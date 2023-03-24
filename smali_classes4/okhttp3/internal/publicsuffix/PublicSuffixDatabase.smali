@@ -188,12 +188,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_11
@@ -205,7 +205,7 @@
 
     new-array v4, v1, [[B
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     if-ge v5, v1, :cond_2
@@ -243,7 +243,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     const-string v6, "publicSuffixListBytes"
@@ -293,7 +293,7 @@
 
     sub-int/2addr v9, v3
 
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_5
     if-ge v10, v9, :cond_8
@@ -336,7 +336,7 @@
 
     sub-int/2addr v1, v3
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_7
     if-ge v6, v1, :cond_b

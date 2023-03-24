@@ -116,7 +116,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lorg/bouncycastle/asn1/ASN1GeneralizedTime;->time:[B

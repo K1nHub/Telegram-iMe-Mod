@@ -1,7 +1,7 @@
 package com.smedialink.model.wallet.crypto.settings;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: WalletSettingsItem.kt */
 /* loaded from: classes3.dex */
 public abstract class WalletSettingsItem {
@@ -37,7 +37,7 @@ public abstract class WalletSettingsItem {
         public static final Blockchains INSTANCE = new Blockchains();
 
         private Blockchains() {
-            super(C3286R.C3288drawable.fork_ic_blockchain, C3286R.string.wallet_crypto_blockchains_title, C3286R.string.wallet_crypto_blockchains_item_description, null);
+            super(C3301R.C3303drawable.fork_ic_blockchain, C3301R.string.wallet_crypto_blockchains_title, C3301R.string.wallet_crypto_blockchains_item_description, null);
         }
     }
 
@@ -47,7 +47,7 @@ public abstract class WalletSettingsItem {
         public static final Privacy INSTANCE = new Privacy();
 
         private Privacy() {
-            super(C3286R.C3288drawable.fork_ic_crypto_privacy, C3286R.string.wallet_crypto_privacy_toolbar_title, C3286R.string.wallet_crypto_privacy_item_description, null);
+            super(C3301R.C3303drawable.fork_ic_crypto_privacy, C3301R.string.wallet_crypto_privacy_toolbar_title, C3301R.string.wallet_crypto_privacy_item_description, null);
         }
     }
 
@@ -57,7 +57,7 @@ public abstract class WalletSettingsItem {
         public static final WalletConnect INSTANCE = new WalletConnect();
 
         private WalletConnect() {
-            super(C3286R.C3288drawable.fork_ic_wallet_connect, C3286R.string.wallet_connect_title, C3286R.string.wallet_connect_subtitle, null);
+            super(C3301R.C3303drawable.fork_ic_wallet_connect, C3301R.string.wallet_connect_title, C3301R.string.wallet_connect_subtitle, null);
         }
     }
 
@@ -67,7 +67,7 @@ public abstract class WalletSettingsItem {
         public static final PinCode INSTANCE = new PinCode();
 
         private PinCode() {
-            super(C3286R.C3288drawable.fork_filter_icon_lock, C3286R.string.wallet_settings_pin_code_title, C3286R.string.wallet_settings_pin_code_subtitle, null);
+            super(C3301R.C3303drawable.fork_filter_icon_lock, C3301R.string.wallet_settings_pin_code_title, C3301R.string.wallet_settings_pin_code_subtitle, null);
         }
     }
 }

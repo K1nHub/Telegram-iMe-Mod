@@ -1872,7 +1872,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;Z)V
@@ -2562,12 +2562,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->inBubbleMode:Z
@@ -2666,7 +2666,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 399
     :goto_2

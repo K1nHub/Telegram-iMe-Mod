@@ -98,7 +98,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1083
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
@@ -133,17 +133,17 @@
 
     if-eqz v2, :cond_0
 
-    const/16 v2, 0x4cf
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x4d5
+    move v2, v4
 
     :goto_0
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1084
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
@@ -153,7 +153,7 @@
     goto :goto_1
 
     :cond_1
-    const/16 v3, 0x4d5
+    move v3, v4
 
     :goto_1
     add-int/2addr v0, v3

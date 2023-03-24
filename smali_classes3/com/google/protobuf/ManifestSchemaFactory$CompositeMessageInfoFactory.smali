@@ -25,10 +25,10 @@
 .method varargs constructor <init>([Lcom/google/protobuf/MessageInfoFactory;)V
     .locals 0
 
-    .line 125
+    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 126
+    .line 127
     iput-object p1, p0, Lcom/google/protobuf/ManifestSchemaFactory$CompositeMessageInfoFactory;->factories:[Lcom/google/protobuf/MessageInfoFactory;
 
     return-void
@@ -46,21 +46,21 @@
         }
     .end annotation
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lcom/google/protobuf/ManifestSchemaFactory$CompositeMessageInfoFactory;->factories:[Lcom/google/protobuf/MessageInfoFactory;
 
     array-length v1, v0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1
 
     aget-object v4, v0, v3
 
-    .line 132
+    .line 133
     invoke-interface {v4, p1}, Lcom/google/protobuf/MessageInfoFactory;->isSupported(Ljava/lang/Class;)Z
 
     move-result v4
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 141
+    .line 142
     iget-object v0, p0, Lcom/google/protobuf/ManifestSchemaFactory$CompositeMessageInfoFactory;->factories:[Lcom/google/protobuf/MessageInfoFactory;
 
     array-length v1, v0
@@ -103,14 +103,14 @@
 
     aget-object v3, v0, v2
 
-    .line 142
+    .line 143
     invoke-interface {v3, p1}, Lcom/google/protobuf/MessageInfoFactory;->isSupported(Ljava/lang/Class;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 143
+    .line 144
     invoke-interface {v3, p1}, Lcom/google/protobuf/MessageInfoFactory;->messageInfoFor(Ljava/lang/Class;)Lcom/google/protobuf/MessageInfo;
 
     move-result-object p1
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 146
+    .line 147
     :cond_1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -134,7 +134,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 147
+    .line 148
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p1

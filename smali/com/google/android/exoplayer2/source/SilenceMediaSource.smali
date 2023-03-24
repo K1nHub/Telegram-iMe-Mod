@@ -136,16 +136,16 @@
 .end method
 
 .method private constructor <init>(JLcom/google/android/exoplayer2/MediaItem;)V
-    .locals 3
+    .locals 2
 
     .line 125
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/BaseMediaSource;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -230,7 +230,7 @@
 
     const-wide/32 v0, 0xac44
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     const-wide/32 v0, 0xf4240
 
@@ -246,7 +246,7 @@
 
     int-to-long v0, v0
 
-    mul-long v0, v0, p0
+    mul-long/2addr v0, p0
 
     return-wide v0
 .end method
@@ -267,7 +267,7 @@
 
     const-wide/32 v0, 0xf4240
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     const-wide/32 v0, 0xac44
 

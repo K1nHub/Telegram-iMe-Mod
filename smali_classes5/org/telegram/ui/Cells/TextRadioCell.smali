@@ -144,12 +144,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x5
+    move v4, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x3
+    move v4, v7
 
     :goto_1
     or-int/lit8 v4, v4, 0x10
@@ -174,12 +174,12 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v10, 0x5
+    move v10, v6
 
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x3
+    move v10, v7
 
     :goto_2
     or-int/lit8 v10, v10, 0x30
@@ -193,14 +193,14 @@
     goto :goto_3
 
     :cond_3
-    const/16 v11, 0x40
+    move v11, v15
 
     :goto_3
     const/4 v12, 0x0
 
     if-eqz v4, :cond_4
 
-    const/16 v13, 0x40
+    move v13, v15
 
     goto :goto_4
 
@@ -254,12 +254,12 @@
 
     if-eqz v4, :cond_6
 
-    const/4 v4, 0x5
+    move v4, v6
 
     goto :goto_6
 
     :cond_6
-    const/4 v4, 0x3
+    move v4, v7
 
     :goto_6
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setGravity(I)V
@@ -304,12 +304,12 @@
 
     if-eqz v5, :cond_7
 
-    const/4 v10, 0x5
+    move v10, v6
 
     goto :goto_7
 
     :cond_7
-    const/4 v10, 0x3
+    move v10, v7
 
     :goto_7
     or-int/lit8 v10, v10, 0x30
@@ -321,14 +321,14 @@
     goto :goto_8
 
     :cond_8
-    const/16 v11, 0x40
+    move v11, v15
 
     :goto_8
     const/16 v12, 0x24
 
     if-eqz v5, :cond_9
 
-    const/16 v13, 0x40
+    move v13, v15
 
     goto :goto_9
 
@@ -391,7 +391,7 @@
     goto :goto_a
 
     :cond_a
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_a
     or-int/lit8 v10, v6, 0x10
@@ -524,7 +524,7 @@
     .line 283
     iget v3, p0, Lorg/telegram/ui/Cells/TextRadioCell;->animationProgress:F
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     int-to-float v2, v2
 
@@ -548,8 +548,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_1
@@ -559,9 +557,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -1020,12 +1018,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_0
     or-int/lit8 v1, v1, 0x10
@@ -1046,12 +1044,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v4, 0x5
+    move v4, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x3
+    move v4, v3
 
     :goto_1
     or-int/lit8 v4, v4, 0x30
@@ -1068,7 +1066,7 @@
     goto :goto_2
 
     :cond_3
-    const/16 v1, 0x40
+    move v1, v4
 
     :goto_2
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1082,7 +1080,7 @@
 
     if-eqz v1, :cond_4
 
-    const/16 v1, 0x40
+    move v1, v4
 
     goto :goto_3
 
@@ -1108,12 +1106,12 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_4
 
     :cond_5
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_4
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -1132,12 +1130,12 @@
 
     if-eqz v1, :cond_6
 
-    const/4 v5, 0x5
+    move v5, v2
 
     goto :goto_5
 
     :cond_6
-    const/4 v5, 0x3
+    move v5, v3
 
     :goto_5
     or-int/lit8 v5, v5, 0x30
@@ -1152,7 +1150,7 @@
     goto :goto_6
 
     :cond_7
-    const/16 v1, 0x40
+    move v1, v4
 
     :goto_6
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1200,7 +1198,7 @@
     goto :goto_8
 
     :cond_9
-    const/4 v2, 0x3
+    move v2, v3
 
     :goto_8
     or-int/lit8 v1, v2, 0x10

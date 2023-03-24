@@ -315,13 +315,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v4, 0x1
+    move v4, v3
 
     :goto_1
     if-nez v4, :cond_2
@@ -370,7 +370,7 @@
     if-nez v0, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_4
     if-nez v1, :cond_6

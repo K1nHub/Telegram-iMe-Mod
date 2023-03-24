@@ -195,31 +195,27 @@ public final class AtomParsers {
         return new Track(parseTkhd.f108id, trackTypeForHdlr, ((Long) parseMdhd.first).longValue(), parseMvhd, j4, parseStsd.format, parseStsd.requiredSampleTransformation, parseStsd.trackEncryptionBoxes, parseStsd.nalUnitLengthFieldLength, jArr, jArr2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:116:0x02b1  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02c1  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x03b2  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x03b4  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x03cc  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x043c  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x0441  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0444  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0447  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x044a  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x044d  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x044f  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0453  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0456  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0465  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0431 A[EDGE_INSN: B:211:0x0431->B:170:0x0431 ?: BREAK  , SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x03b4  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x03b6  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x03ce  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x043e  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x0446  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0449  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x044f  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0451  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0455  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0458  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0467  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x0433 A[EDGE_INSN: B:210:0x0433->B:169:0x0433 ?: BREAK  , SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private static com.google.android.exoplayer2.extractor.mp4.TrackSampleTable parseStbl(com.google.android.exoplayer2.extractor.mp4.Track r38, com.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom r39, com.google.android.exoplayer2.extractor.GaplessInfoHolder r40) throws com.google.android.exoplayer2.ParserException {
         /*
-            Method dump skipped, instructions count: 1319
+            Method dump skipped, instructions count: 1321
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.extractor.mp4.AtomParsers.parseStbl(com.google.android.exoplayer2.extractor.mp4.Track, com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom, com.google.android.exoplayer2.extractor.GaplessInfoHolder):com.google.android.exoplayer2.extractor.mp4.TrackSampleTable");
@@ -726,14 +722,14 @@ public final class AtomParsers {
         return parsableByteArray.readUnsignedIntToInt() / parsableByteArray.readUnsignedIntToInt();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0165  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private static void parseAudioSampleEntry(com.google.android.exoplayer2.util.ParsableByteArray r22, int r23, int r24, int r25, int r26, java.lang.String r27, boolean r28, com.google.android.exoplayer2.drm.DrmInitData r29, com.google.android.exoplayer2.extractor.mp4.AtomParsers.StsdData r30, int r31) throws com.google.android.exoplayer2.ParserException {
         /*
-            Method dump skipped, instructions count: 858
+            Method dump skipped, instructions count: 862
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.extractor.mp4.AtomParsers.parseAudioSampleEntry(com.google.android.exoplayer2.util.ParsableByteArray, int, int, int, int, java.lang.String, boolean, com.google.android.exoplayer2.drm.DrmInitData, com.google.android.exoplayer2.extractor.mp4.AtomParsers$StsdData, int):void");
@@ -802,9 +798,9 @@ public final class AtomParsers {
 
     static Pair<Integer, TrackEncryptionBox> parseCommonEncryptionSinfFromParent(ParsableByteArray parsableByteArray, int i, int i2) throws ParserException {
         int i3 = i + 8;
+        int i4 = -1;
         String str = null;
         Integer num = null;
-        int i4 = -1;
         int i5 = 0;
         while (i3 - i < i2) {
             parsableByteArray.setPosition(i3);

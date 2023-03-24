@@ -510,7 +510,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x4
@@ -526,7 +526,7 @@
 
     int-to-float v6, v2
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
     add-float v8, v5, v6
 
@@ -654,7 +654,7 @@
     iget-object v2, v2, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->luminanceCurve:Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;
 
     :goto_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
     const/4 v8, 0x5
@@ -810,7 +810,7 @@
 
     int-to-float v9, v4
 
-    mul-float v9, v9, v0
+    mul-float/2addr v9, v0
 
     add-float/2addr v11, v9
 
@@ -875,7 +875,7 @@
 
     iget v10, v4, Lorg/telegram/ui/Components/Rect;->width:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v5, v9
 
@@ -889,7 +889,7 @@
 
     iget v4, v4, Lorg/telegram/ui/Components/Rect;->height:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     add-float/2addr v9, v2
 
@@ -911,7 +911,7 @@
 
     iget v10, v4, Lorg/telegram/ui/Components/Rect;->width:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v5, v9
 
@@ -925,7 +925,7 @@
 
     iget v4, v4, Lorg/telegram/ui/Components/Rect;->height:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     add-float/2addr v9, v2
 

@@ -1564,7 +1564,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
@@ -2015,7 +2015,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 283
     :goto_0
@@ -2158,12 +2158,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-eqz v1, :cond_1
@@ -2425,7 +2425,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -3821,7 +3821,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_0
     if-ge v6, v5, :cond_1
@@ -3891,12 +3891,12 @@
 
     if-ne p1, v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_1
     invoke-virtual {v8, v9, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V

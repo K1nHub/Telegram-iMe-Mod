@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 343
     :goto_0
@@ -208,9 +208,9 @@
 
     div-float/2addr v2, v1
 
-    const/high16 v1, 0x41800000    # 16.0f
-
     cmpl-float p2, p2, v2
+
+    const/high16 v1, 0x41800000    # 16.0f
 
     if-ltz p2, :cond_0
 

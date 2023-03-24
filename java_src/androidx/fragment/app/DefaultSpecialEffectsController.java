@@ -151,6 +151,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
     private void startAnimations(List<AnimationInfo> list, List<SpecialEffectsController.Operation> list2, boolean z, Map<SpecialEffectsController.Operation, Boolean> map) {
         int i;
         boolean z2;
+        int i2;
         final SpecialEffectsController.Operation operation;
         final ViewGroup container = getContainer();
         Context context = container.getContext();
@@ -251,6 +252,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                     view2.startAnimation(animation2);
                     animationInfo.completeSpecialEffect();
                     z2 = z3;
+                    i2 = i;
                 } else {
                     container.startViewTransition(view2);
                     FragmentAnim.EndViewTransitionAnimation endViewTransitionAnimation = new FragmentAnim.EndViewTransitionAnimation(animation2, container, view2);
@@ -283,6 +285,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                         }
                     });
                     view2.startAnimation(endViewTransitionAnimation);
+                    i2 = 2;
                     if (FragmentManager.isLoggingEnabled(2)) {
                         Log.v("FragmentManager", "Animation from operation " + operation3 + " has started.");
                     }
@@ -298,7 +301,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                         }
                     }
                 });
-                i = 2;
+                i = i2;
                 z3 = z2;
             }
         }

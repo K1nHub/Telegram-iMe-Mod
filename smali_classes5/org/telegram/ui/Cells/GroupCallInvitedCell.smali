@@ -89,12 +89,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v6, 0x5
+    move v6, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x3
+    move v6, v5
 
     :goto_0
     or-int/lit8 v9, v6, 0x30
@@ -105,24 +105,24 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v10, 0x0
+    move v10, v14
 
     goto :goto_1
 
     :cond_1
-    const/16 v10, 0xb
+    move v10, v6
 
     :goto_1
     const/4 v11, 0x6
 
     if-eqz v3, :cond_2
 
-    const/16 v12, 0xb
+    move v12, v6
 
     goto :goto_2
 
     :cond_2
-    const/4 v12, 0x0
+    move v12, v14
 
     :goto_2
     const/4 v13, 0x0
@@ -178,12 +178,12 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v6, 0x5
+    move v6, v4
 
     goto :goto_3
 
     :cond_3
-    const/4 v6, 0x3
+    move v6, v5
 
     :goto_3
     or-int/lit8 v6, v6, 0x30
@@ -201,12 +201,12 @@
 
     if-eqz v8, :cond_4
 
-    const/4 v9, 0x5
+    move v9, v4
 
     goto :goto_4
 
     :cond_4
-    const/4 v9, 0x3
+    move v9, v5
 
     :goto_4
     or-int/lit8 v9, v9, 0x30
@@ -217,24 +217,24 @@
 
     if-eqz v8, :cond_5
 
-    const/16 v10, 0x36
+    move v10, v13
 
     goto :goto_5
 
     :cond_5
-    const/16 v10, 0x43
+    move v10, v15
 
     :goto_5
     const/16 v11, 0xa
 
     if-eqz v8, :cond_6
 
-    const/16 v12, 0x43
+    move v12, v15
 
     goto :goto_6
 
     :cond_6
-    const/16 v12, 0x36
+    move v12, v13
 
     :goto_6
     const/16 v16, 0x0
@@ -274,12 +274,12 @@
 
     if-eqz v6, :cond_7
 
-    const/4 v6, 0x5
+    move v6, v4
 
     goto :goto_7
 
     :cond_7
-    const/4 v6, 0x3
+    move v6, v5
 
     :goto_7
     or-int/lit8 v6, v6, 0x30
@@ -321,24 +321,24 @@
 
     if-eqz v8, :cond_8
 
-    const/4 v9, 0x5
+    move v9, v4
 
     goto :goto_8
 
     :cond_8
-    const/4 v9, 0x3
+    move v9, v5
 
     :goto_8
     or-int/lit8 v9, v9, 0x30
 
     if-eqz v8, :cond_9
 
-    const/16 v10, 0x36
+    move v10, v13
 
     goto :goto_9
 
     :cond_9
-    const/16 v10, 0x43
+    move v10, v15
 
     :goto_9
     const/16 v11, 0x20
@@ -348,7 +348,7 @@
     goto :goto_a
 
     :cond_a
-    const/16 v15, 0x36
+    move v15, v13
 
     :goto_a
     const/4 v12, 0x0
@@ -432,7 +432,7 @@
 
     if-eqz v2, :cond_b
 
-    const/4 v4, 0x3
+    move v4, v5
 
     :cond_b
     or-int/lit8 v8, v4, 0x10
@@ -481,8 +481,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -492,9 +490,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0

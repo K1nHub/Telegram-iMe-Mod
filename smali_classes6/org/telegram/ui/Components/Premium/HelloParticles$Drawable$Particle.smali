@@ -147,7 +147,7 @@
 
     double-to-float p4, v0
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     sub-float/2addr p3, p4
 
@@ -166,11 +166,11 @@
 
     const v0, 0x3ecccccd    # 0.4f
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     add-float/2addr v0, p4
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     .line 142
     iget p4, p0, Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable$Particle;->x:F
@@ -223,7 +223,7 @@
 
     int-to-float p4, p4
 
-    mul-float p4, p4, p3
+    mul-float/2addr p4, p3
 
     float-to-int p3, p4
 
@@ -286,7 +286,7 @@
 
     const v2, 0x3ee66666    # 0.45f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const v2, 0x3f19999a    # 0.6f
 
@@ -331,7 +331,7 @@
     .line 156
     iget v3, v0, Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable$Particle;->scale:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iput v3, v0, Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable$Particle;->scale:F
 
@@ -352,7 +352,7 @@
 
     const/high16 v3, 0x3f400000    # 0.75f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iput v2, v0, Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable$Particle;->scale:F
 
@@ -633,9 +633,9 @@
 
     add-float/2addr v6, v8
 
-    const/4 v8, 0x0
+    move v8, v3
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_3
     const/16 v10, 0xa
@@ -692,7 +692,7 @@
 
     const/high16 v12, 0x4f000000
 
-    const/4 v13, 0x0
+    move v13, v3
 
     .line 190
     :goto_4
@@ -742,11 +742,11 @@
 
     div-float/2addr v4, v5
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const v4, 0x3f8ccccd    # 1.1f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v15, v3
 
@@ -773,9 +773,9 @@
 
     sub-float/2addr v4, v11
 
-    mul-float v3, v3, v3
+    mul-float/2addr v3, v3
 
-    mul-float v4, v4, v4
+    mul-float/2addr v4, v4
 
     add-float/2addr v3, v4
 
@@ -882,7 +882,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -903,7 +903,7 @@
 
     const v2, 0x3f666666    # 0.9f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 

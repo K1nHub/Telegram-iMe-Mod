@@ -462,175 +462,169 @@
 .end method
 
 .method private static zzb([BLcom/google/android/play/core/internal/zzcm;Ljava/io/OutputStream;JIJ)V
-    .locals 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    move-object v0, p0
+    if-ltz p5, :cond_5
 
-    move v1, p5
+    const-wide/16 v0, 0x0
 
-    if-ltz v1, :cond_5
+    cmp-long v0, p3, v0
 
-    const-wide/16 v2, 0x0
+    if-ltz v0, :cond_4
 
-    cmp-long v4, p3, v2
+    int-to-long v5, p5
 
-    if-ltz v4, :cond_4
+    cmp-long p6, v5, p6
 
-    int-to-long v8, v1
-
-    cmp-long v2, v8, p6
-
-    if-gtz v2, :cond_3
+    if-gtz p6, :cond_3
 
     .line 2
     :try_start_0
-    new-instance v2, Lcom/google/android/play/core/internal/zzcn;
+    new-instance p6, Lcom/google/android/play/core/internal/zzcn;
 
-    move-object v4, v2
+    move-object v1, p6
 
-    move-object v5, p1
+    move-object v2, p1
 
-    move-wide v6, p3
+    move-wide v3, p3
 
     .line 3
-    invoke-direct/range {v4 .. v9}, Lcom/google/android/play/core/internal/zzcn;-><init>(Lcom/google/android/play/core/internal/zzcm;JJ)V
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/play/core/internal/zzcn;-><init>(Lcom/google/android/play/core/internal/zzcm;JJ)V
 
     .line 4
-    invoke-virtual {v2}, Lcom/google/android/play/core/internal/zzcm;->zzc()Ljava/io/InputStream;
+    invoke-virtual {p6}, Lcom/google/android/play/core/internal/zzcm;->zzc()Ljava/io/InputStream;
 
-    move-result-object v2
+    move-result-object p1
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    if-lez v1, :cond_2
+    if-lez p5, :cond_2
 
-    const/16 v3, 0x4000
+    const/16 p3, 0x4000
 
     .line 5
     :try_start_1
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+    invoke-static {p5, p3}, Ljava/lang/Math;->min(II)I
 
-    move-result v3
+    move-result p3
 
-    const/4 v4, 0x0
+    const/4 p4, 0x0
 
-    const/4 v5, 0x0
+    move p6, p4
 
     :goto_1
-    if-ge v5, v3, :cond_1
+    if-ge p6, p3, :cond_1
 
-    sub-int v6, v3, v5
+    sub-int p7, p3, p6
 
     .line 6
-    invoke-virtual {v2, p0, v5, v6}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {p1, p0, p6, p7}, Ljava/io/InputStream;->read([BII)I
 
-    move-result v6
+    move-result p7
 
-    const/4 v7, -0x1
+    const/4 v0, -0x1
 
-    if-eq v6, v7, :cond_0
+    if-eq p7, v0, :cond_0
 
-    add-int/2addr v5, v6
+    add-int/2addr p6, p7
 
     goto :goto_1
 
     :cond_0
-    new-instance v0, Ljava/io/IOException;
+    new-instance p0, Ljava/io/IOException;
 
-    const-string v1, "truncated input stream"
+    const-string p2, "truncated input stream"
 
     .line 9
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v0
-
-    :cond_1
-    move-object v5, p2
+    throw p0
 
     .line 7
-    invoke-virtual {p2, p0, v4, v3}, Ljava/io/OutputStream;->write([BII)V
+    :cond_1
+    invoke-virtual {p2, p0, p4, p3}, Ljava/io/OutputStream;->write([BII)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    sub-int/2addr v1, v3
+    sub-int/2addr p5, p3
 
     goto :goto_0
 
     :catchall_0
-    move-exception v0
+    move-exception p0
 
     .line 4
     :try_start_2
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :catchall_1
     :try_start_3
-    throw v0
+    throw p0
 
     .line 8
     :cond_2
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
     :try_end_3
     .catch Ljava/io/EOFException; {:try_start_3 .. :try_end_3} :catch_0
 
     return-void
 
     :catch_0
-    move-exception v0
+    move-exception p0
 
     .line 11
-    new-instance v1, Ljava/io/IOException;
+    new-instance p1, Ljava/io/IOException;
 
-    const-string v2, "patch underrun"
+    const-string p2, "patch underrun"
 
     .line 10
-    invoke-direct {v1, v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, p2, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v1
+    throw p1
 
     .line 8
     :cond_3
-    new-instance v0, Ljava/io/IOException;
+    new-instance p0, Ljava/io/IOException;
 
-    const-string v1, "Output length overrun"
+    const-string p1, "Output length overrun"
 
     .line 11
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 
     .line 1
     :cond_4
-    new-instance v0, Ljava/io/IOException;
+    new-instance p0, Ljava/io/IOException;
 
-    const-string v1, "inputOffset negative"
+    const-string p1, "inputOffset negative"
 
     .line 2
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 
     .line 1
     :cond_5
-    new-instance v0, Ljava/io/IOException;
+    new-instance p0, Ljava/io/IOException;
 
-    const-string v1, "copyLength negative"
+    const-string p1, "copyLength negative"
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 .end method
 
 .method private static zzc([BLjava/io/DataInputStream;Ljava/io/OutputStream;IJ)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -641,9 +635,9 @@
 
     int-to-long v0, p3
 
-    cmp-long v2, v0, p4
+    cmp-long p4, v0, p4
 
-    if-gtz v2, :cond_1
+    if-gtz p4, :cond_1
 
     :goto_0
     if-lez p3, :cond_0

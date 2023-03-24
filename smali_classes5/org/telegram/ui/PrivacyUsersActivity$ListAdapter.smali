@@ -364,7 +364,7 @@
 
     if-lez v4, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_5
     invoke-virtual {p1, p2, v1, v0, v2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IZ)V
@@ -628,7 +628,7 @@
 
     if-eq p2, v5, :cond_c
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_c
     invoke-virtual {p1, v4, v0, v1, v2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -739,7 +739,7 @@
 
     if-eq p2, v5, :cond_10
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_10
     invoke-virtual {p1, v0, v1, v4, v2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -840,7 +840,7 @@
 
     if-eq p2, v5, :cond_15
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_15
     invoke-virtual {p1, v0, v1, v4, v2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

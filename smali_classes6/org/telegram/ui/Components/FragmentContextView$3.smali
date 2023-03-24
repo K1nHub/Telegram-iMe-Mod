@@ -108,7 +108,7 @@
 
     const v6, 0x3fd9999a    # 1.7f
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     const/4 v7, 0x0
 
@@ -188,7 +188,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v1, v1, v4
+    mul-long/2addr v1, v4
 
     iget-object v4, p0, Lorg/telegram/ui/Components/FragmentContextView$3;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
@@ -208,40 +208,40 @@
 
     const-wide/16 v4, 0x0
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    cmp-long v4, v1, v4
 
-    cmp-long v7, v1, v4
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    if-gez v7, :cond_1
+    if-gez v4, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const-wide/16 v4, 0x1388
+    const-wide/16 v6, 0x1388
 
-    cmp-long v7, v1, v4
+    cmp-long v4, v1, v6
 
-    if-gez v7, :cond_2
+    if-gez v4, :cond_2
 
     long-to-float v4, v1
 
-    const v5, 0x459c4000    # 5000.0f
+    const v6, 0x459c4000    # 5000.0f
 
-    div-float/2addr v4, v5
+    div-float/2addr v4, v6
 
-    sub-float/2addr v6, v4
+    sub-float/2addr v5, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 v6, 0x0
+    move v5, v3
 
     :goto_0
-    const-wide/16 v4, 0x1770
+    const-wide/16 v6, 0x1770
 
-    cmp-long v7, v1, v4
+    cmp-long v1, v1, v6
 
-    if-gez v7, :cond_4
+    if-gez v1, :cond_4
 
     .line 364
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FragmentContextView$3;->invalidate()V
@@ -249,7 +249,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v5, v3
 
     .line 367
     :cond_4
@@ -281,9 +281,9 @@
 
     const v4, 0x3f333333    # 0.7f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v5
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 

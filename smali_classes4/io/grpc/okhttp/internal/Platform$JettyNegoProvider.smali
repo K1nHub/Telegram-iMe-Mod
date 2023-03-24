@@ -203,7 +203,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v4
 
     :goto_0
     if-ge p3, p2, :cond_6

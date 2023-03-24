@@ -298,7 +298,7 @@
 .end method
 
 .method public computeWrapSize(Landroidx/constraintlayout/core/widgets/ConstraintWidgetContainer;I)J
-    .locals 12
+    .locals 11
 
     .line 121
     iget-object v0, p0, Landroidx/constraintlayout/core/widgets/analyzer/RunGroup;->firstRun:Landroidx/constraintlayout/core/widgets/analyzer/WidgetRun;
@@ -428,9 +428,9 @@
 
     int-to-long v9, v9
 
-    cmp-long v11, v0, v9
+    cmp-long v9, v0, v9
 
-    if-ltz v11, :cond_5
+    if-ltz v9, :cond_5
 
     int-to-long v8, v8
 
@@ -452,9 +452,9 @@
 
     int-to-long v9, v8
 
-    cmp-long v11, v6, v9
+    cmp-long v9, v6, v9
 
-    if-ltz v11, :cond_6
+    if-ltz v9, :cond_6
 
     int-to-long v8, v8
 
@@ -470,9 +470,9 @@
 
     const/4 p2, 0x0
 
-    const/high16 v8, 0x3f800000    # 1.0f
-
     cmpl-float p2, p1, p2
+
+    const/high16 v8, 0x3f800000    # 1.0f
 
     if-lez p2, :cond_7
 
@@ -503,7 +503,7 @@
 
     sub-float/2addr v8, p1
 
-    mul-float p2, p2, v8
+    mul-float/2addr p2, v8
 
     add-float/2addr p2, v1
 

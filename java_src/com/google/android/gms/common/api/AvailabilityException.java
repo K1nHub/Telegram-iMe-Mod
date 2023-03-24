@@ -31,9 +31,7 @@ public class AvailabilityException extends Exception {
         for (ApiKey apiKey : this.zaa.keySet()) {
             ConnectionResult connectionResult = (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) this.zaa.get(apiKey));
             z &= !connectionResult.isSuccess();
-            String zaa = apiKey.zaa();
-            String valueOf = String.valueOf(connectionResult);
-            arrayList.add(zaa + ": " + valueOf);
+            arrayList.add(apiKey.zaa() + ": " + String.valueOf(connectionResult));
         }
         StringBuilder sb = new StringBuilder();
         if (z) {

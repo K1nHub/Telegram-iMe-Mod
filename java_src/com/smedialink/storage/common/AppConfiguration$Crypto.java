@@ -35,8 +35,12 @@ public final class AppConfiguration$Crypto {
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[NetworkType.THE_OPEN_NETWORK.ordinal()] = 5;
+                iArr[NetworkType.TRON.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[NetworkType.THE_OPEN_NETWORK.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -45,53 +49,68 @@ public final class AppConfiguration$Crypto {
     private AppConfiguration$Crypto() {
     }
 
-    public final String getScanUrlByToken(NetworkType network) {
-        Intrinsics.checkNotNullParameter(network, "network");
-        int i = WhenMappings.$EnumSwitchMapping$0[network.ordinal()];
-        if (i != 1) {
-            if (i != 2) {
-                if (i != 3) {
-                    if (i != 4) {
-                        if (i == 5) {
-                            return EnvironmentManager.INSTANCE.getEnvironmentInformation().getTonScanUrl();
-                        }
-                        throw new NoWhenBranchMatchedException();
-                    }
-                    return EnvironmentManager.INSTANCE.getEnvironmentInformation().getFantomScanUrl();
-                }
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getPolygonScanUrl();
-            }
-            return EnvironmentManager.INSTANCE.getEnvironmentInformation().getBscScanUrl();
-        }
-        return EnvironmentManager.INSTANCE.getEnvironmentInformation().getEtherScanUrl();
+    public final String formatScanTxUrl(NetworkType networkType, String txHash) {
+        Intrinsics.checkNotNullParameter(networkType, "networkType");
+        Intrinsics.checkNotNullParameter(txHash, "txHash");
+        return getScanUrlByToken(networkType) + getScanTxUrlMainPart(networkType) + txHash;
     }
 
-    public final String formatScanTxUrl(NetworkType network, String tx) {
-        Intrinsics.checkNotNullParameter(network, "network");
-        Intrinsics.checkNotNullParameter(tx, "tx");
-        return getScanUrlByToken(network) + "tx/" + tx;
-    }
-
-    public final String formatScanAddressUrl(NetworkType network, String address) {
-        Intrinsics.checkNotNullParameter(network, "network");
+    public final String formatScanAddressUrl(NetworkType networkType, String address) {
+        Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(address, "address");
-        return getScanUrlByToken(network) + "address/" + address;
+        return getScanUrlByToken(networkType) + getScanAddressUrlMainPart(networkType) + address;
     }
 
-    public static final String formatScanTokenUrlWithAddress(NetworkType network, TokenCode code, String address) {
-        Intrinsics.checkNotNullParameter(network, "network");
+    public static final String formatScanTokenUrlWithAddress(NetworkType networkType, TokenCode code, String address) {
+        Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(code, "code");
         Intrinsics.checkNotNullParameter(address, "address");
-        String contract = SmartContractProvider.INSTANCE.getContract(code, network);
+        String contract = SmartContractProvider.INSTANCE.getContract(code, networkType);
         if (contract == null) {
             contract = "";
         }
-        return formatScanTokenUrl(network, contract) + "?a=" + address;
+        return formatScanTokenUrl(networkType, contract) + "?a=" + address;
     }
 
-    public static final String formatScanTokenUrl(NetworkType network, String address) {
-        Intrinsics.checkNotNullParameter(network, "network");
+    public static final String formatScanTokenUrl(NetworkType networkType, String address) {
+        Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(address, "address");
-        return INSTANCE.getScanUrlByToken(network) + "token/" + address;
+        StringBuilder sb = new StringBuilder();
+        AppConfiguration$Crypto appConfiguration$Crypto = INSTANCE;
+        sb.append(appConfiguration$Crypto.getScanUrlByToken(networkType));
+        sb.append(appConfiguration$Crypto.getTokenUrlMainPart(networkType));
+        sb.append(address);
+        return sb.toString();
+    }
+
+    private final String getScanUrlByToken(NetworkType networkType) {
+        switch (WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()]) {
+            case 1:
+                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getEtherScanUrl();
+            case 2:
+                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getBscScanUrl();
+            case 3:
+                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getPolygonScanUrl();
+            case 4:
+                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getFantomScanUrl();
+            case 5:
+                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getTronScanUrl();
+            case 6:
+                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getTonScanUrl();
+            default:
+                throw new NoWhenBranchMatchedException();
+        }
+    }
+
+    private final String getScanAddressUrlMainPart(NetworkType networkType) {
+        return WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()] == 5 ? "#/address/" : "address/";
+    }
+
+    private final String getScanTxUrlMainPart(NetworkType networkType) {
+        return WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()] == 5 ? "#/transaction/" : "tx/";
+    }
+
+    private final String getTokenUrlMainPart(NetworkType networkType) {
+        return WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()] == 5 ? "#/token20/" : "token/";
     }
 }

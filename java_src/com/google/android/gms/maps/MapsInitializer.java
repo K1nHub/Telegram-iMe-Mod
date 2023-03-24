@@ -74,10 +74,10 @@ public final class MapsInitializer {
             if (r6 == r3) goto L46
             goto L48
         L46:
-            r3 = 2
+            r3 = r4
             goto L49
         L48:
-            r3 = 0
+            r3 = r2
         L49:
             int r6 = r1.zzd()     // Catch: android.os.RemoteException -> L5b java.lang.Throwable -> L89
             if (r6 != r4) goto L53

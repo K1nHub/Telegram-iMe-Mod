@@ -147,21 +147,21 @@
 
     iget p4, v0, Lorg/telegram/ui/Components/Point;->x:F
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     iget v4, v1, Lorg/telegram/ui/Components/Point;->x:F
 
-    mul-float v4, v4, p2
+    mul-float/2addr v4, p2
 
     add-float/2addr p4, v4
 
     iget v4, v0, Lorg/telegram/ui/Components/Point;->y:F
 
-    mul-float v4, v4, p2
+    mul-float/2addr v4, p2
 
     iget v5, v1, Lorg/telegram/ui/Components/Point;->y:F
 
-    mul-float v5, v5, p2
+    mul-float/2addr v5, p2
 
     add-float/2addr v4, v5
 
@@ -232,13 +232,13 @@
 
     const v0, 0x40166666    # 2.35f
 
-    mul-float v0, v0, p4
+    mul-float/2addr v0, p4
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/PhotoFace;->width:F
 
     const v0, 0x3f4ccccd    # 0.8f
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     sub-float/2addr p3, p1
 
@@ -266,7 +266,7 @@
 
     double-to-float p3, v6
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     add-float/2addr v1, p3
 
@@ -281,7 +281,7 @@
 
     double-to-float v4, v4
 
-    mul-float p4, p4, v4
+    mul-float/2addr p4, v4
 
     add-float/2addr p3, p4
 
@@ -315,21 +315,21 @@
 
     iget p4, v2, Lorg/telegram/ui/Components/Point;->x:F
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     iget v0, v3, Lorg/telegram/ui/Components/Point;->x:F
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     add-float/2addr p4, v0
 
     iget v0, v2, Lorg/telegram/ui/Components/Point;->y:F
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     iget v1, v3, Lorg/telegram/ui/Components/Point;->y:F
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     add-float/2addr v0, v1
 
@@ -342,7 +342,7 @@
     .line 90
     iget p3, p0, Lorg/telegram/ui/Components/Paint/PhotoFace;->eyesDistance:F
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     .line 91
     iget p2, p0, Lorg/telegram/ui/Components/Paint/PhotoFace;->angle:F
@@ -372,7 +372,7 @@
 
     double-to-float p1, v2
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     add-float/2addr p4, p1
 
@@ -387,7 +387,7 @@
 
     double-to-float v0, v0
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     add-float/2addr p1, p3
 
@@ -443,7 +443,7 @@
 
     iget v2, p1, Landroid/graphics/PointF;->x:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     div-float/2addr v1, v0
 
@@ -451,7 +451,7 @@
 
     iget p1, p1, Landroid/graphics/PointF;->y:F
 
-    mul-float p3, p3, p1
+    mul-float/2addr p3, p1
 
     div-float/2addr p3, p2
 

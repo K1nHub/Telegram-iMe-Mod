@@ -203,7 +203,7 @@ public final class CacheInterceptor implements Interceptor {
             boolean startsWith$default;
             Headers.Builder builder = new Headers.Builder();
             int size = headers.size();
-            while (i < size) {
+            for (i = 0; i < size; i = i + 1) {
                 String name = headers.name(i);
                 String value = headers.value(i);
                 equals = StringsKt__StringsJVMKt.equals("Warning", name, true);

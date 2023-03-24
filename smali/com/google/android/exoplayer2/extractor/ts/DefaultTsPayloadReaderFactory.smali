@@ -205,7 +205,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-ge v4, v1, :cond_5
@@ -228,12 +228,12 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_2
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_2
     if-eqz v7, :cond_2
@@ -247,7 +247,7 @@
     :cond_2
     const-string v9, "application/cea-608"
 
-    const/4 v6, 0x1
+    move v6, v8
 
     .line 261
     :goto_3
@@ -271,7 +271,7 @@
     goto :goto_4
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 270
     :goto_4

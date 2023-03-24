@@ -298,12 +298,12 @@
 
     if-eqz p4, :cond_0
 
-    const/4 p4, 0x1
+    move p4, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p4, 0x0
+    move p4, v1
 
     :goto_0
     const-string v2, "Invalid DNS name: %s"
@@ -419,7 +419,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 189
     :goto_2
@@ -592,9 +592,9 @@
 
     if-eqz v4, :cond_1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     iget-object v0, p0, Lio/grpc/internal/DnsNameResolver;->stopwatch:Lcom/google/common/base/Stopwatch;
 
@@ -607,9 +607,9 @@
 
     iget-wide v2, p0, Lio/grpc/internal/DnsNameResolver;->cacheTtlNanos:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 
@@ -1083,12 +1083,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     if-nez v0, :cond_3
@@ -1114,12 +1114,12 @@
 
     if-gt v4, v5, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_2
     const-string v7, "Bad percentage: %s"
@@ -1176,12 +1176,12 @@
 
     if-eqz v0, :cond_6
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_3
 
     :cond_7
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_3
     if-nez p1, :cond_8
@@ -1607,20 +1607,20 @@
     goto :goto_3
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, p3
 
     goto :goto_4
 
     :cond_2
     :goto_3
-    const/4 p2, 0x1
+    move p2, v5
 
     :goto_4
     if-eqz v4, :cond_3
 
     if-eqz p2, :cond_3
 
-    const/4 p3, 0x1
+    move p3, v5
 
     :cond_3
     if-nez p3, :cond_4
@@ -1801,9 +1801,9 @@
     :cond_2
     const/4 p0, 0x1
 
-    const/4 p1, 0x0
+    move v1, p0
 
-    const/4 v1, 0x1
+    move p1, v0
 
     .line 743
     :goto_0
@@ -1830,12 +1830,12 @@
 
     if-gt v2, v3, :cond_3
 
-    const/4 v2, 0x1
+    move v2, p0
 
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     and-int/2addr v1, v2

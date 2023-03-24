@@ -5,14 +5,14 @@ import java.math.BigInteger;
 public class ECPrivateKeyParameters extends ECKeyParameters {
 
     /* renamed from: d */
-    BigInteger f1302d;
+    BigInteger f1303d;
 
     public ECPrivateKeyParameters(BigInteger bigInteger, ECDomainParameters eCDomainParameters) {
         super(true, eCDomainParameters);
-        this.f1302d = bigInteger;
+        this.f1303d = bigInteger;
     }
 
     public BigInteger getD() {
-        return this.f1302d;
+        return this.f1303d;
     }
 }

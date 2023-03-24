@@ -1182,7 +1182,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_0
     if-eq p1, p2, :cond_3
@@ -1519,7 +1519,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 513
     :goto_0
@@ -3119,7 +3119,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_0
     aput v0, v4, v5
@@ -3146,7 +3146,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_1
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
@@ -3639,7 +3639,7 @@
     :goto_0
     if-eqz p2, :cond_3
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_1
     const/4 v0, 0x3

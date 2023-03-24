@@ -233,7 +233,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 346
     :goto_0
@@ -252,7 +252,7 @@
 
     aput-object v3, v0, v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 348
     :goto_1
@@ -344,7 +344,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 303
     :goto_0
@@ -354,7 +354,7 @@
 
     if-ge v2, v3, :cond_4
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 305
     :goto_1

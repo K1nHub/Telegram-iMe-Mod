@@ -181,7 +181,7 @@
 
     invoke-direct {v4, v3}, Landroidx/collection/ArrayMap;-><init>(I)V
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_0
     if-ge v5, v3, :cond_2
@@ -239,9 +239,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-gez v9, :cond_3
+    if-gez v5, :cond_3
 
     goto :goto_2
 
@@ -360,12 +360,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_0
     if-eqz p2, :cond_1
@@ -373,7 +373,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     if-eq v2, v0, :cond_6

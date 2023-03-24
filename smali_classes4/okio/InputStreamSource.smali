@@ -73,7 +73,7 @@
 
     if-ltz v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
@@ -106,16 +106,16 @@
 
     move-result-wide p2
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 90
-    iget-object p2, p0, Lokio/InputStreamSource;->input:Ljava/io/InputStream;
+    iget-object p3, p0, Lokio/InputStreamSource;->input:Ljava/io/InputStream;
 
     iget-object v1, v0, Lokio/Segment;->data:[B
 
     iget v2, v0, Lokio/Segment;->limit:I
 
-    invoke-virtual {p2, v1, v2, p3}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {p3, v1, v2, p2}, Ljava/io/InputStream;->read([BII)I
 
     move-result p2
 

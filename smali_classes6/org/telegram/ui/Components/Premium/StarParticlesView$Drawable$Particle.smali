@@ -220,7 +220,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     const/high16 v0, 0x3f800000    # 1.0f
@@ -311,7 +311,7 @@
 
     sget v4, Lorg/telegram/ui/GLIconSettingsView;->smallStarsSize:F
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     .line 439
     invoke-virtual {p1, v1, v1, v3, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
@@ -370,9 +370,9 @@
 
     sub-float v1, v0, v3
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
     float-to-int p2, p2
 
@@ -461,20 +461,20 @@
 
     div-float/2addr p2, p3
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget p3, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->speedScale:F
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     .line 453
     iget p3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->vecX:F
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     add-float/2addr p3, p4
 
@@ -485,7 +485,7 @@
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->vecY:F
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     add-float/2addr p3, p4
 
@@ -643,9 +643,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v3, p1
 
-    const/4 v3, 0x0
+    move v2, v1
 
     :goto_0
     const/16 v4, 0xa
@@ -716,7 +716,7 @@
 
     const/high16 v6, 0x4f000000
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 478
     :goto_1
@@ -795,9 +795,9 @@
     :goto_2
     sub-float/2addr v9, v5
 
-    mul-float v8, v8, v8
+    mul-float/2addr v8, v8
 
-    mul-float v9, v9, v9
+    mul-float/2addr v9, v9
 
     add-float/2addr v8, v9
 
@@ -876,7 +876,7 @@
 
     sub-float/2addr v0, v1
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     add-float/2addr p2, v1
 
@@ -916,7 +916,7 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v2
+    mul-double/2addr v6, v2
 
     double-to-float p2, v6
 
@@ -941,7 +941,7 @@
 
     move-result-wide v0
 
-    mul-double v2, v2, v0
+    mul-double/2addr v2, v0
 
     double-to-float v0, v2
 
@@ -1094,7 +1094,7 @@
 
     div-float/2addr v1, v0
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     float-to-int p2, v1
 
@@ -1118,7 +1118,7 @@
 
     div-float/2addr v1, v0
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     float-to-int p2, v1
 
@@ -1181,7 +1181,7 @@
 
     div-float/2addr v1, v0
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     float-to-int p2, v1
 

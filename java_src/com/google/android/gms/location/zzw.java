@@ -9,26 +9,26 @@ public final class zzw implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 1;
+        int i2 = 1;
+        int i3 = 1000;
         long j = 0;
         zzac[] zzacVarArr = null;
-        int i = 1000;
-        int i2 = 1;
-        int i3 = 1;
         boolean z = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {
                 case 1:
-                    i2 = SafeParcelReader.readInt(parcel, readHeader);
+                    i = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 2:
-                    i3 = SafeParcelReader.readInt(parcel, readHeader);
+                    i2 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 3:
                     j = SafeParcelReader.readLong(parcel, readHeader);
                     break;
                 case 4:
-                    i = SafeParcelReader.readInt(parcel, readHeader);
+                    i3 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 5:
                     zzacVarArr = (zzac[]) SafeParcelReader.createTypedArray(parcel, readHeader, zzac.CREATOR);
@@ -42,7 +42,7 @@ public final class zzw implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new LocationAvailability(i, i2, i3, j, zzacVarArr, z);
+        return new LocationAvailability(i3, i, i2, j, zzacVarArr, z);
     }
 
     @Override // android.os.Parcelable.Creator

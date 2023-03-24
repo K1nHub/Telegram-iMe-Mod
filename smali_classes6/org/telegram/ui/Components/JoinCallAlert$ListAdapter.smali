@@ -90,32 +90,32 @@
 
     move-result-wide v0
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v3, 0x0
 
-    if-lez v5, :cond_0
+    if-lez v2, :cond_0
 
     .line 735
-    iget-object v3, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
+    iget-object v2, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1400(Lorg/telegram/ui/Components/JoinCallAlert;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1400(Lorg/telegram/ui/Components/JoinCallAlert;)I
 
-    move-result v3
+    move-result v2
 
-    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 736
     sget v4, Lorg/telegram/messenger/R$string;->VoipGroupPersonalAccount:I
@@ -130,15 +130,15 @@
 
     .line 738
     :cond_0
-    iget-object v3, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
+    iget-object v2, p0, Lorg/telegram/ui/Components/JoinCallAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/JoinCallAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1500(Lorg/telegram/ui/Components/JoinCallAlert;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/JoinCallAlert;->access$1500(Lorg/telegram/ui/Components/JoinCallAlert;)I
 
-    move-result v3
+    move-result v2
 
-    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v3
+    move-result-object v2
 
     neg-long v4, v0
 
@@ -146,11 +146,11 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v3
+    move-result-object v2
 
-    move-object v4, v2
+    move-object v4, v3
 
     .line 741
     :goto_0
@@ -180,16 +180,16 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    cmp-long p2, v0, v3
+    cmp-long p2, v0, v4
 
     if-nez p2, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_1
-    invoke-virtual {p1, v0, v1, v6, v2}, Lorg/telegram/ui/Cells/ShareDialogCell;->setDialog(JZLjava/lang/CharSequence;)V
+    invoke-virtual {p1, v0, v1, v6, v3}, Lorg/telegram/ui/Cells/ShareDialogCell;->setDialog(JZLjava/lang/CharSequence;)V
 
     goto :goto_1
 
@@ -208,10 +208,10 @@
 
     if-eq p2, v0, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v7
 
     :cond_3
-    invoke-virtual {p1, v3, v2, v4, v6}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {p1, v2, v3, v4, v6}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     :goto_1
     return-void
@@ -283,16 +283,14 @@
 
     const/4 p2, 0x1
 
-    const/4 v7, 0x1
-
     goto :goto_0
 
     :cond_1
     const/4 p2, 0x0
 
-    const/4 v7, 0x0
-
     :goto_0
+    move v7, p2
+
     move-object v2, p1
 
     invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;-><init>(Landroid/content/Context;IIZZ)V
@@ -368,14 +366,14 @@
 
     :cond_1
     :goto_0
-    cmp-long v2, v0, v5
+    cmp-long v0, v0, v5
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 721
     :goto_1
@@ -392,14 +390,14 @@
 
     move-result-wide v5
 
-    cmp-long v2, v0, v5
+    cmp-long v0, v0, v5
 
-    if-nez v2, :cond_4
+    if-nez v0, :cond_4
 
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 725
     :goto_2

@@ -67,7 +67,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity$6;->wasEmpty:Z

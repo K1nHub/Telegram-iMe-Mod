@@ -990,7 +990,7 @@
 
     const/high16 v3, 0x3fc00000    # 1.5f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-double v3, v1
 
@@ -1176,7 +1176,7 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -1189,7 +1189,7 @@
 
     if-eq v0, v3, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1
@@ -1218,7 +1218,7 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -1229,7 +1229,7 @@
 
     if-eq v0, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1
@@ -1927,9 +1927,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
@@ -1940,14 +1940,14 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v2, :cond_1
 
     .line 855
     iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->view:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/ImageButton;->setLayerType(ILandroid/graphics/Paint;)V
+    invoke-virtual {v0, v2, v1}, Landroid/widget/ImageButton;->setLayerType(ILandroid/graphics/Paint;)V
 
     goto :goto_0
 
@@ -1964,9 +1964,9 @@
     .line 859
     iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl;->view:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/ImageButton;->setLayerType(ILandroid/graphics/Paint;)V
+    invoke-virtual {v0, v2, v1}, Landroid/widget/ImageButton;->setLayerType(ILandroid/graphics/Paint;)V
 
     .line 865
     :cond_1

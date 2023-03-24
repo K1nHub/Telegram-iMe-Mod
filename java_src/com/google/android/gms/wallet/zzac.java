@@ -11,6 +11,9 @@ public final class zzac implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        boolean z2 = false;
+        boolean z3 = false;
         CardRequirements cardRequirements = null;
         ShippingAddressRequirements shippingAddressRequirements = null;
         ArrayList<Integer> arrayList = null;
@@ -18,9 +21,6 @@ public final class zzac implements Parcelable.Creator {
         TransactionInfo transactionInfo = null;
         String str = null;
         Bundle bundle = null;
-        boolean z = false;
-        boolean z2 = false;
-        boolean z3 = false;
         boolean z4 = true;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);

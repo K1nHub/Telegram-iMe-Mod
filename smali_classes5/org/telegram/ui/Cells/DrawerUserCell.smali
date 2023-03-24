@@ -235,7 +235,7 @@
 
     if-eqz v8, :cond_1
 
-    const/4 v8, 0x0
+    move v8, v1
 
     goto :goto_1
 
@@ -998,7 +998,7 @@
 
     mul-float v7, v5, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countPaint:Landroid/graphics/Paint;
 
@@ -1177,13 +1177,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 221
-    :goto_0
+    :catch_0
     iget-object v3, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
@@ -1242,7 +1237,7 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawableOutside(Z)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     if-eqz v1, :cond_2
@@ -1285,7 +1280,7 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawableOutside(Z)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 236
     :cond_2
@@ -1301,7 +1296,7 @@
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawableOutside(Z)V
 
     .line 239
-    :goto_1
+    :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->status:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     const-string v3, "chats_verifiedBackground"
@@ -1339,12 +1334,12 @@
 
     if-ne p1, v1, :cond_3
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
-    const/4 v2, 0x4
+    move v2, v5
 
-    :goto_2
+    :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 243

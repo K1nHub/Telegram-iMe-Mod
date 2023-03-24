@@ -521,6 +521,7 @@ public class TextCell extends FrameLayout {
             } else {
                 f = AndroidUtilities.m50dp(this.imageView.getVisibility() == 0 ? this.inDialogs ? 72 : 68 : 20);
             }
+            float f2 = f;
             float measuredHeight = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
             if (LocaleController.isRTL) {
@@ -533,7 +534,7 @@ public class TextCell extends FrameLayout {
             } else {
                 i = 0;
             }
-            canvas.drawLine(f, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(f2, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

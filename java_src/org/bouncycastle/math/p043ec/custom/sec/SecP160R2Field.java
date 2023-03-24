@@ -8,18 +8,18 @@ import org.bouncycastle.math.raw.Nat160;
 public class SecP160R2Field {
 
     /* renamed from: P */
-    static final int[] f1333P = {-21389, -2, -1, -1, -1};
+    static final int[] f1334P = {-21389, -2, -1, -1, -1};
     static final int[] PExt = {457489321, 42778, 1, 0, 0, -42778, -3, -1, -1, -1};
     private static final int[] PExtInv = {-457489321, -42779, -2, -1, -1, 42777, 2};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat160.add(iArr, iArr2, iArr3) != 0 || (iArr3[4] == -1 && Nat160.gte(iArr3, f1333P))) {
+        if (Nat160.add(iArr, iArr2, iArr3) != 0 || (iArr3[4] == -1 && Nat160.gte(iArr3, f1334P))) {
             Nat.add33To(5, 21389, iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(5, iArr, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1333P))) {
+        if (Nat.inc(5, iArr, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1334P))) {
             Nat.add33To(5, 21389, iArr2);
         }
     }
@@ -27,7 +27,7 @@ public class SecP160R2Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat160.fromBigInteger(bigInteger);
         if (fromBigInteger[4] == -1) {
-            int[] iArr = f1333P;
+            int[] iArr = f1334P;
             if (Nat160.gte(fromBigInteger, iArr)) {
                 Nat160.subFrom(iArr, fromBigInteger);
             }
@@ -54,18 +54,18 @@ public class SecP160R2Field {
         if (Nat160.isZero(iArr)) {
             Nat160.zero(iArr2);
         } else {
-            Nat160.sub(f1333P, iArr, iArr2);
+            Nat160.sub(f1334P, iArr, iArr2);
         }
     }
 
     public static void reduce(int[] iArr, int[] iArr2) {
-        if (Nat160.mul33DWordAdd(21389, Nat160.mul33Add(21389, iArr, 5, iArr, 0, iArr2, 0), iArr2, 0) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1333P))) {
+        if (Nat160.mul33DWordAdd(21389, Nat160.mul33Add(21389, iArr, 5, iArr, 0, iArr2, 0), iArr2, 0) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1334P))) {
             Nat.add33To(5, 21389, iArr2);
         }
     }
 
     public static void reduce32(int i, int[] iArr) {
-        if ((i == 0 || Nat160.mul33WordAdd(21389, i, iArr, 0) == 0) && !(iArr[4] == -1 && Nat160.gte(iArr, f1333P))) {
+        if ((i == 0 || Nat160.mul33WordAdd(21389, i, iArr, 0) == 0) && !(iArr[4] == -1 && Nat160.gte(iArr, f1334P))) {
             return;
         }
         Nat.add33To(5, 21389, iArr);
@@ -97,7 +97,7 @@ public class SecP160R2Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(5, iArr, 0, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1333P))) {
+        if (Nat.shiftUpBit(5, iArr, 0, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1334P))) {
             Nat.add33To(5, 21389, iArr2);
         }
     }

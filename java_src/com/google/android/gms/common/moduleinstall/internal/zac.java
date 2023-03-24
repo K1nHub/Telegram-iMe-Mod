@@ -13,8 +13,8 @@ public final class zac implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         ArrayList arrayList = null;
         String str = null;
-        String str2 = null;
         boolean z = false;
+        String str2 = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);
@@ -23,15 +23,15 @@ public final class zac implements Parcelable.Creator {
             } else if (fieldId == 2) {
                 z = SafeParcelReader.readBoolean(parcel, readHeader);
             } else if (fieldId == 3) {
-                str = SafeParcelReader.createString(parcel, readHeader);
-            } else if (fieldId == 4) {
                 str2 = SafeParcelReader.createString(parcel, readHeader);
+            } else if (fieldId == 4) {
+                str = SafeParcelReader.createString(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new ApiFeatureRequest(arrayList, z, str, str2);
+        return new ApiFeatureRequest(arrayList, z, str2, str);
     }
 
     @Override // android.os.Parcelable.Creator

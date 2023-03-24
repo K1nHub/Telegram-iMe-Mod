@@ -48,11 +48,11 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTransactionsBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenu;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -176,13 +176,15 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     @Override // com.smedialink.p031ui.wallet.transaction.WalletTransactionsView
+    public void renderInitialItems(List<BaseNode> items) {
+        Intrinsics.checkNotNullParameter(items, "items");
+        getTransactionAdapter().setNewInstance(items);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.transaction.WalletTransactionsView
     public void renderItems(List<BaseNode> items) {
         Intrinsics.checkNotNullParameter(items, "items");
         BaseQuickAdapter.setDiffNewData$default(getTransactionAdapter(), items, null, 2, null);
-        LinearLayoutManager linearLayoutManager = this.linearLayoutManager;
-        if (linearLayoutManager != null) {
-            linearLayoutManager.scrollToPositionWithOffset(0, 0);
-        }
     }
 
     @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
@@ -245,12 +247,12 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_transactions_toolbar_title));
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.wallet_transactions_toolbar_title));
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletTransactionsPresenter presenter;
                 if (i == -1) {
@@ -261,7 +263,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
                 }
             }
         });
-        ActionBarMenu createMenu = c3351ActionBar.createMenu();
+        ActionBarMenu createMenu = c3366ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);

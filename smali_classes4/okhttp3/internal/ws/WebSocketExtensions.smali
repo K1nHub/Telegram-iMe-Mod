@@ -100,7 +100,7 @@
 
     if-eqz p8, :cond_0
 
-    const/4 p8, 0x0
+    move p8, v0
 
     goto :goto_0
 
@@ -126,7 +126,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_2
 
@@ -148,7 +148,7 @@
 
     if-eqz p1, :cond_4
 
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_4
 
@@ -160,7 +160,7 @@
 
     if-eqz p1, :cond_5
 
-    const/4 p7, 0x0
+    move p7, v0
 
     goto :goto_5
 
@@ -266,7 +266,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_0
     mul-int/lit8 v0, v0, 0x1f
@@ -284,7 +284,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     add-int/2addr v0, v2
@@ -295,7 +295,7 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_2
     add-int/2addr v0, v2
@@ -319,7 +319,7 @@
 
     if-eqz v2, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_4
     add-int/2addr v0, v2

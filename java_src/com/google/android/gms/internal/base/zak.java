@@ -153,7 +153,7 @@ public final class zak extends Drawable implements Drawable.Callback {
         return this.zam;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x004e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x004d, code lost:
         if (r0 == 0) goto L22;
      */
     @Override // android.graphics.drawable.Drawable
@@ -161,26 +161,26 @@ public final class zak extends Drawable implements Drawable.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public final void draw(android.graphics.Canvas r8) {
+    public final void draw(android.graphics.Canvas r7) {
         /*
-            r7 = this;
-            int r0 = r7.zaa
+            r6 = this;
+            int r0 = r6.zaa
             r1 = 2
             r2 = 0
             r3 = 1
-            if (r0 == r3) goto L39
+            if (r0 == r3) goto L38
             if (r0 == r1) goto La
-            goto L42
+            goto L41
         La:
-            long r0 = r7.zab
+            long r0 = r6.zab
             r4 = 0
-            int r6 = (r0 > r4 ? 1 : (r0 == r4 ? 0 : -1))
-            if (r6 < 0) goto L42
+            int r0 = (r0 > r4 ? 1 : (r0 == r4 ? 0 : -1))
+            if (r0 < 0) goto L41
             long r0 = android.os.SystemClock.uptimeMillis()
-            long r4 = r7.zab
+            long r4 = r6.zab
             long r0 = r0 - r4
             float r0 = (float) r0
-            int r1 = r7.zae
+            int r1 = r6.zae
             float r1 = (float) r1
             float r0 = r0 / r1
             r1 = 1065353216(0x3f800000, float:1.0)
@@ -188,64 +188,64 @@ public final class zak extends Drawable implements Drawable.Callback {
             if (r4 < 0) goto L25
             goto L26
         L25:
-            r3 = 0
+            r3 = r2
         L26:
             if (r3 == 0) goto L2a
-            r7.zaa = r2
+            r6.zaa = r2
         L2a:
             float r0 = java.lang.Math.min(r0, r1)
-            int r1 = r7.zac
+            int r1 = r6.zac
             float r1 = (float) r1
             float r1 = r1 * r0
             r0 = 0
             float r1 = r1 + r0
             int r0 = (int) r1
-            r7.zaf = r0
-            goto L42
-        L39:
+            r6.zaf = r0
+            goto L41
+        L38:
             long r3 = android.os.SystemClock.uptimeMillis()
-            r7.zab = r3
-            r7.zaa = r1
-            r3 = 0
-        L42:
-            int r0 = r7.zaf
-            boolean r1 = r7.zag
-            android.graphics.drawable.Drawable r4 = r7.zaj
-            android.graphics.drawable.Drawable r5 = r7.zak
-            if (r3 == 0) goto L61
-            if (r1 == 0) goto L51
-            if (r0 != 0) goto L56
-            goto L52
-        L51:
+            r6.zab = r3
+            r6.zaa = r1
+            r3 = r2
+        L41:
+            int r0 = r6.zaf
+            boolean r1 = r6.zag
+            android.graphics.drawable.Drawable r4 = r6.zaj
+            android.graphics.drawable.Drawable r5 = r6.zak
+            if (r3 == 0) goto L60
+            if (r1 == 0) goto L50
+            if (r0 != 0) goto L55
+            goto L51
+        L50:
             r2 = r0
-        L52:
-            r4.draw(r8)
+        L51:
+            r4.draw(r7)
             r0 = r2
-        L56:
-            int r1 = r7.zad
-            if (r0 != r1) goto L60
+        L55:
+            int r1 = r6.zad
+            if (r0 != r1) goto L5f
             r5.setAlpha(r1)
-            r5.draw(r8)
-        L60:
+            r5.draw(r7)
+        L5f:
             return
-        L61:
-            if (r1 == 0) goto L69
-            int r2 = r7.zad
+        L60:
+            if (r1 == 0) goto L68
+            int r2 = r6.zad
             int r2 = r2 - r0
             r4.setAlpha(r2)
-        L69:
-            r4.draw(r8)
-            if (r1 == 0) goto L73
-            int r1 = r7.zad
+        L68:
+            r4.draw(r7)
+            if (r1 == 0) goto L72
+            int r1 = r6.zad
             r4.setAlpha(r1)
-        L73:
-            if (r0 <= 0) goto L80
+        L72:
+            if (r0 <= 0) goto L7f
             r5.setAlpha(r0)
-            r5.draw(r8)
-            int r8 = r7.zad
-            r5.setAlpha(r8)
-        L80:
-            r7.invalidateSelf()
+            r5.draw(r7)
+            int r7 = r6.zad
+            r5.setAlpha(r7)
+        L7f:
+            r6.invalidateSelf()
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.base.zak.draw(android.graphics.Canvas):void");

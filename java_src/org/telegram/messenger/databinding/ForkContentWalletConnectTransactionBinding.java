@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.smedialink.p031ui.custom.BigActionButton;
 import com.smedialink.p031ui.custom.FeeView;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.Cells.TextDetailCell;
 /* loaded from: classes4.dex */
@@ -48,7 +48,7 @@ public final class ForkContentWalletConnectTransactionBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectTransactionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3286R.layout.fork_content_wallet_connect_transaction, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3301R.layout.fork_content_wallet_connect_transaction, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -56,32 +56,32 @@ public final class ForkContentWalletConnectTransactionBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectTransactionBinding bind(View view) {
-        int i = C3286R.C3289id.button_close;
+        int i = C3301R.C3304id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3286R.C3289id.button_process;
+            i = C3301R.C3304id.button_process;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                i = C3286R.C3289id.fee_view;
+                i = C3301R.C3304id.fee_view;
                 FeeView feeView = (FeeView) ViewBindings.findChildViewById(view, i);
                 if (feeView != null) {
                     LinearLayout linearLayout = (LinearLayout) view;
-                    i = C3286R.C3289id.text_from;
+                    i = C3301R.C3304id.text_from;
                     TextDetailCell textDetailCell = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                     if (textDetailCell != null) {
-                        i = C3286R.C3289id.text_network;
+                        i = C3301R.C3304id.text_network;
                         TextDetailCell textDetailCell2 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                         if (textDetailCell2 != null) {
-                            i = C3286R.C3289id.text_peer_url;
+                            i = C3301R.C3304id.text_peer_url;
                             TextDetailCell textDetailCell3 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                             if (textDetailCell3 != null) {
-                                i = C3286R.C3289id.text_title;
+                                i = C3301R.C3304id.text_title;
                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView != null) {
-                                    i = C3286R.C3289id.text_to;
+                                    i = C3301R.C3304id.text_to;
                                     TextDetailCell textDetailCell4 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                                     if (textDetailCell4 != null) {
-                                        i = C3286R.C3289id.text_transaction_amount;
+                                        i = C3301R.C3304id.text_transaction_amount;
                                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView2 != null) {
                                             return new ForkContentWalletConnectTransactionBinding(linearLayout, actionBarMenuItem, bigActionButton, feeView, linearLayout, textDetailCell, textDetailCell2, textDetailCell3, appCompatTextView, textDetailCell4, appCompatTextView2);

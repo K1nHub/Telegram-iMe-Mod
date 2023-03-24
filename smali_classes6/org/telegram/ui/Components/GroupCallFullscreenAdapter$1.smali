@@ -182,14 +182,14 @@
 
     move-result-wide v0
 
-    cmp-long v4, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v4, :cond_1
+    if-nez p1, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     return v2
@@ -286,9 +286,9 @@
 
     move-result-wide p1
 
-    cmp-long v4, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v4, :cond_5
+    if-nez p1, :cond_5
 
     return v2
 

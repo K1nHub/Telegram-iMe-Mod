@@ -405,7 +405,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 1380
     :goto_0
@@ -452,7 +452,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 1390
     :goto_1
@@ -499,7 +499,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 1400
     :goto_2
@@ -546,7 +546,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 1410
     :goto_3
@@ -651,7 +651,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, p2
 
     :cond_a
     :goto_4
@@ -854,7 +854,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     sub-float/2addr v1, v2
 
@@ -870,7 +870,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     add-float/2addr v1, v2
 
@@ -882,7 +882,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     add-float/2addr v2, v1
 
@@ -902,9 +902,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1450
     :goto_0
@@ -1365,9 +1365,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v6, v3
+    cmp-long v6, v6, v3
 
-    if-lez v8, :cond_c
+    if-lez v6, :cond_c
 
     .line 1511
     invoke-virtual {v2}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getPricePerYear()J
@@ -1416,7 +1416,7 @@
 
     if-ne v0, v1, :cond_11
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1521
     :goto_6
@@ -1619,13 +1619,13 @@
     goto :goto_4
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_5
 
     :cond_5
     :goto_4
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 1546
     :goto_5

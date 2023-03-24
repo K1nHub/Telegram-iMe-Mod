@@ -98,39 +98,39 @@
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpl-float v1, p1, v0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    cmpl-float v3, p1, v2
+    const/4 v3, 0x0
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
-    const/4 v3, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v1, v3
 
     .line 60
     :goto_0
-    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    cmpl-float v2, p2, v2
+    cmpl-float v0, p2, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v2, v3
 
     .line 61
     :goto_1
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
     .line 62
     iput p1, p0, Lcom/google/android/exoplayer2/PlaybackParameters;->speed:F
@@ -140,7 +140,7 @@
 
     const/high16 p2, 0x447a0000    # 1000.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     .line 64
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
@@ -230,7 +230,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -248,7 +248,7 @@
 
     int-to-long v0, v0
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     return-wide p1
 .end method

@@ -47,8 +47,7 @@ public class OkHttpFrameLogger {
         if (buffer.size() <= 64) {
             return buffer.snapshot().hex();
         }
-        int min = (int) Math.min(buffer.size(), 64L);
-        return buffer.snapshot(min).hex() + "...";
+        return buffer.snapshot((int) Math.min(buffer.size(), 64L)).hex() + "...";
     }
 
     private boolean isEnabled() {

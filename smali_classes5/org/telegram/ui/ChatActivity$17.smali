@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public hasDoubleTap(Landroid/view/View;I)Z
-    .locals 8
+    .locals 6
 
     .line 3349
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$17;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -94,28 +94,28 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 v6, 0x1
+    cmp-long v2, v2, v4
 
-    cmp-long v7, v2, v4
+    const/4 v3, 0x1
 
-    if-ltz v7, :cond_2
+    if-ltz v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-nez v2, :cond_4
 
     .line 3355
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$17;->this$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$17;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v3, v3, Lorg/telegram/ui/ChatActivity;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
+    iget-object v4, v4, Lorg/telegram/ui/ChatActivity;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     if-nez v0, :cond_3
 
@@ -126,7 +126,7 @@
     iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->reaction:Ljava/lang/String;
 
     :goto_1
-    invoke-static {v3, p2}, Lorg/telegram/messenger/ChatObject;->reactionIsAvailable(Lorg/telegram/tgnet/TLRPC$ChatFull;Ljava/lang/String;)Z
+    invoke-static {v4, p2}, Lorg/telegram/messenger/ChatObject;->reactionIsAvailable(Lorg/telegram/tgnet/TLRPC$ChatFull;Ljava/lang/String;)Z
 
     move-result v2
 
@@ -213,7 +213,7 @@
 
     if-nez p1, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_6
     :goto_2
@@ -326,7 +326,7 @@
 
     if-ltz p1, :cond_3
 
-    const/4 p2, 0x1
+    move p2, v3
 
     :cond_3
     if-nez p2, :cond_4
@@ -421,7 +421,7 @@
 
     if-ltz p1, :cond_8
 
-    const/4 p2, 0x1
+    move p2, v3
 
     :cond_8
     if-nez p2, :cond_9

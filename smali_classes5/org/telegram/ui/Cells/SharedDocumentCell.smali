@@ -158,24 +158,24 @@
 
     if-eqz v12, :cond_1
 
-    const/4 v15, 0x0
+    move v15, v9
 
     goto :goto_1
 
     :cond_1
-    const/16 v15, 0xf
+    move v15, v14
 
     :goto_1
     const/16 v16, 0xc
 
     if-eqz v12, :cond_2
 
-    const/16 v17, 0xf
+    move/from16 v17, v14
 
     goto :goto_2
 
     :cond_2
-    const/16 v17, 0x0
+    move/from16 v17, v9
 
     :goto_2
     const/16 v18, 0x0
@@ -220,24 +220,24 @@
 
     if-eqz v10, :cond_5
 
-    const/4 v14, 0x0
+    move v14, v9
 
     goto :goto_4
 
     :cond_5
-    const/16 v14, 0xc
+    move v14, v6
 
     :goto_4
     const/16 v15, 0x8
 
     if-eqz v10, :cond_6
 
-    const/16 v16, 0xc
+    move/from16 v16, v6
 
     goto :goto_5
 
     :cond_6
-    const/16 v16, 0x0
+    move/from16 v16, v9
 
     :goto_5
     const/16 v17, 0x0
@@ -348,24 +348,24 @@
 
     if-eqz v16, :cond_8
 
-    const/16 v19, 0x0
+    move/from16 v19, v9
 
     goto :goto_8
 
     :cond_8
-    const/16 v19, 0x14
+    move/from16 v19, v18
 
     :goto_8
     const/16 v20, 0x1c
 
     if-eqz v16, :cond_9
 
-    const/16 v21, 0x14
+    move/from16 v21, v18
 
     goto :goto_9
 
     :cond_9
-    const/16 v21, 0x0
+    move/from16 v21, v9
 
     :goto_9
     const/16 v22, 0x0
@@ -412,24 +412,24 @@
 
     if-eqz v16, :cond_c
 
-    const/16 v18, 0x0
+    move/from16 v18, v9
 
     goto :goto_b
 
     :cond_c
-    const/16 v18, 0x10
+    move/from16 v18, v4
 
     :goto_b
     const/16 v19, 0x16
 
     if-eqz v16, :cond_d
 
-    const/16 v20, 0x10
+    move/from16 v20, v4
 
     goto :goto_c
 
     :cond_d
-    const/16 v20, 0x0
+    move/from16 v20, v9
 
     :goto_c
     const/16 v21, 0x0
@@ -492,24 +492,24 @@
 
     if-eqz v13, :cond_f
 
-    const/16 v18, 0x0
+    move/from16 v18, v9
 
     goto :goto_f
 
     :cond_f
-    const/16 v18, 0x10
+    move/from16 v18, v4
 
     :goto_f
     const/16 v19, 0xc
 
     if-eqz v13, :cond_10
 
-    const/16 v20, 0x10
+    move/from16 v20, v4
 
     goto :goto_10
 
     :cond_10
-    const/16 v20, 0x0
+    move/from16 v20, v9
 
     :goto_10
     const/16 v21, 0x0
@@ -546,12 +546,12 @@
 
     if-eqz v17, :cond_13
 
-    const/16 v19, 0x0
+    move/from16 v19, v9
 
     goto :goto_12
 
     :cond_13
-    const/16 v19, 0xc
+    move/from16 v19, v6
 
     :goto_12
     const/16 v20, 0x8
@@ -561,7 +561,7 @@
     goto :goto_13
 
     :cond_14
-    const/4 v6, 0x0
+    move v6, v9
 
     :goto_13
     const/16 v21, 0x0
@@ -687,24 +687,24 @@
 
     if-eqz v10, :cond_17
 
-    const/16 v20, 0x8
+    move/from16 v20, v15
 
     goto :goto_17
 
     :cond_17
-    const/16 v20, 0x48
+    move/from16 v20, v16
 
     :goto_17
     const/16 v21, 0x9
 
     if-eqz v10, :cond_18
 
-    const/16 v22, 0x48
+    move/from16 v22, v16
 
     goto :goto_18
 
     :cond_18
-    const/16 v22, 0x8
+    move/from16 v22, v15
 
     :goto_18
     const/16 v23, 0x0
@@ -749,24 +749,24 @@
 
     if-eqz v19, :cond_1b
 
-    const/16 v21, 0x10
+    move/from16 v21, v4
 
     goto :goto_1a
 
     :cond_1b
-    const/16 v21, 0x48
+    move/from16 v21, v16
 
     :goto_1a
     const/16 v22, 0x5
 
     if-eqz v19, :cond_1c
 
-    const/16 v23, 0x48
+    move/from16 v23, v16
 
     goto :goto_1b
 
     :cond_1c
-    const/16 v23, 0x10
+    move/from16 v23, v4
 
     :goto_1b
     const/16 v24, 0x0
@@ -971,24 +971,24 @@
 
     if-eqz v7, :cond_20
 
-    const/16 v28, 0x8
+    move/from16 v28, v15
 
     goto :goto_1f
 
     :cond_20
-    const/16 v28, 0x48
+    move/from16 v28, v16
 
     :goto_1f
     const/16 v29, 0x1e
 
     if-eqz v7, :cond_21
 
-    const/16 v30, 0x48
+    move/from16 v30, v16
 
     goto :goto_20
 
     :cond_21
-    const/16 v30, 0x8
+    move/from16 v30, v15
 
     :goto_20
     const/16 v31, 0x0
@@ -1035,24 +1035,24 @@
 
     if-eqz v7, :cond_24
 
-    const/16 v28, 0x8
+    move/from16 v28, v15
 
     goto :goto_22
 
     :cond_24
-    const/16 v28, 0x48
+    move/from16 v28, v16
 
     :goto_22
     const/16 v29, 0x5
 
     if-eqz v7, :cond_25
 
-    const/16 v30, 0x48
+    move/from16 v30, v16
 
     goto :goto_23
 
     :cond_25
-    const/16 v30, 0x8
+    move/from16 v30, v15
 
     :goto_23
     const/16 v31, 0x0
@@ -1150,26 +1150,26 @@
 
     if-eqz v7, :cond_27
 
-    const/16 v28, 0x8
+    move/from16 v28, v15
 
     goto :goto_26
 
     :cond_27
     const/16 v9, 0x46
 
-    const/16 v28, 0x46
+    move/from16 v28, v9
 
     :goto_26
     const/16 v29, 0x25
 
     if-eqz v7, :cond_28
 
-    const/16 v30, 0x48
+    move/from16 v30, v16
 
     goto :goto_27
 
     :cond_28
-    const/16 v30, 0x8
+    move/from16 v30, v15
 
     :goto_27
     const/16 v31, 0x0
@@ -1206,26 +1206,26 @@
 
     if-eqz v7, :cond_2b
 
-    const/16 v28, 0x8
+    move/from16 v28, v15
 
     goto :goto_29
 
     :cond_2b
     const/16 v9, 0x46
 
-    const/16 v28, 0x46
+    move/from16 v28, v9
 
     :goto_29
     const/16 v29, 0x21
 
     if-eqz v7, :cond_2c
 
-    const/16 v30, 0x48
+    move/from16 v30, v16
 
     goto :goto_2a
 
     :cond_2c
-    const/16 v30, 0x8
+    move/from16 v30, v15
 
     :goto_2a
     const/16 v31, 0x0
@@ -1322,24 +1322,24 @@
 
     if-eqz v5, :cond_2f
 
-    const/16 v28, 0x8
+    move/from16 v28, v15
 
     goto :goto_2e
 
     :cond_2f
-    const/16 v28, 0x48
+    move/from16 v28, v16
 
     :goto_2e
     const/16 v29, 0x22
 
     if-eqz v5, :cond_30
 
-    const/16 v30, 0x48
+    move/from16 v30, v16
 
     goto :goto_2f
 
     :cond_30
-    const/16 v30, 0x8
+    move/from16 v30, v15
 
     :goto_2f
     const/16 v31, 0x0
@@ -1381,24 +1381,24 @@
 
     if-eqz v5, :cond_33
 
-    const/16 v28, 0x8
+    move/from16 v28, v15
 
     goto :goto_31
 
     :cond_33
-    const/16 v28, 0x48
+    move/from16 v28, v16
 
     :goto_31
     const/16 v29, 0x1e
 
     if-eqz v5, :cond_34
 
-    const/16 v30, 0x48
+    move/from16 v30, v16
 
     goto :goto_32
 
     :cond_34
-    const/16 v30, 0x8
+    move/from16 v30, v15
 
     :goto_32
     const/16 v31, 0x0
@@ -1452,7 +1452,7 @@
     goto :goto_35
 
     :cond_36
-    const/16 v9, 0x48
+    move/from16 v9, v16
 
     :goto_35
     const/16 v10, 0x36
@@ -1555,7 +1555,7 @@
 
     const/16 v6, 0x26
 
-    const/16 v10, 0x26
+    move v10, v6
 
     goto :goto_39
 
@@ -1621,7 +1621,7 @@
 
     const/16 v6, 0x21
 
-    const/16 v10, 0x21
+    move v10, v6
 
     goto :goto_3c
 
@@ -1791,7 +1791,7 @@
 .end method
 
 .method private updateDateView()V
-    .locals 11
+    .locals 10
 
     .line 501
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->message:Lorg/telegram/messenger/MessageObject;
@@ -1818,22 +1818,22 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     .line 506
     iget-wide v3, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->downloadedSize:J
 
     const-wide/16 v5, 0x0
 
-    const/4 v7, 0x1
+    cmp-long v5, v3, v5
 
-    const/4 v8, 0x0
+    const/4 v6, 0x1
 
-    const/4 v9, 0x2
+    const/4 v7, 0x0
 
-    cmp-long v10, v3, v5
+    const/4 v8, 0x2
 
-    if-nez v10, :cond_1
+    if-nez v5, :cond_1
 
     .line 507
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
@@ -1852,13 +1852,13 @@
     :cond_1
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    new-array v5, v9, [Ljava/lang/Object;
+    new-array v5, v8, [Ljava/lang/Object;
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v5, v8
+    aput-object v3, v5, v7
 
     iget-object v3, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->message:Lorg/telegram/messenger/MessageObject;
 
@@ -1872,7 +1872,7 @@
 
     move-result-object v3
 
-    aput-object v3, v5, v7
+    aput-object v3, v5, v6
 
     const-string v3, "%s / %s"
 
@@ -1884,7 +1884,7 @@
     :goto_0
     iget v3, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->viewType:I
 
-    if-ne v3, v9, :cond_2
+    if-ne v3, v8, :cond_2
 
     .line 512
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->message:Lorg/telegram/messenger/MessageObject;
@@ -1952,45 +1952,45 @@
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->dateTextView:Lorg/telegram/ui/Components/AnimatedEmojiSpan$TextViewEmojis;
 
-    new-array v4, v9, [Ljava/lang/Object;
+    new-array v4, v8, [Ljava/lang/Object;
 
-    aput-object v0, v4, v8
+    aput-object v0, v4, v7
 
     sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
-    new-array v5, v9, [Ljava/lang/Object;
+    new-array v5, v8, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v6
+    move-result-object v8
 
-    iget-object v6, v6, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v8, v8, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v9, Ljava/util/Date;
 
     invoke-direct {v9, v1, v2}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v6, v9}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    aput-object v6, v5, v8
+    aput-object v8, v5, v7
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v6
+    move-result-object v7
 
-    iget-object v6, v6, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v7, v7, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v8, Ljava/util/Date;
 
     invoke-direct {v8, v1, v2}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v6, v8}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v1
 
-    aput-object v1, v5, v7
+    aput-object v1, v5, v6
 
     const-string v1, "formatDateAtTime"
 
@@ -1998,7 +1998,7 @@
 
     move-result-object v0
 
-    aput-object v0, v4, v7
+    aput-object v0, v4, v6
 
     const-string v0, "%s, %s"
 
@@ -2054,7 +2054,7 @@
 
     const/high16 v9, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v9
 
     float-to-int v7, v0
 
@@ -2104,7 +2104,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Cells/SharedDocumentCell;->enterAlpha:F
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v9
 
     float-to-int v7, v0
 
@@ -2995,14 +2995,14 @@
 
     move/from16 v1, p2
 
-    const/4 v14, 0x1
+    move v14, v12
 
     goto :goto_0
 
     :cond_0
     move/from16 v1, p2
 
-    const/4 v14, 0x0
+    move v14, v13
 
     .line 386
     :goto_0
@@ -3051,7 +3051,7 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v6, 0x0
+    move v6, v13
 
     .line 399
     :goto_1
@@ -3410,12 +3410,12 @@
 
     if-nez v4, :cond_12
 
-    const/4 v3, 0x1
+    move v3, v12
 
     goto :goto_6
 
     :cond_12
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_6
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setNeedsQualityThumb(Z)V
@@ -3429,12 +3429,12 @@
 
     if-nez v4, :cond_13
 
-    const/4 v3, 0x1
+    move v3, v12
 
     goto :goto_7
 
     :cond_13
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_7
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setShouldGenerateQualityThumb(Z)V
@@ -3611,7 +3611,7 @@
     goto :goto_a
 
     :cond_16
-    const/4 v15, 0x0
+    move v15, v13
 
     .line 472
     :goto_a
@@ -4108,9 +4108,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v4, v1, v6
+    cmp-long v1, v1, v6
 
-    if-eqz v4, :cond_8
+    if-eqz v1, :cond_8
 
     .line 350
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -4578,12 +4578,12 @@
 
     if-eqz v7, :cond_2
 
-    const/16 v7, 0xf
+    move v7, v8
 
     goto :goto_0
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_0
     invoke-virtual {v4, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
@@ -4613,7 +4613,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_1
     invoke-virtual {p1, v8}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
@@ -4642,12 +4642,12 @@
 
     if-eqz v3, :cond_5
 
-    const/16 v3, 0x8
+    move v3, v6
 
     goto :goto_3
 
     :cond_5
-    const/16 v3, 0x56
+    move v3, v4
 
     :goto_3
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4661,7 +4661,7 @@
 
     if-eqz v3, :cond_6
 
-    const/16 v6, 0x56
+    move v6, v4
 
     :cond_6
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4750,12 +4750,12 @@
 
     if-eqz v1, :cond_b
 
-    const/16 v1, 0x8
+    move v1, v6
 
     goto :goto_5
 
     :cond_b
-    const/16 v1, 0x48
+    move v1, v4
 
     :goto_5
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4772,7 +4772,7 @@
     goto :goto_6
 
     :cond_c
-    const/16 v4, 0x8
+    move v4, v6
 
     :goto_6
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4842,12 +4842,12 @@
 
     if-eqz v0, :cond_f
 
-    const/16 v0, 0x8
+    move v0, v6
 
     goto :goto_7
 
     :cond_f
-    const/16 v0, 0x48
+    move v0, v4
 
     :goto_7
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4864,7 +4864,7 @@
     goto :goto_8
 
     :cond_10
-    const/16 v4, 0x8
+    move v4, v6
 
     :goto_8
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

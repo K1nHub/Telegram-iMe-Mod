@@ -109,14 +109,14 @@ public class NumberPicker extends LinearLayout {
         return 0.9f;
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [byte, boolean] */
+    /* JADX WARN: Type inference failed for: r2v2, types: [boolean, byte] */
     static /* synthetic */ boolean access$280(NumberPicker numberPicker, int i) {
         ?? r2 = (byte) (i ^ (numberPicker.mIncrementVirtualButtonPressed ? 1 : 0));
         numberPicker.mIncrementVirtualButtonPressed = r2;
         return r2;
     }
 
-    /* JADX WARN: Type inference failed for: r2v2, types: [byte, boolean] */
+    /* JADX WARN: Type inference failed for: r2v2, types: [boolean, byte] */
     static /* synthetic */ boolean access$480(NumberPicker numberPicker, int i) {
         ?? r2 = (byte) (i ^ (numberPicker.mDecrementVirtualButtonPressed ? 1 : 0));
         numberPicker.mDecrementVirtualButtonPressed = r2;
@@ -467,7 +467,7 @@ public class NumberPicker extends LinearLayout {
             boolean r6 = r6.isFinished()
             if (r6 == 0) goto L5f
             if (r0 != r2) goto L5b
-            r6 = 1
+            r6 = r3
             goto L5c
         L5b:
             r6 = 0

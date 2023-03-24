@@ -28,7 +28,7 @@ public final class WalletSessionInteractor$login$lambda$4$$inlined$flatMapSucces
             pushNotificationRepository = this.this$0.notificationRepository;
             Observable<Result<String>> issuePushAllowanceToken = pushNotificationRepository.issuePushAllowanceToken();
             schedulersProvider = this.this$0.schedulersProvider;
-            Observable<Result<String>> subscribeOn = issuePushAllowanceToken.subscribeOn(schedulersProvider.mo708io());
+            Observable<Result<String>> subscribeOn = issuePushAllowanceToken.subscribeOn(schedulersProvider.mo707io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository.i…(schedulersProvider.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {

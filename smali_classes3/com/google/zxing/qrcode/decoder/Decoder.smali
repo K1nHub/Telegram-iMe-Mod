@@ -42,7 +42,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_0
@@ -146,9 +146,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -173,9 +173,9 @@
     .line 149
     array-length v4, p1
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_1
     if-ge v5, v4, :cond_2
@@ -195,7 +195,7 @@
     .line 152
     invoke-direct {p0, v8, v7}, Lcom/google/zxing/qrcode/decoder/Decoder;->correctErrors([BI)V
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_2
     if-ge v9, v7, :cond_1
@@ -318,8 +318,6 @@
     return-object p2
 
     :catch_2
-    nop
-
     if-eqz p1, :cond_0
 
     .line 124

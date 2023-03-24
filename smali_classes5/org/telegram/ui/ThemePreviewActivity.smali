@@ -679,7 +679,7 @@
 
     const/high16 p2, -0x40800000    # -1.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     iput p1, p0, Lorg/telegram/ui/ThemePreviewActivity;->currentIntensity:F
 
@@ -2439,7 +2439,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_3
     if-ge p2, p1, :cond_11
@@ -2675,7 +2675,7 @@
 .end method
 
 .method private checkDiscard()Z
-    .locals 7
+    .locals 6
 
     .line 2484
     iget v0, p0, Lorg/telegram/ui/ThemePreviewActivity;->screenType:I
@@ -2732,33 +2732,33 @@
 
     iget-wide v4, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundOverrideColor:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
     iget-wide v4, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor1:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
     iget-wide v4, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor2:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
     iget-wide v4, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor3:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternIntensity:F
 
@@ -3357,7 +3357,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 4686
     :goto_0
@@ -3430,7 +3430,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 4691
     :goto_1
@@ -3572,7 +3572,7 @@
 
     invoke-interface {v10, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 4700
     :goto_2
@@ -3612,7 +3612,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 4703
     :goto_3
@@ -4580,7 +4580,7 @@
 .end method
 
 .method private hasChanges(I)Z
-    .locals 11
+    .locals 10
 
     .line 2386
     iget-boolean v0, p0, Lorg/telegram/ui/ThemePreviewActivity;->editingTheme:Z
@@ -4617,9 +4617,9 @@
 
     iget-wide v7, v7, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    cmp-long v9, v3, v7
+    cmp-long v3, v3, v7
 
-    if-eqz v9, :cond_4
+    if-eqz v3, :cond_4
 
     return v2
 
@@ -4657,20 +4657,20 @@
 
     iget-wide v7, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor2:J
 
-    cmp-long v9, v7, v5
+    cmp-long v7, v7, v5
 
-    if-nez v9, :cond_b
+    if-nez v7, :cond_b
 
     iget-wide v7, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor3:J
 
-    cmp-long v9, v7, v5
+    cmp-long v7, v7, v5
 
-    if-eqz v9, :cond_5
+    if-eqz v7, :cond_5
 
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_c
@@ -4726,11 +4726,11 @@
 
     if-nez v9, :cond_8
 
-    cmp-long v10, v7, v5
+    cmp-long v7, v7, v5
 
-    if-eqz v10, :cond_8
+    if-eqz v7, :cond_8
 
-    const/4 v9, 0x0
+    move v9, v1
 
     goto :goto_2
 
@@ -4757,25 +4757,25 @@
 
     iget-wide v6, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
-    cmp-long v8, v3, v6
+    cmp-long v3, v3, v6
 
-    if-nez v8, :cond_19
+    if-nez v3, :cond_19
 
     iget-wide v3, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor2:J
 
     iget-wide v6, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
-    cmp-long v8, v3, v6
+    cmp-long v3, v3, v6
 
-    if-nez v8, :cond_19
+    if-nez v3, :cond_19
 
     iget-wide v3, p0, Lorg/telegram/ui/ThemePreviewActivity;->backupBackgroundGradientOverrideColor3:J
 
     iget-wide v5, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_c
+    if-eqz v3, :cond_c
 
     goto :goto_4
 
@@ -4995,12 +4995,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1743
     :goto_0
@@ -5011,12 +5011,12 @@
 
     if-nez p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     if-ne v0, p2, :cond_2
@@ -5040,12 +5040,12 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     invoke-virtual {p2, v0, v2}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setChecked(ZZ)V
@@ -5383,7 +5383,7 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    move v0, p4
 
     :goto_0
     if-ge v0, p1, :cond_2
@@ -5412,7 +5412,7 @@
 
     move-result p1
 
-    const/4 v0, 0x0
+    move v0, p4
 
     :goto_1
     if-ge v0, p1, :cond_3
@@ -5590,7 +5590,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     invoke-virtual {p3, p1}, Landroid/view/View;->setTranslationX(F)V
 
@@ -5599,7 +5599,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
@@ -5666,7 +5666,7 @@
 
     const/4 v12, 0x1
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     .line 1058
     iget-object v0, v1, Lorg/telegram/ui/ThemePreviewActivity;->originalBitmap:Landroid/graphics/Bitmap;
@@ -5692,7 +5692,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_1
-    const/4 v0, 0x1
+    move v0, v12
 
     goto :goto_4
 
@@ -5729,7 +5729,7 @@
 
     :cond_2
     :goto_2
-    const/4 v0, 0x0
+    move v0, v5
 
     goto :goto_4
 
@@ -5767,7 +5767,7 @@
     goto :goto_2
 
     :goto_4
-    if-nez v0, :cond_9
+    if-nez v0, :cond_4
 
     .line 1087
     iget-object v0, v1, Lorg/telegram/ui/ThemePreviewActivity;->currentWallpaper:Ljava/lang/Object;
@@ -5795,7 +5795,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto/16 :goto_8
+    goto :goto_6
 
     :catch_2
     move-exception v0
@@ -5805,10 +5805,17 @@
     .line 1093
     invoke-static {v7}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto/16 :goto_c
+    :goto_5
+    move v0, v5
+
+    :cond_4
+    :goto_6
+    move v7, v5
+
+    goto/16 :goto_f
 
     .line 1096
-    :cond_4
+    :cond_5
     instance-of v7, v0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
     if-eqz v7, :cond_a
@@ -5816,7 +5823,7 @@
     .line 1097
     iget-object v7, v1, Lorg/telegram/ui/ThemePreviewActivity;->selectedPattern:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_9
 
     .line 1099
     :try_start_3
@@ -5858,15 +5865,15 @@
 
     const/4 v15, 0x2
 
-    if-eqz v14, :cond_5
+    if-eqz v14, :cond_6
 
-    goto :goto_5
+    goto :goto_7
 
     .line 1106
-    :cond_5
+    :cond_6
     iget v14, v1, Lorg/telegram/ui/ThemePreviewActivity;->backgroundGradientColor1:I
 
-    if-eqz v14, :cond_6
+    if-eqz v14, :cond_7
 
     .line 1107
     new-instance v14, Landroid/graphics/drawable/GradientDrawable;
@@ -5903,16 +5910,16 @@
     .line 1109
     invoke-virtual {v14, v13}, Landroid/graphics/drawable/GradientDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    goto :goto_5
+    goto :goto_7
 
     .line 1111
-    :cond_6
+    :cond_7
     iget v3, v1, Lorg/telegram/ui/ThemePreviewActivity;->backgroundColor:I
 
     invoke-virtual {v13, v3}, Landroid/graphics/Canvas;->drawColor(I)V
 
     .line 1113
-    :goto_5
+    :goto_7
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v15}, Landroid/graphics/Paint;-><init>(I)V
@@ -5937,7 +5944,7 @@
 
     move-result v11
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     float-to-int v9, v11
 
@@ -5956,7 +5963,7 @@
     .line 1119
     iget v3, v1, Lorg/telegram/ui/ThemePreviewActivity;->backgroundGradientColor2:I
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     .line 1120
     sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
@@ -5965,10 +5972,10 @@
 
     invoke-virtual {v7, v3, v9, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    goto :goto_6
+    goto :goto_8
 
     .line 1122
-    :cond_7
+    :cond_8
     sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v9, 0x57
@@ -5976,12 +5983,12 @@
     invoke-virtual {v7, v3, v9, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
     .line 1124
-    :goto_6
+    :goto_8
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_7
+    goto :goto_9
 
     :catchall_0
     move-exception v0
@@ -5989,17 +5996,16 @@
     .line 1127
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto :goto_c
-
-    :cond_8
-    :goto_7
-    const/4 v0, 0x1
+    goto/16 :goto_e
 
     :cond_9
-    :goto_8
-    const/4 v7, 0x0
+    :goto_9
+    move v7, v5
 
-    goto :goto_d
+    :goto_a
+    move v0, v12
+
+    goto/16 :goto_f
 
     .line 1133
     :cond_a
@@ -6013,7 +6019,7 @@
     .line 1135
     iget v3, v0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->resId:I
 
-    if-nez v3, :cond_8
+    if-nez v3, :cond_9
 
     iget-object v3, v0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->slug:Ljava/lang/String;
 
@@ -6023,7 +6029,7 @@
 
     if-eqz v3, :cond_b
 
-    goto :goto_7
+    goto :goto_9
 
     .line 1139
     :cond_b
@@ -6032,13 +6038,13 @@
 
     if-eqz v3, :cond_c
 
-    goto :goto_9
+    goto :goto_b
 
     :cond_c
     iget-object v3, v0, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->path:Ljava/io/File;
 
     .line 1140
-    :goto_9
+    :goto_b
     invoke-virtual {v3, v6}, Ljava/io/File;->equals(Ljava/lang/Object;)Z
 
     move-result v7
@@ -6047,9 +6053,7 @@
 
     if-eqz v7, :cond_d
 
-    const/4 v0, 0x1
-
-    goto :goto_d
+    goto :goto_a
 
     .line 1143
     :cond_d
@@ -6060,25 +6064,25 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
 
-    goto :goto_d
+    goto :goto_f
 
     :catch_3
     move-exception v0
 
-    goto :goto_a
+    goto :goto_c
 
     :catch_4
     move-exception v0
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 1147
-    :goto_a
+    :goto_c
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    const/4 v0, 0x0
+    move v0, v5
 
-    goto :goto_d
+    goto :goto_f
 
     .line 1150
     :cond_e
@@ -6114,7 +6118,7 @@
 
     move-result-object v0
 
-    goto :goto_b
+    goto :goto_d
 
     .line 1157
     :cond_f
@@ -6125,7 +6129,7 @@
     move-result-object v0
 
     .line 1160
-    :goto_b
+    :goto_d
     :try_start_6
     invoke-static {v0, v6}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
@@ -6133,7 +6137,7 @@
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_5
 
-    goto :goto_8
+    goto/16 :goto_6
 
     :catch_5
     move-exception v0
@@ -6143,14 +6147,16 @@
     .line 1163
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :cond_10
-    :goto_c
-    const/4 v0, 0x0
+    goto/16 :goto_5
 
-    goto :goto_8
+    :cond_10
+    :goto_e
+    move v0, v5
+
+    move v7, v0
 
     .line 1168
-    :goto_d
+    :goto_f
     iget-boolean v3, v1, Lorg/telegram/ui/ThemePreviewActivity;->isBlurred:Z
 
     if-eqz v3, :cond_11
@@ -6184,9 +6190,9 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    const/4 v0, 0x1
+    move v0, v12
 
-    goto :goto_e
+    goto :goto_10
 
     :catchall_1
     move-exception v0
@@ -6194,10 +6200,10 @@
     .line 1176
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    const/4 v0, 0x0
+    move v0, v5
 
     :cond_11
-    :goto_e
+    :goto_10
     const/16 v3, 0x2d
 
     .line 1188
@@ -6217,17 +6223,16 @@
     .line 1190
     iget-object v8, v9, Lorg/telegram/tgnet/TLRPC$WallPaper;->slug:Ljava/lang/String;
 
-    :goto_f
-    const/4 v9, 0x0
+    move v9, v5
 
-    const/4 v11, 0x0
+    move v11, v9
 
-    const/4 v15, 0x0
+    move v15, v11
 
-    :goto_10
+    :goto_11
     const/16 v17, 0x0
 
-    goto/16 :goto_14
+    goto/16 :goto_15
 
     .line 1191
     :cond_12
@@ -6247,9 +6252,15 @@
 
     if-eqz v8, :cond_13
 
+    move v9, v5
+
+    move v11, v9
+
+    move v15, v11
+
     move-object v8, v14
 
-    goto :goto_f
+    goto :goto_11
 
     .line 1197
     :cond_13
@@ -6260,13 +6271,13 @@
     .line 1198
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$WallPaper;->slug:Ljava/lang/String;
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_14
     move-object v3, v13
 
     .line 1202
-    :goto_11
+    :goto_12
     iget v8, v1, Lorg/telegram/ui/ThemePreviewActivity;->backgroundColor:I
 
     .line 1203
@@ -6289,7 +6300,7 @@
 
     move/from16 v5, v22
 
-    goto :goto_10
+    goto :goto_11
 
     .line 1208
     :cond_15
@@ -6306,7 +6317,7 @@
     .line 1211
     iget-object v5, v9, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;->path:Ljava/io/File;
 
-    :goto_12
+    :goto_13
     move-object/from16 v17, v5
 
     const/4 v5, 0x0
@@ -6317,7 +6328,7 @@
 
     const/4 v15, 0x0
 
-    goto :goto_14
+    goto :goto_15
 
     .line 1212
     :cond_16
@@ -6353,7 +6364,7 @@
 
     move-result-object v5
 
-    goto :goto_13
+    goto :goto_14
 
     .line 1218
     :cond_17
@@ -6363,20 +6374,26 @@
 
     move-result-object v5
 
-    :goto_13
+    :goto_14
     const-string v8, ""
 
-    goto :goto_12
+    goto :goto_13
 
     :cond_18
     move-object v8, v14
 
     const/4 v5, 0x0
 
-    goto :goto_f
+    const/4 v9, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v15, 0x0
+
+    goto :goto_11
 
     .line 1226
-    :goto_14
+    :goto_15
     new-instance v12, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
     invoke-direct {v12}, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;-><init>()V
@@ -6451,13 +6468,13 @@
 
     move-object v4, v8
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_19
     const/4 v4, 0x0
 
     .line 1246
-    :goto_15
+    :goto_16
     iget v13, v2, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->intensity:F
 
     const/4 v14, 0x0
@@ -6479,7 +6496,7 @@
 
     const/high16 v14, -0x40800000    # -1.0f
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     .line 1250
     :cond_1a
@@ -6560,12 +6577,12 @@
 
     const/16 v19, 0x1
 
-    goto :goto_16
+    goto :goto_17
 
     :cond_1d
     const/16 v19, 0x0
 
-    :goto_16
+    :goto_17
     const-wide/16 v20, 0x0
 
     move-object/from16 v16, v2
@@ -6596,13 +6613,13 @@
 
     const/4 v3, 0x0
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_1e
     move-object v3, v12
 
     .line 1264
-    :goto_17
+    :goto_18
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -6809,12 +6826,12 @@
 
     if-eqz p2, :cond_5
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ThemePreviewActivity;->showPatternsView(IZZ)V
@@ -6832,7 +6849,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     invoke-direct {p0, p2}, Lorg/telegram/ui/ThemePreviewActivity;->selectPattern(I)V
@@ -6859,12 +6876,12 @@
 
     if-eqz p2, :cond_9
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_2
 
     :cond_9
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_2
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ThemePreviewActivity;->showPatternsView(IZZ)V
@@ -6880,7 +6897,7 @@
 
     if-eqz p2, :cond_b
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_b
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setChecked(ZZ)V
@@ -6917,7 +6934,7 @@
 
     if-eqz p2, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_d
     invoke-direct {p0, p1, v1, v0}, Lorg/telegram/ui/ThemePreviewActivity;->showPatternsView(IZZ)V
@@ -7145,12 +7162,12 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     invoke-virtual {v5, v6, v3}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setChecked(ZZ)V
@@ -7318,9 +7335,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x1
@@ -7418,7 +7435,7 @@
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/ThemePreviewActivity;->updateButtonState(ZZ)V
 
     :goto_1
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_2
 
@@ -7653,37 +7670,37 @@
 .end method
 
 .method private synthetic lambda$selectColorType$15(Landroid/content/DialogInterface;I)V
-    .locals 5
+    .locals 4
 
     .line 2134
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     iget-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    const/4 p2, 0x0
-
     const-wide v2, 0x100000000L
 
-    cmp-long v4, v0, v2
+    cmp-long p2, v0, v2
 
-    if-nez v4, :cond_0
+    const/4 v0, 0x0
 
-    const-wide/16 v0, 0x0
+    if-nez p2, :cond_0
+
+    const-wide/16 v1, 0x0
 
     .line 2135
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
     .line 2136
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
     .line 2137
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
     .line 2138
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
     .line 2139
-    invoke-direct {p0, p2}, Lorg/telegram/ui/ThemePreviewActivity;->updatePlayAnimationView(Z)V
+    invoke-direct {p0, v0}, Lorg/telegram/ui/ThemePreviewActivity;->updatePlayAnimationView(Z)V
 
     .line 2140
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->refreshThemeColors()V
@@ -7700,7 +7717,7 @@
     const/4 p1, 0x2
 
     .line 2144
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->selectColorType(IZ)V
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ThemePreviewActivity;->selectColorType(IZ)V
 
     return-void
 .end method
@@ -7788,7 +7805,7 @@
 
     move-result p1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, p1, :cond_2
@@ -7848,12 +7865,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     invoke-virtual {p1, v2, v1}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->setChecked(ZZ)V
@@ -7967,37 +7984,37 @@
 .end method
 
 .method private synthetic lambda$selectColorType$17(Landroid/content/DialogInterface;I)V
-    .locals 5
+    .locals 4
 
     .line 2197
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     iget-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    const/4 p2, 0x0
-
     const-wide v2, 0x100000000L
 
-    cmp-long v4, v0, v2
+    cmp-long p2, v0, v2
 
-    if-nez v4, :cond_0
+    const/4 v0, 0x0
 
-    const-wide/16 v0, 0x0
+    if-nez p2, :cond_0
+
+    const-wide/16 v1, 0x0
 
     .line 2198
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
     .line 2199
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
     .line 2200
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
     .line 2201
-    iput-wide v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
+    iput-wide v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
     .line 2202
-    invoke-direct {p0, p2}, Lorg/telegram/ui/ThemePreviewActivity;->updatePlayAnimationView(Z)V
+    invoke-direct {p0, v0}, Lorg/telegram/ui/ThemePreviewActivity;->updatePlayAnimationView(Z)V
 
     .line 2203
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->refreshThemeColors()V
@@ -8014,7 +8031,7 @@
     const/4 p1, 0x2
 
     .line 2207
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->selectColorType(IZ)V
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ThemePreviewActivity;->selectColorType(IZ)V
 
     return-void
 .end method
@@ -8265,7 +8282,7 @@
     .line 2372
     iget v7, p0, Lorg/telegram/ui/ThemePreviewActivity;->currentIntensity:F
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     float-to-int v6, v7
 
@@ -8305,7 +8322,7 @@
 .end method
 
 .method private scheduleApplyColor(IIZ)V
-    .locals 12
+    .locals 11
 
     const/4 v0, -0x1
 
@@ -8455,39 +8472,39 @@
 
     iget-wide v6, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
-    long-to-int v7, v6
+    long-to-int v6, v6
 
     .line 2880
-    iget-wide v8, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
+    iget-wide v7, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
-    long-to-int v6, v8
+    long-to-int v7, v7
 
     .line 2881
     iget-wide v8, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
 
-    long-to-int v9, v8
+    long-to-int v8, v8
 
     .line 2882
-    iget-wide v10, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
+    iget-wide v9, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    long-to-int v5, v10
+    long-to-int v5, v9
 
     .line 2883
-    iget-object v8, p0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
+    iget-object v9, p0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
 
-    if-eqz v9, :cond_5
+    if-eqz v8, :cond_5
 
-    move v4, v9
+    move v4, v8
 
     :cond_5
-    invoke-virtual {v8, v4, p2}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
+    invoke-virtual {v9, v4, p2}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
     .line 2884
     iget-object v4, p0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
 
-    if-eqz v6, :cond_6
+    if-eqz v7, :cond_6
 
-    move v3, v6
+    move v3, v7
 
     :cond_6
     invoke-virtual {v4, v3, p3}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
@@ -8495,9 +8512,9 @@
     .line 2885
     iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
 
-    if-eqz v7, :cond_7
+    if-eqz v6, :cond_7
 
-    move v2, v7
+    move v2, v6
 
     :cond_7
     invoke-virtual {v3, v2, v1}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
@@ -8718,7 +8735,7 @@
 .end method
 
 .method private selectColorType(IZ)V
-    .locals 28
+    .locals 26
 
     move-object/from16 v0, p0
 
@@ -8761,9 +8778,9 @@
 
     const-wide v5, 0x100000000L
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_4
+    if-nez v3, :cond_4
 
     .line 2129
     :cond_1
@@ -8955,17 +8972,17 @@
 
     if-eqz v8, :cond_7
 
-    const/4 v13, 0x3
+    move v13, v4
 
     goto :goto_2
 
     :cond_7
-    const/4 v13, 0x2
+    move v13, v2
 
     goto :goto_2
 
     :cond_8
-    const/4 v13, 0x1
+    move v13, v6
 
     .line 2289
     :goto_2
@@ -9160,7 +9177,7 @@
     goto :goto_5
 
     :cond_e
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_5
     const-string v11, "key_chat_wallpaper_gradient_to2"
@@ -9179,7 +9196,7 @@
     goto :goto_6
 
     :cond_f
-    const/4 v11, 0x0
+    move v11, v5
 
     :goto_6
     const-string v12, "key_chat_wallpaper_gradient_to3"
@@ -9198,7 +9215,7 @@
     goto :goto_7
 
     :cond_10
-    const/4 v12, 0x0
+    move v12, v5
 
     .line 2237
     :goto_7
@@ -9212,11 +9229,11 @@
 
     if-nez v8, :cond_11
 
-    cmp-long v18, v14, v16
+    cmp-long v14, v14, v16
 
-    if-eqz v18, :cond_11
+    if-eqz v14, :cond_11
 
-    const/4 v10, 0x0
+    move v10, v5
 
     .line 2241
     :cond_11
@@ -9226,11 +9243,11 @@
 
     if-nez v7, :cond_12
 
-    cmp-long v19, v14, v16
+    cmp-long v14, v14, v16
 
-    if-eqz v19, :cond_12
+    if-eqz v14, :cond_12
 
-    const/4 v11, 0x0
+    move v11, v5
 
     .line 2245
     :cond_12
@@ -9240,9 +9257,9 @@
 
     if-nez v5, :cond_13
 
-    cmp-long v20, v14, v16
+    cmp-long v14, v14, v16
 
-    if-eqz v20, :cond_13
+    if-eqz v14, :cond_13
 
     const/4 v12, 0x0
 
@@ -9250,7 +9267,7 @@
     :cond_13
     iget-wide v13, v13, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    long-to-int v14, v13
+    long-to-int v13, v13
 
     if-nez v8, :cond_15
 
@@ -9259,7 +9276,7 @@
     goto :goto_8
 
     :cond_14
-    const/16 v24, 0x1
+    move/from16 v22, v6
 
     goto :goto_b
 
@@ -9279,48 +9296,48 @@
     goto :goto_9
 
     :cond_17
-    const/16 v24, 0x2
+    move/from16 v22, v2
 
     goto :goto_b
 
     :cond_18
     :goto_9
-    const/16 v24, 0x3
+    move/from16 v22, v4
 
     goto :goto_b
 
     :cond_19
     :goto_a
-    const/16 v24, 0x4
+    const/16 v22, 0x4
 
     .line 2262
     :goto_b
-    iget-object v13, v0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
+    iget-object v14, v0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
 
-    const/16 v21, 0x2
+    const/16 v19, 0x2
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/ThemePreviewActivity;->hasChanges(I)Z
 
-    move-result v22
+    move-result v20
 
-    const/16 v23, 0x4
+    const/16 v21, 0x4
 
-    const/16 v25, 0x0
+    const/16 v23, 0x0
 
     iget-object v15, v0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     iget v15, v15, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
 
-    const/16 v27, 0x0
+    const/16 v25, 0x0
 
-    move-object/from16 v20, v13
+    move-object/from16 v18, v14
 
-    move/from16 v26, v15
+    move/from16 v24, v15
 
-    invoke-virtual/range {v20 .. v27}, Lorg/telegram/ui/Components/ColorPicker;->setType(IZIIZIZ)V
+    invoke-virtual/range {v18 .. v25}, Lorg/telegram/ui/Components/ColorPicker;->setType(IZIIZIZ)V
 
     .line 2263
-    iget-object v13, v0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
+    iget-object v14, v0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
 
     if-eqz v5, :cond_1a
 
@@ -9330,7 +9347,7 @@
     move v5, v12
 
     :goto_c
-    invoke-virtual {v13, v5, v4}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
+    invoke-virtual {v14, v5, v4}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
     .line 2264
     iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
@@ -9361,9 +9378,9 @@
     .line 2266
     iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->colorPicker:Lorg/telegram/ui/Components/ColorPicker;
 
-    if-eqz v14, :cond_1d
+    if-eqz v13, :cond_1d
 
-    move v9, v14
+    move v9, v13
 
     :cond_1d
     const/4 v7, 0x0
@@ -9431,12 +9448,12 @@
 
     if-eqz v5, :cond_21
 
-    const/4 v11, 0x2
+    move v11, v2
 
     goto :goto_11
 
     :cond_21
-    const/4 v11, 0x1
+    move v11, v6
 
     .line 2220
     :goto_11
@@ -9738,7 +9755,7 @@
 
     if-eqz p4, :cond_5
 
-    const/4 p4, 0x0
+    move p4, v2
 
     .line 3556
     :goto_1
@@ -10207,7 +10224,7 @@
 
     move-result p2
 
-    const/4 p4, 0x0
+    move p4, v2
 
     :goto_7
     if-ge p4, p2, :cond_15
@@ -10292,7 +10309,7 @@
 
     :cond_0
     :goto_0
-    const/4 v1, 0x0
+    move v1, v2
 
     goto/16 :goto_f
 
@@ -10654,7 +10671,7 @@
     goto :goto_3
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 3694
     :goto_3
@@ -10731,11 +10748,11 @@
 
     iget-wide v7, v7, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    if-eqz v8, :cond_12
+    if-eqz v7, :cond_12
 
-    move v1, v8
+    move v1, v7
 
     :cond_12
     const-string v7, "chat_wallpaper_gradient_to"
@@ -10756,11 +10773,11 @@
 
     if-nez v10, :cond_13
 
-    cmp-long v13, v8, v11
+    cmp-long v8, v8, v11
 
-    if-eqz v13, :cond_13
+    if-eqz v8, :cond_13
 
-    const/4 v7, 0x0
+    move v7, v2
 
     goto :goto_4
 
@@ -10787,11 +10804,11 @@
 
     if-nez v13, :cond_15
 
-    cmp-long v14, v9, v11
+    cmp-long v9, v9, v11
 
-    if-eqz v14, :cond_15
+    if-eqz v9, :cond_15
 
-    const/4 v8, 0x0
+    move v8, v2
 
     goto :goto_5
 
@@ -10818,11 +10835,11 @@
 
     if-nez v15, :cond_17
 
-    cmp-long v16, v13, v11
+    cmp-long v11, v13, v11
 
-    if-eqz v16, :cond_17
+    if-eqz v11, :cond_17
 
-    const/4 v9, 0x0
+    move v9, v2
 
     goto :goto_6
 
@@ -11320,7 +11337,7 @@
     :cond_29
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesButtonsContainer:Landroid/widget/FrameLayout;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2a
 
     .line 3830
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -11330,7 +11347,7 @@
     const/4 v3, 0x0
 
     :goto_e
-    if-ge v3, v1, :cond_0
+    if-ge v3, v1, :cond_2a
 
     .line 3831
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesButtonsContainer:Landroid/widget/FrameLayout;
@@ -11344,6 +11361,9 @@
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_e
+
+    :cond_2a
+    const/4 v1, 0x0
 
     .line 3835
     :goto_f
@@ -11515,12 +11535,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_0
     const/4 v2, 0x4
@@ -11565,26 +11585,26 @@
 
     if-eqz v9, :cond_1
 
-    const/4 v7, 0x4
+    move v7, v2
 
     goto :goto_1
 
     :cond_1
     if-eqz v8, :cond_2
 
-    const/4 v7, 0x3
+    move v7, v14
 
     goto :goto_1
 
     :cond_2
     if-eqz v7, :cond_3
 
-    const/4 v7, 0x2
+    move v7, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v7, 0x1
+    move v7, v1
 
     .line 3234
     :goto_1
@@ -11600,7 +11620,7 @@
 
     const/16 v17, 0x0
 
-    const/4 v9, 0x3
+    move v9, v14
 
     move v14, v7
 
@@ -11668,7 +11688,7 @@
 
     if-nez v8, :cond_5
 
-    const/4 v7, 0x0
+    move v7, v0
 
     goto :goto_3
 
@@ -11682,12 +11702,12 @@
 
     if-ne v8, v3, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_2
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_2
     add-int/2addr v7, v8
@@ -11729,12 +11749,12 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v8, 0x2
+    move v8, v3
 
     goto :goto_5
 
     :cond_9
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_5
     aget-object v7, v7, v8
@@ -11794,12 +11814,12 @@
 
     if-nez v4, :cond_c
 
-    const/4 v11, 0x1
+    move v11, v1
 
     goto :goto_6
 
     :cond_c
-    const/4 v11, 0x0
+    move v11, v0
 
     :goto_6
     if-eqz p2, :cond_17
@@ -11836,7 +11856,7 @@
     goto :goto_7
 
     :cond_d
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_7
     aput v9, v13, v0
@@ -11858,12 +11878,12 @@
 
     if-eqz v5, :cond_e
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v10
 
     goto :goto_8
 
     :cond_e
-    const/4 v13, 0x0
+    move v13, v7
 
     :goto_8
     aput v13, v12, v0
@@ -11885,12 +11905,12 @@
 
     if-eqz v5, :cond_f
 
-    const/4 v13, 0x0
+    move v13, v7
 
     goto :goto_9
 
     :cond_f
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v10
 
     :goto_9
     aput v13, v12, v0
@@ -12002,12 +12022,12 @@
 
     if-eqz v5, :cond_12
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v10
 
     goto :goto_b
 
     :cond_12
-    const/4 v13, 0x0
+    move v13, v7
 
     :goto_b
     aput v13, v12, v0
@@ -12029,7 +12049,7 @@
 
     if-eqz v5, :cond_13
 
-    const/4 v10, 0x0
+    move v10, v7
 
     :cond_13
     aput v10, v12, v0
@@ -12333,12 +12353,12 @@
     :cond_18
     if-nez v4, :cond_19
 
-    const/4 v11, 0x1
+    move v11, v1
 
     goto :goto_e
 
     :cond_19
-    const/4 v11, 0x0
+    move v11, v0
 
     :goto_e
     if-eqz p2, :cond_25
@@ -12371,7 +12391,7 @@
     goto :goto_f
 
     :cond_1a
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_f
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
@@ -12383,12 +12403,12 @@
 
     if-eqz v5, :cond_1b
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     goto :goto_10
 
     :cond_1b
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_10
     invoke-virtual {v8, v9}, Landroid/view/View;->setAlpha(F)V
@@ -12400,12 +12420,12 @@
 
     if-eqz v5, :cond_1c
 
-    const/4 v9, 0x0
+    move v9, v7
 
     goto :goto_11
 
     :cond_1c
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :goto_11
     invoke-virtual {v8, v9}, Landroid/view/View;->setAlpha(F)V
@@ -12483,12 +12503,12 @@
 
     if-eqz v5, :cond_20
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     goto :goto_14
 
     :cond_20
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_14
     invoke-virtual {v8, v9}, Landroid/view/View;->setAlpha(F)V
@@ -12500,12 +12520,12 @@
 
     if-eqz v5, :cond_21
 
-    const/4 v9, 0x0
+    move v9, v7
 
     goto :goto_15
 
     :cond_21
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :goto_15
     invoke-virtual {v8, v9}, Landroid/view/View;->setAlpha(F)V
@@ -12707,7 +12727,7 @@
     goto :goto_1a
 
     :cond_2a
-    const/4 v0, 0x2
+    move v0, v3
 
     :goto_1a
     aget-object v0, v1, v0
@@ -12717,8 +12737,6 @@
     :cond_2b
     :goto_1b
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -13058,9 +13076,9 @@
 
     const-wide/16 p1, 0x0
 
-    cmp-long v1, v4, p1
+    cmp-long p1, v4, p1
 
-    if-eqz v1, :cond_9
+    if-eqz p1, :cond_9
 
     .line 3064
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity;->actionBar2:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13183,12 +13201,12 @@
 
     if-eqz v0, :cond_f
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v7
 
     goto :goto_6
 
     :cond_f
-    const/high16 v1, 0x3f000000    # 0.5f
+    move v1, p2
 
     .line 3087
     :goto_6
@@ -13213,7 +13231,7 @@
     goto :goto_7
 
     :cond_11
-    const/high16 v7, 0x3f000000    # 0.5f
+    move v7, p2
 
     :goto_7
     invoke-virtual {p1, v7}, Landroid/widget/TextView;->setAlpha(F)V
@@ -13236,7 +13254,7 @@
     goto :goto_8
 
     :cond_13
-    const/high16 v7, 0x3f000000    # 0.5f
+    move v7, p2
 
     :goto_8
     invoke-virtual {p1, v7}, Landroid/widget/TextView;->setAlpha(F)V
@@ -13257,7 +13275,7 @@
     goto :goto_9
 
     :cond_15
-    const/high16 v7, 0x3f000000    # 0.5f
+    move v7, p2
 
     :goto_9
     invoke-virtual {p1, v7}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -13305,12 +13323,12 @@
 
     if-eqz v8, :cond_1
 
-    const/4 v9, 0x1
+    move v9, v6
 
     goto :goto_0
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_0
     if-ne v0, v9, :cond_2
@@ -13337,12 +13355,12 @@
 
     if-eqz v8, :cond_4
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_1
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_1
     invoke-virtual {v0, v8}, Landroid/view/View;->setEnabled(Z)V
@@ -13407,7 +13425,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     aput v3, v11, v7
@@ -13435,7 +13453,7 @@
 
     if-eqz v11, :cond_7
 
-    const/4 v11, 0x0
+    move v11, v4
 
     goto :goto_3
 
@@ -13534,12 +13552,12 @@
 
     if-eqz v8, :cond_b
 
-    const/4 v8, 0x2
+    move v8, v5
 
     goto :goto_6
 
     :cond_b
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_6
     aget-object v0, v0, v8
@@ -13567,12 +13585,12 @@
 
     if-eqz v11, :cond_c
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v3
 
     goto :goto_7
 
     :cond_c
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_7
     aput v11, v10, v7
@@ -13596,7 +13614,7 @@
 
     if-eqz v11, :cond_d
 
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_d
     aput v3, v10, v7
@@ -13633,7 +13651,7 @@
 .end method
 
 .method private updatePlayAnimationView(Z)V
-    .locals 19
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -13703,9 +13721,9 @@
 
     if-nez v11, :cond_2
 
-    cmp-long v12, v9, v3
+    cmp-long v9, v9, v3
 
-    if-eqz v12, :cond_2
+    if-eqz v9, :cond_2
 
     goto :goto_0
 
@@ -13734,7 +13752,7 @@
 
     :cond_4
     :goto_0
-    const/4 v1, 0x0
+    move v1, v8
 
     :cond_5
     :goto_1
@@ -13798,7 +13816,7 @@
     if-eqz v1, :cond_b
 
     :goto_3
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_5
 
@@ -13821,11 +13839,11 @@
 
     if-nez v5, :cond_9
 
-    cmp-long v18, v9, v3
+    cmp-long v3, v9, v3
 
-    if-eqz v18, :cond_9
+    if-eqz v3, :cond_9
 
-    const/4 v1, 0x0
+    move v1, v8
 
     goto :goto_4
 
@@ -13841,7 +13859,7 @@
     goto :goto_3
 
     :cond_b
-    const/4 v1, 0x0
+    move v1, v8
 
     .line 3462
     :goto_5
@@ -13853,12 +13871,12 @@
 
     if-eqz v3, :cond_c
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_6
 
     :cond_c
-    const/4 v3, 0x0
+    move v3, v8
 
     .line 3463
     :goto_6
@@ -14239,12 +14257,12 @@
 
     if-eqz v1, :cond_1e
 
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_15
 
     :cond_1e
-    const/4 v1, 0x0
+    move v1, v8
 
     .line 3505
     :goto_15
@@ -14671,12 +14689,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v8
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x2
+    move v1, v14
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -14693,7 +14711,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_1
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -14945,26 +14963,26 @@
 
     if-lt v1, v4, :cond_5
 
-    const/16 v17, 0x38
+    move/from16 v17, v16
 
     goto :goto_2
 
     :cond_5
     const/16 v3, 0x3c
 
-    const/16 v17, 0x3c
+    move/from16 v17, v3
 
     :goto_2
     if-lt v1, v4, :cond_6
 
-    const/16 v18, 0x38
+    move/from16 v18, v16
 
     goto :goto_3
 
     :cond_6
     const/16 v1, 0x3c
 
-    const/16 v18, 0x3c
+    move/from16 v18, v1
 
     :goto_3
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -14973,7 +14991,7 @@
 
     if-eqz v1, :cond_7
 
-    const/4 v3, 0x3
+    move v3, v11
 
     goto :goto_4
 
@@ -14987,26 +15005,26 @@
 
     const/16 v3, 0xe
 
-    const/16 v20, 0xe
+    move/from16 v20, v3
 
     goto :goto_5
 
     :cond_8
-    const/16 v20, 0x0
+    move/from16 v20, v9
 
     :goto_5
     const/16 v21, 0x0
 
     if-eqz v1, :cond_9
 
-    const/16 v22, 0x0
+    move/from16 v22, v9
 
     goto :goto_6
 
     :cond_9
     const/16 v1, 0xe
 
-    const/16 v22, 0xe
+    move/from16 v22, v1
 
     :goto_6
     const/16 v23, 0xe
@@ -15182,7 +15200,7 @@
 
     :cond_c
     :goto_7
-    const/16 v20, 0x15
+    move/from16 v20, v4
 
     goto/16 :goto_a
 
@@ -15305,7 +15323,7 @@
 
     move-object/from16 v2, p1
 
-    const/16 v20, 0x15
+    move/from16 v20, v4
 
     move/from16 v4, v18
 
@@ -15388,12 +15406,12 @@
 
     const/16 v3, 0x40
 
-    const/16 v27, 0x40
+    move/from16 v27, v3
 
     goto :goto_8
 
     :cond_12
-    const/16 v27, 0x38
+    move/from16 v27, v16
 
     :goto_8
     const/16 v28, 0x0
@@ -15566,7 +15584,7 @@
     goto :goto_a
 
     :cond_13
-    const/16 v20, 0x15
+    move/from16 v20, v4
 
     .line 814
     iget-object v0, v6, Lorg/telegram/ui/ThemePreviewActivity;->applyingTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -15762,12 +15780,12 @@
 
     if-eqz v1, :cond_19
 
-    const/4 v1, 0x1
+    move v1, v8
 
     goto :goto_c
 
     :cond_19
-    const/4 v1, 0x2
+    move v1, v14
 
     :goto_c
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -16106,7 +16124,7 @@
     goto :goto_f
 
     :cond_1e
-    const/4 v12, 0x2
+    move v12, v14
 
     goto :goto_10
 
@@ -16132,12 +16150,12 @@
     if-eqz v12, :cond_20
 
     :goto_f
-    const/4 v12, 0x0
+    move v12, v9
 
     goto :goto_10
 
     :cond_20
-    const/4 v12, 0x3
+    move v12, v11
 
     .line 1309
     :goto_10
@@ -16236,9 +16254,9 @@
     aput-object v2, v13, v14
 
     :goto_12
-    const/4 v2, 0x0
+    move v2, v9
 
-    const/4 v11, 0x0
+    move v11, v2
 
     :goto_13
     if-ge v2, v12, :cond_23
@@ -16293,7 +16311,7 @@
 
     if-eqz v4, :cond_24
 
-    const/4 v4, 0x0
+    move v4, v9
 
     goto :goto_14
 
@@ -16310,7 +16328,7 @@
 
     if-eqz v4, :cond_25
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move/from16 v4, v22
 
     goto :goto_15
 
@@ -16327,7 +16345,7 @@
 
     if-eqz v4, :cond_26
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move/from16 v4, v22
 
     goto :goto_16
 
@@ -16344,7 +16362,7 @@
 
     if-eqz v4, :cond_27
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move/from16 v4, v22
 
     goto :goto_17
 
@@ -16461,7 +16479,7 @@
     if-eqz v2, :cond_2c
 
     :cond_2b
-    const/4 v9, 0x1
+    move v9, v8
 
     goto :goto_1b
 
@@ -16564,7 +16582,7 @@
 
     :cond_31
     :goto_1e
-    const/4 v5, 0x1
+    move v5, v8
 
     :goto_1f
     const/4 v9, 0x0
@@ -16867,7 +16885,7 @@
 
     if-eqz v2, :cond_3c
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move/from16 v2, v22
 
     goto :goto_25
 
@@ -16886,7 +16904,7 @@
 
     if-eqz v2, :cond_3d
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move/from16 v2, v22
 
     goto :goto_26
 
@@ -16905,16 +16923,14 @@
 
     if-eqz v2, :cond_3e
 
-    const/high16 v2, 0x3f800000    # 1.0f
-
     goto :goto_27
 
     :cond_3e
     const/16 v22, 0x0
 
-    const/4 v2, 0x0
-
     :goto_27
+    move/from16 v2, v22
+
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     .line 1504
@@ -16989,7 +17005,7 @@
 
     if-nez v1, :cond_3f
 
-    const/4 v12, 0x1
+    move v12, v8
 
     goto :goto_29
 
@@ -17966,7 +17982,7 @@
     goto :goto_36
 
     :cond_50
-    const/16 v32, 0x1
+    move/from16 v32, v8
 
     .line 1890
     :goto_36
@@ -18565,9 +18581,9 @@
 
     const-wide v2, 0x100000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_57
+    if-eqz v0, :cond_57
 
     const/4 v0, 0x2
 
@@ -18628,7 +18644,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     if-ge p2, p1, :cond_e
@@ -18746,9 +18762,9 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v0
 
-    const/4 v2, 0x0
+    move v2, p3
 
     :goto_1
     if-ge p3, p2, :cond_9
@@ -18834,7 +18850,7 @@
     invoke-direct {p0, v0, v0}, Lorg/telegram/ui/ThemePreviewActivity;->updateButtonState(ZZ)V
 
     :goto_2
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_3
 
@@ -19591,7 +19607,7 @@
 .end method
 
 .method public setPatterns(Ljava/util/ArrayList;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -19628,9 +19644,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_3
+    if-eqz v1, :cond_3
 
     const/4 v1, 0x0
 
@@ -19656,9 +19672,9 @@
 
     iget-wide v5, v0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->patternId:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_1
+    if-nez v3, :cond_1
 
     .line 3118
     iput-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity;->selectedPattern:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;

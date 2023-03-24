@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter */
@@ -96,11 +96,11 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 loadPrivacySettings$lambda$1 = WalletPrivacySettingPresenter.loadPrivacySettings$lambda$1(Function2.this, obj, obj2);
                 return loadPrivacySettings$lambda$1;
             }
-        }).observeOn(this.schedulersProvider.mo707ui());
+        }).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(getWalletAddressSett…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2090xca859c2b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2091xca859c2c((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2104xca859c2b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2105xca859c2c((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -121,11 +121,11 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 saveSettings$lambda$3 = WalletPrivacySettingPresenter.saveSettings$lambda$3(Function2.this, obj, obj2);
                 return saveSettings$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo707ui());
+        }).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(walletAddressObserva…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2093x708bde00(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2094x708bde01((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2107x708bde00(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2108x708bde01((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -137,21 +137,21 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final Observable<Result<CryptoWalletInfo>> getWalletAddressSettingsObservable() {
-        Observable<Result<CryptoWalletInfo>> observeOn = this.cryptoPermissionInteractor.getCryptoPrivacySettings(false).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<CryptoWalletInfo>> observeOn = this.cryptoPermissionInteractor.getCryptoPrivacySettings(false).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2089x78f2e5da((BaseView) viewState, this.resourceManager)));
+        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2103x78f2e5da((BaseView) viewState, this.resourceManager)));
         Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …ager))\n    }\n    result\n}");
         return map;
     }
 
     private final Observable<Result<Boolean>> getAccountRankSettingsObservable() {
-        Observable<Result<Boolean>> observeOn = this.accountLevelInteractor.getLevelVisibility().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Boolean>> observeOn = this.accountLevelInteractor.getLevelVisibility().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2088x14057a9c((BaseView) viewState, this.resourceManager)));
+        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2102x14057a9c((BaseView) viewState, this.resourceManager)));
         Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …ager))\n    }\n    result\n}");
         return map;
     }
@@ -160,7 +160,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     public final Observable<Result<Boolean>> saveWalletAddressSettingsObservable(ArrayList<Long> arrayList, ArrayList<Long> arrayList2, int i, int i2) {
         Observable just = Observable.just(Boolean.valueOf((i == i2 && Intrinsics.areEqual(arrayList, arrayList2)) ? false : true));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-        final C2097x88ce73d4 c2097x88ce73d4 = new C2097x88ce73d4(this, i2, arrayList2);
+        final C2111x88ce73d4 c2111x88ce73d4 = new C2111x88ce73d4(this, i2, arrayList2);
         Observable<Result<Boolean>> flatMap = just.flatMap(new Function() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -183,7 +183,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     public final Observable<Result<Boolean>> saveAccountRankSettingsObservable(int i, int i2) {
         Observable just = Observable.just(Boolean.valueOf(i != i2));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-        final C2096x1efe2092 c2096x1efe2092 = new C2096x1efe2092(this, i2);
+        final C2110x1efe2092 c2110x1efe2092 = new C2110x1efe2092(this, i2);
         Observable<Result<Boolean>> flatMap = just.flatMap(new Function() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -203,6 +203,6 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final DialogModel getEverybodyWarningDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3286R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3301R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.common_confirm));
     }
 }

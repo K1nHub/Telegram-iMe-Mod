@@ -82,20 +82,20 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v1, 0x0
+    cmpl-float v1, p1, v0
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    cmpl-float v3, p1, v0
+    const/4 v3, 0x1
 
-    if-nez v3, :cond_1
+    if-nez v1, :cond_1
 
     .line 183
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v0, v0, v2
+    aget-object v0, v0, v3
 
     if-eqz v0, :cond_0
 
@@ -111,22 +111,22 @@
 
     move-result-object p1
 
-    aget p1, p1, v2
+    aget p1, p1, v3
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    iget-object v3, v3, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+    iget-object v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v3, v3, v2
+    aget-object v1, v1, v3
 
-    invoke-virtual {v0, p1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 186
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v0, v0, v2
+    aget-object v0, v0, v3
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
@@ -135,7 +135,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object p1, p1, v1
+    aget-object p1, p1, v2
 
     const/4 v0, 0x0
 
@@ -148,18 +148,18 @@
 
     const/4 v0, 0x0
 
-    aput-object v0, p1, v2
+    aput-object v0, p1, v3
 
     :cond_0
     return-void
 
     .line 192
     :cond_1
-    iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    iget-object v4, v3, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+    iget-object v4, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v4, v4, v2
+    aget-object v4, v4, v3
 
     if-nez v4, :cond_2
 
@@ -167,41 +167,41 @@
 
     .line 195
     :cond_2
-    invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$100(Lorg/telegram/ui/Components/ViewPagerFixed;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$100(Lorg/telegram/ui/Components/ViewPagerFixed;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_3
+    if-eqz v1, :cond_3
 
     .line 196
-    iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    iget-object v3, v3, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+    iget-object v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v2, v3, v2
+    aget-object v3, v1, v3
 
-    aget-object v3, v3, v1
+    aget-object v1, v1, v2
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v3
+    move-result v1
 
-    int-to-float v3, v3
+    int-to-float v1, v1
 
     sub-float/2addr v0, p1
 
-    mul-float v3, v3, v0
+    mul-float/2addr v1, v0
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setTranslationX(F)V
 
     .line 197
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v2, v0, v1
+    aget-object v1, v0, v2
 
-    aget-object v0, v0, v1
+    aget-object v0, v0, v2
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -211,44 +211,44 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationX(F)V
 
     goto :goto_0
 
     .line 199
     :cond_3
-    iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    iget-object v3, v3, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
+    iget-object v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v2, v3, v2
+    aget-object v3, v1, v3
 
-    aget-object v3, v3, v1
+    aget-object v1, v1, v2
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v3
+    move-result v1
 
-    neg-int v3, v3
+    neg-int v1, v1
 
-    int-to-float v3, v3
+    int-to-float v1, v1
 
     sub-float/2addr v0, p1
 
-    mul-float v3, v3, v0
+    mul-float/2addr v1, v0
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setTranslationX(F)V
 
     .line 200
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
-    aget-object v2, v0, v1
+    aget-object v1, v0, v2
 
-    aget-object v0, v0, v1
+    aget-object v0, v0, v2
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -256,9 +256,9 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationX(F)V
 
     :goto_0
     return-void

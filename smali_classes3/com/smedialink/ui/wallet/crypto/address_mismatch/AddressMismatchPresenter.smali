@@ -33,18 +33,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$BqKsHnvBEfCNMJx0vQpiLn91qe0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$PPn6gftcKH-if2WgZQ_5lOrRnyY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveEthWallet$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveWallet$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$zTtwxcWwfotmbQCiCkLpilbq-b0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$aqW4MDyRsKX6kIJK61XbRgrBREw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveEthWallet$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveWallet$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -102,7 +102,7 @@
     return-object p0
 .end method
 
-.method public static synthetic deleteActiveEthWallet$default(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;JILjava/lang/Object;)V
+.method public static synthetic deleteActiveWallet$default(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;JILjava/lang/Object;)V
     .locals 0
 
     and-int/lit8 p3, p3, 0x1
@@ -113,12 +113,12 @@
 
     .line 36
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveEthWallet(J)V
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveWallet(J)V
 
     return-void
 .end method
 
-.method private static final deleteActiveEthWallet$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private static final deleteActiveWallet$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -131,7 +131,7 @@
     return-void
 .end method
 
-.method private static final deleteActiveEthWallet$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private static final deleteActiveWallet$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -214,8 +214,8 @@
 
 
 # virtual methods
-.method public final deleteActiveEthWallet(J)V
-    .locals 3
+.method public final deleteActiveWallet(J)V
+    .locals 6
 
     .line 37
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
@@ -229,8 +229,14 @@
 
     const/4 v2, 0x0
 
+    const/4 v3, 0x0
+
+    const/4 v4, 0x4
+
+    const/4 v5, 0x0
+
     .line 38
-    invoke-virtual {v0, v1, v2}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Z)Lio/reactivex/Observable;
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$default(Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;ZZILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -246,17 +252,17 @@
     move-result-object v0
 
     .line 43
-    new-instance v1, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveEthWallet$1;
+    new-instance v1, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveWallet$1;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveEthWallet$1;-><init>(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;J)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveWallet$1;-><init>(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;J)V
 
     new-instance p1, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, v1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    new-instance p2, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveEthWallet$2;
+    new-instance p2, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveWallet$2;
 
-    invoke-direct {p2, p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveEthWallet$2;-><init>(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;)V
+    invoke-direct {p2, p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$deleteActiveWallet$2;-><init>(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;)V
 
     .line 49
     new-instance v1, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$$ExternalSyntheticLambda0;
@@ -268,7 +274,7 @@
 
     move-result-object p1
 
-    const-string p2, "fun deleteActiveEthWalle\u2026     .autoDispose()\n    }"
+    const-string p2, "fun deleteActiveWallet(d\u2026     .autoDispose()\n    }"
 
     .line 49
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

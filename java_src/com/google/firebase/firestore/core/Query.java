@@ -236,8 +236,9 @@ public final class Query {
         QueryComparator(List<OrderBy> list) {
             boolean z;
             loop0: while (true) {
+                z = false;
                 for (OrderBy orderBy : list) {
-                    z = z || orderBy.getField().equals(FieldPath.KEY_PATH);
+                    z = (z || orderBy.getField().equals(FieldPath.KEY_PATH)) ? true : z;
                 }
             }
             if (!z) {

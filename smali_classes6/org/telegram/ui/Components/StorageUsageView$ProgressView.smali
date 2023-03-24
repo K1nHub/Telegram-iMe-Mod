@@ -386,7 +386,7 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/StorageUsageView;->progress2:F
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 
@@ -502,7 +502,7 @@
 
     iget v7, v7, Lorg/telegram/ui/Components/StorageUsageView;->progress:F
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 

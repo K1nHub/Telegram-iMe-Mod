@@ -551,7 +551,7 @@
 
     move-result-object v2
 
-    const/4 v5, 0x0
+    move v5, v8
 
     .line 32
     :goto_0
@@ -650,7 +650,7 @@
 
     move-result-object v5
 
-    const/4 v6, 0x0
+    move v6, v8
 
     .line 42
     :goto_2

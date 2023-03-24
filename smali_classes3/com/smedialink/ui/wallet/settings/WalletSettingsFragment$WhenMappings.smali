@@ -45,7 +45,7 @@
 
     :catch_0
     :try_start_1
-    sget-object v1, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->ETH_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
+    sget-object v1, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->CRYPTO_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 

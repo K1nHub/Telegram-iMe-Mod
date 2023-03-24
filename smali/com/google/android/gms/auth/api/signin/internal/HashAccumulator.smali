@@ -50,7 +50,7 @@
 
     iget v1, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     if-nez p1, :cond_0
 
@@ -88,7 +88,7 @@
 
     iget v1, p0, Lcom/google/android/gms/auth/api/signin/internal/HashAccumulator;->zab:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     add-int/2addr v0, p1
 

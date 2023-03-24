@@ -5,7 +5,7 @@ public abstract class TLRPC$InputPhoto extends TLObject {
     public byte[] file_reference;
 
     /* renamed from: id */
-    public long f1521id;
+    public long f1522id;
 
     public static TLRPC$InputPhoto TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$InputPhoto tLRPC$TL_inputPhotoEmpty;

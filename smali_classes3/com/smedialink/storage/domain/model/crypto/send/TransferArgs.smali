@@ -10,7 +10,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;,
-        Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;
+        Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TON;,
+        Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$TRON;
     }
 .end annotation
 
@@ -23,7 +24,7 @@
 .method private constructor <init>(D)V
     .locals 0
 
-    .line 6
+    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-wide p1, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;->amount:D
@@ -44,7 +45,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 6
+    .line 7
     iget-wide v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;->amount:D
 
     return-wide v0

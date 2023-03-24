@@ -170,9 +170,9 @@
 
     int-to-float p3, p3
 
-    const/4 v0, 0x0
-
     cmpg-float p3, p2, p3
+
+    const/4 v0, 0x0
 
     if-gez p3, :cond_0
 
@@ -192,7 +192,7 @@
 
     if-lez p3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     :cond_1
     :goto_0

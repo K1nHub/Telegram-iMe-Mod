@@ -191,7 +191,7 @@
 
     new-array v2, v2, [Ljava/lang/Class;
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 219
     :goto_0
@@ -269,7 +269,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 205
     :goto_0

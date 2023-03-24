@@ -122,7 +122,7 @@
 
     if-gez v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 197
     :cond_2

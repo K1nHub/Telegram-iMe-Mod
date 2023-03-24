@@ -185,7 +185,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
@@ -294,7 +294,7 @@
 .end method
 
 .method emitNext(Ljava/lang/Object;J)V
-    .locals 3
+    .locals 2
 
     .line 539
     iget-boolean v0, p0, Lio/reactivex/subjects/BehaviorSubject$BehaviorDisposable;->cancelled:Z
@@ -327,9 +327,9 @@
     :cond_1
     iget-wide v0, p0, Lio/reactivex/subjects/BehaviorSubject$BehaviorDisposable;->index:J
 
-    cmp-long v2, v0, p2
+    cmp-long p2, v0, p2
 
-    if-nez v2, :cond_2
+    if-nez p2, :cond_2
 
     .line 548
     monitor-exit p0

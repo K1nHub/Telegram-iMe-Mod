@@ -145,7 +145,7 @@
 .end method
 
 .method public onComplete()V
-    .locals 5
+    .locals 4
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -154,9 +154,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 145
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableTimeout$TimeoutObserver;->task:Lio/reactivex/internal/disposables/SequentialDisposable;
@@ -173,7 +173,7 @@
 .end method
 
 .method public onError(Ljava/lang/Throwable;)V
-    .locals 5
+    .locals 4
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -182,9 +182,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 134
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableTimeout$TimeoutObserver;->task:Lio/reactivex/internal/disposables/SequentialDisposable;

@@ -202,7 +202,7 @@
 
     sub-float v1, v9, v1
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     float-to-int v1, v1
 
@@ -215,7 +215,7 @@
 
     const-wide/16 v1, 0x168
 
-    mul-long v1, v1, v6
+    mul-long/2addr v1, v6
 
     long-to-float v1, v1
 
@@ -341,7 +341,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/ProxyDrawable;->connectedAnimationProgress:F
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     float-to-int v2, v2
 

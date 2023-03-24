@@ -91,14 +91,14 @@
 .end method
 
 .method public equals(J)Z
-    .locals 3
+    .locals 2
 
     .line 433
     iget-wide v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$DelayedAnimatedEmojiDrawable;->documentId:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 

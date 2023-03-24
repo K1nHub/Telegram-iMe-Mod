@@ -300,45 +300,46 @@
 
     div-float/2addr v4, p2
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    cmpl-float p2, v3, v4
 
-    cmpl-float p3, v3, v4
+    const/high16 p3, 0x3f800000    # 1.0f
 
-    if-lez p3, :cond_3
+    if-lez p2, :cond_3
 
     div-float/2addr v3, v4
 
-    move p2, v3
+    move v4, p3
+
+    move p3, v3
 
     goto :goto_3
 
     :cond_3
-    cmpg-float p3, v3, v4
+    cmpg-float p2, v3, v4
 
-    if-gez p3, :cond_4
+    if-gez p2, :cond_4
 
     div-float/2addr v4, v3
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_4
-    :goto_3
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, p3
 
     .line 113
-    :goto_4
-    iget-object p3, p0, Lcom/otaliastudios/gif/transcode/VideoTranscoder;->mDecoderOutputSurface:Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;
+    :goto_3
+    iget-object p2, p0, Lcom/otaliastudios/gif/transcode/VideoTranscoder;->mDecoderOutputSurface:Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;
 
     float-to-int v0, v1
 
     float-to-int p1, p1
 
-    invoke-virtual {p3, v0, p1}, Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;->setSize(II)V
+    invoke-virtual {p2, v0, p1}, Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;->setSize(II)V
 
     .line 114
     iget-object p1, p0, Lcom/otaliastudios/gif/transcode/VideoTranscoder;->mDecoderOutputSurface:Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;
 
-    invoke-virtual {p1, p2, v4}, Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;->setScale(FF)V
+    invoke-virtual {p1, p3, v4}, Lcom/otaliastudios/gif/transcode/internal/VideoDecoderOutput;->setScale(FF)V
 
     return-void
 .end method

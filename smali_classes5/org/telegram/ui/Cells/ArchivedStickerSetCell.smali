@@ -477,17 +477,17 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v0, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     const/4 v2, 0x4
@@ -672,12 +672,12 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x4
+    move v0, v2
 
     :goto_2
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setVisibility(I)V
@@ -707,7 +707,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_3
     invoke-virtual {p1, v2}, Landroid/widget/Button;->setVisibility(I)V

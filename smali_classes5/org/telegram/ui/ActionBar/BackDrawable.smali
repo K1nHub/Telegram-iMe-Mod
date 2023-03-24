@@ -135,49 +135,49 @@
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->finalRotation:F
 
-    const/high16 v2, 0x3f800000    # 1.0f
-
     cmpl-float v0, v0, v1
+
+    const/high16 v1, 0x3f800000    # 1.0f
 
     if-eqz v0, :cond_3
 
     .line 96
-    iget-wide v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->lastFrameTime:J
+    iget-wide v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->lastFrameTime:J
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v2, v4
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
     .line 97
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iget-wide v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->lastFrameTime:J
+    iget-wide v4, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->lastFrameTime:J
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v2, v4
 
     .line 99
-    iget v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentAnimationTime:I
+    iget v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentAnimationTime:I
 
-    int-to-long v3, v3
+    int-to-long v4, v0
 
-    add-long/2addr v3, v0
+    add-long/2addr v4, v2
 
-    long-to-int v0, v3
+    long-to-int v0, v4
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentAnimationTime:I
 
-    int-to-float v1, v0
+    int-to-float v2, v0
 
     .line 100
     iget v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->animationTime:F
 
-    cmpl-float v1, v1, v3
+    cmpl-float v2, v2, v3
 
-    if-ltz v1, :cond_0
+    if-ltz v2, :cond_0
 
     .line 101
     iget v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->finalRotation:F
@@ -188,28 +188,28 @@
 
     .line 103
     :cond_0
-    iget v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
+    iget v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
     iget v4, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->finalRotation:F
 
-    cmpg-float v1, v1, v4
+    cmpg-float v2, v2, v4
 
-    if-gez v1, :cond_1
+    if-gez v2, :cond_1
 
     .line 104
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
 
     int-to-float v0, v0
 
     div-float/2addr v0, v3
 
-    invoke-virtual {v1, v0}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {v2, v0}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
     move-result v0
 
-    iget v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->finalRotation:F
+    iget v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->finalRotation:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v2
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
@@ -217,17 +217,17 @@
 
     .line 106
     :cond_1
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
 
     int-to-float v0, v0
 
     div-float/2addr v0, v3
 
-    invoke-virtual {v1, v0}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {v2, v0}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
     move-result v0
 
-    sub-float v0, v2, v0
+    sub-float v0, v1, v0
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
@@ -236,9 +236,9 @@
     :goto_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iput-wide v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->lastFrameTime:J
+    iput-wide v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->lastFrameTime:J
 
     .line 111
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
@@ -247,7 +247,7 @@
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->rotated:Z
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_4
 
@@ -269,14 +269,14 @@
 
     iget v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 115
     :goto_1
@@ -302,14 +302,14 @@
 
     iget v4, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 116
     :goto_2
@@ -317,11 +317,11 @@
 
     if-eqz v4, :cond_6
 
-    iget v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->rotatedColor:I
+    iget v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->rotatedColor:I
 
-    invoke-static {v1}, Landroid/graphics/Color;->blue(I)I
+    invoke-static {v2}, Landroid/graphics/Color;->blue(I)I
 
-    move-result v1
+    move-result v2
 
     iget v4, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->color:I
 
@@ -329,15 +329,15 @@
 
     move-result v4
 
-    sub-int/2addr v1, v4
+    sub-int/2addr v2, v4
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
     iget v4, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
-    mul-float v1, v1, v4
+    mul-float/2addr v2, v4
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
     .line 117
     :cond_6
@@ -363,16 +363,16 @@
 
     move-result v3
 
-    add-int/2addr v3, v1
+    add-int/2addr v3, v2
 
     invoke-static {v4, v0, v3}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
     .line 118
-    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->paint:Landroid/graphics/Paint;
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 120
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -388,13 +388,13 @@
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BackDrawable;->getIntrinsicHeight()I
 
-    move-result v1
+    move-result v2
 
-    div-int/lit8 v1, v1, 0x2
+    div-int/lit8 v2, v2, 0x2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 122
     iget v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->arrowRotation:I
@@ -411,33 +411,33 @@
     iget v0, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->currentRotation:F
 
     .line 126
-    iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->alwaysClose:Z
+    iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->alwaysClose:Z
 
-    if-nez v1, :cond_9
+    if-nez v2, :cond_9
 
     .line 127
-    iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->reverseAngle:Z
+    iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->reverseAngle:Z
 
-    if-eqz v1, :cond_8
+    if-eqz v2, :cond_8
 
-    const/16 v1, -0xe1
+    const/16 v2, -0xe1
 
     goto :goto_3
 
     :cond_8
-    const/16 v1, 0x87
+    const/16 v2, 0x87
 
     :goto_3
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    mul-float v1, v1, v0
+    mul-float/2addr v2, v0
 
-    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->rotate(F)V
 
     goto :goto_5
 
     :cond_9
-    const/high16 v1, 0x43070000    # 135.0f
+    const/high16 v2, 0x43070000    # 135.0f
 
     .line 129
     iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->reverseAngle:Z
@@ -454,39 +454,39 @@
     :goto_4
     int-to-float v3, v3
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
-    add-float/2addr v0, v1
+    add-float/2addr v0, v2
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :goto_5
-    const/high16 v1, -0x3f280000    # -6.75f
+    const/high16 v2, -0x3f280000    # -6.75f
 
     const/high16 v3, -0x3f000000    # -8.0f
 
     .line 132
-    invoke-static {v1, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    invoke-static {v2, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v4, v1
+    int-to-float v4, v2
 
     const/4 v5, 0x0
 
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->paint:Landroid/graphics/Paint;
 
@@ -498,11 +498,11 @@
 
     div-float/2addr v3, v6
 
-    sub-float/2addr v2, v0
+    sub-float/2addr v1, v0
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v1
 
-    sub-float v6, v1, v3
+    sub-float v6, v2, v3
 
     const/4 v7, 0x0
 
@@ -512,29 +512,29 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    const/high16 v1, -0x41800000    # -0.25f
+    const/high16 v2, -0x41800000    # -0.25f
 
     .line 133
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v5, v1
+    int-to-float v5, v2
 
-    const/high16 v1, 0x40e00000    # 7.0f
+    const/high16 v2, 0x40e00000    # 7.0f
 
     const/high16 v3, 0x41000000    # 8.0f
 
     .line 134
-    invoke-static {v1, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    invoke-static {v2, v3, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->paint:Landroid/graphics/Paint;
 
@@ -546,9 +546,9 @@
 
     div-float/2addr v3, v4
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v1
 
-    sub-float v7, v1, v3
+    sub-float v7, v2, v3
 
     const/high16 v1, -0x3f180000    # -7.25f
 
@@ -746,7 +746,7 @@
     .line 73
     iget p2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->animationTime:F
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     float-to-int p2, v2
 
@@ -760,7 +760,7 @@
     .line 75
     iget p2, p0, Lorg/telegram/ui/ActionBar/BackDrawable;->animationTime:F
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     float-to-int p2, v3
 

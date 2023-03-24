@@ -817,12 +817,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/ManageLinksActivity;->isChannel:Z
@@ -881,9 +881,9 @@
 
     iget-wide v1, p5, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long p5, p3, v1
+    cmp-long p3, p3, v1
 
-    if-eqz p5, :cond_2
+    if-eqz p3, :cond_2
 
     if-eqz p1, :cond_3
 
@@ -892,7 +892,7 @@
     if-nez p1, :cond_3
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, p2
 
     :cond_3
     iput-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->canEdit:Z
@@ -2897,7 +2897,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_f
@@ -3161,7 +3161,7 @@
 .end method
 
 .method private synthetic lambda$loadLinks$23(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -3173,7 +3173,7 @@
     .line 1160
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_chatAdminsWithInvites;
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1161
     :goto_0
@@ -3207,9 +3207,9 @@
 
     iget-wide v4, v4, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     .line 1164
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity;->admins:Ljava/util/ArrayList;
@@ -3222,7 +3222,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1167
     :goto_1
@@ -3364,7 +3364,7 @@
 
     if-eqz p4, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 1255
     :goto_0
@@ -3448,7 +3448,7 @@
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 1265
     :goto_1
@@ -3482,7 +3482,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 1272
     :goto_2
@@ -3559,12 +3559,12 @@
 
     if-ge v2, v3, :cond_6
 
-    const/4 v2, 0x1
+    move v2, p1
 
     goto :goto_3
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_3
     iput-boolean v2, p0, Lorg/telegram/ui/ManageLinksActivity;->hasMore:Z
@@ -3585,12 +3585,12 @@
 
     if-ge v2, v3, :cond_8
 
-    const/4 v2, 0x1
+    move v2, p1
 
     goto :goto_4
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_4
     iput-boolean v2, p0, Lorg/telegram/ui/ManageLinksActivity;->hasMore:Z
@@ -3624,12 +3624,12 @@
     invoke-virtual {v2, p2}, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;->showItemsAnimated(I)V
 
     :cond_9
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_6
 
     :cond_a
-    const/4 p2, 0x1
+    move p2, p1
 
     .line 1290
     :goto_6
@@ -3663,7 +3663,7 @@
     :cond_b
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->hasMore:Z
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 1299
     :cond_c
@@ -3688,9 +3688,9 @@
 
     iget-wide v2, v2, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v4, p3, v2
+    cmp-long p3, p3, v2
 
-    if-nez v4, :cond_d
+    if-nez p3, :cond_d
 
     .line 1300
     iput-boolean p1, p0, Lorg/telegram/ui/ManageLinksActivity;->hasMore:Z
@@ -3717,12 +3717,12 @@
     iput-boolean p1, p0, Lorg/telegram/ui/ManageLinksActivity;->loadRevoked:Z
 
     :goto_8
-    const/4 p3, 0x1
+    move p3, p1
 
     goto :goto_9
 
     :cond_e
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 1309
     :goto_9
@@ -4835,7 +4835,7 @@
 .end method
 
 .method private loadLinks(Z)V
-    .locals 7
+    .locals 6
 
     .line 1153
     iget-boolean v0, p0, Lorg/telegram/ui/ManageLinksActivity;->loadAdmins:Z
@@ -4929,9 +4929,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     .line 1200
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5814,7 +5814,7 @@
 .end method
 
 .method private revokePermanent()V
-    .locals 5
+    .locals 4
 
     .line 2570
     iget-wide v0, p0, Lorg/telegram/ui/ManageLinksActivity;->adminId:J
@@ -5829,9 +5829,9 @@
 
     iget-wide v2, v2, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 2571
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_exportChatInvite;
@@ -6304,7 +6304,7 @@
 .end method
 
 .method private updateRows(Z)V
-    .locals 7
+    .locals 6
 
     .line 1332
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -6472,9 +6472,9 @@
 
     iget-wide v4, v4, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_1
+    if-eqz v2, :cond_1
 
     const/4 v1, 0x1
 
@@ -7888,7 +7888,7 @@
 
     if-eqz v3, :cond_a
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
@@ -8119,7 +8119,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     iput-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->expired:Z
@@ -8140,7 +8140,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     iput-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->expired:Z
@@ -9310,12 +9310,12 @@
 
     if-ne v0, v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinancePayCreateCollectionType:Z
@@ -9325,12 +9325,12 @@
 
     if-ne v0, v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isWalletTransferType:Z
@@ -9340,12 +9340,12 @@
 
     if-ne v0, v1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isBinanceReplenishType:Z
@@ -9355,12 +9355,12 @@
 
     if-ne v0, v1, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_4
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isDonationsTransferType:Z
@@ -9370,12 +9370,12 @@
 
     if-ne v0, v1, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_5
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingDepositType:Z
@@ -9385,12 +9385,12 @@
 
     if-ne v0, v1, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_6
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingProfitType:Z
@@ -9400,12 +9400,12 @@
 
     if-ne v0, v1, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_7
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_7
     iput-boolean v1, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingWithdrawType:Z
@@ -9418,7 +9418,7 @@
     goto :goto_8
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_8
     iput-boolean v2, p0, Lorg/telegram/ui/ManageLinksActivity;->isStakingCalculatorType:Z

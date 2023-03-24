@@ -157,9 +157,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     add-int/lit8 v4, v2, 0x1
@@ -221,7 +221,7 @@
     :cond_1
     if-eqz v5, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :cond_2
     move v2, v4
@@ -246,12 +246,12 @@
 
     if-ltz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 679
     :goto_0
@@ -391,7 +391,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_4
 
@@ -426,7 +426,7 @@
     if-ne p1, v2, :cond_8
 
     :goto_3
-    const/4 p1, 0x1
+    move p1, v2
 
     :goto_4
     aput-boolean p1, p3, v1
@@ -457,12 +457,12 @@
     if-nez p1, :cond_c
 
     :goto_5
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_6
 
     :cond_c
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_6
     aput-boolean p1, p3, v2
@@ -472,7 +472,7 @@
 
     if-nez p0, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_d
     aput-boolean v1, p3, v3
@@ -750,7 +750,7 @@
 
     rsub-int/lit8 v10, v3, 0x8
 
-    mul-int/lit8 v10, v10, 0x2
+    mul-int/2addr v10, v4
 
     .line 514
     invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->skipBits(I)V
@@ -816,23 +816,23 @@
     goto :goto_3
 
     :cond_8
-    const/16 v21, 0x1
+    move/from16 v21, v12
 
     goto :goto_4
 
     :cond_9
     :goto_3
-    const/16 v21, 0x2
+    move/from16 v21, v4
 
     :goto_4
     if-ne v10, v12, :cond_a
 
-    const/4 v10, 0x2
+    move v10, v4
 
     goto :goto_5
 
     :cond_a
-    const/4 v10, 0x1
+    move v10, v12
 
     :goto_5
     add-int v17, v17, v18
@@ -1297,7 +1297,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x1
+    move v10, v9
 
     const/4 v11, 0x0
 
@@ -1341,7 +1341,7 @@
 
     if-eq v10, v2, :cond_3
 
-    const/16 v12, 0x8
+    move v12, v1
 
     goto :goto_2
 
@@ -1434,9 +1434,9 @@
     :goto_6
     int-to-long v7, v15
 
-    cmp-long v17, v7, v1
+    cmp-long v7, v7, v1
 
-    if-gez v17, :cond_8
+    if-gez v7, :cond_8
 
     .line 386
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readUnsignedExpGolombCodedInt()I
@@ -1488,7 +1488,7 @@
 
     rsub-int/lit8 v8, v12, 0x2
 
-    mul-int v8, v8, v2
+    mul-int/2addr v8, v2
 
     if-nez v12, :cond_a
 
@@ -1501,9 +1501,9 @@
 
     const/16 v2, 0x10
 
-    mul-int/lit8 v1, v1, 0x10
+    mul-int/2addr v1, v2
 
-    mul-int/lit8 v8, v8, 0x10
+    mul-int/2addr v8, v2
 
     .line 403
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readBit()Z
@@ -1552,26 +1552,26 @@
     goto :goto_9
 
     :cond_c
-    const/4 v9, 0x1
+    move/from16 v21, v20
 
-    const/16 v21, 0x2
+    const/4 v9, 0x1
 
     :goto_9
     if-ne v10, v9, :cond_d
 
-    const/4 v9, 0x2
+    move/from16 v9, v20
 
     :cond_d
     rsub-int/lit8 v10, v12, 0x2
 
-    mul-int v10, v10, v9
+    mul-int/2addr v10, v9
 
     move/from16 v9, v21
 
     :goto_a
     add-int v2, v2, v17
 
-    mul-int v2, v2, v9
+    mul-int/2addr v2, v9
 
     sub-int/2addr v1, v2
 
@@ -1593,14 +1593,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
     .line 427
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
     const/16 v2, 0x8
 
@@ -1611,7 +1611,7 @@
 
     const/16 v10, 0xff
 
-    if-ne v2, v10, :cond_10
+    if-ne v2, v10, :cond_f
 
     const/16 v10, 0x10
 
@@ -1625,9 +1625,9 @@
 
     move-result v0
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_11
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
     int-to-float v1, v2
 
@@ -1635,28 +1635,25 @@
 
     div-float/2addr v1, v0
 
-    :cond_f
-    move v10, v1
-
     goto :goto_b
 
     .line 436
-    :cond_10
+    :cond_f
     sget-object v0, Lcom/google/android/exoplayer2/util/NalUnitUtil;->ASPECT_RATIO_IDC_VALUES:[F
 
     array-length v10, v0
 
-    if-ge v2, v10, :cond_11
+    if-ge v2, v10, :cond_10
 
     .line 437
     aget v0, v0, v2
 
     move v10, v0
 
-    goto :goto_b
+    goto :goto_c
 
     .line 439
-    :cond_11
+    :cond_10
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1675,11 +1672,12 @@
 
     invoke-static {v2, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_12
-    const/high16 v10, 0x3f800000    # 1.0f
+    :cond_11
+    :goto_b
+    move v10, v1
 
     .line 444
-    :goto_b
+    :goto_c
     new-instance v0, Lcom/google/android/exoplayer2/util/NalUnitUtil$SpsData;
 
     move-object v2, v0
@@ -1694,14 +1692,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x4
 
     if-ge v1, v2, :cond_5
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     const/4 v4, 0x6
@@ -1742,7 +1740,7 @@
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readSignedExpGolombCodedInt()I
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_2
     if-ge v6, v4, :cond_2
@@ -1760,7 +1758,7 @@
 
     if-ne v1, v4, :cond_3
 
-    const/4 v5, 0x3
+    move v5, v4
 
     :cond_3
     add-int/2addr v3, v5
@@ -1783,9 +1781,9 @@
 
     const/4 v1, 0x0
 
-    const/16 v1, 0x8
+    move v2, v1
 
-    const/4 v2, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v2, p1, :cond_2
@@ -1837,9 +1835,9 @@
 
     const/4 v4, -0x1
 
-    const/4 v5, -0x1
+    move v6, v1
 
-    const/4 v6, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v6, v0, :cond_10
@@ -1855,12 +1853,12 @@
 
     if-eqz v8, :cond_0
 
-    const/4 v8, 0x1
+    move v8, v7
 
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_1
     if-eqz v8, :cond_d
@@ -1883,14 +1881,14 @@
 
     rsub-int/lit8 v9, v9, 0x1
 
-    mul-int v9, v9, v10
+    mul-int/2addr v9, v10
 
     add-int/lit8 v10, v8, 0x1
 
     .line 815
     new-array v11, v10, [Z
 
-    const/4 v12, 0x0
+    move v12, v1
 
     :goto_2
     if-gt v12, v8, :cond_2
@@ -1929,7 +1927,7 @@
 
     add-int/lit8 v12, v5, -0x1
 
-    const/4 v13, 0x0
+    move v13, v1
 
     :goto_4
     if-ltz v12, :cond_4
@@ -1976,7 +1974,7 @@
     move v13, v12
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v1
 
     :goto_5
     if-ge v12, v4, :cond_7
@@ -2013,7 +2011,7 @@
 
     add-int/lit8 v12, v4, -0x1
 
-    const/4 v14, 0x0
+    move v14, v1
 
     :goto_6
     if-ltz v12, :cond_9
@@ -2058,7 +2056,7 @@
     move v14, v2
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_7
     if-ge v2, v5, :cond_c
@@ -2119,7 +2117,7 @@
     .line 869
     new-array v4, v2, [I
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_8
     if-ge v5, v2, :cond_e
@@ -2144,7 +2142,7 @@
     :cond_e
     new-array v5, v3, [I
 
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_9
     if-ge v8, v3, :cond_f
@@ -2197,9 +2195,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :cond_0
     :goto_0
@@ -2254,11 +2252,11 @@
     :cond_2
     sub-int/2addr p1, v3
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ge v2, v3, :cond_3

@@ -104,7 +104,7 @@
 
     const-wide v2, 0x3ff5555555555555L    # 1.3333333333333333
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float v0, v0
 
@@ -204,11 +204,11 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget v6, v0, Lorg/telegram/ui/Components/CircleBezierDrawable;->cubicBezierK:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     .line 57
     iget-object v6, v0, Lorg/telegram/ui/Components/CircleBezierDrawable;->path:Landroid/graphics/Path;
@@ -217,7 +217,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v8, 0x0
+    move v8, v6
 
     .line 58
     :goto_0
@@ -243,7 +243,7 @@
 
     int-to-float v12, v8
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     invoke-virtual {v9, v10, v1, v2}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
@@ -266,7 +266,7 @@
 
     aget v13, v12, v8
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     add-float/2addr v9, v13
 
@@ -287,11 +287,11 @@
     .line 65
     aget v12, v12, v8
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     iget v12, v0, Lorg/telegram/ui/Components/CircleBezierDrawable;->L:F
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     add-float/2addr v15, v10
 
@@ -316,7 +316,7 @@
 
     if-lt v9, v13, :cond_1
 
-    const/4 v13, 0x0
+    move v13, v6
 
     goto :goto_2
 
@@ -362,11 +362,11 @@
     .line 78
     aget v12, v12, v13
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     iget v12, v0, Lorg/telegram/ui/Components/CircleBezierDrawable;->L:F
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float v17, v17, v11
 
@@ -397,7 +397,7 @@
 
     int-to-float v12, v13
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     invoke-virtual {v10, v11, v1, v2}, Landroid/graphics/Matrix;->setRotate(FFF)V
 

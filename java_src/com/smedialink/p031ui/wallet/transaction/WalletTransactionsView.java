@@ -18,6 +18,8 @@ public interface WalletTransactionsView extends BaseView, LoadMoreView<BaseNode>
     @OneExecution
     void openStakingOperationDetails(StakingOperationItem stakingOperationItem, NetworkType networkType);
 
+    void renderInitialItems(List<BaseNode> list);
+
     void renderItems(List<BaseNode> list);
 
     @OneExecution

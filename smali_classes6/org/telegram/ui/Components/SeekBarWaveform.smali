@@ -214,7 +214,7 @@
     .line 397
     iget v3, p0, Lorg/telegram/ui/Components/SeekBarWaveform;->waveScaling:F
 
-    mul-float p3, p3, v3
+    mul-float/2addr p3, v3
 
     .line 398
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -319,11 +319,11 @@
 
     const/4 v6, 0x0
 
+    move v10, v6
+
     const/4 v8, 0x0
 
     const/4 v9, 0x0
-
-    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
@@ -514,12 +514,12 @@
 
     if-gtz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     iput-boolean v2, v0, Lorg/telegram/ui/Components/SeekBarWaveform;->isUnread:Z
@@ -584,12 +584,12 @@
 
     if-nez v2, :cond_3
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v8
 
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_2
     invoke-virtual {v6, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -622,7 +622,7 @@
 
     sub-float v9, v8, v2
 
-    mul-float v7, v7, v9
+    mul-float/2addr v7, v9
 
     mul-float v7, v7, p2
 
@@ -683,7 +683,7 @@
 
     add-float/2addr v7, v1
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     mul-float v13, v6, v9
 
@@ -818,7 +818,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     mul-float v2, v2, p2
 
@@ -866,7 +866,7 @@
     .line 383
     iget v2, v0, Lorg/telegram/ui/Components/SeekBarWaveform;->loadingPaintWidth:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     move-object/from16 v2, p1
 
@@ -909,6 +909,8 @@
 
     :cond_8
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -1138,9 +1140,9 @@
     :goto_5
     const/4 v4, -0x1
 
-    const/4 v6, 0x0
+    move v8, v2
 
-    const/4 v8, 0x0
+    move v6, v5
 
     :goto_6
     if-ge v6, v0, :cond_d
@@ -1153,7 +1155,7 @@
 
     int-to-float v12, v3
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     float-to-double v11, v11
 
@@ -1183,7 +1185,7 @@
 
     move-result v10
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     .line 315
     aget v10, v7, v11
@@ -1219,7 +1221,7 @@
 
     move-result v10
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     .line 320
     aget v10, v7, v11
@@ -1274,7 +1276,7 @@
 
     move-result v6
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     mul-float v7, p2, v0
 
@@ -1294,7 +1296,7 @@
 
     move-result v7
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     .line 333
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -1303,7 +1305,7 @@
 
     sub-float v3, v4, v3
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     sub-float/2addr v7, v8
 
@@ -1318,7 +1320,7 @@
 
     :cond_c
     :goto_9
-    const/4 v8, 0x0
+    move v8, v2
 
     :cond_d
     cmpl-float p2, v8, v2
@@ -1336,7 +1338,7 @@
     .line 341
     iget p2, p0, Lorg/telegram/ui/Components/SeekBarWaveform;->alpha:F
 
-    mul-float v8, v8, p2
+    mul-float/2addr v8, p2
 
     invoke-direct {p0, p1, v8}, Lorg/telegram/ui/Components/SeekBarWaveform;->drawFill(Landroid/graphics/Canvas;F)V
 
@@ -1781,7 +1783,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v1
 
     goto :goto_0
 
@@ -1830,7 +1832,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-double p1, p2
 

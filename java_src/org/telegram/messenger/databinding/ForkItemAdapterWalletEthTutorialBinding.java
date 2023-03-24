@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
 public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBinding {
@@ -29,7 +29,7 @@ public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBindin
     }
 
     public static ForkItemAdapterWalletEthTutorialBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3286R.layout.fork_item_adapter_wallet_eth_tutorial, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3301R.layout.fork_item_adapter_wallet_eth_tutorial, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,13 +37,13 @@ public final class ForkItemAdapterWalletEthTutorialBinding implements ViewBindin
     }
 
     public static ForkItemAdapterWalletEthTutorialBinding bind(View view) {
-        int i = C3286R.C3289id.image_logo;
+        int i = C3301R.C3304id.image_logo;
         RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
         if (rLottieImageView != null) {
-            i = C3286R.C3289id.text_description;
+            i = C3301R.C3304id.text_description;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3286R.C3289id.text_title;
+                i = C3301R.C3304id.text_title;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
                     return new ForkItemAdapterWalletEthTutorialBinding((LinearLayout) view, rLottieImageView, appCompatTextView, appCompatTextView2);

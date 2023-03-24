@@ -451,9 +451,9 @@
 
     const/4 v4, 0x1
 
-    move/from16 v4, v16
+    move/from16 v31, v4
 
-    const/16 v31, 0x1
+    move/from16 v4, v16
 
     goto :goto_b
 

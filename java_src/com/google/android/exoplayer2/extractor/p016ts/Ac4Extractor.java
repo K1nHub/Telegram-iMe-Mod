@@ -1,6 +1,7 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
 import com.google.android.exoplayer2.C0468C;
+import com.google.android.exoplayer2.audio.Ac4Util;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -30,86 +31,49 @@ public final class Ac4Extractor implements Extractor {
         return new Extractor[]{new Ac4Extractor()};
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x003d, code lost:
-        r9.resetPeekPosition();
-        r4 = r4 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0046, code lost:
-        if ((r4 - r3) < 8192) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0048, code lost:
-        return false;
-     */
     @Override // com.google.android.exoplayer2.extractor.Extractor
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public boolean sniff(com.google.android.exoplayer2.extractor.ExtractorInput r9) throws java.io.IOException {
-        /*
-            r8 = this;
-            com.google.android.exoplayer2.util.ParsableByteArray r0 = new com.google.android.exoplayer2.util.ParsableByteArray
-            r1 = 10
-            r0.<init>(r1)
-            r2 = 0
-            r3 = 0
-        L9:
-            byte[] r4 = r0.getData()
-            r9.peekFully(r4, r2, r1)
-            r0.setPosition(r2)
-            int r4 = r0.readUnsignedInt24()
-            r5 = 4801587(0x494433, float:6.728456E-39)
-            if (r4 == r5) goto L65
-            r9.resetPeekPosition()
-            r9.advancePeekPosition(r3)
-            r4 = r3
-        L23:
-            r1 = 0
-        L24:
-            byte[] r5 = r0.getData()
-            r6 = 7
-            r9.peekFully(r5, r2, r6)
-            r0.setPosition(r2)
-            int r5 = r0.readUnsignedShort()
-            r6 = 44096(0xac40, float:6.1792E-41)
-            if (r5 == r6) goto L4d
-            r6 = 44097(0xac41, float:6.1793E-41)
-            if (r5 == r6) goto L4d
-            r9.resetPeekPosition()
-            int r4 = r4 + 1
-            int r1 = r4 - r3
-            r5 = 8192(0x2000, float:1.14794E-41)
-            if (r1 < r5) goto L49
-            return r2
-        L49:
-            r9.advancePeekPosition(r4)
-            goto L23
-        L4d:
-            r6 = 1
-            int r1 = r1 + r6
-            r7 = 4
-            if (r1 < r7) goto L53
-            return r6
-        L53:
-            byte[] r6 = r0.getData()
-            int r5 = com.google.android.exoplayer2.audio.Ac4Util.parseAc4SyncframeSize(r6, r5)
-            r6 = -1
-            if (r5 != r6) goto L5f
-            return r2
-        L5f:
-            int r5 = r5 + (-7)
-            r9.advancePeekPosition(r5)
-            goto L24
-        L65:
-            r4 = 3
-            r0.skipBytes(r4)
-            int r4 = r0.readSynchSafeInt()
-            int r5 = r4 + 10
-            int r3 = r3 + r5
-            r9.advancePeekPosition(r4)
-            goto L9
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.extractor.p016ts.Ac4Extractor.sniff(com.google.android.exoplayer2.extractor.ExtractorInput):boolean");
+    public boolean sniff(ExtractorInput extractorInput) throws IOException {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(10);
+        int i = 0;
+        while (true) {
+            extractorInput.peekFully(parsableByteArray.getData(), 0, 10);
+            parsableByteArray.setPosition(0);
+            if (parsableByteArray.readUnsignedInt24() != 4801587) {
+                break;
+            }
+            parsableByteArray.skipBytes(3);
+            int readSynchSafeInt = parsableByteArray.readSynchSafeInt();
+            i += readSynchSafeInt + 10;
+            extractorInput.advancePeekPosition(readSynchSafeInt);
+        }
+        extractorInput.resetPeekPosition();
+        extractorInput.advancePeekPosition(i);
+        int i2 = 0;
+        int i3 = i;
+        while (true) {
+            extractorInput.peekFully(parsableByteArray.getData(), 0, 7);
+            parsableByteArray.setPosition(0);
+            int readUnsignedShort = parsableByteArray.readUnsignedShort();
+            if (readUnsignedShort == 44096 || readUnsignedShort == 44097) {
+                i2++;
+                if (i2 >= 4) {
+                    return true;
+                }
+                int parseAc4SyncframeSize = Ac4Util.parseAc4SyncframeSize(parsableByteArray.getData(), readUnsignedShort);
+                if (parseAc4SyncframeSize == -1) {
+                    return false;
+                }
+                extractorInput.advancePeekPosition(parseAc4SyncframeSize - 7);
+            } else {
+                extractorInput.resetPeekPosition();
+                i3++;
+                if (i3 - i >= 8192) {
+                    return false;
+                }
+                extractorInput.advancePeekPosition(i3);
+                i2 = 0;
+            }
+        }
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor

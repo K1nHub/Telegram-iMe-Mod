@@ -373,7 +373,7 @@
 
     sub-int/2addr v0, v6
 
-    mul-int v9, v9, v0
+    mul-int/2addr v9, v0
 
     move-object v0, v10
 
@@ -392,7 +392,7 @@
 
     sub-int/2addr v14, v13
 
-    mul-int v6, v6, v14
+    mul-int/2addr v6, v14
 
     int-to-double v13, v6
 
@@ -411,7 +411,7 @@
 
     sub-int/2addr v0, v15
 
-    mul-int v6, v6, v0
+    mul-int/2addr v6, v0
 
     move-wide/from16 v19, v3
 
@@ -618,7 +618,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 54
     :goto_0

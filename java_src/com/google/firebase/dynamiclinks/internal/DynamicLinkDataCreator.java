@@ -16,8 +16,8 @@ public class DynamicLinkDataCreator implements Parcelable.Creator<DynamicLinkDat
         String str2 = null;
         Bundle bundle = null;
         Uri uri = null;
-        long j = 0;
         int i = 0;
+        long j = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

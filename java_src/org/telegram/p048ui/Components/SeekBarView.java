@@ -63,10 +63,10 @@ public class SeekBarView extends FrameLayout {
     private int separatorsCount;
 
     /* renamed from: sx */
-    float f1807sx;
+    float f1808sx;
 
     /* renamed from: sy */
-    float f1808sy;
+    float f1809sy;
     private int thumbDX;
     private int thumbSize;
     private int thumbX;
@@ -228,14 +228,14 @@ public class SeekBarView extends FrameLayout {
         Drawable drawable2;
         Drawable drawable3;
         if (motionEvent.getAction() == 0) {
-            this.f1807sx = motionEvent.getX();
-            this.f1808sy = motionEvent.getY();
+            this.f1808sx = motionEvent.getX();
+            this.f1809sy = motionEvent.getY();
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
             this.captured = false;
             if (motionEvent.getAction() == 1) {
-                if (Math.abs(motionEvent.getY() - this.f1808sy) < ViewConfiguration.get(getContext()).getScaledTouchSlop()) {
+                if (Math.abs(motionEvent.getY() - this.f1809sy) < ViewConfiguration.get(getContext()).getScaledTouchSlop()) {
                     int measuredHeight = (getMeasuredHeight() - this.thumbSize) / 2;
                     if (this.thumbX - measuredHeight > motionEvent.getX() || motionEvent.getX() > this.thumbX + this.thumbSize + measuredHeight) {
                         int x = ((int) motionEvent.getX()) - (this.thumbSize / 2);
@@ -281,7 +281,7 @@ public class SeekBarView extends FrameLayout {
         } else if (motionEvent.getAction() == 2) {
             if (!this.captured) {
                 ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
-                if (Math.abs(motionEvent.getY() - this.f1808sy) <= viewConfiguration.getScaledTouchSlop() && Math.abs(motionEvent.getX() - this.f1807sx) > viewConfiguration.getScaledTouchSlop()) {
+                if (Math.abs(motionEvent.getY() - this.f1809sy) <= viewConfiguration.getScaledTouchSlop() && Math.abs(motionEvent.getX() - this.f1808sx) > viewConfiguration.getScaledTouchSlop()) {
                     this.captured = true;
                     getParent().requestDisallowInterceptTouchEvent(true);
                     int measuredHeight2 = (getMeasuredHeight() - this.thumbSize) / 2;
@@ -428,9 +428,9 @@ public class SeekBarView extends FrameLayout {
         return this.pressed;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01ef  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0237  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x024f  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x01eb  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0230  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0248  */
     /* JADX WARN: Removed duplicated region for block: B:111:? A[RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
@@ -439,7 +439,7 @@ public class SeekBarView extends FrameLayout {
     */
     protected void onDraw(android.graphics.Canvas r16) {
         /*
-            Method dump skipped, instructions count: 595
+            Method dump skipped, instructions count: 588
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.SeekBarView.onDraw(android.graphics.Canvas):void");
@@ -540,6 +540,7 @@ public class SeekBarView extends FrameLayout {
     private void drawProgressBar(Canvas canvas, RectF rectF, Paint paint) {
         int i;
         float f;
+        char c;
         float m50dp = AndroidUtilities.m50dp(2);
         ArrayList<Pair<Float, CharSequence>> arrayList = this.timestamps;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -588,14 +589,14 @@ public class SeekBarView extends FrameLayout {
         int i3 = i2;
         while (i3 <= i) {
             float f4 = BitmapDescriptorFactory.HUE_RED;
-            float floatValue = i3 == i2 ? BitmapDescriptorFactory.HUE_RED : ((Float) this.timestamps.get(i3 - 1).first).floatValue();
+            float floatValue = i3 == i2 ? 0.0f : ((Float) this.timestamps.get(i3 - 1).first).floatValue();
             float floatValue2 = i3 == i ? 1.0f : ((Float) this.timestamps.get(i3).first).floatValue();
             while (i3 != i && i3 != 0 && i3 < this.timestamps.size() - 1 && ((Float) this.timestamps.get(i3).first).floatValue() - floatValue <= m50dp2) {
                 i3++;
                 floatValue2 = ((Float) this.timestamps.get(i3).first).floatValue();
             }
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.left = AndroidUtilities.lerp(f3, measuredWidth, floatValue) + (i3 > 0 ? m51dp : BitmapDescriptorFactory.HUE_RED);
+            rectF2.left = AndroidUtilities.lerp(f3, measuredWidth, floatValue) + (i3 > 0 ? m51dp : 0.0f);
             float lerp = AndroidUtilities.lerp(f3, measuredWidth, floatValue2);
             if (i3 < i) {
                 f4 = m51dp;
@@ -611,6 +612,7 @@ public class SeekBarView extends FrameLayout {
             float f8 = rectF.left;
             if (f7 < f8) {
                 f = f3;
+                c = 2;
             } else {
                 if (rectF2.left < f8) {
                     rectF2.left = f8;
@@ -629,6 +631,7 @@ public class SeekBarView extends FrameLayout {
                     fArr[5] = f9;
                     fArr[4] = f9;
                     fArr[3] = f9;
+                    c = 2;
                     fArr[2] = f9;
                 } else if (i3 >= i) {
                     float[] fArr2 = tmpRadii;
@@ -641,6 +644,7 @@ public class SeekBarView extends FrameLayout {
                     fArr2[5] = m50dp;
                     fArr2[4] = m50dp;
                     fArr2[3] = m50dp;
+                    c = 2;
                     fArr2[2] = m50dp;
                 } else {
                     f = f3;
@@ -654,6 +658,7 @@ public class SeekBarView extends FrameLayout {
                     fArr3[6] = f11;
                     fArr3[1] = f11;
                     fArr3[0] = f11;
+                    c = 2;
                 }
                 tmpPath.addRoundRect(rectF2, tmpRadii, Path.Direction.CW);
                 if (z) {
@@ -667,9 +672,6 @@ public class SeekBarView extends FrameLayout {
     }
 
     private void drawTimestampLabel(Canvas canvas) {
-        float f;
-        float f2;
-        float f3;
         ArrayList<Pair<Float, CharSequence>> arrayList = this.timestamps;
         if (arrayList == null || arrayList.isEmpty()) {
             return;
@@ -689,10 +691,10 @@ public class SeekBarView extends FrameLayout {
         if (this.timestampLabel == null) {
             this.timestampLabel = new StaticLayout[2];
         }
-        float f4 = this.selectorWidth / 2.0f;
-        float abs = Math.abs(f4 - ((getMeasuredWidth() - (this.selectorWidth / 2.0f)) - (this.lastDuration > 600000 ? AndroidUtilities.m50dp(36) : 0))) - AndroidUtilities.m50dp(66);
-        float f5 = this.lastWidth;
-        if (f5 > BitmapDescriptorFactory.HUE_RED && Math.abs(f5 - abs) > 0.01f) {
+        float f = this.selectorWidth / 2.0f;
+        float abs = Math.abs(f - ((getMeasuredWidth() - (this.selectorWidth / 2.0f)) - (this.lastDuration > 600000 ? AndroidUtilities.m50dp(36) : 0))) - AndroidUtilities.m50dp(66);
+        float f2 = this.lastWidth;
+        if (f2 > BitmapDescriptorFactory.HUE_RED && Math.abs(f2 - abs) > 0.01f) {
             StaticLayout[] staticLayoutArr = this.timestampLabel;
             if (staticLayoutArr[0] != null) {
                 staticLayoutArr[0] = makeStaticLayout(staticLayoutArr[0].getText(), (int) abs);
@@ -738,31 +740,25 @@ public class SeekBarView extends FrameLayout {
             this.currentTimestamp = size;
         }
         if (this.timestampChangeT < 1.0f) {
-            f = 1.0f;
             this.timestampChangeT = Math.min(this.timestampChangeT + (((float) Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.lastTimestampUpdate))) / (this.timestamps.size() > 8 ? 160.0f : 220.0f)), 1.0f);
             invalidate();
             this.lastTimestampUpdate = SystemClock.elapsedRealtime();
-        } else {
-            f = 1.0f;
         }
-        if (this.timestampsAppearing < f) {
+        if (this.timestampsAppearing < 1.0f) {
             this.timestampsAppearing = Math.min(this.timestampsAppearing + (((float) Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.lastTimestampUpdate))) / 200.0f), 1.0f);
             invalidate();
             SystemClock.elapsedRealtime();
         }
         float interpolation = CubicBezierInterpolator.DEFAULT.getInterpolation(this.timestampChangeT);
         canvas.save();
-        canvas.translate(f4 + AndroidUtilities.m50dp(25), (getMeasuredHeight() / 2.0f) + AndroidUtilities.m50dp(14));
+        canvas.translate(f + AndroidUtilities.m50dp(25), (getMeasuredHeight() / 2.0f) + AndroidUtilities.m50dp(14));
         this.timestampLabelPaint.setColor(getThemedColor("player_time"));
         if (this.timestampLabel[1] != null) {
             canvas.save();
             if (this.timestampChangeDirection != 0) {
-                f3 = BitmapDescriptorFactory.HUE_RED;
                 canvas.translate(AndroidUtilities.m50dp(8) + (AndroidUtilities.m50dp(16) * (-this.timestampChangeDirection) * interpolation), BitmapDescriptorFactory.HUE_RED);
-            } else {
-                f3 = BitmapDescriptorFactory.HUE_RED;
             }
-            canvas.translate(f3, (-this.timestampLabel[1].getHeight()) / 2.0f);
+            canvas.translate(BitmapDescriptorFactory.HUE_RED, (-this.timestampLabel[1].getHeight()) / 2.0f);
             this.timestampLabelPaint.setAlpha((int) ((1.0f - interpolation) * 255.0f * this.timestampsAppearing));
             this.timestampLabel[1].draw(canvas);
             canvas.restore();
@@ -770,12 +766,9 @@ public class SeekBarView extends FrameLayout {
         if (this.timestampLabel[0] != null) {
             canvas.save();
             if (this.timestampChangeDirection != 0) {
-                f2 = BitmapDescriptorFactory.HUE_RED;
                 canvas.translate(AndroidUtilities.m50dp(8) + (AndroidUtilities.m50dp(16) * this.timestampChangeDirection * (1.0f - interpolation)), BitmapDescriptorFactory.HUE_RED);
-            } else {
-                f2 = BitmapDescriptorFactory.HUE_RED;
             }
-            canvas.translate(f2, (-this.timestampLabel[0].getHeight()) / 2.0f);
+            canvas.translate(BitmapDescriptorFactory.HUE_RED, (-this.timestampLabel[0].getHeight()) / 2.0f);
             this.timestampLabelPaint.setAlpha((int) (interpolation * 255.0f * this.timestampsAppearing));
             this.timestampLabel[0].draw(canvas);
             canvas.restore();

@@ -985,12 +985,12 @@
 
     if-nez p1, :cond_1
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v0
 
     :goto_0
     const/4 v10, 0x0
@@ -1012,12 +1012,12 @@
 
     if-nez p1, :cond_2
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v4
 
     goto :goto_1
 
     :cond_2
-    const v9, 0x3dcccccd    # 0.1f
+    move v9, v2
 
     :goto_1
     aput v9, v8, v10
@@ -1037,12 +1037,12 @@
 
     if-nez p1, :cond_3
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v4
 
     goto :goto_2
 
     :cond_3
-    const v9, 0x3dcccccd    # 0.1f
+    move v9, v2
 
     :goto_2
     aput v9, v8, v10
@@ -1064,12 +1064,12 @@
 
     if-ne p1, v3, :cond_4
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v4
 
     goto :goto_3
 
     :cond_4
-    const/4 v11, 0x0
+    move v11, v0
 
     :goto_3
     aput v11, v9, v10
@@ -1091,12 +1091,12 @@
 
     if-ne p1, v3, :cond_5
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v4
 
     goto :goto_4
 
     :cond_5
-    const v11, 0x3dcccccd    # 0.1f
+    move v11, v2
 
     :goto_4
     aput v11, v9, v10
@@ -1118,12 +1118,12 @@
 
     if-ne p1, v3, :cond_6
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v4
 
     goto :goto_5
 
     :cond_6
-    const v11, 0x3dcccccd    # 0.1f
+    move v11, v2
 
     :goto_5
     aput v11, v9, v10
@@ -1145,7 +1145,7 @@
 
     if-ne p1, v1, :cond_7
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v4
 
     :cond_7
     aput v0, v9, v10
@@ -1167,12 +1167,12 @@
 
     if-ne p1, v1, :cond_8
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v4
 
     goto :goto_6
 
     :cond_8
-    const v9, 0x3dcccccd    # 0.1f
+    move v9, v2
 
     :goto_6
     aput v9, v8, v10
@@ -1194,7 +1194,7 @@
 
     if-ne p1, v1, :cond_9
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     :cond_9
     aput v2, v3, v10
@@ -1229,12 +1229,12 @@
 
     if-nez p1, :cond_b
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_7
 
     :cond_b
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_7
     invoke-virtual {p2, v5}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1244,12 +1244,12 @@
 
     if-nez p1, :cond_c
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_8
 
     :cond_c
-    const v5, 0x3dcccccd    # 0.1f
+    move v5, v2
 
     :goto_8
     invoke-virtual {p2, v5}, Landroid/widget/TextView;->setScaleX(F)V
@@ -1259,12 +1259,12 @@
 
     if-nez p1, :cond_d
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_9
 
     :cond_d
-    const v5, 0x3dcccccd    # 0.1f
+    move v5, v2
 
     :goto_9
     invoke-virtual {p2, v5}, Landroid/widget/TextView;->setScaleY(F)V
@@ -1274,12 +1274,12 @@
 
     if-ne p1, v3, :cond_e
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_a
 
     :cond_e
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_a
     invoke-virtual {p2, v5}, Landroid/view/View;->setAlpha(F)V
@@ -1289,12 +1289,12 @@
 
     if-ne p1, v3, :cond_f
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_b
 
     :cond_f
-    const v5, 0x3dcccccd    # 0.1f
+    move v5, v2
 
     :goto_b
     invoke-virtual {p2, v5}, Landroid/view/View;->setScaleX(F)V
@@ -1304,12 +1304,12 @@
 
     if-ne p1, v3, :cond_10
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     goto :goto_c
 
     :cond_10
-    const v3, 0x3dcccccd    # 0.1f
+    move v3, v2
 
     :goto_c
     invoke-virtual {p2, v3}, Landroid/view/View;->setScaleY(F)V
@@ -1319,7 +1319,7 @@
 
     if-ne p1, v1, :cond_11
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v4
 
     :cond_11
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -1329,12 +1329,12 @@
 
     if-ne p1, v1, :cond_12
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v4
 
     goto :goto_d
 
     :cond_12
-    const v0, 0x3dcccccd    # 0.1f
+    move v0, v2
 
     :goto_d
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleX(F)V
@@ -1344,7 +1344,7 @@
 
     if-ne p1, v1, :cond_13
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     :cond_13
     invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setScaleY(F)V

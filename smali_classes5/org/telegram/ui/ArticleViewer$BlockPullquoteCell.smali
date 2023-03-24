@@ -150,7 +150,7 @@
     .line 9833
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 9835
     :cond_1

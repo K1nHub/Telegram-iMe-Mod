@@ -169,7 +169,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 4
 
     .line 117
     instance-of v0, p1, Lokhttp3/Cookie;
@@ -202,9 +202,9 @@
 
     iget-wide v2, p0, Lokhttp3/Cookie;->expiresAt:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-object v0, p1, Lokhttp3/Cookie;->domain:Ljava/lang/String;
 
@@ -324,7 +324,7 @@
     .line 137
     iget-boolean v0, p0, Lokhttp3/Cookie;->secure:Z
 
-    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lcom/smedialink/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -335,7 +335,7 @@
     .line 138
     iget-boolean v0, p0, Lokhttp3/Cookie;->httpOnly:Z
 
-    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lcom/smedialink/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -346,7 +346,7 @@
     .line 139
     iget-boolean v0, p0, Lokhttp3/Cookie;->persistent:Z
 
-    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lcom/smedialink/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -357,7 +357,7 @@
     .line 140
     iget-boolean v0, p0, Lokhttp3/Cookie;->hostOnly:Z
 
-    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lcom/smedialink/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -389,7 +389,7 @@
 .end method
 
 .method public final toString$okhttp(Z)Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     .line 215
     new-instance v0, Ljava/lang/StringBuilder;
@@ -421,9 +421,9 @@
 
     const-wide/high16 v3, -0x8000000000000000L
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     const-string v1, "; max-age=0"
 

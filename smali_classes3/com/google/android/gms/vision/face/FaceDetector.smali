@@ -159,12 +159,12 @@
     .line 73
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v3
 
     .line 75
     :goto_0
@@ -391,7 +391,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     if-ge v3, v2, :cond_4

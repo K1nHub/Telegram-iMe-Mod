@@ -10,20 +10,20 @@ public final class zzi implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        boolean z2 = false;
+        boolean z3 = false;
         LatLng latLng = null;
         String str = null;
         String str2 = null;
         IBinder iBinder = null;
-        float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
-        boolean z = false;
-        boolean z2 = false;
-        boolean z3 = false;
-        float f3 = BitmapDescriptorFactory.HUE_RED;
-        float f4 = 0.5f;
-        float f5 = BitmapDescriptorFactory.HUE_RED;
-        float f6 = 1.0f;
-        float f7 = BitmapDescriptorFactory.HUE_RED;
+        float f = 0.0f;
+        float f2 = 0.0f;
+        float f3 = 0.0f;
+        float f4 = 0.0f;
+        float f5 = 0.0f;
+        float f6 = 0.5f;
+        float f7 = 1.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {
@@ -58,16 +58,16 @@ public final class zzi implements Parcelable.Creator {
                     f3 = SafeParcelReader.readFloat(parcel, readHeader);
                     break;
                 case 12:
-                    f4 = SafeParcelReader.readFloat(parcel, readHeader);
-                    break;
-                case 13:
-                    f5 = SafeParcelReader.readFloat(parcel, readHeader);
-                    break;
-                case 14:
                     f6 = SafeParcelReader.readFloat(parcel, readHeader);
                     break;
-                case 15:
+                case 13:
+                    f4 = SafeParcelReader.readFloat(parcel, readHeader);
+                    break;
+                case 14:
                     f7 = SafeParcelReader.readFloat(parcel, readHeader);
+                    break;
+                case 15:
+                    f5 = SafeParcelReader.readFloat(parcel, readHeader);
                     break;
                 default:
                     SafeParcelReader.skipUnknownField(parcel, readHeader);
@@ -75,7 +75,7 @@ public final class zzi implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new MarkerOptions(latLng, str, str2, iBinder, f, f2, z, z2, z3, f3, f4, f5, f6, f7);
+        return new MarkerOptions(latLng, str, str2, iBinder, f, f2, z, z2, z3, f3, f6, f4, f7, f5);
     }
 
     @Override // android.os.Parcelable.Creator

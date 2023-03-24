@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletPinPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,120:1\n39#2,8:121\n39#2,8:129\n*S KotlinDebug\n*F\n+ 1 CreateWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter\n*L\n50#1:121,8\n66#1:129,8\n*E\n"
+    value = "SMAP\nCreateWalletPinPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,118:1\n39#2,8:119\n39#2,8:127\n*S KotlinDebug\n*F\n+ 1 CreateWalletPinPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter\n*L\n48#1:119,8\n64#1:127,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -89,49 +89,49 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 30
+    .line 28
     invoke-direct {p0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 25
+    .line 23
     iput-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 26
+    .line 24
     iput-object p3, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 27
+    .line 25
     iput-object p4, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 28
+    .line 26
     iput-object p5, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 29
+    .line 27
     iput-object p6, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->telegramControllersGateway:Lcom/smedialink/gateway/TelegramControllersGateway;
 
-    .line 33
+    .line 31
     sget-object p2, Lcom/smedialink/model/common/ScreenStep;->FIRST_STEP:Lcom/smedialink/model/common/ScreenStep;
 
     iput-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->currentScreenStep:Lcom/smedialink/model/common/ScreenStep;
 
     const-string p2, ""
 
-    .line 36
+    .line 34
     iput-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->pin:Ljava/lang/String;
 
-    .line 37
+    .line 35
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;->getPassword()Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->password:Ljava/lang/String;
 
-    .line 38
+    .line 36
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;->getGuid()Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->guid:Ljava/lang/String;
 
-    .line 39
+    .line 37
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/pin/WalletPinScreenArgs;->getSeed()Ljava/lang/String;
 
     move-result-object p1
@@ -144,7 +144,7 @@
 .method public static final synthetic access$getPassword$p(Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;)Ljava/lang/String;
     .locals 0
 
-    .line 22
+    .line 20
     iget-object p0, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->password:Ljava/lang/String;
 
     return-object p0
@@ -153,7 +153,7 @@
 .method public static final synthetic access$getPin$p(Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;)Ljava/lang/String;
     .locals 0
 
-    .line 22
+    .line 20
     iget-object p0, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->pin:Ljava/lang/String;
 
     return-object p0
@@ -162,7 +162,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 22
+    .line 20
     iget-object p0, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -171,7 +171,7 @@
 .method public static final synthetic access$onPinError(Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;Ljava/lang/String;)V
     .locals 0
 
-    .line 22
+    .line 20
     invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->onPinError(Ljava/lang/String;)V
 
     return-void
@@ -180,7 +180,7 @@
 .method public static final synthetic access$savePinEncrypted(Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;)V
     .locals 0
 
-    .line 22
+    .line 20
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->savePinEncrypted()V
 
     return-void
@@ -189,7 +189,7 @@
 .method private final isValidPin(Ljava/lang/String;)Z
     .locals 1
 
-    .line 113
+    .line 111
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -212,17 +212,17 @@
 .method private final onPinError(Ljava/lang/String;)V
     .locals 1
 
-    .line 107
+    .line 105
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinView;
 
-    .line 108
+    .line 106
     invoke-interface {v0, p1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
-    .line 109
+    .line 107
     invoke-interface {v0}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinView;->onCodeErrorShake()V
 
     return-void
@@ -231,7 +231,7 @@
 .method private final savePinEncrypted()V
     .locals 4
 
-    .line 98
+    .line 96
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -240,11 +240,11 @@
 
     return-void
 
-    .line 99
+    .line 97
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/FingerprintController;->createCipher()Z
 
-    .line 100
+    .line 98
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->telegramControllersGateway:Lcom/smedialink/gateway/TelegramControllersGateway;
 
     const/4 v1, 0x0
@@ -257,7 +257,7 @@
 
     move-result-object v0
 
-    .line 101
+    .line 99
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->pin:Ljava/lang/String;
 
     invoke-static {v1}, Lorg/telegram/messenger/FingerprintController;->encode(Ljava/lang/String;)Ljava/lang/String;
@@ -271,7 +271,7 @@
     :cond_1
     invoke-virtual {v0, v1}, Lorg/fork/controller/WalletFingerprintController;->setWalletPinCodeEncrypted(Ljava/lang/String;)V
 
-    .line 102
+    .line 100
     invoke-virtual {v0}, Lorg/fork/controller/WalletFingerprintController;->saveConfig()V
 
     return-void
@@ -286,14 +286,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 83
     invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->isValidPin(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 86
+    .line 84
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->currentScreenStep:Lcom/smedialink/model/common/ScreenStep;
 
     sget-object v1, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -314,13 +314,13 @@
 
     goto :goto_0
 
-    .line 88
+    .line 86
     :cond_0
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->validatePin(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 87
+    .line 85
     :cond_1
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->pin:Ljava/lang/String;
 
@@ -336,7 +336,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
+    .line 31
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->currentScreenStep:Lcom/smedialink/model/common/ScreenStep;
 
     return-void
@@ -349,7 +349,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 42
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->pin:Ljava/lang/String;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -358,7 +358,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 45
+    .line 43
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->guid:Ljava/lang/String;
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -371,12 +371,12 @@
 
     if-lez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     const-string v2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
@@ -397,23 +397,23 @@
 
     if-lez p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_1
     if-eqz p1, :cond_2
 
     goto :goto_2
 
-    .line 62
+    .line 60
     :cond_2
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 63
+    .line 61
     iget-object v6, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->guid:Ljava/lang/String;
 
     iget-object v7, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->password:Ljava/lang/String;
@@ -422,7 +422,7 @@
 
     move-result-object p1
 
-    .line 64
+    .line 62
     iget-object v6, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v6}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -435,7 +435,7 @@
 
     invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 63
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v4
@@ -476,17 +476,17 @@
     .line 46
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 77
+    .line 75
     invoke-static {p0, p1, v5, v0, v5}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     goto :goto_3
 
-    .line 46
+    .line 44
     :cond_3
     :goto_2
     iget-object v6, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 47
+    .line 45
     iget-object v7, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->password:Ljava/lang/String;
 
     iget-object v8, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->pin:Ljava/lang/String;
@@ -505,7 +505,7 @@
 
     move-result-object p1
 
-    .line 48
+    .line 46
     iget-object v6, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v6}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -518,7 +518,7 @@
 
     invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 47
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v4
@@ -531,7 +531,7 @@
 
     move-result-object p1
 
-    .line 50
+    .line 48
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -564,12 +564,12 @@
     .line 46
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 58
     invoke-static {p0, p1, v5, v0, v5}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     goto :goto_3
 
-    .line 80
+    .line 78
     :cond_4
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 

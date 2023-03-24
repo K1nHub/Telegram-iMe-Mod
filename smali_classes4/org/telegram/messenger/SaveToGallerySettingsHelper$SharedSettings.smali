@@ -131,12 +131,12 @@
     if-ne v2, v3, :cond_4
 
     :cond_3
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-eqz p2, :cond_5
@@ -183,9 +183,9 @@
 
     if-eqz p3, :cond_7
 
-    cmp-long p3, p1, v5
+    cmp-long p1, p1, v5
 
-    if-gez p3, :cond_9
+    if-gez p1, :cond_9
 
     :cond_7
     return v1

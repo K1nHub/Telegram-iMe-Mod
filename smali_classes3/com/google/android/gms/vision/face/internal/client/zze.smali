@@ -41,17 +41,17 @@
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/high16 v9, -0x40800000    # -1.0f
+    move v9, v2
 
     .line 14
     :goto_0
@@ -138,8 +138,6 @@
     invoke-direct/range {v3 .. v9}, Lcom/google/android/gms/vision/face/internal/client/zzf;-><init>(IIIZZF)V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x2

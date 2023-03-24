@@ -327,11 +327,11 @@
     :cond_1
     const-wide v6, 0x3f847ae147ae147bL    # 0.01
 
-    mul-double v2, v2, v6
+    mul-double/2addr v2, v6
 
     const-wide v6, 0x3fefae147ae147aeL    # 0.99
 
-    mul-double v6, v6, v4
+    mul-double/2addr v6, v4
 
     add-double/2addr v2, v6
 
@@ -346,7 +346,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     long-to-double v2, v2
 
@@ -382,7 +382,7 @@
 
     const/high16 p2, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 

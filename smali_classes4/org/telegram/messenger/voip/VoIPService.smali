@@ -1344,10 +1344,10 @@
 .method private acceptIncomingCallFromNotification()V
     .locals 3
 
-    .line 4349
+    .line 4352
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->showNotification()V
 
-    .line 4350
+    .line 4353
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -1382,7 +1382,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4353
+    .line 4356
     :cond_0
     :try_start_0
     new-instance v0, Landroid/content/Intent;
@@ -1412,25 +1412,25 @@
     :catch_0
     move-exception v0
 
-    .line 4355
+    .line 4358
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_1
 
     const-string v1, "Error starting permission activity"
 
-    .line 4356
+    .line 4359
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_0
     return-void
 
-    .line 4361
+    .line 4364
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->acceptIncomingCall()V
 
-    .line 4363
+    .line 4366
     :try_start_1
     new-instance v0, Landroid/content/Intent;
 
@@ -1461,14 +1461,14 @@
     :catch_1
     move-exception v0
 
-    .line 4365
+    .line 4368
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_3
 
     const-string v1, "Error starting incall activity"
 
-    .line 4366
+    .line 4369
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_3
@@ -1994,14 +1994,14 @@
 
     const-string v0, "telecom"
 
-    .line 4420
+    .line 4423
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/telecom/TelecomManager;
 
-    .line 4421
+    .line 4424
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -2012,7 +2012,7 @@
 
     move-result-object v1
 
-    .line 4422
+    .line 4425
     new-instance v2, Landroid/telecom/PhoneAccountHandle;
 
     new-instance v3, Landroid/content/ComponentName;
@@ -2039,7 +2039,7 @@
 
     invoke-direct {v2, v3, v4}, Landroid/telecom/PhoneAccountHandle;-><init>(Landroid/content/ComponentName;Ljava/lang/String;)V
 
-    .line 4423
+    .line 4426
     new-instance v3, Landroid/telecom/PhoneAccount$Builder;
 
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -2054,14 +2054,14 @@
 
     const/16 v1, 0x800
 
-    .line 4424
+    .line 4427
     invoke-virtual {v3, v1}, Landroid/telecom/PhoneAccount$Builder;->setCapabilities(I)Landroid/telecom/PhoneAccount$Builder;
 
     move-result-object v1
 
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_launcher_dr:I
 
-    .line 4425
+    .line 4428
     invoke-static {p0, v3}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
     move-result-object v3
@@ -2072,31 +2072,31 @@
 
     const v3, -0xd35a20
 
-    .line 4426
+    .line 4429
     invoke-virtual {v1, v3}, Landroid/telecom/PhoneAccount$Builder;->setHighlightColor(I)Landroid/telecom/PhoneAccount$Builder;
 
     move-result-object v1
 
     const-string v3, "sip"
 
-    .line 4427
+    .line 4430
     invoke-virtual {v1, v3}, Landroid/telecom/PhoneAccount$Builder;->addSupportedUriScheme(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;
 
     move-result-object v1
 
-    .line 4428
+    .line 4431
     invoke-virtual {v1}, Landroid/telecom/PhoneAccount$Builder;->build()Landroid/telecom/PhoneAccount;
 
     move-result-object v1
 
-    .line 4429
+    .line 4432
     invoke-virtual {v0, v1}, Landroid/telecom/TelecomManager;->registerPhoneAccount(Landroid/telecom/PhoneAccount;)V
 
     return-object v2
 .end method
 
 .method private broadcastUnknownParticipants(J[I)V
-    .locals 10
+    .locals 9
 
     .line 2001
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
@@ -2124,7 +2124,7 @@
     .line 2006
     array-length v4, p3
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     if-ge v5, v4, :cond_5
@@ -2182,9 +2182,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v2
+    cmp-long v7, v7, v2
 
-    if-eqz v9, :cond_4
+    if-eqz v7, :cond_4
 
     iget v7, v6, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->source:I
 
@@ -2231,7 +2231,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-ge v3, v2, :cond_6
@@ -2265,7 +2265,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_3
     if-ge p2, p1, :cond_8
@@ -2330,12 +2330,12 @@
 .method private callEnded()V
     .locals 5
 
-    .line 4262
+    .line 4265
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 4263
+    .line 4266
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2360,7 +2360,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 4265
+    .line 4268
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
@@ -2377,10 +2377,10 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 4266
+    .line 4269
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->needPlayEndSound:Z
 
-    .line 4268
+    .line 4271
     :cond_2
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda24;
 
@@ -2390,7 +2390,7 @@
 
     const/16 v0, 0x2bc
 
-    .line 4270
+    .line 4273
     sget-object v1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda30;
@@ -2399,20 +2399,20 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 4277
+    .line 4280
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->connectingSoundRunnable:Ljava/lang/Runnable;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_3
 
-    .line 4278
+    .line 4281
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 4279
+    .line 4282
     iput-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->connectingSoundRunnable:Ljava/lang/Runnable;
 
-    .line 4281
+    .line 4284
     :cond_3
     iget-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->needPlayEndSound:Z
 
@@ -2420,15 +2420,15 @@
 
     const/4 v1, 0x1
 
-    .line 4282
+    .line 4285
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->playingSound:Z
 
-    .line 4283
+    .line 4286
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
     if-nez v1, :cond_4
 
-    .line 4284
+    .line 4287
     sget-object v1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v3, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda9;
@@ -2439,7 +2439,7 @@
 
     goto :goto_0
 
-    .line 4286
+    .line 4289
     :cond_4
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -2453,7 +2453,7 @@
 
     const/16 v0, 0x1f4
 
-    .line 4289
+    .line 4292
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->afterSoundRunnable:Ljava/lang/Runnable;
 
@@ -2461,19 +2461,19 @@
 
     invoke-static {v1, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 4291
+    .line 4294
     :cond_5
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->timeoutRunnable:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_6
 
-    .line 4292
+    .line 4295
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 4293
+    .line 4296
     iput-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->timeoutRunnable:Ljava/lang/Runnable;
 
-    .line 4295
+    .line 4298
     :cond_6
     iget-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->needPlayEndSound:Z
 
@@ -2489,7 +2489,7 @@
     :goto_1
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->endConnectionServiceCall(J)V
 
-    .line 4296
+    .line 4299
     invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
     return-void
@@ -2498,7 +2498,7 @@
 .method private callFailed()V
     .locals 3
 
-    .line 3918
+    .line 3921
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     const/4 v1, 0x0
@@ -2527,60 +2527,60 @@
 .method private callFailed(Ljava/lang/String;)V
     .locals 7
 
-    .line 4118
+    .line 4121
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     const-wide/16 v1, 0x3e8
 
     if-eqz v0, :cond_2
 
-    .line 4119
+    .line 4122
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "Discarding failed call"
 
-    .line 4120
+    .line 4123
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 4122
+    .line 4125
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;-><init>()V
 
-    .line 4123
+    .line 4126
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;-><init>()V
 
     iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->peer:Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
-    .line 4124
+    .line 4127
     iget-object v4, p0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     iget-wide v5, v4, Lorg/telegram/tgnet/TLRPC$PhoneCall;->access_hash:J
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->access_hash:J
 
-    .line 4125
+    .line 4128
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$PhoneCall;->id:J
 
     iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->id:J
 
-    .line 4126
+    .line 4129
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->getCallDuration()J
 
     move-result-wide v3
 
     div-long/2addr v3, v1
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    iput v4, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->duration:I
+    iput v3, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->duration:I
 
-    .line 4127
+    .line 4130
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     const/4 v4, 0x0
@@ -2603,14 +2603,14 @@
     :goto_0
     iput-wide v3, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->connection_id:J
 
-    .line 4128
+    .line 4131
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonDisconnect;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonDisconnect;-><init>()V
 
     iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->reason:Lorg/telegram/tgnet/TLRPC$PhoneCallDiscardReason;
 
-    .line 4129
+    .line 4132
     iget v3, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2621,7 +2621,7 @@
 
     invoke-virtual {v3, v0, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 4142
+    .line 4145
     :cond_2
     :try_start_0
     new-instance v0, Ljava/lang/Exception;
@@ -2659,13 +2659,13 @@
     :catch_0
     move-exception v0
 
-    .line 4144
+    .line 4147
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4146
+    .line 4149
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->lastError:Ljava/lang/String;
 
-    .line 4147
+    .line 4150
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda31;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/messenger/voip/VoIPService;)V
@@ -2674,7 +2674,7 @@
 
     const-string v0, "ERROR_LOCALIZED"
 
-    .line 4148
+    .line 4151
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -2687,10 +2687,10 @@
 
     if-eqz p1, :cond_3
 
-    .line 4149
+    .line 4152
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->playingSound:Z
 
-    .line 4150
+    .line 4153
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v3, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda32;
@@ -2699,12 +2699,12 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 4151
+    .line 4154
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->afterSoundRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 4153
+    .line 4156
     :cond_3
     sget-boolean p1, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
@@ -2714,24 +2714,24 @@
 
     if-eqz p1, :cond_4
 
-    .line 4154
+    .line 4157
     new-instance v1, Landroid/telecom/DisconnectCause;
 
     invoke-direct {v1, v0}, Landroid/telecom/DisconnectCause;-><init>(I)V
 
     invoke-virtual {p1, v1}, Landroid/telecom/Connection;->setDisconnected(Landroid/telecom/DisconnectCause;)V
 
-    .line 4155
+    .line 4158
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
     invoke-virtual {p1}, Landroid/telecom/Connection;->destroy()V
 
     const/4 p1, 0x0
 
-    .line 4156
+    .line 4159
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
-    .line 4158
+    .line 4161
     :cond_4
     invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
@@ -2800,7 +2800,7 @@
 .method private checkIsNear()V
     .locals 3
 
-    .line 3757
+    .line 3760
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->remoteVideoState:I
 
     const/4 v1, 0x0
@@ -2815,7 +2815,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 3758
+    .line 3761
     :cond_0
     invoke-direct {p0, v1}, Lorg/telegram/messenger/voip/VoIPService;->checkIsNear(Z)V
 
@@ -2826,17 +2826,17 @@
 .method private checkIsNear(Z)V
     .locals 2
 
-    .line 3763
+    .line 3766
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isProximityNear:Z
 
     if-eq p1, v0, :cond_2
 
-    .line 3764
+    .line 3767
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 3765
+    .line 3768
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2853,13 +2853,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3767
+    .line 3770
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/messenger/voip/VoIPService;->isProximityNear:Z
 
     if-eqz p1, :cond_1
 
-    .line 3770
+    .line 3773
     :try_start_0
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->proximityWakelock:Landroid/os/PowerManager$WakeLock;
 
@@ -2867,7 +2867,7 @@
 
     goto :goto_0
 
-    .line 3772
+    .line 3775
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->proximityWakelock:Landroid/os/PowerManager$WakeLock;
 
@@ -2882,7 +2882,7 @@
     :catch_0
     move-exception p1
 
-    .line 3775
+    .line 3778
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -2893,7 +2893,7 @@
 .method private checkUpdateBluetoothHeadset()V
     .locals 6
 
-    .line 3557
+    .line 3560
     sget-boolean v0, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     if-nez v0, :cond_4
@@ -2911,14 +2911,14 @@
     :try_start_0
     const-string v0, "media_router"
 
-    .line 3559
+    .line 3562
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/MediaRouter;
 
-    .line 3560
+    .line 3563
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x18
@@ -2931,7 +2931,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 3561
+    .line 3564
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->btAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0, v5}, Landroid/bluetooth/BluetoothAdapter;->getProfileConnectionState(I)I
@@ -2940,13 +2940,13 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
-    .line 3562
+    .line 3565
     :cond_0
     invoke-direct {p0, v4}, Lorg/telegram/messenger/voip/VoIPService;->updateBluetoothHeadsetState(Z)V
 
-    .line 3563
+    .line 3566
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2966,18 +2966,18 @@
 
     check-cast v1, Lorg/telegram/messenger/voip/VoIPService$StateListener;
 
-    .line 3564
+    .line 3567
     invoke-interface {v1}, Lorg/telegram/messenger/voip/VoIPService$StateListener;->onAudioSettingsChanged()V
 
     goto :goto_0
 
-    .line 3567
+    .line 3570
     :cond_1
     invoke-virtual {v0, v5}, Landroid/media/MediaRouter;->getSelectedRoute(I)Landroid/media/MediaRouter$RouteInfo;
 
     move-result-object v0
 
-    .line 3568
+    .line 3571
     invoke-virtual {v0}, Landroid/media/MediaRouter$RouteInfo;->getDeviceType()I
 
     move-result v0
@@ -2986,7 +2986,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 3569
+    .line 3572
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->btAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v0, v5}, Landroid/bluetooth/BluetoothAdapter;->getProfileConnectionState(I)I
@@ -2995,13 +2995,13 @@
 
     if-ne v0, v3, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v5
 
-    .line 3570
+    .line 3573
     :cond_2
     invoke-direct {p0, v4}, Lorg/telegram/messenger/voip/VoIPService;->updateBluetoothHeadsetState(Z)V
 
-    .line 3571
+    .line 3574
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -3021,12 +3021,12 @@
 
     check-cast v1, Lorg/telegram/messenger/voip/VoIPService$StateListener;
 
-    .line 3572
+    .line 3575
     invoke-interface {v1}, Lorg/telegram/messenger/voip/VoIPService$StateListener;->onAudioSettingsChanged()V
 
     goto :goto_1
 
-    .line 3575
+    .line 3578
     :cond_3
     invoke-direct {p0, v4}, Lorg/telegram/messenger/voip/VoIPService;->updateBluetoothHeadsetState(Z)V
     :try_end_0
@@ -3037,7 +3037,7 @@
     :catchall_0
     move-exception v0
 
-    .line 3579
+    .line 3582
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
@@ -3048,12 +3048,12 @@
 .method private configureDeviceForCall()V
     .locals 5
 
-    .line 3642
+    .line 3645
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 3643
+    .line 3646
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3072,7 +3072,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3646
+    .line 3649
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -3082,14 +3082,14 @@
 
     if-lt v0, v1, :cond_3
 
-    .line 3647
+    .line 3650
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->hasRtmpStream()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
@@ -3099,7 +3099,7 @@
     :goto_0
     invoke-static {v0}, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->setAudioTrackUsageAttribute(I)V
 
-    .line 3648
+    .line 3651
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->hasRtmpStream()Z
 
     move-result v0
@@ -3116,25 +3116,25 @@
     :goto_1
     invoke-static {v0}, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->setAudioStreamType(I)V
 
-    .line 3651
+    .line 3654
     :cond_3
     iput-boolean v2, p0, Lorg/telegram/messenger/voip/VoIPService;->needPlayEndSound:Z
 
     const-string v0, "audio"
 
-    .line 3652
+    .line 3655
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 3653
+    .line 3656
     sget-boolean v1, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     if-nez v1, :cond_4
 
-    .line 3654
+    .line 3657
     sget-object v1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda44;
@@ -3146,7 +3146,7 @@
     :cond_4
     const-string v0, "sensor"
 
-    .line 3713
+    .line 3716
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -3155,7 +3155,7 @@
 
     const/16 v1, 0x8
 
-    .line 3714
+    .line 3717
     invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     move-result-object v1
@@ -3165,7 +3165,7 @@
     :try_start_0
     const-string v2, "power"
 
-    .line 3717
+    .line 3720
     invoke-virtual {p0, v2}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
@@ -3184,7 +3184,7 @@
 
     const/4 v2, 0x3
 
-    .line 3718
+    .line 3721
     invoke-virtual {v0, p0, v1, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -3194,14 +3194,14 @@
     :catch_0
     move-exception v0
 
-    .line 3721
+    .line 3724
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_5
 
     const-string v1, "Error initializing proximity sensor"
 
-    .line 3722
+    .line 3725
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_5
@@ -3235,7 +3235,7 @@
         }
     .end annotation
 
-    .line 3418
+    .line 3421
     new-instance v0, Ljava/io/BufferedReader;
 
     new-instance v1, Ljava/io/InputStreamReader;
@@ -3244,12 +3244,12 @@
 
     invoke-direct {v0, v1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 3419
+    .line 3422
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 3421
+    .line 3424
     :goto_0
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -3257,7 +3257,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 3422
+    .line 3425
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "\n"
@@ -3266,11 +3266,11 @@
 
     goto :goto_0
 
-    .line 3424
+    .line 3427
     :cond_0
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
 
-    .line 3425
+    .line 3428
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -3394,12 +3394,12 @@
 
     if-ne v1, v2, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_2
     if-nez v1, :cond_5
@@ -3408,12 +3408,12 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v10, 0x1
+    move v10, v2
 
     goto :goto_3
 
     :cond_5
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_3
     new-instance v11, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda72;
@@ -3477,12 +3477,12 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/messenger/voip/NativeInstance;->setOnStateUpdatedListener(Lorg/telegram/messenger/voip/Instance$OnStateUpdatedListener;)V
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_4
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 2193
     :goto_4
@@ -3548,7 +3548,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -3589,7 +3589,7 @@
 
     iput-object v6, v5, Lorg/telegram/messenger/voip/NativeInstance$SsrcGroup;->ssrcs:[I
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 1298
     :goto_1
@@ -3636,12 +3636,12 @@
 .method private dispatchStateChanged(I)V
     .locals 3
 
-    .line 3604
+    .line 3607
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 3605
+    .line 3608
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3672,11 +3672,11 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3607
+    .line 3610
     :cond_0
     iput p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
 
-    .line 3608
+    .line 3611
     sget-boolean v0, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     if-eqz v0, :cond_1
@@ -3689,13 +3689,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 3609
+    .line 3612
     invoke-virtual {v0}, Landroid/telecom/Connection;->setActive()V
 
     :cond_1
     const/4 v0, 0x0
 
-    .line 3611
+    .line 3614
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
 
@@ -3705,7 +3705,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 3612
+    .line 3615
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3714,7 +3714,7 @@
 
     check-cast v1, Lorg/telegram/messenger/voip/VoIPService$StateListener;
 
-    .line 3613
+    .line 3616
     invoke-interface {v1, p1}, Lorg/telegram/messenger/voip/VoIPService$StateListener;->onStateChanged(I)V
 
     add-int/lit8 v0, v0, 0x1
@@ -3726,30 +3726,30 @@
 .end method
 
 .method private endConnectionServiceCall(J)V
-    .locals 4
+    .locals 3
 
-    .line 4300
+    .line 4303
     sget-boolean v0, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     if-eqz v0, :cond_1
 
-    .line 4301
+    .line 4304
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda19;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/messenger/voip/VoIPService;)V
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p1, v1
+    cmp-long v1, p1, v1
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
-    .line 4325
+    .line 4328
     invoke-static {v0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto :goto_0
 
-    .line 4327
+    .line 4330
     :cond_0
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
@@ -3761,7 +3761,7 @@
 .method private fetchBluetoothDeviceName()V
     .locals 3
 
-    .line 3728
+    .line 3731
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->fetchingBluetoothDeviceName:Z
 
     if-eqz v0, :cond_0
@@ -3771,16 +3771,16 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 3732
+    .line 3735
     :try_start_0
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentBluetoothDeviceName:Ljava/lang/String;
 
     const/4 v0, 0x1
 
-    .line 3733
+    .line 3736
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->fetchingBluetoothDeviceName:Z
 
-    .line 3734
+    .line 3737
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v1
@@ -3796,7 +3796,7 @@
     :catchall_0
     move-exception v0
 
-    .line 3736
+    .line 3739
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -3808,7 +3808,7 @@
 
     const-string v0, "connectivity"
 
-    .line 3914
+    .line 3917
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -3871,7 +3871,7 @@
 .method private getNetworkType()I
     .locals 3
 
-    .line 3869
+    .line 3872
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
@@ -3882,7 +3882,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 3872
+    .line 3875
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
 
     move-result v2
@@ -3907,7 +3907,7 @@
 
     goto :goto_1
 
-    .line 3874
+    .line 3877
     :cond_2
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->getSubtype()I
 
@@ -3975,7 +3975,7 @@
 
     const/4 v1, 0x1
 
-    .line 3924
+    .line 3927
     :try_start_0
     instance-of v2, p1, Lorg/telegram/tgnet/TLRPC$User;
     :try_end_0
@@ -3985,13 +3985,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 3925
+    .line 3928
     :try_start_1
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 3926
+    .line 3929
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
     if-eqz v4, :cond_3
@@ -4000,7 +4000,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 3927
+    .line 3930
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v4
@@ -4015,7 +4015,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 3929
+    .line 3932
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v2
@@ -4030,17 +4030,17 @@
 
     goto :goto_0
 
-    .line 3932
+    .line 3935
     :cond_0
     :try_start_2
     new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 3933
+    .line 3936
     iput-boolean v1, v3, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
 
-    .line 3934
+    .line 3937
     iget v4, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -4070,19 +4070,19 @@
     :catchall_0
     move-exception v2
 
-    .line 3936
+    .line 3939
     :try_start_3
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 3941
+    .line 3944
     :cond_1
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 3942
+    .line 3945
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$Chat;->photo:Lorg/telegram/tgnet/TLRPC$ChatPhoto;
 
     if-eqz v4, :cond_3
@@ -4091,7 +4091,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 3943
+    .line 3946
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v4
@@ -4106,7 +4106,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 3945
+    .line 3948
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v2
@@ -4121,17 +4121,17 @@
 
     goto :goto_0
 
-    .line 3948
+    .line 3951
     :cond_2
     :try_start_4
     new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 3949
+    .line 3952
     iput-boolean v1, v3, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
 
-    .line 3950
+    .line 3953
     iget v4, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -4161,7 +4161,7 @@
     :catchall_1
     move-exception v2
 
-    .line 3952
+    .line 3955
     :try_start_5
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_5
@@ -4172,22 +4172,22 @@
     :catchall_2
     move-exception v2
 
-    .line 3958
+    .line 3961
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
     :goto_0
     if-nez v0, :cond_5
 
-    .line 3961
+    .line 3964
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->createDialogsResources(Landroid/content/Context;)V
 
-    .line 3963
+    .line 3966
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_4
 
-    .line 3964
+    .line 3967
     new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
@@ -4196,7 +4196,7 @@
 
     goto :goto_1
 
-    .line 3966
+    .line 3969
     :cond_4
     new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -4207,7 +4207,7 @@
     :goto_1
     const/16 p1, 0x2a
 
-    .line 3968
+    .line 3971
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -4222,7 +4222,7 @@
 
     move-result-object p1
 
-    .line 3969
+    .line 3972
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -4235,7 +4235,7 @@
 
     invoke-virtual {v0, v4, v4, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 3970
+    .line 3973
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
@@ -4244,18 +4244,18 @@
 
     move-object v0, p1
 
-    .line 3973
+    .line 3976
     :cond_5
     new-instance p1, Landroid/graphics/Canvas;
 
     invoke-direct {p1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 3974
+    .line 3977
     new-instance v2, Landroid/graphics/Path;
 
     invoke-direct {v2}, Landroid/graphics/Path;-><init>()V
 
-    .line 3975
+    .line 3978
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -4284,15 +4284,15 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 3976
+    .line 3979
     invoke-virtual {v2}, Landroid/graphics/Path;->toggleInverseFillType()V
 
-    .line 3977
+    .line 3980
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v1}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 3978
+    .line 3981
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -4301,7 +4301,7 @@
 
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 3979
+    .line 3982
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     return-object v0
@@ -4364,22 +4364,22 @@
         }
     .end annotation
 
-    .line 3429
+    .line 3432
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 3430
+    .line 3433
     new-instance p0, Ljava/io/FileInputStream;
 
     invoke-direct {p0, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    .line 3431
+    .line 3434
     invoke-static {p0}, Lorg/telegram/messenger/voip/VoIPService;->convertStreamToString(Ljava/io/InputStream;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3432
+    .line 3435
     invoke-virtual {p0}, Ljava/io/FileInputStream;->close()V
 
     return-object v0
@@ -4397,7 +4397,7 @@
         }
     .end annotation
 
-    .line 3315
+    .line 3318
     const-class v0, Lorg/telegram/ui/LaunchActivity;
 
     return-object v0
@@ -4447,10 +4447,10 @@
 .method private initializeAccountRelatedThings()V
     .locals 2
 
-    .line 3469
+    .line 3472
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->updateServerConfig()V
 
-    .line 3470
+    .line 3473
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -4461,7 +4461,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3471
+    .line 3474
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4710,7 +4710,7 @@
     goto :goto_3
 
     :catch_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 2348
     :goto_3
@@ -4723,11 +4723,15 @@
 
     goto :goto_4
 
-    :cond_8
-    const/4 v0, 0x0
-
     :catch_2
-    const/4 v2, 0x0
+    move v2, v3
+
+    goto :goto_4
+
+    :cond_8
+    move v0, v3
+
+    move v2, v0
 
     .line 2353
     :goto_4
@@ -4791,13 +4795,13 @@
     goto :goto_5
 
     :cond_9
-    const/16 v20, 0x0
+    move/from16 v20, v3
 
     goto :goto_6
 
     :cond_a
     :goto_5
-    const/16 v20, 0x1
+    move/from16 v20, v7
 
     :goto_6
     if-eqz v2, :cond_c
@@ -4810,13 +4814,13 @@
     goto :goto_7
 
     :cond_b
-    const/16 v21, 0x0
+    move/from16 v21, v3
 
     goto :goto_8
 
     :cond_c
     :goto_7
-    const/16 v21, 0x1
+    move/from16 v21, v7
 
     .line 2363
     :goto_8
@@ -4927,7 +4931,7 @@
     goto :goto_a
 
     :cond_e
-    const/4 v2, 0x2
+    move v2, v8
 
     .line 2373
     :goto_a
@@ -4948,7 +4952,7 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
-    const/4 v13, 0x0
+    move v13, v3
 
     :goto_b
     if-ge v13, v6, :cond_10
@@ -5401,7 +5405,7 @@
     goto :goto_11
 
     :cond_18
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_11
     invoke-static {v3, v7}, Lorg/telegram/messenger/voip/NativeInstance;->createVideoCapturer(Lorg/webrtc/VideoSink;I)J
@@ -5624,7 +5628,7 @@
 .method public static isAnyKindOfCallActive()Z
     .locals 3
 
-    .line 4400
+    .line 4403
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -5633,7 +5637,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4401
+    .line 4404
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -5663,7 +5667,7 @@
 .method private isFinished()Z
     .locals 2
 
-    .line 4407
+    .line 4410
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
 
     const/16 v1, 0xb
@@ -5905,7 +5909,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, p2, :cond_3
@@ -5919,7 +5923,7 @@
 
     const-wide/high16 v5, 0x4070000000000000L    # 256.0
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     double-to-int v3, v3
 
@@ -6250,7 +6254,7 @@
 
     const/16 v0, 0xb
 
-    .line 4268
+    .line 4271
     invoke-direct {p0, v0}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
 
     return-void
@@ -6259,19 +6263,19 @@
 .method private synthetic lambda$callEnded$91()V
     .locals 2
 
-    .line 4271
+    .line 4274
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spPlayId:I
 
     if-eqz v0, :cond_0
 
-    .line 4272
+    .line 4275
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v1, v0}, Landroid/media/SoundPool;->stop(I)V
 
     const/4 v0, 0x0
 
-    .line 4273
+    .line 4276
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spPlayId:I
 
     :cond_0
@@ -6281,7 +6285,7 @@
 .method private synthetic lambda$callEnded$92()V
     .locals 7
 
-    .line 4284
+    .line 4287
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->spEndId:I
@@ -6304,7 +6308,7 @@
 .method private synthetic lambda$callEnded$93()V
     .locals 7
 
-    .line 4286
+    .line 4289
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->spVoiceChatEndId:I
@@ -6329,12 +6333,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 4131
+    .line 4134
     sget-boolean p0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p0, :cond_1
 
-    .line 4132
+    .line 4135
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6353,13 +6357,13 @@
 
     goto :goto_0
 
-    .line 4135
+    .line 4138
     :cond_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_1
 
-    .line 4136
+    .line 4139
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -6386,7 +6390,7 @@
 
     const/4 v0, 0x4
 
-    .line 4147
+    .line 4150
     invoke-direct {p0, v0}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
 
     return-void
@@ -6395,7 +6399,7 @@
 .method private synthetic lambda$callFailed$83()V
     .locals 7
 
-    .line 4150
+    .line 4153
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->spFailedID:I
@@ -6418,7 +6422,7 @@
 .method private static synthetic lambda$configureDeviceForCall$77()V
     .locals 2
 
-    .line 3660
+    .line 3663
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -6429,7 +6433,7 @@
 
     if-nez v0, :cond_0
 
-    .line 3661
+    .line 3664
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -6455,10 +6459,10 @@
 
     const/4 v1, 0x1
 
-    .line 3672
+    .line 3675
     invoke-virtual {p1, p0, v0, v1}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 3673
+    .line 3676
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->isBluetoothHeadsetConnected()Z
 
     move-result v2
@@ -6471,7 +6475,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 3674
+    .line 3677
     iget v2, p0, Lorg/telegram/messenger/voip/VoIPService;->audioRouteToSet:I
 
     if-eqz v2, :cond_3
@@ -6484,16 +6488,16 @@
 
     goto :goto_0
 
-    .line 3676
+    .line 3679
     :cond_0
     iget-boolean v2, p0, Lorg/telegram/messenger/voip/VoIPService;->bluetoothScoActive:Z
 
     if-nez v2, :cond_1
 
-    .line 3677
+    .line 3680
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->needSwitchToBluetoothAfterScoActivates:Z
 
-    .line 3679
+    .line 3682
     :try_start_0
     invoke-virtual {p1}, Landroid/media/AudioManager;->startBluetoothSco()V
     :try_end_0
@@ -6504,39 +6508,39 @@
     :catchall_0
     move-exception p1
 
-    .line 3681
+    .line 3684
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 3684
+    .line 3687
     :cond_1
     invoke-virtual {p1, v1}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 3685
+    .line 3688
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
     goto :goto_0
 
-    .line 3693
+    .line 3696
     :cond_2
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 3694
+    .line 3697
     invoke-virtual {p1, v1}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
     goto :goto_0
 
-    .line 3689
+    .line 3692
     :cond_3
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 3690
+    .line 3693
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
     goto :goto_0
 
-    .line 3697
+    .line 3700
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->isBluetoothHeadsetConnected()Z
 
@@ -6544,38 +6548,38 @@
 
     if-eqz v2, :cond_5
 
-    .line 3698
+    .line 3701
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->speakerphoneStateToSet:Z
 
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
     goto :goto_0
 
-    .line 3700
+    .line 3703
     :cond_5
     iget-boolean v2, p0, Lorg/telegram/messenger/voip/VoIPService;->speakerphoneStateToSet:Z
 
     invoke-virtual {p1, v2}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
-    .line 3701
+    .line 3704
     iget-boolean p1, p0, Lorg/telegram/messenger/voip/VoIPService;->speakerphoneStateToSet:Z
 
     if-eqz p1, :cond_6
 
-    .line 3702
+    .line 3705
     iput v1, p0, Lorg/telegram/messenger/voip/VoIPService;->audioRouteToSet:I
 
     goto :goto_0
 
-    .line 3704
+    .line 3707
     :cond_6
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->audioRouteToSet:I
 
-    .line 3707
+    .line 3710
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->updateOutputGainControlState()V
 
-    .line 3708
+    .line 3711
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->audioConfigured:Z
 
     return-void
@@ -6584,7 +6588,7 @@
 .method private synthetic lambda$configureDeviceForCall$79(Landroid/media/AudioManager;)V
     .locals 1
 
-    .line 3656
+    .line 3659
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->hasRtmpStream()Z
 
@@ -6594,13 +6598,13 @@
 
     const/4 v0, 0x0
 
-    .line 3657
+    .line 3660
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setMode(I)V
 
-    .line 3658
+    .line 3661
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 3659
+    .line 3662
     sget-object v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda62;->INSTANCE:Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda62;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
@@ -6610,7 +6614,7 @@
     :cond_0
     const/4 v0, 0x3
 
-    .line 3667
+    .line 3670
     invoke-virtual {p1, v0}, Landroid/media/AudioManager;->setMode(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -6620,10 +6624,10 @@
     :catch_0
     move-exception v0
 
-    .line 3669
+    .line 3672
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3671
+    .line 3674
     :goto_0
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda43;
 
@@ -6684,9 +6688,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2072
     :goto_0
@@ -6797,7 +6801,7 @@
 
     move-result p1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
@@ -7017,18 +7021,16 @@
     :cond_3
     const/4 v2, -0x1
 
-    const/4 v7, -0x1
-
     goto :goto_1
 
     :cond_4
     :goto_0
     const/4 v2, 0x0
 
-    const/4 v7, 0x0
+    :goto_1
+    move v7, v2
 
     .line 2142
-    :goto_1
     iget-object v2, v0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     aget-object v3, v2, v1
@@ -7109,14 +7111,14 @@
 
     const-wide/16 v1, 0x1f4
 
-    const/4 v3, 0x1
+    cmp-long v1, p4, v1
 
-    cmp-long v10, p4, v1
+    const/4 v2, 0x1
 
-    if-nez v10, :cond_1
+    if-nez v1, :cond_1
 
     .line 2115
-    iput v3, v0, Lorg/telegram/tgnet/TLRPC$TL_inputGroupCallStream;->scale:I
+    iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_inputGroupCallStream;->scale:I
 
     :cond_1
     if-eqz v6, :cond_2
@@ -7124,7 +7126,7 @@
     .line 2118
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$InputFileLocation;->flags:I
 
-    or-int/2addr v1, v3
+    or-int/2addr v1, v2
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$InputFileLocation;->flags:I
 
@@ -7552,14 +7554,14 @@
 .method private synthetic lambda$declineIncomingCall$71()V
     .locals 2
 
-    .line 3250
+    .line 3253
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
 
     const/16 v1, 0xa
 
     if-ne v0, v1, :cond_0
 
-    .line 3251
+    .line 3254
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callEnded()V
 
     :cond_0
@@ -7571,12 +7573,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 3293
+    .line 3296
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
-    .line 3294
+    .line 3297
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7595,18 +7597,18 @@
 
     goto :goto_0
 
-    .line 3297
+    .line 3300
     :cond_0
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_updates;
 
     if-eqz p2, :cond_1
 
-    .line 3298
+    .line 3301
     move-object p2, p1
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_updates;
 
-    .line 3299
+    .line 3302
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7617,13 +7619,13 @@
 
     invoke-virtual {v0, p2, v1}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 3301
+    .line 3304
     :cond_1
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_2
 
-    .line 3302
+    .line 3305
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -7700,12 +7702,12 @@
 .method private synthetic lambda$endConnectionServiceCall$94()V
     .locals 4
 
-    .line 4302
+    .line 4305
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
     if-eqz v0, :cond_6
 
-    .line 4303
+    .line 4306
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->callDiscardReason:I
 
     const/4 v2, 0x2
@@ -7724,7 +7726,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 4317
+    .line 4320
     new-instance v1, Landroid/telecom/DisconnectCause;
 
     invoke-direct {v1, v3}, Landroid/telecom/DisconnectCause;-><init>(I)V
@@ -7733,7 +7735,7 @@
 
     goto :goto_2
 
-    .line 4311
+    .line 4314
     :cond_0
     new-instance v1, Landroid/telecom/DisconnectCause;
 
@@ -7745,7 +7747,7 @@
 
     goto :goto_2
 
-    .line 4314
+    .line 4317
     :cond_1
     new-instance v1, Landroid/telecom/DisconnectCause;
 
@@ -7765,7 +7767,7 @@
 
     goto :goto_2
 
-    .line 4308
+    .line 4311
     :cond_3
     new-instance v1, Landroid/telecom/DisconnectCause;
 
@@ -7775,7 +7777,7 @@
 
     goto :goto_2
 
-    .line 4305
+    .line 4308
     :cond_4
     new-instance v1, Landroid/telecom/DisconnectCause;
 
@@ -7793,7 +7795,7 @@
 
     invoke-virtual {v0, v1}, Landroid/telecom/Connection;->setDisconnected(Landroid/telecom/DisconnectCause;)V
 
-    .line 4320
+    .line 4323
     :goto_2
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
@@ -7801,7 +7803,7 @@
 
     const/4 v0, 0x0
 
-    .line 4321
+    .line 4324
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
     :cond_6
@@ -7813,10 +7815,10 @@
 
     const/4 v0, 0x0
 
-    .line 3328
+    .line 3331
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->delayedStartOutgoingCall:Ljava/lang/Runnable;
 
-    .line 3329
+    .line 3332
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->startOutgoingCall()V
 
     return-void
@@ -8013,7 +8015,7 @@
 .method private synthetic lambda$loadResources$76()V
     .locals 3
 
-    .line 3589
+    .line 3592
     new-instance v0, Landroid/media/SoundPool;
 
     const/4 v1, 0x1
@@ -8024,7 +8026,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
-    .line 3590
+    .line 3593
     sget v2, Lorg/telegram/messenger/R$raw;->voip_connecting:I
 
     invoke-virtual {v0, p0, v2, v1}, Landroid/media/SoundPool;->load(Landroid/content/Context;II)I
@@ -8033,7 +8035,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spConnectingId:I
 
-    .line 3591
+    .line 3594
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voip_ringback:I
@@ -8044,7 +8046,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spRingbackID:I
 
-    .line 3592
+    .line 3595
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voip_failed:I
@@ -8055,7 +8057,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spFailedID:I
 
-    .line 3593
+    .line 3596
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voip_end:I
@@ -8066,7 +8068,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spEndId:I
 
-    .line 3594
+    .line 3597
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voip_busy:I
@@ -8077,7 +8079,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spBusyId:I
 
-    .line 3595
+    .line 3598
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voicechat_leave:I
@@ -8088,7 +8090,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spVoiceChatEndId:I
 
-    .line 3596
+    .line 3599
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voicechat_join:I
@@ -8099,7 +8101,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spVoiceChatStartId:I
 
-    .line 3597
+    .line 3600
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voicechat_connecting:I
@@ -8110,7 +8112,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spVoiceChatConnecting:I
 
-    .line 3598
+    .line 3601
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voip_onallowtalk:I
@@ -8121,7 +8123,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spAllowTalkId:I
 
-    .line 3599
+    .line 3602
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voip_recordstart:I
@@ -8215,19 +8217,19 @@
 .method private synthetic lambda$onConnectionStateChanged$84()V
     .locals 2
 
-    .line 4188
+    .line 4191
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spPlayId:I
 
     if-eqz v0, :cond_0
 
-    .line 4189
+    .line 4192
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v1, v0}, Landroid/media/SoundPool;->stop(I)V
 
     const/4 v0, 0x0
 
-    .line 4190
+    .line 4193
     iput v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spPlayId:I
 
     :cond_0
@@ -8237,17 +8239,17 @@
 .method private synthetic lambda$onConnectionStateChanged$85()V
     .locals 9
 
-    .line 4219
+    .line 4222
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->spPlayId:I
 
     if-eqz v0, :cond_0
 
-    .line 4220
+    .line 4223
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v1, v0}, Landroid/media/SoundPool;->stop(I)V
 
-    .line 4222
+    .line 4225
     :cond_0
     iget-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
@@ -8285,22 +8287,22 @@
 .end method
 
 .method private synthetic lambda$onConnectionStateChanged$86(I)V
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_0
 
-    .line 4173
+    .line 4176
     iget-wide v1, p0, Lorg/telegram/messenger/voip/VoIPService;->callStartTime:J
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
-    .line 4174
+    .line 4177
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -8312,7 +8314,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 4179
+    .line 4182
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callFailed()V
 
     return-void
@@ -8320,20 +8322,20 @@
     :cond_1
     if-ne p1, v0, :cond_5
 
-    .line 4183
+    .line 4186
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->connectingSoundRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_2
 
-    .line 4184
+    .line 4187
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v0, 0x0
 
-    .line 4185
+    .line 4188
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->connectingSoundRunnable:Ljava/lang/Runnable;
 
-    .line 4187
+    .line 4190
     :cond_2
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -8343,7 +8345,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 4193
+    .line 4196
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
     if-nez v0, :cond_5
@@ -8354,10 +8356,10 @@
 
     const/4 v0, 0x1
 
-    .line 4194
+    .line 4197
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->wasEstablished:Z
 
-    .line 4195
+    .line 4198
     iget-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->isProximityNear:Z
 
     if-nez v1, :cond_3
@@ -8370,14 +8372,14 @@
 
     const-string/jumbo v1, "vibrator"
 
-    .line 4196
+    .line 4199
     invoke-virtual {p0, v1}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/os/Vibrator;
 
-    .line 4197
+    .line 4200
     invoke-virtual {v1}, Landroid/os/Vibrator;->hasVibrator()Z
 
     move-result v2
@@ -8386,10 +8388,10 @@
 
     const-wide/16 v2, 0x64
 
-    .line 4198
+    .line 4201
     invoke-virtual {v1, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 4201
+    .line 4204
     :cond_3
     new-instance v1, Lorg/telegram/messenger/voip/VoIPService$9;
 
@@ -8399,14 +8401,14 @@
 
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 4210
+    .line 4213
     iget-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->isOutgoing:Z
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_4
 
-    .line 4211
+    .line 4214
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -8421,7 +8423,7 @@
 
     goto :goto_0
 
-    .line 4213
+    .line 4216
     :cond_4
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
@@ -8441,7 +8443,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 4218
+    .line 4221
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda27;
@@ -8450,7 +8452,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 4225
+    .line 4228
     :cond_6
     invoke-direct {p0, p1}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
 
@@ -8562,12 +8564,12 @@
 .method private synthetic lambda$onSignalBarCountChanged$89(I)V
     .locals 2
 
-    .line 4240
+    .line 4243
     iput p1, p0, Lorg/telegram/messenger/voip/VoIPService;->signalBarCount:I
 
     const/4 v0, 0x0
 
-    .line 4241
+    .line 4244
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
 
@@ -8577,7 +8579,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 4242
+    .line 4245
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -8586,7 +8588,7 @@
 
     check-cast v1, Lorg/telegram/messenger/voip/VoIPService$StateListener;
 
-    .line 4243
+    .line 4246
     invoke-interface {v1, p1}, Lorg/telegram/messenger/voip/VoIPService$StateListener;->onSignalBarsCountChanged(I)V
 
     add-int/lit8 v0, v0, 0x1
@@ -8641,12 +8643,12 @@
 .method private static synthetic lambda$onTgVoipStop$75(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 3460
+    .line 3463
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
-    .line 3461
+    .line 3464
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -8670,7 +8672,7 @@
 .method private synthetic lambda$playAllowTalkSound$88()V
     .locals 7
 
-    .line 4234
+    .line 4237
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->spAllowTalkId:I
@@ -8716,7 +8718,7 @@
 .method private synthetic lambda$playStartRecordSound$87()V
     .locals 7
 
-    .line 4230
+    .line 4233
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->soundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->spStartRecordId:I
@@ -8967,7 +8969,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 1721
     :goto_0
@@ -9247,7 +9249,7 @@
 .end method
 
 .method private synthetic lambda$startGroupCall$28(IZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 10
+    .locals 9
 
     if-eqz p3, :cond_4
 
@@ -9275,7 +9277,7 @@
 
     const/4 p4, 0x0
 
-    const/4 v2, 0x0
+    move v2, p4
 
     :goto_0
     if-ge v2, p1, :cond_3
@@ -9304,7 +9306,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, p4
 
     :goto_1
     if-ge v5, v4, :cond_2
@@ -9325,9 +9327,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v0
+    cmp-long v7, v7, v0
 
-    if-nez v9, :cond_0
+    if-nez v7, :cond_0
 
     .line 1796
     new-instance v3, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda55;
@@ -9503,12 +9505,12 @@
 
     if-nez p3, :cond_1
 
-    const/4 p3, 0x1
+    move p3, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, v0
 
     .line 1952
     :goto_0
@@ -9549,12 +9551,12 @@
 
     if-nez p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_2
 
@@ -9589,22 +9591,22 @@
 
     if-eqz p1, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v0
 
-    :goto_1
-    const/4 p3, 0x1
+    move p3, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v0
 
-    const/4 p3, 0x0
+    :goto_1
+    move p3, p1
 
     :goto_2
     if-eqz p3, :cond_6
@@ -9852,7 +9854,7 @@
 
     new-array v1, p2, [B
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, p2, :cond_3
@@ -9866,7 +9868,7 @@
 
     const-wide/high16 v5, 0x4070000000000000L    # 256.0
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     double-to-int v3, v3
 
@@ -10431,7 +10433,7 @@
 .end method
 
 .method private synthetic lambda$startScreenCapture$30(Lorg/telegram/tgnet/TLRPC$Updates;)V
-    .locals 13
+    .locals 12
 
     .line 1856
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
@@ -10456,7 +10458,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v0, :cond_5
@@ -10512,7 +10514,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_1
     if-ge v8, v7, :cond_4
@@ -10533,9 +10535,9 @@
 
     move-result-wide v10
 
-    cmp-long v12, v10, v2
+    cmp-long v10, v10, v2
 
-    if-nez v12, :cond_3
+    if-nez v10, :cond_3
 
     .line 1870
     iget-object v6, v9, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->presentation:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;
@@ -10566,7 +10568,7 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_2
     if-ge v7, v6, :cond_4
@@ -10867,7 +10869,7 @@
 .method private static synthetic lambda$updateBluetoothHeadsetState$80(Landroid/media/AudioManager;)V
     .locals 0
 
-    .line 3826
+    .line 3829
     :try_start_0
     invoke-virtual {p0}, Landroid/media/AudioManager;->startBluetoothSco()V
     :try_end_0
@@ -10971,15 +10973,15 @@
 
     if-nez p2, :cond_0
 
-    .line 3382
+    .line 3385
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 3383
+    .line 3386
     invoke-static {p1}, Lorg/telegram/messenger/voip/Instance;->setGlobalServerConfig(Ljava/lang/String;)V
 
-    .line 3384
+    .line 3387
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
@@ -10999,7 +11001,7 @@
 .method private loadResources()V
     .locals 2
 
-    .line 3585
+    .line 3588
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -11008,10 +11010,10 @@
 
     const/4 v0, 0x2
 
-    .line 3586
+    .line 3589
     invoke-static {v0}, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->setAudioTrackUsageAttribute(I)V
 
-    .line 3588
+    .line 3591
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -11033,14 +11035,14 @@
 .method private onTgVoipStop(Lorg/telegram/messenger/voip/Instance$FinalState;)V
     .locals 5
 
-    .line 3437
+    .line 3440
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 3440
+    .line 3443
     :cond_0
     iget-object v0, p1, Lorg/telegram/messenger/voip/Instance$FinalState;->debugLog:Ljava/lang/String;
 
@@ -11050,7 +11052,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3442
+    .line 3445
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
@@ -11075,10 +11077,10 @@
     :catch_0
     move-exception v0
 
-    .line 3444
+    .line 3447
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 3448
+    .line 3451
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->needRateCall:Z
@@ -11095,14 +11097,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 3449
+    .line 3452
     :cond_2
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->startRatingActivity()V
 
-    .line 3450
+    .line 3453
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->needRateCall:Z
 
-    .line 3452
+    .line 3455
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->needSendDebugLog:Z
 
@@ -11112,43 +11114,43 @@
 
     if-eqz v0, :cond_4
 
-    .line 3453
+    .line 3456
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phone_saveCallDebug;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_phone_saveCallDebug;-><init>()V
 
-    .line 3454
+    .line 3457
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
 
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_saveCallDebug;->debug:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 3455
+    .line 3458
     iget-object p1, p1, Lorg/telegram/messenger/voip/Instance$FinalState;->debugLog:Ljava/lang/String;
 
     iput-object p1, v2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 3456
+    .line 3459
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;-><init>()V
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_saveCallDebug;->peer:Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
-    .line 3457
+    .line 3460
     iget-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$PhoneCall;->access_hash:J
 
     iput-wide v3, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->access_hash:J
 
-    .line 3458
+    .line 3461
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$PhoneCall;->id:J
 
     iput-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->id:J
 
-    .line 3459
+    .line 3462
     iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -11159,7 +11161,7 @@
 
     invoke-virtual {p1, v0, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 3464
+    .line 3467
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->needSendDebugLog:Z
 
     :cond_4
@@ -11280,7 +11282,7 @@
 
     invoke-static {v0, v3, v1, v5, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 1622
     :goto_0
@@ -11418,7 +11420,7 @@
 
     move-object/from16 v3, p3
 
-    .line 3984
+    .line 3987
     new-instance v4, Landroid/content/Intent;
 
     const-class v5, Lorg/telegram/ui/LaunchActivity;
@@ -11427,10 +11429,10 @@
 
     const-string/jumbo v5, "voip"
 
-    .line 3985
+    .line 3988
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3986
+    .line 3989
     new-instance v5, Landroid/app/Notification$Builder;
 
     invoke-direct {v5, v1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
@@ -11441,7 +11443,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 3987
+    .line 3990
     sget v8, Lorg/telegram/messenger/R$string;->VoipInVideoCallBranding:I
 
     invoke-static {v6, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -11462,19 +11464,19 @@
 
     move-result-object v5
 
-    .line 3988
+    .line 3991
     invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
     sget v8, Lorg/telegram/messenger/R$drawable;->notification:I
 
-    .line 3989
+    .line 3992
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
-    .line 3990
+    .line 3993
     invoke-virtual {v5, v2}, Landroid/app/Notification$Builder;->setSubText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v5
@@ -11483,7 +11485,7 @@
 
     const/high16 v9, 0x2000000
 
-    .line 3991
+    .line 3994
     invoke-static {v1, v8, v4, v9}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v10
@@ -11492,14 +11494,14 @@
 
     move-result-object v5
 
-    .line 3992
+    .line 3995
     sget v10, Lorg/telegram/messenger/R$drawable;->fork_notification:I
 
     invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
-    .line 3993
+    .line 3996
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -11526,35 +11528,35 @@
 
     move-result-object v10
 
-    .line 3994
+    .line 3997
     sget v11, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v12, 0x1a
 
     if-lt v11, v12, :cond_7
 
-    .line 3995
+    .line 3998
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalNotificationsSettings()Landroid/content/SharedPreferences;
 
     move-result-object v12
 
     const-string v9, "calls_notification_channel"
 
-    .line 3996
+    .line 3999
     invoke-interface {v12, v9, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v13
 
     const-string v15, "notification"
 
-    .line 3997
+    .line 4000
     invoke-virtual {v1, v15}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v15
 
     check-cast v15, Landroid/app/NotificationManager;
 
-    .line 3998
+    .line 4001
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -11575,14 +11577,14 @@
 
     if-eqz v8, :cond_1
 
-    .line 4000
+    .line 4003
     invoke-virtual {v8}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v15, v8}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
 
-    .line 4002
+    .line 4005
     :cond_1
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -11608,7 +11610,7 @@
 
     if-eqz v8, :cond_5
 
-    .line 4005
+    .line 4008
     invoke-virtual {v8}, Landroid/app/NotificationChannel;->getImportance()I
 
     move-result v7
@@ -11644,7 +11646,7 @@
 
     goto :goto_2
 
-    .line 4006
+    .line 4009
     :cond_3
     :goto_1
     sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -11653,10 +11655,10 @@
 
     const-string v7, "User messed up the notification channel; deleting it and creating a proper one"
 
-    .line 4007
+    .line 4010
     invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 4009
+    .line 4012
     :cond_4
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -11674,7 +11676,7 @@
 
     add-int/lit8 v13, v13, 0x1
 
-    .line 4011
+    .line 4014
     invoke-interface {v12}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v7
@@ -11691,34 +11693,34 @@
     :goto_2
     if-eqz v7, :cond_6
 
-    .line 4017
+    .line 4020
     new-instance v7, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v7}, Landroid/media/AudioAttributes$Builder;-><init>()V
 
-    .line 4018
+    .line 4021
     invoke-virtual {v7, v2}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
 
     move-result-object v7
 
     const/4 v8, 0x2
 
-    .line 4019
+    .line 4022
     invoke-virtual {v7, v8}, Landroid/media/AudioAttributes$Builder;->setLegacyStreamType(I)Landroid/media/AudioAttributes$Builder;
 
     move-result-object v7
 
-    .line 4020
+    .line 4023
     invoke-virtual {v7, v8}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
 
     move-result-object v7
 
-    .line 4021
+    .line 4024
     invoke-virtual {v7}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
 
     move-result-object v7
 
-    .line 4022
+    .line 4025
     new-instance v8, Landroid/app/NotificationChannel;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -11745,23 +11747,23 @@
 
     invoke-direct {v8, v9, v6, v2}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    .line 4023
+    .line 4026
     invoke-virtual {v8, v10, v7}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
 
     const/4 v2, 0x0
 
-    .line 4024
+    .line 4027
     invoke-virtual {v8, v2}, Landroid/app/NotificationChannel;->enableVibration(Z)V
 
-    .line 4025
+    .line 4028
     invoke-virtual {v8, v2}, Landroid/app/NotificationChannel;->enableLights(Z)V
 
     const/4 v2, 0x1
 
-    .line 4026
+    .line 4029
     invoke-virtual {v8, v2}, Landroid/app/NotificationChannel;->setBypassDnd(Z)V
 
-    .line 4028
+    .line 4031
     :try_start_0
     invoke-virtual {v15, v8}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
     :try_end_0
@@ -11774,10 +11776,10 @@
 
     move-object v2, v0
 
-    .line 4030
+    .line 4033
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4031
+    .line 4034
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->stopSelf()V
 
     return-void
@@ -11785,7 +11787,7 @@
     :cond_6
     move-object/from16 v17, v6
 
-    .line 4035
+    .line 4038
     :goto_3
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -11814,10 +11816,10 @@
 
     const/4 v2, 0x2
 
-    .line 4037
+    .line 4040
     invoke-virtual {v5, v10, v2}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;I)Landroid/app/Notification$Builder;
 
-    .line 4039
+    .line 4042
     :cond_8
     :goto_4
     new-instance v2, Landroid/content/Intent;
@@ -11826,7 +11828,7 @@
 
     invoke-direct {v2, v1, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 4040
+    .line 4043
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -11847,7 +11849,7 @@
 
     invoke-virtual {v2, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4041
+    .line 4044
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/voip/VoIPService;->getCallID()J
 
     move-result-wide v6
@@ -11856,7 +11858,7 @@
 
     invoke-virtual {v2, v8, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 4042
+    .line 4045
     sget v6, Lorg/telegram/messenger/R$string;->VoipDeclineCall:I
 
     const-string v7, "VoipDeclineCall"
@@ -11869,12 +11871,12 @@
 
     if-lt v11, v10, :cond_9
 
-    .line 4044
+    .line 4047
     new-instance v12, Landroid/text/SpannableString;
 
     invoke-direct {v12, v9}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4045
+    .line 4048
     new-instance v9, Landroid/text/style/ForegroundColorSpan;
 
     const v13, -0xbbcca
@@ -11899,24 +11901,24 @@
     :goto_5
     const/high16 v12, 0x12000000
 
-    .line 4047
+    .line 4050
     invoke-static {v1, v14, v2, v12}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v2
 
-    .line 4048
+    .line 4051
     sget v13, Lorg/telegram/messenger/R$drawable;->ic_call_end_white_24dp:I
 
     invoke-virtual {v5, v13, v9, v2}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
-    .line 4049
+    .line 4052
     new-instance v9, Landroid/content/Intent;
 
     const-class v13, Lorg/telegram/messenger/voip/VoIPActionsReceiver;
 
     invoke-direct {v9, v1, v13}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 4050
+    .line 4053
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -11937,14 +11939,14 @@
 
     invoke-virtual {v9, v13}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4051
+    .line 4054
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/voip/VoIPService;->getCallID()J
 
     move-result-wide v13
 
     invoke-virtual {v9, v8, v13, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 4052
+    .line 4055
     sget v8, Lorg/telegram/messenger/R$string;->VoipAnswerCall:I
 
     const-string v13, "VoipAnswerCall"
@@ -11955,12 +11957,12 @@
 
     if-lt v11, v10, :cond_a
 
-    .line 4054
+    .line 4057
     new-instance v10, Landroid/text/SpannableString;
 
     invoke-direct {v10, v14}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4055
+    .line 4058
     new-instance v14, Landroid/text/style/ForegroundColorSpan;
 
     const v15, -0xff5600
@@ -11985,26 +11987,26 @@
     :goto_6
     const/high16 v10, 0x12000000
 
-    .line 4057
+    .line 4060
     invoke-static {v1, v12, v9, v10}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v9
 
-    .line 4058
+    .line 4061
     sget v10, Lorg/telegram/messenger/R$drawable;->ic_call:I
 
     invoke-virtual {v5, v10, v14, v9}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
     const/4 v10, 0x2
 
-    .line 4059
+    .line 4062
     invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
     const/16 v10, 0x11
 
     if-lt v11, v10, :cond_b
 
-    .line 4061
+    .line 4064
     invoke-virtual {v5, v12}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
 
     :cond_b
@@ -12014,22 +12016,22 @@
 
     const v10, -0xd35a20
 
-    .line 4064
+    .line 4067
     invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
     new-array v10, v12, [J
 
-    .line 4065
+    .line 4068
     invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setVibrate([J)Landroid/app/Notification$Builder;
 
     const-string v10, "call"
 
-    .line 4066
+    .line 4069
     invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     const/high16 v10, 0x2000000
 
-    .line 4067
+    .line 4070
     invoke-static {v1, v12, v4, v10}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v4
@@ -12038,17 +12040,17 @@
 
     invoke-virtual {v5, v4, v10}, Landroid/app/Notification$Builder;->setFullScreenIntent(Landroid/app/PendingIntent;Z)Landroid/app/Notification$Builder;
 
-    .line 4068
+    .line 4071
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v4, :cond_c
 
-    .line 4069
+    .line 4072
     move-object v4, v3
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 4070
+    .line 4073
     iget-object v10, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -12057,7 +12059,7 @@
 
     if-nez v10, :cond_c
 
-    .line 4071
+    .line 4074
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -12076,7 +12078,7 @@
 
     invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->addPerson(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    .line 4075
+    .line 4078
     :cond_c
     invoke-virtual {v5}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
 
@@ -12086,7 +12088,7 @@
 
     if-lt v11, v10, :cond_14
 
-    .line 4077
+    .line 4080
     new-instance v10, Landroid/widget/RemoteViews;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getPackageName()Ljava/lang/String;
@@ -12107,12 +12109,12 @@
     :goto_7
     invoke-direct {v10, v12, v14}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    .line 4078
+    .line 4081
     sget v12, Lorg/telegram/messenger/R$id;->name:I
 
     invoke-virtual {v10, v12, v0}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 4080
+    .line 4083
     invoke-static/range {p2 .. p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -12121,12 +12123,12 @@
 
     if-eqz v0, :cond_11
 
-    .line 4081
+    .line 4084
     sget v0, Lorg/telegram/messenger/R$id;->subtitle:I
 
     invoke-virtual {v10, v0, v12}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 4082
+    .line 4085
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->getActivatedAccountsCount()I
 
     move-result v0
@@ -12135,7 +12137,7 @@
 
     if-le v0, v12, :cond_f
 
-    .line 4083
+    .line 4086
     iget v0, v1, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -12146,7 +12148,7 @@
 
     move-result-object v0
 
-    .line 4084
+    .line 4087
     sget v14, Lorg/telegram/messenger/R$id;->title:I
 
     if-eqz p4, :cond_e
@@ -12214,7 +12216,7 @@
     :cond_f
     move-object/from16 p5, v4
 
-    .line 4086
+    .line 4089
     sget v0, Lorg/telegram/messenger/R$id;->title:I
 
     if-eqz p4, :cond_10
@@ -12242,7 +12244,7 @@
     :cond_11
     move-object/from16 p5, v4
 
-    .line 4089
+    .line 4092
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->getActivatedAccountsCount()I
 
     move-result v0
@@ -12251,7 +12253,7 @@
 
     if-le v0, v4, :cond_12
 
-    .line 4090
+    .line 4093
     iget v0, v1, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -12262,7 +12264,7 @@
 
     move-result-object v0
 
-    .line 4091
+    .line 4094
     sget v12, Lorg/telegram/messenger/R$id;->subtitle:I
 
     sget v14, Lorg/telegram/messenger/R$string;->VoipAnsweringAsAccount:I
@@ -12291,13 +12293,13 @@
 
     goto :goto_a
 
-    .line 4093
+    .line 4096
     :cond_12
     sget v0, Lorg/telegram/messenger/R$id;->subtitle:I
 
     invoke-virtual {v10, v0, v12}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 4095
+    .line 4098
     :goto_a
     sget v0, Lorg/telegram/messenger/R$id;->title:I
 
@@ -12305,13 +12307,13 @@
 
     invoke-virtual {v10, v0, v4}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 4097
+    .line 4100
     :goto_b
     invoke-direct {v1, v3}, Lorg/telegram/messenger/voip/VoIPService;->getRoundAvatarBitmap(Lorg/telegram/tgnet/TLObject;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 4098
+    .line 4101
     sget v3, Lorg/telegram/messenger/R$id;->answer_text:I
 
     invoke-static {v13, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -12320,7 +12322,7 @@
 
     invoke-virtual {v10, v3, v4}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 4099
+    .line 4102
     sget v3, Lorg/telegram/messenger/R$id;->decline_text:I
 
     invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -12329,22 +12331,22 @@
 
     invoke-virtual {v10, v3, v4}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 4100
+    .line 4103
     sget v3, Lorg/telegram/messenger/R$id;->photo:I
 
     invoke-virtual {v10, v3, v0}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 4101
+    .line 4104
     sget v3, Lorg/telegram/messenger/R$id;->answer_btn:I
 
     invoke-virtual {v10, v3, v9}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    .line 4102
+    .line 4105
     sget v3, Lorg/telegram/messenger/R$id;->decline_btn:I
 
     invoke-virtual {v10, v3, v2}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    .line 4103
+    .line 4106
     invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
 
     const/16 v0, 0x1f
@@ -12353,15 +12355,15 @@
 
     const v0, -0xd7d1cf
 
-    .line 4106
+    .line 4109
     invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
     const/4 v0, 0x1
 
-    .line 4107
+    .line 4110
     invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->setColorized(Z)Landroid/app/Notification$Builder;
 
-    .line 4108
+    .line 4111
     invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setCustomBigContentView(Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;
 
     move-object/from16 v0, p5
@@ -12371,7 +12373,7 @@
     :cond_13
     move-object/from16 v0, p5
 
-    .line 4110
+    .line 4113
     iput-object v10, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
     iput-object v10, v0, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
@@ -12384,10 +12386,10 @@
     :goto_c
     const/16 v2, 0xca
 
-    .line 4113
+    .line 4116
     invoke-virtual {v1, v2, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 
-    .line 4114
+    .line 4117
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/voip/VoIPService;->startRingtoneAndVibration()V
 
     return-void
@@ -12396,12 +12398,12 @@
 .method private showNotification()V
     .locals 2
 
-    .line 3390
+    .line 3393
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_0
 
-    .line 3391
+    .line 3394
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -12420,7 +12422,7 @@
 
     goto :goto_0
 
-    .line 3393
+    .line 3396
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -13028,7 +13030,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_joinGroupCall;->video_stopped:Z
@@ -13282,7 +13284,7 @@
 .method private startRinging()V
     .locals 8
 
-    .line 3340
+    .line 3343
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
 
     const/16 v1, 0xf
@@ -13291,7 +13293,7 @@
 
     return-void
 
-    .line 3343
+    .line 3346
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
@@ -13301,16 +13303,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 3344
+    .line 3347
     invoke-virtual {v0}, Landroid/telecom/Connection;->setRinging()V
 
-    .line 3346
+    .line 3349
     :cond_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2
 
-    .line 3347
+    .line 3350
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -13331,11 +13333,11 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3349
+    .line 3352
     :cond_2
     invoke-direct {p0, v1}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
 
-    .line 3350
+    .line 3353
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->notificationsDisabled:Z
 
     if-nez v0, :cond_3
@@ -13346,7 +13348,7 @@
 
     if-lt v0, v1, :cond_3
 
-    .line 3351
+    .line 3354
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -13371,19 +13373,19 @@
 
     invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/voip/VoIPService;->showIncomingNotification(Ljava/lang/String;Ljava/lang/CharSequence;Lorg/telegram/tgnet/TLObject;ZI)V
 
-    .line 3352
+    .line 3355
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_5
 
     const-string v0, "Showing incoming call notification"
 
-    .line 3353
+    .line 3356
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 3356
+    .line 3359
     :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -13391,20 +13393,20 @@
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->startRingtoneAndVibration(J)V
 
-    .line 3357
+    .line 3360
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_4
 
     const-string v0, "Starting incall activity for incoming call"
 
-    .line 3358
+    .line 3361
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_4
     const/16 v0, 0x3039
 
-    .line 3361
+    .line 3364
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -13433,14 +13435,14 @@
     :catch_0
     move-exception v0
 
-    .line 3363
+    .line 3366
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_5
 
     const-string v1, "Error starting incall activity"
 
-    .line 3364
+    .line 3367
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_5
@@ -13480,12 +13482,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     if-eqz v3, :cond_a
@@ -13840,20 +13842,20 @@
 .method private updateBluetoothHeadsetState(Z)V
     .locals 3
 
-    .line 3801
+    .line 3804
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isBtHeadsetConnected:Z
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 3804
+    .line 3807
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 3805
+    .line 3808
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -13870,13 +13872,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3807
+    .line 3810
     :cond_1
     iput-boolean p1, p0, Lorg/telegram/messenger/voip/VoIPService;->isBtHeadsetConnected:Z
 
     const-string v0, "audio"
 
-    .line 3808
+    .line 3811
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -13887,7 +13889,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 3809
+    .line 3812
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->isRinging()Z
 
     move-result p1
@@ -13898,24 +13900,24 @@
 
     if-eqz p1, :cond_5
 
-    .line 3810
+    .line 3813
     iget-boolean p1, p0, Lorg/telegram/messenger/voip/VoIPService;->bluetoothScoActive:Z
 
     const/4 v2, 0x1
 
     if-eqz p1, :cond_3
 
-    .line 3811
+    .line 3814
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_2
 
     const-string p1, "SCO already active, setting audio routing"
 
-    .line 3812
+    .line 3815
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3814
+    .line 3817
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->hasRtmpStream()Z
 
@@ -13923,15 +13925,15 @@
 
     if-nez p1, :cond_6
 
-    .line 3815
+    .line 3818
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
-    .line 3816
+    .line 3819
     invoke-virtual {v0, v2}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
     goto :goto_0
 
-    .line 3819
+    .line 3822
     :cond_3
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -13939,10 +13941,10 @@
 
     const-string p1, "startBluetoothSco"
 
-    .line 3820
+    .line 3823
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3822
+    .line 3825
     :cond_4
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->hasRtmpStream()Z
 
@@ -13950,10 +13952,10 @@
 
     if-nez p1, :cond_6
 
-    .line 3823
+    .line 3826
     iput-boolean v2, p0, Lorg/telegram/messenger/voip/VoIPService;->needSwitchToBluetoothAfterScoActivates:Z
 
-    .line 3824
+    .line 3827
     new-instance p1, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, v0}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda3;-><init>(Landroid/media/AudioManager;)V
@@ -13964,17 +13966,17 @@
 
     goto :goto_0
 
-    .line 3834
+    .line 3837
     :cond_5
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->bluetoothScoActive:Z
 
-    .line 3835
+    .line 3838
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->bluetoothScoConnecting:Z
 
-    .line 3837
+    .line 3840
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 3839
+    .line 3842
     :cond_6
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->stateListeners:Ljava/util/ArrayList;
@@ -13996,7 +13998,7 @@
 
     check-cast v0, Lorg/telegram/messenger/voip/VoIPService$StateListener;
 
-    .line 3840
+    .line 3843
     invoke-interface {v0}, Lorg/telegram/messenger/voip/VoIPService$StateListener;->onAudioSettingsChanged()V
 
     goto :goto_1
@@ -14202,7 +14204,7 @@
 .method private updateNetworkType()V
     .locals 3
 
-    .line 3857
+    .line 3860
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     const/4 v1, 0x0
@@ -14211,7 +14213,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3858
+    .line 3861
     aget-object v0, v0, v1
 
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/NativeInstance;->isGroup()Z
@@ -14222,7 +14224,7 @@
 
     goto :goto_0
 
-    .line 3861
+    .line 3864
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
@@ -14236,7 +14238,7 @@
 
     goto :goto_0
 
-    .line 3864
+    .line 3867
     :cond_1
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
@@ -14251,7 +14253,7 @@
 .method private updateServerConfig()V
     .locals 4
 
-    .line 3378
+    .line 3381
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
@@ -14262,14 +14264,14 @@
 
     const-string/jumbo v2, "{}"
 
-    .line 3379
+    .line 3382
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v1}, Lorg/telegram/messenger/voip/Instance;->setGlobalServerConfig(Ljava/lang/String;)V
 
-    .line 3380
+    .line 3383
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -14294,12 +14296,12 @@
 
     if-nez p2, :cond_0
 
-    .line 3619
+    .line 3622
     invoke-virtual {p1}, Lorg/telegram/messenger/voip/NativeInstance;->getTrafficStats()Lorg/telegram/messenger/voip/Instance$TrafficStats;
 
     move-result-object p2
 
-    .line 3621
+    .line 3624
     :cond_0
     iget-wide v0, p2, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesSentWifi:J
 
@@ -14319,7 +14321,7 @@
     :goto_0
     sub-long/2addr v0, v4
 
-    .line 3622
+    .line 3625
     iget-wide v4, p2, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesReceivedWifi:J
 
     if-eqz p1, :cond_2
@@ -14334,7 +14336,7 @@
     :goto_1
     sub-long/2addr v4, v6
 
-    .line 3623
+    .line 3626
     iget-wide v6, p2, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesSentMobile:J
 
     if-eqz p1, :cond_3
@@ -14349,7 +14351,7 @@
     :goto_2
     sub-long/2addr v6, v8
 
-    .line 3624
+    .line 3627
     iget-wide v8, p2, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesReceivedMobile:J
 
     if-eqz p1, :cond_4
@@ -14364,103 +14366,103 @@
     :goto_3
     sub-long/2addr v8, v10
 
-    .line 3625
+    .line 3628
     iput-object p2, p0, Lorg/telegram/messenger/voip/VoIPService;->prevTrafficStats:Lorg/telegram/messenger/voip/Instance$TrafficStats;
 
-    const/4 p1, 0x1
+    cmp-long p1, v0, v2
 
-    const/4 p2, 0x0
+    const/4 p2, 0x1
 
-    cmp-long v10, v0, v2
+    const/4 v10, 0x0
 
-    if-lez v10, :cond_5
-
-    .line 3627
-    iget v10, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
-
-    invoke-static {v10}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p1, p2, v0, v1}, Lorg/telegram/messenger/StatsController;->incrementSentBytesCount(IIJ)V
-
-    :cond_5
-    cmp-long v0, v4, v2
-
-    if-lez v0, :cond_6
+    if-lez p1, :cond_5
 
     .line 3630
-    iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
+    iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
+    invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, p1, p2, v4, v5}, Lorg/telegram/messenger/StatsController;->incrementReceivedBytesCount(IIJ)V
+    invoke-virtual {p1, p2, v10, v0, v1}, Lorg/telegram/messenger/StatsController;->incrementSentBytesCount(IIJ)V
 
-    :cond_6
-    const/4 p1, 0x2
+    :cond_5
+    cmp-long p1, v4, v2
 
-    cmp-long v0, v6, v2
-
-    if-lez v0, :cond_8
+    if-lez p1, :cond_6
 
     .line 3633
-    iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
+    iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
+    invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->lastNetInfo:Landroid/net/NetworkInfo;
+    invoke-virtual {p1, p2, v10, v4, v5}, Lorg/telegram/messenger/StatsController;->incrementReceivedBytesCount(IIJ)V
 
-    if-eqz v1, :cond_7
+    :cond_6
+    cmp-long p1, v6, v2
 
-    invoke-virtual {v1}, Landroid/net/NetworkInfo;->isRoaming()Z
+    const/4 p2, 0x2
 
-    move-result v1
+    if-lez p1, :cond_8
 
-    if-eqz v1, :cond_7
+    .line 3636
+    iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
-    const/4 v1, 0x2
+    invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->lastNetInfo:Landroid/net/NetworkInfo;
+
+    if-eqz v0, :cond_7
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isRoaming()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    move v0, p2
 
     goto :goto_4
 
     :cond_7
-    const/4 v1, 0x0
+    move v0, v10
 
     :goto_4
-    invoke-virtual {v0, v1, p2, v6, v7}, Lorg/telegram/messenger/StatsController;->incrementSentBytesCount(IIJ)V
+    invoke-virtual {p1, v0, v10, v6, v7}, Lorg/telegram/messenger/StatsController;->incrementSentBytesCount(IIJ)V
 
     :cond_8
-    cmp-long v0, v8, v2
+    cmp-long p1, v8, v2
 
-    if-lez v0, :cond_a
+    if-lez p1, :cond_a
 
-    .line 3636
-    iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
+    .line 3639
+    iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
+    invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->lastNetInfo:Landroid/net/NetworkInfo;
+    iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->lastNetInfo:Landroid/net/NetworkInfo;
 
-    if-eqz v1, :cond_9
+    if-eqz v0, :cond_9
 
-    invoke-virtual {v1}, Landroid/net/NetworkInfo;->isRoaming()Z
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isRoaming()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_9
+    if-eqz v0, :cond_9
 
     goto :goto_5
 
     :cond_9
-    const/4 p1, 0x0
+    move p2, v10
 
     :goto_5
-    invoke-virtual {v0, p1, p2, v8, v9}, Lorg/telegram/messenger/StatsController;->incrementReceivedBytesCount(IIJ)V
+    invoke-virtual {p1, p2, v10, v8, v9}, Lorg/telegram/messenger/StatsController;->incrementReceivedBytesCount(IIJ)V
 
     :cond_a
     return-void
@@ -14668,19 +14670,19 @@
 .method callFailedFromConnectionService()V
     .locals 1
 
-    .line 4162
+    .line 4165
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isOutgoing:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "ERROR_CONNECTION_SERVICE"
 
-    .line 4163
+    .line 4166
     invoke-direct {p0, v0}, Lorg/telegram/messenger/voip/VoIPService;->callFailed(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 4165
+    .line 4168
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->hangUp()V
 
@@ -14864,13 +14866,13 @@
 .end method
 
 .method public createCaptureDevice(Z)V
-    .locals 10
+    .locals 9
 
     const/4 v0, 0x2
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x2
+    move v1, v0
 
     goto :goto_0
 
@@ -14929,9 +14931,9 @@
 
     aget-wide v7, v6, p1
 
-    cmp-long v9, v7, v4
+    cmp-long v4, v7, v4
 
-    if-eqz v9, :cond_3
+    if-eqz v4, :cond_3
 
     return-void
 
@@ -15001,9 +15003,9 @@
 
     aget-wide v2, v0, p1
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_6
+    if-nez v2, :cond_6
 
     iget-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
@@ -15070,7 +15072,7 @@
 
     const/4 v1, 0x0
 
-    .line 3311
+    .line 3314
     invoke-virtual {p0, v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->declineIncomingCall(ILjava/lang/Runnable;)V
 
     return-void
@@ -15080,43 +15082,52 @@
     .locals 6
 
     .line 3240
-    invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->stopRinging()V
+    iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
+
+    if-eqz v0, :cond_0
 
     .line 3241
-    iput p1, p0, Lorg/telegram/messenger/voip/VoIPService;->callDiscardReason:I
-
-    .line 3242
-    iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
-
-    const/16 v1, 0xa
-
-    const/16 v2, 0xe
-
-    if-ne v0, v2, :cond_1
+    invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->stopScreenCapture()V
 
     .line 3243
-    iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->delayedStartOutgoingCall:Ljava/lang/Runnable;
-
-    if-eqz p1, :cond_0
+    :cond_0
+    invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->stopRinging()V
 
     .line 3244
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+    iput p1, p0, Lorg/telegram/messenger/voip/VoIPService;->callDiscardReason:I
 
     .line 3245
+    iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
+
+    const/16 v1, 0xe
+
+    const/16 v2, 0xa
+
+    if-ne v0, v1, :cond_2
+
+    .line 3246
+    iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService;->delayedStartOutgoingCall:Ljava/lang/Runnable;
+
+    if-eqz p1, :cond_1
+
+    .line 3247
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 3248
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callEnded()V
 
     goto :goto_0
 
-    .line 3247
-    :cond_0
-    invoke-direct {p0, v1}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
+    .line 3250
+    :cond_1
+    invoke-direct {p0, v2}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
 
     const/4 p1, 0x1
 
-    .line 3248
+    .line 3251
     iput-boolean p1, p0, Lorg/telegram/messenger/voip/VoIPService;->endCallAfterRequest:Z
 
-    .line 3249
+    .line 3252
     new-instance p1, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda15;
 
     invoke-direct {p1, p0}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/messenger/voip/VoIPService;)V
@@ -15128,38 +15139,38 @@
     :goto_0
     return-void
 
-    :cond_1
-    if-eq v0, v1, :cond_9
+    :cond_2
+    if-eq v0, v2, :cond_a
 
-    const/16 v2, 0xb
+    const/16 v1, 0xb
 
-    if-ne v0, v2, :cond_2
+    if-ne v0, v1, :cond_3
 
     goto/16 :goto_3
 
-    .line 3260
-    :cond_2
-    invoke-direct {p0, v1}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
+    .line 3263
+    :cond_3
+    invoke-direct {p0, v2}, Lorg/telegram/messenger/voip/VoIPService;->dispatchStateChanged(I)V
 
-    .line 3261
+    .line 3264
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_4
-
-    .line 3262
-    iput-object p2, p0, Lorg/telegram/messenger/voip/VoIPService;->onDestroyRunnable:Ljava/lang/Runnable;
-
-    .line 3263
-    invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callEnded()V
-
-    .line 3264
-    iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->callReqId:I
-
-    if-eqz p1, :cond_3
+    if-nez v0, :cond_5
 
     .line 3265
+    iput-object p2, p0, Lorg/telegram/messenger/voip/VoIPService;->onDestroyRunnable:Ljava/lang/Runnable;
+
+    .line 3266
+    invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callEnded()V
+
+    .line 3267
+    iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->callReqId:I
+
+    if-eqz p1, :cond_4
+
+    .line 3268
     iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -15170,38 +15181,38 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 3266
+    .line 3269
     iput v1, p0, Lorg/telegram/messenger/voip/VoIPService;->callReqId:I
 
-    :cond_3
+    :cond_4
     return-void
 
-    .line 3270
-    :cond_4
+    .line 3273
+    :cond_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;-><init>()V
 
-    .line 3271
+    .line 3274
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;-><init>()V
 
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->peer:Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;
 
-    .line 3272
+    .line 3275
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$PhoneCall;->access_hash:J
 
     iput-wide v4, v2, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->access_hash:J
 
-    .line 3273
+    .line 3276
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$PhoneCall;->id:J
 
     iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputPhoneCall;->id:J
 
-    .line 3274
+    .line 3277
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->getCallDuration()J
 
     move-result-wide v2
@@ -15210,16 +15221,16 @@
 
     div-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    iput v3, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->duration:I
+    iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->duration:I
 
-    .line 3275
+    .line 3278
     iget-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     aget-object v3, v2, v1
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     aget-object v1, v2, v1
 
@@ -15229,7 +15240,7 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     const-wide/16 v1, 0x0
 
     :goto_1
@@ -15237,17 +15248,17 @@
 
     const/4 v1, 0x2
 
-    if-eq p1, v1, :cond_8
+    if-eq p1, v1, :cond_9
 
     const/4 v2, 0x3
 
-    if-eq p1, v2, :cond_7
+    if-eq p1, v2, :cond_8
 
     const/4 v2, 0x4
 
-    if-eq p1, v2, :cond_6
+    if-eq p1, v2, :cond_7
 
-    .line 3288
+    .line 3291
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonHangup;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonHangup;-><init>()V
@@ -15256,8 +15267,8 @@
 
     goto :goto_2
 
-    .line 3284
-    :cond_6
+    .line 3287
+    :cond_7
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonBusy;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonBusy;-><init>()V
@@ -15266,8 +15277,8 @@
 
     goto :goto_2
 
-    .line 3281
-    :cond_7
+    .line 3284
+    :cond_8
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonMissed;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonMissed;-><init>()V
@@ -15276,15 +15287,15 @@
 
     goto :goto_2
 
-    .line 3278
-    :cond_8
+    .line 3281
+    :cond_9
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonDisconnect;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscardReasonDisconnect;-><init>()V
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_phone_discardCall;->reason:Lorg/telegram/tgnet/TLRPC$PhoneCallDiscardReason;
 
-    .line 3291
+    .line 3294
     :goto_2
     iget p1, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
@@ -15298,13 +15309,13 @@
 
     invoke-virtual {p1, v0, v2, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;I)I
 
-    .line 3306
+    .line 3309
     iput-object p2, p0, Lorg/telegram/messenger/voip/VoIPService;->onDestroyRunnable:Ljava/lang/Runnable;
 
-    .line 3307
+    .line 3310
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callEnded()V
 
-    :cond_9
+    :cond_a
     :goto_3
     return-void
 .end method
@@ -15312,12 +15323,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 4394
+    .line 4397
     sget p2, Lorg/telegram/messenger/NotificationCenter;->appDidLogout:I
 
     if-ne p1, p2, :cond_0
 
-    .line 4395
+    .line 4398
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callEnded()V
 
     :cond_0
@@ -15325,7 +15336,7 @@
 .end method
 
 .method public editCallMember(Lorg/telegram/tgnet/TLObject;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Runnable;)V
-    .locals 8
+    .locals 7
 
     if-eqz p1, :cond_a
 
@@ -15455,9 +15466,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
     goto :goto_0
 
@@ -15613,23 +15624,23 @@
 .method public getAccount()I
     .locals 1
 
-    .line 4389
+    .line 4392
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
 
     return v0
 .end method
 
 .method public getCallDuration()J
-    .locals 5
+    .locals 4
 
     .line 2873
     iget-wide v0, p0, Lorg/telegram/messenger/voip/VoIPService;->callStartTime:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     return-wide v2
 
@@ -15668,7 +15679,7 @@
 .method public getCallState()I
     .locals 1
 
-    .line 3849
+    .line 3852
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->currentState:I
 
     return v0
@@ -15710,22 +15721,22 @@
 .method public getConnectionAndStartCall()Lorg/telegram/messenger/voip/VoIPService$CallConnection;
     .locals 4
 
-    .line 3320
+    .line 3323
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
     if-nez v0, :cond_2
 
-    .line 3321
+    .line 3324
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "creating call connection"
 
-    .line 3322
+    .line 3325
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3324
+    .line 3327
     :cond_0
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
@@ -15733,15 +15744,15 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
-    .line 3325
+    .line 3328
     invoke-virtual {v0}, Landroid/telecom/Connection;->setInitializing()V
 
-    .line 3326
+    .line 3329
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isOutgoing:Z
 
     if-eqz v0, :cond_1
 
-    .line 3327
+    .line 3330
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/voip/VoIPService;)V
@@ -15750,10 +15761,10 @@
 
     const-wide/16 v1, 0x7d0
 
-    .line 3331
+    .line 3334
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 3333
+    .line 3336
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
@@ -15787,7 +15798,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telecom/Connection;->setAddress(Landroid/net/Uri;I)V
 
-    .line 3334
+    .line 3337
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
@@ -15802,7 +15813,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telecom/Connection;->setCallerDisplayName(Ljava/lang/String;I)V
 
-    .line 3336
+    .line 3339
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
@@ -15967,7 +15978,7 @@
 .method public getGroupCallPeer()Lorg/telegram/tgnet/TLRPC$InputPeer;
     .locals 1
 
-    .line 3853
+    .line 3856
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCallPeer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     return-object v0
@@ -15976,7 +15987,7 @@
 .method public getLastError()Ljava/lang/String;
     .locals 1
 
-    .line 3845
+    .line 3848
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->lastError:Ljava/lang/String;
 
     return-object v0
@@ -15985,7 +15996,7 @@
 .method public getRemoteAudioState()I
     .locals 1
 
-    .line 4411
+    .line 4414
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->remoteAudioState:I
 
     return v0
@@ -15994,7 +16005,7 @@
 .method public getRemoteVideoState()I
     .locals 1
 
-    .line 4415
+    .line 4418
     iget v0, p0, Lorg/telegram/messenger/voip/VoIPService;->remoteVideoState:I
 
     return v0
@@ -16075,7 +16086,7 @@
 .method public handleNotificationAction(Landroid/content/Intent;)V
     .locals 3
 
-    .line 4337
+    .line 4340
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16106,15 +16117,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 4338
+    .line 4341
     invoke-virtual {p0, v1}, Landroid/app/Service;->stopForeground(Z)V
 
-    .line 4339
+    .line 4342
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->hangUp()V
 
     goto :goto_0
 
-    .line 4340
+    .line 4343
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -16144,19 +16155,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 4341
+    .line 4344
     invoke-virtual {p0, v1}, Landroid/app/Service;->stopForeground(Z)V
 
     const/4 p1, 0x4
 
     const/4 v0, 0x0
 
-    .line 4342
+    .line 4345
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/voip/VoIPService;->declineIncomingCall(ILjava/lang/Runnable;)V
 
     goto :goto_0
 
-    .line 4343
+    .line 4346
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -16186,7 +16197,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 4344
+    .line 4347
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->acceptIncomingCallFromNotification()V
 
     :cond_2
@@ -16243,13 +16254,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x3
+    move v0, v1
 
     :goto_1
     invoke-virtual {p0, v0, p2}, Lorg/telegram/messenger/voip/VoIPService;->declineIncomingCall(ILjava/lang/Runnable;)V
@@ -16459,7 +16470,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -16632,7 +16643,7 @@
 .method public isBluetoothHeadsetConnected()Z
     .locals 1
 
-    .line 3786
+    .line 3789
     sget-boolean v0, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     if-eqz v0, :cond_1
@@ -16647,7 +16658,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3787
+    .line 3790
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
     invoke-virtual {v0}, Landroid/telecom/Connection;->getCallAudioState()Landroid/telecom/CallAudioState;
@@ -16672,7 +16683,7 @@
     :goto_0
     return v0
 
-    .line 3789
+    .line 3792
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isBtHeadsetConnected:Z
 
@@ -16684,14 +16695,14 @@
 
     const-string v0, "audio"
 
-    .line 4249
+    .line 4252
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 4250
+    .line 4253
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
 
     move-result v0
@@ -16702,7 +16713,7 @@
 .method public isBluetoothWillOn()Z
     .locals 1
 
-    .line 4254
+    .line 4257
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->needSwitchToBluetoothAfterScoActivates:Z
 
     return v0
@@ -16782,7 +16793,7 @@
 .method public isHeadsetPlugged()Z
     .locals 1
 
-    .line 4258
+    .line 4261
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isHeadsetPlugged:Z
 
     return v0
@@ -16823,7 +16834,7 @@
 .method public isOutgoing()Z
     .locals 1
 
-    .line 4333
+    .line 4336
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->isOutgoing:Z
 
     return v0
@@ -16892,7 +16903,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     return v2
@@ -17033,7 +17044,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 3794
+    .line 3797
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->hasAudioFocus:Z
 
     goto :goto_0
@@ -17041,7 +17052,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 3796
+    .line 3799
     iput-boolean p1, p0, Lorg/telegram/messenger/voip/VoIPService;->hasAudioFocus:Z
 
     :goto_0
@@ -17090,9 +17101,9 @@
 
     iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_4
+    if-eqz v1, :cond_4
 
     .line 1460
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -17141,9 +17152,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_5
+    if-nez v1, :cond_5
 
     .line 1466
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->access_hash:J
@@ -17423,7 +17434,7 @@
 
     invoke-static {v0, v5, v1, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 1524
     :goto_0
@@ -17638,7 +17649,7 @@
 .method public onConnectionStateChanged(IZ)V
     .locals 0
 
-    .line 4171
+    .line 4174
     new-instance p2, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda37;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/messenger/voip/VoIPService;I)V
@@ -17653,31 +17664,31 @@
 
     const-string v0, "android.media.property.OUTPUT_FRAMES_PER_BUFFER"
 
-    .line 3477
+    .line 3480
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 3478
+    .line 3481
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_0
 
     const-string v1, "=============== VoIPService STARTING ==============="
 
-    .line 3479
+    .line 3482
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
     :try_start_0
     const-string v1, "audio"
 
-    .line 3482
+    .line 3485
     invoke-virtual {p0, v1}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/media/AudioManager;
 
-    .line 3483
+    .line 3486
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x11
@@ -17690,7 +17701,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3484
+    .line 3487
     invoke-virtual {v1, v0}, Landroid/media/AudioManager;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -17699,7 +17710,7 @@
 
     move-result v0
 
-    .line 3485
+    .line 3488
     invoke-static {v0}, Lorg/telegram/messenger/voip/Instance;->setBufferSize(I)V
 
     goto :goto_0
@@ -17711,7 +17722,7 @@
 
     const/4 v3, 0x2
 
-    .line 3487
+    .line 3490
     invoke-static {v0, v2, v3}, Landroid/media/AudioTrack;->getMinBufferSize(III)I
 
     move-result v0
@@ -17723,7 +17734,7 @@
     :goto_0
     const-string v0, "power"
 
-    .line 3490
+    .line 3493
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -17740,10 +17751,10 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->cpuWakelock:Landroid/os/PowerManager$WakeLock;
 
-    .line 3491
+    .line 3494
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 3493
+    .line 3496
     invoke-virtual {v1}, Landroid/media/AudioManager;->isBluetoothScoAvailableOffCall()Z
 
     move-result v0
@@ -17764,74 +17775,74 @@
     :goto_1
     iput-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->btAdapter:Landroid/bluetooth/BluetoothAdapter;
 
-    .line 3495
+    .line 3498
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     const-string v3, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    .line 3496
+    .line 3499
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 3497
+    .line 3500
     sget-boolean v3, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     if-nez v3, :cond_4
 
     const-string v3, "android.intent.action.HEADSET_PLUG"
 
-    .line 3498
+    .line 3501
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 3499
+    .line 3502
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->btAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     if-eqz v3, :cond_3
 
     const-string v3, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
 
-    .line 3500
+    .line 3503
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v3, "android.media.ACTION_SCO_AUDIO_STATE_UPDATED"
 
-    .line 3501
+    .line 3504
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     :cond_3
     const-string v3, "android.intent.action.PHONE_STATE"
 
-    .line 3503
+    .line 3506
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v3, "android.intent.action.SCREEN_ON"
 
-    .line 3504
+    .line 3507
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v3, "android.intent.action.SCREEN_OFF"
 
-    .line 3505
+    .line 3508
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 3507
+    .line 3510
     :cond_4
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->receiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v3, v0}, Landroid/app/Service;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 3508
+    .line 3511
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->fetchBluetoothDeviceName()V
 
-    .line 3510
+    .line 3513
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->audioDeviceCallback:Landroid/media/AudioDeviceCallback;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     if-nez v0, :cond_5
 
-    .line 3512
+    .line 3515
     :try_start_1
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$8;
 
@@ -17846,21 +17857,21 @@
     :catchall_0
     move-exception v0
 
-    .line 3525
+    .line 3528
     :try_start_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3526
+    .line 3529
     iput-object v2, p0, Lorg/telegram/messenger/voip/VoIPService;->audioDeviceCallback:Landroid/media/AudioDeviceCallback;
 
-    .line 3529
+    .line 3532
     :cond_5
     :goto_2
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->audioDeviceCallback:Landroid/media/AudioDeviceCallback;
 
     if-eqz v0, :cond_6
 
-    .line 3530
+    .line 3533
     new-instance v2, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -17871,7 +17882,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/media/AudioManager;->registerAudioDeviceCallback(Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V
 
-    .line 3532
+    .line 3535
     :cond_6
     new-instance v0, Landroid/content/ComponentName;
 
@@ -17881,7 +17892,7 @@
 
     invoke-virtual {v1, v0}, Landroid/media/AudioManager;->registerMediaButtonEventReceiver(Landroid/content/ComponentName;)V
 
-    .line 3534
+    .line 3537
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->checkUpdateBluetoothHeadset()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
@@ -17891,21 +17902,21 @@
     :catch_0
     move-exception v0
 
-    .line 3536
+    .line 3539
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_7
 
     const-string v1, "error initializing voip controller"
 
-    .line 3537
+    .line 3540
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 3539
+    .line 3542
     :cond_7
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->callFailed()V
 
-    .line 3541
+    .line 3544
     :goto_3
     sget-object v0, Lorg/telegram/messenger/voip/VoIPService;->callIShouldHavePutIntoIntent:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
@@ -17917,10 +17928,10 @@
 
     if-lt v0, v1, :cond_a
 
-    .line 3542
+    .line 3545
     invoke-static {}, Lorg/telegram/messenger/NotificationsController;->checkOtherNotificationsChannel()V
 
-    .line 3543
+    .line 3546
     new-instance v0, Landroid/app/Notification$Builder;
 
     sget-object v1, Lorg/telegram/messenger/NotificationsController;->OTHER_NOTIFICATIONS_CHANNEL:Ljava/lang/String;
@@ -17931,7 +17942,7 @@
 
     const-string v2, "VoipOutgoingCall"
 
-    .line 3544
+    .line 3547
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -17942,17 +17953,17 @@
 
     const/4 v1, 0x0
 
-    .line 3545
+    .line 3548
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
-    .line 3546
+    .line 3549
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
     if-eqz v1, :cond_9
 
-    .line 3547
+    .line 3550
     invoke-virtual {p0}, Lorg/telegram/messenger/voip/VoIPService;->isMicMute()Z
 
     move-result v1
@@ -17971,13 +17982,13 @@
 
     goto :goto_5
 
-    .line 3549
+    .line 3552
     :cond_9
     sget v1, Lorg/telegram/messenger/R$drawable;->notification:I
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
-    .line 3550
+    .line 3553
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_notification:I
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -17985,7 +17996,7 @@
     :goto_5
     const/16 v1, 0xc9
 
-    .line 3552
+    .line 3555
     invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     move-result-object v0
@@ -18190,11 +18201,11 @@
 
     div-long/2addr v7, v9
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    rem-int/lit8 v8, v8, 0x5
+    rem-int/lit8 v7, v7, 0x5
 
-    invoke-virtual {v1, v6, v8}, Lorg/telegram/messenger/StatsController;->incrementTotalCallsTime(II)V
+    invoke-virtual {v1, v6, v7}, Lorg/telegram/messenger/StatsController;->incrementTotalCallsTime(II)V
 
     .line 3040
     invoke-direct {p0}, Lorg/telegram/messenger/voip/VoIPService;->onTgVoipPreStop()V
@@ -18348,7 +18359,7 @@
     aput-object v3, v1, v0
 
     :cond_c
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 3063
     :goto_2
@@ -18361,9 +18372,9 @@
     .line 3064
     aget-wide v7, v6, v1
 
-    cmp-long v9, v7, v4
+    cmp-long v7, v7, v4
 
-    if-eqz v9, :cond_e
+    if-eqz v7, :cond_e
 
     .line 3065
     iget-object v7, p0, Lorg/telegram/messenger/voip/VoIPService;->destroyCaptureDevice:[Z
@@ -18623,9 +18634,9 @@
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_inputGroupCall;->id:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     goto/16 :goto_2
 
@@ -18644,7 +18655,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_9
@@ -18679,9 +18690,9 @@
 
     if-ne v5, v6, :cond_8
 
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_1
     if-ge v5, v2, :cond_3
@@ -18911,7 +18922,7 @@
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1430
     :goto_0
@@ -18964,7 +18975,7 @@
 
     if-eqz v2, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_6
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/voip/NativeInstance;->prepareForStream(Z)V
@@ -19075,7 +19086,7 @@
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 3
 
-    .line 3743
+    .line 3746
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->unmutedByHold:Z
 
     if-nez v0, :cond_3
@@ -19096,7 +19107,7 @@
 
     goto :goto_0
 
-    .line 3746
+    .line 3749
     :cond_0
     iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -19110,14 +19121,14 @@
 
     const-string v0, "audio"
 
-    .line 3747
+    .line 3750
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 3748
+    .line 3751
     iget v1, p0, Lorg/telegram/messenger/voip/VoIPService;->audioRouteToSet:I
 
     if-nez v1, :cond_3
@@ -19146,7 +19157,7 @@
 
     goto :goto_0
 
-    .line 3751
+    .line 3754
     :cond_1
     iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -19170,7 +19181,7 @@
 
     const/4 v2, 0x1
 
-    .line 3752
+    .line 3755
     :cond_2
     invoke-direct {p0, v2}, Lorg/telegram/messenger/voip/VoIPService;->checkIsNear(Z)V
 
@@ -19184,7 +19195,7 @@
 .method public onSignalBarCountChanged(I)V
     .locals 1
 
-    .line 4239
+    .line 4242
     new-instance v0, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda35;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/messenger/voip/VoIPService;I)V
@@ -19561,9 +19572,9 @@
     iput-object v0, v1, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     :cond_5
-    cmp-long v6, v8, v4
+    cmp-long v4, v8, v4
 
-    if-eqz v6, :cond_6
+    if-eqz v4, :cond_6
 
     .line 722
     iget v0, v1, Lorg/telegram/messenger/voip/VoIPService;->currentAccount:I
@@ -19574,9 +19585,9 @@
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v0, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v0, v5}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v0
 
@@ -19596,13 +19607,13 @@
 
     move-result-object v0
 
-    iget-object v4, v1, Lorg/telegram/messenger/voip/VoIPService;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v5, v1, Lorg/telegram/messenger/voip/VoIPService;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iget v5, v1, Lorg/telegram/messenger/voip/VoIPService;->classGuid:I
+    iget v6, v1, Lorg/telegram/messenger/voip/VoIPService;->classGuid:I
 
     const/4 v7, 0x0
 
-    invoke-virtual {v0, v4, v5, v7}, Lorg/telegram/messenger/MessagesController;->startShortPoll(Lorg/telegram/tgnet/TLRPC$Chat;IZ)V
+    invoke-virtual {v0, v5, v6, v7}, Lorg/telegram/messenger/MessagesController;->startShortPoll(Lorg/telegram/tgnet/TLRPC$Chat;IZ)V
 
     .line 727
     :cond_6
@@ -19612,27 +19623,27 @@
 
     .line 728
     :goto_1
-    iget-object v4, v1, Lorg/telegram/messenger/voip/VoIPService;->localSink:[Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
+    iget-object v5, v1, Lorg/telegram/messenger/voip/VoIPService;->localSink:[Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
 
-    array-length v5, v4
+    array-length v6, v5
 
-    if-ge v0, v5, :cond_7
+    if-ge v0, v6, :cond_7
 
     .line 729
-    new-instance v5, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
+    new-instance v6, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
 
-    invoke-direct {v5}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;-><init>()V
+    invoke-direct {v6}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;-><init>()V
 
-    aput-object v5, v4, v0
+    aput-object v6, v5, v0
 
     .line 730
-    iget-object v4, v1, Lorg/telegram/messenger/voip/VoIPService;->remoteSink:[Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
+    iget-object v5, v1, Lorg/telegram/messenger/voip/VoIPService;->remoteSink:[Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
 
-    new-instance v5, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
+    new-instance v6, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
 
-    invoke-direct {v5}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;-><init>()V
+    invoke-direct {v6}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;-><init>()V
 
-    aput-object v5, v4, v0
+    aput-object v6, v5, v0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -19683,13 +19694,13 @@
 
     move-result-object v0
 
-    iget-object v4, v1, Lorg/telegram/messenger/voip/VoIPService;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v5, v1, Lorg/telegram/messenger/voip/VoIPService;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     const/4 v7, 0x0
 
-    invoke-virtual {v0, v4, v5, v7}, Lorg/telegram/messenger/MessagesController;->getGroupCall(JZ)Lorg/telegram/messenger/ChatObject$Call;
+    invoke-virtual {v0, v5, v6, v7}, Lorg/telegram/messenger/MessagesController;->getGroupCall(JZ)Lorg/telegram/messenger/ChatObject$Call;
 
     move-result-object v0
 
@@ -19732,9 +19743,9 @@
     .line 748
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v4, 0x17
+    const/16 v5, 0x17
 
-    if-lt v0, v4, :cond_a
+    if-lt v0, v5, :cond_a
 
     const-string v0, "android.permission.CAMERA"
 
@@ -19750,37 +19761,37 @@
     :cond_9
     iget-object v0, v1, Lorg/telegram/messenger/voip/VoIPService;->videoState:[I
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    aput v10, v0, v4
+    aput v10, v0, v5
 
     goto :goto_4
 
     :cond_a
     :goto_3
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 749
     iget-object v0, v1, Lorg/telegram/messenger/voip/VoIPService;->captureDevice:[J
 
-    iget-object v5, v1, Lorg/telegram/messenger/voip/VoIPService;->localSink:[Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
+    iget-object v6, v1, Lorg/telegram/messenger/voip/VoIPService;->localSink:[Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;
 
-    aget-object v5, v5, v4
+    aget-object v6, v6, v5
 
     iget-boolean v7, v1, Lorg/telegram/messenger/voip/VoIPService;->isFrontFaceCamera:Z
 
-    invoke-static {v5, v7}, Lorg/telegram/messenger/voip/NativeInstance;->createVideoCapturer(Lorg/webrtc/VideoSink;I)J
+    invoke-static {v6, v7}, Lorg/telegram/messenger/voip/NativeInstance;->createVideoCapturer(Lorg/webrtc/VideoSink;I)J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    aput-wide v7, v0, v4
+    aput-wide v6, v0, v5
 
-    if-eqz v6, :cond_b
+    if-eqz v4, :cond_b
 
     .line 751
     iget-object v0, v1, Lorg/telegram/messenger/voip/VoIPService;->videoState:[I
 
-    aput v10, v0, v4
+    aput v10, v0, v5
 
     goto :goto_4
 
@@ -19788,7 +19799,7 @@
     :cond_b
     iget-object v0, v1, Lorg/telegram/messenger/voip/VoIPService;->videoState:[I
 
-    aput v3, v0, v4
+    aput v3, v0, v5
 
     .line 758
     :goto_4
@@ -19801,7 +19812,7 @@
     if-nez v0, :cond_c
 
     .line 759
-    invoke-virtual {v1, v4}, Lorg/telegram/messenger/voip/VoIPService;->setAudioOutput(I)V
+    invoke-virtual {v1, v5}, Lorg/telegram/messenger/voip/VoIPService;->setAudioOutput(I)V
 
     .line 763
     :cond_c
@@ -20089,7 +20100,7 @@
 
     if-eqz v0, :cond_16
 
-    const/4 v0, 0x1
+    move v0, v10
 
     goto :goto_8
 
@@ -20186,7 +20197,7 @@
 .method public playAllowTalkSound()V
     .locals 2
 
-    .line 4234
+    .line 4237
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda22;
@@ -20221,7 +20232,7 @@
 .method public playStartRecordSound()V
     .locals 2
 
-    .line 4230
+    .line 4233
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/voip/VoIPService$$ExternalSyntheticLambda16;
@@ -20386,7 +20397,7 @@
 .end method
 
 .method public requestVideoCall(Z)V
-    .locals 8
+    .locals 7
 
     .line 1084
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
@@ -20409,9 +20420,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v3, :cond_1
 
     .line 1088
     aget-object v0, v0, v1
@@ -21021,7 +21032,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 p3, 0x1
+    move p3, v1
 
     :cond_1
     if-eqz p3, :cond_2
@@ -21077,7 +21088,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/messenger/voip/VoIPService;->unmutedByHold:Z
@@ -21209,7 +21220,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -21371,7 +21382,7 @@
 .end method
 
 .method public setVideoState(ZI)V
-    .locals 9
+    .locals 8
 
     .line 1180
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
@@ -21385,7 +21396,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1181
     :goto_0
@@ -21404,9 +21415,9 @@
 
     aget-wide v3, v2, p1
 
-    cmp-long v8, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v8, :cond_1
+    if-eqz v3, :cond_1
 
     .line 1183
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->videoState:[I
@@ -21476,9 +21487,9 @@
 
     aget-wide v3, v0, p1
 
-    cmp-long v8, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v8, :cond_4
+    if-eqz v3, :cond_4
 
     .line 1194
     aget-wide v3, v0, p1
@@ -21567,9 +21578,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v3, :cond_1
 
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
@@ -21649,7 +21660,7 @@
 
     if-eq p1, v0, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -21675,12 +21686,12 @@
 .method public startRingtoneAndVibration()V
     .locals 2
 
-    .line 3371
+    .line 3374
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->startedRinging:Z
 
     if-nez v0, :cond_0
 
-    .line 3372
+    .line 3375
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -21689,7 +21700,7 @@
 
     const/4 v0, 0x1
 
-    .line 3373
+    .line 3376
     iput-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService;->startedRinging:Z
 
     :cond_0
@@ -22164,7 +22175,7 @@
     goto :goto_4
 
     :cond_6
-    const/16 p2, 0x8
+    move p2, v1
 
     :goto_4
     invoke-virtual {p1, p2}, Landroid/telecom/Connection;->setAudioRoute(I)V
@@ -22185,7 +22196,7 @@
 
     if-ne v0, v1, :cond_8
 
-    const/4 v1, 0x5
+    move v1, p2
 
     :cond_8
     invoke-virtual {p1, v1}, Landroid/telecom/Connection;->setAudioRoute(I)V
@@ -22295,7 +22306,7 @@
 .method public updateOutputGainControlState()V
     .locals 5
 
-    .line 4372
+    .line 4375
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->hasRtmpStream()Z
 
     move-result v0
@@ -22304,7 +22315,7 @@
 
     return-void
 
-    .line 4375
+    .line 4378
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
@@ -22314,7 +22325,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 4376
+    .line 4379
     sget-boolean v0, Lorg/telegram/messenger/voip/VoIPService;->USE_CONNECTION_SERVICE:Z
 
     const/4 v2, 0x1
@@ -22323,14 +22334,14 @@
 
     const-string v0, "audio"
 
-    .line 4377
+    .line 4380
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 4378
+    .line 4381
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     aget-object v3, v3, v1
@@ -22357,17 +22368,17 @@
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     invoke-virtual {v3, v4}, Lorg/telegram/messenger/voip/NativeInstance;->setAudioOutputGainControlEnabled(Z)V
 
-    .line 4379
+    .line 4382
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     aget-object v3, v3, v1
@@ -22401,7 +22412,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     :goto_1
@@ -22409,7 +22420,7 @@
 
     goto :goto_3
 
-    .line 4381
+    .line 4384
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService;->systemCallConnection:Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
@@ -22423,14 +22434,14 @@
 
     if-ne v0, v2, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
-    .line 4382
+    .line 4385
     :goto_2
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
@@ -22438,7 +22449,7 @@
 
     invoke-virtual {v3, v0}, Lorg/telegram/messenger/voip/NativeInstance;->setAudioOutputGainControlEnabled(Z)V
 
-    .line 4383
+    .line 4386
     iget-object v3, p0, Lorg/telegram/messenger/voip/VoIPService;->tgVoip:[Lorg/telegram/messenger/voip/NativeInstance;
 
     aget-object v1, v3, v1

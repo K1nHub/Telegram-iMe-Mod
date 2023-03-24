@@ -797,14 +797,14 @@ public interface ExoPlayer extends Player {
 
         public Builder setSeekBackIncrementMs(long j) {
             Assertions.checkArgument(j > 0);
-            Assertions.checkState(true ^ this.buildCalled);
+            Assertions.checkState(!this.buildCalled);
             this.seekBackIncrementMs = j;
             return this;
         }
 
         public Builder setSeekForwardIncrementMs(long j) {
             Assertions.checkArgument(j > 0);
-            Assertions.checkState(true ^ this.buildCalled);
+            Assertions.checkState(!this.buildCalled);
             this.seekForwardIncrementMs = j;
             return this;
         }

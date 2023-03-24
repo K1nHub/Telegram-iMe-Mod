@@ -168,12 +168,12 @@
 
     if-nez p4, :cond_0
 
-    const/4 p4, 0x1
+    move p4, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 p4, 0x0
+    move p4, p1
 
     :goto_0
     const-string v0, "registeredKeys must not be null or empty"
@@ -227,13 +227,13 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, p1
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const/4 v0, 0x1
+    move v0, p2
 
     :goto_3
     const-string v1, "registered key has null appId and no request appId is provided"
@@ -285,7 +285,7 @@
     if-gt p3, p4, :cond_7
 
     :cond_6
-    const/4 p1, 0x1
+    move p1, p2
 
     :cond_7
     const-string p2, "Display Hint cannot be longer than 80 characters"

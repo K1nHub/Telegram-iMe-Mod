@@ -625,7 +625,7 @@
 .end method
 
 .method private synthetic lambda$new$0(J)V
-    .locals 3
+    .locals 2
 
     .line 140
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -645,9 +645,9 @@
 
     const-wide/16 p1, 0x3e8
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-lez v2, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -811,7 +811,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 166
     :goto_0
@@ -854,7 +854,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 176
     :goto_1
@@ -897,7 +897,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 186
     :goto_2
@@ -940,7 +940,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 196
     :goto_3
@@ -1238,7 +1238,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 329
     :goto_0
@@ -1533,7 +1533,7 @@
 
     move-result-wide v4
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     double-to-long v2, v2
 
@@ -1581,7 +1581,7 @@
 .end method
 
 .method private onGiftSuccess(Z)V
-    .locals 10
+    .locals 9
 
     .line 232
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -1727,9 +1727,9 @@
 
     iget-wide v7, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_1
+    if-eqz v5, :cond_1
 
     .line 248
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
@@ -1814,7 +1814,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 222
     :cond_0

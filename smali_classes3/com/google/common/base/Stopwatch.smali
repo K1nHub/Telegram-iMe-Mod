@@ -99,7 +99,7 @@
 .end method
 
 .method private static chooseUnit(J)Ljava/util/concurrent/TimeUnit;
-    .locals 7
+    .locals 6
 
     .line 221
     sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
@@ -112,9 +112,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_0
+    if-lez v2, :cond_0
 
     return-object v0
 
@@ -126,9 +126,9 @@
 
     move-result-wide v2
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_1
+    if-lez v2, :cond_1
 
     return-object v0
 
@@ -140,9 +140,9 @@
 
     move-result-wide v2
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_2
+    if-lez v2, :cond_2
 
     return-object v0
 
@@ -154,9 +154,9 @@
 
     move-result-wide v2
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_3
+    if-lez v2, :cond_3
 
     return-object v0
 
@@ -168,9 +168,9 @@
 
     move-result-wide v2
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_4
+    if-lez v2, :cond_4
 
     return-object v0
 
@@ -182,9 +182,9 @@
 
     move-result-wide p0
 
-    cmp-long v2, p0, v4
+    cmp-long p0, p0, v4
 
-    if-lez v2, :cond_5
+    if-lez p0, :cond_5
 
     return-object v0
 

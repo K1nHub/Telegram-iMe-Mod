@@ -127,7 +127,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 

@@ -8,11 +8,11 @@ import io.reactivex.Observable;
 /* compiled from: CryptoWalletRepository.kt */
 /* loaded from: classes3.dex */
 public interface CryptoWalletRepository {
-    Observable<Result<Boolean>> clearTokensData();
+    Observable<Result<Boolean>> clearTokensData(BlockchainType blockchainType);
 
     Observable<Result<CryptoWalletInfo>> getLinkedCryptoWalletInfo();
 
     Observable<Result<Boolean>> linkWallet(String str, NetworkType networkType, String str2);
 
-    Observable<Result<Boolean>> unlinkWallet(NetworkType networkType, BlockchainType blockchainType);
+    Observable<Result<Boolean>> unlinkWallet(NetworkType networkType);
 }

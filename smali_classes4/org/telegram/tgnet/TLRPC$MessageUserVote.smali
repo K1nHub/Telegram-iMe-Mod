@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30997
+    .line 31007
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 31009
+    .line 31019
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageUserVoteInputOption;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 31006
+    .line 31016
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageUserVote;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 31012
+    .line 31022
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageUserVoteMultiple;
 
@@ -67,7 +67,7 @@
 
     goto :goto_1
 
-    .line 31016
+    .line 31026
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -97,7 +97,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 31019
+    .line 31029
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

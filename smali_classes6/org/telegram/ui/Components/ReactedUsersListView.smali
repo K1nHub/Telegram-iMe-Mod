@@ -579,7 +579,7 @@
 .end method
 
 .method private synthetic lambda$load$4(Lorg/telegram/tgnet/TLObject;)V
-    .locals 12
+    .locals 11
 
     .line 274
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;
@@ -628,7 +628,7 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 282
     :goto_1
@@ -687,7 +687,7 @@
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 289
     :goto_2
@@ -739,9 +739,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-eqz v11, :cond_4
+    if-eqz v7, :cond_4
 
     .line 299
     invoke-virtual {v0, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -1124,7 +1124,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v1, 0x0
+    move v1, v7
 
     .line 350
     :goto_0
@@ -1379,7 +1379,7 @@
 .end method
 
 .method public setSeenUsers(Ljava/util/List;)Lorg/telegram/ui/Components/ReactedUsersListView;
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1466,9 +1466,9 @@
 
     iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_1
+    if-nez v6, :cond_1
 
     .line 213
     iget v2, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->date:I

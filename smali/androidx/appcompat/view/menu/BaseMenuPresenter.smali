@@ -317,9 +317,9 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v2, :cond_5

@@ -12,7 +12,7 @@
 
 # direct methods
 .method constructor <init>(Lj$/util/stream/v3;Lj$/util/stream/m3;)V
-    .locals 3
+    .locals 2
 
     iput-object p1, p0, Lj$/util/stream/u3;->d:Lj$/util/stream/v3;
 
@@ -26,9 +26,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 
@@ -48,21 +48,21 @@
 
     iget-wide v0, p0, Lj$/util/stream/u3;->b:J
 
-    const-wide/16 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v4, 0x0
+    cmp-long v4, v0, v2
 
-    cmp-long v6, v0, v4
+    const-wide/16 v5, 0x1
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     iget-wide v0, p0, Lj$/util/stream/u3;->c:J
 
-    cmp-long v6, v0, v4
+    cmp-long v2, v0, v2
 
-    if-lez v6, :cond_1
+    if-lez v2, :cond_1
 
-    sub-long/2addr v0, v2
+    sub-long/2addr v0, v5
 
     iput-wide v0, p0, Lj$/util/stream/u3;->c:J
 
@@ -73,7 +73,7 @@
     goto :goto_0
 
     :cond_0
-    sub-long/2addr v0, v2
+    sub-long/2addr v0, v5
 
     iput-wide v0, p0, Lj$/util/stream/u3;->b:J
 
@@ -105,15 +105,15 @@
 .end method
 
 .method public o()Z
-    .locals 5
+    .locals 4
 
     iget-wide v0, p0, Lj$/util/stream/u3;->c:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lj$/util/stream/h3;->a:Lj$/util/stream/m3;
 

@@ -130,7 +130,7 @@
 
     if-ne p0, v1, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_4
     return v0
@@ -201,7 +201,7 @@
 .end method
 
 .method private readFirstScrValue(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/extractor/PositionHolder;)I
-    .locals 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -219,33 +219,33 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 150
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
-    int-to-long v4, v0
+    int-to-long v4, v3
 
-    const/4 v6, 0x1
+    cmp-long v1, v1, v4
 
-    cmp-long v7, v2, v4
+    const/4 v2, 0x1
 
-    if-eqz v7, :cond_0
+    if-eqz v1, :cond_0
 
     .line 151
     iput-wide v4, p2, Lcom/google/android/exoplayer2/extractor/PositionHolder;->position:J
 
-    return v6
+    return v2
 
     .line 155
     :cond_0
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
+    invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
     .line 156
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
@@ -257,7 +257,7 @@
 
     move-result-object p2
 
-    invoke-interface {p1, p2, v0, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
+    invoke-interface {p1, p2, v3, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
     .line 159
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -269,9 +269,9 @@
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->firstScrValue:J
 
     .line 160
-    iput-boolean v6, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->isFirstScrValueRead:Z
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->isFirstScrValueRead:Z
 
-    return v0
+    return v3
 .end method
 
 .method private readFirstScrValueFromBuffer(Lcom/google/android/exoplayer2/util/ParsableByteArray;)J
@@ -333,7 +333,7 @@
 .end method
 
 .method private readLastScrValue(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/extractor/PositionHolder;)I
-    .locals 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -352,33 +352,33 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    int-to-long v4, v3
+    int-to-long v3, v2
 
-    sub-long/2addr v0, v4
+    sub-long/2addr v0, v3
 
     .line 187
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    const/4 v2, 0x1
+    cmp-long v3, v3, v0
 
-    cmp-long v6, v4, v0
+    const/4 v4, 0x1
 
-    if-eqz v6, :cond_0
+    if-eqz v3, :cond_0
 
     .line 188
     iput-wide v0, p2, Lcom/google/android/exoplayer2/extractor/PositionHolder;->position:J
 
-    return v2
+    return v4
 
     .line 192
     :cond_0
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
+    invoke-virtual {p2, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
     .line 193
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
@@ -392,7 +392,7 @@
 
     const/4 v0, 0x0
 
-    invoke-interface {p1, p2, v0, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
+    invoke-interface {p1, p2, v0, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
     .line 196
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -404,13 +404,13 @@
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->lastScrValue:J
 
     .line 197
-    iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->isLastScrValueRead:Z
+    iput-boolean v4, p0, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->isLastScrValueRead:Z
 
     return v0
 .end method
 
 .method private readLastScrValueFromBuffer(Lcom/google/android/exoplayer2/util/ParsableByteArray;)J
-    .locals 7
+    .locals 6
 
     .line 202
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
@@ -452,9 +452,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     return-wide v4
 
@@ -681,9 +681,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 96
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/PsDurationReader;->finishReadDuration(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)I

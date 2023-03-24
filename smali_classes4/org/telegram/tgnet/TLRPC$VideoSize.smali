@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 19280
+    .line 19290
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 19289
+    .line 19299
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static TLdeserialize(JJLorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$VideoSize;
-    .locals 3
+    .locals 2
 
     sparse-switch p5, :sswitch_data_0
 
@@ -55,7 +55,7 @@
 
     goto :goto_0
 
-    .line 19295
+    .line 19305
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoSize_layer115;
 
@@ -63,7 +63,7 @@
 
     goto :goto_0
 
-    .line 19304
+    .line 19314
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoSizeStickerMarkup;
 
@@ -71,7 +71,7 @@
 
     goto :goto_0
 
-    .line 19307
+    .line 19317
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;
 
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 19298
+    .line 19308
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoSize_layer127;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 19301
+    .line 19311
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_videoSize;
 
@@ -102,7 +102,7 @@
 
     goto :goto_1
 
-    .line 19311
+    .line 19321
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -130,15 +130,15 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 19314
+    .line 19324
     invoke-virtual {v0, p4, p6}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 19315
+    .line 19325
     iget-object p4, v0, Lorg/telegram/tgnet/TLRPC$VideoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     if-nez p4, :cond_5
 
-    .line 19316
+    .line 19326
     iget-object p4, v0, Lorg/telegram/tgnet/TLRPC$VideoSize;->type:Ljava/lang/String;
 
     invoke-static {p4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -153,11 +153,11 @@
 
     if-nez p6, :cond_2
 
-    cmp-long v2, p2, p4
+    cmp-long p4, p2, p4
 
-    if-eqz v2, :cond_4
+    if-eqz p4, :cond_4
 
-    .line 19317
+    .line 19327
     :cond_2
     new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
@@ -169,10 +169,10 @@
 
     neg-long p0, p0
 
-    .line 19319
+    .line 19329
     iput-wide p0, p4, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 19320
+    .line 19330
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$VideoSize;->type:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -186,10 +186,10 @@
     :cond_3
     neg-long p0, p2
 
-    .line 19322
+    .line 19332
     iput-wide p0, p4, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 19323
+    .line 19333
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$VideoSize;->type:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -202,7 +202,7 @@
 
     goto :goto_2
 
-    .line 19326
+    .line 19336
     :cond_4
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 

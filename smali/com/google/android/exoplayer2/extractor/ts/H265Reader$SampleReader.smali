@@ -201,9 +201,9 @@
 
     sub-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    add-int/2addr p3, p2
+    add-int/2addr p3, p1
 
     .line 549
     invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->outputSample(I)V
@@ -265,7 +265,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p2
 
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstSlice:Z
@@ -385,12 +385,12 @@
 
     if-gt p4, p1, :cond_3
 
-    const/4 p1, 0x1
+    move p1, p2
 
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 523
     :goto_0
@@ -403,7 +403,7 @@
     if-gt p4, p1, :cond_5
 
     :cond_4
-    const/4 v0, 0x1
+    move v0, p2
 
     .line 524
     :cond_5

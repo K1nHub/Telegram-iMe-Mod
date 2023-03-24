@@ -158,7 +158,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 p2, 0x30
+    move p2, p3
 
     :goto_0
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

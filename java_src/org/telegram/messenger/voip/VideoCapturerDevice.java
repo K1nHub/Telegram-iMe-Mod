@@ -177,7 +177,7 @@ public class VideoCapturerDevice {
         this.nativePtr = j;
         if ("screen".equals(str)) {
             if (Build.VERSION.SDK_INT >= 21 && this.videoCapturer == null) {
-                this.videoCapturer = new ScreenCapturerAndroid(mediaProjectionPermissionResultData, new C33341());
+                this.videoCapturer = new ScreenCapturerAndroid(mediaProjectionPermissionResultData, new C33491());
                 final Point screenCaptureSize = getScreenCaptureSize();
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
@@ -210,7 +210,7 @@ public class VideoCapturerDevice {
         }
         final String str2 = deviceNames[i];
         if (this.videoCapturer == null) {
-            this.videoCapturer = camera2Enumerator.createCapturer(str2, new C33352());
+            this.videoCapturer = camera2Enumerator.createCapturer(str2, new C33502());
             this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("VideoCapturerThread", eglBase.getEglBaseContext());
             this.handler.post(new Runnable() { // from class: org.telegram.messenger.voip.VideoCapturerDevice$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -231,8 +231,8 @@ public class VideoCapturerDevice {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VideoCapturerDevice$1 */
     /* loaded from: classes4.dex */
-    public class C33341 extends MediaProjection.Callback {
-        C33341() {
+    public class C33491 extends MediaProjection.Callback {
+        C33491() {
         }
 
         @Override // android.media.projection.MediaProjection.Callback
@@ -268,7 +268,7 @@ public class VideoCapturerDevice {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VideoCapturerDevice$2 */
     /* loaded from: classes4.dex */
-    public class C33352 implements CameraVideoCapturer.CameraEventsHandler {
+    public class C33502 implements CameraVideoCapturer.CameraEventsHandler {
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
         public void onCameraClosed() {
         }
@@ -289,7 +289,7 @@ public class VideoCapturerDevice {
         public void onCameraOpening(String str) {
         }
 
-        C33352() {
+        C33502() {
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
@@ -318,12 +318,12 @@ public class VideoCapturerDevice {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VideoCapturerDevice$3 */
     /* loaded from: classes4.dex */
-    public class C33363 implements CameraVideoCapturer.CameraSwitchHandler {
+    public class C33513 implements CameraVideoCapturer.CameraSwitchHandler {
         @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
         public void onCameraSwitchError(String str) {
         }
 
-        C33363() {
+        C33513() {
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
@@ -331,7 +331,7 @@ public class VideoCapturerDevice {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VideoCapturerDevice$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoCapturerDevice.C33363.lambda$onCameraSwitchDone$0(z);
+                    VideoCapturerDevice.C33513.lambda$onCameraSwitchDone$0(z);
                 }
             });
         }
@@ -346,7 +346,7 @@ public class VideoCapturerDevice {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$4(String str) {
-        ((CameraVideoCapturer) this.videoCapturer).switchCamera(new C33363(), str);
+        ((CameraVideoCapturer) this.videoCapturer).switchCamera(new C33513(), str);
     }
 
     public static MediaProjection getMediaProjection() {

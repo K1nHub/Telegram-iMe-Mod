@@ -121,7 +121,7 @@
 
     const/high16 v0, 0x41a00000    # 20.0f
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -254,7 +254,7 @@
     :cond_0
     const/high16 v0, 0x3f000000    # 0.5f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     cmpg-float p2, p1, p2
 
@@ -326,12 +326,12 @@
 
     if-lez v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1307
     :goto_0
@@ -343,28 +343,28 @@
 
     if-lez p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     if-eqz v1, :cond_4
 
     if-eqz p1, :cond_4
 
-    mul-float p2, p2, p2
+    mul-float/2addr p2, p2
 
-    mul-float p3, p3, p3
+    mul-float/2addr p3, p3
 
     add-float/2addr p2, p3
 
     .line 1310
     iget p1, p0, Landroidx/customview/widget/ViewDragHelper;->mTouchSlop:I
 
-    mul-int p1, p1, p1
+    mul-int/2addr p1, p1
 
     int-to-float p1, p1
 
@@ -372,7 +372,7 @@
 
     if-lez p1, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_3
     return v0
@@ -393,7 +393,7 @@
 
     if-lez p1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_5
     return v0
@@ -414,7 +414,7 @@
 
     if-lez p1, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_7
     return v0
@@ -428,9 +428,9 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     cmpg-float p2, v0, p2
+
+    const/4 v1, 0x0
 
     if-gez p2, :cond_0
 
@@ -660,7 +660,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v1, v2
 
@@ -682,7 +682,7 @@
 
     move-result p2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
@@ -708,7 +708,7 @@
 
     const/high16 p2, 0x43800000    # 256.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -832,11 +832,11 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     add-float/2addr p2, p1
 
@@ -862,7 +862,7 @@
 
     div-float/2addr v0, p1
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p1, p2
 
@@ -927,7 +927,7 @@
 
     const v0, 0x3ef1463b
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-double v0, p1
 
@@ -1760,7 +1760,7 @@
 
     invoke-virtual {v0}, Landroid/widget/OverScroller;->abortAnimation()V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :cond_4
     if-nez v0, :cond_6
@@ -2092,7 +2092,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 p1, -0x1
+    move p1, v3
 
     :goto_2
     if-ne p1, v3, :cond_6
@@ -2758,7 +2758,7 @@
 
     if-eqz v8, :cond_9
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_2
 
@@ -2940,7 +2940,7 @@
 
     if-ne v1, v6, :cond_13
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_13
     return v5

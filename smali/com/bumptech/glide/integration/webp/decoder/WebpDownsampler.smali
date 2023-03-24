@@ -136,7 +136,7 @@
 
     const-wide v0, 0x41cdcd6500000000L    # 1.0E9
 
-    mul-double v0, v0, p0
+    mul-double/2addr v0, p0
 
     .line 430
     invoke-static {v0, v1}, Lcom/bumptech/glide/integration/webp/decoder/WebpDownsampler;->round(D)I
@@ -155,7 +155,7 @@
 
     int-to-double v0, v0
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 433
     invoke-static {p0, p1}, Lcom/bumptech/glide/integration/webp/decoder/WebpDownsampler;->round(D)I
@@ -344,11 +344,11 @@
     :goto_1
     const/4 v8, 0x0
 
+    cmpg-float v8, v2, v8
+
     const-string v9, "], target: ["
 
     const-string v10, "x"
-
-    cmpg-float v8, v2, v8
 
     if-lez v8, :cond_12
 
@@ -893,7 +893,7 @@
 
     :cond_1
     :goto_0
-    const/16 v23, 0x0
+    move/from16 v23, v22
 
     .line 198
     :goto_1
@@ -991,7 +991,7 @@
 
     move-object/from16 v2, p4
 
-    const/4 v9, 0x1
+    move v9, v3
 
     move/from16 v3, v23
 
@@ -1019,7 +1019,7 @@
 
     if-lt v0, v1, :cond_4
 
-    const/16 v22, 0x1
+    move/from16 v22, v9
 
     .line 230
     :cond_4
@@ -1119,7 +1119,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     .line 242
     invoke-static {v5}, Ljava/lang/Math;->round(F)I
@@ -1128,7 +1128,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     .line 243
     invoke-static {v6}, Ljava/lang/Math;->round(F)I
@@ -2165,16 +2165,14 @@
 
     const/4 v0, 0x1
 
-    const/4 v6, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v6, 0x0
-
     :goto_0
+    move v6, v0
+
     move-object v1, p0
 
     move-object/from16 v2, p1

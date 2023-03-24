@@ -650,7 +650,7 @@
 .end method
 
 .method private bindTextureView()V
-    .locals 21
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -723,9 +723,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_9
+    if-eqz v5, :cond_9
 
     .line 635
     :cond_0
@@ -750,12 +750,12 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     iput-boolean v5, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->boundPresentation:Z
@@ -817,19 +817,19 @@
 
     const-wide/16 v7, 0x0
 
-    const v9, 0x3ecccccd    # 0.4f
+    cmp-long v7, v5, v7
 
-    const/4 v10, 0x2
+    const v8, 0x3ecccccd    # 0.4f
 
-    const/4 v11, -0x1
+    const/4 v9, 0x2
 
-    const v12, 0x3e4ccccd    # 0.2f
+    const/4 v10, -0x1
 
-    const/high16 v13, -0x1000000
+    const v11, 0x3e4ccccd    # 0.2f
 
-    cmp-long v14, v5, v7
+    const/high16 v12, -0x1000000
 
-    if-lez v14, :cond_5
+    if-lez v7, :cond_5
 
     .line 649
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -843,7 +843,7 @@
     .line 650
     invoke-static {v2, v4}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
-    move-result-object v15
+    move-result-object v14
 
     if-eqz v2, :cond_4
 
@@ -857,7 +857,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {v13, v11, v12}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v12, v10, v11}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v5
 
@@ -867,40 +867,40 @@
 
     sget-object v7, Landroid/graphics/drawable/GradientDrawable$Orientation;->BOTTOM_TOP:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    new-array v8, v10, [I
+    new-array v9, v9, [I
 
-    invoke-static {v5, v13, v12}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v5, v12, v11}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v10
 
-    aput v10, v8, v3
+    aput v10, v9, v3
 
-    invoke-static {v5, v13, v9}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v5, v12, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v5
 
-    aput v5, v8, v4
+    aput v5, v9, v4
 
-    invoke-direct {v6, v7, v8}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
+    invoke-direct {v6, v7, v9}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     .line 653
     iget-object v5, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
-    move-result-object v14
+    move-result-object v13
 
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
-    const/16 v20, 0x0
+    const/16 v19, 0x0
 
-    const-string v16, "50_50_b"
+    const-string v15, "50_50_b"
 
-    move-object/from16 v17, v6
+    move-object/from16 v16, v6
 
-    move-object/from16 v19, v2
+    move-object/from16 v18, v2
 
-    invoke-virtual/range {v14 .. v20}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
+    invoke-virtual/range {v13 .. v19}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
     goto :goto_4
 
@@ -919,7 +919,7 @@
     .line 656
     invoke-static {v2, v4}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
-    move-result-object v15
+    move-result-object v14
 
     if-eqz v2, :cond_6
 
@@ -933,7 +933,7 @@
     goto :goto_3
 
     :cond_6
-    invoke-static {v13, v11, v12}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v12, v10, v11}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v5
 
@@ -943,40 +943,40 @@
 
     sget-object v7, Landroid/graphics/drawable/GradientDrawable$Orientation;->BOTTOM_TOP:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    new-array v8, v10, [I
+    new-array v9, v9, [I
 
-    invoke-static {v5, v13, v12}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v5, v12, v11}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v10
 
-    aput v10, v8, v3
+    aput v10, v9, v3
 
-    invoke-static {v5, v13, v9}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v5, v12, v8}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v5
 
-    aput v5, v8, v4
+    aput v5, v9, v4
 
-    invoke-direct {v6, v7, v8}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
+    invoke-direct {v6, v7, v9}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     .line 659
     iget-object v5, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
-    move-result-object v14
+    move-result-object v13
 
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
-    const/16 v20, 0x0
+    const/16 v19, 0x0
 
-    const-string v16, "50_50_b"
+    const-string v15, "50_50_b"
 
-    move-object/from16 v17, v6
+    move-object/from16 v16, v6
 
-    move-object/from16 v19, v2
+    move-object/from16 v18, v2
 
-    invoke-virtual/range {v14 .. v20}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
+    invoke-virtual/range {v13 .. v19}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
     .line 662
     :goto_4
@@ -1046,7 +1046,7 @@
     if-eqz v1, :cond_d
 
     :cond_c
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 672
     :cond_d
@@ -1076,12 +1076,12 @@
 
     if-eqz v3, :cond_e
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v2
 
     goto :goto_6
 
     :cond_e
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_6
     invoke-virtual {v1, v5}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1120,12 +1120,12 @@
 
     if-eqz v3, :cond_f
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v2
 
     goto :goto_7
 
     :cond_f
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_7
     invoke-virtual {v1, v8}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1160,7 +1160,7 @@
 
     if-eqz v3, :cond_10
 
-    const/4 v2, 0x0
+    move v2, v4
 
     :cond_10
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1194,7 +1194,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     cmpl-float v1, v1, v2
 
@@ -1212,7 +1212,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     cmpl-float v1, v1, v2
 
@@ -1230,7 +1230,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1249,7 +1249,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1293,7 +1293,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/high16 v4, 0x40000000    # 2.0f
 
@@ -1309,9 +1309,9 @@
 
     div-float/2addr v5, v4
 
-    const/high16 v4, 0x41800000    # 16.0f
-
     cmpl-float v2, v2, v5
+
+    const/high16 v4, 0x41800000    # 16.0f
 
     if-ltz v2, :cond_13
 
@@ -1325,7 +1325,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     sub-float/2addr v2, v3
 
@@ -1393,7 +1393,7 @@
 
     iget v7, v0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->scaleFactor:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     sub-float/2addr v5, v6
 
@@ -1786,7 +1786,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1823,7 +1823,7 @@
     const v1, 0x3eb33333    # 0.35f
 
     :goto_0
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -2841,12 +2841,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x0
@@ -2857,7 +2857,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :cond_1
     aput v1, v0, v3

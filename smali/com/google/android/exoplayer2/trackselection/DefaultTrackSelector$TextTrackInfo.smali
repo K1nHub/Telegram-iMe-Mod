@@ -81,12 +81,12 @@
 
     if-eqz p3, :cond_0
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 3605
     :goto_0
@@ -96,12 +96,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 3606
     :goto_1
@@ -132,7 +132,7 @@
     iget-object p3, p4, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredTextLanguages:Lcom/google/common/collect/ImmutableList;
 
     :goto_2
-    const/4 v1, 0x0
+    move v1, p1
 
     .line 3615
     :goto_3
@@ -171,7 +171,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, p1
 
     .line 3625
     :goto_4
@@ -203,12 +203,12 @@
 
     if-eqz p3, :cond_5
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_5
 
     :cond_5
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_5
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$TextTrackInfo;->hasCaptionRoleFlags:Z
@@ -220,12 +220,12 @@
 
     if-nez p3, :cond_6
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_6
 
     :cond_6
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 3633
     :goto_6
@@ -266,13 +266,13 @@
     goto :goto_7
 
     :cond_8
-    const/4 p2, 0x0
+    move p2, p1
 
     goto :goto_8
 
     :cond_9
     :goto_7
-    const/4 p2, 0x1
+    move p2, v0
 
     .line 3642
     :goto_8
@@ -287,7 +287,7 @@
 
     if-eqz p2, :cond_a
 
-    const/4 p1, 0x1
+    move p1, v0
 
     .line 3644
     :cond_a

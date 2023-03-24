@@ -305,7 +305,7 @@
 .end method
 
 .method public skip(J)J
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -319,9 +319,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     .line 129
     iget v0, p0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->position:I
@@ -330,9 +330,9 @@
 
     add-long/2addr v0, p1
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, p0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->position:I
+    iput v0, p0, Lcom/bumptech/glide/load/data/ExifOrientationStream;->position:I
 
     :cond_0
     return-wide p1

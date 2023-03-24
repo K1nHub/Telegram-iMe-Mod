@@ -53,15 +53,15 @@ public final class BufferKt {
         int i6 = segment2.limit;
         int[] trie$okio = options.getTrie$okio();
         Segment segment3 = segment2;
-        int i7 = 0;
-        int i8 = -1;
+        int i7 = -1;
+        int i8 = 0;
         loop0: while (true) {
-            int i9 = i7 + 1;
-            int i10 = trie$okio[i7];
+            int i9 = i8 + 1;
+            int i10 = trie$okio[i8];
             int i11 = i9 + 1;
             int i12 = trie$okio[i9];
             if (i12 != -1) {
-                i8 = i12;
+                i7 = i12;
             }
             if (segment3 == null) {
                 break;
@@ -87,14 +87,14 @@ public final class BufferKt {
                         i11++;
                     }
                 }
-                return i8;
+                return i7;
             }
             int i15 = i11 + (i10 * (-1));
             while (true) {
                 int i16 = i5 + 1;
                 int i17 = i11 + 1;
                 if ((bArr[i5] & 255) != trie$okio[i11]) {
-                    return i8;
+                    return i7;
                 }
                 boolean z2 = i17 == i15;
                 if (i16 == i6) {
@@ -134,12 +134,12 @@ public final class BufferKt {
             if (i2 >= 0) {
                 return i2;
             }
-            i7 = -i2;
+            i8 = -i2;
             i5 = i;
         }
         if (z) {
             return -2;
         }
-        return i8;
+        return i7;
     }
 }

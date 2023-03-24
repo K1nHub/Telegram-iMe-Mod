@@ -662,23 +662,25 @@
 
 .field public static final wallet_network_type_ton:I = 0x7f060143
 
-.field public static final wallet_primary_text_holo_light:I = 0x7f060144
+.field public static final wallet_network_type_tron:I = 0x7f060144
 
-.field public static final wallet_secondary_text_holo_dark:I = 0x7f060145
+.field public static final wallet_primary_text_holo_light:I = 0x7f060145
 
-.field public static final widget_action_text:I = 0x7f060146
+.field public static final wallet_secondary_text_holo_dark:I = 0x7f060146
 
-.field public static final widget_badge:I = 0x7f060147
+.field public static final widget_action_text:I = 0x7f060147
 
-.field public static final widget_divider:I = 0x7f060148
+.field public static final widget_badge:I = 0x7f060148
 
-.field public static final widget_edit_text:I = 0x7f060149
+.field public static final widget_divider:I = 0x7f060149
 
-.field public static final widget_name:I = 0x7f06014a
+.field public static final widget_edit_text:I = 0x7f06014a
 
-.field public static final widget_text:I = 0x7f06014b
+.field public static final widget_name:I = 0x7f06014b
 
-.field public static final widget_time:I = 0x7f06014c
+.field public static final widget_text:I = 0x7f06014c
+
+.field public static final widget_time:I = 0x7f06014d
 
 
 # direct methods

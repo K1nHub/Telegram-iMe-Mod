@@ -50,7 +50,7 @@
 .end method
 
 .method public getSeekPoints(J)Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
-    .locals 8
+    .locals 7
 
     .line 524
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/avi/AviExtractor$AviSeekMap;->this$0:Lcom/google/android/exoplayer2/extractor/avi/AviExtractor;
@@ -103,9 +103,9 @@
 
     iget-wide v5, v5, Lcom/google/android/exoplayer2/extractor/SeekPoint;->position:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-gez v7, :cond_0
+    if-gez v3, :cond_0
 
     move-object v0, v2
 

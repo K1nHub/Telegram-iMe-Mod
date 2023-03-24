@@ -128,7 +128,7 @@
 
     iput-object v2, p0, Lorg/bouncycastle/pqc/asn1/RainbowPublicKey;->coeffQuadratic:[[B
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
@@ -174,7 +174,7 @@
 
     iput-object v2, p0, Lorg/bouncycastle/pqc/asn1/RainbowPublicKey;->coeffSingular:[[B
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     invoke-virtual {v1}, Lorg/bouncycastle/asn1/ASN1Sequence;->size()I
@@ -342,7 +342,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     iget-object v4, p0, Lorg/bouncycastle/pqc/asn1/RainbowPublicKey;->coeffQuadratic:[[B

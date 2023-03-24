@@ -102,7 +102,7 @@
 
     move-result-object v3
 
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_0
     if-ge v4, v0, :cond_2
@@ -350,7 +350,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 

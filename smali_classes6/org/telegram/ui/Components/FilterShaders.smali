@@ -517,7 +517,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     add-int/lit8 v5, p0, 0x1
@@ -539,7 +539,7 @@
 
     move-result-wide v14
 
-    mul-double v14, v14, v7
+    mul-double/2addr v14, v7
 
     invoke-static {v14, v15}, Ljava/lang/Math;->sqrt(D)D
 
@@ -559,7 +559,7 @@
 
     move-result-wide v10
 
-    mul-double v10, v10, v12
+    mul-double/2addr v10, v12
 
     div-double/2addr v7, v10
 
@@ -567,7 +567,7 @@
 
     move-result-wide v7
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     double-to-float v5, v5
 
@@ -590,7 +590,7 @@
 
     float-to-double v7, v3
 
-    mul-double v7, v7, v12
+    mul-double/2addr v7, v12
 
     add-double/2addr v5, v7
 
@@ -602,7 +602,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_2
     if-ge v4, v5, :cond_2
@@ -711,7 +711,7 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_3
     if-ge v7, v5, :cond_3
@@ -807,11 +807,11 @@
 
     int-to-float v8, v8
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     int-to-float v7, v7
 
-    mul-float v10, v10, v7
+    mul-float/2addr v10, v7
 
     add-float/2addr v9, v10
 
@@ -962,7 +962,7 @@
     :cond_0
     invoke-static {p0}, Landroid/opengl/GLES20;->glDeleteShader(I)V
 
-    const/4 p0, 0x0
+    move p0, v2
 
     :cond_1
     return p0
@@ -1121,7 +1121,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v13
+    mul-float/2addr v11, v13
 
     float-to-int v11, v11
 
@@ -1142,7 +1142,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     float-to-int v11, v11
 
@@ -1274,7 +1274,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     add-int/lit8 v5, p0, 0x1
@@ -1296,7 +1296,7 @@
 
     move-result-wide v14
 
-    mul-double v14, v14, v7
+    mul-double/2addr v14, v7
 
     invoke-static {v14, v15}, Ljava/lang/Math;->sqrt(D)D
 
@@ -1316,7 +1316,7 @@
 
     move-result-wide v10
 
-    mul-double v10, v10, v12
+    mul-double/2addr v10, v12
 
     div-double/2addr v7, v10
 
@@ -1324,7 +1324,7 @@
 
     move-result-wide v7
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     double-to-float v5, v5
 
@@ -1347,7 +1347,7 @@
 
     float-to-double v7, v3
 
-    mul-double v7, v7, v12
+    mul-double/2addr v7, v12
 
     add-double/2addr v5, v7
 
@@ -1359,7 +1359,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_2
     if-ge v4, v5, :cond_2
@@ -1394,7 +1394,7 @@
     .line 140
     new-array v5, v3, [F
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     if-ge v6, v3, :cond_3
@@ -1415,11 +1415,11 @@
 
     int-to-float v8, v8
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     int-to-float v7, v7
 
-    mul-float v10, v10, v7
+    mul-float/2addr v10, v7
 
     add-float/2addr v9, v10
 
@@ -1506,7 +1506,7 @@
     .line 157
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_4
     if-ge v6, v3, :cond_4
@@ -2453,7 +2453,7 @@
     iput v2, v0, Lorg/telegram/ui/Components/FilterShaders;->radialBlurAspectRatioHandle:I
 
     :goto_5
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 1226
     :goto_6
@@ -2522,13 +2522,13 @@
     goto :goto_8
 
     :cond_8
+    move/from16 v16, v5
+
     move-object/from16 v18, v8
 
     const/4 v4, 0x2
 
     const v5, 0x8b30
-
-    const/16 v16, 0x1
 
     const v3, 0x8b31
 
@@ -3448,22 +3448,22 @@
     return v1
 
     :cond_1b
-    const/4 v1, 0x0
+    move v1, v3
 
     return v1
 
     :cond_1c
-    const/4 v1, 0x0
+    move v1, v3
 
     return v1
 
     :cond_1d
-    const/4 v1, 0x0
+    move v1, v3
 
     return v1
 
     :cond_1e
-    const/4 v1, 0x0
+    move v1, v3
 
     return v1
 .end method
@@ -3487,7 +3487,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1734
     :goto_0
@@ -4310,7 +4310,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :cond_1
     invoke-static {v6, v1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
@@ -4508,7 +4508,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
@@ -4566,7 +4566,7 @@
 
     invoke-static {v1, v2, v10, v3, v10}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 
@@ -4600,7 +4600,7 @@
     :goto_1
     invoke-static {v9, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    const/4 v1, 0x0
+    move v1, v10
 
     .line 1450
     :goto_2
@@ -4692,9 +4692,9 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/FilterShaders;->renderBufferHeight:I
 
-    mul-int v1, v1, v3
+    mul-int/2addr v1, v3
 
-    mul-int/lit8 v1, v1, 0x4
+    mul-int/2addr v1, v6
 
     .line 1463
     iget-object v3, v0, Lorg/telegram/ui/Components/FilterShaders;->hsvBuffer:Ljava/nio/ByteBuffer;
@@ -5188,7 +5188,7 @@
 
     const v4, 0x3bc49ba6    # 0.006f
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     .line 1603
     iget-object v4, v0, Lorg/telegram/ui/Components/FilterShaders;->skinBlurProgram:Lorg/telegram/ui/Components/FilterShaders$BlurProgram;
@@ -5207,9 +5207,9 @@
 
     const-wide v16, 0x3f1a36e2eb1c432dL    # 1.0E-4
 
-    cmpl-double v18, v3, v16
+    cmpl-double v3, v3, v16
 
-    if-lez v18, :cond_4
+    if-lez v3, :cond_4
 
     .line 1604
     :cond_2

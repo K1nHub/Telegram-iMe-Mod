@@ -903,7 +903,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_0
     if-ge v2, v0, :cond_6
@@ -974,7 +974,7 @@
 
     if-eqz v14, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v12
 
     goto :goto_1
 
@@ -983,12 +983,12 @@
 
     if-eqz v5, :cond_3
 
-    const/4 v5, 0x2
+    move v5, v15
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x1
+    move v5, v11
 
     .line 437
     :goto_1
@@ -1082,7 +1082,7 @@
 
     const v11, 0x3f4ccccd    # 0.8f
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
     float-to-int v2, v2
 
@@ -1119,7 +1119,7 @@
 
     iget v2, v2, Lorg/telegram/ui/Components/Size;->width:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget v2, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
@@ -1131,7 +1131,7 @@
 
     sub-float v14, v11, v5
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     const/high16 v5, 0x40000000    # 2.0f
 
@@ -1148,7 +1148,7 @@
 
     iget v2, v2, Lorg/telegram/ui/Components/Size;->height:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget v2, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
@@ -1160,7 +1160,7 @@
 
     sub-float v14, v13, v11
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     div-float/2addr v2, v5
 
@@ -1222,7 +1222,7 @@
 
     const-wide v14, 0x4066800000000000L    # 180.0
 
-    mul-double v1, v1, v14
+    mul-double/2addr v1, v14
 
     double-to-float v1, v1
 
@@ -1947,7 +1947,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v12
 
     :goto_5
     invoke-direct {v0, v7, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;-><init>(Landroid/content/Context;Z)V
@@ -2501,7 +2501,7 @@
 
     const v3, 0x3eb33333    # 0.35f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2519,7 +2519,7 @@
 
     const-wide v7, 0x3fe4cccccccccccdL    # 0.65
 
-    mul-double v4, v4, v7
+    mul-double/2addr v4, v7
 
     double-to-int v4, v4
 
@@ -3138,7 +3138,7 @@
 
     const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
@@ -3174,7 +3174,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     add-float/2addr v1, v2
 
@@ -3193,7 +3193,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->panTranslationY:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 3011
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
@@ -3429,7 +3429,7 @@
 
     iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->zoom:D
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
     double-to-float v5, v5
 
@@ -3455,11 +3455,11 @@
 
     float-to-double v14, v4
 
-    mul-double v12, v12, v14
+    mul-double/2addr v12, v14
 
     iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->x:D
 
-    mul-double v12, v12, v8
+    mul-double/2addr v12, v8
 
     double-to-float v4, v12
 
@@ -3468,11 +3468,11 @@
 
     move-result-wide v8
 
-    mul-double v8, v8, v14
+    mul-double/2addr v8, v14
 
     iget-wide v10, v2, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->x:D
 
-    mul-double v8, v8, v10
+    mul-double/2addr v8, v10
 
     double-to-float v8, v8
 
@@ -3485,11 +3485,11 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v14
+    mul-double/2addr v9, v14
 
     iget-wide v11, v2, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->y:D
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     double-to-float v9, v9
 
@@ -3498,11 +3498,11 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v14
+    mul-double/2addr v6, v14
 
     iget-wide v10, v2, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->y:D
 
-    mul-double v6, v6, v10
+    mul-double/2addr v6, v10
 
     double-to-float v2, v6
 
@@ -3593,7 +3593,7 @@
 
     move-result-wide v8
 
-    mul-double v4, v4, v8
+    mul-double/2addr v4, v8
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -3605,7 +3605,7 @@
 
     move-result-wide v10
 
-    mul-double v8, v8, v10
+    mul-double/2addr v8, v10
 
     sub-double/2addr v4, v8
 
@@ -3622,7 +3622,7 @@
 
     move-result-wide v8
 
-    mul-double v4, v4, v8
+    mul-double/2addr v4, v8
 
     iget-object v8, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -3634,7 +3634,7 @@
 
     move-result-wide v6
 
-    mul-double v8, v8, v6
+    mul-double/2addr v8, v6
 
     add-double/2addr v4, v8
 
@@ -3643,14 +3643,14 @@
     .line 2601
     iget v5, v0, Lorg/telegram/ui/Components/Size;->width:F
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     sub-float/2addr v1, v2
 
     .line 2602
     iget v0, v0, Lorg/telegram/ui/Components/Size;->height:F
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     sub-float/2addr v3, v4
 
@@ -3723,14 +3723,14 @@
 
     div-float/2addr p2, v1
 
-    const/4 v2, 0x1
-
     cmpl-float p1, p1, p2
+
+    const/4 p2, 0x1
 
     if-nez p1, :cond_0
 
     .line 2717
-    invoke-virtual {v10, v2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyX(Z)V
+    invoke-virtual {v10, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyX(Z)V
 
     .line 2719
     :cond_0
@@ -3740,22 +3740,22 @@
 
     iget p1, p1, Lorg/telegram/ui/Components/Point;->y:F
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
-    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result p2
+    move-result v0
 
-    int-to-float p2, p2
+    int-to-float v0, v0
 
-    div-float/2addr p2, v1
+    div-float/2addr v0, v1
 
-    cmpl-float p1, p1, p2
+    cmpl-float p1, p1, v0
 
     if-nez p1, :cond_1
 
     .line 2720
-    invoke-virtual {v10, v2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyY(Z)V
+    invoke-virtual {v10, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyY(Z)V
 
     .line 2722
     :cond_1
@@ -3838,14 +3838,14 @@
 
     div-float/2addr v3, v4
 
-    const/4 v5, 0x1
-
     cmpl-float v2, v2, v3
+
+    const/4 v3, 0x1
 
     if-nez v2, :cond_0
 
     .line 917
-    invoke-virtual {v9, v5}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyX(Z)V
+    invoke-virtual {v9, v3}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyX(Z)V
 
     .line 919
     :cond_0
@@ -3866,7 +3866,7 @@
     if-nez v1, :cond_1
 
     .line 920
-    invoke-virtual {v9, v5}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyY(Z)V
+    invoke-virtual {v9, v3}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setHasStickyY(Z)V
 
     .line 922
     :cond_1
@@ -3978,7 +3978,7 @@
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     .line 939
-    iput-boolean v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
+    iput-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
     .line 940
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
@@ -3993,7 +3993,7 @@
 
     move-result v0
 
-    invoke-virtual {p1, v0, v5}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setAlignment(IZ)V
+    invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setAlignment(IZ)V
 
     .line 941
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
@@ -4281,7 +4281,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -4289,7 +4289,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 2792
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -4302,7 +4302,7 @@
 
     move-result p1
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -4310,7 +4310,7 @@
 
     move-result p1
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     float-to-double v3, v1
 
@@ -4321,7 +4321,7 @@
 
     move-result-wide v5
 
-    mul-double v5, v5, v3
+    mul-double/2addr v5, v3
 
     float-to-double v7, v2
 
@@ -4329,7 +4329,7 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v7
+    mul-double/2addr v9, v7
 
     sub-double/2addr v5, v9
 
@@ -4340,13 +4340,13 @@
 
     move-result-wide v5
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v0
 
-    mul-double v7, v7, v0
+    mul-double/2addr v7, v0
 
     add-double/2addr v3, v7
 
@@ -4512,7 +4512,7 @@
     .line 1455
     iput v2, v3, Lorg/telegram/ui/Components/Size;->height:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     div-float/2addr v2, v1
 
@@ -4828,9 +4828,9 @@
 
     const v2, 0x3f8ccccd    # 1.1f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2687
     :goto_0
@@ -5777,12 +5777,12 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const v4, 0x3f19999a    # 0.6f
+    move v4, v3
 
     :goto_0
     invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -5829,7 +5829,7 @@
     goto :goto_1
 
     :cond_1
-    const v2, 0x3f19999a    # 0.6f
+    move v2, v3
 
     :goto_1
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -6360,7 +6360,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2356
     :goto_0
@@ -6451,7 +6451,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x3
@@ -6517,7 +6517,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     new-instance v6, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda32;
@@ -6700,7 +6700,7 @@
 
     const p7, 0x3ecccccd    # 0.4f
 
-    mul-float p6, p6, p7
+    mul-float/2addr p6, p7
 
     const p7, 0x3f19999a    # 0.6f
 
@@ -6729,7 +6729,7 @@
 
     move-result p7
 
-    mul-float p6, p6, p7
+    mul-float/2addr p6, p7
 
     div-float/2addr p6, v0
 
@@ -6782,7 +6782,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
-    mul-float p7, p7, v0
+    mul-float/2addr p7, v0
 
     invoke-virtual {p6, p7}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
@@ -6828,7 +6828,7 @@
 
     int-to-float p6, p6
 
-    mul-float p6, p6, p3
+    mul-float/2addr p6, p3
 
     if-eqz p2, :cond_2
 
@@ -6842,7 +6842,7 @@
     :goto_1
     int-to-float p2, p2
 
-    mul-float p6, p6, p2
+    mul-float/2addr p6, p2
 
     sub-float/2addr p4, p6
 
@@ -7590,7 +7590,7 @@
     const/4 v3, 0x0
 
     :goto_1
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v3, v2
 
@@ -7641,7 +7641,7 @@
 
     move-result v7
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     div-float/2addr v5, v6
 
@@ -7658,7 +7658,7 @@
 
     invoke-virtual {p1, v5}, Landroid/view/View;->setAlpha(F)V
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
     add-float/2addr p3, v2
 
@@ -7681,7 +7681,7 @@
 
     move-result p3
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     div-float/2addr p1, v6
 
@@ -7742,14 +7742,14 @@
 
     if-nez v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -7988,12 +7988,12 @@
 
     if-eq v4, v5, :cond_6
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
     :cond_5
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 1009
     :cond_6
@@ -8105,12 +8105,12 @@
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiPopup(Z)V
 
     :cond_b
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_2
 
     :cond_c
-    const/4 p2, 0x0
+    move p2, v2
 
     .line 1038
     :goto_2
@@ -8484,7 +8484,7 @@
     goto :goto_0
 
     :cond_1
-    const/16 v3, 0x11
+    move v3, v0
 
     .line 2333
     :goto_0
@@ -8511,7 +8511,7 @@
     if-eqz p2, :cond_5
 
     :cond_2
-    const/4 v2, 0x3
+    move v2, v0
 
     goto :goto_1
 
@@ -9011,12 +9011,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_0
 
     :cond_1
-    const/high16 v4, 0x447a0000    # 1000.0f
+    move v4, v3
 
     :goto_0
     invoke-direct {v1, v4}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
@@ -9032,7 +9032,7 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v2, 0x447a0000    # 1000.0f
+    move v2, v3
 
     .line 2023
     :cond_2
@@ -9075,7 +9075,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v7
 
     :cond_4
     :goto_1
@@ -9166,12 +9166,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 2869
     :goto_0
@@ -9830,12 +9830,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/high16 v4, 0x447a0000    # 1000.0f
+    move v4, v2
 
     :goto_0
     invoke-direct {v1, v4}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
@@ -9854,7 +9854,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 1981
     :goto_1
@@ -9978,7 +9978,7 @@
     :goto_0
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 2499
     :goto_1
@@ -10238,12 +10238,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v8
 
     :goto_1
     const/4 v4, 0x0
@@ -10267,12 +10267,12 @@
 
     if-nez v0, :cond_4
 
-    const/4 v10, 0x1
+    move v10, v1
 
     goto :goto_2
 
     :cond_4
-    const/4 v10, 0x0
+    move v10, v8
 
     :goto_2
     const/4 v11, 0x0
@@ -10299,13 +10299,13 @@
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v8
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    const/4 v3, 0x1
+    move v3, v1
 
     :goto_4
     const/4 v4, 0x0
@@ -10332,13 +10332,13 @@
     goto :goto_5
 
     :cond_7
-    const/4 v10, 0x0
+    move v10, v8
 
     goto :goto_6
 
     :cond_8
     :goto_5
-    const/4 v10, 0x1
+    move v10, v1
 
     :goto_6
     const/4 v11, 0x0
@@ -10571,13 +10571,13 @@
     .line 1114
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     invoke-virtual {p2}, Landroid/view/View;->getScaleX()F
 
     move-result v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -10592,13 +10592,13 @@
     .line 1115
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {p2}, Landroid/view/View;->getScaleY()F
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -10812,9 +10812,9 @@
 
     const/4 v6, 0x0
 
-    const/4 v0, 0x0
+    move v7, v6
 
-    const/4 v7, 0x0
+    const/4 v0, 0x0
 
     :goto_0
     if-ge v7, v4, :cond_17
@@ -10906,7 +10906,7 @@
 
     if-eqz v11, :cond_5
 
-    const/4 v13, 0x0
+    move v13, v6
 
     .line 1602
     :goto_1
@@ -11273,7 +11273,7 @@
 
     if-eqz v3, :cond_b
 
-    const/16 v18, 0x1
+    move/from16 v18, v5
 
     :cond_b
     or-int v4, v4, v18
@@ -11292,9 +11292,9 @@
     :cond_c
     const-wide/16 v3, 0x0
 
-    cmp-long v6, v16, v3
+    cmp-long v3, v16, v3
 
-    if-eqz v6, :cond_d
+    if-eqz v3, :cond_d
 
     .line 1667
     invoke-static/range {v16 .. v17}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
@@ -11385,7 +11385,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v0
+    mul-float/2addr v10, v0
 
     iget-object v12, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -11406,7 +11406,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     iget-object v12, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -11431,7 +11431,7 @@
 
     sub-float v13, v12, v0
 
-    mul-float v10, v10, v13
+    mul-float/2addr v10, v13
 
     const/high16 v13, 0x40000000    # 2.0f
 
@@ -11460,7 +11460,7 @@
 
     sub-float/2addr v12, v3
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     div-float/2addr v10, v13
 
@@ -11489,7 +11489,7 @@
 
     const-wide v15, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    mul-double v12, v12, v15
+    mul-double/2addr v12, v15
 
     double-to-float v3, v12
 
@@ -11623,7 +11623,7 @@
     move-object/from16 v19, v0
 
     :cond_f
-    const/4 v13, 0x1
+    move v13, v5
 
     goto :goto_7
 
@@ -11847,13 +11847,13 @@
     :goto_e
     add-int/lit8 v7, v7, 0x1
 
-    move-object/from16 v1, p0
+    move v6, v1
 
     move-object v3, v11
 
     move/from16 v4, v22
 
-    const/4 v6, 0x0
+    move-object/from16 v1, p0
 
     goto/16 :goto_0
 
@@ -12011,7 +12011,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_8
@@ -12114,7 +12114,7 @@
 
     if-eqz v4, :cond_7
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 1917
     :goto_1
@@ -12274,7 +12274,7 @@
 
     move-result-wide v7
 
-    mul-double v7, v7, v3
+    mul-double/2addr v7, v3
 
     float-to-double p1, p2
 
@@ -12282,7 +12282,7 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, p1
+    mul-double/2addr v9, p1
 
     sub-double/2addr v7, v9
 
@@ -12309,13 +12309,13 @@
 
     move-result-wide v7
 
-    mul-double v3, v3, v7
+    mul-double/2addr v3, v7
 
     invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v5
 
-    mul-double p1, p1, v5
+    mul-double/2addr p1, v5
 
     add-double/2addr v3, p1
 
@@ -13180,7 +13180,7 @@
 
     if-lez v6, :cond_1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     div-float/2addr v2, v4
 
@@ -13655,7 +13655,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_2
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -13962,7 +13962,7 @@
 
     move-result-wide v8
 
-    mul-double v8, v8, v4
+    mul-double/2addr v8, v4
 
     float-to-double v0, v1
 
@@ -13970,7 +13970,7 @@
 
     move-result-wide v10
 
-    mul-double v10, v10, v0
+    mul-double/2addr v10, v0
 
     sub-double/2addr v8, v10
 
@@ -13993,13 +13993,13 @@
 
     move-result-wide v8
 
-    mul-double v4, v4, v8
+    mul-double/2addr v4, v8
 
     invoke-static {v6, v7}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v6
 
-    mul-double v0, v0, v6
+    mul-double/2addr v0, v6
 
     add-double/2addr v4, v0
 
@@ -14242,7 +14242,7 @@
     .line 1847
     iget v8, v9, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     .line 1849
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
@@ -14287,7 +14287,7 @@
     .line 1862
     iget v14, v12, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v14, v14, v9
+    mul-float/2addr v14, v9
 
     float-to-int v14, v14
 
@@ -14296,7 +14296,7 @@
     .line 1863
     iget v12, v12, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v12, v12, v11
+    mul-float/2addr v12, v11
 
     float-to-int v12, v12
 
@@ -14313,35 +14313,35 @@
 
     move-result v12
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
     .line 1868
     iget-object v14, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v15, v14, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
 
-    mul-float v15, v15, v9
+    mul-float/2addr v15, v9
 
-    mul-float v15, v15, v1
+    mul-float/2addr v15, v1
 
-    mul-float v15, v15, v12
+    mul-float/2addr v15, v12
 
     iget v9, v14, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    mul-float v15, v15, v9
+    mul-float/2addr v15, v9
 
     add-float/2addr v15, v2
 
     .line 1869
     iget v10, v14, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
-    mul-float v10, v10, v1
+    mul-float/2addr v10, v1
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     add-float/2addr v10, v3
 
@@ -14370,26 +14370,28 @@
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     goto :goto_3
 
     :cond_8
     const/high16 v10, 0x3f800000    # 1.0f
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :goto_3
     move v15, v2
 
     move v11, v3
 
-    move v8, v9
+    move/from16 v16, v9
 
-    const/4 v9, 0x0
+    move v9, v8
+
+    move/from16 v8, v16
 
     :goto_4
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     .line 1879
     invoke-static {v8}, Ljava/lang/Float;->isNaN(F)Z

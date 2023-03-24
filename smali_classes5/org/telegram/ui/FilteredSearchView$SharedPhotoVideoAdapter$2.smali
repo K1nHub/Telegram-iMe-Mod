@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 921
+    .line 931
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public getColumnsCount()I
     .locals 1
 
-    .line 924
+    .line 934
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$SharedPhotoVideoAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;

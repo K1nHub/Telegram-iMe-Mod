@@ -176,7 +176,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-ge v4, v3, :cond_0
@@ -324,24 +324,24 @@
     .line 419
     aget v9, v7, v8
 
-    mul-float v9, v9, v3
+    mul-float/2addr v9, v3
 
     iget-object v10, p0, Lorg/telegram/messenger/FourierTransform;->imag:[F
 
     aget v11, v10, v8
 
-    mul-float v11, v11, v4
+    mul-float/2addr v11, v4
 
     sub-float/2addr v9, v11
 
     .line 420
     aget v11, v10, v8
 
-    mul-float v11, v11, v3
+    mul-float/2addr v11, v3
 
     aget v12, v7, v8
 
-    mul-float v12, v12, v4
+    mul-float/2addr v12, v4
 
     add-float/2addr v11, v12
 
@@ -386,9 +386,9 @@
 
     sub-float/2addr v6, v7
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     add-float/2addr v4, v3
 
@@ -552,7 +552,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 486
     :goto_0
@@ -567,7 +567,7 @@
 
     const/high16 v4, -0x40800000    # -1.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     aput v3, v2, v1
 
@@ -626,7 +626,7 @@
 
     aget v1, v0, p1
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     aput v1, v0, p1
 
@@ -635,7 +635,7 @@
 
     aget v2, v1, p1
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     aput v2, v1, p1
 
@@ -644,7 +644,7 @@
 
     aget v3, v2, p1
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     aput v3, v2, p1
 
@@ -747,7 +747,7 @@
 
     aget v3, v2, p1
 
-    mul-float p2, p2, v3
+    mul-float/2addr p2, v3
 
     aput p2, v1, p1
 
@@ -756,7 +756,7 @@
 
     aget v2, v2, p1
 
-    mul-float p2, p2, v2
+    mul-float/2addr p2, v2
 
     aput p2, v0, p1
 

@@ -1,5 +1,5 @@
 package io.grpc;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface InternalWithLogId {
     InternalLogId getLogId();
 }

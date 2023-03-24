@@ -42,11 +42,11 @@ public class SecP128R1Point extends ECPoint.AbstractFp {
             return twice();
         }
         ECCurve curve = getCurve();
-        SecP128R1FieldElement secP128R1FieldElement = (SecP128R1FieldElement) this.f1310x;
-        SecP128R1FieldElement secP128R1FieldElement2 = (SecP128R1FieldElement) this.f1311y;
+        SecP128R1FieldElement secP128R1FieldElement = (SecP128R1FieldElement) this.f1311x;
+        SecP128R1FieldElement secP128R1FieldElement2 = (SecP128R1FieldElement) this.f1312y;
         SecP128R1FieldElement secP128R1FieldElement3 = (SecP128R1FieldElement) eCPoint.getXCoord();
         SecP128R1FieldElement secP128R1FieldElement4 = (SecP128R1FieldElement) eCPoint.getYCoord();
-        SecP128R1FieldElement secP128R1FieldElement5 = (SecP128R1FieldElement) this.f1312zs[0];
+        SecP128R1FieldElement secP128R1FieldElement5 = (SecP128R1FieldElement) this.f1313zs[0];
         SecP128R1FieldElement secP128R1FieldElement6 = (SecP128R1FieldElement) eCPoint.getZCoord(0);
         int[] createExt = Nat128.createExt();
         int[] create = Nat128.create();
@@ -54,25 +54,25 @@ public class SecP128R1Point extends ECPoint.AbstractFp {
         int[] create3 = Nat128.create();
         boolean isOne = secP128R1FieldElement5.isOne();
         if (isOne) {
-            iArr = secP128R1FieldElement3.f1326x;
-            iArr2 = secP128R1FieldElement4.f1326x;
+            iArr = secP128R1FieldElement3.f1327x;
+            iArr2 = secP128R1FieldElement4.f1327x;
         } else {
-            SecP128R1Field.square(secP128R1FieldElement5.f1326x, create2);
-            SecP128R1Field.multiply(create2, secP128R1FieldElement3.f1326x, create);
-            SecP128R1Field.multiply(create2, secP128R1FieldElement5.f1326x, create2);
-            SecP128R1Field.multiply(create2, secP128R1FieldElement4.f1326x, create2);
+            SecP128R1Field.square(secP128R1FieldElement5.f1327x, create2);
+            SecP128R1Field.multiply(create2, secP128R1FieldElement3.f1327x, create);
+            SecP128R1Field.multiply(create2, secP128R1FieldElement5.f1327x, create2);
+            SecP128R1Field.multiply(create2, secP128R1FieldElement4.f1327x, create2);
             iArr = create;
             iArr2 = create2;
         }
         boolean isOne2 = secP128R1FieldElement6.isOne();
         if (isOne2) {
-            iArr3 = secP128R1FieldElement.f1326x;
-            iArr4 = secP128R1FieldElement2.f1326x;
+            iArr3 = secP128R1FieldElement.f1327x;
+            iArr4 = secP128R1FieldElement2.f1327x;
         } else {
-            SecP128R1Field.square(secP128R1FieldElement6.f1326x, create3);
-            SecP128R1Field.multiply(create3, secP128R1FieldElement.f1326x, createExt);
-            SecP128R1Field.multiply(create3, secP128R1FieldElement6.f1326x, create3);
-            SecP128R1Field.multiply(create3, secP128R1FieldElement2.f1326x, create3);
+            SecP128R1Field.square(secP128R1FieldElement6.f1327x, create3);
+            SecP128R1Field.multiply(create3, secP128R1FieldElement.f1327x, createExt);
+            SecP128R1Field.multiply(create3, secP128R1FieldElement6.f1327x, create3);
+            SecP128R1Field.multiply(create3, secP128R1FieldElement2.f1327x, create3);
             iArr3 = createExt;
             iArr4 = create3;
         }
@@ -90,33 +90,33 @@ public class SecP128R1Point extends ECPoint.AbstractFp {
         Nat128.mul(iArr4, create5, createExt);
         SecP128R1Field.reduce32(Nat128.addBothTo(create2, create2, create5), create5);
         SecP128R1FieldElement secP128R1FieldElement7 = new SecP128R1FieldElement(create3);
-        SecP128R1Field.square(create, secP128R1FieldElement7.f1326x);
-        int[] iArr5 = secP128R1FieldElement7.f1326x;
+        SecP128R1Field.square(create, secP128R1FieldElement7.f1327x);
+        int[] iArr5 = secP128R1FieldElement7.f1327x;
         SecP128R1Field.subtract(iArr5, create5, iArr5);
         SecP128R1FieldElement secP128R1FieldElement8 = new SecP128R1FieldElement(create5);
-        SecP128R1Field.subtract(create2, secP128R1FieldElement7.f1326x, secP128R1FieldElement8.f1326x);
-        SecP128R1Field.multiplyAddToExt(secP128R1FieldElement8.f1326x, create, createExt);
-        SecP128R1Field.reduce(createExt, secP128R1FieldElement8.f1326x);
+        SecP128R1Field.subtract(create2, secP128R1FieldElement7.f1327x, secP128R1FieldElement8.f1327x);
+        SecP128R1Field.multiplyAddToExt(secP128R1FieldElement8.f1327x, create, createExt);
+        SecP128R1Field.reduce(createExt, secP128R1FieldElement8.f1327x);
         SecP128R1FieldElement secP128R1FieldElement9 = new SecP128R1FieldElement(create4);
         if (!isOne) {
-            int[] iArr6 = secP128R1FieldElement9.f1326x;
-            SecP128R1Field.multiply(iArr6, secP128R1FieldElement5.f1326x, iArr6);
+            int[] iArr6 = secP128R1FieldElement9.f1327x;
+            SecP128R1Field.multiply(iArr6, secP128R1FieldElement5.f1327x, iArr6);
         }
         if (!isOne2) {
-            int[] iArr7 = secP128R1FieldElement9.f1326x;
-            SecP128R1Field.multiply(iArr7, secP128R1FieldElement6.f1326x, iArr7);
+            int[] iArr7 = secP128R1FieldElement9.f1327x;
+            SecP128R1Field.multiply(iArr7, secP128R1FieldElement6.f1327x, iArr7);
         }
         return new SecP128R1Point(curve, secP128R1FieldElement7, secP128R1FieldElement8, new ECFieldElement[]{secP128R1FieldElement9}, this.withCompression);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECPoint negate() {
-        return isInfinity() ? this : new SecP128R1Point(this.curve, this.f1310x, this.f1311y.negate(), this.f1312zs, this.withCompression);
+        return isInfinity() ? this : new SecP128R1Point(this.curve, this.f1311x, this.f1312y.negate(), this.f1313zs, this.withCompression);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECPoint threeTimes() {
-        return (isInfinity() || this.f1311y.isZero()) ? this : twice().add(this);
+        return (isInfinity() || this.f1312y.isZero()) ? this : twice().add(this);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
@@ -125,54 +125,54 @@ public class SecP128R1Point extends ECPoint.AbstractFp {
             return this;
         }
         ECCurve curve = getCurve();
-        SecP128R1FieldElement secP128R1FieldElement = (SecP128R1FieldElement) this.f1311y;
+        SecP128R1FieldElement secP128R1FieldElement = (SecP128R1FieldElement) this.f1312y;
         if (secP128R1FieldElement.isZero()) {
             return curve.getInfinity();
         }
-        SecP128R1FieldElement secP128R1FieldElement2 = (SecP128R1FieldElement) this.f1310x;
-        SecP128R1FieldElement secP128R1FieldElement3 = (SecP128R1FieldElement) this.f1312zs[0];
+        SecP128R1FieldElement secP128R1FieldElement2 = (SecP128R1FieldElement) this.f1311x;
+        SecP128R1FieldElement secP128R1FieldElement3 = (SecP128R1FieldElement) this.f1313zs[0];
         int[] create = Nat128.create();
         int[] create2 = Nat128.create();
         int[] create3 = Nat128.create();
-        SecP128R1Field.square(secP128R1FieldElement.f1326x, create3);
+        SecP128R1Field.square(secP128R1FieldElement.f1327x, create3);
         int[] create4 = Nat128.create();
         SecP128R1Field.square(create3, create4);
         boolean isOne = secP128R1FieldElement3.isOne();
-        int[] iArr = secP128R1FieldElement3.f1326x;
+        int[] iArr = secP128R1FieldElement3.f1327x;
         if (!isOne) {
             SecP128R1Field.square(iArr, create2);
             iArr = create2;
         }
-        SecP128R1Field.subtract(secP128R1FieldElement2.f1326x, iArr, create);
-        SecP128R1Field.add(secP128R1FieldElement2.f1326x, iArr, create2);
+        SecP128R1Field.subtract(secP128R1FieldElement2.f1327x, iArr, create);
+        SecP128R1Field.add(secP128R1FieldElement2.f1327x, iArr, create2);
         SecP128R1Field.multiply(create2, create, create2);
         SecP128R1Field.reduce32(Nat128.addBothTo(create2, create2, create2), create2);
-        SecP128R1Field.multiply(create3, secP128R1FieldElement2.f1326x, create3);
+        SecP128R1Field.multiply(create3, secP128R1FieldElement2.f1327x, create3);
         SecP128R1Field.reduce32(Nat.shiftUpBits(4, create3, 2, 0), create3);
         SecP128R1Field.reduce32(Nat.shiftUpBits(4, create4, 3, 0, create), create);
         SecP128R1FieldElement secP128R1FieldElement4 = new SecP128R1FieldElement(create4);
-        SecP128R1Field.square(create2, secP128R1FieldElement4.f1326x);
-        int[] iArr2 = secP128R1FieldElement4.f1326x;
+        SecP128R1Field.square(create2, secP128R1FieldElement4.f1327x);
+        int[] iArr2 = secP128R1FieldElement4.f1327x;
         SecP128R1Field.subtract(iArr2, create3, iArr2);
-        int[] iArr3 = secP128R1FieldElement4.f1326x;
+        int[] iArr3 = secP128R1FieldElement4.f1327x;
         SecP128R1Field.subtract(iArr3, create3, iArr3);
         SecP128R1FieldElement secP128R1FieldElement5 = new SecP128R1FieldElement(create3);
-        SecP128R1Field.subtract(create3, secP128R1FieldElement4.f1326x, secP128R1FieldElement5.f1326x);
-        int[] iArr4 = secP128R1FieldElement5.f1326x;
+        SecP128R1Field.subtract(create3, secP128R1FieldElement4.f1327x, secP128R1FieldElement5.f1327x);
+        int[] iArr4 = secP128R1FieldElement5.f1327x;
         SecP128R1Field.multiply(iArr4, create2, iArr4);
-        int[] iArr5 = secP128R1FieldElement5.f1326x;
+        int[] iArr5 = secP128R1FieldElement5.f1327x;
         SecP128R1Field.subtract(iArr5, create, iArr5);
         SecP128R1FieldElement secP128R1FieldElement6 = new SecP128R1FieldElement(create2);
-        SecP128R1Field.twice(secP128R1FieldElement.f1326x, secP128R1FieldElement6.f1326x);
+        SecP128R1Field.twice(secP128R1FieldElement.f1327x, secP128R1FieldElement6.f1327x);
         if (!isOne) {
-            int[] iArr6 = secP128R1FieldElement6.f1326x;
-            SecP128R1Field.multiply(iArr6, secP128R1FieldElement3.f1326x, iArr6);
+            int[] iArr6 = secP128R1FieldElement6.f1327x;
+            SecP128R1Field.multiply(iArr6, secP128R1FieldElement3.f1327x, iArr6);
         }
         return new SecP128R1Point(curve, secP128R1FieldElement4, secP128R1FieldElement5, new ECFieldElement[]{secP128R1FieldElement6}, this.withCompression);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECPoint
     public ECPoint twicePlus(ECPoint eCPoint) {
-        return this == eCPoint ? threeTimes() : isInfinity() ? eCPoint : eCPoint.isInfinity() ? twice() : this.f1311y.isZero() ? eCPoint : twice().add(eCPoint);
+        return this == eCPoint ? threeTimes() : isInfinity() ? eCPoint : eCPoint.isInfinity() ? twice() : this.f1312y.isZero() ? eCPoint : twice().add(eCPoint);
     }
 }

@@ -320,7 +320,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 654
     :goto_1
@@ -933,7 +933,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 721
     :goto_0
@@ -951,9 +951,9 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_1
     :goto_1
@@ -1023,9 +1023,9 @@
 
     const/4 v4, -0x1
 
-    const/4 v5, 0x0
+    move v5, p2
 
-    const/4 v6, -0x1
+    move v6, v4
 
     .line 785
     :goto_2
@@ -1127,7 +1127,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 v0, 0x1
+    move v0, v3
 
     goto/16 :goto_1
 
@@ -1325,7 +1325,7 @@
 
     int-to-double v3, v7
 
-    mul-double v14, v14, v3
+    mul-double/2addr v14, v3
 
     double-to-float v12, v14
 
@@ -1347,7 +1347,7 @@
 
     move-result-wide v7
 
-    mul-double v7, v7, v3
+    mul-double/2addr v7, v3
 
     double-to-float v10, v7
 
@@ -1573,7 +1573,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 624
     :cond_8
@@ -1855,7 +1855,7 @@
 
     const/high16 p2, -0x40800000    # -1.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -1930,7 +1930,7 @@
 
     const/high16 p2, -0x40800000    # -1.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -2439,7 +2439,7 @@
     :goto_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 466
     :goto_1
@@ -2512,7 +2512,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 185
     :goto_0
@@ -2581,7 +2581,7 @@
     .line 200
     iput v1, p0, Landroidx/constraintlayout/core/LinearSystem;->mNumColumns:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 201
     :goto_1

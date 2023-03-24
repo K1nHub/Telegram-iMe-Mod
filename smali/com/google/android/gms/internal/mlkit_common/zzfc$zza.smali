@@ -524,9 +524,9 @@
 
     int-to-long v1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     invoke-static {v0, v1, v2, p1}, Lcom/google/android/gms/internal/mlkit_common/zzip;->zza([BJB)V
 
@@ -576,9 +576,9 @@
 
     iput v2, p0, Lcom/google/android/gms/internal/mlkit_common/zzfc$zza;->zze:I
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     aput-byte p1, v0, v1
 
@@ -1281,9 +1281,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v2
 
@@ -1296,9 +1296,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v1
 
@@ -1311,9 +1311,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v2
 
@@ -1326,9 +1326,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v1
 
@@ -1341,9 +1341,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v2
 
@@ -1356,9 +1356,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    int-to-byte v3, v4
+    int-to-byte v3, v3
 
     aput-byte v3, v0, v1
 
@@ -1371,9 +1371,9 @@
 
     shr-long/2addr p1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     aput-byte p1, v0, v2
     :try_end_0

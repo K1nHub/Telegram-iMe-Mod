@@ -416,7 +416,7 @@
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_0
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_4
 
@@ -550,7 +550,7 @@
     move-object v1, v4
 
     :goto_3
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_4
     if-nez v4, :cond_d
@@ -818,7 +818,7 @@
 
     int-to-float p1, v0
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 

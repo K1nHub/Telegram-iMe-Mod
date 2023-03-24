@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFeeUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FeeUiMapping.kt\ncom/smedialink/mapper/crypto/FeeUiMappingKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,14:1\n1#2:15\n*E\n"
+    value = "SMAP\nFeeUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FeeUiMapping.kt\ncom/smedialink/mapper/crypto/FeeUiMappingKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,12:1\n1#2:13\n*E\n"
 .end annotation
 
 
@@ -36,7 +36,7 @@
 
     new-array v0, v0, [Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
-    .line 10
+    .line 9
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getLow()Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object v1
@@ -63,7 +63,7 @@
 
     const/4 v1, 0x1
 
-    .line 11
+    .line 10
     new-instance v3, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
     sget-object v4, Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;->MEDIUM:Lcom/smedialink/storage/domain/model/crypto/send/TransactionSpeedLevel;
@@ -78,7 +78,7 @@
 
     const/4 v1, 0x2
 
-    .line 12
+    .line 11
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getFastest()Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object p0
@@ -94,12 +94,12 @@
     :cond_1
     aput-object v2, v0, v1
 
-    .line 9
+    .line 8
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
-    .line 13
+    .line 12
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object p0

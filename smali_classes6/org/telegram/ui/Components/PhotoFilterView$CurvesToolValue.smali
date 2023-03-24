@@ -120,7 +120,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     const/16 v6, 0xc8
@@ -134,7 +134,7 @@
 
     const/high16 v8, 0x437f0000    # 255.0f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -147,7 +147,7 @@
 
     aget v7, v3, v5
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -160,7 +160,7 @@
 
     aget v7, v4, v5
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -173,7 +173,7 @@
 
     aget v7, v0, v5
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 

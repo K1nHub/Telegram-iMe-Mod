@@ -95,11 +95,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v5, v2, :cond_3
@@ -126,7 +126,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     add-int/lit8 v5, v5, 0x1

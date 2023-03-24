@@ -57,9 +57,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v5, v2
 
-    const/4 v5, 0x1
+    move v4, v3
 
     :goto_0
     const/4 v6, 0x0
@@ -96,7 +96,7 @@
     aput v6, p1, v4
 
     :goto_1
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_2
 
@@ -113,7 +113,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     if-ne v9, v7, :cond_2
@@ -122,7 +122,7 @@
     aput v6, p1, v8
 
     :goto_3
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_4
 
@@ -158,7 +158,7 @@
 
     add-int/lit8 v1, v1, -0x2
 
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_5
     if-ltz v1, :cond_b
@@ -191,7 +191,7 @@
     aput v6, p1, v1
 
     :goto_6
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_7
 
@@ -208,7 +208,7 @@
     goto :goto_6
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_7
     if-ne v8, v7, :cond_8
@@ -217,7 +217,7 @@
     aput v6, p1, v5
 
     :goto_8
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_9
 

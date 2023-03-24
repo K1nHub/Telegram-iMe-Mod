@@ -215,6 +215,9 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.p048ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
+        ArrayList<StickerView> arrayList;
+        ArrayList<StickerView> arrayList2;
+        ArrayList<StickerView> arrayList3;
         if (this.isVisible) {
             this.sortedView.clear();
             for (int i = 0; i < getChildCount(); i++) {
@@ -230,18 +233,14 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
             }
             Collections.sort(this.sortedView, this.comparator);
             if ((this.firstDraw || this.checkEffect) && this.sortedView.size() > 0 && !this.premiumStickers.isEmpty()) {
-                ArrayList<StickerView> arrayList = this.sortedView;
-                StickerView stickerView2 = arrayList.get(arrayList.size() - 1);
+                StickerView stickerView2 = this.sortedView.get(arrayList.size() - 1);
                 this.oldSelectedView = stickerView2;
                 drawEffectForView(stickerView2, !this.firstDraw);
                 this.firstDraw = false;
                 this.checkEffect = false;
             } else {
-                View view = this.oldSelectedView;
-                ArrayList<StickerView> arrayList2 = this.sortedView;
-                if (view != arrayList2.get(arrayList2.size() - 1)) {
-                    ArrayList<StickerView> arrayList3 = this.sortedView;
-                    this.oldSelectedView = arrayList3.get(arrayList3.size() - 1);
+                if (this.oldSelectedView != this.sortedView.get(arrayList2.size() - 1)) {
+                    this.oldSelectedView = this.sortedView.get(arrayList3.size() - 1);
                     if (this.haptic) {
                         performHapticFeedback(3);
                     }
@@ -483,14 +482,14 @@ public class PremiumStickersPreviewRecycler extends RecyclerListView implements 
             if (this.drawEffect != z2) {
                 this.drawEffect = z2;
                 if (!z3) {
-                    this.effectProgress = z2 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                    this.effectProgress = z2 ? 1.0f : 0.0f;
                 }
                 this.view.invalidate();
             }
             if (this.animateImage != z) {
                 this.animateImage = z;
                 if (!z3) {
-                    this.animateImageProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                    this.animateImageProgress = z ? 1.0f : 0.0f;
                 }
                 this.view.invalidate();
             }

@@ -23,7 +23,7 @@
 .end method
 
 .method private getBytesToRead(J)J
-    .locals 4
+    .locals 3
 
     .line 77
     iget v0, p0, Lcom/bumptech/glide/util/MarkEnforcingInputStream;->availableBytes:I
@@ -41,9 +41,9 @@
 
     int-to-long v1, v0
 
-    cmp-long v3, p1, v1
+    cmp-long v1, p1, v1
 
-    if-lez v3, :cond_1
+    if-lez v1, :cond_1
 
     int-to-long p1, v0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method private updateAvailableBytesAfterRead(J)V
-    .locals 4
+    .locals 3
 
     .line 87
     iget v0, p0, Lcom/bumptech/glide/util/MarkEnforcingInputStream;->availableBytes:I
@@ -63,9 +63,9 @@
 
     const-wide/16 v1, -0x1
 
-    cmp-long v3, p1, v1
+    cmp-long v1, p1, v1
 
-    if-eqz v3, :cond_0
+    if-eqz v1, :cond_0
 
     int-to-long v0, v0
 
@@ -146,7 +146,7 @@
 .end method
 
 .method public read()I
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -162,9 +162,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
@@ -254,7 +254,7 @@
 .end method
 
 .method public skip(J)J
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -268,9 +268,9 @@
 
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     const-wide/16 p1, 0x0
 

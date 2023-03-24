@@ -80,7 +80,7 @@
 .end method
 
 .method protected final complete(Ljava/lang/Object;)V
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"
@@ -110,9 +110,9 @@
 
     and-long v6, v0, v4
 
-    cmp-long v8, v6, v2
+    cmp-long v6, v6, v2
 
-    if-eqz v8, :cond_1
+    if-eqz v6, :cond_1
 
     .line 76
     invoke-virtual {p0, p1}, Lio/reactivex/internal/subscribers/SinglePostCompleteSubscriber;->onDrop(Ljava/lang/Object;)V
@@ -124,9 +124,9 @@
 
     and-long/2addr v0, v6
 
-    cmp-long v6, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v6, :cond_2
+    if-eqz v0, :cond_2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -203,7 +203,7 @@
 .end method
 
 .method public final request(J)V
-    .locals 9
+    .locals 8
 
     .line 103
     invoke-static {p1, p2}, Lio/reactivex/internal/subscriptions/SubscriptionHelper;->validate(J)Z
@@ -224,9 +224,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 

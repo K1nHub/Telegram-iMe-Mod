@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,126:1\n1549#2:127\n1620#2,3:128\n8#3:131\n*S KotlinDebug\n*F\n+ 1 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$1\n*L\n78#1:127\n78#1:128,3\n78#1:131\n*E\n"
+    value = "SMAP\nCatalogRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,127:1\n1549#2:128\n1620#2,3:129\n9#3:132\n*S KotlinDebug\n*F\n+ 1 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$1\n*L\n79#1:128\n79#1:129,3\n79#1:132\n*E\n"
 .end annotation
 
 
@@ -116,7 +116,7 @@
     .line 1621
     check-cast v1, Lcom/smedialink/storage/data/locale/db/model/catalog/CatalogCategoryDb;
 
-    .line 78
+    .line 79
     invoke-static {v1}, Lcom/smedialink/storage/data/mapper/catalog/ChannelCategoryMappingKt;->mapToDomain(Lcom/smedialink/storage/data/locale/db/model/catalog/CatalogCategoryDb;)Lcom/smedialink/storage/domain/model/catalog/CategoryWithCounter;
 
     move-result-object v1
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 8
+    .line 9
     :cond_0
     sget-object p1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
@@ -140,7 +140,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 77
+    .line 78
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$1;->invoke(Ljava/util/List;)Lcom/smedialink/storage/domain/model/Result;

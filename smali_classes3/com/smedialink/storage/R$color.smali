@@ -24,3 +24,5 @@
 .field public static final wallet_network_type_polygon:I = 0x7f060142
 
 .field public static final wallet_network_type_ton:I = 0x7f060143
+
+.field public static final wallet_network_type_tron:I = 0x7f060144

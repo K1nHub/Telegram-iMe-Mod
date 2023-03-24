@@ -107,7 +107,7 @@
 
     const-wide/16 v2, 0x8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->squeeze([BIJ)V
 

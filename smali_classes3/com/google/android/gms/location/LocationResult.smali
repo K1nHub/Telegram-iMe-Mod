@@ -190,7 +190,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 9
+    .locals 8
 
     .line 1
     instance-of v0, p1, Lcom/google/android/gms/location/LocationResult;
@@ -319,9 +319,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_5
+    if-eqz v4, :cond_5
 
     return v1
 
@@ -335,9 +335,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_6
+    if-eqz v4, :cond_6
 
     return v1
 

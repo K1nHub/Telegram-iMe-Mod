@@ -224,7 +224,7 @@
 
     if-nez v1, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_3
     invoke-static {v0, v2}, Lorg/telegram/ui/LocationActivity;->access$2002(Lorg/telegram/ui/LocationActivity;Z)Z

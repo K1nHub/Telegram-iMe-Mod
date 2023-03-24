@@ -155,11 +155,11 @@
 
     const/4 v2, -0x1
 
+    move v5, v2
+
+    move v6, v5
+
     const/4 v4, 0x0
-
-    const/4 v5, -0x1
-
-    const/4 v6, -0x1
 
     .line 2037
     :goto_0
@@ -221,11 +221,11 @@
     goto :goto_0
 
     :cond_4
+    move v7, v2
+
+    move v14, v7
+
     const/4 v4, 0x0
-
-    const/4 v7, -0x1
-
-    const/4 v14, -0x1
 
     .line 2051
     :goto_1
@@ -559,7 +559,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     float-to-int v2, v4
 
@@ -748,7 +748,7 @@
 
     if-eqz v11, :cond_14
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v12
 
     goto :goto_5
 
@@ -775,7 +775,7 @@
 
     if-eqz v14, :cond_15
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v12
 
     goto :goto_6
 
@@ -792,7 +792,7 @@
 
     sub-float v14, v12, v14
 
-    mul-float v6, v6, v14
+    mul-float/2addr v6, v14
 
     iget-object v14, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -800,7 +800,7 @@
 
     move-result v14
 
-    mul-float v10, v10, v14
+    mul-float/2addr v10, v14
 
     add-float/2addr v6, v10
 
@@ -815,7 +815,7 @@
 
     sub-float v6, v12, v6
 
-    mul-float v11, v11, v6
+    mul-float/2addr v11, v6
 
     iget-object v6, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -823,7 +823,7 @@
 
     move-result v6
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     add-float/2addr v11, v15
 
@@ -962,7 +962,7 @@
     goto :goto_9
 
     :cond_1b
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v12
 
     .line 2130
     :goto_a
@@ -1023,7 +1023,7 @@
     goto :goto_c
 
     :cond_1d
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v12
 
     .line 2140
     :goto_c
@@ -1097,7 +1097,7 @@
 
     move-result v6
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     add-int/2addr v5, v4
 
@@ -1174,7 +1174,7 @@
 
     sub-float v6, v12, v6
 
-    mul-float v6, v6, v12
+    mul-float/2addr v6, v12
 
     iget-object v7, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1182,7 +1182,7 @@
 
     move-result v7
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     add-float/2addr v6, v4
 
@@ -1268,7 +1268,7 @@
 
     move-result v4
 
-    mul-float v11, v11, v4
+    mul-float/2addr v11, v4
 
     invoke-virtual {v2, v11}, Landroid/view/View;->setTranslationX(F)V
 
@@ -1281,7 +1281,7 @@
 
     move-result v4
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     invoke-virtual {v2, v15}, Landroid/view/View;->setTranslationY(F)V
 
@@ -1369,7 +1369,7 @@
     move-result v19
 
     :cond_1e
-    const/4 v4, 0x1
+    move v4, v13
 
     goto :goto_d
 
@@ -1524,7 +1524,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1592,7 +1592,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1669,7 +1669,7 @@
 
     float-to-double v3, v7
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -1793,7 +1793,7 @@
 
     sub-float v15, v21, v15
 
-    mul-float v11, v11, v15
+    mul-float/2addr v11, v15
 
     int-to-float v1, v1
 
@@ -1805,13 +1805,13 @@
 
     move-result v15
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     add-float/2addr v11, v1
 
     int-to-float v1, v3
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     add-float v1, v19, v1
 
@@ -1864,7 +1864,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v12
+    mul-float/2addr v1, v12
 
     float-to-int v1, v1
 
@@ -1966,7 +1966,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -2034,7 +2034,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -2081,7 +2081,7 @@
 
     float-to-double v3, v12
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -2210,7 +2210,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     .line 2248
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$11;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -2223,7 +2223,7 @@
 
     sub-float v4, v5, v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     int-to-float v4, v3
 
@@ -2235,13 +2235,13 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v1, v4
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     add-float v2, v19, v2
 
@@ -2370,7 +2370,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v6, v1
 

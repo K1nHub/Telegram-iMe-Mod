@@ -142,12 +142,12 @@
 
     if-eqz v2, :cond_0
 
-    const/16 v24, 0x1
+    move/from16 v24, v22
 
     goto :goto_0
 
     :cond_0
-    const/16 v24, 0x0
+    move/from16 v24, v23
 
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
@@ -156,12 +156,12 @@
 
     if-eqz v2, :cond_1
 
-    const/16 v25, 0x1
+    move/from16 v25, v22
 
     goto :goto_1
 
     :cond_1
-    const/16 v25, 0x0
+    move/from16 v25, v23
 
     :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readDouble()D
@@ -194,12 +194,12 @@
 
     if-eqz v2, :cond_2
 
-    const/16 v41, 0x1
+    move/from16 v41, v22
 
     goto :goto_2
 
     :cond_2
-    const/16 v41, 0x0
+    move/from16 v41, v23
 
     :goto_2
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;

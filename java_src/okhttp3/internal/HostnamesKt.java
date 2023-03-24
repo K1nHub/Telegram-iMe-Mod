@@ -79,7 +79,7 @@ public final class HostnamesKt {
             kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r0)     // Catch: java.lang.IllegalArgumentException -> La4
             int r0 = r5.length()     // Catch: java.lang.IllegalArgumentException -> La4
             if (r0 != 0) goto L90
-            r1 = 1
+            r1 = r4
         L90:
             if (r1 == 0) goto L93
             return r3

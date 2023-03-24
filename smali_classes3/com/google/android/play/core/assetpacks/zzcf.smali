@@ -472,9 +472,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v19, v10, v6
+    cmp-long v6, v10, v6
 
-    if-lez v19, :cond_9
+    if-lez v6, :cond_9
 
     if-gtz v8, :cond_8
 
@@ -842,9 +842,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v5
+    cmp-long v7, v7, v5
 
-    if-nez v9, :cond_15
+    if-nez v7, :cond_15
 
     goto :goto_7
 

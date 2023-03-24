@@ -156,12 +156,12 @@
 
     if-eqz p4, :cond_0
 
-    const/4 p4, 0x5
+    move p4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p4, 0x3
+    move p4, v2
 
     :goto_0
     or-int/lit8 p4, p4, 0x10
@@ -226,12 +226,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x5
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x3
+    move v4, v2
 
     :goto_1
     or-int/lit8 v4, v4, 0x10
@@ -256,7 +256,7 @@
     goto :goto_2
 
     :cond_2
-    const/16 v4, 0x1a
+    move v4, v3
 
     :goto_2
     invoke-direct {p3, p1, v4, p5}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -292,7 +292,7 @@
     goto :goto_3
 
     :cond_3
-    const/16 p6, 0x1a
+    move p6, v3
 
     :goto_3
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -302,7 +302,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x3
+    move v1, v2
 
     :goto_4
     or-int/lit8 p2, v1, 0x10
@@ -324,14 +324,14 @@
     goto :goto_5
 
     :cond_6
-    const/16 p6, 0x1a
+    move p6, v3
 
     :goto_5
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_7
 
-    const/4 v1, 0x3
+    move v1, v2
 
     :cond_7
     or-int/lit8 p2, v1, 0x10
@@ -358,14 +358,14 @@
     goto :goto_6
 
     :cond_8
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_6
     sget-boolean p4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p4, :cond_9
 
-    const/4 p3, 0x0
+    move p3, v0
 
     goto :goto_7
 
@@ -843,12 +843,12 @@
 
     if-eqz v0, :cond_3
 
-    const/16 v0, 0x8
+    move v0, v1
 
     goto :goto_1
 
     :cond_3
-    const/16 v0, 0x12
+    move v0, v2
 
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -859,7 +859,7 @@
 
     if-eqz v3, :cond_4
 
-    const/16 v1, 0x12
+    move v1, v2
 
     :cond_4
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -975,7 +975,7 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_0
 
@@ -996,7 +996,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     invoke-virtual {v0, v5, v3, v6, v3}, Landroid/widget/TextView;->setPadding(IIII)V
@@ -1051,7 +1051,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     if-eq v0, v2, :cond_7
@@ -1061,7 +1061,7 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :cond_5
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setVisibility(I)V
@@ -1202,7 +1202,7 @@
 
     if-eqz p3, :cond_3
 
-    const/4 p3, 0x0
+    move p3, p1
 
     goto :goto_2
 
@@ -1223,7 +1223,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_3
     invoke-virtual {p2, p3, p1, v0, p1}, Landroid/widget/TextView;->setPadding(IIII)V
@@ -1265,12 +1265,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x6
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     iget-boolean v4, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->bottom:Z
@@ -1280,7 +1280,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createRadSelectorDrawable(III)Landroid/graphics/drawable/Drawable;

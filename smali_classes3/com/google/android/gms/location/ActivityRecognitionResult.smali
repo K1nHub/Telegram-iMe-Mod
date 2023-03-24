@@ -179,12 +179,12 @@
 
     if-lez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const-string v3, "Must have at least 1 detected activity"
@@ -198,14 +198,14 @@
 
     if-lez v4, :cond_1
 
-    cmp-long v4, p4, v2
+    cmp-long v2, p4, v2
 
-    if-lez v4, :cond_1
+    if-lez v2, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const-string v1, "Must set times"
@@ -556,7 +556,7 @@
 
     if-ne v3, v6, :cond_a
 
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_0
     if-ge v6, v3, :cond_4
@@ -604,7 +604,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
     .annotation build Lcom/google/android/gms/common/internal/ShowFirstParty;
     .end annotation
 
@@ -639,17 +639,17 @@
 
     iget-wide v4, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->zzb:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->zzc:J
 
     iget-wide v4, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->zzc:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->zzd:I
 

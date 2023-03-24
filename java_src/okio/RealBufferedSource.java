@@ -20,7 +20,7 @@ public final class RealBufferedSource implements BufferedSource {
         Intrinsics.checkNotNullParameter(sink, "sink");
         if (!(j >= 0)) {
             throw new IllegalArgumentException(("byteCount < 0: " + j).toString());
-        } else if (true ^ this.closed) {
+        } else if (!this.closed) {
             if (this.bufferField.size() == 0 && this.source.read(this.bufferField, 8192) == -1) {
                 return -1L;
             }
@@ -312,7 +312,7 @@ public final class RealBufferedSource implements BufferedSource {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x002c, code lost:
-        if (r9 == 0) goto L16;
+        if (r4 == 0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x002f, code lost:
         r1 = new java.lang.StringBuilder();
@@ -351,17 +351,17 @@ public final class RealBufferedSource implements BufferedSource {
             byte r9 = (byte) r9
             if (r8 <= r9) goto L2a
         L20:
-            int r9 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1))
-            if (r9 != 0) goto L2c
-            r4 = 45
-            byte r4 = (byte) r4
-            if (r8 == r4) goto L2a
+            int r4 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1))
+            if (r4 != 0) goto L2c
+            r5 = 45
+            byte r5 = (byte) r5
+            if (r8 == r5) goto L2a
             goto L2c
         L2a:
             r4 = r6
             goto L8
         L2c:
-            if (r9 == 0) goto L2f
+            if (r4 == 0) goto L2f
             goto L59
         L2f:
             java.lang.NumberFormatException r0 = new java.lang.NumberFormatException

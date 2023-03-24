@@ -876,7 +876,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     add-int/2addr v1, p2
@@ -1068,7 +1068,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-virtual {p0, v1, v2, v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onPanTranslationUpdate(FFZ)V
@@ -1100,13 +1100,13 @@
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->from:F
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->to:F
 
     sub-float/2addr v1, p1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v0, v2
 

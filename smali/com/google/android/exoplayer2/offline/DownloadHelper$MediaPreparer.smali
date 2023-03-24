@@ -535,7 +535,7 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1081
     :goto_0

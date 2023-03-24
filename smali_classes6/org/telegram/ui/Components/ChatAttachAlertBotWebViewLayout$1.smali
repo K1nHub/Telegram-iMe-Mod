@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onItemClick(I)V
-    .locals 6
+    .locals 5
 
     const/4 v0, -0x1
 
@@ -314,9 +314,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_4
+    if-nez v1, :cond_4
 
     .line 160
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;

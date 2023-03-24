@@ -50,20 +50,20 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
     public final void markAllNotificationAsRead(List<NotificationItem> notifications) {
         Intrinsics.checkNotNullParameter(notifications, "notifications");
-        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setAllNotificationsRead().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setAllNotificationsRead().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletNotificationIntera…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2216x7115685f(notifications, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2217x71156860((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2230x7115685f(notifications, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2231x71156860((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void loadMoreNotification(String lastId) {
         Intrinsics.checkNotNullParameter(lastId, "lastId");
-        Observable<Result<List<Notification>>> observeOn = this.walletNotificationInteractor.getNotifications(lastId).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<Notification>>> observeOn = this.walletNotificationInteractor.getNotifications(lastId).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletNotificationIntera…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2212xb19756d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2213xb19756d5((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2226xb19756d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2227xb19756d5((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -79,14 +79,14 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
         if (z) {
             ((WalletNotificationsView) getViewState()).resetLoadMore();
         }
-        Observable doFinally = PushNotificationInteractor.getNotifications$default(this.walletNotificationInteractor, null, 1, null).observeOn(this.schedulersProvider.mo707ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsPresenter$$ExternalSyntheticLambda0
+        Observable doFinally = PushNotificationInteractor.getNotifications$default(this.walletNotificationInteractor, null, 1, null).observeOn(this.schedulersProvider.mo706ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.notifications.WalletNotificationsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletNotificationsPresenter.loadNotification$lambda$4(WalletNotificationsPresenter.this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "walletNotificationIntera…e.showRefreshing(false) }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2214x949ebadf(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2215x949ebae0((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2228x949ebadf(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2229x949ebae0((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -104,9 +104,9 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
     }
 
     private final void markNotificationAsRead(String str) {
-        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setNotificationsRead(str).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setNotificationsRead(str).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletNotificationIntera…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2218x560e7e8e(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2219x560e7e8f((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2232x560e7e8e(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2233x560e7e8f((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -995,7 +995,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1604,7 +1604,7 @@
 
     if-lt p2, v0, :cond_5
 
-    goto :goto_4
+    goto :goto_3
 
     .line 853
     :cond_5
@@ -1632,7 +1632,7 @@
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/PhotoPickerActivity;->onListItemClick(Landroid/view/View;Ljava/lang/Object;)V
 
-    goto :goto_4
+    goto :goto_3
 
     .line 860
     :cond_7
@@ -1656,9 +1656,7 @@
 
     const/4 v1, 0x3
 
-    const/4 v5, 0x3
-
-    goto :goto_3
+    goto :goto_2
 
     .line 864
     :cond_9
@@ -1668,9 +1666,7 @@
 
     const/16 v1, 0xa
 
-    const/16 v5, 0xa
-
-    goto :goto_3
+    goto :goto_2
 
     .line 866
     :cond_a
@@ -1680,23 +1676,16 @@
 
     const/4 v1, 0x4
 
-    const/4 v5, 0x4
-
-    goto :goto_3
+    goto :goto_2
 
     :cond_b
     const/4 v1, 0x0
 
-    const/4 v5, 0x0
-
-    goto :goto_3
-
     :cond_c
     :goto_2
-    const/4 v5, 0x1
+    move v5, v1
 
     .line 871
-    :goto_3
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p1
@@ -1730,7 +1719,7 @@
     invoke-virtual/range {v2 .. v8}, Lorg/telegram/ui/PhotoViewer;->openPhotoForSelect(Ljava/util/ArrayList;IIZLorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Lorg/telegram/ui/ChatActivity;)Z
 
     :cond_d
-    :goto_4
+    :goto_3
     return-void
 .end method
 
@@ -2147,7 +2136,7 @@
 
     move-result-object v9
 
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_0
     if-ge v10, v6, :cond_11
@@ -2175,7 +2164,7 @@
 
     :cond_1
     :goto_1
-    const/4 v13, 0x1
+    move v13, v5
 
     goto :goto_2
 
@@ -2199,7 +2188,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v13, 0x0
+    move v13, v3
 
     :goto_2
     if-nez v11, :cond_4
@@ -2223,7 +2212,7 @@
     if-eqz v14, :cond_6
 
     :cond_5
-    const/4 v13, 0x1
+    move v13, v5
 
     :cond_6
     if-eqz v13, :cond_7
@@ -2242,22 +2231,22 @@
 
     if-nez v10, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_3
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_3
     if-ne v10, v5, :cond_9
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_4
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_4
     invoke-direct {v14, v15, v6, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
@@ -2271,22 +2260,22 @@
 
     if-nez v10, :cond_a
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_5
 
     :cond_a
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_5
     if-ne v10, v8, :cond_b
 
-    const/4 v13, 0x1
+    move v13, v5
 
     goto :goto_6
 
     :cond_b
-    const/4 v13, 0x0
+    move v13, v3
 
     :goto_6
     invoke-virtual {v4, v6, v13}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->updateSelectorBackground(ZZ)V
@@ -2768,9 +2757,9 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_11
@@ -2839,7 +2828,7 @@
 
     if-eqz v6, :cond_7
 
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 1741
     :goto_1
@@ -3007,7 +2996,7 @@
     goto/16 :goto_8
 
     :cond_a
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 1774
     :goto_3
@@ -3084,7 +3073,7 @@
 
     if-eqz p4, :cond_e
 
-    const/4 v6, 0x0
+    move v6, v0
 
     goto :goto_6
 
@@ -3193,13 +3182,13 @@
     goto :goto_9
 
     :cond_12
-    const/4 p3, 0x0
+    move p3, v0
 
     goto :goto_a
 
     :cond_13
     :goto_9
-    const/4 p3, 0x1
+    move p3, p2
 
     :goto_a
     iput-boolean p3, p0, Lorg/telegram/ui/PhotoPickerActivity;->imageSearchEndReached:Z
@@ -3207,7 +3196,7 @@
     goto :goto_b
 
     :cond_14
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 1806
     :goto_b
@@ -3366,7 +3355,7 @@
 
     if-ne p2, v0, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
@@ -3487,12 +3476,12 @@
 
     if-ne v1, v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     const-string v3, ""
@@ -4032,12 +4021,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-ne p1, v0, :cond_2
@@ -4143,12 +4132,12 @@
 
     if-eqz p1, :cond_7
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v5
 
     goto :goto_2
 
     :cond_7
-    const v9, 0x3e4ccccd    # 0.2f
+    move v9, v4
 
     :goto_2
     aput v9, v8, v1
@@ -4168,12 +4157,12 @@
 
     if-eqz p1, :cond_8
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v5
 
     goto :goto_3
 
     :cond_8
-    const v9, 0x3e4ccccd    # 0.2f
+    move v9, v4
 
     :goto_3
     aput v9, v8, v1
@@ -4193,12 +4182,12 @@
 
     if-eqz p1, :cond_9
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v5
 
     goto :goto_4
 
     :cond_9
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_4
     aput v9, v8, v1
@@ -4218,12 +4207,12 @@
 
     if-eqz p1, :cond_a
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v5
 
     goto :goto_5
 
     :cond_a
-    const v9, 0x3e4ccccd    # 0.2f
+    move v9, v4
 
     :goto_5
     aput v9, v8, v1
@@ -4243,7 +4232,7 @@
 
     if-eqz p1, :cond_b
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v5
 
     :cond_b
     aput v4, v8, v1
@@ -4266,7 +4255,7 @@
     goto :goto_6
 
     :cond_c
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_6
     aput v5, v7, v1
@@ -4286,7 +4275,7 @@
 
     if-eqz p1, :cond_d
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_7
 
@@ -4376,12 +4365,12 @@
 
     if-eqz p1, :cond_10
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     goto :goto_9
 
     :cond_10
-    const v1, 0x3e4ccccd    # 0.2f
+    move v1, v4
 
     :goto_9
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -4391,12 +4380,12 @@
 
     if-eqz p1, :cond_11
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     goto :goto_a
 
     :cond_11
-    const v1, 0x3e4ccccd    # 0.2f
+    move v1, v4
 
     :goto_a
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -4406,12 +4395,12 @@
 
     if-eqz p1, :cond_12
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     goto :goto_b
 
     :cond_12
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_b
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -4421,12 +4410,12 @@
 
     if-eqz p1, :cond_13
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     goto :goto_c
 
     :cond_13
-    const v1, 0x3e4ccccd    # 0.2f
+    move v1, v4
 
     :goto_c
     invoke-virtual {p2, v1}, Landroid/view/View;->setScaleX(F)V
@@ -4436,7 +4425,7 @@
 
     if-eqz p1, :cond_14
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v5
 
     :cond_14
     invoke-virtual {p2, v4}, Landroid/view/View;->setScaleY(F)V
@@ -4449,7 +4438,7 @@
     goto :goto_d
 
     :cond_15
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_d
     invoke-virtual {p2, v5}, Landroid/view/View;->setAlpha(F)V
@@ -4459,7 +4448,7 @@
 
     if-eqz p1, :cond_16
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_e
 
@@ -4529,7 +4518,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_7
@@ -4683,7 +4672,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     invoke-virtual {v3, v4, v1}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setChecked(ZZ)V
@@ -5880,34 +5869,34 @@
 
     if-lt v6, v12, :cond_10
 
-    const/16 v14, 0x38
+    move v14, v1
 
     goto :goto_3
 
     :cond_10
-    const/16 v14, 0x3c
+    move v14, v5
 
     :goto_3
     if-lt v6, v12, :cond_11
 
-    const/16 v15, 0x38
+    move v15, v1
 
     goto :goto_4
 
     :cond_11
-    const/16 v15, 0x3c
+    move v15, v5
 
     :goto_4
     const/16 v16, 0x33
 
     if-lt v6, v12, :cond_12
 
-    const/16 v17, 0x2
+    move/from16 v17, v10
 
     goto :goto_5
 
     :cond_12
-    const/16 v17, 0x0
+    move/from16 v17, v8
 
     :goto_5
     const/16 v18, 0x0
@@ -6038,12 +6027,12 @@
 
     if-eqz v1, :cond_15
 
-    const/4 v1, 0x1
+    move v1, v9
 
     goto :goto_6
 
     :cond_15
-    const/4 v1, 0x0
+    move v1, v8
 
     :goto_6
     iput-boolean v1, v0, Lorg/telegram/ui/PhotoPickerActivity;->allowIndices:Z
@@ -6767,7 +6756,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1626
     :goto_0
@@ -6783,12 +6772,12 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1629
     :goto_1
@@ -6848,12 +6837,12 @@
 
     if-ne p1, v3, :cond_3
 
-    const v10, 0x3f8ccccd    # 1.1f
+    move v10, v8
 
     goto :goto_2
 
     :cond_3
-    const v10, 0x3f666666    # 0.9f
+    move v10, v9
 
     :goto_2
     aput v10, v7, v2
@@ -6880,7 +6869,7 @@
     goto :goto_3
 
     :cond_4
-    const v8, 0x3f666666    # 0.9f
+    move v8, v9
 
     :goto_3
     aput v8, v1, v2

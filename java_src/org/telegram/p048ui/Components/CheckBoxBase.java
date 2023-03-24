@@ -238,11 +238,11 @@ public class CheckBoxBase {
         setProgress(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:0x02c6  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x02b8  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x003c  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:180:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:182:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -250,7 +250,7 @@ public class CheckBoxBase {
     */
     public void draw(android.graphics.Canvas r23) {
         /*
-            Method dump skipped, instructions count: 1187
+            Method dump skipped, instructions count: 1167
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.CheckBoxBase.draw(android.graphics.Canvas):void");

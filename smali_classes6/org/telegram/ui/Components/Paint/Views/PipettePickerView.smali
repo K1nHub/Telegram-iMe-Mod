@@ -453,7 +453,7 @@
 
     const v1, 0x3e4ccccd    # 0.2f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 164
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->positionX:F
@@ -464,7 +464,7 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->positionY:F
 
@@ -474,7 +474,7 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 166
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->positionX:F
@@ -487,7 +487,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
 
@@ -503,7 +503,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -549,22 +549,22 @@
     .line 173
     iget v5, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->appearProgress:F
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    cmpl-float v6, v5, v6
 
-    cmpl-float v7, v5, v7
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    if-eqz v7, :cond_0
+    if-eqz v6, :cond_0
 
-    cmpl-float v5, v5, v6
+    cmpl-float v5, v5, v7
 
     if-eqz v5, :cond_0
 
     .line 174
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    sub-float v7, v1, v0
+    sub-float v6, v1, v0
 
     sub-float v8, v2, v0
 
@@ -572,20 +572,20 @@
 
     add-float v10, v2, v0
 
-    invoke-virtual {v5, v7, v8, v9, v10}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v5, v6, v8, v9, v10}, Landroid/graphics/RectF;->set(FFFF)V
 
-    const/high16 v7, 0x437f0000    # 255.0f
+    const/high16 v6, 0x437f0000    # 255.0f
 
     .line 175
     iget v8, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->appearProgress:F
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v6
 
-    float-to-int v7, v8
+    float-to-int v6, v8
 
     const/16 v8, 0x1f
 
-    invoke-virtual {p1, v5, v7, v8}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
+    invoke-virtual {p1, v5, v6, v8}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
     goto :goto_0
 
@@ -597,11 +597,11 @@
     :goto_0
     iget v5, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->appearProgress:F
 
-    const/high16 v7, 0x3f000000    # 0.5f
+    const/high16 v6, 0x3f000000    # 0.5f
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v6
 
-    add-float/2addr v5, v7
+    add-float/2addr v5, v6
 
     .line 180
     invoke-virtual {p1, v5, v5, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
@@ -614,9 +614,9 @@
     .line 183
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
 
-    sget-object v7, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+    sget-object v6, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    invoke-virtual {v5, v1, v2, v0, v7}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
+    invoke-virtual {v5, v1, v2, v0, v6}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
     .line 184
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
@@ -631,7 +631,7 @@
     move-result v5
 
     .line 187
-    iget-object v7, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->srcRect:Landroid/graphics/Rect;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->srcRect:Landroid/graphics/Rect;
 
     sub-int v8, v3, v5
 
@@ -641,7 +641,7 @@
 
     add-int/2addr v4, v5
 
-    invoke-virtual {v7, v8, v9, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v6, v8, v9, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 188
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->dstRect:Landroid/graphics/RectF;
@@ -650,11 +650,11 @@
 
     sub-float v5, v2, v0
 
-    add-float v7, v1, v0
+    add-float v6, v1, v0
 
     add-float v8, v2, v0
 
-    invoke-virtual {v3, v4, v5, v7, v8}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v4, v5, v6, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 189
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->bitmap:Landroid/graphics/Bitmap;
@@ -663,9 +663,9 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->dstRect:Landroid/graphics/RectF;
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    invoke-virtual {p1, v3, v4, v5, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v3, v4, v5, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     .line 191
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->colorPaint:Landroid/graphics/Paint;
@@ -753,19 +753,19 @@
 
     const/high16 v5, -0x3fa00000    # -3.5f
 
-    const/high16 v7, -0x3fa00000    # -3.5f
+    move v6, v5
 
     :goto_1
     const/high16 v8, 0x40900000    # 4.5f
 
-    cmpg-float v9, v7, v8
+    cmpg-float v9, v6, v8
 
     if-gez v9, :cond_1
 
     .line 207
     iget-object v8, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
 
-    mul-float v9, v7, v3
+    mul-float v9, v6, v3
 
     add-float/2addr v9, v1
 
@@ -780,18 +780,18 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/graphics/Path;->lineTo(FF)V
 
-    add-float/2addr v7, v6
+    add-float/2addr v6, v7
 
     goto :goto_1
 
     :cond_1
     :goto_2
-    cmpg-float v7, v5, v8
+    cmpg-float v6, v5, v8
 
-    if-gez v7, :cond_2
+    if-gez v6, :cond_2
 
     .line 211
-    iget-object v7, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
 
     sub-float v9, v1, v0
 
@@ -799,16 +799,16 @@
 
     add-float/2addr v10, v2
 
-    invoke-virtual {v7, v9, v10}, Landroid/graphics/Path;->moveTo(FF)V
+    invoke-virtual {v6, v9, v10}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 212
-    iget-object v7, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->path:Landroid/graphics/Path;
 
     add-float v9, v1, v0
 
-    invoke-virtual {v7, v9, v10}, Landroid/graphics/Path;->lineTo(FF)V
+    invoke-virtual {v6, v9, v10}, Landroid/graphics/Path;->lineTo(FF)V
 
-    add-float/2addr v5, v6
+    add-float/2addr v5, v7
 
     goto :goto_2
 
@@ -888,7 +888,7 @@
     .line 153
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->positionX:F
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     int-to-float p1, p1
 
@@ -901,7 +901,7 @@
     .line 154
     iget p3, p0, Lorg/telegram/ui/Components/Paint/Views/PipettePickerView;->positionY:F
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     int-to-float p2, p2
 

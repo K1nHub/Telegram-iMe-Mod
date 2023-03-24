@@ -149,7 +149,7 @@
     .line 51
     sget-object v0, Lcom/squareup/okhttp/Protocol;->HTTP_1_0:Lcom/squareup/okhttp/Protocol;
 
-    const/4 v3, 0x4
+    move v3, v2
 
     .line 58
     :goto_0

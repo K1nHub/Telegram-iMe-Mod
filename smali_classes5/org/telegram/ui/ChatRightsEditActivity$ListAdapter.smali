@@ -42,12 +42,12 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/content/Context;)V
     .locals 1
 
-    .line 1460
+    .line 1470
     iput-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1461
+    .line 1471
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result p1
@@ -58,20 +58,20 @@
 
     const/4 p1, 0x1
 
-    .line 1462
+    .line 1472
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
 
-    .line 1464
+    .line 1474
     :cond_0
     iput-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
 .end method
 
-.method static synthetic access$5000(Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;)Z
+.method static synthetic access$5100(Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;)Z
     .locals 0
 
-    .line 1443
+    .line 1453
     iget-boolean p0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->ignoreTextChange:Z
 
     return p0
@@ -80,7 +80,7 @@
 .method private synthetic lambda$onBindViewHolder$1(Lorg/telegram/ui/Cells/TextCheckCell2;)V
     .locals 2
 
-    .line 1768
+    .line 1778
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6100(Lorg/telegram/ui/ChatRightsEditActivity;)Z
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1769
+    .line 1779
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -104,7 +104,7 @@
 
     const-string v1, "UserRestrictionsCantModify"
 
-    .line 1770
+    .line 1780
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -117,7 +117,7 @@
 
     const-string v1, "UserRestrictionsCantModifyEnabled"
 
-    .line 1771
+    .line 1781
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -130,7 +130,7 @@
 
     const-string v1, "OK"
 
-    .line 1772
+    .line 1782
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -141,17 +141,17 @@
 
     move-result-object p1
 
-    .line 1773
+    .line 1783
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 1774
+    .line 1784
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     return-void
 
-    .line 1777
+    .line 1787
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell2;->isChecked()Z
 
@@ -159,10 +159,10 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 1778
+    .line 1788
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setChecked(Z)V
 
-    .line 1779
+    .line 1789
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6500(Lorg/telegram/ui/ChatRightsEditActivity;Z)V
@@ -173,7 +173,7 @@
 .method private synthetic lambda$onCreateViewHolder$0(Landroid/view/View;)V
     .locals 0
 
-    .line 1606
+    .line 1616
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$100(Lorg/telegram/ui/ChatRightsEditActivity;)V
@@ -186,7 +186,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1558
+    .line 1568
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$200(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -199,7 +199,7 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 1469
+    .line 1479
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -210,7 +210,7 @@
 
     if-ne v0, v1, :cond_23
 
-    .line 1470
+    .line 1480
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$600(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -223,7 +223,7 @@
 
     return-wide v0
 
-    .line 1471
+    .line 1481
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -237,7 +237,7 @@
 
     return-wide v0
 
-    .line 1472
+    .line 1482
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -251,7 +251,7 @@
 
     return-wide v0
 
-    .line 1473
+    .line 1483
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -265,7 +265,7 @@
 
     return-wide v0
 
-    .line 1474
+    .line 1484
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -279,7 +279,7 @@
 
     return-wide v0
 
-    .line 1475
+    .line 1485
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -293,7 +293,7 @@
 
     return-wide v0
 
-    .line 1476
+    .line 1486
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -307,7 +307,7 @@
 
     return-wide v0
 
-    .line 1477
+    .line 1487
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -321,7 +321,7 @@
 
     return-wide v0
 
-    .line 1478
+    .line 1488
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -335,7 +335,7 @@
 
     return-wide v0
 
-    .line 1479
+    .line 1489
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -349,7 +349,7 @@
 
     return-wide v0
 
-    .line 1480
+    .line 1490
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -363,7 +363,7 @@
 
     return-wide v0
 
-    .line 1481
+    .line 1491
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -377,7 +377,7 @@
 
     return-wide v0
 
-    .line 1482
+    .line 1492
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -391,7 +391,7 @@
 
     return-wide v0
 
-    .line 1483
+    .line 1493
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -405,7 +405,7 @@
 
     return-wide v0
 
-    .line 1484
+    .line 1494
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -419,7 +419,7 @@
 
     return-wide v0
 
-    .line 1485
+    .line 1495
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -433,7 +433,7 @@
 
     return-wide v0
 
-    .line 1486
+    .line 1496
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -447,7 +447,7 @@
 
     return-wide v0
 
-    .line 1487
+    .line 1497
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -461,7 +461,7 @@
 
     return-wide v0
 
-    .line 1488
+    .line 1498
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -475,7 +475,7 @@
 
     return-wide v0
 
-    .line 1489
+    .line 1499
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -489,7 +489,7 @@
 
     return-wide v0
 
-    .line 1490
+    .line 1500
     :cond_13
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -503,7 +503,7 @@
 
     return-wide v0
 
-    .line 1491
+    .line 1501
     :cond_14
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -517,7 +517,7 @@
 
     return-wide v0
 
-    .line 1492
+    .line 1502
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -531,7 +531,7 @@
 
     return-wide v0
 
-    .line 1493
+    .line 1503
     :cond_16
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -545,7 +545,7 @@
 
     return-wide v0
 
-    .line 1494
+    .line 1504
     :cond_17
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -559,7 +559,7 @@
 
     return-wide v0
 
-    .line 1495
+    .line 1505
     :cond_18
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -573,7 +573,7 @@
 
     return-wide v0
 
-    .line 1496
+    .line 1506
     :cond_19
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -587,7 +587,7 @@
 
     return-wide v0
 
-    .line 1497
+    .line 1507
     :cond_1a
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -601,7 +601,7 @@
 
     return-wide v0
 
-    .line 1498
+    .line 1508
     :cond_1b
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -615,7 +615,7 @@
 
     return-wide v0
 
-    .line 1499
+    .line 1509
     :cond_1c
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -629,7 +629,7 @@
 
     return-wide v0
 
-    .line 1500
+    .line 1510
     :cond_1d
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -643,7 +643,7 @@
 
     return-wide v0
 
-    .line 1501
+    .line 1511
     :cond_1e
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -657,7 +657,7 @@
 
     return-wide v0
 
-    .line 1502
+    .line 1512
     :cond_1f
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -671,7 +671,7 @@
 
     return-wide v0
 
-    .line 1503
+    .line 1513
     :cond_20
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -685,7 +685,7 @@
 
     return-wide v0
 
-    .line 1504
+    .line 1514
     :cond_21
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -704,7 +704,7 @@
 
     return-wide v0
 
-    .line 1507
+    .line 1517
     :cond_23
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemId(I)J
 
@@ -716,7 +716,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 1951
+    .line 1961
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6400(Lorg/telegram/ui/ChatRightsEditActivity;I)Z
@@ -729,7 +729,7 @@
 
     return p1
 
-    .line 1953
+    .line 1963
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -755,7 +755,7 @@
 
     if-eq p1, v0, :cond_d
 
-    .line 1957
+    .line 1967
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1600(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -795,7 +795,7 @@
 
     if-eq p1, v1, :cond_c
 
-    .line 1959
+    .line 1969
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2200(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -806,7 +806,7 @@
 
     goto/16 :goto_2
 
-    .line 1961
+    .line 1971
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -842,7 +842,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    .line 1962
+    .line 1972
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1100(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
@@ -875,7 +875,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    .line 1963
+    .line 1973
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
@@ -916,7 +916,7 @@
 
     goto :goto_1
 
-    .line 1965
+    .line 1975
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -936,7 +936,7 @@
 
     goto :goto_0
 
-    .line 1967
+    .line 1977
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -950,7 +950,7 @@
 
     return p1
 
-    .line 1969
+    .line 1979
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -964,7 +964,7 @@
 
     return p1
 
-    .line 1971
+    .line 1981
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1007,12 +1007,12 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 6
 
-    .line 1513
+    .line 1523
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 1514
+    .line 1524
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4100(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1070,7 +1070,7 @@
 
     return v4
 
-    .line 1517
+    .line 1527
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1084,7 +1084,7 @@
 
     return v5
 
-    .line 1520
+    .line 1530
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1105,12 +1105,12 @@
     :cond_3
     if-ne v0, v2, :cond_16
 
-    .line 1521
+    .line 1531
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 1522
+    .line 1532
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$600(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -1119,7 +1119,7 @@
 
     if-ne p1, v1, :cond_6
 
-    .line 1523
+    .line 1533
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1151,13 +1151,13 @@
     goto :goto_0
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v5
 
     :cond_5
     :goto_0
     return v4
 
-    .line 1525
+    .line 1535
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1177,7 +1177,7 @@
 
     return v5
 
-    .line 1528
+    .line 1538
     :cond_7
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1187,7 +1187,7 @@
 
     if-ne p1, v1, :cond_a
 
-    .line 1529
+    .line 1539
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1214,18 +1214,26 @@
 
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
 
+    if-nez p1, :cond_9
+
+    iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Z
+
+    move-result p1
+
     if-eqz p1, :cond_8
 
     goto :goto_1
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v5
 
     :cond_9
     :goto_1
     return v4
 
-    .line 1530
+    .line 1540
     :cond_a
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1235,7 +1243,7 @@
 
     if-ne p1, v1, :cond_b
 
-    .line 1531
+    .line 1541
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1246,7 +1254,7 @@
 
     return p1
 
-    .line 1532
+    .line 1542
     :cond_b
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1256,7 +1264,7 @@
 
     if-ne p1, v1, :cond_c
 
-    .line 1533
+    .line 1543
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1267,7 +1275,7 @@
 
     return p1
 
-    .line 1534
+    .line 1544
     :cond_c
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1277,7 +1285,7 @@
 
     if-ne p1, v1, :cond_d
 
-    .line 1535
+    .line 1545
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1288,7 +1296,7 @@
 
     return p1
 
-    .line 1536
+    .line 1546
     :cond_d
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1298,7 +1306,7 @@
 
     if-ne p1, v1, :cond_e
 
-    .line 1537
+    .line 1547
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1309,7 +1317,7 @@
 
     return p1
 
-    .line 1538
+    .line 1548
     :cond_e
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1319,7 +1327,7 @@
 
     if-ne p1, v1, :cond_f
 
-    .line 1539
+    .line 1549
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1330,7 +1338,7 @@
 
     return p1
 
-    .line 1540
+    .line 1550
     :cond_f
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1340,7 +1348,7 @@
 
     if-ne p1, v1, :cond_10
 
-    .line 1541
+    .line 1551
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1351,7 +1359,7 @@
 
     return p1
 
-    .line 1542
+    .line 1552
     :cond_10
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1361,7 +1369,7 @@
 
     if-ne p1, v1, :cond_11
 
-    .line 1543
+    .line 1553
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1372,7 +1380,7 @@
 
     return p1
 
-    .line 1544
+    .line 1554
     :cond_11
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1382,7 +1390,7 @@
 
     if-ne p1, v1, :cond_12
 
-    .line 1545
+    .line 1555
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1393,7 +1401,7 @@
 
     return p1
 
-    .line 1546
+    .line 1556
     :cond_12
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1403,7 +1411,7 @@
 
     if-ne p1, v1, :cond_15
 
-    .line 1547
+    .line 1557
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1435,13 +1443,13 @@
     goto :goto_2
 
     :cond_13
-    const/4 v4, 0x0
+    move v4, v5
 
     :cond_14
     :goto_2
     return v4
 
-    .line 1548
+    .line 1558
     :cond_15
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1451,7 +1459,7 @@
 
     if-ne p1, v1, :cond_16
 
-    .line 1549
+    .line 1559
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -1480,7 +1488,7 @@
     goto :goto_3
 
     :cond_17
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     return v4
@@ -1489,7 +1497,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 13
 
-    .line 1658
+    .line 1668
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1511,13 +1519,13 @@
     :pswitch_0
     goto/16 :goto_56
 
-    .line 1660
+    .line 1670
     :pswitch_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 1661
+    .line 1671
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -1536,14 +1544,14 @@
 
     if-ne v0, p2, :cond_0
 
-    const/4 v12, 0x1
+    move v12, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v12, 0x0
+    move v12, v6
 
-    .line 1662
+    .line 1672
     :goto_0
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1551,16 +1559,16 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1664
+    .line 1674
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5300(Lorg/telegram/ui/ChatRightsEditActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
     if-ne p2, v0, :cond_3
 
-    .line 1665
+    .line 1675
     sget p2, Lorg/telegram/messenger/R$string;->user_restrictions_send_gifs:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1569,7 +1577,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1587,12 +1595,12 @@
 
     if-nez p2, :cond_1
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_1
     const/4 v11, 0x1
@@ -1603,7 +1611,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1666
+    .line 1676
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -1621,17 +1629,17 @@
 
     goto/16 :goto_56
 
-    .line 1667
+    .line 1677
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5600(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
     if-ne p2, v0, :cond_6
 
-    .line 1668
+    .line 1678
     sget p2, Lorg/telegram/messenger/R$string;->user_restrictions_send_games:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1640,7 +1648,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1658,12 +1666,12 @@
 
     if-nez p2, :cond_4
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_2
 
     :cond_4
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_2
     const/4 v11, 0x1
@@ -1674,7 +1682,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1669
+    .line 1679
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -1692,17 +1700,17 @@
 
     goto/16 :goto_56
 
-    .line 1670
+    .line 1680
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5600(Lorg/telegram/ui/ChatRightsEditActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5700(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
     if-ne p2, v0, :cond_9
 
-    .line 1671
+    .line 1681
     sget p2, Lorg/telegram/messenger/R$string;->user_restrictions_send_inline:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1711,7 +1719,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1729,12 +1737,12 @@
 
     if-nez p2, :cond_7
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_3
 
     :cond_7
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_3
     const/4 v11, 0x1
@@ -1745,7 +1753,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1672
+    .line 1682
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -1763,7 +1771,7 @@
 
     goto/16 :goto_56
 
-    .line 1674
+    .line 1684
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1773,7 +1781,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 1675
+    .line 1685
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionStickersGifs:I
 
     const-string v0, "SendMediaPermissionStickersGifs"
@@ -1784,7 +1792,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1802,12 +1810,12 @@
 
     if-nez p2, :cond_a
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_4
 
     :cond_a
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_4
     const/4 v11, 0x1
@@ -1818,7 +1826,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1676
+    .line 1686
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -1836,7 +1844,7 @@
 
     goto/16 :goto_56
 
-    .line 1677
+    .line 1687
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1846,7 +1854,7 @@
 
     if-ne p2, v0, :cond_f
 
-    .line 1678
+    .line 1688
     sget p2, Lorg/telegram/messenger/R$string;->UserRestrictionsEmbedLinks:I
 
     const-string v0, "UserRestrictionsEmbedLinks"
@@ -1857,7 +1865,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1877,7 +1885,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1895,12 +1903,12 @@
 
     if-nez p2, :cond_d
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_5
 
     :cond_d
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_5
     const/4 v11, 0x1
@@ -1911,7 +1919,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1679
+    .line 1689
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -1929,7 +1937,7 @@
 
     goto/16 :goto_56
 
-    .line 1680
+    .line 1690
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -1939,7 +1947,7 @@
 
     if-ne p2, v0, :cond_12
 
-    .line 1681
+    .line 1691
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPolls:I
 
     const-string v0, "SendMediaPolls"
@@ -1950,7 +1958,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -1968,12 +1976,12 @@
 
     if-nez p2, :cond_10
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_6
 
     :cond_10
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_6
     const/4 v11, 0x1
@@ -1984,7 +1992,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1682
+    .line 1692
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2002,7 +2010,7 @@
 
     goto/16 :goto_56
 
-    .line 1683
+    .line 1693
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2012,7 +2020,7 @@
 
     if-ne p2, v0, :cond_15
 
-    .line 1684
+    .line 1694
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionPhotos:I
 
     const-string v0, "SendMediaPermissionPhotos"
@@ -2023,7 +2031,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2041,12 +2049,12 @@
 
     if-nez p2, :cond_13
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_7
 
     :cond_13
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_7
     const/4 v11, 0x1
@@ -2057,7 +2065,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1685
+    .line 1695
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2075,7 +2083,7 @@
 
     goto/16 :goto_56
 
-    .line 1686
+    .line 1696
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2085,7 +2093,7 @@
 
     if-ne p2, v0, :cond_18
 
-    .line 1687
+    .line 1697
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionVideos:I
 
     const-string v0, "SendMediaPermissionVideos"
@@ -2096,7 +2104,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2114,12 +2122,12 @@
 
     if-nez p2, :cond_16
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_8
 
     :cond_16
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_8
     const/4 v11, 0x1
@@ -2130,7 +2138,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1688
+    .line 1698
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2148,7 +2156,7 @@
 
     goto/16 :goto_56
 
-    .line 1689
+    .line 1699
     :cond_18
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2158,7 +2166,7 @@
 
     if-ne p2, v0, :cond_1b
 
-    .line 1690
+    .line 1700
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionMusic:I
 
     const-string v0, "SendMediaPermissionMusic"
@@ -2169,7 +2177,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2187,12 +2195,12 @@
 
     if-nez p2, :cond_19
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_9
 
     :cond_19
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_9
     const/4 v11, 0x1
@@ -2203,7 +2211,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1691
+    .line 1701
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2221,7 +2229,7 @@
 
     goto/16 :goto_56
 
-    .line 1692
+    .line 1702
     :cond_1b
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2231,7 +2239,7 @@
 
     if-ne p2, v0, :cond_1e
 
-    .line 1693
+    .line 1703
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionFiles:I
 
     const-string v0, "SendMediaPermissionFiles"
@@ -2242,7 +2250,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2260,12 +2268,12 @@
 
     if-nez p2, :cond_1c
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_a
 
     :cond_1c
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_a
     const/4 v11, 0x1
@@ -2276,7 +2284,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1694
+    .line 1704
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2294,7 +2302,7 @@
 
     goto/16 :goto_56
 
-    .line 1695
+    .line 1705
     :cond_1e
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2304,7 +2312,7 @@
 
     if-ne p2, v0, :cond_21
 
-    .line 1696
+    .line 1706
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionVoice:I
 
     const-string v0, "SendMediaPermissionVoice"
@@ -2315,7 +2323,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2333,12 +2341,12 @@
 
     if-nez p2, :cond_1f
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_b
 
     :cond_1f
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_b
     const/4 v11, 0x1
@@ -2349,7 +2357,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1697
+    .line 1707
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2367,7 +2375,7 @@
 
     goto/16 :goto_56
 
-    .line 1698
+    .line 1708
     :cond_21
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2375,9 +2383,9 @@
 
     move-result v0
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_91
 
-    .line 1699
+    .line 1709
     sget p2, Lorg/telegram/messenger/R$string;->SendMediaPermissionRound:I
 
     const-string v0, "SendMediaPermissionRound"
@@ -2388,7 +2396,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2406,12 +2414,12 @@
 
     if-nez p2, :cond_22
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_c
 
     :cond_22
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_c
     const/4 v11, 0x1
@@ -2422,7 +2430,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZZ)V
 
-    .line 1700
+    .line 1710
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -2440,16 +2448,16 @@
 
     goto/16 :goto_56
 
-    .line 1918
+    .line 1928
     :pswitch_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/PollEditTextCell;
 
-    .line 1920
+    .line 1930
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5700(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p2
 
@@ -2469,7 +2477,7 @@
 
     if-eqz p2, :cond_24
 
-    .line 1921
+    .line 1931
     sget p2, Lorg/telegram/messenger/R$string;->ChannelCreator:I
 
     invoke-static {v1, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -2478,7 +2486,7 @@
 
     goto :goto_d
 
-    .line 1923
+    .line 1933
     :cond_24
     sget p2, Lorg/telegram/messenger/R$string;->ChannelAdmin:I
 
@@ -2486,11 +2494,11 @@
 
     move-result-object p2
 
-    .line 1925
+    .line 1935
     :goto_d
     iput-boolean v5, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->ignoreTextChange:Z
 
-    .line 1926
+    .line 1936
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
@@ -2516,25 +2524,25 @@
     goto :goto_e
 
     :cond_25
-    const/4 v1, 0x0
+    move v1, v6
 
     goto :goto_f
 
     :cond_26
     :goto_e
-    const/4 v1, 0x1
+    move v1, v5
 
     :goto_f
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 1927
+    .line 1937
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
     invoke-virtual {v0, v5}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 1928
+    .line 1938
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
@@ -2543,39 +2551,39 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 1929
+    .line 1939
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5100(Lorg/telegram/ui/ChatRightsEditActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5200(Lorg/telegram/ui/ChatRightsEditActivity;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0, p2, v6}, Lorg/telegram/ui/Cells/PollEditTextCell;->setTextAndHint(Ljava/lang/CharSequence;Ljava/lang/String;Z)V
 
-    .line 1930
+    .line 1940
     iput-boolean v6, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->ignoreTextChange:Z
 
     goto/16 :goto_56
 
-    .line 1906
+    .line 1916
     :pswitch_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 1907
+    .line 1917
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$3200(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_91
 
-    .line 1909
+    .line 1919
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2585,7 +2593,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2615,11 +2623,11 @@
 
     goto :goto_10
 
-    .line 1912
+    .line 1922
     :cond_27
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
@@ -2633,7 +2641,7 @@
 
     goto :goto_11
 
-    .line 1910
+    .line 1920
     :cond_28
     :goto_10
     sget p2, Lorg/telegram/messenger/R$string;->UserRestrictionsUntilForever:I
@@ -2644,7 +2652,7 @@
 
     move-result-object p2
 
-    .line 1914
+    .line 1924
     :goto_11
     sget v0, Lorg/telegram/messenger/R$string;->UserRestrictionsDuration:I
 
@@ -2658,13 +2666,13 @@
 
     goto/16 :goto_56
 
-    .line 1889
+    .line 1899
     :pswitch_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    .line 1890
+    .line 1900
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -2689,7 +2697,7 @@
 
     if-ne p2, v0, :cond_2a
 
-    .line 1891
+    .line 1901
     :cond_29
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2704,10 +2712,10 @@
     :cond_2a
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1893
+    .line 1903
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1895
+    .line 1905
     :goto_12
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2719,7 +2727,7 @@
 
     if-ne p2, v0, :cond_2c
 
-    .line 1896
+    .line 1906
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -2754,7 +2762,7 @@
 
     goto/16 :goto_56
 
-    .line 1897
+    .line 1907
     :cond_2c
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2764,7 +2772,7 @@
 
     if-ne p2, v0, :cond_2d
 
-    .line 1898
+    .line 1908
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -2777,7 +2785,7 @@
 
     goto/16 :goto_56
 
-    .line 1899
+    .line 1909
     :cond_2d
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2787,7 +2795,7 @@
 
     if-ne p2, v0, :cond_2f
 
-    .line 1900
+    .line 1910
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -2814,7 +2822,7 @@
 
     goto/16 :goto_56
 
-    .line 1902
+    .line 1912
     :cond_2f
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
@@ -2828,13 +2836,13 @@
 
     goto/16 :goto_56
 
-    .line 1761
+    .line 1771
     :pswitch_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell2;
 
-    .line 1762
+    .line 1772
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -2854,15 +2862,15 @@
     goto :goto_15
 
     :cond_30
-    const/4 v0, 0x0
+    move v0, v6
 
     goto :goto_16
 
     :cond_31
     :goto_15
-    const/4 v0, 0x1
+    move v0, v5
 
-    .line 1763
+    .line 1773
     :goto_16
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2882,14 +2890,14 @@
 
     if-eqz v1, :cond_32
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_17
 
     :cond_32
-    const/4 v1, 0x0
+    move v1, v6
 
-    .line 1764
+    .line 1774
     :goto_17
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -2899,14 +2907,14 @@
 
     if-ne p2, v2, :cond_35
 
-    .line 1765
+    .line 1775
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5900(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    .line 1766
+    .line 1776
     sget v1, Lorg/telegram/messenger/R$string;->UserRestrictionsSendMedia:I
 
     const-string v2, "UserRestrictionsSendMedia"
@@ -2917,17 +2925,17 @@
 
     if-lez v0, :cond_33
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_18
 
     :cond_33
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_18
     invoke-virtual {p1, v1, v2, v5, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
 
-    .line 1767
+    .line 1777
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/16 v2, 0x9
@@ -2974,7 +2982,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell2;->setCollapseArrow(Ljava/lang/String;ZLjava/lang/Runnable;)V
 
-    .line 1781
+    .line 1791
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6100(Lorg/telegram/ui/ChatRightsEditActivity;)Z
@@ -2988,14 +2996,14 @@
     goto :goto_19
 
     :cond_34
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_19
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1782
+    .line 1792
     :cond_35
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3005,7 +3013,7 @@
 
     if-ne p2, v2, :cond_38
 
-    .line 1783
+    .line 1793
     sget v0, Lorg/telegram/messenger/R$string;->ManageGroup:I
 
     const-string v2, "ManageGroup"
@@ -3022,7 +3030,7 @@
 
     invoke-virtual {p1, v0, v2, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1784
+    .line 1794
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -3044,14 +3052,14 @@
 
     :cond_37
     :goto_1a
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_1b
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1785
+    .line 1795
     :cond_38
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3059,9 +3067,9 @@
 
     move-result v2
 
-    if-ne p2, v2, :cond_47
+    if-ne p2, v2, :cond_45
 
-    .line 1786
+    .line 1796
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -3080,7 +3088,7 @@
 
     goto :goto_1f
 
-    .line 1795
+    .line 1805
     :cond_39
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3088,9 +3096,9 @@
 
     move-result v0
 
-    if-ne v0, v5, :cond_86
+    if-ne v0, v5, :cond_84
 
-    .line 1796
+    .line 1806
     sget v0, Lorg/telegram/messenger/R$string;->UserRestrictionsChangeInfo:I
 
     const-string v1, "UserRestrictionsChangeInfo"
@@ -3101,7 +3109,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object v1
 
@@ -3119,12 +3127,12 @@
 
     if-nez v1, :cond_3a
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_1c
 
     :cond_3a
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_1c
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -3135,17 +3143,17 @@
 
     if-eq v2, v3, :cond_3b
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_1d
 
     :cond_3b
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_1d
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1797
+    .line 1807
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -3161,25 +3169,25 @@
     goto :goto_1e
 
     :cond_3c
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_1e
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1787
+    .line 1797
     :cond_3d
     :goto_1f
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Z
+    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_3f
 
-    .line 1788
+    .line 1798
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminChangeChannelInfo:I
 
     const-string v3, "EditAdminChangeChannelInfo"
@@ -3198,34 +3206,22 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->change_info:Z
 
-    if-nez v0, :cond_3f
+    if-eqz v0, :cond_3e
 
-    :cond_3e
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
-
-    if-nez v0, :cond_40
-
-    :cond_3f
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_20
 
-    :cond_40
-    const/4 v0, 0x0
+    :cond_3e
+    move v0, v6
 
     :goto_20
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     goto :goto_22
 
-    .line 1790
-    :cond_41
+    .line 1800
+    :cond_3f
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminChangeGroupInfo:I
 
     const-string v3, "EditAdminChangeGroupInfo"
@@ -3234,7 +3230,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_40
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3244,9 +3240,9 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->change_info:Z
 
-    if-nez v0, :cond_43
+    if-nez v0, :cond_41
 
-    :cond_42
+    :cond_40
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -3255,20 +3251,20 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_42
 
-    :cond_43
-    const/4 v0, 0x1
+    :cond_41
+    move v0, v5
 
     goto :goto_21
 
-    :cond_44
-    const/4 v0, 0x0
+    :cond_42
+    move v0, v6
 
     :goto_21
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1792
+    .line 1802
     :goto_22
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3276,9 +3272,9 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
-    .line 1793
+    .line 1803
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -3287,37 +3283,37 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->change_info:Z
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_44
 
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_43
 
     goto :goto_23
 
-    :cond_45
+    :cond_43
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_24
 
-    :cond_46
+    :cond_44
     :goto_23
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_24
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1799
-    :cond_47
+    .line 1809
+    :cond_45
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$800(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_4b
+    if-ne p2, v2, :cond_49
 
-    .line 1800
+    .line 1810
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminPostMessages:I
 
     const-string v3, "EditAdminPostMessages"
@@ -3326,7 +3322,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_46
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3336,28 +3332,28 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->post_messages:Z
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_46
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_25
 
-    :cond_48
-    const/4 v0, 0x0
+    :cond_46
+    move v0, v6
 
     :goto_25
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1801
+    .line 1811
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
-    .line 1802
+    .line 1812
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -3366,37 +3362,37 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->post_messages:Z
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_48
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_47
 
     goto :goto_26
 
-    :cond_49
+    :cond_47
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_27
 
-    :cond_4a
+    :cond_48
     :goto_26
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_27
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1804
-    :cond_4b
+    .line 1814
+    :cond_49
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$900(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_4f
+    if-ne p2, v2, :cond_4d
 
-    .line 1805
+    .line 1815
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminEditMessages:I
 
     const-string v3, "EditAdminEditMessages"
@@ -3405,7 +3401,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_4a
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3415,28 +3411,28 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->edit_messages:Z
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_4a
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_28
 
-    :cond_4c
-    const/4 v0, 0x0
+    :cond_4a
+    move v0, v6
 
     :goto_28
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1806
+    .line 1816
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
-    .line 1807
+    .line 1817
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -3445,46 +3441,46 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->edit_messages:Z
 
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_4c
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_4b
 
     goto :goto_29
 
-    :cond_4d
+    :cond_4b
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_2a
 
-    :cond_4e
+    :cond_4c
     :goto_29
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_2a
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1809
-    :cond_4f
+    .line 1819
+    :cond_4d
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1000(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_55
+    if-ne p2, v2, :cond_53
 
-    .line 1810
+    .line 1820
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Z
+    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_4f
 
-    .line 1811
+    .line 1821
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminDeleteMessages:I
 
     const-string v3, "EditAdminDeleteMessages"
@@ -3493,7 +3489,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_4e
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3503,22 +3499,22 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->delete_messages:Z
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_4e
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_2b
 
-    :cond_50
-    const/4 v0, 0x0
+    :cond_4e
+    move v0, v6
 
     :goto_2b
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     goto :goto_2d
 
-    .line 1813
-    :cond_51
+    .line 1823
+    :cond_4f
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminGroupDeleteMessages:I
 
     const-string v3, "EditAdminGroupDeleteMessages"
@@ -3527,7 +3523,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_50
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3537,19 +3533,19 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->delete_messages:Z
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_50
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_2c
 
-    :cond_52
-    const/4 v0, 0x0
+    :cond_50
+    move v0, v6
 
     :goto_2c
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1815
+    .line 1825
     :goto_2d
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3557,197 +3553,7 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
-
-    .line 1816
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->delete_messages:Z
-
-    if-nez v0, :cond_54
-
-    if-eqz v1, :cond_53
-
-    goto :goto_2e
-
-    :cond_53
-    sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
-
-    goto :goto_2f
-
-    :cond_54
-    :goto_2e
-    const/4 v0, 0x0
-
-    :goto_2f
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
-
-    goto/16 :goto_51
-
-    .line 1818
-    :cond_55
-    iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1100(Lorg/telegram/ui/ChatRightsEditActivity;)I
-
-    move-result v2
-
-    if-ne p2, v2, :cond_5a
-
-    .line 1819
-    sget v2, Lorg/telegram/messenger/R$string;->EditAdminAddAdmins:I
-
-    const-string v7, "EditAdminAddAdmins"
-
-    invoke-static {v7, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v0, :cond_56
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6200(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->add_admins:Z
-
-    if-eqz v0, :cond_56
-
-    const/4 v0, 0x1
-
-    goto :goto_30
-
-    :cond_56
-    const/4 v0, 0x0
-
-    :goto_30
-    iget-object v7, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v7}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1200(Lorg/telegram/ui/ChatRightsEditActivity;)I
-
-    move-result v7
-
-    if-eq v7, v3, :cond_57
-
-    const/4 v3, 0x1
-
-    goto :goto_31
-
-    :cond_57
-    const/4 v3, 0x0
-
-    :goto_31
-    invoke-virtual {p1, v2, v0, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
-
-    .line 1820
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
-
-    move-result v0
-
-    if-ne v0, v4, :cond_86
-
-    .line 1821
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->add_admins:Z
-
-    if-nez v0, :cond_59
-
-    if-eqz v1, :cond_58
-
-    goto :goto_32
-
-    :cond_58
-    sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
-
-    goto :goto_33
-
-    :cond_59
-    :goto_32
-    const/4 v0, 0x0
-
-    :goto_33
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
-
-    goto/16 :goto_51
-
-    .line 1823
-    :cond_5a
-    iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1200(Lorg/telegram/ui/ChatRightsEditActivity;)I
-
-    move-result v2
-
-    if-ne p2, v2, :cond_5f
-
-    .line 1824
-    sget v2, Lorg/telegram/messenger/R$string;->EditAdminSendAnonymously:I
-
-    const-string v7, "EditAdminSendAnonymously"
-
-    invoke-static {v7, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v0, :cond_5b
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6200(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->anonymous:Z
-
-    if-eqz v0, :cond_5b
-
-    const/4 v0, 0x1
-
-    goto :goto_34
-
-    :cond_5b
-    const/4 v0, 0x0
-
-    :goto_34
-    iget-object v7, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v7}, Lorg/telegram/ui/ChatRightsEditActivity;->access$3400(Lorg/telegram/ui/ChatRightsEditActivity;)I
-
-    move-result v7
-
-    if-eq v7, v3, :cond_5c
-
-    const/4 v3, 0x1
-
-    goto :goto_35
-
-    :cond_5c
-    const/4 v3, 0x0
-
-    :goto_35
-    invoke-virtual {p1, v2, v0, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
-
-    .line 1825
-    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
-
-    move-result v0
-
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
     .line 1826
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -3756,48 +3562,48 @@
 
     move-result-object v0
 
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->anonymous:Z
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->delete_messages:Z
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_52
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_51
 
-    goto :goto_36
+    goto :goto_2e
 
-    :cond_5d
+    :cond_51
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
-    goto :goto_37
+    goto :goto_2f
 
-    :cond_5e
-    :goto_36
-    const/4 v0, 0x0
+    :cond_52
+    :goto_2e
+    move v0, v6
 
-    :goto_37
+    :goto_2f
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
     .line 1828
-    :cond_5f
+    :cond_53
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1300(Lorg/telegram/ui/ChatRightsEditActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1100(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_63
+    if-ne p2, v2, :cond_58
 
     .line 1829
-    sget v2, Lorg/telegram/messenger/R$string;->EditAdminBanUsers:I
+    sget v2, Lorg/telegram/messenger/R$string;->EditAdminAddAdmins:I
 
-    const-string v3, "EditAdminBanUsers"
+    const-string v7, "EditAdminAddAdmins"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_54
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3805,19 +3611,35 @@
 
     move-result-object v0
 
-    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->ban_users:Z
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->add_admins:Z
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_54
 
-    const/4 v0, 0x1
+    move v0, v5
 
-    goto :goto_38
+    goto :goto_30
 
-    :cond_60
-    const/4 v0, 0x0
+    :cond_54
+    move v0, v6
 
-    :goto_38
-    invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
+    :goto_30
+    iget-object v7, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v7}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1200(Lorg/telegram/ui/ChatRightsEditActivity;)I
+
+    move-result v7
+
+    if-eq v7, v3, :cond_55
+
+    move v3, v5
+
+    goto :goto_31
+
+    :cond_55
+    move v3, v6
+
+    :goto_31
+    invoke-virtual {p1, v2, v0, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     .line 1830
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -3826,7 +3648,7 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
     .line 1831
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
@@ -3835,39 +3657,213 @@
 
     move-result-object v0
 
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->add_admins:Z
+
+    if-nez v0, :cond_57
+
+    if-eqz v1, :cond_56
+
+    goto :goto_32
+
+    :cond_56
+    sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
+
+    goto :goto_33
+
+    :cond_57
+    :goto_32
+    move v0, v6
+
+    :goto_33
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
+
+    goto/16 :goto_51
+
+    .line 1833
+    :cond_58
+    iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1200(Lorg/telegram/ui/ChatRightsEditActivity;)I
+
+    move-result v2
+
+    if-ne p2, v2, :cond_5d
+
+    .line 1834
+    sget v2, Lorg/telegram/messenger/R$string;->EditAdminSendAnonymously:I
+
+    const-string v7, "EditAdminSendAnonymously"
+
+    invoke-static {v7, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v0, :cond_59
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6200(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->anonymous:Z
+
+    if-eqz v0, :cond_59
+
+    move v0, v5
+
+    goto :goto_34
+
+    :cond_59
+    move v0, v6
+
+    :goto_34
+    iget-object v7, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v7}, Lorg/telegram/ui/ChatRightsEditActivity;->access$3400(Lorg/telegram/ui/ChatRightsEditActivity;)I
+
+    move-result v7
+
+    if-eq v7, v3, :cond_5a
+
+    move v3, v5
+
+    goto :goto_35
+
+    :cond_5a
+    move v3, v6
+
+    :goto_35
+    invoke-virtual {p1, v2, v0, v3}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
+
+    .line 1835
+    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
+
+    move-result v0
+
+    if-ne v0, v4, :cond_84
+
+    .line 1836
+    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->anonymous:Z
+
+    if-nez v0, :cond_5c
+
+    if-eqz v1, :cond_5b
+
+    goto :goto_36
+
+    :cond_5b
+    sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
+
+    goto :goto_37
+
+    :cond_5c
+    :goto_36
+    move v0, v6
+
+    :goto_37
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
+
+    goto/16 :goto_51
+
+    .line 1838
+    :cond_5d
+    iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1300(Lorg/telegram/ui/ChatRightsEditActivity;)I
+
+    move-result v2
+
+    if-ne p2, v2, :cond_61
+
+    .line 1839
+    sget v2, Lorg/telegram/messenger/R$string;->EditAdminBanUsers:I
+
+    const-string v3, "EditAdminBanUsers"
+
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v0, :cond_5e
+
+    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$6200(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
+
+    move-result-object v0
+
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->ban_users:Z
 
-    if-nez v0, :cond_62
+    if-eqz v0, :cond_5e
 
-    if-eqz v1, :cond_61
+    move v0, v5
+
+    goto :goto_38
+
+    :cond_5e
+    move v0, v6
+
+    :goto_38
+    invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
+
+    .line 1840
+    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
+
+    move-result v0
+
+    if-ne v0, v4, :cond_84
+
+    .line 1841
+    iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->ban_users:Z
+
+    if-nez v0, :cond_60
+
+    if-eqz v1, :cond_5f
 
     goto :goto_39
 
-    :cond_61
+    :cond_5f
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_3a
 
-    :cond_62
+    :cond_60
     :goto_39
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_3a
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1833
-    :cond_63
+    .line 1843
+    :cond_61
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$3000(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_67
+    if-ne p2, v2, :cond_65
 
-    .line 1834
+    .line 1844
     sget v2, Lorg/telegram/messenger/R$string;->StartVoipChatPermission:I
 
     const-string v3, "StartVoipChatPermission"
@@ -3876,7 +3872,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_62
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3886,28 +3882,28 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_call:Z
 
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_62
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_3b
 
-    :cond_64
-    const/4 v0, 0x0
+    :cond_62
+    move v0, v6
 
     :goto_3b
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1835
+    .line 1845
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
-    .line 1836
+    .line 1846
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -3916,37 +3912,37 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_call:Z
 
-    if-nez v0, :cond_66
+    if-nez v0, :cond_64
 
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_63
 
     goto :goto_3c
 
-    :cond_65
+    :cond_63
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_3d
 
-    :cond_66
+    :cond_64
     :goto_3c
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_3d
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1838
-    :cond_67
+    .line 1848
+    :cond_65
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$3400(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_70
+    if-ne p2, v2, :cond_6e
 
-    .line 1839
+    .line 1849
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -3955,16 +3951,16 @@
 
     const-string v3, "ManageTopicsPermission"
 
-    if-nez v2, :cond_69
+    if-nez v2, :cond_67
 
-    .line 1840
+    .line 1850
     sget v1, Lorg/telegram/messenger/R$string;->ManageTopicsPermission:I
 
     invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_66
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -3974,31 +3970,31 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_topics:Z
 
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_66
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_3e
 
-    :cond_68
-    const/4 v0, 0x0
+    :cond_66
+    move v0, v6
 
     :goto_3e
     invoke-virtual {p1, v1, v0, v6}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     goto/16 :goto_51
 
-    .line 1841
-    :cond_69
+    .line 1851
+    :cond_67
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne v2, v5, :cond_6c
+    if-ne v2, v5, :cond_6a
 
-    .line 1842
+    .line 1852
     sget v0, Lorg/telegram/messenger/R$string;->CreateTopicsPermission:I
 
     const-string v1, "CreateTopicsPermission"
@@ -4009,13 +4005,13 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->manage_topics:Z
 
-    if-nez v1, :cond_6a
+    if-nez v1, :cond_68
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4025,19 +4021,19 @@
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->manage_topics:Z
 
-    if-nez v1, :cond_6a
+    if-nez v1, :cond_68
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_3f
 
-    :cond_6a
-    const/4 v1, 0x0
+    :cond_68
+    move v1, v6
 
     :goto_3f
     invoke-virtual {p1, v0, v1, v6}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1843
+    .line 1853
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -4046,38 +4042,38 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->manage_topics:Z
 
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_69
 
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_40
 
-    :cond_6b
-    const/4 v0, 0x0
+    :cond_69
+    move v0, v6
 
     :goto_40
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1844
-    :cond_6c
+    .line 1854
+    :cond_6a
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne v2, v4, :cond_86
+    if-ne v2, v4, :cond_84
 
-    .line 1845
+    .line 1855
     sget v2, Lorg/telegram/messenger/R$string;->ManageTopicsPermission:I
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v0, :cond_6d
+    if-eqz v0, :cond_6b
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4087,19 +4083,19 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_topics:Z
 
-    if-eqz v0, :cond_6d
+    if-eqz v0, :cond_6b
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_41
 
-    :cond_6d
-    const/4 v0, 0x0
+    :cond_6b
+    move v0, v6
 
     :goto_41
     invoke-virtual {p1, v2, v0, v6}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1846
+    .line 1856
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -4108,37 +4104,37 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_topics:Z
 
-    if-nez v0, :cond_6f
+    if-nez v0, :cond_6d
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_6c
 
     goto :goto_42
 
-    :cond_6e
+    :cond_6c
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_43
 
-    :cond_6f
+    :cond_6d
     :goto_42
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_43
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1848
-    :cond_70
+    .line 1858
+    :cond_6e
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1400(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_79
+    if-ne p2, v2, :cond_77
 
-    .line 1849
+    .line 1859
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -4147,9 +4143,9 @@
 
     const-string v3, "EditAdminAddUsersViaLink"
 
-    if-nez v2, :cond_72
+    if-nez v2, :cond_70
 
-    .line 1850
+    .line 1860
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4100(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -4162,9 +4158,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_6f
 
-    .line 1851
+    .line 1861
     sget v0, Lorg/telegram/messenger/R$string;->EditAdminAddUsers:I
 
     const-string v1, "EditAdminAddUsers"
@@ -4185,8 +4181,8 @@
 
     goto/16 :goto_51
 
-    .line 1853
-    :cond_71
+    .line 1863
+    :cond_6f
     sget v0, Lorg/telegram/messenger/R$string;->EditAdminAddUsersViaLink:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -4205,17 +4201,17 @@
 
     goto/16 :goto_51
 
-    .line 1855
-    :cond_72
+    .line 1865
+    :cond_70
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne v2, v5, :cond_75
+    if-ne v2, v5, :cond_73
 
-    .line 1856
+    .line 1866
     sget v0, Lorg/telegram/messenger/R$string;->UserRestrictionsInviteUsers:I
 
     const-string v1, "UserRestrictionsInviteUsers"
@@ -4226,13 +4222,13 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
-    if-nez v1, :cond_73
+    if-nez v1, :cond_71
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4242,19 +4238,19 @@
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
-    if-nez v1, :cond_73
+    if-nez v1, :cond_71
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_44
 
-    :cond_73
-    const/4 v1, 0x0
+    :cond_71
+    move v1, v6
 
     :goto_44
     invoke-virtual {p1, v0, v1, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1857
+    .line 1867
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -4263,38 +4259,38 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_72
 
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_45
 
-    :cond_74
-    const/4 v0, 0x0
+    :cond_72
+    move v0, v6
 
     :goto_45
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1858
-    :cond_75
+    .line 1868
+    :cond_73
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne v2, v4, :cond_86
+    if-ne v2, v4, :cond_84
 
-    .line 1859
+    .line 1869
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminAddUsersViaLink:I
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v0, :cond_76
+    if-eqz v0, :cond_74
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4304,19 +4300,19 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->invite_users:Z
 
-    if-eqz v0, :cond_76
+    if-eqz v0, :cond_74
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_46
 
-    :cond_76
-    const/4 v0, 0x0
+    :cond_74
+    move v0, v6
 
     :goto_46
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1860
+    .line 1870
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -4325,44 +4321,44 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->invite_users:Z
 
-    if-nez v0, :cond_78
+    if-nez v0, :cond_76
 
-    if-eqz v1, :cond_77
+    if-eqz v1, :cond_75
 
     goto :goto_47
 
-    :cond_77
+    :cond_75
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_48
 
-    :cond_78
+    :cond_76
     :goto_47
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_48
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1862
-    :cond_79
+    .line 1872
+    :cond_77
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_83
+    if-ne p2, v2, :cond_81
 
-    .line 1863
+    .line 1873
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v2
 
-    if-eqz v2, :cond_7d
+    if-eqz v2, :cond_7b
 
     iget-object v2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4370,21 +4366,21 @@
 
     move-result v2
 
-    if-ne v2, v4, :cond_7a
+    if-ne v2, v4, :cond_78
 
     goto :goto_4b
 
-    .line 1868
-    :cond_7a
+    .line 1878
+    :cond_78
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne v0, v5, :cond_86
+    if-ne v0, v5, :cond_84
 
-    .line 1869
+    .line 1879
     sget v0, Lorg/telegram/messenger/R$string;->UserRestrictionsPinMessages:I
 
     const-string v1, "UserRestrictionsPinMessages"
@@ -4395,13 +4391,13 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
-    if-nez v1, :cond_7b
+    if-nez v1, :cond_79
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4411,19 +4407,19 @@
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
-    if-nez v1, :cond_7b
+    if-nez v1, :cond_79
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_49
 
-    :cond_7b
-    const/4 v1, 0x0
+    :cond_79
+    move v1, v6
 
     :goto_49
     invoke-virtual {p1, v0, v1, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1870
+    .line 1880
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -4432,22 +4428,22 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_7a
 
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_4a
 
-    :cond_7c
-    const/4 v0, 0x0
+    :cond_7a
+    move v0, v6
 
     :goto_4a
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto/16 :goto_51
 
-    .line 1864
-    :cond_7d
+    .line 1874
+    :cond_7b
     :goto_4b
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminPinMessages:I
 
@@ -4457,7 +4453,7 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_7e
+    if-eqz v0, :cond_7c
 
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4467,9 +4463,9 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->pin_messages:Z
 
-    if-nez v0, :cond_7f
+    if-nez v0, :cond_7d
 
-    :cond_7e
+    :cond_7c
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -4478,29 +4474,29 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
-    if-nez v0, :cond_80
+    if-nez v0, :cond_7e
 
-    :cond_7f
-    const/4 v0, 0x1
+    :cond_7d
+    move v0, v5
 
     goto :goto_4c
 
-    :cond_80
-    const/4 v0, 0x0
+    :cond_7e
+    move v0, v6
 
     :goto_4c
     invoke-virtual {p1, v2, v0, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1865
+    .line 1875
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_86
+    if-ne v0, v4, :cond_84
 
-    .line 1866
+    .line 1876
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
@@ -4509,37 +4505,37 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->pin_messages:Z
 
-    if-nez v0, :cond_82
+    if-nez v0, :cond_80
 
-    if-eqz v1, :cond_81
+    if-eqz v1, :cond_7f
 
     goto :goto_4d
 
-    :cond_81
+    :cond_7f
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_4e
 
-    :cond_82
+    :cond_80
     :goto_4d
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_4e
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
     goto :goto_51
 
-    .line 1872
-    :cond_83
+    .line 1882
+    :cond_81
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_86
+    if-ne p2, v0, :cond_84
 
-    .line 1873
+    .line 1883
     sget v0, Lorg/telegram/messenger/R$string;->UserRestrictionsSend:I
 
     const-string v1, "UserRestrictionsSend"
@@ -4550,13 +4546,13 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_plain:Z
 
-    if-nez v1, :cond_84
+    if-nez v1, :cond_82
 
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4566,19 +4562,19 @@
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_plain:Z
 
-    if-nez v1, :cond_84
+    if-nez v1, :cond_82
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_4f
 
-    :cond_84
-    const/4 v1, 0x0
+    :cond_82
+    move v1, v6
 
     :goto_4f
     invoke-virtual {p1, v0, v1, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 1874
+    .line 1884
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
@@ -4587,20 +4583,20 @@
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_plain:Z
 
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_83
 
     sget v0, Lorg/telegram/messenger/R$drawable;->permission_locked:I
 
     goto :goto_50
 
-    :cond_85
-    const/4 v0, 0x0
+    :cond_83
+    move v0, v6
 
     :goto_50
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell2;->setIcon(I)V
 
-    .line 1877
-    :cond_86
+    .line 1887
+    :cond_84
     :goto_51
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4608,30 +4604,30 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_87
+    if-ne v0, v4, :cond_85
 
     goto/16 :goto_56
 
-    .line 1883
-    :cond_87
+    .line 1893
+    :cond_85
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_91
 
-    .line 1884
+    .line 1894
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5400(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5500(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     move-result-object p2
 
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->view_messages:Z
 
-    if-nez p2, :cond_88
+    if-nez p2, :cond_86
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4641,66 +4637,66 @@
 
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->view_messages:Z
 
-    if-nez p2, :cond_88
+    if-nez p2, :cond_86
 
     goto :goto_52
 
-    :cond_88
-    const/4 v5, 0x0
+    :cond_86
+    move v5, v6
 
     :goto_52
     invoke-virtual {p1, v5}, Lorg/telegram/ui/Cells/TextCheckCell2;->setEnabled(Z)V
 
     goto/16 :goto_56
 
-    .line 1746
+    .line 1756
     :pswitch_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    if-ne p2, v4, :cond_8c
+    if-ne p2, v4, :cond_8a
 
-    .line 1748
+    .line 1758
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result p2
 
-    if-eq p2, v4, :cond_8b
+    if-eq p2, v4, :cond_89
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5700(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p2
 
-    if-eqz p2, :cond_89
+    if-eqz p2, :cond_87
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5700(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p2
 
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-eqz p2, :cond_89
+    if-eqz p2, :cond_87
 
     goto :goto_53
 
-    .line 1750
-    :cond_89
+    .line 1760
+    :cond_87
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result p2
 
-    if-nez p2, :cond_8a
+    if-nez p2, :cond_88
 
-    .line 1751
+    .line 1761
     sget p2, Lorg/telegram/messenger/R$string;->EditAdminWhatCanDo:I
 
     const-string v0, "EditAdminWhatCanDo"
@@ -4713,17 +4709,17 @@
 
     goto/16 :goto_56
 
-    .line 1752
-    :cond_8a
+    .line 1762
+    :cond_88
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result p2
 
-    if-ne p2, v5, :cond_93
+    if-ne p2, v5, :cond_91
 
-    .line 1753
+    .line 1763
     sget p2, Lorg/telegram/messenger/R$string;->UserRestrictionsCanDo:I
 
     const-string v0, "UserRestrictionsCanDo"
@@ -4736,8 +4732,8 @@
 
     goto/16 :goto_56
 
-    .line 1749
-    :cond_8b
+    .line 1759
+    :cond_89
     :goto_53
     sget p2, Lorg/telegram/messenger/R$string;->BotRestrictionsCanDo:I
 
@@ -4751,17 +4747,17 @@
 
     goto/16 :goto_56
 
-    .line 1755
-    :cond_8c
+    .line 1765
+    :cond_8a
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2200(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_91
 
-    .line 1756
+    .line 1766
     sget p2, Lorg/telegram/messenger/R$string;->EditAdminRank:I
 
     const-string v0, "EditAdminRank"
@@ -4774,43 +4770,43 @@
 
     goto/16 :goto_56
 
-    .line 1726
+    .line 1736
     :pswitch_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    .line 1727
+    .line 1737
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1700(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_8e
+    if-ne p2, v0, :cond_8c
 
     const-string p2, "windowBackgroundWhiteRedText5"
 
-    .line 1728
+    .line 1738
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 1729
+    .line 1739
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1730
+    .line 1740
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result p2
 
-    if-nez p2, :cond_8d
+    if-nez p2, :cond_8b
 
-    .line 1731
+    .line 1741
     sget p2, Lorg/telegram/messenger/R$string;->EditAdminRemoveAdmin:I
 
     const-string v0, "EditAdminRemoveAdmin"
@@ -4823,17 +4819,17 @@
 
     goto/16 :goto_56
 
-    .line 1732
-    :cond_8d
+    .line 1742
+    :cond_8b
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result p2
 
-    if-ne p2, v5, :cond_93
+    if-ne p2, v5, :cond_91
 
-    .line 1733
+    .line 1743
     sget p2, Lorg/telegram/messenger/R$string;->UserRestrictionsBlock:I
 
     const-string v0, "UserRestrictionsBlock"
@@ -4846,38 +4842,38 @@
 
     goto/16 :goto_56
 
-    .line 1735
-    :cond_8e
+    .line 1745
+    :cond_8c
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2100(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_91
 
     const-string p2, "windowBackgroundWhiteBlackText"
 
-    .line 1736
+    .line 1746
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 1737
+    .line 1747
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1738
+    .line 1748
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Z
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_8f
+    if-eqz p2, :cond_8d
 
-    .line 1739
+    .line 1749
     sget p2, Lorg/telegram/messenger/R$string;->EditAdminChannelTransfer:I
 
     const-string v0, "EditAdminChannelTransfer"
@@ -4890,8 +4886,8 @@
 
     goto/16 :goto_56
 
-    .line 1741
-    :cond_8f
+    .line 1751
+    :cond_8d
     sget p2, Lorg/telegram/messenger/R$string;->EditAdminGroupTransfer:I
 
     const-string v0, "EditAdminGroupTransfer"
@@ -4904,22 +4900,22 @@
 
     goto/16 :goto_56
 
-    .line 1712
+    .line 1722
     :pswitch_8
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1713
+    .line 1723
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$1900(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_90
+    if-ne p2, v0, :cond_8e
 
-    .line 1714
+    .line 1724
     sget p2, Lorg/telegram/messenger/R$string;->EditAdminCantEdit:I
 
     const-string v0, "EditAdminCantEdit"
@@ -4932,20 +4928,20 @@
 
     goto :goto_56
 
-    .line 1715
-    :cond_90
+    .line 1725
+    :cond_8e
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$2400(Lorg/telegram/ui/ChatRightsEditActivity;)I
 
     move-result v0
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_91
 
-    .line 1717
+    .line 1727
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5700(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p2
 
@@ -4953,7 +4949,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_91
+    if-eqz p2, :cond_8f
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -4963,9 +4959,9 @@
 
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
-    if-eqz p2, :cond_91
+    if-eqz p2, :cond_8f
 
-    .line 1718
+    .line 1728
     sget p2, Lorg/telegram/messenger/R$string;->ChannelCreator:I
 
     invoke-static {v1, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -4974,15 +4970,15 @@
 
     goto :goto_54
 
-    .line 1720
-    :cond_91
+    .line 1730
+    :cond_8f
     sget p2, Lorg/telegram/messenger/R$string;->ChannelAdmin:I
 
     invoke-static {v2, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 1722
+    .line 1732
     :goto_54
     sget v0, Lorg/telegram/messenger/R$string;->EditAdminRankInfo:I
 
@@ -5000,13 +4996,13 @@
 
     goto :goto_56
 
-    .line 1704
+    .line 1714
     :pswitch_9
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/UserCell2;
 
-    .line 1706
+    .line 1716
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$500(Lorg/telegram/ui/ChatRightsEditActivity;)I
@@ -5015,9 +5011,9 @@
 
     const/4 v0, 0x0
 
-    if-ne p2, v4, :cond_92
+    if-ne p2, v4, :cond_90
 
-    .line 1707
+    .line 1717
     sget p2, Lorg/telegram/messenger/R$string;->Bot:I
 
     const-string v1, "Bot"
@@ -5028,20 +5024,20 @@
 
     goto :goto_55
 
-    :cond_92
+    :cond_90
     move-object p2, v0
 
-    .line 1709
+    .line 1719
     :goto_55
     iget-object v1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5700(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v1
 
     invoke-virtual {p1, v1, v0, p2, v6}, Lorg/telegram/ui/Cells/UserCell2;->setData(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
 
-    :cond_93
+    :cond_91
     :goto_56
     return-void
 
@@ -5076,7 +5072,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 1575
+    .line 1585
     :pswitch_0
     new-instance p2, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -5084,7 +5080,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1576
+    .line 1586
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -5093,7 +5089,7 @@
 
     goto/16 :goto_1
 
-    .line 1645
+    .line 1655
     :pswitch_1
     new-instance p2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -5109,14 +5105,14 @@
 
     invoke-direct {p2, v2, v0, v4, v5}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1646
+    .line 1656
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 1647
+    .line 1657
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object p1
@@ -5129,10 +5125,10 @@
 
     invoke-virtual {p1, v0, v2, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1648
+    .line 1658
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setEnabled(Z)V
 
-    .line 1650
+    .line 1660
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -5141,7 +5137,7 @@
 
     goto/16 :goto_1
 
-    .line 1595
+    .line 1605
     :pswitch_2
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -5151,12 +5147,12 @@
 
     invoke-direct {v0, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    invoke-static {p2, v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4602(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/widget/FrameLayout;)Landroid/widget/FrameLayout;
+    invoke-static {p2, v0}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4702(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/widget/FrameLayout;)Landroid/widget/FrameLayout;
 
-    .line 1596
+    .line 1606
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p2
 
@@ -5168,7 +5164,7 @@
 
     invoke-virtual {p2, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1597
+    .line 1607
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     new-instance v3, Landroid/widget/FrameLayout;
@@ -5177,9 +5173,9 @@
 
     invoke-direct {v3, v4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    invoke-static {p2, v3}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4702(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/widget/FrameLayout;)Landroid/widget/FrameLayout;
+    invoke-static {p2, v3}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4802(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/widget/FrameLayout;)Landroid/widget/FrameLayout;
 
-    .line 1598
+    .line 1608
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     new-instance v3, Lorg/telegram/ui/Components/AnimatedTextView;
@@ -5188,12 +5184,12 @@
 
     invoke-direct {v3, v4, v1, v2, v2}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;ZZZ)V
 
-    invoke-static {p2, v3}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4802(Lorg/telegram/ui/ChatRightsEditActivity;Lorg/telegram/ui/Components/AnimatedTextView;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p2, v3}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4902(Lorg/telegram/ui/ChatRightsEditActivity;Lorg/telegram/ui/Components/AnimatedTextView;)Lorg/telegram/ui/Components/AnimatedTextView;
 
-    .line 1599
+    .line 1609
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4900(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p2
 
@@ -5205,10 +5201,10 @@
 
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1600
+    .line 1610
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4900(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p2
 
@@ -5216,10 +5212,10 @@
 
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 1601
+    .line 1611
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4900(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p2
 
@@ -5231,10 +5227,10 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 1602
+    .line 1612
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4900(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p1
 
@@ -5242,10 +5238,10 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 1603
+    .line 1613
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4900(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p1
 
@@ -5299,16 +5295,16 @@
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1604
+    .line 1614
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
     iget-object v4, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {v4}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4900(Lorg/telegram/ui/ChatRightsEditActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object v4
 
@@ -5320,10 +5316,10 @@
 
     invoke-virtual {p1, v4, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1605
+    .line 1615
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
@@ -5341,10 +5337,10 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1606
+    .line 1616
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
@@ -5354,16 +5350,16 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1607
+    .line 1617
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4800(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p2
 
@@ -5387,10 +5383,10 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1608
+    .line 1618
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
@@ -5400,42 +5396,42 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1609
+    .line 1619
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1610
+    .line 1620
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1611
+    .line 1621
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p2
 
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1612
+    .line 1622
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p2
 
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 1613
+    .line 1623
     iget-object p2, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p2
 
@@ -5459,16 +5455,16 @@
 
     invoke-virtual {p2, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1614
+    .line 1624
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4600(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4700(Lorg/telegram/ui/ChatRightsEditActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p2
 
     goto/16 :goto_1
 
-    .line 1617
+    .line 1627
     :pswitch_3
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
@@ -5480,18 +5476,18 @@
 
     invoke-direct {p2, v0, v1}, Lorg/telegram/ui/Cells/PollEditTextCell;-><init>(Landroid/content/Context;Landroid/view/View$OnClickListener;)V
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$4902(Lorg/telegram/ui/ChatRightsEditActivity;Lorg/telegram/ui/Cells/PollEditTextCell;)Lorg/telegram/ui/Cells/PollEditTextCell;
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5002(Lorg/telegram/ui/ChatRightsEditActivity;Lorg/telegram/ui/Cells/PollEditTextCell;)Lorg/telegram/ui/Cells/PollEditTextCell;
 
     move-result-object p2
 
-    .line 1618
+    .line 1628
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1619
+    .line 1629
     new-instance p1, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter$1;-><init>(Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;)V
@@ -5500,7 +5496,7 @@
 
     goto :goto_1
 
-    .line 1591
+    .line 1601
     :pswitch_4
     new-instance p2, Lorg/telegram/ui/Cells/TextDetailCell;
 
@@ -5508,7 +5504,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextDetailCell;-><init>(Landroid/content/Context;)V
 
-    .line 1592
+    .line 1602
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -5517,7 +5513,7 @@
 
     goto :goto_1
 
-    .line 1588
+    .line 1598
     :pswitch_5
     new-instance p2, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -5527,7 +5523,7 @@
 
     goto :goto_1
 
-    .line 1584
+    .line 1594
     :pswitch_6
     new-instance p2, Lorg/telegram/ui/Cells/TextCheckCell2;
 
@@ -5535,7 +5531,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextCheckCell2;-><init>(Landroid/content/Context;)V
 
-    .line 1585
+    .line 1595
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -5544,7 +5540,7 @@
 
     goto :goto_1
 
-    .line 1579
+    .line 1589
     :pswitch_7
     new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -5562,7 +5558,7 @@
 
     invoke-direct/range {v4 .. v9}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
 
-    .line 1580
+    .line 1590
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
@@ -5571,7 +5567,7 @@
 
     goto :goto_1
 
-    .line 1570
+    .line 1580
     :pswitch_8
     new-instance p2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -5579,7 +5575,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 1571
+    .line 1581
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -5594,7 +5590,7 @@
 
     goto :goto_1
 
-    .line 1566
+    .line 1576
     :pswitch_9
     new-instance p2, Lorg/telegram/ui/Cells/UserCell2;
 
@@ -5602,14 +5598,14 @@
 
     invoke-direct {p2, p1, v0, v2}, Lorg/telegram/ui/Cells/UserCell2;-><init>(Landroid/content/Context;II)V
 
-    .line 1567
+    .line 1577
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1653
+    .line 1663
     :goto_1
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -5636,7 +5632,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 2
 
-    .line 1937
+    .line 1947
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
@@ -5649,12 +5645,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1938
+    .line 1948
     iget-object v0, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5200(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatRightsEditActivity;->access$5300(Lorg/telegram/ui/ChatRightsEditActivity;Landroid/view/View;)V
 
     :cond_0
     return-void
@@ -5663,7 +5659,7 @@
 .method public onViewDetachedFromWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 1944
+    .line 1954
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
@@ -5684,7 +5680,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1945
+    .line 1955
     iget-object p1, p0, Lorg/telegram/ui/ChatRightsEditActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatRightsEditActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;

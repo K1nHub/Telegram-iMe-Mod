@@ -474,11 +474,11 @@
 
     mul-float v1, p0, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
-    mul-float v1, v1, p0
+    mul-float/2addr v1, p0
 
     add-float/2addr v1, v0
 
@@ -565,7 +565,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 795
     :goto_0
@@ -992,7 +992,7 @@
     .line 560
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->setSizeNotifierLayout(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_0
     const/4 v5, 0x4
@@ -1074,7 +1074,7 @@
 
     invoke-virtual {v2, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->setParentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 584
     :goto_2
@@ -1389,7 +1389,7 @@
 
     if-ne p1, v0, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v6
 
     :cond_8
     iput-boolean v4, p0, Lorg/telegram/ui/PhotoPickerSearchActivity;->swipeBackEnabled:Z

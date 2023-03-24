@@ -17,7 +17,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -56,7 +56,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     public final FrameLayout initRootView() {
         int collectionSizeOrDefault;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_drawer_items), true);
+        setTitle(LocaleController.getInternalString(C3301R.string.settings_interface_drawer_items), true);
         ScrollView scrollView = new ScrollView(frameLayout.getContext());
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
@@ -84,7 +84,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         frameLayout.addView(view, LayoutHelper.createFrame(-1, 1, 80, 0, 0, 0, 52));
         TextView textView = new TextView(frameLayout.getContext());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3286R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3301R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
@@ -102,7 +102,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         });
         TextView textView2 = new TextView(frameLayout.getContext());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3286R.string.Save);
+        String string2 = LocaleController.getString("Save", C3301R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");

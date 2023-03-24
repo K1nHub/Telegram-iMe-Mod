@@ -648,7 +648,7 @@
 
     move-result p2
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, p2, :cond_1
@@ -891,10 +891,8 @@
 
     goto/16 :goto_1
 
-    :catch_0
-    nop
-
     .line 3302
+    :catch_0
     iget v6, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxHeight:I
 
     invoke-virtual {p1, v5, v6}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -923,10 +921,8 @@
 
     goto/16 :goto_1
 
-    :catch_1
-    nop
-
     .line 3291
+    :catch_1
     iget v6, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinHeight:I
 
     invoke-virtual {p1, v5, v6}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -974,10 +970,8 @@
 
     goto/16 :goto_1
 
-    :catch_2
-    nop
-
     .line 3275
+    :catch_2
     iget v6, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMaxWidth:I
 
     invoke-virtual {p1, v5, v6}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -1006,10 +1000,8 @@
 
     goto/16 :goto_1
 
-    :catch_3
-    nop
-
     .line 3264
+    :catch_3
     iget v6, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintMinWidth:I
 
     invoke-virtual {p1, v5, v6}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -1916,12 +1908,12 @@
 
     if-ne v4, p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_0
     const/4 v2, -0x1
@@ -1987,7 +1979,7 @@
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->resolvedRightToLeft:I
 
     :goto_1
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_2
 
@@ -2012,7 +2004,7 @@
     .line 3495
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->resolvedLeftToRight:I
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 3498
     :cond_3
@@ -2023,7 +2015,7 @@
     .line 3499
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->resolvedLeftToLeft:I
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 3502
     :cond_4

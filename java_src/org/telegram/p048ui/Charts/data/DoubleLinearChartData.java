@@ -14,22 +14,22 @@ public class DoubleLinearChartData extends ChartData {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.p048ui.Charts.data.ChartData
     public void measure() {
+        int i;
         super.measure();
         int size = this.lines.size();
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            int i3 = this.lines.get(i2).maxValue;
-            if (i3 > i) {
-                i = i3;
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            int i4 = this.lines.get(i3).maxValue;
+            if (i4 > i2) {
+                i2 = i4;
             }
         }
         this.linesK = new float[size];
-        for (int i4 = 0; i4 < size; i4++) {
-            int i5 = this.lines.get(i4).maxValue;
-            if (i == i5) {
-                this.linesK[i4] = 1.0f;
+        for (int i5 = 0; i5 < size; i5++) {
+            if (i2 == this.lines.get(i5).maxValue) {
+                this.linesK[i5] = 1.0f;
             } else {
-                this.linesK[i4] = i / i5;
+                this.linesK[i5] = i2 / i;
             }
         }
     }

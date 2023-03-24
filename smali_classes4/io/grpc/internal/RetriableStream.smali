@@ -854,7 +854,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 242
     :goto_0
@@ -1699,7 +1699,7 @@
 
     if-nez v1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v2
 
     :cond_1
     const-string v1, "hedgingPolicy has been initialized unexpectedly"

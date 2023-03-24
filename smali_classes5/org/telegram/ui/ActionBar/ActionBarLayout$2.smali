@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 10
+    .locals 9
 
     .line 1185
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
@@ -104,9 +104,9 @@
 
     const-wide/16 v6, 0x28
 
-    const-wide/16 v8, 0x12
-
     cmp-long v0, v4, v6
+
+    const-wide/16 v6, 0x12
 
     if-lez v0, :cond_2
 
@@ -120,11 +120,11 @@
     goto :goto_0
 
     :cond_2
-    cmp-long v0, v4, v8
+    cmp-long v0, v4, v6
 
     if-lez v0, :cond_3
 
-    move-wide v4, v8
+    move-wide v4, v6
 
     .line 1199
     :cond_3
@@ -307,18 +307,18 @@
 
     move-result v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     iget-boolean v4, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$2;->val$open:Z
 
     if-eqz v4, :cond_a
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     goto :goto_3
 
     :cond_a
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     sub-float/2addr v6, v4
@@ -450,7 +450,7 @@
 
     const v8, 0x3e99999a    # 0.3f
 
-    mul-float v8, v8, v0
+    mul-float/2addr v8, v0
 
     add-float/2addr v8, v7
 
@@ -487,7 +487,7 @@
 
     sub-float v8, v2, v0
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -508,7 +508,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -523,7 +523,7 @@
 
     const v8, 0x3d4ccccd    # 0.05f
 
-    mul-float v0, v0, v8
+    mul-float/2addr v0, v8
 
     add-float/2addr v0, v7
 
@@ -546,7 +546,7 @@
 
     move-result-object v0
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     float-to-int v5, v6
 
@@ -555,7 +555,7 @@
     .line 1240
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->moveUpDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -573,7 +573,7 @@
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    goto/16 :goto_5
+    goto :goto_5
 
     .line 1244
     :cond_f
@@ -589,7 +589,7 @@
 
     sub-float v0, v2, v0
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -628,7 +628,7 @@
 
     const v8, 0x3dcccccd    # 0.1f
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     add-float/2addr v1, v7
 
@@ -650,7 +650,7 @@
 
     move-result-object v0
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v1, v6
 
@@ -668,7 +668,7 @@
     .line 1254
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->moveUpDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v1, v5
 
@@ -703,7 +703,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 

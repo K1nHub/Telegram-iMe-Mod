@@ -11,7 +11,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -70,7 +70,7 @@ public final class FabsCell extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3286R.string.create_folder_change_fab_title));
+        simpleTextView.setText(LocaleController.getInternalString(C3301R.string.create_folder_change_fab_title));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }

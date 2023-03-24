@@ -436,9 +436,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     iget-object v0, p0, Lorg/telegram/messenger/FileStreamLoadOperation;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -453,9 +453,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_4
+    if-ltz v0, :cond_4
 
     const/4 v0, 0x1
 
@@ -525,9 +525,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     const/4 p1, -0x1
 
@@ -536,14 +536,14 @@
     :cond_1
     int-to-long v3, p3
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-gez v5, :cond_2
+    if-gez v3, :cond_2
 
     long-to-int p3, v1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_3
     :goto_0

@@ -461,7 +461,7 @@ public class LocationController extends BaseController implements NotificationCe
         if (!this.sharingLocations.isEmpty()) {
             int currentTime = getConnectionsManager().getCurrentTime();
             float[] fArr = new float[1];
-            while (i < this.sharingLocations.size()) {
+            for (i = 0; i < this.sharingLocations.size(); i = i + 1) {
                 final SharingLocationInfo sharingLocationInfo = this.sharingLocations.get(i);
                 TLRPC$Message tLRPC$Message = sharingLocationInfo.messageObject.messageOwner;
                 TLRPC$MessageMedia tLRPC$MessageMedia = tLRPC$Message.media;
@@ -477,7 +477,7 @@ public class LocationController extends BaseController implements NotificationCe
                 }
                 final TLRPC$TL_messages_editMessage tLRPC$TL_messages_editMessage = new TLRPC$TL_messages_editMessage();
                 tLRPC$TL_messages_editMessage.peer = getMessagesController().getInputPeer(sharingLocationInfo.did);
-                tLRPC$TL_messages_editMessage.f1583id = sharingLocationInfo.mid;
+                tLRPC$TL_messages_editMessage.f1584id = sharingLocationInfo.mid;
                 tLRPC$TL_messages_editMessage.flags |= 16384;
                 TLRPC$TL_inputMediaGeoLive tLRPC$TL_inputMediaGeoLive = new TLRPC$TL_inputMediaGeoLive();
                 tLRPC$TL_messages_editMessage.media = tLRPC$TL_inputMediaGeoLive;
@@ -704,7 +704,7 @@ public class LocationController extends BaseController implements NotificationCe
     public void addSharingLocation(TLRPC$Message tLRPC$Message) {
         final SharingLocationInfo sharingLocationInfo = new SharingLocationInfo();
         sharingLocationInfo.did = tLRPC$Message.dialog_id;
-        sharingLocationInfo.mid = tLRPC$Message.f1523id;
+        sharingLocationInfo.mid = tLRPC$Message.f1524id;
         TLRPC$MessageMedia tLRPC$MessageMedia = tLRPC$Message.media;
         sharingLocationInfo.period = tLRPC$MessageMedia.period;
         int i = tLRPC$MessageMedia.proximity_notification_radius;
@@ -952,7 +952,7 @@ public class LocationController extends BaseController implements NotificationCe
         if (sharingLocationInfo != null) {
             TLRPC$TL_messages_editMessage tLRPC$TL_messages_editMessage = new TLRPC$TL_messages_editMessage();
             tLRPC$TL_messages_editMessage.peer = getMessagesController().getInputPeer(sharingLocationInfo.did);
-            tLRPC$TL_messages_editMessage.f1583id = sharingLocationInfo.mid;
+            tLRPC$TL_messages_editMessage.f1584id = sharingLocationInfo.mid;
             tLRPC$TL_messages_editMessage.flags |= 16384;
             TLRPC$TL_inputMediaGeoLive tLRPC$TL_inputMediaGeoLive = new TLRPC$TL_inputMediaGeoLive();
             tLRPC$TL_messages_editMessage.media = tLRPC$TL_inputMediaGeoLive;
@@ -1023,7 +1023,7 @@ public class LocationController extends BaseController implements NotificationCe
             SharingLocationInfo sharingLocationInfo = this.sharingLocations.get(i);
             TLRPC$TL_messages_editMessage tLRPC$TL_messages_editMessage = new TLRPC$TL_messages_editMessage();
             tLRPC$TL_messages_editMessage.peer = getMessagesController().getInputPeer(sharingLocationInfo.did);
-            tLRPC$TL_messages_editMessage.f1583id = sharingLocationInfo.mid;
+            tLRPC$TL_messages_editMessage.f1584id = sharingLocationInfo.mid;
             tLRPC$TL_messages_editMessage.flags |= 16384;
             TLRPC$TL_inputMediaGeoLive tLRPC$TL_inputMediaGeoLive = new TLRPC$TL_inputMediaGeoLive();
             tLRPC$TL_messages_editMessage.media = tLRPC$TL_inputMediaGeoLive;
@@ -1107,7 +1107,7 @@ public class LocationController extends BaseController implements NotificationCe
             r0 = move-exception
             org.telegram.messenger.FileLog.m45e(r0)
         L1f:
-            r0 = 0
+            r0 = r1
         L20:
             if (r0 != 0) goto L78
             android.location.LocationManager r1 = r7.locationManager     // Catch: java.lang.Exception -> L2f
@@ -1278,7 +1278,7 @@ public class LocationController extends BaseController implements NotificationCe
                     tLRPC$TL_messages_readMessageContents = new TLRPC$TL_channels_readMessageContents();
                     int size = arrayList.size();
                     while (i < size) {
-                        tLRPC$TL_messages_readMessageContents.f1542id.add(Integer.valueOf(arrayList.get(i).f1523id));
+                        tLRPC$TL_messages_readMessageContents.f1543id.add(Integer.valueOf(arrayList.get(i).f1524id));
                         i++;
                     }
                     tLRPC$TL_messages_readMessageContents.channel = getMessagesController().getInputChannel(j2);
@@ -1293,7 +1293,7 @@ public class LocationController extends BaseController implements NotificationCe
             tLRPC$TL_messages_readMessageContents = new TLRPC$TL_messages_readMessageContents();
             int size2 = arrayList.size();
             while (i < size2) {
-                tLRPC$TL_messages_readMessageContents.f1599id.add(Integer.valueOf(arrayList.get(i).f1523id));
+                tLRPC$TL_messages_readMessageContents.f1600id.add(Integer.valueOf(arrayList.get(i).f1524id));
                 i++;
             }
             getConnectionsManager().sendRequest(tLRPC$TL_messages_readMessageContents, new RequestDelegate() { // from class: org.telegram.messenger.LocationController$$ExternalSyntheticLambda29

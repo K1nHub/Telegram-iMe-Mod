@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenInfo.kt\ncom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1115:1\n1#2:1116\n*E\n"
+    value = "SMAP\nTokenInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenInfo.kt\ncom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1155:1\n1#2:1156\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1073
+    .line 1112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
         }
     .end annotation
 
-    .line 1075
+    .line 1114
     invoke-static {}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->access$getSupportedTokens$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1111
+    .line 1151
     invoke-direct {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->getSupportedTokens()Ljava/util/List;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     if-nez v1, :cond_3
 
-    .line 1112
+    .line 1152
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;->INSTANCE:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;
 
     :cond_3
@@ -134,7 +134,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1107
+    .line 1147
     invoke-direct {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->getSupportedTokens()Ljava/util/List;
 
     move-result-object v0
@@ -182,7 +182,7 @@
 
     if-nez v1, :cond_2
 
-    .line 1108
+    .line 1148
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;->INSTANCE:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;
 
     :cond_2

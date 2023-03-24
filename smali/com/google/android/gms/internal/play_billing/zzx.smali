@@ -346,7 +346,7 @@
 
     const-wide/16 v2, 0x8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -356,9 +356,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const/16 v0, 0x7b
 

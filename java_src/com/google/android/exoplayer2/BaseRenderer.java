@@ -226,14 +226,10 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
         if (format != null && !this.throwRendererExceptionIsExecuting) {
             this.throwRendererExceptionIsExecuting = true;
             try {
-                int formatSupport = RendererCapabilities.CC.getFormatSupport(supportsFormat(format));
-                this.throwRendererExceptionIsExecuting = false;
-                i2 = formatSupport;
+                i2 = RendererCapabilities.CC.getFormatSupport(supportsFormat(format));
             } catch (ExoPlaybackException unused) {
+            } finally {
                 this.throwRendererExceptionIsExecuting = false;
-            } catch (Throwable th2) {
-                this.throwRendererExceptionIsExecuting = false;
-                throw th2;
             }
             return ExoPlaybackException.createForRenderer(th, getName(), getIndex(), format, i2, z, i);
         }

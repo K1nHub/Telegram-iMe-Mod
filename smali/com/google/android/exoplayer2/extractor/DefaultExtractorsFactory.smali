@@ -316,7 +316,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     or-int/2addr v0, v2
@@ -339,7 +339,7 @@
 
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3
+    goto/16 :goto_3
 
     .line 408
     :pswitch_b
@@ -409,7 +409,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     or-int/2addr v0, v2
@@ -441,7 +441,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     or-int/2addr v0, v2
@@ -475,6 +475,8 @@
     :cond_4
     :goto_3
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

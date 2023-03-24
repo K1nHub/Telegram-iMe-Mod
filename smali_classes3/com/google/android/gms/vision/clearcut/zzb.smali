@@ -65,9 +65,9 @@
 
     add-long/2addr v3, v5
 
-    cmp-long v5, v3, v1
+    cmp-long v3, v3, v1
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     const/4 v1, 0x0
 

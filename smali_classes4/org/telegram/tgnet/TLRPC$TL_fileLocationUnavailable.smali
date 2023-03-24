@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46075
+    .line 46085
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$FileLocation;-><init>()V
 
     return-void
@@ -28,21 +28,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 46080
+    .line 46090
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 46081
+    .line 46091
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
-    .line 46082
+    .line 46092
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide p1
@@ -55,22 +55,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 46086
+    .line 46096
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 46087
+    .line 46097
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 46088
+    .line 46098
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 46089
+    .line 46099
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$FileLocation;->secret:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

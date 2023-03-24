@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 64312
+    .line 64339
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$RequestPeerType;-><init>()V
 
     return-void
@@ -18,7 +18,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 3
 
-    .line 64316
+    .line 64343
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -33,14 +33,14 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
-    .line 64317
+    .line 64344
     :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -48,14 +48,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->bot_participant:Ljava/lang/Boolean;
 
-    .line 64318
+    .line 64345
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
     and-int/2addr v0, v2
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -64,14 +64,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->creator:Ljava/lang/Boolean;
 
-    .line 64319
+    .line 64346
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_2
 
-    .line 64320
+    .line 64347
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
@@ -82,7 +82,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->has_username:Ljava/lang/Boolean;
 
-    .line 64322
+    .line 64349
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 64323
+    .line 64350
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
@@ -101,7 +101,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->forum:Ljava/lang/Boolean;
 
-    .line 64325
+    .line 64352
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
@@ -109,7 +109,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 64326
+    .line 64353
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -120,7 +120,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->user_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
-    .line 64328
+    .line 64355
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
@@ -128,7 +128,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 64329
+    .line 64356
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -148,10 +148,10 @@
 
     const v0, -0x360f91e5
 
-    .line 64334
+    .line 64361
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 64335
+    .line 64362
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->creator:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
@@ -176,7 +176,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64336
+    .line 64363
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->user_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz v1, :cond_1
@@ -191,7 +191,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64337
+    .line 64364
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->bot_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz v1, :cond_2
@@ -206,7 +206,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64338
+    .line 64365
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->has_username:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_3
@@ -221,7 +221,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64339
+    .line 64366
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->forum:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_4
@@ -236,7 +236,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64340
+    .line 64367
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->bot_participant:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_5
@@ -261,50 +261,50 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64341
+    .line 64368
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 64342
+    .line 64369
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->has_username:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_6
 
-    .line 64343
+    .line 64370
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 64345
+    .line 64372
     :cond_6
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->forum:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_7
 
-    .line 64346
+    .line 64373
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 64348
+    .line 64375
     :cond_7
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->user_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz v0, :cond_8
 
-    .line 64349
+    .line 64376
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 64351
+    .line 64378
     :cond_8
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->bot_admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz v0, :cond_9
 
-    .line 64352
+    .line 64379
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     :cond_9

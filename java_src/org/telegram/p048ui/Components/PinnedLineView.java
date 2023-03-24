@@ -177,7 +177,7 @@ public class PinnedLineView extends View {
                 f = (this.selectedPosition - 1) * measuredHeight;
             }
             if (f < BitmapDescriptorFactory.HUE_RED) {
-                f = BitmapDescriptorFactory.HUE_RED;
+                f = 0.0f;
             } else {
                 float f7 = m50dp;
                 if ((((this.totalCount - 1) * measuredHeight) + f7) - f < (getMeasuredHeight() - m50dp) - measuredHeight) {
@@ -234,7 +234,10 @@ public class PinnedLineView extends View {
         int i3;
         int i4;
         int i5 = this.selectedPosition;
-        if (!((i5 < 0 || i2 == 0 || this.totalCount == 0) ? false : false)) {
+        if (i5 < 0 || i2 == 0 || this.totalCount == 0) {
+            z = false;
+        }
+        if (!z) {
             ValueAnimator valueAnimator = this.animator;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

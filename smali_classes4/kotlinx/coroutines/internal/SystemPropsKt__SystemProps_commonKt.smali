@@ -20,9 +20,9 @@
 
     move-result-wide p0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static final systemProp(Ljava/lang/String;JJJ)J
@@ -53,20 +53,20 @@
 
     move-result-wide v2
 
-    const/4 p1, 0x0
+    cmp-long p1, p3, v2
 
-    cmp-long v0, p3, v2
+    const/4 v0, 0x0
 
-    if-gtz v0, :cond_1
+    if-gtz p1, :cond_1
 
-    cmp-long v0, v2, p5
+    cmp-long p1, v2, p5
 
-    if-gtz v0, :cond_1
+    if-gtz p1, :cond_1
 
-    const/4 p1, 0x1
+    const/4 v0, 0x1
 
     :cond_1
-    if-eqz p1, :cond_2
+    if-eqz v0, :cond_2
 
     return-wide v2
 

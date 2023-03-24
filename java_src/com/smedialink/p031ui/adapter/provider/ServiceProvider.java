@@ -7,7 +7,7 @@ import com.smedialink.model.wallet.home.ServicesBasicItem;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: ServiceProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.ServiceProvider */
 /* loaded from: classes3.dex */
@@ -20,7 +20,7 @@ public final class ServiceProvider extends BaseNodeProvider<ServicesBasicItem> {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.SERVICES_BASIC;
-        this.layoutId = C3286R.layout.fork_recycle_item_wallet_card_icon_title_subtitle;
+        this.layoutId = C3301R.layout.fork_recycle_item_wallet_card_icon_title_subtitle;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -37,11 +37,11 @@ public final class ServiceProvider extends BaseNodeProvider<ServicesBasicItem> {
     public void convert(BaseViewHolder helper, ServicesBasicItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3286R.C3289id.card_root;
+        int i = C3301R.C3304id.card_root;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, "windowBackgroundWhite");
-        int i2 = C3286R.C3289id.text_title;
+        int i2 = C3301R.C3304id.text_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, "chat_messagePanelText");
-        int i3 = C3286R.C3289id.text_subtitle;
-        BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, "windowBackgroundWhiteGrayText2"), i2).setImageResource(C3286R.C3289id.image_icon, item.getIcon()).setText(i2, this.resourceManager.getString(item.getTitleResId())).setText(i3, this.resourceManager.getString(item.getSubtitleResId()));
+        int i3 = C3301R.C3304id.text_subtitle;
+        BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, "windowBackgroundWhiteGrayText2"), i2).setImageResource(C3301R.C3304id.image_icon, item.getIcon()).setText(i2, this.resourceManager.getString(item.getTitleResId())).setText(i3, this.resourceManager.getString(item.getSubtitleResId()));
     }
 }

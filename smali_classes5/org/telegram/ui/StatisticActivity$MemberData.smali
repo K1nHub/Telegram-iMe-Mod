@@ -73,7 +73,7 @@
 .end method
 
 .method public static find(JLjava/util/ArrayList;)Lorg/telegram/tgnet/TLRPC$User;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -105,9 +105,9 @@
     .line 2547
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v3, v1, p0
+    cmp-long v1, v1, p0
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     return-object v0
 
@@ -827,7 +827,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v4
 
     const/4 v11, 0x0
 
@@ -856,9 +856,9 @@
 
     iget-wide v4, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v6, v14, v4
+    cmp-long v4, v14, v4
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     .line 2580
     instance-of v4, v13, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
@@ -880,9 +880,9 @@
 
     iget-wide v4, v4, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v6, v14, v4
+    cmp-long v4, v14, v4
 
-    if-nez v6, :cond_1
+    if-nez v4, :cond_1
 
     .line 2585
     instance-of v4, v13, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
@@ -1193,7 +1193,7 @@
 
     if-eqz v9, :cond_9
 
-    const/4 v13, 0x1
+    move v13, v5
 
     goto :goto_2
 
@@ -1285,7 +1285,7 @@
     :cond_f
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 2677
     :goto_6

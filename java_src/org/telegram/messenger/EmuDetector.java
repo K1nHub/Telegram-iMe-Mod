@@ -18,7 +18,7 @@ import java.util.List;
 public class EmuDetector {
 
     /* renamed from: IP */
-    private static final String f1426IP = "10.0.2.15";
+    private static final String f1427IP = "10.0.2.15";
     private static final int MIN_PROPERTIES_THRESHOLD = 5;
     private static EmuDetector mEmulatorDetector;
     private boolean detectResult;
@@ -221,10 +221,10 @@ public class EmuDetector {
             if (r0 == 0) goto Lcb
             goto Lcd
         Lcb:
-            r0 = 0
+            r0 = r2
             goto Lce
         Lcd:
-            r0 = 1
+            r0 = r5
         Lce:
             if (r0 == 0) goto Ld1
             return r5
@@ -235,7 +235,7 @@ public class EmuDetector {
             java.lang.String r1 = android.os.Build.DEVICE
             boolean r1 = r1.startsWith(r4)
             if (r1 == 0) goto Le2
-            r2 = 1
+            r2 = r5
         Le2:
             r0 = r0 | r2
             if (r0 == 0) goto Le6
@@ -386,7 +386,7 @@ public class EmuDetector {
                 return false;
             }
             for (String str : sb2.split("\n")) {
-                if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(f1426IP)) {
+                if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(f1427IP)) {
                     return true;
                 }
             }

@@ -132,7 +132,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
@@ -178,7 +178,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -192,7 +192,7 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 73
     iget-wide v3, p0, Lcom/google/firebase/installations/remote/AutoValue_TokenResult;->tokenExpirationTimestamp:J
@@ -203,11 +203,11 @@
 
     xor-long/2addr v3, v5
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    xor-int/2addr v0, v4
+    xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 75
     iget-object v2, p0, Lcom/google/firebase/installations/remote/AutoValue_TokenResult;->responseCode:Lcom/google/firebase/installations/remote/TokenResult$ResponseCode;

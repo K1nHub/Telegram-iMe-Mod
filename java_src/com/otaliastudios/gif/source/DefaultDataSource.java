@@ -114,7 +114,8 @@ public abstract class DefaultDataSource implements DataSource {
             mediaFormat.setInteger("width", this.mGifHeader.getWidth());
             this.mFormat.setInteger("height", this.mGifHeader.getHeight());
             this.mFormat.setInteger("rotation-degrees", 0);
-            this.mFormat.setInteger("frame-rate", (int) Math.round(this.mGifHeader.getNumFrames() / (getDurationUs() / 1000000.0d)));
+            MediaFormat mediaFormat2 = this.mFormat;
+            mediaFormat2.setInteger("frame-rate", (int) Math.round(this.mGifHeader.getNumFrames() / (getDurationUs() / 1000000.0d)));
         }
         return this.mFormat;
     }

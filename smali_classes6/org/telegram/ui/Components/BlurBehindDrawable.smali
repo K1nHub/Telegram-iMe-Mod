@@ -330,7 +330,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v1, :cond_d
@@ -1171,7 +1171,7 @@
     goto :goto_1
 
     :cond_6
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     :goto_1
     if-nez v0, :cond_7
@@ -1186,7 +1186,7 @@
 
     const/high16 v1, 0x42480000    # 50.0f
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -1200,9 +1200,9 @@
     return-void
 
     :cond_7
-    const/high16 v6, 0x437f0000    # 255.0f
-
     cmpl-float v3, v5, v3
+
+    const/high16 v6, 0x437f0000    # 255.0f
 
     if-nez v3, :cond_8
 
@@ -1249,7 +1249,7 @@
     .line 107
     iget-object v3, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->emptyPaint:Landroid/graphics/Paint;
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -1431,7 +1431,7 @@
     iput-object p1, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
 
     :cond_d
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_3
     if-ge p1, v0, :cond_15

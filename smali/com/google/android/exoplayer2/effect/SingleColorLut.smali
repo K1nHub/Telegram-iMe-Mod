@@ -42,7 +42,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -54,12 +54,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const/4 v1, 0x2
@@ -109,7 +109,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     const-string v0, "Color representation needs to be ARGB_8888."
@@ -151,12 +151,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v3, "LUT must have three dimensions."
@@ -182,12 +182,12 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     const/4 v3, 0x3
@@ -299,17 +299,17 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v0, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1
     if-ge v5, v0, :cond_1
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_2
     if-ge v6, v0, :cond_0
@@ -325,7 +325,7 @@
 
     add-int/2addr v8, v5
 
-    mul-int v8, v8, v0
+    mul-int/2addr v8, v0
 
     add-int/2addr v8, v6
 

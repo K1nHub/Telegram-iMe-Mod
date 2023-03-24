@@ -163,15 +163,15 @@
     :cond_0
     const-wide/16 p5, -0x1
 
-    cmp-long v1, p1, p5
+    cmp-long p5, p1, p5
 
-    if-eqz v1, :cond_2
+    if-eqz p5, :cond_2
 
     const-wide/16 p5, 0x0
 
-    cmp-long v1, p1, p5
+    cmp-long p5, p1, p5
 
-    if-nez v1, :cond_1
+    if-nez p5, :cond_1
 
     goto :goto_0
 
@@ -180,13 +180,11 @@
 
     const/high16 p6, 0x42c80000    # 100.0f
 
-    mul-float p5, p5, p6
+    mul-float/2addr p5, p6
 
     long-to-float p6, p1
 
     div-float/2addr p5, p6
-
-    move v5, p5
 
     goto :goto_1
 
@@ -194,9 +192,9 @@
     :goto_0
     const/high16 p5, -0x40800000    # -1.0f
 
-    const/high16 v5, -0x40800000    # -1.0f
-
     :goto_1
+    move v5, p5
+
     move-wide v1, p1
 
     move-wide v3, p3

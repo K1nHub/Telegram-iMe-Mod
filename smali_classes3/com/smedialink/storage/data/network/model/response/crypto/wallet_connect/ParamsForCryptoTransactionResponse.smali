@@ -14,13 +14,13 @@
 
 .field private final to:Ljava/lang/String;
 
-.field private final transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+.field private final transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
 .field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "from"
@@ -67,7 +67,7 @@
     iput-object p4, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->data:Ljava/lang/String;
 
     .line 10
-    iput-object p5, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iput-object p5, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     .line 11
     iput-object p6, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->networkType:Ljava/lang/String;
@@ -78,7 +78,7 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
+.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
     .locals 5
 
     and-int/lit8 p9, p8, 0x1
@@ -119,7 +119,7 @@
 
     if-eqz p2, :cond_4
 
-    iget-object p5, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object p5, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     :cond_4
     move-object v2, p5
@@ -158,7 +158,7 @@
 
     move-object p9, v4
 
-    invoke-virtual/range {p2 .. p9}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
+    invoke-virtual/range {p2 .. p9}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
 
     move-result-object p0
 
@@ -199,10 +199,10 @@
     return-object v0
 .end method
 
-.method public final component5()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+.method public final component5()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     return-object v0
 .end method
@@ -223,7 +223,7 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
     .locals 9
 
     const-string v0, "from"
@@ -272,7 +272,7 @@
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v8}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -350,9 +350,9 @@
     return v2
 
     :cond_5
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
-    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -437,11 +437,11 @@
     return-object v0
 .end method
 
-.method public final getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+.method public final getTransactionParams()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
     .locals 1
 
     .line 10
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     return-object v0
 .end method
@@ -496,9 +496,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;->hashCode()I
+    invoke-virtual {v1}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;->hashCode()I
 
     move-result v1
 
@@ -570,7 +570,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

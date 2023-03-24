@@ -129,7 +129,7 @@
 .end method
 
 .method emit(JLjava/lang/Object;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JTT;)V"
@@ -139,9 +139,9 @@
     .line 133
     iget-wide v0, p0, Lio/reactivex/internal/operators/observable/ObservableDebounce$DebounceObserver;->index:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     .line 134
     iget-object p1, p0, Lio/reactivex/internal/operators/observable/ObservableDebounce$DebounceObserver;->downstream:Lio/reactivex/Observer;

@@ -61,7 +61,9 @@ public class ActivityTransition extends AbstractSafeParcelable {
 
     public static void zza(int i) {
         boolean z = true;
-        z = (i < 0 || i > 1) ? false : false;
+        if (i < 0 || i > 1) {
+            z = false;
+        }
         Preconditions.checkArgument(z, "Transition type " + i + " is not valid.");
     }
 

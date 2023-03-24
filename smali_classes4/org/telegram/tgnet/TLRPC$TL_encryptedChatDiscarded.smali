@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36024
+    .line 36034
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$EncryptedChat;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 36029
+    .line 36039
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -46,11 +46,11 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 36030
+    .line 36040
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->history_deleted:Z
 
-    .line 36031
+    .line 36041
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -63,12 +63,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 36035
+    .line 36045
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 36036
+    .line 36046
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->history_deleted:Z
 
     if-eqz v0, :cond_0
@@ -87,10 +87,10 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->flags:I
 
-    .line 36037
+    .line 36047
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 36038
+    .line 36048
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

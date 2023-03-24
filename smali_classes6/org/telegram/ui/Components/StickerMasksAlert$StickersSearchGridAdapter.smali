@@ -497,9 +497,9 @@
 
     const/4 v4, -0x1
 
-    const/4 v5, -0x1
+    move v6, v1
 
-    const/4 v6, 0x0
+    move v5, v4
 
     :goto_0
     add-int v7, v2, v3
@@ -601,7 +601,7 @@
 
     move-result v10
 
-    const/4 v11, 0x0
+    move v11, v1
 
     :goto_2
     if-ge v11, v10, :cond_2
@@ -659,7 +659,7 @@
     :cond_2
     add-int/lit8 v8, v9, 0x1
 
-    const/4 v10, 0x0
+    move v10, v1
 
     :goto_3
     if-ge v10, v8, :cond_3
@@ -689,7 +689,7 @@
 
     move-result v10
 
-    mul-int v9, v9, v10
+    mul-int/2addr v9, v10
 
     add-int/lit8 v9, v9, 0x1
 
@@ -711,9 +711,9 @@
 
     const-string v8, ""
 
-    const/4 v9, 0x0
+    move v9, v1
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_4
     if-ge v9, v7, :cond_8
@@ -762,7 +762,7 @@
 
     move-result v12
 
-    const/4 v13, 0x0
+    move v13, v1
 
     :goto_5
     if-ge v13, v12, :cond_7
@@ -920,7 +920,7 @@
 
     move-result v4
 
-    mul-int v4, v4, v1
+    mul-int/2addr v4, v1
 
     add-int/2addr v2, v4
 
@@ -1079,7 +1079,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-virtual {p1, p2, v1, v0, v2}, Lorg/telegram/ui/Cells/StickerSetNameCell;->setText(Ljava/lang/CharSequence;III)V
@@ -1232,7 +1232,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     sub-int/2addr p2, v0
 
@@ -1336,7 +1336,7 @@
     if-eqz p2, :cond_f
 
     :cond_e
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_f
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/StickerEmojiCell;->setRecent(Z)V

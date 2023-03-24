@@ -34,11 +34,11 @@
 
     mul-float v0, p1, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     return v0
 .end method

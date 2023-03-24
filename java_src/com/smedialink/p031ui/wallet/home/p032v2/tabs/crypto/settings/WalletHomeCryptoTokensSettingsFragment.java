@@ -41,11 +41,11 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.fork.p046ui.view.MovingCheckCell;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.CheckBoxSquare;
@@ -161,15 +161,15 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.wallet_home_crypto_tokens_settings_toolbar_title));
-        ActionBarMenuItem addItem = c3351ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3286R.C3288drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.RESET, C3286R.C3288drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3286R.string.ThemeResetToDefaults));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$2
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.wallet_home_crypto_tokens_settings_toolbar_title));
+        ActionBarMenuItem addItem = c3366ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3301R.C3303drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.RESET, C3301R.C3303drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3301R.string.ThemeResetToDefaults));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$2
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletHomeCryptoTokensSettingsFragment.this.finishFragment();
@@ -274,7 +274,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
                 MovingCheckCell movingCheckCell = new MovingCheckCell(parentActivity);
                 movingCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
                 AppCompatImageView iconView = movingCheckCell.getIconView();
-                iconView.setBackgroundResource(C3286R.C3288drawable.fork_bg_white_circle);
+                iconView.setBackgroundResource(C3301R.C3303drawable.fork_bg_white_circle);
                 ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
                 Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
@@ -331,7 +331,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
                 bind.onlyPositiveCheckbox.setChecked(walletHomeCryptoTokensSettingsFragment.getPresenter().getOnlyPositiveTokens(), false);
                 AppCompatTextView appCompatTextView = bind.onlyPositiveCheckboxText;
                 appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-                appCompatTextView.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3286R.string.wallet_home_crypto_tokens_settings_only_positive));
+                appCompatTextView.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3301R.string.wallet_home_crypto_tokens_settings_only_positive));
                 NetworkTypeView onBindViewHolder$lambda$10$lambda$9 = bind.networkTypeView;
                 onBindViewHolder$lambda$10$lambda$9.setNetworkType(walletHomeCryptoTokensSettingsFragment.getPresenter().getCurrentNetworkType());
                 Intrinsics.checkNotNullExpressionValue(onBindViewHolder$lambda$10$lambda$9, "onBindViewHolder$lambda$10$lambda$9");

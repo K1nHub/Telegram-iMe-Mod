@@ -33,9 +33,9 @@ public class PlayPauseDrawable extends Drawable {
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x0062  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00e5  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -43,7 +43,7 @@ public class PlayPauseDrawable extends Drawable {
     */
     public void draw(android.graphics.Canvas r10) {
         /*
-            Method dump skipped, instructions count: 256
+            Method dump skipped, instructions count: 250
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.PlayPauseDrawable.draw(android.graphics.Canvas):void");

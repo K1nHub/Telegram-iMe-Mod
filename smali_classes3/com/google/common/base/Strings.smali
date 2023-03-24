@@ -49,7 +49,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 269
     :goto_0
@@ -87,7 +87,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 278
     :goto_2

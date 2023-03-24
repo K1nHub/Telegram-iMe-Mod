@@ -1142,9 +1142,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x4
@@ -1181,7 +1181,7 @@
     .line 1938
     iput-boolean v1, p0, Lorg/telegram/ui/VoIPFragment;->emojiLoaded:Z
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-ge v1, v3, :cond_3
@@ -1741,7 +1741,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, p1
 
     goto :goto_1
 
@@ -1904,7 +1904,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     .line 1726
     :cond_2
@@ -1925,7 +1925,7 @@
     const/high16 v1, 0x3f000000    # 0.5f
 
     :goto_0
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -1967,7 +1967,7 @@
 
     if-eqz p1, :cond_6
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :cond_6
     aput v0, p2, v2
@@ -2332,9 +2332,9 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     div-float/2addr v8, v4
 
@@ -2671,25 +2671,25 @@
 
     move-result p4
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float v1, v0, p4
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr p1, v1
 
     .line 1022
     iput p1, p0, Lorg/telegram/ui/VoIPFragment;->pinchScale:F
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
     .line 1023
     iput p2, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationX:F
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     .line 1024
     iput p3, p0, Lorg/telegram/ui/VoIPFragment;->pinchTranslationY:F
@@ -4678,7 +4678,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v7
 
     :goto_1
     const/16 v1, 0x1e
@@ -4929,7 +4929,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -5138,7 +5138,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x8
+    move v0, v1
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
@@ -5852,7 +5852,7 @@
 
     :cond_8
     :goto_0
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_1
     if-eqz p2, :cond_b
@@ -6050,12 +6050,12 @@
 
     if-ne p1, v1, :cond_f
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_3
 
     :cond_f
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_3
     invoke-virtual {p2, v0, v6}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->setFloatingMode(ZZ)V
@@ -6065,7 +6065,7 @@
     goto :goto_4
 
     :cond_10
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 1859
     :goto_4
@@ -7219,7 +7219,7 @@
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :goto_4
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_5
     const/4 v1, 0x4
@@ -7338,7 +7338,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     const/4 v3, 0x4
@@ -7502,11 +7502,11 @@
 
     const/high16 v2, 0x42cc0000    # 102.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget v2, p0, Lorg/telegram/ui/VoIPFragment;->enterTransitionProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -7525,17 +7525,17 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v1, v3
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     iget v3, p0, Lorg/telegram/ui/VoIPFragment;->enterTransitionProgress:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -7571,7 +7571,7 @@
 
     if-eqz v1, :cond_0
 
-    goto/16 :goto_28
+    goto/16 :goto_27
 
     :cond_0
     const/4 v1, 0x0
@@ -7588,12 +7588,12 @@
 
     if-eq v2, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1394
     :goto_0
@@ -7653,15 +7653,19 @@
     .line 1438
     iput-boolean v1, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
-    const/4 v5, 0x0
+    move v5, v1
+
+    move v10, v5
 
     :goto_1
-    const/4 v10, 0x0
+    move v12, v10
 
     :goto_2
-    const/4 v11, 0x1
+    move v13, v12
 
-    goto/16 :goto_6
+    move v11, v4
+
+    goto/16 :goto_7
 
     .line 1426
     :pswitch_1
@@ -7717,12 +7721,12 @@
 
     if-eqz v10, :cond_2
 
-    const/4 v10, 0x1
+    move v10, v4
 
     goto :goto_3
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v1
 
     .line 1408
     :goto_3
@@ -7753,6 +7757,8 @@
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setTranslationY(F)V
 
+    move v12, v1
+
     goto :goto_2
 
     .line 1411
@@ -7773,6 +7779,8 @@
     iget-object v10, v0, Lorg/telegram/ui/VoIPFragment;->acceptDeclineView:Lorg/telegram/ui/Components/voip/AcceptDeclineView;
 
     invoke-virtual {v10, v9}, Landroid/view/View;->setTranslationY(F)V
+
+    move v10, v1
 
     goto :goto_1
 
@@ -8110,7 +8118,7 @@
 
     invoke-direct {v0, v5}, Lorg/telegram/ui/VoIPFragment;->showErrorDialog(Ljava/lang/CharSequence;)V
 
-    goto :goto_5
+    goto/16 :goto_5
 
     :cond_9
     const-string v10, "ERROR_AUDIO_IO"
@@ -8198,26 +8206,26 @@
 
     if-ne v5, v6, :cond_f
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v10, 0x0
+    move v10, v5
 
-    const/4 v11, 0x0
+    move v11, v10
 
-    const/4 v12, 0x1
+    move v12, v4
 
-    const/4 v13, 0x1
-
-    goto :goto_8
+    goto :goto_6
 
     :cond_f
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v10, 0x0
+    move v10, v5
 
-    const/4 v11, 0x0
+    move v11, v10
 
-    const/4 v12, 0x1
+    move v13, v11
+
+    move v12, v4
 
     goto :goto_7
 
@@ -8236,20 +8244,19 @@
     invoke-virtual {v5, v10, v4, v2}, Lorg/telegram/ui/Components/voip/VoIPStatusTextView;->setText(Ljava/lang/String;ZZ)V
 
     :goto_5
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v10, 0x0
+    move v10, v5
 
-    const/4 v11, 0x0
+    move v11, v10
+
+    move v12, v11
 
     :goto_6
-    const/4 v12, 0x0
-
-    :goto_7
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 1516
-    :goto_8
+    :goto_7
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->previewDialog:Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
     if-eqz v14, :cond_11
@@ -8266,14 +8273,14 @@
 
     if-ne v14, v8, :cond_12
 
-    const/4 v14, 0x1
+    move v14, v4
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_12
-    const/4 v14, 0x0
+    move v14, v1
 
-    :goto_9
+    :goto_8
     iput-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserIsVideo:Z
 
     .line 1522
@@ -8289,18 +8296,18 @@
 
     if-ne v14, v4, :cond_13
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_13
-    const/4 v14, 0x0
+    move v14, v1
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_14
-    :goto_a
-    const/4 v14, 0x1
+    :goto_9
+    move v14, v4
 
-    :goto_b
+    :goto_a
     iput-boolean v14, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v14, :cond_15
@@ -8366,7 +8373,7 @@
 
     invoke-virtual {v14}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_c
+    goto :goto_b
 
     .line 1540
     :cond_18
@@ -8384,7 +8391,7 @@
     invoke-virtual {v14, v15}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     .line 1543
-    :goto_c
+    :goto_b
     iget-object v14, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v14, v14, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
@@ -8412,7 +8419,7 @@
 
     if-eqz v14, :cond_1a
 
-    goto :goto_d
+    goto :goto_c
 
     .line 1551
     :cond_1a
@@ -8442,7 +8449,7 @@
 
     invoke-virtual {v6}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_e
+    goto :goto_d
 
     .line 1556
     :cond_1b
@@ -8459,15 +8466,15 @@
 
     invoke-virtual {v6, v9}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    goto :goto_e
+    goto :goto_d
 
     .line 1549
     :cond_1c
-    :goto_d
+    :goto_c
     invoke-direct {v0, v4, v2}, Lorg/telegram/ui/VoIPFragment;->fillNavigationBar(ZZ)V
 
     .line 1561
-    :goto_e
+    :goto_d
     iget-boolean v6, v0, Lorg/telegram/ui/VoIPFragment;->currentUserIsVideo:Z
 
     if-eqz v6, :cond_1d
@@ -8488,15 +8495,15 @@
 
     if-eqz v6, :cond_1f
 
-    const/4 v6, 0x1
+    move v6, v4
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_1f
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 1567
-    :goto_f
+    :goto_e
     invoke-direct {v0, v10, v2}, Lorg/telegram/ui/VoIPFragment;->showCallingUserAvatarMini(ZZ)V
 
     .line 1568
@@ -8508,9 +8515,9 @@
 
     if-nez v7, :cond_20
 
-    const/4 v7, 0x0
+    move v7, v1
 
-    goto :goto_10
+    goto :goto_f
 
     :cond_20
     const/16 v7, 0x87
@@ -8527,7 +8534,7 @@
 
     add-int/2addr v7, v10
 
-    :goto_10
+    :goto_f
     add-int/2addr v5, v7
 
     .line 1569
@@ -8544,18 +8551,18 @@
 
     if-eqz v10, :cond_21
 
-    goto :goto_11
+    goto :goto_10
 
     :cond_21
-    const/4 v10, 0x0
+    move v10, v1
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_22
-    :goto_11
-    const/4 v10, 0x1
+    :goto_10
+    move v10, v4
 
-    :goto_12
+    :goto_11
     invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->setLockOnScreen(Z)V
 
     .line 1571
@@ -8574,14 +8581,14 @@
     if-eqz v7, :cond_24
 
     :cond_23
-    const/4 v7, 0x1
+    move v7, v4
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_24
-    const/4 v7, 0x0
+    move v7, v1
 
-    :goto_13
+    :goto_12
     iput-boolean v7, v0, Lorg/telegram/ui/VoIPFragment;->canHideUI:Z
 
     if-nez v7, :cond_25
@@ -8626,7 +8633,7 @@
     .line 1578
     iput-boolean v4, v0, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_26
     if-eqz v3, :cond_27
@@ -8648,7 +8655,7 @@
 
     .line 1583
     :cond_27
-    :goto_14
+    :goto_13
     iget-boolean v7, v0, Lorg/telegram/ui/VoIPFragment;->uiVisible:Z
 
     if-nez v7, :cond_28
@@ -8682,7 +8689,7 @@
 
     if-nez v11, :cond_29
 
-    goto :goto_15
+    goto :goto_14
 
     .line 1595
     :cond_29
@@ -8698,11 +8705,11 @@
 
     invoke-virtual {v11}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_16
+    goto :goto_15
 
     .line 1589
     :cond_2a
-    :goto_15
+    :goto_14
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->backIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v11}, Landroid/widget/ImageView;->getVisibility()I
@@ -8736,7 +8743,7 @@
     invoke-virtual {v11}, Landroid/view/ViewPropertyAnimator;->start()V
 
     .line 1597
-    :goto_16
+    :goto_15
     iget-object v11, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v11}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -8757,12 +8764,12 @@
 
     move-result v7
 
-    goto :goto_17
+    goto :goto_16
 
     :cond_2c
-    const/4 v7, 0x0
+    move v7, v1
 
-    :goto_17
+    :goto_16
     sub-int/2addr v10, v7
 
     int-to-float v7, v10
@@ -8783,7 +8790,7 @@
 
     invoke-virtual {v7}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 1599
     :cond_2d
@@ -8804,14 +8811,14 @@
 
     if-eqz v15, :cond_2f
 
-    const/4 v15, 0x0
+    move v15, v9
 
-    goto :goto_18
+    goto :goto_17
 
     :cond_2f
     const/high16 v15, 0x3f800000    # 1.0f
 
-    :goto_18
+    :goto_17
     invoke-virtual {v11, v15}, Landroid/widget/ImageView;->setAlpha(F)V
 
     .line 1603
@@ -8831,12 +8838,12 @@
 
     move-result v7
 
-    goto :goto_19
+    goto :goto_18
 
     :cond_30
-    const/4 v7, 0x0
+    move v7, v1
 
-    :goto_19
+    :goto_18
     sub-int/2addr v10, v7
 
     int-to-float v7, v10
@@ -8844,7 +8851,7 @@
     invoke-virtual {v11, v7}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
     .line 1606
-    :goto_1a
+    :goto_19
     iget v7, v0, Lorg/telegram/ui/VoIPFragment;->currentState:I
 
     const/16 v10, 0xa
@@ -8904,7 +8911,7 @@
 
     invoke-virtual {v7}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 1621
     :cond_33
@@ -8916,7 +8923,7 @@
 
     .line 1623
     :cond_34
-    :goto_1b
+    :goto_1a
     iput v14, v0, Lorg/telegram/ui/VoIPFragment;->statusLayoutAnimateToOffset:I
 
     .line 1624
@@ -8930,18 +8937,18 @@
 
     if-eqz v10, :cond_35
 
-    goto :goto_1c
+    goto :goto_1b
 
     :cond_35
-    const/4 v10, 0x0
+    move v10, v1
 
-    goto :goto_1d
+    goto :goto_1c
 
     :cond_36
-    :goto_1c
+    :goto_1b
     const/4 v10, 0x1
 
-    :goto_1d
+    :goto_1c
     invoke-virtual {v7, v10, v2}, Lorg/telegram/ui/Components/voip/VoIPOverlayBackground;->setShowBlackout(ZZ)V
 
     .line 1625
@@ -8964,12 +8971,12 @@
     :cond_37
     const/4 v11, 0x1
 
-    goto :goto_1e
+    goto :goto_1d
 
     :cond_38
-    const/4 v11, 0x0
+    move v11, v1
 
-    :goto_1e
+    :goto_1d
     iput-boolean v11, v0, Lorg/telegram/ui/VoIPFragment;->canSwitchToPip:Z
 
     const/4 v7, 0x0
@@ -9024,24 +9031,24 @@
 
     iget-object v10, v10, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
-    goto :goto_1f
+    goto :goto_1e
 
     :cond_3a
     move-object v10, v7
 
-    :goto_1f
+    :goto_1e
     if-eqz v6, :cond_3b
 
     iget-object v12, v0, Lorg/telegram/ui/VoIPFragment;->callingUserMiniTextureRenderer:Lorg/webrtc/TextureViewRenderer;
 
-    goto :goto_20
+    goto :goto_1f
 
     :cond_3b
     iget-object v12, v0, Lorg/telegram/ui/VoIPFragment;->callingUserTextureView:Lorg/telegram/ui/Components/voip/VoIPTextureView;
 
     iget-object v12, v12, Lorg/telegram/ui/Components/voip/VoIPTextureView;->renderer:Lorg/webrtc/TextureViewRenderer;
 
-    :goto_20
+    :goto_1f
     invoke-virtual {v3, v10, v12}, Lorg/telegram/messenger/voip/VoIPService;->setSinks(Lorg/webrtc/VideoSink;Lorg/webrtc/VideoSink;)V
 
     if-eqz v2, :cond_3c
@@ -9121,7 +9128,7 @@
 
     invoke-virtual {v10, v15, v4, v14, v2}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->addNotification(ILjava/lang/String;Ljava/lang/String;Z)V
 
-    goto :goto_21
+    goto :goto_20
 
     .line 1643
     :cond_3f
@@ -9130,7 +9137,7 @@
     invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
     .line 1645
-    :goto_21
+    :goto_20
     invoke-virtual {v3}, Lorg/telegram/messenger/voip/VoIPService;->getRemoteVideoState()I
 
     move-result v4
@@ -9164,7 +9171,7 @@
 
     invoke-virtual {v4, v5, v10, v13, v2}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->addNotification(ILjava/lang/String;Ljava/lang/String;Z)V
 
-    goto :goto_23
+    goto :goto_22
 
     .line 1648
     :cond_40
@@ -9172,7 +9179,7 @@
 
     invoke-virtual {v4, v13}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
-    goto :goto_23
+    goto :goto_22
 
     .line 1651
     :cond_41
@@ -9207,7 +9214,7 @@
 
     invoke-virtual {v4, v5, v10, v14, v2}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->addNotification(ILjava/lang/String;Ljava/lang/String;Z)V
 
-    goto :goto_22
+    goto :goto_21
 
     .line 1654
     :cond_42
@@ -9216,13 +9223,13 @@
     invoke-virtual {v4, v14}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
     .line 1656
-    :goto_22
+    :goto_21
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v4, v13}, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;->removeNotification(Ljava/lang/String;)V
 
     .line 1659
-    :goto_23
+    :goto_22
     iget-object v4, v0, Lorg/telegram/ui/VoIPFragment;->notificationsLayout:Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout;
 
     invoke-virtual {v4}, Landroid/widget/LinearLayout;->getChildCount()I
@@ -9263,7 +9270,7 @@
 
     invoke-virtual {v3, v5, v4}, Lorg/telegram/ui/Components/HintView;->showForView(Landroid/view/View;Z)Z
 
-    goto :goto_24
+    goto :goto_23
 
     .line 1662
     :cond_43
@@ -9281,7 +9288,7 @@
     invoke-virtual {v3}, Lorg/telegram/ui/Components/HintView;->hide()V
 
     :cond_44
-    :goto_24
+    :goto_23
     if-eqz v2, :cond_45
 
     .line 1667
@@ -9335,7 +9342,7 @@
 
     if-eqz v3, :cond_46
 
-    goto :goto_25
+    goto :goto_24
 
     .line 1682
     :cond_46
@@ -9343,16 +9350,16 @@
 
     const/4 v3, 0x1
 
-    goto :goto_26
+    goto :goto_25
 
     :cond_47
-    :goto_25
+    :goto_24
     const/4 v3, 0x1
 
     .line 1680
     invoke-direct {v0, v3, v2}, Lorg/telegram/ui/VoIPFragment;->showFloatingLayout(IZ)V
 
-    goto :goto_26
+    goto :goto_25
 
     :cond_48
     const/4 v3, 0x1
@@ -9360,7 +9367,7 @@
     .line 1685
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/VoIPFragment;->showFloatingLayout(IZ)V
 
-    :goto_26
+    :goto_25
     const/high16 v2, 0x3f000000    # 0.5f
 
     if-eqz v6, :cond_4a
@@ -9472,7 +9479,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    goto :goto_27
+    goto :goto_26
 
     :cond_4a
     if-nez v6, :cond_4b
@@ -9540,7 +9547,7 @@
 
     .line 1712
     :cond_4b
-    :goto_27
+    :goto_26
     iget-object v1, v0, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;->restoreRelativePosition()V
@@ -9554,10 +9561,8 @@
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/VoIPFragment;->updateSpeakerPhoneIcon()V
 
     :cond_4c
-    :goto_28
+    :goto_27
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0xb
@@ -9671,14 +9676,14 @@
 
     if-eqz v2, :cond_1
 
-    const v14, 0x3ecccccd    # 0.4f
+    move v14, v4
 
     goto :goto_0
 
     :cond_1
     const/high16 v2, 0x3e800000    # 0.25f
 
-    const/high16 v14, 0x3e800000    # 0.25f
+    move v14, v2
 
     .line 1227
     :goto_0
@@ -9698,7 +9703,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v14
+    mul-float/2addr v6, v14
 
     sub-float/2addr v2, v6
 
@@ -9725,7 +9730,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v14
+    mul-float/2addr v8, v14
 
     sub-float/2addr v2, v8
 
@@ -9769,9 +9774,9 @@
 
     div-float/2addr v9, v2
 
-    mul-float v9, v9, v14
+    mul-float/2addr v9, v14
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     .line 1233
     iget-object v2, v15, Lorg/telegram/ui/VoIPFragment;->currentUserCameraFloatingLayout:Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -9790,7 +9795,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     sub-float/2addr v2, v8
 
@@ -9807,7 +9812,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     add-float/2addr v0, v2
 
@@ -9819,9 +9824,9 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float/2addr v0, v2
 
@@ -9850,7 +9855,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     sub-float/2addr v2, v8
 
@@ -9867,7 +9872,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
     add-float/2addr v1, v2
 
@@ -9879,9 +9884,9 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v14
+    mul-float/2addr v2, v14
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float/2addr v1, v2
 
@@ -9898,9 +9903,9 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v0, 0x3f800000    # 1.0f
+    move/from16 v0, v19
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v0
 
     const/4 v2, 0x0
 
@@ -9933,7 +9938,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v14
+    mul-float/2addr v4, v14
 
     sub-float/2addr v2, v4
 
@@ -9958,7 +9963,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v14
+    mul-float/2addr v4, v14
 
     sub-float/2addr v2, v4
 
@@ -10019,7 +10024,7 @@
 
     if-eqz v0, :cond_5
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move/from16 v0, v19
 
     goto :goto_4
 
@@ -10032,7 +10037,7 @@
     goto :goto_5
 
     :cond_6
-    const/high16 v1, 0x3f800000    # 1.0f
+    move/from16 v1, v19
 
     :goto_5
     if-eqz p1, :cond_8
@@ -10146,12 +10151,12 @@
 
     if-eqz p1, :cond_9
 
-    const/high16 v21, 0x3f800000    # 1.0f
+    move/from16 v21, v19
 
     goto :goto_7
 
     :cond_9
-    const/16 v21, 0x0
+    move/from16 v21, v13
 
     :goto_7
     const/16 v23, 0x0
@@ -10160,12 +10165,12 @@
 
     if-eqz p1, :cond_a
 
-    const/16 v20, 0x0
+    move/from16 v20, v13
 
     goto :goto_8
 
     :cond_a
-    const/high16 v20, 0x3f800000    # 1.0f
+    move/from16 v20, v19
 
     :goto_8
     const/16 v21, 0x1
@@ -10182,7 +10187,7 @@
     goto :goto_9
 
     :cond_b
-    const/high16 v13, 0x3f800000    # 1.0f
+    move/from16 v13, v19
 
     .line 1281
     :goto_9
@@ -10762,7 +10767,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_0
     const/4 v2, 0x4
@@ -10800,12 +10805,12 @@
 
     if-nez v1, :cond_0
 
-    const/16 v21, 0x0
+    move/from16 v21, v9
 
     goto :goto_1
 
     :cond_0
-    const/16 v21, 0x4
+    move/from16 v21, v2
 
     :goto_1
     const/16 v22, 0x0
@@ -11122,7 +11127,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/VoIPFragment;->buttonsLayout:Lorg/telegram/ui/Components/voip/VoIPButtonsLayout;
 
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_2
     if-ge v1, v2, :cond_2
@@ -11490,7 +11495,7 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v11
 
     :cond_4
     iput-boolean v9, v0, Lorg/telegram/ui/VoIPFragment;->isVideoCall:Z

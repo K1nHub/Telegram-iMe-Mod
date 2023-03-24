@@ -202,8 +202,6 @@
     return-object p0
 
     :catch_0
-    nop
-
     if-eqz p6, :cond_7
 
     invoke-virtual {p6}, Lcom/google/android/gms/measurement/internal/zzel;->zzk()Lcom/google/android/gms/measurement/internal/zzej;
@@ -217,6 +215,8 @@
 
     :cond_7
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -450,7 +450,7 @@
     goto :goto_4
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_4
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -523,7 +523,7 @@
     goto :goto_5
 
     :cond_e
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 16
     :goto_5
@@ -544,7 +544,7 @@
     goto :goto_6
 
     :cond_10
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_6
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -569,7 +569,7 @@
     goto :goto_7
 
     :cond_13
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_7
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -596,7 +596,7 @@
     goto :goto_9
 
     :cond_17
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_9
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

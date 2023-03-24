@@ -1261,7 +1261,7 @@
     .line 239
     iput v8, p0, Lorg/telegram/ui/PhotoCropActivity$PhotoCropView;->bitmapHeight:I
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-double v5, v3
 
@@ -1280,7 +1280,7 @@
     :cond_1
     iput v6, p0, Lorg/telegram/ui/PhotoCropActivity$PhotoCropView;->bitmapWidth:I
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-double v5, v5
 
@@ -1467,7 +1467,7 @@
 
     int-to-float v6, v5
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     iget v6, p0, Lorg/telegram/ui/PhotoCropActivity$PhotoCropView;->bitmapX:I
 
@@ -1482,7 +1482,7 @@
 
     int-to-float v6, v0
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     int-to-float v3, v3
 
@@ -1492,14 +1492,14 @@
 
     int-to-float v2, v5
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     .line 270
     iput v4, p0, Lorg/telegram/ui/PhotoCropActivity$PhotoCropView;->rectSizeX:F
 
     int-to-float v0, v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 271
     iput v1, p0, Lorg/telegram/ui/PhotoCropActivity$PhotoCropView;->rectSizeY:F
@@ -1575,7 +1575,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1592,7 +1592,7 @@
 
     int-to-float v1, v1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -1609,7 +1609,7 @@
 
     int-to-float v2, v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -1626,7 +1626,7 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1634,12 +1634,12 @@
 
     if-gez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :cond_0
     if-gez v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :cond_1
     add-int v4, v0, v2
@@ -1975,7 +1975,7 @@
 
     const/4 v11, 0x3
 
-    mul-int/lit8 v2, v2, 0x3
+    mul-int/2addr v2, v11
 
     int-to-float v12, v2
 
@@ -2300,7 +2300,7 @@
 
     int-to-float v12, v0
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
     add-float/2addr v4, v2
 
@@ -2312,7 +2312,7 @@
 
     div-float/2addr v3, v10
 
-    mul-float v3, v3, v12
+    mul-float/2addr v3, v12
 
     add-float v7, v2, v3
 
@@ -2349,7 +2349,7 @@
 
     div-float v6, v5, v10
 
-    mul-float v6, v6, v12
+    mul-float/2addr v6, v12
 
     add-float/2addr v6, v4
 
@@ -2361,7 +2361,7 @@
 
     div-float/2addr v5, v10
 
-    mul-float v5, v5, v12
+    mul-float/2addr v5, v12
 
     add-float/2addr v4, v5
 

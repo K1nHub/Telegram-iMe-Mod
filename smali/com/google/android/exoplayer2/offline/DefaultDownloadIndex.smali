@@ -271,7 +271,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -294,12 +294,12 @@
 
     if-ne v5, v6, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -849,15 +849,10 @@
 
     move-result v2
 
+    :cond_1
     move v13, v2
 
-    goto :goto_1
-
-    :cond_1
-    const/4 v13, 0x0
-
     .line 466
-    :goto_1
     new-instance v0, Lcom/google/android/exoplayer2/offline/Download;
 
     const/4 v1, 0x7
@@ -1029,15 +1024,10 @@
 
     move-result v1
 
+    :cond_0
     move v13, v1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v13, 0x0
-
     .line 515
-    :goto_0
     new-instance v0, Lcom/google/android/exoplayer2/offline/Download;
 
     const/4 v1, 0x7

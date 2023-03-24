@@ -265,7 +265,7 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 166
     :cond_0
@@ -310,7 +310,7 @@
 
     if-nez v12, :cond_2
 
-    const/4 v13, 0x1
+    move v13, v2
 
     goto :goto_1
 
@@ -364,15 +364,15 @@
     return-void
 
     :cond_6
-    cmp-long v10, v8, v6
+    cmp-long v6, v8, v6
 
-    if-eqz v10, :cond_7
+    if-eqz v6, :cond_7
 
     const-wide v6, 0x7fffffffffffffffL
 
-    cmp-long v10, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v10, :cond_7
+    if-eqz v4, :cond_7
 
     .line 203
     iget-object v4, p0, Lio/reactivex/internal/operators/flowable/FlowableOnBackpressureBuffer$BackpressureBufferSubscriber;->requested:Ljava/util/concurrent/atomic/AtomicLong;

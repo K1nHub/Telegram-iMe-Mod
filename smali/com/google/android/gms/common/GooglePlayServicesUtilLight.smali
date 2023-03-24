@@ -679,22 +679,22 @@
 
     if-nez v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_2
     if-ltz p1, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 10
     :goto_3
@@ -744,7 +744,7 @@
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_4
-    const/16 v3, 0x9
+    move v3, v7
 
     goto/16 :goto_7
 

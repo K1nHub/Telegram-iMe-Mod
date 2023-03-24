@@ -47,7 +47,7 @@ import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentWalletTransactionDetailsLayoutBinding;
@@ -292,7 +292,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     @Override // com.smedialink.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void openProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m100to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m99to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -357,7 +357,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
     @Override // com.smedialink.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void onSuccessCancelTransaction(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3286R.string.wallet_cancel_transaction_success_dialog_title), getResourceManager().getString(C3286R.string.wallet_cancel_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3
+        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3301R.string.wallet_cancel_transaction_success_dialog_title), getResourceManager().getString(C3301R.string.wallet_cancel_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTransactionDetailsBottomSheetDialog.onSuccessCancelTransaction$lambda$9(WalletTransactionDetailsBottomSheetDialog.this);
@@ -374,7 +374,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
     @Override // com.smedialink.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void onSuccessBoostTransaction(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3286R.string.wallet_boost_transaction_success_dialog_title), getResourceManager().getString(C3286R.string.wallet_boost_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda2
+        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3301R.string.wallet_boost_transaction_success_dialog_title), getResourceManager().getString(C3301R.string.wallet_boost_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda2
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTransactionDetailsBottomSheetDialog.onSuccessBoostTransaction$lambda$10(WalletTransactionDetailsBottomSheetDialog.this);
@@ -392,10 +392,10 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         final ActionBarMenuItem setupActionItem$lambda$13 = getBinding().itemMoreOptions;
         setupActionItem$lambda$13.setLongClickEnabled(false);
         setupActionItem$lambda$13.setSubMenuOpenSide(2);
-        setupActionItem$lambda$13.setIcon(C3286R.C3288drawable.ic_ab_other);
+        setupActionItem$lambda$13.setIcon(C3301R.C3303drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$13, "setupActionItem$lambda$13");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$13);
-        setupActionItem$lambda$13.addSubItem(IdFabric$Menu.SHARE, C3286R.C3288drawable.msg_shareout, getResourceManager().getString(C3286R.string.common_share));
+        setupActionItem$lambda$13.addSubItem(IdFabric$Menu.SHARE, C3301R.C3303drawable.msg_shareout, getResourceManager().getString(C3301R.string.common_share));
         setupActionItem$lambda$13.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -408,7 +408,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
                 WalletTransactionDetailsBottomSheetDialog.setupActionItem$lambda$13$lambda$12(WalletTransactionDetailsBottomSheetDialog.this, i);
             }
         });
-        setupActionItem$lambda$13.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$13.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -496,15 +496,15 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     private final void setupTexts() {
         ForkContentWalletTransactionDetailsLayoutBinding binding = getBinding();
-        binding.textActionCancel.setText(getResourceManager().getString(C3286R.string.common_ok));
-        binding.textSectionName.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_section_info));
-        binding.textSectionActions.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_section_actions));
-        binding.textFeeTitle.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_fee_title));
-        binding.textProcessingTitle.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_processing_title));
-        binding.textDateTitle.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_date_title));
-        binding.textRecipientTitle.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_recipient_title));
-        binding.textStatusTitle.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_status_title));
-        binding.textCommentTitle.setText(getResourceManager().getString(C3286R.string.wallet_transaction_details_comment_title));
+        binding.textActionCancel.setText(getResourceManager().getString(C3301R.string.common_ok));
+        binding.textSectionName.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_section_info));
+        binding.textSectionActions.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_section_actions));
+        binding.textFeeTitle.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_fee_title));
+        binding.textProcessingTitle.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_processing_title));
+        binding.textDateTitle.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_date_title));
+        binding.textRecipientTitle.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_recipient_title));
+        binding.textStatusTitle.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_status_title));
+        binding.textCommentTitle.setText(getResourceManager().getString(C3301R.string.wallet_transaction_details_comment_title));
     }
 
     private final void setupListeners() {
@@ -620,7 +620,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         /* JADX WARN: Multi-variable type inference failed */
         public static /* synthetic */ WalletTransactionDetailsBottomSheetDialog newInstance$default(Companion companion, BaseFragment baseFragment, ScreenType screenType, Callbacks$Callback1 callbacks$Callback1, int i, Object obj) {
             if ((i & 4) != 0) {
-                callbacks$Callback1 = C2319xc5bfbef6.INSTANCE;
+                callbacks$Callback1 = C2333xc5bfbef6.INSTANCE;
             }
             return companion.newInstance(baseFragment, screenType, callbacks$Callback1);
         }

@@ -125,7 +125,7 @@
     return v3
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :cond_2
     :goto_0

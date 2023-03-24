@@ -74,7 +74,7 @@
 .end method
 
 .method public areItemsTheSame(Lcom/smedialink/model/common/FilterItem;Lcom/smedialink/model/common/FilterItem;)Z
-    .locals 3
+    .locals 2
 
     const-string v0, "oldItem"
 
@@ -93,9 +93,9 @@
 
     move-result-wide p1
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 

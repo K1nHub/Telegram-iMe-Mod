@@ -768,7 +768,7 @@
     .line 171
     iput v2, p0, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;->colorIndex:I
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 172
     :goto_0

@@ -49,15 +49,14 @@ public final class zzan extends CapabilityClient {
         boolean z;
         Asserts.checkNotNull(onCapabilityChangedListener, "listener must not be null");
         Asserts.checkNotNull(uri, "uri must not be null");
-        if (i != 0) {
-            if (i != 1) {
-                z = false;
-                Preconditions.checkArgument(z, "invalid filter type");
-                return zza(ListenerHolders.createListenerHolder(onCapabilityChangedListener, getLooper(), "CapabilityListener"), onCapabilityChangedListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.CAPABILITY_CHANGED", uri, i)});
-            }
+        if (i == 0) {
+            z = true;
+        } else if (i == 1) {
             i = 1;
+            z = true;
+        } else {
+            z = false;
         }
-        z = true;
         Preconditions.checkArgument(z, "invalid filter type");
         return zza(ListenerHolders.createListenerHolder(onCapabilityChangedListener, getLooper(), "CapabilityListener"), onCapabilityChangedListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.CAPABILITY_CHANGED", uri, i)});
     }

@@ -52,7 +52,7 @@
 
     iget-wide v3, p0, Lorg/telegram/ui/DataUsage2Activity$CustomCharacterSpan;->ratio:D
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     double-to-int v1, v1
 
@@ -77,7 +77,7 @@
 
     iget-wide v3, p0, Lorg/telegram/ui/DataUsage2Activity$CustomCharacterSpan;->ratio:D
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     double-to-int v1, v1
 

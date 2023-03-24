@@ -318,7 +318,7 @@
     .line 246
     array-length v6, v5
 
-    const/4 v7, 0x0
+    move v7, v11
 
     :goto_0
     if-ge v7, v6, :cond_9
@@ -347,7 +347,7 @@
     .line 251
     iput v12, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    const/4 v5, 0x1
+    move v5, v10
 
     goto :goto_1
 
@@ -357,7 +357,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v11
 
     :goto_1
     if-nez v5, :cond_b
@@ -378,7 +378,7 @@
     .line 258
     array-length v6, v5
 
-    const/4 v7, 0x0
+    move v7, v11
 
     :goto_2
     if-ge v7, v6, :cond_b

@@ -458,13 +458,13 @@
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_2
 
     :cond_3
     :goto_1
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 1787
     :goto_2
@@ -481,7 +481,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_3
     or-int/2addr v7, v2
@@ -628,7 +628,7 @@
     .line 1825
     invoke-virtual {p1, v8}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    mul-int/lit8 v3, v3, 0x6
+    mul-int/2addr v3, v0
 
     add-int/2addr v3, v6
 
@@ -749,7 +749,7 @@
 .end method
 
 .method public seek(J)V
-    .locals 4
+    .locals 3
 
     .line 1682
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleIndex:I
@@ -767,9 +767,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-gtz v3, :cond_1
+    if-gtz v1, :cond_1
 
     .line 1685
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Lcom/google/android/exoplayer2/extractor/mp4/TrackFragment;

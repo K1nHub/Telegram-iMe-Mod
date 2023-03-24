@@ -350,7 +350,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
@@ -425,7 +425,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -452,7 +452,7 @@
     .line 402
     sget-object v8, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_1
     if-eq v9, v5, :cond_0

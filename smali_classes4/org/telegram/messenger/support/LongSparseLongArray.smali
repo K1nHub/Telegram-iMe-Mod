@@ -56,7 +56,7 @@
 .end method
 
 .method private static binarySearch([JIIJ)I
-    .locals 6
+    .locals 5
 
     add-int/2addr p2, p1
 
@@ -79,9 +79,9 @@
     .line 238
     aget-wide v3, p0, v2
 
-    cmp-long v5, v3, p3
+    cmp-long v3, v3, p3
 
-    if-gez v5, :cond_0
+    if-gez v3, :cond_0
 
     move p1, v2
 

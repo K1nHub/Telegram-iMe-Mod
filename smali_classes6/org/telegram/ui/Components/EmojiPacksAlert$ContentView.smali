@@ -349,7 +349,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v9
 
     .line 580
     :goto_0
@@ -398,7 +398,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sub-float/2addr v1, v4
 
@@ -406,7 +406,7 @@
 
     const/high16 v5, 0x41600000    # 14.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     .line 582
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -462,20 +462,20 @@
 
     const/high16 v4, 0x3f400000    # 0.75f
 
+    cmpl-float v3, v3, v4
+
     const/4 v11, 0x1
 
     const/4 v12, 0x0
 
-    cmpl-float v3, v3, v4
-
     if-lez v3, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v11
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v12
 
     .line 588
     :goto_1
@@ -544,7 +544,7 @@
 
     int-to-float v6, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
@@ -652,7 +652,7 @@
     if-nez v3, :cond_6
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v12
 
     :cond_6
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
@@ -762,7 +762,7 @@
 
     const/high16 v15, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     float-to-int v6, v1
 
@@ -772,7 +772,7 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    const/4 v1, 0x0
+    move v1, v12
 
     .line 606
     :goto_2
@@ -811,7 +811,7 @@
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->clear()V
 
-    const/4 v1, 0x0
+    move v1, v12
 
     .line 612
     :goto_3
@@ -1016,7 +1016,7 @@
 
     move-result-wide v16
 
-    const/4 v7, 0x0
+    move v7, v12
 
     .line 653
     :goto_6
@@ -1057,7 +1057,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v12
 
     .line 658
     :goto_7
@@ -1361,7 +1361,7 @@
 
     sub-float/2addr v10, v5
 
-    mul-float v10, v10, v15
+    mul-float/2addr v10, v15
 
     float-to-int v5, v10
 
@@ -1476,7 +1476,7 @@
     .line 855
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->attached:Z
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 856
     :goto_0

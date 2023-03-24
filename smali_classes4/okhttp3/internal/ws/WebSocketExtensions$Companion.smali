@@ -146,7 +146,7 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_1
     :goto_2
@@ -203,7 +203,7 @@
 
     if-eqz v7, :cond_3
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_3
     if-eqz v6, :cond_4
@@ -237,15 +237,15 @@
 
     if-eqz v8, :cond_6
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_6
     if-eqz v6, :cond_7
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_7
-    const/4 v8, 0x1
+    move v8, v13
 
     goto :goto_7
 
@@ -261,7 +261,7 @@
 
     if-eqz v9, :cond_9
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_9
     if-eqz v6, :cond_a
@@ -295,21 +295,21 @@
 
     if-eqz v10, :cond_c
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_c
     if-eqz v6, :cond_d
 
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_d
-    const/4 v10, 0x1
+    move v10, v13
 
     goto :goto_7
 
     :cond_e
     :goto_6
-    const/4 v11, 0x1
+    move v11, v13
 
     :cond_f
     :goto_7
@@ -320,14 +320,14 @@
     :cond_10
     move v12, v2
 
-    const/4 v6, 0x1
+    move v6, v13
 
     goto/16 :goto_1
 
     :cond_11
     move v12, v2
 
-    const/4 v11, 0x1
+    move v11, v13
 
     goto/16 :goto_1
 

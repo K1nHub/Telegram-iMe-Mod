@@ -68,7 +68,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_a
@@ -84,9 +84,9 @@
 
     array-length v7, v6
 
-    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
+    move v12, v3
 
-    const/4 v12, 0x0
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
     const/4 v13, 0x0
 
@@ -147,7 +147,7 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x2
+    move v1, v2
 
     goto :goto_3
 
@@ -271,9 +271,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v8, v2
+    cmp-long v2, v8, v2
 
-    if-eqz v6, :cond_9
+    if-eqz v2, :cond_9
 
     .line 100
     :cond_8

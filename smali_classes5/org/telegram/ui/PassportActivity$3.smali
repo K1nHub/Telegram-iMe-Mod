@@ -410,9 +410,9 @@
 
     invoke-static {v0, v8}, Lorg/telegram/ui/PassportActivity;->access$2302(Lorg/telegram/ui/PassportActivity;Z)Z
 
-    const/4 v0, 0x0
+    move v0, v8
 
-    const/4 v12, 0x0
+    move v12, v0
 
     .line 983
     :goto_0
@@ -739,7 +739,7 @@
     invoke-static {v0, v1}, Lorg/telegram/ui/PassportActivity;->access$2800(Lorg/telegram/ui/PassportActivity;Landroid/view/View;)V
 
     :goto_4
-    const/4 v0, 0x1
+    move v0, v11
 
     :cond_5
     add-int/lit8 v12, v12, 0x1
@@ -814,7 +814,7 @@
 
     move-result v2
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     const-string v3, "last_name_native"
 
@@ -1066,7 +1066,7 @@
 
     invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 1045
     :try_start_2
@@ -1090,7 +1090,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v8
 
     :goto_6
     if-ge v5, v4, :cond_c
@@ -1169,7 +1169,7 @@
 
     aget v3, v3, v8
     :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     const-string v4, "expiry_date"
 
@@ -1245,7 +1245,7 @@
 
     invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 1072
     :try_start_4
@@ -1286,29 +1286,25 @@
 
     invoke-virtual {v3, v6, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_8
 
     :catch_0
-    nop
-
-    goto :goto_9
-
-    :catch_1
     :cond_e
     move-object v3, v0
 
     goto :goto_9
 
-    :catch_2
+    :catch_1
     move-object v2, v0
 
     move-object v3, v2
 
     .line 1091
+    :catch_2
     :cond_f
     :goto_9
     iget-object v1, v7, Lorg/telegram/ui/PassportActivity$3;->this$0:Lorg/telegram/ui/PassportActivity;
@@ -2085,7 +2081,7 @@
 
     invoke-direct {v7}, Lorg/json/JSONObject;-><init>()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
     const-string v10, "street_line1"
@@ -2204,20 +2200,16 @@
 
     invoke-virtual {v7, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_4
 
     :catch_0
-    nop
-
-    goto :goto_4
-
-    :catch_1
     :cond_11
     move-object v7, v5
 
     .line 1208
+    :catch_1
     :goto_4
     iget-object v3, v0, Lorg/telegram/ui/PassportActivity$3;->this$0:Lorg/telegram/ui/PassportActivity;
 

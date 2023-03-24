@@ -634,11 +634,11 @@
 
     move-object v6, v1
 
-    const/4 v4, 0x0
+    move v7, v2
 
-    const/4 v5, 0x0
+    move v4, v3
 
-    const v7, 0x7fffffff
+    move v5, v4
 
     :goto_0
     const/4 v8, 0x2
@@ -661,7 +661,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_2
     if-ge v10, v9, :cond_4
@@ -698,7 +698,7 @@
 
     add-int/lit8 v9, v9, -0x1
 
-    const/4 v5, 0x1
+    move v5, v12
 
     goto :goto_3
 
@@ -785,7 +785,7 @@
     if-eqz v0, :cond_0
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -842,7 +842,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 478
     :goto_1
@@ -854,12 +854,12 @@
 
     if-nez v3, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-eq v0, v3, :cond_b
@@ -921,12 +921,12 @@
 
     if-eqz v0, :cond_6
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v3
 
     goto :goto_4
 
     :cond_6
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_4
     aput v9, v8, v1
@@ -954,7 +954,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_5
     aput v3, v8, v1
@@ -997,12 +997,12 @@
 
     if-eqz v0, :cond_9
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v3
 
     goto :goto_6
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_6
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
@@ -1019,7 +1019,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_7
     invoke-virtual {p1, v3}, Landroid/view/View;->setAlpha(F)V
@@ -1041,7 +1041,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 527
     :goto_0
@@ -1581,7 +1581,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1670,12 +1670,12 @@
     .line 633
     invoke-direct {p0, v2}, Lorg/telegram/ui/PeopleNearbyActivity;->updateRows(Lorg/telegram/ui/PeopleNearbyActivity$DiffCallback;)V
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     if-eqz p3, :cond_a
@@ -1741,7 +1741,7 @@
 
     iput p2, v1, Lorg/telegram/messenger/UserConfig;->lastMyLocationShareTime:I
 
-    const/4 p2, 0x1
+    move p2, v3
 
     .line 650
     :cond_2
@@ -1751,9 +1751,9 @@
 
     move-result v2
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ge v4, v2, :cond_8
@@ -1782,7 +1782,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_2
     if-ge v8, v7, :cond_7
@@ -1845,10 +1845,14 @@
     .line 667
     iput v9, v1, Lorg/telegram/messenger/UserConfig;->sharingMyLocationUntil:I
 
-    const/4 p2, 0x1
+    move p2, v3
+
+    move v5, p2
+
+    goto :goto_3
 
     :cond_5
-    const/4 v5, 0x1
+    move v5, v3
 
     :cond_6
     :goto_3
@@ -1872,7 +1876,7 @@
     .line 675
     iput v0, v1, Lorg/telegram/messenger/UserConfig;->sharingMyLocationUntil:I
 
-    const/4 p2, 0x1
+    move p2, v3
 
     .line 679
     :cond_9
@@ -2249,7 +2253,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_5
@@ -2672,12 +2676,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
@@ -2938,7 +2942,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v3, :cond_8
@@ -2982,9 +2986,9 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v2
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_2
     if-ge v10, v9, :cond_6
@@ -4157,7 +4161,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 6
+    .locals 5
 
     const-string v0, "windowBackgroundWhite"
 
@@ -4177,9 +4181,9 @@
 
     const-wide v3, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v5, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-lez v5, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 

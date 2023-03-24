@@ -558,7 +558,7 @@
     goto/16 :goto_0
 
     :cond_0
-    const/16 v12, 0xb
+    move v12, v1
 
     goto/16 :goto_0
 
@@ -574,7 +574,7 @@
     goto/16 :goto_0
 
     :cond_1
-    const/16 v12, 0xa
+    move v12, v2
 
     goto/16 :goto_0
 
@@ -590,7 +590,7 @@
     goto/16 :goto_0
 
     :cond_2
-    const/16 v12, 0x9
+    move v12, v3
 
     goto/16 :goto_0
 
@@ -606,7 +606,7 @@
     goto/16 :goto_0
 
     :cond_3
-    const/16 v12, 0x8
+    move v12, v4
 
     goto/16 :goto_0
 
@@ -619,10 +619,10 @@
 
     if-nez p0, :cond_4
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_4
-    const/4 v12, 0x7
+    move v12, v5
 
     goto :goto_0
 
@@ -638,7 +638,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v12, 0x6
+    move v12, v6
 
     goto :goto_0
 
@@ -654,7 +654,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v12, 0x5
+    move v12, v7
 
     goto :goto_0
 
@@ -670,7 +670,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v12, 0x4
+    move v12, v8
 
     goto :goto_0
 
@@ -686,7 +686,7 @@
     goto :goto_0
 
     :cond_8
-    const/4 v12, 0x3
+    move v12, v9
 
     goto :goto_0
 
@@ -702,7 +702,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v12, 0x2
+    move v12, v10
 
     goto :goto_0
 
@@ -718,7 +718,7 @@
     goto :goto_0
 
     :cond_a
-    const/4 v12, 0x1
+    move v12, v11
 
     goto :goto_0
 
@@ -783,6 +783,8 @@
 
     :pswitch_b
     return v4
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -962,7 +964,7 @@
 
     if-lez v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 324
     :cond_0
@@ -1075,7 +1077,7 @@
 
     if-lez v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 301
     :cond_0
@@ -1186,7 +1188,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     goto :goto_0
 
@@ -1480,12 +1482,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -1563,7 +1565,7 @@
 
     move-result-object v7
 
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 135
     :goto_1
@@ -1643,12 +1645,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -1730,7 +1732,7 @@
 
     move-result-object v7
 
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 166
     :goto_1

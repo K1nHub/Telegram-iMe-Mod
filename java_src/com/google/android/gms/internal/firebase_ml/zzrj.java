@@ -227,7 +227,7 @@ public final class zzrj implements Closeable, Flushable {
             r1.write(r2)
             int r1 = r9.length()
             r3 = 0
-            r4 = 0
+            r4 = r3
         Lf:
             if (r3 >= r1) goto L3e
             char r5 = r9.charAt(r3)

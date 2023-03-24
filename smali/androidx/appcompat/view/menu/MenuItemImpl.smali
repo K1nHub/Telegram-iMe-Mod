@@ -1188,7 +1188,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1
@@ -1204,7 +1204,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -1509,7 +1509,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     or-int/2addr p1, v1
@@ -2130,7 +2130,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_0
 

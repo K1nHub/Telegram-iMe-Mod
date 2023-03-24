@@ -1895,7 +1895,7 @@
     .line 13645
     array-length p3, p2
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ge v2, p3, :cond_7

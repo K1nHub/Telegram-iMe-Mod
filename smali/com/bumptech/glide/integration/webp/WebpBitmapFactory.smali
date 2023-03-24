@@ -394,7 +394,7 @@
 
     move-result-object p1
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 328
@@ -403,7 +403,7 @@
 
     move-result-object v0
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     if-eqz p1, :cond_1
@@ -413,12 +413,7 @@
     :try_start_2
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    goto :goto_2
-
-    :catch_0
-    nop
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
     goto :goto_2
 
@@ -438,21 +433,22 @@
     :try_start_3
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 340
-    :catch_1
+    :catch_0
     :cond_0
     throw p0
 
-    :catch_2
+    :catch_1
     move-object p1, v0
 
-    :catch_3
+    :catch_2
     if-eqz p1, :cond_1
 
     goto :goto_0
 
+    :catch_3
     :cond_1
     :goto_2
     if-nez v0, :cond_3

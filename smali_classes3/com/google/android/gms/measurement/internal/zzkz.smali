@@ -697,7 +697,7 @@
 .end method
 
 .method static final zzao(Landroid/os/Bundle;I)Z
-    .locals 6
+    .locals 5
 
     const-string v0, "_err"
 
@@ -708,9 +708,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v1, :cond_0
 
     int-to-long v1, p1
 
@@ -1086,7 +1086,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1177,7 +1177,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-static {v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkState(Z)V
@@ -1552,9 +1552,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v3, :cond_0
 
     iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
@@ -2480,9 +2480,9 @@
 
     const/16 v0, 0x16
 
-    move-object v14, v8
+    move v2, v0
 
-    const/16 v2, 0x16
+    move-object v14, v8
 
     goto :goto_5
 
@@ -2880,7 +2880,7 @@
 
     sget-object v1, Lcom/google/android/gms/measurement/internal/zzkz;->zzb:[Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     const/4 v3, 0x3
@@ -3298,7 +3298,7 @@
 
     :cond_5
     :goto_2
-    const/16 v9, 0x11
+    move v9, v4
 
     goto :goto_3
 
@@ -3308,7 +3308,7 @@
     return v0
 
     :cond_7
-    const/4 v9, 0x0
+    move v9, v5
 
     .line 19
     :goto_3
@@ -3417,7 +3417,7 @@
     .line 35
     array-length v12, v11
 
-    const/4 v13, 0x0
+    move v13, v5
 
     :goto_5
     if-ge v13, v12, :cond_11
@@ -3493,7 +3493,7 @@
 
     move-result v12
 
-    const/4 v13, 0x0
+    move v13, v5
 
     :goto_6
     if-ge v13, v12, :cond_11
@@ -3697,7 +3697,7 @@
 
     if-ne v1, v3, :cond_2
 
-    const/16 v1, 0x5f
+    move v1, v3
 
     goto :goto_0
 
@@ -4726,9 +4726,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzkz;->zzk:Ljava/util/concurrent/atomic/AtomicLong;
 
@@ -4830,7 +4830,7 @@
 
     const-wide/32 v0, 0xea60
 
-    mul-long p3, p3, v0
+    mul-long/2addr p3, v0
 
     add-long/2addr p1, p3
 
@@ -5259,7 +5259,7 @@
 
     const/16 v17, 0x0
 
-    const/16 v18, 0x0
+    move/from16 v18, v17
 
     :goto_0
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
@@ -5288,7 +5288,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    move/from16 v2, v17
 
     goto :goto_3
 
@@ -5304,7 +5304,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move/from16 v0, v17
 
     :goto_2
     if-nez v0, :cond_3

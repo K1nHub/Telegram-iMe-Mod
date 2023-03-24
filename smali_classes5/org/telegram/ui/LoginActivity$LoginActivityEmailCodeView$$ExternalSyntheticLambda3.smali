@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/OnCompleteListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-.field public final synthetic f$1:Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-    iput-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda3;->f$1:Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
-    .locals 2
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda3;->f$1:Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->$r8$lambda$wtY20W-DthX7RJCor1m26C7NSBA(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;Lcom/google/android/gms/tasks/Task;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->$r8$lambda$rw9SnSuI4NMCfTH1dgbm9ur40xY(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/view/View;)V
 
     return-void
 .end method

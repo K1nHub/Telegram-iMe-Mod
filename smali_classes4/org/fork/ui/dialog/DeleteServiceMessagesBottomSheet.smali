@@ -207,12 +207,12 @@
 
     if-nez p3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 82
     :goto_0
@@ -2458,7 +2458,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_0

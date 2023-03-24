@@ -635,7 +635,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_3
@@ -906,7 +906,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -1010,11 +1010,11 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v3
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 665
     :goto_1
@@ -1228,12 +1228,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput-boolean v0, p0, Lcom/google/android/material/appbar/CollapsingToolbarLayout;->drawCollapsingTitle:Z
@@ -1250,7 +1250,7 @@
 
     if-ne v0, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 615
     :cond_2
@@ -1498,7 +1498,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-lez v0, :cond_4
@@ -1591,12 +1591,12 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 409
     :goto_0
@@ -1611,7 +1611,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_2
     :goto_1
@@ -2210,7 +2210,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_1
@@ -2248,7 +2248,7 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-ge v1, p1, :cond_2
@@ -2436,7 +2436,7 @@
 
     sub-int/2addr p2, v0
 
-    mul-int v2, v2, p2
+    mul-int/2addr v2, p2
 
     .line 548
     iput v2, p0, Lcom/google/android/material/appbar/CollapsingToolbarLayout;->extraMultilineHeight:I
@@ -2988,7 +2988,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 815
     :goto_0
@@ -3002,7 +3002,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 817
     :goto_1
@@ -3086,7 +3086,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
@@ -3259,7 +3259,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 981
     :goto_0

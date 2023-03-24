@@ -83,9 +83,9 @@
 
     if-eqz v6, :cond_2
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     goto :goto_0
 
@@ -95,9 +95,9 @@
 
     iget-wide v5, v4, Lcom/google/android/exoplayer2/Format;->subsampleOffsetUs:J
 
-    cmp-long v7, v0, v5
+    cmp-long v5, v0, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     .line 72
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/Format;->buildUpon()Lcom/google/android/exoplayer2/Format$Builder;

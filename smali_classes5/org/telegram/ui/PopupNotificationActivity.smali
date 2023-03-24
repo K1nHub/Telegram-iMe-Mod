@@ -824,7 +824,7 @@
 
     if-ne v1, v6, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 774
     :cond_3
@@ -849,9 +849,9 @@
 
     const-wide/32 v10, 0xbdb28
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_6
+    if-nez v8, :cond_6
 
     if-eqz v7, :cond_6
 
@@ -863,9 +863,9 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v5
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_1
     if-ge v10, v9, :cond_7
@@ -884,7 +884,7 @@
 
     move-result v13
 
-    const/4 v14, 0x0
+    move v14, v5
 
     :goto_2
     if-ge v14, v13, :cond_5
@@ -916,7 +916,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v11, 0x0
+    move v11, v5
 
     .line 792
     :cond_7
@@ -932,7 +932,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_3
     if-ge v10, v9, :cond_b
@@ -951,7 +951,7 @@
 
     move-result v13
 
-    const/4 v14, 0x0
+    move v14, v5
 
     :goto_4
     if-ge v14, v13, :cond_a
@@ -1177,7 +1177,7 @@
 .end method
 
 .method private getNewMessage()V
-    .locals 10
+    .locals 9
 
     .line 1217
     iget-object v0, p0, Lorg/telegram/ui/PopupNotificationActivity;->popupMessages:Ljava/util/ArrayList;
@@ -1230,7 +1230,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_3
@@ -1263,9 +1263,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_2
+    if-nez v5, :cond_2
 
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
@@ -1282,7 +1282,7 @@
     .line 1228
     iput v3, p0, Lorg/telegram/ui/PopupNotificationActivity;->currentMessageNum:I
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
@@ -1292,7 +1292,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     if-nez v0, :cond_4
@@ -1456,7 +1456,7 @@
 
     if-ne v1, v6, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 859
     :cond_3
@@ -1721,12 +1721,12 @@
 
     if-nez v9, :cond_6
 
-    const/4 v9, 0x0
+    move v9, v5
 
     goto :goto_2
 
     :cond_6
-    const/4 v9, 0x1
+    move v9, v4
 
     .line 904
     :goto_2
@@ -1775,7 +1775,9 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    const/16 v4, 0x8
+    move v7, v4
+
+    move v4, v13
 
     goto :goto_4
 
@@ -1808,23 +1810,22 @@
 
     move-object/from16 v11, v16
 
-    const/16 v4, 0x8
+    move v4, v13
 
     move-object v13, v6
 
     invoke-virtual/range {v7 .. v13}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;ILjava/lang/Object;)V
 
-    :goto_4
     const/4 v7, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_9
-    const/16 v4, 0x8
+    move v4, v13
 
-    const/4 v7, 0x0
+    move v7, v5
 
-    :goto_5
+    :goto_4
     if-nez v7, :cond_a
 
     .line 917
@@ -1847,7 +1848,7 @@
 
     invoke-virtual {v14, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 922
     :cond_a
@@ -1856,10 +1857,10 @@
     .line 923
     invoke-virtual {v14, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_b
-    const/16 v4, 0x8
+    move v4, v13
 
     const/4 v9, 0x4
 
@@ -1939,7 +1940,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 936
     :cond_c
@@ -1970,7 +1971,7 @@
     .line 937
     invoke-virtual {v15, v4, v6, v6}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 940
     :cond_d
@@ -2016,7 +2017,7 @@
 
     check-cast v4, Lorg/telegram/ui/Components/PopupAudioView;
 
-    goto :goto_6
+    goto :goto_5
 
     .line 947
     :cond_e
@@ -2122,7 +2123,7 @@
     move-object v4, v7
 
     .line 965
-    :goto_6
+    :goto_5
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/PopupAudioView;->setMessageObject(Lorg/telegram/messenger/MessageObject;)V
 
     .line 966
@@ -2141,7 +2142,7 @@
     .line 967
     invoke-virtual {v4}, Lorg/telegram/ui/Components/PopupAudioView;->downloadAudioIfNeed()V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 970
     :cond_f
@@ -2169,7 +2170,7 @@
 
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    goto :goto_7
+    goto :goto_6
 
     .line 974
     :cond_10
@@ -2295,7 +2296,7 @@
     invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
     .line 997
-    :goto_7
+    :goto_6
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -2322,7 +2323,7 @@
 
     .line 1001
     :cond_11
-    :goto_8
+    :goto_7
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
@@ -2381,7 +2382,7 @@
     .line 1013
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_13
     add-int/lit8 v6, v2, -0x1
@@ -2395,7 +2396,7 @@
     .line 1015
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_14
     const/4 v6, 0x1
@@ -2411,7 +2412,7 @@
 
     .line 1019
     :cond_15
-    :goto_9
+    :goto_8
     invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1020
@@ -2442,7 +2443,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/PopupNotificationActivity;->isReply:Z
@@ -2498,7 +2499,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_2
     const/4 v1, 0x5
@@ -3326,7 +3327,7 @@
 
     :cond_9
     :goto_2
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_3
     if-ge p1, v1, :cond_e
@@ -3388,7 +3389,7 @@
 
     if-ne v0, v4, :cond_d
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1139
     :cond_d
@@ -4170,7 +4171,7 @@
 .end method
 
 .method private updateSubtitle()V
-    .locals 10
+    .locals 9
 
     .line 1323
     iget-object v0, p0, Lorg/telegram/ui/PopupNotificationActivity;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4205,17 +4206,17 @@
 
     const-wide/16 v7, 0x309
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-eqz v9, :cond_4
+    if-eqz v5, :cond_4
 
     div-long/2addr v1, v3
 
     const-wide/16 v3, 0x14d
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_4
+    if-eqz v1, :cond_4
 
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -4352,9 +4353,9 @@
 
     const-wide/32 v2, 0xbdb28
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_5
+    if-nez v0, :cond_5
 
     .line 1339
     iget-object v0, p0, Lorg/telegram/ui/PopupNotificationActivity;->onlineTextView:Landroid/widget/TextView;
@@ -4497,9 +4498,9 @@
 
     sub-long/2addr v2, v4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -4569,7 +4570,7 @@
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_0
     const/4 p2, 0x5
@@ -4616,7 +4617,7 @@
 
     if-nez p1, :cond_19
 
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_1
     if-ge p1, v1, :cond_19
@@ -4678,7 +4679,7 @@
 
     if-ne p2, p3, :cond_6
 
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 1475
     :cond_6
@@ -5158,7 +5159,7 @@
     .line 165
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/AndroidUtilities;->fillStatusBarHeight(Landroid/content/Context;)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x5
@@ -6377,7 +6378,7 @@
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->clear()V
 
     :goto_0
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 626
     :cond_3
@@ -6392,7 +6393,7 @@
 
     if-lez v5, :cond_4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 630
     :cond_4
@@ -6497,7 +6498,7 @@
 
     if-ltz v7, :cond_9
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_2
 
@@ -6515,12 +6516,12 @@
 
     if-gtz v7, :cond_a
 
-    const/4 v7, 0x2
+    move v7, v2
 
     goto :goto_2
 
     :cond_a
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_2
     const/4 v8, 0x0
@@ -6671,7 +6672,7 @@
 
     move-object v4, v2
 
-    const/4 p1, 0x0
+    move p1, v8
 
     :goto_5
     cmpl-float v7, p1, v8
@@ -6689,7 +6690,7 @@
 
     const/high16 v7, 0x43480000    # 200.0f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 

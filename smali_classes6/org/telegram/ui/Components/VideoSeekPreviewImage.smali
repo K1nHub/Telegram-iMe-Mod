@@ -374,7 +374,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     float-to-int p2, p2
 
@@ -383,7 +383,7 @@
 
     int-to-float p2, p3
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -419,7 +419,7 @@
     :cond_1
     int-to-float p2, p1
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     float-to-int p2, p2
 
@@ -962,7 +962,7 @@
     :cond_2
     int-to-float p1, v0
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
@@ -1671,7 +1671,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-int p2, p2
 
@@ -1695,7 +1695,7 @@
 
     long-to-float p2, v2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     float-to-long v2, p2
 
@@ -1786,7 +1786,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     float-to-int p3, p3
 
@@ -1812,7 +1812,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     float-to-long v0, p3
 
@@ -1869,7 +1869,7 @@
 
     int-to-float p3, p3
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     const/high16 p3, 0x447a0000    # 1000.0f
 

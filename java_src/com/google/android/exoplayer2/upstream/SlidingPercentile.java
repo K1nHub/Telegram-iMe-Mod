@@ -85,6 +85,7 @@ public class SlidingPercentile {
     }
 
     public float getPercentile(float f) {
+        ArrayList<Sample> arrayList;
         ensureSortedByValue();
         float f2 = f * this.totalWeight;
         int i = 0;
@@ -98,8 +99,7 @@ public class SlidingPercentile {
         if (this.samples.isEmpty()) {
             return Float.NaN;
         }
-        ArrayList<Sample> arrayList = this.samples;
-        return arrayList.get(arrayList.size() - 1).value;
+        return this.samples.get(arrayList.size() - 1).value;
     }
 
     private void ensureSortedByIndex() {

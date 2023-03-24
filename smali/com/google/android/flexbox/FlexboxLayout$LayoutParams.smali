@@ -356,7 +356,7 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_0
     iput-boolean v0, p0, Lcom/google/android/flexbox/FlexboxLayout$LayoutParams;->mWrapBefore:Z

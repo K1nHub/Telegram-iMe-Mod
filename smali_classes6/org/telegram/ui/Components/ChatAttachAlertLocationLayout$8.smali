@@ -47,7 +47,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->access$2702(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Z)Z

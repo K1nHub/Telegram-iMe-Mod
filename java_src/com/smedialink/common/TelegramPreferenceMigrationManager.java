@@ -123,22 +123,22 @@ public final class TelegramPreferenceMigrationManager {
         }
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v0 */
-    /* JADX WARN: Type inference failed for: r3v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v21 */
     /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r5v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r5v11 */
     public static final void migrateUserPreferences(int i, SharedPreferences preferences) {
+        boolean z;
         int i2;
         int collectionSizeOrDefault;
         int collectionSizeOrDefault2;
         int i3;
         int i4;
-        DialogType[] values;
-        boolean z;
-        SortingFilter[] values2;
+        boolean z2;
         List sortedWith;
         int collectionSizeOrDefault3;
         List<SortingTabState> mutableList;
@@ -157,6 +157,7 @@ public final class TelegramPreferenceMigrationManager {
                         SharedPreferences.Editor edit = preferences.edit();
                         SortingFilter sortingFilter = SortingFilter.GROUPS;
                         int i6 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter), sortingFilter.groupOrdinal());
+                        z = false;
                         for (SortingFilter sortingFilter2 : SortingFilter.Companion.getSortingFilters(false)) {
                             if (sortingFilter2 != SortingFilter.PRIVATE_GROUPS && sortingFilter2 != SortingFilter.PUBLIC_GROUPS && (i2 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter2), sortingFilter2.groupOrdinal())) > i6) {
                                 edit.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter2), i2 + 2);
@@ -166,12 +167,13 @@ public final class TelegramPreferenceMigrationManager {
                         edit.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.PUBLIC_GROUPS), i6 + 2);
                         edit.apply();
                         FiltersController.Companion.getInstance(i).loadConfig(preferences);
-                        continue;
-                        preferences.edit().putInt("iMe_userPreferencesVersion", i5).apply();
-                        i5++;
-                        r3 = 0;
-                        r5 = 1;
+                        break;
                     }
+                    z = false;
+                    break;
+                case 2:
+                default:
+                    z = r3;
                     break;
                 case 3:
                     if (preferences.contains(TelegramPreferenceKeys.User.isSortingChatsEnabled())) {
@@ -217,8 +219,10 @@ public final class TelegramPreferenceMigrationManager {
                         }
                         edit2.apply();
                         FiltersController.Companion.getInstance(i).loadConfig(preferences);
+                        z = false;
                         break;
                     }
+                    z = r3;
                     break;
                 case 4:
                     if (preferences.contains(TelegramPreferenceKeys.User.isMultiPanelEnabled())) {
@@ -241,8 +245,8 @@ public final class TelegramPreferenceMigrationManager {
                         edit3.putBoolean(TelegramPreferenceKeys.User.buildMultiPanelButtonEnabledKey(multiPanelButton3, dialogType3), r5);
                         edit3.apply();
                         MultiPanelController.Companion.getInstance(i).loadConfig(preferences);
-                        break;
                     }
+                    z = r3;
                     break;
                 case 5:
                     if (preferences.contains(TelegramPreferenceKeys.User.isMultiPanelEnabled())) {
@@ -257,13 +261,16 @@ public final class TelegramPreferenceMigrationManager {
                         DialogType dialogType5 = DialogType.CHANNEL;
                         edit4.putInt(TelegramPreferenceKeys.User.buildMultiPanelButtonPositionKey(multiPanelButton5, dialogType5), r3);
                         edit4.putBoolean(TelegramPreferenceKeys.User.buildMultiPanelButtonEnabledKey(multiPanelButton5, dialogType5), r5);
-                        for (DialogType dialogType6 : DialogType.values()) {
-                            int i9 = 0;
+                        DialogType[] values = DialogType.values();
+                        int length = values.length;
+                        for (int i9 = r3; i9 < length; i9++) {
+                            DialogType dialogType6 = values[i9];
+                            int i10 = r3;
                             for (MultiPanelButton multiPanelButton6 : dialogType6.getMultiPanelButtons()) {
-                                i9 = Math.max(i9, preferences.getInt(TelegramPreferenceKeys.User.buildMultiPanelButtonPositionKey(multiPanelButton6, dialogType6), r3));
+                                i10 = Math.max(i10, preferences.getInt(TelegramPreferenceKeys.User.buildMultiPanelButtonPositionKey(multiPanelButton6, dialogType6), r3));
                             }
                             MultiPanelButton multiPanelButton7 = MultiPanelButton.PINS;
-                            edit4.putInt(TelegramPreferenceKeys.User.buildMultiPanelButtonPositionKey(multiPanelButton7, dialogType6), i9 + 1);
+                            edit4.putInt(TelegramPreferenceKeys.User.buildMultiPanelButtonPositionKey(multiPanelButton7, dialogType6), i10 + 1);
                             edit4.putBoolean(TelegramPreferenceKeys.User.buildMultiPanelButtonEnabledKey(multiPanelButton7, dialogType6), multiPanelButton7.isEnabledByDefault());
                         }
                         edit4.apply();
@@ -272,34 +279,34 @@ public final class TelegramPreferenceMigrationManager {
                     if (preferences.contains(TelegramPreferenceKeys.User.isSortingChatsEnabled())) {
                         SharedPreferences.Editor edit5 = preferences.edit();
                         SortingFilter sortingFilter4 = SortingFilter.PERSONAL;
-                        int i10 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter4), sortingFilter4.groupOrdinal());
+                        int i11 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter4), sortingFilter4.groupOrdinal());
                         for (SortingFilter sortingFilter5 : SortingFilter.Companion.getSortingFilters(r3)) {
-                            if (sortingFilter5 != SortingFilter.MENTIONED_CHATS && sortingFilter5 != SortingFilter.DELETED_USERS && sortingFilter5 != SortingFilter.LIVE_CHATS && (i4 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter5), sortingFilter5.groupOrdinal())) > i10) {
+                            if (sortingFilter5 != SortingFilter.MENTIONED_CHATS && sortingFilter5 != SortingFilter.DELETED_USERS && sortingFilter5 != SortingFilter.LIVE_CHATS && (i4 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter5), sortingFilter5.groupOrdinal())) > i11) {
                                 edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter5), i4 + 2);
                             }
                         }
-                        edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.MENTIONED_CHATS), i10 + 1);
-                        edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.DELETED_USERS), i10 + 2);
+                        edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.MENTIONED_CHATS), i11 + 1);
+                        edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.DELETED_USERS), i11 + 2);
                         SortingFilter sortingFilter6 = SortingFilter.CHANNELS;
-                        int i11 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter6), sortingFilter6.groupOrdinal());
+                        int i12 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter6), sortingFilter6.groupOrdinal());
                         for (SortingFilter sortingFilter7 : SortingFilter.Companion.getSortingFilters(r3)) {
-                            if (sortingFilter7 != SortingFilter.LIVE_CHATS && (i3 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter7), sortingFilter7.groupOrdinal())) > i11) {
+                            if (sortingFilter7 != SortingFilter.LIVE_CHATS && (i3 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter7), sortingFilter7.groupOrdinal())) > i12) {
                                 edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter7), i3 + 1);
                             }
                         }
-                        edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.LIVE_CHATS), i11 + 1);
+                        edit5.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(SortingFilter.LIVE_CHATS), i12 + 1);
                         edit5.apply();
                         FiltersController.Companion.getInstance(i).loadConfig(preferences);
-                        break;
                     }
+                    z = r3;
                     break;
                 case 6:
                     if (preferences.contains(TelegramPreferenceKeys.User.selectedMessagePopupItems())) {
                         ToolsController companion = ToolsController.Companion.getInstance(i);
                         companion.getSelectedMessagePopupItems().add(MessagePopupItem.COPY_IMAGE);
                         companion.saveConfig();
-                        break;
                     }
+                    z = r3;
                     break;
                 case 7:
                     if (preferences.contains(TelegramPreferenceKeys.User.selectedMessagePopupItems())) {
@@ -318,13 +325,16 @@ public final class TelegramPreferenceMigrationManager {
                             edit6.putStringSet(selectedAllChatsTabFabs2, companion3.mapEnumsToNames(companion3.mapOldPreferenceJsonToEnums(string5)));
                         }
                         edit6.apply();
-                        z = true;
+                        z2 = r5;
                     } else {
-                        z = false;
+                        z2 = r3;
                     }
                     if (preferences.contains(TelegramPreferenceKeys.User.isSortingChatsEnabled())) {
                         SharedPreferences.Editor edit7 = preferences.edit();
-                        for (SortingFilter sortingFilter8 : SortingFilter.values()) {
+                        SortingFilter[] values2 = SortingFilter.values();
+                        int length2 = values2.length;
+                        for (int i13 = r3; i13 < length2; i13++) {
+                            SortingFilter sortingFilter8 = values2[i13];
                             String str4 = "iMe_sortingTab_" + sortingFilter8.name() + "_fabs";
                             String string6 = preferences.getString(str4, null);
                             if (string6 != null) {
@@ -336,29 +346,29 @@ public final class TelegramPreferenceMigrationManager {
                             }
                         }
                         edit7.apply();
-                        z = true;
+                        z2 = r5;
                     }
-                    if (z) {
+                    if (z2) {
                         FiltersController.Companion.getInstance(i).loadConfig(preferences);
-                        break;
                     }
+                    z = r3;
                     break;
                 case 8:
                     if (preferences.contains(TelegramPreferenceKeys.User.isSortingChatsEnabled())) {
                         SharedPreferences.Editor edit8 = preferences.edit();
-                        int i12 = preferences.getInt("iMe_sortingTab_ARCHIVE_MENTIONED_CHATS_position", -1);
-                        if (i12 != -1) {
+                        int i14 = preferences.getInt("iMe_sortingTab_ARCHIVE_MENTIONED_CHATS_position", -1);
+                        if (i14 != -1) {
                             for (SortingFilter sortingFilter9 : SortingFilter.Companion.getSortingFilters(r5)) {
-                                int i13 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter9), sortingFilter9.groupOrdinal());
-                                if (i13 > i12) {
-                                    edit8.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter9), i13 - 1);
+                                int i15 = preferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter9), sortingFilter9.groupOrdinal());
+                                if (i15 > i14) {
+                                    edit8.putInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter9), i15 - 1);
                                 }
                             }
                         }
                         edit8.apply();
                         FiltersController.Companion.getInstance(i).loadConfig(preferences);
-                        break;
                     }
+                    z = r3;
                     break;
                 case 9:
                     if (preferences.contains(TelegramPreferenceKeys.User.isSortingChatsEnabled())) {
@@ -373,16 +383,16 @@ public final class TelegramPreferenceMigrationManager {
                         });
                         collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(sortedWith, 10);
                         ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault3);
-                        int i14 = 0;
+                        int i16 = r3;
                         for (Object obj : sortedWith) {
-                            int i15 = i14 + 1;
-                            if (i14 < 0) {
+                            int i17 = i16 + 1;
+                            if (i16 < 0) {
                                 CollectionsKt__CollectionsKt.throwIndexOverflow();
                             }
                             SortingTabState sortingTabState = (SortingTabState) obj;
-                            sortingTabState.setPosition(i14);
+                            sortingTabState.setPosition(i16);
                             arrayList3.add(sortingTabState);
-                            i14 = i15;
+                            i16 = i17;
                         }
                         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList3);
                         companion5.setSortingTabs(mutableList);
@@ -396,43 +406,43 @@ public final class TelegramPreferenceMigrationManager {
                         });
                         collectionSizeOrDefault4 = CollectionsKt__IterablesKt.collectionSizeOrDefault(sortedWith2, 10);
                         ArrayList arrayList4 = new ArrayList(collectionSizeOrDefault4);
-                        int i16 = 0;
+                        int i18 = r3;
                         for (Object obj2 : sortedWith2) {
-                            int i17 = i16 + 1;
-                            if (i16 < 0) {
+                            int i19 = i18 + 1;
+                            if (i18 < 0) {
                                 CollectionsKt__CollectionsKt.throwIndexOverflow();
                             }
                             SortingTabState sortingTabState2 = (SortingTabState) obj2;
-                            sortingTabState2.setPosition(i16);
+                            sortingTabState2.setPosition(i18);
                             arrayList4.add(sortingTabState2);
-                            i16 = i17;
+                            i18 = i19;
                         }
                         mutableList2 = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList4);
                         companion5.setArchiveSortingTabs(mutableList2);
                         companion5.saveConfig();
-                        break;
                     }
+                    z = r3;
                     break;
                 case 10:
                     if (preferences.contains(TelegramPreferenceKeys.User.selectedMessagePopupItems())) {
                         ToolsController companion6 = ToolsController.Companion.getInstance(i);
                         companion6.getSelectedMessagePopupItems().add(MessagePopupItem.SHARE);
                         companion6.saveConfig();
-                        break;
                     }
+                    z = r3;
                     break;
                 case 11:
                     if (preferences.contains(TelegramPreferenceKeys.User.selectedRecentChatsDialogTypes())) {
                         RecentChatsController companion7 = RecentChatsController.Companion.getInstance(i);
                         companion7.getSelectedRecentChatsDialogTypes().add(RecentChatsDialogType.FORUM);
                         companion7.saveConfig();
-                        break;
                     }
+                    z = r3;
                     break;
             }
             preferences.edit().putInt("iMe_userPreferencesVersion", i5).apply();
             i5++;
-            r3 = 0;
+            r3 = z;
             r5 = 1;
         }
     }

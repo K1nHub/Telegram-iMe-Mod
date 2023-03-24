@@ -2107,7 +2107,7 @@
 
     xor-int/2addr v6, v8
 
-    const/4 v8, 0x1
+    move v8, v5
 
     :goto_0
     iget v10, v0, Lorg/bouncycastle/crypto/engines/AESEngine;->ROUNDS:I
@@ -3047,9 +3047,9 @@
 
     aput v1, v8, v11
 
-    const/4 v8, 0x2
+    move v8, v4
 
-    const/16 v17, 0x1
+    move/from16 v17, v6
 
     :goto_0
     const/16 v11, 0xe
@@ -3281,9 +3281,9 @@
 
     aput v1, v13, v14
 
-    const/4 v13, 0x3
+    move v14, v4
 
-    const/4 v14, 0x2
+    const/4 v13, 0x3
 
     :goto_1
     if-ge v13, v7, :cond_3
@@ -3474,7 +3474,7 @@
 
     aput v1, v7, v11
 
-    const/4 v7, 0x1
+    move v7, v6
 
     :goto_2
     const/16 v11, 0xa
@@ -3536,7 +3536,7 @@
 
     if-ge v6, v1, :cond_7
 
-    const/4 v1, 0x0
+    move v1, v9
 
     const/4 v2, 0x4
 

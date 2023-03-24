@@ -92,7 +92,7 @@ public final class zzfm {
         } else {
             this.zzbc = null;
         }
-        this.zzbd = (zzfoVar != zzfo.SCALAR || (i3 = zzfp.zzb[zzgdVar.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : false;
+        this.zzbd = (zzfoVar != zzfo.SCALAR || (i3 = zzfp.zzb[zzgdVar.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
     }
 
     public final int zza() {

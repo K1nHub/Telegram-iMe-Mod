@@ -382,7 +382,7 @@
     goto :goto_2
 
     :cond_9
-    const/16 v4, 0x10
+    move v4, v2
 
     :goto_2
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -523,7 +523,7 @@
 
     const v8, 0x3ecccccd    # 0.4f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v7, v1
 
@@ -540,7 +540,7 @@
     goto :goto_3
 
     :cond_a
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     sub-float v1, v3, v4
@@ -718,7 +718,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTranslationX(F)V
 
@@ -763,13 +763,13 @@
 
     const v4, 0x3dcccccd    # 0.1f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget-object v5, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget v5, v5, Lorg/telegram/ui/PremiumPreviewFragment;->progress:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float/2addr v2, v3
 
@@ -864,7 +864,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1550,7 +1550,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 
@@ -1627,7 +1627,7 @@
 
     :cond_4
     :goto_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 401
     :goto_3

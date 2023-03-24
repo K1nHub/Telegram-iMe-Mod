@@ -19,11 +19,11 @@ import kotlin.collections.CollectionsKt__MutableCollectionsJVMKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.ExtendedAvatarPreviewerItem;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -124,12 +124,12 @@ public final class ExtendedAvatarPreviewerSettingsActivity extends BaseFragment 
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_chat_user_options_by_avatar_click_subtitle));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ExtendedAvatarPreviewerSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.settings_interface_chat_user_options_by_avatar_click_subtitle));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ExtendedAvatarPreviewerSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ExtendedAvatarPreviewerSettingsActivity.this.finishFragment();
@@ -310,26 +310,26 @@ public final class ExtendedAvatarPreviewerSettingsActivity extends BaseFragment 
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == ExtendedAvatarPreviewerSettingsActivity.this.enableRow) {
                     textCheckCell.setType(1);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_chat_user_options_by_avatar_click_subtitle), SharedConfig.isExtendedAvatarPreviewerEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_chat_user_options_by_avatar_click_subtitle), SharedConfig.isExtendedAvatarPreviewerEnabled, needDivider);
                     return;
                 }
                 textCheckCell.setType(0);
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_chat_user_options_by_avatar_click_title), SharedConfig.isExtendedAvatarPreviewerByTapEnabled, needDivider);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_interface_chat_user_options_by_avatar_click_title), SharedConfig.isExtendedAvatarPreviewerByTapEnabled, needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
                 ExtendedAvatarPreviewerSettingsActivity extendedAvatarPreviewerSettingsActivity = ExtendedAvatarPreviewerSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == extendedAvatarPreviewerSettingsActivity.enableSectionRow && !SharedConfig.isExtendedAvatarPreviewerEnabled) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(extendedAvatarPreviewerSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.settings_interface_chat_user_options_by_avatar_click_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(extendedAvatarPreviewerSettingsActivity.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3301R.string.settings_interface_chat_user_options_by_avatar_click_hint));
                     textInfoPrivacyCell.setFixedSize(0);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(extendedAvatarPreviewerSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(extendedAvatarPreviewerSettingsActivity.getParentActivity(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                 textInfoPrivacyCell.setText(null);
                 textInfoPrivacyCell.setFixedSize(12);
             } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
                 if (i == ExtendedAvatarPreviewerSettingsActivity.this.itemsHeaderRow) {
-                    ((HeaderCell) view).setText(LocaleController.getInternalString(C3286R.string.wallet_transaction_details_section_actions));
+                    ((HeaderCell) view).setText(LocaleController.getInternalString(C3301R.string.wallet_transaction_details_section_actions));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX && (view instanceof TextCheckBoxCell)) {
                 ExtendedAvatarPreviewerItem extendedAvatarPreviewerItem = ExtendedAvatarPreviewerSettingsActivity.this.getItems()[i - ExtendedAvatarPreviewerSettingsActivity.this.itemsStartRow];

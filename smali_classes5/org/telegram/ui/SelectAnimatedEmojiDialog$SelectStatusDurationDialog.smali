@@ -1417,12 +1417,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;->changeToScrimColor:Z
@@ -1692,7 +1692,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationY(F)V
 
@@ -1758,11 +1758,11 @@
 
     const v0, 0x3ccccccd    # 0.025f
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
     cmpg-float p5, p5, v0
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     if-gez p5, :cond_2
 
@@ -1773,7 +1773,7 @@
     .line 4921
     iget-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;->imageViewEmoji:Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    iput-boolean v2, p2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
+    iput-boolean v1, p2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
 
     .line 4922
     iget-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
@@ -1790,7 +1790,7 @@
 
     sget p5, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
 
-    new-array v0, v1, [Ljava/lang/Object;
+    new-array v2, v0, [Ljava/lang/Object;
 
     const/4 v3, 0x4
 
@@ -1798,9 +1798,9 @@
 
     move-result-object v3
 
-    aput-object v3, v0, v2
+    aput-object v3, v2, v1
 
-    invoke-virtual {p2, p5, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {p2, p5, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     .line 4927
     :cond_2
@@ -1816,12 +1816,12 @@
 
     if-eqz p3, :cond_3
 
-    aget-boolean p1, p4, v2
+    aget-boolean p1, p4, v1
 
     if-nez p1, :cond_3
 
     .line 4928
-    aput-boolean v1, p4, v2
+    aput-boolean v0, p4, v1
 
     .line 4929
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V

@@ -98,9 +98,6 @@
     .line 22
     new-instance v1, Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;
 
-    .line 24
-    new-instance v4, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
-
     .line 28
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/staking/StakingTransactionAction;->getTransaction()Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;
 
@@ -119,22 +116,24 @@
 
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/staking/StakingTransactionArgs;->getChainId()J
 
-    move-result-wide v6
+    move-result-wide v3
 
-    invoke-virtual {v2, v6, v7}, Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;->getChainById(J)Lcom/smedialink/storage/domain/model/crypto/Chain;
+    invoke-virtual {v2, v3, v4}, Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;->getChainById(J)Lcom/smedialink/storage/domain/model/crypto/Chain;
 
     move-result-object v11
 
-    const/4 v7, 0x0
+    .line 24
+    new-instance v4, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
+
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     move-object v6, v4
 
-    move-object v8, v0
+    move-object v7, v0
 
-    .line 24
-    invoke-direct/range {v6 .. v11}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;-><init>(Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/smedialink/storage/domain/model/crypto/Chain;)V
+    invoke-direct/range {v6 .. v11}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;-><init>(Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/smedialink/storage/domain/model/crypto/Chain;)V
 
     .line 32
     new-instance v6, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;

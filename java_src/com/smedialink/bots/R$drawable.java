@@ -8,5 +8,5 @@ public final class R$drawable {
     public static final int bot_avatar_12_04 = 2131230919;
     public static final int bot_avatar_23_02 = 2131230920;
     public static final int bot_avatar_28_04 = 2131230921;
-    public static final int ic_bots_recent = 2131231661;
+    public static final int ic_bots_recent = 2131231666;
 }

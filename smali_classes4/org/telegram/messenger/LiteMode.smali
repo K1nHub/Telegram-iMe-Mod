@@ -121,19 +121,19 @@
         }
     .end annotation
 
-    .line 311
+    .line 313
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
     if-nez v0, :cond_0
 
-    .line 312
+    .line 314
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
-    .line 314
+    .line 316
     :cond_0
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
@@ -143,7 +143,7 @@
 .end method
 
 .method public static getBatteryLevel()I
-    .locals 5
+    .locals 4
 
     .line 115
     sget v0, Lorg/telegram/messenger/LiteMode;->lastBatteryLevelCached:I
@@ -160,9 +160,9 @@
 
     const-wide/16 v2, 0x2ee0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     .line 116
     :cond_0
@@ -204,15 +204,15 @@
 .method public static getPowerSaverLevel()I
     .locals 1
 
-    .line 261
+    .line 263
     sget-boolean v0, Lorg/telegram/messenger/LiteMode;->loaded:Z
 
     if-nez v0, :cond_0
 
-    .line 262
+    .line 264
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->loadPreference()V
 
-    .line 264
+    .line 266
     :cond_0
     sget v0, Lorg/telegram/messenger/LiteMode;->powerSaverLevel:I
 
@@ -305,7 +305,7 @@
 .method public static isEnabled(I)Z
     .locals 1
 
-    .line 137
+    .line 139
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->getValue()I
 
     move-result v0
@@ -334,7 +334,7 @@
 
     const/4 v0, 0x1
 
-    .line 141
+    .line 143
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->getValue(Z)I
 
     move-result v1
@@ -357,10 +357,10 @@
 
     const/4 v0, 0x0
 
-    .line 276
+    .line 278
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->getValue(Z)I
 
-    .line 277
+    .line 279
     sget-boolean v0, Lorg/telegram/messenger/LiteMode;->lastPowerSaverApplied:Z
 
     return v0
@@ -369,14 +369,14 @@
 .method private static synthetic lambda$onPowerSaverApplied$0(Z)V
     .locals 3
 
-    .line 288
+    .line 290
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 289
+    .line 291
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -385,7 +385,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 290
+    .line 292
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -394,7 +394,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 292
+    .line 294
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
@@ -410,12 +410,12 @@
 .method public static loadPreference()V
     .locals 8
 
-    .line 186
+    .line 188
     sget v0, Lorg/telegram/messenger/LiteMode;->PRESET_HIGH:I
 
     sget v1, Lorg/telegram/messenger/LiteMode;->BATTERY_HIGH:I
 
-    .line 187
+    .line 189
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v2
@@ -424,15 +424,15 @@
 
     if-nez v2, :cond_0
 
-    .line 188
+    .line 190
     sget v0, Lorg/telegram/messenger/LiteMode;->PRESET_LOW:I
 
-    .line 189
+    .line 191
     sget v1, Lorg/telegram/messenger/LiteMode;->BATTERY_LOW:I
 
     goto :goto_0
 
-    .line 190
+    .line 192
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
@@ -440,13 +440,13 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 191
+    .line 193
     sget v0, Lorg/telegram/messenger/LiteMode;->PRESET_MEDIUM:I
 
-    .line 192
+    .line 194
     sget v1, Lorg/telegram/messenger/LiteMode;->BATTERY_MEDIUM:I
 
-    .line 195
+    .line 197
     :cond_1
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
@@ -455,7 +455,7 @@
 
     const-string v4, "lite_mode2"
 
-    .line 196
+    .line 198
     invoke-interface {v2, v4}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v5
@@ -464,14 +464,14 @@
 
     const-string v5, "lite_mode"
 
-    .line 197
+    .line 199
     invoke-interface {v2, v5}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_2
 
-    .line 198
+    .line 200
     invoke-interface {v2, v5, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -480,7 +480,7 @@
 
     if-ne v0, v5, :cond_10
 
-    .line 200
+    .line 202
     sget v0, Lorg/telegram/messenger/LiteMode;->PRESET_HIGH:I
 
     goto/16 :goto_7
@@ -488,7 +488,7 @@
     :cond_2
     const-string v5, "light_mode"
 
-    .line 203
+    .line 205
     invoke-interface {v2, v5}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
@@ -497,19 +497,19 @@
 
     if-eqz v6, :cond_6
 
-    .line 204
+    .line 206
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v7
 
     :goto_1
     invoke-interface {v2, v5, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -520,22 +520,22 @@
 
     if-lez v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v7
 
     :goto_2
     if-eqz v0, :cond_5
 
-    .line 206
+    .line 208
     sget v0, Lorg/telegram/messenger/LiteMode;->PRESET_LOW:I
 
     goto :goto_3
 
-    .line 208
+    .line 210
     :cond_5
     sget v0, Lorg/telegram/messenger/LiteMode;->PRESET_HIGH:I
 
@@ -543,14 +543,14 @@
     :goto_3
     const-string v5, "loopStickers"
 
-    .line 212
+    .line 214
     invoke-interface {v2, v5}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_8
 
-    .line 213
+    .line 215
     invoke-interface {v2, v5, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
@@ -568,14 +568,14 @@
     :goto_4
     const-string v5, "autoplay_video"
 
-    .line 220
+    .line 222
     invoke-interface {v2, v5}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_c
 
-    .line 221
+    .line 223
     invoke-interface {v2, v5, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
@@ -591,7 +591,7 @@
     if-eqz v5, :cond_a
 
     :cond_9
-    const/4 v7, 0x1
+    move v7, v3
 
     :cond_a
     if-eqz v7, :cond_b
@@ -607,14 +607,14 @@
     :goto_5
     const-string v5, "autoplay_gif"
 
-    .line 228
+    .line 230
     invoke-interface {v2, v5}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_e
 
-    .line 229
+    .line 231
     invoke-interface {v2, v5, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
@@ -632,14 +632,14 @@
     :goto_6
     const-string v5, "chatBlur"
 
-    .line 236
+    .line 238
     invoke-interface {v2, v5}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_10
 
-    .line 237
+    .line 239
     invoke-interface {v2, v5, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
@@ -653,37 +653,37 @@
     :cond_f
     and-int/lit16 v0, v0, -0x101
 
-    .line 247
+    .line 249
     :cond_10
     :goto_7
     sget v5, Lorg/telegram/messenger/LiteMode;->value:I
 
-    .line 248
+    .line 250
     invoke-interface {v2, v4, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
     sput v0, Lorg/telegram/messenger/LiteMode;->value:I
 
-    .line 249
+    .line 251
     sget-boolean v4, Lorg/telegram/messenger/LiteMode;->loaded:Z
 
     if-eqz v4, :cond_11
 
-    .line 250
+    .line 252
     invoke-static {v5, v0}, Lorg/telegram/messenger/LiteMode;->onFlagsUpdate(II)V
 
     :cond_11
     const-string v0, "lite_mode_battery_level"
 
-    .line 252
+    .line 254
     invoke-interface {v2, v0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
     sput v0, Lorg/telegram/messenger/LiteMode;->powerSaverLevel:I
 
-    .line 253
+    .line 255
     sput-boolean v3, Lorg/telegram/messenger/LiteMode;->loaded:Z
 
     return-void
@@ -700,7 +700,7 @@
 
     if-lez p1, :cond_0
 
-    .line 302
+    .line 304
     invoke-static {}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->updateAll()V
 
     :cond_0
@@ -708,7 +708,7 @@
 
     if-lez p0, :cond_1
 
-    .line 305
+    .line 307
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->reloadWallpaper()V
 
     :cond_1
@@ -722,7 +722,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 282
+    .line 284
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->getValue(Z)I
 
     move-result v0
@@ -733,7 +733,7 @@
 
     goto :goto_0
 
-    .line 284
+    .line 286
     :cond_0
     sget v1, Lorg/telegram/messenger/LiteMode;->PRESET_POWER_SAVER:I
 
@@ -743,13 +743,13 @@
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/LiteMode;->onFlagsUpdate(II)V
 
-    .line 286
+    .line 288
     :goto_0
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
     if-eqz v0, :cond_1
 
-    .line 287
+    .line 289
     new-instance v0, Lorg/telegram/messenger/LiteMode$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/LiteMode$$ExternalSyntheticLambda0;-><init>(Z)V
@@ -763,70 +763,78 @@
 .method private static preprocessFlag(I)I
     .locals 1
 
-    const/16 v0, 0x4004
+    and-int/lit16 v0, p0, 0x4004
 
-    if-ne p0, v0, :cond_1
+    if-lez v0, :cond_1
+
+    and-int/lit16 p0, p0, -0x4005
 
     .line 127
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->hasPremiumOnAccounts()Z
 
-    move-result p0
+    move-result v0
 
-    if-eqz p0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p0, 0x4
+    const/4 v0, 0x4
 
     goto :goto_0
 
     :cond_0
-    const/16 p0, 0x4000
+    const/16 v0, 0x4000
 
     :goto_0
-    return p0
+    or-int/2addr p0, v0
 
     :cond_1
-    const/16 v0, 0x2008
+    and-int/lit16 v0, p0, 0x2008
 
-    if-ne p0, v0, :cond_3
+    if-lez v0, :cond_3
 
-    .line 129
+    and-int/lit16 p0, p0, -0x2009
+
+    .line 130
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->hasPremiumOnAccounts()Z
 
-    move-result p0
+    move-result v0
 
-    if-eqz p0, :cond_2
+    if-eqz v0, :cond_2
 
-    const/16 p0, 0x8
+    const/16 v0, 0x8
 
     goto :goto_1
 
     :cond_2
-    const/16 p0, 0x2000
+    const/16 v0, 0x2000
 
     :goto_1
-    return p0
+    or-int/2addr p0, v0
 
     :cond_3
-    const/16 v0, 0x1010
+    and-int/lit16 v0, p0, 0x1010
 
-    if-ne p0, v0, :cond_5
+    if-lez v0, :cond_5
 
-    .line 131
+    and-int/lit16 p0, p0, -0x1011
+
+    .line 133
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->hasPremiumOnAccounts()Z
 
-    move-result p0
+    move-result v0
 
-    if-eqz p0, :cond_4
+    if-eqz v0, :cond_4
 
-    const/16 p0, 0x10
+    const/16 v0, 0x10
 
     goto :goto_2
 
     :cond_4
-    const/16 p0, 0x1000
+    const/16 v0, 0x1000
+
+    :goto_2
+    or-int/2addr p0, v0
 
     :cond_5
-    :goto_2
     return p0
 .end method
 
@@ -841,12 +849,12 @@
         }
     .end annotation
 
-    .line 318
+    .line 320
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
     if-eqz v0, :cond_0
 
-    .line 319
+    .line 321
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     :cond_0
@@ -856,7 +864,7 @@
 .method public static savePreference()V
     .locals 3
 
-    .line 257
+    .line 259
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -889,10 +897,10 @@
 .method public static setAllFlags(I)V
     .locals 0
 
-    .line 155
+    .line 157
     sput p0, Lorg/telegram/messenger/LiteMode;->value:I
 
-    .line 156
+    .line 158
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->savePreference()V
 
     return-void
@@ -905,17 +913,17 @@
 
     const/16 v1, 0x64
 
-    .line 268
+    .line 270
     invoke-static {p0, v0, v1}, Landroidx/core/math/MathUtils;->clamp(III)I
 
     move-result p0
 
     sput p0, Lorg/telegram/messenger/LiteMode;->powerSaverLevel:I
 
-    .line 269
+    .line 271
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->savePreference()V
 
-    .line 272
+    .line 274
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->getValue(Z)I
 
     return-void
@@ -924,7 +932,7 @@
 .method public static toggleFlag(I)V
     .locals 1
 
-    .line 145
+    .line 147
     invoke-static {p0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -943,7 +951,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 149
+    .line 151
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->getValue(Z)I
 
     move-result p1
@@ -972,9 +980,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    .line 160
+    .line 162
     :goto_0
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;->value:Ljava/util/ArrayList;
 
@@ -984,7 +992,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 161
+    .line 163
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;->value:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -993,7 +1001,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;
 
-    .line 162
+    .line 164
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
     const-string v4, "settings_mask"
@@ -1014,12 +1022,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 163
+    .line 165
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_jsonArray;
 
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_jsonArray;->value:Ljava/util/ArrayList;
 
-    .line 165
+    .line 167
     :try_start_0
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1033,7 +1041,7 @@
 
     sput v3, Lorg/telegram/messenger/LiteMode;->PRESET_LOW:I
 
-    .line 166
+    .line 168
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1046,7 +1054,7 @@
 
     sput v3, Lorg/telegram/messenger/LiteMode;->PRESET_MEDIUM:I
 
-    .line 167
+    .line 169
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1066,12 +1074,12 @@
     :catch_0
     move-exception v2
 
-    .line 169
+    .line 171
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_1
 
-    .line 171
+    .line 173
     :cond_0
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
@@ -1089,12 +1097,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 172
+    .line 174
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_jsonArray;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_jsonArray;->value:Ljava/util/ArrayList;
 
-    .line 174
+    .line 176
     :try_start_1
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1108,7 +1116,7 @@
 
     sput v3, Lorg/telegram/messenger/LiteMode;->BATTERY_LOW:I
 
-    .line 175
+    .line 177
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1121,7 +1129,7 @@
 
     sput v3, Lorg/telegram/messenger/LiteMode;->BATTERY_MEDIUM:I
 
-    .line 176
+    .line 178
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1141,7 +1149,7 @@
     :catch_1
     move-exception v2
 
-    .line 178
+    .line 180
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -1150,7 +1158,7 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 184
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/LiteMode;->loadPreference()V
 

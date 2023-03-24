@@ -105,7 +105,7 @@
     if-ltz v2, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
@@ -225,7 +225,7 @@
 
     if-eqz v3, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v6
 
     .line 3
     :cond_3
@@ -257,7 +257,7 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v5, 0x1
+    move v5, v6
 
     .line 6
     :cond_6

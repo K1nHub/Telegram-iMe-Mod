@@ -206,11 +206,11 @@
     .line 11980
     iget v0, p1, Landroid/graphics/PointF;->x:F
 
-    mul-float v0, v0, v0
+    mul-float/2addr v0, v0
 
     iget v1, p1, Landroid/graphics/PointF;->y:F
 
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
     add-float/2addr v0, v1
 

@@ -541,9 +541,9 @@
 
     const v3, 0x7fffffff
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v1, :cond_4

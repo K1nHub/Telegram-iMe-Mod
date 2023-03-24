@@ -128,16 +128,16 @@
 .end method
 
 .method public final zzd(J)V
-    .locals 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzam;->zzb()V
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzam;->zzb:Lcom/google/android/gms/measurement/internal/zzgq;
 
@@ -191,15 +191,15 @@
 .end method
 
 .method public final zze()Z
-    .locals 5
+    .locals 4
 
     iget-wide v0, p0, Lcom/google/android/gms/measurement/internal/zzam;->zzd:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 

@@ -292,12 +292,12 @@
 
     if-nez v5, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 159
     :goto_0
@@ -782,7 +782,7 @@
 
     aput-object p3, p2, v5
 
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 249
     :goto_2
@@ -797,12 +797,12 @@
 
     if-eqz p1, :cond_b
 
-    const/4 p4, 0x1
+    move p4, v1
 
     goto :goto_3
 
     :cond_b
-    const/4 p4, 0x0
+    move p4, v3
 
     :goto_3
     invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/StatusDrawable;->setIsChat(Z)V
@@ -1122,7 +1122,7 @@
 .method private getThemedColor(Ljava/lang/String;)I
     .locals 1
 
-    .line 1148
+    .line 1149
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -1139,7 +1139,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1149
+    .line 1150
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -1934,7 +1934,7 @@
 .method public getAvatarImageView()Lorg/telegram/ui/Components/BackupImageView;
     .locals 1
 
-    .line 1144
+    .line 1145
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object v0
@@ -1952,7 +1952,7 @@
 .method public getSharedMediaPreloader()Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
     .locals 1
 
-    .line 1140
+    .line 1141
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     return-object v0
@@ -2267,6 +2267,9 @@
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 1134
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 1135
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->isClickable()Z
 
     move-result v0
@@ -2279,7 +2282,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 1135
+    .line 1136
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v1, 0x10
@@ -2336,7 +2339,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p4
 
     :goto_0
     add-int/2addr p1, p3
@@ -2734,12 +2737,12 @@
 
     if-nez v0, :cond_0
 
-    const/16 v0, 0x36
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     add-int/lit8 v0, v0, 0x10
@@ -2897,7 +2900,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     add-int/lit8 v1, v1, 0x10
@@ -2978,7 +2981,7 @@
     if-nez v1, :cond_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 353
     :cond_1
@@ -3174,7 +3177,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 384
     :goto_0
@@ -3247,7 +3250,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 397
     :goto_1
@@ -3347,7 +3350,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v2, 0x1
@@ -3755,13 +3758,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v4, 0x1
+    move v4, v3
 
     :goto_1
     and-int/2addr p5, v4
@@ -4214,7 +4217,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 263
     :goto_0
@@ -4519,14 +4522,14 @@
 .method public updateColors()V
     .locals 2
 
-    .line 1153
+    .line 1154
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentTypingDrawable:Lorg/telegram/ui/Components/StatusDrawable;
 
     if-eqz v0, :cond_0
 
     const-string v1, "chat_status"
 
-    .line 1154
+    .line 1155
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(Ljava/lang/String;)I
 
     move-result v1
@@ -4538,7 +4541,7 @@
 .end method
 
 .method public updateOnlineCount()V
-    .locals 9
+    .locals 8
 
     .line 1019
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
@@ -4674,9 +4677,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_5
+    if-nez v4, :cond_5
 
     :cond_4
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
@@ -5230,7 +5233,7 @@
     goto :goto_4
 
     :cond_d
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_4
     if-lez p1, :cond_e
@@ -5876,7 +5879,7 @@
 
     :cond_2a
     :goto_8
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_9
     if-eqz v2, :cond_2b

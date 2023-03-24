@@ -278,8 +278,8 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             f2 = fArr[1];
             f = f3;
         } else {
-            f = BitmapDescriptorFactory.HUE_RED;
-            f2 = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
+            f2 = 0.0f;
         }
         this.mCallback.onDrawOver(canvas, recyclerView, this.mSelected, this.mRecoverAnimations, this.mActionState, f, f2);
     }
@@ -296,23 +296,23 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             f2 = fArr[1];
             f = f3;
         } else {
-            f = BitmapDescriptorFactory.HUE_RED;
-            f2 = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
+            f2 = 0.0f;
         }
         this.mCallback.onDraw(canvas, recyclerView, this.mSelected, this.mRecoverAnimations, this.mActionState, f, f2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x013d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     void select(androidx.recyclerview.widget.RecyclerView.ViewHolder r24, int r25) {
         /*
-            Method dump skipped, instructions count: 342
+            Method dump skipped, instructions count: 341
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.ItemTouchHelper.select(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");

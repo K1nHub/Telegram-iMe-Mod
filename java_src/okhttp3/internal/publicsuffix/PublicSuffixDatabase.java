@@ -207,8 +207,8 @@ public final class PublicSuffixDatabase {
                         break;
                     } else {
                         i8++;
-                        z2 = true;
                         i9 = -1;
+                        z2 = true;
                     }
                 }
                 if (and2 >= 0) {

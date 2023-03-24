@@ -253,7 +253,7 @@
 
     invoke-virtual {v0, v3, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_0
     const/4 v8, 0x3
@@ -279,12 +279,12 @@
 
     if-eqz v12, :cond_1
 
-    const/4 v12, 0x5
+    move/from16 v12, v17
 
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x3
+    move v12, v8
 
     :goto_1
     const/4 v13, 0x0
@@ -365,7 +365,7 @@
 
     if-eqz v12, :cond_2
 
-    const/4 v8, 0x5
+    move/from16 v8, v17
 
     :cond_2
     or-int/lit8 v8, v8, 0x10

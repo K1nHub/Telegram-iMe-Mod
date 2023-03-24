@@ -28,26 +28,26 @@
 
     const/4 v0, 0x0
 
+    cmpg-float v0, p1, v0
+
     const/4 v1, 0x0
 
-    cmpg-float v1, p1, v1
+    if-nez v0, :cond_0
 
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v0, v1
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    mul-float p0, p0, p1
+    mul-float/2addr p0, p1
 
     float-to-double p0, p0
 
@@ -58,8 +58,8 @@
 
     invoke-static {p0, p1}, Lkotlin/math/MathKt;->roundToInt(D)I
 
-    move-result v0
+    move-result v1
 
     :goto_1
-    return v0
+    return v1
 .end method

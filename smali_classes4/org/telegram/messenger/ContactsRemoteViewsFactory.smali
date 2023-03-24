@@ -348,14 +348,14 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     const/4 v0, 0x2
 
     if-ge v7, v0, :cond_1c
 
-    mul-int/lit8 v0, v2, 0x2
+    mul-int/2addr v0, v2
 
     add-int/2addr v0, v7
 
@@ -385,7 +385,7 @@
 
     move-object v8, v4
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto/16 :goto_14
 
@@ -528,9 +528,9 @@
 
     iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v16, v14, v9
+    cmp-long v9, v14, v9
 
-    if-eqz v16, :cond_8
+    if-eqz v9, :cond_8
 
     iget v9, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -585,9 +585,9 @@
 
     iget-wide v14, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v16, v14, v9
+    cmp-long v9, v14, v9
 
-    if-eqz v16, :cond_b
+    if-eqz v9, :cond_b
 
     iget v9, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -1072,9 +1072,9 @@
     :goto_14
     add-int/lit8 v7, v7, 0x1
 
-    move-object v4, v8
+    move v3, v4
 
-    const/4 v3, 0x1
+    move-object v4, v8
 
     goto/16 :goto_0
 

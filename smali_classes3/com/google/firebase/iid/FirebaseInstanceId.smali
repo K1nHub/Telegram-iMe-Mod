@@ -705,7 +705,7 @@
 
     :cond_1
     :goto_0
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_2
     return v3

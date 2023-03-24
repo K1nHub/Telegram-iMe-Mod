@@ -1193,7 +1193,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_0
     return v0
@@ -1213,7 +1213,7 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     return v0
@@ -1244,7 +1244,7 @@
 
     if-eq v2, v3, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
@@ -1387,12 +1387,12 @@
     goto :goto_1
 
     :cond_2
-    const/16 v16, 0x0
+    move/from16 v16, v2
 
-    const/16 v17, 0x1
+    move/from16 v17, v5
 
     :goto_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v3, v10, :cond_d
@@ -1414,6 +1414,14 @@
     move-result v0
 
     add-int/2addr v1, v0
+
+    move/from16 v21, v5
+
+    move/from16 v22, v7
+
+    move/from16 v19, v10
+
+    move/from16 v20, v11
 
     goto/16 :goto_6
 
@@ -1658,7 +1666,6 @@
     :cond_c
     move/from16 v18, v3
 
-    :goto_6
     move/from16 v22, v7
 
     move/from16 v19, v10
@@ -1667,6 +1674,7 @@
 
     const/16 v21, 0x1
 
+    :goto_6
     const/16 v23, -0x1
 
     :goto_7
@@ -1676,9 +1684,9 @@
 
     move/from16 v11, v20
 
-    move/from16 v7, v22
+    move/from16 v5, v21
 
-    const/4 v5, 0x1
+    move/from16 v7, v22
 
     const/4 v15, 0x2
 
@@ -1780,7 +1788,7 @@
     :goto_0
     const/4 v1, 0x0
 
-    const/4 v12, 0x0
+    move v12, v1
 
     :goto_1
     if-ge v12, v10, :cond_8
@@ -1950,13 +1958,18 @@
 
     move/from16 v0, v16
 
-    :cond_7
-    :goto_4
     const/4 v1, 0x1
 
+    goto :goto_5
+
+    :cond_7
+    :goto_4
+    move v1, v14
+
+    :goto_5
     add-int/2addr v12, v1
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_8
     return-void
@@ -1984,7 +1997,7 @@
 .end method
 
 .method measureHorizontal(II)V
-    .locals 37
+    .locals 38
 
     move-object/from16 v7, p0
 
@@ -2077,35 +2090,35 @@
 
     if-ne v12, v2, :cond_2
 
-    const/16 v19, 0x1
+    move/from16 v19, v18
 
     goto :goto_0
 
     :cond_2
-    const/16 v19, 0x0
+    move/from16 v19, v10
 
     :goto_0
     const/16 v20, 0x0
 
-    const/4 v0, 0x0
+    move v1, v10
 
-    const/4 v1, 0x0
+    move v14, v1
 
-    const/4 v14, 0x0
+    move/from16 v21, v14
 
-    const/16 v21, 0x0
+    move/from16 v22, v21
 
-    const/16 v22, 0x0
+    move/from16 v23, v22
 
-    const/16 v23, 0x0
+    move/from16 v24, v23
 
-    const/16 v24, 0x0
+    move/from16 v25, v24
 
-    const/16 v25, 0x0
+    move/from16 v27, v25
 
-    const/16 v26, 0x1
+    move/from16 v26, v18
 
-    const/16 v27, 0x0
+    move/from16 v0, v20
 
     :goto_1
     move-object/from16 v28, v6
@@ -2133,13 +2146,15 @@
     iput v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     :goto_2
-    move v2, v1
-
     move/from16 v32, v3
 
     move/from16 v36, v4
 
-    const/high16 v1, 0x40000000    # 2.0f
+    move/from16 v37, v2
+
+    move v2, v1
+
+    move/from16 v1, v37
 
     goto/16 :goto_e
 
@@ -2273,9 +2288,9 @@
 
     move-object v3, v6
 
-    const/high16 v1, 0x40000000    # 2.0f
+    move/from16 v24, v18
 
-    const/16 v24, 0x1
+    const/high16 v1, 0x40000000    # 2.0f
 
     const/16 v30, -0x2
 
@@ -2341,17 +2356,17 @@
 
     move/from16 v4, v29
 
-    const/4 v9, -0x1
+    move/from16 v29, v5
 
-    const/16 v29, -0x2
+    const/4 v9, -0x1
 
     move/from16 v5, p2
 
-    move-object/from16 v29, v6
+    move/from16 v30, v29
 
     const/high16 v9, -0x80000000
 
-    const/16 v30, -0x2
+    move-object/from16 v29, v6
 
     move/from16 v6, v33
 
@@ -2452,9 +2467,9 @@
 
     if-ne v0, v2, :cond_e
 
-    const/4 v0, 0x1
+    move/from16 v0, v18
 
-    const/16 v27, 0x1
+    move/from16 v27, v0
 
     goto :goto_9
 
@@ -2553,7 +2568,7 @@
 
     if-ne v5, v6, :cond_11
 
-    const/16 v26, 0x1
+    move/from16 v26, v18
 
     goto :goto_a
 
@@ -2624,23 +2639,27 @@
 
     move/from16 v9, p2
 
-    move v1, v2
-
     move-object/from16 v6, v28
 
     move/from16 v3, v32
 
     move/from16 v4, v36
 
-    const/high16 v2, 0x40000000    # 2.0f
-
     const/4 v5, -0x1
 
     const/4 v10, 0x0
 
+    move/from16 v37, v2
+
+    move v2, v1
+
+    move/from16 v1, v37
+
     goto/16 :goto_1
 
     :cond_15
+    move v1, v2
+
     move/from16 v32, v3
 
     move/from16 v36, v4
@@ -2652,8 +2671,6 @@
     move/from16 v10, v23
 
     move/from16 v6, v25
-
-    const/high16 v1, 0x40000000    # 2.0f
 
     const/high16 v9, -0x80000000
 
@@ -3085,9 +3102,9 @@
 
     move v6, v4
 
-    move/from16 v9, v23
+    move v4, v5
 
-    const/4 v4, -0x1
+    move/from16 v9, v23
 
     const/4 v10, 0x0
 
@@ -3129,7 +3146,7 @@
 
     int-to-float v8, v2
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     div-float/2addr v8, v0
 
@@ -3338,7 +3355,7 @@
 
     if-ne v0, v8, :cond_2b
 
-    const/4 v0, 0x1
+    move/from16 v0, v18
 
     goto :goto_1d
 
@@ -3387,7 +3404,7 @@
 
     if-ne v6, v8, :cond_2e
 
-    const/4 v6, 0x1
+    move/from16 v6, v18
 
     goto :goto_1f
 
@@ -3702,25 +3719,25 @@
 
     const/16 v17, 0x1
 
-    const/4 v0, 0x0
+    move v1, v10
 
-    const/4 v1, 0x0
+    move v2, v1
 
-    const/4 v2, 0x0
+    move v3, v2
 
-    const/4 v3, 0x0
+    move v4, v3
 
-    const/4 v4, 0x0
+    move v5, v4
 
-    const/4 v5, 0x0
+    move v6, v5
 
-    const/4 v6, 0x0
+    move/from16 v18, v6
 
-    const/16 v18, 0x0
+    move/from16 v20, v18
 
-    const/16 v19, 0x1
+    move/from16 v0, v16
 
-    const/16 v20, 0x0
+    move/from16 v19, v17
 
     :goto_0
     const/16 v10, 0x8
@@ -3853,11 +3870,11 @@
 
     move/from16 v31, v5
 
+    move/from16 v18, v17
+
     move/from16 v8, v24
 
     move/from16 v29, v26
-
-    const/16 v18, 0x1
 
     move/from16 v26, v11
 
@@ -3935,7 +3952,7 @@
 
     move/from16 v13, v22
 
-    const/high16 v11, 0x40000000    # 2.0f
+    move/from16 v11, v28
 
     move-object/from16 v22, v4
 
@@ -4056,9 +4073,9 @@
 
     if-ne v1, v2, :cond_b
 
-    const/4 v1, 0x1
+    move/from16 v1, v17
 
-    const/16 v20, 0x1
+    move/from16 v20, v1
 
     goto :goto_5
 
@@ -4106,7 +4123,7 @@
 
     if-ne v8, v9, :cond_c
 
-    const/16 v19, 0x1
+    move/from16 v19, v17
 
     goto :goto_6
 
@@ -4498,7 +4515,7 @@
 
     move v1, v8
 
-    const/4 v8, 0x0
+    move v8, v10
 
     :goto_11
     if-ge v8, v2, :cond_27
@@ -4540,7 +4557,7 @@
 
     int-to-float v15, v11
 
-    mul-float v15, v15, v10
+    mul-float/2addr v15, v10
 
     div-float/2addr v15, v0
 
@@ -4695,7 +4712,7 @@
 
     if-ne v0, v1, :cond_24
 
-    const/4 v0, 0x1
+    move/from16 v0, v17
 
     goto :goto_16
 
@@ -4728,7 +4745,7 @@
 
     if-ne v9, v1, :cond_26
 
-    const/4 v9, 0x1
+    move/from16 v9, v17
 
     goto :goto_18
 

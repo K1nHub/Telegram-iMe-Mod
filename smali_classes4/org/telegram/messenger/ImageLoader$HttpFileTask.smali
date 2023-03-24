@@ -243,17 +243,17 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     const-wide/16 v4, 0x64
 
     sub-long v4, v0, v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_1
+    if-gez v2, :cond_1
 
     .line 211
     :cond_0
@@ -627,7 +627,7 @@
     :try_start_5
     new-array v0, v0, [B
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 297
     :cond_8
@@ -705,14 +705,14 @@
 
     :cond_b
     :goto_6
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_9
 
     :catch_3
     move-exception v0
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 318
     :goto_7
@@ -731,7 +731,7 @@
     :catchall_4
     move-exception v0
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 323
     :goto_8

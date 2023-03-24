@@ -99,7 +99,7 @@
 
     :cond_5
     :goto_1
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_2
     xor-int/lit8 v1, p4, 0x1
@@ -176,7 +176,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     return v1
@@ -266,17 +266,17 @@
 
     const/4 v6, -0x1
 
-    const/4 v7, -0x1
+    move v7, v6
 
-    const/4 v8, -0x1
+    move v8, v7
 
-    const/4 v9, -0x1
+    move v9, v8
 
-    const/4 v10, -0x1
+    move v10, v9
 
-    const/4 v11, -0x1
+    move v11, v10
 
-    const/4 v12, -0x1
+    move v12, v11
 
     :goto_0
     const/4 v13, 0x2
@@ -537,7 +537,7 @@
 
     if-lt v7, v1, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_4
 
@@ -551,7 +551,7 @@
 
     if-eq v10, v6, :cond_a
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_5
 
@@ -570,7 +570,7 @@
     :cond_b
     if-lt v1, v9, :cond_c
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_7
 
@@ -590,7 +590,7 @@
     :cond_d
     if-lt v1, v8, :cond_e
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_9
 
@@ -610,7 +610,7 @@
     :cond_f
     if-lt v1, v11, :cond_10
 
-    const/4 v3, 0x1
+    move v3, v14
 
     goto :goto_b
 
@@ -628,7 +628,7 @@
     :cond_11
     if-lt v1, v12, :cond_12
 
-    const/4 v1, 0x1
+    move v1, v14
 
     goto :goto_d
 
@@ -930,12 +930,12 @@
 
     if-nez v5, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     if-nez v5, :cond_17
@@ -981,15 +981,15 @@
 
     move-object/from16 v22, v10
 
+    move/from16 v17, v3
+
+    move/from16 v18, v17
+
+    move/from16 v19, v18
+
+    move/from16 v20, v4
+
     move-wide v15, v5
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
-
-    const/16 v19, 0x0
-
-    const/16 v20, 0x1
 
     const-wide v23, 0xe677d21fdbffL
 
@@ -1072,7 +1072,7 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
 
     :goto_3
-    const/16 v19, 0x1
+    move/from16 v19, v4
 
     goto :goto_4
 
@@ -1094,7 +1094,7 @@
     :try_end_2
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_0
 
-    const/16 v20, 0x0
+    move/from16 v20, v3
 
     goto :goto_4
 
@@ -1122,7 +1122,7 @@
 
     if-eqz v13, :cond_9
 
-    const/16 v17, 0x1
+    move/from16 v17, v4
 
     goto :goto_4
 
@@ -1136,7 +1136,7 @@
 
     if-eqz v9, :cond_a
 
-    const/16 v18, 0x1
+    move/from16 v18, v4
 
     :catch_0
     :cond_a
@@ -1166,15 +1166,15 @@
 
     const-wide v1, 0x20c49ba5e353f7L
 
-    cmp-long v4, v15, v1
+    cmp-long v1, v15, v1
 
-    if-gtz v4, :cond_e
+    if-gtz v1, :cond_e
 
     const/16 v1, 0x3e8
 
     int-to-long v1, v1
 
-    mul-long v15, v15, v1
+    mul-long/2addr v15, v1
 
     goto :goto_5
 

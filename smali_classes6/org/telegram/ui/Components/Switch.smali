@@ -657,7 +657,7 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-int v9, v9
 
@@ -672,7 +672,7 @@
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_0
     const/4 v15, 0x1
@@ -686,7 +686,7 @@
 
     if-nez v13, :cond_1
 
-    const/high16 v7, 0x41600000    # 14.0f
+    move v7, v6
 
     goto/16 :goto_6
 
@@ -1112,9 +1112,9 @@
 
     move-object/from16 v1, p1
 
-    const/4 v4, 0x2
+    move v6, v7
 
-    const/high16 v6, 0x41600000    # 14.0f
+    const/4 v4, 0x2
 
     const/4 v7, 0x7
 
@@ -1151,9 +1151,9 @@
     :goto_7
     const/4 v1, 0x0
 
-    :goto_8
     const/4 v4, 0x2
 
+    :goto_8
     if-ge v1, v4, :cond_1c
 
     const/4 v4, 0x1
@@ -1304,7 +1304,7 @@
 
     int-to-float v11, v12
 
-    mul-float v11, v11, v6
+    mul-float/2addr v11, v6
 
     add-float/2addr v7, v11
 
@@ -1316,7 +1316,7 @@
 
     int-to-float v12, v14
 
-    mul-float v12, v12, v6
+    mul-float/2addr v12, v6
 
     add-float/2addr v11, v12
 
@@ -1328,7 +1328,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v6
+    mul-float/2addr v13, v6
 
     add-float/2addr v12, v13
 
@@ -1340,7 +1340,7 @@
 
     int-to-float v4, v10
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v13, v4
 
@@ -1472,7 +1472,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     sub-float/2addr v7, v8
 
@@ -1499,7 +1499,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
-    mul-float v7, v7, v9
+    mul-float/2addr v7, v9
 
     sub-float/2addr v4, v7
 
@@ -1594,7 +1594,7 @@
     .line 526
     iget v12, v0, Lorg/telegram/ui/Components/Switch;->progress:F
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
     add-float/2addr v2, v4
 
@@ -1606,7 +1606,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v12
+    mul-float/2addr v6, v12
 
     add-float/2addr v4, v6
 
@@ -1618,7 +1618,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     add-float/2addr v6, v10
 
@@ -1630,7 +1630,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float/2addr v10, v11
 
@@ -1740,7 +1740,7 @@
 
     sub-float v13, v16, v11
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     float-to-int v10, v13
 
@@ -1777,7 +1777,7 @@
     .line 541
     iget v10, v0, Lorg/telegram/ui/Components/Switch;->iconProgress:F
 
-    mul-float v10, v10, v7
+    mul-float/2addr v10, v7
 
     invoke-virtual {v5, v10, v4, v6}, Landroid/graphics/Canvas;->rotate(FFF)V
 
@@ -1835,6 +1835,8 @@
 
     :goto_11
     add-int/lit8 v1, v1, 0x1
+
+    move v4, v2
 
     const/4 v2, 0x0
 
@@ -2200,7 +2202,7 @@
 
     if-eqz v1, :cond_7
 
-    const/4 v4, 0x2
+    move v4, v5
 
     :cond_7
     iput v4, p0, Lorg/telegram/ui/Components/Switch;->colorSet:I

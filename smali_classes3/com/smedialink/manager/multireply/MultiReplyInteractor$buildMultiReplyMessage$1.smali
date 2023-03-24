@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,100:1\n1864#2,3:101\n8#3:104\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n*L\n40#1:101,3\n48#1:104\n*E\n"
+    value = "SMAP\nMultiReplyInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,100:1\n1864#2,3:101\n9#3:104\n*S KotlinDebug\n*F\n+ 1 MultiReplyInteractor.kt\ncom/smedialink/manager/multireply/MultiReplyInteractor$buildMultiReplyMessage$1\n*L\n40#1:101,3\n48#1:104\n*E\n"
 .end annotation
 
 
@@ -106,7 +106,7 @@
 
     const-string v3, ""
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 8
+    .line 9
     :cond_1
     sget-object p1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 

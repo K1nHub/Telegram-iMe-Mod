@@ -89,7 +89,7 @@ public class Jdk9Platform extends Platform {
             if (r1 < r3) goto L21
             goto L2c
         L21:
-            r0 = 0
+            r0 = r2
             goto L2c
         L23:
             java.lang.Class<javax.net.ssl.SSLSocket> r1 = javax.net.ssl.SSLSocket.class

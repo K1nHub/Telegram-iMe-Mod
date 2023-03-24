@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: HorizontalActionButtonsView.kt */
 /* renamed from: com.smedialink.ui.custom.HorizontalActionButtonsView */
@@ -48,14 +47,14 @@ public final class HorizontalActionButtonsView extends LinearLayout {
             AppCompatTextView appCompatTextView = new AppCompatTextView(getContext());
             appCompatTextView.setGravity(1);
             Resources resources = appCompatTextView.getResources();
-            int i = C3286R.dimen.margin_half_small;
+            int i = C3301R.dimen.margin_half_small;
             ViewExtKt.setPaddingHorizontal(appCompatTextView, resources.getDimensionPixelOffset(i));
-            ViewExtKt.setPaddingVertical(appCompatTextView, appCompatTextView.getResources().getDimensionPixelOffset(C3286R.dimen.margin_normal_2));
+            ViewExtKt.setPaddingVertical(appCompatTextView, appCompatTextView.getResources().getDimensionPixelOffset(C3301R.dimen.margin_normal_2));
             com.smedialink.utils.extentions.common.ViewExtKt.singleLine(appCompatTextView);
             appCompatTextView.setEllipsize(TextUtils.TruncateAt.END);
-            appCompatTextView.setText(LocaleController.getInternalString(horizontalActionButtonItem.getTextRes()));
-            appCompatTextView.setTextSize(0, appCompatTextView.getResources().getDimension(C3286R.dimen.text_size_normal));
-            appCompatTextView.setCompoundDrawablesWithIntrinsicBounds(0, horizontalActionButtonItem.getIconRes(), 0, 0);
+            appCompatTextView.setText(horizontalActionButtonItem.getText());
+            appCompatTextView.setTextSize(0, appCompatTextView.getResources().getDimension(C3301R.dimen.text_size_normal));
+            appCompatTextView.setCompoundDrawablesWithIntrinsicBounds(0, horizontalActionButtonItem.getIconResId(), 0, 0);
             appCompatTextView.setCompoundDrawablePadding(appCompatTextView.getResources().getDimensionPixelOffset(i));
             appCompatTextView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.HorizontalActionButtonsView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener

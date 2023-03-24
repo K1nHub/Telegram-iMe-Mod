@@ -90,19 +90,19 @@
 .end method
 
 .method static d(JLj$/util/function/m;)Lj$/util/stream/s1;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide/32 v0, 0x7ffffff7
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     new-instance v0, Lj$/util/stream/b2;
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public static e(Lj$/util/stream/y2;Lj$/util/s;ZLj$/util/function/m;)Lj$/util/stream/A1;
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
 
@@ -129,9 +129,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_1
+    if-ltz v2, :cond_1
 
     const/16 v2, 0x4000
 
@@ -200,7 +200,7 @@
 .end method
 
 .method public static f(Lj$/util/stream/y2;Lj$/util/s;Z)Lj$/util/stream/u1;
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
 
@@ -208,9 +208,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_1
+    if-ltz v2, :cond_1
 
     const/16 v2, 0x4000
 
@@ -277,7 +277,7 @@
 .end method
 
 .method public static g(Lj$/util/stream/y2;Lj$/util/s;Z)Lj$/util/stream/w1;
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
 
@@ -285,9 +285,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_1
+    if-ltz v2, :cond_1
 
     const/16 v2, 0x4000
 
@@ -354,7 +354,7 @@
 .end method
 
 .method public static h(Lj$/util/stream/y2;Lj$/util/s;Z)Lj$/util/stream/y1;
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0, p1}, Lj$/util/stream/y2;->q0(Lj$/util/s;)J
 
@@ -362,9 +362,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_1
+    if-ltz v2, :cond_1
 
     const/16 v2, 0x4000
 
@@ -519,19 +519,19 @@
 .end method
 
 .method static j(J)Lj$/util/stream/p1;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide/32 v0, 0x7ffffff7
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     new-instance v0, Lj$/util/stream/U1;
 
@@ -618,7 +618,7 @@
 .end method
 
 .method public static l(Lj$/util/stream/A1;Lj$/util/function/m;)Lj$/util/stream/A1;
-    .locals 5
+    .locals 4
 
     invoke-interface {p0}, Lj$/util/stream/A1;->p()I
 
@@ -632,13 +632,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-interface {p1, v1}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -676,7 +676,7 @@
 .end method
 
 .method public static m(Lj$/util/stream/u1;)Lj$/util/stream/u1;
-    .locals 5
+    .locals 4
 
     invoke-interface {p0}, Lj$/util/stream/A1;->p()I
 
@@ -690,13 +690,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    new-array v0, v1, [D
+    new-array v0, v0, [D
 
     new-instance v1, Lj$/util/stream/u2;
 
@@ -730,7 +730,7 @@
 .end method
 
 .method public static n(Lj$/util/stream/w1;)Lj$/util/stream/w1;
-    .locals 5
+    .locals 4
 
     invoke-interface {p0}, Lj$/util/stream/A1;->p()I
 
@@ -744,13 +744,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    new-array v0, v1, [I
+    new-array v0, v0, [I
 
     new-instance v1, Lj$/util/stream/u2;
 
@@ -784,7 +784,7 @@
 .end method
 
 .method public static o(Lj$/util/stream/y1;)Lj$/util/stream/y1;
-    .locals 5
+    .locals 4
 
     invoke-interface {p0}, Lj$/util/stream/A1;->p()I
 
@@ -798,13 +798,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    new-array v0, v1, [J
+    new-array v0, v0, [J
 
     new-instance v1, Lj$/util/stream/u2;
 
@@ -838,19 +838,19 @@
 .end method
 
 .method static p(J)Lj$/util/stream/q1;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide/32 v0, 0x7ffffff7
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     new-instance v0, Lj$/util/stream/d2;
 
@@ -869,19 +869,19 @@
 .end method
 
 .method static q(J)Lj$/util/stream/r1;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide/32 v0, 0x7ffffff7
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     new-instance v0, Lj$/util/stream/m2;
 

@@ -101,7 +101,7 @@
 .end method
 
 .method public setMoving(Z)V
-    .locals 5
+    .locals 4
 
     .line 300
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -114,9 +114,9 @@
 
     const-wide/16 v2, 0x1f4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

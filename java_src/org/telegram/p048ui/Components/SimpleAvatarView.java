@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -85,7 +84,7 @@ public class SimpleAvatarView extends View {
             valueAnimator.cancel();
         }
         if (z2) {
-            ValueAnimator duration = ValueAnimator.ofFloat(this.selectProgress, z ? 1.0f : BitmapDescriptorFactory.HUE_RED).setDuration(200L);
+            ValueAnimator duration = ValueAnimator.ofFloat(this.selectProgress, z ? 1.0f : 0.0f).setDuration(200L);
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SimpleAvatarView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -105,7 +104,7 @@ public class SimpleAvatarView extends View {
             this.animator = duration;
             return;
         }
-        this.selectProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        this.selectProgress = z ? 1.0f : 0.0f;
         invalidate();
     }
 

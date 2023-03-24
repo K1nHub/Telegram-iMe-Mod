@@ -89,14 +89,9 @@
 
     const/4 p2, -0x1
 
-    const/4 v2, -0x1
-
-    goto :goto_0
-
     :cond_0
     move v2, p2
 
-    :goto_0
     move-object v0, p0
 
     move v1, p1

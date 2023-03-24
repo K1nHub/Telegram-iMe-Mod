@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final addFailReason(J)I
-    .locals 3
+    .locals 2
 
     const-wide/high16 v0, 0x2000000000000000L
 
@@ -43,9 +43,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x2
 

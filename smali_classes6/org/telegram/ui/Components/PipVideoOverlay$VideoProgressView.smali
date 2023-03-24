@@ -103,7 +103,7 @@
 
     const v1, 0x3e99999a    # 0.3f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -203,7 +203,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v2, v2
 
@@ -246,7 +246,7 @@
 
     move-result v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     add-float v7, v5, v0
 

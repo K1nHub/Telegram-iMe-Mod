@@ -111,7 +111,7 @@
 .end method
 
 .method static eventToProto(Lcom/google/firebase/messaging/reporting/MessagingClientEvent$Event;Landroid/content/Intent;)Lcom/google/firebase/messaging/reporting/MessagingClientEvent;
-    .locals 4
+    .locals 3
 
     if-nez p1, :cond_0
 
@@ -233,9 +233,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p0, v1
+    cmp-long v1, p0, v1
 
-    if-lez v3, :cond_7
+    if-lez v1, :cond_7
 
     .line 20
     invoke-virtual {v0, p0, p1}, Lcom/google/firebase/messaging/reporting/MessagingClientEvent$Builder;->setProjectNumber(J)Lcom/google/firebase/messaging/reporting/MessagingClientEvent$Builder;

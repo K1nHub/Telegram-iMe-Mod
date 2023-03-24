@@ -700,7 +700,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
@@ -730,7 +730,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_a
@@ -740,12 +740,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     const-string v1, "Check failed."
@@ -757,12 +757,12 @@
 
     if-nez v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     if-eqz v0, :cond_8
@@ -775,7 +775,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_3
     if-eqz v3, :cond_7

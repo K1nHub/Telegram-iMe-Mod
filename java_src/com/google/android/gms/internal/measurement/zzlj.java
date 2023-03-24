@@ -235,8 +235,10 @@ public final class zzlj<T> implements zzlr<T> {
         return ((Boolean) zzms.zzf(t, j)).booleanValue();
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     private final void zzR(T t, zzjh zzjhVar) throws IOException {
         int i;
+        boolean z;
         if (this.zzh) {
             this.zzo.zza(t);
             throw null;
@@ -244,19 +246,19 @@ public final class zzlj<T> implements zzlr<T> {
         int length = this.zzc.length;
         Unsafe unsafe = zzb;
         int i2 = 1048575;
-        int i3 = 0;
+        int i3 = 1048575;
         int i4 = 0;
-        int i5 = 1048575;
-        while (i3 < length) {
-            int zzB = zzB(i3);
-            int i6 = this.zzc[i3];
+        int i5 = 0;
+        while (i4 < length) {
+            int zzB = zzB(i4);
+            int i6 = this.zzc[i4];
             int zzA = zzA(zzB);
             if (zzA <= 17) {
-                int i7 = this.zzc[i3 + 2];
+                int i7 = this.zzc[i4 + 2];
                 int i8 = i7 & i2;
-                if (i8 != i5) {
-                    i4 = unsafe.getInt(t, i8);
-                    i5 = i8;
+                if (i8 != i3) {
+                    i5 = unsafe.getInt(t, i8);
+                    i3 = i8;
                 }
                 i = 1 << (i7 >>> 20);
             } else {
@@ -265,373 +267,328 @@ public final class zzlj<T> implements zzlr<T> {
             long j = zzB & i2;
             switch (zzA) {
                 case 0:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzf(i6, zzms.zza(t, j));
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 1:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzo(i6, zzms.zzb(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 2:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzt(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 3:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzJ(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 4:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzr(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 5:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzm(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 6:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzk(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 7:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzb(i6, zzms.zzw(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 8:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzT(i6, unsafe.getObject(t, j), zzjhVar);
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 9:
-                    if ((i4 & i) != 0) {
-                        zzjhVar.zzv(i6, unsafe.getObject(t, j), zzE(i3));
+                    if ((i5 & i) == 0) {
+                        break;
                     } else {
-                        continue;
+                        zzjhVar.zzv(i6, unsafe.getObject(t, j), zzE(i4));
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 10:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzd(i6, (zziy) unsafe.getObject(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 11:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzH(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 12:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzi(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 13:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzw(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 14:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzy(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 15:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzA(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 16:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzjhVar.zzC(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 17:
-                    if ((i4 & i) != 0) {
-                        zzjhVar.zzq(i6, unsafe.getObject(t, j), zzE(i3));
+                    if ((i5 & i) == 0) {
+                        break;
                     } else {
-                        continue;
+                        zzjhVar.zzq(i6, unsafe.getObject(t, j), zzE(i4));
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 18:
-                    zzlt.zzL(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzL(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 19:
-                    zzlt.zzP(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzP(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 20:
-                    zzlt.zzS(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzS(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 21:
-                    zzlt.zzaa(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzaa(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 22:
-                    zzlt.zzR(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzR(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 23:
-                    zzlt.zzO(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzO(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 24:
-                    zzlt.zzN(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzN(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 25:
-                    zzlt.zzJ(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzlt.zzJ(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    break;
                 case 26:
-                    zzlt.zzY(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar);
+                    zzlt.zzY(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar);
                     break;
                 case 27:
-                    zzlt.zzT(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, zzE(i3));
+                    zzlt.zzT(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, zzE(i4));
                     break;
                 case 28:
-                    zzlt.zzK(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar);
+                    zzlt.zzK(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar);
                     break;
                 case 29:
-                    zzlt.zzZ(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    z = false;
+                    zzlt.zzZ(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
                     break;
                 case 30:
-                    zzlt.zzM(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    z = false;
+                    zzlt.zzM(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
                     break;
                 case 31:
-                    zzlt.zzU(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    z = false;
+                    zzlt.zzU(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
                     break;
                 case 32:
-                    zzlt.zzV(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    z = false;
+                    zzlt.zzV(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
                     break;
                 case 33:
-                    zzlt.zzW(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    z = false;
+                    zzlt.zzW(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
                     break;
                 case 34:
-                    zzlt.zzX(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, false);
+                    z = false;
+                    zzlt.zzX(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, false);
                     break;
                 case 35:
-                    zzlt.zzL(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzL(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 36:
-                    zzlt.zzP(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzP(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 37:
-                    zzlt.zzS(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzS(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 38:
-                    zzlt.zzaa(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzaa(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 39:
-                    zzlt.zzR(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzR(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 40:
-                    zzlt.zzO(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzO(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 41:
-                    zzlt.zzN(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzN(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 42:
-                    zzlt.zzJ(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzJ(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 43:
-                    zzlt.zzZ(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzZ(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 44:
-                    zzlt.zzM(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzM(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 45:
-                    zzlt.zzU(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzU(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 46:
-                    zzlt.zzV(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzV(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 47:
-                    zzlt.zzW(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzW(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 48:
-                    zzlt.zzX(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, true);
+                    zzlt.zzX(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, true);
                     break;
                 case 49:
-                    zzlt.zzQ(this.zzc[i3], (List) unsafe.getObject(t, j), zzjhVar, zzE(i3));
+                    zzlt.zzQ(this.zzc[i4], (List) unsafe.getObject(t, j), zzjhVar, zzE(i4));
                     break;
                 case 50:
-                    zzS(zzjhVar, i6, unsafe.getObject(t, j), i3);
+                    zzS(zzjhVar, i6, unsafe.getObject(t, j), i4);
                     break;
                 case 51:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzf(i6, zzn(t, j));
-                        break;
                     }
                     break;
                 case 52:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzo(i6, zzo(t, j));
-                        break;
                     }
                     break;
                 case 53:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzt(i6, zzC(t, j));
-                        break;
                     }
                     break;
                 case 54:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzJ(i6, zzC(t, j));
-                        break;
                     }
                     break;
                 case 55:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzr(i6, zzr(t, j));
-                        break;
                     }
                     break;
                 case 56:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzm(i6, zzC(t, j));
-                        break;
                     }
                     break;
                 case 57:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzk(i6, zzr(t, j));
-                        break;
                     }
                     break;
                 case 58:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzb(i6, zzQ(t, j));
-                        break;
                     }
                     break;
                 case 59:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzT(i6, unsafe.getObject(t, j), zzjhVar);
-                        break;
                     }
                     break;
                 case 60:
-                    if (zzP(t, i6, i3)) {
-                        zzjhVar.zzv(i6, unsafe.getObject(t, j), zzE(i3));
-                        break;
+                    if (zzP(t, i6, i4)) {
+                        zzjhVar.zzv(i6, unsafe.getObject(t, j), zzE(i4));
                     }
                     break;
                 case 61:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzd(i6, (zziy) unsafe.getObject(t, j));
-                        break;
                     }
                     break;
                 case 62:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzH(i6, zzr(t, j));
-                        break;
                     }
                     break;
                 case 63:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzi(i6, zzr(t, j));
-                        break;
                     }
                     break;
                 case 64:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzw(i6, zzr(t, j));
-                        break;
                     }
                     break;
                 case 65:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzy(i6, zzC(t, j));
-                        break;
                     }
                     break;
                 case 66:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzA(i6, zzr(t, j));
-                        break;
                     }
                     break;
                 case 67:
-                    if (zzP(t, i6, i3)) {
+                    if (zzP(t, i6, i4)) {
                         zzjhVar.zzC(i6, zzC(t, j));
-                        break;
                     }
                     break;
                 case 68:
-                    if (zzP(t, i6, i3)) {
-                        zzjhVar.zzq(i6, unsafe.getObject(t, j), zzE(i3));
-                        break;
+                    if (zzP(t, i6, i4)) {
+                        zzjhVar.zzq(i6, unsafe.getObject(t, j), zzE(i4));
                     }
                     break;
             }
-            i3 += 3;
+            i4 += 3;
             i2 = 1048575;
         }
         zzmi<?, ?> zzmiVar = this.zzn;
@@ -674,11 +631,11 @@ public final class zzlj<T> implements zzlr<T> {
         throw null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:123:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0278  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x025e  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x032c  */
     /* JADX WARN: Removed duplicated region for block: B:180:0x0385  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -717,9 +674,9 @@ public final class zzlj<T> implements zzlr<T> {
         int zzA8;
         int i2;
         Unsafe unsafe = zzb;
-        int i3 = 0;
+        int i3 = 1048575;
         int i4 = 0;
-        int i5 = 1048575;
+        int i5 = 0;
         for (int i6 = 0; i6 < this.zzc.length; i6 += 3) {
             int zzB2 = zzB(i6);
             int i7 = this.zzc[i6];
@@ -728,9 +685,9 @@ public final class zzlj<T> implements zzlr<T> {
                 int i8 = this.zzc[i6 + 2];
                 int i9 = i8 & 1048575;
                 i = 1 << (i8 >>> 20);
-                if (i9 != i5) {
-                    i4 = unsafe.getInt(t, i9);
-                    i5 = i9;
+                if (i9 != i3) {
+                    i5 = unsafe.getInt(t, i9);
+                    i3 = i9;
                 }
             } else {
                 i = 0;
@@ -738,7 +695,7 @@ public final class zzlj<T> implements zzlr<T> {
             long j = zzB2 & 1048575;
             switch (zzA9) {
                 case 0:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA = zzjg.zzA(i7 << 3);
                         zzo = zzA + 8;
                         break;
@@ -746,7 +703,7 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 1:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA2 = zzjg.zzA(i7 << 3);
                         zzo = zzA2 + 4;
                         break;
@@ -754,7 +711,7 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 2:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         long j2 = unsafe.getLong(t, j);
                         zzA3 = zzjg.zzA(i7 << 3);
                         zzB = zzjg.zzB(j2);
@@ -764,7 +721,7 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 3:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         long j3 = unsafe.getLong(t, j);
                         zzA3 = zzjg.zzA(i7 << 3);
                         zzB = zzjg.zzB(j3);
@@ -774,17 +731,17 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 4:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i10 = unsafe.getInt(t, j);
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzv(i10);
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 5:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA = zzjg.zzA(i7 << 3);
                         zzo = zzA + 8;
                         break;
@@ -792,7 +749,7 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 6:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA2 = zzjg.zzA(i7 << 3);
                         zzo = zzA2 + 4;
                         break;
@@ -800,7 +757,7 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 7:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA5 = zzjg.zzA(i7 << 3);
                         zzo = zzA5 + 1;
                         break;
@@ -808,62 +765,62 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 8:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         Object object = unsafe.getObject(t, j);
                         if (object instanceof zziy) {
                             zzA6 = zzjg.zzA(i7 << 3);
                             zzd = ((zziy) object).zzd();
                             zzA7 = zzjg.zzA(zzd);
                             i2 = zzA6 + zzA7 + zzd;
-                            i3 += i2;
+                            i4 += i2;
                         } else {
                             zzA4 = zzjg.zzA(i7 << 3);
                             zzv = zzjg.zzy((String) object);
                             i2 = zzA4 + zzv;
-                            i3 += i2;
+                            i4 += i2;
                         }
                     } else {
                         continue;
                     }
                 case 9:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzo = zzlt.zzo(i7, unsafe.getObject(t, j), zzE(i6));
                         break;
                     } else {
                         continue;
                     }
                 case 10:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA6 = zzjg.zzA(i7 << 3);
                         zzd = ((zziy) unsafe.getObject(t, j)).zzd();
                         zzA7 = zzjg.zzA(zzd);
                         i2 = zzA6 + zzA7 + zzd;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 11:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i11 = unsafe.getInt(t, j);
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzA(i11);
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 12:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i12 = unsafe.getInt(t, j);
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzv(i12);
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 13:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA2 = zzjg.zzA(i7 << 3);
                         zzo = zzA2 + 4;
                         break;
@@ -871,7 +828,7 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 14:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzA = zzjg.zzA(i7 << 3);
                         zzo = zzA + 8;
                         break;
@@ -879,27 +836,27 @@ public final class zzlj<T> implements zzlr<T> {
                         continue;
                     }
                 case 15:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i13 = unsafe.getInt(t, j);
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzA((i13 >> 31) ^ (i13 + i13));
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 16:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         long j4 = unsafe.getLong(t, j);
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzB((j4 >> 63) ^ (j4 + j4));
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 17:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzo = zzjg.zzu(i7, (zzlg) unsafe.getObject(t, j), zzE(i6));
                         break;
                     } else {
@@ -963,7 +920,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -974,7 +931,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -985,7 +942,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -996,7 +953,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1007,7 +964,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1018,7 +975,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1029,7 +986,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1040,7 +997,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1051,7 +1008,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1062,7 +1019,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1073,7 +1030,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1084,7 +1041,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1095,7 +1052,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1106,7 +1063,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA8 = zzjg.zzA(zzv);
                         zzA4 = zzz + zzA8;
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1158,7 +1115,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzv(zzr);
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1194,12 +1151,12 @@ public final class zzlj<T> implements zzlr<T> {
                             zzd = ((zziy) object2).zzd();
                             zzA7 = zzjg.zzA(zzd);
                             i2 = zzA6 + zzA7 + zzd;
-                            i3 += i2;
+                            i4 += i2;
                         } else {
                             zzA4 = zzjg.zzA(i7 << 3);
                             zzv = zzjg.zzy((String) object2);
                             i2 = zzA4 + zzv;
-                            i3 += i2;
+                            i4 += i2;
                         }
                     } else {
                         continue;
@@ -1217,7 +1174,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzd = ((zziy) unsafe.getObject(t, j)).zzd();
                         zzA7 = zzjg.zzA(zzd);
                         i2 = zzA6 + zzA7 + zzd;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1227,7 +1184,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzA(zzr2);
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1237,7 +1194,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzv(zzr3);
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1263,7 +1220,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzA((zzr4 >> 31) ^ (zzr4 + zzr4));
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1273,7 +1230,7 @@ public final class zzlj<T> implements zzlr<T> {
                         zzA4 = zzjg.zzA(i7 << 3);
                         zzv = zzjg.zzB((zzC3 >> 63) ^ (zzC3 + zzC3));
                         i2 = zzA4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1286,10 +1243,10 @@ public final class zzlj<T> implements zzlr<T> {
                     }
                 default:
             }
-            i3 += zzo;
+            i4 += zzo;
         }
         zzmi<?, ?> zzmiVar = this.zzn;
-        int zza2 = i3 + zzmiVar.zza(zzmiVar.zzc(t));
+        int zza2 = i4 + zzmiVar.zza(zzmiVar.zzc(t));
         if (this.zzh) {
             this.zzo.zza(t);
             throw null;
@@ -2101,28 +2058,29 @@ public final class zzlj<T> implements zzlr<T> {
         return i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x02a8, code lost:
-        if (r0 != r15) goto L152;
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x02a9, code lost:
+        if (r0 != r15) goto L154;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x02aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x02ab, code lost:
         r15 = r30;
         r14 = r31;
         r12 = r32;
         r13 = r34;
         r11 = r35;
+        r10 = r18;
         r2 = r19;
         r1 = r20;
         r6 = r24;
         r7 = r25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x02be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x02c1, code lost:
         r2 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x02f1, code lost:
-        if (r0 != r15) goto L152;
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x02f4, code lost:
+        if (r0 != r15) goto L154;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x0314, code lost:
-        if (r0 != r15) goto L152;
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x0317, code lost:
+        if (r0 != r15) goto L154;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v10, types: [int] */
@@ -2132,7 +2090,7 @@ public final class zzlj<T> implements zzlr<T> {
     */
     private final int zzu(T r31, byte[] r32, int r33, int r34, com.google.android.gms.internal.measurement.zzik r35) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 896
+            Method dump skipped, instructions count: 898
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.measurement.zzlj.zzu(java.lang.Object, byte[], int, int, com.google.android.gms.internal.measurement.zzik):int");
@@ -2517,58 +2475,58 @@ public final class zzlj<T> implements zzlr<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x0417, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x0419, code lost:
         if (r6 == 1048575) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x0419, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:145:0x041b, code lost:
         r26.putInt(r12, r6, r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x041f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x0421, code lost:
         r3 = r9.zzk;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:148:0x0423, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:148:0x0425, code lost:
         if (r3 >= r9.zzl) goto L49;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x0425, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0427, code lost:
         r4 = r9.zzj[r3];
         r5 = r9.zzc[r4];
         r5 = com.google.android.gms.internal.measurement.zzms.zzf(r12, r9.zzB(r4) & 1048575);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0437, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x0439, code lost:
         if (r5 != null) goto L40;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x043e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x0440, code lost:
         if (r9.zzD(r4) != null) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:154:0x0440, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:154:0x0442, code lost:
         r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x0443, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x0445, code lost:
         r5 = (com.google.android.gms.internal.measurement.zzla) r5;
         r0 = (com.google.android.gms.internal.measurement.zzkz) r9.zzF(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x044b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:156:0x044d, code lost:
         throw null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x044c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x044e, code lost:
         if (r7 != 0) goto L56;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x0450, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x0452, code lost:
         if (r0 != r32) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x0457, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x0459, code lost:
         throw com.google.android.gms.internal.measurement.zzkj.zze();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x045a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x045c, code lost:
         if (r0 > r32) goto L59;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x045c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x045e, code lost:
         if (r1 != r7) goto L59;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x045e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x0460, code lost:
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x0463, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x0465, code lost:
         throw com.google.android.gms.internal.measurement.zzkj.zze();
      */
     /*
@@ -2577,7 +2535,7 @@ public final class zzlj<T> implements zzlr<T> {
     */
     public final int zzc(T r29, byte[] r30, int r31, int r32, int r33, com.google.android.gms.internal.measurement.zzik r34) throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 1162
+            Method dump skipped, instructions count: 1164
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.measurement.zzlj.zzc(java.lang.Object, byte[], int, int, int, com.google.android.gms.internal.measurement.zzik):int");

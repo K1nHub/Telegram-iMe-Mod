@@ -261,7 +261,7 @@
 
     move-result v2
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
@@ -271,7 +271,7 @@
     .line 273
     iput-object v5, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 275
     :goto_0
@@ -286,7 +286,7 @@
 
     move-result p2
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     if-ge v0, p2, :cond_6
@@ -366,7 +366,7 @@
 
     move-result p2
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_3
     if-ge v0, p2, :cond_9

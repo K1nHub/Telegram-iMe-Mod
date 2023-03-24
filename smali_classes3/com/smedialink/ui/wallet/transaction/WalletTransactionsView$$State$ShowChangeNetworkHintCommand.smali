@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State;)V
     .locals 1
 
-    .line 263
+    .line 294
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showChangeNetworkHint"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 0
 
-    .line 268
+    .line 299
     invoke-interface {p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;->showChangeNetworkHint()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 261
+    .line 292
     check-cast p1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChangeNetworkHintCommand;->apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V

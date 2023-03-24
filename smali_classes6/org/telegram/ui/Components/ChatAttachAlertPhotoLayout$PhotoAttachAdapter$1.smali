@@ -118,7 +118,7 @@
 
     iget v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->cornerRadius:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -172,7 +172,7 @@
 
     iget v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->cornerRadius:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 

@@ -135,7 +135,7 @@
 
     invoke-direct {p2, p3}, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;-><init>(I)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     const/4 p5, 0x0
@@ -144,15 +144,10 @@
 
     const/4 p5, 0x4
 
-    const/4 v1, 0x4
-
-    goto :goto_0
-
     :cond_2
-    const/4 v1, 0x0
+    move v1, p5
 
     .line 67
-    :goto_0
     new-instance p2, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;
 
     const/4 v2, 0x0
@@ -168,7 +163,7 @@
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor;-><init>(ILcom/google/android/exoplayer2/util/TimestampAdjuster;Lcom/google/android/exoplayer2/extractor/mp4/Track;Ljava/util/List;Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
 
     .line 75
-    :goto_1
+    :goto_0
     new-instance p3, Lcom/google/android/exoplayer2/source/chunk/BundledChunkExtractor;
 
     invoke-direct {p3, p2, p0, p1}, Lcom/google/android/exoplayer2/source/chunk/BundledChunkExtractor;-><init>(Lcom/google/android/exoplayer2/extractor/Extractor;ILcom/google/android/exoplayer2/Format;)V
@@ -263,7 +258,7 @@
 .end method
 
 .method public init(Lcom/google/android/exoplayer2/source/chunk/ChunkExtractor$TrackOutputProvider;JJ)V
-    .locals 6
+    .locals 5
 
     .line 124
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/chunk/BundledChunkExtractor;->trackOutputProvider:Lcom/google/android/exoplayer2/source/chunk/ChunkExtractor$TrackOutputProvider;
@@ -306,9 +301,9 @@
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/chunk/BundledChunkExtractor;->extractor:Lcom/google/android/exoplayer2/extractor/Extractor;
 
-    cmp-long v5, p2, v1
+    cmp-long v1, p2, v1
 
-    if-nez v5, :cond_2
+    if-nez v1, :cond_2
 
     move-wide p2, v3
 
@@ -370,12 +365,12 @@
 
     if-eq p1, v1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 148
     :goto_0
@@ -383,7 +378,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     return v0

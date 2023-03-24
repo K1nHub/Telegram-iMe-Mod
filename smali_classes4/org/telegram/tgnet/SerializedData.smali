@@ -233,11 +233,11 @@
 
     shr-long v1, p1, v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     .line 134
     :try_start_0
-    invoke-virtual {p3, v2}, Ljava/io/DataOutputStream;->write(I)V
+    invoke-virtual {p3, v1}, Ljava/io/DataOutputStream;->write(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -582,12 +582,12 @@
 
     iput v1, p0, Lorg/telegram/tgnet/SerializedData;->len:I
 
-    const/4 v1, 0x4
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 467
     :goto_0
@@ -842,9 +842,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x4
@@ -1047,12 +1047,12 @@
 
     iput v1, p0, Lorg/telegram/tgnet/SerializedData;->len:I
 
-    const/4 v1, 0x4
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 434
     :goto_0
@@ -1472,12 +1472,12 @@
 
     if-gt v0, v1, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x4
+    move v0, v2
 
     .line 240
     :goto_2
@@ -1638,12 +1638,12 @@
     :goto_1
     if-gt p3, v0, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 p1, 0x4
+    move p1, v1
 
     :goto_2
     add-int p2, p3, p1

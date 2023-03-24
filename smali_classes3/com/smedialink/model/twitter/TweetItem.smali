@@ -406,29 +406,50 @@
 
     return v0
 
+    .line 21
     :cond_0
-    instance-of v1, p1, Lcom/smedialink/model/twitter/TweetItem;
+    const-class v1, Lcom/smedialink/model/twitter/TweetItem;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v2, 0x0
+
+    :goto_0
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
     return v2
 
-    :cond_1
+    :cond_2
+    const-string v1, "null cannot be cast to non-null type com.smedialink.model.twitter.TweetItem"
+
+    .line 23
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Lcom/smedialink/model/twitter/TweetItem;
 
+    .line 25
     iget-wide v3, p0, Lcom/smedialink/model/twitter/TweetItem;->id:J
 
     iget-wide v5, p1, Lcom/smedialink/model/twitter/TweetItem;->id:J
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_2
+    if-nez v1, :cond_3
 
-    return v2
-
-    :cond_2
+    .line 26
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->authorName:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->authorName:Ljava/lang/String;
@@ -437,11 +458,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_3
+    .line 27
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->authorNickname:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->authorNickname:Ljava/lang/String;
@@ -450,11 +469,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_4
+    .line 28
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->avatarUrl:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->avatarUrl:Ljava/lang/String;
@@ -463,11 +480,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_5
+    .line 29
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->likesCountText:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->likesCountText:Ljava/lang/String;
@@ -476,11 +491,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_6
+    .line 30
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->commentsCountText:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->commentsCountText:Ljava/lang/String;
@@ -489,11 +502,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_7
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_7
+    .line 31
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
@@ -502,24 +513,28 @@
 
     move-result v1
 
-    if-nez v1, :cond_8
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_8
+    .line 32
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
 
+    invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_9
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_9
+    .line 33
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->date:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/smedialink/model/twitter/TweetItem;->date:Ljava/lang/String;
@@ -528,20 +543,21 @@
 
     move-result v1
 
-    if-nez v1, :cond_a
+    if-eqz v1, :cond_3
 
-    return v2
-
-    :cond_a
+    .line 34
     iget-boolean v1, p0, Lcom/smedialink/model/twitter/TweetItem;->isLiked:Z
 
     iget-boolean p1, p1, Lcom/smedialink/model/twitter/TweetItem;->isLiked:Z
 
-    if-eq v1, p1, :cond_b
+    if-ne v1, p1, :cond_3
 
-    return v2
+    goto :goto_1
 
-    :cond_b
+    :cond_3
+    move v0, v2
+
+    :goto_1
     return v0
 .end method
 
@@ -629,6 +645,7 @@
 .method public hashCode()I
     .locals 2
 
+    .line 38
     iget-wide v0, p0, Lcom/smedialink/model/twitter/TweetItem;->id:J
 
     invoke-static {v0, v1}, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;->m(J)I
@@ -637,6 +654,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 39
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->authorName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -647,6 +665,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 40
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->authorNickname:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -657,6 +676,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 41
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->avatarUrl:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -667,6 +687,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 42
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->likesCountText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -677,6 +698,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 43
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->commentsCountText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -687,6 +709,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 44
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -697,9 +720,14 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 45
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
 
-    invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->hashCode()I
+    invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -707,6 +735,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 46
     iget-object v1, p0, Lcom/smedialink/model/twitter/TweetItem;->date:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -717,13 +746,13 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    .line 47
     iget-boolean v1, p0, Lcom/smedialink/model/twitter/TweetItem;->isLiked:Z
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Lcom/smedialink/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
 
-    const/4 v1, 0x1
+    move-result v1
 
-    :cond_0
     add-int/2addr v0, v1
 
     return v0

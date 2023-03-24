@@ -998,7 +998,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 1865
     :goto_4
@@ -1116,7 +1116,7 @@
     if-ne v0, v1, :cond_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 1881
     :cond_1
@@ -1192,7 +1192,7 @@
 
     iput v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;->emojiStartRow:I
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1893
     :goto_0
@@ -1309,7 +1309,7 @@
 
     iput v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;->stickersStartRow:I
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1906
     :goto_1
@@ -1404,7 +1404,7 @@
 
     if-nez v0, :cond_7
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_7
     invoke-virtual {p1, v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->switchSearchEmptyView(Z)V

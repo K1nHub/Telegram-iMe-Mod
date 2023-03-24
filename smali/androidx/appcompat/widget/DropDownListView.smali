@@ -341,12 +341,12 @@
 
     if-eq p1, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_1
@@ -383,7 +383,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
@@ -798,7 +798,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 313
     :goto_0
@@ -808,13 +808,13 @@
 
     const/4 v3, 0x0
 
+    move v4, p3
+
+    move v5, v4
+
+    move v7, v5
+
     move-object v6, v3
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
 
     :goto_1
     if-ge v4, v1, :cond_9
@@ -960,27 +960,27 @@
 
     :cond_0
     :goto_0
-    const/4 p2, 0x0
+    move p2, v1
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_3
 
     :cond_1
     :goto_1
-    const/4 p2, 0x0
+    move p2, v1
 
-    const/4 v3, 0x0
+    move v3, p2
 
     goto :goto_3
 
     :cond_2
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 493
     :goto_2
@@ -1016,7 +1016,7 @@
 
     if-ne v5, v6, :cond_5
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_3
 

@@ -482,7 +482,7 @@
 
     if-eqz v7, :cond_18
 
-    const/4 v7, -0x1
+    move v7, v11
 
     :cond_0
     const/4 v12, 0x1
@@ -505,9 +505,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v9, v2
+    cmp-long v2, v9, v2
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     .line 62
     invoke-virtual {v8}, Ljava/lang/ThreadLocal;->remove()V
@@ -966,9 +966,9 @@
     :goto_4
     const-wide/16 v1, 0x0
 
-    cmp-long v3, v9, v1
+    cmp-long v1, v9, v1
 
-    if-nez v3, :cond_e
+    if-nez v1, :cond_e
 
     .line 62
     invoke-virtual {v8}, Ljava/lang/ThreadLocal;->remove()V
@@ -1174,9 +1174,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, v9, v1
+    cmp-long v1, v9, v1
 
-    if-nez v3, :cond_14
+    if-nez v1, :cond_14
 
     sget-object v1, Lcom/google/android/gms/dynamite/DynamiteModule;->zzh:Ljava/lang/ThreadLocal;
 
@@ -1304,9 +1304,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, v9, v1
+    cmp-long v1, v9, v1
 
-    if-nez v3, :cond_19
+    if-nez v1, :cond_19
 
     .line 27
     sget-object v1, Lcom/google/android/gms/dynamite/DynamiteModule;->zzh:Ljava/lang/ThreadLocal;
@@ -2214,7 +2214,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, p1
 
     :goto_0
     sput-boolean v9, Lcom/google/android/gms/dynamite/DynamiteModule;->zzd:Z
@@ -2613,7 +2613,7 @@
 
     if-eqz p0, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 5
     :cond_2

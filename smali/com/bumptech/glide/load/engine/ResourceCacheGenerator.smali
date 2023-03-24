@@ -387,7 +387,7 @@
 
     invoke-interface {v0, v1, p0}, Lcom/bumptech/glide/load/data/DataFetcher;->loadData(Lcom/bumptech/glide/Priority;Lcom/bumptech/glide/load/data/DataFetcher$DataCallback;)V
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_1
 

@@ -147,7 +147,7 @@
 
     aput-object v4, p1, v5
 
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_2
     if-ge v4, v1, :cond_3

@@ -57,7 +57,7 @@
 
     if-ne p1, v1, :cond_1
 
-    const/16 p1, 0x64
+    move p1, v0
 
     goto :goto_0
 

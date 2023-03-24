@@ -705,12 +705,12 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_2
 
     :cond_6
-    const/4 v4, 0x2
+    move v4, v7
 
     .line 871
     :cond_7
@@ -734,7 +734,7 @@
 
     if-ne v4, v10, :cond_8
 
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_8
     invoke-virtual {v1, v2, v9, v10}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -772,7 +772,7 @@
     goto :goto_3
 
     :cond_a
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_3
     invoke-virtual {v1, v2, v10, v9}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
@@ -894,7 +894,7 @@
     move-result v2
 
     :goto_4
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_5
     const/16 v4, 0x9
@@ -1427,7 +1427,7 @@
 
     if-ne v2, v5, :cond_1e
 
-    goto :goto_9
+    goto/16 :goto_9
 
     :cond_1e
     if-ne v2, v10, :cond_21
@@ -1462,7 +1462,7 @@
     if-eq v4, v8, :cond_20
 
     :cond_1f
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_20
     invoke-virtual {v1, v2, v3, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -1502,7 +1502,7 @@
     if-eq v4, v8, :cond_23
 
     :cond_22
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_23
     invoke-virtual {v1, v2, v3, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -1544,7 +1544,7 @@
     if-eq v4, v8, :cond_26
 
     :cond_25
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_26
     invoke-virtual {v1, v2, v3, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -1583,7 +1583,7 @@
     if-eq v4, v8, :cond_29
 
     :cond_28
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_29
     invoke-virtual {v1, v2, v3, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -1819,7 +1819,7 @@
 
     if-eq v4, v8, :cond_31
 
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_31
     invoke-virtual {v1, v2, v3, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -1871,7 +1871,7 @@
 
     if-eq v3, v8, :cond_33
 
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_33
     invoke-virtual {v1, v4, v2, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

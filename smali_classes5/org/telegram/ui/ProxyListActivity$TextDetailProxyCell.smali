@@ -120,12 +120,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_0
     or-int/lit8 v1, v1, 0x10
@@ -143,12 +143,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v6, 0x5
+    move v6, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_1
     or-int/lit8 v6, v6, 0x30
@@ -159,24 +159,24 @@
 
     if-eqz v1, :cond_2
 
-    const/16 v7, 0x38
+    move v7, v11
 
     goto :goto_2
 
     :cond_2
-    const/16 v7, 0x15
+    move v7, v12
 
     :goto_2
     const/16 v8, 0xa
 
     if-eqz v1, :cond_3
 
-    const/16 v9, 0x15
+    move v9, v12
 
     goto :goto_3
 
     :cond_3
-    const/16 v9, 0x38
+    move v9, v11
 
     :goto_3
     const/4 v10, 0x0
@@ -206,12 +206,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_4
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -267,36 +267,36 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v6, 0x5
+    move v6, v2
 
     goto :goto_5
 
     :cond_5
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_5
     or-int/lit8 v6, v6, 0x30
 
     if-eqz v1, :cond_6
 
-    const/16 v7, 0x38
+    move v7, v11
 
     goto :goto_6
 
     :cond_6
-    const/16 v7, 0x15
+    move v7, v12
 
     :goto_6
     const/16 v8, 0x23
 
     if-eqz v1, :cond_7
 
-    const/16 v9, 0x15
+    move v9, v12
 
     goto :goto_7
 
     :cond_7
-    const/16 v9, 0x38
+    move v9, v11
 
     :goto_7
     const/4 v10, 0x0
@@ -367,12 +367,12 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v1, 0x3
+    move v1, v3
 
     goto :goto_8
 
     :cond_8
-    const/4 v1, 0x5
+    move v1, v2
 
     :goto_8
     or-int/lit8 v6, v1, 0x30
@@ -444,7 +444,7 @@
     goto :goto_9
 
     :cond_9
-    const/4 v2, 0x3
+    move v2, v3
 
     :goto_9
     or-int/lit8 v6, v2, 0x10
@@ -649,8 +649,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -660,9 +658,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -932,7 +930,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 233
     :goto_1
@@ -980,12 +978,12 @@
 
     if-eqz p1, :cond_4
 
-    const/16 v1, 0x8
+    move v1, v0
 
     goto :goto_3
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -1013,7 +1011,7 @@
     goto :goto_4
 
     :cond_5
-    const/16 v2, 0x8
+    move v2, v0
 
     :goto_4
     invoke-virtual {p2, v2}, Landroid/view/View;->setVisibility(I)V
@@ -1042,12 +1040,12 @@
 
     if-eqz p1, :cond_7
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_5
 
     :cond_7
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v4
 
     :goto_5
     aput v1, p2, v2
@@ -1059,7 +1057,7 @@
     goto :goto_6
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_6
     aput v4, p2, v1
@@ -1188,50 +1186,50 @@
 
     iget-wide v0, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
-    const-string v6, "Connected"
+    cmp-long v0, v0, v7
 
-    cmp-long v9, v0, v7
+    const-string v1, "Connected"
 
-    if-eqz v9, :cond_2
+    if-eqz v0, :cond_2
 
     .line 189
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     sget v9, Lorg/telegram/messenger/R$string;->Connected:I
 
-    invoke-static {v6, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget v5, Lorg/telegram/messenger/R$string;->Ping:I
+    sget v1, Lorg/telegram/messenger/R$string;->Ping:I
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    iget-object v5, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    iget-wide v9, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
+    iget-wide v9, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v3, v2
+    aput-object v5, v3, v2
 
-    invoke-static {v4, v5, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1243,9 +1241,9 @@
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    sget v1, Lorg/telegram/messenger/R$string;->Connected:I
+    sget v2, Lorg/telegram/messenger/R$string;->Connected:I
 
-    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1303,50 +1301,50 @@
     .line 205
     iget-wide v0, v0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
-    const-string v6, "Available"
+    cmp-long v0, v0, v7
 
-    cmp-long v9, v0, v7
+    const-string v1, "Available"
 
-    if-eqz v9, :cond_6
+    if-eqz v0, :cond_6
 
     .line 206
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     sget v7, Lorg/telegram/messenger/R$string;->Available:I
 
-    invoke-static {v6, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget v5, Lorg/telegram/messenger/R$string;->Ping:I
+    sget v1, Lorg/telegram/messenger/R$string;->Ping:I
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
+    iget-object v5, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->currentInfo:Lorg/telegram/messenger/SharedConfig$ProxyInfo;
 
-    iget-wide v6, v6, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
+    iget-wide v7, v5, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v3, v2
+    aput-object v5, v3, v2
 
-    invoke-static {v4, v5, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1358,9 +1356,9 @@
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->valueTextView:Landroid/widget/TextView;
 
-    sget v1, Lorg/telegram/messenger/R$string;->Available:I
+    sget v2, Lorg/telegram/messenger/R$string;->Available:I
 
-    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 

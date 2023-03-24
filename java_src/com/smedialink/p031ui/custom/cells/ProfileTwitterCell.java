@@ -15,7 +15,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.Cells.TextDetailCell;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -73,21 +73,21 @@ public final class ProfileTwitterCell extends TextDetailCell implements KoinComp
     public final void setupWithTwitterStatus(TwitterAccountStatus twitterAccountStatus) {
         Intrinsics.checkNotNullParameter(twitterAccountStatus, "twitterAccountStatus");
         if (twitterAccountStatus instanceof TwitterAccountStatus.Active) {
-            setTextAndValue('@' + ((TwitterAccountStatus.Active) twitterAccountStatus).getNickname(), getResourceManager().getString(C3286R.string.drawer_social_network_twitter), false);
+            setTextAndValue('@' + ((TwitterAccountStatus.Active) twitterAccountStatus).getNickname(), getResourceManager().getString(C3301R.string.drawer_social_network_twitter), false);
             ViewExtKt.gone(getButtonAdd());
             AppCompatImageView imageView = getImageView();
             ViewExtKt.visible(imageView);
-            imageView.setImageResource(C3286R.C3288drawable.fork_drawer_social_twitter);
-            ViewExtKt.setImageColor(imageView, getResourceManager().getColor(C3286R.C3287color.twitter));
+            imageView.setImageResource(C3301R.C3303drawable.fork_drawer_social_twitter);
+            ViewExtKt.setImageColor(imageView, getResourceManager().getColor(C3301R.C3302color.twitter));
         } else if (twitterAccountStatus instanceof TwitterAccountStatus.Error) {
-            setTextAndValue('@' + ((TwitterAccountStatus.Error) twitterAccountStatus).getNickname(), getResourceManager().getString(C3286R.string.drawer_social_network_twitter), false);
+            setTextAndValue('@' + ((TwitterAccountStatus.Error) twitterAccountStatus).getNickname(), getResourceManager().getString(C3301R.string.drawer_social_network_twitter), false);
             ViewExtKt.gone(getButtonAdd());
             AppCompatImageView imageView2 = getImageView();
             ViewExtKt.visible(imageView2);
-            imageView2.setImageResource(C3286R.C3288drawable.msg_report);
-            ViewExtKt.setImageColor(imageView2, getResourceManager().getColor(C3286R.C3287color.common_red));
+            imageView2.setImageResource(C3301R.C3303drawable.msg_report);
+            ViewExtKt.setImageColor(imageView2, getResourceManager().getColor(C3301R.C3302color.common_red));
         } else if (Intrinsics.areEqual(twitterAccountStatus, TwitterAccountStatus.None.INSTANCE)) {
-            setTextAndValue(getResourceManager().getString(C3286R.string.profile_twitter_not_connected), getResourceManager().getString(C3286R.string.drawer_social_network_twitter), false);
+            setTextAndValue(getResourceManager().getString(C3301R.string.profile_twitter_not_connected), getResourceManager().getString(C3301R.string.drawer_social_network_twitter), false);
             ViewExtKt.gone(getImageView());
             ViewExtKt.visible(getButtonAdd());
         }
@@ -98,7 +98,7 @@ public final class ProfileTwitterCell extends TextDetailCell implements KoinComp
         Context context = getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
         SmallActionButton smallActionButton = new SmallActionButton(context, null, 0, 6, null);
-        smallActionButton.setText(LocaleController.getString("Add", C3286R.string.Add));
+        smallActionButton.setText(LocaleController.getString("Add", C3301R.string.Add));
         ViewExtKt.gone(smallActionButton);
         return smallActionButton;
     }

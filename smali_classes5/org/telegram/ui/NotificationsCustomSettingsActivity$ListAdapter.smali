@@ -285,7 +285,7 @@
 
     if-eq v1, v2, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_0
     invoke-virtual {p1, p2, v0, v4}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
@@ -441,12 +441,12 @@
 
     if-ge p1, p2, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v5
 
     goto :goto_2
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_2
     if-eqz v9, :cond_5
@@ -463,7 +463,7 @@
     invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_3
-    const/4 v10, 0x0
+    move v10, v4
 
     goto :goto_4
 
@@ -509,7 +509,7 @@
 
     invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v10, 0x2
+    move v10, v3
 
     :goto_4
     const/4 v11, 0x0
@@ -1385,7 +1385,7 @@
 
     if-eq p2, v2, :cond_28
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_28
     invoke-virtual {p1, v0, v1, v4}, Lorg/telegram/ui/Cells/UserCell;->setException(Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Ljava/lang/CharSequence;Z)V

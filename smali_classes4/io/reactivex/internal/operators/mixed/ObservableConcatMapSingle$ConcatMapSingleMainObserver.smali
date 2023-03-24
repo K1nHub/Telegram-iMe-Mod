@@ -219,7 +219,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 191
     :cond_1
@@ -292,7 +292,7 @@
 
     if-nez v7, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v4
 
     :cond_5
     if-eqz v6, :cond_7

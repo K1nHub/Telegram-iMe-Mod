@@ -19,7 +19,6 @@ public final class zzab implements Parcelable.Creator {
         String str = null;
         byte b = -1;
         byte b2 = -1;
-        int i = 0;
         byte b3 = -1;
         byte b4 = -1;
         byte b5 = -1;
@@ -30,6 +29,7 @@ public final class zzab implements Parcelable.Creator {
         byte b10 = -1;
         byte b11 = -1;
         byte b12 = -1;
+        int i = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

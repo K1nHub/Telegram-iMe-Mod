@@ -25,10 +25,10 @@ public class CarouselView extends View implements PagerHeaderView {
     private Runnable autoScrollRunnable;
 
     /* renamed from: cX */
-    int f1759cX;
+    int f1760cX;
 
     /* renamed from: cY */
-    int f1760cY;
+    int f1761cY;
     Comparator<DrawingObject> comparator;
     private final ArrayList<? extends DrawingObject> drawingObjects;
     private final ArrayList<? extends DrawingObject> drawingObjectsSorted;
@@ -48,10 +48,10 @@ public class CarouselView extends View implements PagerHeaderView {
         public double angle;
 
         /* renamed from: x */
-        public float f1761x;
+        public float f1762x;
 
         /* renamed from: y */
-        public float f1762y;
+        public float f1763y;
         float yRelative;
 
         public void draw(Canvas canvas, float f, float f2, float f3) {
@@ -93,7 +93,7 @@ public class CarouselView extends View implements PagerHeaderView {
                     CarouselView.this.lambda$scrollToInternal$2(f2, f, valueAnimator2);
                 }
             });
-            this.autoScrollAnimation.addListener(new C48923(f));
+            this.autoScrollAnimation.addListener(new C49073(f));
             this.autoScrollAnimation.setInterpolator(new OvershootInterpolator());
             this.autoScrollAnimation.setDuration(600L);
             this.autoScrollAnimation.start();
@@ -110,10 +110,10 @@ public class CarouselView extends View implements PagerHeaderView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.CarouselView$3 */
     /* loaded from: classes6.dex */
-    public class C48923 extends AnimatorListenerAdapter {
+    public class C49073 extends AnimatorListenerAdapter {
         final /* synthetic */ float val$scrollTo;
 
-        C48923(float f) {
+        C49073(float f) {
             this.val$scrollTo = f;
         }
 
@@ -126,7 +126,7 @@ public class CarouselView extends View implements PagerHeaderView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.CarouselView$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CarouselView.C48923.this.lambda$onAnimationEnd$0();
+                    CarouselView.C49073.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -155,8 +155,8 @@ public class CarouselView extends View implements PagerHeaderView {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f1759cX = getMeasuredWidth() >> 1;
-        this.f1760cY = getMeasuredHeight() >> 1;
+        this.f1760cX = getMeasuredWidth() >> 1;
+        this.f1761cY = getMeasuredHeight() >> 1;
     }
 
     @Override // android.view.View
@@ -218,15 +218,15 @@ public class CarouselView extends View implements PagerHeaderView {
             double d = this.offsetAngle + (i * size);
             drawingObject.angle = d;
             double cos = drawingObject.angle - (Math.cos(Math.toRadians(d)) * 30.0d);
-            drawingObject.f1761x = (((float) Math.cos(Math.toRadians(cos))) * min) + this.f1759cX;
+            drawingObject.f1762x = (((float) Math.cos(Math.toRadians(cos))) * min) + this.f1760cX;
             float sin = (float) Math.sin(Math.toRadians(cos));
             drawingObject.yRelative = sin;
-            drawingObject.f1762y = (sin * f6) + this.f1760cY;
+            drawingObject.f1763y = (sin * f6) + this.f1761cY;
         }
         Collections.sort(this.drawingObjectsSorted, this.comparator);
         for (int i2 = 0; i2 < this.drawingObjectsSorted.size(); i2++) {
             DrawingObject drawingObject2 = this.drawingObjectsSorted.get(i2);
-            drawingObject2.draw(canvas, drawingObject2.f1761x, drawingObject2.f1762y, (((drawingObject2.yRelative + 1.0f) * 0.7f) / 2.0f) + 0.2f);
+            drawingObject2.draw(canvas, drawingObject2.f1762x, drawingObject2.f1763y, (((drawingObject2.yRelative + 1.0f) * 0.7f) / 2.0f) + 0.2f);
         }
         invalidate();
     }

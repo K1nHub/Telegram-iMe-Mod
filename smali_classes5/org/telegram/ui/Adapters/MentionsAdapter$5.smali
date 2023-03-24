@@ -47,11 +47,11 @@
 .end method
 
 .method private getIndex(Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;)I
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 918
     :goto_0
@@ -78,9 +78,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     const p1, 0x1e8480
 
@@ -125,9 +125,9 @@
 
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_2
+    if-nez v1, :cond_2
 
     .line 925
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$recentStickers:Ljava/util/ArrayList;

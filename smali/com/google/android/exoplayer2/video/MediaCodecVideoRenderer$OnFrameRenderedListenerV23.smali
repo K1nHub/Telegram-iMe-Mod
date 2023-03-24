@@ -51,7 +51,7 @@
 .end method
 
 .method private handleFrameRendered(J)V
-    .locals 3
+    .locals 2
 
     .line 2054
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
@@ -71,9 +71,9 @@
     :cond_0
     const-wide v0, 0x7fffffffffffffffL
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     .line 2059
     iget-object p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer$OnFrameRenderedListenerV23;->this$0:Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
@@ -158,10 +158,10 @@
 
     long-to-int p5, v0
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 2031
-    invoke-static {p1, p4, p5, p3}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
+    invoke-static {p1, p4, p5, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object p1
 

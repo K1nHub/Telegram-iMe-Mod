@@ -741,9 +741,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_1
+    if-lez v2, :cond_1
 
     goto :goto_0
 

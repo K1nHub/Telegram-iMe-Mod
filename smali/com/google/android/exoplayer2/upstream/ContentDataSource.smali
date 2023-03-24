@@ -342,22 +342,22 @@
     .line 103
     iput-object v3, v1, Lcom/google/android/exoplayer2/upstream/ContentDataSource;->inputStream:Ljava/io/FileInputStream;
 
-    const/16 v8, 0x7d8
+    const-wide/16 v8, -0x1
 
-    const/4 v9, 0x0
+    cmp-long v10, v6, v8
 
-    const-wide/16 v10, -0x1
+    const/16 v11, 0x7d8
 
-    cmp-long v12, v6, v10
+    const/4 v12, 0x0
 
-    if-eqz v12, :cond_2
+    if-eqz v10, :cond_2
 
     .line 111
     iget-wide v13, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    cmp-long v15, v13, v6
+    cmp-long v13, v13, v6
 
-    if-gtz v15, :cond_1
+    if-gtz v13, :cond_1
 
     goto :goto_1
 
@@ -365,7 +365,7 @@
     :cond_1
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
 
-    invoke-direct {v0, v9, v8}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
+    invoke-direct {v0, v12, v11}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
 
     throw v0
 
@@ -399,7 +399,7 @@
 
     const-wide/16 v13, 0x0
 
-    if-nez v12, :cond_5
+    if-nez v10, :cond_5
 
     .line 129
     invoke-virtual {v3}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
@@ -416,7 +416,7 @@
     if-nez v7, :cond_3
 
     .line 132
-    iput-wide v10, v1, Lcom/google/android/exoplayer2/upstream/ContentDataSource;->bytesRemaining:J
+    iput-wide v8, v1, Lcom/google/android/exoplayer2/upstream/ContentDataSource;->bytesRemaining:J
 
     goto :goto_2
 
@@ -440,7 +440,7 @@
     :cond_4
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
 
-    invoke-direct {v0, v9, v8}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
+    invoke-direct {v0, v12, v11}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
 
     throw v0
 
@@ -461,14 +461,14 @@
     :goto_2
     iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    cmp-long v5, v2, v10
+    cmp-long v5, v2, v8
 
     if-eqz v5, :cond_7
 
     .line 160
     iget-wide v5, v1, Lcom/google/android/exoplayer2/upstream/ContentDataSource;->bytesRemaining:J
 
-    cmp-long v7, v5, v10
+    cmp-long v7, v5, v8
 
     if-nez v7, :cond_6
 
@@ -494,7 +494,7 @@
     .line 164
     iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    cmp-long v0, v2, v10
+    cmp-long v0, v2, v8
 
     if-eqz v0, :cond_8
 
@@ -511,7 +511,7 @@
     :try_start_1
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
 
-    invoke-direct {v0, v9, v8}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
+    invoke-direct {v0, v12, v11}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
 
     throw v0
 
@@ -519,7 +519,7 @@
     :cond_a
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
 
-    invoke-direct {v0, v9, v8}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
+    invoke-direct {v0, v12, v11}, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;-><init>(Ljava/io/IOException;I)V
 
     throw v0
 
@@ -579,7 +579,7 @@
 .end method
 
 .method public read([BII)I
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
@@ -598,29 +598,29 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, -0x1
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v3, -0x1
 
-    if-nez v5, :cond_1
+    if-nez v2, :cond_1
 
-    return v4
+    return v3
 
     :cond_1
-    const-wide/16 v2, -0x1
+    const-wide/16 v4, -0x1
 
-    cmp-long v5, v0, v2
+    cmp-long v2, v0, v4
 
-    if-nez v5, :cond_2
+    if-nez v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    int-to-long v5, p3
+    int-to-long v6, p3
 
     .line 178
     :try_start_0
-    invoke-static {v0, v1, v5, v6}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
@@ -642,15 +642,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-ne p1, v4, :cond_3
+    if-ne p1, v3, :cond_3
 
-    return v4
+    return v3
 
     .line 187
     :cond_3
     iget-wide p2, p0, Lcom/google/android/exoplayer2/upstream/ContentDataSource;->bytesRemaining:J
 
-    cmp-long v0, p2, v2
+    cmp-long v0, p2, v4
 
     if-eqz v0, :cond_4
 

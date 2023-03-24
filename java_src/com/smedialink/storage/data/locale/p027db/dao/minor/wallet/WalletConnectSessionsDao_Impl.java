@@ -307,8 +307,8 @@ public final class WalletConnectSessionsDao_Impl extends WalletConnectSessionsDa
                         String string9 = query.isNull(columnIndexOrThrow11) ? null : query.getString(columnIndexOrThrow11);
                         List<String> fromString = Converter.fromString(query.isNull(columnIndexOrThrow12) ? null : query.getString(columnIndexOrThrow12));
                         if (query.getInt(columnIndexOrThrow13) != 0) {
-                            i = columnIndexOrThrow14;
                             z = true;
+                            i = columnIndexOrThrow14;
                         } else {
                             i = columnIndexOrThrow14;
                             z = false;

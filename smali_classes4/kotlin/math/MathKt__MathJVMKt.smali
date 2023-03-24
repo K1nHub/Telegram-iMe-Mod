@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static roundToInt(D)I
-    .locals 3
+    .locals 2
 
     .line 619
     invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
@@ -16,9 +16,9 @@
 
     const-wide v0, 0x41dfffffffc00000L    # 2.147483647E9
 
-    cmpl-double v2, p0, v0
+    cmpl-double v0, p0, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const p0, 0x7fffffff
 
@@ -27,9 +27,9 @@
     :cond_0
     const-wide/high16 v0, -0x3e20000000000000L    # -2.147483648E9
 
-    cmpg-double v2, p0, v0
+    cmpg-double v0, p0, v0
 
-    if-gez v2, :cond_1
+    if-gez v0, :cond_1
 
     const/high16 p0, -0x80000000
 

@@ -164,65 +164,65 @@ public final class RealCall implements Call {
         this.eventListener.callStart(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public final okhttp3.Response getResponseWithInterceptorChain$okhttp() throws java.io.IOException {
         /*
-            r10 = this;
+            r11 = this;
             java.util.ArrayList r2 = new java.util.ArrayList
             r2.<init>()
-            okhttp3.OkHttpClient r0 = r10.client
+            okhttp3.OkHttpClient r0 = r11.client
             java.util.List r0 = r0.interceptors()
             kotlin.collections.CollectionsKt.addAll(r2, r0)
             okhttp3.internal.http.RetryAndFollowUpInterceptor r0 = new okhttp3.internal.http.RetryAndFollowUpInterceptor
-            okhttp3.OkHttpClient r1 = r10.client
+            okhttp3.OkHttpClient r1 = r11.client
             r0.<init>(r1)
             r2.add(r0)
             okhttp3.internal.http.BridgeInterceptor r0 = new okhttp3.internal.http.BridgeInterceptor
-            okhttp3.OkHttpClient r1 = r10.client
+            okhttp3.OkHttpClient r1 = r11.client
             okhttp3.CookieJar r1 = r1.cookieJar()
             r0.<init>(r1)
             r2.add(r0)
             okhttp3.internal.cache.CacheInterceptor r0 = new okhttp3.internal.cache.CacheInterceptor
-            okhttp3.OkHttpClient r1 = r10.client
+            okhttp3.OkHttpClient r1 = r11.client
             okhttp3.Cache r1 = r1.cache()
             r0.<init>(r1)
             r2.add(r0)
             okhttp3.internal.connection.ConnectInterceptor r0 = okhttp3.internal.connection.ConnectInterceptor.INSTANCE
             r2.add(r0)
-            boolean r0 = r10.forWebSocket
+            boolean r0 = r11.forWebSocket
             if (r0 != 0) goto L46
-            okhttp3.OkHttpClient r0 = r10.client
+            okhttp3.OkHttpClient r0 = r11.client
             java.util.List r0 = r0.networkInterceptors()
             kotlin.collections.CollectionsKt.addAll(r2, r0)
         L46:
             okhttp3.internal.http.CallServerInterceptor r0 = new okhttp3.internal.http.CallServerInterceptor
-            boolean r1 = r10.forWebSocket
+            boolean r1 = r11.forWebSocket
             r0.<init>(r1)
             r2.add(r0)
             okhttp3.internal.http.RealInterceptorChain r9 = new okhttp3.internal.http.RealInterceptorChain
             r3 = 0
             r4 = 0
-            okhttp3.Request r5 = r10.originalRequest
-            okhttp3.OkHttpClient r0 = r10.client
+            okhttp3.Request r5 = r11.originalRequest
+            okhttp3.OkHttpClient r0 = r11.client
             int r6 = r0.connectTimeoutMillis()
-            okhttp3.OkHttpClient r0 = r10.client
+            okhttp3.OkHttpClient r0 = r11.client
             int r7 = r0.readTimeoutMillis()
-            okhttp3.OkHttpClient r0 = r10.client
+            okhttp3.OkHttpClient r0 = r11.client
             int r8 = r0.writeTimeoutMillis()
             r0 = r9
-            r1 = r10
+            r1 = r11
             r0.<init>(r1, r2, r3, r4, r5, r6, r7, r8)
             r0 = 0
             r1 = 0
-            okhttp3.Request r2 = r10.originalRequest     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
+            okhttp3.Request r2 = r11.originalRequest     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
             okhttp3.Response r2 = r9.proceed(r2)     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
-            boolean r3 = r10.isCanceled()     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
+            boolean r3 = r11.isCanceled()     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
             if (r3 != 0) goto L7f
-            r10.noMoreExchanges$okhttp(r1)
+            r11.noMoreExchanges$okhttp(r1)
             return r2
         L7f:
             okhttp3.internal.Util.closeQuietly(r2)     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
@@ -232,11 +232,11 @@ public final class RealCall implements Call {
             throw r2     // Catch: java.lang.Throwable -> L8a java.io.IOException -> L8c
         L8a:
             r2 = move-exception
-            goto La0
+            goto La1
         L8c:
             r0 = move-exception
             r2 = 1
-            java.io.IOException r0 = r10.noMoreExchanges$okhttp(r0)     // Catch: java.lang.Throwable -> L9d
+            java.io.IOException r0 = r11.noMoreExchanges$okhttp(r0)     // Catch: java.lang.Throwable -> L9d
             if (r0 != 0) goto L9c
             java.lang.NullPointerException r0 = new java.lang.NullPointerException     // Catch: java.lang.Throwable -> L9d
             java.lang.String r3 = "null cannot be cast to non-null type kotlin.Throwable"
@@ -246,12 +246,13 @@ public final class RealCall implements Call {
             throw r0     // Catch: java.lang.Throwable -> L9d
         L9d:
             r0 = move-exception
+            r10 = r2
             r2 = r0
-            r0 = 1
-        La0:
-            if (r0 != 0) goto La5
-            r10.noMoreExchanges$okhttp(r1)
-        La5:
+            r0 = r10
+        La1:
+            if (r0 != 0) goto La6
+            r11.noMoreExchanges$okhttp(r1)
+        La6:
             throw r2
         */
         throw new UnsupportedOperationException("Method not decompiled: okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp():okhttp3.Response");
@@ -347,10 +348,10 @@ public final class RealCall implements Call {
             if (r4 != 0) goto L33
             boolean r5 = r2.responseBodyOpen     // Catch: java.lang.Throwable -> L19
             if (r5 != 0) goto L33
-            r5 = 1
+            r5 = r0
             goto L34
         L33:
-            r5 = 0
+            r5 = r3
         L34:
             if (r4 != 0) goto L3f
             boolean r4 = r2.responseBodyOpen     // Catch: java.lang.Throwable -> L19
@@ -359,12 +360,12 @@ public final class RealCall implements Call {
             if (r4 != 0) goto L3f
             goto L40
         L3f:
-            r0 = 0
+            r0 = r3
         L40:
             r3 = r5
             goto L43
         L42:
-            r0 = 0
+            r0 = r3
         L43:
             kotlin.Unit r4 = kotlin.Unit.INSTANCE     // Catch: java.lang.Throwable -> L19
             monitor-exit(r2)
@@ -576,8 +577,8 @@ public final class RealCall implements Call {
 
         @Override // java.lang.Runnable
         public void run() {
-            Throwable th;
             boolean z;
+            Throwable th;
             IOException e;
             Dispatcher dispatcher;
             Thread currentThread = Thread.currentThread();
@@ -589,11 +590,11 @@ public final class RealCall implements Call {
                 try {
                     z = true;
                 } catch (IOException e2) {
+                    z = false;
                     e = e2;
-                    z = false;
                 } catch (Throwable th2) {
-                    th = th2;
                     z = false;
+                    th = th2;
                 }
                 try {
                     this.responseCallback.onResponse(this.this$0, this.this$0.getResponseWithInterceptorChain$okhttp());

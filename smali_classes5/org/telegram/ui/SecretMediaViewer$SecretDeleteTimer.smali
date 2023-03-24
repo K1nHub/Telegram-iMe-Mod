@@ -365,7 +365,7 @@
 
     const/high16 v2, 0x447a0000    # 1000.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     div-float v1, v0, v1
 
@@ -433,7 +433,7 @@
 
     const/high16 v0, -0x3c4c0000    # -360.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 195
     iget-object v3, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;

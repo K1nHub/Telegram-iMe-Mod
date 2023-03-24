@@ -21,7 +21,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -101,7 +101,7 @@ public class SharedPhotoVideoCell extends FrameLayout {
             this.videoInfoContainer.setPadding(AndroidUtilities.m50dp(5), 0, AndroidUtilities.m50dp(5), 0);
             this.container.addView(this.videoInfoContainer, LayoutHelper.createFrame(-2, 17, 83, 4, 0, 0, 4));
             ImageView imageView = new ImageView(context);
-            imageView.setImageResource(C3286R.C3288drawable.play_mini_video);
+            imageView.setImageResource(C3301R.C3303drawable.play_mini_video);
             this.videoInfoContainer.addView(imageView, LayoutHelper.createFrame(-2, -2, 19));
             TextView textView = new TextView(context);
             this.videoTextView = textView;
@@ -187,7 +187,7 @@ public class SharedPhotoVideoCell extends FrameLayout {
             this.imageView.getImageReceiver().setVisible(!PhotoViewer.isShowingImage(messageObject), false);
             if (!TextUtils.isEmpty(MessagesController.getRestrictionReason(messageObject.messageOwner.restriction_reason))) {
                 this.videoInfoContainer.setVisibility(4);
-                this.imageView.setImageResource(C3286R.C3288drawable.photo_placeholder_in);
+                this.imageView.setImageResource(C3301R.C3303drawable.photo_placeholder_in);
                 return;
             }
             if (messageObject.isVideo()) {
@@ -202,11 +202,11 @@ public class SharedPhotoVideoCell extends FrameLayout {
                         this.imageView.setImage(ImageLocation.getForDocument(tLRPC$PhotoSize, document), "100_100", (String) null, messageObject.strippedThumb, messageObject);
                         return;
                     } else {
-                        this.imageView.setImage(ImageLocation.getForDocument(tLRPC$PhotoSize, document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "b", ApplicationLoader.applicationContext.getResources().getDrawable(C3286R.C3288drawable.photo_placeholder_in), null, null, 0, messageObject);
+                        this.imageView.setImage(ImageLocation.getForDocument(tLRPC$PhotoSize, document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "b", ApplicationLoader.applicationContext.getResources().getDrawable(C3301R.C3303drawable.photo_placeholder_in), null, null, 0, messageObject);
                         return;
                     }
                 }
-                this.imageView.setImageResource(C3286R.C3288drawable.photo_placeholder_in);
+                this.imageView.setImageResource(C3301R.C3303drawable.photo_placeholder_in);
                 return;
             }
             TLRPC$MessageMedia tLRPC$MessageMedia = messageObject.messageOwner.media;
@@ -229,12 +229,12 @@ public class SharedPhotoVideoCell extends FrameLayout {
                     this.imageView.setImage(null, null, null, null, bitmapDrawable, null, null, 0, messageObject);
                     return;
                 } else {
-                    this.imageView.setImage(null, null, ImageLocation.getForObject(closestPhotoSizeWithSize3, messageObject.photoThumbsObject), "b", ApplicationLoader.applicationContext.getResources().getDrawable(C3286R.C3288drawable.photo_placeholder_in), null, null, 0, messageObject);
+                    this.imageView.setImage(null, null, ImageLocation.getForObject(closestPhotoSizeWithSize3, messageObject.photoThumbsObject), "b", ApplicationLoader.applicationContext.getResources().getDrawable(C3301R.C3303drawable.photo_placeholder_in), null, null, 0, messageObject);
                     return;
                 }
             }
             this.videoInfoContainer.setVisibility(4);
-            this.imageView.setImageResource(C3286R.C3288drawable.photo_placeholder_in);
+            this.imageView.setImageResource(C3301R.C3303drawable.photo_placeholder_in);
         }
 
         @Override // android.view.View
@@ -258,9 +258,9 @@ public class SharedPhotoVideoCell extends FrameLayout {
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
             if (this.currentMessageObject.isVideo()) {
-                accessibilityNodeInfo.setText(LocaleController.getString("AttachVideo", C3286R.string.AttachVideo) + ", " + LocaleController.formatDuration(this.currentMessageObject.getDuration()));
+                accessibilityNodeInfo.setText(LocaleController.getString("AttachVideo", C3301R.string.AttachVideo) + ", " + LocaleController.formatDuration(this.currentMessageObject.getDuration()));
             } else {
-                accessibilityNodeInfo.setText(LocaleController.getString("AttachPhoto", C3286R.string.AttachPhoto));
+                accessibilityNodeInfo.setText(LocaleController.getString("AttachPhoto", C3301R.string.AttachPhoto));
             }
             if (this.checkBox.isChecked()) {
                 accessibilityNodeInfo.setCheckable(true);

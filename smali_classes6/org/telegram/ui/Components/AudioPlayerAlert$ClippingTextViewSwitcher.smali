@@ -283,12 +283,12 @@
 
     if-ne v9, v3, :cond_0
 
-    const/4 v10, 0x0
+    move v10, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x1
+    move v10, v4
 
     .line 2631
     :goto_0
@@ -360,7 +360,7 @@
 
     if-nez v5, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_1
 
@@ -426,7 +426,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v13, 0x0
+    move v13, v2
 
     .line 2650
     :goto_2
@@ -712,7 +712,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, p2
 
     :goto_0
     const/4 v3, 0x1
@@ -764,12 +764,12 @@
 
     if-nez v0, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_2
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, p2
 
     .line 2701
     :goto_2

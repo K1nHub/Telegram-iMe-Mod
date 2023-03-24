@@ -322,9 +322,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 216
     iget-object v0, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesPresenter;->catalogInteractor:Lcom/smedialink/storage/domain/interactor/catalog/CatalogInteractor;
@@ -1070,14 +1070,14 @@
 
     if-eqz p4, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
 
     if-eqz p3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 50
     :cond_1
@@ -1157,9 +1157,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
@@ -1228,12 +1228,12 @@
 
     if-nez v2, :cond_1
 
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_1
     const/4 v10, 0x3
@@ -1307,7 +1307,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_5
     :goto_3

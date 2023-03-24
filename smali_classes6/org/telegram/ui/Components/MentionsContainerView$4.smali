@@ -122,7 +122,7 @@
 
     if-nez v0, :cond_2
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :cond_2
     if-eqz p1, :cond_3

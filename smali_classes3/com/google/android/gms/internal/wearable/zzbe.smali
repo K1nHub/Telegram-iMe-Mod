@@ -105,24 +105,24 @@
 .end method
 
 .method public static zzB(J)I
-    .locals 7
+    .locals 6
 
     const-wide/16 v0, -0x80
 
     and-long/2addr v0, p0
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    return v2
+    return v1
 
     :cond_0
-    cmp-long v0, p0, v3
+    cmp-long v0, p0, v2
 
     if-gez v0, :cond_1
 
@@ -131,13 +131,13 @@
     return p0
 
     :cond_1
-    const-wide v0, -0x800000000L
+    const-wide v4, -0x800000000L
 
-    and-long/2addr v0, p0
+    and-long/2addr v4, p0
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v4, v2
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
     const/16 v0, 0x1c
 
@@ -151,30 +151,30 @@
     const/4 v0, 0x2
 
     :goto_0
-    const-wide/32 v5, -0x200000
+    const-wide/32 v4, -0x200000
 
-    and-long/2addr v5, p0
+    and-long/2addr v4, p0
 
-    cmp-long v1, v5, v3
+    cmp-long v4, v4, v2
 
-    if-eqz v1, :cond_3
+    if-eqz v4, :cond_3
 
     add-int/lit8 v0, v0, 0x2
 
-    const/16 v1, 0xe
+    const/16 v4, 0xe
 
-    ushr-long/2addr p0, v1
+    ushr-long/2addr p0, v4
 
     :cond_3
-    const-wide/16 v5, -0x4000
+    const-wide/16 v4, -0x4000
 
-    and-long/2addr p0, v5
+    and-long/2addr p0, v4
 
-    cmp-long v1, p0, v3
+    cmp-long p0, p0, v2
 
-    if-eqz v1, :cond_4
+    if-eqz p0, :cond_4
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     :cond_4
     return v0

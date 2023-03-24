@@ -158,7 +158,7 @@
 
     if-ne v2, v6, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 

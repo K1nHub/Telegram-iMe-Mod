@@ -148,11 +148,11 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     const/4 v6, 0x0
 
-    const/4 v14, 0x0
+    move v14, v6
 
     :goto_0
     const/4 v6, 0x6
@@ -184,7 +184,7 @@
 
     double-to-float v6, v6
 
-    mul-float v6, v6, v12
+    mul-float/2addr v6, v12
 
     .line 73
     invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
@@ -193,7 +193,7 @@
 
     double-to-float v7, v7
 
-    mul-float v7, v7, v12
+    mul-float/2addr v7, v12
 
     const v8, 0x3f28f5c3    # 0.66f
 
@@ -245,7 +245,7 @@
 
     float-to-double v8, v13
 
-    mul-double v6, v6, v8
+    mul-double/2addr v6, v8
 
     invoke-static {v10, v11}, Ljava/lang/Math;->sin(D)D
 
@@ -324,7 +324,7 @@
 
     move-result-wide v8
 
-    mul-double v8, v8, v3
+    mul-double/2addr v8, v3
 
     sub-double/2addr v6, v8
 
@@ -343,7 +343,7 @@
 
     move-result-wide v9
 
-    mul-double v9, v9, v3
+    mul-double/2addr v9, v3
 
     add-double/2addr v7, v9
 
@@ -390,7 +390,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -440,7 +440,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

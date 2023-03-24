@@ -1778,7 +1778,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const/4 p1, 0x1
+    move p1, v1
 
     .line 1544
     :cond_1
@@ -1797,12 +1797,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_0
 
@@ -2079,7 +2079,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     const/4 v5, 0x5
@@ -2248,7 +2248,7 @@
 
     invoke-direct {v4, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_4
     if-ge v1, v0, :cond_12
@@ -2422,9 +2422,9 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v6
 
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 1676
     :goto_0
@@ -2492,7 +2492,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v11, 0x0
+    move v11, v6
 
     .line 1690
     :cond_6
@@ -2700,7 +2700,7 @@
 
     invoke-direct {v2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_3
     if-ge v0, v7, :cond_10
@@ -2856,7 +2856,7 @@
     if-eqz v2, :cond_4
 
     :cond_3
-    const/4 p1, 0x1
+    move p1, v1
 
     .line 1750
     :cond_4
@@ -3326,7 +3326,7 @@
 
     invoke-direct {v3, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_3
     if-ge v4, v7, :cond_19
@@ -3420,7 +3420,7 @@
 
     invoke-direct {v3, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_7
     if-ge v4, v7, :cond_18
@@ -3509,7 +3509,7 @@
     goto :goto_a
 
     :cond_1a
-    const/4 v1, 0x0
+    move v1, v8
 
     :goto_a
     invoke-virtual {v0, v3, v1}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
@@ -3560,12 +3560,12 @@
 
     if-nez v0, :cond_1c
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_c
 
     :cond_1c
-    const/4 v0, 0x0
+    move v0, v8
 
     .line 1754
     :goto_c
@@ -3603,12 +3603,12 @@
 
     if-eqz v0, :cond_1d
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_d
 
     :cond_1d
-    const/4 v0, 0x0
+    move v0, v8
 
     :cond_1e
     :goto_d
@@ -3755,7 +3755,7 @@
 .end method
 
 .method private checkSpeedHint()V
-    .locals 7
+    .locals 6
 
     .line 923
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -3769,9 +3769,9 @@
 
     const-wide/16 v4, 0x12c
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_1
+    if-lez v2, :cond_1
 
     .line 925
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalNotificationsSettings()Landroid/content/SharedPreferences;
@@ -4002,7 +4002,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1047
     :goto_0
@@ -4020,7 +4020,7 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_6
     if-eqz v2, :cond_7
@@ -4553,12 +4553,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    const/16 v1, 0x8
+    move v1, v2
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -4587,12 +4587,12 @@
 
     if-eqz v0, :cond_2
 
-    const/16 v0, 0x24
+    move v0, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 152
     :goto_1
@@ -4636,7 +4636,7 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_3
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -5383,28 +5383,28 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 745
-    iget-object v5, p0, Lorg/telegram/ui/Components/FragmentContextView;->chatActivity:Lorg/telegram/ui/Components/ChatActivityInterface;
+    iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView;->chatActivity:Lorg/telegram/ui/Components/ChatActivityInterface;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
-    move-result v6
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x1
-
-    const/4 v11, 0x0
-
-    invoke-interface/range {v5 .. v11}, Lorg/telegram/ui/Components/ChatActivityInterface;->scrollToMessageId(IIZIZI)V
+    invoke-interface/range {v1 .. v7}, Lorg/telegram/ui/Components/ChatActivityInterface;->scrollToMessageId(IIZIZI)V
 
     goto/16 :goto_4
 
@@ -5555,7 +5555,7 @@
 
     if-ne v3, v2, :cond_9
 
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_1
     if-ge v2, v4, :cond_9
@@ -5606,9 +5606,9 @@
     move-wide v2, v0
 
     :goto_2
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-eqz v4, :cond_a
+    if-eqz v0, :cond_a
 
     .line 782
     invoke-static {p1}, Lorg/telegram/messenger/LocationController;->getInstance(I)Lorg/telegram/messenger/LocationController;
@@ -5761,7 +5761,7 @@
     goto :goto_3
 
     :cond_f
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_3
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -5898,7 +5898,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 859
     :goto_0
@@ -6352,11 +6352,11 @@
 
     move-result v1
 
-    const/high16 v2, 0x40000000    # 2.0f
+    const v2, 0x3d4ccccd    # 0.05f
 
-    const v3, 0x3d4ccccd    # 0.05f
+    cmpg-float v1, v1, v2
 
-    cmpg-float v1, v1, v3
+    const/high16 v3, 0x40000000    # 2.0f
 
     if-gez v1, :cond_4
 
@@ -6376,14 +6376,14 @@
 
     move-result-object p1
 
-    sub-float v0, p2, v2
+    sub-float v0, p2, v3
 
     .line 1088
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    cmpg-float v0, v0, v3
+    cmpg-float v0, v0, v2
 
     if-gez v0, :cond_2
 
@@ -6411,7 +6411,7 @@
     :cond_4
     const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     const-string v4, "AudioSpeedCustom"
 
@@ -6435,7 +6435,7 @@
     .line 1096
     sget p1, Lorg/telegram/messenger/R$string;->AudioSpeedCustom:I
 
-    new-array p2, v3, [Ljava/lang/Object;
+    new-array p2, v2, [Ljava/lang/Object;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/SpeedIconDrawable;->formatNumber(F)Ljava/lang/String;
 
@@ -6456,7 +6456,7 @@
     if-eqz p1, :cond_6
 
     .line 1098
-    invoke-direct {p0, p3, v2}, Lorg/telegram/ui/Components/FragmentContextView;->equals(FF)Z
+    invoke-direct {p0, p3, v3}, Lorg/telegram/ui/Components/FragmentContextView;->equals(FF)Z
 
     move-result p1
 
@@ -6486,7 +6486,7 @@
     :cond_6
     sget p1, Lorg/telegram/messenger/R$string;->AudioSpeedCustom:I
 
-    new-array p2, v3, [Ljava/lang/Object;
+    new-array p2, v2, [Ljava/lang/Object;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/SpeedIconDrawable;->formatNumber(F)Ljava/lang/String;
 
@@ -6799,7 +6799,7 @@
 
     move-result v3
 
-    const/4 v8, 0x0
+    move v8, v6
 
     :goto_3
     if-ge v8, v5, :cond_8
@@ -6840,7 +6840,7 @@
 
     invoke-virtual {v8, v6, v4, v3}, Lorg/telegram/ui/Components/AvatarsImageView;->setObject(IILorg/telegram/tgnet/TLObject;)V
 
-    const/4 v3, 0x1
+    move v3, v7
 
     :goto_5
     if-ge v3, v5, :cond_8
@@ -6855,7 +6855,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_6
     if-ge v3, v5, :cond_8
@@ -7064,12 +7064,12 @@
 
     if-eqz v5, :cond_d
 
-    const/16 v7, 0x5a
+    move v7, v9
 
     goto :goto_a
 
     :cond_d
-    const/16 v7, 0x24
+    move v7, v10
 
     :goto_a
     const/4 v8, 0x0
@@ -7099,12 +7099,12 @@
 
     if-eqz v1, :cond_e
 
-    const/16 v7, 0x5a
+    move v7, v9
 
     goto :goto_b
 
     :cond_e
-    const/16 v7, 0x24
+    move v7, v10
 
     :goto_b
     const/4 v8, 0x0
@@ -7257,9 +7257,9 @@
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    cmp-long v3, v1, v5
+    cmp-long v1, v1, v5
 
-    if-nez v3, :cond_6
+    if-nez v1, :cond_6
 
     .line 2509
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView;->chatActivity:Lorg/telegram/ui/Components/ChatActivityInterface;
@@ -7375,9 +7375,9 @@
 
     iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_8
+    if-nez v1, :cond_8
 
     .line 2526
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView;->titleTextView:Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
@@ -7679,12 +7679,12 @@
 
     if-eq v1, v5, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     invoke-virtual {v2, v7}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
@@ -7825,12 +7825,12 @@
 
     if-eqz v11, :cond_7
 
-    const/4 v11, 0x0
+    move v11, v6
 
     goto :goto_1
 
     :cond_7
-    const/16 v11, 0x8
+    move v11, v10
 
     :goto_1
     invoke-virtual {v7, v11}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -7875,7 +7875,7 @@
 
     invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_2
     if-ge v1, v15, :cond_b
@@ -8066,7 +8066,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_5
     const-string v3, "inappPlayerPerformer"
@@ -8180,7 +8180,7 @@
     goto :goto_8
 
     :cond_12
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 1249
     :goto_8
@@ -8188,12 +8188,12 @@
 
     if-nez v4, :cond_13
 
-    const/4 v3, 0x0
+    move v3, v6
 
     goto :goto_9
 
     :cond_13
-    const/16 v3, 0x8
+    move v3, v10
 
     :goto_9
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
@@ -8291,12 +8291,12 @@
 
     if-nez v5, :cond_17
 
-    const/4 v9, 0x0
+    move v9, v6
 
     goto :goto_b
 
     :cond_17
-    const/16 v9, 0x8
+    move v9, v10
 
     :goto_b
     invoke-virtual {v8, v9}, Landroid/view/View;->setVisibility(I)V
@@ -8351,12 +8351,12 @@
 
     if-nez v5, :cond_1a
 
-    const/4 v3, 0x0
+    move v3, v6
 
     goto :goto_d
 
     :cond_1a
-    const/16 v3, 0x8
+    move v3, v10
 
     :goto_d
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -8378,12 +8378,12 @@
 
     if-eqz v1, :cond_1b
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_e
 
     :cond_1b
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_e
     iput-boolean v1, v0, Lorg/telegram/ui/Components/FragmentContextView;->isMuted:Z
@@ -8449,7 +8449,7 @@
     .line 1290
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/FragmentContextView;->invalidate()V
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_10
     const-string v3, "returnToCallText"
@@ -8653,7 +8653,7 @@
 
     invoke-virtual {v2, v10}, Landroid/view/View;->setVisibility(I)V
 
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_14
     if-ge v2, v15, :cond_23
@@ -8908,7 +8908,7 @@
     if-eqz v2, :cond_3
 
     :cond_2
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
@@ -8923,97 +8923,100 @@
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_4
 
-    const/4 v4, 0x0
+    move v4, v5
 
-    :cond_4
-    const/4 v6, 0x0
+    :goto_1
+    move v6, v4
 
-    goto :goto_2
+    goto :goto_3
 
     .line 2085
-    :cond_5
+    :cond_4
     sget-boolean v4, Lorg/telegram/ui/GroupCallActivity;->groupCallUiVisible:Z
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_5
 
     iget-boolean v4, v0, Lorg/telegram/ui/Components/FragmentContextView;->supportsCalls:Z
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     invoke-virtual {v1}, Lorg/telegram/messenger/voip/VoIPService;->isHangingUp()Z
 
     move-result v4
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v3
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_6
-    const/4 v4, 0x0
+    :cond_5
+    move v4, v5
 
-    :goto_1
-    if-eqz v1, :cond_7
+    :goto_2
+    if-eqz v1, :cond_6
 
     .line 2086
     iget-object v6, v1, Lorg/telegram/messenger/voip/VoIPService;->groupCall:Lorg/telegram/messenger/ChatObject$Call;
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_6
 
     iget-object v6, v6, Lorg/telegram/messenger/ChatObject$Call;->call:Lorg/telegram/tgnet/TLRPC$GroupCall;
 
     instance-of v6, v6, Lorg/telegram/tgnet/TLRPC$TL_groupCallDiscarded;
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_6
 
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 2090
-    :cond_7
+    :cond_6
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/FragmentContextView;->isPlayingVoice()Z
 
     move-result v6
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_7
 
     sget-boolean v6, Lorg/telegram/ui/GroupCallActivity;->groupCallUiVisible:Z
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_7
 
     iget-boolean v6, v0, Lorg/telegram/ui/Components/FragmentContextView;->supportsCalls:Z
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_7
 
-    if-nez v4, :cond_4
+    if-nez v4, :cond_7
 
     iget-object v6, v0, Lorg/telegram/ui/Components/FragmentContextView;->chatActivity:Lorg/telegram/ui/Components/ChatActivityInterface;
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_7
 
     .line 2091
     invoke-interface {v6}, Lorg/telegram/ui/Components/ChatActivityInterface;->getGroupCall()Lorg/telegram/messenger/ChatObject$Call;
 
     move-result-object v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_7
 
     .line 2092
     invoke-virtual {v6}, Lorg/telegram/messenger/ChatObject$Call;->shouldShowPanel()Z
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_7
 
-    const/4 v4, 0x1
+    move v4, v3
 
-    const/4 v6, 0x1
+    goto :goto_1
 
-    :goto_2
+    :cond_7
+    move v6, v5
+
+    :goto_3
     const-wide/16 v7, 0xdc
 
     const/4 v9, 0x0
@@ -9072,7 +9075,7 @@
     :cond_a
     invoke-virtual {v0, v9}, Lorg/telegram/ui/Components/FragmentContextView;->setTopPadding(F)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 2108
     :cond_b
@@ -9151,7 +9154,7 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_d
     if-eqz v1, :cond_f
@@ -9175,7 +9178,7 @@
     invoke-virtual {v0, v11}, Lorg/telegram/ui/Components/FragmentContextView;->setVisibility(I)V
 
     :cond_f
-    :goto_3
+    :goto_4
     if-eqz v2, :cond_2a
 
     .line 2145
@@ -9218,7 +9221,7 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    goto/16 :goto_12
+    goto/16 :goto_13
 
     .line 2149
     :cond_10
@@ -9226,9 +9229,9 @@
 
     if-eqz v6, :cond_11
 
-    const/4 v4, 0x4
+    move v4, v15
 
-    goto :goto_4
+    goto :goto_5
 
     .line 2153
     :cond_11
@@ -9236,15 +9239,15 @@
 
     if-eqz v4, :cond_12
 
-    const/4 v4, 0x3
+    move v4, v13
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_12
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 2158
-    :goto_4
+    :goto_5
     iget v13, v0, Lorg/telegram/ui/Components/FragmentContextView;->currentStyle:I
 
     if-eq v4, v13, :cond_13
@@ -9358,15 +9361,15 @@
 
     if-eqz v1, :cond_16
 
-    const/4 v1, 0x1
+    move v1, v3
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_16
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 2189
-    :goto_5
+    :goto_6
     invoke-direct {v0, v15}, Lorg/telegram/ui/Components/FragmentContextView;->updateStyle(I)V
 
     .line 2191
@@ -9474,7 +9477,7 @@
 
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_6
+    goto :goto_7
 
     .line 2209
     :cond_18
@@ -9497,7 +9500,7 @@
 
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_6
+    goto :goto_7
 
     .line 2212
     :cond_19
@@ -9514,7 +9517,7 @@
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
     .line 2215
-    :goto_6
+    :goto_7
     iget-object v6, v0, Lorg/telegram/ui/Components/FragmentContextView;->subtitleTextView:Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;
 
     iget-object v4, v4, Lorg/telegram/messenger/ChatObject$Call;->call:Lorg/telegram/tgnet/TLRPC$GroupCall;
@@ -9542,7 +9545,7 @@
 
     invoke-interface {v4}, Ljava/lang/Runnable;->run()V
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 2221
     :cond_1a
@@ -9573,7 +9576,7 @@
 
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_7
+    goto :goto_8
 
     .line 2225
     :cond_1b
@@ -9594,7 +9597,7 @@
 
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_7
+    goto :goto_8
 
     .line 2227
     :cond_1c
@@ -9617,7 +9620,7 @@
 
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_7
+    goto :goto_8
 
     .line 2230
     :cond_1d
@@ -9634,7 +9637,7 @@
     invoke-virtual {v6, v9, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
     .line 2232
-    :goto_7
+    :goto_8
     iget-object v4, v4, Lorg/telegram/messenger/ChatObject$Call;->call:Lorg/telegram/tgnet/TLRPC$GroupCall;
 
     iget v6, v4, Lorg/telegram/tgnet/TLRPC$GroupCall;->participants_count:I
@@ -9650,19 +9653,19 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->ViewersWatchingNobody:I
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_1e
     sget v4, Lorg/telegram/messenger/R$string;->MembersTalkingNobody:I
 
-    :goto_8
+    :goto_9
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v6, v4, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
-    goto :goto_a
+    goto :goto_b
 
     .line 2235
     :cond_1f
@@ -9674,12 +9677,12 @@
 
     const-string v4, "ViewersWatching"
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_20
     const-string v4, "Participants"
 
-    :goto_9
+    :goto_a
     new-array v11, v5, [Ljava/lang/Object;
 
     invoke-static {v4, v6, v11}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
@@ -9689,14 +9692,14 @@
     invoke-virtual {v9, v4, v5}, Lorg/telegram/ui/Components/AudioPlayerAlert$ClippingTextViewSwitcher;->setText(Ljava/lang/CharSequence;Z)V
 
     .line 2237
-    :goto_a
+    :goto_b
     iget-object v4, v0, Lorg/telegram/ui/Components/FragmentContextView;->frameLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidate()V
 
     .line 2240
     :cond_21
-    :goto_b
+    :goto_c
     iget-object v4, v0, Lorg/telegram/ui/Components/FragmentContextView;->avatars:Lorg/telegram/ui/Components/AvatarsImageView;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/AvatarsImageView;->avatarsDrawable:Lorg/telegram/ui/Components/AvatarsDrawable;
@@ -9707,17 +9710,17 @@
 
     if-eqz v1, :cond_22
 
-    const/4 v1, 0x1
+    move v1, v3
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_22
-    const/4 v1, 0x0
+    move v1, v5
 
-    :goto_c
+    :goto_d
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FragmentContextView;->updateAvatars(Z)V
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_23
     if-eqz v1, :cond_25
@@ -9731,41 +9734,41 @@
 
     if-ne v13, v1, :cond_24
 
-    const/4 v4, 0x1
+    move v4, v3
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_24
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 2243
-    :goto_d
+    :goto_e
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/FragmentContextView;->updateAvatars(Z)V
 
     .line 2244
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FragmentContextView;->updateStyle(I)V
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_25
     if-ne v13, v3, :cond_26
 
-    const/4 v1, 0x1
+    move v1, v3
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_26
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 2246
-    :goto_e
+    :goto_f
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FragmentContextView;->updateAvatars(Z)V
 
     .line 2247
     invoke-direct {v0, v3}, Lorg/telegram/ui/Components/FragmentContextView;->updateStyle(I)V
 
     .line 2250
-    :goto_f
+    :goto_10
     iget-boolean v1, v0, Lorg/telegram/ui/Components/FragmentContextView;->visible:Z
 
     if-nez v1, :cond_2a
@@ -9829,7 +9832,7 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    goto :goto_10
+    goto :goto_11
 
     .line 2260
     :cond_28
@@ -9852,7 +9855,7 @@
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     .line 2262
-    :goto_10
+    :goto_11
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextView;->account:I
 
     .line 2263
@@ -9929,7 +9932,7 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto :goto_11
+    goto :goto_12
 
     .line 2290
     :cond_29
@@ -9954,14 +9957,14 @@
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/FragmentContextView;->startJoinFlickerAnimation()V
 
     .line 2294
-    :goto_11
+    :goto_12
     iput-boolean v3, v0, Lorg/telegram/ui/Components/FragmentContextView;->visible:Z
 
     .line 2295
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/FragmentContextView;->setVisibility(I)V
 
     :cond_2a
-    :goto_12
+    :goto_13
     return-void
 .end method
 
@@ -10041,7 +10044,7 @@
     if-eqz v2, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v1
 
     .line 1947
     :cond_2
@@ -10549,9 +10552,9 @@
 
     move-result-wide v0
 
-    cmp-long p3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez p3, :cond_1a
+    if-nez p1, :cond_1a
 
     .line 1450
     invoke-direct {p0}, Lorg/telegram/ui/Components/FragmentContextView;->checkLocationString()V
@@ -10793,7 +10796,7 @@
 
     const/high16 p2, 0x457a0000    # 4000.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     const p2, 0x4604d000    # 8500.0f
 
@@ -10857,7 +10860,7 @@
 
     const/high16 p2, 0x41700000    # 15.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     const/high16 p2, 0x42a00000    # 80.0f
 
@@ -11334,7 +11337,7 @@
     .line 2429
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/FragmentContextView;->invalidate()V
 
-    const/4 v0, 0x1
+    move v0, v9
 
     .line 2431
     :goto_2
@@ -11543,7 +11546,7 @@
     goto/16 :goto_2
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const/4 v4, 0x5
@@ -11894,12 +11897,12 @@
 
     if-eqz v0, :cond_b
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_4
 
     :cond_b
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1415
     :goto_4
@@ -12010,12 +12013,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 267
     :goto_0
@@ -12185,7 +12188,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v2, 0x5
@@ -12563,7 +12566,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz p1, :cond_3

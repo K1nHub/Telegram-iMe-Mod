@@ -226,7 +226,7 @@
 
     move-result v0
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     .line 1833
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$ListAdapter;->this$0:Lorg/telegram/ui/WallpapersListActivity;
@@ -237,12 +237,12 @@
 
     if-nez p2, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/WallpapersListActivity$ListAdapter;->this$0:Lorg/telegram/ui/WallpapersListActivity;
@@ -263,17 +263,17 @@
 
     if-ne v4, v5, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     invoke-virtual {p1, v0, v3, v4}, Lorg/telegram/ui/Cells/WallpaperCell;->setParams(IZZ)V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1834
     :goto_2
@@ -672,7 +672,7 @@
 
     iget v9, v3, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->intensity:F
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     float-to-int v9, v9
 
@@ -682,7 +682,7 @@
 
     move-result v10
 
-    mul-float v10, v10, v4
+    mul-float/2addr v10, v4
 
     float-to-int v4, v10
 
@@ -785,12 +785,12 @@
 
     if-ltz v3, :cond_f
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_8
 
     :cond_f
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_8
     iget-object v4, p0, Lorg/telegram/ui/WallpapersListActivity$ListAdapter;->this$0:Lorg/telegram/ui/WallpapersListActivity;

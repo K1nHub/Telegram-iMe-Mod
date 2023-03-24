@@ -86,7 +86,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p2
 
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H263Reader$SampleReader;->sampleIsKeyframe:Z
@@ -191,13 +191,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 454
     :goto_1
@@ -208,7 +208,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 456
     :goto_2

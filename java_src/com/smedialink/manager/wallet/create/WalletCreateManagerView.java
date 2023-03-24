@@ -16,6 +16,8 @@ public interface WalletCreateManagerView extends BaseView {
 
     void openImportWalletScreen(String str, String str2);
 
+    void showActivationConfirmationDialog(DialogModel dialogModel, Callbacks$Callback callbacks$Callback);
+
     void showAlreadyCreatedWalletWarningDialog(DialogModel dialogModel, String str, Callbacks$Callback callbacks$Callback);
 
     void showAnimatedDialog(AnimatedSpannableDialogModel animatedSpannableDialogModel, Callbacks$Callback callbacks$Callback);

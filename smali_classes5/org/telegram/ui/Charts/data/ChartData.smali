@@ -112,7 +112,7 @@
     .line 40
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 41
     :goto_0
@@ -154,7 +154,7 @@
 
     iput-object v6, p0, Lorg/telegram/ui/Charts/data/ChartData;->x:[J
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_1
     if-ge v6, v5, :cond_3
@@ -204,7 +204,7 @@
 
     iput-object v7, v5, Lorg/telegram/ui/Charts/data/ChartData$Line;->y:[I
 
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_2
     if-ge v7, v6, :cond_3
@@ -628,34 +628,34 @@
 
     const/4 v0, 0x0
 
+    cmpl-float v0, p1, v0
+
     const/4 v1, 0x0
 
-    cmpl-float v1, p1, v1
+    if-nez v0, :cond_0
 
-    if-nez v1, :cond_0
-
-    return v0
+    return v1
 
     .line 150
     :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/Charts/data/ChartData;->xPercentage:[F
+    iget-object v0, p0, Lorg/telegram/ui/Charts/data/ChartData;->xPercentage:[F
 
-    array-length v1, v1
+    array-length v0, v0
 
     const/4 v2, 0x2
 
-    if-ge v1, v2, :cond_1
+    if-ge v0, v2, :cond_1
 
-    return v0
+    return v1
 
     :cond_1
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     :cond_2
     :goto_0
-    if-gt v0, v1, :cond_7
+    if-gt v1, v0, :cond_7
 
-    add-int v2, v1, v0
+    add-int v2, v0, v1
 
     shr-int/lit8 v2, v2, 0x1
 
@@ -701,7 +701,7 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    move v1, v2
+    move v0, v2
 
     goto :goto_0
 
@@ -715,12 +715,12 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    move v0, v2
+    move v1, v2
 
     goto :goto_0
 
     :cond_7
-    return v0
+    return v1
 .end method
 
 .method public getDayString(I)Ljava/lang/String;
@@ -790,7 +790,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ge v0, v1, :cond_2
@@ -820,7 +820,7 @@
 
     :cond_2
     :goto_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 115
     :goto_2
@@ -925,11 +925,11 @@
 
     div-long/2addr v5, v0
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    add-int/lit8 v6, v6, 0xa
+    add-int/lit8 v5, v5, 0xa
 
-    new-array v5, v6, [Ljava/lang/String;
+    new-array v5, v5, [Ljava/lang/String;
 
     iput-object v5, p0, Lorg/telegram/ui/Charts/data/ChartData;->daysLookup:[Ljava/lang/String;
 
@@ -946,9 +946,9 @@
     :cond_6
     const-wide/32 v8, 0x5265c00
 
-    cmp-long v10, v0, v8
+    cmp-long v0, v0, v8
 
-    if-gez v10, :cond_7
+    if-gez v0, :cond_7
 
     .line 128
     new-instance v0, Ljava/text/SimpleDateFormat;
@@ -968,7 +968,7 @@
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     :goto_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 133
     :goto_4
@@ -981,9 +981,9 @@
     .line 134
     iget-wide v9, p0, Lorg/telegram/ui/Charts/data/ChartData;->timeStep:J
 
-    cmp-long v11, v9, v5
+    cmp-long v9, v9, v5
 
-    if-nez v11, :cond_8
+    if-nez v9, :cond_8
 
     .line 135
     sget-object v9, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
@@ -1014,7 +1014,7 @@
 
     iget-wide v12, p0, Lorg/telegram/ui/Charts/data/ChartData;->timeStep:J
 
-    mul-long v10, v10, v12
+    mul-long/2addr v10, v12
 
     add-long/2addr v10, v3
 

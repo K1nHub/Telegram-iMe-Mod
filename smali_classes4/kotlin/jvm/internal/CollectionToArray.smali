@@ -115,7 +115,7 @@
 
     if-ge v2, v3, :cond_3
 
-    const v1, 0x7ffffffd
+    move v1, v3
 
     goto :goto_2
 
@@ -297,7 +297,7 @@
 
     if-ge v3, v4, :cond_4
 
-    const v2, 0x7ffffffd
+    move v2, v4
 
     goto :goto_1
 

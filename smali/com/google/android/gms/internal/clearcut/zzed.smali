@@ -601,12 +601,12 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-eqz v0, :cond_7
@@ -840,7 +840,7 @@
 
     if-eqz v0, :cond_f
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_f
     if-eqz v1, :cond_12

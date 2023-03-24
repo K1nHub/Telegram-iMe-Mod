@@ -663,7 +663,7 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v5, 0x1
+    move v5, v4
 
     :cond_4
     :goto_1
@@ -1041,7 +1041,7 @@
 .end method
 
 .method private shouldForceKeyFrame(J)Z
-    .locals 5
+    .locals 4
 
     .line 499
     iget-object v0, p0, Lorg/webrtc/HardwareVideoEncoder;->encodeThreadChecker:Lorg/webrtc/ThreadUtils$ThreadChecker;
@@ -1053,17 +1053,17 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     iget-wide v2, p0, Lorg/webrtc/HardwareVideoEncoder;->lastKeyFrameNs:J
 
     add-long/2addr v2, v0
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1550,12 +1550,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v6
 
     .line 345
     :goto_0
@@ -1614,7 +1614,7 @@
 
     array-length v1, p2
 
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_1
     if-ge v6, v1, :cond_6
@@ -1626,7 +1626,7 @@
 
     if-ne v4, v7, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v5
 
     :cond_5
     add-int/lit8 v6, v6, 0x1
@@ -1665,7 +1665,7 @@
 
     move-result v1
 
-    mul-int p2, p2, v1
+    mul-int/2addr p2, v1
 
     mul-int/lit8 p2, p2, 0x3
 
@@ -2122,7 +2122,7 @@
 
     if-le p2, v0, :cond_0
 
-    const/16 p2, 0x1e
+    move p2, v0
 
     .line 460
     :cond_0

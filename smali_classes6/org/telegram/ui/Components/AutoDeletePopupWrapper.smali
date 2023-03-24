@@ -116,7 +116,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p4, 0x0
+    move p4, v1
 
     :goto_0
     invoke-direct {v0, p1, p4, p6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -709,7 +709,7 @@
 .end method
 
 .method public updateItems(I)V
-    .locals 5
+    .locals 4
 
     .line 105
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -722,9 +722,9 @@
 
     const-wide/16 v2, 0xc8
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     .line 106
     new-instance v0, Lorg/telegram/ui/Components/AutoDeletePopupWrapper$$ExternalSyntheticLambda7;

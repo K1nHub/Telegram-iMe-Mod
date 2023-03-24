@@ -12,14 +12,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP384R1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1360q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFF"));
+    public static final BigInteger f1361q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFF"));
     protected SecP384R1Point infinity;
 
     public SecP384R1Curve() {
-        super(f1360q);
+        super(f1361q);
         this.infinity = new SecP384R1Point(this, null, null);
-        this.f1307a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFC")));
-        this.f1308b = fromBigInteger(new BigInteger(1, Hex.decode("B3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D2A85C8EDD3EC2AEF")));
+        this.f1308a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFC")));
+        this.f1309b = fromBigInteger(new BigInteger(1, Hex.decode("B3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D2A85C8EDD3EC2AEF")));
         this.order = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC7634D81F4372DDF581A0DB248B0A77AECEC196ACCC52973"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -36,9 +36,9 @@ public class SecP384R1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat.copy(12, ((SecP384R1FieldElement) eCPoint.getRawXCoord()).f1363x, 0, iArr, i3);
+            Nat.copy(12, ((SecP384R1FieldElement) eCPoint.getRawXCoord()).f1364x, 0, iArr, i3);
             int i5 = i3 + 12;
-            Nat.copy(12, ((SecP384R1FieldElement) eCPoint.getRawYCoord()).f1363x, 0, iArr, i5);
+            Nat.copy(12, ((SecP384R1FieldElement) eCPoint.getRawYCoord()).f1364x, 0, iArr, i5);
             i3 = i5 + 12;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP384R1Curve.1
@@ -86,7 +86,7 @@ public class SecP384R1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1360q.bitLength();
+        return f1361q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

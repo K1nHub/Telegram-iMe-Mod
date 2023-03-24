@@ -164,7 +164,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p4, 0x0
+    move p4, v0
 
     :goto_0
     invoke-direct {p5, p0, p1, p4, p7}, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper$1;-><init>(Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -523,7 +523,7 @@
     .line 239
     div-int v2, p1, v1
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     sub-int/2addr p1, v1
 
@@ -1021,7 +1021,7 @@
 .end method
 
 .method public update(JILjava/util/HashSet;)V
-    .locals 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JI",
@@ -1042,24 +1042,24 @@
 
     const-wide/16 v2, 0xc8
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     .line 164
     new-instance v0, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper$$ExternalSyntheticLambda10;
 
-    move-object v5, v0
+    move-object v1, v0
 
-    move-object v6, p0
+    move-object v2, p0
 
-    move-wide v7, p1
+    move-wide v3, p1
 
-    move v9, p3
+    move v5, p3
 
-    move-object v10, p4
+    move-object v6, p4
 
-    invoke-direct/range {v5 .. v10}, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;JILjava/util/HashSet;)V
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/ChatNotificationsPopupWrapper;JILjava/util/HashSet;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -1238,9 +1238,9 @@
 
     :cond_5
     :goto_2
-    const/4 p2, 0x0
+    move p2, v2
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_3
     if-eqz v0, :cond_6

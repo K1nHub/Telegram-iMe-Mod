@@ -180,7 +180,7 @@
 
     iget v4, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Matrix;->numRows:I
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     if-lez v4, :cond_3
 
@@ -224,14 +224,14 @@
 
     and-int/lit8 v1, v1, 0x1f
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     iget v4, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Matrix;->numRows:I
 
     if-ge v3, v4, :cond_2
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     if-ge v4, v2, :cond_0
@@ -253,7 +253,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_2
     if-ge v4, v1, :cond_1
@@ -342,7 +342,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iget v2, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Matrix;->numRows:I
@@ -391,7 +391,7 @@
 
     iget v1, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Matrix;->numRows:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     const/16 v2, 0x8
 
@@ -415,14 +415,14 @@
 
     and-int/lit8 v1, v1, 0x1f
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     iget v6, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Matrix;->numRows:I
 
     if-ge v5, v6, :cond_2
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     if-ge v6, v4, :cond_0
@@ -442,7 +442,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_2
     if-ge v6, v1, :cond_1
@@ -545,7 +545,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     iget v5, p0, Lorg/bouncycastle/pqc/math/linearalgebra/Matrix;->numRows:I
@@ -568,7 +568,7 @@
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     const/16 v6, 0x30
@@ -583,7 +583,7 @@
 
     aget v8, v8, v5
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_3
     const/16 v10, 0x20
@@ -626,7 +626,7 @@
 
     aget v5, v5, v8
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_5
     if-ge v8, v0, :cond_5

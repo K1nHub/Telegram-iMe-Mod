@@ -173,7 +173,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, -0x1
+    move v2, v0
 
     .line 143
     :goto_0
@@ -238,7 +238,7 @@
 
     if-eq p0, p1, :cond_0
 
-    const/4 p4, 0x1
+    move p4, v0
 
     :cond_0
     return p4

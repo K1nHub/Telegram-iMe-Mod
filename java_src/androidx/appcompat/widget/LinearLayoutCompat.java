@@ -308,14 +308,14 @@ public class LinearLayoutCompat extends ViewGroup {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:150:0x0323  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0325  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     void measureVertical(int r34, int r35) {
         /*
-            Method dump skipped, instructions count: 911
+            Method dump skipped, instructions count: 914
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.LinearLayoutCompat.measureVertical(int, int):void");
@@ -337,17 +337,17 @@ public class LinearLayoutCompat extends ViewGroup {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:197:0x044d  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x01d4  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x0453  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01d8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    void measureHorizontal(int r38, int r39) {
+    void measureHorizontal(int r39, int r40) {
         /*
-            Method dump skipped, instructions count: 1288
+            Method dump skipped, instructions count: 1294
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.LinearLayoutCompat.measureHorizontal(int, int):void");
@@ -426,19 +426,19 @@ public class LinearLayoutCompat extends ViewGroup {
             int r0 = r0 + r1
         L47:
             r1 = 0
-            r12 = 0
+            r12 = r1
         L49:
-            if (r12 >= r10) goto Lc8
+            if (r12 >= r10) goto Lcb
             android.view.View r13 = r6.getVirtualChildAt(r12)
             r14 = 1
             if (r13 != 0) goto L59
             int r1 = r6.measureNullChild(r12)
             int r0 = r0 + r1
-            goto Lc5
+            goto Lc7
         L59:
             int r1 = r13.getVisibility()
             r2 = 8
-            if (r1 == r2) goto Lc5
+            if (r1 == r2) goto Lc7
             int r4 = r13.getMeasuredWidth()
             int r15 = r13.getMeasuredHeight()
             android.view.ViewGroup$LayoutParams r1 = r13.getLayoutParams()
@@ -494,27 +494,30 @@ public class LinearLayoutCompat extends ViewGroup {
             int r0 = r6.getChildrenSkipCount(r13, r12)
             int r12 = r12 + r0
             r0 = r16
-        Lc5:
             r1 = 1
+            goto Lc8
+        Lc7:
+            r1 = r14
+        Lc8:
             int r12 = r12 + r1
             goto L49
-        Lc8:
+        Lcb:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.LinearLayoutCompat.layoutVertical(int, int, int, int):void");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00a7  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00ff  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     void layoutHorizontal(int r25, int r26, int r27, int r28) {
         /*
-            Method dump skipped, instructions count: 320
+            Method dump skipped, instructions count: 329
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.LinearLayoutCompat.layoutHorizontal(int, int, int, int):void");

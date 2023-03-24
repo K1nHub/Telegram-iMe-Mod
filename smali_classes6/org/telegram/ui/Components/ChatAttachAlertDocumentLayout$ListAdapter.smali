@@ -376,12 +376,12 @@
 
     if-eq p2, v2, :cond_1
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v9
 
     :goto_0
     move-object v2, p1

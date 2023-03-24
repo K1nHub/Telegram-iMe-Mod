@@ -29,7 +29,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11844
+    .line 11854
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$SecureRequiredType;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 11854
+    .line 11864
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -55,14 +55,14 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 11855
+    .line 11865
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
 
@@ -70,14 +70,14 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 11856
+    .line 11866
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->selfie_required:Z
 
@@ -85,13 +85,13 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
-    .line 11857
+    .line 11867
     :cond_2
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->translation_required:Z
 
-    .line 11858
+    .line 11868
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -108,12 +108,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 11862
+    .line 11872
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11863
+    .line 11873
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->native_names:Z
 
     if-eqz v0, :cond_0
@@ -132,7 +132,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->flags:I
 
-    .line 11864
+    .line 11874
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->selfie_required:Z
 
     if-eqz v1, :cond_1
@@ -147,7 +147,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->flags:I
 
-    .line 11865
+    .line 11875
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->translation_required:Z
 
     if-eqz v1, :cond_2
@@ -162,10 +162,10 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->flags:I
 
-    .line 11866
+    .line 11876
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11867
+    .line 11877
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

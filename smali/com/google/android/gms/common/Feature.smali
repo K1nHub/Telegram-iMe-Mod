@@ -196,7 +196,7 @@
 .end method
 
 .method public getVersion()J
-    .locals 5
+    .locals 4
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -204,9 +204,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     iget v0, p0, Lcom/google/android/gms/common/Feature;->zzb:I
 

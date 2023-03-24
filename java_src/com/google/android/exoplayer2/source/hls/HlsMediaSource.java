@@ -304,16 +304,16 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0047  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private void updateLiveConfiguration(com.google.android.exoplayer2.source.hls.playlist.HlsMediaPlaylist r6, long r7) {
+    private void updateLiveConfiguration(com.google.android.exoplayer2.source.hls.playlist.HlsMediaPlaylist r5, long r6) {
         /*
-            r5 = this;
-            com.google.android.exoplayer2.MediaItem r0 = r5.mediaItem
+            r4 = this;
+            com.google.android.exoplayer2.MediaItem r0 = r4.mediaItem
             com.google.android.exoplayer2.MediaItem$LiveConfiguration r0 = r0.liveConfiguration
             float r1 = r0.minPlaybackSpeed
             r2 = -8388609(0xffffffffff7fffff, float:-3.4028235E38)
@@ -322,41 +322,41 @@ public final class HlsMediaSource extends BaseMediaSource implements HlsPlaylist
             float r0 = r0.maxPlaybackSpeed
             int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
             if (r0 != 0) goto L28
-            com.google.android.exoplayer2.source.hls.playlist.HlsMediaPlaylist$ServerControl r6 = r6.serverControl
-            long r0 = r6.holdBackUs
+            com.google.android.exoplayer2.source.hls.playlist.HlsMediaPlaylist$ServerControl r5 = r5.serverControl
+            long r0 = r5.holdBackUs
             r2 = -9223372036854775807(0x8000000000000001, double:-4.9E-324)
-            int r4 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r4 != 0) goto L28
-            long r0 = r6.partHoldBackUs
-            int r6 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r6 != 0) goto L28
-            r6 = 1
+            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+            if (r0 != 0) goto L28
+            long r0 = r5.partHoldBackUs
+            int r5 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
+            if (r5 != 0) goto L28
+            r5 = 1
             goto L29
         L28:
-            r6 = 0
+            r5 = 0
         L29:
             com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r0 = new com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder
             r0.<init>()
-            long r7 = com.google.android.exoplayer2.util.Util.usToMs(r7)
-            com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r7 = r0.setTargetOffsetMs(r7)
-            r8 = 1065353216(0x3f800000, float:1.0)
-            if (r6 == 0) goto L3d
-            r0 = 1065353216(0x3f800000, float:1.0)
-            goto L41
-        L3d:
-            com.google.android.exoplayer2.MediaItem$LiveConfiguration r0 = r5.liveConfiguration
+            long r6 = com.google.android.exoplayer2.util.Util.usToMs(r6)
+            com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r6 = r0.setTargetOffsetMs(r6)
+            r7 = 1065353216(0x3f800000, float:1.0)
+            if (r5 == 0) goto L3c
+            r0 = r7
+            goto L40
+        L3c:
+            com.google.android.exoplayer2.MediaItem$LiveConfiguration r0 = r4.liveConfiguration
             float r0 = r0.minPlaybackSpeed
-        L41:
-            com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r7 = r7.setMinPlaybackSpeed(r0)
-            if (r6 == 0) goto L48
-            goto L4c
-        L48:
-            com.google.android.exoplayer2.MediaItem$LiveConfiguration r6 = r5.liveConfiguration
-            float r8 = r6.maxPlaybackSpeed
-        L4c:
-            com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r6 = r7.setMaxPlaybackSpeed(r8)
-            com.google.android.exoplayer2.MediaItem$LiveConfiguration r6 = r6.build()
-            r5.liveConfiguration = r6
+        L40:
+            com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r6 = r6.setMinPlaybackSpeed(r0)
+            if (r5 == 0) goto L47
+            goto L4b
+        L47:
+            com.google.android.exoplayer2.MediaItem$LiveConfiguration r5 = r4.liveConfiguration
+            float r7 = r5.maxPlaybackSpeed
+        L4b:
+            com.google.android.exoplayer2.MediaItem$LiveConfiguration$Builder r5 = r6.setMaxPlaybackSpeed(r7)
+            com.google.android.exoplayer2.MediaItem$LiveConfiguration r5 = r5.build()
+            r4.liveConfiguration = r5
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.hls.HlsMediaSource.updateLiveConfiguration(com.google.android.exoplayer2.source.hls.playlist.HlsMediaPlaylist, long):void");

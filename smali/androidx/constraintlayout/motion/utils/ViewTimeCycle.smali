@@ -104,11 +104,11 @@
 
     const-wide v2, 0x3e112e0be826d695L    # 1.0E-9
 
-    mul-double p1, p1, v2
+    mul-double/2addr p1, v2
 
     float-to-double p3, p4
 
-    mul-double p1, p1, p3
+    mul-double/2addr p1, p3
 
     add-double/2addr v0, p1
 

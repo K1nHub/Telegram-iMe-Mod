@@ -460,7 +460,7 @@ public final class MediaCodecUtil {
                 default: goto L2b;
             }
         L2b:
-            r2 = -1
+            r2 = r4
             goto L78
         L2d:
             java.lang.String r2 = "vp09"

@@ -433,7 +433,7 @@
 
     move-result v10
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     invoke-static {v8, v13}, Ljava/lang/Math;->max(FF)F
 
@@ -571,7 +571,7 @@
 
     const/high16 v1, 0x41c00000    # 24.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -588,7 +588,7 @@
 
     const/high16 v1, 0x41c00000    # 24.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 

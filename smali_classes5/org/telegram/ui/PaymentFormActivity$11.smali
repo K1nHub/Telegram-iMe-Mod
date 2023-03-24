@@ -182,12 +182,12 @@
 
     if-ltz v6, :cond_3
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_2
 
     :cond_3
-    const/4 v15, 0x0
+    move v15, v8
 
     .line 1920
     :goto_2
@@ -250,7 +250,7 @@
 
     int-to-long v2, v9
 
-    mul-long v12, v12, v2
+    mul-long/2addr v12, v2
 
     .line 1924
     invoke-static {v1}, Lorg/telegram/PhoneFormat/PhoneFormat;->stripExceptNumbers(Ljava/lang/String;)Ljava/lang/String;
@@ -379,9 +379,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v3, v1, v9
+    cmp-long v1, v1, v9
 
-    if-eqz v3, :cond_8
+    if-eqz v1, :cond_8
 
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity$11;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
@@ -403,9 +403,9 @@
 
     iget-wide v9, v3, Lorg/telegram/tgnet/TLRPC$TL_invoice;->max_tip_amount:J
 
-    cmp-long v3, v1, v9
+    cmp-long v1, v1, v9
 
-    if-lez v3, :cond_8
+    if-lez v1, :cond_8
 
     .line 1937
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity$11;->this$0:Lorg/telegram/ui/PaymentFormActivity;
@@ -456,9 +456,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v12, v2, v9
+    cmp-long v2, v2, v9
 
-    if-nez v12, :cond_9
+    if-nez v2, :cond_9
 
     .line 1943
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity$11;->this$0:Lorg/telegram/ui/PaymentFormActivity;
@@ -537,15 +537,15 @@
 
     move-result-wide v2
 
-    cmp-long v9, v4, v2
+    cmp-long v2, v4, v2
 
-    if-gez v9, :cond_a
+    if-gez v2, :cond_a
 
     const-wide/16 v2, 0x0
 
-    cmp-long v9, v4, v2
+    cmp-long v2, v4, v2
 
-    if-eqz v9, :cond_a
+    if-eqz v2, :cond_a
 
     iget-boolean v2, v0, Lorg/telegram/ui/PaymentFormActivity$11;->anyBefore:Z
 
@@ -782,7 +782,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
@@ -802,12 +802,12 @@
 
     if-nez p4, :cond_2
 
-    const/4 p3, 0x1
+    move p3, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, v0
 
     .line 1880
     :goto_1

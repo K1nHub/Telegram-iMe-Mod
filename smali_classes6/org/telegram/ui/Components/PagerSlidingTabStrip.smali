@@ -525,7 +525,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
@@ -716,7 +716,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 233
     :goto_0
@@ -1202,21 +1202,21 @@
     .line 305
     iget v7, p0, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->currentPositionOffset:F
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     const/high16 v8, 0x3f800000    # 1.0f
 
     sub-float v9, v8, v7
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     add-float/2addr v5, v9
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
     sub-float/2addr v8, v7
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     add-float/2addr v2, v8
 

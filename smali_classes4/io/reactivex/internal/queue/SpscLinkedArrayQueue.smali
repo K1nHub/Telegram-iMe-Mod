@@ -184,9 +184,9 @@
 .method private static calcWrappedOffset(JI)I
     .locals 0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    and-int p0, p1, p2
+    and-int/2addr p0, p2
 
     .line 241
     invoke-static {p0}, Lio/reactivex/internal/queue/SpscLinkedArrayQueue;->calcDirectOffset(I)I
@@ -549,7 +549,7 @@
 .end method
 
 .method public isEmpty()Z
-    .locals 5
+    .locals 4
 
     .line 209
     invoke-direct {p0}, Lio/reactivex/internal/queue/SpscLinkedArrayQueue;->lvProducerIndex()J
@@ -560,9 +560,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -933,7 +933,7 @@
 .end method
 
 .method public size()I
-    .locals 7
+    .locals 6
 
     .line 196
     invoke-direct {p0}, Lio/reactivex/internal/queue/SpscLinkedArrayQueue;->lvConsumerIndex()J
@@ -951,9 +951,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
     sub-long/2addr v2, v4
 

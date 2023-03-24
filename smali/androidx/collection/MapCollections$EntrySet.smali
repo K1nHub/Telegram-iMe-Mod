@@ -283,7 +283,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ltz v0, :cond_2
@@ -304,7 +304,7 @@
 
     if-nez v4, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_1
 
@@ -317,7 +317,7 @@
     :goto_1
     if-nez v5, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_2
 

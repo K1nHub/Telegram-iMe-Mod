@@ -11,7 +11,7 @@ import android.util.Property;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.Components.AnimationProperties;
 /* renamed from: org.telegram.ui.Components.ZoomControlView */
 /* loaded from: classes6.dex */
@@ -63,12 +63,12 @@ public class ZoomControlView extends View {
                 return Float.valueOf(ZoomControlView.this.zoom);
             }
         };
-        this.minusDrawable = context.getResources().getDrawable(C3286R.C3288drawable.zoom_minus);
-        this.plusDrawable = context.getResources().getDrawable(C3286R.C3288drawable.zoom_plus);
-        this.progressDrawable = context.getResources().getDrawable(C3286R.C3288drawable.zoom_slide);
-        this.filledProgressDrawable = context.getResources().getDrawable(C3286R.C3288drawable.zoom_slide_a);
-        this.knobDrawable = context.getResources().getDrawable(C3286R.C3288drawable.zoom_round);
-        this.pressedKnobDrawable = context.getResources().getDrawable(C3286R.C3288drawable.zoom_round_b);
+        this.minusDrawable = context.getResources().getDrawable(C3301R.C3303drawable.zoom_minus);
+        this.plusDrawable = context.getResources().getDrawable(C3301R.C3303drawable.zoom_plus);
+        this.progressDrawable = context.getResources().getDrawable(C3301R.C3303drawable.zoom_slide);
+        this.filledProgressDrawable = context.getResources().getDrawable(C3301R.C3303drawable.zoom_slide_a);
+        this.knobDrawable = context.getResources().getDrawable(C3301R.C3303drawable.zoom_round);
+        this.pressedKnobDrawable = context.getResources().getDrawable(C3301R.C3303drawable.zoom_round_b);
     }
 
     public float getZoom() {
@@ -84,7 +84,7 @@ public class ZoomControlView extends View {
             return;
         }
         if (f < BitmapDescriptorFactory.HUE_RED) {
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
         } else if (f > 1.0f) {
             f = 1.0f;
         }
@@ -99,8 +99,8 @@ public class ZoomControlView extends View {
         this.delegate = zoomControlViewDelegate;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:92:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x01e3  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x01d6  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01df  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -108,7 +108,7 @@ public class ZoomControlView extends View {
     */
     public boolean onTouchEvent(android.view.MotionEvent r15) {
         /*
-            Method dump skipped, instructions count: 499
+            Method dump skipped, instructions count: 495
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.ZoomControlView.onTouchEvent(android.view.MotionEvent):boolean");

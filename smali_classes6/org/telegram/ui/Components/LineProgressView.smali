@@ -94,7 +94,7 @@
 .end method
 
 .method private updateAnimation()V
-    .locals 12
+    .locals 11
 
     .line 52
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -114,24 +114,24 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    const/4 v4, 0x0
+    cmpl-float v4, v0, v1
 
-    cmpl-float v5, v0, v1
+    const/4 v5, 0x0
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
-    iget v5, p0, Lorg/telegram/ui/Components/LineProgressView;->currentProgress:F
+    iget v4, p0, Lorg/telegram/ui/Components/LineProgressView;->currentProgress:F
 
-    cmpl-float v0, v0, v5
+    cmpl-float v0, v0, v4
 
     if-eqz v0, :cond_2
 
     .line 57
     iget v0, p0, Lorg/telegram/ui/Components/LineProgressView;->animationProgressStart:F
 
-    sub-float v6, v5, v0
+    sub-float v6, v4, v0
 
-    cmpl-float v7, v6, v4
+    cmpl-float v7, v6, v5
 
     if-lez v7, :cond_1
 
@@ -144,26 +144,26 @@
 
     const-wide/16 v9, 0x12c
 
-    cmp-long v11, v7, v9
+    cmp-long v9, v7, v9
 
-    if-ltz v11, :cond_0
+    if-ltz v9, :cond_0
 
     .line 61
-    iput v5, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedProgressValue:F
+    iput v4, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedProgressValue:F
 
     .line 62
-    iput v5, p0, Lorg/telegram/ui/Components/LineProgressView;->animationProgressStart:F
+    iput v4, p0, Lorg/telegram/ui/Components/LineProgressView;->animationProgressStart:F
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
     .line 63
-    iput-wide v5, p0, Lorg/telegram/ui/Components/LineProgressView;->currentProgressTime:J
+    iput-wide v6, p0, Lorg/telegram/ui/Components/LineProgressView;->currentProgressTime:J
 
     goto :goto_0
 
     .line 65
     :cond_0
-    sget-object v5, Lorg/telegram/ui/Components/LineProgressView;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
+    sget-object v4, Lorg/telegram/ui/Components/LineProgressView;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
     long-to-float v7, v7
 
@@ -171,11 +171,11 @@
 
     div-float/2addr v7, v8
 
-    invoke-virtual {v5, v7}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {v4, v7}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
-    move-result v5
+    move-result v4
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v4
 
     add-float/2addr v0, v6
 
@@ -190,9 +190,9 @@
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedProgressValue:F
 
-    cmpl-float v5, v0, v1
+    cmpl-float v4, v0, v1
 
-    if-ltz v5, :cond_4
+    if-ltz v4, :cond_4
 
     cmpl-float v0, v0, v1
 
@@ -200,7 +200,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedAlphaValue:F
 
-    cmpl-float v1, v0, v4
+    cmpl-float v1, v0, v5
 
     if-eqz v1, :cond_4
 
@@ -215,12 +215,12 @@
     .line 71
     iput v0, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedAlphaValue:F
 
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v5
 
     if-gtz v0, :cond_3
 
     .line 73
-    iput v4, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedAlphaValue:F
+    iput v5, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedAlphaValue:F
 
     .line 75
     :cond_3
@@ -273,7 +273,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedAlphaValue:F
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     float-to-int v4, v4
 
@@ -335,7 +335,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedAlphaValue:F
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     float-to-int v1, v4
 
@@ -352,7 +352,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/LineProgressView;->animatedProgressValue:F
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 

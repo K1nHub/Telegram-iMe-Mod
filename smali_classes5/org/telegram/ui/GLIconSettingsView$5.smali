@@ -65,7 +65,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     iput p2, p1, Lorg/telegram/ui/Components/Premium/GLIcon/Star3DIcon;->normalSpec:F
 

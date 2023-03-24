@@ -60,7 +60,7 @@
 
     int-to-float p2, p2
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 

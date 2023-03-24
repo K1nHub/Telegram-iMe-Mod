@@ -309,7 +309,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p4, 0x0
+    move p4, p0
 
     .line 76
     :goto_0

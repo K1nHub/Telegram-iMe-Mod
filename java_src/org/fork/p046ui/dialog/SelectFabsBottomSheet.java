@@ -21,7 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.fork.p046ui.view.CircleCheckCell;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BottomSheet;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -71,7 +71,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         this.bottomShadow$delegate = lazy4;
         lazy5 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$saveButton$2(this));
         this.saveButton$delegate = lazy5;
-        setTitle(LocaleController.getInternalString(C3286R.string.create_folder_change_fab_title), true);
+        setTitle(LocaleController.getInternalString(C3301R.string.create_folder_change_fab_title), true);
         setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.fork.ui.dialog.SelectFabsBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
@@ -162,7 +162,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("dialogBackground"), Theme.getColor("listSelectorSDK21")));
-        textView.setText(LocaleController.getString("Save", C3286R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3301R.string.Save));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor("dialogTextBlue2"));
         return textView;

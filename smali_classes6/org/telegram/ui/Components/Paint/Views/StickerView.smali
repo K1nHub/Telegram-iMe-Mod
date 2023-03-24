@@ -391,7 +391,7 @@
 
     add-float/2addr v2, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 173
     new-instance v2, Lorg/telegram/ui/Components/Rect;
@@ -406,7 +406,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionY()F
 
@@ -414,9 +414,9 @@
 
     sub-float/2addr v5, v4
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     invoke-direct {v2, v3, v5, v1, v1}, Lorg/telegram/ui/Components/Rect;-><init>(FFFF)V
 

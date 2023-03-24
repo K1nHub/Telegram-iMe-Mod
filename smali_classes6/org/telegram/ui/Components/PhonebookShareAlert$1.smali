@@ -106,9 +106,9 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x3f800000    # 1.0f
-
     cmpg-float v3, v3, v2
+
+    const/high16 v4, 0x3f800000    # 1.0f
 
     if-gez v3, :cond_0
 
@@ -138,7 +138,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     .line 421
     :goto_0
@@ -180,29 +180,29 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    const-string v1, "dialogBackground"
+    cmpl-float v1, v3, v4
 
-    cmpl-float v4, v3, v4
+    const-string v4, "dialogBackground"
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_2
 
     .line 430
-    iget-object v4, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2700(Lorg/telegram/ui/Components/PhonebookShareAlert;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2700(Lorg/telegram/ui/Components/PhonebookShareAlert;)Landroid/graphics/Paint;
 
-    move-result-object v4
+    move-result-object v1
 
     iget-object v5, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v5, v1}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2600(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    invoke-static {v5, v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2600(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 431
-    iget-object v4, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->rect:Landroid/graphics/RectF;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->rect:Landroid/graphics/RectF;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
@@ -254,26 +254,26 @@
 
     int-to-float v0, v8
 
-    invoke-virtual {v4, v5, v6, v7, v0}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v5, v6, v7, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->rect:Landroid/graphics/RectF;
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
+    iget-object v1, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2700(Lorg/telegram/ui/Components/PhonebookShareAlert;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$2700(Lorg/telegram/ui/Components/PhonebookShareAlert;)Landroid/graphics/Paint;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {p1, v0, v2, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v2, v2, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 435
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PhonebookShareAlert$1;->this$0:Lorg/telegram/ui/Components/PhonebookShareAlert;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3200(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    invoke-static {v0, v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$3200(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
 
     move-result v0
 
@@ -290,7 +290,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -302,7 +302,7 @@
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -312,7 +312,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -322,7 +322,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -575,7 +575,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v3, :cond_1

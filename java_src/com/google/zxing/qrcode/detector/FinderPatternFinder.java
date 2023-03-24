@@ -32,7 +32,10 @@ public class FinderPatternFinder {
         boolean z = map != null && map.containsKey(DecodeHintType.TRY_HARDER);
         int height = this.image.getHeight();
         int width = this.image.getWidth();
-        int i = ((height * 3) / 388 < 3 || z) ? 3 : 3;
+        int i = (height * 3) / 388;
+        if (i < 3 || z) {
+            i = 3;
+        }
         int[] iArr = new int[5];
         int i2 = i - 1;
         boolean z2 = false;
@@ -61,8 +64,8 @@ public class FinderPatternFinder {
                                 }
                             }
                             clearCounts(iArr);
-                            i = 2;
                             i4 = 0;
+                            i = 2;
                         } else {
                             shiftCounts2(iArr);
                         }
@@ -286,16 +289,16 @@ public class FinderPatternFinder {
     /* JADX WARN: Code restructure failed: missing block: B:58:0x00a1, code lost:
         return Float.NaN;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00b8, code lost:
         if ((java.lang.Math.abs(((((r2[0] + r2[1]) + r2[2]) + r2[3]) + r2[4]) - r14) * 5) < (r14 * 2)) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ba, code lost:
         return Float.NaN;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00bf, code lost:
         if (foundPatternCross(r2) == false) goto L70;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c5, code lost:
         return centerFromEnd(r2, r11);
      */
     /* JADX WARN: Code restructure failed: missing block: B:83:?, code lost:
@@ -316,7 +319,7 @@ public class FinderPatternFinder {
     */
     private float crossCheckVertical(int r11, int r12, int r13, int r14) {
         /*
-            Method dump skipped, instructions count: 199
+            Method dump skipped, instructions count: 198
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.zxing.qrcode.detector.FinderPatternFinder.crossCheckVertical(int, int, int, int):float");
@@ -494,8 +497,8 @@ public class FinderPatternFinder {
     private boolean haveMultiplyConfirmedCenters() {
         int size = this.possibleCenters.size();
         float f = BitmapDescriptorFactory.HUE_RED;
+        float f2 = 0.0f;
         int i = 0;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
         for (FinderPattern finderPattern : this.possibleCenters) {
             if (finderPattern.getCount() >= 2) {
                 i++;

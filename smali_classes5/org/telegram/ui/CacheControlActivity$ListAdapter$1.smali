@@ -79,12 +79,12 @@
 
     if-ne p1, p2, :cond_1
 
-    const/4 p1, -0x1
+    move p1, v0
 
     :cond_1
     const/4 p2, 0x0
 
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 2061
     :goto_0

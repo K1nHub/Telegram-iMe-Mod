@@ -504,7 +504,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 8700
     :goto_0
@@ -830,7 +830,7 @@
 
     iget-object p2, p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-eqz p2, :cond_2
@@ -931,9 +931,9 @@
 
     move-result-wide v5
 
-    cmp-long v3, v1, v5
+    cmp-long v1, v1, v5
 
-    if-eqz v3, :cond_6
+    if-eqz v1, :cond_6
 
     .line 8594
     :cond_4

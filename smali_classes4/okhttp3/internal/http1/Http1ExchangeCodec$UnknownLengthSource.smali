@@ -76,39 +76,39 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
-
-    cmp-long v3, p2, v1
-
-    if-ltz v3, :cond_0
+    cmp-long v0, p2, v0
 
     const/4 v1, 0x1
+
+    if-ltz v0, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
     .line 464
     invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->getClosed()Z
 
-    move-result v1
+    move-result v0
 
-    xor-int/2addr v1, v0
+    xor-int/2addr v0, v1
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
     .line 465
-    iget-boolean v1, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$UnknownLengthSource;->inputExhausted:Z
+    iget-boolean v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$UnknownLengthSource;->inputExhausted:Z
 
     const-wide/16 v2, -0x1
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     return-wide v2
 
@@ -123,7 +123,7 @@
     if-nez p3, :cond_2
 
     .line 469
-    iput-boolean v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$UnknownLengthSource;->inputExhausted:Z
+    iput-boolean v1, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$UnknownLengthSource;->inputExhausted:Z
 
     .line 470
     invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->responseBodyComplete()V

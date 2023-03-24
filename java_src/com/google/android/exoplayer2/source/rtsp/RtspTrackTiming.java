@@ -24,15 +24,15 @@ final class RtspTrackTiming {
             java.lang.String[] r1 = com.google.android.exoplayer2.util.Util.split(r2, r1)
             int r2 = r1.length
             r3 = 0
-            r4 = 0
+            r4 = r3
         L10:
             if (r4 >= r2) goto Lc8
             r5 = r1[r4]
             java.lang.String r6 = ";"
             java.lang.String[] r6 = com.google.android.exoplayer2.util.Util.split(r5, r6)
             int r7 = r6.length
+            r12 = r3
             r8 = -9223372036854775807(0x8000000000000001, double:-4.9E-324)
-            r12 = 0
             r13 = 0
             r14 = -1
         L23:
@@ -58,7 +58,7 @@ final class RtspTrackTiming {
             java.lang.String r1 = "rtptime"
             boolean r1 = r10.equals(r1)     // Catch: java.lang.Exception -> L91
             if (r1 == 0) goto L69
-            r1 = 2
+            r1 = r2
             goto L6a
         L55:
             java.lang.String r1 = "url"
@@ -113,8 +113,8 @@ final class RtspTrackTiming {
             r2 = -1
             if (r14 != r2) goto Lb1
             r2 = -9223372036854775807(0x8000000000000001, double:-4.9E-324)
-            int r6 = (r8 > r2 ? 1 : (r8 == r2 ? 0 : -1))
-            if (r6 == 0) goto Lc2
+            int r2 = (r8 > r2 ? 1 : (r8 == r2 ? 0 : -1))
+            if (r2 == 0) goto Lc2
         Lb1:
             com.google.android.exoplayer2.source.rtsp.RtspTrackTiming r2 = new com.google.android.exoplayer2.source.rtsp.RtspTrackTiming
             r2.<init>(r8, r14, r13)

@@ -281,7 +281,7 @@
 .end method
 
 .method private regionsConnect(Lcom/google/android/exoplayer2/upstream/CachedRegionTracker$Region;Lcom/google/android/exoplayer2/upstream/CachedRegionTracker$Region;)Z
-    .locals 3
+    .locals 2
 
     if-eqz p1, :cond_0
 
@@ -292,9 +292,9 @@
 
     iget-wide p1, p2, Lcom/google/android/exoplayer2/upstream/CachedRegionTracker$Region;->startOffset:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -336,9 +336,9 @@
     .line 83
     iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/CachedRegionTracker$Region;->endOffset:J
 
-    cmp-long v4, p1, v2
+    cmp-long p1, p1, v2
 
-    if-gtz v4, :cond_2
+    if-gtz p1, :cond_2
 
     iget p1, v0, Lcom/google/android/exoplayer2/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
@@ -394,7 +394,7 @@
 
     sub-long/2addr v2, v6
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     iget-object v0, p2, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->sizes:[I
 
@@ -417,11 +417,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     monitor-exit p0
 
-    return p2
+    return p1
 
     .line 86
     :cond_2

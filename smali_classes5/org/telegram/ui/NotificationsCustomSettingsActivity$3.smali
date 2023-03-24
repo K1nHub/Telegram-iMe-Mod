@@ -623,16 +623,16 @@
 .end method
 
 .method public showCustomize()V
-    .locals 5
+    .locals 4
 
     .line 310
     iget-wide v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$3;->val$did:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 311
     new-instance v0, Landroid/os/Bundle;

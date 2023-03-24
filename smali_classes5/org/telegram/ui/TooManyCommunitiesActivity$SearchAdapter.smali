@@ -158,12 +158,12 @@
 
     if-eqz v4, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     add-int/2addr v6, v5
@@ -190,7 +190,7 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 602
     :goto_2
@@ -219,9 +219,9 @@
 
     check-cast v9, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    const/4 v10, 0x0
+    move v10, v3
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_3
     const/4 v12, 0x2
@@ -251,7 +251,7 @@
 
     move-result-object v12
 
-    const/4 v13, 0x0
+    move v13, v3
 
     :goto_5
     if-ge v13, v6, :cond_9
@@ -297,7 +297,7 @@
 
     :cond_8
     :goto_6
-    const/4 v11, 0x1
+    move v11, v5
 
     :cond_9
     if-eqz v11, :cond_a
@@ -522,7 +522,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_0
     invoke-virtual {p1, v0, v2, v1, v4}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

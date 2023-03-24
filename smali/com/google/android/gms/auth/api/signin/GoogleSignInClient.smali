@@ -111,7 +111,7 @@
 
     sput v4, Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;->zba:I
 
-    const/4 v0, 0x4
+    move v0, v4
 
     goto :goto_0
 
@@ -136,7 +136,7 @@
 
     sput v2, Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;->zba:I
 
-    const/4 v0, 0x3
+    move v0, v2
 
     goto :goto_0
 
@@ -145,7 +145,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v0, 0x2
+    move v0, v3
 
     .line 3
     :cond_2

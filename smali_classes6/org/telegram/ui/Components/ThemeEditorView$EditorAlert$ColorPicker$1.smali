@@ -138,7 +138,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_0
 
@@ -197,7 +197,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    const/16 p1, 0xff
+    move p1, v3
 
     .line 393
     :cond_2
@@ -272,7 +272,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->setColor(I)V
 
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 404
     :goto_3

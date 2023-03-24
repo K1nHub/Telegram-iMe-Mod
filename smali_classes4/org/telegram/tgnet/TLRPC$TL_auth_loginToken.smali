@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 17904
+    .line 17914
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$auth_LoginToken;-><init>()V
 
     return-void
@@ -34,14 +34,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 17911
+    .line 17921
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_loginToken;->expires:I
 
-    .line 17912
+    .line 17922
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object p1
@@ -54,17 +54,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 17916
+    .line 17926
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_auth_loginToken;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 17917
+    .line 17927
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_loginToken;->expires:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 17918
+    .line 17928
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_auth_loginToken;->token:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V

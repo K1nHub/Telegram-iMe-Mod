@@ -140,7 +140,7 @@
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->await()V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 62
     :goto_0
@@ -228,7 +228,7 @@
 .end method
 
 .method public isReady()Z
-    .locals 5
+    .locals 4
 
     .line 121
     iget-object v0, p0, Lorg/telegram/messenger/DispatchQueue;->syncLatch:Ljava/util/concurrent/CountDownLatch;
@@ -239,9 +239,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -275,7 +275,7 @@
 .end method
 
 .method public postRunnable(Ljava/lang/Runnable;J)Z
-    .locals 3
+    .locals 2
 
     .line 77
     :try_start_0
@@ -298,9 +298,9 @@
     :goto_0
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     .line 82
     iget-object p2, p0, Lorg/telegram/messenger/DispatchQueue;->handler:Landroid/os/Handler;

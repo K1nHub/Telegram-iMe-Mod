@@ -58,7 +58,7 @@ public final class GetApproveTokensInfoResponse {
         private final String lastErrorMessage;
         private final String spenderContractAddress;
         private final String status;
-        private final TransactionParamsResponse transactionParams;
+        private final TransactionParamsResponse.EVM transactionParams;
         private final String value;
 
         public final String component1() {
@@ -85,7 +85,7 @@ public final class GetApproveTokensInfoResponse {
             return this.feeTokenCode;
         }
 
-        public final TransactionParamsResponse component7() {
+        public final TransactionParamsResponse.EVM component7() {
             return this.transactionParams;
         }
 
@@ -93,14 +93,14 @@ public final class GetApproveTokensInfoResponse {
             return this.lastErrorMessage;
         }
 
-        public final CryptoTokenApprovalQuote copy(String cryptoTokenCode, String contractAddress, String spenderContractAddress, String status, String value, String feeTokenCode, TransactionParamsResponse transactionParamsResponse, String str) {
+        public final CryptoTokenApprovalQuote copy(String cryptoTokenCode, String contractAddress, String spenderContractAddress, String status, String value, String feeTokenCode, TransactionParamsResponse.EVM evm, String str) {
             Intrinsics.checkNotNullParameter(cryptoTokenCode, "cryptoTokenCode");
             Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
             Intrinsics.checkNotNullParameter(spenderContractAddress, "spenderContractAddress");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(value, "value");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            return new CryptoTokenApprovalQuote(cryptoTokenCode, contractAddress, spenderContractAddress, status, value, feeTokenCode, transactionParamsResponse, str);
+            return new CryptoTokenApprovalQuote(cryptoTokenCode, contractAddress, spenderContractAddress, status, value, feeTokenCode, evm, str);
         }
 
         public boolean equals(Object obj) {
@@ -116,8 +116,8 @@ public final class GetApproveTokensInfoResponse {
 
         public int hashCode() {
             int hashCode = ((((((((((this.cryptoTokenCode.hashCode() * 31) + this.contractAddress.hashCode()) * 31) + this.spenderContractAddress.hashCode()) * 31) + this.status.hashCode()) * 31) + this.value.hashCode()) * 31) + this.feeTokenCode.hashCode()) * 31;
-            TransactionParamsResponse transactionParamsResponse = this.transactionParams;
-            int hashCode2 = (hashCode + (transactionParamsResponse == null ? 0 : transactionParamsResponse.hashCode())) * 31;
+            TransactionParamsResponse.EVM evm = this.transactionParams;
+            int hashCode2 = (hashCode + (evm == null ? 0 : evm.hashCode())) * 31;
             String str = this.lastErrorMessage;
             return hashCode2 + (str != null ? str.hashCode() : 0);
         }
@@ -126,7 +126,7 @@ public final class GetApproveTokensInfoResponse {
             return "CryptoTokenApprovalQuote(cryptoTokenCode=" + this.cryptoTokenCode + ", contractAddress=" + this.contractAddress + ", spenderContractAddress=" + this.spenderContractAddress + ", status=" + this.status + ", value=" + this.value + ", feeTokenCode=" + this.feeTokenCode + ", transactionParams=" + this.transactionParams + ", lastErrorMessage=" + this.lastErrorMessage + ')';
         }
 
-        public CryptoTokenApprovalQuote(String cryptoTokenCode, String contractAddress, String spenderContractAddress, String status, String value, String feeTokenCode, TransactionParamsResponse transactionParamsResponse, String str) {
+        public CryptoTokenApprovalQuote(String cryptoTokenCode, String contractAddress, String spenderContractAddress, String status, String value, String feeTokenCode, TransactionParamsResponse.EVM evm, String str) {
             Intrinsics.checkNotNullParameter(cryptoTokenCode, "cryptoTokenCode");
             Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
             Intrinsics.checkNotNullParameter(spenderContractAddress, "spenderContractAddress");
@@ -139,7 +139,7 @@ public final class GetApproveTokensInfoResponse {
             this.status = status;
             this.value = value;
             this.feeTokenCode = feeTokenCode;
-            this.transactionParams = transactionParamsResponse;
+            this.transactionParams = evm;
             this.lastErrorMessage = str;
         }
 
@@ -167,7 +167,7 @@ public final class GetApproveTokensInfoResponse {
             return this.feeTokenCode;
         }
 
-        public final TransactionParamsResponse getTransactionParams() {
+        public final TransactionParamsResponse.EVM getTransactionParams() {
             return this.transactionParams;
         }
 

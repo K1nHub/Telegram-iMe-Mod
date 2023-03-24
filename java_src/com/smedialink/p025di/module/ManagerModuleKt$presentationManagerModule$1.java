@@ -107,6 +107,25 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
+    /* renamed from: com.smedialink.di.module.ManagerModuleKt$presentationManagerModule$1$4 */
+    /* loaded from: classes3.dex */
+    public static final class C13584 extends Lambda implements Function2<Scope, ParametersHolder, WalletCreateManager> {
+        public static final C13584 INSTANCE = new C13584();
+
+        C13584() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final WalletCreateManager invoke(Scope factory, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(factory, "$this$factory");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new WalletCreateManager((CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ManagerModule.kt */
     /* renamed from: com.smedialink.di.module.ManagerModuleKt$presentationManagerModule$1$2 */
     /* loaded from: classes3.dex */
     public static final class C13562 extends Lambda implements Function2<Scope, ParametersHolder, CryptoRecipientManager> {
@@ -141,25 +160,6 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
             Intrinsics.checkNotNullParameter(factory, "$this$factory");
             Intrinsics.checkNotNullParameter(it, "it");
             return new BinancePayProcessManager((BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null), (DynamicLinksInteractor) factory.get(Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: ManagerModule.kt */
-    /* renamed from: com.smedialink.di.module.ManagerModuleKt$presentationManagerModule$1$4 */
-    /* loaded from: classes3.dex */
-    public static final class C13584 extends Lambda implements Function2<Scope, ParametersHolder, WalletCreateManager> {
-        public static final C13584 INSTANCE = new C13584();
-
-        C13584() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final WalletCreateManager invoke(Scope factory, ParametersHolder it) {
-            Intrinsics.checkNotNullParameter(factory, "$this$factory");
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new WalletCreateManager((CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null));
         }
     }
 }

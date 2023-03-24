@@ -384,7 +384,7 @@
 
     int-to-double v2, v2
 
-    mul-double v2, v2, v0
+    mul-double/2addr v2, v0
 
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
@@ -399,7 +399,7 @@
 
     int-to-double v5, v3
 
-    mul-double v5, v5, v0
+    mul-double/2addr v5, v0
 
     invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 

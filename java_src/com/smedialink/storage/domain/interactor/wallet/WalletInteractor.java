@@ -3,6 +3,7 @@ package com.smedialink.storage.domain.interactor.wallet;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.error.IErrorStatus;
 import com.smedialink.storage.domain.model.Result;
+import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.smedialink.storage.domain.model.crypto.send.TransferArgs;
@@ -36,7 +37,7 @@ public final class WalletInteractor {
     public final Observable<Result<CryptoTransferMetadata>> getCryptoTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<CryptoTransferMetadata>> subscribeOn = this.walletRepository.getCryptoTransferMetadata(tokenCode, str, str2, networkType).startWith((Observable<Result<CryptoTransferMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<CryptoTransferMetadata>> subscribeOn = this.walletRepository.getCryptoTransferMetadata(tokenCode, str, str2, networkType).startWith((Observable<Result<CryptoTransferMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -52,7 +53,7 @@ public final class WalletInteractor {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Observable<R> flatMap = this.walletRepository.getWalletBalance(z, networkType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletInteractor$getWalletBalance$$inlined$flatMapError$1(new IErrorStatus[]{FirebaseFunctionsErrorHandler.ErrorStatus.ERR_MONEY_ACCOUNT_NOT_EXIST}, this, z, networkType)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "vararg errorStatus: IErr…e.empty()\n        }\n    }");
-        Observable<Result<List<TokenBalance>>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<List<TokenBalance>>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -75,7 +76,7 @@ public final class WalletInteractor {
         listOf = CollectionsKt__CollectionsJVMKt.listOf(tokenCode);
         Observable<R> flatMap = walletRepository.getTokensBalance(listOf, z, networkType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletInteractor$getTokenBalance$$inlined$flatMapSuccess$1()));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<TokenBalance>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<TokenBalance>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -86,7 +87,10 @@ public final class WalletInteractor {
         }
         String str2 = (i2 & 2) != 0 ? null : str;
         TokenCode tokenCode2 = (i2 & 4) == 0 ? tokenCode : null;
-        int i3 = (i2 & 8) != 0 ? 30 : i;
+        if ((i2 & 8) != 0) {
+            i = 30;
+        }
+        int i3 = i;
         if ((i2 & 16) != 0) {
             networkType = walletInteractor.cryptoPreferenceHelper.getNetworkType();
         }
@@ -99,15 +103,16 @@ public final class WalletInteractor {
         if (tokenCode != null && tokenCode.isUnknown()) {
             z2 = true;
         }
-        Observable<Result<List<Transaction>>> subscribeOn = this.walletRepository.getWalletTransactionHistory(z, str, z2 ? null : tokenCode, i, networkType).startWith((Observable<Result<List<Transaction>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Observable<Result<List<Transaction>>> subscribeOn = this.walletRepository.getWalletTransactionHistory(z, str, z2 ? null : tokenCode, i, networkType).startWith((Observable<Result<List<Transaction>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public final Observable<Result<Boolean>> sendTokens(TokenCode code, TransferArgs args) {
+    public final Observable<Result<Boolean>> sendTokens(TokenCode code, TransferArgs args, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(code, "code");
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<Boolean>> subscribeOn = this.walletRepository.sendTokens(code, args).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        Observable<Result<Boolean>> subscribeOn = this.walletRepository.sendTokens(code, args, blockchainType).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }

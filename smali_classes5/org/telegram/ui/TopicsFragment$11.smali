@@ -71,7 +71,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     .line 1089
     :goto_0
@@ -88,12 +88,12 @@
 
     if-ge p1, p2, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p3
 
     .line 1092
     :goto_1
@@ -104,12 +104,12 @@
     :cond_2
     if-le p2, v0, :cond_3
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_2
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, p3
 
     .line 1097
     :goto_2
@@ -122,7 +122,7 @@
     if-nez p1, :cond_5
 
     :cond_4
-    const/4 p3, 0x1
+    move p3, v1
 
     :cond_5
     invoke-static {p2, p3, v1}, Lorg/telegram/ui/TopicsFragment;->access$3500(Lorg/telegram/ui/TopicsFragment;ZZ)V

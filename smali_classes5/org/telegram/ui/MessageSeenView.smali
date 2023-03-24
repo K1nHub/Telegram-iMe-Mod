@@ -158,13 +158,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/ui/MessageSeenView;->isVoice:Z
@@ -479,7 +479,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 170
     :goto_0
@@ -613,7 +613,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 190
     :goto_0
@@ -738,212 +738,204 @@
 .end method
 
 .method private synthetic lambda$new$4(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;JILorg/telegram/tgnet/TLRPC$Chat;)V
-    .locals 15
-
-    move-object v0, p0
-
-    move/from16 v1, p5
-
-    move-object/from16 v2, p6
+    .locals 9
 
     if-nez p1, :cond_8
 
     .line 118
-    move-object/from16 v3, p2
-
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$Vector;
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
     .line 119
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance p1, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     .line 120
-    new-instance v5, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     .line 121
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 122
-    iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
+    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v7
+    move-result v2
 
-    const/4 v8, 0x0
+    const/4 v3, 0x0
 
-    const/4 v9, 0x0
+    move v4, v3
 
     :goto_0
-    if-ge v9, v7, :cond_4
+    if-ge v4, v2, :cond_4
 
     .line 123
-    iget-object v10, v3, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
+    iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
-    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v5
 
     .line 124
-    instance-of v11, v10, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;
+    instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;
 
-    if-eqz v11, :cond_1
+    if-eqz v6, :cond_1
 
     .line 125
-    check-cast v10, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;
+    check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;
 
-    iget v11, v10, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;->date:I
+    iget v6, v5, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;->date:I
 
     .line 126
-    iget-wide v12, v10, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;->user_id:J
+    iget-wide v7, v5, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;->user_id:J
 
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v10
+    move-result-object v5
 
     .line 127
-    invoke-virtual {v10}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v12
+    move-result-wide v7
 
-    cmp-long v14, p3, v12
+    cmp-long v7, p3, v7
 
-    if-nez v14, :cond_0
+    if-nez v7, :cond_0
 
     goto :goto_1
 
     .line 130
     :cond_0
-    invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v12
+    move-result-object v7
 
-    invoke-virtual {v12, v10}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v7, v5}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
     .line 131
-    new-instance v12, Landroid/util/Pair;
+    new-instance v7, Landroid/util/Pair;
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v11
+    move-result-object v6
 
-    invoke-direct {v12, v10, v11}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v7, v5, v6}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v6, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 133
-    invoke-virtual {v4, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     .line 137
     :cond_1
-    instance-of v11, v10, Ljava/lang/Long;
+    instance-of v6, v5, Ljava/lang/Long;
 
-    if-eqz v11, :cond_3
+    if-eqz v6, :cond_3
 
     .line 138
-    check-cast v10, Ljava/lang/Long;
+    check-cast v5, Ljava/lang/Long;
 
     .line 139
-    invoke-virtual {v10}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v11
+    move-result-wide v6
 
-    cmp-long v13, p3, v11
+    cmp-long v6, p3, v6
 
-    if-nez v13, :cond_2
+    if-nez v6, :cond_2
 
     goto :goto_1
 
     .line 142
     :cond_2
-    invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v11
+    move-result-object v6
 
-    invoke-virtual {v11, v10}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v6, v5}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
     .line 143
-    new-instance v11, Landroid/util/Pair;
+    new-instance v6, Landroid/util/Pair;
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
+    move-result-object v7
 
-    invoke-direct {v11, v10, v12}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v6, v5, v7}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v6, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 145
-    invoke-virtual {v4, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_3
     :goto_1
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 152
     :cond_4
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v3
+    move-result p1
 
-    if-eqz v3, :cond_6
+    if-eqz p1, :cond_6
 
     .line 153
     :goto_2
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result p1
 
-    if-ge v8, v1, :cond_5
+    if-ge v3, p1, :cond_5
 
     .line 154
-    invoke-virtual {v6, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, Landroid/util/Pair;
+    check-cast p1, Landroid/util/Pair;
 
     .line 155
-    iget-object v2, v0, Lorg/telegram/ui/MessageSeenView;->peerIds:Ljava/util/ArrayList;
+    iget-object p2, p0, Lorg/telegram/ui/MessageSeenView;->peerIds:Ljava/util/ArrayList;
 
-    iget-object v3, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    iget-object p3, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/Long;
+    check-cast p3, Ljava/lang/Long;
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 156
-    iget-object v2, v0, Lorg/telegram/ui/MessageSeenView;->dates:Ljava/util/ArrayList;
+    iget-object p2, p0, Lorg/telegram/ui/MessageSeenView;->dates:Ljava/util/ArrayList;
 
-    iget-object v3, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
+    iget-object p3, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast p3, Ljava/lang/Integer;
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 157
-    iget-object v2, v0, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
+    iget-object p2, p0, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
 
-    iget-object v1, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    invoke-virtual {v5, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$User;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
@@ -955,83 +947,83 @@
 
     .line 161
     :cond_6
-    invoke-static/range {p6 .. p6}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
+    invoke-static {p6}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
-    move-result v3
+    move-result p1
 
-    if-eqz v3, :cond_7
+    if-eqz p1, :cond_7
 
     .line 162
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;
 
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;-><init>()V
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;-><init>()V
 
     .line 163
-    invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v4
+    move-result-object p2
 
-    iget v4, v4, Lorg/telegram/messenger/MessagesController;->chatReadMarkSizeThreshold:I
+    iget p2, p2, Lorg/telegram/messenger/MessagesController;->chatReadMarkSizeThreshold:I
 
-    iput v4, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->limit:I
+    iput p2, p1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->limit:I
 
     .line 164
-    iput v8, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->offset:I
+    iput v3, p1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->offset:I
 
     .line 165
-    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsRecent;
+    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsRecent;
 
-    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsRecent;-><init>()V
+    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantsRecent;-><init>()V
 
-    iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->filter:Lorg/telegram/tgnet/TLRPC$ChannelParticipantsFilter;
+    iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->filter:Lorg/telegram/tgnet/TLRPC$ChannelParticipantsFilter;
 
     .line 166
-    invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v4
+    move-result-object p2
 
-    iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget-wide p3, p6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    invoke-virtual {v4, v7, v8}, Lorg/telegram/messenger/MessagesController;->getInputChannel(J)Lorg/telegram/tgnet/TLRPC$InputChannel;
+    invoke-virtual {p2, p3, p4}, Lorg/telegram/messenger/MessagesController;->getInputChannel(J)Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    move-result-object v2
+    move-result-object p2
 
-    iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
+    iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     .line 167
-    invoke-static/range {p5 .. p5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {p5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object v2
+    move-result-object p2
 
-    new-instance v4, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda4;
+    new-instance p3, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda4;
 
-    invoke-direct {v4, p0, v1, v5, v6}, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/MessageSeenView;ILjava/util/HashMap;Ljava/util/ArrayList;)V
+    invoke-direct {p3, p0, p5, v0, v1}, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/MessageSeenView;ILjava/util/HashMap;Ljava/util/ArrayList;)V
 
-    invoke-virtual {v2, v3, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
     goto :goto_3
 
     .line 185
     :cond_7
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messages_getFullChat;
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_getFullChat;
 
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_messages_getFullChat;-><init>()V
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_getFullChat;-><init>()V
 
     .line 186
-    iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget-wide p2, p6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    iput-wide v7, v3, Lorg/telegram/tgnet/TLRPC$TL_messages_getFullChat;->chat_id:J
+    iput-wide p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_getFullChat;->chat_id:J
 
     .line 187
-    invoke-static/range {p5 .. p5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {p5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object v2
+    move-result-object p2
 
-    new-instance v4, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda3;
+    new-instance p3, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda3;
 
-    invoke-direct {v4, p0, v1, v5, v6}, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/MessageSeenView;ILjava/util/HashMap;Ljava/util/ArrayList;)V
+    invoke-direct {p3, p0, p5, v0, v1}, Lorg/telegram/ui/MessageSeenView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/MessageSeenView;ILjava/util/HashMap;Ljava/util/ArrayList;)V
 
-    invoke-virtual {v2, v3, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
     goto :goto_3
 
@@ -1086,17 +1078,17 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     const/4 v3, 0x3
@@ -1220,7 +1212,7 @@
 
     move-result v5
 
-    mul-int/lit8 v5, v5, 0xc
+    mul-int/2addr v5, v3
 
     add-int/lit8 v5, v5, 0x20
 
@@ -1526,7 +1518,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 232
     :goto_0

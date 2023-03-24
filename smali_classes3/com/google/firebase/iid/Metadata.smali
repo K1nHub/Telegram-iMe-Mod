@@ -488,7 +488,7 @@
 
     iput v1, p0, Lcom/google/firebase/iid/Metadata;->iidImplementation:I
 
-    const/4 v2, 0x2
+    move v2, v1
 
     goto :goto_2
 

@@ -34,7 +34,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 696
+    .line 690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
 .method public static final autoLockInId()I
     .locals 1
 
-    .line 810
+    .line 804
     sget-object v0, Lorg/fork/enums/AutoLockTime;->HOUR:Lorg/fork/enums/AutoLockTime;
 
     invoke-virtual {v0}, Lorg/fork/enums/AutoLockTime;->getId()I
@@ -88,7 +88,7 @@
 .method public static final isArchiveSortingChatsEnabled()Z
     .locals 1
 
-    .line 738
+    .line 732
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     return v0
@@ -305,7 +305,7 @@
 .method public static final isSortingChatsEnabled()Z
     .locals 1
 
-    .line 735
+    .line 729
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     return v0
@@ -438,7 +438,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 732
+    .line 726
     sget-object v1, Lcom/smedialink/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/smedialink/storage/domain/model/filters/FilterFab;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -459,7 +459,7 @@
 .method public static final selectedAutoBackupInterval()Lorg/fork/enums/Interval;
     .locals 1
 
-    .line 710
+    .line 704
     sget-object v0, Lorg/fork/enums/Interval;->EVERY_WEEK:Lorg/fork/enums/Interval;
 
     return-object v0
@@ -468,7 +468,7 @@
 .method public static final selectedAutoUpdateTopicsCatalogInterval()Lorg/fork/enums/Interval;
     .locals 1
 
-    .line 908
+    .line 902
     sget-object v0, Lorg/fork/enums/Interval;->EVERY_WEEK:Lorg/fork/enums/Interval;
 
     return-object v0
@@ -477,7 +477,7 @@
 .method public static final selectedContactsFilter()Lcom/smedialink/model/contacts/ContactsFilter;
     .locals 1
 
-    .line 775
+    .line 769
     sget-object v0, Lcom/smedialink/model/contacts/ContactsFilter;->ALL:Lcom/smedialink/model/contacts/ContactsFilter;
 
     return-object v0
@@ -494,7 +494,7 @@
         }
     .end annotation
 
-    .line 788
+    .line 782
     sget-object v0, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -523,7 +523,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 943
+    .line 937
     sget-object v1, Lorg/fork/enums/DrawStatusType;->UNREAD_COUNT_CHATS:Lorg/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -592,7 +592,7 @@
         }
     .end annotation
 
-    .line 794
+    .line 788
     sget-object v0, Lorg/fork/enums/MessagePopupItem;->Companion:Lorg/fork/enums/MessagePopupItem$Companion;
 
     invoke-virtual {v0}, Lorg/fork/enums/MessagePopupItem$Companion;->getDefaultEnumNames()Ljava/util/Set;
@@ -605,7 +605,7 @@
 .method public static final selectedMusicTab()Lcom/smedialink/ui/music/MusicTab;
     .locals 1
 
-    .line 851
+    .line 845
     sget-object v0, Lcom/smedialink/ui/music/MusicTab;->ALBUMS:Lcom/smedialink/ui/music/MusicTab;
 
     return-object v0
@@ -632,7 +632,7 @@
 
     const-string v4, "FORUM"
 
-    .line 940
+    .line 934
     filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
 
     move-result-object v0
@@ -647,7 +647,7 @@
 .method public static final selectedSentMessageFont()Lorg/fork/enums/SentMessageFont;
     .locals 1
 
-    .line 884
+    .line 878
     sget-object v0, Lorg/fork/enums/SentMessageFont;->REGULAR:Lorg/fork/enums/SentMessageFont;
 
     return-object v0

@@ -399,7 +399,7 @@
 
     move-result p1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
@@ -1958,9 +1958,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
     return-wide v0
 
@@ -2019,7 +2019,7 @@
 .end method
 
 .method public readUtf8EncodedLong()J
-    .locals 12
+    .locals 11
 
     .line 553
     iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
@@ -2032,7 +2032,7 @@
 
     const/4 v2, 0x7
 
-    const/4 v3, 0x7
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x6
@@ -2049,9 +2049,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v11, v7, v9
+    cmp-long v7, v7, v9
 
-    if-nez v11, :cond_1
+    if-nez v7, :cond_1
 
     if-ge v3, v4, :cond_0
 
@@ -2068,7 +2068,7 @@
     :cond_0
     if-ne v3, v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_1
 

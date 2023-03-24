@@ -738,43 +738,43 @@
     :cond_0
     ushr-long v12, v0, v11
 
-    long-to-int v13, v12
+    long-to-int v12, v12
 
-    and-int/lit8 v12, v13, 0x7
+    and-int/lit8 v13, v12, 0x7
 
-    aget-wide v14, v2, v12
+    aget-wide v13, v2, v13
 
-    ushr-int/lit8 v12, v13, 0x3
+    ushr-int/lit8 v15, v12, 0x3
+
+    and-int/2addr v15, v8
+
+    aget-wide v15, v2, v15
+
+    shl-long/2addr v15, v7
+
+    xor-long/2addr v13, v15
+
+    ushr-int/lit8 v15, v12, 0x6
+
+    and-int/2addr v15, v8
+
+    aget-wide v15, v2, v15
+
+    shl-long/2addr v15, v6
+
+    xor-long/2addr v13, v15
+
+    const/16 v15, 0x9
+
+    ushr-int/2addr v12, v15
 
     and-int/2addr v12, v8
 
     aget-wide v16, v2, v12
 
-    shl-long v16, v16, v7
+    shl-long v15, v16, v15
 
-    xor-long v14, v14, v16
-
-    ushr-int/lit8 v12, v13, 0x6
-
-    and-int/2addr v12, v8
-
-    aget-wide v16, v2, v12
-
-    shl-long v16, v16, v6
-
-    xor-long v14, v14, v16
-
-    const/16 v12, 0x9
-
-    ushr-int/2addr v13, v12
-
-    and-int/2addr v13, v8
-
-    aget-wide v16, v2, v13
-
-    shl-long v12, v16, v12
-
-    xor-long/2addr v12, v14
+    xor-long v12, v13, v15
 
     shl-long v14, v12, v11
 

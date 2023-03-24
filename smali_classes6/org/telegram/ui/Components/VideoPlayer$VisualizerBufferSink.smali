@@ -247,7 +247,7 @@
 
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     if-ge p1, v0, :cond_4
@@ -291,9 +291,9 @@
 
     const/4 p1, 0x0
 
-    const/4 v1, 0x0
+    move v3, p1
 
-    const/4 v3, 0x0
+    move v1, v2
 
     :goto_1
     const/high16 v4, 0x3f800000    # 1.0f
@@ -318,9 +318,9 @@
 
     aget v6, v6, v1
 
-    mul-float v5, v5, v5
+    mul-float/2addr v5, v5
 
-    mul-float v6, v6, v6
+    mul-float/2addr v6, v6
 
     add-float/2addr v5, v6
 
@@ -348,7 +348,7 @@
 
     if-gez v4, :cond_6
 
-    const/4 v4, 0x0
+    move v4, p1
 
     goto :goto_2
 
@@ -356,7 +356,7 @@
     move v4, v5
 
     :goto_2
-    mul-float v4, v4, v4
+    mul-float/2addr v4, v4
 
     add-float/2addr v3, v4
 
@@ -428,9 +428,9 @@
 
     aget v1, v7, v1
 
-    mul-float v6, v6, v6
+    mul-float/2addr v6, v6
 
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
     add-float/2addr v6, v1
 

@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 263
+    .line 301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,17 +41,17 @@
 .method public compare(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ByteString;)I
     .locals 4
 
-    .line 266
+    .line 304
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->iterator()Lcom/google/protobuf/ByteString$ByteIterator;
 
     move-result-object v0
 
-    .line 267
+    .line 305
     invoke-virtual {p2}, Lcom/google/protobuf/ByteString;->iterator()Lcom/google/protobuf/ByteString$ByteIterator;
 
     move-result-object v1
 
-    .line 269
+    .line 307
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -65,7 +65,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 273
+    .line 309
     invoke-interface {v0}, Lcom/google/protobuf/ByteString$ByteIterator;->nextByte()B
 
     move-result v2
@@ -74,6 +74,11 @@
 
     move-result v2
 
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    .line 310
     invoke-interface {v1}, Lcom/google/protobuf/ByteString$ByteIterator;->nextByte()B
 
     move-result v3
@@ -82,7 +87,11 @@
 
     move-result v3
 
-    invoke-static {v2, v3}, Ljava/lang/Integer;->compare(II)I
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Integer;->compareTo(Ljava/lang/Integer;)I
 
     move-result v2
 
@@ -90,17 +99,25 @@
 
     return v2
 
-    .line 279
+    .line 315
     :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->size()I
 
     move-result p1
 
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
     invoke-virtual {p2}, Lcom/google/protobuf/ByteString;->size()I
 
     move-result p2
 
-    invoke-static {p1, p2}, Ljava/lang/Integer;->compare(II)I
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/Integer;->compareTo(Ljava/lang/Integer;)I
 
     move-result p1
 
@@ -110,7 +127,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 263
+    .line 301
     check-cast p1, Lcom/google/protobuf/ByteString;
 
     check-cast p2, Lcom/google/protobuf/ByteString;

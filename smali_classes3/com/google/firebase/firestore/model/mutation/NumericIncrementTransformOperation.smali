@@ -200,7 +200,7 @@
 .end method
 
 .method private safeIncrement(JJ)J
-    .locals 3
+    .locals 2
 
     add-long v0, p1, p3
 
@@ -212,9 +212,9 @@
 
     const-wide/16 p3, 0x0
 
-    cmp-long v2, p1, p3
+    cmp-long p1, p1, p3
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     return-wide v0
 

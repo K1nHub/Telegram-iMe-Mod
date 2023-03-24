@@ -270,7 +270,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v5, 0x1
+    move v5, v3
 
     :goto_0
     if-eqz v2, :cond_6

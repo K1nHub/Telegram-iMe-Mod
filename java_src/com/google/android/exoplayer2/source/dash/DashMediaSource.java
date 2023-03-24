@@ -330,15 +330,15 @@ public final class DashMediaSource extends BaseMediaSource {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00ca  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     void onManifestLoadCompleted(com.google.android.exoplayer2.upstream.ParsingLoadable<com.google.android.exoplayer2.source.dash.manifest.DashManifest> r19, long r20, long r22) {
         /*
-            Method dump skipped, instructions count: 286
+            Method dump skipped, instructions count: 285
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.dash.DashMediaSource.onManifestLoadCompleted(com.google.android.exoplayer2.upstream.ParsingLoadable, long, long):void");
@@ -509,14 +509,14 @@ public final class DashMediaSource extends BaseMediaSource {
     /* JADX WARN: Removed duplicated region for block: B:45:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void updateLiveConfiguration(long r18, long r20) {
         /*
-            Method dump skipped, instructions count: 279
+            Method dump skipped, instructions count: 273
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.dash.DashMediaSource.updateLiveConfiguration(long, long):void");

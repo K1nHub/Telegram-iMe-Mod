@@ -1,5 +1,6 @@
 package org.telegram.p048ui.Cells;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.LinearGradient;
@@ -19,9 +20,10 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.AnimatedFloat;
@@ -30,6 +32,7 @@ import org.telegram.p048ui.Components.BackupImageView;
 import org.telegram.p048ui.Components.CombinedDrawable;
 import org.telegram.p048ui.Components.DotDividerSpan;
 import org.telegram.p048ui.Components.FlickerLoadingView;
+import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_authorization;
 import org.telegram.tgnet.TLRPC$TL_webAuthorization;
@@ -52,19 +55,93 @@ public class SessionCell extends FrameLayout {
     private boolean showStub;
     private AnimatedFloat showStubValue;
 
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x0220, code lost:
-        if (r23 == 0) goto L43;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public SessionCell(android.content.Context r22, int r23) {
-        /*
-            Method dump skipped, instructions count: 744
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.SessionCell.<init>(android.content.Context, int):void");
+    public SessionCell(Context context, int i) {
+        super(context);
+        this.showStubValue = new AnimatedFloat(this);
+        this.currentAccount = UserConfig.selectedAccount;
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.linearLayout = linearLayout;
+        linearLayout.setOrientation(0);
+        this.linearLayout.setWeightSum(1.0f);
+        this.currentType = i;
+        int i2 = 21;
+        if (i == 1) {
+            LinearLayout linearLayout2 = this.linearLayout;
+            boolean z = LocaleController.isRTL;
+            addView(linearLayout2, LayoutHelper.createFrame(-1, 30, (z ? 5 : 3) | 48, z ? 15 : 49, 11, z ? 49 : 15, 0));
+            AvatarDrawable avatarDrawable = new AvatarDrawable();
+            this.avatarDrawable = avatarDrawable;
+            avatarDrawable.setTextSize(AndroidUtilities.m50dp(10));
+            BackupImageView backupImageView = new BackupImageView(context);
+            this.imageView = backupImageView;
+            backupImageView.setRoundRadius(AndroidUtilities.m50dp(10));
+            BackupImageView backupImageView2 = this.imageView;
+            boolean z2 = LocaleController.isRTL;
+            addView(backupImageView2, LayoutHelper.createFrame(20, 20, (z2 ? 5 : 3) | 48, z2 ? 0 : 21, 13, z2 ? 21 : 0, 0));
+        } else {
+            BackupImageView backupImageView3 = new BackupImageView(context);
+            this.placeholderImageView = backupImageView3;
+            backupImageView3.setRoundRadius(AndroidUtilities.m50dp(10));
+            BackupImageView backupImageView4 = this.placeholderImageView;
+            boolean z3 = LocaleController.isRTL;
+            addView(backupImageView4, LayoutHelper.createFrame(42, 42, (z3 ? 5 : 3) | 48, z3 ? 0 : 16, 9, z3 ? 16 : 0, 0));
+            BackupImageView backupImageView5 = new BackupImageView(context);
+            this.imageView = backupImageView5;
+            backupImageView5.setRoundRadius(AndroidUtilities.m50dp(10));
+            BackupImageView backupImageView6 = this.imageView;
+            boolean z4 = LocaleController.isRTL;
+            addView(backupImageView6, LayoutHelper.createFrame(42, 42, (z4 ? 5 : 3) | 48, z4 ? 0 : 16, 9, z4 ? 16 : 0, 0));
+            LinearLayout linearLayout3 = this.linearLayout;
+            boolean z5 = LocaleController.isRTL;
+            addView(linearLayout3, LayoutHelper.createFrame(-1, 30.0f, (z5 ? 5 : 3) | 48, z5 ? 15 : 72, 6.333f, z5 ? 72 : 15, (float) BitmapDescriptorFactory.HUE_RED));
+        }
+        TextView textView = new TextView(context);
+        this.nameTextView = textView;
+        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.nameTextView.setTextSize(1, i == 0 ? 15.0f : 16.0f);
+        this.nameTextView.setLines(1);
+        this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        this.nameTextView.setMaxLines(1);
+        this.nameTextView.setSingleLine(true);
+        this.nameTextView.setEllipsize(TextUtils.TruncateAt.END);
+        this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        TextView textView2 = new TextView(context);
+        this.onlineTextView = textView2;
+        textView2.setTextSize(1, i == 0 ? 12.0f : 13.0f);
+        this.onlineTextView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+        if (LocaleController.isRTL) {
+            this.linearLayout.addView(this.onlineTextView, LayoutHelper.createLinear(-2, -1, 51, 0, 2, 0, 0));
+            this.linearLayout.addView(this.nameTextView, LayoutHelper.createLinear(0, -1, 1.0f, 53, 10, 0, 0, 0));
+        } else {
+            this.linearLayout.addView(this.nameTextView, LayoutHelper.createLinear(0, -1, 1.0f, 51, 0, 0, 10, 0));
+            this.linearLayout.addView(this.onlineTextView, LayoutHelper.createLinear(-2, -1, 53, 0, 2, 0, 0));
+        }
+        if (LocaleController.isRTL) {
+            i2 = i != 0 ? 21 : 72;
+            r3 = 21;
+        } else if (i != 0) {
+            r3 = 21;
+        }
+        TextView textView3 = new TextView(context);
+        this.detailTextView = textView3;
+        textView3.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.detailTextView.setTextSize(1, i == 0 ? 13.0f : 14.0f);
+        this.detailTextView.setLines(1);
+        this.detailTextView.setMaxLines(1);
+        this.detailTextView.setSingleLine(true);
+        this.detailTextView.setEllipsize(TextUtils.TruncateAt.END);
+        this.detailTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(this.detailTextView, LayoutHelper.createFrame(-1, -2, (LocaleController.isRTL ? 5 : 3) | 48, r3, i == 0 ? 28 : 36, i2, 0));
+        TextView textView4 = new TextView(context);
+        this.detailExTextView = textView4;
+        textView4.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText3"));
+        this.detailExTextView.setTextSize(1, i != 0 ? 14.0f : 13.0f);
+        this.detailExTextView.setLines(1);
+        this.detailExTextView.setMaxLines(1);
+        this.detailExTextView.setSingleLine(true);
+        this.detailExTextView.setEllipsize(TextUtils.TruncateAt.END);
+        this.detailExTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(this.detailExTextView, LayoutHelper.createFrame(-1, -2, (LocaleController.isRTL ? 5 : 3) | 48, r3, i == 0 ? 46 : 59, i2, 0));
     }
 
     private void setContentAlpha(float f) {
@@ -128,7 +205,7 @@ public class SessionCell extends FrameLayout {
             this.nameTextView.setText(sb);
             if ((tLRPC$TL_authorization.flags & 1) != 0) {
                 setTag("windowBackgroundWhiteValueText");
-                stringForMessageListDate = LocaleController.getString("Online", C3286R.string.Online);
+                stringForMessageListDate = LocaleController.getString("Online", C3301R.string.Online);
             } else {
                 setTag("windowBackgroundWhiteGrayText3");
                 stringForMessageListDate = LocaleController.stringForMessageListDate(tLRPC$TL_authorization.date_active);
@@ -164,8 +241,8 @@ public class SessionCell extends FrameLayout {
             this.onlineTextView.setText(LocaleController.stringForMessageListDate(tLRPC$TL_webAuthorization.date_active));
             this.onlineTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText3"));
             StringBuilder sb3 = new StringBuilder();
-            if (tLRPC$TL_webAuthorization.f1637ip.length() != 0) {
-                sb3.append(tLRPC$TL_webAuthorization.f1637ip);
+            if (tLRPC$TL_webAuthorization.f1638ip.length() != 0) {
+                sb3.append(tLRPC$TL_webAuthorization.f1638ip);
             }
             if (tLRPC$TL_webAuthorization.region.length() != 0) {
                 if (sb3.length() != 0) {
@@ -209,34 +286,34 @@ public class SessionCell extends FrameLayout {
         String str = "avatar_background2Cyan";
         String str2 = "avatar_backgroundCyan";
         if (lowerCase2.contains("safari")) {
-            i = C3286R.C3288drawable.device_web_safari;
+            i = C3301R.C3303drawable.device_web_safari;
         } else if (lowerCase2.contains("edge")) {
-            i = C3286R.C3288drawable.device_web_edge;
+            i = C3301R.C3303drawable.device_web_edge;
         } else if (lowerCase2.contains("chrome")) {
-            i = C3286R.C3288drawable.device_web_chrome;
+            i = C3301R.C3303drawable.device_web_chrome;
         } else if (lowerCase2.contains("opera")) {
-            i = C3286R.C3288drawable.device_web_opera;
+            i = C3301R.C3303drawable.device_web_opera;
         } else if (lowerCase2.contains("firefox")) {
-            i = C3286R.C3288drawable.device_web_firefox;
+            i = C3301R.C3303drawable.device_web_firefox;
         } else if (lowerCase2.contains("vivaldi")) {
-            i = C3286R.C3288drawable.device_web_other;
+            i = C3301R.C3303drawable.device_web_other;
         } else {
             if (lowerCase.contains("ios")) {
-                i = lowerCase2.contains("ipad") ? C3286R.C3288drawable.device_tablet_ios : C3286R.C3288drawable.device_phone_ios;
+                i = lowerCase2.contains("ipad") ? C3301R.C3303drawable.device_tablet_ios : C3301R.C3303drawable.device_phone_ios;
                 str2 = "avatar_backgroundBlue";
                 str = "avatar_background2Blue";
             } else if (lowerCase.contains("windows")) {
-                i = C3286R.C3288drawable.device_desktop_win;
+                i = C3301R.C3303drawable.device_desktop_win;
             } else if (lowerCase.contains("macos")) {
-                i = C3286R.C3288drawable.device_desktop_osx;
+                i = C3301R.C3303drawable.device_desktop_osx;
             } else if (lowerCase.contains("android")) {
-                i = lowerCase2.contains("tab") ? C3286R.C3288drawable.device_tablet_android : C3286R.C3288drawable.device_phone_android;
+                i = lowerCase2.contains("tab") ? C3301R.C3303drawable.device_tablet_android : C3301R.C3303drawable.device_phone_android;
                 str2 = "avatar_backgroundGreen";
                 str = "avatar_background2Green";
             } else if (tLRPC$TL_authorization.app_name.toLowerCase().contains("desktop")) {
-                i = C3286R.C3288drawable.device_desktop_other;
+                i = C3301R.C3303drawable.device_desktop_other;
             } else {
-                i = C3286R.C3288drawable.device_web_other;
+                i = C3301R.C3303drawable.device_web_other;
             }
             Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, i).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("avatar_text"), PorterDuff.Mode.SRC_IN));
@@ -294,14 +371,17 @@ public class SessionCell extends FrameLayout {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        float f = this.showStubValue.set(this.showStub ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-        setContentAlpha(1.0f - f);
-        if (f > BitmapDescriptorFactory.HUE_RED && this.globalGradient != null) {
-            int i = (f > 1.0f ? 1 : (f == 1.0f ? 0 : -1));
+        AnimatedFloat animatedFloat = this.showStubValue;
+        boolean z = this.showStub;
+        float f = BitmapDescriptorFactory.HUE_RED;
+        float f2 = animatedFloat.set(z ? 1.0f : 0.0f);
+        setContentAlpha(1.0f - f2);
+        if (f2 > BitmapDescriptorFactory.HUE_RED && this.globalGradient != null) {
+            int i = (f2 > 1.0f ? 1 : (f2 == 1.0f ? 0 : -1));
             if (i < 0) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight());
-                canvas.saveLayerAlpha(rectF, (int) (f * 255.0f), 31);
+                canvas.saveLayerAlpha(rectF, (int) (f2 * 255.0f), 31);
             }
             this.globalGradient.updateColors();
             this.globalGradient.updateGradient();
@@ -329,14 +409,17 @@ public class SessionCell extends FrameLayout {
         }
         if (this.needDivider) {
             int i2 = this.currentType == 1 ? 49 : 72;
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(i2), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(i2) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            if (!LocaleController.isRTL) {
+                f = AndroidUtilities.m50dp(i2);
+            }
+            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(i2) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
     public void showStub(FlickerLoadingView flickerLoadingView) {
         this.globalGradient = flickerLoadingView;
         this.showStub = true;
-        Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, AndroidUtilities.isTablet() ? C3286R.C3288drawable.device_tablet_android : C3286R.C3288drawable.device_phone_android).mutate();
+        Drawable mutate = ContextCompat.getDrawable(ApplicationLoader.applicationContext, AndroidUtilities.isTablet() ? C3301R.C3303drawable.device_tablet_android : C3301R.C3303drawable.device_phone_android).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("avatar_text"), PorterDuff.Mode.SRC_IN));
         CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m50dp(42), Theme.getColor("avatar_backgroundGreen")), mutate);
         BackupImageView backupImageView = this.placeholderImageView;

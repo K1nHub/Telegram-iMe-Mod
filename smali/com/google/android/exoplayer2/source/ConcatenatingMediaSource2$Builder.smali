@@ -117,9 +117,9 @@
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 

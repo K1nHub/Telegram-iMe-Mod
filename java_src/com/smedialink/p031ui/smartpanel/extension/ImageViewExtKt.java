@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: ImageViewExt.kt */
 /* renamed from: com.smedialink.ui.smartpanel.extension.ImageViewExtKt */
 /* loaded from: classes3.dex */
@@ -56,7 +56,7 @@ public final class ImageViewExtKt {
         } else {
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             gradientDrawable2.setShape(1);
-            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3286R.C3287color.placeholder_color)));
+            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3301R.C3302color.placeholder_color)));
             gradientDrawable = gradientDrawable2;
         }
         loadFrom(imageView, url, context, gradientDrawable, z);

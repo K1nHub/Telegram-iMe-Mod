@@ -228,7 +228,7 @@
     if-ne p1, v0, :cond_0
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -244,13 +244,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_2
 
     :goto_2
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_3
 
@@ -266,7 +266,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     if-eqz v0, :cond_4
@@ -286,7 +286,7 @@
     if-ne p1, v0, :cond_5
 
     :goto_4
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_5
 
@@ -302,7 +302,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_5
     if-eqz v0, :cond_7
@@ -329,7 +329,7 @@
 
     if-gt v0, p1, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_8
     if-eqz v1, :cond_9
@@ -654,12 +654,12 @@
 
     if-ne v4, v1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_1
     invoke-static {v0}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout;->access$getBalancesEndRow$p(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;)I
@@ -671,7 +671,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_2
     invoke-virtual {p1, v3, v1, v5}, Lorg/fork/ui/view/ImageRadioCell;->setText(Ljava/lang/String;ZZ)V

@@ -138,7 +138,7 @@
 
     const v3, 0x3ecccccd    # 0.4f
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     invoke-static {}, Lorg/telegram/messenger/Emoji;->access$400()Landroid/graphics/Paint;
 

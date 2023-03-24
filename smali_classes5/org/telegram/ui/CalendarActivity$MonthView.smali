@@ -328,7 +328,7 @@
 
     sub-float/2addr p3, p2
 
-    mul-float p3, p3, p8
+    mul-float/2addr p3, p8
 
     add-float/2addr p2, p3
 
@@ -337,7 +337,7 @@
 
     sub-float/2addr p5, p4
 
-    mul-float p5, p5, p8
+    mul-float/2addr p5, p8
 
     add-float/2addr p4, p5
 
@@ -346,7 +346,7 @@
 
     sub-float/2addr p7, p6
 
-    mul-float p7, p7, p8
+    mul-float/2addr p7, p8
 
     add-float/2addr p6, p7
 
@@ -374,11 +374,11 @@
     :cond_0
     const/4 p1, -0x1
 
-    const/4 v1, 0x0
+    move v2, p1
 
-    const/4 v2, -0x1
+    move v3, v2
 
-    const/4 v3, -0x1
+    move v1, v0
 
     .line 542
     :goto_0
@@ -485,7 +485,7 @@
 
     sub-float/2addr v3, v2
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v2, v3
 
@@ -498,7 +498,7 @@
 
     sub-float/2addr v3, v2
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v2, v3
 
@@ -561,12 +561,12 @@
 
     if-gt v2, p2, :cond_0
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     iput v5, v1, Lorg/telegram/ui/CalendarActivity$PeriodDay;->toSelProgress:F
@@ -671,7 +671,7 @@
     :cond_1
     int-to-float v2, v0
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     div-float v5, v1, v4
 
@@ -681,14 +681,14 @@
 
     move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_0
     if-eqz p4, :cond_2
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     div-float v2, v1, v4
 
@@ -708,7 +708,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     div-float/2addr v1, v4
 
@@ -726,12 +726,12 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v0
 
     goto :goto_3
 
     :cond_4
-    const/4 v13, 0x0
+    move v13, v3
 
     .line 855
     :goto_3
@@ -974,7 +974,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 28
+    .locals 29
 
     move-object/from16 v0, p0
 
@@ -1035,19 +1035,19 @@
 
     move-result-wide v13
 
-    const-string v15, "chat_messagePanelVoiceBackground"
+    cmpg-double v4, v4, v13
 
-    const/high16 v16, 0x40000000    # 2.0f
+    const-string v13, "chat_messagePanelVoiceBackground"
 
-    cmpg-double v6, v4, v13
+    const/high16 v14, 0x40000000    # 2.0f
 
-    if-gez v6, :cond_1
+    if-gez v4, :cond_1
 
     int-to-float v4, v3
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
-    div-float v5, v10, v16
+    div-float v5, v10, v14
 
     add-float/2addr v4, v5
 
@@ -1078,7 +1078,7 @@
 
     move-result-object v6
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v13
 
@@ -1093,9 +1093,9 @@
 
     iget v13, v5, Lorg/telegram/ui/CalendarActivity$RowAnimationValue;->alpha:F
 
-    const v14, 0x42233333    # 40.8f
+    const v15, 0x42233333    # 40.8f
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v15
 
     float-to-int v13, v13
 
@@ -1106,21 +1106,21 @@
 
     iget v13, v5, Lorg/telegram/ui/CalendarActivity$RowAnimationValue;->startX:F
 
-    int-to-float v14, v2
+    int-to-float v15, v2
 
-    div-float v14, v14, v16
+    div-float/2addr v15, v14
 
-    sub-float/2addr v13, v14
+    sub-float/2addr v13, v15
 
-    sub-float v15, v4, v14
+    sub-float v14, v4, v15
 
     iget v5, v5, Lorg/telegram/ui/CalendarActivity$RowAnimationValue;->endX:F
 
-    add-float/2addr v5, v14
+    add-float/2addr v5, v15
 
-    add-float/2addr v4, v14
+    add-float/2addr v4, v15
 
-    invoke-virtual {v6, v13, v15, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v6, v13, v14, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
     const/16 v4, 0x20
 
@@ -1146,31 +1146,31 @@
     goto :goto_0
 
     :cond_1
-    move v13, v1
+    move v15, v1
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
-
-    const/4 v14, 0x0
 
     .line 1013
     :goto_1
     iget v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->daysInMonth:I
 
-    if-ge v14, v1, :cond_14
+    if-ge v6, v1, :cond_14
 
-    int-to-float v1, v13
+    int-to-float v1, v15
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
-    div-float v2, v9, v16
+    div-float v2, v9, v14
 
-    add-float v5, v1, v2
+    add-float v4, v1, v2
 
-    int-to-float v1, v6
+    int-to-float v1, v5
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
-    div-float v2, v10, v16
+    div-float v2, v10, v14
 
     add-float/2addr v1, v2
 
@@ -1181,49 +1181,49 @@
 
     int-to-float v2, v2
 
-    add-float v4, v1, v2
+    add-float v3, v1, v2
 
     .line 1016
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    const-wide/16 v17, 0x3e8
+    const-wide/16 v16, 0x3e8
 
-    div-long v1, v1, v17
+    div-long v1, v1, v16
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     .line 1018
-    iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
+    iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
-    const/4 v3, 0x0
+    const/4 v12, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v1, v14, v3}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v6, v12}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    move-object v3, v1
+    move-object v12, v2
 
-    check-cast v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;
+    check-cast v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;
 
     .line 1019
     :cond_2
-    iget v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->startMonthTime:I
+    iget v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->startMonthTime:I
 
-    add-int/lit8 v17, v14, 0x1
+    add-int/lit8 v17, v6, 0x1
 
     const v18, 0x15180
 
     mul-int v19, v17, v18
 
-    add-int v1, v1, v19
+    add-int v2, v2, v19
 
     const/16 v19, 0x5
 
-    if-lt v2, v1, :cond_12
+    if-lt v1, v2, :cond_12
 
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
@@ -1241,7 +1241,7 @@
 
     iget v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->startMonthTime:I
 
-    add-int/lit8 v20, v14, 0x2
+    add-int/lit8 v20, v6, 0x2
 
     mul-int v20, v20, v18
 
@@ -1258,19 +1258,21 @@
 
     const/high16 v20, 0x437f0000    # 255.0f
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    move/from16 v21, v5
 
-    if-eqz v3, :cond_f
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    if-eqz v12, :cond_f
 
     .line 1024
-    iget-boolean v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->hasImage:Z
+    iget-boolean v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->hasImage:Z
 
     if-eqz v1, :cond_f
 
     .line 1026
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->imagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v6}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1283,67 +1285,67 @@
 
     move-result v1
 
-    const/4 v11, 0x0
+    const/4 v14, 0x0
 
     if-eqz v1, :cond_4
 
-    iget-boolean v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->wasDrawn:Z
+    iget-boolean v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->wasDrawn:Z
 
     if-nez v1, :cond_4
 
     .line 1028
-    iput v11, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iput v14, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
     .line 1029
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getY()F
 
     move-result v1
 
-    add-float/2addr v1, v4
+    add-float/2addr v1, v3
 
-    iget-object v8, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v11, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v8, v8, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v11, v11, Lorg/telegram/ui/CalendarActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v8}, Landroid/view/ViewGroup;->getMeasuredHeight()I
+    invoke-virtual {v11}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
-    move-result v8
+    move-result v11
 
-    int-to-float v8, v8
+    int-to-float v11, v11
 
-    div-float/2addr v1, v8
+    div-float/2addr v1, v11
 
-    const/high16 v8, 0x43160000    # 150.0f
+    const/high16 v11, 0x43160000    # 150.0f
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v11
 
-    invoke-static {v11, v1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v14, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    iput v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
+    iput v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
 
     .line 1031
     :cond_4
-    iget v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
 
-    cmpl-float v8, v1, v11
+    cmpl-float v11, v1, v14
 
-    if-lez v8, :cond_6
+    if-lez v11, :cond_6
 
-    const/high16 v8, 0x41800000    # 16.0f
+    const/high16 v11, 0x41800000    # 16.0f
 
-    sub-float/2addr v1, v8
+    sub-float/2addr v1, v11
 
     .line 1032
-    iput v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
+    iput v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
 
-    cmpg-float v1, v1, v11
+    cmpg-float v1, v1, v14
 
     if-gez v1, :cond_5
 
     .line 1034
-    iput v11, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
+    iput v14, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
 
     goto :goto_2
 
@@ -1354,31 +1356,31 @@
     .line 1039
     :cond_6
     :goto_2
-    iget v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->startEnterDelay:F
 
-    cmpl-float v1, v1, v11
+    cmpl-float v1, v1, v14
 
     if-ltz v1, :cond_8
 
-    iget v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
-    cmpl-float v8, v1, v12
+    cmpl-float v11, v1, v5
 
-    if-eqz v8, :cond_8
+    if-eqz v11, :cond_8
 
-    const v8, 0x3d94f209
+    const v11, 0x3d94f209
 
-    add-float/2addr v1, v8
+    add-float/2addr v1, v11
 
     .line 1040
-    iput v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iput v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
-    cmpl-float v1, v1, v12
+    cmpl-float v1, v1, v5
 
     if-lez v1, :cond_7
 
     .line 1042
-    iput v12, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iput v5, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
     goto :goto_3
 
@@ -1389,44 +1391,42 @@
     .line 1047
     :cond_8
     :goto_3
-    iget v8, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iget v11, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
-    cmpl-float v11, v8, v12
+    cmpl-float v14, v11, v5
 
-    if-eqz v11, :cond_9
+    if-eqz v14, :cond_9
 
     .line 1049
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const v1, 0x3f4ccccd    # 0.8f
 
-    const v21, 0x3e4ccccd    # 0.2f
+    const v22, 0x3e4ccccd    # 0.2f
 
-    mul-float v21, v21, v8
+    mul-float v22, v22, v11
 
-    add-float v1, v21, v1
+    add-float v1, v22, v1
 
     .line 1051
-    invoke-virtual {v7, v1, v1, v5, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    :cond_9
-    const/high16 v1, 0x40e00000    # 7.0f
+    invoke-virtual {v7, v1, v1, v4, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 1053
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    :cond_9
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v12
+    move-result v1
 
-    int-to-float v1, v12
+    int-to-float v1, v1
 
-    iget v12, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectProgress:F
+    iget v5, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectProgress:F
 
-    mul-float v1, v1, v12
+    mul-float/2addr v1, v5
 
-    float-to-int v12, v1
+    float-to-int v5, v1
 
     .line 1054
-    iget v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
     cmpl-float v1, v1, v18
 
@@ -1452,7 +1452,7 @@
 
     move-result-object v1
 
-    iget v2, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v2, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
     mul-float v2, v2, v20
 
@@ -1469,47 +1469,33 @@
 
     int-to-float v2, v2
 
-    div-float v2, v2, v16
+    const/high16 v18, 0x40000000    # 2.0f
 
-    iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    div-float v2, v2, v18
 
-    invoke-static {v1}, Lorg/telegram/ui/CalendarActivity;->access$3500(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
+    iget-object v8, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    move-result-object v1
+    invoke-static {v8}, Lorg/telegram/ui/CalendarActivity;->access$3500(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
 
-    invoke-virtual {v7, v5, v4, v2, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    move-result-object v8
+
+    invoke-virtual {v7, v4, v3, v2, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 1059
-    iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/CalendarActivity;->access$3700(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
+    invoke-static {v2}, Lorg/telegram/ui/CalendarActivity;->access$3700(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v8
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v8}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 1060
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
-
-    move/from16 v22, v6
-
-    const/16 v1, 0x2c
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    div-float v6, v6, v16
-
-    sub-float v6, v5, v6
-
-    move/from16 v23, v8
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1517,116 +1503,122 @@
 
     int-to-float v8, v8
 
-    div-float v8, v8, v16
+    div-float v8, v8, v18
 
     sub-float v8, v4, v8
 
-    move/from16 v24, v9
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    div-float v9, v9, v16
-
-    add-float/2addr v9, v5
-
-    move/from16 v25, v5
+    move/from16 v23, v5
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
-    int-to-float v1, v5
+    int-to-float v5, v5
 
-    div-float v1, v1, v16
+    div-float v5, v5, v18
 
-    add-float/2addr v1, v4
+    sub-float v5, v3, v5
 
-    invoke-virtual {v2, v6, v8, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    move/from16 v24, v6
 
-    const/high16 v5, -0x3d4c0000    # -90.0f
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    div-float v6, v6, v18
+
+    add-float/2addr v6, v4
+
+    move/from16 v25, v4
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    int-to-float v1, v4
+
+    div-float v1, v1, v18
+
+    add-float/2addr v1, v3
+
+    invoke-virtual {v2, v8, v5, v6, v1}, Landroid/graphics/RectF;->set(FFFF)V
+
+    const/high16 v4, -0x3d4c0000    # -90.0f
 
     .line 1061
-    iget v1, v3, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
-    const/high16 v6, 0x43b40000    # 360.0f
+    const/high16 v5, 0x43b40000    # 360.0f
 
-    mul-float v6, v6, v1
+    mul-float/2addr v5, v1
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/CalendarActivity;->access$3700(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
 
-    move-result-object v9
+    move-result-object v8
 
     move-object/from16 v1, p1
 
-    move-object/from16 v26, v3
+    move/from16 v26, v3
 
-    move v3, v5
+    move v3, v4
 
-    move v5, v4
+    move/from16 v27, v25
 
-    move v4, v6
+    move v4, v5
 
-    move/from16 v27, v5
+    move/from16 v18, v23
 
-    move/from16 v6, v25
+    const/high16 v22, 0x3f800000    # 1.0f
 
-    move v5, v8
+    move v5, v6
 
-    move/from16 v8, v22
+    move/from16 v23, v9
 
-    move/from16 v22, v10
+    move/from16 v9, v24
 
-    move v10, v6
-
-    move-object v6, v9
+    move-object v6, v8
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     goto :goto_4
 
     :cond_a
-    move-object/from16 v26, v3
+    move/from16 v26, v3
 
     move/from16 v27, v4
 
-    move/from16 v23, v8
+    move/from16 v18, v5
 
-    move/from16 v24, v9
+    move/from16 v23, v9
 
-    move/from16 v22, v10
+    const/high16 v22, 0x3f800000    # 1.0f
 
-    move v10, v5
-
-    move v8, v6
+    move v9, v6
 
     .line 1064
     :goto_4
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->imagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/ImageReceiver;
 
-    move-object/from16 v9, v26
-
-    iget v2, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iget v2, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
     .line 1065
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->imagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1638,50 +1630,54 @@
 
     move-result v3
 
-    sub-int/2addr v3, v12
+    sub-int v3, v3, v18
 
     int-to-float v3, v3
 
-    div-float v3, v3, v16
+    const/high16 v4, 0x40000000    # 2.0f
 
-    sub-float v5, v10, v3
+    div-float/2addr v3, v4
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move/from16 v8, v27
 
-    move-result v3
-
-    sub-int/2addr v3, v12
-
-    int-to-float v3, v3
-
-    div-float v3, v3, v16
-
-    move/from16 v6, v27
-
-    sub-float v4, v6, v3
+    sub-float v3, v8, v3
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v5
 
-    sub-int/2addr v3, v12
+    sub-int v5, v5, v18
 
-    int-to-float v3, v3
+    int-to-float v5, v5
+
+    div-float/2addr v5, v4
+
+    move/from16 v6, v26
+
+    sub-float v4, v6, v5
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v18
+    move-result v5
 
-    sub-int v2, v18, v12
+    sub-int v5, v5, v18
+
+    int-to-float v5, v5
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v20
+
+    sub-int v2, v20, v18
 
     int-to-float v2, v2
 
-    invoke-virtual {v1, v5, v4, v3, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+    invoke-virtual {v1, v3, v4, v5, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
     .line 1066
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->imagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1692,7 +1688,7 @@
     .line 1068
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1700,7 +1696,7 @@
 
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1712,7 +1708,7 @@
 
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, v14}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1733,11 +1729,13 @@
 
     move-result v2
 
-    sub-int/2addr v2, v12
+    sub-int v2, v2, v18
 
     int-to-float v1, v2
 
-    div-float v1, v1, v16
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
 
     .line 1070
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1757,7 +1755,7 @@
 
     sget-object v3, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    invoke-virtual {v2, v10, v6, v1, v3}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
+    invoke-virtual {v2, v8, v6, v1, v3}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
     .line 1073
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -1788,11 +1786,11 @@
 
     const v5, 0x3ea66666    # 0.325f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    iget v5, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iget v5, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1809,15 +1807,15 @@
 
     move-result-object v2
 
-    sub-float v5, v10, v1
+    sub-float v4, v8, v1
 
-    float-to-int v3, v5
+    float-to-int v3, v4
 
     sub-float v4, v6, v1
 
     float-to-int v4, v4
 
-    add-float v5, v10, v1
+    add-float v5, v8, v1
 
     float-to-int v5, v5
 
@@ -1850,11 +1848,11 @@
 
     const/high16 v2, -0x1000000
 
-    iget v3, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
+    iget v3, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->enterAlpha:F
 
     const/high16 v4, 0x42a00000    # 80.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1871,83 +1869,77 @@
 
     move-result v2
 
-    sub-int/2addr v2, v12
+    sub-int v2, v2, v18
 
     int-to-float v1, v2
 
-    div-float v1, v1, v16
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity;->blackoutPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v7, v10, v6, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v8, v6, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     const/4 v1, 0x1
 
     .line 1088
-    iput-boolean v1, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->wasDrawn:Z
+    iput-boolean v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->wasDrawn:Z
 
-    if-eqz v11, :cond_c
+    if-eqz v14, :cond_c
 
     .line 1090
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_c
-    move/from16 v21, v23
-
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v5, v11
 
     goto :goto_5
 
     :cond_d
-    move v8, v6
+    move v6, v3
 
-    move/from16 v24, v9
+    move v8, v4
 
-    move/from16 v22, v10
+    move/from16 v22, v5
 
-    move v6, v4
-
-    move v10, v5
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    const/high16 v21, 0x3f800000    # 1.0f
+    move/from16 v23, v9
 
     :goto_5
-    cmpl-float v2, v21, v1
+    cmpl-float v1, v5, v22
 
-    if-eqz v2, :cond_e
+    if-eqz v1, :cond_e
 
     .line 1094
+    iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+
+    iget-object v1, v1, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getAlpha()I
+
+    move-result v1
+
+    .line 1095
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2}, Landroid/text/TextPaint;->getAlpha()I
+    int-to-float v3, v1
 
-    move-result v2
+    sub-float v4, v22, v5
 
-    .line 1095
-    iget-object v3, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    mul-float/2addr v3, v4
 
-    iget-object v3, v3, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    float-to-int v3, v3
 
-    int-to-float v4, v2
-
-    sub-float v12, v1, v21
-
-    mul-float v4, v4, v12
-
-    float-to-int v1, v4
-
-    invoke-virtual {v3, v1}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1096
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1955,20 +1947,20 @@
 
     int-to-float v3, v3
 
-    add-float v4, v6, v3
+    add-float/2addr v3, v6
 
-    iget-object v3, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v3, v3, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v4, v4, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v1, v10, v4, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v2, v8, v3, v4}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     .line 1097
-    iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v1, v1, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v2, v2, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v2, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1099
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1986,7 +1978,7 @@
 
     int-to-float v3, v1
 
-    mul-float v3, v3, v21
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
@@ -2003,13 +1995,13 @@
 
     int-to-float v3, v3
 
-    add-float v4, v6, v3
+    add-float/2addr v3, v6
 
-    iget-object v3, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v3, v3, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
+    iget-object v4, v4, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v2, v10, v4, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v2, v8, v3, v4}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     .line 1102
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -2032,38 +2024,36 @@
 
     int-to-float v2, v2
 
-    add-float v4, v6, v2
+    add-float v3, v6, v2
 
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v1, v10, v4, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v1, v8, v3, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     :goto_6
     const/high16 v1, 0x40e00000    # 7.0f
 
     const/16 v3, 0x2c
 
+    const/high16 v4, 0x40000000    # 2.0f
+
     goto/16 :goto_8
 
     :cond_f
-    move v8, v6
+    move v6, v3
 
-    move/from16 v24, v9
+    move v8, v4
 
-    move/from16 v22, v10
+    move/from16 v22, v5
 
-    move-object v9, v3
+    move/from16 v23, v9
 
-    move v6, v4
-
-    move v10, v5
-
-    if-eqz v9, :cond_11
+    if-eqz v12, :cond_11
 
     .line 1107
-    iget v1, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
     cmpl-float v1, v1, v18
 
@@ -2089,7 +2079,7 @@
 
     move-result-object v1
 
-    iget v2, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v2, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
     mul-float v2, v2, v20
 
@@ -2106,15 +2096,17 @@
 
     int-to-float v2, v2
 
-    div-float v2, v2, v16
+    const/high16 v3, 0x40000000    # 2.0f
 
-    iget-object v3, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    div-float/2addr v2, v3
 
-    invoke-static {v3}, Lorg/telegram/ui/CalendarActivity;->access$3500(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
+    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    move-result-object v3
+    invoke-static {v4}, Lorg/telegram/ui/CalendarActivity;->access$3500(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
 
-    invoke-virtual {v7, v10, v6, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    move-result-object v4
+
+    invoke-virtual {v7, v8, v6, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 1112
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -2123,44 +2115,44 @@
 
     move-result-object v2
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 1113
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    int-to-float v3, v3
+    int-to-float v4, v4
 
-    div-float v3, v3, v16
+    div-float/2addr v4, v3
 
-    sub-float v5, v10, v3
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float v3, v3, v16
-
-    sub-float v4, v6, v3
+    sub-float v4, v8, v4
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v5
 
-    int-to-float v3, v3
+    int-to-float v5, v5
 
-    div-float v3, v3, v16
+    div-float/2addr v5, v3
 
-    add-float/2addr v3, v10
+    sub-float v5, v6, v5
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    div-float/2addr v9, v3
+
+    add-float/2addr v9, v8
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2168,20 +2160,20 @@
 
     int-to-float v1, v11
 
-    div-float v1, v1, v16
+    div-float/2addr v1, v3
 
-    add-float/2addr v1, v6
+    add-float v3, v6, v1
 
-    invoke-virtual {v2, v5, v4, v3, v1}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v4, v5, v9, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
     const/high16 v3, -0x3d4c0000    # -90.0f
 
     .line 1114
-    iget v1, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v1, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
     const/high16 v4, 0x43b40000    # 360.0f
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     const/4 v5, 0x0
 
@@ -2189,13 +2181,13 @@
 
     invoke-static {v1}, Lorg/telegram/ui/CalendarActivity;->access$3700(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
 
-    move-result-object v11
+    move-result-object v9
 
     move-object/from16 v1, p1
 
-    move v12, v6
+    move v11, v6
 
-    move-object v6, v11
+    move-object v6, v9
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
@@ -2208,9 +2200,9 @@
 
     int-to-float v2, v2
 
-    iget v3, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v3, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2221,7 +2213,7 @@
 
     move-result-object v3
 
-    invoke-static {v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
 
@@ -2234,7 +2226,7 @@
 
     move-result-object v3
 
-    iget v4, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v4, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
     mul-float v4, v4, v20
 
@@ -2253,22 +2245,22 @@
 
     int-to-float v2, v4
 
-    div-float v2, v2, v16
+    const/high16 v4, 0x40000000    # 2.0f
 
-    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    div-float/2addr v2, v4
 
-    invoke-static {v4}, Lorg/telegram/ui/CalendarActivity;->access$3500(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
+    iget-object v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    move-result-object v4
+    invoke-static {v5}, Lorg/telegram/ui/CalendarActivity;->access$3500(Lorg/telegram/ui/CalendarActivity;)Landroid/graphics/Paint;
 
-    invoke-virtual {v7, v10, v12, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    move-result-object v5
+
+    invoke-virtual {v7, v8, v11, v2, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 1121
-    iget v2, v9, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
+    iget v2, v12, Lorg/telegram/ui/CalendarActivity$PeriodDay;->selectStartEndProgress:F
 
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    cmpl-float v5, v2, v4
+    cmpl-float v5, v2, v22
 
     if-eqz v5, :cond_10
 
@@ -2288,61 +2280,61 @@
 
     int-to-float v9, v5
 
-    sub-float/2addr v4, v2
+    sub-float v12, v22, v2
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v12
 
-    float-to-int v4, v9
+    float-to-int v9, v9
 
-    invoke-virtual {v6, v4}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v6, v9}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1125
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v9
 
-    int-to-float v6, v6
+    int-to-float v9, v9
 
-    add-float/2addr v6, v12
+    add-float/2addr v9, v11
 
-    iget-object v9, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v12, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v9, v9, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v12, v12, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v4, v10, v6, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v6, v8, v9, v12}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     .line 1126
-    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v4, v4, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v6, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1128
-    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
-
-    iget-object v4, v4, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v4}, Landroid/text/TextPaint;->getAlpha()I
-
-    move-result v4
-
-    .line 1129
     iget-object v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v5, v5, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
+    iget-object v5, v5, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    int-to-float v6, v4
+    invoke-virtual {v5}, Landroid/text/TextPaint;->getAlpha()I
 
-    mul-float v6, v6, v2
+    move-result v5
 
-    float-to-int v2, v6
+    .line 1129
+    iget-object v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    invoke-virtual {v5, v2}, Landroid/text/TextPaint;->setAlpha(I)V
+    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
+
+    int-to-float v9, v5
+
+    mul-float/2addr v9, v2
+
+    float-to-int v2, v9
+
+    invoke-virtual {v6, v2}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1130
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -2351,24 +2343,24 @@
 
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    add-float/2addr v5, v12
+    add-float/2addr v6, v11
 
-    iget-object v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v9, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
+    iget-object v9, v9, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v2, v10, v5, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v2, v8, v6, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     .line 1131
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v2, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
     goto :goto_8
 
@@ -2380,26 +2372,28 @@
 
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v5
 
-    int-to-float v4, v4
+    int-to-float v5, v5
 
-    add-float/2addr v4, v12
+    add-float/2addr v5, v11
 
-    iget-object v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v5, v5, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
+    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->activeTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v2, v10, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v2, v8, v5, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     goto :goto_8
 
     :cond_11
-    move v12, v6
+    move v11, v6
 
     const/high16 v1, 0x40e00000    # 7.0f
 
     const/16 v3, 0x2c
+
+    const/high16 v4, 0x40000000    # 2.0f
 
     .line 1136
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -2408,35 +2402,37 @@
 
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v5
 
-    int-to-float v4, v4
+    int-to-float v5, v5
 
-    add-float/2addr v4, v12
+    add-float/2addr v5, v11
 
-    iget-object v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v5, v5, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v2, v10, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v2, v8, v5, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     goto :goto_8
 
     :cond_12
     :goto_7
-    move v12, v4
+    move/from16 v21, v5
 
-    move v8, v6
+    move v1, v8
 
-    move/from16 v24, v9
+    move/from16 v23, v9
 
-    move/from16 v22, v10
+    move v8, v4
 
-    const/high16 v1, 0x40e00000    # 7.0f
+    move v4, v14
 
-    const/16 v3, 0x2c
+    move/from16 v28, v11
 
-    move v10, v5
+    move v11, v3
+
+    move/from16 v3, v28
 
     .line 1020
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -2448,72 +2444,72 @@
     move-result v2
 
     .line 1021
-    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v4, v4, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v5, v5, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    int-to-float v5, v2
+    int-to-float v6, v2
 
-    const v6, 0x3e99999a    # 0.3f
+    const v9, 0x3e99999a    # 0.3f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v6, v9
 
-    float-to-int v5, v5
+    float-to-int v6, v6
 
-    invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v5, v6}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1022
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v5
+    move-result v6
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    add-float/2addr v5, v12
+    add-float/2addr v6, v11
 
-    iget-object v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v9, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v6, v6, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v9, v9, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v7, v4, v10, v5, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v5, v8, v6, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     .line 1023
-    iget-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
+    iget-object v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
-    iget-object v4, v4, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
+    iget-object v5, v5, Lorg/telegram/ui/CalendarActivity;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v4, v2}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v5, v2}, Landroid/text/TextPaint;->setAlpha(I)V
 
     :goto_8
-    add-int/lit8 v13, v13, 0x1
+    add-int/lit8 v15, v15, 0x1
 
     const/4 v2, 0x7
 
-    if-lt v13, v2, :cond_13
+    if-lt v15, v2, :cond_13
 
-    add-int/lit8 v6, v8, 0x1
+    add-int/lit8 v5, v21, 0x1
 
-    const/4 v13, 0x0
+    const/4 v15, 0x0
 
     goto :goto_9
 
     :cond_13
-    move v6, v8
+    move/from16 v5, v21
 
     :goto_9
-    move/from16 v14, v17
+    move v8, v1
 
-    move/from16 v10, v22
+    move v11, v3
 
-    move/from16 v9, v24
+    move v14, v4
 
-    const/high16 v8, 0x40e00000    # 7.0f
+    move/from16 v6, v17
 
-    const/16 v11, 0x2c
+    move/from16 v9, v23
 
     goto/16 :goto_1
 
@@ -2592,7 +2588,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v6
 
     goto :goto_1
 
@@ -2619,7 +2615,7 @@
 
     if-eqz v4, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 908
     :goto_2
@@ -2677,7 +2673,7 @@
     iput-object v4, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->imagesByDays:Landroid/util/SparseArray;
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 920
     :goto_3
@@ -3028,7 +3024,7 @@
 
     move-object v6, v10
 
-    const/16 v20, 0x2
+    move/from16 v20, v15
 
     goto :goto_8
 
@@ -3095,7 +3091,7 @@
 
     if-eqz v10, :cond_15
 
-    const/16 v19, 0x2
+    move/from16 v19, v15
 
     goto :goto_a
 
@@ -3194,9 +3190,9 @@
 
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    iput v6, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->startMonthTime:I
+    iput v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->startMonthTime:I
 
     .line 979
     iget v5, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->daysInMonth:I

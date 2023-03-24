@@ -105,7 +105,7 @@
 
     move-result v0
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     add-float/2addr p1, p2
 
@@ -160,7 +160,7 @@
 
     if-gez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_0
     if-eqz p1, :cond_2

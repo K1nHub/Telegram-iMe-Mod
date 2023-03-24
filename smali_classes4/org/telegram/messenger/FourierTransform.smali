@@ -68,7 +68,7 @@
 
     div-float/2addr p2, v0
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     .line 31
     iput p1, p0, Lorg/telegram/messenger/FourierTransform;->bandWidth:F
@@ -135,7 +135,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 54
     :goto_0
@@ -152,7 +152,7 @@
 
     aget v3, v3, v1
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     iget-object v3, p0, Lorg/telegram/messenger/FourierTransform;->imag:[F
 
@@ -160,7 +160,7 @@
 
     aget v3, v3, v1
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     add-float/2addr v4, v5
 
@@ -197,7 +197,7 @@
 
     div-int/2addr v1, v2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 60
     :goto_1
@@ -207,9 +207,9 @@
 
     if-ge v2, v4, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_2
     if-ge v4, v1, :cond_1
@@ -255,7 +255,7 @@
 
     if-ne v1, v2, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 75
     :goto_3
@@ -267,7 +267,7 @@
 
     if-nez v1, :cond_3
 
-    const/4 v8, 0x0
+    move v8, v3
 
     goto :goto_4
 
@@ -324,7 +324,7 @@
 
     div-float/2addr v5, v6
 
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 85
     :goto_5
@@ -332,7 +332,7 @@
 
     if-ge v6, v7, :cond_4
 
-    mul-int v7, v7, v1
+    mul-int/2addr v7, v1
 
     add-int/2addr v7, v6
 
@@ -455,7 +455,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -531,7 +531,7 @@
 
     if-nez p1, :cond_0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 
@@ -558,7 +558,7 @@
 
     sub-float/2addr p1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p1, v0
 
@@ -567,7 +567,7 @@
     :cond_1
     int-to-float p1, p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     return p1
 .end method
@@ -657,7 +657,7 @@
     .line 139
     iget p1, p0, Lorg/telegram/messenger/FourierTransform;->octaves:I
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     new-array p1, p1, [F
 

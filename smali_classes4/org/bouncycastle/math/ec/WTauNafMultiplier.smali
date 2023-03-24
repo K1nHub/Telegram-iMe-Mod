@@ -54,7 +54,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     array-length v4, v0
@@ -90,7 +90,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-ltz v3, :cond_3
@@ -127,7 +127,7 @@
 
     check-cast p0, Lorg/bouncycastle/math/ec/ECPoint$AbstractF2m;
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :cond_2
     add-int/lit8 v3, v3, -0x1

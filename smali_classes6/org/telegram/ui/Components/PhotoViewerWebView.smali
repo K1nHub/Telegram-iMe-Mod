@@ -977,7 +977,7 @@
     goto :goto_1
 
     :goto_2
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_3
     if-ge v1, v0, :cond_7
@@ -1525,7 +1525,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    mul-int/lit8 v0, v0, 0x19
+    mul-int/2addr v0, v1
 
     sub-int/2addr p1, v0
 
@@ -1860,7 +1860,7 @@
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 730
     :goto_0
@@ -2162,7 +2162,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v1, 0x64
+    move v1, v2
 
     .line 593
     :goto_0
@@ -2209,14 +2209,14 @@
 
     check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
     .line 598
     iput v1, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 

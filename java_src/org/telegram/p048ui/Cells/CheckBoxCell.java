@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.smedialink.common.IdFabric$ViewTypes;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -125,7 +125,7 @@ public class CheckBoxCell extends FrameLayout {
         addView(this.valueTextView, LayoutHelper.createFrame(-2, -1, (LocaleController.isRTL ? 3 : 5) | 48, i2, 0, i2, 0));
         if (this.currentType == i4) {
             ImageView imageView = new ImageView(context);
-            imageView.setImageResource(C3286R.C3288drawable.account_check);
+            imageView.setImageResource(C3301R.C3303drawable.account_check);
             ViewExtKt.setImageColor(imageView, getThemedColor("actionBarDefaultSubmenuItemIcon"));
             this.checkBox = imageView;
             this.checkBoxSize = 20;
@@ -224,7 +224,7 @@ public class CheckBoxCell extends FrameLayout {
         }
         if (this.collapsedArrow == null) {
             this.collapsedArrow = new View(getContext());
-            Drawable mutate = getContext().getResources().getDrawable(C3286R.C3288drawable.arrow_more).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3301R.C3303drawable.arrow_more).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteBlackText"), PorterDuff.Mode.MULTIPLY));
             this.collapsedArrow.setBackground(mutate);
             addView(this.collapsedArrow, LayoutHelper.createFrame(16, 16, 16));

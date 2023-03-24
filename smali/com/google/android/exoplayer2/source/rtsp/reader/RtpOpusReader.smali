@@ -72,12 +72,12 @@
 
     if-le v1, v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     const-string v4, "ID Header has insufficient data"
@@ -110,7 +110,7 @@
 
     if-ne v1, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1
     const-string v1, "version number must always be 1"
@@ -201,7 +201,7 @@
 
     if-lt v3, v6, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     :cond_1
     const-string v3, "Comment Header has insufficient data"

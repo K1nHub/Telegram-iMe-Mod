@@ -1297,8 +1297,6 @@
     goto :goto_0
 
     :catch_4
-    nop
-
     const/4 p0, 0x5
 
     const-string v0, "Glide"

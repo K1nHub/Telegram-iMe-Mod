@@ -192,7 +192,7 @@
 .end method
 
 .method protected final r()I
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lj$/util/stream/J4;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
@@ -202,9 +202,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x2
 
@@ -263,7 +263,7 @@
 .end method
 
 .method public final trySplit()Lj$/util/s;
-    .locals 6
+    .locals 4
 
     iget-object v0, p0, Lj$/util/stream/J4;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
@@ -271,15 +271,15 @@
 
     move-result-wide v0
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v2
+    return-object v1
 
     :cond_0
     iget-object v0, p0, Lj$/util/stream/J4;->a:Lj$/util/s;
@@ -295,10 +295,10 @@
     :cond_1
     invoke-virtual {p0, v0}, Lj$/util/stream/J4;->q(Lj$/util/s;)Lj$/util/s;
 
-    move-result-object v2
+    move-result-object v1
 
     :goto_0
-    return-object v2
+    return-object v1
 .end method
 
 .method public bridge synthetic trySplit()Lj$/util/t;

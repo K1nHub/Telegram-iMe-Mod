@@ -85,7 +85,7 @@
 
     const/high16 v1, 0x42400000    # 48.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x3f000000    # 0.5f
 

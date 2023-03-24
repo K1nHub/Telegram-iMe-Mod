@@ -30,8 +30,8 @@ public final class zzkw implements Parcelable.Creator<zzkv> {
         String str2 = null;
         String str3 = null;
         Double d = null;
-        long j = 0;
         int i = 0;
+        long j = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

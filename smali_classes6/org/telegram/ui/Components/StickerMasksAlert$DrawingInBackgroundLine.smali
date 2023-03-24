@@ -120,13 +120,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_1
     if-nez v0, :cond_4
@@ -205,7 +205,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1053
     :goto_0
@@ -311,7 +311,7 @@
 
     const v5, 0x3cf5c28f    # 0.03f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -361,43 +361,43 @@
     .line 1078
     iget v2, v2, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;->pressedProgress:F
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    cmpl-float v4, v2, v1
 
-    cmpl-float v6, v2, v1
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    if-eqz v6, :cond_1
+    if-eqz v4, :cond_1
 
-    const v6, 0x3f4ccccd    # 0.8f
+    const v4, 0x3f4ccccd    # 0.8f
 
     const v7, 0x3e4ccccd    # 0.2f
 
-    sub-float v2, v4, v2
+    sub-float v2, v6, v2
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
-    add-float/2addr v2, v6
+    add-float/2addr v2, v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v6
 
     goto :goto_1
 
     :cond_1
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v6
 
     :goto_1
-    const/high16 v6, 0x437f0000    # 255.0f
+    const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v6, v6, p2
+    mul-float/2addr v4, p2
 
-    float-to-int v6, v6
+    float-to-int v4, v4
 
     .line 1098
-    invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setAlpha(I)V
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setAlpha(I)V
 
     .line 1099
     invoke-virtual {v3, v5}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    cmpl-float v4, v2, v4
+    cmpl-float v4, v2, v6
 
     if-eqz v4, :cond_2
 
@@ -617,7 +617,7 @@
 
     const v4, 0x3cf5c28f    # 0.03f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

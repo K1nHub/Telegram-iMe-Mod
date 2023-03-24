@@ -84,6 +84,15 @@ public final class NumberExtKt {
         return 0.0d;
     }
 
+    public static final BigInteger orZero(BigInteger bigInteger) {
+        if (bigInteger == null) {
+            BigInteger ZERO = BigInteger.ZERO;
+            Intrinsics.checkNotNullExpressionValue(ZERO, "ZERO");
+            return ZERO;
+        }
+        return bigInteger;
+    }
+
     public static final BigDecimal orZero(BigDecimal bigDecimal) {
         if (bigDecimal == null) {
             BigDecimal orZero = BigDecimal.ZERO;

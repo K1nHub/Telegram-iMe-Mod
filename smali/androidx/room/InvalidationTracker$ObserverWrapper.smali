@@ -189,7 +189,7 @@
     .line 702
     array-length v0, p1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_5
@@ -226,7 +226,7 @@
     .line 711
     array-length v2, p1
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v2, :cond_4
@@ -238,7 +238,7 @@
 
     array-length v7, v6
 
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_2
     if-ge v8, v7, :cond_3

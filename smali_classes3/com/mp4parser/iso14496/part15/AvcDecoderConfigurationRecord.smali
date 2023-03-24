@@ -259,7 +259,7 @@
 
     move-result v1
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_0
     if-lt v6, v1, :cond_5
@@ -271,7 +271,7 @@
 
     int-to-long v7, v1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     int-to-long v9, v1
@@ -374,9 +374,9 @@
     :goto_2
     int-to-long v3, v0
 
-    cmp-long v5, v3, v1
+    cmp-long v3, v3, v1
 
-    if-ltz v5, :cond_2
+    if-ltz v3, :cond_2
 
     goto :goto_3
 

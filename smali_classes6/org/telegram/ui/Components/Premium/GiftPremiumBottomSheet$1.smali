@@ -315,7 +315,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->setChecked(ZZ)V

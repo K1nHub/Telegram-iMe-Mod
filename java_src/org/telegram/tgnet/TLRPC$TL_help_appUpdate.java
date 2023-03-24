@@ -10,7 +10,7 @@ public class TLRPC$TL_help_appUpdate extends TLRPC$help_AppUpdate {
     public int flags;
 
     /* renamed from: id */
-    public int f1556id;
+    public int f1557id;
     public TLRPC$Document sticker;
     public String text;
     public String url;
@@ -21,7 +21,7 @@ public class TLRPC$TL_help_appUpdate extends TLRPC$help_AppUpdate {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.can_not_skip = (readInt32 & 1) != 0;
-        this.f1556id = abstractSerializedData.readInt32(z);
+        this.f1557id = abstractSerializedData.readInt32(z);
         this.version = abstractSerializedData.readString(z);
         this.text = abstractSerializedData.readString(z);
         int readInt322 = abstractSerializedData.readInt32(z);
@@ -56,7 +56,7 @@ public class TLRPC$TL_help_appUpdate extends TLRPC$help_AppUpdate {
         int i = this.can_not_skip ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        abstractSerializedData.writeInt32(this.f1556id);
+        abstractSerializedData.writeInt32(this.f1557id);
         abstractSerializedData.writeString(this.version);
         abstractSerializedData.writeString(this.text);
         abstractSerializedData.writeInt32(481674261);

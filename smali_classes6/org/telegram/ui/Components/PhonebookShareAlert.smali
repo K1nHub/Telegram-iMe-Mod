@@ -396,7 +396,7 @@
     :goto_2
     if-eqz v2, :cond_b
 
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 286
     :goto_3
@@ -418,7 +418,7 @@
 
     if-nez v10, :cond_8
 
-    const/4 v10, 0x0
+    move v10, v6
 
     .line 290
     :goto_4
@@ -453,7 +453,7 @@
 
     if-eqz v11, :cond_5
 
-    const/4 v10, 0x1
+    move v10, v7
 
     goto :goto_5
 
@@ -463,7 +463,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_5
     if-eqz v10, :cond_7
@@ -730,7 +730,7 @@
 
     move-result v3
 
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_9
     const/4 v8, -0x2
@@ -1970,7 +1970,7 @@
 
     if-ge p1, v0, :cond_b
 
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 537
     :goto_1
@@ -2003,7 +2003,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     const-string p1, "featuredStickers_buttonText"
@@ -2490,7 +2490,7 @@
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 909
     :goto_2
@@ -2750,19 +2750,19 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x1
 
     if-gtz v3, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     const-wide/16 v6, 0xb4
@@ -2852,12 +2852,12 @@
 
     if-eqz v5, :cond_6
 
-    const/high16 v16, 0x3f800000    # 1.0f
+    move/from16 v16, v9
 
     goto :goto_3
 
     :cond_6
-    const/16 v16, 0x0
+    move/from16 v16, v10
 
     :goto_3
     aput v16, v15, v2
@@ -2877,12 +2877,12 @@
 
     if-eqz v5, :cond_7
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v9
 
     goto :goto_4
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_4
     aput v5, v15, v2
@@ -2919,12 +2919,12 @@
 
     if-eqz v5, :cond_9
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v9
 
     goto :goto_5
 
     :cond_9
-    const/4 v12, 0x0
+    move v12, v10
 
     :goto_5
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -2934,12 +2934,12 @@
 
     if-eqz v5, :cond_a
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v9
 
     goto :goto_6
 
     :cond_a
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_6
     invoke-virtual {v11, v5}, Landroid/view/View;->setAlpha(F)V
@@ -2989,12 +2989,12 @@
 
     if-le v1, v3, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_8
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_8
     if-eqz v1, :cond_e
@@ -3077,7 +3077,7 @@
     goto :goto_a
 
     :cond_12
-    const/4 v9, 0x0
+    move v9, v10
 
     :goto_a
     aput v9, v4, v2
@@ -3115,7 +3115,7 @@
     goto :goto_b
 
     :cond_14
-    const/4 v9, 0x0
+    move v9, v10
 
     :goto_b
     invoke-virtual {v2, v9}, Landroid/view/View;->setAlpha(F)V

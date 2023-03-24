@@ -413,7 +413,7 @@
     .line 170
     iput-boolean v4, v0, Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;->isFrameDirty:Z
 
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 171
     :goto_1
@@ -564,7 +564,7 @@
 
     int-to-float v9, v9
 
-    const/4 v10, 0x0
+    move v10, v4
 
     .line 191
     :goto_3

@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: 9.5.3+iMe+(15.03.23).apk
+apkFileName: 9.5.4+iMe+(22.03.23).apk
 compressionType: false
 doNotCompress:
 - resources.arsc
@@ -132,9 +132,9 @@ doNotCompress:
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
-  renameManifestPackage: org.telegram.messenger
+  renameManifestPackage: null
 sdkInfo:
-  minSdkVersion: '21'
+  minSdkVersion: '23'
   targetSdkVersion: '31'
 sharedLibrary: false
 sparseResources: false
@@ -375,5 +375,5 @@ usesFramework:
   tag: null
 version: 2.7.0
 versionInfo:
-  versionCode: '950309'
-  versionName: 9.5.3
+  versionCode: '950409'
+  versionName: 9.5.4

@@ -23,24 +23,24 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-eqz v2, :cond_d
 
     if-lt p2, p1, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-eqz v2, :cond_c
@@ -55,7 +55,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-eqz v1, :cond_b
@@ -121,7 +121,7 @@
     goto :goto_6
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_6
     const v9, 0xdbff

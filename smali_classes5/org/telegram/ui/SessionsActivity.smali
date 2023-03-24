@@ -1016,7 +1016,7 @@
 
     if-gt v1, v2, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v6
 
     goto :goto_0
 
@@ -1025,7 +1025,7 @@
 
     if-gt v1, v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_0
 
@@ -1034,12 +1034,12 @@
 
     if-gt v1, v2, :cond_3
 
-    const/4 v1, 0x2
+    move v1, v7
 
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x3
+    move v1, v8
 
     .line 250
     :goto_0
@@ -1125,7 +1125,7 @@
     .line 260
     invoke-virtual {v2, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    const/4 v11, 0x0
+    move v11, v6
 
     :goto_1
     if-ge v11, v9, :cond_5
@@ -1177,12 +1177,12 @@
 
     if-ne v1, v11, :cond_4
 
-    const/4 v14, 0x1
+    move v14, v5
 
     goto :goto_2
 
     :cond_4
-    const/4 v14, 0x0
+    move v14, v6
 
     :goto_2
     invoke-virtual {v12, v13, v14}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
@@ -1463,7 +1463,7 @@
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
     :goto_4
-    const/4 v5, 0x0
+    move v5, v6
 
     .line 375
     :goto_5
@@ -1823,7 +1823,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_0
     const/4 v0, 0x5

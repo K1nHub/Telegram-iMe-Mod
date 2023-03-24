@@ -173,7 +173,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -444,9 +444,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -470,9 +470,9 @@
     :cond_1
     new-array p1, v3, [Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 285
     :goto_1
@@ -492,7 +492,7 @@
     .line 287
     iget v4, v3, Lcom/google/android/exoplayer2/source/TrackGroupArray;->length:I
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_2
     if-ge v5, v4, :cond_2
@@ -605,136 +605,134 @@
 .end method
 
 .method public readDiscontinuity()J
-    .locals 17
-
-    move-object/from16 v0, p0
+    .locals 15
 
     .line 221
-    iget-object v1, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    array-length v2, v1
+    array-length v1, v0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    move-wide v7, v4
+    move v5, v2
 
-    const/4 v6, 0x0
+    move-wide v6, v3
 
     :goto_0
-    if-ge v6, v2, :cond_8
+    if-ge v5, v1, :cond_8
 
-    aget-object v9, v1, v6
+    aget-object v8, v0, v5
 
     .line 222
-    invoke-interface {v9}, Lcom/google/android/exoplayer2/source/MediaPeriod;->readDiscontinuity()J
+    invoke-interface {v8}, Lcom/google/android/exoplayer2/source/MediaPeriod;->readDiscontinuity()J
 
-    move-result-wide v10
+    move-result-wide v9
+
+    cmp-long v11, v9, v3
 
     const-string v12, "Unexpected child seekToUs result."
 
-    cmp-long v13, v10, v4
+    if-eqz v11, :cond_5
 
-    if-eqz v13, :cond_5
+    cmp-long v11, v6, v3
 
-    cmp-long v13, v7, v4
-
-    if-nez v13, :cond_3
+    if-nez v11, :cond_3
 
     .line 227
-    iget-object v7, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    iget-object v6, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    array-length v8, v7
+    array-length v7, v6
 
-    const/4 v13, 0x0
+    move v11, v2
 
     :goto_1
-    if-ge v13, v8, :cond_2
+    if-ge v11, v7, :cond_2
 
-    aget-object v14, v7, v13
+    aget-object v13, v6, v11
 
-    if-ne v14, v9, :cond_0
+    if-ne v13, v8, :cond_0
 
     goto :goto_2
 
     .line 231
     :cond_0
-    invoke-interface {v14, v10, v11}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
+    invoke-interface {v13, v9, v10}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
 
-    move-result-wide v14
+    move-result-wide v13
 
-    cmp-long v16, v14, v10
+    cmp-long v13, v13, v9
 
-    if-nez v16, :cond_1
+    if-nez v13, :cond_1
 
-    add-int/lit8 v13, v13, 0x1
+    add-int/lit8 v11, v11, 0x1
 
     goto :goto_1
 
     .line 232
     :cond_1
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v1, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_2
     :goto_2
-    move-wide v7, v10
+    move-wide v6, v9
 
     goto :goto_3
 
     :cond_3
-    cmp-long v9, v10, v7
+    cmp-long v8, v9, v6
 
-    if-nez v9, :cond_4
+    if-nez v8, :cond_4
 
     goto :goto_3
 
     .line 236
     :cond_4
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v2, "Conflicting discontinuities."
+    const-string v1, "Conflicting discontinuities."
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_5
-    cmp-long v10, v7, v4
+    cmp-long v9, v6, v3
 
-    if-eqz v10, :cond_7
+    if-eqz v9, :cond_7
 
     .line 240
-    invoke-interface {v9, v7, v8}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
+    invoke-interface {v8, v6, v7}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    cmp-long v11, v9, v7
+    cmp-long v8, v8, v6
 
-    if-nez v11, :cond_6
+    if-nez v8, :cond_6
 
     goto :goto_3
 
     .line 241
     :cond_6
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v1, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_7
     :goto_3
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
     :cond_8
-    return-wide v7
+    return-wide v6
 .end method
 
 .method public reevaluateBuffer(J)V
@@ -749,7 +747,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .locals 4
+    .locals 3
 
     .line 255
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
@@ -779,9 +777,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, p1
+    cmp-long v1, v1, p1
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -822,7 +820,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 117
     :goto_0
@@ -857,7 +855,7 @@
 
     if-nez v8, :cond_1
 
-    const/4 v8, -0x1
+    move v8, v7
 
     goto :goto_2
 
@@ -945,7 +943,7 @@
 
     move-wide/from16 v17, p5
 
-    const/4 v13, 0x0
+    move v13, v5
 
     .line 135
     :goto_4
@@ -955,7 +953,7 @@
 
     if-ge v13, v10, :cond_e
 
-    const/4 v10, 0x0
+    move v10, v5
 
     .line 136
     :goto_5
@@ -1067,9 +1065,9 @@
     goto :goto_8
 
     :cond_7
-    cmp-long v12, v10, v17
+    cmp-long v10, v10, v17
 
-    if-nez v12, :cond_d
+    if-nez v10, :cond_d
 
     :goto_8
     const/4 v10, 0x0
@@ -1112,7 +1110,7 @@
 
     invoke-virtual {v12, v11, v14}, Ljava/util/IdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v11, 0x1
+    move v11, v13
 
     goto :goto_b
 
@@ -1175,9 +1173,9 @@
     throw v1
 
     :cond_e
-    move-object v8, v14
+    move v1, v5
 
-    const/4 v1, 0x0
+    move-object v8, v14
 
     .line 174
     invoke-static {v7, v1, v2, v1, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V

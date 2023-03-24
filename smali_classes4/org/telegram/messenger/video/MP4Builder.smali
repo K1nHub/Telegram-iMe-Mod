@@ -158,13 +158,13 @@
 .end method
 
 .method public static gcd(JJ)J
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-wide p0
 
@@ -465,7 +465,7 @@
 
     move-result-wide v8
 
-    mul-long v8, v8, v2
+    mul-long/2addr v8, v2
 
     invoke-virtual {v7}, Lorg/telegram/messenger/video/Track;->getTimeScale()I
 
@@ -631,9 +631,9 @@
     move-wide v3, v1
 
     :cond_0
-    cmp-long v8, v3, v1
+    cmp-long v3, v3, v1
 
-    if-nez v8, :cond_1
+    if-nez v3, :cond_1
 
     .line 509
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -732,11 +732,11 @@
 
     const/4 v4, -0x1
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x1
+    move v7, v3
 
     :goto_0
     if-ge v5, v1, :cond_4
@@ -795,13 +795,13 @@
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v2
 
     goto :goto_2
 
     :cond_1
     :goto_1
-    const/4 v8, 0x1
+    move v8, v3
 
     :goto_2
     if-eqz v8, :cond_3
@@ -832,7 +832,7 @@
     :cond_2
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :cond_3
     add-int/lit8 v5, v5, 0x1
@@ -917,7 +917,7 @@
 .end method
 
 .method protected createStts(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
-    .locals 10
+    .locals 9
 
     .line 422
     new-instance v0, Ljava/util/ArrayList;
@@ -951,9 +951,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v3
+    cmp-long v7, v7, v3
 
-    if-nez v9, :cond_0
+    if-nez v7, :cond_0
 
     .line 428
     invoke-virtual {v1}, Lcom/coremedia/iso/boxes/TimeToSampleBox$Entry;->getCount()J
@@ -1063,7 +1063,7 @@
 
     move-result-wide v6
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getTimeScale()I
 
@@ -1270,9 +1270,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 182
     invoke-direct {p0}, Lorg/telegram/messenger/video/MP4Builder;->flushCurrentMdat()V
@@ -1478,7 +1478,7 @@
 .end method
 
 .method public writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -1561,22 +1561,22 @@
 
     const-wide/32 v6, 0x8000
 
-    const/4 v0, 0x1
+    cmp-long v0, v4, v6
 
-    cmp-long v8, v4, v6
+    const/4 v4, 0x1
 
-    if-ltz v8, :cond_2
+    if-ltz v0, :cond_2
 
     .line 139
-    iget-boolean v4, p0, Lorg/telegram/messenger/video/MP4Builder;->splitMdat:Z
+    iget-boolean v0, p0, Lorg/telegram/messenger/video/MP4Builder;->splitMdat:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 140
     invoke-direct {p0}, Lorg/telegram/messenger/video/MP4Builder;->flushCurrentMdat()V
 
     .line 141
-    iput-boolean v0, p0, Lorg/telegram/messenger/video/MP4Builder;->writeNewMdat:Z
+    iput-boolean v4, p0, Lorg/telegram/messenger/video/MP4Builder;->writeNewMdat:Z
 
     .line 144
     :cond_1
@@ -1585,15 +1585,15 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v4, v3
 
     .line 147
     :goto_0
-    iget-object v4, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
+    iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
     iget-wide v5, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
-    invoke-virtual {v4, p1, v5, v6, p3}, Lorg/telegram/messenger/video/Mp4Movie;->addSample(IJLandroid/media/MediaCodec$BufferInfo;)V
+    invoke-virtual {v0, p1, v5, v6, p3}, Lorg/telegram/messenger/video/Mp4Movie;->addSample(IJLandroid/media/MediaCodec$BufferInfo;)V
 
     if-eqz p4, :cond_3
 
@@ -1664,7 +1664,7 @@
 
     iput-wide p1, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
-    if-eqz v0, :cond_4
+    if-eqz v4, :cond_4
 
     .line 165
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;

@@ -978,12 +978,12 @@
     if-eqz v3, :cond_3
 
     :cond_2
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_0
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v6
 
     .line 657
     :goto_0
@@ -1024,7 +1024,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_1
     if-eqz v3, :cond_5
@@ -2167,9 +2167,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 565
     :goto_0
@@ -2232,7 +2232,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_1
     :goto_1
@@ -2597,7 +2597,7 @@
 
     if-eqz p2, :cond_2
 
-    const/4 p3, 0x0
+    move p3, v3
 
     .line 510
     :goto_0
@@ -2868,7 +2868,7 @@
 
     move-result p3
 
-    const/4 p4, 0x0
+    move p4, v4
 
     :goto_0
     if-ge p4, p3, :cond_2
@@ -2955,7 +2955,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v4
 
     .line 800
     :goto_1
@@ -3310,7 +3310,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 918
     :goto_0
@@ -3859,6 +3859,7 @@
     const/4 v2, 0x1
 
     .line 960
+    :catch_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -3943,11 +3944,6 @@
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    nop
 
     goto :goto_0
 
@@ -4760,7 +4756,7 @@
 .end method
 
 .method public isDialogTranslatable(J)Z
-    .locals 3
+    .locals 2
 
     .line 100
     invoke-virtual {p0}, Lorg/telegram/messenger/TranslateController;->isFeatureAvailable()Z
@@ -4785,9 +4781,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController;->translatableDialogs:Ljava/util/Set;
 
@@ -5516,7 +5512,7 @@
     invoke-virtual {p3, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     :goto_0
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_1
 
@@ -5638,7 +5634,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 225
     :goto_0

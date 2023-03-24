@@ -148,12 +148,12 @@
 
     if-eqz p5, :cond_0
 
-    const/4 p3, 0x1
+    move p3, p1
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p2
 
     .line 231
     :goto_0
@@ -166,7 +166,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p2
 
     .line 232
     :goto_1
@@ -664,7 +664,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_0
     if-eqz p0, :cond_3
@@ -690,7 +690,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     const/4 p0, -0x1
@@ -1508,7 +1508,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v5, 0x3
+    move v5, v6
 
     :goto_2
     return v5
@@ -1573,7 +1573,7 @@
 
     if-eqz p1, :cond_b
 
-    const/4 v1, 0x5
+    move v1, v0
 
     :cond_b
     return v1
@@ -1591,7 +1591,7 @@
 
     if-eqz p1, :cond_e
 
-    const/4 v1, 0x5
+    move v1, v0
 
     :cond_e
     return v1
@@ -1624,7 +1624,7 @@
     goto :goto_3
 
     :cond_11
-    const/4 v5, 0x3
+    move v5, v6
 
     :goto_3
     return v5
@@ -1660,7 +1660,7 @@
     goto :goto_4
 
     :cond_13
-    const/4 v5, 0x3
+    move v5, v6
 
     :goto_4
     return v5
@@ -1826,7 +1826,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -2260,7 +2260,7 @@
 
     if-ge p3, p1, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_4
     return v3
@@ -2275,7 +2275,7 @@
 
     if-eq p3, v4, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_6
     return v3
@@ -2301,7 +2301,7 @@
     if-eq p3, v4, :cond_a
 
     :cond_9
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_a
     return v3
@@ -2311,7 +2311,7 @@
 
     if-eq p3, p1, :cond_c
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_c
     return v3
@@ -2341,7 +2341,7 @@
 
     if-ge p3, p1, :cond_f
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_f
     return v3
@@ -2374,7 +2374,7 @@
 
     if-ge p3, p1, :cond_11
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_11
     return v3
@@ -2948,12 +2948,12 @@
 
     if-nez v4, :cond_18
 
-    const/4 v4, 0x0
+    move v4, v3
 
     goto :goto_4
 
     :cond_18
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_4
     sub-int/2addr p1, v4
@@ -3011,7 +3011,7 @@
 
     if-ltz p2, :cond_19
 
-    const/4 v3, 0x1
+    move v3, v2
 
     :cond_19
     iget-boolean p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->scrolling:Z
@@ -3246,12 +3246,12 @@
 
     if-eqz p2, :cond_4
 
-    const/16 p2, 0x1c
+    move p2, v0
 
     goto :goto_0
 
     :cond_4
-    const/16 p2, 0x48
+    move p2, v1
 
     :goto_0
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3268,7 +3268,7 @@
 
     if-eqz v4, :cond_5
 
-    const/16 v0, 0x48
+    move v0, v1
 
     :cond_5
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3479,7 +3479,7 @@
 .end method
 
 .method public setSortType(IZ)V
-    .locals 5
+    .locals 4
 
     .line 246
     iput p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortType:I
@@ -3558,9 +3558,9 @@
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     .line 258
     iget-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter;->onlineContacts:Ljava/util/ArrayList;

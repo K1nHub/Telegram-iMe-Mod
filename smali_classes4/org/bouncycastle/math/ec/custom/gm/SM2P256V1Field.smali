@@ -219,9 +219,9 @@
 
     shr-long/2addr v1, v0
 
-    cmp-long v9, v1, v7
+    cmp-long v7, v1, v7
 
-    if-eqz v9, :cond_1
+    if-eqz v7, :cond_1
 
     const/4 v7, 0x4
 
@@ -284,9 +284,9 @@
 
     add-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    aput v2, p0, v0
+    aput v1, p0, v0
 
     return-void
 .end method
@@ -687,9 +687,9 @@
 
     shr-long v1, v5, v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    invoke-static {v2, v0}, Lorg/bouncycastle/math/ec/custom/gm/SM2P256V1Field;->reduce32(I[I)V
+    invoke-static {v1, v0}, Lorg/bouncycastle/math/ec/custom/gm/SM2P256V1Field;->reduce32(I[I)V
 
     return-void
 .end method
@@ -1010,9 +1010,9 @@
 
     shr-long/2addr v1, v0
 
-    cmp-long v9, v1, v7
+    cmp-long v7, v1, v7
 
-    if-eqz v9, :cond_1
+    if-eqz v7, :cond_1
 
     const/4 v7, 0x4
 
@@ -1075,9 +1075,9 @@
 
     add-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    aput v2, p0, v0
+    aput v1, p0, v0
 
     return-void
 .end method

@@ -340,9 +340,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
@@ -398,7 +398,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, -0x1
@@ -627,7 +627,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x1
@@ -658,7 +658,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_0
     const/4 v2, 0x1
@@ -767,7 +767,7 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_0
     if-ge v1, p0, :cond_2
@@ -792,7 +792,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p0, :cond_1
@@ -842,7 +842,7 @@
 
     and-long/2addr v9, v2
 
-    mul-long v9, v9, v0
+    mul-long/2addr v9, v0
 
     aget v11, p4, v8
 
@@ -850,7 +850,7 @@
 
     and-long/2addr v11, v2
 
-    mul-long v11, v11, v4
+    mul-long/2addr v11, v4
 
     add-long/2addr v9, v11
 
@@ -909,7 +909,7 @@
 
     and-long/2addr v7, v2
 
-    mul-long v7, v7, v0
+    mul-long/2addr v7, v0
 
     add-int v9, p5, v6
 
@@ -1600,7 +1600,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p0, :cond_0

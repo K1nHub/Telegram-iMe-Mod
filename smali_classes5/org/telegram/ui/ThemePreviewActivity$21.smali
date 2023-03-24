@@ -56,7 +56,7 @@
 .end method
 
 .method public onSeekBarDrag(ZF)V
-    .locals 2
+    .locals 1
 
     .line 1780
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$21;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -113,11 +113,11 @@
 
     const/4 p2, 0x0
 
+    cmpl-float p1, p1, p2
+
+    const/4 p2, 0x0
+
     const/16 v0, 0x1d
-
-    const/4 v1, 0x0
-
-    cmpl-float p1, p1, v1
 
     if-ltz p1, :cond_1
 

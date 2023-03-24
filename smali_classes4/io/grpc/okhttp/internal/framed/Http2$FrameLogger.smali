@@ -69,7 +69,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 739
     :goto_0
@@ -134,7 +134,7 @@
     .line 748
     aput-object v3, v1, v6
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     const-string/jumbo v3, "|PADDED"
@@ -198,7 +198,7 @@
     .line 756
     fill-array-data v4, :array_0
 
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_2
     if-ge v7, v1, :cond_3
@@ -206,7 +206,7 @@
     .line 759
     aget v8, v4, v7
 
-    const/4 v9, 0x0
+    move v9, v0
 
     :goto_3
     if-ge v9, v5, :cond_2

@@ -226,9 +226,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmpl-double v11, v7, v9
+    cmpl-double v7, v7, v9
 
-    if-nez v11, :cond_0
+    if-nez v7, :cond_0
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -255,12 +255,12 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x5
+    move v7, v8
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x3
+    move v7, v2
 
     :goto_1
     or-int/lit8 v13, v7, 0x10
@@ -410,7 +410,7 @@
 
     if-eqz v6, :cond_4
 
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_3
 
@@ -431,7 +431,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_4
     invoke-virtual {v1, v6, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
@@ -443,7 +443,7 @@
 
     if-eqz v6, :cond_6
 
-    const/4 v2, 0x5
+    move v2, v8
 
     :cond_6
     or-int/lit8 v2, v2, 0x10
@@ -503,7 +503,7 @@
 
     double-to-int v1, v1
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 699
     :goto_5
@@ -515,7 +515,7 @@
 
     if-nez v2, :cond_7
 
-    const/4 v7, 0x0
+    move v7, v4
 
     goto :goto_6
 
@@ -577,7 +577,7 @@
 
     const-wide v4, 0x40d3880000000000L    # 20000.0
 
-    mul-double v1, v1, v4
+    mul-double/2addr v1, v4
 
     double-to-int v1, v1
 
@@ -774,7 +774,7 @@
 
     if-eqz v10, :cond_4
 
-    const/4 v10, 0x0
+    move v10, v1
 
     goto :goto_2
 
@@ -815,9 +815,9 @@
     :goto_3
     iget-wide v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
 
-    cmpl-double v5, v3, v8
+    cmpl-double v3, v3, v8
 
-    if-nez v5, :cond_7
+    if-nez v3, :cond_7
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -852,13 +852,13 @@
 
     iget-wide v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
 
-    const/16 v6, 0x11
+    cmpl-double v4, v4, v8
 
-    cmpl-double v7, v4, v8
+    const/16 v5, 0x11
 
-    if-nez v7, :cond_a
+    if-nez v4, :cond_a
 
-    const/16 v4, 0x11
+    move v4, v5
 
     goto :goto_4
 
@@ -871,16 +871,16 @@
     .line 830
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    iget-wide v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
+    iget-wide v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
 
-    cmpl-double v7, v4, v8
+    cmpl-double v4, v6, v8
 
-    if-nez v7, :cond_b
+    if-nez v4, :cond_b
 
     goto :goto_5
 
     :cond_b
-    const/16 v1, 0x11
+    move v1, v5
 
     :goto_5
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
@@ -902,7 +902,7 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 18
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -926,13 +926,13 @@
     goto :goto_0
 
     :cond_0
-    const-wide/high16 v6, 0x3fe0000000000000L    # 0.5
+    cmpl-double v4, v2, v4
 
-    cmpl-double v8, v2, v4
+    const-wide/high16 v5, 0x3fe0000000000000L    # 0.5
 
-    if-lez v8, :cond_1
+    if-lez v4, :cond_1
 
-    cmpg-double v4, v2, v6
+    cmpg-double v4, v2, v5
 
     if-gez v4, :cond_1
 
@@ -944,15 +944,15 @@
     goto :goto_0
 
     :cond_1
-    cmpl-double v4, v2, v6
+    cmpl-double v4, v2, v5
 
     if-ltz v4, :cond_2
 
     const-wide/high16 v4, 0x3fe8000000000000L    # 0.75
 
-    cmpg-double v6, v2, v4
+    cmpg-double v2, v2, v4
 
-    if-gtz v6, :cond_2
+    if-gtz v2, :cond_2
 
     const v2, -0xa84395
 
@@ -1133,7 +1133,7 @@
     goto :goto_3
 
     :cond_8
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v3
 
     .line 877
     :goto_3
@@ -1149,7 +1149,7 @@
 
     int-to-float v12, v12
 
-    mul-float v12, v12, v1
+    mul-float/2addr v12, v1
 
     const/4 v1, 0x5
 
@@ -1258,7 +1258,7 @@
 
     add-int/2addr v1, v12
 
-    const/4 v14, 0x0
+    move v14, v9
 
     .line 886
     :goto_4
@@ -1277,9 +1277,9 @@
 
     int-to-float v12, v12
 
-    const/4 v13, 0x0
+    move v13, v9
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_9
     if-ne v14, v4, :cond_a
@@ -1293,12 +1293,6 @@
 
     move-result v13
 
-    int-to-float v13, v13
-
-    move v12, v13
-
-    const/16 v13, 0x32
-
     goto :goto_5
 
     :cond_a
@@ -1311,14 +1305,17 @@
 
     move-result v13
 
+    :goto_5
     int-to-float v13, v13
 
-    move v12, v13
+    move/from16 v18, v13
 
-    const/16 v13, 0x96
+    move v13, v12
+
+    move/from16 v12, v18
 
     .line 898
-    :goto_5
+    :goto_6
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1441,7 +1438,7 @@
     :cond_c
     const/4 v10, 0x0
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_d
     const/high16 v9, 0x3f800000    # 1.0f
@@ -1483,14 +1480,14 @@
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_f
-    :goto_6
+    :goto_7
     add-int/lit8 v14, v2, 0x1
 
     move-object/from16 v15, p1
 
-    const/4 v2, 0x0
+    move v3, v9
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v2, v10
 
     const/4 v4, 0x1
 
@@ -1544,7 +1541,7 @@
 
     iget-wide v0, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     double-to-int p1, p1
 

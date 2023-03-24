@@ -234,12 +234,12 @@
 
     if-lt v1, v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 470
     :goto_0
@@ -372,7 +372,7 @@
     .line 499
     invoke-interface {p1, v0}, Landroid/view/MenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 502
     :cond_6
@@ -844,7 +844,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     const/4 v4, 0x0

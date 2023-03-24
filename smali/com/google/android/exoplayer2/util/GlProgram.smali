@@ -122,12 +122,12 @@
 
     if-ne p2, p1, :cond_0
 
-    const/4 p2, 0x1
+    move p2, p1
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
@@ -176,7 +176,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/util/GlProgram;->attributes:[Lcom/google/android/exoplayer2/util/GlProgram$Attribute;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 108
     :goto_1
@@ -231,7 +231,7 @@
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/util/GlProgram;->uniforms:[Lcom/google/android/exoplayer2/util/GlProgram$Uniform;
 
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 117
     :goto_2
@@ -342,7 +342,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -508,7 +508,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0

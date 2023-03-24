@@ -107,7 +107,7 @@ public class HintDialogCell extends FrameLayout {
     public void update(int i) {
         int i2;
         if ((MessagesController.UPDATE_MASK_STATUS & i) != 0 && this.currentUser != null) {
-            this.currentUser = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentUser.f1639id));
+            this.currentUser = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentUser.f1640id));
             this.imageView.invalidate();
             invalidate();
         }
@@ -180,7 +180,7 @@ public class HintDialogCell extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x007c  */
     @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -191,7 +191,7 @@ public class HintDialogCell extends FrameLayout {
             r5 = this;
             boolean r8 = super.drawChild(r6, r7, r8)
             org.telegram.ui.Components.BackupImageView r9 = r5.imageView
-            if (r7 != r9) goto Lc4
+            if (r7 != r9) goto Lc3
             org.telegram.tgnet.TLRPC$User r7 = r5.currentUser
             r9 = 1
             if (r7 == 0) goto L3b
@@ -209,12 +209,12 @@ public class HintDialogCell extends FrameLayout {
             org.telegram.messenger.MessagesController r7 = org.telegram.messenger.MessagesController.getInstance(r7)
             j$.util.concurrent.ConcurrentHashMap<java.lang.Long, java.lang.Integer> r7 = r7.onlinePrivacy
             org.telegram.tgnet.TLRPC$User r0 = r5.currentUser
-            long r0 = r0.f1639id
+            long r0 = r0.f1640id
             java.lang.Long r0 = java.lang.Long.valueOf(r0)
             boolean r7 = r7.containsKey(r0)
             if (r7 == 0) goto L3b
         L39:
-            r7 = 1
+            r7 = r9
             goto L3c
         L3b:
             r7 = 0
@@ -222,44 +222,44 @@ public class HintDialogCell extends FrameLayout {
             boolean r0 = r5.wasDraw
             r1 = 1065353216(0x3f800000, float:1.0)
             r2 = 0
-            if (r0 != 0) goto L4b
-            if (r7 == 0) goto L48
-            r0 = 1065353216(0x3f800000, float:1.0)
-            goto L49
+            if (r0 != 0) goto L4a
+            if (r7 == 0) goto L47
+            r0 = r1
+            goto L48
+        L47:
+            r0 = r2
         L48:
-            r0 = 0
-        L49:
             r5.showOnlineProgress = r0
-        L4b:
+        L4a:
             r0 = 1037726734(0x3dda740e, float:0.10666667)
-            if (r7 == 0) goto L63
+            if (r7 == 0) goto L62
             float r3 = r5.showOnlineProgress
             int r4 = (r3 > r1 ? 1 : (r3 == r1 ? 0 : -1))
-            if (r4 == 0) goto L63
+            if (r4 == 0) goto L62
             float r3 = r3 + r0
             r5.showOnlineProgress = r3
             int r7 = (r3 > r1 ? 1 : (r3 == r1 ? 0 : -1))
-            if (r7 <= 0) goto L5f
+            if (r7 <= 0) goto L5e
             r5.showOnlineProgress = r1
-        L5f:
+        L5e:
             r5.invalidate()
-            goto L77
-        L63:
-            if (r7 != 0) goto L77
+            goto L76
+        L62:
+            if (r7 != 0) goto L76
             float r7 = r5.showOnlineProgress
             int r1 = (r7 > r2 ? 1 : (r7 == r2 ? 0 : -1))
-            if (r1 == 0) goto L77
+            if (r1 == 0) goto L76
             float r7 = r7 - r0
             r5.showOnlineProgress = r7
             int r7 = (r7 > r2 ? 1 : (r7 == r2 ? 0 : -1))
-            if (r7 >= 0) goto L74
+            if (r7 >= 0) goto L73
             r5.showOnlineProgress = r2
-        L74:
+        L73:
             r5.invalidate()
-        L77:
+        L76:
             float r7 = r5.showOnlineProgress
             int r7 = (r7 > r2 ? 1 : (r7 == r2 ? 0 : -1))
-            if (r7 == 0) goto Lc2
+            if (r7 == 0) goto Lc1
             r7 = 53
             int r7 = org.telegram.messenger.AndroidUtilities.m50dp(r7)
             r0 = 59
@@ -288,9 +288,9 @@ public class HintDialogCell extends FrameLayout {
             android.graphics.Paint r2 = org.telegram.p048ui.ActionBar.Theme.dialogs_onlineCirclePaint
             r6.drawCircle(r0, r7, r1, r2)
             r6.restore()
-        Lc2:
+        Lc1:
             r5.wasDraw = r9
-        Lc4:
+        Lc3:
             return r8
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.HintDialogCell.drawChild(android.graphics.Canvas, android.view.View, long):boolean");

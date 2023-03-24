@@ -49,7 +49,7 @@
 
     const p3, 0x3e8f5c29    # 0.28f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     iget-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
 
@@ -78,7 +78,7 @@
 
     const p3, 0x3f51eb85    # 0.82f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     iget-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
 

@@ -115,13 +115,13 @@
 
     const v3, 0x3ed70a3d    # 0.42f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const v3, 0x3f147ae1    # 0.58f
 
     add-float/2addr v2, v3
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -252,7 +252,7 @@
 
     check-cast v0, [Landroid/text/style/ImageSpan;
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 312
     :goto_1
@@ -361,7 +361,7 @@
 
     if-ge p1, v8, :cond_3
 
-    const/16 p1, -0x270f
+    move p1, v8
 
     .line 327
     :cond_3
@@ -383,12 +383,12 @@
 
     if-nez v9, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_2
     invoke-virtual {v8, p1, v9}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
@@ -502,7 +502,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/NumberTextView;->setTextColor(I)V
 
-    const/4 p1, 0x0
+    move p1, v3
 
     goto :goto_4
 
@@ -555,7 +555,7 @@
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     :goto_3
-    const/4 p1, 0x1
+    move p1, v2
 
     .line 350
     :goto_4
@@ -596,19 +596,19 @@
 
     if-eqz v1, :cond_9
 
-    const/4 v4, 0x0
+    move v4, v6
 
     goto :goto_5
 
     :cond_9
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v7
 
     :goto_5
     aput v4, v0, v3
 
     if-eqz v1, :cond_a
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v7
 
     :cond_a
     aput v6, v0, v2
@@ -818,12 +818,12 @@
 
     if-lt p2, v0, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
@@ -834,17 +834,17 @@
 
     if-lt v3, v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eq p2, v0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$2;->heightShouldBeChanged:Z

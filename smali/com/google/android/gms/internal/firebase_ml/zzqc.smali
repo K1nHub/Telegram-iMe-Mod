@@ -62,11 +62,11 @@
 
     const v1, 0x7fffffff
 
-    const/4 v1, 0x0
+    move v2, v1
 
-    const v2, 0x7fffffff
+    move v3, v2
 
-    const v3, 0x7fffffff
+    move v1, v0
 
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -141,7 +141,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     .line 29
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
@@ -150,7 +150,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     .line 30
     invoke-static {v3}, Ljava/lang/Math;->round(F)I
@@ -159,7 +159,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 31
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -168,7 +168,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     .line 32
     invoke-static {v1}, Ljava/lang/Math;->round(F)I

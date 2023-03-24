@@ -98,7 +98,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 33
     div-int/2addr v0, v1

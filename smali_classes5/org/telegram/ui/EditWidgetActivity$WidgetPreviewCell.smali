@@ -462,7 +462,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     const/4 v4, 0x2
@@ -504,7 +504,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
     float-to-int v6, v6
 
@@ -649,7 +649,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     float-to-double v8, v8
 
@@ -666,7 +666,7 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     float-to-double v9, v9
 
@@ -857,7 +857,7 @@
 .end method
 
 .method public updateDialogs()V
-    .locals 27
+    .locals 25
 
     move-object/from16 v1, p0
 
@@ -888,7 +888,7 @@
 
     if-nez v0, :cond_3d
 
-    const/4 v13, 0x0
+    move v13, v15
 
     :goto_0
     if-ge v13, v12, :cond_3c
@@ -1046,7 +1046,7 @@
 
     move-object/from16 v4, v18
 
-    goto/16 :goto_21
+    goto/16 :goto_20
 
     .line 257
     :cond_4
@@ -1172,9 +1172,9 @@
 
     iget-wide v3, v15, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v22, v3, v9
+    cmp-long v3, v3, v9
 
-    if-eqz v22, :cond_9
+    if-eqz v3, :cond_9
 
     iget v3, v15, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -1250,9 +1250,9 @@
 
     iget-wide v6, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v22, v6, v9
+    cmp-long v6, v6, v9
 
-    if-eqz v22, :cond_d
+    if-eqz v6, :cond_d
 
     iget v6, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -1367,9 +1367,9 @@
     .line 305
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_10
+    if-eqz v22, :cond_10
 
     const/16 v12, 0xc
 
@@ -1609,9 +1609,9 @@
 
     move-result-wide v9
 
-    const-wide/16 v23, 0x0
+    const-wide/16 v22, 0x0
 
-    cmp-long v0, v9, v23
+    cmp-long v0, v9, v22
 
     if-lez v0, :cond_16
 
@@ -1721,7 +1721,7 @@
 
     move-result v7
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     :cond_19
     const-string v9, "\ud83c\udfa4 "
@@ -1730,18 +1730,18 @@
 
     const-string v14, "\ud83d\udcf9 "
 
-    move-object/from16 v25, v9
+    move-object/from16 v24, v9
 
     if-eqz v6, :cond_2c
 
     .line 364
     iget-wide v8, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    const-wide/16 v23, 0x0
+    const-wide/16 v22, 0x0
 
-    cmp-long v26, v8, v23
+    cmp-long v8, v8, v22
 
-    if-lez v26, :cond_2c
+    if-lez v8, :cond_2c
 
     if-nez v0, :cond_2c
 
@@ -1856,7 +1856,7 @@
 
     if-eqz v10, :cond_1f
 
-    move-object/from16 v10, v25
+    move-object/from16 v10, v24
 
     goto :goto_12
 
@@ -1925,7 +1925,7 @@
 
     move-result-object v0
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     .line 392
     :cond_22
@@ -2021,7 +2021,7 @@
 
     const/16 v19, 0x0
 
-    goto :goto_16
+    goto :goto_15
 
     .line 402
     :cond_24
@@ -2053,6 +2053,8 @@
 
     move-result-object v10
 
+    move v12, v6
+
     goto :goto_15
 
     :cond_25
@@ -2075,10 +2077,9 @@
 
     move-result-object v10
 
-    :goto_15
     const/4 v12, 0x1
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_26
     const/16 v19, 0x0
@@ -2118,7 +2119,7 @@
 
     move-result-object v10
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_27
     const/4 v6, 0x2
@@ -2146,7 +2147,7 @@
 
     move-result-object v10
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_28
     const/4 v12, 0x1
@@ -2159,7 +2160,7 @@
     move-result-object v10
 
     .line 417
-    :goto_16
+    :goto_15
     invoke-virtual {v10, v9, v8}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v6
@@ -2207,7 +2208,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_17
+    goto :goto_16
 
     :catch_0
     move-exception v0
@@ -2215,10 +2216,10 @@
     .line 422
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_17
+    :goto_16
     move-object v11, v8
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 424
     :cond_29
@@ -2242,13 +2243,13 @@
 
     move-result-object v10
 
-    goto :goto_18
+    goto :goto_17
 
     :cond_2a
     const/4 v11, 0x0
 
     .line 429
-    :goto_18
+    :goto_17
     invoke-virtual {v10, v9, v8}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v8
@@ -2276,7 +2277,7 @@
 
     move-result-object v0
 
-    goto :goto_19
+    goto :goto_18
 
     .line 432
     :cond_2b
@@ -2284,11 +2285,11 @@
 
     move-result-object v0
 
-    :goto_19
+    :goto_18
     move-object v11, v0
 
     .line 435
-    :goto_1a
+    :goto_19
     :try_start_2
     new-instance v0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
@@ -2312,7 +2313,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     :catch_1
     move-exception v0
@@ -2320,7 +2321,7 @@
     .line 437
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     .line 441
     :cond_2c
@@ -2351,7 +2352,7 @@
 
     move-result-object v11
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     .line 443
     :cond_2d
@@ -2378,7 +2379,7 @@
 
     move-result-object v11
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     .line 445
     :cond_2e
@@ -2395,7 +2396,7 @@
 
     move-object v9, v14
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 449
     :cond_2f
@@ -2405,9 +2406,9 @@
 
     if-eqz v0, :cond_30
 
-    move-object/from16 v9, v25
+    move-object/from16 v9, v24
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 451
     :cond_30
@@ -2419,7 +2420,7 @@
 
     const-string v9, "\ud83c\udfa7 "
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 453
     :cond_31
@@ -2431,13 +2432,13 @@
 
     const-string v9, "\ud83d\uddbc "
 
-    goto :goto_1b
+    goto :goto_1a
 
     :cond_32
     const-string v9, "\ud83d\udcce "
 
     .line 458
-    :goto_1b
+    :goto_1a
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2452,7 +2453,7 @@
 
     move-result-object v11
 
-    goto/16 :goto_1e
+    goto/16 :goto_1d
 
     .line 460
     :cond_33
@@ -2482,10 +2483,10 @@
 
     move-result-object v0
 
-    :goto_1c
+    :goto_1b
     move-object v11, v0
 
-    goto :goto_1d
+    goto :goto_1c
 
     .line 463
     :cond_34
@@ -2516,7 +2517,7 @@
 
     move-result-object v0
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 465
     :cond_35
@@ -2551,7 +2552,7 @@
 
     move-result-object v0
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 468
     :cond_36
@@ -2564,10 +2565,10 @@
 
     invoke-static {v0, v4, v6}, Lorg/telegram/messenger/AndroidUtilities;->highlightText(Ljava/lang/CharSequence;Ljava/util/ArrayList;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Ljava/lang/CharSequence;
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 471
-    :goto_1d
+    :goto_1c
     iget-object v0, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
@@ -2597,7 +2598,7 @@
 
     .line 478
     :cond_37
-    :goto_1e
+    :goto_1d
     iget-object v0, v1, Lorg/telegram/ui/EditWidgetActivity$WidgetPreviewCell;->cells:[Landroid/view/ViewGroup;
 
     aget-object v0, v0, v13
@@ -2654,7 +2655,7 @@
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto :goto_20
+    goto :goto_1f
 
     .line 482
     :cond_38
@@ -2685,7 +2686,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 485
     :cond_39
@@ -2704,7 +2705,7 @@
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 487
-    :goto_1f
+    :goto_1e
     iget-object v0, v1, Lorg/telegram/ui/EditWidgetActivity$WidgetPreviewCell;->cells:[Landroid/view/ViewGroup;
 
     aget-object v0, v0, v13
@@ -2720,7 +2721,7 @@
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 489
-    :goto_20
+    :goto_1f
     iget v0, v2, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
     if-lez v0, :cond_3b
@@ -2799,7 +2800,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    goto :goto_21
+    goto :goto_20
 
     .line 495
     :cond_3a
@@ -2815,7 +2816,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    goto :goto_21
+    goto :goto_20
 
     :cond_3b
     move-object/from16 v4, v18
@@ -2835,7 +2836,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    :goto_21
+    :goto_20
     add-int/lit8 v13, v13, 0x1
 
     move-object v3, v4
@@ -2895,7 +2896,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_39
+    goto/16 :goto_3a
 
     :cond_3d
     move-object/from16 v20, v4
@@ -2917,14 +2918,14 @@
 
     const/4 v2, 0x0
 
-    :goto_22
+    :goto_21
     const/4 v6, 0x2
 
     if-ge v2, v6, :cond_5d
 
     const/4 v7, 0x0
 
-    :goto_23
+    :goto_22
     if-ge v7, v6, :cond_5c
 
     mul-int/lit8 v0, v2, 0x2
@@ -3003,7 +3004,7 @@
     .line 514
     iput-wide v8, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    goto :goto_24
+    goto :goto_23
 
     .line 520
     :cond_3e
@@ -3076,13 +3077,13 @@
 
     iput-wide v8, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    goto :goto_24
+    goto :goto_23
 
     :cond_3f
     const/4 v6, 0x0
 
     :cond_40
-    :goto_24
+    :goto_23
     if-nez v6, :cond_44
 
     .line 531
@@ -3094,12 +3095,12 @@
 
     sget v8, Lorg/telegram/messenger/R$id;->contacts_widget_item1:I
 
-    goto :goto_25
+    goto :goto_24
 
     :cond_41
     sget v8, Lorg/telegram/messenger/R$id;->contacts_widget_item2:I
 
-    :goto_25
+    :goto_24
     invoke-virtual {v6, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v6
@@ -3139,7 +3140,7 @@
 
     const-wide/16 v20, 0x0
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     .line 537
     :cond_44
@@ -3151,12 +3152,12 @@
 
     sget v9, Lorg/telegram/messenger/R$id;->contacts_widget_item1:I
 
-    goto :goto_26
+    goto :goto_25
 
     :cond_45
     sget v9, Lorg/telegram/messenger/R$id;->contacts_widget_item2:I
 
-    :goto_26
+    :goto_25
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v8
@@ -3222,10 +3223,10 @@
 
     move-result-object v9
 
-    :goto_27
+    :goto_26
     move-object/from16 v11, v20
 
-    goto :goto_28
+    goto :goto_27
 
     :cond_48
     move-object v10, v15
@@ -3244,7 +3245,7 @@
 
     move-result-object v9
 
-    goto :goto_27
+    goto :goto_26
 
     .line 553
     :cond_49
@@ -3263,7 +3264,7 @@
 
     move-result-object v9
 
-    goto :goto_28
+    goto :goto_27
 
     :cond_4a
     move-object/from16 v11, v20
@@ -3274,7 +3275,7 @@
     move-result-object v9
 
     .line 558
-    :goto_28
+    :goto_27
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v13
@@ -3301,9 +3302,9 @@
 
     const-wide/16 v20, 0x0
 
-    cmp-long v16, v14, v20
+    cmp-long v14, v14, v20
 
-    if-eqz v16, :cond_4b
+    if-eqz v14, :cond_4b
 
     iget v14, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -3313,7 +3314,7 @@
 
     const/4 v9, 0x0
 
-    goto :goto_29
+    goto :goto_28
 
     :cond_4b
     move-object v14, v9
@@ -3322,10 +3323,10 @@
 
     const/4 v13, 0x0
 
-    :goto_29
+    :goto_28
     const-wide/16 v20, 0x0
 
-    goto :goto_2b
+    goto :goto_2a
 
     :cond_4c
     move-object v10, v15
@@ -3367,9 +3368,9 @@
 
     const-wide/16 v20, 0x0
 
-    cmp-long v16, v14, v20
+    cmp-long v14, v14, v20
 
-    if-eqz v16, :cond_4e
+    if-eqz v14, :cond_4e
 
     iget v14, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -3377,7 +3378,7 @@
 
     move-object v14, v9
 
-    goto :goto_2a
+    goto :goto_29
 
     :cond_4d
     const-wide/16 v20, 0x0
@@ -3387,13 +3388,13 @@
 
     const/4 v13, 0x0
 
-    :goto_2a
+    :goto_29
     move-object v9, v0
 
     const/4 v0, 0x0
 
     .line 568
-    :goto_2b
+    :goto_2a
     iget-object v15, v1, Lorg/telegram/ui/EditWidgetActivity$WidgetPreviewCell;->cells:[Landroid/view/ViewGroup;
 
     aget-object v15, v15, v2
@@ -3402,12 +3403,12 @@
 
     sget v16, Lorg/telegram/messenger/R$id;->contacts_widget_item_text1:I
 
-    goto :goto_2c
+    goto :goto_2b
 
     :cond_4f
     sget v16, Lorg/telegram/messenger/R$id;->contacts_widget_item_text2:I
 
-    :goto_2c
+    :goto_2b
     move/from16 v3, v16
 
     invoke-virtual {v15, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
@@ -3443,12 +3444,12 @@
 
     move-result-object v3
 
-    goto :goto_2d
+    goto :goto_2c
 
     :cond_50
     const/4 v3, 0x0
 
-    :goto_2d
+    :goto_2c
     const/16 v13, 0x30
 
     .line 576
@@ -3475,7 +3476,7 @@
 
     if-nez v3, :cond_55
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_54
 
     .line 583
     new-instance v3, Lorg/telegram/ui/Components/AvatarDrawable;
@@ -3486,15 +3487,18 @@
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v9
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_5
 
     if-eqz v9, :cond_51
 
     const/16 v9, 0xc
 
     .line 585
+    :try_start_4
     invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    goto :goto_2e
+    goto :goto_2d
 
     :cond_51
     const/16 v9, 0xc
@@ -3510,22 +3514,31 @@
 
     .line 587
     invoke-virtual {v3, v12}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_4
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :cond_52
+    :goto_2d
+    move/from16 v17, v9
+
+    :cond_53
     :goto_2e
     const/4 v9, 0x0
 
-    const/16 v17, 0xc
-
     goto :goto_2f
 
-    :cond_53
+    :catchall_1
+    move-exception v0
+
+    move/from16 v17, v9
+
+    goto/16 :goto_32
+
+    :cond_54
     const/16 v17, 0xc
 
     .line 590
-    :try_start_4
+    :try_start_5
     new-instance v3, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v3, v9}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;)V
@@ -3543,15 +3556,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_53
 
     const/16 v0, 0x65
 
     .line 593
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    :cond_54
-    const/4 v9, 0x0
+    goto :goto_2e
 
     .line 597
     :goto_2f
@@ -3610,14 +3622,14 @@
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v12
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_3
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     int-to-float v12, v12
 
     const/4 v13, 0x0
 
-    :try_start_5
+    :try_start_6
     invoke-virtual {v0, v13, v13, v9, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 606
@@ -3641,14 +3653,14 @@
 
     .line 607
     invoke-virtual {v8}, Landroid/graphics/Canvas;->restore()V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     const/4 v9, 0x0
 
     .line 609
     :goto_30
-    :try_start_6
+    :try_start_7
     invoke-virtual {v8, v9}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
     .line 610
@@ -3673,33 +3685,34 @@
     check-cast v0, Landroid/widget/ImageView;
 
     invoke-virtual {v0, v15}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    goto :goto_33
-
-    :catchall_1
-    move-exception v0
-
-    goto :goto_32
+    goto :goto_34
 
     :catchall_2
     move-exception v0
 
-    const/4 v9, 0x0
-
-    goto :goto_32
+    goto :goto_33
 
     :catchall_3
     move-exception v0
 
     const/4 v9, 0x0
 
-    const/4 v13, 0x0
-
-    goto :goto_32
+    goto :goto_33
 
     :catchall_4
+    move-exception v0
+
+    :goto_32
+    const/4 v9, 0x0
+
+    const/4 v13, 0x0
+
+    goto :goto_33
+
+    :catchall_5
     move-exception v0
 
     const/4 v9, 0x0
@@ -3709,11 +3722,11 @@
     const/16 v17, 0xc
 
     .line 612
-    :goto_32
+    :goto_33
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     .line 615
-    :goto_33
+    :goto_34
     iget v0, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
     if-lez v0, :cond_5a
@@ -3741,7 +3754,7 @@
 
     move-result-object v0
 
-    goto :goto_34
+    goto :goto_35
 
     :cond_57
     const/4 v6, 0x1
@@ -3762,7 +3775,7 @@
     move-result-object v0
 
     .line 622
-    :goto_34
+    :goto_35
     iget-object v3, v1, Lorg/telegram/ui/EditWidgetActivity$WidgetPreviewCell;->cells:[Landroid/view/ViewGroup;
 
     aget-object v3, v3, v2
@@ -3771,12 +3784,12 @@
 
     sget v8, Lorg/telegram/messenger/R$id;->contacts_widget_item_badge1:I
 
-    goto :goto_35
+    goto :goto_36
 
     :cond_58
     sget v8, Lorg/telegram/messenger/R$id;->contacts_widget_item_badge2:I
 
-    :goto_35
+    :goto_36
     invoke-virtual {v3, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
@@ -3794,12 +3807,12 @@
 
     sget v3, Lorg/telegram/messenger/R$id;->contacts_widget_item_badge_bg1:I
 
-    goto :goto_36
+    goto :goto_37
 
     :cond_59
     sget v3, Lorg/telegram/messenger/R$id;->contacts_widget_item_badge_bg2:I
 
-    :goto_36
+    :goto_37
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -3808,7 +3821,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_38
+    goto :goto_39
 
     :cond_5a
     const/4 v6, 0x1
@@ -3822,12 +3835,12 @@
 
     sget v3, Lorg/telegram/messenger/R$id;->contacts_widget_item_badge_bg1:I
 
-    goto :goto_37
+    goto :goto_38
 
     :cond_5b
     sget v3, Lorg/telegram/messenger/R$id;->contacts_widget_item_badge_bg2:I
 
-    :goto_37
+    :goto_38
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -3836,7 +3849,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :goto_38
+    :goto_39
     add-int/lit8 v7, v7, 0x1
 
     move-object v15, v10
@@ -3845,7 +3858,7 @@
 
     const/4 v6, 0x2
 
-    goto/16 :goto_23
+    goto/16 :goto_22
 
     :cond_5c
     move-object v10, v15
@@ -3866,11 +3879,11 @@
 
     move-object/from16 v20, v11
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     .line 630
     :cond_5d
-    :goto_39
+    :goto_3a
     iget-object v0, v1, Lorg/telegram/ui/EditWidgetActivity$WidgetPreviewCell;->cells:[Landroid/view/ViewGroup;
 
     const/4 v2, 0x0
@@ -3894,7 +3907,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_3a
+    goto :goto_3b
 
     .line 633
     :cond_5e
@@ -3906,6 +3919,6 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    :goto_3a
+    :goto_3b
     return-void
 .end method

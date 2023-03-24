@@ -37,7 +37,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
@@ -141,7 +141,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
             addView(view2, LayoutHelper.createFrame(-1, 36, 51, 14, 14, 14, 0));
             ImageView imageView = new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3286R.C3288drawable.smiles_inputsearch);
+            imageView.setImageResource(C3301R.C3303drawable.smiles_inputsearch);
             imageView.setColorFilter(new PorterDuffColorFilter(-8947849, PorterDuff.Mode.MULTIPLY));
             addView(imageView, LayoutHelper.createFrame(36, 36, 51, 16, 14, 0, 0));
             ImageView imageView2 = new ImageView(context);
@@ -188,11 +188,11 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
             this.searchEditText.setSingleLine(true);
             this.searchEditText.setImeOptions(268435459);
             if (i == 0) {
-                this.searchEditText.setHint(LocaleController.getString("SearchStickersHint", C3286R.string.SearchStickersHint));
+                this.searchEditText.setHint(LocaleController.getString("SearchStickersHint", C3301R.string.SearchStickersHint));
             } else if (i == 1) {
-                this.searchEditText.setHint(LocaleController.getString("SearchEmojiHint", C3286R.string.SearchEmojiHint));
+                this.searchEditText.setHint(LocaleController.getString("SearchEmojiHint", C3301R.string.SearchEmojiHint));
             } else if (i == 2) {
-                this.searchEditText.setHint(LocaleController.getString("SearchGifsTitle", C3286R.string.SearchGifsTitle));
+                this.searchEditText.setHint(LocaleController.getString("SearchGifsTitle", C3301R.string.SearchGifsTitle));
             }
             this.searchEditText.setCursorColor(-1);
             this.searchEditText.setCursorSize(AndroidUtilities.m50dp(20));
@@ -389,7 +389,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         MediaDataController.getInstance(this.currentAccount).loadRecents(0, false, true, false);
         MediaDataController.getInstance(this.currentAccount).loadRecents(1, false, true, false);
         MediaDataController.getInstance(this.currentAccount).loadRecents(2, false, true, false);
-        Drawable mutate = context.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-14342875, PorterDuff.Mode.MULTIPLY));
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.Components.StickerMasksAlert.2
@@ -531,7 +531,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         int i = this.backgroundPaddingLeft;
         viewGroup.setPadding(i, 0, i, 0);
         this.searchFieldHeight = AndroidUtilities.m50dp(64);
-        this.stickerIcons = new Drawable[]{Theme.createEmojiIconSelectorDrawable(context, C3286R.C3288drawable.stickers_recent, -11842741, -9520403), Theme.createEmojiIconSelectorDrawable(context, C3286R.C3288drawable.stickers_favorites, -11842741, -9520403)};
+        this.stickerIcons = new Drawable[]{Theme.createEmojiIconSelectorDrawable(context, C3301R.C3303drawable.stickers_recent, -11842741, -9520403), Theme.createEmojiIconSelectorDrawable(context, C3301R.C3303drawable.stickers_favorites, -11842741, -9520403)};
         MediaDataController.getInstance(this.currentAccount).checkStickers(0);
         MediaDataController.getInstance(this.currentAccount).checkStickers(1);
         MediaDataController.getInstance(this.currentAccount).checkFeaturedStickers();
@@ -796,7 +796,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         };
         this.emojiButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.emojiButton.setImageDrawable(Theme.createEmojiIconSelectorDrawable(context, C3286R.C3288drawable.smiles_tab_smiles, -1, -9520403));
+        this.emojiButton.setImageDrawable(Theme.createEmojiIconSelectorDrawable(context, C3301R.C3303drawable.smiles_tab_smiles, -1, -9520403));
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 21) {
             RippleDrawable rippleDrawable = (RippleDrawable) Theme.createSelectorDrawable(520093695);
@@ -824,7 +824,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         };
         this.stickersButton = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.stickersButton.setImageDrawable(Theme.createEmojiIconSelectorDrawable(context, C3286R.C3288drawable.smiles_tab_stickers, -1, -9520403));
+        this.stickersButton.setImageDrawable(Theme.createEmojiIconSelectorDrawable(context, C3301R.C3303drawable.smiles_tab_stickers, -1, -9520403));
         if (i2 >= 21) {
             RippleDrawable rippleDrawable2 = (RippleDrawable) Theme.createSelectorDrawable(520093695);
             Theme.setRippleDrawableForceSoftware(rippleDrawable2);
@@ -852,7 +852,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
             };
             this.masksButton = imageView3;
             imageView3.setScaleType(ImageView.ScaleType.CENTER);
-            this.masksButton.setImageDrawable(Theme.createEmojiIconSelectorDrawable(context, C3286R.C3288drawable.ic_masks_msk1, -1, -9520403));
+            this.masksButton.setImageDrawable(Theme.createEmojiIconSelectorDrawable(context, C3301R.C3303drawable.ic_masks_msk1, -1, -9520403));
             if (i2 >= 21) {
                 RippleDrawable rippleDrawable3 = (RippleDrawable) Theme.createSelectorDrawable(520093695);
                 Theme.setRippleDrawableForceSoftware(rippleDrawable3);
@@ -1184,13 +1184,13 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
             int i = this.stickersTabOffset;
             this.favTabBum = i;
             this.stickersTabOffset = i + 1;
-            this.stickersTab.addIconTab(1, this.stickerIcons[1]).setContentDescription(LocaleController.getString("FavoriteStickers", C3286R.string.FavoriteStickers));
+            this.stickersTab.addIconTab(1, this.stickerIcons[1]).setContentDescription(LocaleController.getString("FavoriteStickers", C3301R.string.FavoriteStickers));
         }
         if (!this.recentStickers[typeIndex(this.currentType)].isEmpty()) {
             int i2 = this.stickersTabOffset;
             this.recentTabBum = i2;
             this.stickersTabOffset = i2 + 1;
-            this.stickersTab.addIconTab(0, this.stickerIcons[0]).setContentDescription(LocaleController.getString("RecentStickers", C3286R.string.RecentStickers));
+            this.stickersTab.addIconTab(0, this.stickerIcons[0]).setContentDescription(LocaleController.getString("RecentStickers", C3301R.string.RecentStickers));
         }
         this.stickerSets[typeIndex(this.currentType)].clear();
         ArrayList<TLRPC$TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(this.currentAccount).getStickerSets(this.currentType);
@@ -1207,8 +1207,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
             if (closestPhotoSizeWithSize == null) {
                 closestPhotoSizeWithSize = tLRPC$Document;
             }
-            View addStickerTab = this.stickersTab.addStickerTab(closestPhotoSizeWithSize, tLRPC$Document, tLRPC$TL_messages_stickerSet2);
-            addStickerTab.setContentDescription(tLRPC$TL_messages_stickerSet2.set.title + ", " + LocaleController.getString("AccDescrStickerSet", C3286R.string.AccDescrStickerSet));
+            this.stickersTab.addStickerTab(closestPhotoSizeWithSize, tLRPC$Document, tLRPC$TL_messages_stickerSet2).setContentDescription(tLRPC$TL_messages_stickerSet2.set.title + ", " + LocaleController.getString("AccDescrStickerSet", C3301R.string.AccDescrStickerSet));
         }
         this.stickersTab.commitUpdate();
         this.stickersTab.updateTabStyles();
@@ -1279,7 +1278,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                 while (true) {
                     if (i2 < this.recentStickers[typeIndex(this.currentType)].size()) {
                         TLRPC$Document tLRPC$Document2 = this.recentStickers[typeIndex(this.currentType)].get(i2);
-                        if (tLRPC$Document2.dc_id == tLRPC$Document.dc_id && tLRPC$Document2.f1507id == tLRPC$Document.f1507id) {
+                        if (tLRPC$Document2.dc_id == tLRPC$Document.dc_id && tLRPC$Document2.f1508id == tLRPC$Document.f1508id) {
                             this.recentStickers[typeIndex(this.currentType)].remove(i2);
                             break;
                         }
@@ -1480,12 +1479,12 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                         StickerMasksAlert stickerMasksAlert3 = StickerMasksAlert.this;
                         if (obj != arrayListArr3[stickerMasksAlert3.typeIndex(stickerMasksAlert3.currentType)]) {
                             if (obj == StickerMasksAlert.this.favouriteStickers) {
-                                stickerSetNameCell.setText(LocaleController.getString("FavoriteStickers", C3286R.string.FavoriteStickers), 0);
+                                stickerSetNameCell.setText(LocaleController.getString("FavoriteStickers", C3301R.string.FavoriteStickers), 0);
                                 return;
                             }
                             return;
                         }
-                        stickerSetNameCell.setText(LocaleController.getString("RecentStickers", C3286R.string.RecentStickers), 0);
+                        stickerSetNameCell.setText(LocaleController.getString("RecentStickers", C3301R.string.RecentStickers), 0);
                         return;
                     }
                     TLRPC$StickerSet tLRPC$StickerSet = ((TLRPC$TL_messages_stickerSet) obj).set;
@@ -1535,7 +1534,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         /* JADX WARN: Removed duplicated region for block: B:31:0x00ff  */
         /* JADX WARN: Removed duplicated region for block: B:35:0x0114  */
         /* JADX WARN: Removed duplicated region for block: B:43:0x0147  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x016e A[ADDED_TO_REGION, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x016d A[ADDED_TO_REGION, SYNTHETIC] */
         /* JADX WARN: Removed duplicated region for block: B:63:0x0162 A[EDGE_INSN: B:63:0x0162->B:51:0x0162 ?: BREAK  , SYNTHETIC] */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
@@ -1544,7 +1543,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         */
         public void notifyDataSetChanged() {
             /*
-                Method dump skipped, instructions count: 376
+                Method dump skipped, instructions count: 375
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.StickerMasksAlert.StickersGridAdapter.notifyDataSetChanged():void");
@@ -1694,7 +1693,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         private HashMap<TLRPC$TL_messages_stickerSet, Integer> localPacksByName = new HashMap<>();
         private HashMap<ArrayList<TLRPC$Document>, String> emojiStickers = new HashMap<>();
         private ArrayList<ArrayList<TLRPC$Document>> emojiArrays = new ArrayList<>();
-        private Runnable searchRunnable = new RunnableC51991();
+        private Runnable searchRunnable = new RunnableC52141();
 
         static /* synthetic */ int access$5604(StickersSearchGridAdapter stickersSearchGridAdapter) {
             int i = stickersSearchGridAdapter.emojiSearchId + 1;
@@ -1705,8 +1704,8 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.StickerMasksAlert$StickersSearchGridAdapter$1 */
         /* loaded from: classes6.dex */
-        public class RunnableC51991 implements Runnable {
-            RunnableC51991() {
+        public class RunnableC52141 implements Runnable {
+            RunnableC52141() {
             }
 
             private void clear() {
@@ -1738,7 +1737,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                     Method dump skipped, instructions count: 808
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.StickerMasksAlert.StickersSearchGridAdapter.RunnableC51991.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.StickerMasksAlert.StickersSearchGridAdapter.RunnableC52141.run():void");
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -1776,7 +1775,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.StickerMasksAlert$StickersSearchGridAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StickerMasksAlert.StickersSearchGridAdapter.RunnableC51991.this.lambda$run$1(tLRPC$TL_messages_getStickers, tLObject, arrayList, longSparseArray);
+                        StickerMasksAlert.StickersSearchGridAdapter.RunnableC52141.this.lambda$run$1(tLRPC$TL_messages_getStickers, tLObject, arrayList, longSparseArray);
                     }
                 });
             }
@@ -1792,7 +1791,7 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                         int size2 = tLRPC$TL_messages_stickers.stickers.size();
                         for (int i = 0; i < size2; i++) {
                             TLRPC$Document tLRPC$Document = tLRPC$TL_messages_stickers.stickers.get(i);
-                            if (longSparseArray.indexOfKey(tLRPC$Document.f1507id) < 0) {
+                            if (longSparseArray.indexOfKey(tLRPC$Document.f1508id) < 0) {
                                 arrayList.add(tLRPC$Document);
                             }
                         }
@@ -1903,11 +1902,11 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                     };
                     ImageView imageView = new ImageView(this.context);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    imageView.setImageResource(C3286R.C3288drawable.stickers_empty);
+                    imageView.setImageResource(C3301R.C3303drawable.stickers_empty);
                     imageView.setColorFilter(new PorterDuffColorFilter(-7038047, PorterDuff.Mode.MULTIPLY));
                     frameLayout2.addView(imageView, LayoutHelper.createFrame(-2, -2, 17, 0, 0, 0, 50));
                     TextView textView = new TextView(this.context);
-                    textView.setText(LocaleController.getString("NoStickersFound", C3286R.string.NoStickersFound));
+                    textView.setText(LocaleController.getString("NoStickersFound", C3301R.string.NoStickersFound));
                     textView.setTextSize(1, 16.0f);
                     textView.setTextColor(-7038047);
                     frameLayout2.addView(textView, LayoutHelper.createFrame(-2, -2, 17, 0, 0, 0, 0));
@@ -1945,7 +1944,10 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
                 stickerEmojiCell.setSticker(tLRPC$Document2, null, this.cacheParent.get(i), this.positionToEmoji.get(i), false);
                 ArrayList[] arrayListArr2 = StickerMasksAlert.this.recentStickers;
                 StickerMasksAlert stickerMasksAlert2 = StickerMasksAlert.this;
-                stickerEmojiCell.setRecent((arrayListArr2[stickerMasksAlert2.typeIndex(stickerMasksAlert2.currentType)].contains(tLRPC$Document2) || StickerMasksAlert.this.favouriteStickers.contains(tLRPC$Document2)) ? true : true);
+                if (arrayListArr2[stickerMasksAlert2.typeIndex(stickerMasksAlert2.currentType)].contains(tLRPC$Document2) || StickerMasksAlert.this.favouriteStickers.contains(tLRPC$Document2)) {
+                    z = true;
+                }
+                stickerEmojiCell.setRecent(z);
                 return;
             }
             Integer num = null;
@@ -2010,88 +2012,94 @@ public class StickerMasksAlert extends BottomSheet implements NotificationCenter
             this.positionToRow.clear();
             this.cache.clear();
             this.positionToEmoji.clear();
+            int i2 = 0;
             this.totalItems = 0;
             int size = this.localPacks.size();
-            int i2 = !this.emojiArrays.isEmpty() ? 1 : 0;
-            int i3 = -1;
+            int i3 = !this.emojiArrays.isEmpty() ? 1 : 0;
             int i4 = -1;
             int i5 = 0;
-            while (i4 < size + i2) {
-                if (i4 == i3) {
+            int i6 = -1;
+            while (i6 < size + i3) {
+                if (i6 == i4) {
                     SparseArray<Object> sparseArray = this.cache;
-                    int i6 = this.totalItems;
-                    this.totalItems = i6 + 1;
-                    sparseArray.put(i6, "search");
+                    int i7 = this.totalItems;
+                    this.totalItems = i7 + 1;
+                    sparseArray.put(i7, "search");
                     i5++;
-                } else if (i4 < size) {
-                    TLRPC$TL_messages_stickerSet tLRPC$TL_messages_stickerSet = this.localPacks.get(i4);
+                } else if (i6 < size) {
+                    TLRPC$TL_messages_stickerSet tLRPC$TL_messages_stickerSet = this.localPacks.get(i6);
                     ArrayList<TLRPC$Document> arrayList = tLRPC$TL_messages_stickerSet.documents;
                     if (!arrayList.isEmpty()) {
                         int ceil = (int) Math.ceil(arrayList.size() / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow);
                         this.cache.put(this.totalItems, tLRPC$TL_messages_stickerSet);
                         this.positionToRow.put(this.totalItems, i5);
                         int size2 = arrayList.size();
-                        int i7 = 0;
-                        while (i7 < size2) {
-                            int i8 = i7 + 1;
-                            int i9 = this.totalItems + i8;
-                            int i10 = i5 + 1 + (i7 / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow);
-                            this.cache.put(i9, arrayList.get(i7));
-                            this.cacheParent.put(i9, tLRPC$TL_messages_stickerSet);
-                            this.positionToRow.put(i9, i10);
-                            i7 = i8;
+                        int i8 = i2;
+                        while (i8 < size2) {
+                            int i9 = i8 + 1;
+                            int i10 = this.totalItems + i9;
+                            int i11 = i5 + 1 + (i8 / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow);
+                            this.cache.put(i10, arrayList.get(i8));
+                            this.cacheParent.put(i10, tLRPC$TL_messages_stickerSet);
+                            this.positionToRow.put(i10, i11);
+                            i8 = i9;
                         }
-                        int i11 = ceil + 1;
-                        for (int i12 = 0; i12 < i11; i12++) {
-                            this.rowStartPack.put(i5 + i12, tLRPC$TL_messages_stickerSet);
+                        int i12 = ceil + 1;
+                        for (int i13 = i2; i13 < i12; i13++) {
+                            this.rowStartPack.put(i5 + i13, tLRPC$TL_messages_stickerSet);
                         }
                         this.totalItems += (ceil * StickerMasksAlert.this.stickersGridAdapter.stickersPerRow) + 1;
-                        i5 += i11;
+                        i5 += i12;
                     }
                 } else {
                     int size3 = this.emojiArrays.size();
                     String str = "";
-                    int i13 = 0;
-                    for (int i14 = 0; i14 < size3; i14++) {
+                    int i14 = i2;
+                    int i15 = i14;
+                    while (i14 < size3) {
                         ArrayList<TLRPC$Document> arrayList2 = this.emojiArrays.get(i14);
                         String str2 = this.emojiStickers.get(arrayList2);
                         if (str2 != null && !str.equals(str2)) {
-                            this.positionToEmoji.put(this.totalItems + i13, str2);
+                            this.positionToEmoji.put(this.totalItems + i15, str2);
                             str = str2;
                         }
                         int size4 = arrayList2.size();
-                        int i15 = 0;
-                        while (i15 < size4) {
-                            int i16 = this.totalItems + i13;
-                            int i17 = (i13 / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow) + i5;
-                            TLRPC$Document tLRPC$Document = arrayList2.get(i15);
-                            this.cache.put(i16, tLRPC$Document);
-                            int i18 = size;
+                        int i16 = i2;
+                        while (i16 < size4) {
+                            int i17 = this.totalItems + i15;
+                            int i18 = (i15 / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow) + i5;
+                            TLRPC$Document tLRPC$Document = arrayList2.get(i16);
+                            this.cache.put(i17, tLRPC$Document);
+                            int i19 = size;
                             TLRPC$TL_messages_stickerSet stickerSetById = MediaDataController.getInstance(StickerMasksAlert.this.currentAccount).getStickerSetById(MediaDataController.getStickerSetId(tLRPC$Document));
                             if (stickerSetById != null) {
-                                this.cacheParent.put(i16, stickerSetById);
+                                this.cacheParent.put(i17, stickerSetById);
                             }
-                            this.positionToRow.put(i16, i17);
-                            i13++;
+                            this.positionToRow.put(i17, i18);
                             i15++;
-                            size = i18;
+                            i16++;
+                            size = i19;
                         }
+                        i14++;
+                        i2 = 0;
                     }
                     i = size;
-                    int ceil2 = (int) Math.ceil(i13 / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow);
-                    for (int i19 = 0; i19 < ceil2; i19++) {
-                        this.rowStartPack.put(i5 + i19, Integer.valueOf(i13));
+                    int ceil2 = (int) Math.ceil(i15 / StickerMasksAlert.this.stickersGridAdapter.stickersPerRow);
+                    for (int i20 = 0; i20 < ceil2; i20++) {
+                        this.rowStartPack.put(i5 + i20, Integer.valueOf(i15));
                     }
                     this.totalItems += StickerMasksAlert.this.stickersGridAdapter.stickersPerRow * ceil2;
                     i5 += ceil2;
-                    i4++;
+                    i6++;
                     size = i;
-                    i3 = -1;
+                    i2 = 0;
+                    i4 = -1;
                 }
                 i = size;
-                i4++;
+                i6++;
                 size = i;
-                i3 = -1;
+                i2 = 0;
+                i4 = -1;
             }
             super.notifyDataSetChanged();
         }

@@ -81,7 +81,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 break;
             }
         }
-        return TuplesKt.m100to(selectableToken, (WalletCryptoTokensSettingsTokenState) obj);
+        return TuplesKt.m99to(selectableToken, (WalletCryptoTokensSettingsTokenState) obj);
     }
 
     public static /* synthetic */ void saveSettings$default(WalletHomeCryptoTokensSettingsPresenter walletHomeCryptoTokensSettingsPresenter, boolean z, int i, Object obj) {
@@ -161,11 +161,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
     }
 
     private final void resetTokensPrefSettings() {
+        CryptoPreferenceHelper cryptoPreferenceHelper = this.cryptoPreferenceHelper;
         WalletHomeCryptoTokensSettingsFragment.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletHomeCryptoTokensSettingsFragment.ScreenType.Binance) {
-            this.cryptoPreferenceHelper.resetBinanceTokensSettings();
+            cryptoPreferenceHelper.resetBinanceTokensSettings();
         } else if (screenType instanceof WalletHomeCryptoTokensSettingsFragment.ScreenType.Crypto) {
-            this.cryptoPreferenceHelper.resetTokensSettings();
+            cryptoPreferenceHelper.resetTokensSettingsByNetwork(this.currentNetworkType);
         }
     }
 

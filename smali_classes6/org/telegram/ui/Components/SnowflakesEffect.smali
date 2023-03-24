@@ -364,11 +364,11 @@
 
     iget v5, v2, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->velocity:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     long-to-float v6, p1
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     const/high16 v7, 0x43fa0000    # 500.0f
 
@@ -383,9 +383,9 @@
 
     iget v4, v2, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->vy:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     div-float/2addr v4, v7
 
@@ -439,7 +439,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -468,7 +468,7 @@
 
     if-nez p2, :cond_2
 
-    const/16 v2, 0x64
+    move v2, v0
 
     goto :goto_1
 
@@ -495,7 +495,7 @@
 
     if-ge v3, v2, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     if-ge v3, p2, :cond_8
@@ -533,7 +533,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 188
     :goto_4
@@ -549,7 +549,7 @@
 
     int-to-float v6, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     int-to-float v6, v4
 
@@ -576,7 +576,7 @@
 
     int-to-float v4, v8
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     add-float/2addr v6, v7
 
@@ -597,7 +597,7 @@
 
     int-to-double v9, v4
 
-    mul-double v9, v9, v7
+    mul-double/2addr v9, v7
 
     .line 192
     invoke-static {v9, v10}, Ljava/lang/Math;->cos(D)D
@@ -676,7 +676,7 @@
 
     const v5, 0x3f99999a    # 1.2f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v8, Lorg/telegram/ui/Components/SnowflakesEffect$Particle;->scale:F
 
@@ -739,7 +739,7 @@
 
     const/high16 v6, 0x40800000    # 4.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v5, v4
 

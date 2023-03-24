@@ -551,7 +551,7 @@
 
     invoke-static {v0, v2, v3}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 204
     :goto_0
@@ -699,12 +699,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 386
     :goto_0
@@ -897,7 +897,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_4
     invoke-static {v5, v9}, Landroid/opengl/GLES20;->glUniform1f(IF)V
@@ -1104,15 +1104,15 @@
 
     move/from16 v5, p7
 
-    const/16 v20, 0x1
+    move/from16 v20, v6
 
     move/from16 v6, p8
 
-    const/4 v15, 0x0
+    move v15, v7
 
     move/from16 v7, p11
 
-    const v15, 0x8d65
+    move v15, v8
 
     move/from16 v8, p12
 
@@ -1209,11 +1209,11 @@
 
     move/from16 v6, p8
 
-    const/4 v15, 0x5
+    move v15, v7
 
     move/from16 v7, p11
 
-    const/16 v15, 0xde1
+    move v15, v8
 
     move/from16 v8, p12
 
@@ -1323,9 +1323,9 @@
     goto :goto_5
 
     :cond_5
-    const/4 v12, 0x5
+    move v15, v8
 
-    const v15, 0x8d65
+    move v12, v9
 
     const/4 v1, 0x0
 
@@ -1499,21 +1499,21 @@
 
     move/from16 v4, p5
 
-    const/16 v20, 0x1
+    move/from16 v20, v5
 
     move/from16 v5, p7
 
     move/from16 v6, p8
 
-    const/4 v14, 0x0
+    move v14, v7
 
     move/from16 v7, p11
 
-    const/16 v15, 0xde1
+    move v15, v8
 
     move/from16 v8, p12
 
-    const/4 v14, 0x3
+    move v14, v9
 
     move/from16 v9, v17
 
@@ -1566,7 +1566,7 @@
     .line 338
     invoke-static {v2, v1, v0}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_1
     if-ge v7, v14, :cond_1
@@ -1637,11 +1637,11 @@
 
     move/from16 v7, p11
 
-    const v14, 0x8ce0
+    move v14, v8
 
     move/from16 v8, p12
 
-    const v14, 0x8d40
+    move v14, v9
 
     move v9, v12
 
@@ -1749,9 +1749,9 @@
     goto :goto_9
 
     :cond_7
-    const/4 v14, 0x3
+    move v15, v8
 
-    const/16 v15, 0xde1
+    move v14, v9
 
     const/4 v1, 0x2
 
@@ -1808,7 +1808,7 @@
     .line 373
     invoke-static {v1, v2, v0}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_8
     if-ge v7, v14, :cond_9
@@ -2001,7 +2001,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 449
     :goto_0
@@ -2011,7 +2011,7 @@
 
     if-ge v1, v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 450
     :goto_1

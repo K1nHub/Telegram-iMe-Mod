@@ -298,18 +298,18 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
         public final boolean contactSelected;
 
         /* renamed from: id */
-        public final String f377id;
+        public final String f378id;
 
         OnRecipientSelectedCommand(TwitterSearchView$$State twitterSearchView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f377id = str;
+            this.f378id = str;
             this.address = str2;
             this.contactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(TwitterSearchView twitterSearchView) {
-            twitterSearchView.onRecipientSelected(this.f377id, this.address, this.contactSelected);
+            twitterSearchView.onRecipientSelected(this.f378id, this.address, this.contactSelected);
         }
     }
 

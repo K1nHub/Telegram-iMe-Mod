@@ -120,7 +120,7 @@ public class SecT131Field {
         int i3 = 33;
         do {
             int i4 = (int) (j >>> i3);
-            long j5 = (jArr2[(i4 >>> 9) & 7] << 9) ^ ((jArr2[i4 & 7] ^ (jArr2[(i4 >>> 3) & 7] << 3)) ^ (jArr2[(i4 >>> 6) & 7] << 6));
+            long j5 = ((jArr2[i4 & 7] ^ (jArr2[(i4 >>> 3) & 7] << 3)) ^ (jArr2[(i4 >>> 6) & 7] << 6)) ^ (jArr2[(i4 >>> 9) & 7] << 9);
             j3 ^= j5 << i3;
             j4 ^= j5 >>> (-i3);
             i3 -= 12;

@@ -200,12 +200,12 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v5, 0x5
+    move v5, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x3
+    move v5, v8
 
     :goto_1
     or-int/lit8 v5, v5, 0x10
@@ -230,12 +230,12 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v11, 0x5
+    move v11, v7
 
     goto :goto_2
 
     :cond_2
-    const/4 v11, 0x3
+    move v11, v8
 
     :goto_2
     or-int/lit8 v11, v11, 0x30
@@ -244,7 +244,7 @@
 
     if-eqz v5, :cond_3
 
-    const/16 v13, 0x46
+    move v13, v12
 
     goto :goto_3
 
@@ -261,7 +261,7 @@
     goto :goto_4
 
     :cond_4
-    const/16 v5, 0x46
+    move v5, v12
 
     :goto_4
     const/4 v15, 0x0
@@ -316,12 +316,12 @@
 
     if-eqz v5, :cond_6
 
-    const/4 v5, 0x5
+    move v5, v7
 
     goto :goto_6
 
     :cond_6
-    const/4 v5, 0x3
+    move v5, v8
 
     :goto_6
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
@@ -366,12 +366,12 @@
 
     if-eqz v6, :cond_7
 
-    const/4 v11, 0x5
+    move v11, v7
 
     goto :goto_7
 
     :cond_7
-    const/4 v11, 0x3
+    move v11, v8
 
     :goto_7
     or-int/lit8 v11, v11, 0x30
@@ -380,7 +380,7 @@
 
     if-eqz v6, :cond_8
 
-    const/16 v13, 0x40
+    move v13, v12
 
     goto :goto_8
 
@@ -395,7 +395,7 @@
     goto :goto_9
 
     :cond_9
-    const/16 v3, 0x40
+    move v3, v12
 
     :goto_9
     const/4 v15, 0x0
@@ -439,7 +439,7 @@
 
     if-eqz v2, :cond_a
 
-    const/4 v7, 0x3
+    move v7, v8
 
     :cond_a
     or-int/lit8 v11, v7, 0x10
@@ -629,7 +629,7 @@
     .line 387
     iget v2, p0, Lorg/telegram/ui/Cells/TextCheckCell;->animationProgress:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 388
     iget-object v2, p0, Lorg/telegram/ui/Cells/TextCheckCell;->checkBox:Lorg/telegram/ui/Components/Switch;
@@ -676,7 +676,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     return v2
@@ -842,7 +842,7 @@
     .line 436
     iget v3, p0, Lorg/telegram/ui/Cells/TextCheckCell;->animationProgress:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     int-to-float v2, v2
 
@@ -871,8 +871,6 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v4, 0x0
-
     goto :goto_0
 
     :cond_2
@@ -880,9 +878,9 @@
 
     int-to-float v2, v0
 
+    :goto_0
     move v4, v2
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -930,8 +928,6 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v5, 0x0
-
     goto :goto_1
 
     :cond_5
@@ -941,9 +937,9 @@
 
     int-to-float v2, v0
 
+    :goto_1
     move v5, v2
 
-    :goto_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -1229,7 +1225,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x2
+    move v1, v2
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Switch;->setOverrideColor(I)V
@@ -1533,7 +1529,7 @@
 
     if-eqz v1, :cond_1
 
-    const/16 v1, 0x46
+    move v1, v2
 
     goto :goto_1
 
@@ -1732,12 +1728,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v0
 
     goto :goto_0
 
     :cond_0
-    const/high16 v6, 0x3f000000    # 0.5f
+    move v6, v1
 
     :goto_0
     const/4 v7, 0x0
@@ -1759,12 +1755,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v0
 
     goto :goto_1
 
     :cond_1
-    const/high16 v6, 0x3f000000    # 0.5f
+    move v6, v1
 
     :goto_1
     aput v6, v5, v7
@@ -1796,7 +1792,7 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_2
     aput v0, v4, v7
@@ -1815,12 +1811,12 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_3
 
     :cond_4
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_3
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1830,12 +1826,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_4
 
     :cond_5
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_4
     invoke-virtual {p2, v2}, Landroid/view/View;->setAlpha(F)V
@@ -1857,7 +1853,7 @@
     goto :goto_5
 
     :cond_6
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_5
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1948,7 +1944,7 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_1
 
@@ -2327,12 +2323,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_0
     or-int/lit8 v1, v1, 0x10
@@ -2355,12 +2351,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v6, 0x5
+    move v6, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_1
     or-int/lit8 v6, v6, 0x30
@@ -2369,7 +2365,7 @@
 
     if-eqz v1, :cond_3
 
-    const/16 v8, 0x46
+    move v8, v7
 
     goto :goto_2
 
@@ -2386,7 +2382,7 @@
     goto :goto_3
 
     :cond_4
-    const/16 v1, 0x46
+    move v1, v7
 
     :goto_3
     const/4 v10, 0x0
@@ -2410,12 +2406,12 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_4
 
     :cond_5
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_4
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -2436,12 +2432,12 @@
 
     if-eqz v1, :cond_6
 
-    const/4 v6, 0x5
+    move v6, v2
 
     goto :goto_5
 
     :cond_6
-    const/4 v6, 0x3
+    move v6, v3
 
     :goto_5
     or-int/lit8 v6, v6, 0x30
@@ -2450,7 +2446,7 @@
 
     if-eqz v1, :cond_7
 
-    const/16 v8, 0x40
+    move v8, v7
 
     goto :goto_6
 
@@ -2467,7 +2463,7 @@
     goto :goto_7
 
     :cond_8
-    const/16 v1, 0x40
+    move v1, v7
 
     :goto_7
     const/4 v10, 0x0
@@ -2500,7 +2496,7 @@
 
     if-eqz v1, :cond_9
 
-    const/4 v2, 0x3
+    move v2, v3
 
     :cond_9
     or-int/lit8 v6, v2, 0x10

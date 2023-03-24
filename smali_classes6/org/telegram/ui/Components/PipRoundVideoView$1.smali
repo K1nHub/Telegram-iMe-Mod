@@ -55,7 +55,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -111,7 +111,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -428,7 +428,7 @@
 
     div-float/2addr v3, p1
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v6, v3
 
@@ -491,7 +491,7 @@
 
     div-float/2addr v3, p1
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v6, v3
 

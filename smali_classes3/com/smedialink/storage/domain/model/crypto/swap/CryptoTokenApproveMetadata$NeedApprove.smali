@@ -32,13 +32,13 @@
 
 .field private final tokenContractAddress:Ljava/lang/String;
 
-.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
 .field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+.method private constructor <init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
     iput-object p3, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->value:Ljava/lang/String;
 
     .line 28
-    iput-object p4, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iput-object p4, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     .line 29
     iput-object p5, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->tokenContractAddress:Ljava/lang/String;
@@ -70,10 +70,10 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p7}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct/range {p0 .. p7}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;-><init>(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
     return-void
 .end method
@@ -125,11 +125,11 @@
     return-object v0
 .end method
 
-.method public getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.method public getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
     .locals 1
 
     .line 28
-    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$NeedApprove;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     return-object v0
 .end method

@@ -10,6 +10,11 @@ public final class zzq implements Parcelable.Creator<zzp> {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ zzp createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = true;
+        boolean z2 = true;
+        boolean z3 = false;
+        int i = 0;
+        boolean z4 = false;
         long j = 0;
         long j2 = 0;
         long j3 = 0;
@@ -27,11 +32,6 @@ public final class zzq implements Parcelable.Creator<zzp> {
         String str8 = null;
         String str9 = "";
         long j6 = -2147483648L;
-        boolean z = true;
-        boolean z2 = false;
-        int i = 0;
-        boolean z3 = true;
-        boolean z4 = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {
@@ -60,7 +60,7 @@ public final class zzq implements Parcelable.Creator<zzp> {
                     z = SafeParcelReader.readBoolean(parcel, readHeader);
                     break;
                 case 10:
-                    z2 = SafeParcelReader.readBoolean(parcel, readHeader);
+                    z3 = SafeParcelReader.readBoolean(parcel, readHeader);
                     break;
                 case 11:
                     j6 = SafeParcelReader.readLong(parcel, readHeader);
@@ -78,7 +78,7 @@ public final class zzq implements Parcelable.Creator<zzp> {
                     i = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 16:
-                    z3 = SafeParcelReader.readBoolean(parcel, readHeader);
+                    z2 = SafeParcelReader.readBoolean(parcel, readHeader);
                     break;
                 case 17:
                 case 20:
@@ -109,7 +109,7 @@ public final class zzq implements Parcelable.Creator<zzp> {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzp(str, str2, str3, str4, j, j2, str5, z, z2, j6, str6, j3, j4, i, z3, z4, str7, bool, j5, arrayList, str8, str9);
+        return new zzp(str, str2, str3, str4, j, j2, str5, z, z3, j6, str6, j3, j4, i, z2, z4, str7, bool, j5, arrayList, str8, str9);
     }
 
     @Override // android.os.Parcelable.Creator

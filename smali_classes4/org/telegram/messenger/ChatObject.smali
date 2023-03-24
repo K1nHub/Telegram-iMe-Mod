@@ -101,7 +101,7 @@
 
     const/4 v0, 0x4
 
-    .line 1770
+    .line 1774
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -112,7 +112,7 @@
 .method public static canAddBotsToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 3
 
-    .line 1856
+    .line 1860
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -121,7 +121,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1857
+    .line 1861
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v0, :cond_3
@@ -146,7 +146,7 @@
     :cond_1
     return v1
 
-    .line 1861
+    .line 1865
     :cond_2
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
@@ -165,7 +165,7 @@
 
     const/4 v0, 0x3
 
-    .line 1833
+    .line 1837
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -178,7 +178,7 @@
 
     const/4 v0, 0x2
 
-    .line 1774
+    .line 1778
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -191,7 +191,7 @@
 
     const/4 v0, 0x1
 
-    .line 1766
+    .line 1770
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -204,7 +204,7 @@
 
     const/16 v0, 0xf
 
-    .line 1873
+    .line 1877
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -226,7 +226,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 1892
+    .line 1896
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -247,7 +247,7 @@
 
     if-eqz p0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     return v0
@@ -262,7 +262,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1895
+    .line 1899
     iget v2, p2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I
 
     if-ne v2, v1, :cond_0
@@ -272,7 +272,7 @@
     :cond_0
     const/16 v2, 0xd
 
-    .line 1899
+    .line 1903
     invoke-static {p1, v2}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -303,7 +303,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_0
 
@@ -332,7 +332,7 @@
     if-eqz p0, :cond_3
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_3
     return v0
@@ -343,7 +343,7 @@
 
     const/16 v0, 0xe
 
-    .line 1778
+    .line 1782
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -354,7 +354,7 @@
 .method public static canManageTopic(ILorg/telegram/tgnet/TLRPC$Chat;I)Z
     .locals 1
 
-    .line 1884
+    .line 1888
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->canManageTopics(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -385,7 +385,7 @@
 .method public static canManageTopic(ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)Z
     .locals 0
 
-    .line 1881
+    .line 1885
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->canManageTopics(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
@@ -418,7 +418,7 @@
 
     const/16 v0, 0xf
 
-    .line 1877
+    .line 1881
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -431,7 +431,7 @@
 
     const/4 v0, 0x0
 
-    .line 1869
+    .line 1873
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result v1
@@ -468,7 +468,7 @@
 
     const/4 v0, 0x5
 
-    .line 1829
+    .line 1833
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -540,7 +540,7 @@
 .method public static canSendAsPeers(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 1
 
-    .line 1733
+    .line 1737
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -582,7 +582,7 @@
 
     const/16 v0, 0x13
 
-    .line 1805
+    .line 1809
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -595,7 +595,7 @@
 
     const/16 v0, 0x9
 
-    .line 1786
+    .line 1790
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -647,7 +647,7 @@
 
     const/4 v0, 0x6
 
-    .line 1821
+    .line 1825
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -660,7 +660,7 @@
 
     const/16 v0, 0x12
 
-    .line 1801
+    .line 1805
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -673,7 +673,7 @@
 
     const/16 v0, 0x10
 
-    .line 1793
+    .line 1797
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -686,7 +686,7 @@
 
     const/16 v0, 0x16
 
-    .line 1825
+    .line 1829
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -699,7 +699,7 @@
 
     const/16 v0, 0xa
 
-    .line 1817
+    .line 1821
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -712,7 +712,7 @@
 
     const/16 v0, 0x15
 
-    .line 1813
+    .line 1817
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -725,7 +725,7 @@
 
     const/16 v0, 0x8
 
-    .line 1782
+    .line 1786
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -738,7 +738,7 @@
 
     const/16 v0, 0x11
 
-    .line 1797
+    .line 1801
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -751,7 +751,7 @@
 
     const/16 v0, 0x14
 
-    .line 1809
+    .line 1813
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->canUserDoAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p0
@@ -768,7 +768,7 @@
 
     return v0
 
-    .line 1690
+    .line 1694
     :cond_0
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
@@ -778,7 +778,7 @@
 
     return v0
 
-    .line 1693
+    .line 1697
     :cond_1
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -792,7 +792,7 @@
 
     return v2
 
-    .line 1696
+    .line 1700
     :cond_2
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->isBannableAction(I)Z
 
@@ -800,7 +800,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 1697
+    .line 1701
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz v1, :cond_3
@@ -813,7 +813,7 @@
 
     return v0
 
-    .line 1700
+    .line 1704
     :cond_3
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->default_banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -861,7 +861,7 @@
     :cond_5
     if-eqz v1, :cond_7
 
-    .line 1712
+    .line 1716
     invoke-static {v1, p1}, Lorg/telegram/messenger/ChatObject;->getBannedRight(Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;I)Z
 
     move-result p0
@@ -887,7 +887,7 @@
 
     return v0
 
-    .line 1639
+    .line 1643
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
@@ -897,7 +897,7 @@
 
     return v2
 
-    .line 1642
+    .line 1646
     :cond_1
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
@@ -925,65 +925,65 @@
 
     packed-switch p1, :pswitch_data_0
 
-    const/4 p0, 0x0
+    move p0, v0
 
     goto :goto_0
 
-    .line 1649
+    .line 1653
     :pswitch_0
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_topics:Z
 
     goto :goto_0
 
-    .line 1673
+    .line 1677
     :pswitch_1
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->manage_call:Z
 
     goto :goto_0
 
-    .line 1667
+    .line 1671
     :pswitch_2
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->delete_messages:Z
 
     goto :goto_0
 
-    .line 1664
+    .line 1668
     :pswitch_3
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->edit_messages:Z
 
     goto :goto_0
 
-    .line 1661
+    .line 1665
     :cond_2
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->post_messages:Z
 
     goto :goto_0
 
-    .line 1658
+    .line 1662
     :cond_3
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->add_admins:Z
 
     goto :goto_0
 
-    .line 1655
+    .line 1659
     :cond_4
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->invite_users:Z
 
     goto :goto_0
 
-    .line 1670
+    .line 1674
     :cond_5
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->ban_users:Z
 
     goto :goto_0
 
-    .line 1652
+    .line 1656
     :cond_6
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->change_info:Z
 
     goto :goto_0
 
-    .line 1646
+    .line 1650
     :cond_7
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;->pin_messages:Z
 
@@ -1007,7 +1007,7 @@
 .method public static canWriteToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 1
 
-    .line 1930
+    .line 1934
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -1406,7 +1406,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 1573
+    .line 1577
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_gifs:Z
 
     return p0
@@ -1416,7 +1416,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 1576
+    .line 1580
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_games:Z
 
     return p0
@@ -1426,7 +1426,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 1579
+    .line 1583
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_inline:Z
 
     return p0
@@ -1448,103 +1448,103 @@
 
     return v0
 
-    .line 1616
+    .line 1620
     :pswitch_0
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_plain:Z
 
     return p0
 
-    .line 1614
+    .line 1618
     :pswitch_1
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_roundvideos:Z
 
     return p0
 
-    .line 1612
+    .line 1616
     :pswitch_2
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_voices:Z
 
     return p0
 
-    .line 1610
+    .line 1614
     :pswitch_3
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_docs:Z
 
     return p0
 
-    .line 1608
+    .line 1612
     :pswitch_4
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_audios:Z
 
     return p0
 
-    .line 1606
+    .line 1610
     :pswitch_5
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_videos:Z
 
     return p0
 
-    .line 1604
+    .line 1608
     :pswitch_6
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_photos:Z
 
     return p0
 
-    .line 1602
+    .line 1606
     :pswitch_7
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->manage_topics:Z
 
     return p0
 
-    .line 1600
+    .line 1604
     :pswitch_8
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->view_messages:Z
 
     return p0
 
-    .line 1598
+    .line 1602
     :pswitch_9
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_polls:Z
 
     return p0
 
-    .line 1596
+    .line 1600
     :pswitch_a
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->embed_links:Z
 
     return p0
 
-    .line 1594
+    .line 1598
     :pswitch_b
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_stickers:Z
 
     return p0
 
-    .line 1592
+    .line 1596
     :pswitch_c
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
 
     return p0
 
-    .line 1590
+    .line 1594
     :pswitch_d
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_messages:Z
 
     return p0
 
-    .line 1588
+    .line 1592
     :cond_4
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
     return p0
 
-    .line 1586
+    .line 1590
     :cond_5
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
 
     return p0
 
-    .line 1584
+    .line 1588
     :cond_6
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
@@ -1578,7 +1578,7 @@
 .method public static getBannedRightsString(Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;)Ljava/lang/String;
     .locals 2
 
-    .line 1935
+    .line 1939
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1595,7 +1595,7 @@
 
     move-result-object v0
 
-    .line 1936
+    .line 1940
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1610,7 +1610,7 @@
 
     move-result-object v0
 
-    .line 1937
+    .line 1941
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1625,7 +1625,7 @@
 
     move-result-object v0
 
-    .line 1938
+    .line 1942
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1640,7 +1640,7 @@
 
     move-result-object v0
 
-    .line 1939
+    .line 1943
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1655,7 +1655,7 @@
 
     move-result-object v0
 
-    .line 1940
+    .line 1944
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1670,7 +1670,7 @@
 
     move-result-object v0
 
-    .line 1941
+    .line 1945
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1685,7 +1685,7 @@
 
     move-result-object v0
 
-    .line 1942
+    .line 1946
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1700,7 +1700,7 @@
 
     move-result-object v0
 
-    .line 1943
+    .line 1947
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1715,7 +1715,7 @@
 
     move-result-object v0
 
-    .line 1944
+    .line 1948
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1730,7 +1730,7 @@
 
     move-result-object v0
 
-    .line 1945
+    .line 1949
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1745,7 +1745,7 @@
 
     move-result-object v0
 
-    .line 1946
+    .line 1950
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1760,7 +1760,7 @@
 
     move-result-object v0
 
-    .line 1947
+    .line 1951
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1775,7 +1775,7 @@
 
     move-result-object v0
 
-    .line 1948
+    .line 1952
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1790,7 +1790,7 @@
 
     move-result-object v0
 
-    .line 1949
+    .line 1953
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1805,7 +1805,7 @@
 
     move-result-object v0
 
-    .line 1950
+    .line 1954
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1820,7 +1820,7 @@
 
     move-result-object v0
 
-    .line 1951
+    .line 1955
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1835,7 +1835,7 @@
 
     move-result-object v0
 
-    .line 1952
+    .line 1956
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1850,7 +1850,7 @@
 
     move-result-object v0
 
-    .line 1953
+    .line 1957
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1865,7 +1865,7 @@
 
     move-result-object v0
 
-    .line 1954
+    .line 1958
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1880,7 +1880,7 @@
 
     move-result-object v0
 
-    .line 1955
+    .line 1959
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1901,7 +1901,7 @@
 .method public static getParticipantVolume(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;)I
     .locals 1
 
-    .line 1518
+    .line 1522
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->flags:I
 
     and-int/lit16 v0, v0, 0x80
@@ -1922,7 +1922,7 @@
 .method public static getPhoto(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$ChatPhoto;
     .locals 1
 
-    .line 1964
+    .line 1968
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->hasPhoto(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -1945,7 +1945,7 @@
 
     const/4 v0, 0x0
 
-    .line 1968
+    .line 1972
     invoke-static {p0, v0}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;Z)Ljava/lang/String;
 
     move-result-object p0
@@ -1962,7 +1962,7 @@
 
     return-object v0
 
-    .line 1975
+    .line 1979
     :cond_0
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
@@ -1974,12 +1974,12 @@
 
     if-nez p1, :cond_1
 
-    .line 1976
+    .line 1980
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
     return-object p0
 
-    .line 1978
+    .line 1982
     :cond_1
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
@@ -1987,7 +1987,7 @@
 
     const/4 v1, 0x0
 
-    .line 1979
+    .line 1983
     :goto_0
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
@@ -1997,7 +1997,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 1980
+    .line 1984
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2008,7 +2008,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1981
+    .line 1985
     iget-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$TL_username;->active:Z
 
     if-eqz v3, :cond_2
@@ -2029,7 +2029,7 @@
 
     if-nez v3, :cond_4
 
-    .line 1982
+    .line 1986
     iget-object p0, v2, Lorg/telegram/tgnet/TLRPC$TL_username;->username:Ljava/lang/String;
 
     return-object p0
@@ -2039,7 +2039,7 @@
 
     goto :goto_0
 
-    .line 1986
+    .line 1990
     :cond_5
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
@@ -2061,7 +2061,7 @@
 
     if-gtz p1, :cond_7
 
-    .line 1987
+    .line 1991
     :cond_6
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
@@ -2084,7 +2084,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 2016
+    .line 2020
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2093,7 +2093,7 @@
 
     goto :goto_0
 
-    .line 2018
+    .line 2022
     :cond_0
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2103,7 +2103,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2019
+    .line 2023
     sget p0, Lorg/telegram/messenger/R$string;->AttachGifRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2116,7 +2116,7 @@
 
     return-object p0
 
-    .line 2021
+    .line 2025
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->AttachGifRestricted:I
 
@@ -2142,7 +2142,7 @@
 
     return-object p0
 
-    .line 2017
+    .line 2021
     :cond_2
     :goto_0
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachGifRestricted:I
@@ -2162,7 +2162,7 @@
 
     if-eqz p0, :cond_6
 
-    .line 2024
+    .line 2028
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2171,7 +2171,7 @@
 
     goto :goto_1
 
-    .line 2026
+    .line 2030
     :cond_4
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2181,7 +2181,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2027
+    .line 2031
     sget p0, Lorg/telegram/messenger/R$string;->AttachStickersRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2194,7 +2194,7 @@
 
     return-object p0
 
-    .line 2029
+    .line 2033
     :cond_5
     sget p1, Lorg/telegram/messenger/R$string;->AttachStickersRestricted:I
 
@@ -2220,7 +2220,7 @@
 
     return-object p0
 
-    .line 2025
+    .line 2029
     :cond_6
     :goto_1
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachStickersRestricted:I
@@ -2240,7 +2240,7 @@
 
     if-eqz p0, :cond_a
 
-    .line 2032
+    .line 2036
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2249,7 +2249,7 @@
 
     goto :goto_2
 
-    .line 2034
+    .line 2038
     :cond_8
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2259,7 +2259,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 2035
+    .line 2039
     sget p0, Lorg/telegram/messenger/R$string;->AttachPhotoRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2272,7 +2272,7 @@
 
     return-object p0
 
-    .line 2037
+    .line 2041
     :cond_9
     sget p1, Lorg/telegram/messenger/R$string;->AttachPhotoRestricted:I
 
@@ -2298,7 +2298,7 @@
 
     return-object p0
 
-    .line 2033
+    .line 2037
     :cond_a
     :goto_2
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachPhotoRestricted:I
@@ -2318,7 +2318,7 @@
 
     if-eqz p0, :cond_e
 
-    .line 2040
+    .line 2044
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2327,7 +2327,7 @@
 
     goto :goto_3
 
-    .line 2042
+    .line 2046
     :cond_c
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2337,7 +2337,7 @@
 
     if-eqz p1, :cond_d
 
-    .line 2043
+    .line 2047
     sget p0, Lorg/telegram/messenger/R$string;->AttachVideoRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2350,7 +2350,7 @@
 
     return-object p0
 
-    .line 2045
+    .line 2049
     :cond_d
     sget p1, Lorg/telegram/messenger/R$string;->AttachVideoRestricted:I
 
@@ -2376,7 +2376,7 @@
 
     return-object p0
 
-    .line 2041
+    .line 2045
     :cond_e
     :goto_3
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachVideoRestricted:I
@@ -2396,7 +2396,7 @@
 
     if-eqz p0, :cond_12
 
-    .line 2048
+    .line 2052
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2405,7 +2405,7 @@
 
     goto :goto_4
 
-    .line 2050
+    .line 2054
     :cond_10
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2415,7 +2415,7 @@
 
     if-eqz p1, :cond_11
 
-    .line 2051
+    .line 2055
     sget p0, Lorg/telegram/messenger/R$string;->AttachDocumentsRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2428,7 +2428,7 @@
 
     return-object p0
 
-    .line 2053
+    .line 2057
     :cond_11
     sget p1, Lorg/telegram/messenger/R$string;->AttachDocumentsRestricted:I
 
@@ -2454,7 +2454,7 @@
 
     return-object p0
 
-    .line 2049
+    .line 2053
     :cond_12
     :goto_4
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachDocumentsRestricted:I
@@ -2474,7 +2474,7 @@
 
     if-eqz p0, :cond_16
 
-    .line 2056
+    .line 2060
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2483,7 +2483,7 @@
 
     goto :goto_5
 
-    .line 2058
+    .line 2062
     :cond_14
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2493,7 +2493,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 2059
+    .line 2063
     sget p0, Lorg/telegram/messenger/R$string;->AttachMediaRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2506,7 +2506,7 @@
 
     return-object p0
 
-    .line 2061
+    .line 2065
     :cond_15
     sget p1, Lorg/telegram/messenger/R$string;->AttachMediaRestricted:I
 
@@ -2532,7 +2532,7 @@
 
     return-object p0
 
-    .line 2057
+    .line 2061
     :cond_16
     :goto_5
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachMediaRestricted:I
@@ -2552,7 +2552,7 @@
 
     if-eqz p0, :cond_1a
 
-    .line 2064
+    .line 2068
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2561,7 +2561,7 @@
 
     goto :goto_6
 
-    .line 2066
+    .line 2070
     :cond_18
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2571,7 +2571,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 2067
+    .line 2071
     sget p0, Lorg/telegram/messenger/R$string;->AttachAudioRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2584,7 +2584,7 @@
 
     return-object p0
 
-    .line 2069
+    .line 2073
     :cond_19
     sget p1, Lorg/telegram/messenger/R$string;->AttachAudioRestricted:I
 
@@ -2610,7 +2610,7 @@
 
     return-object p0
 
-    .line 2065
+    .line 2069
     :cond_1a
     :goto_6
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachAudioRestricted:I
@@ -2630,7 +2630,7 @@
 
     if-eqz p0, :cond_1e
 
-    .line 2072
+    .line 2076
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2639,7 +2639,7 @@
 
     goto :goto_7
 
-    .line 2074
+    .line 2078
     :cond_1c
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2649,7 +2649,7 @@
 
     if-eqz p1, :cond_1d
 
-    .line 2075
+    .line 2079
     sget p0, Lorg/telegram/messenger/R$string;->AttachPlainRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2662,7 +2662,7 @@
 
     return-object p0
 
-    .line 2077
+    .line 2081
     :cond_1d
     sget p1, Lorg/telegram/messenger/R$string;->AttachPlainRestricted:I
 
@@ -2688,7 +2688,7 @@
 
     return-object p0
 
-    .line 2073
+    .line 2077
     :cond_1e
     :goto_7
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachPlainRestricted:I
@@ -2708,7 +2708,7 @@
 
     if-eqz p0, :cond_22
 
-    .line 2080
+    .line 2084
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2717,7 +2717,7 @@
 
     goto :goto_8
 
-    .line 2082
+    .line 2086
     :cond_20
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2727,7 +2727,7 @@
 
     if-eqz p1, :cond_21
 
-    .line 2083
+    .line 2087
     sget p0, Lorg/telegram/messenger/R$string;->AttachRoundRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2740,7 +2740,7 @@
 
     return-object p0
 
-    .line 2085
+    .line 2089
     :cond_21
     sget p1, Lorg/telegram/messenger/R$string;->AttachRoundRestricted:I
 
@@ -2766,7 +2766,7 @@
 
     return-object p0
 
-    .line 2081
+    .line 2085
     :cond_22
     :goto_8
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachRoundRestricted:I
@@ -2786,7 +2786,7 @@
 
     if-eqz p0, :cond_26
 
-    .line 2088
+    .line 2092
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p1
@@ -2795,7 +2795,7 @@
 
     goto :goto_9
 
-    .line 2090
+    .line 2094
     :cond_24
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -2805,7 +2805,7 @@
 
     if-eqz p1, :cond_25
 
-    .line 2091
+    .line 2095
     sget p0, Lorg/telegram/messenger/R$string;->AttachVoiceRestrictedForever:I
 
     new-array p1, v1, [Ljava/lang/Object;
@@ -2818,7 +2818,7 @@
 
     return-object p0
 
-    .line 2093
+    .line 2097
     :cond_25
     sget p1, Lorg/telegram/messenger/R$string;->AttachVoiceRestricted:I
 
@@ -2844,7 +2844,7 @@
 
     return-object p0
 
-    .line 2089
+    .line 2093
     :cond_26
     :goto_9
     sget p0, Lorg/telegram/messenger/R$string;->GlobalAttachVoiceRestricted:I
@@ -2868,7 +2868,7 @@
 
     const/4 v0, 0x0
 
-    .line 1841
+    .line 1845
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/ChatObject;->getSendAsPeerId(Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$ChatFull;Z)J
 
     move-result-wide p0
@@ -2883,12 +2883,12 @@
 
     if-eqz p1, :cond_2
 
-    .line 1845
+    .line 1849
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->default_send_as:Lorg/telegram/tgnet/TLRPC$Peer;
 
     if-eqz p1, :cond_2
 
-    .line 1847
+    .line 1851
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     const-wide/16 v2, 0x0
@@ -2917,7 +2917,7 @@
     :cond_2
     if-eqz p0, :cond_4
 
-    .line 1849
+    .line 1853
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz p1, :cond_4
@@ -2926,7 +2926,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1850
+    .line 1854
     iget-wide p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     if-eqz p2, :cond_3
@@ -2936,7 +2936,7 @@
     :cond_3
     return-wide p0
 
-    .line 1852
+    .line 1856
     :cond_4
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -2956,7 +2956,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1762
+    .line 1766
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
     if-nez v0, :cond_0
@@ -2986,7 +2986,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1960
+    .line 1964
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->photo:Lorg/telegram/tgnet/TLRPC$ChatPhoto;
 
     if-eqz p0, :cond_0
@@ -3015,7 +3015,7 @@
 
     return v0
 
-    .line 1996
+    .line 2000
     :cond_0
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
@@ -3025,7 +3025,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1997
+    .line 2001
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->username:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -3034,15 +3034,15 @@
 
     return p0
 
-    .line 1999
+    .line 2003
     :cond_1
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    .line 2000
+    .line 2004
     :goto_0
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
@@ -3052,7 +3052,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2001
+    .line 2005
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3063,7 +3063,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2002
+    .line 2006
     iget-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$TL_username;->active:Z
 
     if-eqz v3, :cond_2
@@ -3102,7 +3102,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1632
+    .line 1636
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/ChatObject;->getBannedRight(Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;I)Z
@@ -3140,7 +3140,7 @@
 
     return p0
 
-    .line 1625
+    .line 1629
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -3162,7 +3162,7 @@
 
     return p0
 
-    .line 1628
+    .line 1632
     :cond_1
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->default_banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -3285,7 +3285,7 @@
 .method public static isCanWriteToChannel(JI)Z
     .locals 0
 
-    .line 1925
+    .line 1929
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
@@ -3298,7 +3298,7 @@
 
     move-result-object p0
 
-    .line 1926
+    .line 1930
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->canSendMessages(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
@@ -3327,7 +3327,7 @@
 .method public static isChannel(JI)Z
     .locals 0
 
-    .line 1915
+    .line 1919
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
@@ -3340,7 +3340,7 @@
 
     move-result-object p0
 
-    .line 1916
+    .line 1920
     instance-of p1, p0, Lorg/telegram/tgnet/TLRPC$TL_channel;
 
     if-nez p1, :cond_1
@@ -3367,7 +3367,7 @@
 .method public static isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 1
 
-    .line 1737
+    .line 1741
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channel;
 
     if-nez v0, :cond_1
@@ -3394,7 +3394,7 @@
 .method public static isChannelAndNotMegaGroup(JI)Z
     .locals 0
 
-    .line 1920
+    .line 1924
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
@@ -3407,7 +3407,7 @@
 
     move-result-object p0
 
-    .line 1921
+    .line 1925
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p0
@@ -3418,7 +3418,7 @@
 .method public static isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 1
 
-    .line 1749
+    .line 1753
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -3445,7 +3445,7 @@
 .method public static isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 1
 
-    .line 1741
+    .line 1745
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channel;
 
     if-nez v0, :cond_0
@@ -3514,7 +3514,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1753
+    .line 1757
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->forum:Z
 
     if-eqz p0, :cond_0
@@ -3535,7 +3535,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1725
+    .line 1729
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatEmpty;
 
     if-nez v0, :cond_1
@@ -3584,7 +3584,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1721
+    .line 1725
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatEmpty;
 
     if-nez v0, :cond_1
@@ -3623,7 +3623,7 @@
 .method public static isMegagroup(IJ)Z
     .locals 0
 
-    .line 1757
+    .line 1761
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -3636,7 +3636,7 @@
 
     move-result-object p0
 
-    .line 1758
+    .line 1762
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
@@ -3661,7 +3661,7 @@
 .method public static isMegagroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 1
 
-    .line 1745
+    .line 1749
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channel;
 
     if-nez v0, :cond_0
@@ -3689,7 +3689,7 @@
 .method public static isMyTopic(IJI)Z
     .locals 1
 
-    .line 1911
+    .line 1915
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -3714,7 +3714,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1907
+    .line 1911
     iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;->forum:Z
 
     if-eqz v0, :cond_0
@@ -3739,11 +3739,11 @@
 .end method
 
 .method public static isMyTopic(ILorg/telegram/tgnet/TLRPC$TL_forumTopic;)Z
-    .locals 3
+    .locals 2
 
     if-eqz p1, :cond_1
 
-    .line 1903
+    .line 1907
     iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->my:Z
 
     if-nez v0, :cond_0
@@ -3762,9 +3762,9 @@
 
     iget-wide p0, p0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-nez v2, :cond_1
+    if-nez p0, :cond_1
 
     :cond_0
     const/4 p0, 0x1
@@ -3783,7 +3783,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1729
+    .line 1733
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatEmpty;
 
     if-nez v0, :cond_1
@@ -3826,7 +3826,7 @@
 .method public static isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 0
 
-    .line 2011
+    .line 2015
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
 
     move-result-object p0
@@ -3900,7 +3900,7 @@
     .line 113
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 114
     :goto_0
@@ -3955,7 +3955,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1837
+    .line 1841
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz p0, :cond_0

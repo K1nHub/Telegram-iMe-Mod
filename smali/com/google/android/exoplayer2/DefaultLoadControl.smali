@@ -356,7 +356,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 415
     :goto_0
@@ -503,12 +503,12 @@
 
     if-lt p1, p2, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 367
     :goto_0
@@ -554,7 +554,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :cond_3
     :goto_1
@@ -598,7 +598,7 @@
 .end method
 
 .method public shouldStartPlayback(JFZJ)Z
-    .locals 3
+    .locals 2
 
     .line 393
     invoke-static {p1, p2, p3}, Lcom/google/android/exoplayer2/util/Util;->getPlayoutDurationForMediaDuration(JF)J
@@ -618,9 +618,9 @@
     :goto_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p5, v0
+    cmp-long v0, p5, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/16 v0, 0x2
 
@@ -634,13 +634,13 @@
     :cond_1
     const-wide/16 p5, 0x0
 
-    cmp-long v0, p3, p5
+    cmp-long p5, p3, p5
 
-    if-lez v0, :cond_3
+    if-lez p5, :cond_3
 
-    cmp-long p5, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gez p5, :cond_3
+    if-gez p1, :cond_3
 
     .line 398
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl;->prioritizeTimeOverSizeThresholds:Z

@@ -256,12 +256,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_0
 
     :cond_2
-    const/16 v5, 0x8
+    move v5, v4
 
     :goto_0
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
@@ -276,7 +276,7 @@
     goto :goto_1
 
     :cond_3
-    const/16 v3, 0x8
+    move v3, v4
 
     :cond_4
     :goto_1
@@ -967,7 +967,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_1
     if-eqz v6, :cond_4
@@ -980,7 +980,7 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v6, 0x0
+    move v6, v7
 
     goto :goto_2
 
@@ -1017,12 +1017,12 @@
 
     if-eq v6, v8, :cond_8
 
-    const/high16 v9, 0x40000000    # 2.0f
+    move v9, v1
 
     goto :goto_4
 
     :cond_8
-    const/high16 v9, -0x80000000
+    move v9, v4
 
     :goto_4
     if-ltz v6, :cond_9
@@ -1041,7 +1041,7 @@
     goto :goto_5
 
     :cond_a
-    const/high16 v1, -0x80000000
+    move v1, v4
 
     :goto_5
     if-ltz v5, :cond_b
@@ -1078,7 +1078,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v7
 
     :goto_6
     if-ge v7, v0, :cond_e

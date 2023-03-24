@@ -419,30 +419,29 @@
 
     if-ne v1, v3, :cond_2
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     if-eqz p2, :cond_3
 
     const/4 v1, 0x1
 
-    const/4 v7, 0x1
-
-    goto :goto_3
+    goto :goto_2
 
     :cond_3
     const/4 v1, 0x0
 
-    const/4 v7, 0x0
+    :goto_2
+    move v7, v1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_4
-    :goto_2
-    const/4 v7, 0x7
+    :goto_3
+    move v7, v3
 
     .line 683
-    :goto_3
+    :goto_4
     new-instance v1, Lcom/google/android/exoplayer2/offline/Download;
 
     iget-object v0, v0, Lcom/google/android/exoplayer2/offline/Download;->request:Lcom/google/android/exoplayer2/offline/DownloadRequest;
@@ -874,7 +873,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 586
     :goto_0
@@ -899,7 +898,7 @@
 
     if-nez v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
@@ -909,7 +908,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 593
     :goto_1
@@ -920,7 +919,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 594
     :goto_2
@@ -1153,7 +1152,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 522
     :goto_0
@@ -1319,12 +1318,12 @@
 
     if-lez p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 382
     :goto_0
@@ -1373,12 +1372,12 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 408
     :goto_0

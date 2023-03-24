@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainsManagementFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,208:1\n56#2,6:209\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$presenter$2\n*L\n34#1:209,6\n*E\n"
+    value = "SMAP\nBlockchainsManagementFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,209:1\n56#2,6:210\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementFragment.kt\ncom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$presenter$2\n*L\n35#1:210,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;
     .locals 4
 
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$presenter$2;->this$0:Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 34
+    .line 35
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 35
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementFragment$presenter$2;->invoke()Lcom/smedialink/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;
 
     move-result-object v0

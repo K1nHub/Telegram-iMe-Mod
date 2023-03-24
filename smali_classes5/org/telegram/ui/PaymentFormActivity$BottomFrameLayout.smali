@@ -122,7 +122,7 @@
 
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     add-float/2addr v0, p2
 
@@ -235,7 +235,7 @@
 
     iget v3, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->paint:Landroid/graphics/Paint;
 
@@ -260,7 +260,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v0
 
     goto :goto_0
 
@@ -287,7 +287,7 @@
 
     const/high16 v5, 0x42c80000    # 100.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-direct {v3, v4}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
 
@@ -295,7 +295,7 @@
 
     new-instance v3, Landroidx/dynamicanimation/animation/SpringForce;
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     invoke-direct {v3, v1}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
 

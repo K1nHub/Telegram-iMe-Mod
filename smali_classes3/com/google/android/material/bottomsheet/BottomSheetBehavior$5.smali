@@ -172,15 +172,15 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x4
+    cmpg-float v1, p3, v0
 
-    const/4 v2, 0x6
+    const/4 v2, 0x4
 
-    const/4 v3, 0x3
+    const/4 v3, 0x6
 
-    cmpg-float v4, p3, v0
+    const/4 v4, 0x3
 
-    if-gez v4, :cond_2
+    if-gez v1, :cond_2
 
     .line 1514
     iget-object p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;->this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
@@ -197,7 +197,7 @@
     iget p2, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContentsOffset:I
 
     :goto_0
-    const/4 v1, 0x3
+    move v2, v4
 
     goto/16 :goto_3
 
@@ -228,17 +228,17 @@
 
     .line 1527
     :cond_2
-    iget-object v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;->this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+    iget-object v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;->this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
-    iget-boolean v5, v4, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
+    iget-boolean v5, v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
 
     if-eqz v5, :cond_8
 
-    invoke-virtual {v4, p1, p3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shouldHide(Landroid/view/View;F)Z
+    invoke-virtual {v1, p1, p3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shouldHide(Landroid/view/View;F)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_8
+    if-eqz v1, :cond_8
 
     .line 1530
     invoke-static {p2}, Ljava/lang/Math;->abs(F)F
@@ -273,7 +273,7 @@
 
     iget p2, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->parentHeight:I
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
 
     goto/16 :goto_3
 
@@ -419,7 +419,7 @@
     iget p2, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedOffset:I
 
     :goto_1
-    const/4 v1, 0x6
+    move v2, v3
 
     goto :goto_3
 
@@ -562,7 +562,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p3, p1, v1, p2, v0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->startSettlingAnimation(Landroid/view/View;IIZ)V
+    invoke-virtual {p3, p1, v2, p2, v0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->startSettlingAnimation(Landroid/view/View;IIZ)V
 
     return-void
 .end method
@@ -648,7 +648,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     return v2

@@ -183,17 +183,15 @@
 
     if-eq p2, v0, :cond_0
 
-    move v4, p2
-
     goto :goto_0
 
     :cond_0
     const/16 p2, 0x1680
 
-    const/16 v4, 0x1680
+    :goto_0
+    move v4, p2
 
     .line 118
-    :goto_0
     new-instance p2, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegAudioDecoder;
 
     const/16 v2, 0x10

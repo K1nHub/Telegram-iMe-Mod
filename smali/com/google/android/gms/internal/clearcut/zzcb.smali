@@ -1306,7 +1306,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_1
     iput-boolean p3, p0, Lcom/google/android/gms/internal/clearcut/zzcb;->zzja:Z

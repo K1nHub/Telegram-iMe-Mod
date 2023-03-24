@@ -115,28 +115,28 @@
 .end method
 
 .method public trySplit()Lj$/util/s;
-    .locals 15
+    .locals 12
 
     iget-wide v0, p0, Lj$/util/stream/D4;->a:J
 
     iget-wide v2, p0, Lj$/util/stream/D4;->e:J
 
-    const/4 v4, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, 0x0
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
-    return-object v4
+    return-object v1
 
     :cond_0
-    iget-wide v0, p0, Lj$/util/stream/D4;->d:J
+    iget-wide v4, p0, Lj$/util/stream/D4;->d:J
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v4, v2
 
-    if-ltz v5, :cond_1
+    if-ltz v0, :cond_1
 
-    return-object v4
+    return-object v1
 
     :cond_1
     :goto_0
@@ -144,71 +144,75 @@
 
     invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
 
-    move-result-object v6
+    move-result-object v3
 
-    if-nez v6, :cond_2
+    if-nez v3, :cond_2
 
-    return-object v4
+    return-object v1
 
     :cond_2
-    iget-wide v0, p0, Lj$/util/stream/D4;->d:J
+    iget-wide v4, p0, Lj$/util/stream/D4;->d:J
 
-    invoke-interface {v6}, Lj$/util/s;->estimateSize()J
+    invoke-interface {v3}, Lj$/util/s;->estimateSize()J
 
-    move-result-wide v2
+    move-result-wide v6
 
-    add-long/2addr v2, v0
+    add-long/2addr v6, v4
 
-    iget-wide v0, p0, Lj$/util/stream/D4;->b:J
+    iget-wide v4, p0, Lj$/util/stream/D4;->b:J
 
-    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v13
+    move-result-wide v10
 
-    iget-wide v7, p0, Lj$/util/stream/D4;->a:J
+    iget-wide v4, p0, Lj$/util/stream/D4;->a:J
 
-    cmp-long v0, v7, v13
+    cmp-long v0, v4, v10
 
     if-ltz v0, :cond_3
 
-    iput-wide v13, p0, Lj$/util/stream/D4;->d:J
+    iput-wide v10, p0, Lj$/util/stream/D4;->d:J
 
     goto :goto_0
 
     :cond_3
-    iget-wide v9, p0, Lj$/util/stream/D4;->b:J
+    iget-wide v8, p0, Lj$/util/stream/D4;->b:J
 
-    cmp-long v0, v13, v9
+    cmp-long v0, v10, v8
 
     if-ltz v0, :cond_4
 
-    iput-object v6, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
+    iput-object v3, p0, Lj$/util/stream/D4;->c:Lj$/util/s;
 
-    iput-wide v13, p0, Lj$/util/stream/D4;->e:J
+    iput-wide v10, p0, Lj$/util/stream/D4;->e:J
 
     goto :goto_0
 
     :cond_4
-    iget-wide v11, p0, Lj$/util/stream/D4;->d:J
+    iget-wide v0, p0, Lj$/util/stream/D4;->d:J
 
-    cmp-long v0, v11, v7
+    cmp-long v2, v0, v4
 
-    if-ltz v0, :cond_5
+    if-ltz v2, :cond_5
 
-    cmp-long v0, v2, v9
+    cmp-long v2, v6, v8
 
-    if-gtz v0, :cond_5
+    if-gtz v2, :cond_5
 
-    iput-wide v13, p0, Lj$/util/stream/D4;->d:J
+    iput-wide v10, p0, Lj$/util/stream/D4;->d:J
 
-    return-object v6
+    return-object v3
 
     :cond_5
-    iput-wide v13, p0, Lj$/util/stream/D4;->d:J
+    iput-wide v10, p0, Lj$/util/stream/D4;->d:J
 
-    move-object v5, p0
+    move-object v2, p0
 
-    invoke-virtual/range {v5 .. v14}, Lj$/util/stream/D4;->a(Lj$/util/s;JJJJ)Lj$/util/s;
+    move-wide v6, v8
+
+    move-wide v8, v0
+
+    invoke-virtual/range {v2 .. v11}, Lj$/util/stream/D4;->a(Lj$/util/s;JJJJ)Lj$/util/s;
 
     move-result-object v0
 

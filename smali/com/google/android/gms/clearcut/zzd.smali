@@ -42,7 +42,7 @@
 
     move-wide v8, v6
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I

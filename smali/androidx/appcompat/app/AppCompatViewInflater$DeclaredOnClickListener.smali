@@ -90,10 +90,8 @@
 
     return-void
 
-    :catch_0
-    nop
-
     .line 466
+    :catch_0
     :cond_0
     instance-of v0, p1, Landroid/content/ContextWrapper;
 

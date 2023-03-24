@@ -1163,22 +1163,22 @@
     if-eq v2, v13, :cond_b
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v14
 
     goto :goto_1
 
     :cond_b
-    const/4 v2, 0x1
+    move v2, v7
 
     goto :goto_1
 
     :cond_c
-    const/4 v2, 0x3
+    move v2, v13
 
     goto :goto_1
 
     :cond_d
-    const/4 v2, 0x2
+    move v2, v12
 
     .line 506
     :goto_1
@@ -1364,7 +1364,7 @@
 
     move-result v6
 
-    const/4 v10, 0x0
+    move v10, v14
 
     :goto_2
     if-ge v10, v6, :cond_12
@@ -1451,14 +1451,14 @@
     goto :goto_4
 
     :cond_13
-    const/4 v6, 0x0
+    move v6, v14
 
     goto :goto_5
 
     :catch_0
     :cond_14
     :goto_4
-    const/4 v6, 0x1
+    move v6, v7
 
     .line 568
     :goto_5
@@ -1468,7 +1468,7 @@
 
     move-result v10
 
-    const/4 v13, 0x0
+    move v13, v14
 
     :goto_6
     if-ge v13, v10, :cond_17
@@ -1569,9 +1569,9 @@
     goto :goto_8
 
     :cond_16
-    const/4 v11, 0x1
+    move v12, v14
 
-    const/4 v12, 0x0
+    const/4 v11, 0x1
 
     .line 578
     sget v14, Lorg/telegram/messenger/R$string;->StoragePathFree:I
@@ -1636,15 +1636,15 @@
 
     move-object/from16 v1, p1
 
+    move v12, v11
+
+    move v14, v15
+
     const/4 v7, 0x1
 
     const/4 v8, 0x0
 
     const/4 v11, 0x4
-
-    const/4 v12, 0x2
-
-    const/4 v14, 0x0
 
     goto/16 :goto_6
 
@@ -1928,9 +1928,9 @@
 
     :cond_21
     :goto_9
-    const/4 v11, 0x2
+    move v11, v12
 
-    const/4 v15, 0x0
+    move v15, v14
 
     .line 374
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -2015,7 +2015,7 @@
 
     const-string v9, "currentMobilePreset"
 
-    const/4 v12, 0x0
+    move v12, v15
 
     goto :goto_a
 
@@ -2074,7 +2074,7 @@
 
     const-string v9, "currentRoamingPreset"
 
-    const/4 v12, 0x2
+    move v12, v11
 
     :goto_a
     if-nez v5, :cond_26
@@ -2192,7 +2192,7 @@
 
     if-ne v3, v1, :cond_29
 
-    const/4 v7, 0x0
+    move v7, v15
 
     goto :goto_c
 
@@ -2205,7 +2205,7 @@
     goto :goto_c
 
     :cond_2a
-    const/4 v7, 0x2
+    move v7, v11
 
     .line 433
     :goto_c
@@ -2219,11 +2219,11 @@
 
     :cond_2b
     :goto_d
-    const/4 v11, 0x2
+    move v11, v12
 
     if-ne v3, v6, :cond_2c
 
-    const/4 v7, 0x2
+    move v7, v11
 
     goto :goto_e
 
@@ -2372,7 +2372,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     const/4 v1, 0x3
@@ -2573,17 +2573,17 @@
 
     if-eq p4, p3, :cond_0
 
-    const/4 p3, -0x1
+    move p3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x2
+    move p3, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x1
+    move p3, v2
 
     goto :goto_0
 
@@ -2765,14 +2765,14 @@
 
     const-wide/16 p1, 0x78
 
-    cmp-long p3, v1, p1
+    cmp-long p1, v1, p1
 
-    if-lez p3, :cond_0
+    if-lez p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 

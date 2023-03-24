@@ -462,7 +462,7 @@
     .line 288
     div-int/lit8 v10, v0, 0x64
 
-    mul-int v3, v3, v10
+    mul-int/2addr v3, v10
 
     .line 289
     invoke-static {v3}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -557,7 +557,7 @@
 
     invoke-static {v5, v7}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v2
 
     .line 313
     iget-object v7, v1, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->byteBuffer:Ljava/nio/ByteBuffer;
@@ -1259,12 +1259,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V
@@ -1274,12 +1274,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     invoke-static {v0}, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V
@@ -1393,12 +1393,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-static {v1}, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V
@@ -1485,14 +1485,14 @@
 
     const/4 v1, 0x2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v1
 
     .line 368
     iget v2, p0, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->requestedSampleRate:I
 
     div-int/lit8 v2, v2, 0x64
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 369
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -1533,7 +1533,7 @@
     goto/16 :goto_1
 
     :cond_1
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v1
 
     .line 379
     iget-object v3, p0, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->deviceByteBuffer:Ljava/nio/ByteBuffer;

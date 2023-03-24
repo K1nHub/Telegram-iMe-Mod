@@ -154,11 +154,11 @@
 
     const/4 v14, 0x0
 
-    const/4 v2, 0x0
+    move v3, v1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v2, v14
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     const v15, 0x3f99999a    # 1.2f
@@ -269,12 +269,12 @@
 
     if-ne v2, v8, :cond_4
 
-    const/4 v8, 0x1
+    move v8, v12
 
     goto :goto_2
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v14
 
     .line 8001
     :goto_2
@@ -282,7 +282,7 @@
 
     if-nez v6, :cond_5
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v1
 
     goto :goto_3
 
@@ -344,7 +344,7 @@
 
     if-lez v6, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v12
 
     .line 8018
     :cond_8
@@ -500,9 +500,9 @@
 
     mul-double v12, v12, v19
 
-    cmpl-double v6, v3, v12
+    cmpl-double v3, v3, v12
 
-    if-lez v6, :cond_c
+    if-lez v3, :cond_c
 
     iget v3, v15, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
@@ -583,7 +583,7 @@
 
     invoke-virtual/range {v16 .. v23}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     .line 8038
     :cond_c
@@ -611,7 +611,7 @@
 
     const v4, 0x3ecccccd    # 0.4f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     int-to-float v0, v0
 
@@ -720,7 +720,7 @@
     .line 8054
     invoke-virtual/range {v16 .. v23}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     .line 8039
     :cond_f
@@ -794,7 +794,7 @@
     .line 8042
     invoke-virtual/range {v16 .. v23}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_10
     const v3, 0x44064f5d
@@ -848,7 +848,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     iget v6, v5, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
@@ -879,15 +879,15 @@
 
     const/high16 v7, 0x3f000000    # 0.5f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     iget v7, v5, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     iget v8, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v8, v8, v13
+    mul-float/2addr v8, v13
 
     invoke-static {v7, v8}, Ljava/lang/Math;->min(FF)F
 
@@ -914,7 +914,7 @@
 
     const v7, 0x444b8000    # 814.0f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     int-to-float v2, v2
 
@@ -1019,7 +1019,7 @@
     .line 8076
     iput v2, v5, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->leftSpanOffset:I
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     .line 8080
     :cond_11
@@ -1132,7 +1132,7 @@
     .line 8086
     invoke-virtual/range {v24 .. v31}, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->set(IIIIIFI)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_12
     const/4 v7, 0x4
@@ -1266,11 +1266,11 @@
 
     const v4, 0x3ecccccd    # 0.4f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     iget v4, v6, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
@@ -1287,7 +1287,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v13
+    mul-float/2addr v4, v13
 
     invoke-static {v2, v4}, Ljava/lang/Math;->max(FF)F
 
@@ -1295,7 +1295,7 @@
 
     iget v4, v8, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     invoke-static {v2, v4}, Ljava/lang/Math;->max(FF)F
 
@@ -1569,13 +1569,20 @@
     .line 8127
     iput-object v0, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->siblingHeights:[F
 
-    :cond_14
     :goto_7
     move/from16 v22, v11
 
     const/4 v12, 0x0
 
-    goto/16 :goto_20
+    goto/16 :goto_21
+
+    :cond_14
+    :goto_8
+    move/from16 v22, v11
+
+    move v12, v14
+
+    goto/16 :goto_21
 
     .line 8132
     :cond_15
@@ -1589,7 +1596,7 @@
 
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_9
     if-ge v0, v11, :cond_17
 
     const v2, 0x3f8ccccd    # 1.1f
@@ -1615,7 +1622,7 @@
 
     aput v2, v13, v0
 
-    goto :goto_9
+    goto :goto_a
 
     .line 8137
     :cond_16
@@ -1635,7 +1642,7 @@
 
     aput v2, v13, v0
 
-    :goto_9
+    :goto_a
     const v2, 0x3f2aaae3
 
     const v4, 0x3fd9999a    # 1.7f
@@ -1655,7 +1662,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8
+    goto :goto_9
 
     .line 8146
     :cond_17
@@ -1665,7 +1672,7 @@
 
     const/4 v6, 0x1
 
-    :goto_a
+    :goto_b
     if-ge v6, v12, :cond_1a
 
     sub-int v4, v12, v6
@@ -1674,7 +1681,7 @@
 
     if-le v4, v15, :cond_18
 
-    goto :goto_b
+    goto :goto_c
 
     .line 8152
     :cond_18
@@ -1709,26 +1716,26 @@
     invoke-virtual {v14, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_19
-    :goto_b
+    :goto_c
     add-int/lit8 v6, v6, 0x1
 
     const/4 v3, 0x2
 
     const/4 v7, 0x4
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_1a
     const/4 v7, 0x1
 
-    :goto_c
+    :goto_d
     add-int/lit8 v0, v12, -0x1
 
     if-ge v7, v0, :cond_1f
 
     const/4 v6, 0x1
 
-    :goto_d
+    :goto_e
     sub-int v0, v12, v7
 
     if-ge v6, v0, :cond_1e
@@ -1745,17 +1752,17 @@
 
     const/4 v0, 0x4
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_1b
-    const/4 v0, 0x3
+    move v0, v15
 
-    :goto_e
+    :goto_f
     if-gt v6, v0, :cond_1d
 
     if-le v4, v15, :cond_1c
 
-    goto :goto_f
+    goto :goto_10
 
     .line 8161
     :cond_1c
@@ -1803,24 +1810,24 @@
 
     invoke-virtual {v14, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_1d
-    :goto_f
+    :goto_10
     move/from16 v19, v6
 
     move/from16 v20, v7
 
     const/16 v18, 0x4
 
-    :goto_10
+    :goto_11
     add-int/lit8 v6, v19, 0x1
 
     move/from16 v7, v20
 
     const/4 v15, 0x3
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_1e
     move/from16 v20, v7
@@ -1831,28 +1838,28 @@
 
     const/4 v15, 0x3
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_1f
     const/16 v18, 0x4
 
     const/4 v15, 0x1
 
-    :goto_11
+    :goto_12
     add-int/lit8 v0, v12, -0x2
 
     if-ge v15, v0, :cond_24
 
     const/4 v8, 0x1
 
-    :goto_12
+    :goto_13
     sub-int v7, v12, v15
 
     if-ge v8, v7, :cond_23
 
     const/4 v6, 0x1
 
-    :goto_13
+    :goto_14
     sub-int v0, v7, v8
 
     if-ge v6, v0, :cond_22
@@ -1869,7 +1876,7 @@
 
     if-le v5, v0, :cond_20
 
-    goto :goto_14
+    goto :goto_15
 
     .line 8172
     :cond_20
@@ -1933,10 +1940,10 @@
 
     invoke-virtual {v14, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_21
-    :goto_14
+    :goto_15
     move/from16 v26, v6
 
     move/from16 v19, v7
@@ -1949,7 +1956,7 @@
 
     move v11, v9
 
-    :goto_15
+    :goto_16
     add-int/lit8 v6, v26, 0x1
 
     move v9, v11
@@ -1962,7 +1969,7 @@
 
     move/from16 v12, v25
 
-    goto :goto_13
+    goto :goto_14
 
     :cond_22
     move/from16 v20, v8
@@ -1977,7 +1984,7 @@
 
     move/from16 v11, v22
 
-    goto :goto_12
+    goto :goto_13
 
     :cond_23
     move/from16 v22, v11
@@ -1990,7 +1997,7 @@
 
     move/from16 v11, v22
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_24
     move/from16 v22, v11
@@ -2015,7 +2022,7 @@
     const/4 v5, 0x0
 
     .line 8180
-    :goto_16
+    :goto_17
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
     move-result v6
@@ -2031,14 +2038,14 @@
 
     const v7, 0x7f7fffff    # Float.MAX_VALUE
 
-    const/4 v7, 0x0
+    move v8, v7
 
-    const v8, 0x7f7fffff    # Float.MAX_VALUE
+    const/4 v7, 0x0
 
     const/4 v9, 0x0
 
     .line 8184
-    :goto_17
+    :goto_18
     iget-object v12, v6, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     array-length v15, v12
@@ -2063,7 +2070,7 @@
     :cond_25
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_26
     sub-float/2addr v9, v0
@@ -2103,17 +2110,17 @@
 
     if-gt v1, v15, :cond_27
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_27
     const v1, 0x3f99999a    # 1.2f
 
     const/4 v15, 0x3
 
-    goto :goto_1a
+    goto :goto_1b
 
     :cond_28
-    :goto_18
+    :goto_19
     array-length v1, v9
 
     const/4 v15, 0x3
@@ -2126,25 +2133,25 @@
 
     if-le v1, v9, :cond_29
 
-    goto :goto_19
+    goto :goto_1a
 
     :cond_29
     const v1, 0x3f99999a    # 1.2f
 
-    goto :goto_1b
+    goto :goto_1c
 
     :cond_2a
     const/4 v2, 0x2
 
     const/4 v15, 0x3
 
-    :goto_19
+    :goto_1a
     const v1, 0x3f99999a    # 1.2f
 
-    :goto_1a
-    mul-float v7, v7, v1
+    :goto_1b
+    mul-float/2addr v7, v1
 
-    goto :goto_1b
+    goto :goto_1c
 
     :cond_2b
     const v1, 0x3f99999a    # 1.2f
@@ -2155,7 +2162,7 @@
 
     const/4 v15, 0x3
 
-    :goto_1b
+    :goto_1c
     int-to-float v9, v11
 
     cmpg-float v8, v8, v9
@@ -2164,7 +2171,7 @@
 
     const/high16 v8, 0x3fc00000    # 1.5f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     :cond_2c
     if-eqz v4, :cond_2d
@@ -2181,7 +2188,7 @@
     :cond_2e
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_16
+    goto :goto_17
 
     :cond_2f
     const/4 v12, 0x0
@@ -2191,12 +2198,12 @@
     return-void
 
     :cond_30
-    const/4 v0, 0x0
+    move v0, v12
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 8214
-    :goto_1c
+    :goto_1d
     iget-object v1, v4, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     array-length v3, v1
@@ -2216,17 +2223,17 @@
 
     move v6, v5
 
-    const/4 v5, 0x0
+    move v5, v12
 
     const/4 v7, 0x0
 
-    :goto_1d
+    :goto_1e
     if-ge v5, v1, :cond_35
 
     .line 8220
     aget v8, v13, v0
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     float-to-int v8, v8
 
@@ -2245,15 +2252,15 @@
 
     if-nez v2, :cond_31
 
-    const/4 v9, 0x4
+    move/from16 v9, v18
 
-    goto :goto_1e
+    goto :goto_1f
 
     :cond_31
-    const/4 v9, 0x0
+    move v9, v12
 
     .line 8228
-    :goto_1e
+    :goto_1f
     iget-object v11, v4, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     array-length v11, v11
@@ -2282,12 +2289,12 @@
 
     move-object/from16 v7, v24
 
-    goto :goto_1f
+    goto :goto_20
 
     :cond_34
     move/from16 v31, v9
 
-    :goto_1f
+    :goto_20
     const v9, 0x444b8000    # 814.0f
 
     div-float v30, v3, v9
@@ -2309,7 +2316,7 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1d
+    goto :goto_1e
 
     :cond_35
     const v9, 0x444b8000    # 814.0f
@@ -2330,15 +2337,15 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1c
+    goto :goto_1d
 
     :cond_36
-    :goto_20
+    :goto_21
+    move v14, v12
+
     move/from16 v0, v22
 
-    const/4 v14, 0x0
-
-    :goto_21
+    :goto_22
     if-ge v14, v0, :cond_38
 
     .line 8247
@@ -2365,7 +2372,7 @@
     :cond_37
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_21
+    goto :goto_22
 
     :cond_38
     return-void

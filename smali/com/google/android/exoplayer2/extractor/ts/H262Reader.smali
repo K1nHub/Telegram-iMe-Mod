@@ -376,7 +376,7 @@
 
     div-double/2addr v3, v5
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     :cond_3
     const-wide v3, 0x412e848000000000L    # 1000000.0
@@ -519,7 +519,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v10
 
     .line 161
     :goto_1
@@ -580,7 +580,7 @@
     .line 172
     invoke-virtual {v9, v3, v1, v4}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
 
-    const/4 v1, 0x0
+    move v1, v10
 
     goto :goto_2
 
@@ -802,7 +802,7 @@
     :goto_7
     if-nez v19, :cond_10
 
-    const/4 v10, 0x1
+    move v10, v1
 
     .line 208
     :cond_10

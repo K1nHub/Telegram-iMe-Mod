@@ -101,7 +101,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x3
+    move v1, v11
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
@@ -161,7 +161,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x3
+    move v1, v11
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
@@ -1277,12 +1277,12 @@
 
     if-ge v0, v1, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 840
     :goto_2
@@ -1290,12 +1290,12 @@
 
     if-lt v0, v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_3
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 842
     :goto_3
@@ -1303,7 +1303,7 @@
 
     if-gtz v0, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 843
     :cond_5

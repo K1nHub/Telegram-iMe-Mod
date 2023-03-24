@@ -547,7 +547,7 @@
 
     and-int/lit8 v0, v0, 0x1f
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 

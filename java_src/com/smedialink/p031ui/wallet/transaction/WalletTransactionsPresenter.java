@@ -120,7 +120,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         if (this.screenType.isStaking()) {
             loadStakingOperations(z, z2);
         } else {
-            loadTransactions(z, str);
+            loadTransactions(z || z2, str);
         }
     }
 
@@ -159,7 +159,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
 
     private final void loadTransactions(boolean z, String str) {
         boolean z2 = str != null;
-        loadInternal(z, z2, WalletInteractor.getWalletTransactions$default(this.walletInteractor, z, str, this.tokenCode, 0, this.selectedNetworkType, 8, null), new WalletTransactionsPresenter$loadTransactions$1(this, z2));
+        loadInternal(z, z2, WalletInteractor.getWalletTransactions$default(this.walletInteractor, z, str, this.tokenCode, 0, this.selectedNetworkType, 8, null), new WalletTransactionsPresenter$loadTransactions$1(this, z2, z));
     }
 
     public final void renderGlobalState(GlobalState globalState) {
@@ -187,14 +187,14 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
     }
 
     private final <T> void loadInternal(boolean z, boolean z2, Observable<Result<T>> observable, Function1<? super T, Unit> function1) {
-        Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
+        Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo706ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletTransactionsPresenter.loadInternal$lambda$0(WalletTransactionsPresenter.this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "observable\n             …e.showRefreshing(false) }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2310x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2311x713e531((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2324x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2325x713e531((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -223,9 +223,9 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2308x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2309x655d1dae(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2322x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2323x655d1dae(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

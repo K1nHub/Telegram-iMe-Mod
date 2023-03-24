@@ -464,11 +464,11 @@
 
     const v1, 0x3ee66666    # 0.45f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3fbfe7fb
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 374
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -501,7 +501,7 @@
 
     const v8, 0x3ca3d70a    # 0.02f
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     sub-float v8, v7, v8
 
@@ -526,7 +526,7 @@
 
     move-result v0
 
-    mul-float v0, v0, v7
+    mul-float/2addr v0, v7
 
     add-float/2addr v0, v6
 

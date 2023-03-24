@@ -16,7 +16,7 @@
 
 # direct methods
 .method public static getDocumentWithId(Lorg/telegram/tgnet/TLRPC$WebPage;J)Lorg/telegram/tgnet/TLRPC$Document;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -37,9 +37,9 @@
 
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     return-object v1
 
@@ -72,9 +72,9 @@
     .line 4976
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-nez v5, :cond_2
+    if-nez v3, :cond_2
 
     return-object v2
 
@@ -214,7 +214,7 @@
 .end method
 
 .method public static getPhotoWithId(Lorg/telegram/tgnet/TLRPC$WebPage;J)Lorg/telegram/tgnet/TLRPC$Photo;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -235,9 +235,9 @@
 
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     return-object v1
 
@@ -270,9 +270,9 @@
     .line 4960
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-nez v5, :cond_2
+    if-nez v3, :cond_2
 
     return-object v2
 

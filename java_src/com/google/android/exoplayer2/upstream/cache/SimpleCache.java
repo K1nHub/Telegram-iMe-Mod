@@ -328,21 +328,21 @@ public final class SimpleCache implements Cache {
             r1 = 1
             r2 = 0
             if (r0 != 0) goto L9
-            r0 = 1
+            r0 = r1
             goto La
         L9:
-            r0 = 0
+            r0 = r2
         La:
             com.google.android.exoplayer2.util.Assertions.checkState(r0)     // Catch: java.lang.Throwable -> L21
             com.google.android.exoplayer2.upstream.cache.CachedContentIndex r0 = r3.contentIndex     // Catch: java.lang.Throwable -> L21
             com.google.android.exoplayer2.upstream.cache.CachedContent r4 = r0.get(r4)     // Catch: java.lang.Throwable -> L21
             if (r4 == 0) goto L1e
             long r4 = r4.getCachedBytesLength(r5, r7)     // Catch: java.lang.Throwable -> L21
-            int r6 = (r4 > r7 ? 1 : (r4 == r7 ? 0 : -1))
-            if (r6 < 0) goto L1e
+            int r4 = (r4 > r7 ? 1 : (r4 == r7 ? 0 : -1))
+            if (r4 < 0) goto L1e
             goto L1f
         L1e:
-            r1 = 0
+            r1 = r2
         L1f:
             monitor-exit(r3)
             return r1
@@ -368,17 +368,18 @@ public final class SimpleCache implements Cache {
     @Override // com.google.android.exoplayer2.upstream.cache.Cache
     public synchronized long getCachedBytes(String str, long j, long j2) {
         long j3;
-        long j4 = j2 == -1 ? Long.MAX_VALUE : j2 + j;
-        long j5 = j4 >= 0 ? j4 : Long.MAX_VALUE;
+        long j4 = j2 == -1 ? Long.MAX_VALUE : j + j2;
+        long j5 = j4 < 0 ? Long.MAX_VALUE : j4;
+        long j6 = j;
         j3 = 0;
-        while (j < j5) {
-            long cachedLength = getCachedLength(str, j, j5 - j);
+        while (j6 < j5) {
+            long cachedLength = getCachedLength(str, j6, j5 - j6);
             if (cachedLength > 0) {
                 j3 += cachedLength;
             } else {
                 cachedLength = -cachedLength;
             }
-            j += cachedLength;
+            j6 += cachedLength;
         }
         return j3;
     }

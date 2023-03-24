@@ -177,7 +177,7 @@
 .end method
 
 .method public getBatteryVelocity()I
-    .locals 5
+    .locals 4
 
     .line 56
     iget-boolean v0, p0, Lcom/google/firebase/crashlytics/internal/common/BatteryState;->powerConnected:Z
@@ -200,9 +200,9 @@
 
     const-wide v2, 0x3fefae147ae147aeL    # 0.99
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     const/4 v0, 0x2
 

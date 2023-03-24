@@ -24,7 +24,7 @@ public final class BotConstants {
         Map<String, String> mapOf;
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{"assistant", "assistant_eng", "holidays"});
         predefinedBots = listOf;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m100to("assistant", "KrEBEAPGadlvWF8morbTTQ=="), TuplesKt.m100to("assistant_eng", "IOMbdDggW8S3hqQtm7xyPg=="), TuplesKt.m100to("holidays", "U1lmtBOVs9cLAyTMzDkQSA=="));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m99to("assistant", "KrEBEAPGadlvWF8morbTTQ=="), TuplesKt.m99to("assistant_eng", "IOMbdDggW8S3hqQtm7xyPg=="), TuplesKt.m99to("holidays", "U1lmtBOVs9cLAyTMzDkQSA=="));
         hashes = mapOf;
     }
 

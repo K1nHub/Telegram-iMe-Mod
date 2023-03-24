@@ -11,7 +11,7 @@
 
     const-wide/32 v2, -0x3361d2af
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     long-to-int p0, v0
 
@@ -26,7 +26,7 @@
 
     const-wide/32 v2, 0x1b873593
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     long-to-int p0, v0
 

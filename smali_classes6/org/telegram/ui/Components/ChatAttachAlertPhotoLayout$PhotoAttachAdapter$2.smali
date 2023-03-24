@@ -46,7 +46,7 @@
 
     const/high16 v1, 0x41000000    # 8.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 

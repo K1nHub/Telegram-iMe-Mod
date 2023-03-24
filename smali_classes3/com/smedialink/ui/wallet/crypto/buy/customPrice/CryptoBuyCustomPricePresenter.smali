@@ -362,7 +362,7 @@
 
     move-result v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->minItem:Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;
 
@@ -396,7 +396,7 @@
 
     move-result v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;->minItem:Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;
 
@@ -450,7 +450,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 59
     :goto_0
@@ -545,7 +545,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 34
     :goto_0

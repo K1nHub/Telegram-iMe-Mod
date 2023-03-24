@@ -817,9 +817,9 @@
 
     move-result-wide p0
 
-    cmp-long p4, p0, p2
+    cmp-long p0, p0, p2
 
-    if-eqz p4, :cond_0
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
@@ -837,7 +837,7 @@
 .end method
 
 .method private loadExistingExtractions(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
-    .locals 16
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -856,7 +856,7 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    move-object v0, p0
 
     move-object/from16 v1, p2
 
@@ -1024,9 +1024,9 @@
     .line 193
     iget-wide v2, v8, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->crc:J
 
-    cmp-long v15, v11, v2
+    cmp-long v2, v11, v2
 
-    if-nez v15, :cond_0
+    if-nez v2, :cond_0
 
     .line 201
     invoke-interface {v5, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1215,7 +1215,7 @@
 
     move-object v10, v9
 
-    const/4 v9, 0x2
+    move v9, v0
 
     :goto_0
     if-eqz v10, :cond_4

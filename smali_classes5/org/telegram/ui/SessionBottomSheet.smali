@@ -1144,12 +1144,12 @@
     sget p1, Lorg/telegram/messenger/R$raw;->safari_30:I
 
     :goto_0
-    move-object v3, v7
+    move v0, v4
 
     :goto_1
-    const/4 v0, 0x1
+    move-object v3, v7
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_1
     const-string v2, "edge"
@@ -1207,7 +1207,7 @@
 
     if-eqz v8, :cond_4
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_4
     const-string v2, "ubuntu"
@@ -1222,7 +1222,10 @@
     .line 341
     sget p1, Lorg/telegram/messenger/R$raw;->ubuntu_30:I
 
-    goto :goto_1
+    :goto_2
+    move v0, v4
+
+    goto/16 :goto_6
 
     :cond_5
     const-string v2, "ios"
@@ -1245,12 +1248,12 @@
 
     sget p1, Lorg/telegram/messenger/R$raw;->ipad_30:I
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_6
     sget p1, Lorg/telegram/messenger/R$raw;->iphone_30:I
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_7
     const-string v1, "windows"
@@ -1265,10 +1268,12 @@
     .line 349
     sget p1, Lorg/telegram/messenger/R$raw;->windows_30:I
 
-    :goto_2
+    :goto_3
+    move v0, v4
+
     move-object v3, v5
 
-    goto :goto_1
+    goto :goto_6
 
     :cond_8
     const-string v1, "macos"
@@ -1283,7 +1288,7 @@
     .line 353
     sget p1, Lorg/telegram/messenger/R$raw;->mac_30:I
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_9
     const-string v1, "android"
@@ -1300,7 +1305,7 @@
 
     const-string v3, "avatar_backgroundGreen"
 
-    goto :goto_1
+    goto :goto_2
 
     .line 361
     :cond_a
@@ -1321,7 +1326,7 @@
     .line 362
     sget p1, Lorg/telegram/messenger/R$raw;->windows_30:I
 
-    goto :goto_2
+    goto :goto_3
 
     .line 366
     :cond_b
@@ -1331,7 +1336,7 @@
 
     .line 331
     :cond_c
-    :goto_3
+    :goto_4
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -1341,7 +1346,7 @@
     .line 332
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_opera:I
 
-    goto :goto_4
+    goto :goto_5
 
     .line 333
     :cond_d
@@ -1354,18 +1359,18 @@
     .line 334
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_firefox:I
 
-    goto :goto_4
+    goto :goto_5
 
     .line 336
     :cond_e
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_other:I
 
-    :goto_4
-    move-object v3, v7
-
-    const/4 v0, 0x0
-
     :goto_5
+    move v0, v6
+
+    goto/16 :goto_1
+
+    :goto_6
     const/16 v1, 0x2a
 
     .line 372
@@ -1403,7 +1408,7 @@
     .line 376
     invoke-virtual {p2, p1, v1, v1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III[I)V
 
-    goto :goto_6
+    goto :goto_7
 
     .line 378
     :cond_f
@@ -1417,7 +1422,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :goto_6
+    :goto_7
     return-void
 .end method
 

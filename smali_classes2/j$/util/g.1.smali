@@ -129,7 +129,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x6
 
@@ -186,9 +186,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     .line 8
     iget-wide v3, p0, Lj$/util/g;->sum:J

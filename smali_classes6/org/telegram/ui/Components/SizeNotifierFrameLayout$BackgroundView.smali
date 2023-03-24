@@ -139,12 +139,12 @@
     goto :goto_0
 
     :cond_4
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :goto_0
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     const/4 v4, 0x2
@@ -196,7 +196,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
     float-to-int v6, v6
 
@@ -247,7 +247,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_4
     sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -267,7 +267,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_5
     add-int/2addr v6, v7
@@ -321,7 +321,7 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     iget-object v10, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -329,7 +329,7 @@
 
     move-result v10
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-double v9, v9
 
@@ -346,7 +346,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     iget-object v8, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -354,7 +354,7 @@
 
     move-result v8
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     float-to-double v10, v10
 
@@ -860,7 +860,7 @@
     goto :goto_7
 
     :cond_14
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_7
     sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -880,7 +880,7 @@
     goto :goto_8
 
     :cond_15
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_8
     add-int/2addr v6, v7
@@ -934,7 +934,7 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     iget-object v10, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -942,7 +942,7 @@
 
     move-result v10
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-double v9, v9
 
@@ -959,7 +959,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     iget-object v8, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -967,7 +967,7 @@
 
     move-result v8
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     float-to-double v10, v10
 

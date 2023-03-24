@@ -240,7 +240,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -292,7 +292,7 @@
 
     int-to-float v6, v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v1, v4
 
@@ -311,7 +311,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rotation:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -348,7 +348,7 @@
 
     sub-float/2addr v2, v4
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v1, v3
 

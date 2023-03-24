@@ -2,66 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Predicate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lorg/telegram/ui/LanguageSelectActivity;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LanguageSelectActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-boolean p3, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$2:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/LanguageSelectActivity;
 
-    move-result-object p1
+    iget-object v1, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    return-object p1
-.end method
+    iget-boolean v2, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$2:Z
 
-.method public synthetic negate()Lj$/util/function/Predicate;
-    .locals 1
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$j7jm67ektGhd-c7wsY4R3VpNZ80(Lorg/telegram/ui/LanguageSelectActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Z)V
 
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final test(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lorg/telegram/ui/LanguageSelectActivity$$ExternalSyntheticLambda8;->f$0:Ljava/lang/String;
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/LanguageSelectActivity;->$r8$lambda$Ih65pCE9YcfgRrko_8zeKQiiaeQ(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

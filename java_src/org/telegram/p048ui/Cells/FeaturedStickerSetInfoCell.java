@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -92,7 +92,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
             progressButton.setTextColor(getThemedColor("featuredStickers_buttonText"));
-            this.addButton.setText(LocaleController.getString("Add", C3286R.string.Add));
+            this.addButton.setText(LocaleController.getString("Add", C3301R.string.Add));
             if (z) {
                 createFrame3 = LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
             } else {
@@ -105,7 +105,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
             this.delButton.setTextColor(getThemedColor("featuredStickers_removeButtonText"));
             this.delButton.setTextSize(1, 14.0f);
             this.delButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.delButton.setText(LocaleController.getString("StickersRemove", C3286R.string.StickersRemove));
+            this.delButton.setText(LocaleController.getString("StickersRemove", C3301R.string.StickersRemove));
             if (z) {
                 createFrame4 = LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED);
             } else {
@@ -162,7 +162,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
             this.animatorSet = null;
         }
         if (this.set != tLRPC$StickerSetCovered) {
-            this.unreadProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.unreadProgress = z ? 1.0f : 0.0f;
             invalidate();
         }
         this.set = tLRPC$StickerSetCovered;
@@ -178,7 +178,7 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
         if (this.canAddRemove) {
             if (this.hasOnClick) {
                 this.addButton.setVisibility(0);
-                boolean z4 = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1532id);
+                boolean z4 = z3 || MediaDataController.getInstance(this.currentAccount).isStickerPackInstalled(tLRPC$StickerSetCovered.set.f1533id);
                 this.isInstalled = z4;
                 if (!z2) {
                     if (z4) {
@@ -215,32 +215,32 @@ public class FeaturedStickerSetInfoCell extends FrameLayout {
                 TextView textView = this.delButton;
                 Property property = View.ALPHA;
                 float[] fArr = new float[1];
-                fArr[0] = this.isInstalled ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                fArr[0] = this.isInstalled ? 1.0f : 0.0f;
                 animatorArr[0] = ObjectAnimator.ofFloat(textView, property, fArr);
                 TextView textView2 = this.delButton;
                 Property property2 = View.SCALE_X;
                 float[] fArr2 = new float[1];
-                fArr2[0] = this.isInstalled ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                fArr2[0] = this.isInstalled ? 1.0f : 0.0f;
                 animatorArr[1] = ObjectAnimator.ofFloat(textView2, property2, fArr2);
                 TextView textView3 = this.delButton;
                 Property property3 = View.SCALE_Y;
                 float[] fArr3 = new float[1];
-                fArr3[0] = this.isInstalled ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                fArr3[0] = this.isInstalled ? 1.0f : 0.0f;
                 animatorArr[2] = ObjectAnimator.ofFloat(textView3, property3, fArr3);
                 ProgressButton progressButton = this.addButton;
                 Property property4 = View.ALPHA;
                 float[] fArr4 = new float[1];
-                fArr4[0] = this.isInstalled ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+                fArr4[0] = this.isInstalled ? 0.0f : 1.0f;
                 animatorArr[3] = ObjectAnimator.ofFloat(progressButton, property4, fArr4);
                 ProgressButton progressButton2 = this.addButton;
                 Property property5 = View.SCALE_X;
                 float[] fArr5 = new float[1];
-                fArr5[0] = this.isInstalled ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+                fArr5[0] = this.isInstalled ? 0.0f : 1.0f;
                 animatorArr[4] = ObjectAnimator.ofFloat(progressButton2, property5, fArr5);
                 ProgressButton progressButton3 = this.addButton;
                 Property property6 = View.SCALE_Y;
                 float[] fArr6 = new float[1];
-                fArr6[0] = this.isInstalled ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+                fArr6[0] = this.isInstalled ? 0.0f : 1.0f;
                 animatorArr[5] = ObjectAnimator.ofFloat(progressButton3, property6, fArr6);
                 animatorSet3.playTogether(animatorArr);
                 this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.FeaturedStickerSetInfoCell.1

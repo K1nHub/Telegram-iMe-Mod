@@ -67,9 +67,9 @@
 
     const v2, 0x38d1b717    # 1.0E-4f
 
-    const/4 v3, 0x1
-
     cmpl-float v2, v0, v2
+
+    const/4 v3, 0x1
 
     if-lez v2, :cond_0
 
@@ -228,7 +228,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/Crop/CropAreaView;->setActualRect(F)V
 
-    const/4 v9, 0x0
+    move v9, v1
 
     goto :goto_3
 
@@ -271,7 +271,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     iget-object v13, p0, Lorg/telegram/ui/Components/Crop/CropView$1;->this$0:Lorg/telegram/ui/Components/Crop/CropView;
@@ -303,7 +303,7 @@
 
     iget v5, v3, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     iget v3, v3, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
@@ -338,19 +338,19 @@
 
     int-to-float v5, v7
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     iget v5, v0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->minimumScale:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     iget v2, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
     int-to-float v7, v8
 
-    mul-float v2, v2, v7
+    mul-float/2addr v2, v7
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     invoke-static {v0, v3, v2}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$800(Lorg/telegram/ui/Components/Crop/CropView$CropState;FF)V
 
@@ -392,7 +392,7 @@
 
     iget v3, v3, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-static {v2, v3, v11, v11}, Lorg/telegram/ui/Components/Crop/CropView$CropState;->access$900(Lorg/telegram/ui/Components/Crop/CropView$CropState;FFF)V
 

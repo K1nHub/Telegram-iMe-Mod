@@ -88,7 +88,7 @@
     .line 114
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;
 
-    invoke-virtual {p1, v1, v2}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveEthWallet(J)V
+    invoke-virtual {p1, v1, v2}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->deleteActiveWallet(J)V
 
     goto :goto_0
 

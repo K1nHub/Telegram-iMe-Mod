@@ -44,7 +44,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_0
     invoke-virtual {p1}, Lorg/bouncycastle/pqc/math/linearalgebra/GF2mField;->getDegree()I
@@ -78,9 +78,9 @@
 
     const/4 p1, 0x0
 
-    const/4 v2, 0x0
+    move v2, p1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     iget-object v5, p0, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;->coefficients:[I
@@ -89,7 +89,7 @@
 
     if-ge v2, v6, :cond_3
 
-    const/4 v5, 0x0
+    move v5, p1
 
     :goto_2
     if-ge v5, v0, :cond_1
@@ -367,7 +367,7 @@
     return v2
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-gt v1, v0, :cond_2
@@ -779,15 +779,15 @@
 
     array-length v2, v2
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     new-array v1, v2, [B
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     iget-object v5, p0, Lorg/bouncycastle/pqc/math/linearalgebra/PolynomialGF2mSmallM;->coefficients:[I
@@ -796,7 +796,7 @@
 
     if-ge v3, v5, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     if-ge v5, v0, :cond_1

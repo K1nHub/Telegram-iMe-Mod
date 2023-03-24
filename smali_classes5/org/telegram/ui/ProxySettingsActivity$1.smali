@@ -288,8 +288,6 @@
     .line 232
     invoke-interface {v1, v4, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    const/4 v3, 0x1
-
     goto :goto_1
 
     .line 235
@@ -301,10 +299,10 @@
     .line 236
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveProxyList()V
 
+    :goto_1
     move v3, v0
 
     .line 238
-    :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ProxySettingsActivity$1;->this$0:Lorg/telegram/ui/ProxySettingsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProxySettingsActivity;->access$300(Lorg/telegram/ui/ProxySettingsActivity;)Z

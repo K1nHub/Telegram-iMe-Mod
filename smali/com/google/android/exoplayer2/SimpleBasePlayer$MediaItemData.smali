@@ -95,12 +95,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     const-string v5, "presentationStartTimeMs can only be set if liveConfiguration != null"
@@ -117,12 +117,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     const-string v5, "windowStartTimeMs can only be set if liveConfiguration != null"
@@ -139,12 +139,12 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_2
     const-string v5, "elapsedRealtimeEpochOffsetMs can only be set if liveConfiguration != null"
@@ -186,12 +186,12 @@
 
     if-ltz v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_3
     const-string v5, "windowStartTimeMs can\'t be less than presentationStartTimeMs"
@@ -215,9 +215,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v1
+    cmp-long v1, v5, v1
 
-    if-eqz v7, :cond_7
+    if-eqz v1, :cond_7
 
     .line 1612
     invoke-static {p1}, Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData$Builder;->access$5300(Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData$Builder;)J
@@ -228,16 +228,16 @@
 
     move-result-wide v5
 
-    cmp-long v7, v1, v5
+    cmp-long v1, v1, v5
 
-    if-gtz v7, :cond_6
+    if-gtz v1, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_5
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_5
     const-string v2, "defaultPositionUs can\'t be greater than durationUs"
@@ -502,7 +502,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -518,7 +518,7 @@
 
     check-cast v4, Lcom/google/android/exoplayer2/Tracks$Group;
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 1759
     :goto_1
@@ -543,7 +543,7 @@
 
     if-eqz v7, :cond_0
 
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 1763
     :goto_2
@@ -728,7 +728,7 @@
 
     if-eqz v2, :cond_0
 
-    const/16 v19, 0x1
+    move/from16 v19, v18
 
     goto :goto_0
 
@@ -981,7 +981,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -1032,7 +1032,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -1051,7 +1051,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
@@ -1091,9 +1091,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -1104,9 +1104,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -1117,9 +1117,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -1144,9 +1144,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -1157,9 +1157,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 

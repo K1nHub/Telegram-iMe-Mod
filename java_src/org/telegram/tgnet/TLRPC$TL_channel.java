@@ -36,7 +36,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.join_request = (536870912 & readInt32) != 0;
         this.forum = (readInt32 & 1073741824) != 0;
         this.flags2 = abstractSerializedData.readInt32(z);
-        this.f1499id = abstractSerializedData.readInt64(z);
+        this.f1500id = abstractSerializedData.readInt64(z);
         if ((this.flags & 8192) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -139,7 +139,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.flags = i20;
         abstractSerializedData.writeInt32(i20);
         abstractSerializedData.writeInt32(this.flags2);
-        abstractSerializedData.writeInt64(this.f1499id);
+        abstractSerializedData.writeInt64(this.f1500id);
         if ((this.flags & 8192) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }

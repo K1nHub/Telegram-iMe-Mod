@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/data/manager/review/AppReviewManager;",
+        "Lcom/smedialink/storage/data/manager/update/UpdateManager;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$10\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,68:1\n42#2:69\n127#3,5:70\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$10\n*L\n65#1:69\n65#1:70,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$10\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n42#2:71\n127#3,5:72\n127#3,5:77\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$10\n*L\n62#1:71\n64#1:72,5\n65#1:77,5\n*E\n"
 .end annotation
 
 
@@ -61,8 +61,8 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/manager/review/AppReviewManager;
-    .locals 3
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/manager/update/UpdateManager;
+    .locals 6
 
     const-string v0, "$this$single"
 
@@ -85,41 +85,95 @@
 
     move-result-object p2
 
-    check-cast p2, Landroid/app/Activity;
+    move-object v1, p2
 
-    .line 65
-    new-instance v0, Lcom/smedialink/storage/data/manager/review/AppReviewManager;
+    check-cast v1, Landroid/app/Activity;
 
     .line 131
-    const-class v1, Lcom/smedialink/storage/domain/storage/PreferenceHelper;
+    const-class p2, Lcom/smedialink/storage/domain/storage/PreferenceHelper;
 
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v1
+    move-result-object p2
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {p1, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 64
+    move-object v4, p2
+
+    check-cast v4, Lcom/smedialink/storage/domain/storage/PreferenceHelper;
+
+    .line 131
+    const-class p2, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 64
+    move-object v5, p2
+
+    check-cast v5, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+
+    .line 131
+    const-class p2, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 65
+    move-object v3, p2
+
+    check-cast v3, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    .line 131
+    const-class p2, Lcom/smedialink/storage/domain/gateway/ActionGateway;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/storage/PreferenceHelper;
-
     .line 65
-    invoke-direct {v0, p2, p1}, Lcom/smedialink/storage/data/manager/review/AppReviewManager;-><init>(Landroid/app/Activity;Lcom/smedialink/storage/domain/storage/PreferenceHelper;)V
+    move-object v2, p1
 
-    return-object v0
+    check-cast v2, Lcom/smedialink/storage/domain/gateway/ActionGateway;
+
+    .line 63
+    new-instance p1, Lcom/smedialink/storage/data/manager/update/UpdateManager;
+
+    move-object v0, p1
+
+    invoke-direct/range {v0 .. v5}, Lcom/smedialink/storage/data/manager/update/UpdateManager;-><init>(Landroid/app/Activity;Lcom/smedialink/storage/domain/gateway/ActionGateway;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Lcom/smedialink/storage/domain/storage/PreferenceHelper;Lcom/smedialink/storage/domain/gateway/TelegramGateway;)V
+
+    return-object p1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 65
+    .line 62
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/manager/review/AppReviewManager;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/manager/update/UpdateManager;
 
     move-result-object p1
 

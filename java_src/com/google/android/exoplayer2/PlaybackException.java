@@ -229,7 +229,7 @@ public class PlaybackException extends Exception implements Bundleable {
             if (r7 != 0) goto L5e
             goto L5f
         L5e:
-            r0 = 0
+            r0 = r1
         L5f:
             return r0
         L60:

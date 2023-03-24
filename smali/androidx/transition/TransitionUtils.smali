@@ -26,12 +26,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     sput-boolean v3, Landroidx/transition/TransitionUtils;->HAS_IS_ATTACHED_TO_WINDOW:Z
@@ -40,12 +40,12 @@
 
     if-lt v0, v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 37
     :goto_1
@@ -58,7 +58,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 39
     :goto_2
@@ -219,6 +219,8 @@
 
     if-nez p3, :cond_0
 
+    move v2, v1
+
     goto :goto_0
 
     .line 95
@@ -227,16 +229,15 @@
 
     move-result v2
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
-    :goto_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 102
-    :goto_1
+    :goto_0
     sget-boolean v3, Landroidx/transition/TransitionUtils;->HAS_OVERLAY:Z
 
     const/4 v4, 0x0
@@ -269,15 +270,15 @@
 
     invoke-virtual {v5, p0}, Landroid/view/ViewGroupOverlay;->add(Landroid/view/View;)V
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
+    move v2, v1
+
     move-object v1, v4
 
-    const/4 v2, 0x0
-
     .line 111
-    :goto_2
+    :goto_1
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
     move-result v5
@@ -316,7 +317,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     .line 115
     invoke-static {v5}, Ljava/lang/Math;->round(F)I
@@ -325,7 +326,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     .line 116
     invoke-static {v6}, Ljava/lang/Math;->round(F)I
@@ -375,7 +376,7 @@
 
     move-result-object v4
 
-    goto :goto_3
+    goto :goto_2
 
     .line 130
     :cond_4
@@ -397,7 +398,7 @@
     invoke-virtual {p0, p2}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     :cond_5
-    :goto_3
+    :goto_2
     if-eqz v3, :cond_6
 
     if-eqz v0, :cond_6

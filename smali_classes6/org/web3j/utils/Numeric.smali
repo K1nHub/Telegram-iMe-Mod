@@ -64,7 +64,7 @@
 
     if-ne p0, v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -121,7 +121,7 @@
 
     aput-byte v5, v2, v1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
@@ -275,9 +275,9 @@
     :cond_0
     array-length v2, p0
 
-    move v1, v2
+    move v3, v1
 
-    const/4 v3, 0x0
+    move v1, v2
 
     :goto_0
     if-gt v1, p1, :cond_1

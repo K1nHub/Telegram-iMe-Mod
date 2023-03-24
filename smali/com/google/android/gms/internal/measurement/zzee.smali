@@ -150,10 +150,8 @@
 
     return-void
 
-    :catch_0
-    nop
-
     .line 10
+    :catch_0
     :cond_3
     :goto_2
     invoke-static {p3, p4}, Lcom/google/android/gms/internal/measurement/zzee;->zzV(Ljava/lang/String;Ljava/lang/String;)Z
@@ -184,12 +182,12 @@
 
     if-nez p3, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_3
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_3
     if-nez p4, :cond_6
@@ -197,7 +195,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, p2
 
     :goto_4
     xor-int p2, v0, v1

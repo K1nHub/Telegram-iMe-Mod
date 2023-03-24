@@ -242,9 +242,9 @@
 
     const-wide/16 v3, 0x400
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_1
+    if-ltz v1, :cond_1
 
     .line 131
     iget-wide v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
@@ -318,7 +318,7 @@
 
     long-to-double v3, v3
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     double-to-long v1, v1
 

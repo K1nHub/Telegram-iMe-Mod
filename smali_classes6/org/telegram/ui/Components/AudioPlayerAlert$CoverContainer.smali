@@ -233,7 +233,7 @@
 
     const v0, 0x3faaaaab
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     sub-float/2addr p1, p2
 
@@ -328,12 +328,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$CoverContainer;->activeIndex:I

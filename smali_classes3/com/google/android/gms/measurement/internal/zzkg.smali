@@ -421,9 +421,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_2
+    if-gez v0, :cond_2
 
     .line 17
     invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/zzkg;->zzi()Lcom/google/android/gms/measurement/internal/zzam;

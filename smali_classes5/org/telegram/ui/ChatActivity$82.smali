@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 12895
+    .line 12906
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$82;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,10 +41,10 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 7
 
-    .line 12899
+    .line 12910
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$82;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$35100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$35200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object v0
 
@@ -52,7 +52,7 @@
 
     return-void
 
-    .line 12902
+    .line 12913
     :cond_0
     new-instance v0, Landroid/animation/AnimatorSet;
 
@@ -62,11 +62,11 @@
 
     new-array v2, v1, [Landroid/animation/Animator;
 
-    .line 12903
+    .line 12914
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$82;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 12904
-    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$35100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
+    .line 12915
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$35200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object v3
 
@@ -86,10 +86,10 @@
 
     aput-object v1, v2, v6
 
-    .line 12903
+    .line 12914
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 12906
+    .line 12917
     new-instance v1, Lorg/telegram/ui/ChatActivity$82$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ChatActivity$82$1;-><init>(Lorg/telegram/ui/ChatActivity$82;)V
@@ -98,10 +98,10 @@
 
     const-wide/16 v1, 0x12c
 
-    .line 12914
+    .line 12925
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 12915
+    .line 12926
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -112,7 +112,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 12898
+    .line 12909
     new-instance p1, Lorg/telegram/ui/ChatActivity$82$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$82$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$82;)V

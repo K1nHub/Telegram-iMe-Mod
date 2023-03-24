@@ -44,8 +44,9 @@
 
     move-wide v4, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
+    :catch_0
     :goto_0
     const/4 v6, 0x1
 
@@ -82,12 +83,12 @@
 
     invoke-virtual {v7}, Landroid/media/AudioRecord;->stop()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_1
 
-    :catch_0
-    const/4 v3, 0x1
+    :catch_1
+    move v3, v6
 
     .line 1373
     :goto_1
@@ -99,7 +100,7 @@
 
     if-nez v7, :cond_0
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     .line 1378
     :cond_0
@@ -145,7 +146,7 @@
     .line 1384
     iput v8, v7, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->results:I
 
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_3
     if-ge v9, v8, :cond_4
@@ -217,7 +218,7 @@
 
     const v11, 0xf4240
 
-    mul-int v10, v10, v11
+    mul-int/2addr v10, v11
 
     const v11, 0xac44
 
@@ -257,9 +258,7 @@
 
     if-nez v8, :cond_6
 
-    const/4 v3, 0x1
-
-    goto/16 :goto_0
+    goto :goto_7
 
     .line 1416
     :cond_6
@@ -272,12 +271,7 @@
 
     invoke-virtual {v6, v7}, Ljava/util/concurrent/ArrayBlockingQueue;->put(Ljava/lang/Object;)V
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto/16 :goto_0
-
-    :catch_1
-    nop
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto/16 :goto_0
 
@@ -323,13 +317,14 @@
 
     invoke-virtual {v3, v7}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    :goto_7
     move v3, v6
 
     goto/16 :goto_0
 
     .line 1424
     :cond_9
-    :goto_7
+    :goto_8
     :try_start_2
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$VideoRecorder$1;->this$1:Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
 
@@ -341,7 +336,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_8
+    goto :goto_9
 
     :catch_2
     move-exception v0
@@ -350,7 +345,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     .line 1428
-    :goto_8
+    :goto_9
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$VideoRecorder$1;->this$1:Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->access$2000(Lorg/telegram/messenger/camera/CameraView$VideoRecorder;)Lorg/telegram/messenger/camera/CameraView$EncoderHandler;

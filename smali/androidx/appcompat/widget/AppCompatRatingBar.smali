@@ -74,7 +74,7 @@
 
     move-result v0
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     const/4 v0, 0x0
 

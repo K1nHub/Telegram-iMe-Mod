@@ -10,13 +10,13 @@ public final class zzm implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        boolean z = false;
+        boolean z2 = false;
         String str = null;
         Long l = null;
         ArrayList<String> arrayList = null;
         String str2 = null;
-        int i = 0;
-        boolean z = false;
-        boolean z2 = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

@@ -450,7 +450,7 @@
 
     if-ne p3, v3, :cond_3
 
-    const/4 p3, 0x0
+    move p3, v2
 
     .line 293
     :goto_0
@@ -568,7 +568,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     if-eqz p3, :cond_1

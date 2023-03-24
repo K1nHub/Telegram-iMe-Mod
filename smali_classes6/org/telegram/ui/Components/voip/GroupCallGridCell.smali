@@ -158,7 +158,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 p2, 0x40000000    # 2.0f
+    move p2, v1
 
     .line 43
     :goto_0

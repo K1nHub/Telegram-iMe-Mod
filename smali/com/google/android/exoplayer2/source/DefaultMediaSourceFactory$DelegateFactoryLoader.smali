@@ -313,11 +313,6 @@
 
     goto :goto_1
 
-    :catch_0
-    nop
-
-    goto :goto_1
-
     .line 654
     :cond_2
     const-class v2, Lcom/google/android/exoplayer2/source/rtsp/RtspMediaSource$Factory;
@@ -388,6 +383,7 @@
     move-object v1, v3
 
     .line 668
+    :catch_0
     :goto_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->mediaSourceFactorySuppliers:Ljava/util/Map;
 

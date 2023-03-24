@@ -53,7 +53,7 @@ public class Track {
     public static class SamplePresentationTime {
 
         /* renamed from: dt */
-        private long f1488dt;
+        private long f1489dt;
         private int index;
         private long presentationTime;
 
@@ -266,18 +266,19 @@ public class Track {
 
     public void prepare() {
         int i;
+        int i2;
         ArrayList arrayList = new ArrayList(this.samplePresentationTimes);
         Collections.sort(this.samplePresentationTimes, Track$$ExternalSyntheticLambda0.INSTANCE);
         this.sampleDurations = new long[this.samplePresentationTimes.size()];
         long j = Long.MAX_VALUE;
         long j2 = 0;
-        int i2 = 0;
+        int i3 = 0;
         boolean z = false;
         while (true) {
-            if (i2 >= this.samplePresentationTimes.size()) {
+            if (i3 >= this.samplePresentationTimes.size()) {
                 break;
             }
-            SamplePresentationTime samplePresentationTime = this.samplePresentationTimes.get(i2);
+            SamplePresentationTime samplePresentationTime = this.samplePresentationTimes.get(i3);
             long j3 = samplePresentationTime.presentationTime - j2;
             j2 = samplePresentationTime.presentationTime;
             this.sampleDurations[samplePresentationTime.index] = j3;
@@ -286,24 +287,27 @@ public class Track {
                 this.duration += j3;
             }
             j = (j3 <= 0 || j3 >= 2147483647L) ? j4 : Math.min(j4, j3);
-            if (samplePresentationTime.index != i2) {
+            if (samplePresentationTime.index != i3) {
                 z = true;
             }
-            i2++;
+            i3++;
         }
         long[] jArr = this.sampleDurations;
         if (jArr.length > 0) {
+            i2 = 0;
             jArr[0] = j;
             this.duration += j;
+        } else {
+            i2 = 0;
         }
         for (i = 1; i < arrayList.size(); i++) {
-            ((SamplePresentationTime) arrayList.get(i)).f1488dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1488dt;
+            ((SamplePresentationTime) arrayList.get(i)).f1489dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1489dt;
         }
         if (z) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
-            for (int i3 = 0; i3 < this.samplePresentationTimes.size(); i3++) {
-                SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i3);
-                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1488dt);
+            for (int i4 = i2; i4 < this.samplePresentationTimes.size(); i4++) {
+                SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i4);
+                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1489dt);
             }
         }
     }

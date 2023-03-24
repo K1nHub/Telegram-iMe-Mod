@@ -49,11 +49,11 @@
 
     const v2, 0x3f63d70a    # 0.89f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     const v2, 0x3ca3d70a    # 0.02f
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v2, v2
 
@@ -66,7 +66,7 @@
 
     const/high16 v5, 0x3fa00000    # 1.25f
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     float-to-int v0, v0
 
@@ -89,11 +89,11 @@
 
     const v1, 0x3f63d70a    # 0.89f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3ca3d70a    # 0.02f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v1, v1
 
@@ -106,7 +106,7 @@
 
     const/high16 v4, 0x3fa00000    # 1.25f
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 

@@ -194,7 +194,7 @@
     :cond_0
     array-length v1, p1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -262,7 +262,7 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 50
     :goto_0

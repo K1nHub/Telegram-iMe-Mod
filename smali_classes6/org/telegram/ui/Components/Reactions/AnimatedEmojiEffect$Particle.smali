@@ -84,7 +84,7 @@
 
     const/high16 v1, -0x41800000    # -0.25f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
@@ -98,7 +98,7 @@
 
     const/high16 v3, 0x3fc00000    # 1.5f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     sget-object v3, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
@@ -116,7 +116,7 @@
 
     div-float/2addr v3, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v0, v1
 
@@ -148,7 +148,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -169,7 +169,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sget-object v1, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
@@ -189,7 +189,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -332,7 +332,7 @@
 
     const v6, 0x3f4ccccd    # 0.8f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     cmpl-float v6, v3, v5
 
@@ -360,14 +360,14 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v1
 
     :goto_1
     const/high16 v6, 0x40000000    # 2.0f
 
     div-float/2addr v0, v6
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     .line 271
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -395,7 +395,7 @@
 
     const/high16 v7, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     iget v7, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->progress:F
 
@@ -407,7 +407,7 @@
 
     move-result v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v1, v5
 
@@ -478,7 +478,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/16 v5, 0x14
@@ -497,7 +497,7 @@
 
     const/high16 v7, 0x4f000000
 
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 183
     :goto_1
@@ -541,9 +541,9 @@
 
     sub-float/2addr v10, v6
 
-    mul-float v9, v9, v9
+    mul-float/2addr v9, v9
 
-    mul-float v10, v10, v10
+    mul-float/2addr v10, v10
 
     add-float/2addr v9, v10
 
@@ -589,7 +589,7 @@
     goto :goto_2
 
     :cond_4
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v4
 
     .line 201
     :goto_2
@@ -604,11 +604,11 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
-
-    const v5, 0x3dcccccd    # 0.1f
+    mul-float/2addr v0, v3
 
     cmpl-float v0, v1, v0
+
+    const v1, 0x3dcccccd    # 0.1f
 
     if-lez v0, :cond_5
 
@@ -623,7 +623,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromX:F
 
@@ -641,18 +641,18 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromX:F
 
     .line 206
-    iget v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
+    iget v3, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
 
-    cmpl-float v1, v1, v0
+    cmpl-float v3, v3, v0
 
-    if-lez v1, :cond_6
+    if-lez v3, :cond_6
 
-    sub-float/2addr v0, v5
+    sub-float/2addr v0, v1
 
     .line 207
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
@@ -670,21 +670,79 @@
 
     int-to-float v0, v0
 
-    const v1, 0x3ee66666    # 0.45f
+    const v3, 0x3ee66666    # 0.45f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v3
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
+    iget-object v3, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
+    iget-object v3, v3, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
 
-    move-result v1
+    move-result v3
 
-    int-to-float v1, v1
+    int-to-float v3, v3
 
-    mul-float v1, v1, v5
+    mul-float/2addr v3, v1
+
+    sget-object v5, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
+
+    invoke-virtual {v5}, Ljava/util/Random;->nextInt()I
+
+    move-result v5
+
+    rem-int/lit8 v5, v5, 0x64
+
+    invoke-static {v5}, Ljava/lang/Math;->abs(I)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    const/high16 v6, 0x42c80000    # 100.0f
+
+    div-float/2addr v5, v6
+
+    mul-float/2addr v3, v5
+
+    add-float/2addr v0, v3
+
+    iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromY:F
+
+    .line 214
+    iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
+
+    iget-boolean v3, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->longAnimation:Z
+
+    const v5, 0x3d4ccccd    # 0.05f
+
+    const/high16 v7, 0x3fc00000    # 1.5f
+
+    if-eqz v3, :cond_7
+
+    .line 215
+    iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, v5
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
+
+    iget-object v2, v2, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v1
 
     sget-object v3, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
@@ -700,50 +758,15 @@
 
     int-to-float v3, v3
 
-    const/high16 v6, 0x42c80000    # 100.0f
-
     div-float/2addr v3, v6
 
-    mul-float v1, v1, v3
+    mul-float/2addr v2, v3
 
-    add-float/2addr v0, v1
+    add-float/2addr v0, v2
 
-    iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromY:F
+    iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
 
-    .line 214
-    iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
-
-    iget-boolean v1, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->longAnimation:Z
-
-    const v3, 0x3d4ccccd    # 0.05f
-
-    const/high16 v7, 0x3fc00000    # 1.5f
-
-    if-eqz v1, :cond_7
-
-    .line 215
-    iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    mul-float v0, v0, v3
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
-
-    iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float v1, v1, v5
-
+    .line 216
     sget-object v2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v2}, Ljava/util/Random;->nextInt()I
@@ -760,13 +783,33 @@
 
     div-float/2addr v2, v6
 
-    mul-float v1, v1, v2
+    mul-float/2addr v2, v7
 
-    add-float/2addr v0, v1
+    add-float/2addr v2, v7
 
-    iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
+    mul-float/2addr v0, v2
 
-    .line 216
+    iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toSize:F
+
+    .line 217
+    iget v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v0, v2
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
+
+    iget-object v2, v2, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v1
+
     sget-object v1, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v1}, Ljava/util/Random;->nextInt()I
@@ -783,52 +826,9 @@
 
     div-float/2addr v1, v6
 
-    mul-float v1, v1, v7
+    mul-float/2addr v2, v1
 
-    add-float/2addr v1, v7
-
-    mul-float v0, v0, v1
-
-    iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toSize:F
-
-    .line 217
-    iget v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
-
-    iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float v1, v1, v5
-
-    sget-object v2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
-
-    invoke-virtual {v2}, Ljava/util/Random;->nextInt()I
-
-    move-result v2
-
-    rem-int/lit8 v2, v2, 0x64
-
-    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    div-float/2addr v2, v6
-
-    mul-float v1, v1, v2
-
-    add-float/2addr v0, v1
+    add-float/2addr v0, v2
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toY1:F
 
@@ -880,39 +880,39 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v5
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
+    iget-object v3, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
+    iget-object v3, v3, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float v1, v1, v5
-
-    sget-object v3, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
-
-    invoke-virtual {v3}, Ljava/util/Random;->nextInt()I
-
-    move-result v3
-
-    rem-int/lit8 v3, v3, 0x64
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
+    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
 
     move-result v3
 
     int-to-float v3, v3
 
-    div-float/2addr v3, v6
+    mul-float/2addr v3, v1
 
-    mul-float v1, v1, v3
+    sget-object v1, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
-    add-float/2addr v0, v1
+    invoke-virtual {v1}, Ljava/util/Random;->nextInt()I
+
+    move-result v1
+
+    rem-int/lit8 v1, v1, 0x64
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    div-float/2addr v1, v6
+
+    mul-float/2addr v3, v1
+
+    add-float/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
 
@@ -933,11 +933,11 @@
 
     div-float/2addr v1, v6
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     add-float/2addr v1, v7
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toSize:F
 
@@ -1002,7 +1002,7 @@
 
     div-float/2addr v1, v6
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iput v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->randomRotation:F
 

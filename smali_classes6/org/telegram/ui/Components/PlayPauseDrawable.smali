@@ -82,9 +82,9 @@
 
     const-wide/16 v0, 0x12
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const-wide/16 v2, 0x10
 
@@ -245,7 +245,7 @@
 
     sub-float v4, v1, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -262,73 +262,73 @@
     .line 76
     iget v2, p0, Lorg/telegram/ui/Components/PlayPauseDrawable;->progress:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
-    const/high16 v0, -0x3f600000    # -5.0f
+    const/high16 v0, 0x42c80000    # 100.0f
 
-    const/high16 v3, 0x42c80000    # 100.0f
+    cmpg-float v3, v2, v0
 
-    cmpg-float v4, v2, v3
+    const/high16 v4, -0x3f600000    # -5.0f
 
-    if-gez v4, :cond_8
+    if-gez v3, :cond_8
 
     .line 79
-    sget-object v4, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    div-float v3, v2, v3
+    div-float v0, v2, v0
 
-    invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    move-result v3
+    move-result v0
 
-    mul-float v3, v3, v0
+    mul-float/2addr v0, v4
 
     goto :goto_2
 
     :cond_8
-    const/high16 v4, 0x43f20000    # 484.0f
+    const/high16 v3, 0x43f20000    # 484.0f
 
-    cmpg-float v4, v2, v4
+    cmpg-float v3, v2, v3
 
-    if-gez v4, :cond_9
+    if-gez v3, :cond_9
 
-    const/high16 v4, 0x42be0000    # 95.0f
+    const/high16 v3, 0x42be0000    # 95.0f
 
     .line 81
     sget-object v5, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    sub-float v3, v2, v3
+    sub-float v0, v2, v0
 
     const/high16 v6, 0x43c00000    # 384.0f
 
-    div-float/2addr v3, v6
+    div-float/2addr v0, v6
 
-    invoke-virtual {v5, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v5, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    move-result v3
+    move-result v0
 
-    mul-float v3, v3, v4
+    mul-float/2addr v0, v3
 
-    add-float/2addr v3, v0
+    add-float/2addr v0, v4
 
     goto :goto_2
 
     :cond_9
-    const/high16 v3, 0x42b40000    # 90.0f
+    const/high16 v0, 0x42b40000    # 90.0f
 
     :goto_2
-    const v0, 0x3fb9999a    # 1.45f
+    const v3, 0x3fb9999a    # 1.45f
 
     .line 85
     iget v4, p0, Lorg/telegram/ui/Components/PlayPauseDrawable;->size:I
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v3
 
-    const/16 v0, 0x1c
+    const/16 v3, 0x1c
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
@@ -342,20 +342,20 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v0
+    move-result v3
 
-    int-to-float v0, v0
+    int-to-float v3, v3
 
-    div-float/2addr v6, v0
+    div-float/2addr v6, v3
 
     invoke-virtual {p1, v4, v6}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 86
-    invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
     .line 87
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->playPauseAnimator:Lorg/telegram/ui/Components/PathAnimator;

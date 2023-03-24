@@ -799,7 +799,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 304
     :cond_0
@@ -930,7 +930,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_2
     :goto_1
@@ -962,7 +962,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, v0
 
     :cond_5
     :goto_3
@@ -994,7 +994,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 p3, 0x0
+    move p3, v0
 
     :cond_8
     :goto_5
@@ -1023,7 +1023,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 p4, 0x0
+    move p4, v0
 
     .line 322
     :cond_b
@@ -1480,7 +1480,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 240
     :cond_0
@@ -1549,7 +1549,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 

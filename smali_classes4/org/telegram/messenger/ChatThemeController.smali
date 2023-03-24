@@ -205,7 +205,7 @@
 
     invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v1, :cond_1
@@ -410,7 +410,7 @@
 .end method
 
 .method public static getWallpaperBitmap(JLorg/telegram/tgnet/ResultCallback;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -425,9 +425,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
@@ -751,7 +751,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 84
     :goto_0
@@ -847,7 +847,7 @@
     move-result-object v0
 
     :goto_1
-    const/4 p0, 0x0
+    move p0, v1
 
     goto :goto_2
 
@@ -1137,7 +1137,7 @@
 .end method
 
 .method public static requestAllChatThemes(Lorg/telegram/tgnet/ResultCallback;Z)V
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1153,15 +1153,15 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     sget-wide v0, Lorg/telegram/messenger/ChatThemeController;->lastReloadTimeMs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 63
     :cond_0
@@ -1179,30 +1179,30 @@
 
     const-wide/32 v2, 0x6ddd00
 
-    const/4 v4, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, 0x0
 
-    if-lez v5, :cond_2
+    if-lez v0, :cond_2
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 67
     :goto_0
-    sget-object v1, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
+    sget-object v2, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
 
-    if-eqz v1, :cond_6
+    if-eqz v2, :cond_6
 
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_6
+    if-nez v2, :cond_6
 
     if-eqz v0, :cond_3
 
@@ -1212,14 +1212,14 @@
     :cond_3
     new-instance v0, Ljava/util/ArrayList;
 
-    sget-object v1, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
+    sget-object v2, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     if-eqz p1, :cond_4
 
     .line 117
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1234,7 +1234,7 @@
 
     move-result-object p1
 
-    invoke-interface {v0, v4, p1}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    invoke-interface {v0, v1, p1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     .line 120
     :cond_4

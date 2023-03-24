@@ -38,7 +38,7 @@
 
 # virtual methods
 .method run(Ljava/lang/Runnable;)V
-    .locals 5
+    .locals 4
 
     .line 65
     iget-object v0, p0, Lcom/google/firebase/firestore/remote/AbstractStream$CloseGuardedRunner;->this$0:Lcom/google/firebase/firestore/remote/AbstractStream;
@@ -58,9 +58,9 @@
 
     iget-wide v2, p0, Lcom/google/firebase/firestore/remote/AbstractStream$CloseGuardedRunner;->initialCloseCount:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 67
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V

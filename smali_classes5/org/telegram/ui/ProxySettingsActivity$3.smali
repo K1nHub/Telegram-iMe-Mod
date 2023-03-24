@@ -86,7 +86,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 360
     :goto_0

@@ -55,11 +55,11 @@ public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTa
     /* compiled from: TabbedFragmentPage.kt */
     /* renamed from: org.fork.utils.TabbedFragmentPage$1 */
     /* loaded from: classes4.dex */
-    public static final class C31771 extends Lambda implements Function0<View> {
+    public static final class C31911 extends Lambda implements Function0<View> {
         final /* synthetic */ T $fragment;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C31771(T t) {
+        C31911(T t) {
             super(0);
             this.$fragment = t;
         }
@@ -83,7 +83,7 @@ public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTa
     }
 
     public /* synthetic */ TabbedFragmentPage(String str, int i, BaseFragment baseFragment, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, (i2 & 2) != 0 ? -1 : i, baseFragment, (i2 & 8) != 0 ? new C31771(baseFragment) : function0);
+        this(str, (i2 & 2) != 0 ? -1 : i, baseFragment, (i2 & 8) != 0 ? new C31911(baseFragment) : function0);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

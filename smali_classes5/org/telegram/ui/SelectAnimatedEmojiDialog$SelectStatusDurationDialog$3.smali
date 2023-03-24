@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     goto :goto_0
 
@@ -152,7 +152,7 @@
 
     int-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationY(F)V
 

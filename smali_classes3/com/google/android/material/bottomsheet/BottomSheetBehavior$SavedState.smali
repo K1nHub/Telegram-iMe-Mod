@@ -83,12 +83,12 @@
 
     if-ne p2, v1, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->fitToContents:Z
@@ -100,12 +100,12 @@
 
     if-ne p2, v1, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_1
     iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->hideable:Z
@@ -117,7 +117,7 @@
 
     if-ne p1, v1, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     iput-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->skipCollapsed:Z

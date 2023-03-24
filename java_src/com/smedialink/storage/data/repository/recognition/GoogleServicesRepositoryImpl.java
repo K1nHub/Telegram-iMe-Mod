@@ -77,16 +77,16 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
     public Observable<Result<List<RecognizedImageModel>>> getPhotoObjects(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
         Pair<MultipartBody.Part, File> convertBitmapToMultipart = convertBitmapToMultipart(photo);
-        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1789xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
+        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1797xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1788x9906889f(this.errorHandler)));
+        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1796x9906889f(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     private final Pair<MultipartBody.Part, File> convertBitmapToMultipart(Bitmap bitmap) {
         File tempFile$default = BitmapExtKt.toTempFile$default(bitmap, this.cachePath, null, 2, null);
-        return TuplesKt.m100to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
+        return TuplesKt.m99to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
     }
 
     /* compiled from: GoogleServicesRepositoryImpl.kt */

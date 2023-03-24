@@ -255,7 +255,7 @@
 
     const-wide/16 v3, 0x0
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-ge v5, v1, :cond_6
@@ -303,7 +303,7 @@
 
     move-result v8
 
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_2
     if-ge v9, v8, :cond_1
@@ -492,7 +492,7 @@
 .end method
 
 .method public contentLength()J
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -504,9 +504,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 

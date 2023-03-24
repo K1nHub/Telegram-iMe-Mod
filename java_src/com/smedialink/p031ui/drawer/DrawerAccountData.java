@@ -2,16 +2,16 @@ package com.smedialink.p031ui.drawer;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerAccountData.kt */
 /* renamed from: com.smedialink.ui.drawer.DrawerAccountData */
 /* loaded from: classes3.dex */
 public enum DrawerAccountData {
-    PHONE(C3286R.string.drawer_profile_cell_alert_phone_number),
-    USERNAME(C3286R.string.drawer_profile_cell_alert_username),
-    NAME(C3286R.string.drawer_profile_cell_alert_name),
-    USER_ID(C3286R.string.drawer_profile_cell_alert_user_id);
+    PHONE(C3301R.string.drawer_profile_cell_alert_phone_number),
+    USERNAME(C3301R.string.drawer_profile_cell_alert_username),
+    NAME(C3301R.string.drawer_profile_cell_alert_name),
+    USER_ID(C3301R.string.drawer_profile_cell_alert_user_id);
     
     public static final Companion Companion = new Companion(null);
     private final int titleResId;

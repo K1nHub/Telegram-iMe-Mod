@@ -318,13 +318,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_1
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$CommonGroupsAdapter;->endReached:Z
@@ -343,7 +343,7 @@
     iput-boolean v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$CommonGroupsAdapter;->endReached:Z
 
     :goto_2
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 6658
     :goto_3

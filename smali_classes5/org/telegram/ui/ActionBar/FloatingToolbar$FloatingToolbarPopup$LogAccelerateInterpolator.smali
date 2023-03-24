@@ -94,7 +94,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$LogAccelerateInterpolator;->LOGS_SCALE:F
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     sub-float/2addr v0, p1
 

@@ -300,13 +300,13 @@
 
     int-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v0, v1
 
     iget v1, p0, Lcom/smedialink/ui/custom/ProgressView;->progress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 59
     invoke-direct {p0}, Lcom/smedialink/ui/custom/ProgressView;->getStrokePadding()F

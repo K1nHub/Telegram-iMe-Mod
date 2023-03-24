@@ -260,7 +260,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v6
 
     goto :goto_1
 
@@ -271,7 +271,7 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v7
 
     goto :goto_1
 
@@ -284,20 +284,20 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v0, 0x2
+    move v0, v4
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 v0, -0x1
+    move v0, v5
 
     :goto_1
     if-eqz v0, :cond_5
 
     if-eq v0, v7, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v7
 
     goto :goto_2
 
@@ -307,7 +307,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x2
+    move v0, v4
 
     .line 168
     :goto_2
@@ -358,7 +358,7 @@
 
     if-eqz p0, :cond_8
 
-    const/4 v7, 0x0
+    move v7, v6
 
     goto :goto_4
 
@@ -375,7 +375,7 @@
 
     :cond_8
     :goto_3
-    const/4 v7, -0x1
+    move v7, v5
 
     :goto_4
     if-eqz v7, :cond_9
@@ -383,7 +383,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v6
 
     .line 182
     :goto_5
@@ -461,7 +461,7 @@
 
     if-eqz v1, :cond_e
 
-    const/4 v1, 0x0
+    move v1, v6
 
     goto :goto_7
 
@@ -472,23 +472,23 @@
 
     if-eqz v1, :cond_e
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_7
 
     :cond_e
     :goto_6
-    const/4 v1, -0x1
+    move v1, v5
 
     :goto_7
     if-eqz v1, :cond_f
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_8
 
     :cond_f
-    const/4 v1, 0x2
+    move v1, v4
 
     :goto_8
     const-string v2, "circle"
@@ -527,7 +527,7 @@
 
     if-eqz p0, :cond_13
 
-    const/4 v5, 0x0
+    move v5, v6
 
     goto :goto_9
 
@@ -540,7 +540,7 @@
 
     if-eqz p0, :cond_13
 
-    const/4 v5, 0x1
+    move v5, v7
 
     goto :goto_9
 
@@ -551,7 +551,7 @@
 
     if-eqz p0, :cond_13
 
-    const/4 v5, 0x2
+    move v5, v4
 
     :cond_13
     :goto_9
@@ -559,7 +559,7 @@
 
     if-eq v5, v7, :cond_14
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_a
 

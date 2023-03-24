@@ -75,12 +75,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     new-array v1, v3, [Ljava/lang/Object;
@@ -169,7 +169,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_1
     :goto_1
@@ -237,7 +237,7 @@
     invoke-virtual {v0, v4, v2}, Lcom/google/firestore/v1/MapValue$Builder;->putFields(Ljava/lang/String;Lcom/google/firestore/v1/Value;)Lcom/google/firestore/v1/MapValue$Builder;
 
     :goto_2
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_1
 
@@ -264,12 +264,12 @@
 
     if-nez v3, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_3
     new-array v3, v1, [Ljava/lang/Object;

@@ -111,16 +111,14 @@
 
     if-nez p3, :cond_2
 
-    const/4 v4, 0x1
-
     goto :goto_0
 
     :cond_2
     const/4 v0, 0x2
 
-    const/4 v4, 0x2
-
     :goto_0
+    move v4, v0
+
     iget-object v5, p0, Lorg/telegram/ui/ArchivedStickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/ArchivedStickersActivity;
 
     const/4 v6, 0x0
@@ -294,12 +292,12 @@
 
     if-eq p2, v1, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_0
     invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/Cells/ArchivedStickerSetCell;->setStickersSet(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;Z)V
@@ -367,7 +365,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Cells/ArchivedStickerSetCell;->setDrawProgress(ZZ)V

@@ -53,6 +53,6 @@ public final class AutoValue_PersistedEvent extends PersistedEvent {
 
     public int hashCode() {
         long j = this.f99id;
-        return this.event.hashCode() ^ ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.transportContext.hashCode()) * 1000003);
+        return ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.transportContext.hashCode()) * 1000003) ^ this.event.hashCode();
     }
 }

@@ -1179,7 +1179,7 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_4
     const/4 v4, 0x4
@@ -1500,12 +1500,12 @@
 
     if-nez v3, :cond_b
 
-    const/16 v18, 0x0
+    move/from16 v18, v6
 
     goto :goto_6
 
     :cond_b
-    const/16 v18, 0x1e
+    move/from16 v18, v10
 
     :goto_6
     const/16 v19, 0x0
@@ -2318,7 +2318,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     add-int/2addr v1, v5
@@ -2414,7 +2414,7 @@
 
     if-lez v10, :cond_4
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     float-to-double v9, v1
 
@@ -2432,7 +2432,7 @@
     goto :goto_3
 
     :cond_4
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-double v9, v5
 
@@ -2499,7 +2499,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_4
     int-to-float v7, v7
@@ -2561,7 +2561,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_5
     sub-int/2addr v7, v2
@@ -2914,7 +2914,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x4
@@ -2930,12 +2930,12 @@
 
     if-ne v1, p1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     invoke-virtual {v2, v4, v3}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V
@@ -3519,7 +3519,7 @@
 
     const v1, 0x3e99999a    # 0.3f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
@@ -3597,7 +3597,7 @@
 
     const v1, 0x3d23d70a    # 0.04f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -3610,7 +3610,7 @@
 
     const/high16 v1, 0x3f400000    # 0.75f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x42c80000    # 100.0f
 
@@ -3639,7 +3639,7 @@
 
     const v1, 0x3f866666    # 1.05f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     :cond_0
     const/high16 v1, 0x3f800000    # 1.0f
@@ -3771,7 +3771,7 @@
 
     const v1, 0x3f0ccccd    # 0.55f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x42c80000    # 100.0f
 
@@ -3794,7 +3794,7 @@
 
     const v1, 0x3f19999a    # 0.6f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3de147ae    # 0.11f
 
@@ -4038,7 +4038,7 @@
     if-nez v0, :cond_1
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1
@@ -4137,7 +4137,7 @@
     if-nez v0, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     return v1
@@ -4551,7 +4551,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->activeType:I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-ge v0, v2, :cond_4
@@ -4563,12 +4563,12 @@
 
     if-nez v0, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     invoke-virtual {v4, v5, v1}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V

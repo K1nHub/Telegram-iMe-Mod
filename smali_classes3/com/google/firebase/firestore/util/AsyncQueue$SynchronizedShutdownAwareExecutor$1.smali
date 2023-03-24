@@ -83,11 +83,7 @@
 
     move-result-object p2
 
-    goto :goto_0
-
     :catch_2
-    nop
-
     :cond_0
     :goto_0
     if-eqz p2, :cond_1

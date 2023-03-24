@@ -398,7 +398,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v9
 
     :goto_1
     iput-boolean v7, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->backgroundDark:Z
@@ -412,12 +412,12 @@
 
     if-eqz v7, :cond_2
 
-    const/4 v1, -0x1
+    move v1, p2
 
     goto :goto_2
 
     :cond_2
-    const/high16 v1, -0x1000000
+    move v1, v0
 
     :goto_2
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
@@ -640,7 +640,7 @@
 
     int-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -651,7 +651,7 @@
 
     int-to-float v4, v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -662,7 +662,7 @@
 
     int-to-float v4, v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -1260,30 +1260,30 @@
 
     if-eqz v3, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
     move-result v1
 
-    const/high16 v3, 0x437f0000    # 255.0f
+    cmpg-float v3, v1, v2
 
-    cmpg-float v5, v1, v2
+    const/high16 v5, 0x437f0000    # 255.0f
 
-    if-gez v5, :cond_5
+    if-gez v3, :cond_5
 
     .line 305
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
 
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
-    iget v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurWidth:I
+    iget v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurWidth:I
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
@@ -1291,30 +1291,30 @@
 
     float-to-int v6, v6
 
-    if-eq v5, v6, :cond_4
+    if-eq v3, v6, :cond_4
 
     .line 306
     :cond_2
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
 
-    if-nez v5, :cond_3
+    if-nez v3, :cond_3
 
     .line 307
-    new-instance v5, Landroid/graphics/Matrix;
+    new-instance v3, Landroid/graphics/Matrix;
 
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
+    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
+    iput-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
 
     goto :goto_1
 
     .line 309
     :cond_3
-    invoke-virtual {v5}, Landroid/graphics/Matrix;->reset()V
+    invoke-virtual {v3}, Landroid/graphics/Matrix;->reset()V
 
     .line 311
     :goto_1
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
@@ -1326,35 +1326,35 @@
 
     int-to-float v6, v6
 
-    invoke-virtual {v5, v6, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
+    invoke-virtual {v3, v6, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     .line 312
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurGradient:Landroid/graphics/LinearGradient;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurGradient:Landroid/graphics/LinearGradient;
 
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v5, v6}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
+    invoke-virtual {v3, v6}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
     .line 315
     :cond_4
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurPaint:Landroid/graphics/Paint;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurPaint:Landroid/graphics/Paint;
 
     sub-float v6, v2, v1
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v5
 
     float-to-int v6, v6
 
-    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 316
-    iget v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->roundRadiusDp:F
+    iget v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->roundRadiusDp:F
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v5
+    move-result v3
 
-    int-to-float v5, v5
+    int-to-float v3, v3
 
     iget v6, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->roundRadiusDp:F
 
@@ -1366,32 +1366,32 @@
 
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->pseudoBlurPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v5, v6, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v3, v6, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 319
     :cond_5
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->blurBitmap:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->blurBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v5, :cond_6
+    if-eqz v3, :cond_6
 
-    iget v5, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->value:F
+    iget v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->value:F
 
-    cmpg-float v5, v5, v2
+    cmpg-float v3, v3, v2
 
-    if-gez v5, :cond_6
+    if-gez v3, :cond_6
 
-    cmpl-float v4, v1, v4
+    cmpl-float v3, v1, v4
 
-    if-lez v4, :cond_6
+    if-lez v3, :cond_6
 
     .line 320
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->blurPaint:Landroid/graphics/Paint;
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->blurPaint:Landroid/graphics/Paint;
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v5
 
     float-to-int v1, v1
 
-    invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 321
     iget v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->roundRadiusDp:F
@@ -1549,7 +1549,7 @@
 
     iget v7, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->value:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v5, v6
 

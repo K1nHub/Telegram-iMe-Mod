@@ -120,15 +120,15 @@
 
     int-to-long v0, v0
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     const-wide/32 v0, 0xf4240
 
     div-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    return p2
+    return p1
 .end method
 
 .method private findNoiseLimit(Ljava/nio/ByteBuffer;)I
@@ -166,7 +166,7 @@
 
     div-int/2addr v0, p1
 
-    mul-int v0, v0, p1
+    mul-int/2addr v0, p1
 
     add-int/2addr v0, p1
 
@@ -219,7 +219,7 @@
 
     div-int/2addr v0, p1
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     return p1
 
@@ -395,7 +395,7 @@
 
     iget v5, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v4
 
     sub-int/2addr v3, v5
 
@@ -696,7 +696,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 196
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
@@ -720,7 +720,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
 

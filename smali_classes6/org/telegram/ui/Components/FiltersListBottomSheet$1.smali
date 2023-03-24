@@ -73,22 +73,22 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const v1, 0x3f389375    # 0.721f
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    const v3, 0x3f389375    # 0.721f
+    const/4 v2, 0x1
 
-    cmpl-float v0, v0, v3
+    const/4 v3, 0x0
 
     if-lez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 187
     :goto_0
@@ -110,14 +110,14 @@
 
     move-result v4
 
-    cmpl-float v3, v4, v3
+    cmpl-float v1, v4, v1
 
-    if-lez v3, :cond_2
+    if-lez v1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v2, v3
 
     .line 188
     :goto_1
@@ -136,7 +136,7 @@
     goto :goto_2
 
     :cond_3
-    move v0, v1
+    move v0, v2
 
     .line 189
     :goto_2
@@ -209,7 +209,7 @@
 
     const/16 v5, 0x15
 
-    if-lt v2, v5, :cond_1
+    if-lt v2, v5, :cond_2
 
     .line 149
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -221,7 +221,7 @@
     .line 152
     iget-boolean v2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->fullHeight:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     .line 153
     iget-object v2, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
@@ -279,7 +279,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v4
 
     .line 159
     :goto_0
@@ -293,7 +293,7 @@
 
     sget v6, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    if-ge v5, v6, :cond_2
+    if-ge v5, v6, :cond_1
 
     sub-int v5, v6, v0
 
@@ -313,10 +313,14 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v5, v3
+
+    goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
+
+    move v2, v4
 
     .line 165
     :goto_1
@@ -341,23 +345,23 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    const-string v1, "dialogBackground"
+    cmpl-float v1, v2, v4
 
-    cmpl-float v4, v2, v4
+    const-string v4, "dialogBackground"
 
-    if-eqz v4, :cond_3
+    if-eqz v1, :cond_3
 
     .line 169
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v6
 
-    invoke-virtual {v4, v6}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 170
-    iget-object v4, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
+    iget-object v1, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FiltersListBottomSheet;
 
@@ -409,32 +413,32 @@
 
     int-to-float v0, v9
 
-    invoke-virtual {v4, v6, v7, v8, v0}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v6, v7, v8, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 171
     iget-object v0, p0, Lorg/telegram/ui/Components/FiltersListBottomSheet$1;->rect:Landroid/graphics/RectF;
 
-    const/16 v4, 0xc
+    const/16 v1, 0xc
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v1
 
-    int-to-float v4, v4
+    int-to-float v1, v1
 
-    mul-float v4, v4, v2
+    mul-float/2addr v1, v2
 
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v0, v6, v4, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v6, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :cond_3
     if-lez v5, :cond_4
@@ -442,7 +446,7 @@
     .line 175
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
@@ -637,7 +641,7 @@
 
     move-result v4
 
-    mul-int v0, v0, v4
+    mul-int/2addr v0, v4
 
     add-int/2addr v3, v0
 
@@ -662,13 +666,13 @@
 
     const-wide v8, 0x400999999999999aL    # 3.2
 
-    mul-double v6, v6, v8
+    mul-double/2addr v6, v8
 
-    cmpg-double v8, v4, v6
+    cmpg-double v4, v4, v6
 
-    if-gez v8, :cond_1
+    if-gez v4, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -743,7 +747,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 124
     :goto_1

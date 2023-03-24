@@ -214,13 +214,13 @@
 
     const v3, 0x7fffffff
 
-    const/high16 v3, -0x80000000
+    move v6, v2
 
-    const v4, 0x7fffffff
+    move v4, v3
 
-    const v5, 0x7fffffff
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v3, v1
 
     .line 40
     :goto_0
@@ -306,7 +306,7 @@
 
     int-to-double v14, v0
 
-    mul-double v14, v14, v12
+    mul-double/2addr v14, v12
 
     aget-object v0, v7, v2
 
@@ -316,7 +316,7 @@
 
     int-to-double v2, v0
 
-    mul-double v2, v2, v9
+    mul-double/2addr v2, v9
 
     add-double/2addr v14, v2
 
@@ -333,7 +333,7 @@
 
     int-to-double v14, v3
 
-    mul-double v14, v14, v9
+    mul-double/2addr v14, v9
 
     aget-object v3, v7, v2
 
@@ -341,7 +341,7 @@
 
     int-to-double v9, v3
 
-    mul-double v9, v9, v12
+    mul-double/2addr v9, v12
 
     add-double/2addr v14, v9
 
@@ -454,9 +454,9 @@
     goto/16 :goto_0
 
     :cond_2
-    move/from16 v16, v3
+    move v0, v2
 
-    const/4 v0, 0x0
+    move/from16 v16, v3
 
     .line 66
     aget-object v2, v7, v0
@@ -549,7 +549,7 @@
 
     int-to-double v4, v1
 
-    mul-double v4, v4, v8
+    mul-double/2addr v4, v8
 
     aget-object v1, v10, v11
 
@@ -557,7 +557,7 @@
 
     int-to-double v12, v1
 
-    mul-double v12, v12, v6
+    mul-double/2addr v12, v6
 
     sub-double/2addr v4, v12
 
@@ -570,7 +570,7 @@
 
     int-to-double v4, v4
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     aget-object v12, v10, v11
 
@@ -578,7 +578,7 @@
 
     int-to-double v12, v12
 
-    mul-double v12, v12, v8
+    mul-double/2addr v12, v8
 
     add-double/2addr v4, v12
 
@@ -647,7 +647,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_2
@@ -679,7 +679,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 14
     :goto_1

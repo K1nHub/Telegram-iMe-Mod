@@ -247,7 +247,7 @@
 
     const/16 v0, 0x38
 
-    const/16 v1, 0x38
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x9
@@ -263,19 +263,19 @@
 
     ushr-long/2addr v4, v1
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    and-int/lit8 v4, v5, 0xf
+    and-int/lit8 v5, v4, 0xf
 
-    ushr-int/lit8 v5, v5, 0x4
+    ushr-int/lit8 v4, v4, 0x4
 
-    and-int/lit8 v5, v5, 0xf
+    and-int/lit8 v4, v4, 0xf
 
-    mul-int/lit8 v7, v4, 0x9
+    mul-int/lit8 v7, v5, 0x9
 
-    add-int/lit8 v5, v5, 0x10
+    add-int/lit8 v4, v4, 0x10
 
-    mul-int/lit8 v9, v5, 0x9
+    mul-int/lit8 v9, v4, 0x9
 
     add-int/lit8 v11, v3, -0x1
 
@@ -321,23 +321,21 @@
 
     ushr-long/2addr v3, v0
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit8 v3, v4, 0xf
+    and-int/lit8 v4, v3, 0xf
 
-    ushr-int/lit8 v4, v4, 0x4
+    ushr-int/lit8 v3, v3, 0x4
 
-    and-int/lit8 v4, v4, 0xf
+    and-int/lit8 v3, v3, 0xf
 
-    mul-int/lit8 v5, v3, 0x9
+    mul-int/2addr v4, v2
 
-    add-int/lit8 v4, v4, 0x10
+    add-int/lit8 v3, v3, 0x10
 
-    mul-int/lit8 v6, v4, 0x9
+    mul-int/lit8 v6, v3, 0x9
 
     move-object v3, p1
-
-    move v4, v5
 
     move-object v5, p1
 
@@ -867,7 +865,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const-wide v4, 0xffffffffL

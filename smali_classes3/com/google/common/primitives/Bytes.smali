@@ -27,7 +27,7 @@
     return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 120
     :goto_0
@@ -41,7 +41,7 @@
 
     if-ge v0, v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 121
     :goto_1

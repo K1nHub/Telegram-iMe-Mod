@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public getCues(J)Ljava/util/List;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -71,9 +71,9 @@
     .line 172
     iget-wide v0, p0, Lcom/google/android/exoplayer2/text/ExoplayerCuesDecoder$SingleEventSubtitle;->timeUs:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/ExoplayerCuesDecoder$SingleEventSubtitle;->cues:Lcom/google/common/collect/ImmutableList;
 
@@ -119,14 +119,14 @@
 .end method
 
 .method public getNextEventTimeIndex(J)I
-    .locals 3
+    .locals 2
 
     .line 156
     iget-wide v0, p0, Lcom/google/android/exoplayer2/text/ExoplayerCuesDecoder$SingleEventSubtitle;->timeUs:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-lez v2, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x0
 

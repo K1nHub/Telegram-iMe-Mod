@@ -79,7 +79,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v7, 0x0
+    move v7, v0
 
     goto :goto_0
 

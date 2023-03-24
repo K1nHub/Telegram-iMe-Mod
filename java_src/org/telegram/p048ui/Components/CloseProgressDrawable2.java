@@ -74,13 +74,13 @@ public class CloseProgressDrawable2 extends Drawable {
         this.side = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0145  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x01b3  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x01b0  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x01ba  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x01bc  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -88,7 +88,7 @@ public class CloseProgressDrawable2 extends Drawable {
     */
     public void draw(android.graphics.Canvas r18) {
         /*
-            Method dump skipped, instructions count: 450
+            Method dump skipped, instructions count: 457
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.CloseProgressDrawable2.draw(android.graphics.Canvas):void");

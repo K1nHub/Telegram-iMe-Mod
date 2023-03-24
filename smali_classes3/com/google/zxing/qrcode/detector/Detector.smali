@@ -362,7 +362,7 @@
 
     if-le v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
@@ -417,17 +417,17 @@
 
     if-ge v1, v5, :cond_2
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v12, -0x1
+    move v12, v11
 
     :goto_2
     if-ge v4, v6, :cond_3
 
-    const/4 v11, 0x1
+    move v11, v3
 
     :cond_3
     add-int/2addr v5, v12
@@ -463,13 +463,13 @@
     :goto_5
     if-ne v15, v3, :cond_6
 
-    move-object/from16 v3, p0
-
     move/from16 v16, v0
+
+    move v0, v3
 
     move/from16 p2, v5
 
-    const/4 v0, 0x1
+    move-object/from16 v3, p0
 
     goto :goto_6
 
@@ -513,6 +513,8 @@
 
     if-ne v14, v6, :cond_9
 
+    const/4 v0, 0x2
+
     goto :goto_7
 
     :cond_9
@@ -538,9 +540,9 @@
 
     move/from16 p2, v5
 
-    :goto_7
-    const/4 v0, 0x2
+    move v0, v10
 
+    :goto_7
     if-ne v15, v0, :cond_c
 
     move/from16 v5, p2
@@ -584,7 +586,7 @@
 
     div-float/2addr v3, p3
 
-    const/4 p3, 0x0
+    move p3, v1
 
     goto :goto_0
 
@@ -629,7 +631,7 @@
     goto :goto_0
 
     :cond_1
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_0
     int-to-float v4, p2
@@ -638,7 +640,7 @@
 
     int-to-float p4, p4
 
-    mul-float p4, p4, v3
+    mul-float/2addr p4, v3
 
     sub-float p4, v4, p4
 
@@ -697,7 +699,7 @@
     :cond_3
     move v1, p4
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     :goto_1
     int-to-float p4, p1
@@ -706,7 +708,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, v4
+    mul-float/2addr p3, v4
 
     add-float/2addr p4, p3
 
@@ -816,7 +818,7 @@
         }
     .end annotation
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     float-to-int p4, p4
 
@@ -850,7 +852,7 @@
 
     const/high16 v0, 0x40400000    # 3.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     cmpg-float p2, p2, v0
 
@@ -1041,7 +1043,7 @@
 
     sub-float/2addr v5, v10
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     add-float/2addr v6, v5
 
@@ -1058,13 +1060,13 @@
 
     sub-float/2addr v9, v10
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     add-float/2addr v6, v3
 
     float-to-int v3, v6
 
-    const/4 v6, 0x4
+    move v6, v8
 
     :goto_0
     const/16 v9, 0x10

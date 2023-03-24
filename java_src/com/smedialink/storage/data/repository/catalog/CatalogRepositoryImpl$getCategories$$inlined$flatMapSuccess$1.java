@@ -34,10 +34,10 @@ public final class CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1
     /* compiled from: FirebaseExt.kt */
     /* renamed from: com.smedialink.storage.data.repository.catalog.CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17231 extends Lambda implements Function1<List<? extends CategoryWithCounter>, Result<? extends List<? extends CategoryWithCounter>>> {
-        public static final C17231 INSTANCE = new C17231();
+    public static final class C17311 extends Lambda implements Function1<List<? extends CategoryWithCounter>, Result<? extends List<? extends CategoryWithCounter>>> {
+        public static final C17311 INSTANCE = new C17311();
 
-        public C17231() {
+        public C17311() {
             super(1);
         }
 
@@ -77,11 +77,11 @@ public final class CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1
         }
         Completable andThen = rxDeleteCategories.andThen(catalogCategoryDao2.rxInsert((List) arrayList2));
         schedulersProvider = this.this$0.schedulersProvider;
-        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo708io());
+        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo707io());
         Observable just2 = Observable.just(arrayList);
         Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
         Observable andThen2 = subscribeOn.andThen(just2);
         Intrinsics.checkNotNullExpressionValue(andThen2, "catalogCategoryDao\n     …ategories.toObservable())");
-        return andThen2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17231.INSTANCE));
+        return andThen2.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17311.INSTANCE));
     }
 }

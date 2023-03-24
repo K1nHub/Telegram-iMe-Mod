@@ -296,7 +296,7 @@
 
     sub-float v7, v1, v0
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 

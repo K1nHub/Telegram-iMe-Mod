@@ -501,7 +501,7 @@
 
     const v0, 0x40133333    # 2.3f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     const v0, 0x3e4ccccd    # 0.2f
 

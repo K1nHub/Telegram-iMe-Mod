@@ -84,7 +84,7 @@
     .line 875
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 876
     :goto_0
@@ -345,7 +345,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 976
     :goto_0
@@ -387,7 +387,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectedItemId:I
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 

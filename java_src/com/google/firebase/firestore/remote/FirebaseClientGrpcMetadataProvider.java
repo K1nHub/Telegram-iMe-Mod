@@ -16,9 +16,9 @@ public class FirebaseClientGrpcMetadataProvider implements GrpcMetadataProvider 
 
     static {
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        HEART_BEAT_HEADER = Metadata.Key.m700of("x-firebase-client-log-type", asciiMarshaller);
-        USER_AGENT_HEADER = Metadata.Key.m700of("x-firebase-client", asciiMarshaller);
-        GMP_APP_ID_HEADER = Metadata.Key.m700of("x-firebase-gmpid", asciiMarshaller);
+        HEART_BEAT_HEADER = Metadata.Key.m699of("x-firebase-client-log-type", asciiMarshaller);
+        USER_AGENT_HEADER = Metadata.Key.m699of("x-firebase-client", asciiMarshaller);
+        GMP_APP_ID_HEADER = Metadata.Key.m699of("x-firebase-gmpid", asciiMarshaller);
     }
 
     public FirebaseClientGrpcMetadataProvider(Provider<UserAgentPublisher> provider, Provider<HeartBeatInfo> provider2, FirebaseOptions firebaseOptions) {

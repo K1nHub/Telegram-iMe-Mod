@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_2
+    goto/16 :goto_2
 
     .line 3194
     :cond_0
@@ -184,7 +184,7 @@
 
     invoke-static {v0, p1, v1, p3, p4}, Lorg/telegram/ui/ChatActivity;->access$3700(Lorg/telegram/ui/ChatActivity;Landroid/view/View;ZFF)V
 
-    const/4 p3, 0x1
+    move p3, v2
 
     .line 3205
     :goto_0

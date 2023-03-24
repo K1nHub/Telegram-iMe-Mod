@@ -40,7 +40,7 @@
     return v3
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -90,11 +90,11 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x1
+    move v6, v3
 
     .line 68
     :goto_0
@@ -160,9 +160,9 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    move v8, v4
+    move v6, v3
 
-    const/4 v6, 0x1
+    move v8, v4
 
     .line 87
     :goto_2

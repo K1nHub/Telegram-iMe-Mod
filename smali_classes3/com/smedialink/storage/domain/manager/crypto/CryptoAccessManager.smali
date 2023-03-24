@@ -35,16 +35,36 @@
 .method public abstract getEVMWallet()Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;
 .end method
 
+.method public abstract getFirstBip39PhraseBasedBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+.end method
+
 .method public abstract getLastLoggedInAddress(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
 .end method
 
 .method public abstract getLastLoggedInGuid()Ljava/lang/String;
 .end method
 
+.method public abstract getTRONWallet()Lcom/smedialink/storage/domain/model/crypto/Wallet$TRON;
+.end method
+
+.method public abstract getUnactivatedBip39PhraseBasedBlockchainTypes()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/smedialink/storage/domain/model/crypto/BlockchainType;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getWallet(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/model/crypto/Wallet;
 .end method
 
 .method public abstract getWalletPassword()Ljava/lang/String;
+.end method
+
+.method public abstract isAnyBip39PhraseBasedWalletCreated()Z
 .end method
 
 .method public abstract isAnyWalletCreated()Z

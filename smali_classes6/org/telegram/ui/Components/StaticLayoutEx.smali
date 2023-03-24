@@ -216,11 +216,11 @@
 
     move/from16 v17, v5
 
+    move/from16 v18, v6
+
     move-object/from16 v19, v7
 
     move v14, v8
-
-    const/16 v18, 0x1
 
     goto :goto_0
 
@@ -234,7 +234,7 @@
 
     move-object/from16 v2, p0
 
-    const/4 v14, 0x0
+    move v14, v3
 
     move-object/from16 v3, p3
 
@@ -244,7 +244,7 @@
 
     move-object/from16 v5, p5
 
-    const/16 v18, 0x1
+    move/from16 v18, v6
 
     move/from16 v6, p6
 
@@ -419,12 +419,12 @@
 
     if-eqz p12, :cond_6
 
-    const/4 v6, 0x1
+    move/from16 v6, v18
 
     goto :goto_3
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 179
     :goto_3

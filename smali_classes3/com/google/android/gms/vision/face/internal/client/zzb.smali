@@ -82,7 +82,7 @@
 
     new-array v10, v10, [Lcom/google/android/gms/vision/face/Landmark;
 
-    const/4 v11, 0x0
+    move v11, v9
 
     .line 57
     :goto_0

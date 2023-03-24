@@ -14,8 +14,8 @@ final class Sniffer {
         long readUint;
         int i;
         long length = extractorInput.getLength();
-        long j = 1024;
         int i2 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
+        long j = 1024;
         if (i2 != 0 && length <= 1024) {
             j = length;
         }

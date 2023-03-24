@@ -10,9 +10,9 @@ public final class zzl implements Parcelable.Creator<zzk> {
     public final /* bridge */ /* synthetic */ zzk createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
-        zzs zzsVar = null;
         byte[] bArr = null;
         int i = -1;
+        zzs zzsVar = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

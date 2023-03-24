@@ -157,7 +157,7 @@
 
     iget p4, p0, Lorg/telegram/ui/Components/AnimatedEmojiSpan$AnimatedEmojiHolder;->alpha:F
 
-    mul-float p6, p6, p4
+    mul-float/2addr p6, p4
 
     invoke-virtual {p2, p1, p3, p6}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
 

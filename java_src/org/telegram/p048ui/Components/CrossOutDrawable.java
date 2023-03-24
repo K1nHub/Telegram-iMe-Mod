@@ -83,7 +83,7 @@ public class CrossOutDrawable extends Drawable {
     */
     public void draw(android.graphics.Canvas r14) {
         /*
-            Method dump skipped, instructions count: 287
+            Method dump skipped, instructions count: 283
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.CrossOutDrawable.draw(android.graphics.Canvas):void");

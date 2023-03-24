@@ -135,7 +135,7 @@
 
     move-result p0
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
     .line 214
     instance-of v2, p1, Lcom/google/android/gms/internal/mlkit_common/zzgi;
@@ -253,7 +253,7 @@
 
     move-result p0
 
-    mul-int p0, p0, v0
+    mul-int/2addr p0, v0
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -333,7 +333,7 @@
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     add-int/2addr p2, p1
 
@@ -371,7 +371,7 @@
     .line 64
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzgp;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -392,7 +392,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -815,7 +815,7 @@
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     .line 248
     :goto_0
@@ -871,7 +871,7 @@
     return v1
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_1
@@ -930,7 +930,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -968,7 +968,7 @@
     .line 83
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzgp;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -989,7 +989,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1173,7 +1173,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1211,7 +1211,7 @@
     .line 102
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzgp;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1232,7 +1232,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1346,7 +1346,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1384,7 +1384,7 @@
     .line 121
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzft;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1405,7 +1405,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1531,7 +1531,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1569,7 +1569,7 @@
     .line 140
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzft;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1590,7 +1590,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1716,7 +1716,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1754,7 +1754,7 @@
     .line 159
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzft;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1775,7 +1775,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -1873,7 +1873,7 @@
 
     move-result p0
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     add-int/2addr p1, p2
 
@@ -1911,7 +1911,7 @@
     .line 178
     check-cast p0, Lcom/google/android/gms/internal/mlkit_common/zzft;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -1932,7 +1932,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v1, v0, :cond_2
@@ -2024,7 +2024,7 @@
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -2113,7 +2113,7 @@
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method
@@ -2202,7 +2202,7 @@
 
     move-result p0
 
-    mul-int p1, p1, p0
+    mul-int/2addr p1, p0
 
     return p1
 .end method

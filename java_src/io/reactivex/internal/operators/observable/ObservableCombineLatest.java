@@ -222,7 +222,7 @@ public final class ObservableCombineLatest<T, R> extends Observable<R> {
             L14:
                 r3 = r4[r3]     // Catch: java.lang.Throwable -> L2a
                 if (r3 != 0) goto L1a
-                r3 = 1
+                r3 = r0
                 goto L1b
             L1a:
                 r3 = 0
@@ -276,7 +276,7 @@ public final class ObservableCombineLatest<T, R> extends Observable<R> {
                 r4 = r0[r4]     // Catch: java.lang.Throwable -> L25
                 r1 = 1
                 if (r4 != 0) goto Le
-                r4 = 1
+                r4 = r1
                 goto Lf
             Le:
                 r4 = 0

@@ -59,7 +59,7 @@
 
     const/high16 v11, 0x40000000    # 2.0f
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     add-float/2addr v3, v2
 
@@ -84,7 +84,7 @@
 
     sub-float v5, v4, p3
 
-    mul-float v5, v5, v12
+    mul-float/2addr v5, v12
 
     add-float/2addr v3, v5
 
@@ -111,7 +111,7 @@
 
     if-eqz v5, :cond_3
 
-    mul-float v4, v4, v11
+    mul-float/2addr v4, v11
 
     sub-float/2addr v4, v2
 
@@ -131,34 +131,32 @@
     :cond_2
     const/4 v2, 0x0
 
-    const/16 v16, 0x0
-
     goto :goto_1
 
     :cond_3
     :goto_0
     const/4 v2, 0x1
 
-    const/16 v16, 0x1
-
     :goto_1
+    move/from16 v16, v2
+
     if-nez v16, :cond_4
 
     const/high16 v2, 0x3fe00000    # 1.75f
 
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
     goto :goto_2
 
     :cond_4
     move/from16 v17, v3
 
-    const/4 v2, 0x0
+    move v2, v10
 
     :goto_2
     add-float v3, v12, v13
 
-    mul-float v3, v3, v3
+    mul-float/2addr v3, v3
 
     add-float v4, v17, v13
 

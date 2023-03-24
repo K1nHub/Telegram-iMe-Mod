@@ -6,7 +6,7 @@ public class TLRPC$TL_messages_updateDialogFilter extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1610id;
+    public int f1611id;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -17,7 +17,7 @@ public class TLRPC$TL_messages_updateDialogFilter extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
-        abstractSerializedData.writeInt32(this.f1610id);
+        abstractSerializedData.writeInt32(this.f1611id);
         if ((this.flags & 1) != 0) {
             this.filter.serializeToStream(abstractSerializedData);
         }

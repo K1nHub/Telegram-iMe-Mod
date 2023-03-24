@@ -128,24 +128,24 @@
 
     if-lez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     and-int/lit8 v2, v2, 0x40
 
     if-lez v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-eqz v4, :cond_2
@@ -422,7 +422,7 @@
 
 # virtual methods
 .method public consume(Lcom/google/android/exoplayer2/util/ParsableByteArray;JIZ)V
-    .locals 22
+    .locals 19
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
@@ -491,46 +491,49 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v7, v2, v5
+    cmp-long v2, v2, v5
+
+    if-nez v2, :cond_2
 
     move-wide/from16 v2, p2
-
-    if-nez v7, :cond_2
 
     .line 116
     iput-wide v2, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->firstReceivedTimestamp:J
 
-    .line 119
+    goto :goto_1
+
     :cond_2
-    iget-wide v8, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->startTimeOffsetUs:J
+    move-wide/from16 v2, p2
 
-    iget-wide v12, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->firstReceivedTimestamp:J
+    .line 119
+    :goto_1
+    iget-wide v5, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->startTimeOffsetUs:J
 
-    const v14, 0x15f90
+    iget-wide v9, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->firstReceivedTimestamp:J
 
-    move-wide/from16 v10, p2
+    const v11, 0x15f90
+
+    move-wide/from16 v7, p2
 
     .line 120
-    invoke-static/range {v8 .. v14}, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpReaderUtils;->toSampleTimeUs(JJJI)J
+    invoke-static/range {v5 .. v11}, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpReaderUtils;->toSampleTimeUs(JJJI)J
 
-    move-result-wide v16
+    move-result-wide v13
 
     .line 122
-    iget-object v15, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    iget-object v12, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    iget v2, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->bufferFlags:I
+    iget v15, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->bufferFlags:I
 
-    iget v3, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->fragmentedSampleSizeBytes:I
+    iget v2, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->fragmentedSampleSizeBytes:I
 
-    const/16 v20, 0x0
+    const/16 v17, 0x0
 
-    const/16 v21, 0x0
+    const/16 v18, 0x0
 
-    move/from16 v18, v2
+    move/from16 v16, v2
 
-    move/from16 v19, v3
-
-    invoke-interface/range {v15 .. v21}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
+    invoke-interface/range {v12 .. v18}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
     .line 124
     iput v4, v1, Lcom/google/android/exoplayer2/source/rtsp/reader/RtpH264Reader;->fragmentedSampleSizeBytes:I

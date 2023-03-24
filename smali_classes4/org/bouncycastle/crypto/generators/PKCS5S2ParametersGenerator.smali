@@ -96,7 +96,7 @@
 
     invoke-interface {p3, v1, v0}, Lorg/bouncycastle/crypto/Mac;->doFinal([BI)I
 
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_1
     iget-object v1, p0, Lorg/bouncycastle/crypto/generators/PKCS5S2ParametersGenerator;->state:[B
@@ -176,9 +176,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v10, 0x0
+    move v11, v1
 
-    const/4 v11, 0x1
+    move v10, v3
 
     :goto_0
     if-gt v11, p1, :cond_1

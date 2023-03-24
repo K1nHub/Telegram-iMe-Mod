@@ -547,13 +547,13 @@
 .end method
 
 .method private static isBufferLate(J)Z
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, -0x7530
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -567,13 +567,13 @@
 .end method
 
 .method private static isBufferVeryLate(J)Z
-    .locals 3
+    .locals 2
 
     const-wide/32 v0, -0x7a120
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -926,9 +926,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 826
     iput-wide p1, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->initialPositionUs:J
@@ -1001,7 +1001,7 @@
 
     const-wide/16 v9, 0x3e8
 
-    mul-long v7, v7, v9
+    mul-long/2addr v7, v9
 
     .line 846
     iget-wide v9, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->lastRenderTimeUs:J
@@ -1017,12 +1017,12 @@
 
     if-ne v2, v9, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 849
     :goto_0
@@ -1047,12 +1047,12 @@
 
     :cond_6
     :goto_1
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_2
 
     :cond_7
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_2
     if-nez v9, :cond_d
@@ -1115,9 +1115,9 @@
     :cond_b
     const-wide/16 p1, 0x7530
 
-    cmp-long p3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-gez p3, :cond_c
+    if-gez p1, :cond_c
 
     .line 873
     iget-object p1, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->outputBuffer:Lcom/google/android/exoplayer2/decoder/VideoDecoderOutputBuffer;
@@ -1159,16 +1159,16 @@
 .end method
 
 .method private setJoiningDeadlineMs()V
-    .locals 5
+    .locals 4
 
     .line 908
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->allowedJoiningTimeMs:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 909
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1417,25 +1417,25 @@
     :cond_2
     iget-wide v4, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
-    const/4 v0, 0x0
+    cmp-long v0, v4, v2
 
-    cmp-long v6, v4, v2
+    const/4 v4, 0x0
 
-    if-nez v6, :cond_3
+    if-nez v0, :cond_3
 
-    return v0
+    return v4
 
     .line 242
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v4
+    move-result-wide v5
 
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->joiningDeadlineMs:J
+    iget-wide v7, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
-    cmp-long v8, v4, v6
+    cmp-long v0, v5, v7
 
-    if-gez v8, :cond_4
+    if-gez v0, :cond_4
 
     return v1
 
@@ -1443,7 +1443,7 @@
     :cond_4
     iput-wide v2, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
-    return v0
+    return v4
 .end method
 
 .method protected maybeDropBuffersToKeyframe(J)Z
@@ -1786,7 +1786,7 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->lastRenderTimeUs:J
 
@@ -2074,7 +2074,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p2, p2, v0
+    mul-long/2addr p2, v0
 
     invoke-static {p2, p3}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
@@ -2096,12 +2096,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, p4
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_0
     if-nez p2, :cond_2
@@ -2111,12 +2111,12 @@
 
     if-eqz p2, :cond_2
 
-    const/4 p2, 0x1
+    move p2, p4
 
     goto :goto_1
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, p3
 
     :goto_1
     if-nez p2, :cond_3
@@ -2313,7 +2313,7 @@
 .end method
 
 .method protected shouldForceRenderOutputBuffer(JJ)Z
-    .locals 1
+    .locals 0
 
     .line 472
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/DecoderVideoRenderer;->isBufferLate(J)Z
@@ -2324,9 +2324,9 @@
 
     const-wide/32 p1, 0x186a0
 
-    cmp-long v0, p3, p1
+    cmp-long p1, p3, p1
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 

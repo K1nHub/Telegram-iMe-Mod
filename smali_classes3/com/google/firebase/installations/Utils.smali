@@ -163,7 +163,7 @@
 
     const-wide v2, 0x408f400000000000L    # 1000.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-long v0, v0
 

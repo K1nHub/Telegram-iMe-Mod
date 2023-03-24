@@ -108,49 +108,49 @@
     .line 2
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpg-float v1, p3, v0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    cmpg-float v3, p3, v1
+    const/4 v3, 0x0
 
-    if-ltz v3, :cond_0
+    if-ltz v1, :cond_0
 
-    const/high16 v3, 0x42b40000    # 90.0f
+    const/high16 v1, 0x42b40000    # 90.0f
 
-    cmpg-float v3, p3, v3
+    cmpg-float v1, p3, v1
 
-    if-gtz v3, :cond_0
+    if-gtz v1, :cond_0
 
-    const/4 v3, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v1, v3
 
     :goto_0
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
     .line 3
     invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v4
 
-    aput-object v4, v0, v2
+    aput-object v4, v2, v3
 
-    const-string v2, "Tilt needs to be between 0 and 90 inclusive: %s"
+    const-string v3, "Tilt needs to be between 0 and 90 inclusive: %s"
 
     .line 4
-    invoke-static {v3, v2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v3, v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput-object p1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->target:Lcom/google/android/gms/maps/model/LatLng;
 
     iput p2, p0, Lcom/google/android/gms/maps/model/CameraPosition;->zoom:F
 
-    add-float/2addr p3, v1
+    add-float/2addr p3, v0
 
     iput p3, p0, Lcom/google/android/gms/maps/model/CameraPosition;->tilt:F
 
@@ -158,18 +158,18 @@
 
     const-wide/16 v0, 0x0
 
-    const/high16 p3, 0x43b40000    # 360.0f
+    cmpg-double p1, p1, v0
 
-    cmpg-double v2, p1, v0
+    const/high16 p2, 0x43b40000    # 360.0f
 
-    if-gtz v2, :cond_1
+    if-gtz p1, :cond_1
 
-    rem-float/2addr p4, p3
+    rem-float/2addr p4, p2
 
-    add-float/2addr p4, p3
+    add-float/2addr p4, p2
 
     :cond_1
-    rem-float/2addr p4, p3
+    rem-float/2addr p4, p2
 
     iput p4, p0, Lcom/google/android/gms/maps/model/CameraPosition;->bearing:F
 

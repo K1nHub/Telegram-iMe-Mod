@@ -454,7 +454,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p6, 0x1
+    move p6, p7
 
     .line 273
     :goto_0
@@ -1467,12 +1467,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
@@ -1528,12 +1528,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     invoke-virtual {v0, v4}, Landroid/widget/HorizontalScrollView;->setClipChildren(Z)V
@@ -1931,12 +1931,12 @@
 
     if-eqz v11, :cond_7
 
-    const/4 v11, 0x0
+    move v11, v3
 
     goto :goto_4
 
     :cond_7
-    const/16 v11, 0x30
+    move v11, v4
 
     :goto_4
     const/4 v12, 0x0
@@ -2011,12 +2011,12 @@
 
     if-eqz v11, :cond_9
 
-    const/4 v11, 0x0
+    move v11, v3
 
     goto :goto_5
 
     :cond_9
-    const/16 v11, 0x30
+    move v11, v4
 
     :goto_5
     const/4 v12, 0x0
@@ -2324,7 +2324,7 @@
     return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1736
     :goto_0
@@ -2676,7 +2676,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
@@ -2712,7 +2712,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
@@ -3332,7 +3332,7 @@
     invoke-static {v4, v3}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 1094
     :goto_0
@@ -3376,7 +3376,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 1102
     :goto_1
@@ -3441,7 +3441,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 1128
     :goto_2
@@ -3466,12 +3466,12 @@
 
     if-ne v2, v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_3
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->setExpanded(Z)V
@@ -3636,7 +3636,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->subMenuOpenSide:I
 
@@ -4870,7 +4870,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1912
     :goto_0
@@ -4905,7 +4905,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-eqz v1, :cond_2
@@ -5262,7 +5262,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1966
     :goto_0
@@ -5851,7 +5851,7 @@
     .line 350
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->selectedMenuView:Landroid/view/View;
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 351
     :goto_0
@@ -7181,7 +7181,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 895
     :goto_0
@@ -7321,7 +7321,7 @@
 
     invoke-virtual {v4, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 919
     :goto_2
@@ -7423,7 +7423,7 @@
 
     if-eqz v1, :cond_9
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 940
     :goto_3
@@ -7551,7 +7551,7 @@
 
     invoke-virtual {v4, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 966
     :goto_4
@@ -8203,12 +8203,12 @@
 
     if-nez p1, :cond_11
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_3
 
     :cond_11
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_3
     invoke-direct {p0, v3, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->updateOrShowPopup(ZZ)V
@@ -8269,7 +8269,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 2010
     :goto_0

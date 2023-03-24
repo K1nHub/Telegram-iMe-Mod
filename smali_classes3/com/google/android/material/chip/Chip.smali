@@ -1632,7 +1632,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-lez v0, :cond_5
@@ -2663,17 +2663,15 @@
 
     move-result v1
 
-    move v4, v1
-
     goto :goto_3
 
     :cond_3
     const/4 v1, -0x1
 
-    const/4 v4, -0x1
+    :goto_3
+    move v4, v1
 
     .line 287
-    :goto_3
     invoke-virtual {v0, p0}, Lcom/google/android/material/internal/FlowLayout;->getRowIndex(Landroid/view/View;)I
 
     move-result v2
@@ -2834,12 +2832,12 @@
     .line 784
     invoke-virtual {p0}, Lcom/google/android/material/chip/Chip;->performCloseIconClick()Z
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 789
     :goto_0
@@ -2855,13 +2853,13 @@
 
     :cond_4
     :goto_1
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     if-nez v0, :cond_6
@@ -2874,7 +2872,7 @@
     if-eqz p1, :cond_7
 
     :cond_6
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_7
     return v2
@@ -2898,7 +2896,7 @@
     .line 748
     invoke-interface {v1, p0}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 754
     :cond_0

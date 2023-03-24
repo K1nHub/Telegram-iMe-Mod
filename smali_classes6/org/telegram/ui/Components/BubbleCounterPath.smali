@@ -31,7 +31,7 @@
     :cond_1
     const/high16 v0, 0x40000000    # 2.0f
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     .line 22
     invoke-virtual {p0}, Landroid/graphics/Path;->rewind()V

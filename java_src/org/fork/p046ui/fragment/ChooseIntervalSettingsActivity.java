@@ -21,10 +21,10 @@ import org.fork.controller.BackupController;
 import org.fork.controller.ForkTopicsController;
 import org.fork.enums.Interval;
 import org.fork.p046ui.fragment.ChooseIntervalSettingsActivity;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -145,20 +145,20 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
 
     private final void setupActionBar() {
         int i;
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3286R.string.backup_settings_header;
+            i = C3301R.string.backup_settings_header;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3286R.string.topics_catalog;
+            i = C3301R.string.topics_catalog;
         }
-        c3351ActionBar.setTitle(LocaleController.getInternalString(i));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        c3366ActionBar.setTitle(LocaleController.getInternalString(i));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ChooseIntervalSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     ChooseIntervalSettingsActivity.this.finishFragment();
@@ -400,22 +400,22 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 int i5 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
                 if (i5 == 1) {
-                    i4 = C3286R.string.backup_settings_save_auto;
+                    i4 = C3301R.string.backup_settings_save_auto;
                 } else if (i5 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i4 = C3286R.string.topics_catalog_update_auto;
+                    i4 = C3301R.string.topics_catalog_update_auto;
                 }
                 textCheckCell.setTextAndCheck(LocaleController.getInternalString(i4), ChooseIntervalSettingsActivity.this.isMainSwitchEnabled(), false);
             } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
                 int i6 = WhenMappings.$EnumSwitchMapping$0[ChooseIntervalSettingsActivity.this.getType().ordinal()];
                 if (i6 == 1) {
-                    i3 = C3286R.string.backup_auto_settings_interval_chooser_header;
+                    i3 = C3301R.string.backup_auto_settings_interval_chooser_header;
                 } else if (i6 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i3 = C3286R.string.topics_catalog_auto_update_settings_interval_chooser_header;
+                    i3 = C3301R.string.topics_catalog_auto_update_settings_interval_chooser_header;
                 }
                 headerCell.setText(LocaleController.getInternalString(i3));
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
@@ -423,20 +423,20 @@ public final class ChooseIntervalSettingsActivity extends BaseFragment {
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (chooseIntervalSettingsActivity.isMainSwitchEnabled()) {
                     textInfoPrivacyCell.setText(null);
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setFixedSize(12);
                     return;
                 }
                 int i7 = WhenMappings.$EnumSwitchMapping$0[chooseIntervalSettingsActivity.getType().ordinal()];
                 if (i7 == 1) {
-                    i2 = C3286R.string.backup_auto_settings_enable_item_hint;
+                    i2 = C3301R.string.backup_auto_settings_enable_item_hint;
                 } else if (i7 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    i2 = C3286R.string.topics_catalog_auto_update_settings_enable_item_hint;
+                    i2 = C3301R.string.topics_catalog_auto_update_settings_enable_item_hint;
                 }
                 textInfoPrivacyCell.setText(LocaleController.getInternalString(i2));
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(chooseIntervalSettingsActivity.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 textInfoPrivacyCell.setFixedSize(0);
             }
         }

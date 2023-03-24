@@ -56,7 +56,7 @@ public final class zzpp {
     }
 
     public final zzlu.zzp.zzb zzna() {
-        zzlu.zzp.zzb.EnumC6750zzb enumC6750zzb;
+        zzlu.zzp.zzb.EnumC6837zzb enumC6837zzb;
         ArrayList arrayList = new ArrayList();
         for (int i : this.zzaxo) {
             arrayList.add(Integer.valueOf(i));
@@ -64,16 +64,16 @@ public final class zzpp {
         zzlu.zzp.zzb.zza zzje = zzlu.zzp.zzb.zzje();
         int i2 = this.type;
         if (i2 == 1) {
-            enumC6750zzb = zzlu.zzp.zzb.EnumC6750zzb.TYPE_FLOAT32;
+            enumC6837zzb = zzlu.zzp.zzb.EnumC6837zzb.TYPE_FLOAT32;
         } else if (i2 == 2) {
-            enumC6750zzb = zzlu.zzp.zzb.EnumC6750zzb.TYPE_INT32;
+            enumC6837zzb = zzlu.zzp.zzb.EnumC6837zzb.TYPE_INT32;
         } else if (i2 == 3) {
-            enumC6750zzb = zzlu.zzp.zzb.EnumC6750zzb.TYPE_BYTE;
+            enumC6837zzb = zzlu.zzp.zzb.EnumC6837zzb.TYPE_BYTE;
         } else if (i2 == 4) {
-            enumC6750zzb = zzlu.zzp.zzb.EnumC6750zzb.TYPE_LONG;
+            enumC6837zzb = zzlu.zzp.zzb.EnumC6837zzb.TYPE_LONG;
         } else {
-            enumC6750zzb = zzlu.zzp.zzb.EnumC6750zzb.UNKNOWN_DATA_TYPE;
+            enumC6837zzb = zzlu.zzp.zzb.EnumC6837zzb.UNKNOWN_DATA_TYPE;
         }
-        return (zzlu.zzp.zzb) ((zzuu) zzje.zza(enumC6750zzb).zzi(arrayList).zzrq());
+        return (zzlu.zzp.zzb) ((zzuu) zzje.zza(enumC6837zzb).zzi(arrayList).zzrq());
     }
 }

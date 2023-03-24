@@ -272,12 +272,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_0
     aget-object v0, v0, v2
@@ -292,7 +292,7 @@
 
     if-ltz p2, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GifAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;

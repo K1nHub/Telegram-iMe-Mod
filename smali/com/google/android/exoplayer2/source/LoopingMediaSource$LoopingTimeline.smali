@@ -141,7 +141,7 @@
     .line 182
     iget v0, p0, Lcom/google/android/exoplayer2/source/LoopingMediaSource$LoopingTimeline;->childPeriodCount:I
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     return p1
 .end method
@@ -152,7 +152,7 @@
     .line 187
     iget v0, p0, Lcom/google/android/exoplayer2/source/LoopingMediaSource$LoopingTimeline;->childWindowCount:I
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     return p1
 .end method
@@ -165,7 +165,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/LoopingMediaSource$LoopingTimeline;->loopCount:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
@@ -187,7 +187,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/LoopingMediaSource$LoopingTimeline;->loopCount:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method

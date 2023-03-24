@@ -452,7 +452,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v9
 
     :catch_0
     :cond_2

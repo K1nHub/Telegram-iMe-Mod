@@ -1571,11 +1571,11 @@
 
     move-result v0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v2
+    const/high16 v2, 0x3f800000    # 1.0f
 
     if-lez v0, :cond_0
 
@@ -1600,13 +1600,13 @@
 
     div-float/2addr v4, v5
 
-    invoke-static {v4, v2, v1}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    invoke-static {v4, v1, v2}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result v4
 
-    sub-float v4, v1, v4
+    sub-float v4, v2, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1671,11 +1671,11 @@
 
     div-float/2addr v0, v3
 
-    sub-float/2addr v1, v0
+    sub-float/2addr v2, v0
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    cmpl-float v0, v1, v0
+    cmpl-float v0, v2, v0
 
     if-lez v0, :cond_1
 
@@ -1689,33 +1689,33 @@
     :goto_1
     int-to-float v0, v0
 
-    const/high16 v1, 0x42c80000    # 100.0f
+    const/high16 v2, 0x42c80000    # 100.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v2
 
     .line 593
-    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
+    iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    invoke-virtual {v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
+    invoke-virtual {v2}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroidx/dynamicanimation/animation/SpringForce;->getFinalPosition()F
+    invoke-virtual {v2}, Landroidx/dynamicanimation/animation/SpringForce;->getFinalPosition()F
 
-    move-result v1
+    move-result v2
 
-    cmpl-float v1, v1, v0
+    cmpl-float v2, v2, v0
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
     .line 594
-    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
+    iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    invoke-virtual {v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
+    invoke-virtual {v2}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v0}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
+    invoke-virtual {v2, v0}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     .line 595
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -1730,7 +1730,7 @@
 
     move-result v0
 
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
@@ -2113,7 +2113,7 @@
 .end method
 
 .method private updateLightStatusBar()V
-    .locals 6
+    .locals 5
 
     const-string v0, "windowBackgroundWhite"
 
@@ -2139,9 +2139,9 @@
 
     const-wide v3, 0x3feccccccccccccdL    # 0.9
 
-    cmpl-double v5, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->actionBarTransitionProgress:F
 
@@ -2235,9 +2235,9 @@
     .line 1045
     iget-wide v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet;->queryId:J
 
-    cmp-long p3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez p3, :cond_1
+    if-nez p1, :cond_1
 
     .line 1046
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BotWebViewSheet;->dismiss()V
@@ -2726,14 +2726,14 @@
 
     const-wide v5, 0x3feccccccccccccdL    # 0.9
 
-    cmpl-double v2, v0, v5
+    cmpl-double v0, v0, v5
 
-    if-ltz v2, :cond_5
+    if-ltz v0, :cond_5
 
     goto :goto_1
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     invoke-static {p1, v4}, Lorg/telegram/messenger/AndroidUtilities;->setLightNavigationBar(Landroid/view/Window;Z)V
@@ -3199,7 +3199,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v14, 0x0
+    move v14, v13
 
     .line 822
     :goto_0

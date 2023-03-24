@@ -187,7 +187,7 @@ public class ConstraintLayoutStates {
         try {
             int eventType = xml.getEventType();
             while (true) {
-                char c = 1;
+                boolean z = true;
                 if (eventType == 1) {
                     return;
                 }
@@ -201,47 +201,47 @@ public class ConstraintLayoutStates {
                     switch (name.hashCode()) {
                         case -1349929691:
                             if (name.equals("ConstraintSet")) {
-                                c = 4;
+                                z = true;
                                 break;
                             }
-                            c = 65535;
+                            z = true;
                             break;
                         case 80204913:
                             if (name.equals("State")) {
-                                c = 2;
+                                z = true;
                                 break;
                             }
-                            c = 65535;
+                            z = true;
                             break;
                         case 1382829617:
                             if (name.equals("StateSet")) {
                                 break;
                             }
-                            c = 65535;
+                            z = true;
                             break;
                         case 1657696882:
                             if (name.equals("layoutDescription")) {
-                                c = 0;
+                                z = false;
                                 break;
                             }
-                            c = 65535;
+                            z = true;
                             break;
                         case 1901439077:
                             if (name.equals("Variant")) {
-                                c = 3;
+                                z = true;
                                 break;
                             }
-                            c = 65535;
+                            z = true;
                             break;
                         default:
-                            c = 65535;
+                            z = true;
                             break;
                     }
-                    if (c == 2) {
+                    if (z) {
                         state = new State(context, xml);
                         this.mStateList.put(state.mId, state);
                         continue;
-                    } else if (c == 3) {
+                    } else if (z) {
                         Variant variant = new Variant(context, xml);
                         if (state != null) {
                             state.add(variant);
@@ -249,7 +249,7 @@ public class ConstraintLayoutStates {
                         } else {
                             continue;
                         }
-                    } else if (c != 4) {
+                    } else if (!z) {
                         continue;
                     } else {
                         parseConstraintSet(context, xml);

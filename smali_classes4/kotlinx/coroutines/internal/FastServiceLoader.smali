@@ -418,7 +418,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 196
     :goto_1
@@ -448,18 +448,18 @@
     goto :goto_2
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 v4, 0x1
+    move v4, v5
 
     :goto_3
     if-nez v4, :cond_4
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_4
 
@@ -469,7 +469,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v3, 0x1
+    move v3, v5
 
     :goto_4
     if-eqz v3, :cond_7
@@ -481,7 +481,7 @@
 
     if-lez v3, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_6
     if-eqz v2, :cond_0
@@ -648,15 +648,10 @@
 
     move-object v3, v2
 
-    goto :goto_2
-
     :catch_1
-    nop
-
-    :goto_2
     if-nez v3, :cond_2
 
-    goto :goto_3
+    goto :goto_2
 
     .line 61
     :cond_2
@@ -665,7 +660,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    goto :goto_3
+    goto :goto_2
 
     .line 65
     :catchall_0
@@ -677,7 +672,7 @@
 
     move-result-object v1
 
-    :goto_3
+    :goto_2
     return-object v1
 .end method
 

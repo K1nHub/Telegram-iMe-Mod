@@ -217,7 +217,7 @@
 
     array-length v4, v3
 
-    const/4 v8, 0x0
+    move v8, v6
 
     :goto_0
     if-ge v6, v4, :cond_0
@@ -299,7 +299,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p2, :cond_0
@@ -326,7 +326,7 @@
 
     const/4 p1, 0x2
 
-    mul-int/lit8 p3, p3, 0x2
+    mul-int/2addr p3, p1
 
     iput p3, p0, Lj$/util/stream/d4;->b:I
 
@@ -397,7 +397,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_0

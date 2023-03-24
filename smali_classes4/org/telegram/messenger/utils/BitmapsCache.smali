@@ -324,7 +324,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_1
     iput-boolean p3, p0, Lorg/telegram/messenger/utils/BitmapsCache;->useSharedBuffers:Z
@@ -401,7 +401,7 @@
 
     if-le p1, p4, :cond_4
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 110
     :cond_4
@@ -712,7 +712,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -759,7 +759,7 @@
 
     const v2, 0x3fa66666    # 1.3f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     float-to-int p1, p1
 
@@ -1078,7 +1078,7 @@
 
     if-le v2, v3, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v10
 
     :cond_0
     if-lez v2, :cond_3
@@ -1268,9 +1268,9 @@
 
     invoke-interface {v0}, Lorg/telegram/messenger/utils/BitmapsCache$Cacheable;->prepareForGenerateCache()V
 
-    const/16 v17, 0x0
+    move/from16 v17, v10
 
-    const/16 v18, 0x0
+    move/from16 v18, v17
 
     .line 241
     :goto_3
@@ -1333,7 +1333,7 @@
 
     if-eq v0, v15, :cond_d
 
-    const/4 v1, 0x0
+    move v1, v10
 
     .line 326
     :goto_5
@@ -1382,33 +1382,33 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 338
-    sget-object v0, Lorg/telegram/messenger/utils/BitmapsCache$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/messenger/utils/BitmapsCache$$ExternalSyntheticLambda2;
+    sget-object v1, Lorg/telegram/messenger/utils/BitmapsCache$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/messenger/utils/BitmapsCache$$ExternalSyntheticLambda2;
 
-    invoke-static {v0}, Lj$/util/Comparator$-CC;->comparingInt(Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
+    invoke-static {v1}, Lj$/util/Comparator$-CC;->comparingInt(Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v6, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {v6, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 339
-    aget-object v0, v8, v10
+    aget-object v1, v8, v10
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->reset()V
+    invoke-virtual {v1}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->reset()V
 
     .line 340
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v1
 
     .line 341
     aget-object v2, v8, v10
 
-    invoke-virtual {v2, v0}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->writeInt(I)V
+    invoke-virtual {v2, v1}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->writeInt(I)V
 
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 342
     :goto_7
@@ -1454,16 +1454,16 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->buf:[B
 
-    mul-int/lit8 v0, v0, 0x8
+    mul-int/lit8 v1, v1, 0x8
 
-    add-int/lit8 v0, v0, 0x4
+    add-int/lit8 v1, v1, 0x4
 
-    invoke-virtual {v9, v2, v10, v0}, Ljava/io/RandomAccessFile;->write([BII)V
+    invoke-virtual {v9, v2, v10, v1}, Ljava/io/RandomAccessFile;->write([BII)V
 
     .line 347
-    aget-object v0, v8, v10
+    aget-object v1, v8, v10
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->reset()V
+    invoke-virtual {v1}, Lorg/telegram/messenger/utils/ImmutableByteArrayOutputStream;->reset()V
 
     .line 348
     invoke-virtual {v9, v12, v13}, Ljava/io/RandomAccessFile;->seek(J)V
@@ -1472,7 +1472,7 @@
     invoke-virtual {v9, v15}, Ljava/io/RandomAccessFile;->writeBoolean(Z)V
 
     .line 350
-    invoke-virtual {v9, v1}, Ljava/io/RandomAccessFile;->writeInt(I)V
+    invoke-virtual {v9, v0}, Ljava/io/RandomAccessFile;->writeInt(I)V
 
     .line 351
     invoke-virtual {v5, v15}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
@@ -1553,7 +1553,7 @@
 
     move-object/from16 v9, v19
 
-    const/16 v23, 0x0
+    move/from16 v23, v10
 
     move-object/from16 v10, v20
 
@@ -1570,7 +1570,7 @@
 
     if-lt v0, v1, :cond_e
 
-    const/16 v17, 0x0
+    move/from16 v17, v23
 
     goto :goto_8
 
@@ -1588,7 +1588,7 @@
 
     move-object/from16 v9, v22
 
-    const/4 v10, 0x0
+    move/from16 v10, v23
 
     const-wide/16 v12, 0x0
 
@@ -1602,7 +1602,7 @@
 
     move-object/from16 v22, v9
 
-    const/16 v23, 0x0
+    move/from16 v23, v10
 
     .line 250
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
@@ -1618,7 +1618,7 @@
     :cond_10
     invoke-virtual {v13, v15}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    const/4 v10, 0x0
+    move/from16 v10, v23
 
     .line 254
     :goto_a
@@ -1997,12 +1997,8 @@
     .line 494
     iput-boolean v0, p0, Lorg/telegram/messenger/utils/BitmapsCache;->error:Z
 
-    goto :goto_2
-
-    :catch_1
-    nop
-
     .line 498
+    :catch_1
     :cond_a
     :goto_2
     iget-boolean p1, p0, Lorg/telegram/messenger/utils/BitmapsCache;->error:Z

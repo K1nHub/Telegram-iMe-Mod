@@ -129,7 +129,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 p0, 0x0
+    move p0, v0
 
     goto :goto_0
 
@@ -420,7 +420,7 @@
 
     if-nez p0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1

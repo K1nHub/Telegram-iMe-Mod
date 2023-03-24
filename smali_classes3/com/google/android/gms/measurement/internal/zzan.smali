@@ -78,7 +78,7 @@
 .end method
 
 .method final zze()Z
-    .locals 9
+    .locals 8
 
     const-string v0, "com.google"
 
@@ -101,15 +101,15 @@
 
     sub-long v3, v1, v3
 
-    const/4 v5, 0x0
+    const-wide/32 v5, 0x5265c00
 
-    const-wide/32 v6, 0x5265c00
+    cmp-long v3, v3, v5
 
-    cmp-long v8, v3, v6
+    const/4 v4, 0x0
 
-    if-lez v8, :cond_0
+    if-lez v3, :cond_0
 
-    iput-object v5, p0, Lcom/google/android/gms/measurement/internal/zzan;->zzd:Ljava/lang/Boolean;
+    iput-object v4, p0, Lcom/google/android/gms/measurement/internal/zzan;->zzd:Ljava/lang/Boolean;
 
     :cond_0
     iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzan;->zzd:Ljava/lang/Boolean;
@@ -123,14 +123,14 @@
 
     move-result-object v3
 
-    const-string v4, "android.permission.GET_ACCOUNTS"
+    const-string v5, "android.permission.GET_ACCOUNTS"
 
     .line 5
-    invoke-static {v3, v4}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v3, v5}, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v3
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     if-eqz v3, :cond_1
 
@@ -157,7 +157,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/measurement/internal/zzan;->zzd:Ljava/lang/Boolean;
 
-    return v4
+    return v5
 
     :cond_1
     iget-object v3, p0, Lcom/google/android/gms/measurement/internal/zzan;->zzc:Landroid/accounts/AccountManager;
@@ -189,7 +189,7 @@
     move-result-object v6
 
     .line 11
-    invoke-virtual {v3, v0, v6, v5, v5}, Landroid/accounts/AccountManager;->getAccountsByTypeAndFeatures(Ljava/lang/String;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+    invoke-virtual {v3, v0, v6, v4, v4}, Landroid/accounts/AccountManager;->getAccountsByTypeAndFeatures(Ljava/lang/String;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
     move-result-object v3
 
@@ -227,7 +227,7 @@
     move-result-object v7
 
     .line 13
-    invoke-virtual {v3, v0, v7, v5, v5}, Landroid/accounts/AccountManager;->getAccountsByTypeAndFeatures(Ljava/lang/String;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+    invoke-virtual {v3, v0, v7, v4, v4}, Landroid/accounts/AccountManager;->getAccountsByTypeAndFeatures(Ljava/lang/String;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
     move-result-object v0
 
@@ -284,9 +284,9 @@
 
     move-result-object v3
 
-    const-string v5, "Exception checking account types"
+    const-string v4, "Exception checking account types"
 
-    invoke-virtual {v3, v5, v0}, Lcom/google/android/gms/measurement/internal/zzej;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v3, v4, v0}, Lcom/google/android/gms/measurement/internal/zzej;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 15
     :cond_4
@@ -297,7 +297,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/measurement/internal/zzan;->zzd:Ljava/lang/Boolean;
 
-    return v4
+    return v5
 
     .line 20
     :cond_5

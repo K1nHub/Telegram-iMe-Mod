@@ -477,7 +477,7 @@
     :cond_2
     iget-object p1, p1, Lcom/google/android/gms/internal/mlkit_language_id/zzer;->zzb:[I
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 23
     :goto_0
@@ -659,7 +659,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 64
     :goto_0

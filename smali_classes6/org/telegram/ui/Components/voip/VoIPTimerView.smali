@@ -179,7 +179,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
@@ -269,7 +269,7 @@
 
     int-to-float v10, v1
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     const/high16 v11, 0x40300000    # 2.75f
 
@@ -281,13 +281,13 @@
 
     int-to-float v1, v1
 
-    mul-float v12, v12, v1
+    mul-float/2addr v12, v1
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -491,9 +491,9 @@
 
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->formatLongDuration(I)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->formatLongDuration(I)Ljava/lang/String;
 
     move-result-object v0
 

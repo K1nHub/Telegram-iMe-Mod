@@ -177,7 +177,7 @@
 
     const/high16 v3, 0x3e800000    # 0.25f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget v4, v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->xOffset:I
 
@@ -192,7 +192,7 @@
 
     int-to-float v6, v5
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     iget v3, v0, Lorg/telegram/ui/Components/voip/VoIPPiPView;->yOffset:I
 
@@ -206,11 +206,11 @@
 
     const v7, 0x3ecccccd    # 0.4f
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     const/4 v8, 0x2
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/2addr v4, v8
 
     int-to-float v4, v4
 
@@ -218,9 +218,9 @@
 
     int-to-float v4, v5
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v8
 
     int-to-float v3, v3
 
@@ -299,7 +299,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     sub-float/2addr v11, v1
 
@@ -314,7 +314,7 @@
 
     sub-float/2addr v4, v6
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sub-float/2addr v1, v4
 
@@ -373,7 +373,7 @@
 
     move-result p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 700
     iget-object v0, v8, Lorg/telegram/ui/Components/voip/VoIPPiPView;->floatingView:Lorg/telegram/ui/Components/voip/VoIPPiPView$FloatingView;
@@ -384,9 +384,9 @@
 
     int-to-float v1, v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
@@ -399,9 +399,9 @@
 
     int-to-float v1, v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
@@ -508,7 +508,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
     add-float/2addr v11, v1
 
@@ -535,7 +535,7 @@
 
     sub-float/2addr v4, v6
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v2, v4
 
@@ -552,7 +552,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 760
     invoke-static {}, Lorg/telegram/ui/Components/voip/VoIPPiPView;->access$900()Lorg/telegram/ui/Components/voip/VoIPPiPView;
@@ -567,9 +567,9 @@
 
     int-to-float v2, v2
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
-    mul-float v10, v10, v7
+    mul-float/2addr v10, v7
 
     invoke-virtual {v0, v10}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
@@ -586,9 +586,9 @@
 
     int-to-float v2, v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
@@ -804,9 +804,9 @@
 
     sub-float/2addr v0, p3
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     add-float/2addr p0, p1
 
@@ -980,7 +980,7 @@
 
     sub-float/2addr v0, p1
 
-    mul-float p0, p0, p1
+    mul-float/2addr p0, p1
 
     add-float/2addr v0, p0
 
@@ -1108,12 +1108,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1147,12 +1147,12 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_1
     invoke-virtual {v1, v6}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1182,7 +1182,7 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v2
 
     :cond_4
     invoke-virtual {v1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1351,13 +1351,13 @@
 
     div-float v3, v4, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget-object v3, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView$FloatingView;->this$0:Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     iget v3, v3, Lorg/telegram/ui/Components/voip/VoIPPiPView;->progressToCameraMini:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -1380,13 +1380,13 @@
 
     div-float v2, v4, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView$FloatingView;->this$0:Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     iget v2, v2, Lorg/telegram/ui/Components/voip/VoIPPiPView;->progressToCameraMini:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -1409,13 +1409,13 @@
 
     div-float v2, v4, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView$FloatingView;->this$0:Lorg/telegram/ui/Components/voip/VoIPPiPView;
 
     iget v2, v2, Lorg/telegram/ui/Components/voip/VoIPPiPView;->progressToCameraMini:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/VoIPTextureView;->setRoundCorners(F)V
 
@@ -1430,7 +1430,7 @@
 
     const v2, 0x3f19999a    # 0.6f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     const v3, 0x3ecccccd    # 0.4f
 
@@ -1447,7 +1447,7 @@
 
     sub-float v0, v4, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v0, v3
 
@@ -1621,7 +1621,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/voip/VoIPPiPView$FloatingView;->touchSlop:F
 
-    mul-float v7, v7, v7
+    mul-float/2addr v7, v7
 
     cmpl-float p1, p1, v7
 
@@ -1644,9 +1644,9 @@
     .line 576
     iput v2, p1, Lorg/telegram/ui/Components/voip/VoIPPiPView;->startY:F
 
-    const/4 v1, 0x0
+    move v1, v6
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 580
     :cond_3

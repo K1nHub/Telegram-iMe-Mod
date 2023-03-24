@@ -1032,7 +1032,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, p5
 
     :goto_0
     if-eqz p1, :cond_5
@@ -1206,7 +1206,7 @@
     invoke-static {}, Lorg/telegram/ui/PremiumPreviewFragment;->sentPremiumBuyCanceled()V
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v10
 
     :goto_0
     if-ge v0, v8, :cond_2
@@ -1330,7 +1330,7 @@
 
     if-nez v0, :cond_9
 
-    const/4 v13, 0x0
+    move v13, v10
 
     :goto_2
     if-ge v13, v8, :cond_9

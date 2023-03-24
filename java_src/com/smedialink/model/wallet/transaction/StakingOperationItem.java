@@ -16,7 +16,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: StakingOperationItem.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationItem extends NoChildNode {
@@ -222,15 +222,15 @@ public final class StakingOperationItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3286R.string.staking_operation_type_approval;
+            i = C3301R.string.staking_operation_type_approval;
         } else if (i2 == 2) {
-            i = C3286R.string.staking_operation_type_deposit;
+            i = C3301R.string.staking_operation_type_deposit;
         } else if (i2 == 3) {
-            i = this.safe ? C3286R.string.staking_operation_type_withdrawal_request : C3286R.string.staking_operation_type_immediate_withdrawal;
+            i = this.safe ? C3301R.string.staking_operation_type_withdrawal_request : C3301R.string.staking_operation_type_immediate_withdrawal;
         } else if (i2 != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3286R.string.staking_operation_type_claim;
+            i = C3301R.string.staking_operation_type_claim;
         }
         return resourceManager.getString(i);
     }
@@ -250,15 +250,15 @@ public final class StakingOperationItem extends NoChildNode {
             if (i != 2) {
                 if (i != 3) {
                     if (i == 4) {
-                        return C3286R.C3288drawable.fork_ic_transaction_receive;
+                        return C3301R.C3303drawable.fork_ic_transaction_receive;
                     }
                     throw new NoWhenBranchMatchedException();
                 }
-                return C3286R.C3288drawable.fork_ic_transaction_staking_withdraw;
+                return C3301R.C3303drawable.fork_ic_transaction_staking_withdraw;
             }
-            return C3286R.C3288drawable.fork_ic_transaction_sent;
+            return C3301R.C3303drawable.fork_ic_transaction_sent;
         }
-        return C3286R.C3288drawable.fork_ic_transaction_approve;
+        return C3301R.C3303drawable.fork_ic_transaction_approve;
     }
 
     public final String getTransactionTimeText() {
@@ -268,7 +268,7 @@ public final class StakingOperationItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
-            return resourceManager.getString(C3286R.string.wallet_transactions_type_approve_title, resourceManager.getString(getTokenInfo().getShortName()));
+            return resourceManager.getString(C3301R.string.wallet_transactions_type_approve_title, resourceManager.getString(getTokenInfo().getShortName()));
         }
         return getSymbol() + BalanceFormatter.formatBalance(this.amount, getTokenInfo().getDecimals()) + ' ' + resourceManager.getString(getTokenInfo().getShortName());
     }

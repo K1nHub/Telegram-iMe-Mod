@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/manager/wallet/create/WalletCreateManager;->prepareCreateWalletFlow(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    value = Lcom/smedialink/manager/wallet/create/WalletCreateManager;->prepareCreateWalletFlow(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,25 +30,25 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletCreateManager.kt\ncom/smedialink/manager/wallet/create/WalletCreateManager\n*L\n1#1,111:1\n133#2,12:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletCreateManager.kt\ncom/smedialink/manager/wallet/create/WalletCreateManager\n*L\n1#1,111:1\n161#2,12:112\n*E\n"
 .end annotation
 
 
 # instance fields
 .field final synthetic $password$inlined:Ljava/lang/String;
 
-.field final synthetic $walletCreationType$inlined:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;
+.field final synthetic $walletCreationType$inlined:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;
 
 .field final synthetic this$0:Lcom/smedialink/manager/wallet/create/WalletCreateManager;
 
 
 # direct methods
-.method public constructor <init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/manager/wallet/create/WalletCreateManager;
 
-    iput-object p2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$walletCreationType$inlined:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;
+    iput-object p2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$walletCreationType$inlined:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;
 
     iput-object p3, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
 
@@ -100,7 +100,7 @@
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/manager/wallet/create/WalletCreateManager;
 
     .line 115
-    iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$walletCreationType$inlined:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;
+    iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$walletCreationType$inlined:Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;
 
     .line 116
     check-cast p1, Lcom/smedialink/storage/domain/model/Result$Success;
@@ -119,7 +119,7 @@
     iget-object v2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
 
     .line 114
-    invoke-static {v0, v1, p1, v2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->access$openScreenByWalletCreationType(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;Ljava/util/List;Ljava/lang/String;)V
+    invoke-static {v0, v1, p1, v2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->access$openScreenByWalletCreationType(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/util/List;Ljava/lang/String;)V
 
     goto :goto_0
 

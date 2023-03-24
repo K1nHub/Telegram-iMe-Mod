@@ -322,7 +322,7 @@
 
     if-gez v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 3235
     :cond_1
@@ -467,7 +467,7 @@
 
     if-gez v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 3212
     :cond_2
@@ -482,7 +482,7 @@
 
     const v5, 0x3f4ccccd    # 0.8f
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     float-to-int v0, v0
 

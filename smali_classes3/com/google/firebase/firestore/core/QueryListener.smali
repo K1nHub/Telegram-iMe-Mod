@@ -165,7 +165,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 156
     :goto_0
@@ -272,7 +272,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_3
     :goto_0
@@ -367,13 +367,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_1
     new-array v3, v1, [Ljava/lang/Object;
@@ -510,7 +510,7 @@
     invoke-interface {v0, p1, v1}, Lcom/google/firebase/firestore/EventListener;->onEvent(Ljava/lang/Object;Lcom/google/firebase/firestore/FirebaseFirestoreException;)V
 
     :goto_3
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 103
     :cond_6

@@ -165,7 +165,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v2
 
     :cond_1
     if-eqz p1, :cond_2
@@ -372,10 +372,10 @@
 
     if-ne p2, p3, :cond_0
 
-    const/4 p2, 0x2
+    move p2, v2
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 85
     :cond_1
@@ -596,10 +596,10 @@
 
     if-ne p2, p3, :cond_0
 
-    const/4 p2, 0x2
+    move p2, v2
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 121
     :cond_1

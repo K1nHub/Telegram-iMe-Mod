@@ -353,7 +353,7 @@
 
     iget v11, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->currentClipHorizontal:F
 
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     sub-float/2addr v10, v11
 
@@ -365,7 +365,7 @@
 
     iget v12, v0, Lorg/telegram/ui/Components/voip/VoIPTextureView;->currentClipVertical:F
 
-    mul-float v12, v12, v7
+    mul-float/2addr v12, v7
 
     sub-float/2addr v11, v12
 
@@ -578,7 +578,7 @@
 
     if-eqz v2, :cond_a
 
-    const/4 v2, 0x0
+    move v2, v5
 
     goto :goto_2
 
@@ -641,7 +641,7 @@
     goto :goto_3
 
     :cond_c
-    const/4 v13, 0x0
+    move v13, v5
 
     goto :goto_4
 
@@ -656,7 +656,7 @@
 
     move-result v12
 
-    mul-float v9, v9, v12
+    mul-float/2addr v9, v12
 
     goto :goto_6
 
@@ -683,7 +683,7 @@
 
     iget v13, v13, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     add-float/2addr v9, v12
 
@@ -719,7 +719,7 @@
     goto :goto_7
 
     :cond_f
-    const/4 v12, 0x0
+    move v12, v5
 
     goto :goto_8
 
@@ -834,7 +834,7 @@
     goto :goto_c
 
     :cond_15
-    const/4 v7, 0x0
+    move v7, v5
 
     goto :goto_d
 
@@ -845,11 +845,11 @@
     iget v7, v7, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
     :goto_d
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     add-float/2addr v3, v11
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v14, v3
 
@@ -859,7 +859,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v13
+    mul-float/2addr v3, v13
 
     add-float/2addr v14, v3
 
@@ -921,7 +921,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     .line 289
     iget-object v2, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$1;->val$textPaint2:Landroid/text/TextPaint;
@@ -964,7 +964,7 @@
 
     sub-float v7, v6, v12
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
@@ -1381,13 +1381,13 @@
 
     iget v5, v4, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     iget v4, v4, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToHideUi:F
 
     sub-float v4, v6, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v2, v3
 
@@ -1551,13 +1551,13 @@
 
     sub-float v5, v6, v4
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     iget-object v5, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$1;->this$0:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
 
     iget v5, v5, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->overlayIconAlpha:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     add-float/2addr v3, v5
 
@@ -1569,7 +1569,7 @@
     iget v3, v3, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->overlayIconAlpha:F
 
     :goto_14
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/4 v3, 0x0
 
@@ -1717,7 +1717,7 @@
 
     iget v5, v5, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     const/4 v5, 0x0
 
@@ -1741,7 +1741,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     float-to-int v2, v2
 

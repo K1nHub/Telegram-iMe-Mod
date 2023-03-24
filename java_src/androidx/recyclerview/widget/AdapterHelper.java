@@ -148,34 +148,34 @@ public class AdapterHelper implements OpReorderer.Callback {
     private void applyUpdate(UpdateOp updateOp) {
         int i = updateOp.positionStart;
         int i2 = updateOp.itemCount + i;
-        int i3 = i;
-        char c = 65535;
-        int i4 = 0;
+        int i3 = 0;
+        boolean z = true;
+        int i4 = i;
         while (i < i2) {
             if (this.mCallback.findViewHolder(i) != null || canFindInPreLayout(i)) {
-                if (c == 0) {
-                    dispatchAndUpdateViewHolders(obtainUpdateOp(4, i3, i4, updateOp.payload));
-                    i3 = i;
-                    i4 = 0;
+                if (!z) {
+                    dispatchAndUpdateViewHolders(obtainUpdateOp(4, i4, i3, updateOp.payload));
+                    i4 = i;
+                    i3 = 0;
                 }
-                c = 1;
+                z = true;
             } else {
-                if (c == 1) {
-                    postponeAndUpdateViewHolders(obtainUpdateOp(4, i3, i4, updateOp.payload));
-                    i3 = i;
-                    i4 = 0;
+                if (z) {
+                    postponeAndUpdateViewHolders(obtainUpdateOp(4, i4, i3, updateOp.payload));
+                    i4 = i;
+                    i3 = 0;
                 }
-                c = 0;
+                z = false;
             }
-            i4++;
+            i3++;
             i++;
         }
-        if (i4 != updateOp.itemCount) {
+        if (i3 != updateOp.itemCount) {
             Object obj = updateOp.payload;
             recycleUpdateOp(updateOp);
-            updateOp = obtainUpdateOp(4, i3, i4, obj);
+            updateOp = obtainUpdateOp(4, i4, i3, obj);
         }
-        if (c == 0) {
+        if (!z) {
             dispatchAndUpdateViewHolders(updateOp);
         } else {
             postponeAndUpdateViewHolders(updateOp);
@@ -211,8 +211,8 @@ public class AdapterHelper implements OpReorderer.Callback {
                 if (updateOp.cmd == 4) {
                     i3 += i5;
                 }
-                updatePositionWithPostponed = updatePositionWithPostponed2;
                 i5 = 1;
+                updatePositionWithPostponed = updatePositionWithPostponed2;
             }
         }
         Object obj = updateOp.payload;

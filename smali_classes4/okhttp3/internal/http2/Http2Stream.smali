@@ -342,7 +342,7 @@
 
 # virtual methods
 .method public final addBytesToWriteWindow(J)V
-    .locals 3
+    .locals 2
 
     .line 635
     iget-wide v0, p0, Lokhttp3/internal/http2/Http2Stream;->writeBytesMaximum:J
@@ -353,9 +353,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez p1, :cond_0
 
     .line 563
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
@@ -861,12 +861,12 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 127
     :goto_0
@@ -881,7 +881,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1

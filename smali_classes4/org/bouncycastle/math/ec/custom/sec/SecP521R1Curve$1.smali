@@ -64,9 +64,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     iget v6, p0, Lorg/bouncycastle/math/ec/custom/sec/SecP521R1Curve$1;->val$len:I
@@ -79,7 +79,7 @@
 
     shr-int/lit8 v6, v6, 0x1f
 
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_1
     if-ge v7, v0, :cond_0

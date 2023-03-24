@@ -16,8 +16,8 @@ public final class zzm implements Parcelable.Creator<Barcode.WiFi> {
     public final /* synthetic */ Barcode.WiFi createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
-        String str2 = null;
         int i = 0;
+        String str2 = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

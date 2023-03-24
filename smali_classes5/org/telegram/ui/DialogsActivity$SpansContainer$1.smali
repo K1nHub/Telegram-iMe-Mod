@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$SpansContainer;)V
     .locals 0
 
-    .line 1474
+    .line 1503
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/DialogsActivity$SpansContainer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,26 +35,26 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1477
+    .line 1506
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/DialogsActivity$SpansContainer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity$SpansContainer;->access$1402(Lorg/telegram/ui/DialogsActivity$SpansContainer;Landroid/view/View;)Landroid/view/View;
 
-    .line 1478
+    .line 1507
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/DialogsActivity$SpansContainer;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity$SpansContainer;->access$1502(Lorg/telegram/ui/DialogsActivity$SpansContainer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 1479
+    .line 1508
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/DialogsActivity$SpansContainer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity$SpansContainer;->access$1602(Lorg/telegram/ui/DialogsActivity$SpansContainer;Z)Z
 
-    .line 1480
+    .line 1509
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/DialogsActivity$SpansContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity$SpansContainer;->this$0:Lorg/telegram/ui/DialogsActivity;

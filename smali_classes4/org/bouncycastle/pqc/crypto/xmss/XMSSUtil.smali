@@ -52,7 +52,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_1
@@ -112,7 +112,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     array-length v3, p0
@@ -388,9 +388,9 @@
 
     and-long/2addr p0, v2
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static getTreeIndex(JI)J
@@ -413,7 +413,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     array-length v3, p0
@@ -436,13 +436,13 @@
 .end method
 
 .method public static isIndexValid(IJ)Z
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     const-wide/16 v0, 0x1
 
@@ -475,24 +475,24 @@
 .method public static isNewAuthenticationPathNeeded(JII)Z
     .locals 6
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long v2, p0, v0
 
-    cmp-long v3, p0, v1
+    const/4 v3, 0x0
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
-    return v0
+    return v3
 
     :cond_0
-    const-wide/16 v3, 0x1
+    const-wide/16 v4, 0x1
 
-    add-long/2addr p0, v3
+    add-long/2addr p0, v4
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    shl-int p2, v3, p2
+    shl-int p2, v2, p2
 
     int-to-double v4, p2
 
@@ -506,14 +506,14 @@
 
     rem-long/2addr p0, p2
 
-    cmp-long p2, p0, v1
+    cmp-long p0, p0, v0
 
-    if-nez p2, :cond_1
+    if-nez p0, :cond_1
 
-    const/4 v0, 0x1
+    move v3, v2
 
     :cond_1
-    return v0
+    return v3
 .end method
 
 .method public static log2(I)I

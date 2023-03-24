@@ -115,7 +115,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 457
     :goto_0
@@ -128,12 +128,12 @@
 
     if-ge v5, p1, :cond_0
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     const-string v7, "Non-ASCII character: %s"
@@ -146,12 +146,12 @@
 
     if-ne v6, v2, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_2
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_2
     const-string v7, "Duplicate character: %s"

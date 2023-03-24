@@ -52,42 +52,42 @@
 .method public constructor <init>(IIJLjava/lang/String;IZIIJ)V
     .locals 0
 
-    .line 405
+    .line 406
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController$MediaEditState;-><init>()V
 
-    .line 406
+    .line 407
     iput p1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->bucketId:I
 
-    .line 407
+    .line 408
     iput p2, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
 
-    .line 408
+    .line 409
     iput-wide p3, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->dateTaken:J
 
-    .line 409
+    .line 410
     iput-object p5, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
-    .line 410
+    .line 411
     iput p8, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->width:I
 
-    .line 411
+    .line 412
     iput p9, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->height:I
 
-    .line 412
+    .line 413
     iput-wide p10, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->size:J
 
     if-eqz p7, :cond_0
 
-    .line 414
+    .line 415
     iput p6, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
 
     goto :goto_0
 
-    .line 416
+    .line 417
     :cond_0
     iput p6, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    .line 418
+    .line 419
     :goto_0
     iput-boolean p7, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
@@ -99,10 +99,10 @@
 .method public copyFrom(Lorg/telegram/messenger/MediaController$MediaEditState;)V
     .locals 1
 
-    .line 423
+    .line 424
     invoke-super {p0, p1}, Lorg/telegram/messenger/MediaController$MediaEditState;->copyFrom(Lorg/telegram/messenger/MediaController$MediaEditState;)V
 
-    .line 424
+    .line 425
     instance-of v0, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v0, :cond_0
@@ -129,7 +129,7 @@
 .method public getPath()Ljava/lang/String;
     .locals 1
 
-    .line 429
+    .line 430
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     return-object v0
@@ -138,17 +138,17 @@
 .method public reset()V
     .locals 2
 
-    .line 434
+    .line 435
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v0, :cond_0
 
-    .line 435
+    .line 436
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 436
+    .line 437
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
@@ -159,16 +159,16 @@
 
     const/4 v0, 0x0
 
-    .line 437
+    .line 438
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 440
+    .line 441
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
-    .line 441
+    .line 442
     invoke-super {p0}, Lorg/telegram/messenger/MediaController$MediaEditState;->reset()V
 
     return-void

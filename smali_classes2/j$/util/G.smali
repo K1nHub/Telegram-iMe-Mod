@@ -264,9 +264,9 @@
     :goto_0
     const-wide/16 v3, 0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-lez v5, :cond_6
+    if-lez v3, :cond_6
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -280,9 +280,9 @@
 
     int-to-long v4, v3
 
-    cmp-long v6, v4, v1
+    cmp-long v4, v4, v1
 
-    if-lez v6, :cond_1
+    if-lez v4, :cond_1
 
     long-to-int v3, v1
 
@@ -291,14 +291,14 @@
 
     if-le v3, v1, :cond_2
 
-    const/high16 v3, 0x2000000
+    move v3, v1
 
     :cond_2
     new-array v1, v3, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :cond_3
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;

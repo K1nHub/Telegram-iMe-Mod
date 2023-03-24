@@ -193,7 +193,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -201,7 +201,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-double v2, v2
 
@@ -220,7 +220,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$6;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -228,7 +228,7 @@
 
     move-result v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-double v3, v3
 

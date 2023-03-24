@@ -80,12 +80,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_0
     or-int/lit8 v2, v2, 0x10
@@ -103,12 +103,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_1
     or-int/lit8 v7, v2, 0x30
@@ -157,12 +157,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_2
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
@@ -200,12 +200,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x5
+    move v1, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x3
+    move v1, v4
 
     :goto_3
     or-int/lit8 v7, v1, 0x30
@@ -274,7 +274,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v3, 0x3
+    move v3, v4
 
     :goto_4
     or-int/lit8 v7, v3, 0x30
@@ -353,9 +353,10 @@
 
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    :goto_0
+    move v4, v0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->imageView:Landroid/widget/ImageView;
@@ -366,23 +367,23 @@
 
     if-nez v0, :cond_1
 
-    const/16 v0, 0x47
+    move v0, v1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    const/16 v0, 0x14
+    move v0, v2
 
-    :goto_0
+    :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    move v4, v0
+    goto :goto_0
 
-    :goto_1
+    :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -407,22 +408,22 @@
 
     if-nez v3, :cond_2
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
-    const/16 v1, 0x14
+    move v1, v2
 
-    :goto_2
+    :goto_3
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_3
     const/4 v1, 0x0
 
-    :goto_3
+    :goto_4
     sub-int/2addr v0, v1
 
     int-to-float v6, v0
@@ -569,7 +570,7 @@
     return-void
 .end method
 
-.method public setTextAndValue(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+.method public setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
     .locals 1
 
     .line 99
@@ -634,7 +635,7 @@
 
     if-eqz p3, :cond_0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     goto :goto_0
 
@@ -655,7 +656,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, p2
 
     :goto_1
     invoke-virtual {p1, p3, p2, v1, p2}, Landroid/widget/TextView;->setPadding(IIII)V
@@ -667,7 +668,7 @@
 
     if-eqz p3, :cond_2
 
-    const/4 p3, 0x0
+    move p3, p2
 
     goto :goto_2
 
@@ -688,7 +689,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_3
     iget-boolean v1, p0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->multiline:Z
@@ -704,7 +705,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, p2
 
     :goto_4
     invoke-virtual {p1, p3, p2, v0, v1}, Landroid/widget/TextView;->setPadding(IIII)V
@@ -715,6 +716,50 @@
     xor-int/lit8 p1, p4, 0x1
 
     .line 114
+    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+
+    return-void
+.end method
+
+.method public setTextWithEmojiAnd21Value(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+    .locals 4
+
+    .line 122
+    iget-object v0, p0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->textView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+
+    move-result-object v1
+
+    const/16 v2, 0xe
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v1, v2, v3}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 123
+    iget-object p1, p0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->valueTextView:Landroid/widget/TextView;
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 124
+    iput-boolean p3, p0, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->needDivider:Z
+
+    xor-int/lit8 p1, p3, 0x1
+
+    .line 125
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void

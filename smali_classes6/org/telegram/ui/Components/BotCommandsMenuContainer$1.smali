@@ -100,14 +100,14 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     cmpg-float v2, v0, v1
 
     if-gez v2, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 60
     :cond_2

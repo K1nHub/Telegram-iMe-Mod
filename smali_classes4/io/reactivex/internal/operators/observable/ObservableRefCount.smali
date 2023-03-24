@@ -137,9 +137,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_3
+    if-nez v0, :cond_3
 
     .line 99
     iget-boolean v0, p1, Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;->connected:Z
@@ -152,9 +152,9 @@
     :cond_1
     iget-wide v0, p0, Lio/reactivex/internal/operators/observable/ObservableRefCount;->timeout:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 103
     invoke-virtual {p0, p1}, Lio/reactivex/internal/operators/observable/ObservableRefCount;->timeout(Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;)V
@@ -252,9 +252,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     .line 74
     iget-object v3, v0, Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;->timer:Lio/reactivex/disposables/Disposable;
@@ -283,9 +283,9 @@
 
     int-to-long v5, v3
 
-    cmp-long v3, v1, v5
+    cmp-long v1, v1, v5
 
-    if-nez v3, :cond_2
+    if-nez v1, :cond_2
 
     .line 80
     iput-boolean v4, v0, Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;->connected:Z
@@ -333,7 +333,7 @@
 .end method
 
 .method terminated(Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;)V
-    .locals 5
+    .locals 4
 
     .line 114
     monitor-enter p0
@@ -371,9 +371,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 122
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableRefCount;->source:Lio/reactivex/observables/ConnectableObservable;
@@ -424,7 +424,7 @@
 .end method
 
 .method timeout(Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;)V
-    .locals 5
+    .locals 4
 
     .line 132
     monitor-enter p0
@@ -435,9 +435,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableRefCount;->connection:Lio/reactivex/internal/operators/observable/ObservableRefCount$RefConnection;
 

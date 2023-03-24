@@ -12,7 +12,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
     public boolean for_chat;
 
     /* renamed from: id */
-    public long f1630id;
+    public long f1631id;
     public int installs_count;
     public boolean isDefault;
     public ArrayList<TLRPC$ThemeSettings> settings = new ArrayList<>();
@@ -26,7 +26,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
         this.creator = (readInt32 & 1) != 0;
         this.isDefault = (readInt32 & 2) != 0;
         this.for_chat = (readInt32 & 32) != 0;
-        this.f1630id = abstractSerializedData.readInt64(z);
+        this.f1631id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.slug = abstractSerializedData.readString(z);
         this.title = abstractSerializedData.readString(z);
@@ -68,7 +68,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
         int i3 = this.for_chat ? i2 | 32 : i2 & (-33);
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
-        abstractSerializedData.writeInt64(this.f1630id);
+        abstractSerializedData.writeInt64(this.f1631id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeString(this.slug);
         abstractSerializedData.writeString(this.title);

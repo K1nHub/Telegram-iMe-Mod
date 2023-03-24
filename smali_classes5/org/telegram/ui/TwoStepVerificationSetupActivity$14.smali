@@ -475,7 +475,7 @@
 
     const/high16 v2, 0x430e0000    # 142.0f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     add-float/2addr p1, v1
 

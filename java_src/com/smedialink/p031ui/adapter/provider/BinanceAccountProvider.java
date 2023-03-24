@@ -8,7 +8,7 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 /* compiled from: BinanceAccountProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.BinanceAccountProvider */
@@ -28,7 +28,7 @@ public final class BinanceAccountProvider extends BaseNodeProvider<BinanceAccoun
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.BINANCE_ACCOUNT;
-        this.layoutId = C3286R.layout.fork_recycle_item_wallet_account;
+        this.layoutId = C3301R.layout.fork_recycle_item_wallet_account;
     }
 
     public final ActionBarMenuItem.ActionBarMenuItemDelegate getActionBarMenuItemDelegate() {
@@ -53,19 +53,19 @@ public final class BinanceAccountProvider extends BaseNodeProvider<BinanceAccoun
     public void convert(BaseViewHolder helper, BinanceAccountItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3286R.C3289id.card_crypto_account, "windowBackgroundWhite");
-        int i = C3286R.C3289id.text_account_id;
+        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3301R.C3304id.card_crypto_account, "windowBackgroundWhite");
+        int i = C3301R.C3304id.text_account_id;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i, "chat_messagePanelText");
-        int i2 = C3286R.C3289id.text_account_name;
+        int i2 = C3301R.C3304id.text_account_name;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, "chats_actionBackground");
-        int i3 = C3286R.C3289id.image_copy;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor2, "dialogIcon", i3), i3), C3286R.C3289id.image_verified, item.getInfo().isVerified()).setText(i2, item.getInfo().getEmail()).setText(i, this.resourceManager.getString(C3286R.string.wallet_binance_pay_id, item.getShortId())), C3286R.C3289id.item_more_options, new BinanceAccountProvider$convert$1(this)), C3286R.C3289id.image_account_avatar, BinanceAccountProvider$convert$2.INSTANCE), C3286R.C3289id.horizontal_action_buttons, new BinanceAccountProvider$convert$3(item));
+        int i3 = C3301R.C3304id.image_copy;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor2, "dialogIcon", i3), i3), C3301R.C3304id.image_verified, item.getInfo().isVerified()).setText(i2, item.getInfo().getEmail()).setText(i, this.resourceManager.getString(C3301R.string.wallet_binance_pay_id, item.getShortId())), C3301R.C3304id.item_more_options, new BinanceAccountProvider$convert$1(this)), C3301R.C3304id.image_account_avatar, BinanceAccountProvider$convert$2.INSTANCE), C3301R.C3304id.horizontal_action_buttons, new BinanceAccountProvider$convert$3(item));
     }
 
     public void convert(BaseViewHolder helper, BinanceAccountItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper.setText(C3286R.C3289id.text_account_id, this.resourceManager.getString(C3286R.string.wallet_binance_pay_id, item.getShortId())).setText(C3286R.C3289id.text_account_name, item.getInfo().getEmail()), C3286R.C3289id.image_account_avatar, BinanceAccountProvider$convert$4.INSTANCE), C3286R.C3289id.horizontal_action_buttons, new BinanceAccountProvider$convert$5(item));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper.setText(C3301R.C3304id.text_account_id, this.resourceManager.getString(C3301R.string.wallet_binance_pay_id, item.getShortId())).setText(C3301R.C3304id.text_account_name, item.getInfo().getEmail()), C3301R.C3304id.image_account_avatar, BinanceAccountProvider$convert$4.INSTANCE), C3301R.C3304id.horizontal_action_buttons, new BinanceAccountProvider$convert$5(item));
     }
 }

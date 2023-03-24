@@ -128,8 +128,10 @@ final class zzeh<T> implements zzep<T> {
         zzfn.zze(t, zzs(i2) & 1048575, i);
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     private final void zzF(T t, zzcn zzcnVar) throws IOException {
         int i;
+        boolean z;
         if (this.zzf) {
             this.zzm.zzb(t);
             throw null;
@@ -137,19 +139,19 @@ final class zzeh<T> implements zzep<T> {
         int length = this.zzc.length;
         Unsafe unsafe = zzb;
         int i2 = 1048575;
-        int i3 = 0;
+        int i3 = 1048575;
         int i4 = 0;
-        int i5 = 1048575;
-        while (i3 < length) {
-            int zzr = zzr(i3);
-            int i6 = this.zzc[i3];
+        int i5 = 0;
+        while (i4 < length) {
+            int zzr = zzr(i4);
+            int i6 = this.zzc[i4];
             int zzt = zzt(zzr);
             if (zzt <= 17) {
-                int i7 = this.zzc[i3 + 2];
+                int i7 = this.zzc[i4 + 2];
                 int i8 = i7 & i2;
-                if (i8 != i5) {
-                    i4 = unsafe.getInt(t, i8);
-                    i5 = i8;
+                if (i8 != i3) {
+                    i5 = unsafe.getInt(t, i8);
+                    i3 = i8;
                 }
                 i = 1 << (i7 >>> 20);
             } else {
@@ -158,373 +160,328 @@ final class zzeh<T> implements zzep<T> {
             long j = zzr & i2;
             switch (zzt) {
                 case 0:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzf(i6, zzfn.zzl(t, j));
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 1:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zze(i6, zzfn.zzj(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 2:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzc(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 3:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzh(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 4:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzi(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 5:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzj(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 6:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzk(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 7:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzl(i6, zzfn.zzh(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 8:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzH(i6, unsafe.getObject(t, j), zzcnVar);
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 9:
-                    if ((i4 & i) != 0) {
-                        zzcnVar.zzr(i6, unsafe.getObject(t, j), zzo(i3));
+                    if ((i5 & i) == 0) {
+                        break;
                     } else {
-                        continue;
+                        zzcnVar.zzr(i6, unsafe.getObject(t, j), zzo(i4));
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 10:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzn(i6, (zzcf) unsafe.getObject(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 11:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzo(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 12:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzg(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 13:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzb(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 14:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzd(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 15:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzp(i6, unsafe.getInt(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 16:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) == 0) {
+                        break;
+                    } else {
                         zzcnVar.zzq(i6, unsafe.getLong(t, j));
-                    } else {
-                        continue;
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 17:
-                    if ((i4 & i) != 0) {
-                        zzcnVar.zzs(i6, unsafe.getObject(t, j), zzo(i3));
+                    if ((i5 & i) == 0) {
+                        break;
                     } else {
-                        continue;
+                        zzcnVar.zzs(i6, unsafe.getObject(t, j), zzo(i4));
+                        break;
                     }
-                    i3 += 3;
-                    i2 = 1048575;
                 case 18:
-                    zzer.zzH(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzH(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 19:
-                    zzer.zzI(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzI(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 20:
-                    zzer.zzJ(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzJ(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 21:
-                    zzer.zzK(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzK(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 22:
-                    zzer.zzO(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzO(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 23:
-                    zzer.zzM(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzM(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 24:
-                    zzer.zzR(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzR(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 25:
-                    zzer.zzU(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
-                    continue;
-                    i3 += 3;
-                    i2 = 1048575;
+                    zzer.zzU(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    break;
                 case 26:
-                    zzer.zzV(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar);
+                    zzer.zzV(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar);
                     break;
                 case 27:
-                    zzer.zzX(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, zzo(i3));
+                    zzer.zzX(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, zzo(i4));
                     break;
                 case 28:
-                    zzer.zzW(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar);
+                    zzer.zzW(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar);
                     break;
                 case 29:
-                    zzer.zzP(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    z = false;
+                    zzer.zzP(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
                     break;
                 case 30:
-                    zzer.zzT(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    z = false;
+                    zzer.zzT(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
                     break;
                 case 31:
-                    zzer.zzS(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    z = false;
+                    zzer.zzS(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
                     break;
                 case 32:
-                    zzer.zzN(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    z = false;
+                    zzer.zzN(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
                     break;
                 case 33:
-                    zzer.zzQ(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    z = false;
+                    zzer.zzQ(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
                     break;
                 case 34:
-                    zzer.zzL(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, false);
+                    z = false;
+                    zzer.zzL(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, false);
                     break;
                 case 35:
-                    zzer.zzH(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzH(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 36:
-                    zzer.zzI(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzI(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 37:
-                    zzer.zzJ(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzJ(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 38:
-                    zzer.zzK(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzK(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 39:
-                    zzer.zzO(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzO(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 40:
-                    zzer.zzM(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzM(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 41:
-                    zzer.zzR(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzR(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 42:
-                    zzer.zzU(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzU(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 43:
-                    zzer.zzP(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzP(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 44:
-                    zzer.zzT(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzT(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 45:
-                    zzer.zzS(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzS(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 46:
-                    zzer.zzN(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzN(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 47:
-                    zzer.zzQ(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzQ(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 48:
-                    zzer.zzL(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, true);
+                    zzer.zzL(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, true);
                     break;
                 case 49:
-                    zzer.zzY(this.zzc[i3], (List) unsafe.getObject(t, j), zzcnVar, zzo(i3));
+                    zzer.zzY(this.zzc[i4], (List) unsafe.getObject(t, j), zzcnVar, zzo(i4));
                     break;
                 case 50:
-                    zzG(zzcnVar, i6, unsafe.getObject(t, j), i3);
+                    zzG(zzcnVar, i6, unsafe.getObject(t, j), i4);
                     break;
                 case 51:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzf(i6, zzu(t, j));
-                        break;
                     }
                     break;
                 case 52:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zze(i6, zzv(t, j));
-                        break;
                     }
                     break;
                 case 53:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzc(i6, zzx(t, j));
-                        break;
                     }
                     break;
                 case 54:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzh(i6, zzx(t, j));
-                        break;
                     }
                     break;
                 case 55:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzi(i6, zzw(t, j));
-                        break;
                     }
                     break;
                 case 56:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzj(i6, zzx(t, j));
-                        break;
                     }
                     break;
                 case 57:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzk(i6, zzw(t, j));
-                        break;
                     }
                     break;
                 case 58:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzl(i6, zzy(t, j));
-                        break;
                     }
                     break;
                 case 59:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzH(i6, unsafe.getObject(t, j), zzcnVar);
-                        break;
                     }
                     break;
                 case 60:
-                    if (zzD(t, i6, i3)) {
-                        zzcnVar.zzr(i6, unsafe.getObject(t, j), zzo(i3));
-                        break;
+                    if (zzD(t, i6, i4)) {
+                        zzcnVar.zzr(i6, unsafe.getObject(t, j), zzo(i4));
                     }
                     break;
                 case 61:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzn(i6, (zzcf) unsafe.getObject(t, j));
-                        break;
                     }
                     break;
                 case 62:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzo(i6, zzw(t, j));
-                        break;
                     }
                     break;
                 case 63:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzg(i6, zzw(t, j));
-                        break;
                     }
                     break;
                 case 64:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzb(i6, zzw(t, j));
-                        break;
                     }
                     break;
                 case 65:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzd(i6, zzx(t, j));
-                        break;
                     }
                     break;
                 case 66:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzp(i6, zzw(t, j));
-                        break;
                     }
                     break;
                 case 67:
-                    if (zzD(t, i6, i3)) {
+                    if (zzD(t, i6, i4)) {
                         zzcnVar.zzq(i6, zzx(t, j));
-                        break;
                     }
                     break;
                 case 68:
-                    if (zzD(t, i6, i3)) {
-                        zzcnVar.zzs(i6, unsafe.getObject(t, j), zzo(i3));
-                        break;
+                    if (zzD(t, i6, i4)) {
+                        zzcnVar.zzs(i6, unsafe.getObject(t, j), zzo(i4));
                     }
                     break;
             }
-            i3 += 3;
+            i4 += 3;
             i2 = 1048575;
         }
         zzfd<?, ?> zzfdVar = this.zzl;
@@ -556,11 +513,11 @@ final class zzeh<T> implements zzep<T> {
         throw null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:123:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0278  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x025e  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x032c  */
     /* JADX WARN: Removed duplicated region for block: B:180:0x0385  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -646,9 +603,9 @@ final class zzeh<T> implements zzep<T> {
         int zzw9;
         int i2;
         Unsafe unsafe = zzb;
-        int i3 = 0;
+        int i3 = 1048575;
         int i4 = 0;
-        int i5 = 1048575;
+        int i5 = 0;
         for (int i6 = 0; i6 < this.zzc.length; i6 += 3) {
             int zzr = zzr(i6);
             int i7 = this.zzc[i6];
@@ -657,9 +614,9 @@ final class zzeh<T> implements zzep<T> {
                 int i8 = this.zzc[i6 + 2];
                 int i9 = i8 & 1048575;
                 i = 1 << (i8 >>> 20);
-                if (i9 != i5) {
-                    i4 = unsafe.getInt(t, i9);
-                    i5 = i9;
+                if (i9 != i3) {
+                    i5 = unsafe.getInt(t, i9);
+                    i3 = i9;
                 }
             } else {
                 i = 0;
@@ -667,7 +624,7 @@ final class zzeh<T> implements zzep<T> {
             long j = zzr & 1048575;
             switch (zzt) {
                 case 0:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw = zzcm.zzw(i7 << 3);
                         zzw8 = zzw + 8;
                         break;
@@ -675,7 +632,7 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 1:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw2 = zzcm.zzw(i7 << 3);
                         zzw8 = zzw2 + 4;
                         break;
@@ -683,7 +640,7 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 2:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         long j2 = unsafe.getLong(t, j);
                         zzw3 = zzcm.zzw(i7 << 3);
                         zzx = zzcm.zzx(j2);
@@ -693,7 +650,7 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 3:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         long j3 = unsafe.getLong(t, j);
                         zzw3 = zzcm.zzw(i7 << 3);
                         zzx = zzcm.zzx(j3);
@@ -703,17 +660,17 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 4:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i10 = unsafe.getInt(t, j);
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzv(i10);
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 5:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw = zzcm.zzw(i7 << 3);
                         zzw8 = zzw + 8;
                         break;
@@ -721,7 +678,7 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 6:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw2 = zzcm.zzw(i7 << 3);
                         zzw8 = zzw2 + 4;
                         break;
@@ -729,7 +686,7 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 7:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw5 = zzcm.zzw(i7 << 3);
                         zzw8 = zzw5 + 1;
                         break;
@@ -737,62 +694,62 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 8:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         Object object = unsafe.getObject(t, j);
                         if (object instanceof zzcf) {
                             zzw6 = zzcm.zzw(i7 << 3);
                             zzc = ((zzcf) object).zzc();
                             zzw7 = zzcm.zzw(zzc);
                             i2 = zzw6 + zzw7 + zzc;
-                            i3 += i2;
+                            i4 += i2;
                         } else {
                             zzw4 = zzcm.zzw(i7 << 3);
                             zzv = zzcm.zzy((String) object);
                             i2 = zzw4 + zzv;
-                            i3 += i2;
+                            i4 += i2;
                         }
                     } else {
                         continue;
                     }
                 case 9:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw8 = zzer.zzw(i7, unsafe.getObject(t, j), zzo(i6));
                         break;
                     } else {
                         continue;
                     }
                 case 10:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw6 = zzcm.zzw(i7 << 3);
                         zzc = ((zzcf) unsafe.getObject(t, j)).zzc();
                         zzw7 = zzcm.zzw(zzc);
                         i2 = zzw6 + zzw7 + zzc;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 11:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i11 = unsafe.getInt(t, j);
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzw(i11);
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 12:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i12 = unsafe.getInt(t, j);
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzv(i12);
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 13:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw2 = zzcm.zzw(i7 << 3);
                         zzw8 = zzw2 + 4;
                         break;
@@ -800,7 +757,7 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 14:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw = zzcm.zzw(i7 << 3);
                         zzw8 = zzw + 8;
                         break;
@@ -808,27 +765,27 @@ final class zzeh<T> implements zzep<T> {
                         continue;
                     }
                 case 15:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         int i13 = unsafe.getInt(t, j);
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzw((i13 >> 31) ^ (i13 + i13));
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 16:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         long j4 = unsafe.getLong(t, j);
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzx((j4 >> 63) ^ (j4 + j4));
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
                 case 17:
-                    if ((i4 & i) != 0) {
+                    if ((i5 & i) != 0) {
                         zzw8 = zzcm.zzE(i7, (zzee) unsafe.getObject(t, j), zzo(i6));
                         break;
                     } else {
@@ -892,7 +849,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -903,7 +860,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -914,7 +871,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -925,7 +882,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -936,7 +893,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -947,7 +904,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -958,7 +915,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -969,7 +926,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -980,7 +937,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -991,7 +948,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1002,7 +959,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1013,7 +970,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1024,7 +981,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1035,7 +992,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw9 = zzcm.zzw(zzv);
                         zzw4 = zzu + zzw9;
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1087,7 +1044,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzv(zzw10);
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1123,12 +1080,12 @@ final class zzeh<T> implements zzep<T> {
                             zzc = ((zzcf) object2).zzc();
                             zzw7 = zzcm.zzw(zzc);
                             i2 = zzw6 + zzw7 + zzc;
-                            i3 += i2;
+                            i4 += i2;
                         } else {
                             zzw4 = zzcm.zzw(i7 << 3);
                             zzv = zzcm.zzy((String) object2);
                             i2 = zzw4 + zzv;
-                            i3 += i2;
+                            i4 += i2;
                         }
                     } else {
                         continue;
@@ -1146,7 +1103,7 @@ final class zzeh<T> implements zzep<T> {
                         zzc = ((zzcf) unsafe.getObject(t, j)).zzc();
                         zzw7 = zzcm.zzw(zzc);
                         i2 = zzw6 + zzw7 + zzc;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1156,7 +1113,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzw(zzw11);
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1166,7 +1123,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzv(zzw12);
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1192,7 +1149,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzw((zzw13 >> 31) ^ (zzw13 + zzw13));
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1202,7 +1159,7 @@ final class zzeh<T> implements zzep<T> {
                         zzw4 = zzcm.zzw(i7 << 3);
                         zzv = zzcm.zzx((zzx4 >> 63) ^ (zzx4 + zzx4));
                         i2 = zzw4 + zzv;
-                        i3 += i2;
+                        i4 += i2;
                     } else {
                         continue;
                     }
@@ -1215,10 +1172,10 @@ final class zzeh<T> implements zzep<T> {
                     }
                 default:
             }
-            i3 += zzw8;
+            i4 += zzw8;
         }
         zzfd<?, ?> zzfdVar = this.zzl;
-        int zzf = i3 + zzfdVar.zzf(zzfdVar.zzb(t));
+        int zzf = i4 + zzfdVar.zzf(zzfdVar.zzb(t));
         if (this.zzf) {
             this.zzm.zzb(t);
             throw null;

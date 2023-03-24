@@ -82,7 +82,7 @@ final class zzea {
         Le:
             int r4 = ~r11
             r0 = r0 & r4
-            r5 = -1
+            r5 = r3
         L11:
             int r2 = r2 + (-1)
             r6 = r13[r2]

@@ -438,7 +438,7 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v10
+    mul-double/2addr v6, v10
 
     add-double/2addr v12, v6
 
@@ -904,9 +904,9 @@
 
     move-result-wide v4
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
-    mul-double v2, v2, v12
+    mul-double/2addr v2, v12
 
     add-double/2addr v14, v2
 
@@ -1090,7 +1090,7 @@
     if-eq v7, v8, :cond_12
 
     :cond_11
-    const/4 v9, 0x1
+    move v9, v10
 
     :cond_12
     if-eqz v9, :cond_13

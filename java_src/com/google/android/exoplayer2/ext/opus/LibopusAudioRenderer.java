@@ -56,7 +56,10 @@ public class LibopusAudioRenderer extends DecoderAudioRenderer<OpusDecoder> {
         TraceUtil.beginSection("createOpusDecoder");
         boolean z = getSinkFormatSupport(Util.getPcmFormat(4, format.channelCount, format.sampleRate)) == 2;
         int i = format.maxInputSize;
-        OpusDecoder opusDecoder = new OpusDecoder(16, 16, i != -1 ? i : DEFAULT_INPUT_BUFFER_SIZE, format.initializationData, cryptoConfig, z);
+        if (i == -1) {
+            i = DEFAULT_INPUT_BUFFER_SIZE;
+        }
+        OpusDecoder opusDecoder = new OpusDecoder(16, 16, i, format.initializationData, cryptoConfig, z);
         opusDecoder.experimentalSetDiscardPaddingEnabled(experimentalGetDiscardPaddingEnabled());
         TraceUtil.endSection();
         return opusDecoder;

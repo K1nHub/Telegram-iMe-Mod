@@ -255,7 +255,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1715
     :goto_0
@@ -453,9 +453,9 @@
     :goto_0
     const-wide p2, 0x7fffffffffffffffL
 
-    cmp-long v2, p0, p2
+    cmp-long p2, p0, p2
 
-    if-nez v2, :cond_1
+    if-nez p2, :cond_1
 
     goto :goto_1
 
@@ -561,7 +561,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -969,7 +969,7 @@
     sparse-switch v1, :sswitch_data_0
 
     :goto_0
-    const/4 p0, -0x1
+    move p0, v0
 
     goto :goto_1
 
@@ -1001,7 +1001,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p0, 0x2
+    move p0, v2
 
     goto :goto_1
 
@@ -1017,7 +1017,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 p0, 0x1
+    move p0, v3
 
     goto :goto_1
 
@@ -1821,7 +1821,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v6, -0x1
+    move v6, v4
 
     :goto_0
     invoke-virtual {v1, v6}, Lcom/google/android/exoplayer2/Format$Builder;->setTileCountHorizontal(I)Lcom/google/android/exoplayer2/Format$Builder;
@@ -1842,7 +1842,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v5, -0x1
+    move v5, v4
 
     :goto_1
     invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setTileCountVertical(I)Lcom/google/android/exoplayer2/Format$Builder;
@@ -2562,15 +2562,15 @@
 
     move/from16 v36, v0
 
+    move/from16 v37, v1
+
     move-object/from16 v38, v2
 
     move-object/from16 v39, v3
 
     move-object/from16 v41, v13
 
-    const/16 v37, -0x1
-
-    const/16 v40, 0x0
+    move/from16 v40, v34
 
     move-wide/from16 v2, p6
 
@@ -3266,7 +3266,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v1, 0x0
+    move/from16 v1, v34
 
     .line 513
     :goto_7
@@ -3406,7 +3406,7 @@
     sparse-switch v1, :sswitch_data_0
 
     :goto_0
-    const/4 v0, -0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -3642,7 +3642,7 @@
 
     const p2, 0x49742400    # 1000000.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-long p1, p1
 
@@ -3694,7 +3694,7 @@
     :cond_0
     if-eqz p3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -3719,7 +3719,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_1
     const-string v4, "serviceLocation"
@@ -3941,7 +3941,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     packed-switch v3, :pswitch_data_0
@@ -3991,7 +3991,7 @@
 
     new-array v4, v4, [Ljava/util/UUID;
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 589
     :goto_1
@@ -5080,14 +5080,14 @@
 
     if-eqz v13, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v8
 
     goto :goto_4
 
     :cond_4
     const/high16 v30, -0x80000000
 
-    const/high16 v1, -0x80000000
+    move/from16 v1, v30
 
     .line 141
     :goto_4
@@ -5122,6 +5122,10 @@
     const-wide/16 v1, 0x0
 
     :goto_5
+    move/from16 v30, v0
+
+    move/from16 v31, v30
+
     move-wide/from16 v32, v1
 
     move-object/from16 v34, v11
@@ -5131,10 +5135,6 @@
     move-object/from16 v36, v35
 
     move-object/from16 v37, v36
-
-    const/16 v30, 0x0
-
-    const/16 v31, 0x0
 
     .line 151
     :goto_6
@@ -5156,7 +5156,7 @@
 
     move-result-wide v3
 
-    const/16 v30, 0x1
+    move/from16 v30, v8
 
     .line 158
     :cond_6
@@ -5190,11 +5190,11 @@
 
     move-object/from16 v43, v7
 
+    move/from16 v42, v8
+
     move-wide/from16 v44, v9
 
     move-object v14, v11
-
-    const/16 v42, 0x1
 
     move-object v11, v5
 
@@ -5308,7 +5308,7 @@
 
     move-object/from16 v43, v7
 
-    const/16 v42, 0x1
+    move/from16 v42, v8
 
     move-wide v7, v15
 
@@ -5333,15 +5333,15 @@
     .line 178
     iget-wide v2, v1, Lcom/google/android/exoplayer2/source/dash/manifest/Period;->startMs:J
 
-    cmp-long v4, v2, v44
+    cmp-long v2, v2, v44
 
-    if-nez v4, :cond_e
+    if-nez v2, :cond_e
 
     if-eqz v21, :cond_d
 
     move-object/from16 v11, v40
 
-    const/4 v8, 0x1
+    move/from16 v8, v42
 
     goto :goto_a
 
@@ -5421,11 +5421,11 @@
 
     move-object/from16 v43, v7
 
+    move/from16 v42, v8
+
     move-wide/from16 v44, v9
 
     move-object v14, v11
-
-    const/16 v42, 0x1
 
     move-object v11, v5
 
@@ -5536,11 +5536,11 @@
 
     move-object/from16 v6, v41
 
+    move/from16 v8, v42
+
     move-object/from16 v7, v43
 
     move-wide/from16 v9, v44
-
-    const/4 v8, 0x1
 
     move-object/from16 v14, p0
 
@@ -5634,13 +5634,13 @@
 
     move-wide/from16 v6, p5
 
+    move/from16 v23, v0
+
     move-wide/from16 v25, v10
 
     move-object/from16 v24, v12
 
     move-object/from16 v27, v24
-
-    const/16 v23, 0x0
 
     .line 312
     :goto_1
@@ -6393,13 +6393,13 @@
 
     move-wide/from16 v5, p20
 
-    move-wide/from16 v1, p22
-
     move-object/from16 v25, v0
 
-    const/16 v26, 0x0
+    move/from16 v26, v1
 
     move-object/from16 v0, p15
+
+    move-wide/from16 v1, p22
 
     .line 700
     :goto_0
@@ -6892,7 +6892,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1547
     :goto_0
@@ -7068,7 +7068,7 @@
     goto/16 :goto_0
 
     :cond_5
-    const/16 v1, 0x8
+    move v1, v3
 
     goto/16 :goto_0
 
@@ -7132,7 +7132,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v1, 0x4
+    move v1, v4
 
     goto :goto_0
 
@@ -7164,7 +7164,7 @@
     goto :goto_0
 
     :cond_b
-    const/4 v1, 0x2
+    move v1, v5
 
     goto :goto_0
 
@@ -7180,7 +7180,7 @@
     goto :goto_0
 
     :cond_c
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_0
 
@@ -7196,7 +7196,7 @@
     goto :goto_0
 
     :cond_d
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     packed-switch v1, :pswitch_data_0
@@ -7250,8 +7250,6 @@
 
     return p1
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
         -0x7ad0b3e8 -> :sswitch_c
@@ -7300,7 +7298,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1562
     :goto_0
@@ -7352,7 +7350,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1535
     :goto_0
@@ -8110,11 +8108,11 @@
 
     move-wide v3, v1
 
+    move v1, v11
+
+    move v7, v1
+
     move-wide v5, v12
-
-    const/4 v1, 0x0
-
-    const/4 v7, 0x0
 
     .line 1265
     :cond_0
@@ -8180,9 +8178,9 @@
 
     move v7, v3
 
-    move-wide v3, v14
+    move v1, v4
 
-    const/4 v1, 0x1
+    move-wide v3, v14
 
     goto :goto_1
 
@@ -8295,7 +8293,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1508
     :goto_0
@@ -8356,15 +8354,15 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
+    move v10, v1
+
+    move v11, v10
+
     move-wide v4, v2
 
     move-wide v6, v4
 
     move-wide v8, v6
-
-    const v10, -0x800001
-
-    const v11, -0x800001
 
     .line 276
     :goto_0
@@ -8483,7 +8481,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1647
     :goto_0
@@ -8629,7 +8627,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x4
+    move v1, v3
 
     goto :goto_0
 
@@ -8677,7 +8675,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
@@ -8693,7 +8691,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     packed-switch v1, :pswitch_data_1

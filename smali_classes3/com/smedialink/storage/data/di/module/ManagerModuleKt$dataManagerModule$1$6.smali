@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;",
+        "Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,68:1\n127#2,5:69\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n*L\n49#1:69,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n127#2,5:71\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n*L\n50#1:71,5\n*E\n"
 .end annotation
 
 
@@ -61,8 +61,8 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
-    .locals 2
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
+    .locals 3
 
     const-string v0, "$this$single"
 
@@ -72,8 +72,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
-    new-instance p2, Lcom/smedialink/storage/data/manager/binancepay/BinancePayManagerImpl;
+    .line 50
+    new-instance p2, Lcom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl;
 
     .line 131
     const-class v0, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
@@ -86,12 +86,24 @@
 
     invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+
+    const-class v2, Lcom/smedialink/storage/domain/manager/crypto/CryptoWalletsManager;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoWalletsManager;
 
-    .line 49
-    invoke-direct {p2, p1}, Lcom/smedialink/storage/data/manager/binancepay/BinancePayManagerImpl;-><init>(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)V
+    .line 50
+    invoke-direct {p2, v0, p1}, Lcom/smedialink/storage/data/manager/crypto/CryptoAccessManagerImpl;-><init>(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/manager/crypto/CryptoWalletsManager;)V
 
     return-object p2
 .end method
@@ -99,12 +111,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 49
+    .line 50
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     move-result-object p1
 

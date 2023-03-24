@@ -240,12 +240,12 @@
     if-nez v1, :cond_3
 
     :goto_0
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_1
 
     :cond_3
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_1
     if-eqz p9, :cond_4
@@ -255,17 +255,15 @@
 
     move-result v3
 
-    move v10, v3
-
     goto :goto_2
 
     :cond_4
     const/4 v3, -0x1
 
-    const/4 v10, -0x1
+    :goto_2
+    move v10, v3
 
     .line 171
-    :goto_2
     invoke-static/range {p8 .. p8}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->getHandler(Landroid/os/Handler;)Landroid/os/Handler;
 
     move-result-object v11

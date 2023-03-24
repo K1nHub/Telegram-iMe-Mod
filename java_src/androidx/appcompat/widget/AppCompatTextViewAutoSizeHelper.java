@@ -382,25 +382,29 @@ public class AppCompatTextViewAutoSizeHelper {
     }
 
     private int findLargestTextSizeWhichFits(RectF rectF) {
+        int i;
         int length = this.mAutoSizeTextSizesInPx.length;
         if (length == 0) {
             throw new IllegalStateException("No available text sizes to choose from.");
         }
-        int i = length - 1;
-        int i2 = 1;
-        int i3 = 0;
-        while (i2 <= i) {
-            int i4 = (i2 + i) / 2;
-            if (suggestedSizeFitsInSpace(this.mAutoSizeTextSizesInPx[i4], rectF)) {
-                int i5 = i4 + 1;
-                i3 = i2;
-                i2 = i5;
-            } else {
-                i3 = i4 - 1;
-                i = i3;
+        int i2 = 0;
+        int i3 = 1;
+        int i4 = length - 1;
+        while (true) {
+            int i5 = i3;
+            int i6 = i2;
+            i2 = i5;
+            while (i2 <= i4) {
+                i = (i2 + i4) / 2;
+                if (suggestedSizeFitsInSpace(this.mAutoSizeTextSizesInPx[i], rectF)) {
+                    break;
+                }
+                i6 = i - 1;
+                i4 = i6;
             }
+            return this.mAutoSizeTextSizesInPx[i6];
+            i3 = i + 1;
         }
-        return this.mAutoSizeTextSizesInPx[i3];
     }
 
     void initTempTextPaint(int i) {

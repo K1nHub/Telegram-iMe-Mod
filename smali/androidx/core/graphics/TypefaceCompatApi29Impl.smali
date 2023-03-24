@@ -39,12 +39,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v2
 
     .line 57
     :goto_1
@@ -164,7 +164,7 @@
 
     move-object v3, p1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -204,7 +204,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_1
     invoke-virtual {v5, v6}, Landroid/graphics/fonts/Font$Builder;->setSlant(I)Landroid/graphics/fonts/Font$Builder;
@@ -317,7 +317,7 @@
 
     move-object v4, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_4
@@ -379,7 +379,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_2
     invoke-virtual {v7, v8}, Landroid/graphics/fonts/Font$Builder;->setSlant(I)Landroid/graphics/fonts/Font$Builder;

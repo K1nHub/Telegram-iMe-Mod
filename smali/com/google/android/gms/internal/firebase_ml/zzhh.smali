@@ -125,13 +125,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_1
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -177,7 +177,7 @@
 
     array-length v4, v3
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_2
     if-ge v5, v4, :cond_8
@@ -221,12 +221,12 @@
 
     if-nez v9, :cond_3
 
-    const/4 v10, 0x1
+    move v10, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 v10, 0x0
+    move v10, v0
 
     :goto_3
     const/4 v11, 0x4

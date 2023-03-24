@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$17;Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
     .locals 7
 
-    .line 4105
+    .line 4107
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$17$1;->this$1:Lorg/telegram/ui/ProfileActivity$17;
 
     move-object v0, p0
@@ -55,7 +55,7 @@
 .method private synthetic lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
     .locals 9
 
-    .line 4109
+    .line 4111
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$17$1;->this$1:Lorg/telegram/ui/ProfileActivity$17;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity$17;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -138,7 +138,7 @@
         }
     .end annotation
 
-    .line 4108
+    .line 4110
     new-instance p3, Lorg/telegram/ui/ProfileActivity$17$1$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$17$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$17$1;Landroidx/collection/LongSparseArray;I)V

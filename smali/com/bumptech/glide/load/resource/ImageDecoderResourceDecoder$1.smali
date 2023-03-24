@@ -166,7 +166,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -179,7 +179,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -282,7 +282,7 @@
 
     if-eqz p2, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v0
 
     :cond_5
     if-eqz v3, :cond_6

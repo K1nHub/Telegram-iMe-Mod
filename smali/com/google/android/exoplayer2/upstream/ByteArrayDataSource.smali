@@ -104,9 +104,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v5, v0, v3
+    cmp-long v3, v0, v3
 
-    if-gtz v5, :cond_2
+    if-gtz v3, :cond_2
 
     long-to-int v3, v0
 
@@ -116,9 +116,9 @@
     .line 55
     array-length v2, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    sub-int/2addr v2, v1
+    sub-int/2addr v2, v0
 
     iput v2, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
@@ -138,9 +138,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
+    iput v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
     :cond_0
     const/4 v0, 0x1

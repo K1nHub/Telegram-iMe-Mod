@@ -48,7 +48,7 @@
 
     xor-long/2addr p0, p2
 
-    mul-long p0, p0, p4
+    mul-long/2addr p0, p4
 
     const/16 v0, 0x2f
 
@@ -58,13 +58,13 @@
 
     xor-long/2addr p0, p2
 
-    mul-long p0, p0, p4
+    mul-long/2addr p0, p4
 
     ushr-long p2, p0, v0
 
     xor-long/2addr p0, p2
 
-    mul-long p0, p0, p4
+    mul-long/2addr p0, p4
 
     return-wide p0
 .end method
@@ -236,13 +236,13 @@
 
     int-to-long v1, v1
 
-    mul-long v1, v1, v12
+    mul-long/2addr v1, v12
 
     int-to-long v3, v0
 
     const-wide v5, -0x3c5a37a36834ced9L    # -7.8480313857871552E17
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     xor-long v0, v1, v3
 
@@ -252,7 +252,7 @@
 
     xor-long/2addr v0, v2
 
-    mul-long v0, v0, v12
+    mul-long/2addr v0, v12
 
     return-wide v0
 
@@ -270,7 +270,7 @@
 
     move-result-wide v4
 
-    mul-long v4, v4, v9
+    mul-long/2addr v4, v9
 
     invoke-static {v7, v6}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
@@ -292,7 +292,7 @@
 
     move-result-wide v6
 
-    mul-long v6, v6, v12
+    mul-long/2addr v6, v12
 
     add-long v10, v4, v8
 
@@ -341,7 +341,7 @@
 
     move-result-wide v8
 
-    mul-long v8, v8, v12
+    mul-long/2addr v8, v12
 
     invoke-static {v7, v6}, Lcom/google/android/gms/internal/clearcut/zzk;->zzb([BI)J
 
@@ -407,7 +407,7 @@
 
     move-result-wide v10
 
-    mul-long v10, v10, v4
+    mul-long/2addr v10, v4
 
     const/16 v12, 0x18
 
@@ -435,7 +435,7 @@
 
     add-long v1, v1, v17
 
-    mul-long v1, v1, v4
+    mul-long/2addr v1, v4
 
     add-long v6, v10, v13
 
@@ -506,7 +506,7 @@
 
     add-int/lit8 v19, v0, -0x3f
 
-    const/16 v20, 0x0
+    move/from16 v20, v14
 
     :goto_0
     add-long v16, v16, v1
@@ -527,7 +527,7 @@
 
     move-result-wide v14
 
-    mul-long v14, v14, v9
+    mul-long/2addr v14, v9
 
     aget-wide v16, v12, v18
 
@@ -547,7 +547,7 @@
 
     move-result-wide v1
 
-    mul-long v1, v1, v9
+    mul-long/2addr v1, v9
 
     aget-wide v16, v13, v18
 
@@ -591,7 +591,7 @@
 
     move-object/from16 v0, p0
 
-    const/16 v11, 0x2a
+    move v11, v1
 
     move/from16 v1, v20
 
@@ -689,7 +689,7 @@
 
     move-result-wide v0
 
-    mul-long v0, v0, v8
+    mul-long/2addr v0, v8
 
     aget-wide v2, v12, v18
 
@@ -709,13 +709,13 @@
 
     move-result-wide v2
 
-    mul-long v2, v2, v8
+    mul-long/2addr v2, v8
 
     aget-wide v4, v13, v18
 
     const-wide/16 v10, 0x9
 
-    mul-long v4, v4, v10
+    mul-long/2addr v4, v10
 
     xor-long v20, v0, v4
 
@@ -723,7 +723,7 @@
 
     aget-wide v4, v12, v0
 
-    mul-long v4, v4, v10
+    mul-long/2addr v4, v10
 
     add-int/lit8 v1, v19, 0x28
 
@@ -807,7 +807,7 @@
 
     const-wide v4, -0x3c5a37a36834ced9L    # -7.8480313857871552E17
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     add-long/2addr v0, v2
 
@@ -840,8 +840,6 @@
 
     move-wide v5, v14
 
-    move-wide/from16 v1, v21
-
     move-wide/from16 v16, v25
 
     const/16 v8, 0x25
@@ -850,7 +848,9 @@
 
     const/4 v14, 0x0
 
-    const/16 v15, 0x40
+    move v15, v1
+
+    move-wide/from16 v1, v21
 
     goto/16 :goto_0
 

@@ -8,13 +8,13 @@ public class TLRPC$TL_secureFile extends TLRPC$SecureFile {
     public byte[] file_hash;
 
     /* renamed from: id */
-    public long f1625id;
+    public long f1626id;
     public byte[] secret;
     public long size;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1625id = abstractSerializedData.readInt64(z);
+        this.f1626id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.size = abstractSerializedData.readInt64(z);
         this.dc_id = abstractSerializedData.readInt32(z);
@@ -26,7 +26,7 @@ public class TLRPC$TL_secureFile extends TLRPC$SecureFile {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1625id);
+        abstractSerializedData.writeInt64(this.f1626id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt64(this.size);
         abstractSerializedData.writeInt32(this.dc_id);

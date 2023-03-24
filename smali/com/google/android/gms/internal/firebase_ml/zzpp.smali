@@ -29,12 +29,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v3, "Data dimensions can not be empty"
@@ -44,7 +44,7 @@
     .line 4
     array-length v0, p2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v0, :cond_2
@@ -53,12 +53,12 @@
 
     if-lez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_2
     const-string v5, "Each dimension must be a positive integer"
@@ -162,7 +162,7 @@
     throw v1
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     :goto_0
@@ -179,7 +179,7 @@
     .line 21
     aget v2, v2, v0
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     add-int/lit8 v0, v0, 0x1
 

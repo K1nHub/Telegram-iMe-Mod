@@ -26,17 +26,17 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 9729
+    .line 9733
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 9731
+    .line 9735
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->lastPaddingHeight:I
 
-    .line 9732
+    .line 9736
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->lastListViewHeight:I
 
     return-void
@@ -47,7 +47,7 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 9736
+    .line 9740
     iget p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->lastListViewHeight:I
 
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
@@ -66,10 +66,10 @@
 
     if-eq p1, p2, :cond_0
 
-    .line 9737
+    .line 9741
     iput v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->lastPaddingHeight:I
 
-    .line 9739
+    .line 9743
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
@@ -85,7 +85,7 @@
 
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->lastListViewHeight:I
 
-    .line 9740
+    .line 9744
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -98,7 +98,7 @@
 
     move-result p1
 
-    .line 9741
+    .line 9745
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -113,14 +113,14 @@
 
     if-ne p1, p2, :cond_6
 
-    const/4 p2, 0x0
+    move p2, v0
 
-    const/4 v1, 0x0
+    move v1, p2
 
     :goto_0
     if-ge p2, p1, :cond_2
 
-    .line 9744
+    .line 9748
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -133,7 +133,7 @@
 
     move-result-object v2
 
-    .line 9745
+    .line 9749
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object v3, v3, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -148,7 +148,7 @@
 
     if-ltz v2, :cond_1
 
-    .line 9746
+    .line 9750
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object v3, v3, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -159,7 +159,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 9747
+    .line 9751
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -183,7 +183,7 @@
 
     goto :goto_0
 
-    .line 9750
+    .line 9754
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
@@ -195,7 +195,7 @@
 
     if-nez p1, :cond_3
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 
@@ -227,14 +227,14 @@
     :goto_1
     const/16 p2, 0x58
 
-    .line 9751
+    .line 9755
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     if-le p1, p2, :cond_4
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_4
     if-gtz p1, :cond_5
@@ -244,7 +244,7 @@
     :cond_5
     move v0, p1
 
-    .line 9757
+    .line 9761
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
@@ -264,7 +264,7 @@
 
     goto :goto_3
 
-    .line 9759
+    .line 9763
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 

@@ -249,7 +249,7 @@
 
     if-nez v5, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_1
 

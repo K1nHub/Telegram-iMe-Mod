@@ -39,13 +39,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 258
+    .line 262
     invoke-direct {p0, p1, p2}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 256
+    .line 260
     iput-object p1, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation;->userId:Ljava/lang/String;
 
-    .line 257
+    .line 261
     iput-object p2, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation;->type:Ljava/lang/String;
 
     return-void
@@ -56,7 +56,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 257
+    .line 261
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation;->type:Ljava/lang/String;
 
     return-object v0
@@ -65,7 +65,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 256
+    .line 260
     iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation;->userId:Ljava/lang/String;
 
     return-object v0

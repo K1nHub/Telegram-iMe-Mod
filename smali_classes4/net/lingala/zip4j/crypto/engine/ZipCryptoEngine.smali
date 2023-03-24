@@ -24,14 +24,14 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
 
-    move v4, v2
+    move v3, v1
 
-    const/4 v3, 0x0
+    move v4, v2
 
     :goto_1
     const/16 v5, 0x8
@@ -125,7 +125,7 @@
 
     xor-int/lit8 v1, v0, 0x1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     ushr-int/lit8 v0, v0, 0x8
 
@@ -219,7 +219,7 @@
 
     const v2, 0x8088405
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     add-int/2addr v1, v0
 

@@ -46,7 +46,7 @@ public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
                 goto L85
             L13:
                 org.telegram.messenger.voip.Instance$ServerConfig r0 = org.telegram.messenger.voip.Instance.getGlobalServerConfig()
-                r2 = 0
+                r2 = r1
             L18:
                 int r3 = r8.length
                 r4 = 1
@@ -63,7 +63,7 @@ public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
                     default: goto L29;
                 }
             L29:
-                r4 = -1
+                r4 = r5
                 goto L54
             L2b:
                 java.lang.String r4 = "video/x-vnd.on2.vp9"
@@ -92,7 +92,7 @@ public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
                 if (r3 != 0) goto L53
                 goto L29
             L53:
-                r4 = 0
+                r4 = r1
             L54:
                 switch(r4) {
                     case 0: goto L81;
@@ -135,7 +135,7 @@ public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
             L85:
                 return r1
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.webrtc.HardwareVideoDecoderFactory.C66801.test(android.media.MediaCodecInfo):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: org.webrtc.HardwareVideoDecoderFactory.C67061.test(android.media.MediaCodecInfo):boolean");
         }
     };
 

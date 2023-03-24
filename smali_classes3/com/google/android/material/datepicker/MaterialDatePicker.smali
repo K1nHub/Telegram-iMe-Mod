@@ -339,7 +339,7 @@
 
     move-result v3
 
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     add-int/lit8 v2, v2, -0x1
 
@@ -350,7 +350,7 @@
 
     move-result v4
 
-    mul-int v2, v2, v4
+    mul-int/2addr v2, v4
 
     add-int/2addr v3, v2
 
@@ -409,13 +409,13 @@
 
     mul-int/lit8 v0, v0, 0x2
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     add-int/2addr v0, v2
 
     add-int/lit8 v1, v1, -0x1
 
-    mul-int v1, v1, p0
+    mul-int/2addr v1, p0
 
     add-int/2addr v0, v1
 

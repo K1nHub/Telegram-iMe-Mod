@@ -152,19 +152,19 @@
 
     const/4 v3, -0x1
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, -0x1
+    move v7, v4
 
-    const/4 v6, -0x1
+    move v10, v7
 
-    const/4 v7, 0x0
+    move v5, v3
 
-    const/4 v8, -0x1
+    move v6, v5
 
-    const/4 v9, -0x1
+    move v8, v6
 
-    const/4 v10, 0x0
+    move v9, v8
 
     .line 1061
     :cond_0
@@ -205,7 +205,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v14, 0x0
+    move v14, v2
 
     :goto_1
     if-ne v13, v10, :cond_2
@@ -266,7 +266,7 @@
     .line 1081
     invoke-static {v0, v5, v11}, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder$CueBuilder;->setUnderlineSpan(Landroid/text/SpannableStringBuilder;II)V
 
-    const/4 v5, -0x1
+    move v5, v3
 
     goto :goto_4
 
@@ -286,7 +286,7 @@
     .line 1088
     invoke-static {v0, v6, v11}, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder$CueBuilder;->setItalicSpan(Landroid/text/SpannableStringBuilder;II)V
 
-    const/4 v6, -0x1
+    move v6, v3
 
     goto :goto_5
 
@@ -497,7 +497,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 974
     :goto_0
@@ -594,7 +594,7 @@
     if-gez v1, :cond_4
 
     :cond_3
-    const/4 p1, 0x1
+    move p1, v7
 
     goto :goto_1
 
@@ -606,12 +606,12 @@
 
     if-lez v4, :cond_5
 
-    const/4 p1, 0x2
+    move p1, v6
 
     goto :goto_1
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_1
     if-eq p1, v7, :cond_7
@@ -629,7 +629,7 @@
 
     div-float/2addr v0, v5
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     add-float/2addr v0, v3
 

@@ -68,8 +68,8 @@ public final class Numeric {
         if (byteArray[0] == 0) {
             length = byteArray.length - 1;
         } else {
-            length = byteArray.length;
             i2 = 0;
+            length = byteArray.length;
         }
         if (length > i) {
             throw new RuntimeException("Input is too large to put in byte array of size " + i);

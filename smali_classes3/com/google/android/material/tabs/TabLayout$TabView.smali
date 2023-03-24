@@ -184,7 +184,7 @@
 
     div-float/2addr p3, p1
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     return p2
 .end method
@@ -1016,7 +1016,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 2859
     :goto_5
@@ -1180,11 +1180,11 @@
 
     aput-object v2, v1, v5
 
-    const/4 v2, 0x0
+    move v2, v3
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v3, v0, :cond_3
@@ -1238,7 +1238,7 @@
     move-result v2
 
     :goto_2
-    const/4 v6, 0x1
+    move v6, v4
 
     :cond_2
     add-int/lit8 v3, v3, 0x1
@@ -1277,11 +1277,11 @@
 
     aput-object v2, v1, v5
 
-    const/4 v2, 0x0
+    move v2, v3
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v3, v0, :cond_3
@@ -1335,7 +1335,7 @@
     move-result v2
 
     :goto_2
-    const/4 v6, 0x1
+    move v6, v4
 
     :cond_2
     add-int/lit8 v3, v3, 0x1
@@ -1543,7 +1543,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
@@ -1647,7 +1647,7 @@
     if-lez v2, :cond_6
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v6
 
     :cond_6
     if-eqz v3, :cond_7

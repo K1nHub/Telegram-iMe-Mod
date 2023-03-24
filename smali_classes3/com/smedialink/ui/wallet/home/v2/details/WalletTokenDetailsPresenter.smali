@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTokenDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,461:1\n39#2,8:462\n39#2,8:470\n39#2,8:478\n39#2,8:489\n16#3,3:486\n1#4:497\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter\n*L\n95#1:462,8\n177#1:470,8\n218#1:478,8\n330#1:489,8\n329#1:486,3\n*E\n"
+    value = "SMAP\nWalletTokenDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,454:1\n39#2,8:455\n39#2,8:463\n39#2,8:471\n39#2,8:482\n16#3,3:479\n1#4:490\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter\n*L\n95#1:455,8\n177#1:463,8\n218#1:471,8\n330#1:482,8\n329#1:479,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -786,7 +786,7 @@
 .method private final openStakingReplenishCheckingAccountLevel(Lcom/smedialink/model/staking/StakingDetailsItem;)V
     .locals 1
 
-    .line 425
+    .line 416
     new-instance v0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1, p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/model/staking/StakingDetailsItem;Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;)V
@@ -807,7 +807,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 427
+    .line 418
     invoke-virtual {p0}, Lcom/smedialink/model/staking/StakingDetailsItem;->getMinimalRank()Lcom/smedialink/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object v0
@@ -822,7 +822,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 428
+    .line 419
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -833,7 +833,7 @@
 
     goto :goto_0
 
-    .line 430
+    .line 421
     :cond_0
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -903,7 +903,13 @@
     sget v8, Lorg/telegram/messenger/R$drawable;->fork_ic_exchange_27:I
 
     .line 350
+    iget-object v7, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
     sget v9, Lorg/telegram/messenger/R$string;->wallet_token_details_transactions_swap:I
+
+    invoke-interface {v7, v9}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
 
     const/4 v10, 0x0
 
@@ -919,7 +925,7 @@
     move-object v7, v6
 
     .line 348
-    invoke-direct/range {v7 .. v13}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v7 .. v13}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     goto :goto_0
 
@@ -929,7 +935,7 @@
     :goto_0
     aput-object v6, v0, v5
 
-    .line 354
+    .line 353
     invoke-virtual {v2}, Lcom/smedialink/model/wallet/details/TokenDetailsArgs$Binance;->getToken()Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
     move-result-object v5
@@ -946,14 +952,20 @@
 
     if-eqz v5, :cond_1
 
-    .line 355
+    .line 354
     new-instance v5, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 356
+    .line 355
     sget v7, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
 
-    .line 357
+    .line 356
+    iget-object v6, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
     sget v8, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
+
+    invoke-interface {v6, v8}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
 
     const/4 v9, 0x0
 
@@ -968,8 +980,8 @@
 
     move-object v6, v5
 
-    .line 355
-    invoke-direct/range {v6 .. v12}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 354
+    invoke-direct/range {v6 .. v12}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     goto :goto_1
 
@@ -979,7 +991,7 @@
     :goto_1
     aput-object v5, v0, v4
 
-    .line 361
+    .line 359
     invoke-virtual {v2}, Lcom/smedialink/model/wallet/details/TokenDetailsArgs$Binance;->getToken()Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
     move-result-object v2
@@ -990,14 +1002,20 @@
 
     if-eqz v2, :cond_2
 
-    .line 362
+    .line 360
     new-instance v3, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 363
+    .line 361
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
 
-    .line 364
-    sget v6, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
+    .line 362
+    iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
+
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
 
     const/4 v7, 0x0
 
@@ -1012,8 +1030,8 @@
 
     move-object v4, v3
 
-    .line 362
-    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 360
+    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     :cond_2
     aput-object v3, v0, v1
@@ -1025,7 +1043,7 @@
 
     goto/16 :goto_8
 
-    .line 369
+    .line 366
     :cond_3
     instance-of v0, p1, Lcom/smedialink/model/wallet/details/TokenDetailsArgs$Crypto;
 
@@ -1033,7 +1051,7 @@
 
     new-array v0, v2, [Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 370
+    .line 367
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->getTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v2
@@ -1044,18 +1062,24 @@
 
     if-eqz v2, :cond_4
 
-    .line 371
+    .line 368
     new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 372
+    .line 369
     sget v7, Lorg/telegram/messenger/R$drawable;->msg_send:I
 
-    .line 373
+    .line 370
+    iget-object v6, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
     sget v8, Lorg/telegram/messenger/R$string;->wallet_token_details_details_action_send:I
+
+    invoke-interface {v6, v8}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
 
     const/4 v9, 0x0
 
-    .line 369
+    .line 366
     new-instance v10, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4;
 
     invoke-direct {v10, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
@@ -1066,8 +1090,8 @@
 
     move-object v6, v2
 
-    .line 371
-    invoke-direct/range {v6 .. v12}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 368
+    invoke-direct/range {v6 .. v12}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     goto :goto_2
 
@@ -1077,7 +1101,7 @@
     :goto_2
     aput-object v2, v0, v5
 
-    .line 376
+    .line 373
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->getTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v2
@@ -1104,18 +1128,24 @@
 
     if-eqz v2, :cond_5
 
-    .line 377
+    .line 374
     new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 378
+    .line 375
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
 
-    .line 379
+    .line 376
+    iget-object v5, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
     sget v7, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
+
+    invoke-interface {v5, v7}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
 
     const/4 v8, 0x0
 
-    .line 369
+    .line 366
     new-instance v9, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$5;
 
     invoke-direct {v9, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$5;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
@@ -1126,8 +1156,8 @@
 
     move-object v5, v2
 
-    .line 377
-    invoke-direct/range {v5 .. v11}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 374
+    invoke-direct/range {v5 .. v11}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     goto :goto_3
 
@@ -1137,7 +1167,7 @@
     :goto_3
     aput-object v2, v0, v4
 
-    .line 383
+    .line 379
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->getTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v2
@@ -1148,18 +1178,24 @@
 
     if-eqz v2, :cond_6
 
-    .line 384
+    .line 380
     new-instance v3, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 385
+    .line 381
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
 
-    .line 386
-    sget v6, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
+    .line 382
+    iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
+
+    invoke-interface {v2, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
 
     const/4 v7, 0x0
 
-    .line 369
+    .line 366
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;
 
     invoke-direct {v8, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
@@ -1170,20 +1206,20 @@
 
     move-object v4, v3
 
-    .line 384
-    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 380
+    invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     :cond_6
     aput-object v3, v0, v1
 
-    .line 369
+    .line 366
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
     goto/16 :goto_8
 
-    .line 391
+    .line 386
     :cond_7
     instance-of v0, p1, Lcom/smedialink/model/wallet/details/TokenDetailsArgs$Staking;
 
@@ -1193,16 +1229,22 @@
 
     new-array v0, v0, [Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 392
+    .line 387
     new-instance v3, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 393
+    .line 388
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
 
-    .line 394
-    sget v7, Lorg/telegram/messenger/R$string;->staking_details_replenish:I
+    .line 389
+    iget-object v7, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 395
+    sget v8, Lorg/telegram/messenger/R$string;->staking_details_replenish:I
+
+    invoke-interface {v7, v8}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 390
     iget-object v8, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
 
     if-eqz v8, :cond_8
@@ -1219,34 +1261,40 @@
 
     if-ne v8, v4, :cond_8
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_4
 
     :cond_8
-    const/4 v8, 0x0
+    move v8, v5
 
-    .line 391
+    .line 386
     :goto_4
     new-instance v9, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$7;
 
     invoke-direct {v9, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$7;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 392
-    invoke-direct {v3, v6, v7, v8, v9}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    .line 387
+    invoke-direct {v3, v6, v7, v8, v9}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     aput-object v3, v0, v5
 
-    .line 398
+    .line 392
     new-instance v3, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 399
+    .line 393
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
 
-    .line 400
-    sget v7, Lorg/telegram/messenger/R$string;->staking_details_claim:I
+    .line 394
+    iget-object v7, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 401
+    sget v8, Lorg/telegram/messenger/R$string;->staking_details_claim:I
+
+    invoke-interface {v7, v8}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 395
     iget-object v8, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
 
     if-eqz v8, :cond_9
@@ -1263,31 +1311,37 @@
 
     if-ne v8, v4, :cond_9
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_5
 
     :cond_9
-    const/4 v8, 0x0
+    move v8, v5
 
-    .line 391
+    .line 386
     :goto_5
     new-instance v9, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$8;
 
     invoke-direct {v9, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$8;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 398
-    invoke-direct {v3, v6, v7, v8, v9}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    .line 392
+    invoke-direct {v3, v6, v7, v8, v9}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     aput-object v3, v0, v4
 
-    .line 405
+    .line 398
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_withdraw:I
 
-    .line 406
-    sget v6, Lorg/telegram/messenger/R$string;->staking_details_withdraw:I
+    .line 399
+    iget-object v6, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 407
+    sget v7, Lorg/telegram/messenger/R$string;->staking_details_withdraw:I
+
+    invoke-interface {v6, v7}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 400
     iget-object v7, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
 
     if-eqz v7, :cond_b
@@ -1298,7 +1352,7 @@
 
     if-eqz v7, :cond_b
 
-    .line 408
+    .line 401
     invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/staking/StakingRules;->getCanWithdrawSafely()Z
 
     move-result v8
@@ -1312,36 +1366,42 @@
     if-eqz v7, :cond_b
 
     :cond_a
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_6
 
     :cond_b
-    const/4 v7, 0x0
+    move v7, v5
 
-    .line 391
+    .line 386
     :goto_6
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$10;
 
     invoke-direct {v8, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$10;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 404
+    .line 397
     new-instance v9, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    invoke-direct {v9, v3, v6, v7, v8}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    invoke-direct {v9, v3, v6, v7, v8}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     aput-object v9, v0, v1
 
-    .line 412
+    .line 404
     new-instance v1, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 413
+    .line 405
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_calculator:I
 
-    .line 414
-    sget v6, Lorg/telegram/messenger/R$string;->staking_dashboard_calculator:I
+    .line 406
+    iget-object v6, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 415
+    sget v7, Lorg/telegram/messenger/R$string;->staking_dashboard_calculator:I
+
+    invoke-interface {v6, v7}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 407
     iget-object v7, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
 
     if-eqz v7, :cond_c
@@ -1361,20 +1421,20 @@
     goto :goto_7
 
     :cond_c
-    const/4 v4, 0x0
+    move v4, v5
 
-    .line 391
+    .line 386
     :goto_7
     new-instance v5, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$11;
 
     invoke-direct {v5, p0, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$11;-><init>(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 412
-    invoke-direct {v1, v3, v6, v4, v5}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    .line 404
+    invoke-direct {v1, v3, v6, v4, v5}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     aput-object v1, v0, v2
 
-    .line 391
+    .line 386
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -1393,7 +1453,7 @@
 .method private final resolveNetworkForReplenish(Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
     .locals 4
 
-    .line 456
+    .line 449
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReplenishNetworks()Ljava/util/List;
 
     move-result-object v0
@@ -1445,7 +1505,7 @@
 
     if-nez v1, :cond_3
 
-    .line 457
+    .line 450
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReplenishNetworks()Ljava/util/List;
 
     move-result-object p1
@@ -1876,12 +1936,12 @@
 
     if-nez v6, :cond_8
 
-    const/16 v19, 0x1
+    move/from16 v19, v10
 
     goto :goto_5
 
     :cond_8
-    const/16 v19, 0x0
+    move/from16 v19, v11
 
     :goto_5
     if-eqz v19, :cond_b
@@ -2249,7 +2309,7 @@
 .method private final startBinanceReceiveScreen(Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 1
 
-    .line 452
+    .line 445
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2268,7 +2328,7 @@
 .method private final startBinanceReplenishScreen(Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 3
 
-    .line 445
+    .line 436
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
@@ -2291,7 +2351,7 @@
 
     goto :goto_0
 
-    .line 446
+    .line 439
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -2328,7 +2388,7 @@
 
     goto :goto_0
 
-    .line 447
+    .line 440
     :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2363,7 +2423,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 445
+    .line 437
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
@@ -2378,7 +2438,7 @@
 .method private final startBinanceSwapScreen(Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 2
 
-    .line 437
+    .line 428
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getBinanceUserInfo()Lcom/smedialink/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
@@ -2404,7 +2464,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 438
+    .line 429
     :goto_0
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -2424,7 +2484,7 @@
 
     goto :goto_1
 
-    .line 439
+    .line 430
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 

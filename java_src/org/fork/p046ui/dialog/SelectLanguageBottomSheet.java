@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.RectF;
 import android.util.Property;
 import android.view.MotionEvent;
@@ -33,7 +35,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -185,7 +187,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet.this.getListAdapter().notifyDataSetChanged();
             }
         };
-        r2.setHint(LocaleController.getInternalString(C3286R.string.translation_search_language));
+        r2.setHint(LocaleController.getInternalString(C3301R.string.translation_search_language));
         return r2;
     }
 
@@ -197,7 +199,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("dialogBackground"), Theme.getColor("listSelectorSDK21")));
-        textView.setText(LocaleController.getString("Cancel", C3286R.string.Cancel));
+        textView.setText(LocaleController.getString("Cancel", C3301R.string.Cancel));
         textView.setTextColor(Theme.getColor("dialogTextBlue2"));
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.SelectLanguageBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -497,21 +499,52 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             super.requestLayout();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x00ae  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x00b3  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0143  */
-        /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        protected void onDraw(android.graphics.Canvas r12) {
-            /*
-                Method dump skipped, instructions count: 398
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: org.fork.p046ui.dialog.SelectLanguageBottomSheet.RootView.onDraw(android.graphics.Canvas):void");
+        protected void onDraw(Canvas canvas) {
+            int i;
+            float f;
+            Intrinsics.checkNotNullParameter(canvas, "canvas");
+            int m50dp = (SelectLanguageBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
+            int m50dp2 = (SelectLanguageBottomSheet.this.scrollOffsetY - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(15) + ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop;
+            int i2 = AndroidUtilities.statusBarHeight;
+            int i3 = m50dp2 + i2;
+            int i4 = m50dp + i2;
+            int i5 = measuredHeight - i2;
+            if (this.fullHeight) {
+                int i6 = ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3;
+                int i7 = AndroidUtilities.statusBarHeight;
+                if (i6 < i7 * 2) {
+                    int min = Math.min(i7, ((i7 * 2) - i3) - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop);
+                    i3 -= min;
+                    i5 += min;
+                    f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+                } else {
+                    f = 1.0f;
+                }
+                int i8 = ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3;
+                int i9 = AndroidUtilities.statusBarHeight;
+                i = i8 < i9 ? Math.min(i9, (i9 - i3) - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop) : 0;
+            } else {
+                i = 0;
+                f = 1.0f;
+            }
+            ((BottomSheet) SelectLanguageBottomSheet.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), i5);
+            ((BottomSheet) SelectLanguageBottomSheet.this).shadowDrawable.draw(canvas);
+            if (!(f == 1.0f)) {
+                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("dialogBackground"));
+                this.rect.set(((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.m50dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+            }
+            int m50dp3 = AndroidUtilities.m50dp(36);
+            this.rect.set((getMeasuredWidth() - m50dp3) / 2.0f, i4, (getMeasuredWidth() + m50dp3) / 2.0f, i4 + AndroidUtilities.m50dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("key_sheet_scrollUp"));
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            if (i > 0) {
+                int color = Theme.getColor("dialogBackground");
+                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(color) * 0.8f), (int) (Color.green(color) * 0.8f), (int) (Color.blue(color) * 0.8f)));
+                canvas.drawRect(((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
+            }
         }
     }
 
@@ -575,7 +608,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet selectLanguageBottomSheet = SelectLanguageBottomSheet.this;
                 textCellWithRightImage.setText(((TranslationLanguageUiModel) selectLanguageBottomSheet.getCurrentItemsList().get(i)).getDisplayLanguage(), z);
                 textCellWithRightImage.setRightIconVisible(selectLanguageBottomSheet.isSelectedLanguagePosition(i));
-                textCellWithRightImage.setRightIcon(C3286R.C3288drawable.ic_ab_done, Theme.getColor("chats_actionBackground"));
+                textCellWithRightImage.setRightIcon(C3301R.C3303drawable.ic_ab_done, Theme.getColor("chats_actionBackground"));
             } else if (itemViewType == IdFabric$ViewTypes.EMPTY) {
                 View view2 = holder.itemView;
                 Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type org.fork.ui.dialog.SelectLanguageBottomSheet.EmptyView");
@@ -597,7 +630,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             Intrinsics.checkNotNullParameter(context, "context");
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(C3286R.C3291raw.fork_catalog_empty, 100, 100);
+            rLottieImageView.setAnimation(C3301R.C3306raw.fork_catalog_empty, 100, 100);
             ViewExtKt.setHorizontalPadding(rLottieImageView, 32);
             this.animationView = rLottieImageView;
             setOrientation(1);
@@ -608,7 +641,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             textView.setTextSize(1, 16.0f);
             ViewExtKt.withMediumTypeface(textView);
             textView.setGravity(17);
-            textView.setText(LocaleController.getInternalString(C3286R.string.translation_search_language_empty));
+            textView.setText(LocaleController.getInternalString(C3301R.string.translation_search_language_empty));
             textView.setPadding(32, 32, 32, 32);
             addView(textView);
         }

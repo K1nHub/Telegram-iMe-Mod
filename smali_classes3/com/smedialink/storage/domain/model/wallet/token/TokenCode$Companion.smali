@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenCode.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenCode.kt\ncom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,136:1\n1#2:137\n*E\n"
+    value = "SMAP\nTokenCode.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenCode.kt\ncom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,144:1\n1#2:145\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 97
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
 
     new-array v0, v0, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 110
+    .line 115
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -120,7 +120,7 @@
 
     aput-object v1, v0, v2
 
-    .line 111
+    .line 116
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->DEGO:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0xa
@@ -181,7 +181,7 @@
 
     aput-object v1, v0, v2
 
-    .line 112
+    .line 117
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->SKILL:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x14
@@ -236,7 +236,7 @@
 
     aput-object v1, v0, v2
 
-    .line 109
+    .line 114
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -255,7 +255,7 @@
         }
     .end annotation
 
-    .line 134
+    .line 142
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
 
     move-result-object v0
@@ -310,11 +310,11 @@
         }
     .end annotation
 
-    const/16 v0, 0x35
+    const/16 v0, 0x36
 
     new-array v0, v0, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 102
+    .line 107
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -375,7 +375,7 @@
 
     aput-object v1, v0, v2
 
-    .line 103
+    .line 108
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->GT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0xa
@@ -454,7 +454,7 @@
 
     aput-object v1, v0, v2
 
-    .line 104
+    .line 109
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->DEGO:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x17
@@ -521,7 +521,7 @@
 
     aput-object v1, v0, v2
 
-    .line 105
+    .line 110
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->GFX:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x22
@@ -594,7 +594,7 @@
 
     aput-object v1, v0, v2
 
-    .line 106
+    .line 111
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->KFT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x2e
@@ -637,7 +637,13 @@
 
     aput-object v1, v0, v2
 
-    .line 101
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/16 v2, 0x35
+
+    aput-object v1, v0, v2
+
+    .line 106
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -656,7 +662,7 @@
         }
     .end annotation
 
-    .line 120
+    .line 125
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->FTM:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
@@ -681,7 +687,7 @@
 
     new-array v0, v0, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 116
+    .line 121
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->MATIC:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -742,7 +748,7 @@
 
     aput-object v1, v0, v2
 
-    .line 117
+    .line 122
     sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->LINK:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0xa
@@ -779,7 +785,7 @@
 
     aput-object v1, v0, v2
 
-    .line 115
+    .line 120
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -804,7 +810,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 125
+    .line 132
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -813,72 +819,72 @@
 
     aget p1, v0, p1
 
-    const/4 v0, 0x1
+    packed-switch p1, :pswitch_data_0
 
-    if-eq p1, v0, :cond_4
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_3
-
-    const/4 v0, 0x3
-
-    if-eq p1, v0, :cond_2
-
-    const/4 v0, 0x4
-
-    if-eq p1, v0, :cond_1
-
-    const/4 v0, 0x5
-
-    if-ne p1, v0, :cond_0
-
-    .line 130
-    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getTonCodes()Ljava/util/List;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
+    .line 138
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p1
 
-    .line 129
-    :cond_1
+    :pswitch_0
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getTonCodes()Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 137
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getTronCodes()Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 136
+    :pswitch_2
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getFantomCodes()Ljava/util/List;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 128
-    :cond_2
+    .line 135
+    :pswitch_3
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getPolygonCodes()Ljava/util/List;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 127
-    :cond_3
+    .line 134
+    :pswitch_4
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getBSCCodes()Ljava/util/List;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 126
-    :cond_4
+    .line 133
+    :pswitch_5
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
 
     move-result-object p1
 
     :goto_0
     return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public final getTonCodes()Ljava/util/List;
@@ -892,10 +898,69 @@
         }
     .end annotation
 
-    .line 122
+    .line 129
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TON:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getTronCodes()Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v0, 0x6
+
+    new-array v0, v0, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    .line 127
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TRX:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USDT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USDC:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->TUSD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
@@ -909,7 +974,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
+    .line 104
     invoke-static {}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->values()[Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v0

@@ -39,7 +39,7 @@
 
     mul-int v2, p7, p8
 
-    mul-int v1, v1, v11
+    mul-int/2addr v1, v11
 
     mul-int/lit8 v3, v1, 0x2
 
@@ -188,9 +188,9 @@
     .line 76
     div-int/lit8 v11, v3, 0x2
 
-    mul-int v1, v1, v7
+    mul-int/2addr v1, v7
 
-    mul-int v2, v2, v11
+    mul-int/2addr v2, v11
 
     mul-int/lit8 v3, v2, 0x2
 
@@ -316,7 +316,7 @@
 
     mul-int v3, p7, p8
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     mul-int/lit8 v2, v2, 0x2
 

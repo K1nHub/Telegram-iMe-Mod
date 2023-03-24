@@ -451,7 +451,7 @@
     goto :goto_2
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     return v1
@@ -480,7 +480,7 @@
     goto :goto_3
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_3
     return v1

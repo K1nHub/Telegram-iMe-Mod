@@ -492,7 +492,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 910
     :goto_0

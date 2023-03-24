@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeCryptoTokensSettingsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,185:1\n1#2:186\n1559#3:187\n1590#3,4:188\n1194#3,2:192\n1222#3,4:194\n1855#3,2:198\n1208#3,2:200\n1238#3,4:202\n1045#3:206\n1549#3:207\n1620#3,3:208\n1045#3:211\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n134#1:187\n134#1:188,4\n143#1:192,2\n143#1:194,4\n145#1:198,2\n170#1:200,2\n170#1:202,4\n173#1:206\n176#1:207\n176#1:208,3\n178#1:211\n*E\n"
+    value = "SMAP\nWalletHomeCryptoTokensSettingsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,189:1\n1#2:190\n1559#3:191\n1590#3,4:192\n1194#3,2:196\n1222#3,4:198\n1855#3,2:202\n1208#3,2:204\n1238#3,4:206\n1045#3:210\n1549#3:211\n1620#3,3:212\n1045#3:215\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n138#1:191\n138#1:192,4\n147#1:196,2\n147#1:198,4\n149#1:202,2\n174#1:204,2\n174#1:206,4\n177#1:210\n180#1:211\n180#1:212,3\n182#1:215\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -114,31 +114,34 @@
 .end method
 
 .method private final resetTokensPrefSettings()V
-    .locals 2
+    .locals 3
 
     .line 117
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 118
-    instance-of v1, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
+    iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
-    if-eqz v1, :cond_0
+    .line 119
+    instance-of v2, v1, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
 
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    if-eqz v2, :cond_0
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->resetBinanceTokensSettings()V
 
     goto :goto_0
 
-    .line 119
+    .line 120
     :cond_0
-    instance-of v0, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
+    instance-of v1, v1, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    .line 121
+    iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->currentNetworkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->resetTokensSettings()V
+    .line 120
+    invoke-interface {v0, v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->resetTokensSettingsByNetwork(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     :cond_1
     :goto_0
@@ -148,10 +151,10 @@
 .method private final resolveNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
     .locals 2
 
-    .line 124
+    .line 128
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
-    .line 125
+    .line 129
     instance-of v1, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
 
     if-eqz v1, :cond_0
@@ -164,7 +167,7 @@
 
     goto :goto_0
 
-    .line 126
+    .line 130
     :cond_0
     instance-of v1, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 
@@ -190,10 +193,10 @@
 .method private final resolveOnlyPositiveTokensFlag()Z
     .locals 2
 
-    .line 164
+    .line 168
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
-    .line 165
+    .line 169
     instance-of v1, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
 
     if-eqz v1, :cond_0
@@ -206,7 +209,7 @@
 
     goto :goto_0
 
-    .line 166
+    .line 170
     :cond_0
     instance-of v0, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 
@@ -240,7 +243,7 @@
         }
     .end annotation
 
-    .line 170
+    .line 174
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->settings:Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
@@ -288,7 +291,7 @@
     .line 1239
     check-cast v2, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 170
+    .line 174
     invoke-virtual {v2}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->getToken()Ljava/lang/String;
 
     move-result-object v4
@@ -306,16 +309,16 @@
 
     goto :goto_0
 
-    .line 171
+    .line 175
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
-    .line 172
+    .line 176
     instance-of v2, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
 
     if-eqz v2, :cond_1
 
-    .line 173
+    .line 177
     check-cast v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;->getTokens()Ljava/util/List;
@@ -333,13 +336,13 @@
 
     goto :goto_2
 
-    .line 174
+    .line 178
     :cond_1
     instance-of v0, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 
     if-eqz v0, :cond_3
 
-    .line 175
+    .line 179
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->currentNetworkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -376,7 +379,7 @@
     .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 176
+    .line 180
     sget-object v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     invoke-virtual {v4, v1}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
@@ -388,7 +391,7 @@
 
     goto :goto_1
 
-    .line 177
+    .line 181
     :cond_2
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
@@ -438,22 +441,22 @@
 .method private final resolveTokensSettings()Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
     .locals 9
 
-    .line 130
+    .line 134
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
-    .line 131
+    .line 135
     instance-of v1, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
 
     if-eqz v1, :cond_6
 
-    .line 132
+    .line 136
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getBinanceTokensSettings()Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
 
     move-result-object v0
 
-    .line 133
+    .line 137
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
     move-result-object v1
@@ -464,7 +467,7 @@
 
     if-nez v1, :cond_2
 
-    .line 134
+    .line 138
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
     check-cast v1, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
@@ -510,15 +513,15 @@
     :cond_0
     check-cast v6, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    .line 135
+    .line 139
     new-instance v8, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 136
+    .line 140
     invoke-virtual {v6}, Lcom/smedialink/model/wallet/select/SelectableToken;->getId()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 135
+    .line 139
     invoke-direct {v8, v6, v5, v3}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;-><init>(Ljava/lang/String;IZ)V
 
     .line 1592
@@ -528,16 +531,16 @@
 
     goto :goto_0
 
-    .line 140
+    .line 144
     :cond_1
     invoke-static {v4}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 134
+    .line 138
     invoke-virtual {v0, v1}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->setStates(Ljava/util/List;)V
 
-    .line 142
+    .line 146
     :cond_2
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
@@ -561,7 +564,7 @@
 
     if-eq v1, v4, :cond_7
 
-    .line 143
+    .line 147
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
     move-result-object v1
@@ -607,7 +610,7 @@
 
     check-cast v5, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 143
+    .line 147
     invoke-virtual {v5}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->getToken()Ljava/lang/String;
 
     move-result-object v5
@@ -617,13 +620,13 @@
 
     goto :goto_1
 
-    .line 144
+    .line 148
     :cond_3
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 145
+    .line 149
     iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->screenType:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType;
 
     check-cast v2, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Binance;
@@ -650,7 +653,7 @@
 
     check-cast v5, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    .line 146
+    .line 150
     invoke-virtual {v5}, Lcom/smedialink/model/wallet/select/SelectableToken;->getId()Ljava/lang/String;
 
     move-result-object v6
@@ -661,24 +664,24 @@
 
     if-nez v6, :cond_4
 
-    .line 147
+    .line 151
     new-instance v6, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 148
+    .line 152
     invoke-virtual {v5}, Lcom/smedialink/model/wallet/select/SelectableToken;->getId()Ljava/lang/String;
 
     move-result-object v5
 
     const v7, 0x7fffffff
 
-    .line 147
+    .line 151
     invoke-direct {v6, v5, v7, v3}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;-><init>(Ljava/lang/String;IZ)V
 
     invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 153
+    .line 157
     :cond_4
     invoke-virtual {v5}, Lcom/smedialink/model/wallet/select/SelectableToken;->getId()Ljava/lang/String;
 
@@ -694,13 +697,13 @@
 
     goto :goto_2
 
-    .line 156
+    .line 160
     :cond_5
     invoke-virtual {v0, v1}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->setStates(Ljava/util/List;)V
 
     goto :goto_3
 
-    .line 160
+    .line 164
     :cond_6
     instance-of v0, v0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ScreenType$Crypto;
 

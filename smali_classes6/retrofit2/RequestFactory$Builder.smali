@@ -251,7 +251,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -785,7 +785,7 @@
     .line 293
     array-length v2, p3
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     if-ge v3, v2, :cond_2
@@ -3138,7 +3138,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -3215,7 +3215,7 @@
 
     iput-object v1, p0, Lretrofit2/RequestFactory$Builder;->parameterHandlers:[Lretrofit2/ParameterHandler;
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     if-ge v1, v0, :cond_4

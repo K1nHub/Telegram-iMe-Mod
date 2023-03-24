@@ -74,7 +74,7 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -220,41 +220,41 @@
 
     int-to-long v4, v4
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-gtz v6, :cond_3
+    if-gtz v4, :cond_3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 75
-    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
+    iput v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
 
     .line 76
-    array-length v0, v2
+    array-length v1, v2
 
-    sub-int/2addr v0, v1
+    sub-int/2addr v1, v0
 
-    iput v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
+    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
 
     .line 77
-    iget-wide v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    const-wide/16 v3, -0x1
+    const-wide/16 v4, -0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v0, v2, v4
 
-    if-eqz v5, :cond_1
+    if-eqz v0, :cond_1
 
-    int-to-long v5, v0
+    int-to-long v0, v1
 
     .line 78
-    invoke-static {v5, v6, v1, v2}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
+    iput v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
 
     .line 80
     :cond_1
@@ -263,7 +263,7 @@
     .line 81
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    cmp-long p1, v0, v3
+    cmp-long p1, v0, v4
 
     if-eqz p1, :cond_2
 

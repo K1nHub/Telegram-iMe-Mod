@@ -3,8 +3,8 @@
 
 
 # static fields
-.field public static final bot_label_neuro:I = 0x7f1019a0
+.field public static final bot_label_neuro:I = 0x7f1019ad
 
-.field public static final bot_label_normal:I = 0x7f1019a1
+.field public static final bot_label_normal:I = 0x7f1019ae
 
-.field public static final bot_title_recent:I = 0x7f1019cb
+.field public static final bot_title_recent:I = 0x7f1019d8

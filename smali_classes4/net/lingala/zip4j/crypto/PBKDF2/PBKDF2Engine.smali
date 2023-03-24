@@ -104,7 +104,7 @@
 
     add-int/lit8 v3, v12, -0x1
 
-    mul-int v3, v3, v10
+    mul-int/2addr v3, v10
 
     sub-int v13, v0, v3
 
@@ -115,9 +115,9 @@
 
     const/4 v3, 0x1
 
-    const/4 v15, 0x1
+    move/from16 v16, v1
 
-    const/16 v16, 0x0
+    move v15, v3
 
     :goto_1
     if-gt v15, v12, :cond_1
@@ -190,7 +190,7 @@
 
     invoke-virtual {p0, v2, p4, p6}, Lnet/lingala/zip4j/crypto/PBKDF2/PBKDF2Engine;->INT([BII)V
 
-    const/4 p4, 0x0
+    move p4, v4
 
     :goto_0
     if-ge p4, p5, :cond_0

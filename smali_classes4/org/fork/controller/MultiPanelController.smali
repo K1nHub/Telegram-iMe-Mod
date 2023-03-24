@@ -573,7 +573,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_3
@@ -595,7 +595,7 @@
 
     move-result-object v6
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z

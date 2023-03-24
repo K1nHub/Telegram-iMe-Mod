@@ -128,7 +128,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
         if (list.isEmpty()) {
             this.localStore.releaseTarget(targetId);
             this.remoteStore.stopListening(targetId);
-            removeAndCleanupTarget(targetId, Status.f427OK);
+            removeAndCleanupTarget(targetId, Status.f428OK);
         }
     }
 

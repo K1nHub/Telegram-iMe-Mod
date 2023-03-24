@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public getCues(J)Ljava/util/List;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -164,7 +164,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 71
     :goto_0
@@ -183,9 +183,9 @@
 
     aget-wide v6, v4, v5
 
-    cmp-long v8, v6, p1
+    cmp-long v6, v6, p1
 
-    if-gtz v8, :cond_1
+    if-gtz v6, :cond_1
 
     add-int/lit8 v5, v5, 0x1
 
@@ -291,12 +291,12 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 62
     :goto_0
@@ -312,7 +312,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V

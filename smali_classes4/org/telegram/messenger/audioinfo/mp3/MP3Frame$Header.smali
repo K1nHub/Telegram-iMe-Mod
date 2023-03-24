@@ -815,9 +815,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method public getFrameSize()I
@@ -838,7 +838,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     invoke-virtual {p0}, Lorg/telegram/messenger/audioinfo/mp3/MP3Frame$Header;->getFrequency()I
 
@@ -856,7 +856,7 @@
 
     aget v1, v1, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
@@ -943,11 +943,11 @@
 
     int-to-long v0, v0
 
-    mul-long v0, v0, p1
+    mul-long/2addr v0, p1
 
     const-wide/16 p1, 0x3e8
 
-    mul-long v0, v0, p1
+    mul-long/2addr v0, p1
 
     invoke-virtual {p0}, Lorg/telegram/messenger/audioinfo/mp3/MP3Frame$Header;->getFrameSize()I
 
@@ -957,7 +957,7 @@
 
     move-result p2
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     int-to-long p1, p1
 

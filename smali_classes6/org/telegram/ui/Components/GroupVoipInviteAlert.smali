@@ -703,7 +703,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_1
     if-eqz v1, :cond_5
@@ -729,7 +729,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, p2
 
     :goto_2
     const/4 p0, -0x1
@@ -875,7 +875,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     if-eqz p3, :cond_3
@@ -901,7 +901,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_1
     const/4 p3, -0x1
@@ -1016,7 +1016,7 @@
 
     move-result-wide v2
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 315
     :goto_0
@@ -1043,9 +1043,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v2
+    cmp-long v4, v4, v2
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     .line 317
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$channels_ChannelParticipants;->participants:Ljava/util/ArrayList;
@@ -1106,7 +1106,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_3
     if-ge v3, v2, :cond_3
@@ -1141,7 +1141,7 @@
 
     move-result p2
 
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_4
     if-ge p3, p2, :cond_a
@@ -1172,7 +1172,7 @@
     if-eqz v4, :cond_4
 
     :goto_5
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_6
 
@@ -1191,7 +1191,7 @@
     goto :goto_5
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 346
     :goto_6
@@ -1224,7 +1224,7 @@
     if-eqz v5, :cond_8
 
     :cond_7
-    const/4 v4, 0x1
+    move v4, v1
 
     :cond_8
     if-eqz v4, :cond_9
@@ -1305,7 +1305,7 @@
 
     if-ne p1, v1, :cond_c
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_8
 
@@ -1324,7 +1324,7 @@
     goto :goto_8
 
     :cond_d
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 416
     :goto_8
@@ -1604,7 +1604,7 @@
     .line 163
     iput v1, p0, Lorg/telegram/ui/Components/GroupVoipInviteAlert;->contactsEndRow:I
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 166
     :cond_3

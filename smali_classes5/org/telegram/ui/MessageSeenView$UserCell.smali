@@ -305,7 +305,7 @@
 
 # virtual methods
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 3
+    .locals 2
 
     .line 422
     sget p2, Lorg/telegram/messenger/NotificationCenter;->userEmojiStatusUpdated:I
@@ -330,9 +330,9 @@
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v2, p2, v0
+    cmp-long p2, p2, v0
 
-    if-nez v2, :cond_0
+    if-nez p2, :cond_0
 
     .line 425
     iput-object p1, p0, Lorg/telegram/ui/MessageSeenView$UserCell;->user:Lorg/telegram/tgnet/TLRPC$User;

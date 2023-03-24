@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n1#1,328:1\n178#2:329\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n1#1,328:1\n182#2:329\n*E\n"
 .end annotation
 
 
@@ -59,7 +59,7 @@
     .line 102
     check-cast p1, Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;
 
-    .line 178
+    .line 182
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$2;->$sortingPosition$inlined:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;->getId()Ljava/lang/String;
@@ -83,7 +83,7 @@
     goto :goto_0
 
     :cond_0
-    const p1, 0x7fffffff
+    move p1, v0
 
     :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -93,7 +93,7 @@
     .line 102
     check-cast p2, Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;
 
-    .line 178
+    .line 182
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$2;->$sortingPosition$inlined:Ljava/util/Map;
 
     invoke-virtual {p2}, Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;->getId()Ljava/lang/String;

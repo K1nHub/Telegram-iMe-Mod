@@ -27,7 +27,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkSecretWordsCountLayoutBinding;
 /* compiled from: SecretWordsCountBottomSheetDialog.kt */
@@ -60,7 +60,7 @@ public final class SecretWordsCountBottomSheetDialog extends MvpBottomSheet impl
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, SecretWordsCountPresenter.class.getName() + ".presenter", secretWordsCountBottomSheetDialog$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2063x593128cf(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2077x593128cf(this, null, null));
         this.actionAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new SecretWordsCountBottomSheetDialog$binding$2(this), 1, (Object) null);
         setApplyBottomPadding(false);
@@ -143,7 +143,7 @@ public final class SecretWordsCountBottomSheetDialog extends MvpBottomSheet impl
     }
 
     private final void setTexts() {
-        getBinding().textTitle.setText(LocaleController.getInternalString(C3286R.string.wallet_import_change_words_count_dialog_title));
+        getBinding().textTitle.setText(LocaleController.getInternalString(C3301R.string.wallet_import_change_words_count_dialog_title));
     }
 
     /* compiled from: SecretWordsCountBottomSheetDialog.kt */

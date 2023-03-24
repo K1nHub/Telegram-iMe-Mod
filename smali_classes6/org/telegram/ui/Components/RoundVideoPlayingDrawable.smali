@@ -171,126 +171,126 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v0, v2
 
     iput v0, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1:F
 
-    const/4 v2, 0x1
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v3, -0x1
+    cmpl-float v3, v0, v2
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/4 v5, -0x1
 
-    cmpl-float v6, v0, v5
+    const/4 v6, 0x0
 
-    if-lez v6, :cond_1
+    if-lez v3, :cond_1
 
     .line 60
-    iput v3, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1Direction:I
+    iput v5, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1Direction:I
 
     .line 61
-    iput v5, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1:F
+    iput v2, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1:F
 
     goto :goto_0
 
     :cond_1
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v6
 
     if-gez v0, :cond_2
 
     .line 63
-    iput v2, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1Direction:I
+    iput v4, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1Direction:I
 
     .line 64
-    iput v4, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1:F
+    iput v6, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress1:F
 
     .line 67
     :cond_2
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
 
-    const/high16 v6, 0x439b0000    # 310.0f
+    const/high16 v3, 0x439b0000    # 310.0f
 
-    div-float v6, v1, v6
+    div-float v3, v1, v3
 
     iget v7, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2Direction:I
 
     int-to-float v7, v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v3, v7
 
-    add-float/2addr v0, v6
+    add-float/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
 
-    cmpl-float v6, v0, v5
+    cmpl-float v3, v0, v2
 
-    if-lez v6, :cond_3
+    if-lez v3, :cond_3
 
     .line 69
-    iput v3, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2Direction:I
+    iput v5, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2Direction:I
 
     .line 70
-    iput v5, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
+    iput v2, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
 
     goto :goto_1
 
     :cond_3
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v6
 
     if-gez v0, :cond_4
 
     .line 72
-    iput v2, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2Direction:I
+    iput v4, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2Direction:I
 
     .line 73
-    iput v4, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
+    iput v6, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
 
     .line 76
     :cond_4
     :goto_1
     iget v0, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
 
-    const/high16 v6, 0x43a00000    # 320.0f
+    const/high16 v3, 0x43a00000    # 320.0f
 
-    div-float/2addr v1, v6
+    div-float/2addr v1, v3
 
-    iget v6, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3Direction:I
+    iget v3, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3Direction:I
 
-    int-to-float v6, v6
+    int-to-float v3, v3
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v3
 
     add-float/2addr v0, v1
 
     iput v0, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
 
-    cmpl-float v1, v0, v5
+    cmpl-float v1, v0, v2
 
     if-lez v1, :cond_5
 
     .line 78
-    iput v3, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3Direction:I
+    iput v5, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3Direction:I
 
     .line 79
-    iput v5, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
+    iput v2, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
 
     goto :goto_2
 
     :cond_5
-    cmpg-float v0, v0, v4
+    cmpg-float v0, v0, v6
 
     if-gez v0, :cond_6
 
     .line 81
-    iput v2, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3Direction:I
+    iput v4, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3Direction:I
 
     .line 82
-    iput v4, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
+    iput v6, p0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
 
     .line 85
     :cond_6
@@ -350,7 +350,7 @@
 
     div-float/2addr v3, v4
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -393,7 +393,7 @@
 
     const/high16 v11, 0x40e00000    # 7.0f
 
-    mul-float v4, v4, v11
+    mul-float/2addr v4, v11
 
     const/high16 v12, 0x40000000    # 2.0f
 
@@ -446,7 +446,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress2:F
 
-    mul-float v5, v5, v11
+    mul-float/2addr v5, v11
 
     add-float/2addr v5, v12
 
@@ -501,7 +501,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/RoundVideoPlayingDrawable;->progress3:F
 
-    mul-float v5, v5, v11
+    mul-float/2addr v5, v11
 
     add-float/2addr v5, v12
 

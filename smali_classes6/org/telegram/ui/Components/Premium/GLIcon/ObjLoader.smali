@@ -56,7 +56,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v4, 0x0
+    move v4, p2
 
     :goto_0
     if-ge v4, p1, :cond_0
@@ -82,7 +82,7 @@
 
     move-result p1
 
-    const/4 v4, 0x0
+    move v4, p2
 
     :goto_1
     if-ge v4, p1, :cond_1
@@ -108,7 +108,7 @@
 
     move-result p1
 
-    const/4 v4, 0x0
+    move v4, p2
 
     :goto_2
     if-ge v4, p1, :cond_2
@@ -158,11 +158,11 @@
 
     iput-object v4, p0, Lorg/telegram/ui/Components/Premium/GLIcon/ObjLoader;->positions:[F
 
-    const/4 v4, 0x0
+    move v4, p2
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_3
     if-ge p2, p1, :cond_3

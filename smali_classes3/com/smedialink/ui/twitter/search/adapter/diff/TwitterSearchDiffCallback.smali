@@ -173,9 +173,9 @@
 
     iget-wide p1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v0, v3, p1
+    cmp-long p1, v3, p1
 
-    if-nez v0, :cond_2
+    if-nez p1, :cond_2
 
     goto :goto_0
 
@@ -192,7 +192,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1

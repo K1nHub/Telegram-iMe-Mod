@@ -2308,7 +2308,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/VideoPlayer;->isStreaming:Z
@@ -2566,12 +2566,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     .line 442
     :goto_0
@@ -2588,7 +2588,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     .line 445
     :goto_1
@@ -2715,12 +2715,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 v4, 0x2
+    move v4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 505
     :goto_0
@@ -2754,7 +2754,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 510
     :goto_1

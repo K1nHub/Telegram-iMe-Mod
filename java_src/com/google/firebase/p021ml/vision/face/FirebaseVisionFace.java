@@ -105,7 +105,7 @@ public class FirebaseVisionFace {
                     i = -1;
                     break;
             }
-            if ((i > 14 || i <= 0) ? false : false) {
+            if ((i > 14 || i <= 0) ? false : z) {
                 PointF[] positions = next.getPositions();
                 ArrayList arrayList2 = new ArrayList();
                 if (positions != null) {

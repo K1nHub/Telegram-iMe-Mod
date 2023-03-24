@@ -42,7 +42,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     const/4 v5, 0x0
 
@@ -89,7 +89,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     const/4 v5, 0x3
@@ -128,7 +128,7 @@
     goto/16 :goto_c
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_3
     const/4 v7, 0x1
@@ -487,7 +487,7 @@
     goto/16 :goto_3
 
     :cond_18
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 368
     :goto_5
@@ -696,13 +696,13 @@
     goto :goto_6
 
     :cond_1d
-    const/4 v9, 0x0
+    move v9, v3
 
     goto :goto_7
 
     :cond_1e
     :goto_6
-    const/4 v9, 0x1
+    move v9, v7
 
     :goto_7
     const/high16 v13, 0x40000000    # 2.0f

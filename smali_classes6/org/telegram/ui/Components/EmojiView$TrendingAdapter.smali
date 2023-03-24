@@ -94,7 +94,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 9
+    .locals 8
 
     .line 7207
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -215,7 +215,7 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 7230
     :goto_2
@@ -238,9 +238,9 @@
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$StickerSet;->thumb_document_id:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_5
+    if-nez v4, :cond_5
 
     .line 7232
     invoke-virtual {p2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -402,7 +402,7 @@
     goto :goto_6
 
     :cond_11
-    const/4 v1, 0x1
+    move v1, v5
 
     :goto_6
     invoke-static {v1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
@@ -537,12 +537,12 @@
 
     if-eqz p2, :cond_0
 
-    const/16 p2, 0x18
+    move p2, v0
 
     goto :goto_0
 
     :cond_0
-    const/16 p2, 0x1e
+    move p2, v1
 
     :goto_0
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -556,7 +556,7 @@
     goto :goto_1
 
     :cond_1
-    const/16 v0, 0x1e
+    move v0, v1
 
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -584,12 +584,12 @@
 
     if-eqz v0, :cond_2
 
-    const/16 v0, 0x22
+    move v0, v1
 
     goto :goto_2
 
     :cond_2
-    const/16 v0, 0x2a
+    move v0, v2
 
     :goto_2
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -603,7 +603,7 @@
     goto :goto_3
 
     :cond_3
-    const/16 v1, 0x2a
+    move v1, v2
 
     :goto_3
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

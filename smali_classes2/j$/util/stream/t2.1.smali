@@ -121,7 +121,7 @@
 .end method
 
 .method public q(Lj$/util/function/m;)[Ljava/lang/Object;
-    .locals 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lj$/util/stream/e;->count()J
@@ -130,13 +130,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-interface {p1, v1}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 

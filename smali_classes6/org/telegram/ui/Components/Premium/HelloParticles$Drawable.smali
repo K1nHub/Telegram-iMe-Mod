@@ -190,7 +190,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/Premium/HelloParticles$Drawable;->bitmapScale:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -304,7 +304,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 88
     :goto_0

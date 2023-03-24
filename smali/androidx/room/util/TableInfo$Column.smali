@@ -80,9 +80,9 @@
     return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 519
     :goto_0
@@ -143,7 +143,7 @@
     :cond_4
     if-nez v2, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_5
     return v1
@@ -498,7 +498,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0

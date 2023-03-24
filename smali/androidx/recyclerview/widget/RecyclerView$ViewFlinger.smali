@@ -92,9 +92,9 @@
     const/4 v2, 0x0
 
     :goto_0
-    mul-int p3, p3, p3
+    mul-int/2addr p3, p3
 
-    mul-int p4, p4, p4
+    mul-int/2addr p4, p4
 
     add-int/2addr p3, p4
 
@@ -107,9 +107,9 @@
 
     double-to-int p3, p3
 
-    mul-int p1, p1, p1
+    mul-int/2addr p1, p1
 
-    mul-int p2, p2, p2
+    mul-int/2addr p2, p2
 
     add-int/2addr p1, p2
 
@@ -146,7 +146,7 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     int-to-float p2, p2
 
@@ -164,7 +164,7 @@
 
     move-result p1
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     add-float/2addr p4, p1
 
@@ -181,7 +181,7 @@
 
     move-result p2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
@@ -208,7 +208,7 @@
 
     const/high16 p2, 0x43960000    # 300.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -232,7 +232,7 @@
 
     const v0, 0x3ef1463b
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-double v0, p1
 
@@ -573,9 +573,9 @@
     goto :goto_0
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v2
 
-    const/4 v8, 0x0
+    move v8, v7
 
     .line 5327
     :cond_6
@@ -672,12 +672,12 @@
 
     if-ne v4, v9, :cond_b
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_1
 
     :cond_b
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 5353
     :goto_1
@@ -691,12 +691,12 @@
 
     if-ne v9, v10, :cond_c
 
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_2
 
     :cond_c
-    const/4 v9, 0x0
+    move v9, v2
 
     .line 5354
     :goto_2
@@ -718,13 +718,13 @@
     goto :goto_3
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_4
 
     :cond_f
     :goto_3
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 5361
     :goto_4
@@ -743,12 +743,12 @@
 
     if-eqz v9, :cond_10
 
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_5
 
     :cond_10
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_5
     if-nez v9, :cond_16
@@ -785,7 +785,7 @@
     goto :goto_6
 
     :cond_12
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_6
     if-gez v13, :cond_13
@@ -800,7 +800,7 @@
     goto :goto_7
 
     :cond_14
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 5373
     :goto_7

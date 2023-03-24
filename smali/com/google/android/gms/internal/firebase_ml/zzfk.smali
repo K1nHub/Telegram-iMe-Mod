@@ -765,9 +765,9 @@
     :cond_f
     const-wide/16 v0, 0x0
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-ltz v4, :cond_11
+    if-ltz v0, :cond_11
 
     const/16 v0, 0x24
 

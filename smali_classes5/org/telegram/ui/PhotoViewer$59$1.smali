@@ -132,12 +132,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x4
+    move v2, v1
 
     :goto_1
     invoke-virtual {p1, v2}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setVisibility(I)V

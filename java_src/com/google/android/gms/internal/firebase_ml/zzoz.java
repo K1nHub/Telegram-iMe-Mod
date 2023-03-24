@@ -358,7 +358,7 @@ public final class zzoz {
             if (r5 != r7) goto L45
             goto L46
         L45:
-            r7 = 0
+            r7 = r4
         L46:
             if (r7 == 0) goto L66
             if (r6 == 0) goto L66

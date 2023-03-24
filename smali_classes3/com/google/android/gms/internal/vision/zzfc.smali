@@ -15,12 +15,12 @@
 
     if-gt p1, v1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-eqz v2, :cond_1

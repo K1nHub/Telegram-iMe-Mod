@@ -9,12 +9,12 @@ public final class zzl implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        RootTelemetryConfiguration rootTelemetryConfiguration = null;
-        int[] iArr = null;
-        int[] iArr2 = null;
         boolean z = false;
         boolean z2 = false;
         int i = 0;
+        RootTelemetryConfiguration rootTelemetryConfiguration = null;
+        int[] iArr = null;
+        int[] iArr2 = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

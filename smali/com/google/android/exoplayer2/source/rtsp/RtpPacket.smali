@@ -233,12 +233,12 @@
 
     if-ne v3, v4, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_0
     and-int/lit8 v0, v0, 0xf
@@ -266,7 +266,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_1
     and-int/lit8 v1, v1, 0x7f
@@ -295,7 +295,7 @@
     .line 222
     new-array v9, v9, [B
 
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_2
     if-ge v10, v0, :cond_5
@@ -401,7 +401,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -452,9 +452,9 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/source/rtsp/RtpPacket;->timestamp:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget v2, p0, Lcom/google/android/exoplayer2/source/rtsp/RtpPacket;->ssrc:I
 
@@ -465,7 +465,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -682,10 +682,10 @@
 
     iget-wide p2, p0, Lcom/google/android/exoplayer2/source/rtsp/RtpPacket;->timestamp:J
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 304
-    invoke-virtual {p1, p3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     move-result-object p1
 

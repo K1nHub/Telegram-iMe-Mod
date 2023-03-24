@@ -283,7 +283,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p4
 
     .line 358
     :goto_0
@@ -351,7 +351,7 @@
 
     const/4 v0, 0x6
 
-    mul-int/lit8 p2, p2, 0x6
+    mul-int/2addr p2, v0
 
     add-int/lit8 p2, p2, 0x1c
 
@@ -399,7 +399,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_1
     add-int/2addr v3, v2
@@ -408,7 +408,7 @@
 
     if-eqz v6, :cond_2
 
-    const/16 v0, 0xe
+    move v0, v4
 
     :cond_2
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -505,7 +505,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     .line 369
     :goto_0
@@ -520,7 +520,7 @@
 
     if-ge p3, p1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, p2
 
     goto :goto_1
 

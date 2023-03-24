@@ -362,12 +362,12 @@
 
     if-eq p2, v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, p1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iput-boolean v0, v2, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
@@ -443,12 +443,12 @@
 
     if-ne p2, v0, :cond_4
 
-    const/4 v8, 0x1
+    move v8, p1
 
     goto :goto_2
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 248
     :goto_2

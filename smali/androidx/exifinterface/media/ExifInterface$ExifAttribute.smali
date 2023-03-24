@@ -132,7 +132,7 @@
 
     array-length v2, p0
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     new-array v0, v0, [B
 
@@ -153,10 +153,10 @@
 
     aget-wide v3, p0, v2
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
     .line 3143
-    invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     add-int/lit8 v2, v2, 0x1
 
@@ -208,7 +208,7 @@
 
     array-length v2, p0
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     new-array v0, v0, [B
 
@@ -232,16 +232,16 @@
     .line 3186
     iget-wide v4, v3, Landroidx/exifinterface/media/ExifInterface$Rational;->numerator:J
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    invoke-virtual {v0, v5}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 3187
     iget-wide v3, v3, Landroidx/exifinterface/media/ExifInterface$Rational;->denominator:J
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     add-int/lit8 v2, v2, 0x1
 
@@ -293,7 +293,7 @@
 
     array-length v2, p0
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     new-array v0, v0, [B
 
@@ -1261,7 +1261,7 @@
 
     if-lt p1, v6, :cond_a
 
-    const/4 p1, 0x0
+    move p1, v5
 
     .line 3250
     :goto_10
@@ -1280,7 +1280,7 @@
 
     if-eq v7, v8, :cond_8
 
-    const/4 v4, 0x0
+    move v4, v5
 
     goto :goto_11
 

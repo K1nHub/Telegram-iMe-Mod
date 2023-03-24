@@ -43,13 +43,12 @@ import org.fork.p046ui.view.PinnedPlayerView;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
@@ -178,7 +177,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
                     while (query.moveToNext()) {
                         try {
                             MediaController.AudioEntry audioEntry = new MediaController.AudioEntry();
-                            audioEntry.f1433id = query.getInt(0);
+                            audioEntry.f1434id = query.getInt(0);
                             audioEntry.author = query.getString(1);
                             audioEntry.title = query.getString(2);
                             audioEntry.path = query.getString(3);
@@ -237,7 +236,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
 
     @Override // com.smedialink.p031ui.pager.TelegramViewPagerFragment
     public String getToolbarTitle() {
-        String string = LocaleController.getString("AttachMusic", C3286R.string.AttachMusic);
+        String string = LocaleController.getString("AttachMusic", C3301R.string.AttachMusic);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
         return string;
     }
@@ -262,7 +261,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(MusicTab.BOTS.titleResId)");
         String internalString4 = LocaleController.getInternalString(MusicTab.DEVICE.getTitleResId());
         Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(MusicTab.DEVICE.titleResId)");
-        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3286R.C3288drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
+        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3301R.C3303drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
     }
 
     @Override // com.smedialink.p031ui.pager.TelegramViewPagerFragment
@@ -274,8 +273,8 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Pair[] pairArr = new Pair[2];
             ProfileSearchCell profileSearchCell = (ProfileSearchCell) itemView;
             TLRPC$User user = profileSearchCell.getUser();
-            pairArr[0] = TuplesKt.m100to("dialog_id", Long.valueOf(user != null ? user.f1639id : -profileSearchCell.getChat().f1499id));
-            pairArr[1] = TuplesKt.m100to("custom_screen_type", Integer.valueOf(IdFabric$CustomType.MEDIA_MUSIC));
+            pairArr[0] = TuplesKt.m99to("dialog_id", Long.valueOf(user != null ? user.f1640id : -profileSearchCell.getChat().f1500id));
+            pairArr[1] = TuplesKt.m99to("custom_screen_type", Integer.valueOf(IdFabric$CustomType.MEDIA_MUSIC));
             presentFragment(new MediaActivity(BundleKt.bundleOf(pairArr), null));
         }
     }
@@ -474,14 +473,14 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             this.parallelCounter = plus2.size();
             this.parallelLoading = true;
             for (TLRPC$Dialog tLRPC$Dialog : plus2) {
-                getMediaDataController().getMediaCount(tLRPC$Dialog.f1505id, 0, 4, this.classGuid, true);
+                getMediaDataController().getMediaCount(tLRPC$Dialog.f1506id, 0, 4, this.classGuid, true);
             }
         }
     }
 
     private final MessageObject convertDeviceAudioEntryToTelegramMessage(MediaController.AudioEntry audioEntry, int i) {
         TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
-        tLRPC$TL_message.f1523id = i;
+        tLRPC$TL_message.f1524id = i;
         tLRPC$TL_message.out = true;
         tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
         tLRPC$TL_message.from_id = new TLRPC$TL_peerUser();
@@ -498,7 +497,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         File file = new File(audioEntry.path);
         String ext = FileLoader.getFileExtension(file);
         tLRPC$TL_message.flags |= 768;
-        tLRPC$TL_document.f1507id = 0L;
+        tLRPC$TL_document.f1508id = 0L;
         tLRPC$TL_document.access_hash = 0L;
         tLRPC$TL_document.file_reference = new byte[0];
         tLRPC$TL_document.date = tLRPC$TL_message.date;
@@ -564,7 +563,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     private final void showDeviceMusicDeleteConfirmDialog(final MessageObject messageObject) {
-        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3286R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3286R.string.Delete), true, null, new Callbacks$Callback1() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda5
+        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3301R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3301R.string.Delete), true, null, new Callbacks$Callback1() { // from class: org.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda5
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 MusicActivity.showDeviceMusicDeleteConfirmDialog$lambda$24(MessageObject.this, this, (Boolean) obj);
@@ -613,7 +612,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             this$0.loadDeviceMusic();
             return;
         }
-        String string = LocaleController.getString("UnknownError", C3286R.string.UnknownError);
+        String string = LocaleController.getString("UnknownError", C3301R.string.UnknownError);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"UnknownError\", R.string.UnknownError)");
         ContextExtKt.toast(string);
     }
@@ -682,7 +681,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof DialogsEmptyCell) {
-                ((DialogsEmptyCell) view).setType(MusicTab.DEVICE.getEmptyCellType().m706id());
+                ((DialogsEmptyCell) view).setType(MusicTab.DEVICE.getEmptyCellType().m705id());
             } else if (view instanceof SharedAudioCell) {
                 SharedAudioCell sharedAudioCell = (SharedAudioCell) view;
                 MessageObject messageObject = ((MediaController.AudioEntry) this.this$0.deviceMusic.get(i)).messageObject;
@@ -777,12 +776,10 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof DialogsEmptyCell) {
-                ((DialogsEmptyCell) view).setType(this.musicTab.getEmptyCellType().m706id());
+                ((DialogsEmptyCell) view).setType(this.musicTab.getEmptyCellType().m705id());
             } else if (view instanceof ProfileSearchCell) {
                 long longValue = getDialogs().get(i).longValue();
-                int i2 = (longValue > 0L ? 1 : (longValue == 0L ? 0 : -1));
-                MessagesController messagesController = this.this$0.getMessagesController();
-                Object user = i2 > 0 ? messagesController.getUser(Long.valueOf(longValue)) : messagesController.getChat(Long.valueOf(-longValue));
+                Object user = longValue > 0 ? this.this$0.getMessagesController().getUser(Long.valueOf(longValue)) : this.this$0.getMessagesController().getChat(Long.valueOf(-longValue));
                 Object obj = this.this$0.countsMap.get(longValue);
                 Intrinsics.checkNotNullExpressionValue(obj, "countsMap[did]");
                 String formatPluralString = LocaleController.formatPluralString("MusicFiles", ((Number) obj).intValue(), new Object[0]);

@@ -338,7 +338,7 @@
 
     if-nez v0, :cond_c
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_4
 
@@ -461,7 +461,7 @@
 
     if-nez v0, :cond_18
 
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_9
 
@@ -1052,7 +1052,7 @@
 
     move-object v2, v8
 
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_0
     if-nez v10, :cond_0
@@ -1077,7 +1077,7 @@
 
     iput-object v9, v1, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_0
     iget v5, v10, Lj$/util/concurrent/ConcurrentHashMap$l;->a:I
@@ -1088,16 +1088,17 @@
 
     const/4 v5, -0x1
 
-    const/4 v12, -0x1
+    :goto_1
+    move v12, v5
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
     if-ge v5, v0, :cond_2
 
-    const/4 v12, 0x1
+    move v12, v11
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_2
     iget-object v5, v10, Lj$/util/concurrent/ConcurrentHashMap$l;->b:Ljava/lang/Object;
@@ -1112,7 +1113,7 @@
 
     if-eqz v6, :cond_3
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_3
     if-nez v2, :cond_4
@@ -1158,31 +1159,29 @@
     return-object v3
 
     :cond_8
-    const/4 v3, 0x1
+    move v3, v11
 
     :cond_9
     invoke-static {v4, v5}, Lj$/util/concurrent/ConcurrentHashMap$q;->j(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v5
 
-    move v12, v5
-
     goto :goto_1
 
     :cond_a
     move v12, v6
 
-    :goto_1
+    :goto_2
     if-gtz v12, :cond_b
 
     iget-object v5, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_b
     iget-object v5, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->g:Lj$/util/concurrent/ConcurrentHashMap$r;
 
-    :goto_2
+    :goto_3
     if-nez v5, :cond_f
 
     iget-object v13, v1, Lj$/util/concurrent/ConcurrentHashMap$q;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
@@ -1214,19 +1213,19 @@
 
     iput-object v14, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->f:Lj$/util/concurrent/ConcurrentHashMap$r;
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_d
     iput-object v14, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->g:Lj$/util/concurrent/ConcurrentHashMap$r;
 
-    :goto_3
+    :goto_4
     iget-boolean v0, v10, Lj$/util/concurrent/ConcurrentHashMap$r;->i:Z
 
     if-nez v0, :cond_e
 
     iput-boolean v11, v14, Lj$/util/concurrent/ConcurrentHashMap$r;->i:Z
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_e
     invoke-direct {p0}, Lj$/util/concurrent/ConcurrentHashMap$q;->e()V
@@ -1245,7 +1244,7 @@
     .line 1
     iput v9, v1, Lj$/util/concurrent/ConcurrentHashMap$q;->lockState:I
 
-    :goto_4
+    :goto_5
     return-object v8
 
     :catchall_0
@@ -1262,7 +1261,7 @@
     goto/16 :goto_0
 
     :cond_10
-    :goto_5
+    :goto_6
     return-object v10
 .end method
 

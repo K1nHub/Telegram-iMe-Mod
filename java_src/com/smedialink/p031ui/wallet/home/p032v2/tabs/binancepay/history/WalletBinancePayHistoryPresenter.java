@@ -79,14 +79,14 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
             this.transactions.clear();
             ((WalletBinancePayHistoryView) getViewState()).resetLoadMore();
         }
-        Observable doFinally = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, str, this.tokenCode, 1, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryPresenter$$ExternalSyntheticLambda0
+        Observable doFinally = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, str, this.tokenCode, 1, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo706ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletBinancePayHistoryPresenter.loadTransactions$lambda$0(WalletBinancePayHistoryPresenter.this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "binanceInternalInteracto…e.showRefreshing(false) }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2180x6d7572a3(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2181x6d7572a4((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2194x6d7572a3(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2195x6d7572a4((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -99,9 +99,9 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
     public final void loadMoreTransactions(String lastId) {
         Intrinsics.checkNotNullParameter(lastId, "lastId");
-        Observable observeOn = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, lastId, this.tokenCode, 1, null).observeOn(this.schedulersProvider.mo707ui());
+        Observable observeOn = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, lastId, this.tokenCode, 1, null).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2178xdc1b5198(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2179xdc1b5199((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2192xdc1b5198(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2193xdc1b5199((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -140,9 +140,9 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2176xab042a08(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2177xab042a09(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2190xab042a08(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2191xab042a09(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

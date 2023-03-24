@@ -86,7 +86,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, -0x1
+    move v2, v3
 
     :goto_1
     if-ne v2, v3, :cond_2

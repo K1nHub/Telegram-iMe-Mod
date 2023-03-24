@@ -4,7 +4,7 @@ import com.smedialink.p031ui.topics.TopicInfo;
 import com.smedialink.storage.data.repository.topics.Topic;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TopicExt.kt */
 /* loaded from: classes3.dex */
 public final class TopicExtKt {
@@ -312,149 +312,149 @@ public final class TopicExtKt {
         Intrinsics.checkNotNullParameter(topic, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[topic.ordinal()]) {
             case 1:
-                return new TopicInfo(C3286R.C3287color.topic_green, C3286R.string.topics_title_animals, C3286R.C3288drawable.fork_topic_animals_small);
+                return new TopicInfo(C3301R.C3302color.topic_green, C3301R.string.topics_title_animals, C3301R.C3303drawable.fork_topic_animals_small);
             case 2:
-                return new TopicInfo(C3286R.C3287color.topic_orange, C3286R.string.topics_title_art, C3286R.C3288drawable.fork_topic_art_small);
+                return new TopicInfo(C3301R.C3302color.topic_orange, C3301R.string.topics_title_art, C3301R.C3303drawable.fork_topic_art_small);
             case 3:
-                return new TopicInfo(C3286R.C3287color.topic_orange, C3286R.string.topics_title_astrology, C3286R.C3288drawable.fork_topic_astrology_small);
+                return new TopicInfo(C3301R.C3302color.topic_orange, C3301R.string.topics_title_astrology, C3301R.C3303drawable.fork_topic_astrology_small);
             case 4:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_auto, C3286R.C3288drawable.fork_topic_auto_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_auto, C3301R.C3303drawable.fork_topic_auto_small);
             case 5:
-                return new TopicInfo(C3286R.C3287color.topic_orange, C3286R.string.topics_title_blogs, C3286R.C3288drawable.fork_topic_blogs_small);
+                return new TopicInfo(C3301R.C3302color.topic_orange, C3301R.string.topics_title_blogs, C3301R.C3303drawable.fork_topic_blogs_small);
             case 6:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_books, C3286R.C3288drawable.fork_topic_books_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_books, C3301R.C3303drawable.fork_topic_books_small);
             case 7:
-                return new TopicInfo(C3286R.C3287color.topic_orange, C3286R.string.topics_title_business, C3286R.C3288drawable.fork_topic_business_small);
+                return new TopicInfo(C3301R.C3302color.topic_orange, C3301R.string.topics_title_business, C3301R.C3303drawable.fork_topic_business_small);
             case 8:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_crypto, C3286R.C3288drawable.fork_topic_crypto_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_crypto, C3301R.C3303drawable.fork_topic_crypto_small);
             case 9:
-                return new TopicInfo(C3286R.C3287color.topic_green, C3286R.string.topics_title_design, C3286R.C3288drawable.fork_topic_design_small);
+                return new TopicInfo(C3301R.C3302color.topic_green, C3301R.string.topics_title_design, C3301R.C3303drawable.fork_topic_design_small);
             case 10:
-                return new TopicInfo(C3286R.C3287color.topic_light_blue, C3286R.string.topics_title_develop, C3286R.C3288drawable.fork_topic_develop_small);
+                return new TopicInfo(C3301R.C3302color.topic_light_blue, C3301R.string.topics_title_develop, C3301R.C3303drawable.fork_topic_develop_small);
             case 11:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_economy, C3286R.C3288drawable.fork_topic_economy_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_economy, C3301R.C3303drawable.fork_topic_economy_small);
             case 12:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_education, C3286R.C3288drawable.fork_topic_education_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_education, C3301R.C3303drawable.fork_topic_education_small);
             case 13:
-                return new TopicInfo(C3286R.C3287color.topic_green, C3286R.string.topics_title_family, C3286R.C3288drawable.fork_topic_family_small);
+                return new TopicInfo(C3301R.C3302color.topic_green, C3301R.string.topics_title_family, C3301R.C3303drawable.fork_topic_family_small);
             case 14:
-                return new TopicInfo(C3286R.C3287color.topic_red, C3286R.string.topics_title_fashion, C3286R.C3288drawable.fork_topic_fashion_small);
+                return new TopicInfo(C3301R.C3302color.topic_red, C3301R.string.topics_title_fashion, C3301R.C3303drawable.fork_topic_fashion_small);
             case 15:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_films, C3286R.C3288drawable.fork_topic_films_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_films, C3301R.C3303drawable.fork_topic_films_small);
             case 16:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_finance, C3286R.C3288drawable.fork_topic_finance_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_finance, C3301R.C3303drawable.fork_topic_finance_small);
             case 17:
-                return new TopicInfo(C3286R.C3287color.topic_green, C3286R.string.topics_title_food, C3286R.C3288drawable.fork_topic_food_small);
+                return new TopicInfo(C3301R.C3302color.topic_green, C3301R.string.topics_title_food, C3301R.C3303drawable.fork_topic_food_small);
             case 18:
-                return new TopicInfo(C3286R.C3287color.topic_pink, C3286R.string.topics_title_friends, C3286R.C3288drawable.fork_topic_friends_small);
+                return new TopicInfo(C3301R.C3302color.topic_pink, C3301R.string.topics_title_friends, C3301R.C3303drawable.fork_topic_friends_small);
             case 19:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_games, C3286R.C3288drawable.fork_topic_games_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_games, C3301R.C3303drawable.fork_topic_games_small);
             case 20:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_hobbies, C3286R.C3288drawable.fork_topic_hobbies_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_hobbies, C3301R.C3303drawable.fork_topic_hobbies_small);
             case 21:
-                return new TopicInfo(C3286R.C3287color.topic_red, C3286R.string.topics_title_home, C3286R.C3288drawable.fork_topic_home_small);
+                return new TopicInfo(C3301R.C3302color.topic_red, C3301R.string.topics_title_home, C3301R.C3303drawable.fork_topic_home_small);
             case 22:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_humor, C3286R.C3288drawable.fork_topic_humor_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_humor, C3301R.C3303drawable.fork_topic_humor_small);
             case 23:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_it, C3286R.C3288drawable.fork_topic_it_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_it, C3301R.C3303drawable.fork_topic_it_small);
             case 24:
-                return new TopicInfo(C3286R.C3287color.topic_red, C3286R.string.topics_title_job, C3286R.C3288drawable.fork_topic_job_small);
+                return new TopicInfo(C3301R.C3302color.topic_red, C3301R.string.topics_title_job, C3301R.C3303drawable.fork_topic_job_small);
             case 25:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_laws, C3286R.C3288drawable.fork_topic_laws_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_laws, C3301R.C3303drawable.fork_topic_laws_small);
             case 26:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_lifehack, C3286R.C3288drawable.fork_topic_lifehack_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_lifehack, C3301R.C3303drawable.fork_topic_lifehack_small);
             case 27:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_marketing, C3286R.C3288drawable.fork_topic_marketing_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_marketing, C3301R.C3303drawable.fork_topic_marketing_small);
             case 28:
-                return new TopicInfo(C3286R.C3287color.topic_pink, C3286R.string.topics_title_medicine, C3286R.C3288drawable.fork_topic_medicine_small);
+                return new TopicInfo(C3301R.C3302color.topic_pink, C3301R.string.topics_title_medicine, C3301R.C3303drawable.fork_topic_medicine_small);
             case 29:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, C3286R.string.topics_title_music, C3286R.C3288drawable.fork_topic_music_small);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, C3301R.string.topics_title_music, C3301R.C3303drawable.fork_topic_music_small);
             case 30:
-                return new TopicInfo(C3286R.C3287color.topic_pink, C3286R.string.topics_title_news, C3286R.C3288drawable.fork_topic_news_small);
+                return new TopicInfo(C3301R.C3302color.topic_pink, C3301R.string.topics_title_news, C3301R.C3303drawable.fork_topic_news_small);
             case 31:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_politics, C3286R.C3288drawable.fork_topic_politics_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_politics, C3301R.C3303drawable.fork_topic_politics_small);
             case 32:
-                return new TopicInfo(C3286R.C3287color.topic_red, C3286R.string.topics_title_quotes, C3286R.C3288drawable.fork_topic_quotes_small);
+                return new TopicInfo(C3301R.C3302color.topic_red, C3301R.string.topics_title_quotes, C3301R.C3303drawable.fork_topic_quotes_small);
             case 33:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, C3286R.string.topics_title_religion, C3286R.C3288drawable.fork_topic_religion_small);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, C3301R.string.topics_title_religion, C3301R.C3303drawable.fork_topic_religion_small);
             case 34:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_sales, C3286R.C3288drawable.fork_topic_sales_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_sales, C3301R.C3303drawable.fork_topic_sales_small);
             case 35:
-                return new TopicInfo(C3286R.C3287color.topic_light_blue, C3286R.string.topics_title_science, C3286R.C3288drawable.fork_topic_science_small);
+                return new TopicInfo(C3301R.C3302color.topic_light_blue, C3301R.string.topics_title_science, C3301R.C3303drawable.fork_topic_science_small);
             case 36:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_sport, C3286R.C3288drawable.fork_topic_sport_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_sport, C3301R.C3303drawable.fork_topic_sport_small);
             case 37:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_technology, C3286R.C3288drawable.fork_topic_technology_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_technology, C3301R.C3303drawable.fork_topic_technology_small);
             case 38:
-                return new TopicInfo(C3286R.C3287color.topic_blue, C3286R.string.topics_title_telegram, C3286R.C3288drawable.fork_topic_telegram_small);
+                return new TopicInfo(C3301R.C3302color.topic_blue, C3301R.string.topics_title_telegram, C3301R.C3303drawable.fork_topic_telegram_small);
             case 39:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, C3286R.string.topics_title_travel, C3286R.C3288drawable.fork_topic_travel_small);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, C3301R.string.topics_title_travel, C3301R.C3303drawable.fork_topic_travel_small);
             case 40:
-                return new TopicInfo(C3286R.C3287color.topic_purple, C3286R.string.topics_title_tv, C3286R.C3288drawable.fork_topic_tv_small);
+                return new TopicInfo(C3301R.C3302color.topic_purple, C3301R.string.topics_title_tv, C3301R.C3303drawable.fork_topic_tv_small);
             case 41:
-                return new TopicInfo(C3286R.C3287color.topic_pink, C3286R.string.topics_title_adulthood, C3286R.C3288drawable.fork_topic_adulthood_small);
+                return new TopicInfo(C3301R.C3302color.topic_pink, C3301R.string.topics_title_adulthood, C3301R.C3303drawable.fork_topic_adulthood_small);
             case 42:
-                return new TopicInfo(C3286R.C3287color.topic_purple, 0, C3286R.C3288drawable.fork_topic_bot);
+                return new TopicInfo(C3301R.C3302color.topic_purple, 0, C3301R.C3303drawable.fork_topic_bot);
             case 43:
-                return new TopicInfo(C3286R.C3287color.topic_green, 0, C3286R.C3288drawable.fork_topic_calculator);
+                return new TopicInfo(C3301R.C3302color.topic_green, 0, C3301R.C3303drawable.fork_topic_calculator);
             case 44:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_beard);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_beard);
             case 45:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, 0, C3286R.C3288drawable.fork_topic_chef);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, 0, C3301R.C3303drawable.fork_topic_chef);
             case 46:
-                return new TopicInfo(C3286R.C3287color.topic_light_blue, 0, C3286R.C3288drawable.fork_topic_chess);
+                return new TopicInfo(C3301R.C3302color.topic_light_blue, 0, C3301R.C3303drawable.fork_topic_chess);
             case 47:
-                return new TopicInfo(C3286R.C3287color.topic_green, 0, C3286R.C3288drawable.fork_topic_cloche);
+                return new TopicInfo(C3301R.C3302color.topic_green, 0, C3301R.C3303drawable.fork_topic_cloche);
             case 48:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_coffee);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_coffee);
             case 49:
-                return new TopicInfo(C3286R.C3287color.topic_red, 0, C3286R.C3288drawable.fork_topic_colosseum);
+                return new TopicInfo(C3301R.C3302color.topic_red, 0, C3301R.C3303drawable.fork_topic_colosseum);
             case 50:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, 0, C3286R.C3288drawable.fork_topic_cubes);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, 0, C3301R.C3303drawable.fork_topic_cubes);
             case 51:
-                return new TopicInfo(C3286R.C3287color.topic_light_blue, 0, C3286R.C3288drawable.fork_topic_flower);
+                return new TopicInfo(C3301R.C3302color.topic_light_blue, 0, C3301R.C3303drawable.fork_topic_flower);
             case 52:
-                return new TopicInfo(C3286R.C3287color.topic_red, 0, C3286R.C3288drawable.fork_topic_funds);
+                return new TopicInfo(C3301R.C3302color.topic_red, 0, C3301R.C3303drawable.fork_topic_funds);
             case 53:
-                return new TopicInfo(C3286R.C3287color.topic_green, 0, C3286R.C3288drawable.fork_topic_shoe);
+                return new TopicInfo(C3301R.C3302color.topic_green, 0, C3301R.C3303drawable.fork_topic_shoe);
             case 54:
-                return new TopicInfo(C3286R.C3287color.topic_light_blue, 0, C3286R.C3288drawable.fork_topic_palm);
+                return new TopicInfo(C3301R.C3302color.topic_light_blue, 0, C3301R.C3303drawable.fork_topic_palm);
             case 55:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_wand);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_wand);
             case 56:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, 0, C3286R.C3288drawable.fork_topic_medal);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, 0, C3301R.C3303drawable.fork_topic_medal);
             case 57:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_mission);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_mission);
             case 58:
-                return new TopicInfo(C3286R.C3287color.topic_green, 0, C3286R.C3288drawable.fork_topic_pagoda);
+                return new TopicInfo(C3301R.C3302color.topic_green, 0, C3301R.C3303drawable.fork_topic_pagoda);
             case 59:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, 0, C3286R.C3288drawable.fork_topic_pill);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, 0, C3301R.C3303drawable.fork_topic_pill);
             case 60:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_pingpong);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_pingpong);
             case 61:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, 0, C3286R.C3288drawable.fork_topic_pizza);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, 0, C3301R.C3303drawable.fork_topic_pizza);
             case 62:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_rocket);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_rocket);
             case 63:
-                return new TopicInfo(C3286R.C3287color.topic_purple, 0, C3286R.C3288drawable.fork_topic_ufo);
+                return new TopicInfo(C3301R.C3302color.topic_purple, 0, C3301R.C3303drawable.fork_topic_ufo);
             case 64:
-                return new TopicInfo(C3286R.C3287color.topic_light_blue, 0, C3286R.C3288drawable.fork_topic_duck);
+                return new TopicInfo(C3301R.C3302color.topic_light_blue, 0, C3301R.C3303drawable.fork_topic_duck);
             case 65:
-                return new TopicInfo(C3286R.C3287color.topic_red, 0, C3286R.C3288drawable.fork_topic_scissors);
+                return new TopicInfo(C3301R.C3302color.topic_red, 0, C3301R.C3303drawable.fork_topic_scissors);
             case 66:
-                return new TopicInfo(C3286R.C3287color.topic_green, 0, C3286R.C3288drawable.fork_topic_melon);
+                return new TopicInfo(C3301R.C3302color.topic_green, 0, C3301R.C3303drawable.fork_topic_melon);
             case 67:
-                return new TopicInfo(C3286R.C3287color.topic_pink, 0, C3286R.C3288drawable.fork_topic_sun);
+                return new TopicInfo(C3301R.C3302color.topic_pink, 0, C3301R.C3303drawable.fork_topic_sun);
             case 68:
-                return new TopicInfo(C3286R.C3287color.topic_dark_blue, 0, C3286R.C3288drawable.fork_topic_darts);
+                return new TopicInfo(C3301R.C3302color.topic_dark_blue, 0, C3301R.C3303drawable.fork_topic_darts);
             case 69:
-                return new TopicInfo(C3286R.C3287color.topic_purple, 0, C3286R.C3288drawable.fork_topic_trophy);
+                return new TopicInfo(C3301R.C3302color.topic_purple, 0, C3301R.C3303drawable.fork_topic_trophy);
             case 70:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, 0, C3286R.C3288drawable.fork_topic_umbrella);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, 0, C3301R.C3303drawable.fork_topic_umbrella);
             case 71:
-                return new TopicInfo(C3286R.C3287color.topic_red, 0, C3286R.C3288drawable.fork_topic_glasses);
+                return new TopicInfo(C3301R.C3302color.topic_red, 0, C3301R.C3303drawable.fork_topic_glasses);
             case 72:
-                return new TopicInfo(C3286R.C3287color.topic_yellow, C3286R.string.topics_title_other, C3286R.C3288drawable.fork_topic_other_small);
+                return new TopicInfo(C3301R.C3302color.topic_yellow, C3301R.string.topics_title_other, C3301R.C3303drawable.fork_topic_other_small);
             default:
                 throw new NoWhenBranchMatchedException();
         }

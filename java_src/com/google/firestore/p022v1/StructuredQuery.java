@@ -529,7 +529,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         /* JADX INFO: Access modifiers changed from: private */
         public void addAllFilters(Iterable<? extends Filter> iterable) {
             ensureFiltersIsMutable();
-            AbstractMessageLite.addAll(iterable, this.filters_);
+            AbstractMessageLite.addAll((Iterable) iterable, (List) this.filters_);
         }
 
         public static Builder newBuilder() {

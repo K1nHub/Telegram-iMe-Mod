@@ -75,7 +75,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
@@ -293,7 +293,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 4175
     :goto_0

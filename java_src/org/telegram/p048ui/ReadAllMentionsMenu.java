@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
@@ -23,13 +23,13 @@ public class ReadAllMentionsMenu {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem((Context) activity, true, true, resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(AndroidUtilities.m50dp(200));
         if (i == 0) {
-            i2 = C3286R.string.ReadAllReactions;
+            i2 = C3301R.string.ReadAllReactions;
             str = "ReadAllReactions";
         } else {
-            i2 = C3286R.string.ReadAllMentions;
+            i2 = C3301R.string.ReadAllMentions;
             str = "ReadAllMentions";
         }
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i2), C3286R.C3288drawable.msg_seen);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i2), C3301R.C3303drawable.msg_seen);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ReadAllMentionsMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -42,7 +42,7 @@ public class ReadAllMentionsMenu {
         actionBarPopupWindow.setDismissAnimationDuration(220);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
-        actionBarPopupWindow.setAnimationStyle(C3286R.style.PopupContextAnimation);
+        actionBarPopupWindow.setAnimationStyle(C3301R.style.PopupContextAnimation);
         actionBarPopupWindow.setFocusable(true);
         actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(1000), Integer.MIN_VALUE));
         actionBarPopupWindow.setInputMethodMode(2);

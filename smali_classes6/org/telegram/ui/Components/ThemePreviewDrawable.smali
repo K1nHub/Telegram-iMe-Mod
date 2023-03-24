@@ -566,13 +566,13 @@
 
     const v12, 0x3f99999a    # 1.2f
 
-    const/high16 v13, 0x3f800000    # 1.0f
-
     cmpg-float v12, v11, v12
+
+    const/high16 v13, 0x3f800000    # 1.0f
 
     if-gez v12, :cond_8
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v13
 
     :cond_8
     const/4 v12, 0x0
@@ -606,7 +606,7 @@
     :cond_a
     const/4 v7, 0x2
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v7
 
     mul-int/lit8 v7, v6, 0x2
 
@@ -651,7 +651,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -747,7 +747,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     float-to-int v5, v5
 
@@ -758,7 +758,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     float-to-int v7, v7
 

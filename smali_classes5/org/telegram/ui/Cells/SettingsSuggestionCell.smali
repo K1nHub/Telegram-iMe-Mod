@@ -102,12 +102,12 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v6, 0x5
+    move v6, v7
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x3
+    move v6, v8
 
     :goto_0
     or-int/lit8 v6, v6, 0x10
@@ -136,12 +136,12 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v6, 0x5
+    move v6, v7
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x3
+    move v6, v8
 
     :goto_1
     or-int/lit8 v11, v6, 0x30
@@ -221,12 +221,12 @@
 
     if-eqz v6, :cond_2
 
-    const/4 v6, 0x5
+    move v6, v7
 
     goto :goto_2
 
     :cond_2
-    const/4 v6, 0x3
+    move v6, v8
 
     :goto_2
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setGravity(I)V
@@ -242,12 +242,12 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v11, 0x5
+    move v11, v7
 
     goto :goto_3
 
     :cond_3
-    const/4 v11, 0x3
+    move v11, v8
 
     :goto_3
     const/16 v12, 0x15
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0, v4, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_4
     const/4 v8, 0x2
@@ -370,24 +370,24 @@
 
     if-nez v7, :cond_4
 
-    const/4 v13, 0x0
+    move v13, v6
 
     goto :goto_5
 
     :cond_4
-    const/4 v13, 0x4
+    move v13, v9
 
     :goto_5
     const/4 v14, 0x0
 
     if-nez v7, :cond_5
 
-    const/4 v15, 0x4
+    move v15, v9
 
     goto :goto_6
 
     :cond_5
-    const/4 v15, 0x0
+    move v15, v6
 
     :goto_6
     const/16 v16, 0x0

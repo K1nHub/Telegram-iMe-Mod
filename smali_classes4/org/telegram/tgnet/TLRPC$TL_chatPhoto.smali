@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 712
+    .line 711
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$ChatPhoto;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 
     const/4 v0, 0x1
 
-    .line 716
+    .line 715
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/tgnet/TLRPC$TL_chatPhoto;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;ZZ)V
 
     return-void
@@ -39,7 +39,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;ZZ)V
     .locals 2
 
-    .line 720
+    .line 719
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -57,32 +57,32 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 721
+    .line 720
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->has_video:Z
 
-    .line 722
+    .line 721
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_id:J
 
-    .line 723
+    .line 722
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 724
+    .line 723
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->stripped_thumb:[B
 
-    .line 726
+    .line 725
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -90,14 +90,14 @@
 
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->dc_id:I
 
-    .line 727
+    .line 726
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_small:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 728
+    .line 727
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_id:J
 
     neg-long v0, v0
@@ -106,17 +106,17 @@
 
     const/16 p2, 0x61
 
-    .line 729
+    .line 728
     iput p2, p1, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
-    .line 730
+    .line 729
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_big:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 731
+    .line 730
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_id:J
 
     neg-long v0, v0
@@ -125,12 +125,12 @@
 
     const/16 p2, 0x63
 
-    .line 732
+    .line 731
     iput p2, p1, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
     if-eqz p3, :cond_2
 
-    .line 734
+    .line 733
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->stripped_thumb:[B
 
     if-eqz p1, :cond_2
@@ -141,7 +141,7 @@
 
     if-lt p1, p2, :cond_2
 
-    .line 736
+    .line 735
     :try_start_0
     new-instance p1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -164,7 +164,7 @@
     :catchall_0
     move-exception p1
 
-    .line 738
+    .line 737
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -175,12 +175,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 744
+    .line 743
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatPhoto;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 745
+    .line 744
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->has_video:Z
 
     if-eqz v0, :cond_0
@@ -199,27 +199,27 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->flags:I
 
-    .line 746
+    .line 745
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 747
+    .line 746
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->photo_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 748
+    .line 747
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 749
+    .line 748
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->stripped_thumb:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V
 
-    .line 751
+    .line 750
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$ChatPhoto;->dc_id:I
 

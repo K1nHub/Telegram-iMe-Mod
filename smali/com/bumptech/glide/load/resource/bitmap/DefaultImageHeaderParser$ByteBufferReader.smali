@@ -153,20 +153,20 @@
 
     move-result-wide p1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 491
-    iget-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
+    iget-object p2, p0, Lcom/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader;->byteBuffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
 
-    add-int/2addr v0, p2
+    add-int/2addr v0, p1
 
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    int-to-long p1, p2
+    int-to-long p1, p1
 
     return-wide p1
 .end method

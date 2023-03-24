@@ -753,7 +753,7 @@
 
     if-eqz p0, :cond_8
 
-    const/4 p0, 0x2
+    move p0, v3
 
     goto :goto_1
 
@@ -766,7 +766,7 @@
 
     if-eqz p0, :cond_8
 
-    const/4 p0, 0x1
+    move p0, v0
 
     goto :goto_1
 
@@ -779,7 +779,7 @@
 
     if-eqz p0, :cond_8
 
-    const/4 p0, 0x0
+    move p0, v1
 
     goto :goto_1
 

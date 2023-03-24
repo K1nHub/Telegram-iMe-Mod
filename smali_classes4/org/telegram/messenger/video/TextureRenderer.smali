@@ -349,7 +349,7 @@
 
     const/4 v10, 0x4
 
-    mul-int/lit8 v7, v7, 0x4
+    mul-int/2addr v7, v10
 
     invoke-static {v7}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
@@ -455,12 +455,12 @@
 
     if-eqz v4, :cond_3
 
-    const/4 v4, 0x2
+    move v4, v11
 
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x1
+    move v4, v6
 
     .line 202
     :goto_0
@@ -539,7 +539,7 @@
 
     iget v4, v1, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     float-to-int v4, v7
 
@@ -552,7 +552,7 @@
 
     iget v7, v1, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v4, v4, v7
+    mul-float/2addr v4, v7
 
     float-to-int v4, v4
 
@@ -639,7 +639,7 @@
 
     iget v10, v1, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     .line 232
     invoke-static {v11, v12}, Ljava/lang/Math;->sin(D)D
@@ -652,13 +652,13 @@
 
     move-result-wide v10
 
-    mul-double v2, v2, v10
+    mul-double/2addr v2, v10
 
     add-double/2addr v5, v2
 
     iget v2, v1, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     float-to-double v2, v2
 
@@ -668,7 +668,7 @@
 
     iget v3, v1, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 233
     iget v3, v0, Lorg/telegram/messenger/video/TextureRenderer;->transformedWidth:I
@@ -679,7 +679,7 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    mul-float v9, v9, v3
+    mul-float/2addr v9, v3
 
     aput v9, v13, v8
 
@@ -690,7 +690,7 @@
 
     div-float/2addr v2, v5
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     aput v2, v13, p9
 
@@ -746,11 +746,11 @@
     goto :goto_2
 
     :cond_5
-    const/16 v2, 0x20
+    move v4, v5
 
-    const/4 v3, 0x0
+    move v2, v8
 
-    const/16 v4, 0x8
+    move v3, v9
 
     new-array v5, v4, [F
 
@@ -934,7 +934,7 @@
 
     const/4 v3, 0x4
 
-    mul-int/lit8 v1, v1, 0x4
+    mul-int/2addr v1, v3
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
@@ -1202,7 +1202,7 @@
 
     iget v2, p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->roundRadius:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 487
     iget-object v2, p0, Lorg/telegram/messenger/video/TextureRenderer;->path:Landroid/graphics/Path;
@@ -1383,6 +1383,8 @@
     :cond_0
     const v2, -0x39e3c000    # -10000.0f
 
+    cmpg-float v2, p3, v2
+
     const/4 v4, 0x7
 
     const/4 v5, 0x3
@@ -1400,8 +1402,6 @@
     const/high16 v11, 0x3f800000    # 1.0f
 
     const/4 v12, 0x0
-
-    cmpg-float v2, p3, v2
 
     if-gtz v2, :cond_1
 
@@ -1442,7 +1442,7 @@
 
     sub-float v13, v11, p4
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     sub-float/2addr v13, v11
 
@@ -1543,7 +1543,7 @@
 
     div-float/2addr v6, v10
 
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_1
     if-ge v2, v8, :cond_3
@@ -1602,19 +1602,19 @@
 
     move-result-wide v9
 
-    mul-double v14, v14, v9
+    mul-double/2addr v14, v9
 
     invoke-static {v7, v8}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v7
 
-    mul-double v12, v12, v7
+    mul-double/2addr v12, v7
 
     add-double/2addr v14, v12
 
     double-to-float v7, v14
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     add-float/2addr v7, v6
 
@@ -1806,7 +1806,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v2, 0x0
+    move v2, v12
 
     .line 340
     :goto_0
@@ -1948,9 +1948,9 @@
 
     move-object v3, v2
 
-    const/16 v2, 0xde1
+    move v2, v10
 
-    const/4 v4, 0x1
+    move v4, v11
 
     goto :goto_1
 
@@ -1963,7 +1963,7 @@
     .line 379
     iget-object v3, v9, Lorg/telegram/messenger/video/TextureRenderer;->mSTMatrix:[F
 
-    const/4 v4, 0x0
+    move v4, v12
 
     .line 382
     :goto_1
@@ -2101,7 +2101,7 @@
 
     if-eqz v0, :cond_9
 
-    const/4 v0, 0x0
+    move v0, v12
 
     .line 405
     :goto_3
@@ -2133,7 +2133,7 @@
 
     move-result v13
 
-    const/4 v14, 0x0
+    move v14, v12
 
     :goto_4
     if-ge v14, v13, :cond_16
@@ -2152,11 +2152,11 @@
 
     const-wide/16 v3, 0x0
 
+    cmp-long v3, v1, v3
+
     const/4 v15, 0x0
 
-    cmp-long v5, v1, v3
-
-    if-eqz v5, :cond_c
+    if-eqz v3, :cond_c
 
     .line 413
     iget v3, v0, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->currentFrame:F
@@ -2241,12 +2241,12 @@
 
     if-eqz v0, :cond_b
 
-    const/4 v8, 0x1
+    move v8, v11
 
     goto :goto_5
 
     :cond_b
-    const/4 v8, 0x0
+    move v8, v12
 
     :goto_5
     move-object/from16 v0, p0
@@ -2434,12 +2434,12 @@
 
     if-eqz v0, :cond_10
 
-    const/4 v8, 0x1
+    move v8, v11
 
     goto :goto_7
 
     :cond_10
-    const/4 v8, 0x0
+    move v8, v12
 
     :goto_7
     move-object/from16 v0, p0
@@ -2536,12 +2536,12 @@
 
     if-eqz v0, :cond_12
 
-    const/4 v8, 0x1
+    move v8, v11
 
     goto :goto_8
 
     :cond_12
-    const/4 v8, 0x0
+    move v8, v12
 
     :goto_8
     move-object/from16 v0, p0
@@ -2591,12 +2591,12 @@
 
     if-eqz v0, :cond_14
 
-    const/4 v8, 0x1
+    move v8, v11
 
     goto :goto_9
 
     :cond_14
-    const/4 v8, 0x0
+    move v8, v12
 
     :goto_9
     move-object/from16 v0, p0
@@ -2626,7 +2626,7 @@
 .end method
 
 .method public release()V
-    .locals 8
+    .locals 7
 
     .line 858
     iget-object v0, p0, Lorg/telegram/messenger/video/TextureRenderer;->mediaEntities:Ljava/util/ArrayList;
@@ -2657,9 +2657,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-eqz v7, :cond_0
+    if-eqz v5, :cond_0
 
     .line 862
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->destroy(J)V
@@ -2713,7 +2713,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 570
     :goto_0
@@ -3026,12 +3026,12 @@
     :cond_6
     if-eqz v0, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_3
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 615
     :goto_3
@@ -3039,12 +3039,12 @@
 
     if-eqz v15, :cond_8
 
-    const/4 v15, 0x1
+    move v15, v3
 
     goto :goto_4
 
     :cond_8
-    const/4 v15, 0x0
+    move v15, v2
 
     :goto_4
     add-int/2addr v0, v15
@@ -3058,7 +3058,7 @@
 
     invoke-static {v15, v0, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 618
     :goto_5
@@ -3110,12 +3110,12 @@
     goto :goto_6
 
     :cond_9
-    const/16 v8, 0x10e
+    move v8, v15
 
     goto :goto_7
 
     :cond_a
-    const/16 v8, 0x5a
+    move v8, v2
 
     goto :goto_7
 
@@ -3365,7 +3365,7 @@
     :cond_11
     iget-object v0, v1, Lorg/telegram/messenger/video/TextureRenderer;->mediaEntities:Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_27
 
     .line 679
     :try_start_3
@@ -3426,7 +3426,7 @@
     const/4 v2, 0x0
 
     :goto_a
-    if-ge v2, v0, :cond_26
+    if-ge v2, v0, :cond_27
 
     .line 688
     iget-object v3, v1, Lorg/telegram/messenger/video/TextureRenderer;->mediaEntities:Ljava/util/ArrayList;
@@ -3442,7 +3442,7 @@
 
     const/4 v5, 0x0
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_17
 
     .line 690
     iget-byte v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
@@ -3500,7 +3500,7 @@
 
     iput v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->framesPerDraw:F
 
-    goto/16 :goto_12
+    goto/16 :goto_c
 
     :cond_12
     const/4 v6, 0x3
@@ -3562,7 +3562,7 @@
     .line 697
     iput v5, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->currentFrame:F
 
-    goto/16 :goto_12
+    goto/16 :goto_c
 
     .line 699
     :cond_13
@@ -3665,7 +3665,7 @@
     :goto_b
     iget-object v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->bitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v4, :cond_24
+    if-eqz v4, :cond_16
 
     .line 713
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
@@ -3709,17 +3709,17 @@
     .line 717
     iput v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->height:F
 
-    goto/16 :goto_12
+    goto :goto_c
 
     :cond_15
     cmpg-float v5, v4, v11
 
-    if-gez v5, :cond_24
+    if-gez v5, :cond_16
 
     .line 719
     iget v5, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     .line 720
     iget v7, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
@@ -3737,14 +3737,20 @@
     .line 721
     iput v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
 
-    goto/16 :goto_12
-
     :cond_16
+    :goto_c
+    const/high16 v7, -0x1000000
+
+    const/4 v8, 0x1
+
+    goto/16 :goto_13
+
+    :cond_17
     const/4 v6, 0x3
 
     const/4 v7, 0x1
 
-    if-ne v4, v7, :cond_24
+    if-ne v4, v7, :cond_25
 
     .line 726
     new-instance v4, Lorg/telegram/messenger/video/TextureRenderer$1;
@@ -3782,19 +3788,19 @@
     .line 736
     iget-object v7, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textTypeface:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    if-eqz v7, :cond_17
+    if-eqz v7, :cond_18
 
     invoke-virtual {v7}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->getTypeface()Landroid/graphics/Typeface;
 
     move-result-object v7
 
-    if-eqz v7, :cond_17
+    if-eqz v7, :cond_18
 
     .line 737
     invoke-virtual {v4, v7}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 739
-    :cond_17
+    :cond_18
     iget v7, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->fontSize:I
 
     int-to-float v7, v7
@@ -3819,12 +3825,12 @@
 
     const/4 v9, 0x0
 
-    :goto_c
+    :goto_d
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v10
 
-    if-eqz v10, :cond_19
+    if-eqz v10, :cond_1a
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3835,7 +3841,7 @@
     .line 745
     iget-object v10, v9, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    if-eqz v10, :cond_18
+    if-eqz v10, :cond_19
 
     .line 746
     new-instance v10, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
@@ -3852,10 +3858,10 @@
 
     invoke-direct {v10, v12, v14}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;-><init>(Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
 
-    goto :goto_d
+    goto :goto_e
 
     .line 748
-    :cond_18
+    :cond_19
     new-instance v10, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     iget-wide v14, v9, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
@@ -3870,7 +3876,7 @@
 
     invoke-direct {v10, v14, v15, v12}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;-><init>(JLandroid/graphics/Paint$FontMetricsInt;)V
 
-    :goto_d
+    :goto_e
     const/16 v12, 0xc
 
     .line 750
@@ -3894,10 +3900,10 @@
 
     const/4 v9, 0x1
 
-    goto :goto_c
+    goto :goto_d
 
     .line 754
-    :cond_19
+    :cond_1a
     invoke-virtual {v4}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v8
@@ -3912,7 +3918,7 @@
 
     const v12, 0x3f4ccccd    # 0.8f
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     float-to-int v10, v10
 
@@ -3934,24 +3940,24 @@
 
     const/4 v8, 0x1
 
-    if-eq v7, v8, :cond_1b
+    if-eq v7, v8, :cond_1c
 
-    if-eq v7, v13, :cond_1a
+    if-eq v7, v13, :cond_1b
 
     const/16 v7, 0x13
 
-    goto :goto_e
-
-    :cond_1a
-    const/16 v7, 0x15
-
-    goto :goto_e
+    goto :goto_f
 
     :cond_1b
+    const/16 v7, 0x15
+
+    goto :goto_f
+
+    :cond_1c
     const/16 v7, 0x11
 
     .line 771
-    :goto_e
+    :goto_f
     invoke-virtual {v4, v7}, Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;->setGravity(I)V
 
     .line 772
@@ -3959,49 +3965,49 @@
 
     const/16 v8, 0x11
 
-    if-lt v7, v8, :cond_20
+    if-lt v7, v8, :cond_21
 
     .line 774
     iget v8, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textAlign:I
 
     const/4 v10, 0x1
 
-    if-eq v8, v10, :cond_1f
+    if-eq v8, v10, :cond_20
 
-    if-eq v8, v13, :cond_1e
+    if-eq v8, v13, :cond_1f
 
     .line 777
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v8, :cond_1d
-
-    :cond_1c
-    const/4 v8, 0x3
-
-    goto :goto_10
+    if-eqz v8, :cond_1e
 
     :cond_1d
-    :goto_f
-    const/4 v8, 0x2
+    move v8, v6
+
+    goto :goto_11
+
+    :cond_1e
+    :goto_10
+    move v8, v13
+
+    goto :goto_11
+
+    .line 783
+    :cond_1f
+    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v8, :cond_1d
 
     goto :goto_10
 
-    .line 783
-    :cond_1e
-    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v8, :cond_1c
-
-    goto :goto_f
-
-    :cond_1f
+    :cond_20
     const/4 v8, 0x4
 
     .line 786
-    :goto_10
+    :goto_11
     invoke-virtual {v4, v8}, Landroid/widget/EditText;->setTextAlignment(I)V
 
-    :cond_20
+    :cond_21
     const/4 v8, 0x0
 
     .line 789
@@ -4028,18 +4034,18 @@
 
     const/16 v10, 0x17
 
-    if-lt v7, v10, :cond_21
+    if-lt v7, v10, :cond_22
 
     .line 794
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/video/TextureRenderer;->setBreakStrategy(Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;)V
 
     .line 796
-    :cond_21
+    :cond_22
     iget-byte v7, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
     and-int/lit8 v10, v7, 0x1
 
-    if-eqz v10, :cond_22
+    if-eqz v10, :cond_23
 
     const/4 v7, -0x1
 
@@ -4061,12 +4067,12 @@
 
     const/high16 v7, -0x1000000
 
-    goto :goto_11
+    goto :goto_12
 
-    :cond_22
+    :cond_23
     and-int/lit8 v7, v7, 0x4
 
-    if-eqz v7, :cond_23
+    if-eqz v7, :cond_24
 
     const/high16 v7, -0x1000000
 
@@ -4086,9 +4092,9 @@
     .line 805
     invoke-virtual {v4, v5, v5, v5, v10}, Landroid/widget/EditText;->setShadowLayer(FFFI)V
 
-    goto :goto_11
+    goto :goto_12
 
-    :cond_23
+    :cond_24
     const/high16 v7, -0x1000000
 
     .line 807
@@ -4112,7 +4118,7 @@
     invoke-virtual {v4, v10, v5, v11, v12}, Landroid/widget/EditText;->setShadowLayer(FFFI)V
 
     .line 813
-    :goto_11
+    :goto_12
     iget v10, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
     const/high16 v12, 0x40000000    # 2.0f
@@ -4163,7 +4169,7 @@
     .line 817
     invoke-virtual {v4, v10}, Landroid/widget/EditText;->draw(Landroid/graphics/Canvas;)V
 
-    if-eqz v9, :cond_25
+    if-eqz v9, :cond_26
 
     .line 819
     iput-object v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->view:Landroid/view/View;
@@ -4185,18 +4191,18 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    goto :goto_13
-
-    :cond_24
-    :goto_12
-    const/high16 v7, -0x1000000
-
-    const/4 v8, 0x1
-
-    const/4 v14, 0x0
+    goto :goto_14
 
     :cond_25
+    move v8, v7
+
+    const/high16 v7, -0x1000000
+
     :goto_13
+    const/4 v14, 0x0
+
+    :cond_26
+    :goto_14
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_a
@@ -4207,6 +4213,6 @@
     .line 827
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :cond_26
+    :cond_27
     return-void
 .end method

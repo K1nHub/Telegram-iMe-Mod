@@ -151,7 +151,10 @@ public final class RecentChatsController extends BaseController implements KoinC
         if (!z) {
             HistoryDialogModel historyDialogModel = this.historyDialogs.get(Long.valueOf(j));
             boolean z2 = true;
-            if ((historyDialogModel == null || !historyDialogModel.isPinned()) ? false : false) {
+            if (historyDialogModel == null || !historyDialogModel.isPinned()) {
+                z2 = false;
+            }
+            if (z2) {
                 return;
             }
         }
@@ -261,8 +264,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (HistoryDialogDb historyDialogDb : historyDialog) {
-            Pair m100to = TuplesKt.m100to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.historyDialogs = mutableMap;

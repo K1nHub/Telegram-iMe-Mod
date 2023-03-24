@@ -52,18 +52,13 @@
 
     move-result-object p0
     :try_end_0
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_2
 
     return-object p0
 
     :catch_0
-    nop
-
-    goto :goto_0
-
-    :catch_1
     move-exception p3
 
     .line 54
@@ -92,17 +87,17 @@
     :cond_0
     throw p3
 
-    :catch_2
+    :catch_1
     const/4 p0, 0x0
 
     .line 52
     sput-boolean p0, Lcom/bumptech/glide/load/resource/drawable/DrawableDecoderCompat;->shouldCallAppCompatResources:Z
 
+    :catch_2
     :cond_1
-    :goto_0
     if-eqz p3, :cond_2
 
-    goto :goto_1
+    goto :goto_0
 
     .line 63
     :cond_2
@@ -110,7 +105,7 @@
 
     move-result-object p3
 
-    :goto_1
+    :goto_0
     invoke-static {p1, p2, p3}, Lcom/bumptech/glide/load/resource/drawable/DrawableDecoderCompat;->loadDrawableV4(Landroid/content/Context;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0

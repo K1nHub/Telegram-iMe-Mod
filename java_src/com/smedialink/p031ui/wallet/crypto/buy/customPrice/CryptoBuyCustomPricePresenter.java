@@ -16,7 +16,7 @@ import com.smedialink.utils.validator.wallet.CustomPriceValidator;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: CryptoBuyCustomPricePresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPricePresenter */
@@ -53,7 +53,7 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
         Intrinsics.checkNotNullParameter(toAmount, "toAmount");
         floatOrNull = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(fromAmount);
         float f = BitmapDescriptorFactory.HUE_RED;
-        float floatValue = floatOrNull != null ? floatOrNull.floatValue() : BitmapDescriptorFactory.HUE_RED;
+        float floatValue = floatOrNull != null ? floatOrNull.floatValue() : 0.0f;
         floatOrNull2 = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(toAmount);
         if (floatOrNull2 != null) {
             f = floatOrNull2.floatValue();
@@ -99,7 +99,7 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
         Intrinsics.checkNotNullParameter(to, "to");
         floatOrNull = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(from);
         float f = BitmapDescriptorFactory.HUE_RED;
-        float floatValue = floatOrNull != null ? floatOrNull.floatValue() : BitmapDescriptorFactory.HUE_RED;
+        float floatValue = floatOrNull != null ? floatOrNull.floatValue() : 0.0f;
         floatOrNull2 = StringsKt__StringNumberConversionsJVMKt.toFloatOrNull(to);
         if (floatOrNull2 != null) {
             f = floatOrNull2.floatValue();
@@ -118,7 +118,7 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
     }
 
     private final DialogModel getConfirmationDialogModel(float f) {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3286R.string.wallet_crypto_buy_confirm_dialog_description, BalanceFormatter.formatBalance(Float.valueOf(f), this.minItem.getTokenInfo().getDecimals()), this.resourceManager.getString(this.minItem.getTokenInfo().getShortName())), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_crypto_buy_confirm_dialog_action_txt));
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3301R.string.wallet_crypto_buy_confirm_dialog_description, BalanceFormatter.formatBalance(Float.valueOf(f), this.minItem.getTokenInfo().getDecimals()), this.resourceManager.getString(this.minItem.getTokenInfo().getShortName())), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.wallet_crypto_buy_confirm_dialog_action_txt));
     }
 
     private final boolean isValidInput(Currency currency, Float f) {

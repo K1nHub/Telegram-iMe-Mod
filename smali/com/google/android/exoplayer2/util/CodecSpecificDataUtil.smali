@@ -236,7 +236,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_2
     if-ge p1, p0, :cond_2
@@ -354,7 +354,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     add-int/lit8 v3, v2, 0x3
@@ -386,7 +386,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_2
 
@@ -406,7 +406,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     const-string v3, "Invalid input: VOL not found."
@@ -425,7 +425,7 @@
 
     const/16 v3, 0x8
 
-    mul-int/lit8 v2, v2, 0x8
+    mul-int/2addr v2, v3
 
     .line 108
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
@@ -501,12 +501,12 @@
 
     if-nez p0, :cond_6
 
-    const/4 p0, 0x1
+    move p0, v6
 
     goto :goto_3
 
     :cond_6
-    const/4 p0, 0x0
+    move p0, v1
 
     :goto_3
     const-string v2, "Only supports rectangular video object layer shape."
@@ -544,12 +544,12 @@
 
     if-lez p0, :cond_7
 
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_4
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 141
     :goto_4
@@ -642,7 +642,7 @@
     return v2
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 282
     :goto_0
@@ -770,7 +770,7 @@
 
     if-ne p0, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -798,7 +798,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 240
     :cond_1
@@ -830,7 +830,7 @@
 
     new-array v2, v2, [[B
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 244
     :goto_0

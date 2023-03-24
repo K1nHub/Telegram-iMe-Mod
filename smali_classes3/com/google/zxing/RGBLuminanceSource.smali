@@ -36,7 +36,7 @@
     .line 40
     iput v0, p0, Lcom/google/zxing/RGBLuminanceSource;->top:I
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     .line 47
     new-array p2, p1, [B
@@ -118,7 +118,7 @@
     .line 103
     iget v5, p0, Lcom/google/zxing/RGBLuminanceSource;->top:I
 
-    mul-int v5, v5, v2
+    mul-int/2addr v5, v2
 
     iget v6, p0, Lcom/google/zxing/RGBLuminanceSource;->left:I
 
@@ -195,7 +195,7 @@
 
     iget v1, p0, Lcom/google/zxing/RGBLuminanceSource;->dataWidth:I
 
-    mul-int p1, p1, v1
+    mul-int/2addr p1, v1
 
     iget v1, p0, Lcom/google/zxing/RGBLuminanceSource;->left:I
 

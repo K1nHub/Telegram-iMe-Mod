@@ -319,13 +319,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
-    :catch_0
-    nop
-
     .line 226
-    :goto_1
+    :catch_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption;->delegate:Lorg/telegram/ui/Components/EditTextCaption$EditTextCaptionDelegate;
 
     if-eqz p1, :cond_3
@@ -1254,12 +1249,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EditTextCaption;->isInitLineCount:Z
@@ -1607,7 +1602,7 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 539
     :goto_0
@@ -1828,13 +1823,13 @@
 
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-interface {v2}, Landroid/text/Editable;->length()I
+    invoke-interface {v5}, Landroid/text/Editable;->length()I
 
-    move-result v2
+    move-result v5
 
-    invoke-interface {v1, v3, v2}, Landroid/text/Editable;->subSequence(II)Ljava/lang/CharSequence;
+    invoke-interface {v1, v3, v5}, Landroid/text/Editable;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -1843,12 +1838,15 @@
     .line 573
     :cond_4
     invoke-virtual {p0, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 574
+    invoke-virtual {p0, v2, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     return v0
 
-    .line 579
+    .line 580
     :catch_1
     :cond_5
     :goto_1

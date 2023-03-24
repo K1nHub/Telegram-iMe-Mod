@@ -620,7 +620,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, -0x1
+    move v4, v3
 
     :goto_0
     invoke-static {v0, v4}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->access$setReactionsAddRow$p(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;I)V
@@ -788,7 +788,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-eqz v4, :cond_4
@@ -1114,12 +1114,12 @@
 
     if-gt v0, p1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     if-eqz v0, :cond_1
@@ -1149,7 +1149,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     if-eqz v2, :cond_3
@@ -1257,7 +1257,7 @@
     if-ne p1, v0, :cond_0
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -1273,13 +1273,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_2
 
     :goto_2
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_3
 
@@ -1295,7 +1295,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     if-eqz v0, :cond_4
@@ -1322,12 +1322,12 @@
 
     if-gt v0, p1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_4
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_4
     if-eqz v0, :cond_6
@@ -1347,7 +1347,7 @@
     if-ne p1, v0, :cond_7
 
     :goto_5
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_6
 
@@ -1363,7 +1363,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_6
     if-eqz v0, :cond_9
@@ -1383,7 +1383,7 @@
     if-ne p1, v0, :cond_a
 
     :goto_7
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_8
 
@@ -1399,7 +1399,7 @@
     goto :goto_7
 
     :cond_b
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_8
     if-eqz v0, :cond_c
@@ -1426,7 +1426,7 @@
 
     if-gt v0, p1, :cond_d
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_d
     if-eqz v1, :cond_e
@@ -1482,7 +1482,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_3
 
@@ -1516,12 +1516,12 @@
 
     if-lez v2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-eqz v2, :cond_5
@@ -1536,32 +1536,32 @@
 
     if-lez v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     if-eqz v1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_2
     if-nez v1, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_3
     if-eqz v0, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_6
     return v3

@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9062
+    .line 9069
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 9071
+    .line 9078
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 9074
+    .line 9081
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 9068
+    .line 9075
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 9077
+    .line 9084
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
 
@@ -59,7 +59,7 @@
 
     goto :goto_1
 
-    .line 9081
+    .line 9088
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -89,7 +89,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 9084
+    .line 9091
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

@@ -1078,7 +1078,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     if-nez p1, :cond_2
@@ -1337,7 +1337,7 @@
 
     move-object/from16 v6, p0
 
-    const/16 v17, 0x3
+    move/from16 v17, v7
 
     move/from16 v7, p2
 
@@ -1372,7 +1372,7 @@
 
     :catch_0
     :cond_3
-    const/16 v17, 0x3
+    move/from16 v17, v7
 
     .line 303
     :catch_1
@@ -2405,7 +2405,7 @@
     if-eqz p0, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     return v0

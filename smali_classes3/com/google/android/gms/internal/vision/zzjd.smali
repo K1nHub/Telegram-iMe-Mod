@@ -437,7 +437,7 @@
     :cond_2
     iget-object p1, p1, Lcom/google/android/gms/internal/vision/zzjd;->zzb:[I
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 23
     :goto_0

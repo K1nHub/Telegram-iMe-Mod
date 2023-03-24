@@ -316,7 +316,7 @@
 
     :cond_1
     :goto_1
-    const/4 v0, -0x1
+    move/from16 v0, v16
 
     :goto_2
     const-wide/high16 v18, -0x4010000000000000L    # -1.0
@@ -1200,9 +1200,9 @@
     :goto_11
     int-to-double v2, v1
 
-    cmpg-double v6, v2, v4
+    cmpg-double v2, v2, v4
 
-    if-gez v6, :cond_1a
+    if-gez v2, :cond_1a
 
     .line 123
     invoke-virtual {v9, v1}, Lcom/google/android/gms/internal/measurement/zzae;->zze(I)Lcom/google/android/gms/internal/measurement/zzap;
@@ -2403,6 +2403,8 @@
     :cond_3e
     return-object v1
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x69e9ad94 -> :sswitch_13
@@ -2668,7 +2670,7 @@
 
     if-eqz p3, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v0
 
     goto :goto_1
 
@@ -2685,7 +2687,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_2
     if-eq v1, p3, :cond_4
@@ -2693,7 +2695,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v6, 0x1
+    move v6, v1
 
     :goto_3
     if-nez p2, :cond_5
@@ -2709,7 +2711,7 @@
     :goto_4
     sub-int p3, v4, v5
 
-    mul-int p3, p3, v6
+    mul-int/2addr p3, v6
 
     if-ltz p3, :cond_8
 

@@ -564,7 +564,7 @@
     .line 142
     sget v1, Lcom/google/android/material/R$layout;->mtrl_calendar_vertical:I
 
-    const/4 v9, 0x1
+    move v9, v2
 
     goto :goto_0
 
@@ -572,7 +572,7 @@
     :cond_0
     sget v1, Lcom/google/android/material/R$layout;->mtrl_calendar_horizontal:I
 
-    const/4 v9, 0x0
+    move v9, v3
 
     .line 149
     :goto_0
@@ -845,12 +845,12 @@
 
     if-le v2, v5, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_0
     if-lez v0, :cond_1
@@ -858,7 +858,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 305
     :goto_1

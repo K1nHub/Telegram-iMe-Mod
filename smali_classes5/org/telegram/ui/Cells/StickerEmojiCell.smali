@@ -266,9 +266,9 @@
 
     const-wide/16 v3, 0x41a
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-lez v5, :cond_2
+    if-lez v0, :cond_2
 
     .line 377
     iput-wide v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->time:J
@@ -291,7 +291,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr v0, v1
 
@@ -317,7 +317,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumAlpha:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
@@ -443,7 +443,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumAlpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {p1, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
@@ -706,7 +706,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumAlpha:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
@@ -1037,7 +1037,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 302
     :goto_0
@@ -1195,16 +1195,14 @@
 
     const/4 v0, 0x1
 
-    const/4 v5, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
-
     :goto_0
+    move v5, v0
+
     const/4 v1, 0x0
 
     const/4 v3, 0x0
@@ -1368,11 +1366,11 @@
 
     move-wide/from16 v11, v17
 
-    const/4 v1, 0x1
+    move v1, v13
 
     move-object v13, v2
 
-    const/4 v2, 0x4
+    move v2, v15
 
     move/from16 v15, v19
 
@@ -1381,7 +1379,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v13
 
     .line 157
     iget-object v9, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
@@ -1430,7 +1428,7 @@
 
     move-object v13, v2
 
-    const/4 v2, 0x4
+    move v2, v15
 
     move/from16 v15, v20
 
@@ -1474,14 +1472,14 @@
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     :goto_3
-    const/4 v6, 0x1
+    move v6, v1
 
     goto/16 :goto_9
 
     :cond_5
-    const/4 v2, 0x4
+    move v6, v13
 
-    const/4 v6, 0x1
+    move v2, v15
 
     if-eqz v1, :cond_16
 
@@ -1786,12 +1784,12 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_9
+    goto/16 :goto_9
 
     :cond_11
     if-eqz p5, :cond_15
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 206
     :goto_7
@@ -1851,7 +1849,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v13, 0x1
+    move v13, v6
 
     goto :goto_8
 
@@ -1861,7 +1859,7 @@
     goto :goto_7
 
     :cond_13
-    const/4 v13, 0x0
+    move v13, v4
 
     :goto_8
     if-nez v13, :cond_14
@@ -1929,7 +1927,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 

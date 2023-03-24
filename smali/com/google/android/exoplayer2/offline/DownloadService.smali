@@ -1173,12 +1173,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 611
     :goto_0
@@ -1191,7 +1191,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     if-eqz v7, :cond_3
@@ -1331,13 +1331,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, p2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v4, 0x1
+    move v4, v1
 
     :goto_1
     or-int/2addr v3, v4
@@ -1396,7 +1396,7 @@
     :cond_4
     const/16 v5, 0x8
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :sswitch_1
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1502,7 +1502,7 @@
     goto :goto_3
 
     :cond_b
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_3
 
@@ -1518,7 +1518,7 @@
     goto :goto_3
 
     :cond_c
-    const/4 v5, 0x0
+    move v5, p2
 
     :goto_3
     const-string p3, "stop_reason"
@@ -1713,6 +1713,8 @@
 
     :cond_12
     return v1
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

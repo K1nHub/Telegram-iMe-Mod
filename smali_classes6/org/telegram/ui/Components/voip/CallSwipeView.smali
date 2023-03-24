@@ -292,11 +292,11 @@
 
     int-to-float v3, v3
 
+    cmpl-float v3, v0, v3
+
     const/high16 v4, 0x3f800000    # 1.0f
 
     const/16 v5, 0x10
-
-    cmpl-float v3, v0, v3
 
     if-lez v3, :cond_3
 
@@ -305,7 +305,7 @@
 
     move-result v3
 
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     int-to-float v3, v3
 
@@ -339,7 +339,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     invoke-static {v6}, Ljava/lang/Math;->round(F)I
 
@@ -563,7 +563,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F

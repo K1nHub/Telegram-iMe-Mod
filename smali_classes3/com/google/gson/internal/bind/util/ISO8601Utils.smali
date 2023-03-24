@@ -834,9 +834,9 @@
     throw v0
 
     :cond_1
-    move v0, p1
+    move v3, v0
 
-    const/4 v3, 0x0
+    move v0, p1
 
     :goto_0
     if-ge v0, p2, :cond_3

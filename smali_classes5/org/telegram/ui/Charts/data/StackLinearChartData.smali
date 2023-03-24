@@ -47,7 +47,7 @@
 
     const-wide/16 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, p1
 
     .line 26
     :goto_0
@@ -64,7 +64,7 @@
 
     array-length v4, v4
 
-    const/4 v5, 0x0
+    move v5, p1
 
     :goto_1
     if-ge v5, v4, :cond_1
@@ -121,7 +121,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v4, 0x0
+    move v4, p1
 
     .line 39
     :goto_2
@@ -144,9 +144,9 @@
 
     const-wide v7, 0x3f847ae147ae147bL    # 0.01
 
-    cmpg-double v9, v5, v7
+    cmpg-double v5, v5, v7
 
-    if-gez v9, :cond_3
+    if-gez v5, :cond_3
 
     aget v5, v0, v4
 
@@ -234,7 +234,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Charts/data/StackLinearChartData;->ySum:[I
 
-    const/4 v1, 0x0
+    move v1, p1
 
     :goto_4
     if-ge v1, p2, :cond_7
@@ -244,7 +244,7 @@
 
     aput p1, v2, v1
 
-    const/4 v2, 0x0
+    move v2, p1
 
     :goto_5
     if-ge v2, v0, :cond_6
@@ -315,7 +315,7 @@
 
     add-int/2addr p2, p3
 
-    const/4 p3, 0x0
+    move p3, v0
 
     .line 71
     :cond_0
@@ -342,7 +342,7 @@
     :cond_1
     if-gez p3, :cond_2
 
-    const/4 p3, 0x0
+    move p3, v0
 
     :cond_2
     sub-int v1, p2, p3
@@ -366,7 +366,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Charts/data/ChartData;->lines:Ljava/util/ArrayList;
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 86
     :goto_0
@@ -463,7 +463,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_1
     if-gt p3, p2, :cond_5
@@ -477,7 +477,7 @@
 
     aput-wide v4, v2, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 100
     :goto_2
@@ -605,12 +605,12 @@
     .line 121
     new-array v6, v2, [I
 
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_0
     if-ge v7, v1, :cond_4
 
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_1
     if-ge v8, v2, :cond_1
@@ -648,7 +648,7 @@
 
     if-nez v8, :cond_3
 
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_2
     if-ge v8, v2, :cond_2

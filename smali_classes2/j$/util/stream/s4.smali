@@ -130,9 +130,9 @@
 
     check-cast v1, [J
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aget-wide v2, v1, v3
+    aget-wide v2, v1, v2
 
     goto :goto_0
 

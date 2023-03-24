@@ -18,7 +18,7 @@ import com.google.android.exoplayer2.extractor.p016ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -109,7 +109,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
         this.blobDrawable2.minRadius = AndroidUtilities.m50dp(32);
         this.blobDrawable.generateBlob();
         this.blobDrawable2.generateBlob();
-        int i3 = C3286R.C3291raw.voice_outlined;
+        int i3 = C3301R.C3306raw.voice_outlined;
         this.bigMicDrawable = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m50dp(22), AndroidUtilities.m50dp(30), true, null);
         setWillNotDraw(false);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
@@ -238,26 +238,26 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:111:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x024f  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02a1  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:134:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0156  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x016c  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0233  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0299  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x02c7  */
+    /* JADX WARN: Removed duplicated region for block: B:135:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00ed  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x016d  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -265,7 +265,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
     */
     protected void onDraw(android.graphics.Canvas r19) {
         /*
-            Method dump skipped, instructions count: 741
+            Method dump skipped, instructions count: 721
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.GroupCallPipButton.onDraw(android.graphics.Canvas):void");
@@ -298,16 +298,16 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
             }
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             if (sharedInstance != null && ChatObject.isChannelOrGiga(sharedInstance.getChat())) {
-                string = LocaleController.getString("VoipChannelVoiceChat", C3286R.string.VoipChannelVoiceChat);
+                string = LocaleController.getString("VoipChannelVoiceChat", C3301R.string.VoipChannelVoiceChat);
             } else {
-                string = LocaleController.getString("VoipGroupVoiceChat", C3286R.string.VoipGroupVoiceChat);
+                string = LocaleController.getString("VoipGroupVoiceChat", C3301R.string.VoipGroupVoiceChat);
             }
             if (i == 0) {
-                string = string + ", " + LocaleController.getString("VoipTapToMute", C3286R.string.VoipTapToMute);
+                string = string + ", " + LocaleController.getString("VoipTapToMute", C3301R.string.VoipTapToMute);
             } else if (i == 2) {
-                string = string + ", " + LocaleController.getString("Connecting", C3286R.string.Connecting);
+                string = string + ", " + LocaleController.getString("Connecting", C3301R.string.Connecting);
             } else if (i == 3) {
-                string = string + ", " + LocaleController.getString("VoipMutedByAdmin", C3286R.string.VoipMutedByAdmin);
+                string = string + ", " + LocaleController.getString("VoipMutedByAdmin", C3301R.string.VoipMutedByAdmin);
             }
             setContentDescription(string);
             invalidate();
@@ -323,10 +323,10 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
             return;
         }
         if (GroupCallPip.getInstance().showAlert) {
-            i = C3286R.string.AccDescrCloseMenu;
+            i = C3301R.string.AccDescrCloseMenu;
             str = "AccDescrCloseMenu";
         } else {
-            i = C3286R.string.AccDescrOpenMenu2;
+            i = C3301R.string.AccDescrOpenMenu2;
             str = "AccDescrOpenMenu2";
         }
         accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(str, i)));

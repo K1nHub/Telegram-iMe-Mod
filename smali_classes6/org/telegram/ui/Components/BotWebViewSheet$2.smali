@@ -473,7 +473,7 @@
 .end method
 
 .method public onSendWebViewData(Ljava/lang/String;)V
-    .locals 5
+    .locals 4
 
     .line 220
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
@@ -484,9 +484,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2;->sentWebViewData:Z
 
@@ -710,12 +710,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, p4
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     invoke-virtual {p2, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -810,7 +810,7 @@
 
     if-eqz p6, :cond_4
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, p4
 
     :cond_4
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -821,12 +821,12 @@
 
     if-eqz p6, :cond_5
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, p4
 
     goto :goto_1
 
     :cond_5
-    const p3, 0x3dcccccd    # 0.1f
+    move p3, p2
 
     .line 401
     :goto_1
@@ -839,7 +839,7 @@
     goto :goto_2
 
     :cond_6
-    const p4, 0x3dcccccd    # 0.1f
+    move p4, p2
 
     .line 402
     :goto_2

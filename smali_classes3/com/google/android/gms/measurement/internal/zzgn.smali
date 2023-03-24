@@ -105,13 +105,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p2, 0x1
+    move p2, v1
 
     .line 2
     :goto_1

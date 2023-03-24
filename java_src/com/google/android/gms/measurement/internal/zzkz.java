@@ -550,8 +550,8 @@ public final class zzkz extends zzgp {
             } else {
                 if (zzae(bundle.get(str5))) {
                     this.zzs.zzay().zzl().zzd("Nested Bundle parameters are not allowed; discarded. event name, param name, child param name", str2, str3, str5);
-                    str4 = str5;
                     zza2 = 22;
+                    str4 = str5;
                 } else {
                     str4 = str5;
                     zza2 = zza(str, str2, str5, bundle.get(str5), bundle, list, z, false);
@@ -650,15 +650,15 @@ public final class zzkz extends zzgp {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00de A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00dd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00de  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     final int zza(java.lang.String r15, java.lang.String r16, java.lang.String r17, java.lang.Object r18, android.os.Bundle r19, java.util.List<java.lang.String> r20, boolean r21, boolean r22) {
         /*
-            Method dump skipped, instructions count: 372
+            Method dump skipped, instructions count: 371
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.measurement.internal.zzkz.zza(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, android.os.Bundle, java.util.List, boolean, boolean):int");
@@ -992,15 +992,15 @@ public final class zzkz extends zzgp {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0108 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x010a A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public final android.os.Bundle zzy(java.lang.String r21, java.lang.String r22, android.os.Bundle r23, java.util.List<java.lang.String> r24, boolean r25) {
         /*
-            Method dump skipped, instructions count: 271
+            Method dump skipped, instructions count: 273
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.measurement.internal.zzkz.zzy(java.lang.String, java.lang.String, android.os.Bundle, java.util.List, boolean):android.os.Bundle");

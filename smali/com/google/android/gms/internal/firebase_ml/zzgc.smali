@@ -43,9 +43,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     return-void
 
@@ -55,13 +55,13 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
-    cmp-long v4, v2, v0
+    cmp-long v2, v2, v0
 
-    if-ltz v4, :cond_1
+    if-ltz v2, :cond_1
 
     goto :goto_0
 

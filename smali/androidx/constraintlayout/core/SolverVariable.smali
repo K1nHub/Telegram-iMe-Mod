@@ -336,7 +336,7 @@
     .line 270
     iget v2, p0, Landroidx/constraintlayout/core/SolverVariable;->mClientEquationsCount:I
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -400,7 +400,7 @@
     .line 233
     iput v0, p0, Landroidx/constraintlayout/core/SolverVariable;->definitionId:I
 
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_0
     if-ge v0, v1, :cond_0
@@ -487,7 +487,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0

@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: WalletSwapFeePresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.swap.fee.WalletSwapFeePresenter */
@@ -177,9 +177,9 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
                 subscribeToChangeEvents$lambda$0 = WalletSwapFeePresenter.subscribeToChangeEvents$lambda$0(Function1.this, obj);
                 return subscribeToChangeEvents$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui());
+        }).subscribeOn(this.schedulersProvider.mo707io()).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "private fun subscribeToC…     .autoDispose()\n    }");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2270x4867fe3b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2271x4867fe3c(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2284x4867fe3b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2285x4867fe3c(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -205,7 +205,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapDeadline[] deadlineOptions = getDeadlineOptions();
         ArrayList arrayList = new ArrayList(deadlineOptions.length);
         for (SwapDeadline swapDeadline : deadlineOptions) {
-            arrayList.add(this.resourceManager.getString(C3286R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
+            arrayList.add(this.resourceManager.getString(C3301R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
         }
         return (String[]) arrayList.toArray(new String[0]);
     }
@@ -215,7 +215,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapSlippage[] slipOptions = getSlipOptions();
         ArrayList arrayList = new ArrayList(slipOptions.length);
         for (SwapSlippage swapSlippage : slipOptions) {
-            arrayList.add(this.resourceManager.getString(C3286R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
+            arrayList.add(this.resourceManager.getString(C3301R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
         }
         return (String[]) arrayList.toArray(new String[0]);
     }

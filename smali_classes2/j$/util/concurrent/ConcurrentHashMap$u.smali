@@ -120,16 +120,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
-
     goto :goto_0
 
     :cond_0
     array-length v0, v1
 
+    :goto_0
     move v4, v0
 
-    :goto_0
     new-instance v6, Lj$/util/concurrent/ConcurrentHashMap$s;
 
     const/4 v3, 0x0
@@ -245,16 +243,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v7, 0x0
-
     goto :goto_0
 
     :cond_0
     array-length v0, v4
 
+    :goto_0
     move v7, v0
 
-    :goto_0
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap$t;
 
     const/4 v6, 0x0

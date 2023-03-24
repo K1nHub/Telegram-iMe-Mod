@@ -1,0 +1,126 @@
+.class public final Lwallet/core/jni/DerivationPathIndex;
+.super Ljava/lang/Object;
+.source "DerivationPathIndex.java"
+
+
+# instance fields
+.field private nativeHandle:J
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 2
+
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, 0x0
+
+    .line 22
+    iput-wide v0, p0, Lwallet/core/jni/DerivationPathIndex;->nativeHandle:J
+
+    return-void
+.end method
+
+.method public constructor <init>(IZ)V
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "value",
+            "hardened"
+        }
+    .end annotation
+
+    .line 69
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 70
+    invoke-static {p1, p2}, Lwallet/core/jni/DerivationPathIndex;->nativeCreate(IZ)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lwallet/core/jni/DerivationPathIndex;->nativeHandle:J
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p1, v0
+
+    if-eqz v0, :cond_0
+
+    .line 75
+    invoke-static {p0, p1, p2}, Lwallet/core/jni/DerivationPathIndexPhantomReference;->register(Lwallet/core/jni/DerivationPathIndex;J)V
+
+    return-void
+
+    .line 72
+    :cond_0
+    new-instance p1, Ljava/security/InvalidParameterException;
+
+    invoke-direct {p1}, Ljava/security/InvalidParameterException;-><init>()V
+
+    throw p1
+.end method
+
+.method static createFromNative(J)Lwallet/core/jni/DerivationPathIndex;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "nativeHandle"
+        }
+    .end annotation
+
+    .line 26
+    new-instance v0, Lwallet/core/jni/DerivationPathIndex;
+
+    invoke-direct {v0}, Lwallet/core/jni/DerivationPathIndex;-><init>()V
+
+    .line 27
+    iput-wide p0, v0, Lwallet/core/jni/DerivationPathIndex;->nativeHandle:J
+
+    .line 28
+    invoke-static {v0, p0, p1}, Lwallet/core/jni/DerivationPathIndexPhantomReference;->register(Lwallet/core/jni/DerivationPathIndex;J)V
+
+    return-object v0
+.end method
+
+.method static native nativeCreate(IZ)J
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "value",
+            "hardened"
+        }
+    .end annotation
+.end method
+
+.method static native nativeDelete(J)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "handle"
+        }
+    .end annotation
+.end method
+
+
+# virtual methods
+.method public native description()Ljava/lang/String;
+.end method
+
+.method public native hardened()Z
+.end method
+
+.method public native value()I
+.end method

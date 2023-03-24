@@ -317,7 +317,7 @@
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_5
@@ -336,9 +336,9 @@
 
     move-result v5
 
-    const/4 v6, 0x1
-
     cmpl-float v5, v5, v1
+
+    const/4 v6, 0x1
 
     if-eqz v5, :cond_3
 
@@ -533,7 +533,7 @@
 
     move-result v3
 
-    mul-int v1, v1, v3
+    mul-int/2addr v1, v3
 
     sub-int/2addr v0, v1
 
@@ -543,7 +543,7 @@
 
     move-result v1
 
-    mul-int p1, p1, v1
+    mul-int/2addr p1, v1
 
     add-int/2addr v0, p1
 
@@ -917,7 +917,7 @@
     .line 336
     invoke-static {p1, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    const/4 p1, 0x0
+    move p1, v8
 
     :goto_2
     if-ge p1, v2, :cond_5
@@ -1422,7 +1422,7 @@
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
     if-ge v4, v2, :cond_6

@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 64939
+    .line 64966
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 64946
+    .line 64973
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$account_SavedRingtone;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$account_SavedRingtone;
 
     move-result-object p1
@@ -45,17 +45,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 64950
+    .line 64977
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_saveRingtone;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 64951
+    .line 64978
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_saveRingtone;->id:Lorg/telegram/tgnet/TLRPC$InputDocument;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 64952
+    .line 64979
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_saveRingtone;->unsave:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V

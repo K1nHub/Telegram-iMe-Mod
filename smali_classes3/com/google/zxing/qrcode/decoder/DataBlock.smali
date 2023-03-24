@@ -52,9 +52,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_0
@@ -79,16 +79,16 @@
     .line 69
     array-length v2, p2
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ge v4, v2, :cond_2
 
     aget-object v6, p2, v4
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 70
     :goto_2
@@ -172,14 +172,14 @@
 
     sub-int/2addr p2, p1
 
-    const/4 p1, 0x0
+    move p1, v1
 
-    const/4 v2, 0x0
+    move v2, p1
 
     :goto_5
     if-ge p1, p2, :cond_6
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_6
     if-ge v4, v5, :cond_5
@@ -240,7 +240,7 @@
     :goto_8
     if-ge p2, p1, :cond_a
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_9
     if-ge v4, v5, :cond_9

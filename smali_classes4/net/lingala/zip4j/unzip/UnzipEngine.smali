@@ -1246,9 +1246,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_4
+    if-eqz v0, :cond_4
 
     .line 284
     new-instance v0, Ljava/lang/StringBuilder;

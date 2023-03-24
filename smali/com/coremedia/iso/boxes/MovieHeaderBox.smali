@@ -1399,7 +1399,7 @@
 .end method
 
 .method public setDuration(J)V
-    .locals 3
+    .locals 2
 
     sget-object v0, Lcom/coremedia/iso/boxes/MovieHeaderBox;->ajc$tjp_12:Lorg/aspectj/lang/JoinPoint$StaticPart;
 
@@ -1422,9 +1422,9 @@
 
     const-wide v0, 0x100000000L
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 

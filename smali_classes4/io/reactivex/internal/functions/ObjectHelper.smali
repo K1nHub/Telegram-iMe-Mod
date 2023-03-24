@@ -62,18 +62,18 @@
 .end method
 
 .method public static compare(JJ)I
-    .locals 1
+    .locals 0
 
-    cmp-long v0, p0, p2
+    cmp-long p0, p0, p2
 
-    if-gez v0, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, -0x1
 
     goto :goto_0
 
     :cond_0
-    if-lez v0, :cond_1
+    if-lez p0, :cond_1
 
     const/4 p0, 0x1
 
@@ -184,13 +184,13 @@
 .end method
 
 .method public static verifyPositive(JLjava/lang/String;)J
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     return-wide p0
 

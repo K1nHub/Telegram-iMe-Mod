@@ -228,9 +228,9 @@
     :cond_8
     const-wide p1, 0x7fffffffffffffffL
 
-    cmp-long p3, p9, p1
+    cmp-long p1, p9, p1
 
-    if-eqz p3, :cond_9
+    if-eqz p1, :cond_9
 
     .line 14
     invoke-virtual {v0, p9, p10}, Lcom/google/android/gms/location/LocationRequest$Builder;->setMaxUpdateAgeMillis(J)Lcom/google/android/gms/location/LocationRequest$Builder;

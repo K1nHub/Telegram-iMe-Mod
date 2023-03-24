@@ -275,8 +275,8 @@ public final class ToolsController extends BaseController {
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
                 Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type org.fork.enums.DialogType");
-                Pair m100to = TuplesKt.m100to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
-                linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+                Pair m99to = TuplesKt.m99to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
+                linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.selectedChatAttachAlertButtons = mutableMap;
@@ -354,8 +354,8 @@ public final class ToolsController extends BaseController {
         Iterator<T> it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            Pair m100to = TuplesKt.m100to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(((DialogType) entry.getKey()).name(), ChatAttachAlertButton.Companion.mapEnumsToNames((Set) entry.getValue()));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;

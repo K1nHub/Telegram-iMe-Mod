@@ -40,7 +40,7 @@ final class TwitterSearchPresenter$flatMapSearchResult$2 extends Lambda implemen
                 }
                 obj = it.next();
                 Long telegramUserId = ((TwitterUserInfo) obj).getTelegramUserId();
-                long j = tLRPC$User.f1639id;
+                long j = tLRPC$User.f1640id;
                 if (telegramUserId != null && telegramUserId.longValue() == j) {
                     z = true;
                     continue;

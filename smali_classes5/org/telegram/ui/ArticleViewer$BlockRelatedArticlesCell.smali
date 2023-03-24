@@ -193,12 +193,12 @@
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 9570
     :goto_0
@@ -245,8 +245,6 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v6, 0x0
-
     goto :goto_1
 
     :cond_4
@@ -256,9 +254,9 @@
 
     int-to-float v4, v0
 
+    :goto_1
     move v6, v4
 
-    :goto_1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -345,12 +343,12 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v12
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v13
 
     :goto_0
     iput-boolean v0, v10, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesCell;->divider:Z
@@ -392,11 +390,11 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, 0x0
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v3, 0x0
 
-    if-eqz v5, :cond_1
+    if-eqz v2, :cond_1
 
     iget-object v2, v10, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
@@ -407,7 +405,7 @@
     goto :goto_1
 
     :cond_1
-    move-object v0, v4
+    move-object v0, v3
 
     :goto_1
     if-eqz v0, :cond_3
@@ -429,9 +427,9 @@
     .line 9489
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
-    const/16 v3, 0x50
+    const/16 v4, 0x50
 
-    invoke-static {v2, v3, v12}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZ)Lorg/telegram/tgnet/TLRPC$PhotoSize;
+    invoke-static {v2, v4, v12}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZ)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v2
 
@@ -440,7 +438,7 @@
     goto :goto_2
 
     :cond_2
-    move-object v4, v2
+    move-object v3, v2
 
     .line 9493
     :goto_2
@@ -450,7 +448,7 @@
 
     move-result-object v17
 
-    invoke-static {v4, v0}, Lorg/telegram/messenger/ImageLocation;->getForPhoto(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Photo;)Lorg/telegram/messenger/ImageLocation;
+    invoke-static {v3, v0}, Lorg/telegram/messenger/ImageLocation;->getForPhoto(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Photo;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v19
 
@@ -653,7 +651,7 @@
 
     add-int v18, v18, v2
 
-    const/4 v2, 0x0
+    move v2, v13
 
     :goto_5
     if-ge v2, v0, :cond_7
@@ -671,7 +669,7 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v12
 
     goto :goto_6
 
@@ -681,7 +679,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v13
 
     .line 9524
     :goto_6
@@ -704,9 +702,9 @@
     :cond_8
     iput v13, v10, Lorg/telegram/ui/ArticleViewer$BlockRelatedArticlesCell;->textOffset:I
 
-    const/4 v0, 0x0
+    move v8, v0
 
-    const/4 v8, 0x4
+    move v0, v13
 
     .line 9530
     :goto_7
@@ -741,7 +739,7 @@
 
     int-to-long v6, v6
 
-    mul-long v6, v6, v2
+    mul-long/2addr v6, v2
 
     invoke-virtual {v5, v6, v7}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
@@ -808,7 +806,7 @@
 
     int-to-long v4, v4
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 

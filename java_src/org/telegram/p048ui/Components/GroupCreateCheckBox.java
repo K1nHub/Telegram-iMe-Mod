@@ -153,14 +153,14 @@ public class GroupCreateCheckBox extends View {
             this.drawBitmap.eraseColor(0);
             float f = this.progress;
             float f2 = f >= 0.5f ? 1.0f : f / 0.5f;
-            float f3 = f < 0.5f ? BitmapDescriptorFactory.HUE_RED : (f - 0.5f) / 0.5f;
+            float f3 = f < 0.5f ? 0.0f : (f - 0.5f) / 0.5f;
             if (!this.isCheckAnimation) {
                 f = 1.0f - f;
             }
             if (f < 0.2f) {
                 m50dp = (AndroidUtilities.m50dp(2) * f) / 0.2f;
             } else {
-                m50dp = f < 0.4f ? AndroidUtilities.m50dp(2) - ((AndroidUtilities.m50dp(2) * (f - 0.2f)) / 0.2f) : BitmapDescriptorFactory.HUE_RED;
+                m50dp = f < 0.4f ? AndroidUtilities.m50dp(2) - ((AndroidUtilities.m50dp(2) * (f - 0.2f)) / 0.2f) : 0.0f;
             }
             if (f3 != BitmapDescriptorFactory.HUE_RED) {
                 canvas.drawCircle(measuredWidth, measuredHeight, ((measuredWidth - AndroidUtilities.m50dp(2)) + (AndroidUtilities.m50dp(2) * f3)) - m50dp, this.backgroundPaint);

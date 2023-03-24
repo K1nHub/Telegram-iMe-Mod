@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28350
+    .line 28360
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 
     goto :goto_0
 
-    .line 28359
+    .line 28369
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
@@ -36,7 +36,7 @@
 
     goto :goto_0
 
-    .line 28356
+    .line 28366
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoUnknown;
 
@@ -49,7 +49,7 @@
 
     goto :goto_1
 
-    .line 28363
+    .line 28373
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -79,7 +79,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 28366
+    .line 28376
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

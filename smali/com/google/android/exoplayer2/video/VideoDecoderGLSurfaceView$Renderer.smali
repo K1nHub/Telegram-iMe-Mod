@@ -416,7 +416,7 @@
 
     check-cast v3, [Ljava/nio/ByteBuffer;
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_1
     const/4 v8, 0x2
@@ -503,7 +503,7 @@
 
     aput v0, v3, v5
 
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_3
     const/4 v7, 0x4
@@ -535,12 +535,12 @@
 
     if-eqz v10, :cond_8
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_4
 
     :cond_8
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_4
     invoke-static {v10}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V

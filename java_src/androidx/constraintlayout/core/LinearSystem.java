@@ -390,7 +390,7 @@ public class LinearSystem {
             r5.mNumRows = r0
             goto L7c
         L7b:
-            r1 = 0
+            r1 = r0
         L7c:
             boolean r0 = r6.hasKeyVariable()
             if (r0 != 0) goto L83

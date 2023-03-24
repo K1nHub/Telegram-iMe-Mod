@@ -1048,7 +1048,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 p4, 0x0
+    move p4, v1
 
     :goto_2
     sget-object p1, Lorg/telegram/ui/ContactAddActivity$$ExternalSyntheticLambda13;->INSTANCE:Lorg/telegram/ui/ContactAddActivity$$ExternalSyntheticLambda13;
@@ -1158,12 +1158,12 @@
 
     if-eqz p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_2
     sget-object v2, Lorg/telegram/ui/ContactAddActivity$$ExternalSyntheticLambda14;->INSTANCE:Lorg/telegram/ui/ContactAddActivity$$ExternalSyntheticLambda14;
@@ -1394,7 +1394,7 @@
     .line 709
     invoke-direct {p0, v10, v11}, Lorg/telegram/ui/ContactAddActivity;->showAvatarProgress(ZZ)V
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_4
     move/from16 v2, p8
@@ -1430,12 +1430,12 @@
 
     if-eqz p3, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v10
 
     goto :goto_2
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v11
 
     .line 697
     :goto_2
@@ -2879,7 +2879,7 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x5
+    move v7, v10
 
     goto :goto_1
 
@@ -2919,7 +2919,7 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v5, 0x5
+    move v5, v10
 
     goto :goto_2
 
@@ -2966,7 +2966,7 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v6, 0x5
+    move v6, v10
 
     goto :goto_3
 
@@ -3039,7 +3039,7 @@
 
     if-eqz v6, :cond_4
 
-    const/4 v6, 0x5
+    move v6, v10
 
     goto :goto_4
 
@@ -3071,7 +3071,7 @@
 
     if-eqz v6, :cond_5
 
-    const/4 v8, 0x5
+    move v8, v10
 
     goto :goto_5
 
@@ -3085,24 +3085,24 @@
 
     if-eqz v6, :cond_6
 
-    const/4 v14, 0x0
+    move v14, v4
 
     goto :goto_6
 
     :cond_6
-    const/16 v14, 0x50
+    move v14, v8
 
     :goto_6
     const/4 v15, 0x3
 
     if-eqz v6, :cond_7
 
-    const/16 v16, 0x50
+    move/from16 v16, v8
 
     goto :goto_7
 
     :cond_7
-    const/16 v16, 0x0
+    move/from16 v16, v4
 
     :goto_7
     const/16 v17, 0x0
@@ -3167,7 +3167,7 @@
 
     if-eqz v11, :cond_8
 
-    const/4 v11, 0x5
+    move v11, v10
 
     goto :goto_8
 
@@ -3188,7 +3188,7 @@
 
     if-eqz v13, :cond_9
 
-    const/4 v14, 0x5
+    move v14, v10
 
     goto :goto_9
 
@@ -3200,12 +3200,12 @@
 
     if-eqz v13, :cond_a
 
-    const/4 v15, 0x0
+    move v15, v4
 
     goto :goto_a
 
     :cond_a
-    const/16 v15, 0x50
+    move v15, v8
 
     :goto_a
     const/16 v16, 0x20
@@ -3215,7 +3215,7 @@
     goto :goto_b
 
     :cond_b
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_b
     const/16 v17, 0x0
@@ -3322,7 +3322,7 @@
 
     if-eqz v4, :cond_c
 
-    const/4 v4, 0x5
+    move v4, v10
 
     goto :goto_c
 
@@ -3510,7 +3510,7 @@
 
     if-eqz v5, :cond_d
 
-    const/4 v5, 0x5
+    move v5, v10
 
     goto :goto_d
 
@@ -3709,7 +3709,7 @@
 
     if-eqz v5, :cond_10
 
-    const/4 v9, 0x5
+    move v9, v10
 
     goto :goto_e
 
@@ -5145,9 +5145,9 @@
     .line 141
     iget-wide v0, p0, Lorg/telegram/ui/ContactAddActivity;->user_id:J
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v5, :cond_0
+    if-eqz v0, :cond_0
 
     .line 142
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

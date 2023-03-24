@@ -563,12 +563,12 @@ public final class Cea608Decoder extends CeaDecoder {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.captionStringBuilder);
             int length = spannableStringBuilder.length();
             int i = 0;
-            int i2 = -1;
+            int i2 = 0;
+            boolean z = false;
             int i3 = -1;
-            int i4 = 0;
+            int i4 = -1;
             int i5 = -1;
             int i6 = -1;
-            boolean z = false;
             while (i < this.cueStyles.size()) {
                 CueStyle cueStyle = this.cueStyles.get(i);
                 boolean z2 = cueStyle.underline;
@@ -583,33 +583,33 @@ public final class Cea608Decoder extends CeaDecoder {
                 int i8 = cueStyle.start;
                 i++;
                 if (i8 != (i < this.cueStyles.size() ? this.cueStyles.get(i).start : length)) {
-                    if (i2 != -1 && !z2) {
-                        setUnderlineSpan(spannableStringBuilder, i2, i8);
-                        i2 = -1;
-                    } else if (i2 == -1 && z2) {
-                        i2 = i8;
-                    }
-                    if (i3 != -1 && !z) {
-                        setItalicSpan(spannableStringBuilder, i3, i8);
+                    if (i3 != -1 && !z2) {
+                        setUnderlineSpan(spannableStringBuilder, i3, i8);
                         i3 = -1;
-                    } else if (i3 == -1 && z) {
+                    } else if (i3 == -1 && z2) {
                         i3 = i8;
                     }
-                    if (i6 != i5) {
-                        setColorSpan(spannableStringBuilder, i4, i8, i5);
-                        i5 = i6;
+                    if (i4 != -1 && !z) {
+                        setItalicSpan(spannableStringBuilder, i4, i8);
+                        i4 = -1;
+                    } else if (i4 == -1 && z) {
                         i4 = i8;
+                    }
+                    if (i6 != i5) {
+                        setColorSpan(spannableStringBuilder, i2, i8, i5);
+                        i5 = i6;
+                        i2 = i8;
                     }
                 }
             }
-            if (i2 != -1 && i2 != length) {
-                setUnderlineSpan(spannableStringBuilder, i2, length);
-            }
             if (i3 != -1 && i3 != length) {
-                setItalicSpan(spannableStringBuilder, i3, length);
+                setUnderlineSpan(spannableStringBuilder, i3, length);
             }
-            if (i4 != length) {
-                setColorSpan(spannableStringBuilder, i4, length, i5);
+            if (i4 != -1 && i4 != length) {
+                setItalicSpan(spannableStringBuilder, i4, length);
+            }
+            if (i2 != length) {
+                setColorSpan(spannableStringBuilder, i2, length, i5);
             }
             return new SpannableString(spannableStringBuilder);
         }

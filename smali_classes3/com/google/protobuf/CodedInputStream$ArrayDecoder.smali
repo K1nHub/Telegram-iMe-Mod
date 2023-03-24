@@ -40,29 +40,29 @@
 
     const/4 v0, 0x0
 
-    .line 609
+    .line 614
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedInputStream;-><init>(Lcom/google/protobuf/CodedInputStream$1;)V
 
     const v0, 0x7fffffff
 
-    .line 607
+    .line 612
     iput v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->currentLimit:I
 
-    .line 610
+    .line 615
     iput-object p1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     add-int/2addr p3, p2
 
-    .line 611
+    .line 616
     iput p3, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
-    .line 612
+    .line 617
     iput p2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 613
+    .line 618
     iput p2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->startPos:I
 
-    .line 614
+    .line 619
     iput-boolean p4, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->immutable:Z
 
     return-void
@@ -71,7 +71,7 @@
 .method synthetic constructor <init>([BIIZLcom/google/protobuf/CodedInputStream$1;)V
     .locals 0
 
-    .line 596
+    .line 601
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;-><init>([BIIZ)V
 
     return-void
@@ -80,7 +80,7 @@
 .method private recomputeBufferSizeAfterLimit()V
     .locals 3
 
-    .line 1200
+    .line 1206
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->bufferSizeAfterLimit:I
@@ -89,24 +89,24 @@
 
     iput v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
-    .line 1201
+    .line 1207
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->startPos:I
 
     sub-int v1, v0, v1
 
-    .line 1202
+    .line 1208
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->currentLimit:I
 
     if-le v1, v2, :cond_0
 
     sub-int/2addr v1, v2
 
-    .line 1204
+    .line 1210
     iput v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->bufferSizeAfterLimit:I
 
     sub-int/2addr v0, v1
 
-    .line 1205
+    .line 1211
     iput v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     goto :goto_0
@@ -114,7 +114,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1207
+    .line 1213
     iput v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->bufferSizeAfterLimit:I
 
     :goto_0
@@ -129,7 +129,7 @@
         }
     .end annotation
 
-    .line 1025
+    .line 1028
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -140,12 +140,12 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 1026
+    .line 1029
     invoke-direct {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipRawVarintFastPath()V
 
     goto :goto_0
 
-    .line 1028
+    .line 1031
     :cond_0
     invoke-direct {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipRawVarintSlowPath()V
 
@@ -168,7 +168,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1034
+    .line 1037
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -188,7 +188,7 @@
 
     goto :goto_0
 
-    .line 1038
+    .line 1041
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->malformedVarint()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -212,7 +212,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1043
+    .line 1046
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawByte()B
 
     move-result v1
@@ -226,7 +226,7 @@
 
     goto :goto_0
 
-    .line 1047
+    .line 1050
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->malformedVarint()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -245,14 +245,14 @@
         }
     .end annotation
 
-    .line 635
+    .line 640
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->lastTag:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 636
+    .line 641
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidEndTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -264,7 +264,7 @@
 .method public getTotalBytesRead()I
     .locals 2
 
-    .line 1233
+    .line 1239
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->startPos:I
@@ -282,7 +282,7 @@
         }
     .end annotation
 
-    .line 1228
+    .line 1234
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
@@ -303,10 +303,10 @@
 .method public popLimit(I)V
     .locals 0
 
-    .line 1213
+    .line 1219
     iput p1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->currentLimit:I
 
-    .line 1214
+    .line 1220
     invoke-direct {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->recomputeBufferSizeAfterLimit()V
 
     return-void
@@ -320,29 +320,31 @@
         }
     .end annotation
 
-    if-ltz p1, :cond_1
+    if-ltz p1, :cond_2
 
-    .line 1187
+    .line 1190
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->getTotalBytesRead()I
 
     move-result v0
 
     add-int/2addr p1, v0
 
-    .line 1188
+    if-ltz p1, :cond_1
+
+    .line 1194
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->currentLimit:I
 
     if-gt p1, v0, :cond_0
 
-    .line 1192
+    .line 1198
     iput p1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->currentLimit:I
 
-    .line 1194
+    .line 1200
     invoke-direct {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->recomputeBufferSizeAfterLimit()V
 
     return v0
 
-    .line 1190
+    .line 1196
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -350,8 +352,16 @@
 
     throw p1
 
-    .line 1185
+    .line 1192
     :cond_1
+    invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    move-result-object p1
+
+    throw p1
+
+    .line 1188
+    :cond_2
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
@@ -360,23 +370,23 @@
 .end method
 
 .method public readBool()Z
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 783
+    .line 788
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint64()J
 
     move-result-wide v0
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -397,14 +407,14 @@
         }
     .end annotation
 
-    .line 898
+    .line 901
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
 
     if-lez v0, :cond_1
 
-    .line 899
+    .line 902
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -413,7 +423,7 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 902
+    .line 905
     iget-boolean v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->immutable:Z
 
     if-eqz v1, :cond_0
@@ -424,7 +434,7 @@
 
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
-    .line 904
+    .line 907
     invoke-static {v1, v2, v0}, Lcom/google/protobuf/ByteString;->wrap([BII)Lcom/google/protobuf/ByteString;
 
     move-result-object v1
@@ -434,12 +444,12 @@
     :cond_0
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
-    .line 905
+    .line 908
     invoke-static {v1, v2, v0}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 
-    .line 906
+    .line 909
     :goto_0
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
@@ -452,12 +462,12 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 910
+    .line 913
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     return-object v0
 
-    .line 913
+    .line 916
     :cond_2
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawBytes(I)[B
 
@@ -478,7 +488,7 @@
         }
     .end annotation
 
-    .line 748
+    .line 753
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawLittleEndian64()J
 
     move-result-wide v0
@@ -498,7 +508,7 @@
         }
     .end annotation
 
-    .line 956
+    .line 959
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
@@ -514,7 +524,7 @@
         }
     .end annotation
 
-    .line 778
+    .line 783
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawLittleEndian32()I
 
     move-result v0
@@ -530,7 +540,7 @@
         }
     .end annotation
 
-    .line 773
+    .line 778
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawLittleEndian64()J
 
     move-result-wide v0
@@ -546,7 +556,7 @@
         }
     .end annotation
 
-    .line 753
+    .line 758
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawLittleEndian32()I
 
     move-result v0
@@ -566,7 +576,7 @@
         }
     .end annotation
 
-    .line 768
+    .line 773
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
@@ -582,7 +592,7 @@
         }
     .end annotation
 
-    .line 763
+    .line 768
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint64()J
 
     move-result-wide v0
@@ -598,14 +608,14 @@
         }
     .end annotation
 
-    .line 1238
+    .line 1244
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     if-eq v0, v1, :cond_0
 
-    .line 1241
+    .line 1247
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     add-int/lit8 v2, v0, 0x1
@@ -616,7 +626,7 @@
 
     return v0
 
-    .line 1239
+    .line 1245
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -635,7 +645,7 @@
 
     if-lez p1, :cond_0
 
-    .line 1246
+    .line 1252
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -646,10 +656,10 @@
 
     add-int/2addr p1, v1
 
-    .line 1248
+    .line 1254
     iput p1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 1249
+    .line 1255
     iget-object v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     invoke-static {v0, v1, p1}, Ljava/util/Arrays;->copyOfRange([BII)[B
@@ -663,12 +673,12 @@
 
     if-nez p1, :cond_1
 
-    .line 1254
+    .line 1260
     sget-object p1, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     return-object p1
 
-    .line 1256
+    .line 1262
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -676,7 +686,7 @@
 
     throw p1
 
-    .line 1259
+    .line 1265
     :cond_2
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -693,10 +703,10 @@
         }
     .end annotation
 
-    .line 1138
+    .line 1141
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 1140
+    .line 1143
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     sub-int/2addr v1, v0
@@ -705,15 +715,15 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 1144
+    .line 1147
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     add-int/lit8 v2, v0, 0x4
 
-    .line 1145
+    .line 1148
     iput v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 1146
+    .line 1149
     aget-byte v2, v1, v0
 
     and-int/lit16 v2, v2, 0xff
@@ -750,7 +760,7 @@
 
     return v0
 
-    .line 1141
+    .line 1144
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -767,10 +777,10 @@
         }
     .end annotation
 
-    .line 1154
+    .line 1157
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 1156
+    .line 1159
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     sub-int/2addr v1, v0
@@ -779,15 +789,15 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 1160
+    .line 1163
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     add-int/lit8 v3, v0, 0x8
 
-    .line 1161
+    .line 1164
     iput v3, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 1162
+    .line 1165
     aget-byte v3, v1, v0
 
     int-to-long v3, v3
@@ -894,7 +904,7 @@
 
     return-wide v0
 
-    .line 1157
+    .line 1160
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -911,28 +921,28 @@
         }
     .end annotation
 
-    .line 986
+    .line 989
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 988
+    .line 991
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     if-ne v1, v0, :cond_0
 
     goto :goto_0
 
-    .line 992
+    .line 995
     :cond_0
     iget-object v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 994
+    .line 997
     aget-byte v0, v2, v0
 
     if-ltz v0, :cond_1
 
-    .line 995
+    .line 998
     iput v3, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     return v0
@@ -949,7 +959,7 @@
     :cond_2
     add-int/lit8 v1, v3, 0x1
 
-    .line 999
+    .line 1002
     aget-byte v3, v2, v3
 
     shl-int/lit8 v3, v3, 0x7
@@ -965,7 +975,7 @@
     :cond_3
     add-int/lit8 v3, v1, 0x1
 
-    .line 1001
+    .line 1004
     aget-byte v1, v2, v1
 
     shl-int/lit8 v1, v1, 0xe
@@ -984,7 +994,7 @@
     :cond_5
     add-int/lit8 v1, v3, 0x1
 
-    .line 1003
+    .line 1006
     aget-byte v3, v2, v3
 
     shl-int/lit8 v3, v3, 0x15
@@ -1002,7 +1012,7 @@
     :cond_6
     add-int/lit8 v3, v1, 0x1
 
-    .line 1006
+    .line 1009
     aget-byte v1, v2, v1
 
     shl-int/lit8 v4, v1, 0x1c
@@ -1017,7 +1027,7 @@
 
     add-int/lit8 v1, v3, 0x1
 
-    .line 1009
+    .line 1012
     aget-byte v3, v2, v3
 
     if-gez v3, :cond_7
@@ -1046,17 +1056,17 @@
 
     if-gez v2, :cond_7
 
-    .line 1021
+    .line 1024
     :goto_0
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint64SlowPath()J
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 
-    .line 1018
+    .line 1021
     :cond_7
     :goto_1
     iput v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -1072,28 +1082,28 @@
         }
     .end annotation
 
-    .line 1065
+    .line 1068
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
-    .line 1067
+    .line 1070
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     if-ne v1, v0, :cond_0
 
     goto/16 :goto_3
 
-    .line 1071
+    .line 1074
     :cond_0
     iget-object v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 1074
+    .line 1077
     aget-byte v0, v2, v0
 
     if-ltz v0, :cond_1
 
-    .line 1075
+    .line 1078
     iput v3, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     int-to-long v0, v0
@@ -1112,7 +1122,7 @@
     :cond_2
     add-int/lit8 v1, v3, 0x1
 
-    .line 1079
+    .line 1082
     aget-byte v3, v2, v3
 
     shl-int/lit8 v3, v3, 0x7
@@ -1131,7 +1141,7 @@
     :cond_3
     add-int/lit8 v3, v1, 0x1
 
-    .line 1081
+    .line 1084
     aget-byte v1, v2, v1
 
     shl-int/lit8 v1, v1, 0xe
@@ -1155,7 +1165,7 @@
     :cond_4
     add-int/lit8 v1, v3, 0x1
 
-    .line 1083
+    .line 1086
     aget-byte v3, v2, v3
 
     shl-int/lit8 v3, v3, 0x15
@@ -1175,7 +1185,7 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1085
+    .line 1088
     aget-byte v1, v2, v1
 
     int-to-long v5, v1
@@ -1204,7 +1214,7 @@
     :cond_6
     add-int/lit8 v1, v0, 0x1
 
-    .line 1087
+    .line 1090
     aget-byte v0, v2, v0
 
     int-to-long v7, v0
@@ -1229,7 +1239,7 @@
     :cond_7
     add-int/lit8 v0, v1, 0x1
 
-    .line 1089
+    .line 1092
     aget-byte v1, v2, v1
 
     int-to-long v7, v1
@@ -1251,7 +1261,7 @@
     :cond_8
     add-int/lit8 v1, v0, 0x1
 
-    .line 1091
+    .line 1094
     aget-byte v0, v2, v0
 
     int-to-long v7, v0
@@ -1273,7 +1283,7 @@
     :cond_9
     add-int/lit8 v0, v1, 0x1
 
-    .line 1101
+    .line 1104
     aget-byte v1, v2, v1
 
     int-to-long v7, v1
@@ -1294,7 +1304,7 @@
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 1112
+    .line 1115
     aget-byte v0, v2, v0
 
     int-to-long v7, v0
@@ -1303,7 +1313,7 @@
 
     if-gez v0, :cond_b
 
-    .line 1120
+    .line 1123
     :goto_3
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint64SlowPath()J
 
@@ -1317,7 +1327,7 @@
     :cond_b
     move-wide v2, v3
 
-    .line 1117
+    .line 1120
     :goto_4
     iput v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
@@ -1341,7 +1351,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 1127
+    .line 1130
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawByte()B
 
     move-result v3
@@ -1365,7 +1375,7 @@
 
     goto :goto_0
 
-    .line 1133
+    .line 1136
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->malformedVarint()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1382,7 +1392,7 @@
         }
     .end annotation
 
-    .line 961
+    .line 964
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawLittleEndian32()I
 
     move-result v0
@@ -1398,7 +1408,7 @@
         }
     .end annotation
 
-    .line 966
+    .line 969
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawLittleEndian64()J
 
     move-result-wide v0
@@ -1414,7 +1424,7 @@
         }
     .end annotation
 
-    .line 971
+    .line 974
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
@@ -1434,7 +1444,7 @@
         }
     .end annotation
 
-    .line 976
+    .line 979
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint64()J
 
     move-result-wide v0
@@ -1454,14 +1464,14 @@
         }
     .end annotation
 
-    .line 788
+    .line 793
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 789
+    .line 794
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -1470,7 +1480,7 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 792
+    .line 797
     new-instance v1, Ljava/lang/String;
 
     iget-object v3, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
@@ -1479,7 +1489,7 @@
 
     invoke-direct {v1, v3, v2, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 793
+    .line 798
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     add-int/2addr v2, v0
@@ -1498,14 +1508,14 @@
     :cond_1
     if-gez v0, :cond_2
 
-    .line 801
+    .line 806
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0
 
     throw v0
 
-    .line 803
+    .line 808
     :cond_2
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1522,14 +1532,14 @@
         }
     .end annotation
 
-    .line 808
+    .line 813
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 809
+    .line 814
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -1538,14 +1548,14 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 810
+    .line 815
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->buffer:[B
 
     invoke-static {v1, v2, v0}, Lcom/google/protobuf/Utf8;->decodeUtf8([BII)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 811
+    .line 816
     iget v2, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     add-int/2addr v2, v0
@@ -1564,14 +1574,14 @@
     :cond_1
     if-gtz v0, :cond_2
 
-    .line 819
+    .line 824
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0
 
     throw v0
 
-    .line 821
+    .line 826
     :cond_2
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1588,7 +1598,7 @@
         }
     .end annotation
 
-    .line 619
+    .line 624
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->isAtEnd()Z
 
     move-result v0
@@ -1597,12 +1607,12 @@
 
     const/4 v0, 0x0
 
-    .line 620
+    .line 625
     iput v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->lastTag:I
 
     return v0
 
-    .line 624
+    .line 629
     :cond_0
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
@@ -1610,19 +1620,19 @@
 
     iput v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->lastTag:I
 
-    .line 625
+    .line 630
     invoke-static {v0}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 630
+    .line 635
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->lastTag:I
 
     return v0
 
-    .line 628
+    .line 633
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1639,7 +1649,7 @@
         }
     .end annotation
 
-    .line 951
+    .line 954
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
     move-result v0
@@ -1655,7 +1665,7 @@
         }
     .end annotation
 
-    .line 758
+    .line 763
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint64()J
 
     move-result-wide v0
@@ -1671,7 +1681,7 @@
         }
     .end annotation
 
-    .line 647
+    .line 652
     invoke-static {p1}, Lcom/google/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
@@ -1698,12 +1708,12 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 665
+    .line 670
     invoke-virtual {p0, v3}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipRawBytes(I)V
 
     return v1
 
-    .line 668
+    .line 673
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidWireType()Lcom/google/protobuf/InvalidProtocolBufferException$InvalidWireTypeException;
 
@@ -1716,11 +1726,11 @@
 
     return p1
 
-    .line 658
+    .line 663
     :cond_2
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipMessage()V
 
-    .line 660
+    .line 665
     invoke-static {p1}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result p1
@@ -1729,12 +1739,12 @@
 
     move-result p1
 
-    .line 659
+    .line 664
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->checkLastTagWas(I)V
 
     return v1
 
-    .line 655
+    .line 660
     :cond_3
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readRawVarint32()I
 
@@ -1747,12 +1757,12 @@
     :cond_4
     const/16 p1, 0x8
 
-    .line 652
+    .line 657
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipRawBytes(I)V
 
     return v1
 
-    .line 649
+    .line 654
     :cond_5
     invoke-direct {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipRawVarint()V
 
@@ -1767,7 +1777,7 @@
         }
     .end annotation
 
-    .line 726
+    .line 731
     :cond_0
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->readTag()I
 
@@ -1775,7 +1785,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 727
+    .line 732
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->skipField(I)Z
 
     move-result v0
@@ -1796,7 +1806,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 1264
+    .line 1270
     iget v0, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->limit:I
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
@@ -1807,7 +1817,7 @@
 
     add-int/2addr v1, p1
 
-    .line 1266
+    .line 1272
     iput v1, p0, Lcom/google/protobuf/CodedInputStream$ArrayDecoder;->pos:I
 
     return-void
@@ -1815,14 +1825,14 @@
     :cond_0
     if-gez p1, :cond_1
 
-    .line 1271
+    .line 1277
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
 
     throw p1
 
-    .line 1273
+    .line 1279
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 

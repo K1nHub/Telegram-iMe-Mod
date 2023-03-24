@@ -865,9 +865,9 @@
 
     div-long/2addr v3, v5
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    iput v4, v2, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    iput v3, v2, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-string v3, ""
 
@@ -1342,7 +1342,7 @@
 
     move-result v3
 
-    const/4 v2, 0x0
+    move v2, v11
 
     :goto_5
     if-ge v2, v3, :cond_29
@@ -2223,7 +2223,7 @@
 
     move-result v6
 
-    const/4 v5, 0x1
+    move/from16 v5, v17
 
     :goto_13
     if-ge v5, v6, :cond_28
@@ -2523,19 +2523,19 @@
 
     if-nez p4, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     sub-int/2addr p5, v2
 
     if-ne p4, p5, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/ArticleViewer$BlockMapCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;ZZ)V
@@ -2579,19 +2579,19 @@
 
     if-nez p4, :cond_4
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_2
     sub-int/2addr p5, v2
 
     if-ne p4, p5, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/ArticleViewer$BlockAudioCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;ZZ)V
@@ -2726,19 +2726,19 @@
 
     if-nez p4, :cond_6
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_3
 
     :cond_6
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_3
     sub-int/2addr p5, v2
 
     if-ne p4, p5, :cond_7
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_7
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;ZZ)V
@@ -2772,7 +2772,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ArticleViewer$BlockBlockquoteCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;)V
 
-    goto :goto_5
+    goto/16 :goto_5
 
     .line 5793
     :pswitch_15
@@ -2798,19 +2798,19 @@
 
     if-nez p4, :cond_8
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_4
 
     :cond_8
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_4
     sub-int/2addr p5, v2
 
     if-ne p4, p5, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_9
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;ZZ)V
@@ -2907,8 +2907,6 @@
 
     :goto_5
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -4132,7 +4130,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_3
     if-ge v3, v0, :cond_1b
@@ -4153,7 +4151,7 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_4
     if-ge v6, v5, :cond_15

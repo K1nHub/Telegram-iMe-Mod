@@ -199,7 +199,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1181,10 +1181,10 @@
     sget v2, Landroidx/appcompat/R$attr;->colorControlNormal:I
 
     :goto_0
-    const/4 p2, -0x1
+    move p2, v3
 
     :goto_1
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_2
 
@@ -1244,11 +1244,11 @@
     goto :goto_0
 
     :cond_4
-    const/4 p2, -0x1
+    move p2, v3
 
-    const/4 v1, 0x0
+    move v1, v4
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-eqz v1, :cond_7

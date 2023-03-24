@@ -144,7 +144,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     add-long v4, p2, v1
 
@@ -266,12 +266,12 @@
 
     if-ne v0, p2, :cond_1
 
-    const/4 v6, 0x1
+    move v6, p2
 
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, p3
 
     .line 105
     :goto_0
@@ -309,7 +309,7 @@
 
     rsub-int/lit8 v0, v0, 0x4
 
-    const/4 v7, 0x0
+    move v7, p3
 
     .line 121
     :goto_1

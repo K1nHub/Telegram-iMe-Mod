@@ -19,13 +19,12 @@ public final class zzaf extends zzx {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r15v0 */
-    /* JADX WARN: Type inference failed for: r5v11 */
-    /* JADX WARN: Type inference failed for: r5v13, types: [java.lang.Object[]] */
     /* JADX WARN: Type inference failed for: r5v4, types: [int[]] */
+    /* JADX WARN: Type inference failed for: r5v7 */
     public static zzaf zzf(int i, Object[] objArr, zzw zzwVar) {
         short[] sArr;
-        Object[] objArr2;
         byte[] bArr;
+        Object[] objArr2;
         int i2 = i;
         Object[] objArr3 = objArr;
         if (i2 == 0) {
@@ -104,7 +103,8 @@ public final class zzaf extends zzx {
                     c = 2;
                     obj = bArr;
                 } else {
-                    sArr = new Object[]{bArr2, Integer.valueOf(i5), obj};
+                    obj = new Object[]{bArr2, Integer.valueOf(i5), obj};
+                    c = 2;
                 }
             } else if (i3 <= 32768) {
                 sArr = new short[i3];
@@ -148,6 +148,9 @@ public final class zzaf extends zzx {
                     objArr2 = new Object[]{sArr, Integer.valueOf(i12), obj};
                     obj = objArr2;
                 }
+                bArr = sArr;
+                c = 2;
+                obj = bArr;
             } else {
                 sArr = new int[i3];
                 Arrays.fill((int[]) sArr, -1);
@@ -194,23 +197,21 @@ public final class zzaf extends zzx {
                     objArr2 = new Object[]{sArr, Integer.valueOf(i19), obj};
                     obj = objArr2;
                 }
+                bArr = sArr;
+                c = 2;
+                obj = bArr;
             }
-            bArr = sArr;
-            c = 2;
-            obj = bArr;
         }
-        boolean z = obj instanceof Object[];
-        Object obj15 = obj;
-        if (z) {
+        if (obj instanceof Object[]) {
             Object[] objArr4 = (Object[]) obj;
             zzwVar.zzc = (zzv) objArr4[c];
-            Object obj16 = objArr4[0];
+            Object obj15 = objArr4[0];
             int intValue = ((Integer) objArr4[1]).intValue();
             objArr3 = Arrays.copyOf(objArr3, intValue + intValue);
-            obj15 = obj16;
+            obj = obj15;
             i2 = intValue;
         }
-        return new zzaf(obj15, objArr3, i2);
+        return new zzaf(obj, objArr3, i2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x009e A[RETURN] */

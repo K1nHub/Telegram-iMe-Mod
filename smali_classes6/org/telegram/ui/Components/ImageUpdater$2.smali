@@ -331,9 +331,9 @@
 
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, p7, Lorg/telegram/messenger/MediaController$SearchImage;->date:I
+    iput v0, p7, Lorg/telegram/messenger/MediaController$SearchImage;->date:I
 
     :cond_9
     :goto_4

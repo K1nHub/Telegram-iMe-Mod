@@ -131,12 +131,12 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v4, 0x5
+    move v4, v12
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x3
+    move v4, v13
 
     :goto_0
     const/16 v14, 0x10
@@ -167,12 +167,12 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v5, 0x5
+    move v5, v12
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x3
+    move v5, v13
 
     :goto_1
     or-int/lit8 v5, v5, 0x30
@@ -233,12 +233,12 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v4, 0x3
+    move v4, v13
 
     goto :goto_2
 
     :cond_2
-    const/4 v4, 0x5
+    move v4, v12
 
     :goto_2
     or-int/2addr v4, v14
@@ -267,12 +267,12 @@
 
     if-eqz v5, :cond_3
 
-    const/4 v5, 0x3
+    move v5, v13
 
     goto :goto_3
 
     :cond_3
-    const/4 v5, 0x5
+    move v5, v12
 
     :goto_3
     or-int/lit8 v5, v5, 0x30
@@ -338,12 +338,12 @@
 
     if-eqz v4, :cond_4
 
-    const/4 v4, 0x5
+    move v4, v12
 
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x3
+    move v4, v13
 
     :goto_4
     or-int/lit8 v17, v4, 0x10
@@ -407,7 +407,7 @@
 
     if-eqz v3, :cond_5
 
-    const/4 v12, 0x3
+    move v12, v13
 
     :cond_5
     or-int/lit8 v3, v12, 0x10
@@ -606,20 +606,20 @@
     .line 361
     iget v6, p0, Lorg/telegram/ui/Cells/TextSettingsCell;->loadingProgress:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v6, v0
 
     iget v0, p0, Lorg/telegram/ui/Cells/TextSettingsCell;->drawLoadingProgress:F
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
     .line 362
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSettingsCell;->paint:Landroid/graphics/Paint;
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v5, v6
 
@@ -787,16 +787,14 @@
 
     if-eqz v3, :cond_a
 
-    const/4 v6, 0x0
-
     goto :goto_3
 
     :cond_a
     int-to-float v4, v0
 
+    :goto_3
     move v6, v4
 
-    :goto_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v3
@@ -1087,7 +1085,7 @@
 
     const/high16 p2, 0x43160000    # 150.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -1465,13 +1463,13 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1497,13 +1495,13 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_3
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
@@ -1528,7 +1526,7 @@
     if-nez p1, :cond_6
 
     :cond_5
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :cond_6
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -1566,12 +1564,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v0
 
     goto :goto_0
 
     :cond_0
-    const/high16 v5, 0x3f000000    # 0.5f
+    move v5, v1
 
     :goto_0
     const/4 v6, 0x0
@@ -1602,12 +1600,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v0
 
     goto :goto_1
 
     :cond_1
-    const/high16 v7, 0x3f000000    # 0.5f
+    move v7, v1
 
     :goto_1
     aput v7, v4, v6
@@ -1638,7 +1636,7 @@
     goto :goto_2
 
     :cond_3
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_2
     aput v0, v3, v6
@@ -1657,12 +1655,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_3
 
     :cond_5
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_3
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1681,12 +1679,12 @@
 
     if-eqz p1, :cond_6
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_4
 
     :cond_6
-    const/high16 v2, 0x3f000000    # 0.5f
+    move v2, v1
 
     :goto_4
     invoke-virtual {p2, v2}, Landroid/view/View;->setAlpha(F)V
@@ -1709,7 +1707,7 @@
     goto :goto_5
 
     :cond_8
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_5
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -2024,12 +2022,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_0
     or-int/lit8 v1, v1, 0x10
@@ -2052,12 +2050,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_1
     or-int/lit8 v6, v1, 0x30
@@ -2083,12 +2081,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x3
+    move v1, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x5
+    move v1, v2
 
     :goto_2
     or-int/lit8 v1, v1, 0x10
@@ -2111,12 +2109,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x3
+    move v1, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v1, 0x5
+    move v1, v2
 
     :goto_3
     or-int/lit8 v6, v1, 0x30
@@ -2151,12 +2149,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x5
+    move v1, v2
 
     goto :goto_4
 
     :cond_4
-    const/4 v1, 0x3
+    move v1, v3
 
     :goto_4
     or-int/lit8 v6, v1, 0x10
@@ -2191,7 +2189,7 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v2, 0x3
+    move v2, v3
 
     :cond_5
     or-int/lit8 v6, v2, 0x10

@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 109
     :catch_0
@@ -325,7 +325,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-eqz v2, :cond_1

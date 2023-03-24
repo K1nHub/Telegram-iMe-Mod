@@ -232,14 +232,18 @@
     :catchall_0
     move-exception v4
 
+    move v8, v1
+
     move-object v11, v2
 
     move-object v2, v5
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catch_0
     move-exception v4
+
+    move v8, v1
 
     move-object v11, v2
 
@@ -384,35 +388,34 @@
 
     move-object v4, v1
 
-    goto :goto_5
+    goto :goto_9
 
     :catchall_4
     move-exception v4
 
-    move-object v11, v2
-
-    goto :goto_7
+    goto :goto_5
 
     :catch_2
     move-exception v4
 
-    move-object v11, v2
-
-    :goto_5
-    move-object v9, v4
-
-    goto :goto_b
+    goto :goto_6
 
     :catchall_5
     move-exception v4
 
+    move v8, v1
+
+    :goto_5
     move-object v11, v2
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_3
     move-exception v4
 
+    move v8, v1
+
+    :goto_6
     move-object v11, v2
 
     goto :goto_9
@@ -422,12 +425,11 @@
 
     move-object v4, v3
 
+    move v8, v1
+
     move-object v3, v2
 
     move-object v11, v3
-
-    :goto_6
-    const/4 v8, 0x0
 
     :goto_7
     if-eqz v2, :cond_4
@@ -512,6 +514,8 @@
 
     move-object v4, v3
 
+    move v8, v1
+
     move-object v3, v2
 
     move-object v11, v3
@@ -520,9 +524,6 @@
     move-object v9, v4
 
     :goto_a
-    const/4 v8, 0x0
-
-    :goto_b
     if-eqz v2, :cond_6
 
     .line 29
@@ -531,7 +532,7 @@
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_6
 
-    goto :goto_c
+    goto :goto_b
 
     :catch_6
     move-exception v1
@@ -561,7 +562,7 @@
     invoke-virtual {v2, v0, v4, v1}, Lcom/google/android/gms/measurement/internal/zzej;->zzc(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     :cond_6
-    :goto_c
+    :goto_b
     if-eqz v3, :cond_7
 
     .line 25

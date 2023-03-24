@@ -24,7 +24,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$LongRef;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: CryptoRecipientManager.kt */
 /* loaded from: classes3.dex */
 public final class CryptoRecipientManager {
@@ -49,8 +49,12 @@ public final class CryptoRecipientManager {
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[BlockchainType.TON.ordinal()] = 2;
+                iArr[BlockchainType.TRON.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[BlockchainType.TON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -92,7 +96,7 @@ public final class CryptoRecipientManager {
         ref$LongRef.element = -1L;
         Observable<R> flatMap = this.cryptoPermissionInteractor.requestAllAddressesPermission(recipient).flatMap(new C1466xd06610b9(new C1461xd1623ac9(recipient, ref$LongRef, this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo707ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
         Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1462x2b67fdc6(this, ref$LongRef, recipient)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1463x2b67fdc7(getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
@@ -102,7 +106,7 @@ public final class CryptoRecipientManager {
     public void loadAddressInfoById(String recipient, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(recipient, "recipient");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<AccountInfo>> observeOn = this.cryptoPermissionInteractor.getAddressInfo(recipient).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<AccountInfo>> observeOn = this.cryptoPermissionInteractor.getAddressInfo(recipient).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
         Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1459x4c48b562(this, recipient, blockchainType)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1460x4c48b563(getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
@@ -112,7 +116,7 @@ public final class CryptoRecipientManager {
     /* JADX INFO: Access modifiers changed from: private */
     public final HashMap<String, String> formatBotRequestParams(String str, String str2) {
         HashMap<String, String> hashMapOf;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m100to(TtmlNode.ATTR_ID, str), TuplesKt.m100to("query_id", str2), TuplesKt.m100to("bot", String.valueOf(AppConfiguration$Wallet.getWalletBotId())), TuplesKt.m100to("bot_name", AppConfiguration$Wallet.getWalletBotUsernameLowerCase()));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m99to(TtmlNode.ATTR_ID, str), TuplesKt.m99to("query_id", str2), TuplesKt.m99to("bot", String.valueOf(AppConfiguration$Wallet.getWalletBotId())), TuplesKt.m99to("bot_name", AppConfiguration$Wallet.getWalletBotUsernameLowerCase()));
         return hashMapOf;
     }
 
@@ -127,7 +131,7 @@ public final class CryptoRecipientManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getRequestPermissionDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3286R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_recipient_request_permission_dialog_action_btn_text));
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3301R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.wallet_recipient_request_permission_dialog_action_btn_text));
     }
 
     private final void autoDispose(Disposable disposable) {

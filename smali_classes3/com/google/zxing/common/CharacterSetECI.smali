@@ -770,7 +770,7 @@
 
     array-length v1, v0
 
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -782,7 +782,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_1
     if-ge v6, v5, :cond_0
@@ -817,7 +817,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_2
     if-ge v6, v5, :cond_1

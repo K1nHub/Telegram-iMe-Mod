@@ -210,22 +210,22 @@
 
     const/4 v6, 0x0
 
-    const v7, 0x3faa3d71    # 1.33f
+    cmpl-float v7, v4, v6
 
-    cmpl-float v8, v4, v6
+    const v8, 0x3faa3d71    # 1.33f
 
-    if-lez v8, :cond_4
+    if-lez v7, :cond_4
 
-    const/high16 v8, 0x43a00000    # 320.0f
+    const/high16 v7, 0x43a00000    # 320.0f
 
-    cmpg-float v9, v4, v8
+    cmpg-float v9, v4, v7
 
     if-gtz v9, :cond_1
 
     .line 65
     iget-object v1, p0, Lorg/telegram/ui/Components/TypingDotsDrawable;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    div-float/2addr v4, v8
+    div-float/2addr v4, v7
 
     invoke-virtual {v1, v4}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
@@ -234,7 +234,7 @@
     .line 66
     iget-object v4, p0, Lorg/telegram/ui/Components/TypingDotsDrawable;->scales:[F
 
-    add-float/2addr v1, v7
+    add-float/2addr v1, v8
 
     aput v1, v4, v0
 
@@ -250,9 +250,9 @@
     .line 68
     iget-object v1, p0, Lorg/telegram/ui/Components/TypingDotsDrawable;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    sub-float/2addr v4, v8
+    sub-float/2addr v4, v7
 
-    div-float/2addr v4, v8
+    div-float/2addr v4, v7
 
     invoke-virtual {v1, v4}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
 
@@ -265,16 +265,16 @@
 
     sub-float/2addr v5, v1
 
-    add-float/2addr v5, v7
+    add-float/2addr v5, v8
 
     aput v5, v4, v0
 
     goto :goto_1
 
     :cond_2
-    const/high16 v8, 0x44480000    # 800.0f
+    const/high16 v7, 0x44480000    # 800.0f
 
-    cmpl-float v4, v4, v8
+    cmpl-float v4, v4, v7
 
     if-ltz v4, :cond_3
 
@@ -287,7 +287,7 @@
     .line 73
     iget-object v1, p0, Lorg/telegram/ui/Components/TypingDotsDrawable;->scales:[F
 
-    aput v7, v1, v0
+    aput v8, v1, v0
 
     goto :goto_1
 
@@ -295,7 +295,7 @@
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/TypingDotsDrawable;->scales:[F
 
-    aput v7, v1, v0
+    aput v8, v1, v0
 
     goto :goto_1
 
@@ -303,7 +303,7 @@
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/TypingDotsDrawable;->scales:[F
 
-    aput v7, v1, v0
+    aput v8, v1, v0
 
     :goto_1
     add-int/lit8 v0, v0, 0x1
@@ -392,7 +392,7 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {p1, v2, v0, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
@@ -413,7 +413,7 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {p1, v2, v0, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
@@ -434,7 +434,7 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {p1, v2, v0, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
@@ -540,7 +540,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x3

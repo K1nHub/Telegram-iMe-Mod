@@ -445,17 +445,17 @@
     move v0, v2
 
     :goto_0
-    mul-int p1, p1, p1
+    mul-int/2addr p1, p1
 
     .line 179
     iput p1, p0, Lorg/telegram/ui/Components/GestureDetector2;->mTouchSlopSquare:I
 
-    mul-int v1, v1, v1
+    mul-int/2addr v1, v1
 
     .line 180
     iput v1, p0, Lorg/telegram/ui/Components/GestureDetector2;->mDoubleTapTouchSlopSquare:I
 
-    mul-int v0, v0, v0
+    mul-int/2addr v0, v0
 
     .line 181
     iput v0, p0, Lorg/telegram/ui/Components/GestureDetector2;->mDoubleTapSlopSquare:I
@@ -538,9 +538,9 @@
     .line 439
     iget p3, p0, Lorg/telegram/ui/Components/GestureDetector2;->mDoubleTapSlopSquare:I
 
-    mul-int p2, p2, p2
+    mul-int/2addr p2, p2
 
-    mul-int p1, p1, p1
+    mul-int/2addr p1, p1
 
     add-int/2addr p2, p1
 
@@ -611,12 +611,12 @@
 
     if-ne v2, v3, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-eqz v6, :cond_3
@@ -639,11 +639,11 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    move v10, v5
 
-    const/4 v11, 0x0
+    move v11, v9
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_2
     if-ge v10, v8, :cond_5
@@ -755,7 +755,7 @@
 
     move-result v3
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_5
     if-ge v6, v8, :cond_2d
@@ -777,7 +777,7 @@
 
     move-result v10
 
-    mul-float v10, v10, v4
+    mul-float/2addr v10, v4
 
     .line 247
     iget-object v11, v0, Lorg/telegram/ui/Components/GestureDetector2;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -786,7 +786,7 @@
 
     move-result v7
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     add-float/2addr v10, v7
 
@@ -856,7 +856,7 @@
     goto :goto_7
 
     :cond_e
-    const/4 v8, 0x0
+    move v8, v5
 
     .line 300
     :goto_7
@@ -892,12 +892,12 @@
 
     if-eqz v1, :cond_f
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_8
 
     :cond_f
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_8
     or-int/2addr v1, v5
@@ -928,9 +928,9 @@
 
     float-to-int v15, v15
 
-    mul-int v14, v14, v14
+    mul-int/2addr v14, v14
 
-    mul-int v15, v15, v15
+    mul-int/2addr v15, v15
 
     add-int/2addr v14, v15
 
@@ -941,24 +941,24 @@
 
     if-ne v8, v4, :cond_11
 
-    const/16 v16, 0x1
+    move/from16 v16, v4
 
     goto :goto_9
 
     :cond_11
-    const/16 v16, 0x0
+    move/from16 v16, v5
 
     :goto_9
     if-eqz v9, :cond_12
 
     if-eqz v16, :cond_12
 
-    const/16 v16, 0x1
+    move/from16 v16, v4
 
     goto :goto_a
 
     :cond_12
-    const/16 v16, 0x0
+    move/from16 v16, v5
 
     :goto_a
     if-eqz v16, :cond_14
@@ -992,7 +992,7 @@
 
     const/high16 v9, 0x40000000    # 2.0f
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     float-to-long v8, v8
 
@@ -1010,7 +1010,7 @@
 
     const/high16 v4, 0x40800000    # 4.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v15, v3
 
@@ -1062,7 +1062,7 @@
     goto :goto_d
 
     :cond_15
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 333
     :goto_d
@@ -1102,7 +1102,7 @@
     goto :goto_e
 
     :cond_17
-    const/4 v1, 0x0
+    move v1, v5
 
     goto :goto_f
 
@@ -1139,7 +1139,7 @@
     goto :goto_11
 
     :cond_1a
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_11
     if-eqz v4, :cond_25
@@ -1197,7 +1197,7 @@
     goto :goto_12
 
     :cond_1c
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_12
     or-int/2addr v1, v5
@@ -1324,7 +1324,7 @@
 
     :cond_22
     :goto_13
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 376
     :goto_14
@@ -1475,7 +1475,7 @@
 
     :cond_2a
     :goto_16
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 275
     :goto_17

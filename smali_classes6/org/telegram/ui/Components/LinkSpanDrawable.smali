@@ -226,13 +226,13 @@
 
     const p2, 0x3fe66666    # 1.8f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     long-to-float p2, p3
 
     const p3, 0x3f4ccccd    # 0.8f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     .line 80
     invoke-static {p1, p2}, Ljava/lang/Math;->min(FF)F
@@ -274,7 +274,7 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -293,12 +293,12 @@
 
     if-eq v4, v2, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 129
     :goto_1
@@ -464,7 +464,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mBounds:Landroid/graphics/Rect;
 
-    const/4 v2, 0x1
+    move v2, v5
 
     .line 159
     :goto_3
@@ -723,7 +723,7 @@
 
     if-eqz v2, :cond_9
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 181
     :goto_4
@@ -798,13 +798,13 @@
     .line 192
     iget-wide v12, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mReleaseStart:J
 
-    const/4 v4, 0x0
-
-    cmp-long v9, v12, v10
-
-    if-gez v9, :cond_b
+    cmp-long v4, v12, v10
 
     const/4 v9, 0x0
+
+    if-gez v4, :cond_b
+
+    move v4, v9
 
     goto :goto_5
 
@@ -815,19 +815,19 @@
 
     sub-long/2addr v14, v12
 
-    long-to-float v9, v14
+    long-to-float v4, v14
 
     const/high16 v12, 0x42c80000    # 100.0f
 
-    div-float/2addr v9, v12
+    div-float/2addr v4, v12
 
-    invoke-static {v4, v9}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v9, v4}, Ljava/lang/Math;->max(FF)F
 
-    move-result v9
+    move-result v4
 
-    invoke-static {v8, v9}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v8, v4}, Ljava/lang/Math;->min(FF)F
 
-    move-result v9
+    move-result v4
 
     .line 194
     :goto_5
@@ -860,49 +860,49 @@
 
     div-float/2addr v12, v10
 
-    invoke-static {v4, v12}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v9, v12}, Ljava/lang/Math;->max(FF)F
 
-    move-result v4
+    move-result v9
 
-    cmpl-float v10, v4, v8
+    cmpl-float v10, v9, v8
 
     if-lez v10, :cond_c
 
     .line 197
-    iget-wide v10, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mStart:J
+    iget-wide v9, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mStart:J
 
-    sub-long v10, v6, v10
+    sub-long v9, v6, v9
 
-    iget-wide v12, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mLongPressDuration:J
+    iget-wide v11, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mLongPressDuration:J
 
-    sub-long/2addr v10, v12
+    sub-long/2addr v9, v11
 
-    long-to-float v4, v10
+    long-to-float v9, v9
 
     iget-wide v10, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mDuration:J
 
     long-to-float v10, v10
 
-    div-float/2addr v4, v10
+    div-float/2addr v9, v10
 
-    sub-float v4, v8, v4
+    sub-float v9, v8, v9
 
     goto :goto_6
 
     :cond_c
     const/high16 v10, 0x3f000000    # 0.5f
 
-    mul-float v4, v4, v10
+    mul-float/2addr v9, v10
 
     :goto_6
-    sub-float v10, v8, v9
+    sub-float v10, v8, v4
 
-    mul-float v4, v4, v10
+    mul-float/2addr v9, v10
 
     goto :goto_7
 
     :cond_d
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v9, v8
 
     .line 206
     :goto_7
@@ -914,21 +914,21 @@
 
     const v12, 0x3e4ccccd    # 0.2f
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     const/high16 v12, 0x40a00000    # 5.0f
 
-    mul-float v12, v12, v2
+    mul-float/2addr v12, v2
 
     invoke-static {v8, v12}, Ljava/lang/Math;->min(FF)F
 
     move-result v12
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
-    sub-float v9, v8, v9
+    sub-float v4, v8, v4
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v4
 
     float-to-int v11, v11
 
@@ -937,9 +937,9 @@
     .line 207
     iget-object v10, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mSelectionPaint:Landroid/graphics/Paint;
 
-    sub-float v4, v8, v4
+    sub-float v9, v8, v9
 
-    invoke-static {v8, v4}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v8, v9}, Ljava/lang/Math;->min(FF)F
 
     move-result v11
 
@@ -951,11 +951,11 @@
 
     int-to-float v13, v13
 
-    mul-float v11, v11, v13
+    mul-float/2addr v11, v13
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    const/4 v10, 0x0
+    move v10, v3
 
     .line 208
     :goto_8
@@ -990,20 +990,20 @@
 
     const v13, 0x3f4ccccd    # 0.8f
 
-    mul-float v11, v11, v13
+    mul-float/2addr v11, v13
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v4
 
-    float-to-int v9, v11
+    float-to-int v4, v11
 
-    invoke-virtual {v10, v9}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v10, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 213
-    iget-object v9, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mRipplePaint:Landroid/graphics/Paint;
+    iget-object v4, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mRipplePaint:Landroid/graphics/Paint;
 
-    invoke-static {v8, v4}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v8, v9}, Ljava/lang/Math;->min(FF)F
 
-    move-result v4
+    move-result v9
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1011,9 +1011,9 @@
 
     int-to-float v10, v10
 
-    mul-float v4, v4, v10
+    mul-float/2addr v9, v10
 
-    invoke-virtual {v9, v4}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {v4, v9}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     cmpg-float v4, v2, v8
 
@@ -1022,7 +1022,7 @@
     .line 215
     iget v8, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mMaxRadius:F
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     .line 216
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -1048,7 +1048,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 220
     :goto_9
@@ -1080,7 +1080,7 @@
     goto :goto_b
 
     :cond_10
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 225
     :goto_a
@@ -1114,9 +1114,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v4, v1, v8
+    cmp-long v1, v1, v8
 
-    if-gez v4, :cond_12
+    if-gez v1, :cond_12
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/LinkSpanDrawable;->mSupportsLongPress:Z
 
@@ -1132,12 +1132,12 @@
 
     add-long/2addr v1, v8
 
-    cmp-long v4, v6, v1
+    cmp-long v1, v6, v1
 
-    if-gez v4, :cond_13
+    if-gez v1, :cond_13
 
     :cond_12
-    const/4 v3, 0x1
+    move v3, v5
 
     :cond_13
     return v3

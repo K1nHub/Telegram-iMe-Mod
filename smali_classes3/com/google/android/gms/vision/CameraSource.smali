@@ -168,7 +168,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 73
     :goto_0
@@ -196,7 +196,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, -0x1
+    move v4, v6
 
     :goto_1
     if-eq v4, v6, :cond_16
@@ -364,11 +364,11 @@
 
     const v7, 0x7fffffff
 
+    move v11, v3
+
+    move v13, v7
+
     move-object v12, v10
-
-    const/4 v11, 0x0
-
-    const v13, 0x7fffffff
 
     :cond_6
     :goto_4
@@ -445,7 +445,7 @@
 
     const/high16 v6, 0x447a0000    # 1000.0f
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     float-to-int v2, v2
 
@@ -642,7 +642,7 @@
 
     :cond_e
     :goto_6
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 159
     :goto_7
@@ -924,11 +924,11 @@
 
     int-to-long v3, p1
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     int-to-long v3, v0
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     long-to-double v0, v1
 

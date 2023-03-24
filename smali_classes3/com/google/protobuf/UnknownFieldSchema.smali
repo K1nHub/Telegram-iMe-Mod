@@ -20,7 +20,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -133,7 +133,7 @@
         }
     .end annotation
 
-    .line 115
+    .line 116
     :cond_0
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->getFieldNumber()I
 
@@ -143,7 +143,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 116
+    .line 117
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/UnknownFieldSchema;->mergeOneFieldFrom(Ljava/lang/Object;Lcom/google/protobuf/Reader;)Z
 
     move-result v0
@@ -170,17 +170,17 @@
         }
     .end annotation
 
-    .line 82
+    .line 83
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->getTag()I
 
     move-result v0
 
-    .line 83
+    .line 84
     invoke-static {v0}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result v1
 
-    .line 84
+    .line 85
     invoke-static {v0}, Lcom/google/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
@@ -207,7 +207,7 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 89
+    .line 90
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->readFixed32()I
 
     move-result p2
@@ -216,7 +216,7 @@
 
     return v2
 
-    .line 109
+    .line 110
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidWireType()Lcom/google/protobuf/InvalidProtocolBufferException$InvalidWireTypeException;
 
@@ -229,28 +229,28 @@
 
     return p1
 
-    .line 98
+    .line 99
     :cond_2
     invoke-virtual {p0}, Lcom/google/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 99
+    .line 100
     invoke-static {v1, v4}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result v3
 
-    .line 100
+    .line 101
     invoke-virtual {p0, v0, p2}, Lcom/google/protobuf/UnknownFieldSchema;->mergeFrom(Ljava/lang/Object;Lcom/google/protobuf/Reader;)V
 
-    .line 101
+    .line 102
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->getTag()I
 
     move-result p2
 
     if-ne v3, p2, :cond_3
 
-    .line 104
+    .line 105
     invoke-virtual {p0, v0}, Lcom/google/protobuf/UnknownFieldSchema;->toImmutable(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -259,7 +259,7 @@
 
     return v2
 
-    .line 102
+    .line 103
     :cond_3
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidEndTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -267,7 +267,7 @@
 
     throw p1
 
-    .line 95
+    .line 96
     :cond_4
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->readBytes()Lcom/google/protobuf/ByteString;
 
@@ -277,7 +277,7 @@
 
     return v2
 
-    .line 92
+    .line 93
     :cond_5
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->readFixed64()J
 
@@ -287,7 +287,7 @@
 
     return v2
 
-    .line 86
+    .line 87
     :cond_6
     invoke-interface {p2}, Lcom/google/protobuf/Reader;->readInt64()J
 

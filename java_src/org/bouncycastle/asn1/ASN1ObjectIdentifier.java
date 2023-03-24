@@ -168,7 +168,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
             int r0 = r5.length()
             r1 = 0
         L5:
-            r2 = 0
+            r2 = r1
         L6:
             int r0 = r0 + (-1)
             if (r0 < r6) goto L1f

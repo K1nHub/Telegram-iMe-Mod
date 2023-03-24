@@ -575,9 +575,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     return-wide v2
 
@@ -704,7 +704,7 @@
     if-nez v0, :cond_2
 
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
@@ -815,7 +815,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v8
 
     :goto_0
     if-eqz v5, :cond_4
@@ -942,7 +942,7 @@
 .end method
 
 .method protected shutdown()V
-    .locals 5
+    .locals 4
 
     .line 218
     sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->INSTANCE:Lkotlinx/coroutines/ThreadLocalEventLoop;
@@ -965,9 +965,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     goto :goto_0
 

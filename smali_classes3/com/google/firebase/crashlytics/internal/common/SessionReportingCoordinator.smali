@@ -845,7 +845,7 @@
 .end method
 
 .method public persistAppExitInfoEvent(Ljava/lang/String;Landroid/app/ApplicationExitInfo;Lcom/google/firebase/crashlytics/internal/log/LogFileManager;Lcom/google/firebase/crashlytics/internal/common/UserMetadata;)V
-    .locals 5
+    .locals 4
 
     .line 142
     iget-object v0, p0, Lcom/google/firebase/crashlytics/internal/common/SessionReportingCoordinator;->reportPersistence:Lcom/google/firebase/crashlytics/internal/persistence/CrashlyticsReportPersistence;
@@ -859,9 +859,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     return-void
 

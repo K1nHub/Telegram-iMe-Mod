@@ -180,7 +180,7 @@
 
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     const/16 v4, 0x20
 
@@ -188,17 +188,17 @@
 
     xor-long/2addr v1, v4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     iget v1, p0, Lcom/google/android/play/core/assetpacks/zzbq;->zzc:I
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     iget-boolean v1, p0, Lcom/google/android/play/core/assetpacks/zzbq;->zzd:Z
 
@@ -210,17 +210,17 @@
 
     if-eq v5, v1, :cond_1
 
-    const/16 v1, 0x4d5
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    const/16 v1, 0x4cf
+    move v1, v4
 
     :goto_1
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     iget-boolean v1, p0, Lcom/google/android/play/core/assetpacks/zzbq;->zze:Z
 
@@ -229,12 +229,12 @@
     goto :goto_2
 
     :cond_2
-    const/16 v2, 0x4cf
+    move v2, v4
 
     :goto_2
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzbq;->zzf:[B
 

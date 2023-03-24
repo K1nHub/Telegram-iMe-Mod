@@ -42,9 +42,9 @@ import kotlin.reflect.KProperty;
 import kotlin.text.Charsets;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentWebViewBinding;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: SimplexWebViewProcessingFragment.kt */
@@ -389,12 +389,12 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_crypto_buy_processing_toolbar_title));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.wallet_crypto_buy_processing_toolbar_title));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SimplexWebViewProcessingFragment.this.handleBackPress();
@@ -433,7 +433,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         public final SimplexWebViewProcessingFragment newInstance(String url, Function1<? super PaymentResult, Unit> resultDelegate) {
             Intrinsics.checkNotNullParameter(url, "url");
             Intrinsics.checkNotNullParameter(resultDelegate, "resultDelegate");
-            return (SimplexWebViewProcessingFragment) BaseFragmentExtKt.withArgs(new SimplexWebViewProcessingFragment(resultDelegate), TuplesKt.m100to("url_arg", url));
+            return (SimplexWebViewProcessingFragment) BaseFragmentExtKt.withArgs(new SimplexWebViewProcessingFragment(resultDelegate), TuplesKt.m99to("url_arg", url));
         }
     }
 }

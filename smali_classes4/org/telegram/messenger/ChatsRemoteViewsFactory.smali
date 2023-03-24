@@ -465,9 +465,9 @@
 
     iget-wide v12, v11, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v14, v12, v6
+    cmp-long v6, v12, v6
 
-    if-eqz v14, :cond_6
+    if-eqz v6, :cond_6
 
     iget v6, v11, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -523,9 +523,9 @@
 
     iget-wide v12, v11, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v14, v12, v6
+    cmp-long v6, v12, v6
 
-    if-eqz v14, :cond_8
+    if-eqz v6, :cond_8
 
     iget v6, v11, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -666,6 +666,8 @@
     new-instance v11, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v11, v6}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;)V
+
+    if-eqz v6, :cond_d
 
     .line 155
     iget-object v0, v1, Lorg/telegram/messenger/ChatsRemoteViewsFactory;->accountInstance:Lorg/telegram/messenger/AccountInstance;
@@ -1257,7 +1259,7 @@
 
     const/4 v13, 0x0
 
-    goto :goto_11
+    goto :goto_10
 
     .line 244
     :cond_1e
@@ -1289,7 +1291,17 @@
 
     move-result-object v8
 
-    goto :goto_10
+    move v14, v11
+
+    const/16 v12, 0x20
+
+    const/16 v15, 0xa
+
+    move-object v11, v8
+
+    const/4 v8, 0x2
+
+    goto :goto_13
 
     :cond_1f
     const/4 v11, 0x1
@@ -1311,17 +1323,16 @@
 
     move-result-object v8
 
-    :goto_10
     move-object v11, v8
 
     const/4 v8, 0x2
 
     const/16 v12, 0x20
 
-    :goto_11
+    :goto_10
     const/4 v14, 0x1
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_20
     const/4 v13, 0x0
@@ -1363,7 +1374,7 @@
 
     move-result-object v11
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_21
     const/4 v8, 0x2
@@ -1389,7 +1400,7 @@
 
     move-result-object v11
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_22
     const/4 v8, 0x2
@@ -1403,13 +1414,14 @@
 
     move-result-object v11
 
-    :goto_12
+    :goto_11
     const/16 v12, 0x20
 
-    :goto_13
+    :goto_12
     const/16 v15, 0xa
 
     .line 259
+    :goto_13
     invoke-virtual {v11, v15, v12}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v11
@@ -2065,12 +2077,12 @@
 
     if-ne v2, v4, :cond_37
 
-    const/16 v4, 0x8
+    move v4, v0
 
     goto :goto_20
 
     :cond_37
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_20
     invoke-virtual {v7, v3, v4}, Landroid/widget/RemoteViews;->setViewVisibility(II)V

@@ -144,7 +144,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget v2, p0, Lorg/bouncycastle/crypto/modes/CBCBlockCipher;->blockSize:I

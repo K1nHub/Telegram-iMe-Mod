@@ -115,10 +115,10 @@ public final class Ac3Util {
     }
 
     public static SyncFrameInfo parseAc3SyncframeInfo(ParsableBitArray parsableBitArray) {
-        String str;
         int i;
         int i2;
         int i3;
+        String str;
         int i4;
         int i5;
         int i6;
@@ -161,7 +161,7 @@ public final class Ac3Util {
             int calculateEac3Bitrate = calculateEac3Bitrate(readBits2, i8, i9);
             int readBits5 = parsableBitArray.readBits(3);
             boolean readBit = parsableBitArray.readBit();
-            int i16 = CHANNEL_COUNT_BY_ACMOD[readBits5] + (readBit ? 1 : 0);
+            i = CHANNEL_COUNT_BY_ACMOD[readBits5] + (readBit ? 1 : 0);
             parsableBitArray.skipBits(10);
             if (parsableBitArray.readBit()) {
                 parsableBitArray.skipBits(8);
@@ -267,7 +267,7 @@ public final class Ac3Util {
                         if (i7 == 0) {
                             parsableBitArray.skipBits(5);
                         } else {
-                            for (int i17 = 0; i17 < i9; i17++) {
+                            for (int i16 = 0; i16 < i9; i16++) {
                                 if (parsableBitArray.readBit()) {
                                     parsableBitArray.skipBits(5);
                                 }
@@ -304,18 +304,17 @@ public final class Ac3Util {
                 i10 = 6;
             }
             str = (parsableBitArray.readBit() && parsableBitArray.readBits(i10) == 1 && parsableBitArray.readBits(8) == 1) ? MimeTypes.AUDIO_E_AC3_JOC : MimeTypes.AUDIO_E_AC3;
-            i5 = i13;
-            i6 = i15;
-            i2 = readBits2;
-            i3 = i8;
-            i = calculateEac3Bitrate;
-            i4 = i16;
+            i2 = i13;
+            i3 = i15;
+            i5 = readBits2;
+            i6 = i8;
+            i4 = calculateEac3Bitrate;
         } else {
             parsableBitArray.skipBits(32);
             int readBits8 = parsableBitArray.readBits(2);
             String str2 = readBits8 == 3 ? null : MimeTypes.AUDIO_AC3;
             int readBits9 = parsableBitArray.readBits(6);
-            int i18 = BITRATE_BY_HALF_FRMSIZECOD[readBits9 / 2] * 1000;
+            int i17 = BITRATE_BY_HALF_FRMSIZECOD[readBits9 / 2] * 1000;
             int ac3SyncframeSize = getAc3SyncframeSize(readBits8, readBits9);
             parsableBitArray.skipBits(8);
             int readBits10 = parsableBitArray.readBits(3);
@@ -329,15 +328,16 @@ public final class Ac3Util {
                 parsableBitArray.skipBits(2);
             }
             int[] iArr = SAMPLE_RATE_BY_FSCOD;
+            int i18 = readBits8 < iArr.length ? iArr[readBits8] : -1;
+            i = CHANNEL_COUNT_BY_ACMOD[readBits10] + (parsableBitArray.readBit() ? 1 : 0);
+            i2 = -1;
+            i3 = AC3_SYNCFRAME_AUDIO_SAMPLE_COUNT;
             str = str2;
-            i = i18;
-            i2 = ac3SyncframeSize;
-            i3 = readBits8 < iArr.length ? iArr[readBits8] : -1;
-            i4 = CHANNEL_COUNT_BY_ACMOD[readBits10] + (parsableBitArray.readBit() ? 1 : 0);
-            i5 = -1;
-            i6 = AC3_SYNCFRAME_AUDIO_SAMPLE_COUNT;
+            i4 = i17;
+            i5 = ac3SyncframeSize;
+            i6 = i18;
         }
-        return new SyncFrameInfo(str, i5, i4, i3, i2, i6, i);
+        return new SyncFrameInfo(str, i2, i, i6, i5, i3, i4);
     }
 
     public static int parseAc3SyncframeSize(byte[] bArr) {

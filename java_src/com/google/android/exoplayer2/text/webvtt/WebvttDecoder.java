@@ -58,21 +58,21 @@ public final class WebvttDecoder extends SimpleSubtitleDecoder {
     }
 
     private static int getNextEvent(ParsableByteArray parsableByteArray) {
-        int i = -1;
-        int i2 = 0;
-        while (i == -1) {
-            i2 = parsableByteArray.getPosition();
+        int i = 0;
+        int i2 = -1;
+        while (i2 == -1) {
+            i = parsableByteArray.getPosition();
             String readLine = parsableByteArray.readLine();
             if (readLine == null) {
-                i = 0;
+                i2 = 0;
             } else if (STYLE_START.equals(readLine)) {
-                i = 2;
+                i2 = 2;
             } else {
-                i = readLine.startsWith(COMMENT_START) ? 1 : 3;
+                i2 = readLine.startsWith(COMMENT_START) ? 1 : 3;
             }
         }
-        parsableByteArray.setPosition(i2);
-        return i;
+        parsableByteArray.setPosition(i);
+        return i2;
     }
 
     private static void skipComment(ParsableByteArray parsableByteArray) {

@@ -167,9 +167,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, v2, p1
+    cmp-long p1, v2, p1
 
-    if-nez v0, :cond_2
+    if-nez p1, :cond_2
 
     const/4 v1, 0x1
 

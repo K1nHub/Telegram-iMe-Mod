@@ -1171,7 +1171,7 @@
     if-gtz v0, :cond_5
 
     :goto_1
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
@@ -1190,7 +1190,7 @@
 
     if-gez v7, :cond_6
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_2
 

@@ -56,6 +56,8 @@
 
 .field private final tonScanUrl:Ljava/lang/String;
 
+.field private final tronScanUrl:Ljava/lang/String;
+
 .field private final walletActivationBotId:J
 
 .field private final walletActivationBotUsername:Ljava/lang/String;
@@ -73,7 +75,7 @@
 
     sput-object v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->Companion:Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Companion;
 
-    .line 81
+    .line 85
     sget-object v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Companion$availableEnvironments$2;->INSTANCE:Lcom/smedialink/storage/domain/model/common/EnvironmentInformation$Companion$availableEnvironments$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -85,7 +87,7 @@
     return-void
 .end method
 
-.method private constructor <init>(Lcom/smedialink/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;I)V
+.method private constructor <init>(Lcom/smedialink/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;I)V
     .locals 3
 
     move-object v0, p0
@@ -141,40 +143,45 @@
     move-object v1, p11
 
     .line 17
-    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tonScanUrl:Ljava/lang/String;
+    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tronScanUrl:Ljava/lang/String;
 
     move-object v1, p12
 
     .line 18
-    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->reactionBotUsername:Ljava/lang/String;
+    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tonScanUrl:Ljava/lang/String;
 
-    move-wide/from16 v1, p13
+    move-object/from16 v1, p13
 
     .line 19
-    iput-wide v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->reactionBotId:J
+    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->reactionBotUsername:Ljava/lang/String;
 
-    move-object/from16 v1, p15
+    move-wide/from16 v1, p14
 
     .line 20
-    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->binanceProcessUrl:Ljava/lang/String;
+    iput-wide v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->reactionBotId:J
 
     move-object/from16 v1, p16
 
     .line 21
-    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tonConfigFilename:Ljava/lang/String;
+    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->binanceProcessUrl:Ljava/lang/String;
 
-    move/from16 v1, p17
+    move-object/from16 v1, p17
 
     .line 22
+    iput-object v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tonConfigFilename:Ljava/lang/String;
+
+    move/from16 v1, p18
+
+    .line 23
     iput v1, v0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->hintDefaultShowsCount:I
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p17}, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/smedialink/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;I)V
+    invoke-direct/range {p0 .. p18}, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/smedialink/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -213,7 +220,7 @@
 .method public final getBinanceProcessUrl()Ljava/lang/String;
     .locals 1
 
-    .line 20
+    .line 21
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->binanceProcessUrl:Ljava/lang/String;
 
     return-object v0
@@ -267,7 +274,7 @@
 .method public final getHintDefaultShowsCount()I
     .locals 1
 
-    .line 22
+    .line 23
     iget v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->hintDefaultShowsCount:I
 
     return v0
@@ -294,7 +301,7 @@
 .method public final getReactionBotId()J
     .locals 2
 
-    .line 19
+    .line 20
     iget-wide v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->reactionBotId:J
 
     return-wide v0
@@ -303,7 +310,7 @@
 .method public final getReactionBotUsername()Ljava/lang/String;
     .locals 1
 
-    .line 18
+    .line 19
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->reactionBotUsername:Ljava/lang/String;
 
     return-object v0
@@ -312,7 +319,7 @@
 .method public final getTonConfigFilename()Ljava/lang/String;
     .locals 1
 
-    .line 21
+    .line 22
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tonConfigFilename:Ljava/lang/String;
 
     return-object v0
@@ -321,8 +328,17 @@
 .method public final getTonScanUrl()Ljava/lang/String;
     .locals 1
 
-    .line 17
+    .line 18
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tonScanUrl:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getTronScanUrl()Ljava/lang/String;
+    .locals 1
+
+    .line 17
+    iget-object v0, p0, Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;->tronScanUrl:Ljava/lang/String;
 
     return-object v0
 .end method

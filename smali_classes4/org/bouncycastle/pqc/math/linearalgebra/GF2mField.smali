@@ -91,7 +91,7 @@
     :goto_0
     ushr-int/2addr p0, v1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_1
     if-eqz p0, :cond_3
@@ -262,7 +262,7 @@
     neg-int p2, p2
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v0
 
     :goto_0
     if-eqz p2, :cond_5
@@ -349,7 +349,7 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -361,7 +361,7 @@
 
     if-ge p1, v0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1

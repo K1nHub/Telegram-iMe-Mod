@@ -54,9 +54,9 @@
 
     iget-wide p0, p0, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;->document_id:J
 
-    cmp-long v0, p0, v4
+    cmp-long p0, p0, v4
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
     return v1
 

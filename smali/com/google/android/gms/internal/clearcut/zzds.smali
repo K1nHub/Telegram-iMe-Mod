@@ -158,7 +158,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     iput-boolean v4, v0, Lcom/google/android/gms/internal/clearcut/zzds;->zzmo:Z
@@ -730,9 +730,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_a
+    if-eqz v3, :cond_a
 
     const/4 v15, 0x1
 
@@ -1319,22 +1319,22 @@
 
     and-long v8, p9, v8
 
-    const-string v1, ""
+    cmp-long v1, v8, v10
 
-    cmp-long v6, v8, v10
+    const-string v6, ""
+
+    if-nez v1, :cond_e
 
     invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
 
-    move-result v4
+    move-result v1
 
-    if-nez v6, :cond_e
+    iget v4, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
 
-    iget v6, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
-
-    if-nez v6, :cond_c
+    if-nez v4, :cond_c
 
     :goto_a
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_c
 
@@ -1343,31 +1343,31 @@
 
     sget-object v9, Lcom/google/android/gms/internal/clearcut/zzci;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v8, v3, v4, v6, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     :goto_b
     invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    add-int/2addr v4, v6
+    add-int/2addr v1, v4
 
     :goto_c
-    if-ge v4, v5, :cond_28
+    if-ge v1, v5, :cond_29
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
-
-    move-result v6
-
-    iget v8, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
-
-    if-ne v2, v8, :cond_28
-
-    invoke-static {v3, v6, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
+    invoke-static {v3, v1, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
 
     move-result v4
 
-    iget v6, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
+    iget v8, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
 
-    if-nez v6, :cond_d
+    if-ne v2, v8, :cond_29
+
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
+
+    move-result v1
+
+    iget v4, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
+
+    if-nez v4, :cond_d
 
     goto :goto_a
 
@@ -1376,24 +1376,28 @@
 
     sget-object v9, Lcom/google/android/gms/internal/clearcut/zzci;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v8, v3, v4, v6, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     goto :goto_b
 
     :cond_e
-    iget v6, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
 
-    if-nez v6, :cond_f
+    move-result v1
+
+    iget v4, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
+
+    if-nez v4, :cond_f
 
     :goto_d
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_f
 
     :cond_f
-    add-int v8, v4, v6
+    add-int v8, v1, v4
 
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/internal/clearcut/zzff;->zze([BII)Z
+    invoke-static {v3, v1, v8}, Lcom/google/android/gms/internal/clearcut/zzff;->zze([BII)Z
 
     move-result v9
 
@@ -1403,38 +1407,38 @@
 
     sget-object v10, Lcom/google/android/gms/internal/clearcut/zzci;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v9, v3, v4, v6, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     :goto_e
     invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move v4, v8
+    move v1, v8
 
     :goto_f
-    if-ge v4, v5, :cond_28
+    if-ge v1, v5, :cond_29
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
-
-    move-result v6
-
-    iget v8, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
-
-    if-ne v2, v8, :cond_28
-
-    invoke-static {v3, v6, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
+    invoke-static {v3, v1, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
 
     move-result v4
 
-    iget v6, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
+    iget v8, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
 
-    if-nez v6, :cond_10
+    if-ne v2, v8, :cond_29
+
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/clearcut/zzax;->zza([BILcom/google/android/gms/internal/clearcut/zzay;)I
+
+    move-result v1
+
+    iget v4, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfd:I
+
+    if-nez v4, :cond_10
 
     goto :goto_d
 
     :cond_10
-    add-int v8, v4, v6
+    add-int v8, v1, v4
 
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/internal/clearcut/zzff;->zze([BII)Z
+    invoke-static {v3, v1, v8}, Lcom/google/android/gms/internal/clearcut/zzff;->zze([BII)Z
 
     move-result v9
 
@@ -1444,7 +1448,7 @@
 
     sget-object v10, Lcom/google/android/gms/internal/clearcut/zzci;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v9, v3, v4, v6, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     goto :goto_e
 
@@ -1486,16 +1490,16 @@
 
     iget-wide v5, v7, Lcom/google/android/gms/internal/clearcut/zzay;->zzfe:J
 
-    cmp-long v8, v5, v10
+    cmp-long v5, v5, v10
 
-    if-eqz v8, :cond_13
+    if-eqz v5, :cond_13
 
-    const/4 v5, 0x1
+    move v5, v14
 
     goto :goto_11
 
     :cond_13
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_11
     invoke-virtual {v12, v5}, Lcom/google/android/gms/internal/clearcut/zzaz;->addBoolean(Z)V
@@ -1530,12 +1534,12 @@
     if-eqz v6, :cond_17
 
     :goto_12
-    const/4 v6, 0x1
+    move v6, v14
 
     goto :goto_13
 
     :cond_17
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_13
     invoke-virtual {v12, v6}, Lcom/google/android/gms/internal/clearcut/zzaz;->addBoolean(Z)V
@@ -2218,11 +2222,11 @@
 
     move/from16 v0, p3
 
-    const/4 v1, 0x0
+    move v7, v8
 
-    const/4 v6, 0x0
+    move/from16 v1, v16
 
-    const/4 v7, -0x1
+    move v6, v1
 
     :goto_0
     const v17, 0xfffff
@@ -2360,7 +2364,7 @@
 
     move/from16 v9, p3
 
-    const/4 v8, -0x1
+    move v8, v5
 
     move-object/from16 v5, p6
 
@@ -2410,7 +2414,7 @@
 
     move-object/from16 v11, p6
 
-    const/4 v8, -0x1
+    move v8, v5
 
     if-nez v2, :cond_6
 
@@ -2457,9 +2461,9 @@
 
     move-object/from16 v11, p6
 
-    move-wide v0, v12
+    move v8, v5
 
-    const/4 v8, -0x1
+    move-wide v0, v12
 
     move-object/from16 v12, p2
 
@@ -2484,9 +2488,9 @@
 
     move-object/from16 v11, p6
 
-    move-wide/from16 v21, v12
+    move v8, v5
 
-    const/4 v8, -0x1
+    move-wide/from16 v21, v12
 
     move-object/from16 v12, p2
 
@@ -2545,11 +2549,11 @@
 
     move-object/from16 v11, p6
 
+    move v8, v5
+
     move-wide v0, v12
 
     const/4 v3, 0x2
-
-    const/4 v8, -0x1
 
     move-object/from16 v12, p2
 
@@ -2693,16 +2697,16 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v17, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v17, :cond_c
+    if-eqz v1, :cond_c
 
     const/4 v1, 0x1
 
     goto :goto_b
 
     :cond_c
-    const/4 v1, 0x0
+    move/from16 v1, v16
 
     :goto_b
     invoke-static {v14, v7, v8, v1}, Lcom/google/android/gms/internal/clearcut/zzfd;->zza(Ljava/lang/Object;JZ)V
@@ -3331,7 +3335,7 @@
 
     move-object v5, v0
 
-    const/4 v14, 0x0
+    move/from16 v14, v16
 
     :goto_1c
     if-ge v14, v13, :cond_1f
@@ -3426,8 +3430,6 @@
     move-result-object v0
 
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -3638,9 +3640,9 @@
 
     const-wide/16 p3, 0x0
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -3724,12 +3726,12 @@
 
     if-ne v1, v2, :cond_0
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v12, 0x0
+    move v12, v4
 
     :goto_0
     invoke-virtual {v0}, Lcom/google/android/gms/internal/clearcut/zzec;->getFieldCount()I
@@ -3738,11 +3740,11 @@
 
     if-nez v1, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v8, 0x0
+    move v8, v5
 
-    const/4 v9, 0x0
+    move v9, v8
 
     goto :goto_1
 
@@ -3828,11 +3830,11 @@
 
     move-result v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v10, 0x0
+    move v10, v5
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_4
     invoke-virtual {v0}, Lcom/google/android/gms/internal/clearcut/zzec;->zzcv()I
@@ -3847,7 +3849,7 @@
 
     if-ge v5, v13, :cond_4
 
-    const/4 v13, 0x0
+    move v13, v4
 
     :goto_5
     const/4 v14, 0x4
@@ -3889,9 +3891,9 @@
 
     move-result-wide v13
 
-    long-to-int v14, v13
+    long-to-int v13, v13
 
-    const/4 v13, 0x0
+    move v14, v4
 
     goto :goto_6
 
@@ -3920,18 +3922,18 @@
 
     move-result-wide v13
 
-    long-to-int v14, v13
+    long-to-int v13, v13
 
     invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzed;->zzdg()I
 
-    move-result v13
+    move-result v14
 
     goto :goto_6
 
     :cond_6
-    const/4 v13, 0x0
+    move v13, v4
 
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_6
     invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzed;->zzcx()I
@@ -3953,7 +3955,7 @@
     goto :goto_7
 
     :cond_7
-    const/16 v18, 0x0
+    move/from16 v18, v4
 
     :goto_7
     invoke-virtual {v1}, Lcom/google/android/gms/internal/clearcut/zzed;->zzdh()Z
@@ -3967,7 +3969,7 @@
     goto :goto_8
 
     :cond_8
-    const/16 v19, 0x0
+    move/from16 v19, v4
 
     :goto_8
     or-int v18, v18, v19
@@ -3986,7 +3988,7 @@
 
     add-int/lit8 v2, v5, 0x2
 
-    shl-int/lit8 v13, v13, 0x14
+    shl-int/lit8 v14, v14, 0x14
 
     or-int/2addr v13, v14
 
@@ -4541,9 +4543,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
     return v3
 
@@ -4567,9 +4569,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_3
 
     return v3
 
@@ -4713,9 +4715,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_e
+    if-eqz p1, :cond_e
 
     return v3
 
@@ -4739,9 +4741,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_10
+    if-eqz p1, :cond_10
 
     return v3
 
@@ -4753,9 +4755,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_11
+    if-eqz p1, :cond_11
 
     return v3
 
@@ -4785,9 +4787,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmpl-double v4, p1, v0
+    cmpl-double p1, p1, v0
 
-    if-eqz v4, :cond_13
+    if-eqz p1, :cond_13
 
     return v3
 
@@ -6851,7 +6853,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x1
@@ -6966,9 +6968,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
@@ -7006,9 +7008,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
@@ -7191,9 +7193,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_2
 
@@ -7231,9 +7233,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_2
 
@@ -7252,9 +7254,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -7293,13 +7295,13 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     :cond_0
     :goto_2
-    const/4 v3, 0x0
+    move v3, v1
 
     :cond_1
     :goto_3
@@ -7449,7 +7451,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -9428,7 +9430,7 @@
 
     array-length v7, v7
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_18
     if-ge v8, v7, :cond_c
@@ -11560,7 +11562,7 @@
 
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v2, :cond_1
@@ -12044,9 +12046,9 @@
 
     sget-object v2, Lcom/google/android/gms/internal/clearcut/zzds;->zzmh:Lsun/misc/Unsafe;
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
     :goto_0
     iget-object v14, v0, Lcom/google/android/gms/internal/clearcut/zzds;->zzmi:[I
@@ -12098,7 +12100,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v11
 
     :goto_1
     packed-switch v15, :pswitch_data_0
@@ -13113,11 +13115,11 @@
 
     const/4 v3, -0x1
 
-    const/4 v5, 0x0
+    move v5, v11
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v12, 0x0
+    move v12, v6
 
     :goto_18
     iget-object v13, v0, Lcom/google/android/gms/internal/clearcut/zzds;->zzmi:[I
@@ -13213,7 +13215,7 @@
 
     packed-switch v4, :pswitch_data_1
 
-    goto/16 :goto_1d
+    goto/16 :goto_1e
 
     :pswitch_41
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13222,7 +13224,7 @@
 
     if-eqz v4, :cond_a
 
-    goto/16 :goto_1f
+    goto/16 :goto_20
 
     :pswitch_42
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13235,7 +13237,7 @@
 
     move-result-wide v9
 
-    goto/16 :goto_20
+    goto/16 :goto_21
 
     :pswitch_43
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13248,7 +13250,7 @@
 
     move-result v4
 
-    goto/16 :goto_21
+    goto/16 :goto_22
 
     :pswitch_44
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13257,7 +13259,7 @@
 
     if-eqz v4, :cond_a
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     :pswitch_45
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13266,7 +13268,7 @@
 
     if-eqz v4, :cond_a
 
-    goto/16 :goto_23
+    goto/16 :goto_24
 
     :pswitch_46
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13279,7 +13281,7 @@
 
     move-result v4
 
-    goto/16 :goto_25
+    goto/16 :goto_26
 
     :pswitch_47
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13292,7 +13294,7 @@
 
     move-result v4
 
-    goto/16 :goto_26
+    goto/16 :goto_27
 
     :pswitch_48
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13301,7 +13303,7 @@
 
     if-eqz v4, :cond_a
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     :pswitch_49
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13310,7 +13312,7 @@
 
     if-eqz v4, :cond_a
 
-    goto/16 :goto_29
+    goto/16 :goto_2a
 
     :pswitch_4a
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13327,7 +13329,7 @@
 
     if-eqz v9, :cond_b
 
-    goto/16 :goto_2a
+    goto/16 :goto_2b
 
     :pswitch_4b
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13336,7 +13338,7 @@
 
     if-eqz v4, :cond_a
 
-    goto/16 :goto_2b
+    goto/16 :goto_2c
 
     :pswitch_4c
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13351,7 +13353,7 @@
 
     move-result v9
 
-    goto/16 :goto_24
+    goto/16 :goto_25
 
     :pswitch_4d
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13366,7 +13368,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_4e
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13383,7 +13385,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_4f
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13400,7 +13402,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_50
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13417,7 +13419,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_51
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13432,7 +13434,7 @@
 
     move-result v9
 
-    goto/16 :goto_24
+    goto/16 :goto_25
 
     :pswitch_52
     invoke-direct {v0, v1, v15, v5}, Lcom/google/android/gms/internal/clearcut/zzds;->zza(Ljava/lang/Object;II)Z
@@ -13447,7 +13449,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_53
     iget-object v4, v0, Lcom/google/android/gms/internal/clearcut/zzds;->zzmz:Lcom/google/android/gms/internal/clearcut/zzdj;
@@ -13464,7 +13466,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_54
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13481,7 +13483,7 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_55
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13765,7 +13767,7 @@
 
     add-int/2addr v9, v4
 
-    goto/16 :goto_24
+    goto/16 :goto_25
 
     :pswitch_63
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13825,7 +13827,7 @@
 
     move-result v4
 
-    goto :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_67
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13838,7 +13840,7 @@
 
     move-result v4
 
-    goto :goto_1c
+    goto/16 :goto_1d
 
     :pswitch_68
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13855,7 +13857,7 @@
 
     move-result v4
 
-    goto :goto_1c
+    goto :goto_1d
 
     :pswitch_69
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13868,7 +13870,7 @@
 
     move-result v4
 
-    goto :goto_1c
+    goto :goto_1d
 
     :pswitch_6a
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -13894,7 +13896,7 @@
 
     check-cast v4, Ljava/util/List;
 
-    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzs(ILjava/util/List;Z)I
+    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzw(ILjava/util/List;Z)I
 
     move-result v4
 
@@ -13909,7 +13911,7 @@
 
     check-cast v4, Ljava/util/List;
 
-    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzp(ILjava/util/List;Z)I
+    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzs(ILjava/util/List;Z)I
 
     move-result v4
 
@@ -13924,7 +13926,7 @@
 
     check-cast v4, Ljava/util/List;
 
-    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzo(ILjava/util/List;Z)I
+    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzp(ILjava/util/List;Z)I
 
     move-result v4
 
@@ -13939,7 +13941,7 @@
 
     check-cast v4, Ljava/util/List;
 
-    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzv(ILjava/util/List;Z)I
+    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzo(ILjava/util/List;Z)I
 
     move-result v4
 
@@ -13954,32 +13956,52 @@
 
     check-cast v4, Ljava/util/List;
 
-    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzw(ILjava/util/List;Z)I
+    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzv(ILjava/util/List;Z)I
 
     move-result v4
 
     :goto_1c
     add-int/2addr v6, v4
 
-    :cond_a
+    move v4, v9
+
+    goto :goto_1f
+
+    :pswitch_70
+    const/4 v9, 0x0
+
+    invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/List;
+
+    invoke-static {v15, v4, v9}, Lcom/google/android/gms/internal/clearcut/zzeh;->zzw(ILjava/util/List;Z)I
+
+    move-result v4
+
     :goto_1d
+    add-int/2addr v6, v4
+
+    :cond_a
+    :goto_1e
     const/4 v4, 0x0
 
-    :goto_1e
+    :goto_1f
     const/4 v9, 0x0
 
     const-wide/16 v10, 0x0
 
     const-wide/16 v13, 0x0
 
-    goto/16 :goto_2e
+    goto/16 :goto_2f
 
-    :pswitch_70
+    :pswitch_71
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
 
-    :goto_1f
+    :goto_20
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
     move-result-object v4
@@ -13994,9 +14016,9 @@
 
     move-result v4
 
-    goto :goto_1c
+    goto :goto_1d
 
-    :pswitch_71
+    :pswitch_72
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
@@ -14005,14 +14027,14 @@
 
     move-result-wide v9
 
-    :goto_20
+    :goto_21
     invoke-static {v15, v9, v10}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzf(IJ)I
 
     move-result v4
 
-    goto :goto_1c
+    goto :goto_1d
 
-    :pswitch_72
+    :pswitch_73
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
@@ -14021,26 +14043,12 @@
 
     move-result v4
 
-    :goto_21
+    :goto_22
     invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzi(II)I
 
     move-result v4
 
-    goto :goto_1c
-
-    :pswitch_73
-    and-int v4, v12, v18
-
-    if-eqz v4, :cond_a
-
-    :goto_22
-    const-wide/16 v9, 0x0
-
-    invoke-static {v15, v9, v10}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzh(IJ)I
-
-    move-result v4
-
-    goto :goto_1c
+    goto :goto_1d
 
     :pswitch_74
     and-int v4, v12, v18
@@ -14048,14 +14056,11 @@
     if-eqz v4, :cond_a
 
     :goto_23
-    const/4 v4, 0x0
+    const-wide/16 v9, 0x0
 
-    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzk(II)I
+    invoke-static {v15, v9, v10}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzh(IJ)I
 
-    move-result v9
-
-    :goto_24
-    add-int/2addr v6, v9
+    move-result v4
 
     goto :goto_1d
 
@@ -14064,16 +14069,17 @@
 
     if-eqz v4, :cond_a
 
-    invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
+    :goto_24
+    const/4 v4, 0x0
 
-    move-result v4
+    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzk(II)I
+
+    move-result v9
 
     :goto_25
-    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzl(II)I
+    add-int/2addr v6, v9
 
-    move-result v4
-
-    goto :goto_1c
+    goto :goto_1e
 
     :pswitch_76
     and-int v4, v12, v18
@@ -14085,37 +14091,53 @@
     move-result v4
 
     :goto_26
-    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzh(II)I
+    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzl(II)I
 
     move-result v4
 
-    goto :goto_1c
+    goto :goto_1d
 
     :pswitch_77
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
 
-    :goto_27
-    invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
-
-    move-result-object v4
-
-    :goto_28
-    check-cast v4, Lcom/google/android/gms/internal/clearcut/zzbb;
-
-    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzc(ILcom/google/android/gms/internal/clearcut/zzbb;)I
+    invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
     move-result v4
 
-    goto :goto_1c
+    :goto_27
+    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzh(II)I
+
+    move-result v4
+
+    goto :goto_1d
 
     :pswitch_78
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
 
+    :goto_28
+    invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    move-result-object v4
+
     :goto_29
+    check-cast v4, Lcom/google/android/gms/internal/clearcut/zzbb;
+
+    invoke-static {v15, v4}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzc(ILcom/google/android/gms/internal/clearcut/zzbb;)I
+
+    move-result v4
+
+    goto :goto_1d
+
+    :pswitch_79
+    and-int v4, v12, v18
+
+    if-eqz v4, :cond_a
+
+    :goto_2a
     invoke-virtual {v2, v1, v10, v11}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
     move-result-object v4
@@ -14128,9 +14150,9 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
-    :pswitch_79
+    :pswitch_7a
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
@@ -14143,8 +14165,8 @@
 
     if-eqz v9, :cond_b
 
-    :goto_2a
-    goto :goto_28
+    :goto_2b
+    goto :goto_29
 
     :cond_b
     check-cast v4, Ljava/lang/String;
@@ -14153,21 +14175,21 @@
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
-    :pswitch_7a
+    :pswitch_7b
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
 
-    :goto_2b
+    :goto_2c
     invoke-static {v15, v7}, Lcom/google/android/gms/internal/clearcut/zzbn;->zzc(IZ)I
 
     move-result v4
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
-    :pswitch_7b
+    :pswitch_7c
     and-int v4, v12, v18
 
     if-eqz v4, :cond_a
@@ -14180,9 +14202,9 @@
 
     add-int/2addr v6, v9
 
-    goto/16 :goto_1e
+    goto/16 :goto_1f
 
-    :pswitch_7c
+    :pswitch_7d
     const/4 v4, 0x0
 
     and-int v9, v12, v18
@@ -14195,9 +14217,9 @@
 
     move-result v9
 
-    goto :goto_2c
+    goto :goto_2d
 
-    :pswitch_7d
+    :pswitch_7e
     const/4 v4, 0x0
 
     const-wide/16 v13, 0x0
@@ -14214,9 +14236,9 @@
 
     move-result v9
 
-    goto :goto_2c
+    goto :goto_2d
 
-    :pswitch_7e
+    :pswitch_7f
     const/4 v4, 0x0
 
     const-wide/16 v13, 0x0
@@ -14233,9 +14255,9 @@
 
     move-result v9
 
-    goto :goto_2c
+    goto :goto_2d
 
-    :pswitch_7f
+    :pswitch_80
     const/4 v4, 0x0
 
     const-wide/16 v13, 0x0
@@ -14252,15 +14274,15 @@
 
     move-result v9
 
-    :goto_2c
+    :goto_2d
     add-int/2addr v6, v9
 
     :cond_c
     const/4 v9, 0x0
 
-    goto :goto_2d
+    goto :goto_2e
 
-    :pswitch_80
+    :pswitch_81
     const/4 v4, 0x0
 
     const-wide/16 v13, 0x0
@@ -14278,12 +14300,12 @@
     add-int/2addr v6, v10
 
     :cond_d
-    :goto_2d
+    :goto_2e
     const-wide/16 v10, 0x0
 
-    goto :goto_2e
+    goto :goto_2f
 
-    :pswitch_81
+    :pswitch_82
     const/4 v4, 0x0
 
     const/4 v9, 0x0
@@ -14302,14 +14324,14 @@
 
     add-int/2addr v6, v15
 
-    :goto_2e
+    :goto_2f
     add-int/lit8 v5, v5, 0x4
 
+    move v11, v4
+
+    move v4, v9
+
     move-wide v9, v13
-
-    const/4 v4, 0x0
-
-    const/4 v11, 0x0
 
     goto/16 :goto_18
 
@@ -14416,6 +14438,7 @@
 
     :pswitch_data_1
     .packed-switch 0x0
+        :pswitch_82
         :pswitch_81
         :pswitch_80
         :pswitch_7f
@@ -14440,15 +14463,14 @@
         :pswitch_6c
         :pswitch_6b
         :pswitch_6f
-        :pswitch_6e
         :pswitch_6a
         :pswitch_69
         :pswitch_68
         :pswitch_67
         :pswitch_66
         :pswitch_65
-        :pswitch_6e
         :pswitch_6f
+        :pswitch_6b
         :pswitch_64
         :pswitch_63
         :pswitch_62
@@ -14585,7 +14607,7 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_2
 
@@ -14730,7 +14752,7 @@
     goto :goto_3
 
     :cond_8
-    const/4 v6, 0x1
+    move v6, v3
 
     :goto_3
     if-nez v6, :cond_e
@@ -14810,7 +14832,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v6, 0x1
+    move v6, v3
 
     :goto_5
     if-nez v6, :cond_e

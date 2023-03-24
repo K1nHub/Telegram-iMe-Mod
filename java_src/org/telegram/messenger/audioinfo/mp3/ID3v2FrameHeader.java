@@ -37,13 +37,13 @@ public class ID3v2FrameHeader {
             byte b5 = 64;
             if (iD3v2TagBody.getTagHeader().getVersion() == 3) {
                 b4 = 128;
-                b3 = 0;
                 b = 32;
+                b3 = 0;
                 b2 = 0;
             } else {
                 b = 64;
-                b5 = 4;
                 b2 = 1;
+                b5 = 4;
             }
             this.compression = (b4 & readByte) != 0;
             this.unsynchronization = (readByte & b3) != 0;

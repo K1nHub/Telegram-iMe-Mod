@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -194,8 +194,8 @@ public class InviteLinkBottomSheet extends BottomSheet {
             }
 
             /* JADX WARN: Removed duplicated region for block: B:17:0x009c  */
-            /* JADX WARN: Removed duplicated region for block: B:19:0x00ed  */
-            /* JADX WARN: Removed duplicated region for block: B:22:0x011c  */
+            /* JADX WARN: Removed duplicated region for block: B:19:0x00eb  */
+            /* JADX WARN: Removed duplicated region for block: B:22:0x011a  */
             @Override // android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -203,10 +203,10 @@ public class InviteLinkBottomSheet extends BottomSheet {
             */
             protected void onDraw(android.graphics.Canvas r13) {
                 /*
-                    Method dump skipped, instructions count: 289
+                    Method dump skipped, instructions count: 287
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.InviteLinkBottomSheet.C46841.onDraw(android.graphics.Canvas):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.InviteLinkBottomSheet.C46991.onDraw(android.graphics.Canvas):void");
             }
 
             private void updateLightStatusBar(boolean z3) {
@@ -310,15 +310,15 @@ public class InviteLinkBottomSheet extends BottomSheet {
         this.titleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (!z) {
             if (tLRPC$TL_chatInviteExported.expired) {
-                this.titleTextView.setText(LocaleController.getString("ExpiredLink", C3286R.string.ExpiredLink));
+                this.titleTextView.setText(LocaleController.getString("ExpiredLink", C3301R.string.ExpiredLink));
             } else if (tLRPC$TL_chatInviteExported.revoked) {
-                this.titleTextView.setText(LocaleController.getString("RevokedLink", C3286R.string.RevokedLink));
+                this.titleTextView.setText(LocaleController.getString("RevokedLink", C3301R.string.RevokedLink));
             } else {
-                this.titleTextView.setText(LocaleController.getString("InviteLink", C3286R.string.InviteLink));
+                this.titleTextView.setText(LocaleController.getString("InviteLink", C3301R.string.InviteLink));
             }
             this.titleVisible = true;
         } else {
-            this.titleTextView.setText(LocaleController.getString("InviteLink", C3286R.string.InviteLink));
+            this.titleTextView.setText(LocaleController.getString("InviteLink", C3301R.string.InviteLink));
             this.titleVisible = false;
             this.titleTextView.setVisibility(4);
             this.titleTextView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -329,7 +329,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
             this.titleTextView.setText(spannableStringBuilder);
         }
         this.containerView.addView(this.listView, LayoutHelper.createFrame(-1, -1, 51, 0, !this.titleVisible ? 0 : 44, 0, 0));
-        this.containerView.addView(this.titleTextView, LayoutHelper.createFrame(-1, !this.titleVisible ? 44 : 50, 51, 0, 0, 0, 0));
+        this.containerView.addView(this.titleTextView, LayoutHelper.createFrame(-1, this.titleVisible ? 50 : 44, 51, 0, 0, 0, 0));
         updateRows();
         loadUsers();
         if (hashMap == null || hashMap.get(Long.valueOf(tLRPC$TL_chatInviteExported.admin_id)) == null) {
@@ -347,7 +347,9 @@ public class InviteLinkBottomSheet extends BottomSheet {
         boolean z = true;
         boolean z2 = i >= i2 && i < this.joinedEndRow;
         int i3 = this.requestedStartRow;
-        z = (i < i3 || i >= this.requestedEndRow) ? false : false;
+        if (i < i3 || i >= this.requestedEndRow) {
+            z = false;
+        }
         if ((i == this.creatorRow || z2 || z) && hashMap != null) {
             long j = tLRPC$TL_chatInviteExported.admin_id;
             if (z2) {
@@ -372,7 +374,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(TLRPC$User tLRPC$User, BaseFragment baseFragment) {
         Bundle bundle = new Bundle();
-        bundle.putLong("user_id", tLRPC$User.f1639id);
+        bundle.putLong("user_id", tLRPC$User.f1640id);
         baseFragment.presentFragment(new ProfileActivity(bundle));
         this.isNeedReopen = true;
     }
@@ -420,7 +422,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
         } else if (view instanceof LinkActionView) {
             ((LinkActionView) view).updateColors();
         } else if (view instanceof TextInfoPrivacyCell) {
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(view.getContext(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(view.getContext(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
             combinedDrawable.setFullsize(true);
             view.setBackground(combinedDrawable);
             ((TextInfoPrivacyCell) view).setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
@@ -430,11 +432,11 @@ public class InviteLinkBottomSheet extends BottomSheet {
         RecyclerView.ViewHolder childViewHolder = this.listView.getChildViewHolder(view);
         if (childViewHolder != null) {
             if (childViewHolder.getItemViewType() == 7) {
-                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(view.getContext(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"), 0, 0);
+                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(view.getContext(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"), 0, 0);
                 combinedDrawable2.setFullsize(true);
                 view.setBackgroundDrawable(combinedDrawable2);
             } else if (childViewHolder.getItemViewType() == 2) {
-                CombinedDrawable combinedDrawable3 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(view.getContext(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"), 0, 0);
+                CombinedDrawable combinedDrawable3 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(view.getContext(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"), 0, 0);
                 combinedDrawable3.setFullsize(true);
                 view.setBackgroundDrawable(combinedDrawable3);
             }
@@ -443,7 +445,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
 
     private void loadCreator() {
         TLRPC$TL_users_getUsers tLRPC$TL_users_getUsers = new TLRPC$TL_users_getUsers();
-        tLRPC$TL_users_getUsers.f1636id.add(MessagesController.getInstance(UserConfig.selectedAccount).getInputUser(this.invite.admin_id));
+        tLRPC$TL_users_getUsers.f1637id.add(MessagesController.getInstance(UserConfig.selectedAccount).getInputUser(this.invite.admin_id));
         ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tLRPC$TL_users_getUsers, new RequestDelegate() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -540,13 +542,13 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 case 3:
                     InviteLinkBottomSheet inviteLinkBottomSheet = InviteLinkBottomSheet.this;
                     LinkActionView linkActionView = new LinkActionView(context, inviteLinkBottomSheet.fragment, inviteLinkBottomSheet, inviteLinkBottomSheet.chatId, false, InviteLinkBottomSheet.this.isChannel);
-                    linkActionView.setDelegate(new C46891());
+                    linkActionView.setDelegate(new C47041());
                     linkActionView.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
                     headerCell = linkActionView;
                     break;
                 case 4:
                     timerPrivacyCell = new TimerPrivacyCell(context);
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(context, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(context, C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                     combinedDrawable.setFullsize(true);
                     timerPrivacyCell.setBackground(combinedDrawable);
                     headerCell = timerPrivacyCell;
@@ -569,7 +571,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     break;
                 case 7:
                     timerPrivacyCell = new ShadowSectionCell(context, 12);
-                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(context, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"), 0, 0);
+                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(context, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"), 0, 0);
                     combinedDrawable2.setFullsize(true);
                     timerPrivacyCell.setBackgroundDrawable(combinedDrawable2);
                     headerCell = timerPrivacyCell;
@@ -592,13 +594,13 @@ public class InviteLinkBottomSheet extends BottomSheet {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$1 */
         /* loaded from: classes6.dex */
-        public class C46891 implements LinkActionView.Delegate {
+        public class C47041 implements LinkActionView.Delegate {
             @Override // org.telegram.p048ui.Components.LinkActionView.Delegate
             public /* synthetic */ void showUsersForPermanentLink() {
                 LinkActionView.Delegate.CC.$default$showUsersForPermanentLink(this);
             }
 
-            C46891() {
+            C47041() {
             }
 
             @Override // org.telegram.p048ui.Components.LinkActionView.Delegate
@@ -616,7 +618,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     ConnectionsManager.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).sendRequest(tLRPC$TL_messages_editExportedChatInvite, new RequestDelegate() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda2
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                            InviteLinkBottomSheet.Adapter.C46891.this.lambda$revokeLink$1(tLObject, tLRPC$TL_error);
+                            InviteLinkBottomSheet.Adapter.C47041.this.lambda$revokeLink$1(tLObject, tLRPC$TL_error);
                         }
                     });
                 }
@@ -628,7 +630,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteLinkBottomSheet.Adapter.C46891.this.lambda$revokeLink$0(tLRPC$TL_error, tLObject);
+                        InviteLinkBottomSheet.Adapter.C47041.this.lambda$revokeLink$0(tLRPC$TL_error, tLObject);
                     }
                 });
             }
@@ -717,7 +719,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     ConnectionsManager.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).sendRequest(tLRPC$TL_messages_deleteExportedChatInvite, new RequestDelegate() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda3
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                            InviteLinkBottomSheet.Adapter.C46891.this.lambda$removeLink$3(tLObject, tLRPC$TL_error);
+                            InviteLinkBottomSheet.Adapter.C47041.this.lambda$removeLink$3(tLObject, tLRPC$TL_error);
                         }
                     });
                 }
@@ -729,7 +731,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteLinkBottomSheet.Adapter.C46891.this.lambda$removeLink$2(tLRPC$TL_error);
+                        InviteLinkBottomSheet.Adapter.C47041.this.lambda$removeLink$2(tLRPC$TL_error);
                     }
                 });
             }
@@ -760,14 +762,14 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 InviteLinkBottomSheet inviteLinkBottomSheet = InviteLinkBottomSheet.this;
                 if (i == inviteLinkBottomSheet.creatorHeaderRow) {
-                    headerCell.setText(LocaleController.getString("LinkCreatedeBy", C3286R.string.LinkCreatedeBy));
+                    headerCell.setText(LocaleController.getString("LinkCreatedeBy", C3301R.string.LinkCreatedeBy));
                     headerCell.setText2(null);
                 } else if (i == inviteLinkBottomSheet.joinedHeaderRow) {
                     int i5 = inviteLinkBottomSheet.invite.usage;
                     if (i5 > 0) {
                         headerCell.setText(LocaleController.formatPluralString("PeopleJoined", i5, new Object[0]));
                     } else {
-                        headerCell.setText(LocaleController.getString("NoOneJoined", C3286R.string.NoOneJoined));
+                        headerCell.setText(LocaleController.getString("NoOneJoined", C3301R.string.NoOneJoined));
                     }
                     TLRPC$TL_chatInviteExported tLRPC$TL_chatInviteExported = InviteLinkBottomSheet.this.invite;
                     if (!tLRPC$TL_chatInviteExported.expired && !tLRPC$TL_chatInviteExported.revoked && (i2 = tLRPC$TL_chatInviteExported.usage_limit) > 0 && (i3 = tLRPC$TL_chatInviteExported.usage) > 0) {
@@ -788,7 +790,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     }
                     if (tLRPC$User2 != null) {
                         LocaleController.formatDateAudio(InviteLinkBottomSheet.this.invite.date, false);
-                        str = LocaleController.formatStringInternal(C3286R.string.invite_link_created_date, LocaleController.formatImportedDate(InviteLinkBottomSheet.this.invite.date));
+                        str = LocaleController.formatStringInternal(C3301R.string.invite_link_created_date, LocaleController.formatImportedDate(InviteLinkBottomSheet.this.invite.date));
                     } else {
                         str = null;
                     }
@@ -797,22 +799,22 @@ public class InviteLinkBottomSheet extends BottomSheet {
                         while (true) {
                             if (i4 >= InviteLinkBottomSheet.this.info.participants.participants.size()) {
                                 break;
-                            } else if (InviteLinkBottomSheet.this.info.participants.participants.get(i4).user_id == tLRPC$User2.f1639id) {
+                            } else if (InviteLinkBottomSheet.this.info.participants.participants.get(i4).user_id == tLRPC$User2.f1640id) {
                                 TLRPC$ChatParticipant tLRPC$ChatParticipant = InviteLinkBottomSheet.this.info.participants.participants.get(i4);
                                 if (tLRPC$ChatParticipant instanceof TLRPC$TL_chatChannelParticipant) {
                                     TLRPC$ChannelParticipant tLRPC$ChannelParticipant = ((TLRPC$TL_chatChannelParticipant) tLRPC$ChatParticipant).channelParticipant;
                                     if (!TextUtils.isEmpty(tLRPC$ChannelParticipant.rank)) {
                                         str2 = tLRPC$ChannelParticipant.rank;
                                     } else if (tLRPC$ChannelParticipant instanceof TLRPC$TL_channelParticipantCreator) {
-                                        str2 = LocaleController.getString("ChannelCreator", C3286R.string.ChannelCreator);
+                                        str2 = LocaleController.getString("ChannelCreator", C3301R.string.ChannelCreator);
                                     } else if (tLRPC$ChannelParticipant instanceof TLRPC$TL_channelParticipantAdmin) {
-                                        str2 = LocaleController.getString("ChannelAdmin", C3286R.string.ChannelAdmin);
+                                        str2 = LocaleController.getString("ChannelAdmin", C3301R.string.ChannelAdmin);
                                     }
                                 } else {
                                     if (tLRPC$ChatParticipant instanceof TLRPC$TL_chatParticipantCreator) {
-                                        string = LocaleController.getString("ChannelCreator", C3286R.string.ChannelCreator);
+                                        string = LocaleController.getString("ChannelCreator", C3301R.string.ChannelCreator);
                                     } else if (tLRPC$ChatParticipant instanceof TLRPC$TL_chatParticipantAdmin) {
-                                        string = LocaleController.getString("ChannelAdmin", C3286R.string.ChannelAdmin);
+                                        string = LocaleController.getString("ChannelAdmin", C3301R.string.ChannelAdmin);
                                     }
                                     str2 = string;
                                 }
@@ -832,7 +834,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                         i6 = i7;
                     }
                     TLRPC$TL_chatInviteImporter tLRPC$TL_chatInviteImporter = arrayList.get(i - i6);
-                    formatStringInternal = LocaleController.formatStringInternal(C3286R.string.invite_link_joined_date, LocaleController.formatImportedDate(tLRPC$TL_chatInviteImporter.date));
+                    formatStringInternal = LocaleController.formatStringInternal(C3301R.string.invite_link_joined_date, LocaleController.formatImportedDate(tLRPC$TL_chatInviteImporter.date));
                     tLRPC$User = InviteLinkBottomSheet.this.users.get(Long.valueOf(tLRPC$TL_chatInviteImporter.user_id));
                 }
                 userCell.setAdminRole(str2);
@@ -865,14 +867,14 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 timerPrivacyCell.setFixedSize(0);
                 TLRPC$TL_chatInviteExported tLRPC$TL_chatInviteExported2 = InviteLinkBottomSheet.this.invite;
                 if (tLRPC$TL_chatInviteExported2.revoked) {
-                    timerPrivacyCell.setText(LocaleController.getString("LinkIsNoActive", C3286R.string.LinkIsNoActive));
+                    timerPrivacyCell.setText(LocaleController.getString("LinkIsNoActive", C3301R.string.LinkIsNoActive));
                 } else if (tLRPC$TL_chatInviteExported2.expired) {
                     int i9 = tLRPC$TL_chatInviteExported2.usage_limit;
                     if (i9 > 0 && i9 == tLRPC$TL_chatInviteExported2.usage) {
-                        timerPrivacyCell.setText(LocaleController.getString("LinkIsExpiredLimitReached", C3286R.string.LinkIsExpiredLimitReached));
+                        timerPrivacyCell.setText(LocaleController.getString("LinkIsExpiredLimitReached", C3301R.string.LinkIsExpiredLimitReached));
                         return;
                     }
-                    timerPrivacyCell.setText(LocaleController.getString("LinkIsExpired", C3286R.string.LinkIsExpired));
+                    timerPrivacyCell.setText(LocaleController.getString("LinkIsExpired", C3301R.string.LinkIsExpired));
                     timerPrivacyCell.setTextColor(Theme.getColor("windowBackgroundWhiteRedText"));
                 } else if (tLRPC$TL_chatInviteExported2.expire_date > 0) {
                     long currentTimeMillis = System.currentTimeMillis() + (InviteLinkBottomSheet.this.timeDif * 1000);
@@ -882,7 +884,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                         j = 0;
                     }
                     if (j > 86400000) {
-                        timerPrivacyCell.setText(LocaleController.formatString("LinkExpiresIn", C3286R.string.LinkExpiresIn, LocaleController.formatDateAudio(i10, false)));
+                        timerPrivacyCell.setText(LocaleController.formatString("LinkExpiresIn", C3301R.string.LinkExpiresIn, LocaleController.formatDateAudio(i10, false)));
                         return;
                     }
                     long j2 = j / 1000;
@@ -897,7 +899,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     String sb2 = sb.toString();
                     timerPrivacyCell.timer = true;
                     timerPrivacyCell.runTimer();
-                    timerPrivacyCell.setText(LocaleController.formatString("LinkExpiresInTime", C3286R.string.LinkExpiresInTime, sb2));
+                    timerPrivacyCell.setText(LocaleController.formatString("LinkExpiresInTime", C3301R.string.LinkExpiresInTime, sb2));
                 } else {
                     timerPrivacyCell.setFixedSize(12);
                     timerPrivacyCell.setText(null);
@@ -972,7 +974,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
         View view = this.shadow;
         Property property = View.ALPHA;
         float[] fArr = new float[1];
-        fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        fArr[0] = z ? 1.0f : 0.0f;
         animatorArr[0] = ObjectAnimator.ofFloat(view, property, fArr);
         animatorSet2.playTogether(animatorArr);
         if (!this.titleVisible) {
@@ -981,7 +983,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
             TextView textView = this.titleTextView;
             Property property2 = View.ALPHA;
             float[] fArr2 = new float[1];
-            fArr2[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr2[0] = z ? 1.0f : 0.0f;
             animatorArr2[0] = ObjectAnimator.ofFloat(textView, property2, fArr2);
             animatorSet3.playTogether(animatorArr2);
         }
@@ -1062,7 +1064,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
             list.addAll(tLRPC$TL_messages_chatInviteImporters.importers);
             for (int i = 0; i < tLRPC$TL_messages_chatInviteImporters.users.size(); i++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_messages_chatInviteImporters.users.get(i);
-                this.users.put(Long.valueOf(tLRPC$User.f1639id), tLRPC$User);
+                this.users.put(Long.valueOf(tLRPC$User.f1640id), tLRPC$User);
             }
             boolean z3 = true;
             if (!z ? !(list.size() < tLRPC$TL_messages_chatInviteImporters.count || z2) : list.size() >= tLRPC$TL_messages_chatInviteImporters.count) {

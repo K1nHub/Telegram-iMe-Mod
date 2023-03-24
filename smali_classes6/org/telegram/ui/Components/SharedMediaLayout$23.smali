@@ -40,11 +40,11 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v1, 0x1
+    cmpl-float v1, p1, v0
 
-    cmpl-float v2, p1, v0
+    const/4 v2, 0x1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
     .line 3022
     iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -53,7 +53,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getVisibility()I
 
@@ -100,7 +100,7 @@
 
     int-to-float v6, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -111,7 +111,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -141,7 +141,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, p1
+    mul-float/2addr v6, p1
 
     sub-float/2addr v5, v6
 
@@ -173,7 +173,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -184,7 +184,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -200,7 +200,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     iget-object v6, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -243,7 +243,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 3037
     :goto_1
@@ -253,7 +253,7 @@
 
     move-result-object v6
 
-    aget-object v6, v6, v1
+    aget-object v6, v6, v2
 
     invoke-static {v6}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$000(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)I
 
@@ -276,9 +276,9 @@
 
     iget-object v7, v6, Lorg/telegram/ui/Components/SharedMediaLayout;->photoVideoOptionsItem:Landroid/widget/ImageView;
 
-    const/4 v8, 0x4
-
     cmpl-float v3, v3, v5
+
+    const/4 v8, 0x4
 
     if-eqz v3, :cond_5
 
@@ -291,13 +291,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v3, 0x4
+    move v3, v8
 
     :goto_3
     invoke-virtual {v7, v3}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -309,7 +309,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     const/4 v6, 0x7
 
@@ -321,7 +321,7 @@
 
     move-result-object v3
 
-    aget-object v3, v3, v1
+    aget-object v3, v3, v2
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$000(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)I
 
@@ -340,20 +340,20 @@
 
     move v3, p1
 
-    move v7, v3
-
-    goto :goto_5
+    goto :goto_4
 
     :cond_6
     move v3, p1
 
-    goto :goto_4
+    move v7, v5
+
+    goto :goto_5
 
     :cond_7
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_4
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 3051
     :goto_5
@@ -424,13 +424,13 @@
     goto :goto_6
 
     :cond_9
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_7
 
     :cond_a
     :goto_6
-    const/4 v3, 0x4
+    move v3, v8
 
     :goto_7
     invoke-virtual {v6, v3}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -474,13 +474,13 @@
     goto :goto_8
 
     :cond_b
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_9
 
     :cond_c
     :goto_8
-    const/4 v6, 0x4
+    move v6, v8
 
     :goto_9
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -503,7 +503,7 @@
 
     move-result v3
 
-    if-ne v3, v1, :cond_d
+    if-ne v3, v2, :cond_d
 
     .line 3064
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -560,7 +560,7 @@
 
     :cond_f
     :goto_a
-    if-nez v2, :cond_11
+    if-nez v1, :cond_11
 
     .line 3073
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -578,15 +578,15 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
+    iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$400(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
+    invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$400(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
-    move-result-object v2
+    move-result-object v1
 
-    aget-object v2, v2, v1
+    aget-object v1, v1, v2
 
-    aput-object v2, v0, v4
+    aput-object v1, v0, v4
 
     .line 3075
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -595,7 +595,7 @@
 
     move-result-object v0
 
-    aput-object p1, v0, v1
+    aput-object p1, v0, v2
 
     .line 3076
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$23;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -604,7 +604,7 @@
 
     move-result-object p1
 
-    aget-object p1, p1, v1
+    aget-object p1, p1, v2
 
     const/16 v0, 0x8
 

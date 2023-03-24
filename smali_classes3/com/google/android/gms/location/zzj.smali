@@ -50,13 +50,13 @@
 
     move-wide v13, v9
 
-    const/4 v11, 0x0
+    move v11, v6
 
-    const/16 v12, 0x66
+    move v15, v11
 
-    const/4 v15, 0x0
+    move/from16 v16, v15
 
-    const/16 v16, 0x0
+    move v12, v7
 
     .line 3
     :goto_0
@@ -194,8 +194,6 @@
     invoke-direct/range {v8 .. v19}, Lcom/google/android/gms/location/CurrentLocationRequest;-><init>(JIIJZILjava/lang/String;Landroid/os/WorkSource;Lcom/google/android/gms/internal/location/zzd;)V
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

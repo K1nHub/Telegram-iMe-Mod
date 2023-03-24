@@ -55,6 +55,9 @@ public class DatabaseConfiguration {
 
     public boolean isMigrationRequired(int i, int i2) {
         Set<Integer> set;
-        return !((i > i2) && this.allowDestructiveMigrationOnDowngrade) && this.requireMigration && ((set = this.mMigrationNotRequiredFrom) == null || !set.contains(Integer.valueOf(i)));
+        if ((i > i2) && this.allowDestructiveMigrationOnDowngrade) {
+            return false;
+        }
+        return this.requireMigration && ((set = this.mMigrationNotRequiredFrom) == null || !set.contains(Integer.valueOf(i)));
     }
 }

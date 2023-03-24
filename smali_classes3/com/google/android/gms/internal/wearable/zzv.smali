@@ -150,7 +150,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 p3, 0x0
+    move p3, v0
 
     .line 2
     :cond_0

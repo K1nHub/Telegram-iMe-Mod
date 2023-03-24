@@ -1495,7 +1495,7 @@
 
     move-result v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1553,21 +1553,21 @@
     .line 368
     iget-object v4, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
-    const/high16 v5, 0x4f000000
+    cmpl-float v5, v0, v2
 
-    cmpl-float v6, v0, v2
+    const/high16 v6, 0x4f000000
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
-    iget v6, v3, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v5, v3, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
     const/high16 v7, 0x40000000    # 2.0f
 
-    div-float/2addr v6, v7
+    div-float/2addr v5, v7
 
-    cmpl-float v0, v0, v6
+    cmpl-float v0, v0, v5
 
     if-ltz v0, :cond_0
 
@@ -1584,7 +1584,7 @@
 
     :cond_1
     :goto_0
-    invoke-direct {p0, v3, v5}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->clampX(Landroid/util/DisplayMetrics;F)F
+    invoke-direct {p0, v3, v6}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->clampX(Landroid/util/DisplayMetrics;F)F
 
     move-result v0
 
@@ -1598,7 +1598,7 @@
 
     if-nez v2, :cond_2
 
-    invoke-direct {p0, v3, v5}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->clampY(Landroid/util/DisplayMetrics;F)F
+    invoke-direct {p0, v3, v6}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->clampY(Landroid/util/DisplayMetrics;F)F
 
     move-result v1
 
@@ -1925,7 +1925,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -2225,12 +2225,12 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v7, 0x0
+    move v7, v5
 
     goto :goto_0
 
     :cond_6
-    const/high16 v7, 0x447a0000    # 1000.0f
+    move v7, v6
 
     :goto_0
     invoke-direct {v4, v7}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
@@ -2257,7 +2257,7 @@
 
     if-eqz p1, :cond_7
 
-    const/high16 v5, 0x447a0000    # 1000.0f
+    move v5, v6
 
     .line 432
     :cond_7

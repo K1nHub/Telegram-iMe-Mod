@@ -316,14 +316,14 @@
 
     move-result p1
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
     .line 747
     invoke-static {p2, p0}, Lcom/google/android/exoplayer2/util/Util;->ceilDivide(II)I
 
     move-result p2
 
-    mul-int p2, p2, p0
+    mul-int/2addr p2, p0
 
     invoke-direct {v1, p1, p2}, Landroid/graphics/Point;-><init>(II)V
 
@@ -331,7 +331,7 @@
 .end method
 
 .method private static areSizeAndRateSupportedV21(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)Z
-    .locals 3
+    .locals 2
 
     .line 724
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->alignVideoSizeV21(Landroid/media/MediaCodecInfo$VideoCapabilities;II)Landroid/graphics/Point;
@@ -346,15 +346,15 @@
 
     const-wide/high16 v0, -0x4010000000000000L    # -1.0
 
-    cmpl-double v2, p3, v0
+    cmpl-double v0, p3, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    cmpg-double v2, p3, v0
+    cmpg-double v0, p3, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     goto :goto_0
 
@@ -413,7 +413,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move p0, v0
 
     :goto_0
     const v1, 0xaba9500
@@ -508,7 +508,7 @@
     goto :goto_1
 
     :cond_a
-    const/4 p0, 0x1
+    move p0, v2
 
     .line 801
     :goto_1
@@ -640,7 +640,7 @@
     const/16 v2, 0x8
 
     :goto_0
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_1
 
@@ -711,7 +711,7 @@
     :cond_4
     array-length v5, v3
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_2
     if-ge v6, v5, :cond_7
@@ -1213,12 +1213,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v8, 0x1
+    move v8, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_0
     if-eqz p3, :cond_1
@@ -1230,12 +1230,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v9, 0x1
+    move v9, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v1
 
     :goto_1
     if-nez p8, :cond_3
@@ -1252,13 +1252,13 @@
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    const/4 v10, 0x1
+    move v10, v0
 
     :goto_3
     move-object v0, v11
@@ -1422,16 +1422,14 @@
 
     const/4 v1, 0x3
 
-    const/4 v5, 0x3
-
     goto :goto_1
 
     :cond_6
     const/4 v1, 0x2
 
-    const/4 v5, 0x2
-
     :goto_1
+    move v5, v1
+
     const/4 v6, 0x0
 
     move-object v1, v0
@@ -1898,7 +1896,7 @@
     return p1
 
     :cond_3
-    mul-int v2, v2, v4
+    mul-int/2addr v2, v4
 
     .line 270
     invoke-static {}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->maxH264DecodableFrameSize()I
@@ -1907,7 +1905,7 @@
 
     if-gt v2, v3, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_4
     if-nez v1, :cond_5
@@ -1978,7 +1976,7 @@
     if-eqz p1, :cond_a
 
     :cond_9
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_a
     return v1
@@ -2013,7 +2011,7 @@
 
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v2, :cond_1

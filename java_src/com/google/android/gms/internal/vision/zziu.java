@@ -160,7 +160,7 @@ public final class zziu<T extends zziw<T>> {
                 default: goto L18;
             }
         L18:
-            r0 = 0
+            r0 = r2
             goto L47
         L1a:
             boolean r0 = r6 instanceof com.google.android.gms.internal.vision.zzkk
@@ -180,7 +180,7 @@ public final class zziu<T extends zziw<T>> {
             boolean r0 = r6 instanceof byte[]
             if (r0 == 0) goto L18
         L34:
-            r0 = 1
+            r0 = r1
             goto L47
         L36:
             boolean r0 = r6 instanceof java.lang.String

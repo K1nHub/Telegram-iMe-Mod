@@ -209,7 +209,7 @@
 
     move-result p2
 
-    mul-int p2, p2, v3
+    mul-int/2addr p2, v3
 
     add-int/2addr p2, v1
 
@@ -1417,12 +1417,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v7
 
     :goto_0
     new-array v3, v4, [Ljava/lang/Object;

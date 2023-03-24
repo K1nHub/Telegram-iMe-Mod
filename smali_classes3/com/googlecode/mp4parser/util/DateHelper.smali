@@ -35,7 +35,7 @@
 
     const-wide/16 v1, 0x3e8
 
-    mul-long p0, p0, v1
+    mul-long/2addr p0, v1
 
     invoke-direct {v0, p0, p1}, Ljava/util/Date;-><init>(J)V
 

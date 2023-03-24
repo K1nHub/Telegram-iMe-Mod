@@ -99,7 +99,7 @@
 
     and-int/2addr v0, v4
 
-    const/4 v5, -0x1
+    move v5, v3
 
     :goto_0
     add-int/lit8 v2, v2, -0x1
@@ -298,7 +298,7 @@
     :goto_0
     add-int/lit8 p0, p0, 0x1
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     return v0
 .end method

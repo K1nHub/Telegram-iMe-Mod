@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -65,7 +65,7 @@ public class PremiumFeatureCell extends FrameLayout {
         addView(this.imageView, LayoutHelper.createFrame(28, 28, 0, 18, 12, 0, 0));
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView2.setImageResource(C3286R.C3288drawable.msg_arrowright);
+        imageView2.setImageResource(C3301R.C3303drawable.msg_arrowright);
         imageView2.setColorFilter(Theme.getColor("switchTrack"));
         addView(imageView2, LayoutHelper.createFrame(24, 24, 21, 0, 0, 18, 0));
         this.initialTitleSubtitleContainerLeftMargin = ((ViewGroup.MarginLayoutParams) linearLayout.getLayoutParams()).rightMargin;

@@ -29,7 +29,9 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
         super(headerCell.getContext());
         Lazy lazy;
         int i;
+        ViewGroup.MarginLayoutParams marginLayoutParams;
         int m49px;
+        ViewGroup.MarginLayoutParams marginLayoutParams2;
         Intrinsics.checkNotNullParameter(headerCell, "headerCell");
         this.headerCell = headerCell;
         lazy = LazyKt__LazyJVMKt.lazy(new HeaderCellWithImageViewButtonWrapper$imageView$2(this));
@@ -42,8 +44,7 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
             TextView textView = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
-            ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null;
-            i = AndroidUtilities.m49px(marginLayoutParams != null ? marginLayoutParams.rightMargin : 0);
+            i = AndroidUtilities.m49px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
         } else {
             i = 0;
         }
@@ -53,8 +54,7 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
             TextView textView2 = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView2, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams2 = textView2.getLayoutParams();
-            ViewGroup.MarginLayoutParams marginLayoutParams2 = layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null;
-            m49px = AndroidUtilities.m49px(marginLayoutParams2 != null ? marginLayoutParams2.rightMargin : 0);
+            m49px = AndroidUtilities.m49px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
         }
         addView(imageView, LayoutHelper.createFrame(24, 24, i2, i, 0, m49px, 0));
         setupColors();

@@ -121,7 +121,7 @@
 
     invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 52
     :goto_1

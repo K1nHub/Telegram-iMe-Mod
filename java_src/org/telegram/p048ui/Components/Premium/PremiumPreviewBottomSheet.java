@@ -29,7 +29,7 @@ import com.google.android.gms.common.Scopes;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -128,12 +128,12 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
         PremiumGradient.PremiumGradientTools premiumGradientTools = new PremiumGradient.PremiumGradientTools("premiumGradient1", "premiumGradient2", "premiumGradient3", "premiumGradient4");
         this.gradientTools = premiumGradientTools;
         premiumGradientTools.exactly = true;
-        premiumGradientTools.f1773x1 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1775y1 = 1.0f;
-        premiumGradientTools.f1774x2 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1776y2 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1771cx = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1772cy = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1774x1 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1776y1 = 1.0f;
+        premiumGradientTools.f1775x2 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1777y2 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1772cx = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1773cy = BitmapDescriptorFactory.HUE_RED;
         int i2 = this.rowCount;
         int i3 = i2 + 1;
         this.rowCount = i3;
@@ -306,7 +306,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             return;
         }
         if (this.statusStickerSet != null) {
-            int i = C3286R.string.TelegramPremiumUserStatusDialogTitle;
+            int i = C3301R.string.TelegramPremiumUserStatusDialogTitle;
             TLRPC$User tLRPC$User = this.user;
             CharSequence replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name), "<STICKERSET>"), "windowBackgroundWhiteBlueButton", 0, null);
             SpannableStringBuilder spannableStringBuilder2 = replaceSingleTag instanceof SpannableStringBuilder ? (SpannableStringBuilder) replaceSingleTag : new SpannableStringBuilder(replaceSingleTag);
@@ -322,7 +322,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                         while (true) {
                             if (i2 >= stickerSet.documents.size()) {
                                 break;
-                            } else if (stickerSet.documents.get(i2).f1507id == stickerSet.set.thumb_document_id) {
+                            } else if (stickerSet.documents.get(i2).f1508id == stickerSet.set.thumb_document_id) {
                                 tLRPC$Document = stickerSet.documents.get(i2);
                                 break;
                             } else {
@@ -365,14 +365,14 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                     this.titleView[0].setText(spannableStringBuilder2, (TextView.BufferType) null);
                 }
             }
-            this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3286R.string.TelegramPremiumUserStatusDialogSubtitle)));
+            this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.TelegramPremiumUserStatusDialogSubtitle)));
         } else if (this.isEmojiStatus) {
             LinkSpanDrawable.LinksTextView linksTextView = linksTextViewArr[0];
-            int i3 = C3286R.string.TelegramPremiumUserStatusDefaultDialogTitle;
+            int i3 = C3301R.string.TelegramPremiumUserStatusDefaultDialogTitle;
             TLRPC$User tLRPC$User2 = this.user;
             linksTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(i3, ContactsController.formatName(tLRPC$User2.first_name, tLRPC$User2.last_name))));
             TextView textView = this.subtitleView;
-            int i4 = C3286R.string.TelegramPremiumUserStatusDialogSubtitle;
+            int i4 = C3301R.string.TelegramPremiumUserStatusDialogSubtitle;
             TLRPC$User tLRPC$User3 = this.user;
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(i4, ContactsController.formatName(tLRPC$User3.first_name, tLRPC$User3.last_name))));
         } else {
@@ -380,14 +380,14 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             if (giftTier != null) {
                 if (this.isOutboundGift) {
                     LinkSpanDrawable.LinksTextView linksTextView2 = linksTextViewArr[0];
-                    int i5 = C3286R.string.TelegramPremiumUserGiftedPremiumOutboundDialogTitleWithPlural;
+                    int i5 = C3301R.string.TelegramPremiumUserGiftedPremiumOutboundDialogTitleWithPlural;
                     Object[] objArr = new Object[2];
                     TLRPC$User tLRPC$User4 = this.user;
                     objArr[0] = tLRPC$User4 != null ? tLRPC$User4.first_name : "";
                     objArr[1] = LocaleController.formatPluralString("GiftMonths", giftTier.getMonths(), new Object[0]);
                     linksTextView2.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(i5, objArr), "windowBackgroundWhiteBlueButton", 0, null));
                     TextView textView2 = this.subtitleView;
-                    int i6 = C3286R.string.TelegramPremiumUserGiftedPremiumOutboundDialogSubtitle;
+                    int i6 = C3301R.string.TelegramPremiumUserGiftedPremiumOutboundDialogSubtitle;
                     Object[] objArr2 = new Object[1];
                     TLRPC$User tLRPC$User5 = this.user;
                     objArr2[0] = tLRPC$User5 != null ? tLRPC$User5.first_name : "";
@@ -395,20 +395,20 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                     return;
                 }
                 LinkSpanDrawable.LinksTextView linksTextView3 = linksTextViewArr[0];
-                int i7 = C3286R.string.TelegramPremiumUserGiftedPremiumDialogTitleWithPlural;
+                int i7 = C3301R.string.TelegramPremiumUserGiftedPremiumDialogTitleWithPlural;
                 Object[] objArr3 = new Object[2];
                 TLRPC$User tLRPC$User6 = this.user;
                 objArr3[0] = tLRPC$User6 != null ? tLRPC$User6.first_name : "";
                 objArr3[1] = LocaleController.formatPluralString("GiftMonths", giftTier.getMonths(), new Object[0]);
                 linksTextView3.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(i7, objArr3), "windowBackgroundWhiteBlueButton", 0, null));
-                this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3286R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle)));
+                this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle)));
                 return;
             }
             LinkSpanDrawable.LinksTextView linksTextView4 = linksTextViewArr[0];
-            int i8 = C3286R.string.TelegramPremiumUserDialogTitle;
+            int i8 = C3301R.string.TelegramPremiumUserDialogTitle;
             TLRPC$User tLRPC$User7 = this.user;
             linksTextView4.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(i8, ContactsController.formatName(tLRPC$User7.first_name, tLRPC$User7.last_name)), "windowBackgroundWhiteBlueButton", 0, null));
-            this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3286R.string.TelegramPremiumUserDialogSubtitle)));
+            this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3301R.string.TelegramPremiumUserDialogSubtitle)));
         }
     }
 
@@ -461,7 +461,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
 
     @Override // org.telegram.p048ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return LocaleController.getString("TelegramPremium", C3286R.string.TelegramPremium);
+        return LocaleController.getString("TelegramPremium", C3301R.string.TelegramPremium);
     }
 
     @Override // org.telegram.p048ui.Components.BottomSheetWithRecyclerListView
@@ -832,7 +832,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                 PremiumPreviewBottomSheet.this.lambda$onCustomOpenAnimation$7(valueAnimator);
             }
         });
-        this.enterAnimator.addListener(new C49304());
+        this.enterAnimator.addListener(new C49454());
         this.enterAnimator.setDuration(600L);
         this.enterAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.enterAnimator.start();
@@ -848,8 +848,8 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$4 */
     /* loaded from: classes6.dex */
-    public class C49304 extends AnimatorListenerAdapter {
-        C49304() {
+    public class C49454 extends AnimatorListenerAdapter {
+        C49454() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -863,7 +863,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet$4$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    PremiumPreviewBottomSheet.C49304.this.lambda$onAnimationEnd$0(rightDrawable, valueAnimator);
+                    PremiumPreviewBottomSheet.C49454.this.lambda$onAnimationEnd$0(rightDrawable, valueAnimator);
                 }
             });
             ofInt.start();
@@ -892,7 +892,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         TLRPC$InputStickerSet tLRPC$InputStickerSet;
-        if (i == NotificationCenter.groupStickersDidLoad && (tLRPC$InputStickerSet = this.statusStickerSet) != null && tLRPC$InputStickerSet.f1522id == ((Long) objArr[0]).longValue()) {
+        if (i == NotificationCenter.groupStickersDidLoad && (tLRPC$InputStickerSet = this.statusStickerSet) != null && tLRPC$InputStickerSet.f1523id == ((Long) objArr[0]).longValue()) {
             setTitle(true);
         }
     }

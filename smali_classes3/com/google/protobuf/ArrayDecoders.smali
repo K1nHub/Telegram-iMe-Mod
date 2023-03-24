@@ -24,33 +24,33 @@
         }
     .end annotation
 
-    .line 374
+    .line 377
     check-cast p4, Lcom/google/protobuf/BooleanArrayList;
 
-    .line 375
+    .line 378
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 376
+    .line 379
     iget-wide v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    cmp-long v0, v0, v2
 
-    const-wide/16 v4, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v6, v0, v4
+    const/4 v4, 0x0
 
-    if-eqz v6, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     invoke-virtual {p4, v0}, Lcom/google/protobuf/BooleanArrayList;->addBoolean(Z)V
@@ -58,37 +58,37 @@
     :goto_1
     if-ge p2, p3, :cond_3
 
-    .line 378
+    .line 381
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 379
-    iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
+    .line 382
+    iget v5, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_1
+    if-eq p0, v5, :cond_1
 
     goto :goto_3
 
-    .line 382
+    .line 385
     :cond_1
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 383
-    iget-wide v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
+    .line 386
+    iget-wide v5, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v5, v2
 
-    if-eqz v6, :cond_2
+    if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_2
     invoke-virtual {p4, v0}, Lcom/google/protobuf/BooleanArrayList;->addBoolean(Z)V
@@ -108,17 +108,17 @@
         }
     .end annotation
 
-    .line 218
+    .line 221
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 219
+    .line 222
     iget v0, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_2
 
-    .line 222
+    .line 225
     array-length v1, p0
 
     sub-int/2addr v1, p1
@@ -127,14 +127,14 @@
 
     if-nez v0, :cond_0
 
-    .line 225
+    .line 228
     sget-object p0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object p0, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     return p1
 
-    .line 228
+    .line 231
     :cond_0
     invoke-static {p0, p1, v0}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
@@ -146,7 +146,7 @@
 
     return p1
 
-    .line 223
+    .line 226
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -154,7 +154,7 @@
 
     throw p0
 
-    .line 221
+    .line 224
     :cond_2
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -181,17 +181,17 @@
         }
     .end annotation
 
-    .line 655
+    .line 657
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 656
+    .line 658
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_7
 
-    .line 659
+    .line 661
     array-length v1, p1
 
     sub-int/2addr v1, p2
@@ -200,14 +200,14 @@
 
     if-nez v0, :cond_0
 
-    .line 662
+    .line 664
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     invoke-interface {p4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 664
+    .line 666
     :cond_0
     invoke-static {p1, p2, v0}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
@@ -221,30 +221,30 @@
     :goto_1
     if-ge p2, p3, :cond_5
 
-    .line 668
+    .line 670
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 669
+    .line 671
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_1
 
     goto :goto_2
 
-    .line 672
+    .line 674
     :cond_1
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 673
+    .line 675
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_4
 
-    .line 676
+    .line 678
     array-length v1, p1
 
     sub-int/2addr v1, p2
@@ -253,14 +253,14 @@
 
     if-nez v0, :cond_2
 
-    .line 679
+    .line 681
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     invoke-interface {p4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 681
+    .line 683
     :cond_2
     invoke-static {p1, p2, v0}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
@@ -270,7 +270,7 @@
 
     goto :goto_0
 
-    .line 677
+    .line 679
     :cond_3
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -278,7 +278,7 @@
 
     throw p0
 
-    .line 675
+    .line 677
     :cond_4
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -290,7 +290,7 @@
     :goto_2
     return p2
 
-    .line 660
+    .line 662
     :cond_6
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -298,7 +298,7 @@
 
     throw p0
 
-    .line 658
+    .line 660
     :cond_7
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -310,7 +310,7 @@
 .method static decodeDouble([BI)D
     .locals 0
 
-    .line 175
+    .line 178
     invoke-static {p0, p1}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide p0
@@ -334,10 +334,10 @@
         }
     .end annotation
 
-    .line 357
+    .line 360
     check-cast p4, Lcom/google/protobuf/DoubleArrayList;
 
-    .line 358
+    .line 361
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeDouble([BI)D
 
     move-result-wide v0
@@ -349,19 +349,19 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 361
+    .line 364
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 362
+    .line 365
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 365
+    .line 368
     :cond_0
     invoke-static {p1, v0}, Lcom/google/protobuf/ArrayDecoders;->decodeDouble([BI)D
 
@@ -402,12 +402,12 @@
         }
     .end annotation
 
-    .line 778
+    .line 782
     iget-object v0, p4, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     ushr-int/lit8 p0, p0, 0x3
 
-    .line 780
+    .line 784
     iget-object v1, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
@@ -426,7 +426,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 781
+    .line 785
     sget-object p3, Lcom/google/protobuf/ArrayDecoders$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     invoke-virtual {p5}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
@@ -441,7 +441,7 @@
 
     packed-switch p3, :pswitch_data_0
 
-    .line 871
+    .line 875
     new-instance p0, Ljava/lang/IllegalStateException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -454,7 +454,7 @@
 
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 872
+    .line 876
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
 
     move-result-object p2
@@ -469,21 +469,21 @@
 
     throw p0
 
-    .line 851
+    .line 855
     :pswitch_0
     new-instance p3, Lcom/google/protobuf/IntArrayList;
 
     invoke-direct {p3}, Lcom/google/protobuf/IntArrayList;-><init>()V
 
-    .line 852
+    .line 856
     invoke-static {p1, p2, p3, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedVarint32List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 853
+    .line 857
     iget-object p2, p4, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
-    .line 854
+    .line 858
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object p7
@@ -495,16 +495,16 @@
     :cond_0
     move-object v2, p2
 
-    .line 857
+    .line 861
     :goto_0
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 861
+    .line 865
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getEnumType()Lcom/google/protobuf/Internal$EnumLiteMap;
 
     move-result-object p2
 
-    .line 858
+    .line 862
     invoke-static {p0, p3, p2, v2, p6}, Lcom/google/protobuf/SchemaUtil;->filterUnknownEnumList(ILjava/util/List;Lcom/google/protobuf/Internal$EnumLiteMap;Ljava/lang/Object;Lcom/google/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p0
@@ -513,10 +513,10 @@
 
     if-eqz p0, :cond_1
 
-    .line 865
+    .line 869
     iput-object p0, p4, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
-    .line 867
+    .line 871
     :cond_1
     iget-object p0, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -524,169 +524,169 @@
 
     goto/16 :goto_7
 
-    .line 844
+    .line 848
     :pswitch_1
     new-instance p0, Lcom/google/protobuf/LongArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/LongArrayList;-><init>()V
 
-    .line 845
+    .line 849
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedSInt64List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 846
+    .line 850
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 837
+    .line 841
     :pswitch_2
     new-instance p0, Lcom/google/protobuf/IntArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/IntArrayList;-><init>()V
 
-    .line 838
+    .line 842
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedSInt32List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 839
+    .line 843
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 830
+    .line 834
     :pswitch_3
     new-instance p0, Lcom/google/protobuf/BooleanArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/BooleanArrayList;-><init>()V
 
-    .line 831
+    .line 835
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedBoolList([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 832
+    .line 836
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 823
+    .line 827
     :pswitch_4
     new-instance p0, Lcom/google/protobuf/IntArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/IntArrayList;-><init>()V
 
-    .line 824
+    .line 828
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedFixed32List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 825
+    .line 829
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 815
+    .line 819
     :pswitch_5
     new-instance p0, Lcom/google/protobuf/LongArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/LongArrayList;-><init>()V
 
-    .line 816
+    .line 820
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedFixed64List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 817
+    .line 821
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 807
+    .line 811
     :pswitch_6
     new-instance p0, Lcom/google/protobuf/IntArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/IntArrayList;-><init>()V
 
-    .line 808
+    .line 812
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedVarint32List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 809
+    .line 813
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 799
+    .line 803
     :pswitch_7
     new-instance p0, Lcom/google/protobuf/LongArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/LongArrayList;-><init>()V
 
-    .line 800
+    .line 804
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedVarint64List([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 801
+    .line 805
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 791
+    .line 795
     :pswitch_8
     new-instance p0, Lcom/google/protobuf/FloatArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/FloatArrayList;-><init>()V
 
-    .line 792
+    .line 796
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedFloatList([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 793
+    .line 797
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 784
+    .line 788
     :pswitch_9
     new-instance p0, Lcom/google/protobuf/DoubleArrayList;
 
     invoke-direct {p0}, Lcom/google/protobuf/DoubleArrayList;-><init>()V
 
-    .line 785
+    .line 789
     invoke-static {p1, p2, p0, p7}, Lcom/google/protobuf/ArrayDecoders;->decodePackedDoubleList([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 786
+    .line 790
     iget-object p2, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p2, p0}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
-    .line 877
+    .line 881
     :cond_2
     invoke-virtual {p5}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
 
@@ -696,12 +696,12 @@
 
     if-ne v1, v3, :cond_5
 
-    .line 878
+    .line 882
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 879
+    .line 883
     iget-object p1, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getEnumType()Lcom/google/protobuf/Internal$EnumLiteMap;
@@ -716,25 +716,25 @@
 
     if-nez p1, :cond_4
 
-    .line 881
+    .line 885
     iget-object p1, p4, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
-    .line 882
+    .line 886
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object p3
 
     if-ne p1, p3, :cond_3
 
-    .line 883
+    .line 887
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object p1
 
-    .line 884
+    .line 888
     iput-object p1, p4, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
-    .line 886
+    .line 890
     :cond_3
     iget p3, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
@@ -742,7 +742,7 @@
 
     return p2
 
-    .line 892
+    .line 896
     :cond_4
     iget p0, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
@@ -752,7 +752,7 @@
 
     goto/16 :goto_4
 
-    .line 894
+    .line 898
     :cond_5
     sget-object p4, Lcom/google/protobuf/ArrayDecoders$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
@@ -770,7 +770,7 @@
 
     goto/16 :goto_4
 
-    .line 953
+    .line 957
     :pswitch_a
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
@@ -788,12 +788,12 @@
 
     move-result-object p0
 
-    .line 952
+    .line 956
     invoke-static {p0, p1, p2, p3, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/protobuf/Schema;[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 955
+    .line 959
     iget-object v2, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     goto/16 :goto_4
@@ -803,7 +803,7 @@
 
     or-int/lit8 v5, p0, 0x4
 
-    .line 946
+    .line 950
     invoke-static {}, Lcom/google/protobuf/Protobuf;->getInstance()Lcom/google/protobuf/Protobuf;
 
     move-result-object p0
@@ -828,39 +828,39 @@
 
     move-object v6, p7
 
-    .line 945
+    .line 949
     invoke-static/range {v1 .. v6}, Lcom/google/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/protobuf/Schema;[BIIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 948
+    .line 952
     iget-object v2, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     goto/16 :goto_4
 
-    .line 940
+    .line 944
     :pswitch_c
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeString([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 941
+    .line 945
     iget-object v2, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     goto/16 :goto_4
 
-    .line 928
+    .line 932
     :pswitch_d
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeBytes([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 929
+    .line 933
     iget-object v2, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     goto/16 :goto_4
 
-    .line 959
+    .line 963
     :pswitch_e
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -870,13 +870,13 @@
 
     throw p0
 
-    .line 936
+    .line 940
     :pswitch_f
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 937
+    .line 941
     iget-wide p0, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-static {p0, p1}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag64(J)J
@@ -889,13 +889,13 @@
 
     goto :goto_4
 
-    .line 932
+    .line 936
     :pswitch_10
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 933
+    .line 937
     iget p0, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {p0}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag32(I)I
@@ -908,20 +908,20 @@
 
     goto :goto_4
 
-    .line 924
+    .line 928
     :pswitch_11
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 925
+    .line 929
     iget-wide p0, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     const-wide/16 p3, 0x0
 
-    cmp-long p6, p0, p3
+    cmp-long p0, p0, p3
 
-    if-eqz p6, :cond_6
+    if-eqz p0, :cond_6
 
     const/4 p0, 0x1
 
@@ -937,7 +937,7 @@
 
     goto :goto_4
 
-    .line 920
+    .line 924
     :pswitch_12
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
@@ -949,7 +949,7 @@
 
     goto :goto_2
 
-    .line 915
+    .line 919
     :pswitch_13
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
@@ -961,13 +961,13 @@
 
     goto :goto_3
 
-    .line 910
+    .line 914
     :pswitch_14
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 911
+    .line 915
     iget p0, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -976,13 +976,13 @@
 
     goto :goto_4
 
-    .line 905
+    .line 909
     :pswitch_15
     invoke-static {p1, p2, p7}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 906
+    .line 910
     iget-wide p0, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -991,7 +991,7 @@
 
     goto :goto_4
 
-    .line 900
+    .line 904
     :pswitch_16
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFloat([BI)F
 
@@ -1006,7 +1006,7 @@
 
     goto :goto_4
 
-    .line 896
+    .line 900
     :pswitch_17
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeDouble([BI)D
 
@@ -1019,7 +1019,7 @@
     :goto_3
     add-int/lit8 p2, p2, 0x8
 
-    .line 962
+    .line 966
     :goto_4
     invoke-virtual {p5}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->isRepeated()Z
 
@@ -1027,14 +1027,14 @@
 
     if-eqz p0, :cond_7
 
-    .line 963
+    .line 967
     iget-object p0, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p0, v2}, Lcom/google/protobuf/FieldSet;->addRepeatedField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
     goto :goto_6
 
-    .line 965
+    .line 969
     :cond_7
     sget-object p0, Lcom/google/protobuf/ArrayDecoders$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
@@ -1058,7 +1058,7 @@
 
     goto :goto_5
 
-    .line 968
+    .line 972
     :cond_8
     iget-object p0, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -1068,12 +1068,12 @@
 
     if-eqz p0, :cond_9
 
-    .line 970
+    .line 974
     invoke-static {p0, v2}, Lcom/google/protobuf/Internal;->mergeMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 976
+    .line 980
     :cond_9
     :goto_5
     iget-object p0, p5, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -1153,17 +1153,17 @@
 
     ushr-int/lit8 v0, p0, 0x3
 
-    .line 755
+    .line 757
     iget-object v1, p7, Lcom/google/protobuf/ArrayDecoders$Registers;->extensionRegistry:Lcom/google/protobuf/ExtensionRegistryLite;
 
-    .line 756
+    .line 758
     invoke-virtual {v1, p5, v0}, Lcom/google/protobuf/ExtensionRegistryLite;->findLiteExtensionByNumber(Lcom/google/protobuf/MessageLite;I)Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     move-result-object v5
 
     if-nez v5, :cond_0
 
-    .line 759
+    .line 761
     invoke-static {p4}, Lcom/google/protobuf/MessageSchema;->getMutableUnknownFields(Ljava/lang/Object;)Lcom/google/protobuf/UnknownFieldSetLite;
 
     move-result-object v4
@@ -1178,19 +1178,20 @@
 
     move-object v5, p7
 
-    .line 758
+    .line 760
     invoke-static/range {v0 .. v5}, Lcom/google/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
     return v0
 
-    .line 761
+    .line 764
     :cond_0
     move-object v4, p4
 
     check-cast v4, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
+    .line 765
     invoke-virtual {v4}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->ensureExtensionsAreMutable()Lcom/google/protobuf/FieldSet;
 
     move v0, p0
@@ -1205,7 +1206,7 @@
 
     move-object v7, p7
 
-    .line 762
+    .line 766
     invoke-static/range {v0 .. v7}, Lcom/google/protobuf/ArrayDecoders;->decodeExtension(I[BIILcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;Lcom/google/protobuf/UnknownFieldSchema;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
@@ -1216,7 +1217,7 @@
 .method static decodeFixed32([BI)I
     .locals 2
 
-    .line 155
+    .line 158
     aget-byte v0, p0, p1
 
     and-int/lit16 v0, v0, 0xff
@@ -1266,10 +1267,10 @@
         }
     .end annotation
 
-    .line 306
+    .line 309
     check-cast p4, Lcom/google/protobuf/IntArrayList;
 
-    .line 307
+    .line 310
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v0
@@ -1281,19 +1282,19 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 310
+    .line 313
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 311
+    .line 314
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 314
+    .line 317
     :cond_0
     invoke-static {p1, v0}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
@@ -1313,7 +1314,7 @@
 .method static decodeFixed64([BI)J
     .locals 7
 
-    .line 163
+    .line 166
     aget-byte v0, p0, p1
 
     int-to-long v0, v0
@@ -1435,10 +1436,10 @@
         }
     .end annotation
 
-    .line 323
+    .line 326
     check-cast p4, Lcom/google/protobuf/LongArrayList;
 
-    .line 324
+    .line 327
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v0
@@ -1450,19 +1451,19 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 327
+    .line 330
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 328
+    .line 331
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 331
+    .line 334
     :cond_0
     invoke-static {p1, v0}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
@@ -1482,7 +1483,7 @@
 .method static decodeFloat([BI)F
     .locals 0
 
-    .line 180
+    .line 183
     invoke-static {p0, p1}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result p0
@@ -1506,10 +1507,10 @@
         }
     .end annotation
 
-    .line 340
+    .line 343
     check-cast p4, Lcom/google/protobuf/FloatArrayList;
 
-    .line 341
+    .line 344
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFloat([BI)F
 
     move-result v0
@@ -1521,19 +1522,19 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 344
+    .line 347
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 345
+    .line 348
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 348
+    .line 351
     :cond_0
     invoke-static {p1, v0}, Lcom/google/protobuf/ArrayDecoders;->decodeFloat([BI)F
 
@@ -1558,10 +1559,10 @@
         }
     .end annotation
 
-    .line 259
+    .line 262
     check-cast p0, Lcom/google/protobuf/MessageSchema;
 
-    .line 260
+    .line 263
     invoke-virtual {p0}, Lcom/google/protobuf/MessageSchema;->newInstance()Ljava/lang/Object;
 
     move-result-object v7
@@ -1580,15 +1581,15 @@
 
     move-object v6, p5
 
-    .line 263
+    .line 266
     invoke-virtual/range {v0 .. v6}, Lcom/google/protobuf/MessageSchema;->parseProto2Message(Ljava/lang/Object;[BIIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 264
+    .line 267
     invoke-virtual {p0, v7}, Lcom/google/protobuf/MessageSchema;->makeImmutable(Ljava/lang/Object;)V
 
-    .line 265
+    .line 268
     iput-object v7, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     return p1
@@ -1630,12 +1631,12 @@
 
     move-object v6, p6
 
-    .line 734
+    .line 736
     invoke-static/range {v1 .. v6}, Lcom/google/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/protobuf/Schema;[BIIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
-    .line 735
+    .line 737
     iget-object v1, p6, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     invoke-interface {p5, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1643,12 +1644,12 @@
     :goto_0
     if-ge p3, p4, :cond_1
 
-    .line 737
+    .line 739
     invoke-static {p2, p3, p6}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v3
 
-    .line 738
+    .line 740
     iget v1, p6, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p1, v1, :cond_0
@@ -1666,12 +1667,12 @@
 
     move-object v6, p6
 
-    .line 741
+    .line 743
     invoke-static/range {v1 .. v6}, Lcom/google/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/protobuf/Schema;[BIIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
-    .line 742
+    .line 744
     iget-object v1, p6, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     invoke-interface {p5, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1693,17 +1694,17 @@
 
     add-int/lit8 v0, p2, 0x1
 
-    .line 237
+    .line 240
     aget-byte p2, p1, p2
 
     if-gez p2, :cond_0
 
-    .line 239
+    .line 242
     invoke-static {p2, p1, v0, p4}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32(I[BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 240
+    .line 243
     iget p2, p4, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     :cond_0
@@ -1715,7 +1716,7 @@
 
     if-gt p2, p3, :cond_1
 
-    .line 245
+    .line 248
     invoke-interface {p0}, Lcom/google/protobuf/Schema;->newInstance()Ljava/lang/Object;
 
     move-result-object p3
@@ -1732,18 +1733,18 @@
 
     move-object v5, p4
 
-    .line 246
+    .line 249
     invoke-interface/range {v0 .. v5}, Lcom/google/protobuf/Schema;->mergeFrom(Ljava/lang/Object;[BIILcom/google/protobuf/ArrayDecoders$Registers;)V
 
-    .line 247
+    .line 250
     invoke-interface {p0, p3}, Lcom/google/protobuf/Schema;->makeImmutable(Ljava/lang/Object;)V
 
-    .line 248
+    .line 251
     iput-object p3, p4, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     return p2
 
-    .line 243
+    .line 246
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1772,12 +1773,12 @@
         }
     .end annotation
 
-    .line 704
+    .line 706
     invoke-static {p0, p2, p3, p4, p6}, Lcom/google/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/protobuf/Schema;[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
-    .line 705
+    .line 707
     iget-object v0, p6, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     invoke-interface {p5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1785,25 +1786,25 @@
     :goto_0
     if-ge p3, p4, :cond_1
 
-    .line 707
+    .line 709
     invoke-static {p2, p3, p6}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 708
+    .line 710
     iget v1, p6, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p1, v1, :cond_0
 
     goto :goto_1
 
-    .line 711
+    .line 713
     :cond_0
     invoke-static {p0, p2, v0, p4, p6}, Lcom/google/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/protobuf/Schema;[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
-    .line 712
+    .line 714
     iget-object v0, p6, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     invoke-interface {p5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1816,7 +1817,7 @@
 .end method
 
 .method static decodePackedBoolList([BILcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/ArrayDecoders$Registers;)I
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -1833,15 +1834,15 @@
         }
     .end annotation
 
-    .line 521
+    .line 524
     check-cast p2, Lcom/google/protobuf/BooleanArrayList;
 
-    .line 522
+    .line 525
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 523
+    .line 526
     iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr v0, p1
@@ -1849,19 +1850,19 @@
     :goto_0
     if-ge p1, v0, :cond_1
 
-    .line 525
+    .line 528
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 526
+    .line 529
     iget-wide v1, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -1880,7 +1881,7 @@
 
     return p1
 
-    .line 529
+    .line 532
     :cond_2
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1907,15 +1908,15 @@
         }
     .end annotation
 
-    .line 505
+    .line 508
     check-cast p2, Lcom/google/protobuf/DoubleArrayList;
 
-    .line 506
+    .line 509
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 507
+    .line 510
     iget p3, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr p3, p1
@@ -1923,7 +1924,7 @@
     :goto_0
     if-ge p1, p3, :cond_0
 
-    .line 509
+    .line 512
     invoke-static {p0, p1}, Lcom/google/protobuf/ArrayDecoders;->decodeDouble([BI)D
 
     move-result-wide v0
@@ -1939,7 +1940,7 @@
 
     return p1
 
-    .line 513
+    .line 516
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -1966,15 +1967,15 @@
         }
     .end annotation
 
-    .line 457
+    .line 460
     check-cast p2, Lcom/google/protobuf/IntArrayList;
 
-    .line 458
+    .line 461
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 459
+    .line 462
     iget p3, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr p3, p1
@@ -1982,7 +1983,7 @@
     :goto_0
     if-ge p1, p3, :cond_0
 
-    .line 461
+    .line 464
     invoke-static {p0, p1}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v0
@@ -1998,7 +1999,7 @@
 
     return p1
 
-    .line 465
+    .line 468
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2025,15 +2026,15 @@
         }
     .end annotation
 
-    .line 473
+    .line 476
     check-cast p2, Lcom/google/protobuf/LongArrayList;
 
-    .line 474
+    .line 477
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 475
+    .line 478
     iget p3, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr p3, p1
@@ -2041,7 +2042,7 @@
     :goto_0
     if-ge p1, p3, :cond_0
 
-    .line 477
+    .line 480
     invoke-static {p0, p1}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v0
@@ -2057,7 +2058,7 @@
 
     return p1
 
-    .line 481
+    .line 484
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2084,15 +2085,15 @@
         }
     .end annotation
 
-    .line 489
+    .line 492
     check-cast p2, Lcom/google/protobuf/FloatArrayList;
 
-    .line 490
+    .line 493
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 491
+    .line 494
     iget p3, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr p3, p1
@@ -2100,7 +2101,7 @@
     :goto_0
     if-ge p1, p3, :cond_0
 
-    .line 493
+    .line 496
     invoke-static {p0, p1}, Lcom/google/protobuf/ArrayDecoders;->decodeFloat([BI)F
 
     move-result v0
@@ -2116,7 +2117,7 @@
 
     return p1
 
-    .line 497
+    .line 500
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2143,21 +2144,8 @@
         }
     .end annotation
 
-    .line 537
+    .line 540
     check-cast p2, Lcom/google/protobuf/IntArrayList;
-
-    .line 538
-    invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
-
-    move-result p1
-
-    .line 539
-    iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
-
-    add-int/2addr v0, p1
-
-    :goto_0
-    if-ge p1, v0, :cond_0
 
     .line 541
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
@@ -2165,6 +2153,19 @@
     move-result p1
 
     .line 542
+    iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_0
+
+    .line 544
+    invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    .line 545
     iget v1, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {v1}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag32(I)I
@@ -2180,7 +2181,7 @@
 
     return p1
 
-    .line 545
+    .line 548
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2207,15 +2208,15 @@
         }
     .end annotation
 
-    .line 554
+    .line 556
     check-cast p2, Lcom/google/protobuf/LongArrayList;
 
-    .line 555
+    .line 557
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 556
+    .line 558
     iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr v0, p1
@@ -2223,12 +2224,12 @@
     :goto_0
     if-ge p1, v0, :cond_0
 
-    .line 558
+    .line 560
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 559
+    .line 561
     iget-wide v1, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-static {v1, v2}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag64(J)J
@@ -2244,7 +2245,7 @@
 
     return p1
 
-    .line 562
+    .line 564
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2271,21 +2272,8 @@
         }
     .end annotation
 
-    .line 425
+    .line 428
     check-cast p2, Lcom/google/protobuf/IntArrayList;
-
-    .line 426
-    invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
-
-    move-result p1
-
-    .line 427
-    iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
-
-    add-int/2addr v0, p1
-
-    :goto_0
-    if-ge p1, v0, :cond_0
 
     .line 429
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
@@ -2293,6 +2281,19 @@
     move-result p1
 
     .line 430
+    iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
+
+    add-int/2addr v0, p1
+
+    :goto_0
+    if-ge p1, v0, :cond_0
+
+    .line 432
+    invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
+
+    move-result p1
+
+    .line 433
     iget v1, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-virtual {p2, v1}, Lcom/google/protobuf/IntArrayList;->addInt(I)V
@@ -2304,7 +2305,7 @@
 
     return p1
 
-    .line 433
+    .line 436
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2331,15 +2332,15 @@
         }
     .end annotation
 
-    .line 441
+    .line 444
     check-cast p2, Lcom/google/protobuf/LongArrayList;
 
-    .line 442
+    .line 445
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 443
+    .line 446
     iget v0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr v0, p1
@@ -2347,12 +2348,12 @@
     :goto_0
     if-ge p1, v0, :cond_0
 
-    .line 445
+    .line 448
     invoke-static {p0, p1, p3}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 446
+    .line 449
     iget-wide v1, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-virtual {p2, v1, v2}, Lcom/google/protobuf/LongArrayList;->addLong(J)V
@@ -2364,7 +2365,7 @@
 
     return p1
 
-    .line 449
+    .line 452
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2385,15 +2386,15 @@
         }
     .end annotation
 
-    .line 391
+    .line 394
     check-cast p4, Lcom/google/protobuf/IntArrayList;
 
-    .line 392
+    .line 395
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 393
+    .line 396
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {v0}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag32(I)I
@@ -2405,25 +2406,25 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 395
+    .line 398
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 396
+    .line 399
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 399
+    .line 402
     :cond_0
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 400
+    .line 403
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {v0}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag32(I)I
@@ -2451,15 +2452,15 @@
         }
     .end annotation
 
-    .line 408
+    .line 411
     check-cast p4, Lcom/google/protobuf/LongArrayList;
 
-    .line 409
+    .line 412
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 410
+    .line 413
     iget-wide v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-static {v0, v1}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag64(J)J
@@ -2471,25 +2472,25 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 412
+    .line 415
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 413
+    .line 416
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 416
+    .line 419
     :cond_0
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 417
+    .line 420
     iget-wide v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-static {v0, v1}, Lcom/google/protobuf/CodedInputStream;->decodeZigZag64(J)J
@@ -2513,12 +2514,12 @@
         }
     .end annotation
 
-    .line 186
+    .line 189
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 187
+    .line 190
     iget v0, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_1
@@ -2527,12 +2528,12 @@
 
     const-string p0, ""
 
-    .line 191
+    .line 194
     iput-object p0, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     return p1
 
-    .line 194
+    .line 197
     :cond_0
     new-instance v1, Ljava/lang/String;
 
@@ -2546,7 +2547,7 @@
 
     return p1
 
-    .line 189
+    .line 192
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2573,12 +2574,12 @@
         }
     .end annotation
 
-    .line 573
+    .line 575
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 574
+    .line 576
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_5
@@ -2587,12 +2588,12 @@
 
     if-nez v0, :cond_0
 
-    .line 578
+    .line 580
     invoke-interface {p4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 580
+    .line 582
     :cond_0
     new-instance v2, Ljava/lang/String;
 
@@ -2600,7 +2601,7 @@
 
     invoke-direct {v2, p1, p2, v0, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 581
+    .line 583
     invoke-interface {p4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_0
@@ -2609,37 +2610,37 @@
     :goto_1
     if-ge p2, p3, :cond_4
 
-    .line 585
+    .line 587
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 586
+    .line 588
     iget v2, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v2, :cond_1
 
     goto :goto_2
 
-    .line 589
+    .line 591
     :cond_1
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 590
+    .line 592
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_3
 
     if-nez v0, :cond_2
 
-    .line 594
+    .line 596
     invoke-interface {p4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 596
+    .line 598
     :cond_2
     new-instance v2, Ljava/lang/String;
 
@@ -2647,12 +2648,12 @@
 
     invoke-direct {v2, p1, p2, v0, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 597
+    .line 599
     invoke-interface {p4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 592
+    .line 594
     :cond_3
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2664,7 +2665,7 @@
     :goto_2
     return p2
 
-    .line 576
+    .line 578
     :cond_5
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2691,12 +2692,12 @@
         }
     .end annotation
 
-    .line 612
+    .line 614
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 613
+    .line 615
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_7
@@ -2705,7 +2706,7 @@
 
     if-nez v0, :cond_0
 
-    .line 617
+    .line 619
     invoke-interface {p4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -2713,21 +2714,21 @@
     :cond_0
     add-int v2, p2, v0
 
-    .line 619
+    .line 621
     invoke-static {p1, p2, v2}, Lcom/google/protobuf/Utf8;->isValidUtf8([BII)Z
 
     move-result v3
 
     if-eqz v3, :cond_6
 
-    .line 622
+    .line 624
     new-instance v3, Ljava/lang/String;
 
     sget-object v4, Lcom/google/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-direct {v3, p1, p2, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 623
+    .line 625
     invoke-interface {p4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_0
@@ -2736,32 +2737,32 @@
     :goto_1
     if-ge p2, p3, :cond_5
 
-    .line 627
+    .line 629
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 628
+    .line 630
     iget v2, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v2, :cond_1
 
     goto :goto_2
 
-    .line 631
+    .line 633
     :cond_1
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 632
+    .line 634
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_4
 
     if-nez v0, :cond_2
 
-    .line 636
+    .line 638
     invoke-interface {p4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -2769,26 +2770,26 @@
     :cond_2
     add-int v2, p2, v0
 
-    .line 638
+    .line 640
     invoke-static {p1, p2, v2}, Lcom/google/protobuf/Utf8;->isValidUtf8([BII)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 641
+    .line 643
     new-instance v3, Ljava/lang/String;
 
     sget-object v4, Lcom/google/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-direct {v3, p1, p2, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 642
+    .line 644
     invoke-interface {p4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 639
+    .line 641
     :cond_3
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2796,7 +2797,7 @@
 
     throw p0
 
-    .line 634
+    .line 636
     :cond_4
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2808,7 +2809,7 @@
     :goto_2
     return p2
 
-    .line 620
+    .line 622
     :cond_6
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidUtf8()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2816,7 +2817,7 @@
 
     throw p0
 
-    .line 615
+    .line 617
     :cond_7
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2833,12 +2834,12 @@
         }
     .end annotation
 
-    .line 202
+    .line 205
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 203
+    .line 206
     iget v0, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz v0, :cond_1
@@ -2847,12 +2848,12 @@
 
     const-string p0, ""
 
-    .line 207
+    .line 210
     iput-object p0, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
     return p1
 
-    .line 210
+    .line 213
     :cond_0
     invoke-static {p0, p1, v0}, Lcom/google/protobuf/Utf8;->decodeUtf8([BII)Ljava/lang/String;
 
@@ -2864,7 +2865,7 @@
 
     return p1
 
-    .line 205
+    .line 208
     :cond_1
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2881,14 +2882,14 @@
         }
     .end annotation
 
-    .line 991
+    .line 995
     invoke-static {p0}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 994
+    .line 998
     invoke-static {p0}, Lcom/google/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
@@ -2911,7 +2912,7 @@
 
     if-ne v0, p3, :cond_0
 
-    .line 1000
+    .line 1004
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result p1
@@ -2926,7 +2927,7 @@
 
     return p2
 
-    .line 1036
+    .line 1040
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2934,7 +2935,7 @@
 
     throw p0
 
-    .line 1019
+    .line 1023
     :cond_1
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/protobuf/UnknownFieldSetLite;
 
@@ -2949,12 +2950,12 @@
     :goto_0
     if-ge p2, p3, :cond_3
 
-    .line 1023
+    .line 1027
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
-    .line 1024
+    .line 1028
     iget p2, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ne p2, v7, :cond_2
@@ -2976,7 +2977,7 @@
 
     move-object v5, p5
 
-    .line 1028
+    .line 1032
     invoke-static/range {v0 .. v5}, Lcom/google/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/protobuf/UnknownFieldSetLite;Lcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
@@ -2995,12 +2996,12 @@
 
     if-ne v0, v7, :cond_4
 
-    .line 1033
+    .line 1037
     invoke-virtual {p4, p0, v6}, Lcom/google/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
 
     return p2
 
-    .line 1031
+    .line 1035
     :cond_4
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -3008,18 +3009,18 @@
 
     throw p0
 
-    .line 1006
+    .line 1010
     :cond_5
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 1007
+    .line 1011
     iget p3, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ltz p3, :cond_8
 
-    .line 1010
+    .line 1014
     array-length p5, p1
 
     sub-int/2addr p5, p2
@@ -3028,14 +3029,14 @@
 
     if-nez p3, :cond_6
 
-    .line 1013
+    .line 1017
     sget-object p1, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {p4, p0, p1}, Lcom/google/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
 
     goto :goto_2
 
-    .line 1015
+    .line 1019
     :cond_6
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
@@ -3048,7 +3049,7 @@
 
     return p2
 
-    .line 1011
+    .line 1015
     :cond_7
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -3056,7 +3057,7 @@
 
     throw p0
 
-    .line 1009
+    .line 1013
     :cond_8
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -3064,7 +3065,7 @@
 
     throw p0
 
-    .line 1003
+    .line 1007
     :cond_9
     invoke-static {p1, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
@@ -3080,13 +3081,13 @@
 
     return p2
 
-    .line 996
+    .line 1000
     :cond_a
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
-    .line 997
+    .line 1001
     iget-wide p2, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3097,7 +3098,7 @@
 
     return p1
 
-    .line 992
+    .line 996
     :cond_b
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -3113,7 +3114,7 @@
 
     add-int/lit8 v0, p2, 0x1
 
-    .line 90
+    .line 93
     aget-byte p2, p1, p2
 
     if-ltz p2, :cond_0
@@ -3122,7 +3123,7 @@
 
     or-int/2addr p0, p1
 
-    .line 92
+    .line 95
     iput p0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     return v0
@@ -3136,7 +3137,7 @@
 
     add-int/lit8 p2, v0, 0x1
 
-    .line 97
+    .line 100
     aget-byte v0, p1, v0
 
     if-ltz v0, :cond_1
@@ -3145,7 +3146,7 @@
 
     or-int/2addr p0, p1
 
-    .line 99
+    .line 102
     iput p0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     return p2
@@ -3159,7 +3160,7 @@
 
     add-int/lit8 v0, p2, 0x1
 
-    .line 104
+    .line 107
     aget-byte p2, p1, p2
 
     if-ltz p2, :cond_2
@@ -3168,7 +3169,7 @@
 
     or-int/2addr p0, p1
 
-    .line 106
+    .line 109
     iput p0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     return v0
@@ -3182,7 +3183,7 @@
 
     add-int/lit8 p2, v0, 0x1
 
-    .line 111
+    .line 114
     aget-byte v0, p1, v0
 
     if-ltz v0, :cond_3
@@ -3191,7 +3192,7 @@
 
     or-int/2addr p0, p1
 
-    .line 113
+    .line 116
     iput p0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     return p2
@@ -3206,7 +3207,7 @@
     :goto_0
     add-int/lit8 v0, p2, 0x1
 
-    .line 118
+    .line 121
     aget-byte p2, p1, p2
 
     if-gez p2, :cond_4
@@ -3215,7 +3216,7 @@
 
     goto :goto_0
 
-    .line 120
+    .line 123
     :cond_4
     iput p0, p3, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
@@ -3227,17 +3228,17 @@
 
     add-int/lit8 v0, p1, 0x1
 
-    .line 79
+    .line 82
     aget-byte p1, p0, p1
 
     if-ltz p1, :cond_0
 
-    .line 81
+    .line 84
     iput p1, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     return v0
 
-    .line 84
+    .line 87
     :cond_0
     invoke-static {p1, p0, v0, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32(I[BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
@@ -3258,15 +3259,15 @@
         }
     .end annotation
 
-    .line 272
+    .line 275
     check-cast p4, Lcom/google/protobuf/IntArrayList;
 
-    .line 273
+    .line 276
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 274
+    .line 277
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-virtual {p4, v0}, Lcom/google/protobuf/IntArrayList;->addInt(I)V
@@ -3274,25 +3275,25 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 276
+    .line 279
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 277
+    .line 280
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 280
+    .line 283
     :cond_0
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 281
+    .line 284
     iget v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-virtual {p4, v0}, Lcom/google/protobuf/IntArrayList;->addInt(I)V
@@ -3313,7 +3314,7 @@
 
     add-int/lit8 v0, p3, 0x1
 
-    .line 141
+    .line 144
     aget-byte p3, p2, p3
 
     and-int/lit8 v1, p3, 0x7f
@@ -3326,14 +3327,14 @@
 
     or-long/2addr p0, v1
 
-    const/4 v1, 0x7
+    move v1, v3
 
     :goto_0
     if-gez p3, :cond_0
 
     add-int/lit8 p3, v0, 0x1
 
-    .line 145
+    .line 148
     aget-byte v0, p2, v0
 
     add-int/2addr v1, v3
@@ -3354,7 +3355,7 @@
 
     goto :goto_0
 
-    .line 149
+    .line 152
     :cond_0
     iput-wide p0, p4, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
@@ -3366,7 +3367,7 @@
 
     add-int/lit8 v0, p1, 0x1
 
-    .line 129
+    .line 132
     aget-byte p1, p0, p1
 
     int-to-long v1, p1
@@ -3377,12 +3378,12 @@
 
     if-ltz p1, :cond_0
 
-    .line 131
+    .line 134
     iput-wide v1, p2, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     return v0
 
-    .line 134
+    .line 137
     :cond_0
     invoke-static {v1, v2, p0, v0, p2}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64(J[BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
@@ -3403,15 +3404,15 @@
         }
     .end annotation
 
-    .line 289
+    .line 292
     check-cast p4, Lcom/google/protobuf/LongArrayList;
 
-    .line 290
+    .line 293
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 291
+    .line 294
     iget-wide v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-virtual {p4, v0, v1}, Lcom/google/protobuf/LongArrayList;->addLong(J)V
@@ -3419,25 +3420,25 @@
     :goto_0
     if-ge p2, p3, :cond_1
 
-    .line 293
+    .line 296
     invoke-static {p1, p2, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
-    .line 294
+    .line 297
     iget v1, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-eq p0, v1, :cond_0
 
     goto :goto_1
 
-    .line 297
+    .line 300
     :cond_0
     invoke-static {p1, v0, p5}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 298
+    .line 301
     iget-wide v0, p5, Lcom/google/protobuf/ArrayDecoders$Registers;->long1:J
 
     invoke-virtual {p4, v0, v1}, Lcom/google/protobuf/LongArrayList;->addLong(J)V
@@ -3457,14 +3458,14 @@
         }
     .end annotation
 
-    .line 1043
+    .line 1047
     invoke-static {p0}, Lcom/google/protobuf/WireFormat;->getTagFieldNumber(I)I
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 1046
+    .line 1050
     invoke-static {p0}, Lcom/google/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
@@ -3491,7 +3492,7 @@
 
     return p2
 
-    .line 1073
+    .line 1077
     :cond_0
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -3509,19 +3510,19 @@
     :goto_0
     if-ge p2, p3, :cond_3
 
-    .line 1061
+    .line 1065
     invoke-static {p1, p2, p4}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    .line 1062
+    .line 1066
     iget v0, p4, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     if-ne v0, p0, :cond_2
 
     goto :goto_1
 
-    .line 1066
+    .line 1070
     :cond_2
     invoke-static {v0, p1, p2, p3, p4}, Lcom/google/protobuf/ArrayDecoders;->skipField(I[BIILcom/google/protobuf/ArrayDecoders$Registers;)I
 
@@ -3537,7 +3538,7 @@
 
     return p2
 
-    .line 1069
+    .line 1073
     :cond_4
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -3545,13 +3546,13 @@
 
     throw p0
 
-    .line 1055
+    .line 1059
     :cond_5
     invoke-static {p1, p2, p4}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
     move-result p0
 
-    .line 1056
+    .line 1060
     iget p1, p4, Lcom/google/protobuf/ArrayDecoders$Registers;->int1:I
 
     add-int/2addr p0, p1
@@ -3563,7 +3564,7 @@
 
     return p2
 
-    .line 1048
+    .line 1052
     :cond_7
     invoke-static {p1, p2, p4}, Lcom/google/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/protobuf/ArrayDecoders$Registers;)I
 
@@ -3571,7 +3572,7 @@
 
     return p0
 
-    .line 1044
+    .line 1048
     :cond_8
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->invalidTag()Lcom/google/protobuf/InvalidProtocolBufferException;
 

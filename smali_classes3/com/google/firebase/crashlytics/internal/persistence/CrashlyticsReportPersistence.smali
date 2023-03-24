@@ -424,9 +424,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -472,7 +472,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     return-wide p0
 .end method
@@ -1303,7 +1303,7 @@
     const/4 v1, 0x0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -1351,7 +1351,7 @@
     :cond_2
     const/4 v3, 0x1
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 

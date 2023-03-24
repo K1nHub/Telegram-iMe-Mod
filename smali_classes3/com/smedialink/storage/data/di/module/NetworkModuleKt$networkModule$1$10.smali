@@ -119,7 +119,7 @@
 
     check-cast p1, Lcom/google/gson/Gson;
 
-    const-string v0, "https://api.kikliko.com/api/v1/ime-android/"
+    const-string v0, "https://api.kikliko.com/api/v1/bab6wg08TpiadT2UhFSme8feAbbMX017dFEbi6xVpvK7DuvZFuFLwPtVIU6uxNI1/"
 
     .line 71
     invoke-static {p2, v0, p1}, Lcom/smedialink/storage/data/di/module/NetworkModuleKt;->createRetrofit(Lokhttp3/OkHttpClient;Ljava/lang/String;Lcom/google/gson/Gson;)Lretrofit2/Retrofit;

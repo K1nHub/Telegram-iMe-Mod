@@ -570,7 +570,7 @@ public abstract class RoomDatabase {
                 if (r3 > r10) goto L45
                 if (r3 <= r9) goto L45
             L3e:
-                r5 = 1
+                r5 = r4
                 goto L45
             L40:
                 if (r3 < r10) goto L45
@@ -585,7 +585,7 @@ public abstract class RoomDatabase {
                 r9 = r3
                 goto L57
             L56:
-                r4 = 0
+                r4 = r5
             L57:
                 if (r4 != 0) goto L0
                 return r1

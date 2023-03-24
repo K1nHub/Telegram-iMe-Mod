@@ -32,7 +32,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.NeuroBotsController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkPanelViewBinding;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -234,8 +234,8 @@ public final class SmartBotsView extends FrameLayout {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
             SmartBotTab smartBotTab = (SmartBotTab) obj;
-            View inflate = View.inflate(getContext(), C3286R.layout.fork_panel_custom_tab_header, null);
-            ImageView avatar = (ImageView) inflate.findViewById(C3286R.C3289id.avatar);
+            View inflate = View.inflate(getContext(), C3301R.layout.fork_panel_custom_tab_header, null);
+            ImageView avatar = (ImageView) inflate.findViewById(C3301R.C3304id.avatar);
             if (smartBotTab.getIconRes() != 0) {
                 avatar.setImageResource(smartBotTab.getIconRes());
             } else if (smartBotTab.getIconUrl().length() > 0) {
@@ -245,7 +245,7 @@ public final class SmartBotsView extends FrameLayout {
                 Intrinsics.checkNotNullExpressionValue(context, "context");
                 ImageViewExtKt.loadFrom$default(avatar, iconUrl, context, null, false, 12, null);
             } else {
-                avatar.setImageResource(C3286R.C3288drawable.bot_avatar_any);
+                avatar.setImageResource(C3301R.C3303drawable.bot_avatar_any);
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
             if (tabAt != null) {
@@ -272,7 +272,7 @@ public final class SmartBotsView extends FrameLayout {
                 gradientDrawable.setStroke(AndroidUtilities.m51dp(2.0f), Theme.getColor("chats_actionBackground"));
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3286R.C3289id.avatar_bg);
+            View findViewById = (tabAt == null || (customView = tabAt.getCustomView()) == null) ? null : customView.findViewById(C3301R.C3304id.avatar_bg);
             if (findViewById != null) {
                 findViewById.setBackground(gradientDrawable);
             }
@@ -301,15 +301,15 @@ public final class SmartBotsView extends FrameLayout {
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
             if (this.binding.viewpager.getCurrentItem() == i) {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3286R.C3288drawable.ic_bots_recent, Theme.getColor("chats_actionBackground"));
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3301R.C3303drawable.ic_bots_recent, Theme.getColor("chats_actionBackground"));
                 Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…_chats_actionBackground))");
                 gradientDrawable.setColor(Color.parseColor("#33cccccc"));
             } else {
-                themedDrawable = Theme.getThemedDrawable(getContext(), C3286R.C3288drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
+                themedDrawable = Theme.getThemedDrawable(getContext(), C3301R.C3303drawable.ic_bots_recent, Color.parseColor("#A8A8A8"));
                 Intrinsics.checkNotNullExpressionValue(themedDrawable, "getThemedDrawable(contex…or.parseColor(\"#A8A8A8\"))");
             }
             TabLayout.Tab tabAt = this.binding.tabs.getTabAt(i);
-            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3286R.C3289id.avatar)) == null) {
+            if (tabAt == null || (customView = tabAt.getCustomView()) == null || (imageView = (ImageView) customView.findViewById(C3301R.C3304id.avatar)) == null) {
                 return;
             }
             imageView.setImageDrawable(themedDrawable);
@@ -376,11 +376,11 @@ public final class SmartBotsView extends FrameLayout {
     private final void setupLayoutBottom() {
         final ForkPanelViewBinding forkPanelViewBinding = this.binding;
         forkPanelViewBinding.layoutBottom.setBackgroundColor(Theme.getColor("chat_emojiPanelBackground"));
-        Drawable createEmojiIconSelectorVectorDrawable = Theme.createEmojiIconSelectorVectorDrawable(getContext(), C3286R.C3288drawable.fork_ic_bots_responses, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
+        Drawable createEmojiIconSelectorVectorDrawable = Theme.createEmojiIconSelectorVectorDrawable(getContext(), C3301R.C3303drawable.fork_ic_bots_responses, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
         Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor("chat_emojiBottomPanelIcon"), false);
         Theme.setEmojiVectorDrawableColor(createEmojiIconSelectorVectorDrawable, Theme.getColor("chat_emojiPanelIconSelected"), true);
         forkPanelViewBinding.imageTextResponses.setImageDrawable(createEmojiIconSelectorVectorDrawable);
-        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3286R.C3288drawable.smiles_tab_gif, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
+        Drawable createEmojiIconSelectorDrawable = Theme.createEmojiIconSelectorDrawable(getContext(), C3301R.C3303drawable.smiles_tab_gif, Theme.getColor("chat_emojiBottomPanelIcon"), Theme.getColor("chat_emojiPanelIconSelected"));
         Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor("chat_emojiBottomPanelIcon"), false);
         Theme.setEmojiDrawableColor(createEmojiIconSelectorDrawable, Theme.getColor("chat_emojiPanelIconSelected"), true);
         forkPanelViewBinding.imageGifResponses.setImageDrawable(createEmojiIconSelectorDrawable);

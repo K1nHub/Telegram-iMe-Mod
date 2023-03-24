@@ -44,61 +44,61 @@
     .line 300
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->length:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    cmp-long v4, v0, v2
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    cmp-long v6, v0, v3
+    const/4 v6, 0x0
 
-    if-nez v6, :cond_1
+    if-nez v4, :cond_1
 
     .line 301
     iget-wide p3, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->position:J
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-ltz v0, :cond_0
+    if-ltz p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v5, v6
 
     :goto_0
-    return v2
+    return v5
 
     :cond_1
-    cmp-long v6, p3, v3
+    cmp-long v2, p3, v2
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
-    return v5
+    return v6
 
     .line 305
     :cond_2
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->position:J
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->position:J
 
-    cmp-long v6, v3, p1
+    cmp-long v4, v2, p1
 
-    if-gtz v6, :cond_3
+    if-gtz v4, :cond_3
 
     add-long/2addr p1, p3
 
-    add-long/2addr v3, v0
+    add-long/2addr v2, v0
 
-    cmp-long p3, p1, v3
+    cmp-long p1, p1, v2
 
-    if-gtz p3, :cond_3
+    if-gtz p1, :cond_3
 
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v5, v6
 
     :goto_1
-    return v2
+    return v5
 .end method
 
 .method public intersects(JJ)Z
@@ -107,49 +107,49 @@
     .line 318
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->position:J
 
-    const/4 v2, 0x0
+    cmp-long v2, v0, p1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const-wide/16 v4, -0x1
+    const/4 v4, 0x1
 
-    cmp-long v6, v0, p1
+    const-wide/16 v5, -0x1
 
-    if-gtz v6, :cond_2
+    if-gtz v2, :cond_2
 
     .line 319
     iget-wide p3, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->length:J
 
-    cmp-long v6, p3, v4
+    cmp-long v2, p3, v5
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     add-long/2addr v0, p3
 
-    cmp-long p3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-lez p3, :cond_1
+    if-lez p1, :cond_1
 
     :cond_0
-    const/4 v2, 0x1
+    move v3, v4
 
     :cond_1
-    return v2
+    return v3
 
     :cond_2
-    cmp-long v6, p3, v4
+    cmp-long v2, p3, v5
 
-    if-eqz v6, :cond_3
+    if-eqz v2, :cond_3
 
     add-long/2addr p1, p3
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-lez p3, :cond_4
+    if-lez p1, :cond_4
 
     :cond_3
-    const/4 v2, 0x1
+    move v3, v4
 
     :cond_4
-    return v2
+    return v3
 .end method

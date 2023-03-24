@@ -13,7 +13,7 @@ import com.smedialink.utils.formatter.BalanceFormatter;
 import com.smedialink.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TransactionItem.kt */
 /* loaded from: classes3.dex */
 public final class TransactionItem extends NoChildNode {
@@ -27,7 +27,7 @@ public final class TransactionItem extends NoChildNode {
         static {
             int[] iArr = new int[TransactionDirection.values().length];
             try {
-                iArr[TransactionDirection.f370IN.ordinal()] = 1;
+                iArr[TransactionDirection.f371IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -116,20 +116,20 @@ public final class TransactionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Transaction transaction = this.transaction;
         if (transaction instanceof Transaction.Unsupported) {
-            return resourceManager.getString(C3286R.string.wallet_unsupported_transaction_message);
+            return resourceManager.getString(C3301R.string.wallet_unsupported_transaction_message);
         }
         if (transaction instanceof Transaction.Crypto.Approve) {
-            return resourceManager.getString(C3286R.string.wallet_transactions_type_approve_title, resourceManager.getString(TokenInfo.Companion.map(transaction.getTokenCode()).getShortName()));
+            return resourceManager.getString(C3301R.string.wallet_transactions_type_approve_title, resourceManager.getString(TokenInfo.Companion.map(transaction.getTokenCode()).getShortName()));
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
             FiatCode spentFiatCode = ((Transaction.Crypto.SimplexPurchase) transaction).getSpentFiatCode();
             TokenInfo map = TokenInfo.Companion.map(this.transaction.getTokenCode());
-            return resourceManager.getString(C3286R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.SimplexPurchase) this.transaction).getSpentAmount(), spentFiatCode.getDecimals()), spentFiatCode.getShortName(), BalanceFormatter.formatBalance(this.transaction.getAmount(), map.getDecimals()), resourceManager.getString(map.getShortName()));
+            return resourceManager.getString(C3301R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.SimplexPurchase) this.transaction).getSpentAmount(), spentFiatCode.getDecimals()), spentFiatCode.getShortName(), BalanceFormatter.formatBalance(this.transaction.getAmount(), map.getDecimals()), resourceManager.getString(map.getShortName()));
         } else if (transaction instanceof Transaction.Crypto.Swap) {
             TokenInfo.Companion companion = TokenInfo.Companion;
             TokenInfo map2 = companion.map(((Transaction.Crypto.Swap) transaction).getInputTokenCode());
             TokenInfo map3 = companion.map(((Transaction.Crypto.Swap) this.transaction).getOutputTokenCode());
-            return resourceManager.getString(C3286R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getInputAmount(), map2.getDecimals()), resourceManager.getString(map2.getShortName()), BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getOutputAmount(), map3.getDecimals()), resourceManager.getString(map3.getShortName()));
+            return resourceManager.getString(C3301R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getInputAmount(), map2.getDecimals()), resourceManager.getString(map2.getShortName()), BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getOutputAmount(), map3.getDecimals()), resourceManager.getString(map3.getShortName()));
         } else {
             return getAmountWithSymbol(true) + ' ' + resourceManager.getString(TokenInfo.Companion.map(this.transaction.getTokenCode()).getShortName());
         }

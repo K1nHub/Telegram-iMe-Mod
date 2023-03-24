@@ -791,7 +791,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, p1
 
     goto :goto_0
 
@@ -1052,17 +1052,17 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_4
+    if-eqz v0, :cond_4
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->durationUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_4
+    if-eqz v0, :cond_4
 
     if-eqz p1, :cond_4
 
@@ -1108,7 +1108,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v6, v0, :cond_1
@@ -1537,104 +1537,104 @@
 .end method
 
 .method private static formatSubtitleTimecode(JLjava/lang/String;J)[B
-    .locals 10
+    .locals 11
 
-    const/4 v0, 0x1
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v1, 0x0
+    cmp-long v0, p0, v0
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    const/4 v1, 0x1
 
-    cmp-long v4, p0, v2
+    const/4 v2, 0x0
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v0, v2
 
     .line 1740
     :goto_0
-    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    const-wide v2, 0xd693a400L
+    const-wide v3, 0xd693a400L
 
     .line 1742
-    div-long v2, p0, v2
+    div-long v3, p0, v3
 
-    long-to-int v3, v2
+    long-to-int v0, v3
 
-    int-to-long v4, v3
+    int-to-long v3, v0
 
-    const-wide/16 v6, 0xe10
+    const-wide/16 v5, 0xe10
 
-    mul-long v4, v4, v6
+    mul-long/2addr v3, v5
 
-    const-wide/32 v6, 0xf4240
+    const-wide/32 v5, 0xf4240
 
-    mul-long v4, v4, v6
+    mul-long/2addr v3, v5
 
-    sub-long/2addr p0, v4
+    sub-long/2addr p0, v3
 
-    const-wide/32 v4, 0x3938700
+    const-wide/32 v3, 0x3938700
 
     .line 1744
-    div-long v4, p0, v4
+    div-long v3, p0, v3
 
-    long-to-int v2, v4
+    long-to-int v3, v3
 
-    int-to-long v4, v2
+    int-to-long v7, v3
 
-    const-wide/16 v8, 0x3c
+    const-wide/16 v9, 0x3c
 
-    mul-long v4, v4, v8
+    mul-long/2addr v7, v9
 
-    mul-long v4, v4, v6
+    mul-long/2addr v7, v5
 
-    sub-long/2addr p0, v4
+    sub-long/2addr p0, v7
 
     .line 1746
-    div-long v4, p0, v6
+    div-long v7, p0, v5
 
-    long-to-int v5, v4
+    long-to-int v4, v7
 
-    int-to-long v8, v5
+    int-to-long v7, v4
 
-    mul-long v8, v8, v6
+    mul-long/2addr v7, v5
 
-    sub-long/2addr p0, v8
+    sub-long/2addr p0, v7
 
     .line 1748
     div-long/2addr p0, p3
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
     .line 1749
-    sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/4 p3, 0x4
 
     new-array p3, p3, [Ljava/lang/Object;
 
     .line 1751
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p4
+
+    aput-object p4, p3, v2
+
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p4
 
     aput-object p4, p3, v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p4
-
-    aput-object p4, p3, v0
-
     const/4 p4, 0x2
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -1642,13 +1642,13 @@
 
     const/4 p4, 0x3
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object p0
 
-    aput-object p1, p3, p4
+    aput-object p0, p3, p4
 
-    invoke-static {p0, p2, p3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2188,7 +2188,7 @@
     goto :goto_0
 
     :cond_1f
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
@@ -2204,7 +2204,7 @@
     goto :goto_0
 
     :cond_20
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     packed-switch v3, :pswitch_data_0
@@ -2490,9 +2490,9 @@
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const-wide/16 v4, 0x3e8
 
@@ -2580,7 +2580,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const-wide/16 v3, 0x3e8
@@ -2838,12 +2838,12 @@
 
     if-ne v7, v4, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_1
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_1
     if-eqz v7, :cond_10
@@ -2852,12 +2852,12 @@
 
     if-ne v1, v3, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 1494
     :goto_2
@@ -2907,7 +2907,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_3
     or-int/2addr v6, v8
@@ -2996,7 +2996,7 @@
     :cond_9
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->samplePartitionCount:I
 
-    mul-int/lit8 v1, v1, 0x4
+    mul-int/2addr v1, v2
 
     .line 1522
     iget-object v6, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -3063,9 +3063,9 @@
 
     invoke-virtual {v7, v1}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    const/4 v1, 0x0
+    move v1, v5
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 1540
     :goto_4
@@ -3351,7 +3351,7 @@
     goto :goto_8
 
     :cond_14
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_8
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -3835,9 +3835,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iput v1, v7, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->seekEntryId:I
+    iput v0, v7, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->seekEntryId:I
 
     goto/16 :goto_d
 
@@ -4092,9 +4092,9 @@
     :cond_c
     if-ne v12, v10, :cond_f
 
-    const/4 v2, 0x0
+    move v2, v9
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1223
     :goto_1
@@ -4169,9 +4169,9 @@
     :cond_f
     if-ne v12, v2, :cond_1a
 
-    const/4 v2, 0x0
+    move v2, v9
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1238
     :goto_2
@@ -4206,7 +4206,7 @@
 
     const-wide/16 v16, 0x0
 
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_3
     if-ge v12, v6, :cond_13
@@ -4522,6 +4522,8 @@
     .line 1291
     iput v1, v7, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->blockSampleIndex:I
 
+    const/16 v1, 0xa3
+
     goto :goto_a
 
     .line 1279
@@ -4549,9 +4551,9 @@
     :cond_1b
     move-object v10, v11
 
-    :goto_a
-    const/16 v1, 0xa3
+    move v1, v3
 
+    :goto_a
     if-ne v0, v1, :cond_1d
 
     .line 1297
@@ -4581,7 +4583,7 @@
 
     iget v3, v10, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->defaultSampleDurationNs:I
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     div-int/lit16 v2, v2, 0x3e8
 
@@ -4889,9 +4891,9 @@
 
     const-wide/16 v4, -0x1
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-eqz v6, :cond_b
+    if-eqz v4, :cond_b
 
     if-ne p1, v3, :cond_15
 
@@ -5039,9 +5041,9 @@
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([B)V
 
     :cond_11
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 768
     :goto_0
@@ -5061,7 +5063,7 @@
     goto :goto_0
 
     :cond_12
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 771
     :goto_1
@@ -5074,7 +5076,7 @@
 
     iget v5, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->defaultSampleDurationNs:I
 
-    mul-int v5, v5, v0
+    mul-int/2addr v5, v0
 
     div-int/lit16 v5, v5, 0x3e8
 
@@ -5654,9 +5656,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->maxFrameAverageLuminance:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->maxFrameAverageLuminance:I
 
     goto/16 :goto_0
 
@@ -5666,9 +5668,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->maxContentLuminance:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->maxContentLuminance:I
 
     goto/16 :goto_0
 
@@ -5757,9 +5759,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->defaultSampleDurationNs:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->defaultSampleDurationNs:I
 
     goto/16 :goto_0
 
@@ -5823,9 +5825,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->audioBitDepth:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->audioBitDepth:I
 
     goto/16 :goto_0
 
@@ -5855,9 +5857,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->maxBlockAdditionId:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->maxBlockAdditionId:I
 
     goto/16 :goto_0
 
@@ -5867,11 +5869,11 @@
 
     move-result-object p1
 
-    cmp-long v1, p2, v3
+    cmp-long p2, p2, v3
 
-    if-nez v1, :cond_6
+    if-nez p2, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v7
 
     :cond_6
     iput-boolean v0, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->flagForced:Z
@@ -5884,9 +5886,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayHeight:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayHeight:I
 
     goto/16 :goto_0
 
@@ -5896,9 +5898,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayUnit:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayUnit:I
 
     goto/16 :goto_0
 
@@ -5908,27 +5910,27 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayWidth:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayWidth:I
 
     goto/16 :goto_0
 
     :sswitch_c
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 971
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->assertInTrackEntry(I)V
 
-    if-eqz p3, :cond_a
+    if-eqz p2, :cond_a
 
-    if-eq p3, v7, :cond_9
+    if-eq p2, v7, :cond_9
 
-    if-eq p3, v5, :cond_8
+    if-eq p2, v5, :cond_8
 
     const/16 p1, 0xf
 
-    if-eq p3, p1, :cond_7
+    if-eq p2, p1, :cond_7
 
     goto/16 :goto_0
 
@@ -6145,9 +6147,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    invoke-static {p1, p3}, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->access$202(Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;I)I
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->access$202(Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;I)I
 
     goto/16 :goto_0
 
@@ -6200,9 +6202,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->number:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->number:I
 
     goto :goto_0
 
@@ -6212,9 +6214,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->height:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->height:I
 
     goto :goto_0
 
@@ -6239,9 +6241,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->width:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->width:I
 
     goto :goto_0
 
@@ -6251,9 +6253,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->channelCount:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->channelCount:I
 
     goto :goto_0
 
@@ -6273,11 +6275,11 @@
 
     move-result-object p1
 
-    cmp-long v1, p2, v3
+    cmp-long p2, p2, v3
 
-    if-nez v1, :cond_10
+    if-nez p2, :cond_10
 
-    const/4 v0, 0x1
+    move v0, v7
 
     :cond_10
     iput-boolean v0, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->flagDefault:Z
@@ -6290,9 +6292,9 @@
 
     move-result-object p1
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    iput p3, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->type:I
+    iput p2, p1, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->type:I
 
     goto :goto_0
 
@@ -6457,7 +6459,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_0
     if-eqz v2, :cond_1
@@ -6679,9 +6681,9 @@
 
     iget-wide p1, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->cuesContentPosition:J
 
-    cmp-long p3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-eqz p3, :cond_1
+    if-eqz p1, :cond_1
 
     .line 683
     iput-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor;->seekForCues:Z

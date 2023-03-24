@@ -1409,8 +1409,8 @@ public abstract class FragmentManager {
                         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
                         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
                         for (String str3 : input) {
-                            Pair m100to = TuplesKt.m100to(str3, Boolean.TRUE);
-                            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+                            Pair m99to = TuplesKt.m99to(str3, Boolean.TRUE);
+                            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
                         }
                         return new ActivityResultContract.SynchronousResult<>(linkedHashMap);
                     }

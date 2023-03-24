@@ -152,7 +152,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 2266
     :goto_0
@@ -266,9 +266,9 @@
 
     const v2, 0x7fffffff
 
-    const v3, 0x7fffffff
+    move v4, v0
 
-    const/4 v4, -0x1
+    move v3, v2
 
     :goto_1
     if-ltz p3, :cond_5
@@ -1136,12 +1136,12 @@
 
     if-gez p1, :cond_3
 
-    const/4 p1, 0x1
+    move p1, p4
 
     :cond_3
     if-gez p2, :cond_4
 
-    const/4 p2, 0x1
+    move p2, p4
 
     .line 2179
     :cond_4
@@ -1215,7 +1215,7 @@
     goto :goto_1
 
     :cond_8
-    const/4 p4, -0x1
+    move p4, v0
 
     :goto_2
     if-ltz p4, :cond_9
@@ -1604,7 +1604,7 @@
     :cond_b
     if-ne v1, v2, :cond_14
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 2698
     :goto_5
@@ -1852,7 +1852,7 @@
     .line 2744
     array-length v2, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_8
     if-ge v4, v2, :cond_18
@@ -3227,7 +3227,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-ge v3, v0, :cond_7

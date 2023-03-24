@@ -305,7 +305,7 @@
 
     const/high16 p4, 0x42400000    # 48.0f
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     const/high16 p4, 0x40000000    # 2.0f
 

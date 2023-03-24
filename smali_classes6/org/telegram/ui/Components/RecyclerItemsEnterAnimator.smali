@@ -146,7 +146,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 156
     :goto_0
@@ -254,7 +254,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 37
     :goto_0

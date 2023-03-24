@@ -1554,7 +1554,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     const/4 p1, 0x0
@@ -1608,7 +1608,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     invoke-virtual {p2, v0}, Landroid/view/View;->setAlpha(F)V
@@ -1750,7 +1750,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 

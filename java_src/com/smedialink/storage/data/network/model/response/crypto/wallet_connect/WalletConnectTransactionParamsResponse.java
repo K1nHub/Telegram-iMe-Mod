@@ -1,30 +1,30 @@
 package com.smedialink.storage.data.network.model.response.crypto.wallet_connect;
 
 import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.GasPriceOneItem;
+import com.smedialink.storage.data.network.model.response.crypto.wallet.GasPriceResponse;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionParamsResponse.kt */
 /* loaded from: classes3.dex */
 public final class WalletConnectTransactionParamsResponse {
     private final long chainId;
-    private final GasPriceOneItem fast;
-    private final GasPriceOneItem fastest;
+    private final GasPriceResponse fast;
+    private final GasPriceResponse fastest;
     private final BigInteger nonce;
-    private final GasPriceOneItem safeLow;
+    private final GasPriceResponse safeLow;
 
-    public static /* synthetic */ WalletConnectTransactionParamsResponse copy$default(WalletConnectTransactionParamsResponse walletConnectTransactionParamsResponse, GasPriceOneItem gasPriceOneItem, GasPriceOneItem gasPriceOneItem2, GasPriceOneItem gasPriceOneItem3, BigInteger bigInteger, long j, int i, Object obj) {
+    public static /* synthetic */ WalletConnectTransactionParamsResponse copy$default(WalletConnectTransactionParamsResponse walletConnectTransactionParamsResponse, GasPriceResponse gasPriceResponse, GasPriceResponse gasPriceResponse2, GasPriceResponse gasPriceResponse3, BigInteger bigInteger, long j, int i, Object obj) {
         if ((i & 1) != 0) {
-            gasPriceOneItem = walletConnectTransactionParamsResponse.fastest;
+            gasPriceResponse = walletConnectTransactionParamsResponse.fastest;
         }
         if ((i & 2) != 0) {
-            gasPriceOneItem2 = walletConnectTransactionParamsResponse.fast;
+            gasPriceResponse2 = walletConnectTransactionParamsResponse.fast;
         }
-        GasPriceOneItem gasPriceOneItem4 = gasPriceOneItem2;
+        GasPriceResponse gasPriceResponse4 = gasPriceResponse2;
         if ((i & 4) != 0) {
-            gasPriceOneItem3 = walletConnectTransactionParamsResponse.safeLow;
+            gasPriceResponse3 = walletConnectTransactionParamsResponse.safeLow;
         }
-        GasPriceOneItem gasPriceOneItem5 = gasPriceOneItem3;
+        GasPriceResponse gasPriceResponse5 = gasPriceResponse3;
         if ((i & 8) != 0) {
             bigInteger = walletConnectTransactionParamsResponse.nonce;
         }
@@ -32,18 +32,18 @@ public final class WalletConnectTransactionParamsResponse {
         if ((i & 16) != 0) {
             j = walletConnectTransactionParamsResponse.chainId;
         }
-        return walletConnectTransactionParamsResponse.copy(gasPriceOneItem, gasPriceOneItem4, gasPriceOneItem5, bigInteger2, j);
+        return walletConnectTransactionParamsResponse.copy(gasPriceResponse, gasPriceResponse4, gasPriceResponse5, bigInteger2, j);
     }
 
-    public final GasPriceOneItem component1() {
+    public final GasPriceResponse component1() {
         return this.fastest;
     }
 
-    public final GasPriceOneItem component2() {
+    public final GasPriceResponse component2() {
         return this.fast;
     }
 
-    public final GasPriceOneItem component3() {
+    public final GasPriceResponse component3() {
         return this.safeLow;
     }
 
@@ -55,10 +55,10 @@ public final class WalletConnectTransactionParamsResponse {
         return this.chainId;
     }
 
-    public final WalletConnectTransactionParamsResponse copy(GasPriceOneItem gasPriceOneItem, GasPriceOneItem fast, GasPriceOneItem gasPriceOneItem2, BigInteger nonce, long j) {
+    public final WalletConnectTransactionParamsResponse copy(GasPriceResponse gasPriceResponse, GasPriceResponse fast, GasPriceResponse gasPriceResponse2, BigInteger nonce, long j) {
         Intrinsics.checkNotNullParameter(fast, "fast");
         Intrinsics.checkNotNullParameter(nonce, "nonce");
-        return new WalletConnectTransactionParamsResponse(gasPriceOneItem, fast, gasPriceOneItem2, nonce, j);
+        return new WalletConnectTransactionParamsResponse(gasPriceResponse, fast, gasPriceResponse2, nonce, j);
     }
 
     public boolean equals(Object obj) {
@@ -73,35 +73,35 @@ public final class WalletConnectTransactionParamsResponse {
     }
 
     public int hashCode() {
-        GasPriceOneItem gasPriceOneItem = this.fastest;
-        int hashCode = (((gasPriceOneItem == null ? 0 : gasPriceOneItem.hashCode()) * 31) + this.fast.hashCode()) * 31;
-        GasPriceOneItem gasPriceOneItem2 = this.safeLow;
-        return ((((hashCode + (gasPriceOneItem2 != null ? gasPriceOneItem2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.chainId);
+        GasPriceResponse gasPriceResponse = this.fastest;
+        int hashCode = (((gasPriceResponse == null ? 0 : gasPriceResponse.hashCode()) * 31) + this.fast.hashCode()) * 31;
+        GasPriceResponse gasPriceResponse2 = this.safeLow;
+        return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.chainId);
     }
 
     public String toString() {
         return "WalletConnectTransactionParamsResponse(fastest=" + this.fastest + ", fast=" + this.fast + ", safeLow=" + this.safeLow + ", nonce=" + this.nonce + ", chainId=" + this.chainId + ')';
     }
 
-    public WalletConnectTransactionParamsResponse(GasPriceOneItem gasPriceOneItem, GasPriceOneItem fast, GasPriceOneItem gasPriceOneItem2, BigInteger nonce, long j) {
+    public WalletConnectTransactionParamsResponse(GasPriceResponse gasPriceResponse, GasPriceResponse fast, GasPriceResponse gasPriceResponse2, BigInteger nonce, long j) {
         Intrinsics.checkNotNullParameter(fast, "fast");
         Intrinsics.checkNotNullParameter(nonce, "nonce");
-        this.fastest = gasPriceOneItem;
+        this.fastest = gasPriceResponse;
         this.fast = fast;
-        this.safeLow = gasPriceOneItem2;
+        this.safeLow = gasPriceResponse2;
         this.nonce = nonce;
         this.chainId = j;
     }
 
-    public final GasPriceOneItem getFastest() {
+    public final GasPriceResponse getFastest() {
         return this.fastest;
     }
 
-    public final GasPriceOneItem getFast() {
+    public final GasPriceResponse getFast() {
         return this.fast;
     }
 
-    public final GasPriceOneItem getSafeLow() {
+    public final GasPriceResponse getSafeLow() {
         return this.safeLow;
     }
 

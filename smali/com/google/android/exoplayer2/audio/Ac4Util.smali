@@ -282,7 +282,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x4
+    move v3, v2
 
     :goto_0
     add-int/2addr v0, v3
@@ -353,12 +353,12 @@
 
     if-eqz v5, :cond_4
 
-    const v9, 0xbb80
+    move v9, v6
 
     goto :goto_1
 
     :cond_4
-    const v9, 0xac44
+    move v9, v8
 
     .line 152
     :goto_1
@@ -381,17 +381,17 @@
 
     move v8, p0
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_5
-    if-ne v9, v6, :cond_b
+    if-ne v9, v6, :cond_a
 
     .line 156
     sget-object v6, Lcom/google/android/exoplayer2/audio/Ac4Util;->SAMPLE_COUNT:[I
 
     array-length v8, v6
 
-    if-ge p0, v8, :cond_b
+    if-ge p0, v8, :cond_a
 
     .line 157
     aget v5, v6, p0
@@ -413,48 +413,40 @@
 
     if-eq v1, v2, :cond_6
 
-    goto :goto_2
+    goto :goto_4
 
     :cond_6
-    if-eq p0, v3, :cond_a
+    if-eq p0, v3, :cond_9
 
-    if-eq p0, v6, :cond_a
+    if-eq p0, v6, :cond_9
 
-    if-ne p0, v8, :cond_9
+    if-ne p0, v8, :cond_a
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_7
-    if-eq p0, v6, :cond_a
+    if-eq p0, v6, :cond_9
 
-    if-ne p0, v8, :cond_9
+    if-ne p0, v8, :cond_a
 
+    :goto_2
     goto :goto_3
 
     :cond_8
-    if-eq p0, v3, :cond_a
+    if-eq p0, v3, :cond_9
 
-    if-ne p0, v6, :cond_9
-
-    goto :goto_3
+    if-ne p0, v6, :cond_a
 
     :cond_9
-    :goto_2
-    move v8, v5
-
-    goto :goto_4
-
-    :cond_a
     :goto_3
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_2
-
-    :cond_b
-    const/4 v8, 0x0
+    :cond_a
+    :goto_4
+    move v8, v5
 
     .line 179
-    :goto_4
+    :goto_5
     new-instance p0, Lcom/google/android/exoplayer2/audio/Ac4Util$SyncFrameInfo;
 
     const/4 v5, 0x2
@@ -538,7 +530,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x4
+    move v1, v3
 
     :goto_0
     const p0, 0xac41

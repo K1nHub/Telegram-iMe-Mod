@@ -168,9 +168,9 @@
 
     const-wide p0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long p2, p5, p0
+    cmp-long p0, p5, p0
 
-    if-eqz p2, :cond_0
+    if-eqz p0, :cond_0
 
     .line 435
     new-instance p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
@@ -426,7 +426,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 283
     :goto_0
@@ -453,7 +453,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     aput-boolean v5, v4, v3
@@ -503,7 +503,7 @@
     .line 305
     iput-boolean v2, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->hasEnabledTracks:Z
 
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 306
     :goto_2
@@ -551,12 +551,12 @@
 
     if-nez v7, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_3
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_3
     invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -804,7 +804,7 @@
 .end method
 
 .method public isFullyBuffered()Z
-    .locals 5
+    .locals 4
 
     .line 149
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->prepared:Z
@@ -824,9 +824,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     const/4 v0, 0x1
@@ -995,7 +995,7 @@
 .end method
 
 .method public updateClipping()V
-    .locals 6
+    .locals 5
 
     .line 362
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
@@ -1011,9 +1011,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_0
+    if-nez v3, :cond_0
 
     const-wide/high16 v1, -0x8000000000000000L
 

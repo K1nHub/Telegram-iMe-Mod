@@ -690,7 +690,7 @@
     goto/16 :goto_5
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v12
 
     .line 211
     :goto_1
@@ -707,13 +707,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v6, 0x2
+    move v6, v13
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v6, 0x1
+    move v6, v5
 
     :goto_3
     if-ge v1, v6, :cond_13
@@ -764,7 +764,7 @@
 
     const/high16 v14, 0x437f0000    # 255.0f
 
-    mul-float v6, v6, v14
+    mul-float/2addr v6, v14
 
     float-to-int v6, v6
 
@@ -1153,7 +1153,7 @@
 
     move-result v5
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float v16, v1, v3
 
@@ -1170,7 +1170,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float v17, v15, v1
 
@@ -1564,7 +1564,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     aput v0, p1, p2
@@ -1611,7 +1611,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 432
     :goto_1
@@ -1653,7 +1653,7 @@
     .line 263
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    const/4 p8, 0x0
+    move p8, v1
 
     .line 266
     :cond_0
@@ -1731,7 +1731,7 @@
 
     const/high16 v2, 0x41cc0000    # 25.5f
 
-    mul-float p4, p4, v2
+    mul-float/2addr p4, v2
 
     float-to-int p4, p4
 
@@ -1762,7 +1762,7 @@
 
     const/high16 v2, 0x42990000    # 76.5f
 
-    mul-float p4, p4, v2
+    mul-float/2addr p4, v2
 
     float-to-int p4, p4
 
@@ -1797,12 +1797,12 @@
 
     if-eq p4, p3, :cond_7
 
-    const/4 p4, 0x1
+    move p4, p5
 
     goto :goto_1
 
     :cond_7
-    const/4 p4, 0x0
+    move p4, v1
 
     :goto_1
     iput-boolean p4, p0, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->animateBackground:Z
@@ -1812,12 +1812,12 @@
 
     if-ne p4, p1, :cond_8
 
-    const/4 p4, 0x1
+    move p4, p5
 
     goto :goto_2
 
     :cond_8
-    const/4 p4, 0x0
+    move p4, v1
 
     :goto_2
     iput-boolean p4, p0, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->iconChangeColor:Z
@@ -1913,7 +1913,7 @@
     goto :goto_3
 
     :cond_c
-    const/4 p1, 0x0
+    move p1, p7
 
     :goto_3
     iput p1, p0, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->crossProgress:F
@@ -2152,7 +2152,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -2178,7 +2178,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     .line 256
     :goto_1
@@ -2255,7 +2255,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 463
     :goto_0
@@ -2302,7 +2302,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V

@@ -194,7 +194,7 @@
     if-ne p2, v2, :cond_4
 
     :cond_3
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_4
     iput-boolean v0, p1, Lorg/telegram/ui/Components/RecyclerListView;->scrollingByUser:Z

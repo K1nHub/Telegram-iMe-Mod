@@ -120,7 +120,7 @@
 
     if-lez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_0
 
@@ -210,7 +210,7 @@
 
     :cond_2
     :goto_0
-    const/4 p2, 0x1
+    move p2, v0
 
     :goto_1
     const/high16 v1, 0x3f800000    # 1.0f

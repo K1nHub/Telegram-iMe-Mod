@@ -33,11 +33,11 @@
 
     move-object v7, v4
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v8, 0x0
+    move v8, v6
 
     .line 2
     :goto_0

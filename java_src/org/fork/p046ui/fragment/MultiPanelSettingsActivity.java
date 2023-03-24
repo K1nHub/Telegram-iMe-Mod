@@ -42,11 +42,11 @@ import org.fork.enums.MultiPanelButton;
 import org.fork.models.MultiPanelButtonState;
 import org.fork.p046ui.view.DialogTypeTopicsBar;
 import org.fork.p046ui.view.MovingCheckCell;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -183,15 +183,15 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_multi_panel_item_title));
-        ActionBarMenuItem addItem = c3351ActionBar.createMenu().addItem(0, C3286R.C3288drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
-        addItem.addSubItem(1, C3286R.C3288drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3286R.string.ThemeResetToDefaults));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.MultiPanelSettingsActivity$setupActionBar$1$2
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.settings_multi_panel_item_title));
+        ActionBarMenuItem addItem = c3366ActionBar.createMenu().addItem(0, C3301R.C3303drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
+        addItem.addSubItem(1, C3301R.C3303drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3301R.string.ThemeResetToDefaults));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.MultiPanelSettingsActivity$setupActionBar$1$2
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     MultiPanelSettingsActivity.this.finishFragment();
@@ -330,8 +330,8 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 arrayList.add(new MultiPanelButtonState(multiPanelButtonState.getType(), multiPanelButtonState.isEnabled(), multiPanelButtonState.getPosition()));
             }
             mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
-            Pair m100to = TuplesKt.m100to(first, mutableList);
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(first, mutableList);
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.newButtonStates = mutableMap;
@@ -478,7 +478,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 dialogTypeTopicsBar = new TextCheckCell(MultiPanelSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
                 FrameLayout textInfoPrivacyCell = new TextInfoPrivacyCell(MultiPanelSettingsActivity.this.getParentActivity());
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(MultiPanelSettingsActivity.this.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(MultiPanelSettingsActivity.this.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 dialogTypeTopicsBar = textInfoPrivacyCell;
             } else {
                 Activity parentActivity2 = MultiPanelSettingsActivity.this.getParentActivity();
@@ -503,25 +503,25 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == multiPanelSettingsActivity.enableRow) {
                     textCheckCell.setType(1);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.multi_panel_settings_enable_item_title), multiPanelSettingsActivity.newIsEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.multi_panel_settings_enable_item_title), multiPanelSettingsActivity.newIsEnabled, needDivider);
                     return;
                 }
                 textCheckCell.setType(0);
                 if (i == multiPanelSettingsActivity.hideOnScrollRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.multi_panel_hide_on_scroll), multiPanelSettingsActivity.newIsHideOnScrollEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.multi_panel_hide_on_scroll), multiPanelSettingsActivity.newIsHideOnScrollEnabled, needDivider);
                 } else if (i == multiPanelSettingsActivity.allButtonsRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.multi_panel_settings_section_enable_all_item_title), multiPanelSettingsActivity.isAllButtonsEnabled(), needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.multi_panel_settings_section_enable_all_item_title), multiPanelSettingsActivity.isAllButtonsEnabled(), needDivider);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
                 MultiPanelSettingsActivity multiPanelSettingsActivity2 = MultiPanelSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == multiPanelSettingsActivity2.enableSectionRow && multiPanelSettingsActivity2.newIsEnabled) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setFixedSize(12);
                     textInfoPrivacyCell.setText(null);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(multiPanelSettingsActivity2.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 if (i == multiPanelSettingsActivity2.hideOnScrollSectionRow) {
                     textInfoPrivacyCell.setFixedSize(1);
                     textInfoPrivacyCell.setText(null);
@@ -530,12 +530,12 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 textInfoPrivacyCell.setFixedSize(0);
                 if (i != multiPanelSettingsActivity2.enableSectionRow) {
                     if (i == multiPanelSettingsActivity2.sectionInfoRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.multi_panel_settings_section_hint));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3301R.string.multi_panel_settings_section_hint));
                         return;
                     }
                     return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.multi_panel_settings_enable_item_subtitle));
+                textInfoPrivacyCell.setText(LocaleController.getInternalString(C3301R.string.multi_panel_settings_enable_item_subtitle));
             } else if (itemViewType == IdFabric$ViewTypes.MOVING_CHECK && (view instanceof MovingCheckCell)) {
                 MovingCheckCell movingCheckCell = (MovingCheckCell) view;
                 MultiPanelButtonState button = MultiPanelSettingsActivity.this.getButton(i);
@@ -546,7 +546,7 @@ public final class MultiPanelSettingsActivity extends MvpFragment {
                 movingCheckCell.setIcon(button.getType().getIconId(), "chats_actionBackground", button.getType().getPorterDuffMode());
                 if (button.getType() == MultiPanelButton.SUBSCRIBERS || button.getType() == MultiPanelButton.RECENT_ACTIONS) {
                     Intrinsics.checkNotNullExpressionValue(text, "text");
-                    String internalString = LocaleController.getInternalString(C3286R.string.multi_panel_settings_only_for_admin_button_item_subtitle);
+                    String internalString = LocaleController.getInternalString(C3301R.string.multi_panel_settings_only_for_admin_button_item_subtitle);
                     Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…min_button_item_subtitle)");
                     movingCheckCell.setTextAndValueAndCheck(text, internalString, button.isEnabled(), needDivider);
                     return;

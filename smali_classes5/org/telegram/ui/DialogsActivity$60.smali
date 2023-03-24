@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 11316
+    .line 11379
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$60;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 11319
+    .line 11382
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 11320
+    .line 11383
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1

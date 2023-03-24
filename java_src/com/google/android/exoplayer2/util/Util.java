@@ -918,50 +918,50 @@ public final class Util {
     public static long[] scaleLargeTimestamps(List<Long> list, long j, long j2) {
         int size = list.size();
         long[] jArr = new long[size];
-        int i = 0;
-        int i2 = (j2 > j ? 1 : (j2 == j ? 0 : -1));
-        if (i2 >= 0 && j2 % j == 0) {
+        int i = (j2 > j ? 1 : (j2 == j ? 0 : -1));
+        int i2 = 0;
+        if (i >= 0 && j2 % j == 0) {
             long j3 = j2 / j;
-            while (i < size) {
-                jArr[i] = list.get(i).longValue() / j3;
-                i++;
+            while (i2 < size) {
+                jArr[i2] = list.get(i2).longValue() / j3;
+                i2++;
             }
-        } else if (i2 >= 0 || j % j2 != 0) {
+        } else if (i >= 0 || j % j2 != 0) {
             double d = j / j2;
-            while (i < size) {
-                jArr[i] = (long) (list.get(i).longValue() * d);
-                i++;
+            while (i2 < size) {
+                jArr[i2] = (long) (list.get(i2).longValue() * d);
+                i2++;
             }
         } else {
             long j4 = j / j2;
-            while (i < size) {
-                jArr[i] = list.get(i).longValue() * j4;
-                i++;
+            while (i2 < size) {
+                jArr[i2] = list.get(i2).longValue() * j4;
+                i2++;
             }
         }
         return jArr;
     }
 
     public static void scaleLargeTimestampsInPlace(long[] jArr, long j, long j2) {
-        int i = 0;
-        int i2 = (j2 > j ? 1 : (j2 == j ? 0 : -1));
-        if (i2 >= 0 && j2 % j == 0) {
+        int i = (j2 > j ? 1 : (j2 == j ? 0 : -1));
+        int i2 = 0;
+        if (i >= 0 && j2 % j == 0) {
             long j3 = j2 / j;
-            while (i < jArr.length) {
-                jArr[i] = jArr[i] / j3;
-                i++;
+            while (i2 < jArr.length) {
+                jArr[i2] = jArr[i2] / j3;
+                i2++;
             }
-        } else if (i2 < 0 && j % j2 == 0) {
+        } else if (i < 0 && j % j2 == 0) {
             long j4 = j / j2;
-            while (i < jArr.length) {
-                jArr[i] = jArr[i] * j4;
-                i++;
+            while (i2 < jArr.length) {
+                jArr[i2] = jArr[i2] * j4;
+                i2++;
             }
         } else {
             double d = j / j2;
-            while (i < jArr.length) {
-                jArr[i] = (long) (jArr[i] * d);
-                i++;
+            while (i2 < jArr.length) {
+                jArr[i2] = (long) (jArr[i2] * d);
+                i2++;
             }
         }
     }

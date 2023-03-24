@@ -734,7 +734,7 @@
     const/4 v1, -0x1
 
     :cond_1
-    mul-int p1, p1, v1
+    mul-int/2addr p1, v1
 
     int-to-float p1, p1
 
@@ -870,9 +870,9 @@
 
     if-nez v1, :cond_2
 
-    const/4 p1, 0x0
+    move p1, v2
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 687
     :cond_2
@@ -1179,7 +1179,7 @@
 
     if-nez p3, :cond_0
 
-    goto :goto_6
+    goto/16 :goto_6
 
     .line 845
     :cond_0
@@ -1197,10 +1197,10 @@
     goto :goto_0
 
     :cond_1
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 849
     :goto_1
@@ -1241,12 +1241,12 @@
 
     if-ne v4, v5, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v0
 
     goto :goto_2
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
     if-eqz v4, :cond_4

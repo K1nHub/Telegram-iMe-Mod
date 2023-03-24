@@ -38,15 +38,15 @@
 .end method
 
 .method public static addCap(JJ)J
-    .locals 1
+    .locals 0
 
     add-long/2addr p0, p2
 
     const-wide/16 p2, 0x0
 
-    cmp-long v0, p0, p2
+    cmp-long p2, p0, p2
 
-    if-gez v0, :cond_0
+    if-gez p2, :cond_0
 
     const-wide p0, 0x7fffffffffffffffL
 

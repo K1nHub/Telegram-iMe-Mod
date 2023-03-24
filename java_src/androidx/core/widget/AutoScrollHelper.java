@@ -182,7 +182,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
             if (r6 == 0) goto L61
             boolean r6 = r5.mAnimating
             if (r6 == 0) goto L61
-            r1 = 1
+            r1 = r2
         L61:
             return r1
         */

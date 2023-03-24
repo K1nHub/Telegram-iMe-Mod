@@ -125,16 +125,22 @@ public abstract class zzx {
                     return Boolean.valueOf(bigDecimal.compareTo(bigDecimal2) > 0);
                 } else if (i != 3) {
                     if (i == 4 && bigDecimal3 != null) {
-                        return Boolean.valueOf((bigDecimal.compareTo(bigDecimal3) < 0 || bigDecimal.compareTo(bigDecimal4) > 0) ? false : false);
+                        if (bigDecimal.compareTo(bigDecimal3) < 0 || bigDecimal.compareTo(bigDecimal4) > 0) {
+                            r2 = false;
+                        }
+                        return Boolean.valueOf(r2);
                     }
                     return null;
                 } else if (bigDecimal2 == null) {
                     return null;
                 } else {
-                    if (d != 0.0d) {
-                        return Boolean.valueOf((bigDecimal.compareTo(bigDecimal2.subtract(new BigDecimal(d).multiply(new BigDecimal(2)))) <= 0 || bigDecimal.compareTo(bigDecimal2.add(new BigDecimal(d).multiply(new BigDecimal(2)))) >= 0) ? false : false);
+                    if (d == 0.0d) {
+                        return Boolean.valueOf(bigDecimal.compareTo(bigDecimal2) == 0);
                     }
-                    return Boolean.valueOf(bigDecimal.compareTo(bigDecimal2) == 0);
+                    if (bigDecimal.compareTo(bigDecimal2.subtract(new BigDecimal(d).multiply(new BigDecimal(2)))) <= 0 || bigDecimal.compareTo(bigDecimal2.add(new BigDecimal(d).multiply(new BigDecimal(2)))) >= 0) {
+                        r2 = false;
+                    }
+                    return Boolean.valueOf(r2);
                 }
             }
         }

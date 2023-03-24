@@ -93,24 +93,24 @@
 
     const-wide/16 v7, 0x6
 
-    mul-long v5, v5, v7
+    mul-long/2addr v5, v7
 
     const-wide/16 v7, 0x8
 
     .line 43
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    new-array v5, v6, [B
+    new-array v6, v5, [B
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/4 v9, 0x0
+    move v9, v8
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_2
     const/4 v11, 0x0
@@ -237,7 +237,7 @@
     int-to-byte v12, v12
 
     .line 83
-    aput-byte v12, v5, v10
+    aput-byte v12, v6, v10
 
     add-int/lit8 v10, v11, 0x1
 
@@ -246,14 +246,14 @@
     int-to-byte v12, v12
 
     .line 84
-    aput-byte v12, v5, v11
+    aput-byte v12, v6, v11
 
     add-int/lit8 v11, v10, 0x1
 
     int-to-byte v12, v9
 
     .line 85
-    aput-byte v12, v5, v10
+    aput-byte v12, v6, v10
 
     move v10, v11
 
@@ -291,7 +291,7 @@
     int-to-byte v1, v1
 
     .line 103
-    aput-byte v1, v5, v10
+    aput-byte v1, v6, v10
 
     add-int/lit8 v10, v0, 0x1
 
@@ -300,7 +300,7 @@
     int-to-byte p0, p0
 
     .line 104
-    aput-byte p0, v5, v0
+    aput-byte p0, v6, v0
 
     goto :goto_a
 
@@ -314,18 +314,18 @@
     int-to-byte p0, p0
 
     .line 98
-    aput-byte p0, v5, v10
+    aput-byte p0, v6, v10
 
     move v10, v0
 
     :goto_a
-    if-ne v10, v6, :cond_11
+    if-ne v10, v5, :cond_11
 
-    return-object v5
+    return-object v6
 
     .line 112
     :cond_11
-    invoke-static {v5, v10}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v6, v10}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object p0
 
@@ -375,7 +375,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v2, :cond_0

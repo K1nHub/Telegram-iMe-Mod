@@ -351,292 +351,288 @@
 .end method
 
 .method private chooseDate(I)V
-    .locals 17
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, p1
+    .locals 13
 
     .line 697
-    iget-object v2, v0, Lorg/telegram/ui/LinkEditActivity;->timeEditText:Landroid/widget/TextView;
+    iget-object v0, p0, Lorg/telegram/ui/LinkEditActivity;->timeEditText:Landroid/widget/TextView;
 
-    int-to-long v3, v1
+    int-to-long v1, p1
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatDateAudio(JZ)Ljava/lang/String;
+    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatDateAudio(JZ)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 700
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
+    invoke-virtual {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
 
-    move-result v2
+    move-result v0
 
-    sub-int/2addr v1, v2
+    sub-int/2addr p1, v0
 
     .line 704
-    iget-object v2, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    const/4 v2, 0x0
+    move v0, v3
 
-    const/4 v6, 0x0
+    move v4, v0
 
-    const/4 v7, 0x0
+    move v5, v4
 
     .line 705
     :goto_0
-    iget-object v8, v0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
+    iget-object v6, p0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
 
-    array-length v9, v8
+    array-length v7, v6
 
-    const/4 v10, 0x1
+    const/4 v8, 0x1
 
-    if-ge v2, v9, :cond_1
+    if-ge v0, v7, :cond_1
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     .line 706
-    aget v8, v8, v2
+    aget v6, v6, v0
 
-    if-ge v1, v8, :cond_0
+    if-ge p1, v6, :cond_0
 
     .line 707
-    iget-object v6, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v4, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move v5, v0
+
+    move v4, v8
+
+    .line 711
+    :cond_0
+    iget-object v6, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+
+    iget-object v7, p0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
+
+    aget v7, v7, v0
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v7, v2
-
-    const/4 v6, 0x1
-
-    .line 711
-    :cond_0
-    iget-object v8, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
-
-    iget-object v9, v0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
-
-    aget v9, v9, v2
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    if-nez v6, :cond_2
+    if-nez v4, :cond_2
 
     .line 714
-    iget-object v2, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 715
-    iget-object v2, v0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
+    iget-object v0, p0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
 
-    array-length v7, v2
+    array-length v5, v0
 
     .line 717
     :cond_2
-    iget-object v2, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v0
 
-    add-int/2addr v2, v10
+    add-int/2addr v0, v8
 
-    new-array v6, v2, [Ljava/lang/String;
+    new-array v4, v0, [Ljava/lang/String;
 
-    const/4 v8, 0x0
+    move v6, v3
 
     :goto_1
-    if-ge v8, v2, :cond_9
+    if-ge v6, v0, :cond_9
 
-    add-int/lit8 v9, v2, -0x1
+    add-int/lit8 v7, v0, -0x1
 
-    if-ne v8, v9, :cond_3
+    if-ne v6, v7, :cond_3
 
     .line 720
-    sget v9, Lorg/telegram/messenger/R$string;->NoLimit:I
+    sget v7, Lorg/telegram/messenger/R$string;->NoLimit:I
 
-    const-string v11, "NoLimit"
+    const-string v9, "NoLimit"
 
-    invoke-static {v11, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v9, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     goto/16 :goto_2
 
     .line 722
     :cond_3
-    iget-object v9, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v7, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v7
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v7, Ljava/lang/Integer;
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v7
 
-    iget-object v11, v0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
+    iget-object v9, p0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
 
-    aget v11, v11, v5
+    aget v9, v9, v3
 
-    if-ne v9, v11, :cond_4
+    if-ne v7, v9, :cond_4
 
-    new-array v9, v5, [Ljava/lang/Object;
+    new-array v7, v3, [Ljava/lang/Object;
 
-    const-string v11, "Hours"
+    const-string v9, "Hours"
 
     .line 723
-    invoke-static {v11, v10, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v9, v8, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     goto/16 :goto_2
 
     .line 724
     :cond_4
-    iget-object v9, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v7, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v7
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v7, Ljava/lang/Integer;
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v7
 
-    iget-object v11, v0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
+    iget-object v9, p0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
 
-    aget v11, v11, v10
+    aget v9, v9, v8
 
-    if-ne v9, v11, :cond_5
+    if-ne v7, v9, :cond_5
 
-    new-array v9, v5, [Ljava/lang/Object;
+    new-array v7, v3, [Ljava/lang/Object;
 
-    const-string v11, "Days"
+    const-string v9, "Days"
 
     .line 725
-    invoke-static {v11, v10, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v9, v8, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     goto :goto_2
 
     .line 726
     :cond_5
-    iget-object v9, v0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
+    iget-object v7, p0, Lorg/telegram/ui/LinkEditActivity;->dispalyedDates:Ljava/util/ArrayList;
 
-    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v7
 
-    check-cast v9, Ljava/lang/Integer;
+    check-cast v7, Ljava/lang/Integer;
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v7
 
-    iget-object v11, v0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
+    iget-object v9, p0, Lorg/telegram/ui/LinkEditActivity;->defaultDates:[I
 
-    const/4 v12, 0x2
+    const/4 v10, 0x2
 
-    aget v11, v11, v12
+    aget v9, v9, v10
 
-    if-ne v9, v11, :cond_6
+    if-ne v7, v9, :cond_6
 
-    new-array v9, v5, [Ljava/lang/Object;
+    new-array v7, v3, [Ljava/lang/Object;
 
-    const-string v11, "Weeks"
+    const-string v9, "Weeks"
 
     .line 727
-    invoke-static {v11, v10, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v9, v8, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     goto :goto_2
 
     :cond_6
-    int-to-long v11, v1
+    int-to-long v9, p1
 
-    const-wide/32 v13, 0x15180
+    const-wide/32 v11, 0x15180
 
-    cmp-long v9, v11, v13
+    cmp-long v7, v9, v11
 
-    if-gez v9, :cond_7
+    if-gez v7, :cond_7
 
     .line 730
-    sget v9, Lorg/telegram/messenger/R$string;->MessageScheduleToday:I
+    sget v7, Lorg/telegram/messenger/R$string;->MessageScheduleToday:I
 
-    const-string v11, "MessageScheduleToday"
+    const-string v9, "MessageScheduleToday"
 
-    invoke-static {v11, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v9, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     goto :goto_2
 
     :cond_7
-    const-wide/32 v13, 0x1dfe200
+    const-wide/32 v11, 0x1dfe200
 
-    const-wide/16 v15, 0x3e8
+    cmp-long v7, v9, v11
 
-    cmp-long v9, v11, v13
+    const-wide/16 v9, 0x3e8
 
-    if-gez v9, :cond_8
+    if-gez v7, :cond_8
 
     .line 732
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v9
+    move-result-object v7
 
-    iget-object v9, v9, Lorg/telegram/messenger/LocaleController;->formatterScheduleDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v7, v7, Lorg/telegram/messenger/LocaleController;->formatterScheduleDay:Lorg/telegram/messenger/time/FastDateFormat;
 
-    mul-long v11, v3, v15
+    mul-long/2addr v9, v1
 
-    invoke-virtual {v9, v11, v12}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v7, v9, v10}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     goto :goto_2
 
@@ -644,28 +640,28 @@
     :cond_8
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v9
+    move-result-object v7
 
-    iget-object v9, v9, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v7, v7, Lorg/telegram/messenger/LocaleController;->formatterYear:Lorg/telegram/messenger/time/FastDateFormat;
 
-    mul-long v11, v3, v15
+    mul-long/2addr v9, v1
 
-    invoke-virtual {v9, v11, v12}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v7, v9, v10}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    aput-object v9, v6, v8
+    aput-object v7, v4, v6
 
     :goto_2
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_1
 
     .line 739
     :cond_9
-    iget-object v1, v0, Lorg/telegram/ui/LinkEditActivity;->timeChooseView:Lorg/telegram/ui/Components/SlideChooseView;
+    iget-object p1, p0, Lorg/telegram/ui/LinkEditActivity;->timeChooseView:Lorg/telegram/ui/Components/SlideChooseView;
 
-    invoke-virtual {v1, v7, v6}, Lorg/telegram/ui/Components/SlideChooseView;->setOptions(I[Ljava/lang/String;)V
+    invoke-virtual {p1, v5, v4}, Lorg/telegram/ui/Components/SlideChooseView;->setOptions(I[Ljava/lang/String;)V
 
     return-void
 .end method
@@ -680,11 +676,11 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 670
     :goto_0
@@ -720,7 +716,7 @@
     :cond_0
     move v3, v1
 
-    const/4 v2, 0x1
+    move v2, v6
 
     .line 679
     :cond_1
@@ -1648,7 +1644,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     iput-boolean v4, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_exportChatInvite;->request_needed:Z
@@ -1826,12 +1822,12 @@
     iput v3, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->expire_date:I
 
     :goto_3
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_4
 
     :cond_c
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 605
     :goto_4
@@ -1901,7 +1897,7 @@
     iput v3, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->usage_limit:I
 
     :goto_5
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 622
     :cond_e
@@ -1919,12 +1915,12 @@
 
     if-eqz v7, :cond_f
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_6
 
     :cond_f
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_6
     if-eq v6, v7, :cond_12
@@ -1947,12 +1943,12 @@
 
     if-eqz v5, :cond_10
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_7
 
     :cond_10
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_7
     iput-boolean v5, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->request_needed:Z
@@ -1970,7 +1966,7 @@
     iput v3, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->usage_limit:I
 
     :cond_11
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 632
     :cond_12
@@ -2005,7 +2001,7 @@
 
     iput v3, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->flags:I
 
-    const/4 v5, 0x1
+    move v5, v4
 
     :cond_13
     if-eqz v5, :cond_14
@@ -2059,7 +2055,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 744
     :goto_0
@@ -2154,7 +2150,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 757
     :goto_0
@@ -2233,12 +2229,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x8
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -2248,12 +2244,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/16 v3, 0x8
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
@@ -2263,12 +2259,12 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_2
 
     :cond_2
-    const/16 v3, 0x8
+    move v3, v2
 
     :goto_2
     invoke-virtual {v0, v3}, Landroid/widget/EditText;->setVisibility(I)V
@@ -2281,7 +2277,7 @@
     goto :goto_3
 
     :cond_3
-    const/16 v1, 0x8
+    move v1, v2
 
     :goto_3
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -2535,7 +2531,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v13, 0x0
+    move v13, v8
 
     .line 128
     :goto_2
@@ -2712,7 +2708,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v8
 
     goto :goto_5
 
@@ -2808,7 +2804,7 @@
 
     invoke-virtual {v7, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v5, 0x1
+    move v5, v3
 
     .line 316
     :goto_5

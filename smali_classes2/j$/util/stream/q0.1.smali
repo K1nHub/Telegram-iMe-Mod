@@ -114,9 +114,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v1
+    cmp-long v5, v5, v1
 
-    if-lez v7, :cond_3
+    if-lez v5, :cond_3
 
     invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
 

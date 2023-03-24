@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,97:1\n127#2,5:98\n127#2,5:103\n127#2,5:108\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n*L\n62#1:98,5\n63#1:103,5\n64#1:108,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n127#2,5:106\n127#2,5:111\n127#2,5:116\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n*L\n64#1:106,5\n65#1:111,5\n66#1:116,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 62
+    .line 64
     invoke-static {}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt;->getETH_APPROVE_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object p2
@@ -90,10 +90,10 @@
 
     move-result-object p2
 
-    .line 62
+    .line 64
     check-cast p2, Lcom/smedialink/storage/data/datasource/approve/WalletApproveDataSource;
 
-    .line 63
+    .line 65
     invoke-static {}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt;->getEVM_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -109,10 +109,10 @@
 
     move-result-object v0
 
-    .line 63
+    .line 65
     check-cast v0, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 64
+    .line 66
     invoke-static {}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt;->getDEX_SWAP_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
@@ -128,10 +128,10 @@
 
     move-result-object p1
 
-    .line 64
+    .line 66
     check-cast p1, Lcom/smedialink/storage/data/datasource/swap/WalletSwapDataSource;
 
-    .line 61
+    .line 63
     new-instance v1, Lcom/smedialink/storage/data/datasource/boost/WalletBoostDataSourceFactory;
 
     invoke-direct {v1, v0, p2, p1}, Lcom/smedialink/storage/data/datasource/boost/WalletBoostDataSourceFactory;-><init>(Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/smedialink/storage/data/datasource/approve/WalletApproveDataSource;Lcom/smedialink/storage/data/datasource/swap/WalletSwapDataSource;)V
@@ -142,7 +142,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 60
+    .line 62
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

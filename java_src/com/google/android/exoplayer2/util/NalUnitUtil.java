@@ -185,17 +185,17 @@ public final class NalUnitUtil {
         return parseSpsNalUnitPayload(bArr, i + 1, i2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00e9  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0145  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static com.google.android.exoplayer2.util.NalUnitUtil.SpsData parseSpsNalUnitPayload(byte[] r22, int r23, int r24) {
         /*
-            Method dump skipped, instructions count: 371
+            Method dump skipped, instructions count: 364
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.util.NalUnitUtil.parseSpsNalUnitPayload(byte[], int, int):com.google.android.exoplayer2.util.NalUnitUtil$SpsData");
@@ -429,11 +429,11 @@ public final class NalUnitUtil {
         int[] iArr = new int[0];
         int[] iArr2 = new int[0];
         int i = -1;
-        int i2 = -1;
-        int i3 = 0;
-        while (i3 < readUnsignedExpGolombCodedInt) {
-            if (i3 != 0 && parsableNalUnitBitArray.readBit()) {
-                int i4 = i + i2;
+        int i2 = 0;
+        int i3 = -1;
+        while (i2 < readUnsignedExpGolombCodedInt) {
+            if (((i2 == 0 || !parsableNalUnitBitArray.readBit()) ? null : 1) != null) {
+                int i4 = i + i3;
                 int readUnsignedExpGolombCodedInt2 = (1 - ((parsableNalUnitBitArray.readBit() ? 1 : 0) * 2)) * (parsableNalUnitBitArray.readUnsignedExpGolombCodedInt() + 1);
                 int i5 = i4 + 1;
                 boolean[] zArr = new boolean[i5];
@@ -447,7 +447,7 @@ public final class NalUnitUtil {
                 int[] iArr3 = new int[i5];
                 int[] iArr4 = new int[i5];
                 int i7 = 0;
-                for (int i8 = i2 - 1; i8 >= 0; i8--) {
+                for (int i8 = i3 - 1; i8 >= 0; i8--) {
                     int i9 = iArr2[i8] + readUnsignedExpGolombCodedInt2;
                     if (i9 < 0 && zArr[i + i8]) {
                         iArr3[i7] = i9;
@@ -478,7 +478,7 @@ public final class NalUnitUtil {
                     iArr4[i12] = readUnsignedExpGolombCodedInt2;
                     i12++;
                 }
-                for (int i15 = 0; i15 < i2; i15++) {
+                for (int i15 = 0; i15 < i3; i15++) {
                     int i16 = iArr2[i15] + readUnsignedExpGolombCodedInt2;
                     if (i16 > 0 && zArr[i + i15]) {
                         iArr4[i12] = i16;
@@ -488,7 +488,7 @@ public final class NalUnitUtil {
                 iArr2 = Arrays.copyOf(iArr4, i12);
                 iArr = copyOf;
                 i = i7;
-                i2 = i12;
+                i3 = i12;
             } else {
                 int readUnsignedExpGolombCodedInt3 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
                 int readUnsignedExpGolombCodedInt4 = parsableNalUnitBitArray.readUnsignedExpGolombCodedInt();
@@ -504,10 +504,10 @@ public final class NalUnitUtil {
                 }
                 i = readUnsignedExpGolombCodedInt3;
                 iArr = iArr5;
-                i2 = readUnsignedExpGolombCodedInt4;
+                i3 = readUnsignedExpGolombCodedInt4;
                 iArr2 = iArr6;
             }
-            i3++;
+            i2++;
         }
     }
 

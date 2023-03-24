@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingDashboardView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,203:1\n56#2,6:204\n4#3:210\n5#3,2:213\n2634#4:211\n1#5:212\n37#6,2:215\n*S KotlinDebug\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n*L\n33#1:204,6\n71#1:210\n71#1:213,2\n71#1:211\n71#1:212\n129#1:215,2\n*E\n"
+    value = "SMAP\nStakingDashboardView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,201:1\n56#2,6:202\n4#3:208\n5#3,2:211\n2634#4:209\n1#5:210\n37#6,2:213\n*S KotlinDebug\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n*L\n33#1:202,6\n71#1:208\n71#1:211,2\n71#1:209\n71#1:210\n129#1:213,2\n*E\n"
 .end annotation
 
 
@@ -285,27 +285,27 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v6, 0x3
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    cmpl-float v7, p2, v6
 
-    cmpl-float v8, p2, v7
+    const/4 v8, 0x3
 
-    if-lez v8, :cond_2
+    if-lez v7, :cond_2
 
     .line 116
-    new-instance v8, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
+    new-instance v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
-    invoke-direct {v8, v5}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
+    invoke-direct {v7, v5}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
 
     .line 117
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     int-to-float v9, v9
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setStrokeWidth(F)V
+    invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setStrokeWidth(F)V
 
     float-to-double v9, p2
 
@@ -314,51 +314,51 @@
 
     move-result-object v9
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSizeAsDouble(Ljava/lang/Double;)V
+    invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSizeAsDouble(Ljava/lang/Double;)V
 
     const-string v9, "statisticChartLine_green"
 
     .line 119
-    iput-object v9, v8, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    iput-object v9, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
 
     .line 116
-    invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    cmpl-float v7, p1, v7
+    cmpl-float v6, p1, v6
 
-    if-lez v7, :cond_3
+    if-lez v6, :cond_3
 
     .line 123
-    new-instance v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
+    new-instance v6, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
-    invoke-direct {v7, v5}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
+    invoke-direct {v6, v5}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;-><init>(Lorg/telegram/ui/Components/StorageDiagramView;)V
 
     .line 124
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v7
 
-    int-to-float v6, v6
+    int-to-float v7, v7
 
-    invoke-virtual {v7, v6}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setStrokeWidth(F)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setStrokeWidth(F)V
 
-    float-to-double v8, p1
+    float-to-double v7, p1
 
     .line 125
-    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v7, v6}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSizeAsDouble(Ljava/lang/Double;)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSizeAsDouble(Ljava/lang/Double;)V
 
-    const-string v6, "statisticChartLine_blue"
+    const-string v7, "statisticChartLine_blue"
 
     .line 126
-    iput-object v6, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    iput-object v7, v6, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
 
     .line 123
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 129
     :cond_3
@@ -476,126 +476,160 @@
 .end method
 
 .method private final setupViews()V
-    .locals 7
+    .locals 18
+
+    move-object/from16 v0, p0
 
     .line 177
-    iget-object v0, p0, Lcom/smedialink/ui/custom/StakingDashboardView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;
+    iget-object v1, v0, Lcom/smedialink/ui/custom/StakingDashboardView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;
 
     .line 178
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textHeader:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textHeader:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lorg/telegram/messenger/R$string;->staking_dashboard_header:I
+    sget v4, Lorg/telegram/messenger/R$string;->staking_dashboard_header:I
 
-    invoke-interface {v2, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 179
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewDiagram:Lorg/telegram/ui/Components/StorageDiagramView;
+    iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewDiagram:Lorg/telegram/ui/Components/StorageDiagramView;
 
-    const/16 v2, 0x4b
+    const/16 v3, 0x4b
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/StorageDiagramView;->setCustomSize(I)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/StorageDiagramView;->setCustomSize(I)V
 
     .line 180
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedTitle:Landroid/widget/TextView;
+    iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedTitle:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lorg/telegram/messenger/R$string;->staking_dashboard_staked_title:I
+    sget v4, Lorg/telegram/messenger/R$string;->staking_dashboard_staked_title:I
 
-    invoke-interface {v2, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 181
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitTitle:Landroid/widget/TextView;
+    iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitTitle:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lorg/telegram/messenger/R$string;->staking_dashboard_profit_title:I
+    sget v4, Lorg/telegram/messenger/R$string;->staking_dashboard_profit_title:I
 
-    invoke-interface {v2, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 182
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
+    iget-object v1, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    new-array v1, v1, [Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
+    new-array v2, v2, [Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
     .line 184
-    new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
+    new-instance v10, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
     .line 185
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_calculator:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_calculator:I
 
     .line 186
-    sget v4, Lorg/telegram/messenger/R$string;->staking_dashboard_calculator:I
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+
+    move-result-object v3
+
+    sget v5, Lorg/telegram/messenger/R$string;->staking_dashboard_calculator:I
+
+    invoke-interface {v3, v5}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
 
     .line 183
-    new-instance v5, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$1;
+    new-instance v7, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$1;
 
-    invoke-direct {v5, p0}, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$1;-><init>(Lcom/smedialink/ui/custom/StakingDashboardView;)V
+    invoke-direct {v7, v0}, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$1;-><init>(Lcom/smedialink/ui/custom/StakingDashboardView;)V
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
+
+    const/4 v8, 0x4
+
+    const/4 v9, 0x0
+
+    move-object v3, v10
 
     .line 184
-    invoke-direct {v2, v3, v4, v6, v5}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
+    invoke-direct/range {v3 .. v9}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x0
 
-    aput-object v2, v1, v3
+    aput-object v10, v2, v3
+
+    .line 188
+    new-instance v3, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
     .line 189
-    new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
+    sget v12, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_history:I
 
     .line 190
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_history:I
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 191
-    sget v4, Lorg/telegram/messenger/R$string;->staking_dashboard_history:I
+    move-result-object v4
 
-    .line 183
-    new-instance v5, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$2;
+    sget v5, Lorg/telegram/messenger/R$string;->staking_dashboard_history:I
 
-    invoke-direct {v5, p0}, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$2;-><init>(Lcom/smedialink/ui/custom/StakingDashboardView;)V
+    invoke-interface {v4, v5}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    .line 189
-    invoke-direct {v2, v3, v4, v6, v5}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;)V
-
-    aput-object v2, v1, v6
+    move-result-object v13
 
     .line 183
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    new-instance v15, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$2;
 
-    move-result-object v1
+    invoke-direct {v15, v0}, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$2;-><init>(Lcom/smedialink/ui/custom/StakingDashboardView;)V
+
+    const/4 v14, 0x0
+
+    const/16 v16, 0x4
+
+    const/16 v17, 0x0
+
+    move-object v11, v3
+
+    .line 188
+    invoke-direct/range {v11 .. v17}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    const/4 v4, 0x1
+
+    aput-object v3, v2, v4
+
+    .line 183
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v2
 
     .line 182
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->initButtons(Ljava/util/List;)V
+    invoke-virtual {v1, v2}, Lcom/smedialink/ui/custom/HorizontalActionButtonsView;->initButtons(Ljava/util/List;)V
 
-    .line 197
-    invoke-direct {p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->showLoading()V
+    .line 195
+    invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->showLoading()V
 
     return-void
 .end method

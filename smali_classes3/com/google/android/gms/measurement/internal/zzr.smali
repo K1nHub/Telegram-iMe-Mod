@@ -310,7 +310,7 @@
 
     add-long/2addr v3, v7
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     .line 16
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -466,7 +466,7 @@
 .end method
 
 .method final zzd()Z
-    .locals 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzr;->zza:Lcom/google/android/gms/measurement/internal/zzfv;
@@ -483,9 +483,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 

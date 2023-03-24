@@ -140,12 +140,12 @@
 
     if-eqz v8, :cond_0
 
-    const/4 v8, 0x5
+    move v8, v9
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x3
+    move v8, v10
 
     :goto_0
     const/16 v11, 0x30
@@ -313,7 +313,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x3
+    move v9, v10
 
     :goto_1
     or-int/lit8 v4, v9, 0x30

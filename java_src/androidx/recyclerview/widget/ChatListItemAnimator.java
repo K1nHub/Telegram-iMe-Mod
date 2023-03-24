@@ -84,7 +84,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
             boolean z5 = false;
             if (this.shouldAnimateEnterFromBottom) {
                 boolean z6 = false;
-                while (i < this.mPendingAdditions.size()) {
+                for (i = 0; i < this.mPendingAdditions.size(); i = i + 1) {
                     if (this.reversePositions) {
                         i = this.mPendingAdditions.get(i).getLayoutPosition() != (this.recyclerListView.getAdapter() == null ? 0 : this.recyclerListView.getAdapter().getItemCount()) - 1 ? i + 1 : 0;
                         z6 = true;
@@ -544,12 +544,12 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
                 this.willChangedGroups.remove(currentMessagesGroup);
                 RecyclerListView recyclerListView = (RecyclerListView) viewHolder.itemView.getParent();
                 MessageObject.GroupedMessages.TransitionParams transitionParams3 = currentMessagesGroup.transitionParams;
+                boolean z5 = true;
                 int i17 = 0;
                 int i18 = 0;
                 int i19 = 0;
                 int i20 = 0;
                 int i21 = 0;
-                boolean z5 = true;
                 while (i18 < recyclerListView.getChildCount()) {
                     View childAt = recyclerListView.getChildAt(i18);
                     if (childAt instanceof ChatMessageCell) {
@@ -1102,10 +1102,10 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
         this.willChangedGroups.add(groupedMessages);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0203  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0249  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0202  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0256  */
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     /*
         Code decompiled incorrectly, please refer to instructions dump.

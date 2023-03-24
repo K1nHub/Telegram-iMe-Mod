@@ -143,9 +143,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long p5, p1, v0
+    cmp-long p1, p1, v0
 
-    if-eqz p5, :cond_0
+    if-eqz p1, :cond_0
 
     new-instance p1, Lcom/google/android/gms/common/moduleinstall/ModuleInstallStatusUpdate$ProgressInfo;
 

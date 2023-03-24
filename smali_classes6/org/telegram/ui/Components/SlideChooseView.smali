@@ -250,14 +250,9 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 176
+    :catch_0
     :cond_0
-    :goto_0
     iput p1, p0, Lorg/telegram/ui/Components/SlideChooseView;->selectedIndex:I
 
     .line 177
@@ -315,12 +310,12 @@
 
     if-eqz v2, :cond_0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v10
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_0
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -365,7 +360,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/SlideChooseView;->gapSize:I
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v12
 
     add-int/2addr v4, v5
 
@@ -373,7 +368,7 @@
 
     add-int/2addr v4, v5
 
-    mul-int v4, v4, v15
+    mul-int/2addr v4, v15
 
     add-int/2addr v1, v4
 
@@ -518,7 +513,7 @@
 
     move-result v9
 
-    mul-int v9, v9, v4
+    mul-int/2addr v9, v4
 
     sub-int v9, v3, v9
 
@@ -671,7 +666,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float/2addr v3, v4
 
@@ -686,7 +681,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     add-float/2addr v1, v3
 
@@ -733,7 +728,7 @@
 
     move/from16 v4, v17
 
-    const/16 v17, 0x0
+    move/from16 v17, v6
 
     move-object/from16 v6, v16
 
@@ -869,9 +864,9 @@
     :goto_4
     add-int/lit8 v15, v15, 0x1
 
-    const/4 v9, 0x0
+    move v10, v14
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    move/from16 v9, v17
 
     goto/16 :goto_1
 
@@ -885,7 +880,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/SlideChooseView;->gapSize:I
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v12
 
     add-int/2addr v4, v5
 
@@ -895,7 +890,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     add-float/2addr v1, v4
 
@@ -924,7 +919,7 @@
 
     const/high16 v5, 0x41400000    # 12.0f
 
-    mul-float v11, v11, v5
+    mul-float/2addr v11, v5
 
     .line 241
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1030,25 +1025,25 @@
 
     array-length v2, v1
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     sub-int/2addr p2, v0
 
     iget v0, p0, Lorg/telegram/ui/Components/SlideChooseView;->gapSize:I
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, p1
 
     array-length v2, v1
 
     add-int/lit8 v2, v2, -0x1
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     sub-int/2addr p2, v0
 
     iget v0, p0, Lorg/telegram/ui/Components/SlideChooseView;->sideSide:I
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, p1
 
     sub-int/2addr p2, v0
 
@@ -1099,7 +1094,7 @@
 
     const/4 v6, 0x2
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v6
 
     add-int/2addr v4, v5
 
@@ -1138,20 +1133,20 @@
 
     move-result v3
 
+    const v5, 0x3eb33333    # 0.35f
+
+    cmpg-float v3, v3, v5
+
     const/4 v5, 0x0
-
-    const v7, 0x3eb33333    # 0.35f
-
-    cmpg-float v3, v3, v7
 
     if-gez v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_0
     if-eqz v3, :cond_1

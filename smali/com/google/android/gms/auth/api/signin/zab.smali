@@ -53,9 +53,9 @@
 
     move-object/from16 v19, v18
 
-    move-wide v14, v4
+    move v7, v3
 
-    const/4 v7, 0x0
+    move-wide v14, v4
 
     .line 2
     :goto_0

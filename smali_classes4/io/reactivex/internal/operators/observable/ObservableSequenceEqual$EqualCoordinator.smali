@@ -274,7 +274,7 @@
     .line 123
     iget-object v5, v0, Lio/reactivex/internal/operators/observable/ObservableSequenceEqual$EqualObserver;->queue:Lio/reactivex/internal/queue/SpscLinkedArrayQueue;
 
-    const/4 v6, 0x1
+    move v6, v4
 
     .line 128
     :cond_1
@@ -351,12 +351,12 @@
 
     if-nez v9, :cond_6
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_0
 
     :cond_6
-    const/4 v9, 0x0
+    move v9, v1
 
     .line 162
     :goto_0
@@ -377,12 +377,12 @@
 
     if-nez v10, :cond_8
 
-    const/4 v11, 0x1
+    move v11, v4
 
     goto :goto_1
 
     :cond_8
-    const/4 v11, 0x0
+    move v11, v1
 
     :goto_1
     if-eqz v7, :cond_9

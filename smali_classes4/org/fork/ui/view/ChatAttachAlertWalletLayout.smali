@@ -1785,7 +1785,7 @@
 
     if-gez p1, :cond_2
 
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 323
     :cond_2

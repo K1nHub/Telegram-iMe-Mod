@@ -27,7 +27,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -124,7 +124,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
 
     @Override // com.smedialink.manager.wallet.WalletLinkClickableView
     public void actionOpenProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m100to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m99to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -232,7 +232,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3286R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3301R.string.common_ok));
     }
 
     private final void setupListeners() {

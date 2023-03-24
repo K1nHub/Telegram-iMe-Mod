@@ -32,51 +32,51 @@
 .method public getInterpolation(F)F
     .locals 4
 
-    const v0, 0x3dcccccd    # 0.1f
+    const v0, 0x3ea8f5c3    # 0.33f
 
-    const v1, 0x3ea8f5c3    # 0.33f
+    cmpg-float v1, p1, v0
 
-    cmpg-float v2, p1, v1
+    const v2, 0x3dcccccd    # 0.1f
 
-    if-gez v2, :cond_0
+    if-gez v1, :cond_0
 
-    div-float/2addr p1, v1
+    div-float/2addr p1, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v2
 
     return p1
 
     :cond_0
-    sub-float/2addr p1, v1
+    sub-float/2addr p1, v0
 
-    const v2, 0x3eae147b    # 0.34f
+    cmpg-float v1, p1, v0
 
-    cmpg-float v3, p1, v1
+    const v3, 0x3eae147b    # 0.34f
 
-    if-gez v3, :cond_1
+    if-gez v1, :cond_1
 
-    const v1, 0x3e19999a    # 0.15f
+    const v0, 0x3e19999a    # 0.15f
 
-    div-float/2addr p1, v2
+    div-float/2addr p1, v3
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v0
 
-    sub-float/2addr v0, p1
+    sub-float/2addr v2, p1
 
-    return v0
+    return v2
 
     :cond_1
-    sub-float/2addr p1, v2
+    sub-float/2addr p1, v3
 
-    const v0, -0x42b33333    # -0.05f
+    const v1, -0x42b33333    # -0.05f
 
     const v2, 0x3d4ccccd    # 0.05f
 
-    div-float/2addr p1, v1
+    div-float/2addr p1, v0
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
-    add-float/2addr p1, v0
+    add-float/2addr p1, v1
 
     return p1
 .end method

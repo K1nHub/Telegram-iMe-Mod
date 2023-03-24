@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1780
+    .line 1779
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 1785
+    .line 1784
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -41,25 +41,25 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 1786
+    .line 1785
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->mask:Z
 
-    .line 1787
+    .line 1786
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
-    .line 1788
+    .line 1787
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -70,14 +70,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->stickerset:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
-    .line 1789
+    .line 1788
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     and-int/2addr v0, v1
 
     if-eqz v0, :cond_1
 
-    .line 1790
+    .line 1789
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -95,12 +95,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 1795
+    .line 1794
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 1796
+    .line 1795
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->mask:Z
 
     if-eqz v0, :cond_0
@@ -119,27 +119,27 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 1797
+    .line 1796
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 1798
+    .line 1797
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 1799
+    .line 1798
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->stickerset:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 1800
+    .line 1799
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 1801
+    .line 1800
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->mask_coords:Lorg/telegram/tgnet/TLRPC$TL_maskCoords;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

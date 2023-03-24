@@ -220,7 +220,7 @@ public class ActivityRecognitionResult extends AbstractSafeParcelable implements
     public ActivityRecognitionResult(@SafeParcelable.Param(m788id = 1) List list, @SafeParcelable.Param(m788id = 2) long j, @SafeParcelable.Param(m788id = 3) long j2, @SafeParcelable.Param(m788id = 4) int i, @SafeParcelable.Param(m788id = 5) Bundle bundle) {
         boolean z = true;
         Preconditions.checkArgument(list != null && list.size() > 0, "Must have at least 1 detected activity");
-        Preconditions.checkArgument((j <= 0 || j2 <= 0) ? false : false, "Must set times");
+        Preconditions.checkArgument((j <= 0 || j2 <= 0) ? false : z, "Must set times");
         this.zza = list;
         this.zzb = j;
         this.zzc = j2;

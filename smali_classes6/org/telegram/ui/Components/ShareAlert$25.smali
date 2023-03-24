@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;IZ)V
     .locals 0
 
-    .line 2171
+    .line 2175
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$25;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     iput p2, p0, Lorg/telegram/ui/Components/ShareAlert$25;->val$num:I
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 2184
+    .line 2188
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$25;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12000(Lorg/telegram/ui/Components/ShareAlert;)[Landroid/animation/AnimatorSet;
@@ -72,7 +72,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2185
+    .line 2189
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$25;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$12000(Lorg/telegram/ui/Components/ShareAlert;)[Landroid/animation/AnimatorSet;
@@ -92,7 +92,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 2174
+    .line 2178
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$25;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12000(Lorg/telegram/ui/Components/ShareAlert;)[Landroid/animation/AnimatorSet;
@@ -121,12 +121,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 2175
+    .line 2179
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert$25;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 2176
+    .line 2180
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$25;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$4200(Lorg/telegram/ui/Components/ShareAlert;)[Landroid/view/View;
@@ -141,7 +141,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2178
+    .line 2182
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$25;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 

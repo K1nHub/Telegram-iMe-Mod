@@ -308,7 +308,7 @@
 .end method
 
 .method public final average()Lj$/util/i;
-    .locals 7
+    .locals 6
 
     sget-object v0, Lj$/util/stream/x;->a:Lj$/util/stream/x;
 
@@ -328,9 +328,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmpl-double v6, v2, v4
+    cmpl-double v2, v2, v4
 
-    if-lez v6, :cond_0
+    if-lez v2, :cond_0
 
     invoke-static {v0}, Lj$/util/stream/l;->a([D)D
 
@@ -690,15 +690,15 @@
 .end method
 
 .method public final skip(J)Lj$/util/stream/U;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-object p0
 

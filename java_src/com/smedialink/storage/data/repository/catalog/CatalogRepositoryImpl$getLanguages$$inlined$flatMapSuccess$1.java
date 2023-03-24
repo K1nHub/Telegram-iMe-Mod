@@ -36,10 +36,10 @@ public final class CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1 
     /* compiled from: FirebaseExt.kt */
     /* renamed from: com.smedialink.storage.data.repository.catalog.CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17241 extends Lambda implements Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>> {
-        public static final C17241 INSTANCE = new C17241();
+    public static final class C17321 extends Lambda implements Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>> {
+        public static final C17321 INSTANCE = new C17321();
 
-        public C17241() {
+        public C17321() {
             super(1);
         }
 
@@ -82,8 +82,8 @@ public final class CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1 
         Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
         Observable andThen = rxInsert.andThen(just2);
         schedulersProvider = this.this$0.schedulersProvider;
-        Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo708io());
+        Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo707io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogLanguageDao\n     …(schedulersProvider.io())");
-        return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17241.INSTANCE));
+        return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C17321.INSTANCE));
     }
 }

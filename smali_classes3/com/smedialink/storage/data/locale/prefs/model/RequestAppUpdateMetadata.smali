@@ -199,16 +199,16 @@
 .end method
 
 .method public final isAnyRequestsBefore()Z
-    .locals 5
+    .locals 4
 
     .line 10
     iget-wide v0, p0, Lcom/smedialink/storage/data/locale/prefs/model/RequestAppUpdateMetadata;->lastRequestTime:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 

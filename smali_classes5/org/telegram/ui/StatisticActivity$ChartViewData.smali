@@ -95,7 +95,7 @@
 
     move-result p1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     const/4 v1, 0x1
@@ -121,7 +121,7 @@
     .line 1860
     invoke-virtual {v2, p0, v1}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->updateData(Lorg/telegram/ui/StatisticActivity$ChartViewData;Z)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 

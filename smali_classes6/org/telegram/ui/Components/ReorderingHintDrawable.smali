@@ -124,7 +124,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleX:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -145,7 +145,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -177,7 +177,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -310,7 +310,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleX:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -331,7 +331,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -363,7 +363,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -417,7 +417,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleX:F
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     float-to-int v2, v2
 
@@ -440,7 +440,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     float-to-int v2, v2
 
@@ -472,7 +472,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -545,7 +545,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -566,7 +566,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -598,7 +598,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -642,7 +642,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleX:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -659,7 +659,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -687,7 +687,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->scaleY:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -742,56 +742,56 @@
     .line 69
     iget-wide v0, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->startedTime:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-lez v5, :cond_7
+    if-lez v0, :cond_7
 
     .line 70
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iget-wide v3, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->startedTime:J
+    iget-wide v4, p0, Lorg/telegram/ui/Components/ReorderingHintDrawable;->startedTime:J
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v2, v4
 
-    long-to-int v1, v0
+    long-to-int v0, v2
 
-    add-int/lit16 v1, v1, -0x12c
+    add-int/lit16 v0, v0, -0x12c
 
-    if-ltz v1, :cond_5
+    if-ltz v0, :cond_5
 
-    const/high16 v0, 0x43160000    # 150.0f
+    const/high16 v1, 0x43160000    # 150.0f
 
     const/16 v2, 0x96
 
-    if-ge v1, v2, :cond_0
+    if-ge v0, v2, :cond_0
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    div-float/2addr v1, v0
+    div-float/2addr v0, v1
 
     .line 73
-    invoke-direct {p0, p1, v1}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage1(Landroid/graphics/Canvas;F)V
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage1(Landroid/graphics/Canvas;F)V
 
     goto :goto_0
 
     :cond_0
-    add-int/lit16 v1, v1, -0x1c2
+    add-int/lit16 v0, v0, -0x1c2
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    if-ltz v1, :cond_4
+    if-ltz v0, :cond_4
 
     const/16 v4, 0xc8
 
-    if-ge v1, v4, :cond_1
+    if-ge v0, v4, :cond_1
 
-    int-to-float v0, v1
+    int-to-float v0, v0
 
     const/high16 v1, 0x43480000    # 200.0f
 
@@ -803,18 +803,18 @@
     goto :goto_0
 
     :cond_1
-    add-int/lit16 v1, v1, -0x1f4
+    add-int/lit16 v0, v0, -0x1f4
 
-    if-ltz v1, :cond_3
+    if-ltz v0, :cond_3
 
-    if-ge v1, v2, :cond_2
+    if-ge v0, v2, :cond_2
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    div-float/2addr v1, v0
+    div-float/2addr v0, v1
 
     .line 83
-    invoke-direct {p0, p1, v1}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage3(Landroid/graphics/Canvas;F)V
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage3(Landroid/graphics/Canvas;F)V
 
     goto :goto_0
 
@@ -822,11 +822,11 @@
     :cond_2
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage3(Landroid/graphics/Canvas;F)V
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v0, v2
 
     const/16 p1, 0x64
 
-    if-lt v1, p1, :cond_6
+    if-lt v0, p1, :cond_6
 
     .line 87
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -851,7 +851,7 @@
 
     .line 99
     :cond_5
-    invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage1(Landroid/graphics/Canvas;F)V
+    invoke-direct {p0, p1, v1}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage1(Landroid/graphics/Canvas;F)V
 
     .line 101
     :cond_6
@@ -862,7 +862,7 @@
 
     .line 103
     :cond_7
-    invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage1(Landroid/graphics/Canvas;F)V
+    invoke-direct {p0, p1, v1}, Lorg/telegram/ui/Components/ReorderingHintDrawable;->drawStage1(Landroid/graphics/Canvas;F)V
 
     :goto_1
     return-void

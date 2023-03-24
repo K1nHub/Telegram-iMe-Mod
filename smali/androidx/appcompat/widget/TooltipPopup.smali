@@ -203,7 +203,7 @@
 
     move-result v1
 
-    const/4 p3, 0x0
+    move p3, v2
 
     :goto_1
     const/16 v0, 0x31
@@ -295,7 +295,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 154
     :goto_3

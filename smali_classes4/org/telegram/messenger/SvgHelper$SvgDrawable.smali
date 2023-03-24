@@ -420,9 +420,9 @@
     move-wide v13, v15
 
     :goto_0
-    cmp-long v15, v13, v11
+    cmp-long v11, v13, v11
 
-    if-lez v15, :cond_8
+    if-lez v11, :cond_8
 
     .line 176
     sput-wide p4, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->lastUpdateTime:J
@@ -434,7 +434,7 @@
 
     sget v13, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->gradientWidth:F
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     div-float/2addr v12, v7
 
@@ -454,7 +454,7 @@
 
     if-ltz v12, :cond_8
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     sub-float/2addr v7, v11
 
@@ -513,7 +513,7 @@
 
     sget v12, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->gradientWidth:F
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     div-float/2addr v11, v7
 
@@ -597,7 +597,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_5
     if-eqz v2, :cond_a
@@ -607,7 +607,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 v11, 0x0
+    move v11, v8
 
     .line 212
     :goto_6
@@ -718,7 +718,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     sub-float v3, v4, v3
 
@@ -728,7 +728,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     sub-float v4, v5, v4
 
@@ -829,7 +829,7 @@
 
     int-to-float v9, v6
 
-    mul-float v7, v7, v9
+    mul-float/2addr v7, v9
 
     float-to-int v7, v7
 
@@ -1222,7 +1222,7 @@
 
     const/4 v3, 0x2
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v3
 
     int-to-float v2, v2
 
@@ -1341,7 +1341,7 @@
 
     iget v6, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->colorAlpha:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 

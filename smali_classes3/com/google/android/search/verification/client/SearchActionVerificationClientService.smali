@@ -220,13 +220,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 166
     :goto_1
@@ -297,13 +297,13 @@
     goto :goto_2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const/4 v5, 0x1
+    move v5, v3
 
     .line 179
     :goto_3
@@ -350,7 +350,7 @@
 
     if-eqz v5, :cond_6
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_6
     return v2
@@ -432,7 +432,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -579,13 +579,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     if-nez v0, :cond_5
@@ -837,7 +837,7 @@
     invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_4
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_5
     const-string p1, "com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER"
@@ -1105,11 +1105,11 @@
 
     const-wide/32 v7, 0xf4240
 
-    mul-long v5, v5, v7
+    mul-long/2addr v5, v7
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-gez v7, :cond_3
+    if-gez v3, :cond_3
 
     const-wide/16 v3, 0x32
 

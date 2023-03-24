@@ -37,9 +37,9 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.databinding.ForkFragmentWebViewBinding;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: TwitterAuthFragment.kt */
 /* renamed from: com.smedialink.ui.twitter.auth.TwitterAuthFragment */
@@ -122,7 +122,7 @@ public final class TwitterAuthFragment extends MvpFragment implements TwitterAut
         }
         WebView webView = getBinding().webView;
         String str = this.websiteUrl;
-        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m100to(RtspHeaders.AUTHORIZATION, this.token));
+        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m99to(RtspHeaders.AUTHORIZATION, this.token));
         webView.loadUrl(str, mapOf);
     }
 
@@ -134,12 +134,12 @@ public final class TwitterAuthFragment extends MvpFragment implements TwitterAut
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.twitter_auth_title));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.twitter.auth.TwitterAuthFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.twitter_auth_title));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.twitter.auth.TwitterAuthFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TwitterAuthFragment.this.finishFragment();

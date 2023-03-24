@@ -9,18 +9,18 @@ import org.bouncycastle.math.raw.Nat160;
 public class SecP160R1Field {
 
     /* renamed from: P */
-    static final int[] f1329P = {Integer.MAX_VALUE, -1, -1, -1, -1};
+    static final int[] f1330P = {Integer.MAX_VALUE, -1, -1, -1, -1};
     static final int[] PExt = {1, 1073741825, 0, 0, 0, -2, -2, -1, -1, -1};
     private static final int[] PExtInv = {-1, -1073741826, -1, -1, -1, 1, 1};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat160.add(iArr, iArr2, iArr3) != 0 || (iArr3[4] == -1 && Nat160.gte(iArr3, f1329P))) {
+        if (Nat160.add(iArr, iArr2, iArr3) != 0 || (iArr3[4] == -1 && Nat160.gte(iArr3, f1330P))) {
             Nat.addWordTo(5, C0468C.RATE_UNSET_INT, iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(5, iArr, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1329P))) {
+        if (Nat.inc(5, iArr, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1330P))) {
             Nat.addWordTo(5, C0468C.RATE_UNSET_INT, iArr2);
         }
     }
@@ -28,7 +28,7 @@ public class SecP160R1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat160.fromBigInteger(bigInteger);
         if (fromBigInteger[4] == -1) {
-            int[] iArr = f1329P;
+            int[] iArr = f1330P;
             if (Nat160.gte(fromBigInteger, iArr)) {
                 Nat160.subFrom(iArr, fromBigInteger);
             }
@@ -55,7 +55,7 @@ public class SecP160R1Field {
         if (Nat160.isZero(iArr)) {
             Nat160.zero(iArr2);
         } else {
-            Nat160.sub(f1329P, iArr, iArr2);
+            Nat160.sub(f1330P, iArr, iArr2);
         }
     }
 
@@ -79,7 +79,7 @@ public class SecP160R1Field {
     }
 
     public static void reduce32(int i, int[] iArr) {
-        if ((i == 0 || Nat160.mulWordsAdd(C0468C.RATE_UNSET_INT, i, iArr, 0) == 0) && !(iArr[4] == -1 && Nat160.gte(iArr, f1329P))) {
+        if ((i == 0 || Nat160.mulWordsAdd(C0468C.RATE_UNSET_INT, i, iArr, 0) == 0) && !(iArr[4] == -1 && Nat160.gte(iArr, f1330P))) {
             return;
         }
         Nat.addWordTo(5, C0468C.RATE_UNSET_INT, iArr);
@@ -111,7 +111,7 @@ public class SecP160R1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(5, iArr, 0, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1329P))) {
+        if (Nat.shiftUpBit(5, iArr, 0, iArr2) != 0 || (iArr2[4] == -1 && Nat160.gte(iArr2, f1330P))) {
             Nat.addWordTo(5, C0468C.RATE_UNSET_INT, iArr2);
         }
     }

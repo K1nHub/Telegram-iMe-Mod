@@ -584,7 +584,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_1
 
@@ -1050,12 +1050,12 @@
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper;->immutableTrackSelectionsByPeriodAndRenderer:[[Ljava/util/List;
 
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_0
     if-ge v2, v0, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_1
     if-ge v3, v1, :cond_0
@@ -1223,7 +1223,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 914
     :goto_0
@@ -1248,7 +1248,7 @@
 
     aget-object v4, v4, v2
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 922
     :goto_1
@@ -1285,7 +1285,7 @@
 
     invoke-virtual {v7}, Landroid/util/SparseIntArray;->clear()V
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 927
     :goto_2
@@ -1309,7 +1309,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 930
     :goto_3
@@ -1342,7 +1342,7 @@
 
     new-array v7, v7, [I
 
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 934
     :goto_4
@@ -1391,7 +1391,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_5
     if-nez v5, :cond_6
@@ -1449,7 +1449,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_1
@@ -1463,12 +1463,12 @@
 
     if-eq v6, v1, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v4
 
     .line 671
     :goto_1
@@ -1487,7 +1487,7 @@
     .line 677
     array-length v2, p1
 
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
     if-ge v3, v2, :cond_3
@@ -1503,7 +1503,7 @@
 
     move-result-object v5
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_3
     if-ge v6, v1, :cond_2
@@ -1566,7 +1566,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -1582,12 +1582,12 @@
 
     if-eq v5, v6, :cond_0
 
-    const/4 v6, 0x1
+    move v6, p1
 
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 712
     :goto_1
@@ -1606,7 +1606,7 @@
     .line 718
     array-length v1, p2
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     if-ge v2, v1, :cond_3
@@ -1622,7 +1622,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_3
     if-ge v5, p1, :cond_2
@@ -1703,7 +1703,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 749
     :goto_0
@@ -1724,7 +1724,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 750
     :goto_1
@@ -1931,7 +1931,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ge v3, v1, :cond_3
@@ -1946,7 +1946,7 @@
 
     array-length v4, v4
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     if-ge v5, v4, :cond_2

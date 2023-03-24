@@ -152,7 +152,7 @@
 
     iget v4, p0, Lorg/telegram/ui/GroupCallActivity$RecordCallDrawable;->alpha:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 

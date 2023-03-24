@@ -35,7 +35,7 @@ final class WalletInteractor$getWalletBalance$1$1 extends Lambda implements Func
         walletRepository = this.this$0.walletRepository;
         Observable<Result<List<TokenBalance>>> walletBalance = walletRepository.getWalletBalance(this.$force, this.$networkType);
         schedulersProvider = this.this$0.schedulersProvider;
-        return walletBalance.subscribeOn(schedulersProvider.mo708io());
+        return walletBalance.subscribeOn(schedulersProvider.mo707io());
     }
 
     @Override // kotlin.jvm.functions.Function1

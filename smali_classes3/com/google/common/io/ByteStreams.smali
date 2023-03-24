@@ -201,7 +201,7 @@
 
     const/4 v1, 0x2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v1
 
     const/16 v2, 0x80
 
@@ -272,7 +272,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x2
+    move v2, v1
 
     .line 185
     :goto_2

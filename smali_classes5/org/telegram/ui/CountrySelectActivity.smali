@@ -212,12 +212,12 @@
 
     if-eqz p0, :cond_0
 
-    const/16 p0, 0x10
+    move p0, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 p0, 0xc
+    move p0, v2
 
     :goto_0
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -228,7 +228,7 @@
 
     if-eqz v3, :cond_1
 
-    const/16 v1, 0xc
+    move v1, v2
 
     :cond_1
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1088,7 +1088,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 6
+    .locals 5
 
     const-string v0, "windowBackgroundWhite"
 
@@ -1108,9 +1108,9 @@
 
     const-wide v3, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v5, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-lez v5, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 

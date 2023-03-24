@@ -77,7 +77,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const-string v2, "Cannot create a CalendarItemStyle with a styleResId of 0"

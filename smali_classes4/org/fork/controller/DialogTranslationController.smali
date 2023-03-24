@@ -582,9 +582,9 @@
 
     const-wide/32 v1, -0x4f7e27c7
 
-    cmp-long v3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-nez v3, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 

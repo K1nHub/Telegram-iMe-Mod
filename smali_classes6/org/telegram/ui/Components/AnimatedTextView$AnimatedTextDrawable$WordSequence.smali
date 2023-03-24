@@ -52,9 +52,9 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->length:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 434
     :goto_0
@@ -88,11 +88,11 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$WordSequence;->words:[Ljava/lang/CharSequence;
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 442
     :goto_1
@@ -119,12 +119,12 @@
 
     if-ge v2, v8, :cond_4
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_2
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_2
     add-int/2addr v8, v2
@@ -155,7 +155,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 480
     :goto_0

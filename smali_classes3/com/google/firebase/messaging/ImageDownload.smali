@@ -206,10 +206,8 @@
 
     return-object v0
 
-    :catch_0
-    nop
-
     .line 3
+    :catch_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0

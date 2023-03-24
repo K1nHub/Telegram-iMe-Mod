@@ -138,7 +138,7 @@
     if-lt v9, v7, :cond_5
 
     :cond_4
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_2
 
@@ -158,7 +158,7 @@
     :cond_8
     if-ge v7, v14, :cond_9
 
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_3
 
@@ -209,7 +209,7 @@
     if-lt v9, v4, :cond_e
 
     :cond_d
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_6
 
@@ -229,7 +229,7 @@
     :cond_11
     if-ge v4, v14, :cond_12
 
-    const/4 v4, 0x1
+    move/from16 v4, v17
 
     goto :goto_7
 
@@ -274,7 +274,7 @@
 
     if-ne v15, v14, :cond_16
 
-    const/4 v15, 0x1
+    move/from16 v15, v17
 
     goto :goto_8
 
@@ -332,7 +332,7 @@
     if-lt v9, v3, :cond_1f
 
     :cond_1e
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_a
 
@@ -354,7 +354,7 @@
 
     if-ge v3, v6, :cond_23
 
-    const/4 v15, 0x1
+    move/from16 v15, v17
 
     goto :goto_b
 
@@ -407,7 +407,7 @@
 
     if-ne v8, v14, :cond_27
 
-    const/4 v8, 0x1
+    move/from16 v8, v17
 
     goto :goto_d
 
@@ -432,7 +432,7 @@
 
     if-ne v8, v14, :cond_2a
 
-    const/4 v8, 0x1
+    move/from16 v8, v17
 
     goto :goto_e
 
@@ -518,7 +518,7 @@
     if-lt v6, v3, :cond_36
 
     :cond_35
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_11
 
@@ -542,7 +542,7 @@
 
     if-ge v3, v6, :cond_3a
 
-    const/4 v15, 0x1
+    move/from16 v15, v17
 
     goto :goto_12
 
@@ -557,7 +557,7 @@
 
     add-int/lit8 v4, v4, 0x3
 
-    goto :goto_c
+    goto/16 :goto_c
 
     :cond_3b
     shr-int/lit8 v3, v7, 0x3
@@ -588,7 +588,7 @@
 
     if-ne v15, v14, :cond_3e
 
-    const/4 v15, 0x1
+    move/from16 v15, v17
 
     goto :goto_13
 
@@ -615,7 +615,7 @@
 
     if-ne v10, v14, :cond_41
 
-    const/4 v10, 0x1
+    move/from16 v10, v17
 
     goto :goto_14
 
@@ -640,7 +640,7 @@
 
     if-ne v10, v14, :cond_44
 
-    const/4 v10, 0x1
+    move/from16 v10, v17
 
     goto :goto_15
 
@@ -744,7 +744,7 @@
     if-lt v6, v3, :cond_52
 
     :cond_51
-    const/4 v6, 0x1
+    move/from16 v6, v17
 
     goto :goto_18
 
@@ -768,7 +768,7 @@
 
     if-ge v3, v6, :cond_56
 
-    const/4 v15, 0x1
+    move/from16 v15, v17
 
     goto :goto_19
 

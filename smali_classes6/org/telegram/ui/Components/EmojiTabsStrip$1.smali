@@ -163,7 +163,7 @@
 
     move-result v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     sub-float/2addr v0, v1
 
@@ -182,7 +182,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v1, v3
 
@@ -201,7 +201,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -220,7 +220,7 @@
 
     move-result p1
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     add-float/2addr v4, v5
 
@@ -374,12 +374,12 @@
 
     if-eqz v1, :cond_3
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v4
 
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -484,7 +484,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -494,7 +494,7 @@
 
     sub-float v1, v4, v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     .line 227
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
@@ -507,11 +507,11 @@
 
     const v6, 0x3e99999a    # 0.3f
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v6, v4
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     .line 228
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
@@ -524,11 +524,11 @@
 
     const v7, 0x3d4ccccd    # 0.05f
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     sub-float v5, v4, v5
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     .line 229
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
@@ -611,13 +611,13 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v0
+    mul-float/2addr v8, v0
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     sub-float/2addr v4, v3
 
-    mul-float v8, v8, v4
+    mul-float/2addr v8, v4
 
     float-to-int v0, v8
 
@@ -703,7 +703,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     float-to-int v3, v3
 
@@ -873,12 +873,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_0
     sub-int/2addr p1, v0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 123
     :goto_1
@@ -1446,7 +1446,7 @@
 
     move-result p2
 
-    mul-int p2, p2, p1
+    mul-int/2addr p2, p1
 
     sub-int/2addr p4, p2
 
@@ -1585,7 +1585,7 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     :goto_0
     float-to-int v2, v2
@@ -1594,7 +1594,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 182
     :goto_1
@@ -1636,7 +1636,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     add-int/2addr v4, v5

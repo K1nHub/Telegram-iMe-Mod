@@ -113,9 +113,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, v1, :cond_1
@@ -148,9 +148,9 @@
 
     array-length v3, v1
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-ge v4, v3, :cond_3
@@ -164,7 +164,7 @@
 
     iget v7, v7, Lcom/google/android/exoplayer2/source/TrackGroupArray;->length:I
 
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_2
     if-ge v8, v7, :cond_2

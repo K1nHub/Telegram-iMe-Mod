@@ -1998,7 +1998,7 @@
 
     const/4 v9, 0x0
 
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_1
     const v2, 0x3a83126f    # 0.001f
@@ -2671,7 +2671,7 @@
 
     invoke-virtual {v0, v9, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    goto :goto_d
+    goto/16 :goto_d
 
     .line 1282
     :cond_15
@@ -2791,7 +2791,7 @@
     goto :goto_c
 
     :cond_18
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_c
     invoke-virtual {v0, v3, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
@@ -3294,32 +3294,32 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v0, 0x1
+    cmp-long v0, p1, v2
 
-    const/4 v4, -0x1
+    const/4 v2, 0x1
 
-    cmp-long v5, p1, v2
+    const/4 v3, -0x1
 
-    if-eqz v5, :cond_3
+    if-eqz v0, :cond_3
 
     .line 1218
-    iget-wide v2, p5, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
+    iget-wide v4, p5, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
-    cmp-long p3, v2, p1
+    cmp-long p3, v4, p1
 
     if-nez p3, :cond_2
 
-    return v4
+    return v3
 
     .line 1220
     :cond_2
-    iget-wide v2, p6, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
+    iget-wide v4, p6, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
-    cmp-long p3, v2, p1
+    cmp-long p1, v4, p1
 
-    if-nez p3, :cond_5
+    if-nez p1, :cond_5
 
-    return v0
+    return v2
 
     .line 1224
     :cond_3
@@ -3331,7 +3331,7 @@
 
     if-eqz p1, :cond_4
 
-    return v4
+    return v3
 
     .line 1226
     :cond_4
@@ -3343,7 +3343,7 @@
 
     if-eqz p1, :cond_5
 
-    return v0
+    return v2
 
     :cond_5
     if-nez p4, :cond_7
@@ -3359,7 +3359,7 @@
 
     if-eqz p1, :cond_6
 
-    return v4
+    return v3
 
     .line 1233
     :cond_6
@@ -3371,7 +3371,7 @@
 
     if-eqz p1, :cond_7
 
-    return v0
+    return v2
 
     .line 1237
     :cond_7
@@ -3407,12 +3407,12 @@
     :cond_9
     if-le p1, p2, :cond_a
 
-    return v0
+    return v2
 
     :cond_a
     if-ge p1, p2, :cond_b
 
-    return v4
+    return v3
 
     :cond_b
     return v1
@@ -3427,18 +3427,18 @@
 
     if-eqz p4, :cond_d
 
-    return v4
+    return v3
 
     :cond_d
-    return v0
+    return v2
 
     :cond_e
     if-eqz p4, :cond_f
 
-    return v0
+    return v2
 
     :cond_f
-    return v4
+    return v3
 
     :cond_10
     return v1
@@ -3511,7 +3511,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_9
@@ -4020,7 +4020,7 @@
 
     move/from16 v2, p3
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_3
 
@@ -4234,7 +4234,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 880
     :goto_1
@@ -4485,7 +4485,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -4505,7 +4505,7 @@
     .line 957
     check-cast v3, Lorg/telegram/ui/Cells/WallpaperCell;
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     const/4 v5, 0x5
@@ -5112,9 +5112,9 @@
 
     const/4 v5, 0x0
 
-    move-object v7, v5
+    move v6, v1
 
-    const/4 v6, 0x0
+    move-object v7, v5
 
     :goto_0
     if-ge v6, v3, :cond_c
@@ -5395,7 +5395,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     if-ge v3, v2, :cond_d
@@ -6066,7 +6066,7 @@
     :goto_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 423
     :goto_1

@@ -736,7 +736,7 @@ public final class MediaItem implements Bundleable {
             long j = this.targetOffsetMs;
             long j2 = this.minOffsetMs;
             long j3 = this.maxOffsetMs;
-            int i = ((((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) (j3 ^ (j3 >>> 32)))) * 31;
+            int i = ((((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) ((j3 >>> 32) ^ j3))) * 31;
             float f = this.minPlaybackSpeed;
             int floatToIntBits = (i + (f != BitmapDescriptorFactory.HUE_RED ? Float.floatToIntBits(f) : 0)) * 31;
             float f2 = this.maxPlaybackSpeed;
@@ -1030,7 +1030,7 @@ public final class MediaItem implements Bundleable {
         public int hashCode() {
             long j = this.startPositionMs;
             long j2 = this.endPositionMs;
-            return (((((((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + (this.relativeToLiveWindow ? 1 : 0)) * 31) + (this.relativeToDefaultPosition ? 1 : 0)) * 31) + (this.startsAtKeyFrame ? 1 : 0);
+            return (((((((((int) (j ^ (j >>> 32))) * 31) + ((int) ((j2 >>> 32) ^ j2))) * 31) + (this.relativeToLiveWindow ? 1 : 0)) * 31) + (this.relativeToDefaultPosition ? 1 : 0)) * 31) + (this.startsAtKeyFrame ? 1 : 0);
         }
 
         @Override // com.google.android.exoplayer2.Bundleable

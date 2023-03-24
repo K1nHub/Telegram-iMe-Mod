@@ -569,9 +569,9 @@
     :try_start_0
     iget-wide v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool;->currentSize:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-lez v2, :cond_3
+    if-lez v0, :cond_3
 
     .line 260
     iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool;->strategy:Lcom/bumptech/glide/load/engine/bitmap_recycle/LruPoolStrategy;

@@ -363,7 +363,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -407,7 +407,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -426,7 +426,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
@@ -445,7 +445,7 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_2
 
@@ -471,7 +471,7 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_3
 
@@ -490,7 +490,7 @@
 
     if-nez v0, :cond_4
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_4
 
@@ -509,7 +509,7 @@
 
     if-nez v0, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_5
 
@@ -528,7 +528,7 @@
 
     if-nez v0, :cond_6
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_6
 
@@ -547,7 +547,7 @@
 
     if-nez v0, :cond_7
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_7
 

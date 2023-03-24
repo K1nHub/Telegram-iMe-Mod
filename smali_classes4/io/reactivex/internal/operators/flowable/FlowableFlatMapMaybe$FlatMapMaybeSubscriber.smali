@@ -233,7 +233,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     .line 298
     :cond_0
@@ -248,11 +248,11 @@
     move-wide v10, v8
 
     :goto_0
-    const/4 v12, 0x0
+    cmp-long v12, v10, v6
 
-    cmp-long v13, v10, v6
+    const/4 v13, 0x0
 
-    if-eqz v13, :cond_9
+    if-eqz v12, :cond_9
 
     .line 302
     iget-boolean v14, v0, Lio/reactivex/internal/operators/flowable/FlowableFlatMapMaybe$FlatMapMaybeSubscriber;->cancelled:Z
@@ -304,12 +304,12 @@
 
     if-nez v14, :cond_3
 
-    const/4 v14, 0x1
+    move v14, v4
 
     goto :goto_1
 
     :cond_3
-    const/4 v14, 0x0
+    move v14, v13
 
     .line 318
     :goto_1
@@ -334,12 +334,12 @@
     :goto_2
     if-nez v15, :cond_5
 
-    const/16 v16, 0x1
+    move/from16 v16, v4
 
     goto :goto_3
 
     :cond_5
-    const/16 v16, 0x0
+    move/from16 v16, v13
 
     :goto_3
     if-eqz v14, :cond_7
@@ -384,7 +384,7 @@
 
     :cond_9
     :goto_5
-    if-nez v13, :cond_10
+    if-nez v12, :cond_10
 
     .line 342
     iget-boolean v6, v0, Lio/reactivex/internal/operators/flowable/FlowableFlatMapMaybe$FlatMapMaybeSubscriber;->cancelled:Z
@@ -436,12 +436,12 @@
 
     if-nez v6, :cond_c
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_6
 
     :cond_c
-    const/4 v6, 0x0
+    move v6, v13
 
     .line 358
     :goto_6
@@ -461,12 +461,12 @@
     if-eqz v7, :cond_e
 
     :cond_d
-    const/4 v12, 0x1
+    move v13, v4
 
     :cond_e
     if-eqz v6, :cond_10
 
-    if-eqz v12, :cond_10
+    if-eqz v13, :cond_10
 
     .line 362
     iget-object v2, v0, Lio/reactivex/internal/operators/flowable/FlowableFlatMapMaybe$FlatMapMaybeSubscriber;->errors:Lio/reactivex/internal/util/AtomicThrowable;
@@ -617,7 +617,7 @@
 
     if-nez v4, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v3
 
     .line 250
     :cond_0
@@ -796,7 +796,7 @@
 .end method
 
 .method innerSuccess(Lio/reactivex/internal/operators/flowable/FlowableFlatMapMaybe$FlatMapMaybeSubscriber$InnerObserver;Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -836,7 +836,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     .line 174
     :cond_0
@@ -848,9 +848,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_4
+    if-eqz v0, :cond_4
 
     .line 175
     iget-object v0, p0, Lio/reactivex/internal/operators/flowable/FlowableFlatMapMaybe$FlatMapMaybeSubscriber;->downstream:Lorg/reactivestreams/Subscriber;

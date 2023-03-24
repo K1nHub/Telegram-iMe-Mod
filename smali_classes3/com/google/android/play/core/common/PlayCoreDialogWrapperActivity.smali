@@ -172,10 +172,8 @@
 
     return-void
 
-    :catch_0
-    nop
-
     .line 12
+    :catch_0
     iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->zza:Landroid/os/ResultReceiver;
 
     if-eqz p1, :cond_1

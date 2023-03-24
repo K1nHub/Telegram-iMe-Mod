@@ -309,7 +309,7 @@
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -344,7 +344,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 202
     :goto_1
@@ -406,12 +406,12 @@
 
     if-eqz v11, :cond_5
 
-    const/4 v11, 0x0
+    move v11, v3
 
     goto :goto_2
 
     :cond_5
-    const/4 v11, 0x4
+    move v11, v7
 
     :goto_2
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -422,7 +422,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v1
+    mul-float/2addr v10, v1
 
     add-float/2addr v9, v10
 
@@ -607,7 +607,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     float-to-int v2, v2
 
@@ -733,7 +733,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/BotCommandsMenuView;->onTranslationChanged(F)V
 
@@ -982,7 +982,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->expandProgress:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/BotCommandsMenuView;->onTranslationChanged(F)V
 

@@ -264,9 +264,9 @@
 
     add-long/2addr v2, v4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v0, :cond_1
 
     iget-object v0, p0, Lcom/google/firebase/iid/Store$Token;->appVersion:Ljava/lang/String;
 

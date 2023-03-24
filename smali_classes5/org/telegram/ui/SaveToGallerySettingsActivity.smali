@@ -819,12 +819,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v3, 0x0
@@ -1108,7 +1108,7 @@
 
     invoke-virtual {v4, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 316
     :goto_4
@@ -1139,7 +1139,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_4
 
@@ -1567,7 +1567,7 @@
 .end method
 
 .method public onFragmentCreate()Z
-    .locals 5
+    .locals 4
 
     .line 75
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getArguments()Landroid/os/Bundle;
@@ -1610,9 +1610,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 79
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I

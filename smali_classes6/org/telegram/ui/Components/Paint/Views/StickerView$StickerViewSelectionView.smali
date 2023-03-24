@@ -90,7 +90,7 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     add-float v9, v7, v1
 
@@ -300,9 +300,9 @@
 
     move-result-wide p1
 
-    cmpg-double v0, v1, p1
+    cmpg-double p1, v1, p1
 
-    if-gez v0, :cond_2
+    if-gez p1, :cond_2
 
     const/4 p1, 0x3
 

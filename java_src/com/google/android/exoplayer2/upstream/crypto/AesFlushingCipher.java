@@ -31,8 +31,9 @@ public final class AesFlushingCipher {
             this.blockSize = blockSize;
             this.zerosBlock = new byte[blockSize];
             this.flushedBlock = new byte[blockSize];
+            long j3 = j2 / blockSize;
             int i2 = (int) (j2 % blockSize);
-            cipher.init(i, new SecretKeySpec(bArr, Util.splitAtFirst(cipher.getAlgorithm(), "/")[0]), new IvParameterSpec(getInitializationVector(j, j2 / blockSize)));
+            cipher.init(i, new SecretKeySpec(bArr, Util.splitAtFirst(cipher.getAlgorithm(), "/")[0]), new IvParameterSpec(getInitializationVector(j, j3)));
             if (i2 != 0) {
                 updateInPlace(new byte[i2], 0, i2);
             }

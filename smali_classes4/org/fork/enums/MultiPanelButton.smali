@@ -477,14 +477,9 @@
 
     const/4 p6, 0x1
 
-    const/4 v6, 0x1
-
-    goto :goto_0
-
     :cond_0
     move v6, p6
 
-    :goto_0
     move-object v0, p0
 
     move-object v1, p1

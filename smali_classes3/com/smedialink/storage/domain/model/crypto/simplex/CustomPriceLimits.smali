@@ -66,28 +66,28 @@
 
     if-eqz p6, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_0
     and-int/lit8 p6, p5, 0x2
 
     if-eqz p6, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     :cond_1
     and-int/lit8 p6, p5, 0x4
 
     if-eqz p6, :cond_2
 
-    const/4 p3, 0x0
+    move p3, v0
 
     :cond_2
     and-int/lit8 p5, p5, 0x8
 
     if-eqz p5, :cond_3
 
-    const/4 p4, 0x0
+    move p4, v0
 
     .line 3
     :cond_3

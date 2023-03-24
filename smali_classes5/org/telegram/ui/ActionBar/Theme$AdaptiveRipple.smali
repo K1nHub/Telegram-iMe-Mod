@@ -551,13 +551,13 @@
 
     const v2, 0x3c23d70a    # 0.01f
 
-    const/4 v3, 0x0
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    const/4 v5, 0x2
-
     cmpl-float v1, v1, v2
+
+    const/4 v2, 0x0
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    const/4 v4, 0x2
 
     if-lez v1, :cond_3
 
@@ -566,25 +566,25 @@
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
-    move-result v2
+    move-result v5
 
-    if-eqz v2, :cond_1
+    if-eqz v5, :cond_1
 
-    const/high16 v2, 0x3e800000    # 0.25f
+    const/high16 v5, 0x3e800000    # 0.25f
 
     goto :goto_0
 
     :cond_1
-    const/high16 v2, -0x41800000    # -0.25f
+    const/high16 v5, -0x41800000    # -0.25f
 
     :goto_0
-    add-float/2addr v1, v2
+    add-float/2addr v1, v5
 
-    invoke-static {v3, v1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    invoke-static {v4, v1}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
@@ -593,7 +593,7 @@
     .line 6672
     sget-object p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->tempHSV:[F
 
-    aget v0, p0, v5
+    aget v0, p0, v4
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
@@ -611,21 +611,21 @@
     :goto_1
     add-float/2addr v0, v1
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
-    invoke-static {v4, v0}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
-    aput v0, p0, v5
+    aput v0, p0, v4
 
     goto :goto_3
 
     .line 6674
     :cond_3
-    aget v0, p0, v5
+    aget v0, p0, v4
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
@@ -643,15 +643,15 @@
     :goto_2
     add-float/2addr v0, v1
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
-    invoke-static {v4, v0}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
-    aput v0, p0, v5
+    aput v0, p0, v4
 
     :goto_3
     const/16 p0, 0x7f
@@ -1116,7 +1116,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x8

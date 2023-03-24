@@ -71,12 +71,12 @@
 
     if-gt v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     new-array v1, v3, [Ljava/lang/Object;
@@ -85,9 +85,9 @@
 
     invoke-static {v0, v4, v1}, Lcom/google/firebase/firestore/util/Assert;->hardAssert(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    const/4 v0, 0x0
+    move v0, v3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 97
     :goto_1
@@ -171,12 +171,12 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_2
     new-array v7, v3, [Ljava/lang/Object;
@@ -275,7 +275,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -426,7 +426,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -469,7 +469,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0

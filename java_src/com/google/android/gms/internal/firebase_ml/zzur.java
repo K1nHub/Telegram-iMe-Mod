@@ -93,7 +93,7 @@ public final class zzur {
         } else {
             this.zzbsb = null;
         }
-        this.zzbsc = (zzutVar != zzut.SCALAR || (i3 = zzuq.zzbpz[zzvgVar.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : false;
+        this.zzbsc = (zzutVar != zzut.SCALAR || (i3 = zzuq.zzbpz[zzvgVar.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
     }
 
     /* renamed from: id */

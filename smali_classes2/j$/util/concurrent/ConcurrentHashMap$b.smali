@@ -212,66 +212,68 @@
     :cond_0
     const-wide/32 v2, 0x7ffffff7
 
-    const-string v4, "Required array size too large"
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const-string v3, "Required array size too large"
 
-    if-gtz v5, :cond_6
+    if-gtz v2, :cond_6
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 2
-    new-array v0, v1, [Ljava/lang/Object;
+    new-array v1, v0, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
     invoke-virtual {p0}, Lj$/util/concurrent/ConcurrentHashMap$b;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
     if-eqz v5, :cond_4
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
-    if-ne v2, v1, :cond_3
+    if-ne v2, v0, :cond_3
 
     const v6, 0x7ffffff7
 
-    if-ge v1, v6, :cond_2
+    if-ge v0, v6, :cond_2
 
     const v7, 0x3ffffffb    # 1.9999994f
 
-    if-lt v1, v7, :cond_1
+    if-lt v0, v7, :cond_1
 
     goto :goto_1
 
     :cond_1
-    ushr-int/lit8 v6, v1, 0x1
+    ushr-int/lit8 v6, v0, 0x1
 
     add-int/lit8 v6, v6, 0x1
 
-    add-int/2addr v6, v1
+    add-int/2addr v6, v0
 
     :goto_1
-    invoke-static {v0, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v1, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
-    move v1, v6
+    move-object v1, v0
+
+    move v0, v6
 
     goto :goto_2
 
     :cond_2
     new-instance v0, Ljava/lang/OutOfMemoryError;
 
-    invoke-direct {v0, v4}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
     throw v0
 
@@ -279,29 +281,29 @@
     :goto_2
     add-int/lit8 v6, v2, 0x1
 
-    aput-object v5, v0, v2
+    aput-object v5, v1, v2
 
     move v2, v6
 
     goto :goto_0
 
     :cond_4
-    if-ne v2, v1, :cond_5
+    if-ne v2, v0, :cond_5
 
     goto :goto_3
 
     :cond_5
-    invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
     :goto_3
-    return-object v0
+    return-object v1
 
     :cond_6
     new-instance v0, Ljava/lang/OutOfMemoryError;
 
-    invoke-direct {v0, v4}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -327,18 +329,18 @@
     :cond_0
     const-wide/32 v2, 0x7ffffff7
 
-    const-string v4, "Required array size too large"
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v2
+    const-string v3, "Required array size too large"
 
-    if-gtz v5, :cond_8
+    if-gtz v2, :cond_8
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 4
-    array-length v0, p1
+    array-length v1, p1
 
-    if-lt v0, v1, :cond_1
+    if-lt v1, v0, :cond_1
 
     move-object v0, p1
 
@@ -347,13 +349,13 @@
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+    invoke-virtual {v1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+    invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -366,16 +368,16 @@
 
     invoke-virtual {p0}, Lj$/util/concurrent/ConcurrentHashMap$b;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
     :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
     if-eqz v5, :cond_5
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -410,7 +412,7 @@
     :cond_3
     new-instance p1, Ljava/lang/OutOfMemoryError;
 
-    invoke-direct {p1, v4}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v3}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -451,7 +453,7 @@
     :cond_8
     new-instance p1, Ljava/lang/OutOfMemoryError;
 
-    invoke-direct {p1, v4}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v3}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
     throw p1
 .end method

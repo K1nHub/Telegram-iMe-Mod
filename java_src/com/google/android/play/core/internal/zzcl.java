@@ -95,29 +95,28 @@ public final class zzcl {
     }
 
     private static void zzb(byte[] bArr, zzcm zzcmVar, OutputStream outputStream, long j, int i, long j2) throws IOException {
-        int i2 = i;
-        if (i2 < 0) {
+        if (i < 0) {
             throw new IOException("copyLength negative");
         }
         if (j < 0) {
             throw new IOException("inputOffset negative");
         }
-        long j3 = i2;
+        long j3 = i;
         if (j3 <= j2) {
             try {
                 InputStream zzc = new zzcn(zzcmVar, j, j3).zzc();
-                while (i2 > 0) {
-                    int min = Math.min(i2, 16384);
-                    int i3 = 0;
-                    while (i3 < min) {
-                        int read = zzc.read(bArr, i3, min - i3);
+                while (i > 0) {
+                    int min = Math.min(i, 16384);
+                    int i2 = 0;
+                    while (i2 < min) {
+                        int read = zzc.read(bArr, i2, min - i2);
                         if (read == -1) {
                             throw new IOException("truncated input stream");
                         }
-                        i3 += read;
+                        i2 += read;
                     }
                     outputStream.write(bArr, 0, min);
-                    i2 -= min;
+                    i -= min;
                 }
                 zzc.close();
                 return;

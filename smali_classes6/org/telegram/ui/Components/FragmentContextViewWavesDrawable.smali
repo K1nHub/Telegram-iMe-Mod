@@ -295,7 +295,7 @@
     if-nez p6, :cond_1
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v10
 
     goto :goto_0
 
@@ -309,7 +309,7 @@
 
     if-lez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v11
 
     :goto_0
     cmpl-float v2, p2, p4
@@ -362,12 +362,12 @@
     if-nez v4, :cond_5
 
     :cond_4
-    const/4 v12, 0x1
+    move v12, v11
 
     goto :goto_1
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v10
 
     :goto_1
     if-eqz v1, :cond_7
@@ -387,9 +387,9 @@
 
     const-wide/16 v2, 0x14
 
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-lez v6, :cond_6
+    if-lez v2, :cond_6
 
     const-wide/16 v2, 0x11
 
@@ -401,13 +401,13 @@
     :goto_2
     const-wide/16 v4, 0x3
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_7
+    if-gez v4, :cond_7
 
     move-wide v14, v2
 
-    const/4 v13, 0x0
+    move v13, v10
 
     goto :goto_3
 
@@ -437,7 +437,7 @@
 
     long-to-float v4, v14
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v2, v4
 
@@ -484,7 +484,7 @@
 
     long-to-float v4, v14
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v2, v4
 
@@ -552,7 +552,7 @@
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/FragmentContextView;->invalidate()V
 
     :cond_f
-    const/4 v7, 0x0
+    move v7, v10
 
     :goto_6
     const/4 v6, 0x2
@@ -568,9 +568,9 @@
 
     move v10, v7
 
-    const/high16 v18, 0x3f800000    # 1.0f
+    move/from16 v18, v8
 
-    const/16 v19, 0x0
+    move/from16 v19, v9
 
     goto/16 :goto_c
 
@@ -591,7 +591,7 @@
 
     move/from16 v16, v1
 
-    const/16 v18, 0x2
+    move/from16 v18, v6
 
     goto :goto_9
 
@@ -616,7 +616,7 @@
     goto :goto_7
 
     :cond_13
-    const/high16 v16, 0x3f800000    # 1.0f
+    move/from16 v16, v8
 
     :goto_7
     if-eqz v13, :cond_14
@@ -636,7 +636,7 @@
 
     move-wide v4, v14
 
-    const/16 v18, 0x2
+    move/from16 v18, v6
 
     move/from16 v6, v17
 
@@ -645,7 +645,7 @@
     goto :goto_8
 
     :cond_14
-    const/16 v18, 0x2
+    move/from16 v18, v6
 
     .line 143
     :goto_8
@@ -676,7 +676,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -714,7 +714,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v3, v5
 
@@ -748,7 +748,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -813,7 +813,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;->amplitude2:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 164
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -847,11 +847,11 @@
 
     move-object/from16 v7, v18
 
-    const/high16 v18, 0x3f800000    # 1.0f
+    move/from16 v18, v8
 
     move/from16 v8, p2
 
-    const/16 v19, 0x0
+    move/from16 v19, v9
 
     move/from16 v9, p7
 
@@ -871,9 +871,9 @@
     :cond_16
     move v10, v7
 
-    const/high16 v18, 0x3f800000    # 1.0f
+    move/from16 v18, v8
 
-    const/16 v19, 0x0
+    move/from16 v19, v9
 
     :goto_a
     const/16 v1, 0xff
@@ -944,7 +944,7 @@
 
     const v4, 0x3f8ccccd    # 1.1f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     mul-float v3, v3, v16
 
@@ -1016,9 +1016,9 @@
     :goto_c
     add-int/lit8 v7, v10, 0x1
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move/from16 v8, v18
 
-    const/4 v9, 0x0
+    move/from16 v9, v19
 
     const/4 v10, 0x0
 

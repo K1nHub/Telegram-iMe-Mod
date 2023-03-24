@@ -87,7 +87,7 @@
 
     if-ne p1, p2, :cond_0
 
-    const/4 p2, 0x0
+    move p2, p3
 
     goto :goto_0
 
@@ -158,7 +158,7 @@
 
     if-ne p2, v0, :cond_1
 
-    const/4 p3, 0x1
+    move p3, v0
 
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/PhotoPickerActivity$10;->this$0:Lorg/telegram/ui/PhotoPickerActivity;

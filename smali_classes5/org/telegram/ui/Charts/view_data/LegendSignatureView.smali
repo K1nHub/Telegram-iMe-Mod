@@ -475,7 +475,7 @@
     return-object p1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     const v3, 0x461c4000    # 10000.0f
@@ -853,9 +853,9 @@
 
     :cond_3
     :goto_1
-    const/4 p2, 0x0
+    move p2, v3
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_2
     if-ge p2, v0, :cond_5
@@ -891,7 +891,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_3
     const/16 p5, 0x8
@@ -1073,11 +1073,11 @@
 
     const v5, 0x3dcccccd    # 0.1f
 
+    cmpg-float v5, p5, v5
+
     const-string v6, "%"
 
     const/high16 v7, 0x42c80000    # 100.0f
-
-    cmpg-float v5, p5, v5
 
     if-gez v5, :cond_a
 
@@ -1094,7 +1094,7 @@
 
     new-array v8, v1, [Ljava/lang/Object;
 
-    mul-float p5, p5, v7
+    mul-float/2addr p5, v7
 
     invoke-static {p5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -1122,7 +1122,7 @@
 
     new-array v8, v1, [Ljava/lang/Object;
 
-    mul-float p5, p5, v7
+    mul-float/2addr p5, v7
 
     invoke-static {p5}, Ljava/lang/Math;->round(F)I
 
@@ -1161,7 +1161,7 @@
     goto :goto_7
 
     :cond_d
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 192
     :goto_7
@@ -1175,7 +1175,7 @@
     goto :goto_8
 
     :cond_e
-    const/16 v3, 0x8
+    move v3, p5
 
     :goto_8
     invoke-virtual {p1, v3}, Landroid/widget/ImageView;->setVisibility(I)V

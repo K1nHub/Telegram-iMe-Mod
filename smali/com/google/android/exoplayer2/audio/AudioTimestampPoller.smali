@@ -278,7 +278,7 @@
 .end method
 
 .method public maybePollTimestamp(J)Z
-    .locals 7
+    .locals 6
 
     .line 125
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->audioTimestamp:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller$AudioTimestampV19;
@@ -293,9 +293,9 @@
 
     iget-wide v4, p0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->sampleIntervalUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_0
+    if-gez v2, :cond_0
 
     goto/16 :goto_1
 
@@ -395,9 +395,9 @@
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->initializeSystemTimeUs:J
 
-    cmp-long v5, p1, v2
+    cmp-long p1, p1, v2
 
-    if-ltz v5, :cond_9
+    if-ltz p1, :cond_9
 
     .line 135
     iget-object p1, p0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->audioTimestamp:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller$AudioTimestampV19;
@@ -421,9 +421,9 @@
 
     const-wide/32 v1, 0x7a120
 
-    cmp-long v4, p1, v1
+    cmp-long p1, p1, v1
 
-    if-lez v4, :cond_8
+    if-lez p1, :cond_8
 
     .line 146
     invoke-direct {p0, v3}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->updateState(I)V

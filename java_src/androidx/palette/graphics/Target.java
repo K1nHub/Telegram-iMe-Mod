@@ -107,7 +107,7 @@ public final class Target {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void normalizeWeights() {
         int length = this.mWeights.length;
-        float f = BitmapDescriptorFactory.HUE_RED;
+        float f = 0.0f;
         for (int i = 0; i < length; i++) {
             float f2 = this.mWeights[i];
             if (f2 > BitmapDescriptorFactory.HUE_RED) {

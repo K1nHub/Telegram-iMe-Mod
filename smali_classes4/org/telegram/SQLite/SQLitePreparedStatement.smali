@@ -298,7 +298,7 @@
 .end method
 
 .method public finalizeQuery()V
-    .locals 5
+    .locals 4
 
     .line 103
     iget-boolean v0, p0, Lorg/telegram/SQLite/SQLitePreparedStatement;->isFinalized:Z
@@ -324,9 +324,9 @@
 
     const-wide/16 v2, 0x1f4
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v2, :cond_1
 
     .line 109
     new-instance v2, Ljava/lang/StringBuilder;
@@ -432,7 +432,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v7, 0x1
+    move v7, v1
 
     .line 57
     :goto_0

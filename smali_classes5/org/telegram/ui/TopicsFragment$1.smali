@@ -85,7 +85,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -176,7 +176,7 @@
 
     sub-float v3, v4, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -224,7 +224,7 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -465,7 +465,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -512,7 +512,7 @@
 
     const/4 p3, 0x0
 
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_0
     if-ge v1, p1, :cond_a
@@ -555,7 +555,7 @@
 
     if-ne v6, v7, :cond_0
 
-    const/4 v6, 0x0
+    move v6, p3
 
     .line 423
     :cond_0
@@ -573,7 +573,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, p3
 
     .line 428
     :goto_1
@@ -665,7 +665,7 @@
 
     if-eqz v8, :cond_4
 
-    const/4 v8, 0x0
+    move v8, p3
 
     goto :goto_4
 
@@ -798,9 +798,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v10, 0x0
+    move v10, v3
 
     .line 375
     :goto_0

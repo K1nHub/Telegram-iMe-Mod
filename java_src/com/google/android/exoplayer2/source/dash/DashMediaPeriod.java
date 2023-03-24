@@ -508,11 +508,10 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
     }
 
     private static void buildManifestEventTrackGroupInfos(List<EventStream> list, TrackGroup[] trackGroupArr, TrackGroupInfo[] trackGroupInfoArr, int i) {
+        EventStream eventStream;
         int i2 = 0;
         while (i2 < list.size()) {
-            EventStream eventStream = list.get(i2);
-            Format build = new Format.Builder().setId(eventStream.m814id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build();
-            trackGroupArr[i] = new TrackGroup(eventStream.m814id() + ":" + i2, build);
+            trackGroupArr[i] = new TrackGroup(eventStream.m814id() + ":" + i2, new Format.Builder().setId(list.get(i2).m814id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
             trackGroupInfoArr[i] = TrackGroupInfo.mpdEventTrack(i2);
             i2++;
             i++;
@@ -520,8 +519,8 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
     }
 
     private ChunkSampleStream<DashChunkSource> buildSampleStream(TrackGroupInfo trackGroupInfo, ExoTrackSelection exoTrackSelection, long j) {
-        TrackGroup trackGroup;
         int i;
+        TrackGroup trackGroup;
         TrackGroup trackGroup2;
         int i2;
         int i3 = trackGroupInfo.embeddedEventMessageTrackGroupIndex;
@@ -531,8 +530,8 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
             trackGroup = this.trackGroups.get(i3);
             i = 1;
         } else {
-            trackGroup = null;
             i = 0;
+            trackGroup = null;
         }
         int i4 = trackGroupInfo.embeddedClosedCaptionTrackGroupIndex;
         boolean z2 = i4 != -1;
@@ -630,8 +629,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
                 return new Format[]{format};
             }
             int parseInt = Integer.parseInt(matcher.group(1));
-            Format.Builder buildUpon = format.buildUpon();
-            formatArr[i] = buildUpon.setId(format.f100id + ":" + parseInt).setAccessibilityChannel(parseInt).setLanguage(matcher.group(2)).build();
+            formatArr[i] = format.buildUpon().setId(format.f100id + ":" + parseInt).setAccessibilityChannel(parseInt).setLanguage(matcher.group(2)).build();
         }
         return formatArr;
     }

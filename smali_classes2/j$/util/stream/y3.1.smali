@@ -32,13 +32,13 @@
 
     move-result-wide v6
 
-    const/4 v8, 0x1
-
     const-wide/16 v0, 0x0
 
-    cmp-long v2, v6, v0
+    cmp-long v0, v6, v0
 
-    if-lez v2, :cond_1
+    const/4 v8, 0x1
+
+    if-lez v0, :cond_1
 
     const/16 v0, 0x4000
 
@@ -158,9 +158,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, v6, v0
+    cmp-long v0, v6, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const/16 v0, 0x4000
 
@@ -275,51 +275,48 @@
 .end method
 
 .method N0(Lj$/util/s$a;JJJ)Lj$/util/s$a;
-    .locals 8
-
-    const-wide/16 v0, 0x0
+    .locals 7
 
     cmp-long v2, p2, p6
 
+    const-wide/16 v3, 0x0
+
     if-gtz v2, :cond_1
 
-    cmp-long v2, p4, v0
-
-    sub-long/2addr p6, p2
+    cmp-long v2, p4, v3
 
     if-ltz v2, :cond_0
 
-    invoke-static {p4, p5, p6, p7}, Ljava/lang/Math;->min(JJ)J
+    sub-long v5, p6, p2
 
-    move-result-wide p2
+    invoke-static {p4, p5, v5, v6}, Ljava/lang/Math;->min(JJ)J
 
-    move-wide p4, p2
+    move-result-wide v0
 
     goto :goto_0
 
     :cond_0
-    move-wide p4, p6
+    sub-long v0, p6, p2
 
-    :goto_0
-    move-wide v6, p4
-
-    move-wide v4, v0
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    move-wide v4, p2
+    move-wide v3, p2
 
-    move-wide v6, p4
+    move-wide v0, p4
 
-    :goto_1
-    new-instance p2, Lj$/util/stream/E4;
+    :goto_0
+    new-instance v2, Lj$/util/stream/E4;
 
-    move-object v2, p2
+    move-object p2, v2
 
-    move-object v3, p1
+    move-object p3, p1
 
-    invoke-direct/range {v2 .. v7}, Lj$/util/stream/E4;-><init>(Lj$/util/s$a;JJ)V
+    move-wide p4, v3
 
-    return-object p2
+    move-wide p6, v0
+
+    invoke-direct/range {p2 .. p7}, Lj$/util/stream/E4;-><init>(Lj$/util/s$a;JJ)V
+
+    return-object v2
 .end method

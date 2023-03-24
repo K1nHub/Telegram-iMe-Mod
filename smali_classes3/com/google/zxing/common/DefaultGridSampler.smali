@@ -41,7 +41,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, p3, :cond_3
@@ -52,7 +52,7 @@
 
     add-float/2addr v4, v5
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     if-ge v6, p2, :cond_0
@@ -82,7 +82,7 @@
     .line 66
     invoke-static {p1, v1}, Lcom/google/zxing/common/GridSampler;->checkAndNudgePoints(Lcom/google/zxing/common/BitMatrix;[F)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_2
     if-ge v4, p2, :cond_2

@@ -466,7 +466,7 @@ public final class ArrayDeque<E> extends AbstractMutableList<E> {
         z = false;
         z = false;
         if (!isEmpty()) {
-            if (!(this.elementData.length == 0)) {
+            if ((this.elementData.length == 0 ? 1 : null) == null) {
                 int positiveMod2 = positiveMod(this.head + size());
                 int i = this.head;
                 if (i < positiveMod2) {
@@ -484,8 +484,8 @@ public final class ArrayDeque<E> extends AbstractMutableList<E> {
                     ArraysKt___ArraysJvmKt.fill(this.elementData, null, positiveMod, positiveMod2);
                 } else {
                     int length = this.elementData.length;
-                    int i2 = i;
                     boolean z2 = false;
+                    int i2 = i;
                     while (i < length) {
                         Object[] objArr = this.elementData;
                         Object obj2 = objArr[i];
@@ -528,7 +528,7 @@ public final class ArrayDeque<E> extends AbstractMutableList<E> {
         z = false;
         z = false;
         if (!isEmpty()) {
-            if (!(this.elementData.length == 0)) {
+            if ((this.elementData.length == 0 ? 1 : null) == null) {
                 int positiveMod2 = positiveMod(this.head + size());
                 int i = this.head;
                 if (i < positiveMod2) {
@@ -546,8 +546,8 @@ public final class ArrayDeque<E> extends AbstractMutableList<E> {
                     ArraysKt___ArraysJvmKt.fill(this.elementData, null, positiveMod, positiveMod2);
                 } else {
                     int length = this.elementData.length;
-                    int i2 = i;
                     boolean z2 = false;
+                    int i2 = i;
                     while (i < length) {
                         Object[] objArr = this.elementData;
                         Object obj2 = objArr[i];

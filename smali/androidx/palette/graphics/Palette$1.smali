@@ -60,11 +60,11 @@
     .line 987
     aget v1, p1, v0
 
+    const/high16 v2, 0x41200000    # 10.0f
+
+    cmpl-float v1, v1, v2
+
     const/4 v2, 0x1
-
-    const/high16 v3, 0x41200000    # 10.0f
-
-    cmpl-float v1, v1, v3
 
     if-ltz v1, :cond_0
 
@@ -84,7 +84,7 @@
 
     if-gtz p1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_0
     return v0

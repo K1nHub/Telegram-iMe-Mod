@@ -130,17 +130,15 @@
 
     const/4 v0, 0x1
 
-    const/4 v5, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v5, 0x0
+    :goto_0
+    move v5, v0
 
     .line 64
-    :goto_0
     sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/Downsampler;->PREFERRED_COLOR_SPACE:Lcom/bumptech/glide/load/Option;
 
     invoke-virtual {p4, v0}, Lcom/bumptech/glide/load/Options;->get(Lcom/bumptech/glide/load/Option;)Ljava/lang/Object;

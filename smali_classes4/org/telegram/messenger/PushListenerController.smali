@@ -1128,7 +1128,7 @@
 .end method
 
 .method private static synthetic lambda$processRemoteMessage$5(I)V
-    .locals 5
+    .locals 4
 
     .line 266
     invoke-static {p0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1141,9 +1141,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 267
     invoke-static {p0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1705,7 +1705,7 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_e
 
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_5
     const/4 v5, 0x5
@@ -1726,7 +1726,7 @@
 
     if-nez v5, :cond_e
 
-    const/4 v5, 0x1
+    move v5, v10
 
     goto :goto_6
 
@@ -1736,9 +1736,9 @@
     goto :goto_5
 
     :cond_f
-    move/from16 v4, v16
+    move v5, v8
 
-    const/4 v5, 0x0
+    move/from16 v4, v16
 
     :goto_6
     if-nez v5, :cond_11
@@ -1856,7 +1856,7 @@
 
     if-eqz v5, :cond_14
 
-    const/4 v5, 0x3
+    move v5, v12
 
     goto :goto_9
 
@@ -1869,7 +1869,7 @@
 
     if-eqz v5, :cond_14
 
-    const/4 v5, 0x1
+    move v5, v10
 
     goto :goto_9
 
@@ -1882,7 +1882,7 @@
 
     if-eqz v5, :cond_14
 
-    const/4 v5, 0x0
+    move v5, v8
 
     goto :goto_9
 
@@ -1897,7 +1897,7 @@
 
     if-eqz v5, :cond_14
 
-    const/4 v5, 0x2
+    move v5, v13
 
     goto :goto_9
 
@@ -2278,9 +2278,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v11, v7, v9
+    cmp-long v9, v7, v9
 
-    if-eqz v11, :cond_1e
+    if-eqz v9, :cond_1e
 
     .line 338
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
@@ -9998,9 +9998,9 @@
     .line 253
     div-long v2, p3, v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    iput v3, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->inbox_date:I
+    iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->inbox_date:I
 
     const-string v2, "message"
 
@@ -10662,17 +10662,17 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
-    sget-wide v0, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeEnd:J
+    sget-wide v4, Lorg/telegram/messenger/SharedConfig;->pushStringGetTimeEnd:J
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v4, v2
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->pushStatSent:Z
 
@@ -10688,14 +10688,14 @@
 
     .line 62
     :cond_1
-    sput-boolean v4, Lorg/telegram/messenger/SharedConfig;->pushStatSent:Z
+    sput-boolean v1, Lorg/telegram/messenger/SharedConfig;->pushStatSent:Z
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 64
     :goto_0
@@ -10704,32 +10704,32 @@
     .line 65
     sput p1, Lorg/telegram/messenger/SharedConfig;->pushType:I
 
-    const/4 v1, 0x0
+    move v4, v1
 
     :goto_1
     const/4 v5, 0x5
 
-    if-ge v1, v5, :cond_6
+    if-ge v4, v5, :cond_6
 
     .line 67
-    invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v5
 
     .line 68
-    iput-boolean v4, v5, Lorg/telegram/messenger/UserConfig;->registeredForPush:Z
+    iput-boolean v1, v5, Lorg/telegram/messenger/UserConfig;->registeredForPush:Z
 
     .line 69
-    invoke-virtual {v5, v4}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
+    invoke-virtual {v5, v1}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
     .line 70
     invoke-virtual {v5}, Lorg/telegram/messenger/UserConfig;->getClientUserId()J
 
     move-result-wide v5
 
-    cmp-long v7, v5, v2
+    cmp-long v5, v5, v2
 
-    if-eqz v7, :cond_5
+    if-eqz v5, :cond_5
 
     if-eqz v0, :cond_4
 
@@ -10845,7 +10845,7 @@
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 90
-    invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {v4}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
@@ -10853,18 +10853,18 @@
 
     invoke-virtual {v0, v5, v6}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 97
     :cond_4
     new-instance v5, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda2;
 
-    invoke-direct {v5, v1, p1, p0}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda2;-><init>(IILjava/lang/String;)V
+    invoke-direct {v5, v4, p1, p0}, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda2;-><init>(IILjava/lang/String;)V
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     :cond_5
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_1
 
@@ -10996,13 +10996,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
-
-    :catchall_0
-    nop
-
     .line 1214
-    :goto_1
+    :catchall_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p1, :cond_2

@@ -5,18 +5,18 @@
 
 # direct methods
 .method public static compareLongs(JJ)I
-    .locals 1
+    .locals 0
 
-    cmp-long v0, p0, p2
+    cmp-long p0, p0, p2
 
-    if-gez v0, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, -0x1
 
     return p0
 
     :cond_0
-    if-lez v0, :cond_1
+    if-lez p0, :cond_1
 
     const/4 p0, 0x1
 
@@ -54,9 +54,9 @@
     :cond_1
     const-wide/high16 v0, 0x43e0000000000000L    # 9.223372036854776E18
 
-    cmpl-double v2, p0, v0
+    cmpl-double v0, p0, v0
 
-    if-ltz v2, :cond_2
+    if-ltz v0, :cond_2
 
     const/4 p0, 0x1
 
@@ -88,27 +88,27 @@
 .method public static firestoreCompareDoubles(DD)I
     .locals 4
 
-    const/4 v0, -0x1
+    cmpg-double v0, p0, p2
 
-    cmpg-double v1, p0, p2
+    const/4 v1, -0x1
 
-    if-gez v1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x1
-
-    cmpl-double v2, p0, p2
-
-    if-lez v2, :cond_1
+    if-gez v0, :cond_0
 
     return v1
+
+    :cond_0
+    cmpl-double v0, p0, p2
+
+    const/4 v2, 0x1
+
+    if-lez v0, :cond_1
+
+    return v2
 
     :cond_1
     const/4 v3, 0x0
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     return v3
 
@@ -120,7 +120,7 @@
 
     if-nez p2, :cond_3
 
-    return v0
+    return v1
 
     .line 96
     :cond_3
@@ -130,7 +130,7 @@
 
     if-nez p0, :cond_4
 
-    return v1
+    return v2
 
     :cond_4
     return v3

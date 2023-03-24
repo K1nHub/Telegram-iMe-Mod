@@ -104,22 +104,22 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    const v1, 0x3f389375    # 0.721f
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    const v3, 0x3f389375    # 0.721f
+    const/4 v2, 0x1
 
-    cmpl-float v0, v0, v3
+    const/4 v3, 0x0
 
     if-lez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 636
     :goto_0
@@ -141,14 +141,14 @@
 
     move-result v4
 
-    cmpl-float v3, v4, v3
+    cmpl-float v1, v4, v1
 
-    if-lez v3, :cond_2
+    if-lez v1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v2, v3
 
     .line 637
     :goto_1
@@ -167,7 +167,7 @@
     goto :goto_2
 
     :cond_3
-    move v0, v1
+    move v0, v2
 
     .line 638
     :goto_2
@@ -292,7 +292,7 @@
 
     const/16 v7, 0x15
 
-    if-lt v3, v7, :cond_1
+    if-lt v3, v7, :cond_2
 
     .line 593
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -332,7 +332,7 @@
 
     int-to-float v3, v7
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/2addr v7, v6
 
     sub-int/2addr v7, v2
 
@@ -363,7 +363,7 @@
 
     add-int/2addr v0, v3
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v6
 
     int-to-float v3, v3
 
@@ -383,7 +383,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v5
 
     .line 603
     :goto_0
@@ -409,7 +409,7 @@
 
     cmpg-float v7, v7, v9
 
-    if-gez v7, :cond_2
+    if-gez v7, :cond_1
 
     int-to-float v7, v8
 
@@ -441,10 +441,14 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v7, v4
+
+    goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v4
+
+    move v3, v5
 
     .line 608
     :goto_1
@@ -554,7 +558,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -562,7 +566,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 

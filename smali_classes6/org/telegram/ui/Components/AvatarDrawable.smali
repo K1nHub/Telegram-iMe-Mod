@@ -227,23 +227,23 @@
 .end method
 
 .method public static getColorIndex(J)I
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide/16 v0, 0x7
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 
     .line 142
     :cond_0
@@ -259,9 +259,9 @@
 
     move-result-wide p0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static getIconColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -665,30 +665,30 @@
     .line 387
     iget v0, v1, Lorg/telegram/ui/Components/AvatarDrawable;->archivedAvatarProgress:F
 
-    const-string v5, "Arrow2.**"
-
-    const-string v10, "Arrow1.**"
-
     cmpl-float v0, v0, v4
+
+    const-string v4, "Arrow2.**"
+
+    const-string v5, "Arrow1.**"
 
     if-eqz v0, :cond_5
 
     .line 388
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v4, "avatar_backgroundArchived"
+    const-string v7, "avatar_backgroundArchived"
 
-    invoke-direct {v1, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v1, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
 
-    move-result v7
+    move-result v10
 
     iget v11, v1, Lorg/telegram/ui/Components/AvatarDrawable;->alpha:I
 
-    invoke-static {v7, v11}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v10, v11}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
-    move-result v7
+    move-result v10
 
-    invoke-virtual {v0, v7}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setColor(I)V
 
     int-to-float v0, v3
 
@@ -697,11 +697,11 @@
     .line 389
     iget v6, v1, Lorg/telegram/ui/Components/AvatarDrawable;->archivedAvatarProgress:F
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
+    sget-object v10, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v0, v0, v6, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v2, v0, v0, v6, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 390
     sget-boolean v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
@@ -716,20 +716,20 @@
     .line 392
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
 
     move-result v6
 
-    invoke-virtual {v0, v10, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
+    invoke-virtual {v0, v5, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
     .line 393
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v5
 
-    invoke-virtual {v0, v5, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
+    invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
     .line 394
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -755,16 +755,16 @@
     .line 400
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    iget v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
+    iget v6, v1, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    invoke-virtual {v0, v10, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
+    invoke-virtual {v0, v5, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
     .line 401
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    iget v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
+    iget v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    invoke-virtual {v0, v5, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
+    invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
     .line 402
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -795,13 +795,13 @@
     .line 409
     iget v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->scaleSize:F
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     float-to-int v0, v0
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1035,7 +1035,7 @@
 
     iget v5, v1, Lorg/telegram/ui/Components/AvatarDrawable;->scaleSize:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1048,7 +1048,7 @@
 
     iget v6, v1, Lorg/telegram/ui/Components/AvatarDrawable;->scaleSize:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -1154,13 +1154,13 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     float-to-int v0, v0
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1982,19 +1982,19 @@
 
     if-eq p1, v0, :cond_e
 
-    const/4 v0, 0x1
+    move v0, v6
 
     goto :goto_2
 
     :cond_e
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     if-eq p1, v4, :cond_f
 
-    const/4 v5, 0x1
+    move v5, v6
 
     :cond_f
     and-int p1, v0, v5
@@ -2072,7 +2072,7 @@
 .end method
 
 .method public setInfo(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 5
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -2112,30 +2112,30 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color2:I
 
-    const/4 v1, 0x0
+    const-wide/16 v1, 0x5
 
-    const-wide/16 v2, 0x5
+    cmp-long p1, p1, v1
 
-    cmp-long v4, p1, v2
+    const/4 p2, 0x0
 
-    if-nez v4, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p2
 
     .line 314
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
     .line 316
-    iput v1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
+    iput p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->avatarType:I
 
     .line 317
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->drawDeleted:Z
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/AvatarDrawable;->drawDeleted:Z
 
     if-eqz p3, :cond_1
 
@@ -2157,7 +2157,7 @@
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->stringBuilder:Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->setLength(I)V
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->setLength(I)V
 
     if-eqz p5, :cond_3
 

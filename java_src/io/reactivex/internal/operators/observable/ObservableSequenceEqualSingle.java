@@ -50,10 +50,10 @@ public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> impl
         final ObservableSource<? extends T> second;
 
         /* renamed from: v1 */
-        T f461v1;
+        T f462v1;
 
         /* renamed from: v2 */
-        T f462v2;
+        T f463v2;
 
         EqualCoordinator(SingleObserver<? super Boolean> singleObserver, int i, ObservableSource<? extends T> observableSource, ObservableSource<? extends T> observableSource2, BiPredicate<? super T, ? super T> biPredicate) {
             this.downstream = singleObserver;
@@ -125,14 +125,14 @@ public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> impl
                     this.downstream.onError(th);
                     return;
                 }
-                if (this.f461v1 == null) {
-                    this.f461v1 = spscLinkedArrayQueue.poll();
+                if (this.f462v1 == null) {
+                    this.f462v1 = spscLinkedArrayQueue.poll();
                 }
-                boolean z3 = this.f461v1 == null;
-                if (this.f462v2 == null) {
-                    this.f462v2 = spscLinkedArrayQueue2.poll();
+                boolean z3 = this.f462v1 == null;
+                if (this.f463v2 == null) {
+                    this.f463v2 = spscLinkedArrayQueue2.poll();
                 }
-                T t = this.f462v2;
+                T t = this.f463v2;
                 boolean z4 = t == null;
                 if (z && z2 && z3 && z4) {
                     this.downstream.onSuccess(Boolean.TRUE);
@@ -144,13 +144,13 @@ public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> impl
                 } else {
                     if (!z3 && !z4) {
                         try {
-                            if (!this.comparer.test((T) this.f461v1, t)) {
+                            if (!this.comparer.test((T) this.f462v1, t)) {
                                 cancel(spscLinkedArrayQueue, spscLinkedArrayQueue2);
                                 this.downstream.onSuccess(Boolean.FALSE);
                                 return;
                             }
-                            this.f461v1 = null;
-                            this.f462v2 = null;
+                            this.f462v1 = null;
+                            this.f463v2 = null;
                         } catch (Throwable th3) {
                             Exceptions.throwIfFatal(th3);
                             cancel(spscLinkedArrayQueue, spscLinkedArrayQueue2);

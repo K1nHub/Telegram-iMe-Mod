@@ -40,7 +40,7 @@ final class LimitingDispatcher extends ExecutorCoroutineDispatcher implements Ta
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1471dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1487dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         dispatch(runnable, false);
     }
 

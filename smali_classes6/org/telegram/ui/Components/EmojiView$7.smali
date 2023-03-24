@@ -291,7 +291,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v6, 0x4
+    move v6, v4
 
     goto :goto_1
 
@@ -305,7 +305,7 @@
     goto :goto_0
 
     :cond_a
-    const/4 v6, 0x3
+    move v6, v15
 
     goto :goto_1
 
@@ -319,7 +319,7 @@
     goto :goto_0
 
     :cond_b
-    const/4 v6, 0x2
+    move v6, v8
 
     goto :goto_1
 
@@ -333,7 +333,7 @@
     goto :goto_0
 
     :cond_c
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_1
 
@@ -347,7 +347,7 @@
     goto :goto_0
 
     :cond_d
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     packed-switch v6, :pswitch_data_1
@@ -451,7 +451,7 @@
 
     move-result v7
 
-    mul-int v6, v6, v7
+    mul-int/2addr v6, v7
 
     iget-object v7, v0, Lorg/telegram/ui/Components/EmojiView$7;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -463,7 +463,7 @@
 
     move-result v7
 
-    mul-int/lit8 v7, v7, 0x4
+    mul-int/2addr v7, v4
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
@@ -471,12 +471,12 @@
 
     if-eqz v4, :cond_f
 
-    const/4 v4, 0x5
+    move v4, v14
 
     goto :goto_3
 
     :cond_f
-    const/4 v4, 0x1
+    move v4, v5
 
     :goto_3
     sub-int/2addr v7, v4

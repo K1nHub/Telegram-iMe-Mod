@@ -120,7 +120,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 49
     iget-boolean v1, p0, Lcom/google/firebase/components/CycleDetector$Dep;->set:Z

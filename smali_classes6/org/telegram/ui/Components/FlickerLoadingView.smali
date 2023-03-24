@@ -386,7 +386,7 @@
 
     if-eqz p1, :cond_4
 
-    const/16 v2, 0x4e
+    move v2, v5
 
     goto :goto_1
 
@@ -444,7 +444,7 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     sub-int/2addr p1, v1
 
@@ -2131,7 +2131,7 @@
 
     move-object/from16 v1, p1
 
-    const/16 v23, 0x18
+    move/from16 v23, v6
 
     move-object v6, v8
 
@@ -2164,12 +2164,12 @@
     :cond_12
     move/from16 v19, v1
 
-    const/16 v6, 0x18
+    move/from16 v6, v23
 
     goto/16 :goto_5
 
     :cond_13
-    const/16 v23, 0x18
+    move/from16 v23, v6
 
     .line 330
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/FlickerLoadingView;->getViewType()I
@@ -2465,7 +2465,7 @@
 
     sub-int/2addr v4, v10
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     sub-int/2addr v2, v3
 
@@ -2477,7 +2477,7 @@
 
     move v9, v1
 
-    const/4 v10, 0x0
+    move/from16 v10, v19
 
     .line 359
     :cond_17
@@ -2492,7 +2492,7 @@
     if-eqz v1, :cond_4a
 
     :cond_18
-    const/4 v11, 0x0
+    move/from16 v11, v19
 
     .line 360
     :goto_8
@@ -2521,7 +2521,7 @@
 
     add-int v2, v24, v2
 
-    mul-int v2, v2, v11
+    mul-int/2addr v2, v11
 
     int-to-float v3, v2
 
@@ -4096,7 +4096,7 @@
 
     if-ne v2, v4, :cond_2d
 
-    const/4 v2, 0x0
+    move/from16 v2, v19
 
     .line 538
     :cond_2c
@@ -4133,7 +4133,7 @@
 
     const/high16 v9, 0x3f000000    # 0.5f
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     const/high16 v9, 0x42200000    # 40.0f
 
@@ -4141,7 +4141,7 @@
 
     aget v11, v11, v19
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -4228,7 +4228,7 @@
 
     const v11, 0x3e4ccccd    # 0.2f
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v11
 
     sub-float/2addr v6, v9
 
@@ -4238,7 +4238,7 @@
 
     aget v11, v11, v19
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -4342,7 +4342,7 @@
 
     div-int/2addr v2, v13
 
-    const/4 v3, 0x0
+    move/from16 v3, v19
 
     :goto_f
     if-ge v3, v13, :cond_2f
@@ -4596,7 +4596,7 @@
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
     :cond_31
-    const/4 v2, 0x0
+    move/from16 v2, v19
 
     :goto_10
     const/4 v3, 0x3
@@ -4628,7 +4628,7 @@
 
     move-result v4
 
-    mul-int v4, v4, v2
+    mul-int/2addr v4, v2
 
     add-int/2addr v3, v4
 
@@ -4671,7 +4671,7 @@
 
     move-result v4
 
-    mul-int v4, v4, v2
+    mul-int/2addr v4, v2
 
     add-int/2addr v3, v4
 
@@ -5670,7 +5670,7 @@
 
     :cond_3f
     :goto_17
-    const/4 v2, 0x0
+    move/from16 v2, v19
 
     .line 654
     :cond_40
@@ -6163,7 +6163,7 @@
 
     const/high16 v12, 0x3f000000    # 0.5f
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     iget-object v12, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->rectF:Landroid/graphics/RectF;
 
@@ -6173,7 +6173,7 @@
 
     const/high16 v14, 0x3f000000    # 0.5f
 
-    mul-float v12, v12, v14
+    mul-float/2addr v12, v14
 
     iget-object v14, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -6221,7 +6221,7 @@
 
     const/high16 v11, 0x3f000000    # 0.5f
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     iget-object v11, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->rectF:Landroid/graphics/RectF;
 
@@ -6231,7 +6231,7 @@
 
     const/high16 v12, 0x3f000000    # 0.5f
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     iget-object v12, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -6337,13 +6337,13 @@
 
     invoke-virtual {v7, v1, v6, v11, v12}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
+    move v12, v10
+
     move/from16 v1, v16
 
     const/16 v6, 0x15
 
     const/4 v10, 0x1
-
-    const/16 v12, 0x8
 
     goto/16 :goto_19
 
@@ -6678,7 +6678,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->itemsCount:I
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/FlickerLoadingView;->getAdditionalHeight()I
 
@@ -6719,7 +6719,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->itemsCount:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
 
@@ -7182,18 +7182,18 @@
 
     const-wide/16 v4, 0x11
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-lez v6, :cond_1
+    if-lez v4, :cond_1
 
     const-wide/16 v2, 0x10
 
     :cond_1
     const-wide/16 v4, 0x4
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gez v6, :cond_2
+    if-gez v4, :cond_2
 
     const-wide/16 v2, 0x0
 
@@ -7262,7 +7262,7 @@
 
     int-to-long v6, v5
 
-    mul-long v2, v2, v6
+    mul-long/2addr v2, v6
 
     long-to-float v2, v2
 
@@ -7310,7 +7310,7 @@
 
     int-to-long v5, v4
 
-    mul-long v2, v2, v5
+    mul-long/2addr v2, v5
 
     long-to-float v2, v2
 

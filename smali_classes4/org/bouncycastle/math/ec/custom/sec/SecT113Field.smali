@@ -258,7 +258,7 @@
 .end method
 
 .method protected static implMulw(JJ[JI)V
-    .locals 19
+    .locals 18
 
     move-wide/from16 v0, p0
 
@@ -331,31 +331,31 @@
     :cond_0
     ushr-long v13, v0, v12
 
-    long-to-int v14, v13
+    long-to-int v13, v13
 
-    and-int/lit8 v13, v14, 0x7
+    and-int/lit8 v14, v13, 0x7
 
-    aget-wide v15, v3, v13
+    aget-wide v14, v3, v14
 
-    ushr-int/lit8 v13, v14, 0x3
+    ushr-int/lit8 v16, v13, 0x3
+
+    and-int/lit8 v16, v16, 0x7
+
+    aget-wide v16, v3, v16
+
+    shl-long v16, v16, v8
+
+    xor-long v14, v14, v16
+
+    ushr-int/2addr v13, v7
 
     and-int/2addr v13, v9
 
-    aget-wide v17, v3, v13
+    aget-wide v16, v3, v13
 
-    shl-long v17, v17, v8
+    shl-long v16, v16, v7
 
-    xor-long v15, v15, v17
-
-    ushr-int/lit8 v13, v14, 0x6
-
-    and-int/2addr v13, v9
-
-    aget-wide v13, v3, v13
-
-    shl-long/2addr v13, v7
-
-    xor-long/2addr v13, v15
+    xor-long v13, v14, v16
 
     shl-long v15, v13, v12
 

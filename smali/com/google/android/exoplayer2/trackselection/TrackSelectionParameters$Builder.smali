@@ -650,7 +650,7 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters$Builder;->overrides:Ljava/util/HashMap;
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 231
     :goto_1

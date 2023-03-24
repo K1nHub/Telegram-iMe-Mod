@@ -328,13 +328,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_1
     :try_start_0
@@ -497,12 +497,12 @@
 
     if-eq v6, p1, :cond_5
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_3
 
     :cond_4
-    const/16 p1, 0x11
+    move p1, v3
 
     .line 145
     :cond_5
@@ -528,7 +528,7 @@
 
     if-ne p1, p2, :cond_6
 
-    const/4 v0, 0x3
+    move v0, p2
 
     goto :goto_4
 
@@ -557,12 +557,12 @@
     throw p2
 
     :cond_7
-    const/4 v0, 0x2
+    move v0, v3
 
     goto :goto_4
 
     :cond_8
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 153
     :cond_9
@@ -611,7 +611,7 @@
 .end method
 
 .method public final zzf(II)Landroid/util/Pair;
-    .locals 9
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -659,7 +659,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 70
     :goto_1
@@ -793,9 +793,11 @@
 
     move-result-object p1
 
+    move v9, p2
+
     move-object p2, p1
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v9
 
     .line 87
     :goto_4

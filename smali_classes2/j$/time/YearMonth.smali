@@ -152,7 +152,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -198,31 +198,31 @@
 
     const-wide/16 v5, 0x0
 
-    const/4 v7, 0x1
+    cmp-long v3, v3, v5
 
-    cmp-long v8, v3, v5
-
-    if-nez v8, :cond_1
-
-    const-wide/16 v3, 0x64
-
-    .line 3
-    rem-long v3, v1, v3
-
-    cmp-long v8, v3, v5
-
-    if-nez v8, :cond_0
-
-    const-wide/16 v3, 0x190
-
-    rem-long/2addr v1, v3
-
-    cmp-long v3, v1, v5
+    const/4 v4, 0x1
 
     if-nez v3, :cond_1
 
+    const-wide/16 v7, 0x64
+
+    .line 3
+    rem-long v7, v1, v7
+
+    cmp-long v3, v7, v5
+
+    if-nez v3, :cond_0
+
+    const-wide/16 v7, 0x190
+
+    rem-long/2addr v1, v7
+
+    cmp-long v1, v1, v5
+
+    if-nez v1, :cond_1
+
     :cond_0
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
@@ -242,7 +242,7 @@
 
     aget v0, v2, v0
 
-    if-eq v0, v7, :cond_3
+    if-eq v0, v4, :cond_3
 
     const/4 v1, 0x2
 

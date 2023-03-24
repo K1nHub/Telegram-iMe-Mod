@@ -95,11 +95,11 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float v3, v4, p3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -157,9 +157,9 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
-    mul-float v2, v2, p3
+    mul-float/2addr v2, p3
 
     add-float/2addr v1, v2
 

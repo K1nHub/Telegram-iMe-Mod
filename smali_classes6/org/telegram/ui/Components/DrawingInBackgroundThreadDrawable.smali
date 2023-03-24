@@ -574,7 +574,7 @@
 
     const/high16 p4, 0x437f0000    # 255.0f
 
-    mul-float p6, p6, p4
+    mul-float/2addr p6, p4
 
     float-to-int p4, p6
 

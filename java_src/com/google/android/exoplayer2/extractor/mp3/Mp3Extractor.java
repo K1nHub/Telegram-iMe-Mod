@@ -237,13 +237,13 @@ public final class Mp3Extractor implements Extractor {
         if (r13 == false) goto L54;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x00a0, code lost:
-        r12.skipFully(r2 + r4);
+        r12.skipFully(r1 + r7);
      */
     /* JADX WARN: Code restructure failed: missing block: B:52:0x00a5, code lost:
         r12.resetPeekPosition();
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x00a8, code lost:
-        r11.synchronizedHeaderData = r1;
+        r11.synchronizedHeaderData = r5;
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x00aa, code lost:
         return true;
@@ -264,49 +264,49 @@ public final class Mp3Extractor implements Extractor {
             r12.resetPeekPosition()
             long r1 = r12.getPosition()
             r3 = 0
-            r5 = 0
-            r6 = 1
-            r7 = 0
-            int r8 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
-            if (r8 != 0) goto L42
+            int r1 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
+            r2 = 0
+            r3 = 1
+            r4 = 0
+            if (r1 != 0) goto L42
             int r1 = r11.flags
             r1 = r1 & 8
             if (r1 != 0) goto L20
-            r1 = 1
+            r1 = r3
             goto L21
         L20:
-            r1 = 0
+            r1 = r4
         L21:
             if (r1 == 0) goto L25
-            r1 = r5
+            r1 = r2
             goto L27
         L25:
             com.google.android.exoplayer2.metadata.id3.Id3Decoder$FramePredicate r1 = com.google.android.exoplayer2.extractor.mp3.Mp3Extractor.REQUIRED_ID3_FRAME_PREDICATE
         L27:
-            com.google.android.exoplayer2.extractor.Id3Peeker r2 = r11.id3Peeker
-            com.google.android.exoplayer2.metadata.Metadata r1 = r2.peekId3Data(r12, r1)
+            com.google.android.exoplayer2.extractor.Id3Peeker r5 = r11.id3Peeker
+            com.google.android.exoplayer2.metadata.Metadata r1 = r5.peekId3Data(r12, r1)
             r11.metadata = r1
             if (r1 == 0) goto L36
-            com.google.android.exoplayer2.extractor.GaplessInfoHolder r2 = r11.gaplessInfoHolder
-            r2.setFromMetadata(r1)
+            com.google.android.exoplayer2.extractor.GaplessInfoHolder r5 = r11.gaplessInfoHolder
+            r5.setFromMetadata(r1)
         L36:
-            long r1 = r12.getPeekPosition()
-            int r2 = (int) r1
+            long r5 = r12.getPeekPosition()
+            int r1 = (int) r5
             if (r13 != 0) goto L40
-            r12.skipFully(r2)
+            r12.skipFully(r1)
         L40:
-            r1 = 0
+            r5 = r4
             goto L44
         L42:
-            r1 = 0
-            r2 = 0
+            r1 = r4
+            r5 = r1
         L44:
-            r3 = 0
-            r4 = 0
+            r6 = r5
+            r7 = r6
         L46:
             boolean r8 = r11.peekEndOfStreamOrHeader(r12)
             if (r8 == 0) goto L55
-            if (r3 <= 0) goto L4f
+            if (r6 <= 0) goto L4f
             goto L9e
         L4f:
             java.io.EOFException r12 = new java.io.EOFException
@@ -314,11 +314,11 @@ public final class Mp3Extractor implements Extractor {
             throw r12
         L55:
             com.google.android.exoplayer2.util.ParsableByteArray r8 = r11.scratch
-            r8.setPosition(r7)
+            r8.setPosition(r4)
             com.google.android.exoplayer2.util.ParsableByteArray r8 = r11.scratch
             int r8 = r8.readInt()
-            if (r1 == 0) goto L69
-            long r9 = (long) r1
+            if (r5 == 0) goto L69
+            long r9 = (long) r5
             boolean r9 = headersMatch(r8, r9)
             if (r9 == 0) goto L70
         L69:
@@ -326,47 +326,47 @@ public final class Mp3Extractor implements Extractor {
             r10 = -1
             if (r9 != r10) goto L90
         L70:
-            int r1 = r4 + 1
-            if (r4 != r0) goto L7e
+            int r5 = r7 + 1
+            if (r7 != r0) goto L7e
             if (r13 == 0) goto L77
-            return r7
+            return r4
         L77:
             java.lang.String r12 = "Searched too many bytes."
-            com.google.android.exoplayer2.ParserException r12 = com.google.android.exoplayer2.ParserException.createForMalformedContainer(r12, r5)
+            com.google.android.exoplayer2.ParserException r12 = com.google.android.exoplayer2.ParserException.createForMalformedContainer(r12, r2)
             throw r12
         L7e:
             if (r13 == 0) goto L89
             r12.resetPeekPosition()
-            int r3 = r2 + r1
-            r12.advancePeekPosition(r3)
+            int r6 = r1 + r5
+            r12.advancePeekPosition(r6)
             goto L8c
         L89:
-            r12.skipFully(r6)
+            r12.skipFully(r3)
         L8c:
-            r4 = r1
-            r1 = 0
-            r3 = 0
+            r6 = r4
+            r7 = r5
+            r5 = r6
             goto L46
         L90:
-            int r3 = r3 + 1
-            if (r3 != r6) goto L9b
-            com.google.android.exoplayer2.audio.MpegAudioUtil$Header r1 = r11.synchronizedHeader
-            r1.setForHeaderData(r8)
-            r1 = r8
+            int r6 = r6 + 1
+            if (r6 != r3) goto L9b
+            com.google.android.exoplayer2.audio.MpegAudioUtil$Header r5 = r11.synchronizedHeader
+            r5.setForHeaderData(r8)
+            r5 = r8
             goto Lab
         L9b:
             r8 = 4
-            if (r3 != r8) goto Lab
+            if (r6 != r8) goto Lab
         L9e:
             if (r13 == 0) goto La5
-            int r2 = r2 + r4
-            r12.skipFully(r2)
+            int r1 = r1 + r7
+            r12.skipFully(r1)
             goto La8
         La5:
             r12.resetPeekPosition()
         La8:
-            r11.synchronizedHeaderData = r1
-            return r6
+            r11.synchronizedHeaderData = r5
+            return r3
         Lab:
             int r9 = r9 + (-4)
             r12.advancePeekPosition(r9)
@@ -427,22 +427,19 @@ public final class Mp3Extractor implements Extractor {
     }
 
     private Seeker maybeReadSeekFrame(ExtractorInput extractorInput) throws IOException {
-        int i;
         ParsableByteArray parsableByteArray = new ParsableByteArray(this.synchronizedHeader.frameSize);
         extractorInput.peekFully(parsableByteArray.getData(), 0, this.synchronizedHeader.frameSize);
         MpegAudioUtil.Header header = this.synchronizedHeader;
+        int i = 21;
         if ((header.version & 1) != 0) {
             if (header.channels != 1) {
                 i = 36;
             }
-            i = 21;
-        } else {
-            if (header.channels == 1) {
-                i = 13;
-            }
-            i = 21;
+        } else if (header.channels == 1) {
+            i = 13;
         }
-        int seekFrameHeader = getSeekFrameHeader(parsableByteArray, i);
+        int i2 = i;
+        int seekFrameHeader = getSeekFrameHeader(parsableByteArray, i2);
         if (seekFrameHeader != SEEK_HEADER_XING && seekFrameHeader != SEEK_HEADER_INFO) {
             if (seekFrameHeader == SEEK_HEADER_VBRI) {
                 VbriSeeker create = VbriSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
@@ -455,7 +452,7 @@ public final class Mp3Extractor implements Extractor {
         XingSeeker create2 = XingSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
         if (create2 != null && !this.gaplessInfoHolder.hasGaplessInfo()) {
             extractorInput.resetPeekPosition();
-            extractorInput.advancePeekPosition(i + 141);
+            extractorInput.advancePeekPosition(i2 + 141);
             extractorInput.peekFully(this.scratch.getData(), 0, 3);
             this.scratch.setPosition(0);
             this.gaplessInfoHolder.setFromXingHeaderValue(this.scratch.readUnsignedInt24());

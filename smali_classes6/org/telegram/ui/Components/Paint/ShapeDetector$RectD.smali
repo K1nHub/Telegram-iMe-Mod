@@ -100,14 +100,14 @@
 .end method
 
 .method public union(DD)V
-    .locals 3
+    .locals 2
 
     .line 55
     iget-wide v0, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->left:D
 
-    cmpl-double v2, v0, p1
+    cmpl-double v0, v0, p1
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 56
     iput-wide p1, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->left:D
@@ -116,9 +116,9 @@
     :cond_0
     iget-wide v0, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->top:D
 
-    cmpl-double v2, v0, p3
+    cmpl-double v0, v0, p3
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     .line 59
     iput-wide p3, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->top:D
@@ -127,9 +127,9 @@
     :cond_1
     iget-wide v0, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->right:D
 
-    cmpg-double v2, v0, p1
+    cmpg-double v0, v0, p1
 
-    if-gtz v2, :cond_2
+    if-gtz v0, :cond_2
 
     .line 62
     iput-wide p1, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->right:D
@@ -138,9 +138,9 @@
     :cond_2
     iget-wide p1, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->bottom:D
 
-    cmpg-double v0, p1, p3
+    cmpg-double p1, p1, p3
 
-    if-gtz v0, :cond_3
+    if-gtz p1, :cond_3
 
     .line 65
     iput-wide p3, p0, Lorg/telegram/ui/Components/Paint/ShapeDetector$RectD;->bottom:D

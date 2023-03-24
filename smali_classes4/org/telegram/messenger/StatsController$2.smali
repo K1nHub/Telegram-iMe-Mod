@@ -58,9 +58,9 @@
 
     const-wide/16 v4, 0x7d0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gez v6, :cond_0
+    if-gez v2, :cond_0
 
     return-void
 
@@ -84,7 +84,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x7
@@ -97,7 +97,7 @@
 
     if-ge v1, v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     if-ge v3, v2, :cond_1
@@ -249,7 +249,7 @@
     :goto_2
     if-ge v2, v5, :cond_4
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_3
     if-ge v1, v3, :cond_3

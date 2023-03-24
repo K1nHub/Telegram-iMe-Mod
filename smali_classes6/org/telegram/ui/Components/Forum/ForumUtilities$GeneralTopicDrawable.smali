@@ -104,7 +104,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->scale:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     sub-float/2addr v2, v3
 
@@ -127,7 +127,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->scale:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sub-float/2addr v3, v5
 
@@ -150,7 +150,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->scale:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v5, v6
 
@@ -173,7 +173,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->scale:F
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     add-float/2addr v6, v0
 

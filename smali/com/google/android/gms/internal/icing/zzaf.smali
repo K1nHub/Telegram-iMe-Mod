@@ -174,7 +174,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_3
     const-string v3, ".private:isDeviceOnly"

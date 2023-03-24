@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(FF)V
-    .locals 5
+    .locals 4
     .param p1    # F
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
@@ -78,39 +78,39 @@
     .line 1
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    const/4 v0, 0x0
+    const/high16 v0, -0x3d4c0000    # -90.0f
 
-    const/high16 v1, -0x3d4c0000    # -90.0f
+    cmpg-float v0, p1, v0
 
-    cmpg-float v1, p1, v1
+    const/4 v1, 0x0
 
-    if-ltz v1, :cond_0
+    if-ltz v0, :cond_0
 
-    const/high16 v1, 0x42b40000    # 90.0f
+    const/high16 v0, 0x42b40000    # 90.0f
 
-    cmpg-float v1, p1, v1
+    cmpg-float v0, p1, v0
 
-    if-gtz v1, :cond_0
+    if-gtz v0, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Tilt needs to be between -90 and 90 inclusive: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     const/4 v0, 0x0
 
@@ -122,18 +122,18 @@
 
     const-wide/16 v2, 0x0
 
-    const/high16 p1, 0x43b40000    # 360.0f
+    cmpg-double p1, v0, v2
 
-    cmpg-double v4, v0, v2
+    const/high16 v0, 0x43b40000    # 360.0f
 
-    if-gtz v4, :cond_1
+    if-gtz p1, :cond_1
 
-    rem-float/2addr p2, p1
+    rem-float/2addr p2, v0
 
-    add-float/2addr p2, p1
+    add-float/2addr p2, v0
 
     :cond_1
-    rem-float/2addr p2, p1
+    rem-float/2addr p2, v0
 
     iput p2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->bearing:F
 

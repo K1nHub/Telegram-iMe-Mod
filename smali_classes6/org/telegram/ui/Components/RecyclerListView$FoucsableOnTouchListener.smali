@@ -129,9 +129,9 @@
 
     if-eqz p2, :cond_4
 
-    mul-float v2, v2, v2
+    mul-float/2addr v2, v2
 
-    mul-float v3, v3, v3
+    mul-float/2addr v3, v3
 
     add-float/2addr v2, v3
 
@@ -143,9 +143,9 @@
 
     float-to-double p1, p1
 
-    cmpl-double v4, v2, p1
+    cmpl-double p1, v2, p1
 
-    if-lez v4, :cond_4
+    if-lez p1, :cond_4
 
     .line 2702
     iput-boolean v1, p0, Lorg/telegram/ui/Components/RecyclerListView$FoucsableOnTouchListener;->onFocus:Z

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;)V
     .locals 0
 
-    .line 316
+    .line 326
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onItemClick(Landroid/view/View;IFF)Z
     .locals 2
 
-    .line 319
+    .line 329
     instance-of p2, p1, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     const/4 v0, 0x1
@@ -47,7 +47,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 320
+    .line 330
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     move-object p3, p1
@@ -62,13 +62,13 @@
 
     goto :goto_0
 
-    .line 321
+    .line 331
     :cond_0
     instance-of p2, p1, Lorg/telegram/ui/Cells/SharedLinkCell;
 
     if-eqz p2, :cond_1
 
-    .line 322
+    .line 332
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     move-object p3, p1
@@ -83,13 +83,13 @@
 
     goto :goto_0
 
-    .line 323
+    .line 333
     :cond_1
     instance-of p2, p1, Lorg/telegram/ui/Cells/SharedAudioCell;
 
     if-eqz p2, :cond_2
 
-    .line 324
+    .line 334
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     move-object p3, p1
@@ -104,13 +104,13 @@
 
     goto :goto_0
 
-    .line 325
+    .line 335
     :cond_2
     instance-of p2, p1, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     if-eqz p2, :cond_3
 
-    .line 326
+    .line 336
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     move-object p3, p1
@@ -125,13 +125,13 @@
 
     goto :goto_0
 
-    .line 327
+    .line 337
     :cond_3
     instance-of p2, p1, Lorg/telegram/ui/Cells/DialogCell;
 
     if-eqz p2, :cond_5
 
-    .line 328
+    .line 338
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {p2}, Lorg/telegram/ui/FilteredSearchView;->access$500(Lorg/telegram/ui/FilteredSearchView;)Lorg/telegram/ui/FilteredSearchView$UiCallback;
@@ -144,7 +144,7 @@
 
     if-nez p2, :cond_4
 
-    .line 329
+    .line 339
     move-object p2, p1
 
     check-cast p2, Lorg/telegram/ui/Cells/DialogCell;
@@ -155,7 +155,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 330
+    .line 340
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {p1}, Lorg/telegram/ui/FilteredSearchView;->access$600(Lorg/telegram/ui/FilteredSearchView;)Lorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;
@@ -170,7 +170,7 @@
 
     return v0
 
-    .line 334
+    .line 344
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
@@ -192,7 +192,7 @@
 .method public onLongClickRelease()V
     .locals 1
 
-    .line 346
+    .line 356
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->access$600(Lorg/telegram/ui/FilteredSearchView;)Lorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;
@@ -207,7 +207,7 @@
 .method public onMove(FF)V
     .locals 0
 
-    .line 341
+    .line 351
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$4;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {p1}, Lorg/telegram/ui/FilteredSearchView;->access$600(Lorg/telegram/ui/FilteredSearchView;)Lorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;

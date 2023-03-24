@@ -48,7 +48,9 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> {
             }
         }
         boolean z = true;
-        z = (publishObserver.shouldConnect.get() || !publishObserver.shouldConnect.compareAndSet(false, true)) ? false : false;
+        if (publishObserver.shouldConnect.get() || !publishObserver.shouldConnect.compareAndSet(false, true)) {
+            z = false;
+        }
         try {
             consumer.accept(publishObserver);
             if (z) {

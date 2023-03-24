@@ -26,11 +26,11 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.fork.controller.ToolsController;
 import org.fork.enums.SentMessageFont;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.RadioColorCell;
@@ -115,21 +115,21 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
 
     private final String getHint(int i) {
         if (i == this.sendPopupTranslateRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_send_popup_translate_hint);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_send_popup_translate_hint);
         }
         if (i == this.messagesSilentSendingRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_silent_sending);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_silent_sending);
         }
         if (i == this.combineMessagesRow) {
-            return LocaleController.getInternalString(C3286R.string.settings_tools_combine_messages_hint);
+            return LocaleController.getInternalString(C3301R.string.settings_tools_combine_messages_hint);
         }
         return null;
     }
 
     private final AlertDialog createChooseSentMessageFontDialog(Context context) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3286R.string.settings_tools_sent_message_font));
-        builder.setNegativeButton(LocaleController.getInternalString(C3286R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3301R.string.settings_tools_sent_message_font));
+        builder.setNegativeButton(LocaleController.getInternalString(C3301R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         SentMessageFont[] values = SentMessageFont.values();
@@ -174,7 +174,7 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
     private final void showHintDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setMessage(str);
-        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -246,17 +246,17 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
 
     private final void setupActionBar() {
         String internalString;
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
         if (this.position == 0) {
-            internalString = LocaleController.getInternalString(C3286R.string.settings_tools_translator);
+            internalString = LocaleController.getInternalString(C3301R.string.settings_tools_translator);
         } else {
-            internalString = LocaleController.getInternalString(C3286R.string.sending_settings_send);
+            internalString = LocaleController.getInternalString(C3301R.string.sending_settings_send);
         }
-        c3351ActionBar.setTitle(internalString);
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsMessageActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        c3366ActionBar.setTitle(internalString);
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsMessageActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsMessageActivity.this.finishFragment();
@@ -318,18 +318,18 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 textCheckCell.setDrawSwitchDivider(SettingsToolsMessageActivity.this.hasHint(i));
                 if (i == SettingsToolsMessageActivity.this.messageQuickTranslateRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_message_quick_translate), SharedConfig.isMessageQuickTranslateEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_message_quick_translate), SharedConfig.isMessageQuickTranslateEnabled, z);
                 } else if (i == SettingsToolsMessageActivity.this.botHelpTranslateRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_bot_help_translate), SharedConfig.isBotHelpTranslateEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_bot_help_translate), SharedConfig.isBotHelpTranslateEnabled, z);
                 } else if (i == SettingsToolsMessageActivity.this.sendPopupTranslateRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_send_popup_translate), SharedConfig.isTranslateInSendPopupEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_send_popup_translate), SharedConfig.isTranslateInSendPopupEnabled, z);
                 } else if (i == SettingsToolsMessageActivity.this.messagesSilentSendingRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getString("SendWithoutSound", C3286R.string.SendWithoutSound), SettingsToolsMessageActivity.this.getToolsController().isSilentSendingEnabled(), z);
+                    textCheckCell.setTextAndCheck(LocaleController.getString("SendWithoutSound", C3301R.string.SendWithoutSound), SettingsToolsMessageActivity.this.getToolsController().isSilentSendingEnabled(), z);
                 } else if (i == SettingsToolsMessageActivity.this.combineMessagesRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_combine_messages), SharedConfig.isCombineMessagesEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3301R.string.settings_tools_combine_messages), SharedConfig.isCombineMessagesEnabled, z);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS && (view instanceof TextSettingsCell) && i == SettingsToolsMessageActivity.this.sentMessageTextFont) {
-                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3286R.string.settings_tools_sent_message_font), SettingsToolsMessageActivity.this.getToolsController().getSelectedSentMessageFont().getTitle(), z);
+                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3301R.string.settings_tools_sent_message_font), SettingsToolsMessageActivity.this.getToolsController().getSelectedSentMessageFont().getTitle(), z);
             }
         }
 

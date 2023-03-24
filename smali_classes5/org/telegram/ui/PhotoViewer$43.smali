@@ -68,7 +68,7 @@
 
     int-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$43;->val$scale:F
 

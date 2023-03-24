@@ -81,16 +81,16 @@
 .end method
 
 .method public constructor <init>(ID)V
-    .locals 3
+    .locals 2
 
     .line 3
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    cmpg-double v2, p2, v0
+    cmpg-double v0, p2, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     .line 5
     invoke-static {p1}, Lcom/google/android/gms/maps/model/StrokeStyle;->colorBuilder(I)Lcom/google/android/gms/maps/model/StrokeStyle$Builder;
@@ -135,7 +135,7 @@
 .end method
 
 .method public constructor <init>(Lcom/google/android/gms/maps/model/StrokeStyle;D)V
-    .locals 3
+    .locals 2
     .param p1    # Lcom/google/android/gms/maps/model/StrokeStyle;
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
@@ -154,9 +154,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmpg-double v2, p2, v0
+    cmpg-double v0, p2, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     .line 8
     iput-object p1, p0, Lcom/google/android/gms/maps/model/StyleSpan;->zza:Lcom/google/android/gms/maps/model/StrokeStyle;

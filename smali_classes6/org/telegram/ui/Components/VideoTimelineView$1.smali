@@ -93,11 +93,11 @@
 
     int-to-long v4, v4
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     const/4 v4, 0x2
 
@@ -192,7 +192,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v6, v6
 
@@ -203,7 +203,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     float-to-int v5, v7
 

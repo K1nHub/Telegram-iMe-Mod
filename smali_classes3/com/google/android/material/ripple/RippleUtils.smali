@@ -44,12 +44,12 @@
 
     if-lt v0, v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     sput-boolean v0, Lcom/google/android/material/ripple/RippleUtils;->USE_FRAMEWORK_RIPPLE:Z
@@ -512,11 +512,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/4 v5, 0x1
@@ -529,7 +529,7 @@
 
     if-ne v6, v7, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_2
 
@@ -539,7 +539,7 @@
     if-ne v6, v7, :cond_1
 
     :goto_1
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_2
 
@@ -568,7 +568,7 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v5
 
     :cond_5
     return v1

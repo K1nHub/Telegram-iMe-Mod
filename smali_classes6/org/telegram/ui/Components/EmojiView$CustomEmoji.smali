@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getDocument()Lorg/telegram/tgnet/TLRPC$Document;
-    .locals 8
+    .locals 7
 
     .line 7761
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->stickerSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
@@ -81,9 +81,9 @@
 
     iget-wide v5, p0, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->documentId:J
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_1
+    if-nez v3, :cond_1
 
     return-object v2
 

@@ -13,24 +13,24 @@ import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
 public class McEliecePublicKey extends ASN1Object {
 
     /* renamed from: g */
-    private final GF2Matrix f1386g;
+    private final GF2Matrix f1387g;
 
     /* renamed from: n */
-    private final int f1387n;
+    private final int f1388n;
 
     /* renamed from: t */
-    private final int f1388t;
+    private final int f1389t;
 
     public McEliecePublicKey(int i, int i2, GF2Matrix gF2Matrix) {
-        this.f1387n = i;
-        this.f1388t = i2;
-        this.f1386g = new GF2Matrix(gF2Matrix);
+        this.f1388n = i;
+        this.f1389t = i2;
+        this.f1387g = new GF2Matrix(gF2Matrix);
     }
 
     private McEliecePublicKey(ASN1Sequence aSN1Sequence) {
-        this.f1387n = ((ASN1Integer) aSN1Sequence.getObjectAt(0)).getValue().intValue();
-        this.f1388t = ((ASN1Integer) aSN1Sequence.getObjectAt(1)).getValue().intValue();
-        this.f1386g = new GF2Matrix(((ASN1OctetString) aSN1Sequence.getObjectAt(2)).getOctets());
+        this.f1388n = ((ASN1Integer) aSN1Sequence.getObjectAt(0)).getValue().intValue();
+        this.f1389t = ((ASN1Integer) aSN1Sequence.getObjectAt(1)).getValue().intValue();
+        this.f1387g = new GF2Matrix(((ASN1OctetString) aSN1Sequence.getObjectAt(2)).getOctets());
     }
 
     public static McEliecePublicKey getInstance(Object obj) {
@@ -44,23 +44,23 @@ public class McEliecePublicKey extends ASN1Object {
     }
 
     public GF2Matrix getG() {
-        return new GF2Matrix(this.f1386g);
+        return new GF2Matrix(this.f1387g);
     }
 
     public int getN() {
-        return this.f1387n;
+        return this.f1388n;
     }
 
     public int getT() {
-        return this.f1388t;
+        return this.f1389t;
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
         ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
-        aSN1EncodableVector.add(new ASN1Integer(this.f1387n));
-        aSN1EncodableVector.add(new ASN1Integer(this.f1388t));
-        aSN1EncodableVector.add(new DEROctetString(this.f1386g.getEncoded()));
+        aSN1EncodableVector.add(new ASN1Integer(this.f1388n));
+        aSN1EncodableVector.add(new ASN1Integer(this.f1389t));
+        aSN1EncodableVector.add(new DEROctetString(this.f1387g.getEncoded()));
         return new DERSequence(aSN1EncodableVector);
     }
 }

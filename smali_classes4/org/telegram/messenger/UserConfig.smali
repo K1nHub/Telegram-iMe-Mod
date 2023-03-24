@@ -339,7 +339,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5
@@ -452,7 +452,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5
@@ -1236,7 +1236,7 @@
 .end method
 
 .method private updateUserId()V
-    .locals 5
+    .locals 4
 
     .line 58
     iget-wide v0, p0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
@@ -1245,9 +1245,9 @@
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
@@ -1303,7 +1303,7 @@
 
 # virtual methods
 .method public checkSavedPassword()V
-    .locals 5
+    .locals 4
 
     .line 474
     iget-object v0, p0, Lorg/telegram/messenger/UserConfig;->savedSaltedPassword:[B
@@ -1329,9 +1329,9 @@
 
     const-wide/32 v2, 0x1b7740
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_2
+    if-gez v0, :cond_2
 
     :cond_1
     return-void
@@ -1502,7 +1502,7 @@
     .line 575
     invoke-virtual {p0}, Lorg/telegram/messenger/UserConfig;->resetSavedPassword()V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v3, 0x5
@@ -1524,7 +1524,7 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -1789,12 +1789,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x0
+    move v4, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, -0x1
+    move v4, v5
 
     :goto_1
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -1832,7 +1832,7 @@
 
     if-eqz v7, :cond_3
 
-    const/4 v5, 0x0
+    move v5, v6
 
     :cond_3
     invoke-interface {v1, v4, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -2649,13 +2649,13 @@
 
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    const v5, 0x14370
+    const v6, 0x14370
 
-    sub-int/2addr v6, v5
+    sub-int/2addr v5, v6
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
 
@@ -2670,13 +2670,13 @@
 
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    const v5, 0x15f90
+    const v6, 0x15f90
 
-    sub-int/2addr v6, v5
+    sub-int/2addr v5, v6
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
 
@@ -2816,13 +2816,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 v2, 0x1
+    move v2, v5
 
     :goto_1
     iput-boolean v2, p0, Lorg/telegram/messenger/UserConfig;->hasValidDialogLoadIds:Z
@@ -3166,7 +3166,7 @@
 .end method
 
 .method public loadGlobalTTl()V
-    .locals 5
+    .locals 4
 
     .line 666
     iget-boolean v0, p0, Lorg/telegram/messenger/UserConfig;->ttlIsLoading:Z
@@ -3183,9 +3183,9 @@
 
     const-wide/32 v2, 0xea60
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     goto :goto_0
 

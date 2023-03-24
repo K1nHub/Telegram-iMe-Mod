@@ -131,14 +131,14 @@
 
     if-eqz p4, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
 
     if-eqz p3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 37
     :cond_1
@@ -189,7 +189,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
@@ -299,7 +299,7 @@
 .end method
 
 .method public final onStakingInfoClick(Lcom/smedialink/model/staking/StakingProgrammeItem;)V
-    .locals 7
+    .locals 6
 
     const-string v0, "stakingProgrammeItem"
 
@@ -335,9 +335,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     const/4 v2, 0x1
 
@@ -383,7 +383,7 @@
 .end method
 
 .method public final onStakingProgrammeClick(Lcom/smedialink/model/staking/StakingProgrammeItem;)V
-    .locals 7
+    .locals 6
 
     const-string v0, "stakingProgrammeItem"
 
@@ -419,9 +419,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     const/4 v2, 0x1
 

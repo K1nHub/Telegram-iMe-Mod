@@ -6,7 +6,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 /* renamed from: org.telegram.ui.Components.Paint.Brush */
 /* loaded from: classes6.dex */
@@ -67,7 +67,7 @@ public abstract class Brush {
     }
 
     public int getStampResId() {
-        return C3286R.C3288drawable.paint_radial_brush;
+        return C3301R.C3303drawable.paint_radial_brush;
     }
 
     public Bitmap getStamp() {
@@ -81,7 +81,7 @@ public abstract class Brush {
     public static class Radial extends Brush {
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getIconRes() {
-            return C3286R.C3291raw.photo_pen;
+            return C3301R.C3306raw.photo_pen;
         }
     }
 
@@ -125,12 +125,12 @@ public abstract class Brush {
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getStampResId() {
-            return C3286R.C3288drawable.paint_elliptical_brush;
+            return C3301R.C3303drawable.paint_elliptical_brush;
         }
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getIconRes() {
-            return C3286R.C3291raw.photo_marker;
+            return C3301R.C3306raw.photo_marker;
         }
     }
 
@@ -178,12 +178,12 @@ public abstract class Brush {
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getStampResId() {
-            return C3286R.C3288drawable.paint_neon_brush;
+            return C3301R.C3303drawable.paint_neon_brush;
         }
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getIconRes() {
-            return C3286R.C3291raw.photo_neon;
+            return C3301R.C3306raw.photo_neon;
         }
     }
 
@@ -202,7 +202,7 @@ public abstract class Brush {
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getIconRes() {
-            return C3286R.C3291raw.photo_arrow;
+            return C3301R.C3306raw.photo_arrow;
         }
     }
 
@@ -245,7 +245,7 @@ public abstract class Brush {
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getIconRes() {
-            return C3286R.C3291raw.photo_eraser;
+            return C3301R.C3306raw.photo_eraser;
         }
     }
 
@@ -283,7 +283,7 @@ public abstract class Brush {
 
         @Override // org.telegram.p048ui.Components.Paint.Brush
         public int getIconRes() {
-            return C3286R.C3291raw.photo_blur;
+            return C3301R.C3306raw.photo_blur;
         }
     }
 
@@ -342,17 +342,17 @@ public abstract class Brush {
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public String getShapeName() {
-                return LocaleController.getString(C3286R.string.PaintCircle);
+                return LocaleController.getString(C3301R.string.PaintCircle);
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush
             public int getIconRes() {
-                return C3286R.C3288drawable.photo_circle;
+                return C3301R.C3303drawable.photo_circle;
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public int getFilledIconRes() {
-                return C3286R.C3288drawable.photo_circle_fill;
+                return C3301R.C3303drawable.photo_circle_fill;
             }
         }
 
@@ -366,17 +366,17 @@ public abstract class Brush {
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public String getShapeName() {
-                return LocaleController.getString(C3286R.string.PaintRectangle);
+                return LocaleController.getString(C3301R.string.PaintRectangle);
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush
             public int getIconRes() {
-                return C3286R.C3288drawable.photo_rectangle;
+                return C3301R.C3303drawable.photo_rectangle;
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public int getFilledIconRes() {
-                return C3286R.C3288drawable.photo_rectangle_fill;
+                return C3301R.C3303drawable.photo_rectangle_fill;
             }
         }
 
@@ -390,17 +390,17 @@ public abstract class Brush {
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public String getShapeName() {
-                return LocaleController.getString(C3286R.string.PaintStar);
+                return LocaleController.getString(C3301R.string.PaintStar);
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush
             public int getIconRes() {
-                return C3286R.C3288drawable.photo_star;
+                return C3301R.C3303drawable.photo_star;
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public int getFilledIconRes() {
-                return C3286R.C3288drawable.photo_star_fill;
+                return C3301R.C3303drawable.photo_star_fill;
             }
         }
 
@@ -414,17 +414,17 @@ public abstract class Brush {
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public String getShapeName() {
-                return LocaleController.getString(C3286R.string.PaintBubble);
+                return LocaleController.getString(C3301R.string.PaintBubble);
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush
             public int getIconRes() {
-                return C3286R.C3288drawable.msg_msgbubble;
+                return C3301R.C3303drawable.msg_msgbubble;
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public int getFilledIconRes() {
-                return C3286R.C3288drawable.msg_msgbubble2;
+                return C3301R.C3303drawable.msg_msgbubble2;
             }
         }
 
@@ -438,17 +438,17 @@ public abstract class Brush {
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public String getShapeName() {
-                return LocaleController.getString(C3286R.string.PaintArrow);
+                return LocaleController.getString(C3301R.string.PaintArrow);
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush
             public int getIconRes() {
-                return C3286R.C3288drawable.photo_arrowshape;
+                return C3301R.C3303drawable.photo_arrowshape;
             }
 
             @Override // org.telegram.p048ui.Components.Paint.Brush.Shape
             public int getFilledIconRes() {
-                return C3286R.C3288drawable.photo_arrowshape;
+                return C3301R.C3303drawable.photo_arrowshape;
             }
         }
     }

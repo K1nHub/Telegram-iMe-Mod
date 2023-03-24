@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity$11;Landroid/os/Bundle;)V
     .locals 0
 
-    .line 1375
+    .line 1374
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$11$1;->this$1:Lorg/telegram/ui/LaunchActivity$11;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -35,10 +35,10 @@
 .method public onPreviewOpenAnimationEnd()V
     .locals 4
 
-    .line 1386
+    .line 1385
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPreviewOpenAnimationEnd()V
 
-    .line 1387
+    .line 1386
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11$1;->this$1:Lorg/telegram/ui/LaunchActivity$11;
 
     iget-object v0, v0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowOpenDrawer(ZZ)V
 
-    .line 1388
+    .line 1387
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11$1;->this$1:Lorg/telegram/ui/LaunchActivity$11;
 
     iget-object v0, v0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setDrawCurrentPreviewFragmentAbove(Z)V
 
-    .line 1389
+    .line 1388
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$11$1;->this$1:Lorg/telegram/ui/LaunchActivity$11;
 
     iget-object v2, v0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
@@ -75,14 +75,14 @@
 .method public onTransitionAnimationEnd(ZZ)V
     .locals 0
 
-    .line 1378
+    .line 1377
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ChatActivity;->onTransitionAnimationEnd(ZZ)V
 
     if-nez p1, :cond_0
 
     if-eqz p2, :cond_0
 
-    .line 1380
+    .line 1379
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11$1;->this$1:Lorg/telegram/ui/LaunchActivity$11;
 
     iget-object p1, p1, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;

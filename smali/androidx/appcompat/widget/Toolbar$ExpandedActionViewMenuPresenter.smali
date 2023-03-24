@@ -316,7 +316,7 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_1

@@ -232,9 +232,9 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v5
 
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 177
     :goto_1
@@ -278,7 +278,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-ge v3, v0, :cond_f
@@ -332,22 +332,22 @@
     :cond_4
     iget v8, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    const/16 v9, 0xff
+    cmpl-float v9, v8, v5
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/16 v10, 0xff
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    cmpl-float v12, v8, v5
+    const/high16 v12, 0x437f0000    # 255.0f
 
-    if-lez v12, :cond_6
+    if-lez v9, :cond_6
 
     if-eqz v4, :cond_5
 
     .line 186
     iget-object v9, p0, Lorg/telegram/ui/Components/NumberTextView;->textPaint:Landroid/text/TextPaint;
 
-    mul-float v8, v8, v11
+    mul-float/2addr v8, v12
 
     float-to-int v8, v8
 
@@ -359,9 +359,9 @@
     .line 188
     iget v8, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    sub-float/2addr v8, v10
+    sub-float/2addr v8, v11
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     invoke-virtual {p1, v6, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -378,18 +378,18 @@
 
     iget v9, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    sub-float/2addr v10, v9
+    sub-float/2addr v11, v9
 
-    mul-float v10, v10, v11
+    mul-float/2addr v11, v12
 
-    float-to-int v9, v10
+    float-to-int v9, v11
 
     invoke-virtual {v8, v9}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 193
     iget v8, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     invoke-virtual {p1, v5, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -399,27 +399,27 @@
     :cond_5
     iget-object v8, p0, Lorg/telegram/ui/Components/NumberTextView;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v8, v9}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v8, v10}, Landroid/text/TextPaint;->setAlpha(I)V
 
     goto :goto_5
 
     :cond_6
-    cmpg-float v12, v8, v5
+    cmpg-float v9, v8, v5
 
-    if-gez v12, :cond_a
+    if-gez v9, :cond_a
 
     if-eqz v4, :cond_7
 
     .line 200
-    iget-object v12, p0, Lorg/telegram/ui/Components/NumberTextView;->textPaint:Landroid/text/TextPaint;
+    iget-object v9, p0, Lorg/telegram/ui/Components/NumberTextView;->textPaint:Landroid/text/TextPaint;
 
     neg-float v8, v8
 
-    mul-float v8, v8, v11
+    mul-float/2addr v8, v12
 
     float-to-int v8, v8
 
-    invoke-virtual {v12, v8}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v9, v8}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 201
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -427,9 +427,9 @@
     .line 202
     iget v8, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    add-float/2addr v8, v10
+    add-float/2addr v8, v11
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     invoke-virtual {p1, v6, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -454,7 +454,7 @@
     :cond_8
     iget-object v8, p0, Lorg/telegram/ui/Components/NumberTextView;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v8, v9}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v8, v10}, Landroid/text/TextPaint;->setAlpha(I)V
 
     goto :goto_5
 
@@ -465,9 +465,9 @@
 
     iget v9, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    add-float/2addr v9, v10
+    add-float/2addr v9, v11
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v12
 
     float-to-int v9, v9
 
@@ -476,7 +476,7 @@
     .line 209
     iget v8, p0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     invoke-virtual {p1, v5, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -488,7 +488,7 @@
     .line 215
     iget-object v8, p0, Lorg/telegram/ui/Components/NumberTextView;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v8, v9}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v8, v10}, Landroid/text/TextPaint;->setAlpha(I)V
 
     :cond_b
     :goto_5
@@ -672,12 +672,12 @@
     if-ge v1, v7, :cond_2
 
     :goto_0
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v4
 
     goto :goto_1
 
@@ -752,12 +752,12 @@
 
     if-eqz v8, :cond_4
 
-    const/4 v8, 0x1
+    move v8, v5
 
     goto :goto_2
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v4
 
     .line 107
     :goto_2
@@ -768,7 +768,7 @@
     .line 108
     iput v1, v0, Lorg/telegram/ui/Components/NumberTextView;->progress:F
 
-    const/4 v9, 0x0
+    move v9, v4
 
     .line 109
     :goto_3

@@ -76,19 +76,19 @@
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     and-int v4, p1, p2
 
     if-nez v4, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v0
 
     :cond_2
     xor-int/2addr v2, v3

@@ -1,7 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
 import android.os.SystemClock;
-import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
@@ -81,16 +80,16 @@ public final class zacd implements OnCompleteListener {
         int i;
         int i2;
         int i3;
-        int i4;
         int errorCode;
         long j;
         long j2;
-        int i5;
+        int i4;
         if (this.zaa.zaF()) {
             RootTelemetryConfiguration config = RootTelemetryConfigManager.getInstance().getConfig();
             if ((config == null || config.getMethodInvocationTelemetryEnabled()) && (zak = this.zaa.zak(this.zac)) != null && (zak.zaf() instanceof BaseGmsClient)) {
                 BaseGmsClient baseGmsClient = (BaseGmsClient) zak.zaf();
                 boolean z = true;
+                int i5 = 0;
                 boolean z2 = this.zad > 0;
                 int gCoreServiceId = baseGmsClient.getGCoreServiceId();
                 if (config != null) {
@@ -103,24 +102,25 @@ public final class zacd implements OnCompleteListener {
                         if (zab == null) {
                             return;
                         }
-                        z = (!zab.getMethodTimingTelemetryEnabled() || this.zad <= 0) ? false : false;
+                        if (!zab.getMethodTimingTelemetryEnabled() || this.zad <= 0) {
+                            z = false;
+                        }
                         maxMethodInvocationsInBatch = zab.getMaxMethodInvocationsLogged();
                         z2 = z;
                     }
-                    i2 = batchPeriodMillis;
-                    i3 = maxMethodInvocationsInBatch;
+                    i3 = batchPeriodMillis;
+                    i2 = maxMethodInvocationsInBatch;
                 } else {
                     i = 0;
-                    i2 = DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS;
-                    i3 = 100;
+                    i2 = 100;
+                    i3 = 5000;
                 }
                 GoogleApiManager googleApiManager = this.zaa;
                 if (task.isSuccessful()) {
-                    i4 = 0;
                     errorCode = 0;
                 } else {
                     if (task.isCanceled()) {
-                        i4 = 100;
+                        i5 = 100;
                     } else {
                         Exception exception = task.getException();
                         if (exception instanceof ApiException) {
@@ -128,24 +128,25 @@ public final class zacd implements OnCompleteListener {
                             int statusCode = status.getStatusCode();
                             ConnectionResult connectionResult = status.getConnectionResult();
                             errorCode = connectionResult == null ? -1 : connectionResult.getErrorCode();
-                            i4 = statusCode;
+                            i5 = statusCode;
                         } else {
-                            i4 = 101;
+                            i5 = 101;
                         }
                     }
                     errorCode = -1;
                 }
                 if (z2) {
                     long j3 = this.zad;
-                    j2 = System.currentTimeMillis();
+                    long currentTimeMillis = System.currentTimeMillis();
+                    i4 = (int) (SystemClock.elapsedRealtime() - this.zae);
                     j = j3;
-                    i5 = (int) (SystemClock.elapsedRealtime() - this.zae);
+                    j2 = currentTimeMillis;
                 } else {
                     j = 0;
                     j2 = 0;
-                    i5 = -1;
+                    i4 = -1;
                 }
-                googleApiManager.zay(new MethodInvocation(this.zab, i4, errorCode, j, j2, null, null, gCoreServiceId, i5), i, i2, i3);
+                googleApiManager.zay(new MethodInvocation(this.zab, i5, errorCode, j, j2, null, null, gCoreServiceId, i4), i, i3, i2);
             }
         }
     }

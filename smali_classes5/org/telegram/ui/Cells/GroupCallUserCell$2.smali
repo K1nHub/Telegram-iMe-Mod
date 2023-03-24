@@ -145,7 +145,7 @@
 
     sub-float/2addr v1, v0
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     .line 324
     invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
@@ -225,7 +225,7 @@
 
     if-lez v0, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 333
     :cond_0

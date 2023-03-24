@@ -24,7 +24,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: BinancePayProcessManager.kt */
 /* loaded from: classes3.dex */
 public final class BinancePayProcessManager {
@@ -80,7 +80,7 @@ public final class BinancePayProcessManager {
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo707ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "dynamicLinksInteractor\n …(schedulersProvider.ui())");
         Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) getViewState(), false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1456x2414b84e(this, holder)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1457x2414b84f(this.viewState)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
@@ -120,17 +120,17 @@ public final class BinancePayProcessManager {
                 ResourceManager resourceManager3;
                 viewState = BinancePayProcessManager.this.getViewState();
                 resourceManager = BinancePayProcessManager.this.resourceManager;
-                String string = resourceManager.getString(C3286R.string.wallet_binance_pay_request_paid_success_dialog_title);
+                String string = resourceManager.getString(C3301R.string.wallet_binance_pay_request_paid_success_dialog_title);
                 resourceManager2 = BinancePayProcessManager.this.resourceManager;
-                String string2 = resourceManager2.getString(C3286R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.formatBalance(Double.valueOf(binanceTransaction.getAmount()), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
+                String string2 = resourceManager2.getString(C3301R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.formatBalance(Double.valueOf(binanceTransaction.getAmount()), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
                 resourceManager3 = BinancePayProcessManager.this.resourceManager;
-                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3286R.string.common_ok));
+                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3301R.string.common_ok));
             }
         });
     }
 
     private final DialogModel getConfirmPayDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3286R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_binance_pay_action_pay));
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3301R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.wallet_binance_pay_action_pay));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

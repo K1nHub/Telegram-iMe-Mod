@@ -403,7 +403,7 @@
 
     int-to-float v3, v0
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v5, v3
 
@@ -437,9 +437,9 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, -0x1
+    move v0, v4
 
-    const/4 v5, -0x1
+    move v5, v0
 
     :goto_2
     const/high16 v3, 0x3f800000    # 1.0f
@@ -489,7 +489,7 @@
 
     if-ge v7, v8, :cond_4
 
-    const/4 v0, -0x1
+    move v0, v4
 
     :cond_6
     if-eq v0, v4, :cond_7
@@ -644,7 +644,7 @@
 .end method
 
 .method private synthetic lambda$init$2(Landroid/graphics/Point;)V
-    .locals 5
+    .locals 4
 
     .line 163
     iget-object v0, p0, Lorg/telegram/messenger/voip/VideoCapturerDevice;->videoCapturerSurfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
@@ -655,9 +655,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_0
 
@@ -929,7 +929,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v0, -0x1
+    move v0, v2
 
     :goto_2
     if-ne v0, v2, :cond_6
@@ -1228,14 +1228,14 @@
 .end method
 
 .method private synthetic lambda$onStateChanged$7(JI)V
-    .locals 3
+    .locals 2
 
     .line 293
     iget-wide v0, p0, Lorg/telegram/messenger/voip/VideoCapturerDevice;->nativePtr:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-eqz v2, :cond_0
+    if-eqz p1, :cond_0
 
     return-void
 

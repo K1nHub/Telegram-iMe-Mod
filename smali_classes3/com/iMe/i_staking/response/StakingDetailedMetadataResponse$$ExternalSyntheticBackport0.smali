@@ -16,7 +16,7 @@
 
     xor-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method

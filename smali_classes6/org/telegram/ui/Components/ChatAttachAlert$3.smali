@@ -104,7 +104,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     float-to-int v3, v5
 
@@ -139,7 +139,7 @@
 
     const/high16 v10, 0x41d00000    # 26.0f
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -148,7 +148,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v9
 
     :goto_0
     add-int/2addr v7, v8
@@ -392,7 +392,7 @@
 
     sub-float/2addr v7, v4
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     float-to-int v4, v7
 
@@ -407,7 +407,7 @@
     goto :goto_5
 
     :cond_8
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v15
 
     .line 1720
     :goto_5
@@ -611,7 +611,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v5
+    mul-float/2addr v13, v5
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -619,7 +619,7 @@
 
     int-to-float v12, v14
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -628,9 +628,14 @@
     .line 1737
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    :cond_c
     const/high16 v11, 0x3f800000    # 1.0f
 
+    goto :goto_8
+
+    :cond_c
+    move v11, v15
+
+    :goto_8
     cmpl-float v12, v5, v11
 
     if-eqz v12, :cond_d
@@ -735,7 +740,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -743,7 +748,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -829,7 +834,7 @@
 
     move v15, v5
 
-    goto :goto_8
+    goto :goto_9
 
     .line 1759
     :cond_f
@@ -850,7 +855,7 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_10
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getAlpha()F
@@ -862,7 +867,7 @@
     sub-float v15, v6, v4
 
     .line 1762
-    :goto_8
+    :goto_9
     invoke-static {v3}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v4
@@ -877,15 +882,15 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v15
+    mul-float/2addr v4, v15
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getAlpha()F
 
     move-result v2
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     float-to-int v2, v4
 
@@ -958,7 +963,7 @@
 
     const/high16 v3, 0x41d00000    # 26.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -1116,7 +1121,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v5
 
     goto :goto_0
 
@@ -1544,7 +1549,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     float-to-int v3, v5
 
@@ -1579,7 +1584,7 @@
 
     const/high16 v10, 0x41d00000    # 26.0f
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -1588,7 +1593,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v9
 
     :goto_0
     add-int/2addr v7, v8
@@ -1604,12 +1609,12 @@
 
     if-ne v5, v10, :cond_1
 
-    const/4 v10, 0x0
+    move v10, v9
 
     goto :goto_1
 
     :cond_1
-    const/4 v10, 0x1
+    move v10, v11
 
     :goto_1
     invoke-static {v8, v10}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$5400(Lorg/telegram/ui/Components/ChatAttachAlert;I)I
@@ -1846,7 +1851,7 @@
 
     sub-float/2addr v7, v4
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     float-to-int v4, v7
 
@@ -1861,7 +1866,7 @@
     goto :goto_6
 
     :cond_9
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v11
 
     .line 1814
     :goto_6
@@ -1989,7 +1994,7 @@
     goto :goto_9
 
     :cond_e
-    const/4 v7, 0x0
+    move v7, v9
 
     :goto_9
     const/high16 v13, 0x40000000    # 2.0f
@@ -2127,7 +2132,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v5
+    mul-float/2addr v11, v5
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2135,7 +2140,7 @@
 
     int-to-float v12, v12
 
-    mul-float v12, v12, v5
+    mul-float/2addr v12, v5
 
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -2248,7 +2253,7 @@
     goto :goto_b
 
     :cond_13
-    const/16 v11, 0xc
+    move/from16 v11, v17
 
     .line 1848
     :goto_b
@@ -2286,7 +2291,7 @@
 
     move-result v14
 
-    mul-float v11, v11, v14
+    mul-float/2addr v11, v14
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -2441,7 +2446,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2449,7 +2454,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -2583,15 +2588,15 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getAlpha()F
 
     move-result v2
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     float-to-int v2, v6
 
@@ -2742,7 +2747,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -3026,7 +3031,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     add-int/2addr p4, v1
@@ -3035,7 +3040,7 @@
     :goto_1
     invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setBottomClip(I)V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     if-ge v1, p1, :cond_d
@@ -3679,7 +3684,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_0
 
@@ -3710,7 +3715,7 @@
 
     div-float v4, p1, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 

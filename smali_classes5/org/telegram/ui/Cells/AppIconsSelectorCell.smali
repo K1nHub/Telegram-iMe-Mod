@@ -202,7 +202,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 139
     :goto_0
@@ -279,7 +279,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 156
     :goto_0

@@ -138,7 +138,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -167,7 +167,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -202,7 +202,7 @@
 
 # virtual methods
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
-    .locals 6
+    .locals 5
 
     .line 252
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay$3;->this$0:Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;
@@ -215,7 +215,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay$3;->this$0:Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;
 
@@ -250,7 +250,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -271,7 +271,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -323,9 +323,9 @@
 
     div-float/2addr v3, v4
 
-    const/high16 v5, 0x41800000    # 16.0f
-
     cmpl-float v1, v1, v3
+
+    const/high16 v3, 0x41800000    # 16.0f
 
     if-ltz v1, :cond_0
 
@@ -337,7 +337,7 @@
 
     sub-int/2addr v2, v1
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
 
@@ -348,7 +348,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
 
@@ -421,7 +421,7 @@
 
     sub-float/2addr p1, v1
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
 
@@ -431,15 +431,15 @@
 
     iget v2, v2, Landroid/graphics/Point;->y:I
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay$3;->this$0:Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;
+    iget-object v4, p0, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay$3;->this$0:Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->access$1400(Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;)I
+    invoke-static {v4}, Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;->access$1400(Lorg/telegram/ui/Components/voip/RTMPStreamPipOverlay;)I
 
-    move-result v3
+    move-result v4
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v2, v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
 
@@ -529,7 +529,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -556,7 +556,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 

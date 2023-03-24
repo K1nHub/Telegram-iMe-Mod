@@ -105,7 +105,7 @@
 
     array-length v0, p0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-ge v1, v0, :cond_7

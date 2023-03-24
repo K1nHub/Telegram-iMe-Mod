@@ -230,7 +230,7 @@
 
     move-object v0, v13
 
-    const/4 v14, 0x5
+    move v14, v12
 
     move-object/from16 v12, v30
 

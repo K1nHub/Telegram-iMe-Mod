@@ -105,7 +105,7 @@
 
     sub-float/2addr v3, v1
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
@@ -117,7 +117,7 @@
 
     sub-float/2addr v0, v2
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr v4, v1
 
@@ -176,52 +176,52 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 9
+    .locals 10
 
     .line 132
     iget v0, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x0
+    cmpl-float v2, v0, v1
 
-    cmpl-float v3, v0, v1
+    const/4 v3, 0x0
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
     .line 133
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->customPaint:Landroid/graphics/Paint;
+    iget-object v2, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->customPaint:Landroid/graphics/Paint;
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object v3, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->paint:Landroid/graphics/Paint;
+    iget-object v2, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->paint:Landroid/graphics/Paint;
 
     :goto_0
-    invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto :goto_4
 
     :cond_1
-    cmpl-float v3, v0, v2
+    cmpl-float v2, v0, v3
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     .line 136
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->isSelected:Z
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->isSelected:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     .line 137
-    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v0
 
@@ -229,11 +229,11 @@
 
     .line 139
     :cond_2
-    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     sub-float v0, v1, v0
 
-    invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v0
 
@@ -243,32 +243,32 @@
     :goto_1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 142
-    invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->centerX()I
 
     move-result v4
 
     int-to-float v4, v4
 
     .line 143
-    invoke-virtual {v3}, Landroid/graphics/Rect;->centerY()I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->centerY()I
 
-    move-result v3
+    move-result v2
 
-    int-to-float v3, v3
+    int-to-float v2, v2
 
     .line 146
     iget v5, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->touchOverrideX:F
 
-    cmpl-float v6, v5, v2
+    cmpl-float v6, v5, v3
 
     if-ltz v6, :cond_3
 
     iget v6, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->touchOverrideY:F
 
-    cmpl-float v7, v6, v2
+    cmpl-float v7, v6, v3
 
     if-ltz v7, :cond_3
 
@@ -278,20 +278,20 @@
     :cond_3
     iget v5, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->touchX:F
 
-    cmpl-float v6, v5, v2
+    cmpl-float v6, v5, v3
 
     if-ltz v6, :cond_4
 
     iget v6, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->touchY:F
 
-    cmpl-float v7, v6, v2
+    cmpl-float v7, v6, v3
 
     if-ltz v7, :cond_4
 
     goto :goto_2
 
     :cond_4
-    move v6, v3
+    move v6, v2
 
     move v5, v4
 
@@ -300,20 +300,20 @@
 
     sub-float/2addr v5, v4
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     add-float/2addr v4, v5
 
-    sub-float/2addr v6, v3
+    sub-float/2addr v6, v2
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
-    add-float/2addr v3, v7
+    add-float/2addr v2, v7
 
     .line 158
     iget v5, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->finalRadius:F
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->customPaint:Landroid/graphics/Paint;
 
@@ -325,7 +325,7 @@
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->paint:Landroid/graphics/Paint;
 
     :goto_3
-    invoke-virtual {p1, v4, v3, v5, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v4, v2, v5, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 160
     :cond_6
@@ -337,31 +337,31 @@
     .line 161
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 162
-    iget-wide v5, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->lastAnimationTime:J
+    iget-wide v6, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->lastAnimationTime:J
 
-    sub-long v5, v3, v5
+    sub-long v6, v4, v6
 
-    const-wide/16 v7, 0x14
+    const-wide/16 v8, 0x14
 
-    cmp-long p1, v5, v7
+    cmp-long p1, v6, v8
 
     if-lez p1, :cond_7
 
-    const-wide/16 v5, 0x11
+    const-wide/16 v6, 0x11
 
     .line 166
     :cond_7
-    iput-wide v3, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->lastAnimationTime:J
+    iput-wide v4, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->lastAnimationTime:J
 
     .line 169
     iget-boolean p1, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->isSelected:Z
 
     const/4 v0, 0x1
 
-    const/high16 v3, 0x43700000    # 240.0f
+    const/high16 v2, 0x43700000    # 240.0f
 
     const/4 v4, 0x0
 
@@ -370,11 +370,11 @@
     .line 170
     iget p1, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
 
-    long-to-float v2, v5
+    long-to-float v3, v6
 
-    div-float/2addr v2, v3
+    div-float/2addr v3, v2
 
-    add-float/2addr p1, v2
+    add-float/2addr p1, v3
 
     iput p1, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
 
@@ -391,25 +391,25 @@
     :cond_8
     iget p1, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
 
-    long-to-float v1, v5
+    long-to-float v1, v6
 
-    div-float/2addr v1, v3
+    div-float/2addr v1, v2
 
     sub-float/2addr p1, v1
 
     iput p1, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
 
-    cmpg-float p1, p1, v2
+    cmpg-float p1, p1, v3
 
     if-gtz p1, :cond_9
 
     .line 178
-    iput v2, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
+    iput v3, p0, Lorg/telegram/ui/Components/MessageBackgroundDrawable;->currentAnimationProgress:F
 
     goto :goto_5
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_5
     if-eqz v0, :cond_a
@@ -573,7 +573,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 44
     :goto_0
@@ -611,7 +611,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 54
     :goto_1

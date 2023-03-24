@@ -22,15 +22,15 @@
 .method constructor <init>(Ljava/io/OutputStream;I)V
     .locals 0
 
-    .line 2712
+    .line 2691
     invoke-direct {p0, p2}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;-><init>(I)V
 
     const-string p2, "out"
 
-    .line 2714
+    .line 2693
     invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 2716
+    .line 2695
     iput-object p1, p0, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->out:Ljava/io/OutputStream;
 
     return-void
@@ -44,7 +44,7 @@
         }
     .end annotation
 
-    .line 3062
+    .line 3041
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->out:Ljava/io/OutputStream;
 
     iget-object v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 3063
+    .line 3042
     iput v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     return-void
@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 3056
+    .line 3035
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
 
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -78,7 +78,7 @@
 
     if-ge v0, p1, :cond_0
 
-    .line 3057
+    .line 3036
     invoke-direct {p0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
 
     :cond_0
@@ -95,12 +95,12 @@
         }
     .end annotation
 
-    .line 2972
+    .line 2951
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     if-lez v0, :cond_0
 
-    .line 2974
+    .line 2953
     invoke-direct {p0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
 
     :cond_0
@@ -115,20 +115,144 @@
         }
     .end annotation
 
-    .line 2866
+    .line 2845
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
 
     if-ne v0, v1, :cond_0
 
-    .line 2867
+    .line 2846
     invoke-direct {p0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
 
-    .line 2870
+    .line 2849
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer(B)V
 
+    return-void
+.end method
+
+.method public write(Ljava/nio/ByteBuffer;)V
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 2997
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    .line 2998
+    iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
+
+    iget v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
+
+    sub-int v3, v1, v2
+
+    if-lt v3, v0, :cond_0
+
+    .line 3000
+    iget-object v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
+
+    invoke-virtual {p1, v1, v2, v0}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+
+    .line 3001
+    iget p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
+
+    .line 3002
+    iget p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    goto :goto_1
+
+    :cond_0
+    sub-int/2addr v1, v2
+
+    .line 3007
+    iget-object v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
+
+    invoke-virtual {p1, v3, v2, v1}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+
+    sub-int/2addr v0, v1
+
+    .line 3009
+    iget v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
+
+    iput v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
+
+    .line 3010
+    iget v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    add-int/2addr v2, v1
+
+    iput v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    .line 3011
+    invoke-direct {p0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
+
+    .line 3016
+    :goto_0
+    iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
+
+    const/4 v2, 0x0
+
+    if-le v0, v1, :cond_1
+
+    .line 3018
+    iget-object v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
+
+    invoke-virtual {p1, v3, v2, v1}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+
+    .line 3019
+    iget-object v1, p0, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->out:Ljava/io/OutputStream;
+
+    iget-object v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
+
+    iget v4, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
+
+    invoke-virtual {v1, v3, v2, v4}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 3020
+    iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
+
+    sub-int/2addr v0, v1
+
+    .line 3021
+    iget v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    add-int/2addr v2, v1
+
+    iput v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    goto :goto_0
+
+    .line 3023
+    :cond_1
+    iget-object v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
+
+    invoke-virtual {p1, v1, v2, v0}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+
+    .line 3024
+    iput v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
+
+    .line 3025
+    iget p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
+
+    :goto_1
     return-void
 .end method
 
@@ -140,7 +264,7 @@
         }
     .end annotation
 
-    .line 2980
+    .line 2959
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
 
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -149,19 +273,19 @@
 
     if-lt v2, p3, :cond_0
 
-    .line 2982
+    .line 2961
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 2983
+    .line 2962
     iget p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     add-int/2addr p1, p3
 
     iput p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
-    .line 2984
+    .line 2963
     iget p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
     add-int/2addr p1, p3
@@ -173,7 +297,7 @@
     :cond_0
     sub-int/2addr v0, v1
 
-    .line 2989
+    .line 2968
     iget-object v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     invoke-static {p1, p2, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -182,45 +306,45 @@
 
     sub-int/2addr p3, v0
 
-    .line 2992
+    .line 2971
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
-    .line 2993
+    .line 2972
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
     add-int/2addr v1, v0
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
-    .line 2994
+    .line 2973
     invoke-direct {p0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
 
-    .line 2999
+    .line 2978
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
 
     if-gt p3, v0, :cond_1
 
-    .line 3001
+    .line 2980
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     const/4 v1, 0x0
 
     invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 3002
+    .line 2981
     iput p3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     goto :goto_0
 
-    .line 3005
+    .line 2984
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 3007
+    .line 2986
     :goto_0
     iget p1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
@@ -242,17 +366,17 @@
 
     const/16 v0, 0xb
 
-    .line 2761
+    .line 2740
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
     const/4 v0, 0x0
 
-    .line 2762
+    .line 2741
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferTag(II)V
 
     int-to-byte p1, p2
 
-    .line 2763
+    .line 2742
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer(B)V
 
     return-void
@@ -266,10 +390,10 @@
         }
     .end annotation
 
-    .line 2806
+    .line 2785
     invoke-virtual {p0, p3}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
-    .line 2807
+    .line 2786
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->write([BII)V
 
     return-void
@@ -285,10 +409,10 @@
 
     const/4 v0, 0x2
 
-    .line 2774
+    .line 2753
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
-    .line 2775
+    .line 2754
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeBytesNoTag(Lcom/google/protobuf/ByteString;)V
 
     return-void
@@ -302,14 +426,14 @@
         }
     .end annotation
 
-    .line 2800
+    .line 2779
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->size()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
-    .line 2801
+    .line 2780
     invoke-virtual {p1, p0}, Lcom/google/protobuf/ByteString;->writeTo(Lcom/google/protobuf/ByteOutput;)V
 
     return-void
@@ -325,15 +449,15 @@
 
     const/16 v0, 0xe
 
-    .line 2740
+    .line 2719
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
     const/4 v0, 0x5
 
-    .line 2741
+    .line 2720
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferTag(II)V
 
-    .line 2742
+    .line 2721
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferFixed32NoTag(I)V
 
     return-void
@@ -349,10 +473,10 @@
 
     const/4 v0, 0x4
 
-    .line 2891
+    .line 2870
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
-    .line 2892
+    .line 2871
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferFixed32NoTag(I)V
 
     return-void
@@ -368,15 +492,15 @@
 
     const/16 v0, 0x12
 
-    .line 2754
+    .line 2733
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
     const/4 v0, 0x1
 
-    .line 2755
+    .line 2734
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferTag(II)V
 
-    .line 2756
+    .line 2735
     invoke-virtual {p0, p2, p3}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferFixed64NoTag(J)V
 
     return-void
@@ -392,10 +516,10 @@
 
     const/16 v0, 0x8
 
-    .line 2903
+    .line 2882
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
-    .line 2904
+    .line 2883
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferFixed64NoTag(J)V
 
     return-void
@@ -411,15 +535,15 @@
 
     const/16 v0, 0x14
 
-    .line 2726
+    .line 2705
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
     const/4 v0, 0x0
 
-    .line 2727
+    .line 2706
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferTag(II)V
 
-    .line 2728
+    .line 2707
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferInt32NoTag(I)V
 
     return-void
@@ -435,7 +559,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 2876
+    .line 2855
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
     goto :goto_0
@@ -443,10 +567,24 @@
     :cond_0
     int-to-long v0, p1
 
-    .line 2879
+    .line 2858
     invoke-virtual {p0, v0, v1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt64NoTag(J)V
 
     :goto_0
+    return-void
+.end method
+
+.method public writeLazy(Ljava/nio/ByteBuffer;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 3031
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->write(Ljava/nio/ByteBuffer;)V
+
     return-void
 .end method
 
@@ -458,7 +596,7 @@
         }
     .end annotation
 
-    .line 3013
+    .line 2992
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->write([BII)V
 
     return-void
@@ -474,10 +612,10 @@
 
     const/4 v0, 0x2
 
-    .line 2823
+    .line 2802
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
-    .line 2824
+    .line 2803
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeMessageNoTag(Lcom/google/protobuf/MessageLite;)V
 
     return-void
@@ -493,10 +631,10 @@
 
     const/4 v0, 0x2
 
-    .line 2830
+    .line 2809
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
-    .line 2831
+    .line 2810
     invoke-virtual {p0, p2, p3}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeMessageNoTag(Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/Schema;)V
 
     return-void
@@ -510,14 +648,14 @@
         }
     .end annotation
 
-    .line 2854
+    .line 2833
     invoke-interface {p1}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
-    .line 2855
+    .line 2834
     invoke-interface {p1, p0}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
     return-void
@@ -531,7 +669,7 @@
         }
     .end annotation
 
-    .line 2860
+    .line 2839
     move-object v0, p1
 
     check-cast v0, Lcom/google/protobuf/AbstractMessageLite;
@@ -542,7 +680,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
-    .line 2861
+    .line 2840
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream;->wrapper:Lcom/google/protobuf/CodedOutputStreamWriter;
 
     invoke-interface {p2, p1, v0}, Lcom/google/protobuf/Schema;->writeTo(Ljava/lang/Object;Lcom/google/protobuf/Writer;)V
@@ -562,20 +700,20 @@
 
     const/4 v1, 0x3
 
-    .line 2837
+    .line 2816
     invoke-virtual {p0, v0, v1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
     const/4 v2, 0x2
 
-    .line 2838
+    .line 2817
     invoke-virtual {p0, v2, p1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32(II)V
 
-    .line 2839
+    .line 2818
     invoke-virtual {p0, v1, p2}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
     const/4 p1, 0x4
 
-    .line 2840
+    .line 2819
     invoke-virtual {p0, v0, p1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
     return-void
@@ -593,20 +731,20 @@
 
     const/4 v1, 0x3
 
-    .line 2846
+    .line 2825
     invoke-virtual {p0, v0, v1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
     const/4 v2, 0x2
 
-    .line 2847
+    .line 2826
     invoke-virtual {p0, v2, p1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32(II)V
 
-    .line 2848
+    .line 2827
     invoke-virtual {p0, v1, p2}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
     const/4 p1, 0x4
 
-    .line 2849
+    .line 2828
     invoke-virtual {p0, v0, p1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
     return-void
@@ -622,10 +760,10 @@
 
     const/4 v0, 0x2
 
-    .line 2768
+    .line 2747
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeTag(II)V
 
-    .line 2769
+    .line 2748
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeStringNoTag(Ljava/lang/String;)V
 
     return-void
@@ -639,7 +777,7 @@
         }
     .end annotation
 
-    .line 2912
+    .line 2891
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -647,37 +785,37 @@
 
     mul-int/lit8 v0, v0, 0x3
 
-    .line 2913
+    .line 2892
     invoke-static {v0}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32SizeNoTag(I)I
 
     move-result v1
 
     add-int v2, v1, v0
 
-    .line 2917
+    .line 2896
     iget v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
 
     if-le v2, v3, :cond_0
 
-    .line 2922
+    .line 2901
     new-array v1, v0, [B
 
     const/4 v2, 0x0
 
-    .line 2923
+    .line 2902
     invoke-static {p1, v1, v2, v0}, Lcom/google/protobuf/Utf8;->encode(Ljava/lang/CharSequence;[BII)I
 
     move-result v0
 
-    .line 2924
+    .line 2903
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
-    .line 2925
+    .line 2904
     invoke-virtual {p0, v1, v2, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeLazy([BII)V
 
     return-void
 
-    .line 2930
+    .line 2909
     :cond_0
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
@@ -685,10 +823,10 @@
 
     if-le v2, v3, :cond_1
 
-    .line 2932
+    .line 2911
     invoke-direct {p0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
 
-    .line 2937
+    .line 2916
     :cond_1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -698,7 +836,7 @@
 
     move-result v0
 
-    .line 2938
+    .line 2917
     iget v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
     :try_end_0
     .catch Lcom/google/protobuf/Utf8$UnpairedSurrogateException; {:try_start_0 .. :try_end_0} :catch_2
@@ -707,11 +845,11 @@
 
     add-int v1, v2, v0
 
-    .line 2942
+    .line 2921
     :try_start_1
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
-    .line 2943
+    .line 2922
     iget-object v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     iget v4, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->limit:I
@@ -722,31 +860,31 @@
 
     move-result v1
 
-    .line 2946
+    .line 2925
     iput v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     sub-int v3, v1, v2
 
     sub-int/2addr v3, v0
 
-    .line 2948
+    .line 2927
     invoke-virtual {p0, v3}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt32NoTag(I)V
 
-    .line 2949
+    .line 2928
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     goto :goto_0
 
-    .line 2951
+    .line 2930
     :cond_2
     invoke-static {p1}, Lcom/google/protobuf/Utf8;->encodedLength(Ljava/lang/CharSequence;)I
 
     move-result v3
 
-    .line 2952
+    .line 2931
     invoke-virtual {p0, v3}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt32NoTag(I)V
 
-    .line 2953
+    .line 2932
     iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -757,7 +895,7 @@
 
     iput v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
-    .line 2955
+    .line 2934
     :goto_0
     iget v0, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
@@ -773,7 +911,7 @@
     :catch_0
     move-exception v0
 
-    .line 2963
+    .line 2942
     :try_start_2
     new-instance v1, Lcom/google/protobuf/CodedOutputStream$OutOfSpaceException;
 
@@ -784,7 +922,7 @@
     :catch_1
     move-exception v0
 
-    .line 2959
+    .line 2938
     iget v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
     iget v3, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -795,10 +933,10 @@
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
 
-    .line 2960
+    .line 2939
     iput v2, p0, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
-    .line 2961
+    .line 2940
     throw v0
     :try_end_2
     .catch Lcom/google/protobuf/Utf8$UnpairedSurrogateException; {:try_start_2 .. :try_end_2} :catch_2
@@ -806,7 +944,7 @@
     :catch_2
     move-exception v0
 
-    .line 2966
+    .line 2945
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream;->inefficientWriteStringNoTag(Ljava/lang/String;Lcom/google/protobuf/Utf8$UnpairedSurrogateException;)V
 
     :goto_1
@@ -821,7 +959,7 @@
         }
     .end annotation
 
-    .line 2721
+    .line 2700
     invoke-static {p1, p2}, Lcom/google/protobuf/WireFormat;->makeTag(II)I
 
     move-result p1
@@ -841,15 +979,15 @@
 
     const/16 v0, 0x14
 
-    .line 2733
+    .line 2712
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
     const/4 v0, 0x0
 
-    .line 2734
+    .line 2713
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferTag(II)V
 
-    .line 2735
+    .line 2714
     invoke-virtual {p0, p2}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt32NoTag(I)V
 
     return-void
@@ -865,10 +1003,10 @@
 
     const/4 v0, 0x5
 
-    .line 2885
+    .line 2864
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
-    .line 2886
+    .line 2865
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt32NoTag(I)V
 
     return-void
@@ -884,15 +1022,15 @@
 
     const/16 v0, 0x14
 
-    .line 2747
+    .line 2726
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
     const/4 v0, 0x0
 
-    .line 2748
+    .line 2727
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferTag(II)V
 
-    .line 2749
+    .line 2728
     invoke-virtual {p0, p2, p3}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt64NoTag(J)V
 
     return-void
@@ -908,10 +1046,10 @@
 
     const/16 v0, 0xa
 
-    .line 2897
+    .line 2876
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->flushIfNotAvailable(I)V
 
-    .line 2898
+    .line 2877
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt64NoTag(J)V
 
     return-void

@@ -277,7 +277,7 @@
 .end method
 
 .method public declared-synchronized onReadyToAcceptInputFrame()V
-    .locals 6
+    .locals 5
 
     monitor-enter p0
 
@@ -320,9 +320,9 @@
 
     const-wide/high16 v3, -0x8000000000000000L
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     .line 78
     iget-object v0, p0, Lcom/google/android/exoplayer2/effect/ChainingGlTextureProcessorListener;->frameProcessingTaskExecutor:Lcom/google/android/exoplayer2/effect/FrameProcessingTaskExecutor;

@@ -33,22 +33,22 @@ public interface Comparator<T> {
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, Function function, java.util.Comparator comparator2) {
             Objects.requireNonNull(function);
             Objects.requireNonNull(comparator2);
-            return AbstractC2538a.m604w(comparator, new C2540c(comparator2, function));
+            return AbstractC2552a.m603w(comparator, new C2554c(comparator2, function));
         }
 
         /* renamed from: a */
-        public static java.util.Comparator m648a() {
-            return EnumC2571e.INSTANCE;
+        public static java.util.Comparator m647a() {
+            return EnumC2585e.INSTANCE;
         }
 
         public static <T, U extends Comparable<? super U>> java.util.Comparator<T> comparing(Function<? super T, ? extends U> function) {
             Objects.requireNonNull(function);
-            return new C2570d(function);
+            return new C2584d(function);
         }
 
         public static <T> java.util.Comparator<T> comparingInt(ToIntFunction<? super T> toIntFunction) {
             Objects.requireNonNull(toIntFunction);
-            return new C2570d(toIntFunction);
+            return new C2584d(toIntFunction);
         }
 
         public static <T extends Comparable<? super T>> java.util.Comparator<T> reverseOrder() {
@@ -57,7 +57,7 @@ public interface Comparator<T> {
 
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, java.util.Comparator comparator2) {
             Objects.requireNonNull(comparator2);
-            return new C2540c(comparator, comparator2);
+            return new C2554c(comparator, comparator2);
         }
     }
 }

@@ -111,9 +111,9 @@
 
     const/4 v2, -0x1
 
-    move-object v2, v1
+    move v3, v2
 
-    const/4 v3, -0x1
+    move-object v2, v1
 
     .line 717
     :goto_0
@@ -187,16 +187,16 @@
     if-nez v7, :cond_3
 
     :goto_1
-    const/16 v3, 0xac
+    move v3, v8
 
     goto/16 :goto_5
 
     :cond_3
     const-wide/32 v7, 0x48455643
 
-    cmp-long v9, v4, v7
+    cmp-long v4, v4, v7
 
-    if-nez v9, :cond_c
+    if-nez v4, :cond_c
 
     const/16 v3, 0x24
 
@@ -208,7 +208,7 @@
     if-ne v4, v5, :cond_5
 
     :goto_2
-    const/16 v3, 0x81
+    move v3, v10
 
     goto :goto_5
 
@@ -218,7 +218,7 @@
     if-ne v4, v5, :cond_6
 
     :goto_3
-    const/16 v3, 0x87
+    move v3, v9
 
     goto :goto_5
 
@@ -314,7 +314,7 @@
     goto :goto_4
 
     :cond_a
-    const/16 v3, 0x59
+    move v3, v7
 
     goto :goto_5
 
@@ -953,7 +953,7 @@
 
     if-ne v3, v5, :cond_11
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_7
 

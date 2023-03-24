@@ -44,6 +44,7 @@ public class StaticLayoutEx {
         StaticLayout staticLayout;
         int i6;
         int i7;
+        int i8;
         StaticLayout staticLayout2;
         TextUtils.TruncateAt truncateAt2;
         int offsetForHorizontal;
@@ -57,16 +58,18 @@ public class StaticLayoutEx {
                     staticLayout = 0;
                 }
             } else {
-                int i8 = Build.VERSION.SDK_INT;
-                if (i8 >= 23) {
+                int i9 = Build.VERSION.SDK_INT;
+                if (i9 >= 23) {
                     staticLayout2 = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i3).setAlignment(alignment).setLineSpacing(f2, f).setIncludePad(z).setEllipsize(null).setEllipsizedWidth(i4).setMaxLines(i5).setBreakStrategy(1).setHyphenationFrequency(0).build();
-                    i6 = i8;
+                    i6 = i9;
+                    i7 = 1;
                     truncateAt2 = null;
-                    i7 = i5;
+                    i8 = i5;
                 } else {
-                    i6 = i8;
+                    i6 = i9;
+                    i7 = 1;
                     staticLayout = 0;
-                    i7 = i5;
+                    i8 = i5;
                     try {
                         staticLayout2 = new StaticLayout(charSequence, textPaint, i3, alignment, f, f2, z);
                         truncateAt2 = staticLayout;
@@ -74,16 +77,16 @@ public class StaticLayoutEx {
                         e = e2;
                     }
                 }
-                if (staticLayout2.getLineCount() <= i7) {
+                if (staticLayout2.getLineCount() <= i8) {
                     return staticLayout2;
                 }
-                int i9 = i7 - 1;
-                float lineLeft = staticLayout2.getLineLeft(i9);
-                float lineWidth = staticLayout2.getLineWidth(i9);
+                int i10 = i8 - 1;
+                float lineLeft = staticLayout2.getLineLeft(i10);
+                float lineWidth = staticLayout2.getLineWidth(i10);
                 if (lineLeft != BitmapDescriptorFactory.HUE_RED) {
-                    offsetForHorizontal = staticLayout2.getOffsetForHorizontal(i9, lineLeft);
+                    offsetForHorizontal = staticLayout2.getOffsetForHorizontal(i10, lineLeft);
                 } else {
-                    offsetForHorizontal = staticLayout2.getOffsetForHorizontal(i9, lineWidth);
+                    offsetForHorizontal = staticLayout2.getOffsetForHorizontal(i10, lineWidth);
                 }
                 if (lineWidth < i4 - AndroidUtilities.m50dp(10)) {
                     offsetForHorizontal += 3;
@@ -91,7 +94,7 @@ public class StaticLayoutEx {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence.subSequence(0, Math.max(0, offsetForHorizontal - 3)));
                 spannableStringBuilder.append((CharSequence) "…");
                 if (i6 >= 23) {
-                    return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i3).setAlignment(alignment).setLineSpacing(f2, f).setIncludePad(z).setEllipsize(((AnimatedEmojiSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), AnimatedEmojiSpan.class)).length > 0 ? truncateAt2 : truncateAt).setEllipsizedWidth(i4).setMaxLines(i7).setBreakStrategy(z2 ? 1 : 0).setHyphenationFrequency(0).build();
+                    return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i3).setAlignment(alignment).setLineSpacing(f2, f).setIncludePad(z).setEllipsize(((AnimatedEmojiSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), AnimatedEmojiSpan.class)).length > 0 ? truncateAt2 : truncateAt).setEllipsizedWidth(i4).setMaxLines(i8).setBreakStrategy(z2 ? i7 : 0).setHyphenationFrequency(0).build();
                 }
                 return new StaticLayout(spannableStringBuilder, textPaint, i3, alignment, f, f2, z);
             }

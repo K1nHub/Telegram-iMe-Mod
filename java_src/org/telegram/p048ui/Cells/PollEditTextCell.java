@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -164,7 +164,7 @@ public class PollEditTextCell extends FrameLayout {
             this.moveImageView = imageView;
             imageView.setFocusable(false);
             this.moveImageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.moveImageView.setImageResource(C3286R.C3288drawable.poll_reorder);
+            this.moveImageView.setImageResource(C3301R.C3303drawable.poll_reorder);
             this.moveImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.MULTIPLY));
             addView(this.moveImageView, LayoutHelper.createFrame(48, 48, (LocaleController.isRTL ? 5 : 3) | 48, 6, 2, 6, 0));
             ImageView imageView2 = new ImageView(context);
@@ -172,10 +172,10 @@ public class PollEditTextCell extends FrameLayout {
             imageView2.setFocusable(false);
             this.deleteImageView.setScaleType(ImageView.ScaleType.CENTER);
             this.deleteImageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("stickers_menuSelector")));
-            this.deleteImageView.setImageResource(C3286R.C3288drawable.poll_remove);
+            this.deleteImageView.setImageResource(C3301R.C3303drawable.poll_remove);
             this.deleteImageView.setOnClickListener(onClickListener);
             this.deleteImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.MULTIPLY));
-            this.deleteImageView.setContentDescription(LocaleController.getString("Delete", C3286R.string.Delete));
+            this.deleteImageView.setContentDescription(LocaleController.getString("Delete", C3301R.string.Delete));
             ImageView imageView3 = this.deleteImageView;
             boolean z3 = LocaleController.isRTL;
             addView(imageView3, LayoutHelper.createFrame(48, 50, (z3 ? 3 : 5) | 48, z3 ? 3 : 0, 0, z3 ? 0 : 3, 0));
@@ -189,7 +189,7 @@ public class PollEditTextCell extends FrameLayout {
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
             checkBox2.setColor(null, "windowBackgroundWhiteGrayIcon", "checkboxCheck");
-            this.checkBox.setContentDescription(LocaleController.getString("AccDescrQuizCorrectAnswer", C3286R.string.AccDescrQuizCorrectAnswer));
+            this.checkBox.setContentDescription(LocaleController.getString("AccDescrQuizCorrectAnswer", C3301R.string.AccDescrQuizCorrectAnswer));
             this.checkBox.setDrawUnchecked(true);
             this.checkBox.setChecked(true, false);
             this.checkBox.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -327,20 +327,20 @@ public class PollEditTextCell extends FrameLayout {
             CheckBox2 checkBox2 = this.checkBox;
             Property property = View.ALPHA;
             float[] fArr = new float[1];
-            fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            fArr[0] = z ? 1.0f : 0.0f;
             animatorArr[0] = ObjectAnimator.ofFloat(checkBox2, property, fArr);
             ImageView imageView = this.moveImageView;
             Property property2 = View.ALPHA;
             float[] fArr2 = new float[1];
-            fArr2[0] = z ? BitmapDescriptorFactory.HUE_RED : 1.0f;
+            fArr2[0] = z ? 0.0f : 1.0f;
             animatorArr[1] = ObjectAnimator.ofFloat(imageView, property2, fArr2);
             animatorSet2.playTogether(animatorArr);
             this.checkBoxAnimation.setDuration(180L);
             this.checkBoxAnimation.start();
             return;
         }
-        this.checkBox.setAlpha(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-        this.moveImageView.setAlpha(z ? BitmapDescriptorFactory.HUE_RED : 1.0f);
+        this.checkBox.setAlpha(z ? 1.0f : 0.0f);
+        this.moveImageView.setAlpha(z ? 0.0f : 1.0f);
     }
 
     public void setTextAndHint(CharSequence charSequence, String str, boolean z) {
@@ -386,6 +386,7 @@ public class PollEditTextCell extends FrameLayout {
             } else {
                 m50dp = AndroidUtilities.m50dp(this.moveImageView != null ? 63 : 20);
             }
+            float f = m50dp;
             float measuredHeight2 = getMeasuredHeight() - 1;
             int measuredWidth2 = getMeasuredWidth();
             if (LocaleController.isRTL) {
@@ -393,7 +394,7 @@ public class PollEditTextCell extends FrameLayout {
             } else {
                 i = 0;
             }
-            canvas.drawLine(m50dp, measuredHeight2, measuredWidth2 - i, getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(f, measuredHeight2, measuredWidth2 - i, getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 }

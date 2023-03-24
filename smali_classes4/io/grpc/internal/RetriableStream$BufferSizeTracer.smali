@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public outboundWireSize(J)V
-    .locals 7
+    .locals 6
 
     .line 1205
     iget-object v0, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
@@ -102,9 +102,9 @@
 
     move-result-wide p1
 
-    cmp-long v4, v2, p1
+    cmp-long p1, v2, p1
 
-    if-gtz v4, :cond_2
+    if-gtz p1, :cond_2
 
     .line 1218
     monitor-exit v1
@@ -121,16 +121,16 @@
 
     move-result-wide v2
 
-    const/4 v4, 0x1
+    cmp-long p1, p1, v2
 
-    cmp-long v5, p1, v2
+    const/4 p2, 0x1
 
-    if-lez v5, :cond_3
+    if-lez p1, :cond_3
 
     .line 1222
     iget-object p1, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->substream:Lio/grpc/internal/RetriableStream$Substream;
 
-    iput-boolean v4, p1, Lio/grpc/internal/RetriableStream$Substream;->bufferLimitExceeded:Z
+    iput-boolean p2, p1, Lio/grpc/internal/RetriableStream$Substream;->bufferLimitExceeded:Z
 
     goto :goto_0
 
@@ -145,40 +145,40 @@
 
     iget-wide v2, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->bufferNeeded:J
 
-    iget-object p2, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
+    iget-object v4, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
 
-    invoke-static {p2}, Lio/grpc/internal/RetriableStream;->access$2400(Lio/grpc/internal/RetriableStream;)J
+    invoke-static {v4}, Lio/grpc/internal/RetriableStream;->access$2400(Lio/grpc/internal/RetriableStream;)J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    sub-long/2addr v2, v5
+    sub-long/2addr v2, v4
 
     invoke-virtual {p1, v2, v3}, Lio/grpc/internal/RetriableStream$ChannelBufferMeter;->addAndGet(J)J
 
-    move-result-wide p1
-
-    .line 1227
-    iget-object v2, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
-
-    iget-wide v5, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->bufferNeeded:J
-
-    invoke-static {v2, v5, v6}, Lio/grpc/internal/RetriableStream;->access$2402(Lio/grpc/internal/RetriableStream;J)J
-
-    .line 1229
-    iget-object v2, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
-
-    invoke-static {v2}, Lio/grpc/internal/RetriableStream;->access$2700(Lio/grpc/internal/RetriableStream;)J
-
     move-result-wide v2
 
-    cmp-long v5, p1, v2
+    .line 1227
+    iget-object p1, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
 
-    if-lez v5, :cond_4
+    iget-wide v4, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->bufferNeeded:J
+
+    invoke-static {p1, v4, v5}, Lio/grpc/internal/RetriableStream;->access$2402(Lio/grpc/internal/RetriableStream;J)J
+
+    .line 1229
+    iget-object p1, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->this$0:Lio/grpc/internal/RetriableStream;
+
+    invoke-static {p1}, Lio/grpc/internal/RetriableStream;->access$2700(Lio/grpc/internal/RetriableStream;)J
+
+    move-result-wide v4
+
+    cmp-long p1, v2, v4
+
+    if-lez p1, :cond_4
 
     .line 1230
     iget-object p1, p0, Lio/grpc/internal/RetriableStream$BufferSizeTracer;->substream:Lio/grpc/internal/RetriableStream$Substream;
 
-    iput-boolean v4, p1, Lio/grpc/internal/RetriableStream$Substream;->bufferLimitExceeded:Z
+    iput-boolean p2, p1, Lio/grpc/internal/RetriableStream$Substream;->bufferLimitExceeded:Z
 
     .line 1234
     :cond_4

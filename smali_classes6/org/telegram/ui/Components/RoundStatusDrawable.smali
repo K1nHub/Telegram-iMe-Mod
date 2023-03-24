@@ -87,7 +87,7 @@
 
     int-to-long v4, v1
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     long-to-float v2, v4
 
@@ -160,7 +160,7 @@
     .line 79
     iget v2, p0, Lorg/telegram/ui/Components/RoundStatusDrawable;->progress:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 

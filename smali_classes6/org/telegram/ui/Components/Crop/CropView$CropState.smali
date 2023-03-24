@@ -631,7 +631,7 @@
     .line 161
     iget v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->scale:F
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     iput v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->scale:F
 
@@ -681,7 +681,7 @@
     .line 109
     iget v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->scale:F
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     iput v0, p0, Lorg/telegram/ui/Components/Crop/CropView$CropState;->scale:F
 

@@ -9,7 +9,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -121,8 +121,8 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
             MessageObject.SendAnimationData sendAnimationData = new MessageObject.SendAnimationData();
             int[] iArr = new int[2];
             getLocationInWindow(iArr);
-            sendAnimationData.f1437x = imageReceiver.getCenterX() + iArr[0];
-            sendAnimationData.f1438y = imageReceiver.getCenterY() + iArr[1];
+            sendAnimationData.f1438x = imageReceiver.getCenterX() + iArr[0];
+            sendAnimationData.f1439y = imageReceiver.getCenterY() + iArr[1];
             sendAnimationData.width = imageReceiver.getImageWidth();
             sendAnimationData.height = imageReceiver.getImageHeight();
             return sendAnimationData;
@@ -133,6 +133,7 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
     public void setSticker(TLRPC$Document tLRPC$Document, SendMessagesHelper.ImportingSticker importingSticker, Object obj, String str, boolean z) {
         boolean z2;
         boolean z3;
+        boolean z4;
         int i;
         this.currentEmoji = str;
         this.isPremiumSticker = MessageObject.isPremiumSticker(tLRPC$Document);
@@ -145,9 +146,11 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
         if (importingSticker != null) {
             this.stickerPath = importingSticker;
             if (importingSticker.validated) {
+                z4 = true;
                 i = 4;
                 this.imageView.setImage(ImageLocation.getForPath(importingSticker.path), "80_80", null, null, DocumentObject.getSvgRectThumb("dialogBackgroundGray", 1.0f), 0L, importingSticker.animated ? "tgs" : null, 0, 1);
             } else {
+                z4 = true;
                 i = 4;
                 this.imageView.setImage(null, null, null, null, DocumentObject.getSvgRectThumb("dialogBackgroundGray", 1.0f), 0L, importingSticker.animated ? "tgs" : null, 0, 1);
             }
@@ -158,15 +161,15 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
             } else {
                 this.emojiTextView.setVisibility(i);
             }
-            z2 = true;
+            z2 = z4;
         } else {
             z2 = true;
             if (tLRPC$Document != null) {
                 this.sticker = tLRPC$Document;
                 this.parentObject = obj;
                 TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
-                boolean z4 = this.fromEmojiPanel;
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document, z4 ? "emptyListPlaceholder" : "windowBackgroundGray", z4 ? 0.2f : 1.0f);
+                boolean z5 = this.fromEmojiPanel;
+                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document, z5 ? "emptyListPlaceholder" : "windowBackgroundGray", z5 ? 0.2f : 1.0f);
                 String str2 = this.fromEmojiPanel ? "66_66_pcache_compress" : "66_66";
                 if (MessageObject.isTextColorEmoji(tLRPC$Document)) {
                     this.imageView.setColorFilter(Theme.chat_animatedEmojiTextColorFilter);
@@ -217,7 +220,7 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
                     }
                     z3 = false;
                     if (!z3) {
-                        this.emojiTextView.setText(Emoji.replaceEmoji(MediaDataController.getInstance(this.currentAccount).getEmojiForSticker(this.sticker.f1507id), this.emojiTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(16), false));
+                        this.emojiTextView.setText(Emoji.replaceEmoji(MediaDataController.getInstance(this.currentAccount).getEmojiForSticker(this.sticker.f1508id), this.emojiTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(16), false));
                     }
                     this.emojiTextView.setVisibility(0);
                 } else {
@@ -304,7 +307,7 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        String string = LocaleController.getString("AttachSticker", C3286R.string.AttachSticker);
+        String string = LocaleController.getString("AttachSticker", C3301R.string.AttachSticker);
         if (this.sticker != null) {
             int i = 0;
             while (true) {

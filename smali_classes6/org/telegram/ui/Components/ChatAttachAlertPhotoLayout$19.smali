@@ -163,7 +163,7 @@
 
     sub-float v3, v4, v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v2, v1
 
@@ -183,7 +183,7 @@
 
     sub-float/2addr v4, v5
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     add-float/2addr v3, v1
 
@@ -247,7 +247,7 @@
 
     iget v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert;->cornerRadius:F
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 

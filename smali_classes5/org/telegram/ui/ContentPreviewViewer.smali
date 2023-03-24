@@ -1470,7 +1470,7 @@
 
     :cond_13
     :goto_8
-    const/4 v13, 0x0
+    move v13, v14
 
     :cond_14
     :goto_9
@@ -1770,7 +1770,7 @@
     .line 1840
     iget-object v6, v1, Lorg/telegram/ui/ContentPreviewViewer;->paint:Landroid/graphics/Paint;
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1802,7 +1802,7 @@
 
     iget v7, v1, Lorg/telegram/ui/ContentPreviewViewer;->showProgress:F
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     float-to-int v6, v7
 
@@ -1872,7 +1872,7 @@
     :cond_7
     sget v6, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    const/4 v2, 0x0
+    move v2, v8
 
     .line 1863
     :goto_1
@@ -1994,7 +1994,7 @@
     goto :goto_4
 
     :cond_a
-    const/4 v6, 0x0
+    move v6, v8
 
     :goto_4
     add-int/2addr v9, v6
@@ -2062,7 +2062,7 @@
 
     int-to-float v6, v7
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     float-to-int v6, v6
 
@@ -2077,11 +2077,11 @@
 
     const v12, 0x3f2ab9f5    # 0.6669f
 
-    mul-float v12, v12, v7
+    mul-float/2addr v12, v7
 
     const/high16 v13, 0x3d600000    # 0.0546875f
 
-    mul-float v13, v13, v7
+    mul-float/2addr v13, v7
 
     .line 1883
     iget-object v14, v1, Lorg/telegram/ui/ContentPreviewViewer;->centerImage:Lorg/telegram/messenger/ImageReceiver;
@@ -2259,7 +2259,7 @@
 
     div-float/2addr v12, v13
 
-    mul-float v12, v12, v10
+    mul-float/2addr v12, v10
 
     add-float/2addr v12, v9
 
@@ -2280,7 +2280,7 @@
 
     sub-float v10, v4, v10
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     float-to-int v3, v10
 
@@ -2942,7 +2942,7 @@
 
     const v1, 0x3f0ccccd    # 0.55f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     div-float/2addr v0, p2
 
@@ -2954,7 +2954,7 @@
 
     sub-float v0, v1, v0
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     neg-float p2, v0
 
@@ -2970,7 +2970,7 @@
     const/high16 v1, -0x40800000    # -1.0f
 
     :goto_0
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     return p2
 .end method
@@ -3473,12 +3473,12 @@
 
     if-eqz p6, :cond_0
 
-    const/4 v8, 0x1
+    move v8, p3
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v0
 
     .line 1321
     :goto_0
@@ -3522,7 +3522,7 @@
 
     if-eqz v8, :cond_2
 
-    const/4 v1, 0x1
+    move v1, p3
 
     goto :goto_1
 
@@ -3533,7 +3533,7 @@
     move-result v1
 
     :goto_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     if-ge v2, v1, :cond_14
@@ -3662,7 +3662,7 @@
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     :goto_5
-    const/4 v6, 0x0
+    move v6, v0
 
     goto/16 :goto_7
 
@@ -3720,7 +3720,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_4
 
@@ -3743,12 +3743,12 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    const/4 v1, 0x1
+    move v1, p3
 
     goto :goto_4
 
     :cond_d
-    const/4 v1, -0x1
+    move v1, v2
 
     goto :goto_4
 
@@ -3764,7 +3764,7 @@
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     :goto_6
-    const/4 v6, 0x2
+    move v6, v4
 
     goto :goto_7
 
@@ -3818,7 +3818,7 @@
     goto :goto_6
 
     :cond_11
-    const/4 v6, -0x1
+    move v6, v2
 
     :goto_7
     if-ne v6, v2, :cond_12
@@ -4021,9 +4021,9 @@
 
     const v1, -0x39e3c000    # -10000.0f
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v1, 0x0
 
     if-nez v0, :cond_3
 
@@ -4035,10 +4035,10 @@
     iput v0, v12, Lorg/telegram/ui/ContentPreviewViewer;->lastTouchY:F
 
     .line 1142
-    iput v2, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
+    iput v1, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
 
     .line 1143
-    iput v2, v12, Lorg/telegram/ui/ContentPreviewViewer;->moveY:F
+    iput v1, v12, Lorg/telegram/ui/ContentPreviewViewer;->moveY:F
 
     goto :goto_1
 
@@ -4049,25 +4049,25 @@
     move-result v0
 
     .line 1146
-    iget v1, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
+    iget v2, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
 
     iget v3, v12, Lorg/telegram/ui/ContentPreviewViewer;->lastTouchY:F
 
     sub-float v3, v0, v3
 
-    add-float/2addr v1, v3
+    add-float/2addr v2, v3
 
-    iput v1, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
+    iput v2, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
 
     .line 1147
     iput v0, v12, Lorg/telegram/ui/ContentPreviewViewer;->lastTouchY:F
 
-    cmpl-float v0, v1, v2
+    cmpl-float v0, v2, v1
 
     if-lez v0, :cond_4
 
     .line 1149
-    iput v2, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
+    iput v1, v12, Lorg/telegram/ui/ContentPreviewViewer;->currentMoveY:F
 
     goto :goto_0
 
@@ -4077,13 +4077,13 @@
     .line 1150
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v1
 
-    neg-int v2, v2
+    neg-int v1, v1
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    cmpg-float v1, v1, v2
+    cmpg-float v1, v2, v1
 
     if-gez v1, :cond_5
 
@@ -4173,7 +4173,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_2
     if-ge v8, v7, :cond_29
@@ -4232,7 +4232,7 @@
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     :goto_3
-    const/4 v11, 0x0
+    move v11, v2
 
     goto :goto_6
 
@@ -4272,7 +4272,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_4
 
@@ -4293,12 +4293,12 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    const/4 v0, 0x1
+    move v0, v13
 
     goto :goto_4
 
     :cond_d
-    const/4 v0, -0x1
+    move v0, v1
 
     :goto_4
     move v11, v0
@@ -4345,7 +4345,7 @@
     goto :goto_5
 
     :cond_10
-    const/4 v11, -0x1
+    move v11, v1
 
     :goto_6
     if-eq v11, v1, :cond_29
@@ -4986,9 +4986,9 @@
 
     int-to-double v4, v4
 
-    cmpl-double v6, v0, v4
+    cmpl-double v0, v0, v4
 
-    if-lez v6, :cond_31
+    if-lez v0, :cond_31
 
     .line 1287
     iget-object v0, v12, Lorg/telegram/ui/ContentPreviewViewer;->openPreviewRunnable:Ljava/lang/Runnable;

@@ -77,9 +77,9 @@
 
     iget-wide v2, p0, Lio/reactivex/internal/operators/observable/ObservableWindow;->skip:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 39
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/AbstractObservableWithUpstream;->source:Lio/reactivex/ObservableSource;

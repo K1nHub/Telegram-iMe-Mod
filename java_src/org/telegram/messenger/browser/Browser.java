@@ -312,7 +312,7 @@ public class Browser {
             r2.postNotificationName(r5, r1)
             goto L38
         L37:
-            r3 = 0
+            r3 = r0
         L38:
             if (r3 != 0) goto L3d
             openUrl(r7, r6, r8, r0)

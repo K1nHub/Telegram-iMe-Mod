@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(DD)V
-    .locals 5
+    .locals 4
     .param p1    # D
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
@@ -86,9 +86,9 @@
 
     const-wide v2, 0x4066800000000000L    # 180.0
 
-    cmpg-double v4, p3, v2
+    cmpg-double v2, p3, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
     iput-wide p3, p0, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
 
@@ -216,21 +216,21 @@
 
     xor-long/2addr v0, v5
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/lit8 v1, v1, 0x1f
+    add-int/lit8 v0, v0, 0x1f
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     ushr-long v4, v2, v4
 
-    xor-long/2addr v2, v4
+    xor-long v1, v2, v4
 
-    long-to-int v0, v2
+    long-to-int v1, v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

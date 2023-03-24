@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,97:1\n127#2,5:98\n127#2,5:103\n127#2,5:108\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n*L\n40#1:98,5\n41#1:103,5\n42#1:108,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n127#2,5:106\n127#2,5:111\n127#2,5:116\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n*L\n42#1:106,5\n43#1:111,5\n44#1:116,5\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
-    .locals 4
+    .locals 5
 
     const-class v0, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;
 
@@ -74,10 +74,10 @@
 
     invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 39
+    .line 41
     new-instance p2, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 40
+    .line 42
     invoke-static {}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt;->getEVM_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v1
@@ -95,7 +95,7 @@
 
     check-cast v1, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 41
+    .line 43
     invoke-static {}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt;->getTON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
@@ -103,29 +103,32 @@
     .line 131
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-virtual {p1, v0, v2, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;
-
-    .line 131
-    const-class v2, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-virtual {p1, v4, v2, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {p1, v2, v3, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    check-cast v2, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;
+
+    .line 44
+    invoke-static {}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt;->getTRON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v4
+
+    .line 131
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v4, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast p1, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 39
-    invoke-direct {p2, v1, v0, p1}, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSourceFactory;-><init>(Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)V
+    .line 41
+    invoke-direct {p2, v1, v2, p1}, Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSourceFactory;-><init>(Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/smedialink/storage/data/datasource/transfer/WalletTransferDataSource;)V
 
     return-object p2
 .end method
@@ -133,7 +136,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 38
+    .line 40
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

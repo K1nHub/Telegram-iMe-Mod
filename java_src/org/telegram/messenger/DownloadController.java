@@ -834,10 +834,10 @@ public class DownloadController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00a7  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00c5 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00c6 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r8v16, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r8v4, types: [java.lang.String] */
     /*
@@ -871,10 +871,10 @@ public class DownloadController extends BaseController implements NotificationCe
             java.util.ArrayList<org.telegram.messenger.DownloadObject> r1 = r0.documentDownloadQueue
         L1f:
             r4 = 0
-            r5 = 0
+            r5 = r4
         L21:
             int r6 = r21.size()
-            if (r5 >= r6) goto Lc9
+            if (r5 >= r6) goto Lca
             r6 = r21
             java.lang.Object r7 = r6.get(r5)
             org.telegram.messenger.DownloadObject r7 = (org.telegram.messenger.DownloadObject) r7
@@ -901,71 +901,71 @@ public class DownloadController extends BaseController implements NotificationCe
         L57:
             r8 = r10
         L58:
-            if (r10 == 0) goto Lc5
+            if (r10 == 0) goto Lc6
             java.util.HashMap<java.lang.String, org.telegram.messenger.DownloadObject> r9 = r0.downloadQueueKeys
             boolean r9 = r9.containsKey(r10)
-            if (r9 == 0) goto L63
-            goto Lc5
-        L63:
-            if (r8 == 0) goto L8a
+            if (r9 == 0) goto L64
+            goto Lc6
+        L64:
+            if (r8 == 0) goto L8b
             org.telegram.tgnet.TLObject r9 = r7.object
             org.telegram.tgnet.TLRPC$Photo r9 = (org.telegram.tgnet.TLRPC$Photo) r9
             boolean r11 = r7.secret
-            if (r11 == 0) goto L70
-            r17 = 2
-            goto L79
-        L70:
+            if (r11 == 0) goto L71
+            r17 = r2
+            goto L7a
+        L71:
             boolean r11 = r7.forceCache
-            if (r11 == 0) goto L77
-            r17 = 1
-            goto L79
-        L77:
-            r17 = 0
-        L79:
+            if (r11 == 0) goto L78
+            r17 = r3
+            goto L7a
+        L78:
+            r17 = r4
+        L7a:
             org.telegram.messenger.FileLoader r12 = r19.getFileLoader()
             org.telegram.messenger.ImageLocation r13 = org.telegram.messenger.ImageLocation.getForPhoto(r8, r9)
             java.lang.String r14 = r7.parent
             r15 = 0
             r16 = 0
             r12.loadFile(r13, r14, r15, r16, r17)
-            goto La2
-        L8a:
+            goto La3
+        L8b:
             org.telegram.tgnet.TLObject r8 = r7.object
             boolean r9 = r8 instanceof org.telegram.tgnet.TLRPC$Document
-            if (r9 == 0) goto La4
+            if (r9 == 0) goto La5
             org.telegram.tgnet.TLRPC$Document r8 = (org.telegram.tgnet.TLRPC$Document) r8
             org.telegram.messenger.FileLoader r9 = r19.getFileLoader()
             java.lang.String r11 = r7.parent
             boolean r12 = r7.secret
-            if (r12 == 0) goto L9e
-            r12 = 2
-            goto L9f
-        L9e:
-            r12 = 0
+            if (r12 == 0) goto L9f
+            r12 = r2
+            goto La0
         L9f:
+            r12 = r4
+        La0:
             r9.loadFile(r8, r11, r4, r12)
-        La2:
-            r8 = 1
-            goto La5
-        La4:
-            r8 = 0
+        La3:
+            r8 = r3
+            goto La6
         La5:
-            if (r8 == 0) goto Lc5
+            r8 = r4
+        La6:
+            if (r8 == 0) goto Lc6
             r1.add(r7)
             java.util.HashMap<java.lang.String, org.telegram.messenger.DownloadObject> r8 = r0.downloadQueueKeys
             r8.put(r10, r7)
             java.util.HashMap<android.util.Pair<java.lang.Long, java.lang.Integer>, org.telegram.messenger.DownloadObject> r8 = r0.downloadQueuePairs
             android.util.Pair r9 = new android.util.Pair
-            long r10 = r7.f1425id
+            long r10 = r7.f1426id
             java.lang.Long r10 = java.lang.Long.valueOf(r10)
             int r11 = r7.type
             java.lang.Integer r11 = java.lang.Integer.valueOf(r11)
             r9.<init>(r10, r11)
             r8.put(r9, r7)
-        Lc5:
+        Lc6:
             int r5 = r5 + 1
             goto L21
-        Lc9:
+        Lca:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.DownloadController.processDownloadObjects(int, java.util.ArrayList):void");
@@ -993,9 +993,9 @@ public class DownloadController extends BaseController implements NotificationCe
         DownloadObject downloadObject = this.downloadQueueKeys.get(str);
         if (downloadObject != null) {
             this.downloadQueueKeys.remove(str);
-            this.downloadQueuePairs.remove(new Pair(Long.valueOf(downloadObject.f1425id), Integer.valueOf(downloadObject.type)));
+            this.downloadQueuePairs.remove(new Pair(Long.valueOf(downloadObject.f1426id), Integer.valueOf(downloadObject.type)));
             if (i == 0 || i == 2) {
-                getMessagesStorage().removeFromDownloadQueue(downloadObject.f1425id, downloadObject.type, false);
+                getMessagesStorage().removeFromDownloadQueue(downloadObject.f1426id, downloadObject.type, false);
             }
             int i2 = downloadObject.type;
             if (i2 == 1) {
@@ -1190,8 +1190,7 @@ public class DownloadController extends BaseController implements NotificationCe
                             Long l5 = this.typingTimes.get(j);
                             if (delayedMessage.type == 4) {
                                 if (l5 == null || l5.longValue() + 4000 < System.currentTimeMillis()) {
-                                    HashMap<Object, Object> hashMap = delayedMessage.extraHashMap;
-                                    MessageObject messageObject = (MessageObject) hashMap.get(str4 + "_i");
+                                    MessageObject messageObject = (MessageObject) delayedMessage.extraHashMap.get(str4 + "_i");
                                     if (messageObject != null && messageObject.isVideo()) {
                                         getMessagesController().sendTyping(j, i9, 5, 0);
                                     } else if (messageObject != null && messageObject.getDocument() != null) {
@@ -1261,7 +1260,7 @@ public class DownloadController extends BaseController implements NotificationCe
                 break;
             }
             MessageObject messageObject2 = this.recentDownloadingFiles.get(i);
-            if (messageObject2 != null && (document2 = messageObject2.getDocument()) != null && document2.f1507id == tLRPC$Document.f1507id) {
+            if (messageObject2 != null && (document2 = messageObject2.getDocument()) != null && document2.f1508id == tLRPC$Document.f1508id) {
                 z2 = true;
                 break;
             }
@@ -1270,7 +1269,7 @@ public class DownloadController extends BaseController implements NotificationCe
         if (!z2) {
             for (int i2 = 0; i2 < this.downloadingFiles.size(); i2++) {
                 MessageObject messageObject3 = this.downloadingFiles.get(i2);
-                if (messageObject3 != null && (document = messageObject3.getDocument()) != null && document.f1507id == tLRPC$Document.f1507id) {
+                if (messageObject3 != null && (document = messageObject3.getDocument()) != null && document.f1508id == tLRPC$Document.f1508id) {
                     break;
                 }
             }
@@ -1296,7 +1295,7 @@ public class DownloadController extends BaseController implements NotificationCe
             SQLitePreparedStatement executeFast = getMessagesStorage().getDatabase().executeFast("REPLACE INTO downloading_documents VALUES(?, ?, ?, ?, ?)");
             executeFast.bindByteBuffer(1, nativeByteBuffer);
             executeFast.bindInteger(2, messageObject.getDocument().dc_id);
-            executeFast.bindLong(3, messageObject.getDocument().f1507id);
+            executeFast.bindLong(3, messageObject.getDocument().f1508id);
             executeFast.bindLong(4, System.currentTimeMillis());
             executeFast.bindInteger(4, 0);
             executeFast.step();
@@ -1330,7 +1329,7 @@ public class DownloadController extends BaseController implements NotificationCe
             if (i >= this.downloadingFiles.size()) {
                 z2 = false;
                 break;
-            } else if (this.downloadingFiles.get(i).getDocument() != null && this.downloadingFiles.get(i).getDocument().f1507id == tLRPC$Document.f1507id) {
+            } else if (this.downloadingFiles.get(i).getDocument() != null && this.downloadingFiles.get(i).getDocument().f1508id == tLRPC$Document.f1508id) {
                 this.downloadingFiles.remove(i);
                 z2 = true;
                 break;
@@ -1344,7 +1343,7 @@ public class DownloadController extends BaseController implements NotificationCe
                 if (i2 >= this.recentDownloadingFiles.size()) {
                     z = false;
                     break;
-                } else if (this.recentDownloadingFiles.get(i2).getDocument() != null && this.recentDownloadingFiles.get(i2).getDocument().f1507id == tLRPC$Document.f1507id) {
+                } else if (this.recentDownloadingFiles.get(i2).getDocument() != null && this.recentDownloadingFiles.get(i2).getDocument().f1508id == tLRPC$Document.f1508id) {
                     break;
                 } else {
                     i2++;
@@ -1367,7 +1366,7 @@ public class DownloadController extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onDownloadComplete$6(MessageObject messageObject) {
         try {
-            getMessagesStorage().getDatabase().executeFast(String.format(Locale.ENGLISH, "UPDATE downloading_documents SET state = 1, date = %d WHERE hash = %d AND id = %d", Long.valueOf(System.currentTimeMillis()), Integer.valueOf(messageObject.getDocument().dc_id), Long.valueOf(messageObject.getDocument().f1507id))).stepThis().dispose();
+            getMessagesStorage().getDatabase().executeFast(String.format(Locale.ENGLISH, "UPDATE downloading_documents SET state = 1, date = %d WHERE hash = %d AND id = %d", Long.valueOf(System.currentTimeMillis()), Integer.valueOf(messageObject.getDocument().dc_id), Long.valueOf(messageObject.getDocument().f1508id))).stepThis().dispose();
             SQLiteCursor queryFinalized = getMessagesStorage().getDatabase().queryFinalized("SELECT COUNT(*) FROM downloading_documents WHERE state = 1", new Object[0]);
             int intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
             queryFinalized.dispose();
@@ -1383,7 +1382,7 @@ public class DownloadController extends BaseController implements NotificationCe
                 while (queryFinalized3.next()) {
                     DownloadingDocumentEntry downloadingDocumentEntry = new DownloadingDocumentEntry();
                     downloadingDocumentEntry.hash = queryFinalized3.intValue(0);
-                    downloadingDocumentEntry.f1424id = queryFinalized3.longValue(1);
+                    downloadingDocumentEntry.f1425id = queryFinalized3.longValue(1);
                     arrayList.add(downloadingDocumentEntry);
                 }
                 queryFinalized3.dispose();
@@ -1391,7 +1390,7 @@ public class DownloadController extends BaseController implements NotificationCe
                 for (int i = 0; i < arrayList.size(); i++) {
                     executeFast.requery();
                     executeFast.bindInteger(1, ((DownloadingDocumentEntry) arrayList.get(i)).hash);
-                    executeFast.bindLong(2, ((DownloadingDocumentEntry) arrayList.get(i)).f1424id);
+                    executeFast.bindLong(2, ((DownloadingDocumentEntry) arrayList.get(i)).f1425id);
                     executeFast.step();
                 }
                 executeFast.dispose();
@@ -1425,7 +1424,7 @@ public class DownloadController extends BaseController implements NotificationCe
         TLRPC$Document document = messageObject.getDocument();
         for (int i2 = 0; i2 < this.downloadingFiles.size(); i2++) {
             TLRPC$Document document2 = this.downloadingFiles.get(i2).getDocument();
-            if (document2 == null || (document != null && document2.f1507id == document.f1507id)) {
+            if (document2 == null || (document != null && document2.f1508id == document.f1508id)) {
                 this.downloadingFiles.remove(i2);
                 z = true;
                 break;
@@ -1435,7 +1434,7 @@ public class DownloadController extends BaseController implements NotificationCe
         if (z) {
             getNotificationCenter().postNotificationName(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
             if (i == 0) {
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.formatString("MessageNotFound", C3286R.string.MessageNotFound, new Object[0]));
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.formatString("MessageNotFound", C3301R.string.MessageNotFound, new Object[0]));
             } else if (i == -1) {
                 LaunchActivity.checkFreeDiscSpaceStatic(2);
             }
@@ -1447,7 +1446,7 @@ public class DownloadController extends BaseController implements NotificationCe
         try {
             SQLitePreparedStatement executeFast = getMessagesStorage().getDatabase().executeFast("DELETE FROM downloading_documents WHERE hash = ? AND id = ?");
             executeFast.bindInteger(1, messageObject.getDocument().dc_id);
-            executeFast.bindLong(2, messageObject.getDocument().f1507id);
+            executeFast.bindLong(2, messageObject.getDocument().f1508id);
             executeFast.step();
             executeFast.dispose();
         } catch (Exception e) {
@@ -1486,7 +1485,7 @@ public class DownloadController extends BaseController implements NotificationCe
         int hash;
 
         /* renamed from: id */
-        long f1424id;
+        long f1425id;
 
         private DownloadingDocumentEntry() {
         }
@@ -1635,7 +1634,7 @@ public class DownloadController extends BaseController implements NotificationCe
             for (int i = 0; i < arrayList.size(); i++) {
                 executeFast.requery();
                 executeFast.bindInteger(1, ((MessageObject) arrayList.get(i)).getDocument().dc_id);
-                executeFast.bindLong(2, ((MessageObject) arrayList.get(i)).getDocument().f1507id);
+                executeFast.bindLong(2, ((MessageObject) arrayList.get(i)).getDocument().f1508id);
                 executeFast.step();
                 try {
                     FileLoader.getInstance(this.currentAccount).getPathToMessage(((MessageObject) arrayList.get(i)).messageOwner).delete();
@@ -1651,7 +1650,7 @@ public class DownloadController extends BaseController implements NotificationCe
 
     public boolean isDownloading(int i) {
         for (int i2 = 0; i2 < this.downloadingFiles.size(); i2++) {
-            if (this.downloadingFiles.get(i2).messageOwner.f1523id == i) {
+            if (this.downloadingFiles.get(i2).messageOwner.f1524id == i) {
                 return true;
             }
         }

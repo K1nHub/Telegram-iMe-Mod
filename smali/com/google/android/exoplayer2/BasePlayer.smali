@@ -144,7 +144,7 @@
 .end method
 
 .method private seekToOffset(JI)V
-    .locals 5
+    .locals 4
 
     .line 460
     invoke-interface {p0}, Lcom/google/android/exoplayer2/Player;->getCurrentPosition()J
@@ -160,9 +160,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 463
     invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
@@ -307,53 +307,53 @@
 
     move-result-wide v2
 
-    const/16 v4, 0x64
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v5, 0x0
+    cmp-long v6, v0, v4
 
-    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
+    const/16 v7, 0x64
 
-    cmp-long v8, v0, v6
+    const/4 v8, 0x0
 
-    if-eqz v8, :cond_2
+    if-eqz v6, :cond_2
 
-    cmp-long v8, v2, v6
+    cmp-long v4, v2, v4
 
-    if-nez v8, :cond_0
+    if-nez v4, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const-wide/16 v6, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v8, v2, v6
+    cmp-long v4, v2, v4
 
-    if-nez v8, :cond_1
+    if-nez v4, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const-wide/16 v6, 0x64
+    const-wide/16 v4, 0x64
 
-    mul-long v0, v0, v6
+    mul-long/2addr v0, v4
 
     .line 379
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-static {v1, v5, v4}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
+    invoke-static {v0, v8, v7}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
-    move-result v4
+    move-result v7
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v4, 0x0
+    move v7, v8
 
     :goto_1
-    return v4
+    return v7
 .end method
 
 .method public final getContentDuration()J
@@ -428,9 +428,9 @@
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/Timeline$Window;->windowStartTimeMs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     return-wide v2
 
@@ -1255,7 +1255,7 @@
 .end method
 
 .method public final seekToPrevious()V
-    .locals 6
+    .locals 5
 
     .line 190
     invoke-interface {p0}, Lcom/google/android/exoplayer2/Player;->getCurrentTimeline()Lcom/google/android/exoplayer2/Timeline;
@@ -1317,9 +1317,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-gtz v5, :cond_2
+    if-gtz v0, :cond_2
 
     .line 200
     invoke-direct {p0, v2}, Lcom/google/android/exoplayer2/BasePlayer;->seekToPreviousMediaItemInternal(I)V

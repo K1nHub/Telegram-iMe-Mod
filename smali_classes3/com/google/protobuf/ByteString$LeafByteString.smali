@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 873
+    .line 948
     invoke-direct {p0}, Lcom/google/protobuf/ByteString;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 873
+    .line 948
     invoke-super {p0}, Lcom/google/protobuf/ByteString;->iterator()Lcom/google/protobuf/ByteString$ByteIterator;
 
     move-result-object v0

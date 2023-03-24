@@ -301,12 +301,12 @@
 
     if-eq p2, v0, :cond_4
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_0
     invoke-virtual {p1, v4, p2}, Lorg/telegram/ui/Cells/StickerSetCell;->setStickersSet(Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Z)V
@@ -382,7 +382,7 @@
     goto :goto_2
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/Cells/StickerSetCell;->setChecked(ZZ)V

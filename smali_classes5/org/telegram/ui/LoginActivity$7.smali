@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 910
+    .line 912
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$7;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 913
+    .line 915
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$7;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$600(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -46,7 +46,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 915
+    .line 917
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$7;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$900(Lorg/telegram/ui/LoginActivity;)Landroid/animation/ValueAnimator;
@@ -55,7 +55,7 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 916
+    .line 918
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$7;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v0, 0x0

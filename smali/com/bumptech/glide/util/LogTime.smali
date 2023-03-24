@@ -50,7 +50,7 @@
 
     sget-wide v0, Lcom/bumptech/glide/util/LogTime;->MILLIS_MULTIPLIER:D
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     return-wide p0
 .end method

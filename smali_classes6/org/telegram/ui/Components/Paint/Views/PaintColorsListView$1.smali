@@ -121,7 +121,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView$ColorView;->setSelected(ZZ)V

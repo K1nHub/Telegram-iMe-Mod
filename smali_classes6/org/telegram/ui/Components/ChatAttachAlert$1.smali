@@ -156,7 +156,7 @@
 
     int-to-float v1, v1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$1102(Lorg/telegram/ui/Components/ChatAttachAlert;F)F
 
@@ -587,12 +587,12 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_2
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     :goto_0
     aput v3, p2, v0
@@ -601,12 +601,12 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     aput v4, p2, v3
@@ -709,7 +709,7 @@
 
     if-eqz p6, :cond_6
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     :cond_6
     invoke-virtual {p1, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -720,12 +720,12 @@
 
     if-eqz p6, :cond_7
 
-    const/high16 p5, 0x3f800000    # 1.0f
+    move p5, v2
 
     goto :goto_2
 
     :cond_7
-    const p5, 0x3dcccccd    # 0.1f
+    move p5, p2
 
     .line 553
     :goto_2
@@ -738,7 +738,7 @@
     goto :goto_3
 
     :cond_8
-    const v2, 0x3dcccccd    # 0.1f
+    move v2, p2
 
     .line 554
     :goto_3

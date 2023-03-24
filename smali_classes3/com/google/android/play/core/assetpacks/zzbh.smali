@@ -106,7 +106,7 @@
 
     array-length p1, p0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, p1, :cond_3
@@ -345,7 +345,7 @@
 
     array-length v3, v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_3
@@ -504,7 +504,7 @@
 
     array-length v3, v0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_0
@@ -619,7 +619,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_4
@@ -682,7 +682,7 @@
 
     array-length v4, v3
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-ge v5, v4, :cond_3
@@ -723,7 +723,7 @@
 .end method
 
 .method final zzC(Ljava/util/List;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -783,9 +783,9 @@
 
     int-to-long v5, v0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_0
+    if-eqz v3, :cond_0
 
     .line 5
     invoke-static {v2}, Lcom/google/android/play/core/assetpacks/zzbh;->zzQ(Ljava/io/File;)Z
@@ -1731,7 +1731,7 @@
 .end method
 
 .method final zzw()V
-    .locals 8
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Lcom/google/android/play/core/assetpacks/zzbh;->zzO()Ljava/util/List;
@@ -1781,9 +1781,9 @@
 
     int-to-long v5, v5
 
-    cmp-long v7, v5, v3
+    cmp-long v5, v5, v3
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     new-instance v5, Ljava/io/File;
 

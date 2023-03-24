@@ -125,7 +125,7 @@
 
     if-eqz p1, :cond_4
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 192
     :goto_0
@@ -258,7 +258,7 @@
 
     invoke-direct {v2, v3}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 209
     :goto_1

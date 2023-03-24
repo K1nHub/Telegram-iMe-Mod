@@ -414,15 +414,15 @@
 .end method
 
 .method public static checkNotZero(J)J
-    .locals 3
+    .locals 2
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     return-wide p0
 
@@ -438,15 +438,15 @@
 .end method
 
 .method public static checkNotZero(JLjava/lang/Object;)J
-    .locals 3
+    .locals 2
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     return-wide p0
 

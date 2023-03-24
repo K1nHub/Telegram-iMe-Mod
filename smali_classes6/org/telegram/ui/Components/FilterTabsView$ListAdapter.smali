@@ -236,7 +236,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_1
     if-gt v1, p1, :cond_2
@@ -270,7 +270,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_2
     if-gt v0, p1, :cond_7
@@ -289,7 +289,7 @@
 
     if-ne v0, p1, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_3
 
@@ -318,7 +318,7 @@
 
     if-ne v0, p1, :cond_5
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_4
 

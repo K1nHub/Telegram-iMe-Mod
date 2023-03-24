@@ -747,17 +747,17 @@
     .line 363
     iput v1, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->currentChannel:I
 
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, p3, v3
+
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-wide/16 v5, 0x0
-
-    cmp-long v0, p3, v5
 
     if-lez v0, :cond_0
 
     const-wide/16 v5, 0x3e8
 
-    mul-long p3, p3, v5
+    mul-long/2addr p3, v5
 
     goto :goto_0
 
@@ -781,12 +781,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x2
+    move p1, p3
 
     goto :goto_1
 
     :cond_1
-    const/4 p1, 0x3
+    move p1, p4
 
     :goto_1
     iput p1, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->packetLength:I
@@ -929,7 +929,7 @@
 
     const/4 v3, 0x2
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v0, :cond_1
@@ -1105,7 +1105,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1306,12 +1306,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_1
@@ -1370,19 +1370,19 @@
 
     if-ne p1, v0, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_1
     and-int/lit8 v0, p2, 0x1
 
     if-ne v0, v2, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     shr-int/2addr p2, v2
@@ -1897,19 +1897,19 @@
     .line 1149
     iget-wide v0, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->validDataChannelTimeoutUs:J
 
-    const/4 v2, 0x0
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_1
+    if-eqz v0, :cond_1
 
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->lastCueUpdateUs:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->lastCueUpdateUs:J
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v4, v2
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
@@ -1917,24 +1917,24 @@
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/text/cea/CeaDecoder;->getPositionUs()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->lastCueUpdateUs:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->lastCueUpdateUs:J
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v2, v4
 
     .line 1153
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->validDataChannelTimeoutUs:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->validDataChannelTimeoutUs:J
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v2, v4
 
-    if-ltz v5, :cond_1
+    if-ltz v0, :cond_1
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     :cond_1
     :goto_0
-    return v2
+    return v1
 .end method
 
 .method private updateAndVerifyCurrentChannel(B)Z
@@ -2026,7 +2026,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    move v1, p1
 
     .line 460
     :cond_0
@@ -2124,12 +2124,12 @@
 
     if-eqz v2, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_2
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, p1
 
     :goto_2
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder;->isCaptionValid:Z
@@ -2156,7 +2156,7 @@
 
     :cond_7
     :goto_3
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

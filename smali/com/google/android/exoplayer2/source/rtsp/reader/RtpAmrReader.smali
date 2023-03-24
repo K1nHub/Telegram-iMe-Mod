@@ -312,7 +312,7 @@
 
     if-ne v10, v3, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_1
     const-string v3, "compound payload not supported currently"

@@ -661,7 +661,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 652
     :goto_1
@@ -676,7 +676,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     invoke-virtual {v4, v7}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -693,7 +693,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_3
     invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -752,7 +752,7 @@
 
     if-nez v10, :cond_6
 
-    const/4 v10, 0x0
+    move v10, v3
 
     goto :goto_4
 
@@ -768,7 +768,7 @@
 
     move-result v11
 
-    mul-int v10, v10, v11
+    mul-int/2addr v10, v11
 
     add-int/2addr v7, v10
 
@@ -790,7 +790,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_5
     sub-float v11, v7, v1
@@ -1127,7 +1127,7 @@
 
     move-result v11
 
-    mul-float v11, v11, v7
+    mul-float/2addr v11, v7
 
     .line 688
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -1403,7 +1403,7 @@
     .line 726
     iget-object v4, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->circlePath:Landroid/graphics/Path;
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     sget-object v5, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -1438,7 +1438,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v6, v1
 
@@ -1982,7 +1982,7 @@
 
     if-nez v0, :cond_0
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     .line 566
     :cond_0
@@ -2078,7 +2078,7 @@
 
     if-le v2, v4, :cond_2
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     .line 580
     :cond_2
@@ -2220,13 +2220,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4
-
-    :catch_0
-    nop
-
     .line 614
-    :goto_4
+    :catch_0
     invoke-static {p1}, Lorg/telegram/messenger/Emoji;->addRecentEmoji(Ljava/lang/String;)V
 
     .line 615
@@ -2247,7 +2242,7 @@
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_8
-    :goto_5
+    :goto_4
     return-void
 .end method
 
@@ -3225,34 +3220,34 @@
 
     if-eqz v5, :cond_0
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v7
 
     :goto_0
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
     move-result v4
 
-    const/high16 v5, 0x437f0000    # 255.0f
+    cmpl-float v5, v4, v7
 
-    const/16 v8, 0x20
+    const/high16 v8, 0x437f0000    # 255.0f
 
-    cmpl-float v9, v4, v7
+    const/16 v9, 0x20
 
-    if-lez v9, :cond_1
+    if-lez v5, :cond_1
 
     .line 748
-    sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientRightDrawable:Landroid/graphics/drawable/Drawable;
+    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientRightDrawable:Landroid/graphics/drawable/Drawable;
 
     float-to-int v2, v2
 
     float-to-int v10, v3
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
@@ -3260,12 +3255,12 @@
 
     float-to-int v12, v1
 
-    invoke-virtual {v9, v2, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v5, v2, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 749
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientRightDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v8
 
     float-to-int v4, v4
 
@@ -3282,20 +3277,20 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    invoke-virtual {v4, v9}, Landroid/view/ViewGroup;->canScrollHorizontally(I)Z
+    invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->canScrollHorizontally(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v6
 
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v7
 
     :goto_1
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -3311,22 +3306,22 @@
 
     float-to-int v0, v0
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v5
 
-    sub-int v7, v0, v7
+    sub-int v5, v0, v5
 
     float-to-int v3, v3
 
     float-to-int v1, v1
 
-    invoke-virtual {v4, v7, v3, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v4, v5, v3, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 756
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientLeftDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v8
 
     float-to-int v1, v2
 

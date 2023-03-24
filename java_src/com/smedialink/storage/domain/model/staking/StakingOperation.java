@@ -292,7 +292,7 @@ public final class StakingOperation {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
-                    return TransactionDirection.f370IN;
+                    return TransactionDirection.f371IN;
                 }
                 throw new NoWhenBranchMatchedException();
             }

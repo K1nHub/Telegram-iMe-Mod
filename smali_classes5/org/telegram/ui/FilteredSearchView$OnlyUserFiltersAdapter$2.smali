@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;Lorg/telegram/ui/Cells/DialogCell;Lorg/telegram/messenger/MessageObject;Z)V
     .locals 0
 
-    .line 1570
+    .line 1580
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->val$cell:Lorg/telegram/ui/Cells/DialogCell;
@@ -50,7 +50,7 @@
 .method public onPreDraw()Z
     .locals 4
 
-    .line 1573
+    .line 1583
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->val$cell:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1574
+    .line 1584
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1575
+    .line 1585
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->set(IJ)V
 
-    .line 1576
+    .line 1586
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->val$cell:Lorg/telegram/ui/Cells/DialogCell;
 
     iget-object v1, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->this$1:Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 1578
+    .line 1588
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$2;->val$cell:Lorg/telegram/ui/Cells/DialogCell;
 

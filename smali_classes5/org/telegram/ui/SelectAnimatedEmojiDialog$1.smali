@@ -108,7 +108,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -203,7 +203,7 @@
 
     move-result v5
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     sub-float v5, v0, v5
 
@@ -233,7 +233,7 @@
 
     move-result v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr v6, v1
 
@@ -250,7 +250,7 @@
 
     move-result v1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v0, v2
 

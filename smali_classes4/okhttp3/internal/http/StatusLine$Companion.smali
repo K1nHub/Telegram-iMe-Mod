@@ -164,7 +164,7 @@
     .line 77
     sget-object v0, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;
 
-    const/4 v6, 0x4
+    move v6, v5
 
     .line 84
     :goto_0

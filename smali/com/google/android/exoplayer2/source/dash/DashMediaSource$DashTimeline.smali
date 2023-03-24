@@ -58,12 +58,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ne v3, v6, :cond_1
@@ -71,7 +71,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_1
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -154,9 +154,9 @@
     .line 1244
     iget-wide p1, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$DashTimeline;->windowDurationUs:J
 
-    cmp-long v4, v0, p1
+    cmp-long p1, v0, p1
 
-    if-lez v4, :cond_1
+    if-lez p1, :cond_1
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -177,7 +177,7 @@
 
     move-result-wide v6
 
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 1253
     :goto_0
@@ -260,9 +260,9 @@
 
     move-result-wide v8
 
-    cmp-long v5, v8, v2
+    cmp-long v2, v8, v2
 
-    if-nez v5, :cond_4
+    if-nez v2, :cond_4
 
     goto :goto_1
 
@@ -287,7 +287,7 @@
 .end method
 
 .method private static isMovingLiveWindow(Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;)Z
-    .locals 5
+    .locals 4
 
     .line 1288
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->dynamic:Z
@@ -298,9 +298,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->durationMs:J
 

@@ -19,7 +19,7 @@ import android.view.animation.OvershootInterpolator;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
@@ -103,7 +103,7 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
         this.avatarImageReceiver = imageReceiver;
         imageReceiver.setParentView(this);
         if (j == Long.MAX_VALUE) {
-            this.dialogText = LocaleController.getString("CacheOtherChats", C3286R.string.CacheOtherChats);
+            this.dialogText = LocaleController.getString("CacheOtherChats", C3301R.string.CacheOtherChats);
             this.avatarDrawable.setAvatarType(14);
             this.avatarImageReceiver.setForUserOrChat(null, this.avatarDrawable);
             return;
@@ -200,6 +200,7 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
     protected void onDraw(Canvas canvas) {
         double d;
         int i;
+        int i2;
         if (this.data == null) {
             return;
         }
@@ -236,89 +237,92 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
                 }
             }
         }
-        int i2 = 0;
-        float f7 = BitmapDescriptorFactory.HUE_RED;
+        float f7 = 0.0f;
+        int i3 = 0;
         while (true) {
             ClearViewData[] clearViewDataArr = this.data;
             d = 180.0d;
             i = 255;
-            if (i2 >= clearViewDataArr.length) {
+            if (i3 >= clearViewDataArr.length) {
                 break;
             }
-            if (clearViewDataArr[i2] != null) {
+            if (clearViewDataArr[i3] != null) {
                 float[] fArr = this.drawingPercentage;
-                if (fArr[i2] != BitmapDescriptorFactory.HUE_RED) {
-                    float f8 = fArr[i2];
-                    if (clearViewDataArr[i2].firstDraw) {
+                if (fArr[i3] != BitmapDescriptorFactory.HUE_RED) {
+                    float f8 = fArr[i3];
+                    if (clearViewDataArr[i3].firstDraw) {
                         float f9 = ((-360.0f) * f8) + ((1.0f - this.singleProgress) * 10.0f);
-                        float f10 = f9 > BitmapDescriptorFactory.HUE_RED ? BitmapDescriptorFactory.HUE_RED : f9;
-                        clearViewDataArr[i2].paint.setColor(Theme.getColor(clearViewDataArr[i2].color));
-                        this.data[i2].paint.setAlpha(255);
+                        float f10 = f9 > BitmapDescriptorFactory.HUE_RED ? 0.0f : f9;
+                        clearViewDataArr[i3].paint.setColor(Theme.getColor(clearViewDataArr[i3].color));
+                        this.data[i3].paint.setAlpha(255);
                         double width = this.rectF.width() / 2.0f;
                         if (Math.abs((float) (f10 * ((3.141592653589793d * width) / 180.0d))) <= 1.0f) {
                             float f11 = 360.0f * f7;
                             float centerX = this.rectF.centerX() + ((float) (Math.cos(Math.toRadians((this.arcDrawingRadianOffset - 90) - f11)) * width));
                             float centerY = this.rectF.centerY() + ((float) (width * Math.sin(Math.toRadians((this.arcDrawingRadianOffset - 90) - f11))));
                             if (Build.VERSION.SDK_INT >= 21) {
-                                canvas.drawPoint(centerX, centerY, this.data[i2].paint);
+                                canvas.drawPoint(centerX, centerY, this.data[i3].paint);
                             } else {
-                                this.data[i2].paint.setStyle(Paint.Style.FILL);
-                                canvas.drawCircle(centerX, centerY, this.data[i2].paint.getStrokeWidth() / 2.0f, this.data[i2].paint);
+                                this.data[i3].paint.setStyle(Paint.Style.FILL);
+                                canvas.drawCircle(centerX, centerY, this.data[i3].paint.getStrokeWidth() / 2.0f, this.data[i3].paint);
                             }
                         } else {
-                            this.data[i2].paint.setStyle(Paint.Style.STROKE);
-                            canvas.drawArc(this.rectF, (this.arcDrawingRadianOffset - 90) - (360.0f * f7), f10, false, this.data[i2].paint);
+                            this.data[i3].paint.setStyle(Paint.Style.STROKE);
+                            canvas.drawArc(this.rectF, (this.arcDrawingRadianOffset - 90) - (360.0f * f7), f10, false, this.data[i3].paint);
                         }
                     }
                     f7 += f8;
                 }
             }
-            i2++;
+            i3++;
         }
-        int i3 = 0;
-        float f12 = BitmapDescriptorFactory.HUE_RED;
+        float f12 = 0.0f;
+        int i4 = 0;
         while (true) {
             ClearViewData[] clearViewDataArr2 = this.data;
-            if (i3 >= clearViewDataArr2.length) {
+            if (i4 >= clearViewDataArr2.length) {
                 break;
             }
-            if (clearViewDataArr2[i3] != null) {
+            if (clearViewDataArr2[i4] != null) {
                 float[] fArr2 = this.drawingPercentage;
-                if (fArr2[i3] != BitmapDescriptorFactory.HUE_RED) {
-                    float f13 = fArr2[i3];
-                    if (!clearViewDataArr2[i3].firstDraw) {
+                if (fArr2[i4] != BitmapDescriptorFactory.HUE_RED) {
+                    float f13 = fArr2[i4];
+                    if (!clearViewDataArr2[i4].firstDraw) {
                         float f14 = (f13 * (-360.0f)) + ((1.0f - this.singleProgress) * 10.0f);
-                        float f15 = f14 > BitmapDescriptorFactory.HUE_RED ? BitmapDescriptorFactory.HUE_RED : f14;
-                        clearViewDataArr2[i3].paint.setColor(Theme.getColor(clearViewDataArr2[i3].color));
-                        this.data[i3].paint.setAlpha(i);
+                        float f15 = f14 > BitmapDescriptorFactory.HUE_RED ? 0.0f : f14;
+                        clearViewDataArr2[i4].paint.setColor(Theme.getColor(clearViewDataArr2[i4].color));
+                        this.data[i4].paint.setAlpha(i);
                         double width2 = this.rectF.width() / 2.0f;
                         if (Math.abs((float) (f15 * ((width2 * 3.141592653589793d) / d))) <= 1.0f) {
                             float f16 = f12 * 360.0f;
                             float centerX2 = this.rectF.centerX() + ((float) (Math.cos(Math.toRadians((this.arcDrawingRadianOffset - 90) - f16)) * width2));
                             float centerY2 = this.rectF.centerY() + ((float) (width2 * Math.sin(Math.toRadians((this.arcDrawingRadianOffset - 90) - f16))));
                             if (Build.VERSION.SDK_INT >= 21) {
-                                canvas.drawPoint(centerX2, centerY2, this.data[i3].paint);
+                                canvas.drawPoint(centerX2, centerY2, this.data[i4].paint);
                             } else {
-                                this.data[i3].paint.setStyle(Paint.Style.FILL);
-                                canvas.drawCircle(centerX2, centerY2, this.data[i3].paint.getStrokeWidth() / 2.0f, this.data[i3].paint);
+                                this.data[i4].paint.setStyle(Paint.Style.FILL);
+                                canvas.drawCircle(centerX2, centerY2, this.data[i4].paint.getStrokeWidth() / 2.0f, this.data[i4].paint);
                             }
                         } else {
-                            this.data[i3].paint.setStyle(Paint.Style.STROKE);
-                            canvas.drawArc(this.rectF, (this.arcDrawingRadianOffset - 90) - (f12 * 360.0f), f15, false, this.data[i3].paint);
+                            this.data[i4].paint.setStyle(Paint.Style.STROKE);
+                            i2 = i;
+                            canvas.drawArc(this.rectF, (this.arcDrawingRadianOffset - 90) - (f12 * 360.0f), f15, false, this.data[i4].paint);
                             f12 += f13;
-                            i3++;
-                            i = 255;
+                            i4++;
+                            i = i2;
                             d = 180.0d;
                         }
                     }
+                    i2 = i;
                     f12 += f13;
-                    i3++;
-                    i = 255;
+                    i4++;
+                    i = i2;
                     d = 180.0d;
                 }
             }
-            i3++;
-            i = 255;
+            i2 = i;
+            i4++;
+            i = i2;
             d = 180.0d;
         }
         ImageReceiver imageReceiver = this.avatarImageReceiver;
@@ -418,8 +422,8 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
         }
         this.enabledCount = 0;
         int i2 = 0;
-        float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
+        float f = 0.0f;
+        float f2 = 0.0f;
         while (i2 < clearViewDataArr.length) {
             CacheModel cacheModel2 = this.cacheModel;
             long selectedFilesSize2 = cacheModel2 == null ? -1L : cacheModel2.getSelectedFilesSize(i2);

@@ -144,7 +144,7 @@
 .end method
 
 .method public onNext(Ljava/lang/Object;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -166,9 +166,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-lez v6, :cond_1
+    if-lez v0, :cond_1
 
     cmp-long v0, v2, v4
 
@@ -202,7 +202,7 @@
 .end method
 
 .method public onSubscribe(Lorg/reactivestreams/Subscription;)V
-    .locals 5
+    .locals 4
 
     .line 58
     iget-object v0, p0, Lio/reactivex/internal/operators/flowable/FlowableTake$TakeSubscriber;->upstream:Lorg/reactivestreams/Subscription;
@@ -221,9 +221,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 61
     invoke-interface {p1}, Lorg/reactivestreams/Subscription;->cancel()V
@@ -252,7 +252,7 @@
 .end method
 
 .method public request(J)V
-    .locals 3
+    .locals 2
 
     .line 103
     invoke-static {p1, p2}, Lio/reactivex/internal/subscriptions/SubscriptionHelper;->validate(J)Z
@@ -284,9 +284,9 @@
     .line 107
     iget-wide v0, p0, Lio/reactivex/internal/operators/flowable/FlowableTake$TakeSubscriber;->limit:J
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     .line 108
     iget-object p1, p0, Lio/reactivex/internal/operators/flowable/FlowableTake$TakeSubscriber;->upstream:Lorg/reactivestreams/Subscription;

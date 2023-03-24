@@ -45,7 +45,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const-wide/16 v5, -0x1
@@ -94,9 +94,9 @@
 
     sub-long v0, v8, v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-interface {p0, v1}, Landroidx/emoji2/text/MetadataListReader$OpenTypeReader;->skip(I)V
+    invoke-interface {p0, v0}, Landroidx/emoji2/text/MetadataListReader$OpenTypeReader;->skip(I)V
 
     const/16 v0, 0xc
 
@@ -111,9 +111,9 @@
     :goto_2
     int-to-long v4, v3
 
-    cmp-long v6, v4, v0
+    cmp-long v4, v4, v0
 
-    if-gez v6, :cond_4
+    if-gez v4, :cond_4
 
     .line 152
     invoke-interface {p0}, Landroidx/emoji2/text/MetadataListReader$OpenTypeReader;->readTag()I
@@ -201,9 +201,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 94
     invoke-static {p0}, Landroidx/emoji2/text/flatbuffer/MetadataList;->getRootAsMetadataList(Ljava/nio/ByteBuffer;)Landroidx/emoji2/text/flatbuffer/MetadataList;

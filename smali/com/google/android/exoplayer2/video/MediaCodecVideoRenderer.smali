@@ -505,7 +505,7 @@
     sparse-switch v12, :sswitch_data_0
 
     :goto_0
-    const/4 v11, -0x1
+    move v11, v8
 
     goto/16 :goto_1
 
@@ -521,7 +521,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v11, 0x7
+    move v11, v2
 
     goto :goto_1
 
@@ -537,7 +537,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v11, 0x6
+    move v11, v3
 
     goto :goto_1
 
@@ -553,7 +553,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v11, 0x5
+    move v11, v4
 
     goto :goto_1
 
@@ -569,7 +569,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v11, 0x4
+    move v11, v5
 
     goto :goto_1
 
@@ -585,7 +585,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v11, 0x3
+    move v11, v6
 
     goto :goto_1
 
@@ -601,7 +601,7 @@
     goto :goto_0
 
     :cond_5
-    const/4 v11, 0x2
+    move v11, v7
 
     goto :goto_1
 
@@ -617,7 +617,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v11, 0x1
+    move v11, v10
 
     goto :goto_1
 
@@ -633,7 +633,7 @@
     goto :goto_0
 
     :cond_7
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_1
     packed-switch v11, :pswitch_data_0
@@ -677,7 +677,7 @@
     sparse-switch v13, :sswitch_data_1
 
     :goto_3
-    const/4 v13, -0x1
+    move v13, v8
 
     goto/16 :goto_4
 
@@ -693,7 +693,7 @@
     goto :goto_3
 
     :cond_a
-    const/16 v13, 0x8
+    move v13, v14
 
     goto/16 :goto_4
 
@@ -709,7 +709,7 @@
     goto :goto_3
 
     :cond_b
-    const/4 v13, 0x7
+    move v13, v2
 
     goto :goto_4
 
@@ -725,7 +725,7 @@
     goto :goto_3
 
     :cond_c
-    const/4 v13, 0x6
+    move v13, v3
 
     goto :goto_4
 
@@ -741,7 +741,7 @@
     goto :goto_3
 
     :cond_d
-    const/4 v13, 0x5
+    move v13, v4
 
     goto :goto_4
 
@@ -757,7 +757,7 @@
     goto :goto_3
 
     :cond_e
-    const/4 v13, 0x4
+    move v13, v5
 
     goto :goto_4
 
@@ -773,7 +773,7 @@
     goto :goto_3
 
     :cond_f
-    const/4 v13, 0x3
+    move v13, v6
 
     goto :goto_4
 
@@ -789,7 +789,7 @@
     goto :goto_3
 
     :cond_10
-    const/4 v13, 0x2
+    move v13, v7
 
     goto :goto_4
 
@@ -805,7 +805,7 @@
     goto :goto_3
 
     :cond_11
-    const/4 v13, 0x1
+    move v13, v10
 
     goto :goto_4
 
@@ -821,7 +821,7 @@
     goto :goto_3
 
     :cond_12
-    const/4 v13, 0x0
+    move v13, v9
 
     :goto_4
     packed-switch v13, :pswitch_data_1
@@ -842,7 +842,7 @@
     sparse-switch v15, :sswitch_data_2
 
     :goto_5
-    const/4 v1, -0x1
+    move v1, v8
 
     goto/16 :goto_6
 
@@ -2645,7 +2645,7 @@
     goto/16 :goto_5
 
     :cond_82
-    const/16 v1, 0x1b
+    move v1, v11
 
     goto/16 :goto_6
 
@@ -2661,7 +2661,7 @@
     goto/16 :goto_5
 
     :cond_83
-    const/16 v1, 0x1a
+    move v1, v13
 
     goto/16 :goto_6
 
@@ -2949,7 +2949,7 @@
     goto/16 :goto_5
 
     :cond_95
-    const/16 v1, 0x8
+    move v1, v14
 
     goto/16 :goto_6
 
@@ -2965,7 +2965,7 @@
     goto/16 :goto_5
 
     :cond_96
-    const/4 v1, 0x7
+    move v1, v2
 
     goto :goto_6
 
@@ -2981,7 +2981,7 @@
     goto/16 :goto_5
 
     :cond_97
-    const/4 v1, 0x6
+    move v1, v3
 
     goto :goto_6
 
@@ -2997,7 +2997,7 @@
     goto/16 :goto_5
 
     :cond_98
-    const/4 v1, 0x5
+    move v1, v4
 
     goto :goto_6
 
@@ -3013,7 +3013,7 @@
     goto/16 :goto_5
 
     :cond_99
-    const/4 v1, 0x4
+    move v1, v5
 
     goto :goto_6
 
@@ -3029,7 +3029,7 @@
     goto/16 :goto_5
 
     :cond_9a
-    const/4 v1, 0x3
+    move v1, v6
 
     goto :goto_6
 
@@ -3045,7 +3045,7 @@
     goto/16 :goto_5
 
     :cond_9b
-    const/4 v1, 0x2
+    move v1, v7
 
     goto :goto_6
 
@@ -3061,7 +3061,7 @@
     goto/16 :goto_5
 
     :cond_9c
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_6
 
@@ -3077,7 +3077,7 @@
     goto/16 :goto_5
 
     :cond_9d
-    const/4 v1, 0x0
+    move v1, v9
 
     :cond_9e
     :goto_6
@@ -3530,7 +3530,7 @@
     sparse-switch p1, :sswitch_data_0
 
     :goto_1
-    const/4 v7, -0x1
+    move v7, v2
 
     goto :goto_2
 
@@ -3576,7 +3576,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v7, 0x4
+    move v7, v4
 
     goto :goto_2
 
@@ -3606,7 +3606,7 @@
     goto :goto_1
 
     :cond_8
-    const/4 v7, 0x2
+    move v7, v8
 
     goto :goto_2
 
@@ -3642,7 +3642,7 @@
     return v2
 
     :pswitch_0
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 868
     invoke-static {v0, v4}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
@@ -3710,11 +3710,11 @@
 
     move-result v0
 
-    mul-int p1, p1, v0
+    mul-int/2addr p1, v0
 
-    mul-int/lit8 p1, p1, 0x10
+    mul-int/2addr p1, p0
 
-    mul-int/lit8 p1, p1, 0x10
+    mul-int/2addr p1, p0
 
     .line 866
     invoke-static {p1, v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
@@ -3730,7 +3730,7 @@
     :pswitch_2
     const/high16 p0, 0x200000
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 854
     invoke-static {v0, v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
@@ -3745,7 +3745,7 @@
     return p0
 
     :pswitch_3
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 848
     invoke-static {v0, v8}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->getMaxSampleSize(II)I
@@ -3798,7 +3798,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_1
@@ -3836,7 +3836,7 @@
 
     int-to-float v9, v8
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     float-to-int v9, v9
 
@@ -3904,14 +3904,14 @@
 
     move-result v8
 
-    mul-int/lit8 v8, v8, 0x10
+    mul-int/2addr v8, v10
 
     .line 1670
     invoke-static {v9, v10}, Lcom/google/android/exoplayer2/util/Util;->ceilDivide(II)I
 
     move-result v9
 
-    mul-int/lit8 v9, v9, 0x10
+    mul-int/2addr v9, v10
 
     mul-int v10, v8, v9
 
@@ -4102,7 +4102,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v0, p0, :cond_0
@@ -4155,13 +4155,13 @@
 .end method
 
 .method private static isBufferLate(J)Z
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, -0x7530
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -4175,13 +4175,13 @@
 .end method
 
 .method private static isBufferVeryLate(J)Z
-    .locals 3
+    .locals 2
 
     const-wide/32 v0, -0x7a120
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-gez v2, :cond_0
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -4444,16 +4444,16 @@
 .end method
 
 .method private setJoiningDeadlineMs()V
-    .locals 5
+    .locals 4
 
     .line 1394
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->allowedJoiningTimeMs:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 1395
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -4761,17 +4761,15 @@
 
     const/4 p1, 0x0
 
-    const/4 v6, 0x0
-
     goto :goto_0
 
     .line 786
     :cond_3
     iget p1, v0, Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;->result:I
 
+    :goto_0
     move v6, p1
 
-    :goto_0
     move-object v2, v1
 
     move-object v4, p2
@@ -4919,7 +4917,7 @@
 
     const/high16 p3, 0x3fc00000    # 1.5f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     float-to-int p2, p2
 
@@ -4942,9 +4940,9 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     if-ge v7, v3, :cond_6
@@ -4997,13 +4995,13 @@
     goto :goto_1
 
     :cond_3
-    const/4 v11, 0x0
+    move v11, v6
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    const/4 v11, 0x1
+    move v11, v4
 
     :goto_2
     or-int/2addr v8, v11
@@ -5175,7 +5173,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, -0x40800000    # -1.0f
+    move v2, v0
 
     :goto_0
     if-ge v1, p2, :cond_1
@@ -5293,16 +5291,14 @@
 
     iget v0, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->tunnelingAudioSessionId:I
 
-    move v8, v0
-
     goto :goto_0
 
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v8, 0x0
-
     :goto_0
+    move v8, v0
+
     move-object v2, p0
 
     move-object v3, p2
@@ -5814,25 +5810,25 @@
     :cond_2
     iget-wide v4, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
 
-    const/4 v0, 0x0
+    cmp-long v0, v4, v2
 
-    cmp-long v6, v4, v2
+    const/4 v4, 0x0
 
-    if-nez v6, :cond_3
+    if-nez v0, :cond_3
 
-    return v0
+    return v4
 
     .line 571
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v4
+    move-result-wide v5
 
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
+    iget-wide v7, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
 
-    cmp-long v8, v4, v6
+    cmp-long v0, v5, v7
 
-    if-gez v8, :cond_4
+    if-gez v0, :cond_4
 
     return v1
 
@@ -5840,7 +5836,7 @@
     :cond_4
     iput-wide v2, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->joiningDeadlineMs:J
 
-    return v0
+    return v4
 .end method
 
 .method protected maybeDropBuffersToKeyframe(JZ)Z
@@ -6115,7 +6111,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_1
 
@@ -6252,7 +6248,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_0
 
@@ -6592,7 +6588,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     iput-wide v1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastRenderRealtimeUs:J
 
@@ -6663,9 +6659,9 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v11, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v11, :cond_0
+    if-nez v2, :cond_0
 
     .line 1040
     iput-wide v7, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->initialPositionUs:J
@@ -6674,9 +6670,9 @@
     :cond_0
     iget-wide v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastBufferPresentationTimeUs:J
 
-    cmp-long v11, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v11, :cond_1
+    if-eqz v2, :cond_1
 
     .line 1044
     iget-object v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->frameReleaseHelper:Lcom/google/android/exoplayer2/video/VideoFrameReleaseHelper;
@@ -6724,12 +6720,12 @@
 
     if-ne v4, v5, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v13
 
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x0
+    move/from16 v4, v16
 
     .line 1059
     :goto_0
@@ -6809,16 +6805,16 @@
 
     :cond_8
     :goto_1
-    move-wide/from16 p10, v14
+    move v5, v13
 
-    const/4 v5, 0x1
+    move-wide/from16 p10, v14
 
     goto :goto_2
 
     :cond_9
     move-wide/from16 p10, v14
 
-    const/4 v5, 0x0
+    move/from16 v5, v16
 
     .line 1086
     :goto_2
@@ -6826,13 +6822,13 @@
 
     const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v15, v13, v17
+    cmp-long v13, v13, v17
 
-    if-nez v15, :cond_b
+    if-nez v13, :cond_b
 
-    cmp-long v13, v7, v2
+    cmp-long v2, v7, v2
 
-    if-ltz v13, :cond_b
+    if-ltz v2, :cond_b
 
     if-nez v5, :cond_a
 
@@ -6853,7 +6849,7 @@
     goto :goto_3
 
     :cond_b
-    const/4 v2, 0x0
+    move/from16 v2, v16
 
     :goto_3
     const/16 v13, 0x15
@@ -6915,9 +6911,9 @@
     .line 1103
     iget-wide v2, v6, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->initialPositionUs:J
 
-    cmp-long v4, v7, v2
+    cmp-long v2, v7, v2
 
-    if-nez v4, :cond_e
+    if-nez v2, :cond_e
 
     goto/16 :goto_9
 
@@ -6948,16 +6944,16 @@
 
     const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, v0, v17
+    cmp-long v0, v0, v17
 
-    if-eqz v2, :cond_f
+    if-eqz v0, :cond_f
 
     const/4 v5, 0x1
 
     goto :goto_6
 
     :cond_f
-    const/4 v5, 0x0
+    move/from16 v5, v16
 
     :goto_6
     move-object/from16 v0, p0
@@ -7035,9 +7031,9 @@
 
     const-wide/32 v2, 0xc350
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_15
+    if-gez v2, :cond_15
 
     move-object/from16 p8, p0
 
@@ -7069,15 +7065,15 @@
     :cond_13
     const-wide/16 v2, 0x7530
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_15
+    if-gez v2, :cond_15
 
     const-wide/16 v2, 0x2af8
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_14
+    if-lez v2, :cond_14
 
     const-wide/16 v2, 0x2710
 
@@ -7155,7 +7151,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastRenderRealtimeUs:J
 
@@ -7203,7 +7199,7 @@
 
     const-wide/16 p3, 0x3e8
 
-    mul-long p1, p1, p3
+    mul-long/2addr p1, p3
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->lastRenderRealtimeUs:J
 
@@ -7316,7 +7312,7 @@
 .end method
 
 .method protected shouldForceRenderOutputBuffer(JJ)Z
-    .locals 1
+    .locals 0
 
     .line 1239
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;->isBufferLate(J)Z
@@ -7327,9 +7323,9 @@
 
     const-wide/32 p1, 0x186a0
 
-    cmp-long v0, p3, p1
+    cmp-long p1, p3, p1
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -7434,12 +7430,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 359
     :goto_0
@@ -7514,7 +7510,7 @@
 
     if-nez v5, :cond_6
 
-    const/4 v6, 0x1
+    move v6, v2
 
     .line 389
     :goto_1
@@ -7538,11 +7534,11 @@
 
     if-eqz v8, :cond_5
 
+    move v3, v1
+
+    move v5, v2
+
     move-object v4, v7
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x1
 
     goto :goto_2
 
@@ -7552,7 +7548,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_2
     if-eqz v5, :cond_7
@@ -7590,7 +7586,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_5
     if-eqz v3, :cond_a
@@ -7600,7 +7596,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 414
     :goto_6

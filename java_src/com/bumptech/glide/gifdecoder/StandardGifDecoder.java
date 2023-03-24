@@ -361,8 +361,8 @@ public class StandardGifDecoder implements GifDecoder {
                         i16 = 4;
                     } else if (i18 == 3) {
                         i17 = i18;
-                        i16 = 2;
                         i14 = 4;
+                        i16 = 2;
                     } else if (i18 != 4) {
                         i17 = i18;
                     } else {
@@ -544,9 +544,9 @@ public class StandardGifDecoder implements GifDecoder {
         int i16 = 0;
         int i17 = 0;
         int i18 = 0;
-        int i19 = -1;
+        int i19 = 0;
         int i20 = 0;
-        int i21 = 0;
+        int i21 = -1;
         while (true) {
             if (i9 >= i3) {
                 break;
@@ -565,16 +565,16 @@ public class StandardGifDecoder implements GifDecoder {
             int i22 = i16 + 8;
             int i23 = i12;
             int i24 = i11;
-            int i25 = i19;
+            int i25 = i21;
             int i26 = i7;
-            int i27 = i20;
+            int i27 = i19;
             while (true) {
                 if (i22 < i24) {
-                    i19 = i25;
+                    i21 = i25;
                     i12 = i23;
                     i16 = i22;
                     standardGifDecoder = this;
-                    i20 = i27;
+                    i19 = i27;
                     i7 = i26;
                     i11 = i24;
                     break;
@@ -591,11 +591,11 @@ public class StandardGifDecoder implements GifDecoder {
                     i25 = -1;
                 } else if (i29 == i5) {
                     i16 = i22;
-                    i20 = i27;
+                    i19 = i27;
                     i12 = i23;
                     i7 = i26;
                     i6 = i28;
-                    i19 = i25;
+                    i21 = i25;
                     i11 = i24;
                     standardGifDecoder = this;
                     break;
@@ -609,15 +609,15 @@ public class StandardGifDecoder implements GifDecoder {
                     i22 = i22;
                 } else {
                     if (i29 >= i23) {
-                        bArr4[i21] = (byte) i27;
-                        i21++;
+                        bArr4[i20] = (byte) i27;
+                        i20++;
                         s = i25;
                     } else {
                         s = i29;
                     }
                     while (s >= i4) {
-                        bArr4[i21] = bArr3[s];
-                        i21++;
+                        bArr4[i20] = bArr3[s];
+                        i20++;
                         s = sArr[s];
                     }
                     i27 = bArr3[s] & 255;
@@ -626,11 +626,11 @@ public class StandardGifDecoder implements GifDecoder {
                     while (true) {
                         i18++;
                         i9++;
-                        if (i21 <= 0) {
+                        if (i20 <= 0) {
                             break;
                         }
-                        i21--;
-                        bArr2[i18] = bArr4[i21];
+                        i20--;
+                        bArr2[i18] = bArr4[i20];
                     }
                     byte[] bArr6 = bArr4;
                     if (i23 < 4096) {

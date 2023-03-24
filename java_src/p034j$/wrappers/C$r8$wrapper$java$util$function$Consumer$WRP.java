@@ -6,26 +6,26 @@ import java.util.function.Consumer;
 public final /* synthetic */ class C$r8$wrapper$java$util$function$Consumer$WRP implements Consumer {
 
     /* renamed from: a */
-    final /* synthetic */ p034j$.util.function.Consumer f1121a;
+    final /* synthetic */ p034j$.util.function.Consumer f1122a;
 
     private /* synthetic */ C$r8$wrapper$java$util$function$Consumer$WRP(p034j$.util.function.Consumer consumer) {
-        this.f1121a = consumer;
+        this.f1122a = consumer;
     }
 
     public static /* synthetic */ Consumer convert(p034j$.util.function.Consumer consumer) {
         if (consumer == null) {
             return null;
         }
-        return consumer instanceof C3009w ? ((C3009w) consumer).f1209a : new C$r8$wrapper$java$util$function$Consumer$WRP(consumer);
+        return consumer instanceof C3023w ? ((C3023w) consumer).f1210a : new C$r8$wrapper$java$util$function$Consumer$WRP(consumer);
     }
 
     @Override // java.util.function.Consumer
     public /* synthetic */ void accept(Object obj) {
-        this.f1121a.accept(obj);
+        this.f1122a.accept(obj);
     }
 
     @Override // java.util.function.Consumer
     public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return convert(this.f1121a.andThen(C3009w.m109b(consumer)));
+        return convert(this.f1122a.andThen(C3023w.m108b(consumer)));
     }
 }

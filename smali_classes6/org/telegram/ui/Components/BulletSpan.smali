@@ -88,7 +88,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p8, 0x0
+    move p8, p10
 
     .line 123
     :goto_0
@@ -133,7 +133,7 @@
     .line 135
     iget p7, p0, Lorg/telegram/ui/Components/BulletSpan;->mBulletRadius:I
 
-    mul-int p4, p4, p7
+    mul-int/2addr p4, p7
 
     add-int/2addr p3, p4
 

@@ -75,7 +75,7 @@
 
     iget v2, p0, Lcom/google/zxing/PlanarYUVLuminanceSource;->dataWidth:I
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     iget v2, p0, Lcom/google/zxing/PlanarYUVLuminanceSource;->left:I
 
@@ -169,7 +169,7 @@
     .line 90
     iget v5, p0, Lcom/google/zxing/PlanarYUVLuminanceSource;->top:I
 
-    mul-int v5, v5, v2
+    mul-int/2addr v5, v2
 
     iget v6, p0, Lcom/google/zxing/PlanarYUVLuminanceSource;->left:I
 
@@ -246,7 +246,7 @@
 
     iget v1, p0, Lcom/google/zxing/PlanarYUVLuminanceSource;->dataWidth:I
 
-    mul-int p1, p1, v1
+    mul-int/2addr p1, v1
 
     iget v1, p0, Lcom/google/zxing/PlanarYUVLuminanceSource;->left:I
 

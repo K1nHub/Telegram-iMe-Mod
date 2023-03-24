@@ -91,17 +91,11 @@ public class Cap extends AbstractSafeParcelable {
         boolean z;
         boolean z2 = f != null && f.floatValue() > BitmapDescriptorFactory.HUE_RED;
         if (i == 3) {
-            if (bitmapDescriptor == null || !z2) {
-                i = 3;
-                z = false;
-                Preconditions.checkArgument(z, String.format("Invalid Cap: type=%s bitmapDescriptor=%s bitmapRefWidth=%s", Integer.valueOf(i), bitmapDescriptor, f));
-                this.zzb = i;
-                this.zzc = bitmapDescriptor;
-                this.zzd = f;
-            }
+            z = bitmapDescriptor != null && z2;
             i = 3;
+        } else {
+            z = true;
         }
-        z = true;
         Preconditions.checkArgument(z, String.format("Invalid Cap: type=%s bitmapDescriptor=%s bitmapRefWidth=%s", Integer.valueOf(i), bitmapDescriptor, f));
         this.zzb = i;
         this.zzc = bitmapDescriptor;

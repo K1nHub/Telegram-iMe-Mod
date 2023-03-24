@@ -59,27 +59,27 @@
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long v2, p2, v0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v4, p2, v1
+    const/4 v4, 0x0
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v2, v4
 
     :goto_0
     const-string v5, "intervalMillis must be greater than or equal to 0"
 
-    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v2, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 2
     invoke-static {p1}, Lcom/google/android/gms/location/zzae;->zza(I)I
@@ -92,11 +92,11 @@
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzc:J
 
-    iput-wide v1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzd:J
+    iput-wide v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzd:J
 
-    const-wide v1, 0x7fffffffffffffffL
+    const-wide v0, 0x7fffffffffffffffL
 
-    iput-wide v1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zze:J
+    iput-wide v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zze:J
 
     const p3, 0x7fffffff
 
@@ -106,19 +106,19 @@
 
     iput p3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzg:F
 
-    iput-boolean v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzh:Z
+    iput-boolean v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzh:Z
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzi:J
 
-    iput v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzj:I
+    iput v4, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzj:I
 
-    iput v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzk:I
+    iput v4, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzk:I
 
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzl:Ljava/lang/String;
 
-    iput-boolean v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzm:Z
+    iput-boolean v4, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzm:Z
 
     iput-object p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzn:Landroid/os/WorkSource;
 
@@ -133,27 +133,27 @@
     .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long v2, p1, v0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    cmp-long v4, p1, v1
+    const/4 v4, 0x0
 
-    if-ltz v4, :cond_0
+    if-ltz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v2, v4
 
     :goto_0
     const-string v5, "intervalMillis must be greater than or equal to 0"
 
-    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v2, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzb:J
 
@@ -165,33 +165,33 @@
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzc:J
 
-    iput-wide v1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzd:J
+    iput-wide v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzd:J
 
-    const-wide v1, 0x7fffffffffffffffL
+    const-wide v0, 0x7fffffffffffffffL
 
-    iput-wide v1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zze:J
+    iput-wide v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zze:J
 
-    const v1, 0x7fffffff
+    const v0, 0x7fffffff
 
-    iput v1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzf:I
+    iput v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzf:I
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput v1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzg:F
+    iput v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzg:F
 
-    iput-boolean v0, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzh:Z
+    iput-boolean v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzh:Z
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzi:J
 
-    iput v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzj:I
+    iput v4, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzj:I
 
-    iput v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzk:I
+    iput v4, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzk:I
 
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzl:Ljava/lang/String;
 
-    iput-boolean v3, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzm:Z
+    iput-boolean v4, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzm:Z
 
     iput-object p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzn:Landroid/os/WorkSource;
 
@@ -375,9 +375,9 @@
 
     iget-wide v9, v0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzi:J
 
-    cmp-long v17, v9, v7
+    cmp-long v7, v9, v7
 
-    if-nez v17, :cond_2
+    if-nez v7, :cond_2
 
     iget-wide v7, v0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzb:J
 
@@ -442,13 +442,13 @@
 .end method
 
 .method public setDurationMillis(J)Lcom/google/android/gms/location/LocationRequest$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -480,13 +480,13 @@
 .end method
 
 .method public setIntervalMillis(J)Lcom/google/android/gms/location/LocationRequest$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -509,31 +509,31 @@
 .method public setMaxUpdateAgeMillis(J)Lcom/google/android/gms/location/LocationRequest$Builder;
     .locals 4
 
-    const/4 v0, 0x1
+    const-wide/16 v0, -0x1
 
-    const-wide/16 v1, -0x1
+    cmp-long v0, p1, v0
 
-    cmp-long v3, p1, v1
+    const/4 v1, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v3, p1, v1
+    cmp-long v0, p1, v2
 
-    if-ltz v3, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :cond_1
     :goto_0
-    const-string v1, "maxUpdateAgeMillis must be greater than or equal to 0, or IMPLICIT_MAX_UPDATE_AGE"
+    const-string v0, "maxUpdateAgeMillis must be greater than or equal to 0, or IMPLICIT_MAX_UPDATE_AGE"
 
     .line 1
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzi:J
 
@@ -541,13 +541,13 @@
 .end method
 
 .method public setMaxUpdateDelayMillis(J)Lcom/google/android/gms/location/LocationRequest$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -620,31 +620,31 @@
 .method public setMinUpdateIntervalMillis(J)Lcom/google/android/gms/location/LocationRequest$Builder;
     .locals 4
 
-    const/4 v0, 0x1
+    const-wide/16 v0, -0x1
 
-    const-wide/16 v1, -0x1
+    cmp-long v0, p1, v0
 
-    cmp-long v3, p1, v1
+    const/4 v1, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v3, p1, v1
+    cmp-long v0, p1, v2
 
-    if-ltz v3, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :cond_1
     :goto_0
-    const-string v1, "minUpdateIntervalMillis must be greater than or equal to 0, or IMPLICIT_MIN_UPDATE_INTERVAL"
+    const-string v0, "minUpdateIntervalMillis must be greater than or equal to 0, or IMPLICIT_MIN_UPDATE_INTERVAL"
 
     .line 1
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     iput-wide p1, p0, Lcom/google/android/gms/location/LocationRequest$Builder;->zzc:J
 
@@ -710,14 +710,14 @@
 
     if-ne p1, v1, :cond_0
 
-    const/4 p1, 0x2
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
     move v1, p1
 
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_1
 
@@ -725,7 +725,7 @@
     move v1, p1
 
     :goto_0
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_1
     new-array v2, v2, [Ljava/lang/Object;

@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public close()V
-    .locals 5
+    .locals 4
 
     .line 384
     invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->getClosed()Z
@@ -74,9 +74,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     const/16 v0, 0x64
 
@@ -116,47 +116,47 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
-
-    cmp-long v3, p2, v1
-
-    if-ltz v3, :cond_0
+    cmp-long v2, p2, v0
 
     const/4 v3, 0x1
+
+    if-ltz v2, :cond_0
+
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v3, :cond_5
+    if-eqz v2, :cond_5
 
     .line 365
     invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->getClosed()Z
 
-    move-result v3
+    move-result v2
 
-    xor-int/2addr v0, v3
+    xor-int/2addr v2, v3
 
-    if-eqz v0, :cond_4
+    if-eqz v2, :cond_4
 
     .line 366
-    iget-wide v3, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;->bytesRemaining:J
+    iget-wide v2, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;->bytesRemaining:J
+
+    cmp-long v4, v2, v0
 
     const-wide/16 v5, -0x1
 
-    cmp-long v0, v3, v1
-
-    if-nez v0, :cond_1
+    if-nez v4, :cond_1
 
     return-wide v5
 
     .line 368
     :cond_1
-    invoke-static {v3, v4, p2, p3}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v2, v3, p2, p3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p2
 
@@ -169,13 +169,13 @@
     if-eqz p3, :cond_3
 
     .line 376
-    iget-wide v3, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;->bytesRemaining:J
+    iget-wide v2, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;->bytesRemaining:J
 
-    sub-long/2addr v3, p1
+    sub-long/2addr v2, p1
 
-    iput-wide v3, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;->bytesRemaining:J
+    iput-wide v2, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$FixedLengthSource;->bytesRemaining:J
 
-    cmp-long p3, v3, v1
+    cmp-long p3, v2, v0
 
     if-nez p3, :cond_2
 

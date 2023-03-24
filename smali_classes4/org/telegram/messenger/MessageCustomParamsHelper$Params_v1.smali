@@ -49,7 +49,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     add-int/2addr v1, v0
@@ -66,7 +66,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     add-int/2addr v1, v2
@@ -83,7 +83,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     add-int/2addr v1, v2
@@ -100,7 +100,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_3
     add-int/2addr v1, v2

@@ -75,9 +75,9 @@
 
     move-result v0
 
-    cmp-long v5, v21, v3
+    cmp-long v3, v21, v3
 
-    if-eqz v5, :cond_3
+    if-eqz v3, :cond_3
 
     if-eqz v2, :cond_3
 

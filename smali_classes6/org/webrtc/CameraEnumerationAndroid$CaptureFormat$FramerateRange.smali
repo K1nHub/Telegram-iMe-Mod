@@ -81,7 +81,7 @@
 
     const v1, 0x10001
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     add-int/lit8 v0, v0, 0x1
 

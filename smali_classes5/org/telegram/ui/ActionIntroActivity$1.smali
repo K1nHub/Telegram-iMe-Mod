@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionIntroActivity;)V
     .locals 0
 
-    .line 245
+    .line 246
     iput-object p1, p0, Lorg/telegram/ui/ActionIntroActivity$1;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 249
+    .line 250
     iget-object p1, p0, Lorg/telegram/ui/ActionIntroActivity$1;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

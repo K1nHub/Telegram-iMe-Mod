@@ -65,10 +65,8 @@
 
     goto :goto_0
 
-    :catch_0
-    nop
-
     .line 2
+    :catch_0
     invoke-static {v5, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
@@ -107,10 +105,8 @@
 
     goto :goto_1
 
-    :catch_1
-    nop
-
     .line 5
+    :catch_1
     invoke-static {v5, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
@@ -219,7 +215,7 @@
     invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_1
-    const/4 p0, 0x0
+    move p0, p3
 
     :goto_1
     const-string v0, "com.google.android.gms"

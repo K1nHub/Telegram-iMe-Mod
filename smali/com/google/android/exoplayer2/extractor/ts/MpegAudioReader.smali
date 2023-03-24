@@ -135,12 +135,12 @@
 
     if-ne v3, v4, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 141
     :goto_1
@@ -156,12 +156,12 @@
 
     if-ne v4, v7, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 142
     :goto_2
@@ -382,7 +382,7 @@
 
     int-to-long v5, v5
 
-    mul-long v5, v5, v3
+    mul-long/2addr v5, v3
 
     iget p1, p1, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->sampleRate:I
 

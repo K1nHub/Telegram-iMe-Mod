@@ -258,7 +258,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_0
@@ -320,7 +320,7 @@
 
     move-result v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-ge v4, v2, :cond_1
@@ -1031,7 +1031,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     const-string v4, ": "

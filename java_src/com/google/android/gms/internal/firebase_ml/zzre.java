@@ -189,17 +189,21 @@ public final class zzre implements Closeable {
         r5 = 16;
         r19.zzbeg = 16;
      */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:104:0x0173 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:105:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0259 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x025a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x025b  */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r2v4, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final int zzny() throws java.io.IOException {
         /*
-            Method dump skipped, instructions count: 786
+            Method dump skipped, instructions count: 789
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.firebase_ml.zzre.zzny():int");
@@ -383,7 +387,7 @@ public final class zzre implements Closeable {
             r0 = 0
             r1 = 0
         L2:
-            r2 = 0
+            r2 = r0
         L3:
             int r3 = r6.pos
             int r4 = r3 + r2

@@ -209,7 +209,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_3
     return v0
@@ -293,7 +293,7 @@
 
     xor-int/2addr v0, v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 96
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application;->customAttributes:Lcom/google/firebase/crashlytics/internal/model/ImmutableList;
@@ -302,7 +302,7 @@
 
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_0
 
@@ -314,14 +314,14 @@
     :goto_0
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 98
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application;->internalKeys:Lcom/google/firebase/crashlytics/internal/model/ImmutableList;
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     goto :goto_1
 
@@ -333,7 +333,7 @@
     :goto_1
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 100
     iget-object v2, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application;->background:Ljava/lang/Boolean;
@@ -350,7 +350,7 @@
     :goto_2
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 102
     iget v1, p0, Lcom/google/firebase/crashlytics/internal/model/AutoValue_CrashlyticsReport_Session_Event_Application;->uiOrientation:I

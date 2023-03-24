@@ -224,53 +224,53 @@ public class SeekBarWaveform {
     }
 
     private float[] calculateHeights(int i) {
+        int i2;
         byte[] bArr = this.waveformBytes;
         if (bArr == null || i <= 0) {
             return null;
         }
         float[] fArr = new float[i];
-        int i2 = 5;
+        int i3 = 5;
         int length = (bArr.length * 8) / 5;
         float f = length / i;
-        int i3 = 0;
+        float f2 = 0.0f;
         int i4 = 0;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
         int i5 = 0;
-        while (i3 < length) {
-            if (i3 == i4) {
-                int i6 = i4;
-                int i7 = 0;
-                while (i4 == i6) {
+        int i6 = 0;
+        while (i4 < length) {
+            if (i4 == i5) {
+                int i7 = i5;
+                int i8 = 0;
+                while (i5 == i7) {
                     f2 += f;
-                    i6 = (int) f2;
-                    i7++;
+                    i7 = (int) f2;
+                    i8++;
                 }
-                int i8 = i3 * 5;
-                int i9 = i8 / 8;
-                int i10 = i8 - (i9 * 8);
-                int i11 = 8 - i10;
-                int i12 = 5 - i11;
-                byte min = (byte) ((this.waveformBytes[i9] >> i10) & ((2 << (Math.min(i2, i11) - 1)) - 1));
+                int i9 = i4 * 5;
+                int i10 = i9 / 8;
+                int i11 = i9 - (i10 * 8);
+                int i12 = 5 - (8 - i11);
+                byte min = (byte) ((this.waveformBytes[i10] >> i11) & ((2 << (Math.min(i3, i2) - 1)) - 1));
                 if (i12 > 0) {
-                    int i13 = i9 + 1;
+                    int i13 = i10 + 1;
                     byte[] bArr2 = this.waveformBytes;
                     if (i13 < bArr2.length) {
                         min = (byte) (((byte) (min << i12)) | (bArr2[i13] & ((2 << (i12 - 1)) - 1)));
                     }
                 }
                 int i14 = 0;
-                while (i14 < i7) {
-                    if (i5 >= i) {
+                while (i14 < i8) {
+                    if (i6 >= i) {
                         return fArr;
                     }
-                    fArr[i5] = Math.max((float) BitmapDescriptorFactory.HUE_RED, (min * 7) / 31.0f);
+                    fArr[i6] = Math.max((float) BitmapDescriptorFactory.HUE_RED, (min * 7) / 31.0f);
                     i14++;
-                    i5++;
+                    i6++;
                 }
-                i4 = i6;
+                i5 = i7;
             }
-            i3++;
-            i2 = 5;
+            i4++;
+            i3 = 5;
         }
         return fArr;
     }
@@ -326,7 +326,7 @@ public class SeekBarWaveform {
                 f5 = 1.0f - f5;
             }
             int i5 = -1;
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
             for (int i6 = 0; i6 < max; i6++) {
                 float f6 = i6;
                 int clamp = MathUtils.clamp((int) Math.floor((f6 / max) * min), 0, min - 1);
@@ -351,7 +351,7 @@ public class SeekBarWaveform {
                     i2++;
                 }
             }
-            f = BitmapDescriptorFactory.HUE_RED;
+            f = 0.0f;
         }
         if (f > BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
@@ -375,7 +375,7 @@ public class SeekBarWaveform {
         paintInner.setColor(z ? this.outerColor : this.selected ? this.selectedColor : this.innerColor);
         paintOuter.setColor(this.outerColor);
         this.loadingFloat.setParent(this.parentView);
-        float f2 = this.loadingFloat.set((!this.loading || MediaController.getInstance().isPlayingMessage(this.messageObject)) ? BitmapDescriptorFactory.HUE_RED : 1.0f);
+        float f2 = this.loadingFloat.set((!this.loading || MediaController.getInstance().isPlayingMessage(this.messageObject)) ? 0.0f : 1.0f);
         Paint paint3 = paintInner;
         paint3.setColor(ColorUtils.blendARGB(paint3.getColor(), this.innerColor, f2));
         float f3 = 1.0f - f2;

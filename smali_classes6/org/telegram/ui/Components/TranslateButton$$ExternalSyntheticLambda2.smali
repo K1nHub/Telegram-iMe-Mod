@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/TranslateButton$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/TranslateButton;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/TranslateButton;->$r8$lambda$qU8R5gTmPT-0R9XiQpG_n2p0mz4(Lorg/telegram/ui/Components/TranslateButton;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/TranslateButton;->$r8$lambda$tWJZIhvFMBvZ7bSc1zjTs4My9vY(Lorg/telegram/ui/Components/TranslateButton;Landroid/view/View;)V
 
     return-void
 .end method

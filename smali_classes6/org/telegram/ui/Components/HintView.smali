@@ -262,24 +262,24 @@
 
     if-eqz v3, :cond_3
 
-    const/16 v16, 0x6
+    move/from16 v16, v10
 
     goto :goto_2
 
     :cond_3
-    const/16 v16, 0x0
+    move/from16 v16, v11
 
     :goto_2
     const/16 v17, 0x0
 
     if-eqz v3, :cond_4
 
-    const/16 v18, 0x0
+    move/from16 v18, v11
 
     goto :goto_3
 
     :cond_4
-    const/16 v18, 0x6
+    move/from16 v18, v10
 
     :goto_3
     invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
@@ -327,7 +327,7 @@
     goto :goto_4
 
     :cond_6
-    const/16 v12, 0x8
+    move v12, v6
 
     :goto_4
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -361,24 +361,24 @@
 
     if-eqz v3, :cond_7
 
-    const/16 v16, 0x6
+    move/from16 v16, v10
 
     goto :goto_5
 
     :cond_7
-    const/16 v16, 0x0
+    move/from16 v16, v11
 
     :goto_5
     const/16 v17, 0x0
 
     if-eqz v3, :cond_8
 
-    const/16 v18, 0x0
+    move/from16 v18, v11
 
     goto :goto_6
 
     :cond_8
-    const/16 v18, 0x6
+    move/from16 v18, v10
 
     :goto_6
     invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
@@ -982,9 +982,9 @@
     goto :goto_7
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v10
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 404
     :goto_7
@@ -1037,7 +1037,7 @@
 
     const/high16 v4, 0x3fc00000    # 1.5f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v1, v3
 

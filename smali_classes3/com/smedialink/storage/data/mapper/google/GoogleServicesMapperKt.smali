@@ -17,7 +17,7 @@
 
     int-to-double v0, v0
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 16
     invoke-static {p0, p1}, Lkotlin/math/MathKt;->roundToInt(D)I

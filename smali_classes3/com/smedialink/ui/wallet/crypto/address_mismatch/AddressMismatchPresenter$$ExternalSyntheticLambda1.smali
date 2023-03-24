@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->$r8$lambda$zTtwxcWwfotmbQCiCkLpilbq-b0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;->$r8$lambda$aqW4MDyRsKX6kIJK61XbRgrBREw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

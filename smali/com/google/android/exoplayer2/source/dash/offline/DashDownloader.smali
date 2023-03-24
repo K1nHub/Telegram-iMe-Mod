@@ -101,7 +101,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v11, 0x0
+    move v11, v0
 
     .line 150
     :goto_0
@@ -148,9 +148,9 @@
 
     const-wide/16 v1, -0x1
 
-    cmp-long v3, v16, v1
+    cmp-long v1, v16, v1
 
-    if-eqz v3, :cond_2
+    if-eqz v1, :cond_2
 
     .line 172
     iget-object v1, v7, Lcom/google/android/exoplayer2/source/dash/offline/DashDownloader;->baseUrlExclusionList:Lcom/google/android/exoplayer2/source/dash/BaseUrlExclusionList;
@@ -455,7 +455,7 @@
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    move v12, v11
 
     .line 129
     :goto_0
@@ -485,7 +485,7 @@
     .line 133
     iget-object v9, v1, Lcom/google/android/exoplayer2/source/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
-    const/4 v8, 0x0
+    move v8, v11
 
     .line 134
     :goto_1

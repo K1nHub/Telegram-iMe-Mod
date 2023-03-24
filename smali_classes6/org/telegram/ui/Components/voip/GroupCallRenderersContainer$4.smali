@@ -62,7 +62,7 @@
 
     sub-float/2addr v2, v1
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
@@ -82,7 +82,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 

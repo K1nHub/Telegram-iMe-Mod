@@ -334,7 +334,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     new-array v4, v4, [Ljava/lang/Object;
@@ -697,12 +697,12 @@
 
     if-ltz v1, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_2
     const/4 v4, 0x2
@@ -856,12 +856,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     new-array v2, v2, [Ljava/lang/Object;
@@ -918,7 +918,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     new-array v0, v0, [Ljava/lang/Object;
@@ -970,12 +970,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     new-array v1, v1, [Ljava/lang/Object;
@@ -1392,9 +1392,9 @@
     .line 497
     sget-wide p0, Lcom/google/firebase/firestore/local/LocalStore;->RESUME_TOKEN_MAX_AGE_SECONDS:J
 
-    cmp-long v0, v3, p0
+    cmp-long p0, v3, p0
 
-    if-ltz v0, :cond_1
+    if-ltz p0, :cond_1
 
     return v1
 
@@ -1435,7 +1435,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1

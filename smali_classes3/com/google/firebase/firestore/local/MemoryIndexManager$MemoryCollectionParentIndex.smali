@@ -66,7 +66,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     new-array v0, v1, [Ljava/lang/Object;

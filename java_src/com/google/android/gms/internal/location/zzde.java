@@ -12,15 +12,15 @@ public final class zzde implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        boolean z2 = false;
+        boolean z3 = false;
+        boolean z4 = false;
         LocationRequest locationRequest = null;
         ArrayList arrayList = null;
         String str = null;
         String str2 = null;
         long j = Long.MAX_VALUE;
-        boolean z = false;
-        boolean z2 = false;
-        boolean z3 = false;
-        boolean z4 = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

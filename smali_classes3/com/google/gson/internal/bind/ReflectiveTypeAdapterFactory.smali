@@ -205,12 +205,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v14, 0x1
+    move v14, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v3
 
     .line 152
     :goto_0
@@ -240,12 +240,12 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    const/4 v9, 0x1
+    move v9, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_1
     if-nez v1, :cond_3
@@ -381,12 +381,12 @@
 
     if-ne v0, v1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v8
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v7
 
     goto :goto_1
 
@@ -429,7 +429,7 @@
     .line 251
     array-length v6, v15
 
-    const/4 v5, 0x0
+    move v5, v7
 
     :goto_2
     if-ge v5, v6, :cond_f
@@ -454,11 +454,11 @@
 
     move/from16 v21, v6
 
+    move/from16 v26, v7
+
+    move/from16 v27, v8
+
     move-object/from16 p2, v15
-
-    const/16 v26, 0x0
-
-    const/16 v27, 0x1
 
     goto/16 :goto_9
 
@@ -476,7 +476,7 @@
 
     if-eqz v3, :cond_5
 
-    const/16 v17, 0x0
+    move/from16 v17, v7
 
     goto :goto_4
 
@@ -589,9 +589,9 @@
 
     move-result v2
 
-    const/4 v1, 0x0
+    move v9, v7
 
-    const/4 v9, 0x0
+    const/4 v1, 0x0
 
     :goto_6
     if-ge v9, v2, :cond_d
@@ -607,7 +607,7 @@
 
     if-eqz v9, :cond_b
 
-    const/16 v20, 0x0
+    move/from16 v20, v7
 
     goto :goto_7
 
@@ -648,11 +648,11 @@
 
     move/from16 v6, v20
 
-    const/16 v26, 0x0
+    move/from16 v26, v7
 
     move/from16 v7, v17
 
-    const/16 v27, 0x1
+    move/from16 v27, v8
 
     move/from16 v8, v16
 
@@ -696,9 +696,9 @@
 
     move/from16 v5, v25
 
-    const/4 v7, 0x0
+    move/from16 v7, v26
 
-    const/4 v8, 0x1
+    move/from16 v8, v27
 
     goto :goto_6
 
@@ -707,11 +707,11 @@
 
     move/from16 v21, v6
 
+    move/from16 v26, v7
+
+    move/from16 v27, v8
+
     move-object/from16 p2, v15
-
-    const/16 v26, 0x0
-
-    const/16 v27, 0x1
 
     move-object v15, v1
 
@@ -720,10 +720,6 @@
     :goto_9
     add-int/lit8 v5, v25, 0x1
 
-    const/4 v7, 0x0
-
-    const/4 v8, 0x1
-
     move-object/from16 v9, p0
 
     move-object/from16 v15, p2
@@ -731,6 +727,10 @@
     move-object/from16 v10, p3
 
     move/from16 v6, v21
+
+    move/from16 v7, v26
+
+    move/from16 v8, v27
 
     goto/16 :goto_2
 
@@ -966,17 +966,15 @@
 
     const/4 v0, 0x1
 
-    const/4 v7, 0x1
-
     goto :goto_0
 
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v7, 0x0
+    :goto_0
+    move v7, v0
 
     .line 122
-    :goto_0
     invoke-static {v6}, Lcom/google/gson/internal/reflect/ReflectionHelper;->isRecord(Ljava/lang/Class;)Z
 
     move-result v0

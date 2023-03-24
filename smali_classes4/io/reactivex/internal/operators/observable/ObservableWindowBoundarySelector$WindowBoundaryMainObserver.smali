@@ -227,7 +227,7 @@
 .end method
 
 .method public dispose()V
-    .locals 5
+    .locals 4
 
     .line 168
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableWindowBoundarySelector$WindowBoundaryMainObserver;->stopWindows:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -256,9 +256,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 171
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableWindowBoundarySelector$WindowBoundaryMainObserver;->upstream:Lio/reactivex/disposables/Disposable;
@@ -286,7 +286,7 @@
 .end method
 
 .method drainLoop()V
-    .locals 10
+    .locals 9
 
     .line 187
     iget-object v0, p0, Lio/reactivex/internal/observers/QueueDrainObserver;->queue:Lio/reactivex/internal/fuseable/SimplePlainQueue;
@@ -301,7 +301,7 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 195
     :cond_0
@@ -315,7 +315,7 @@
 
     if-nez v6, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_1
 
@@ -437,9 +437,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_0
+    if-nez v5, :cond_0
 
     .line 231
     invoke-virtual {p0}, Lio/reactivex/internal/operators/observable/ObservableWindowBoundarySelector$WindowBoundaryMainObserver;->disposeBoundary()V
@@ -594,7 +594,7 @@
 .end method
 
 .method public onComplete()V
-    .locals 5
+    .locals 4
 
     .line 144
     iget-boolean v0, p0, Lio/reactivex/internal/observers/QueueDrainObserver;->done:Z
@@ -629,9 +629,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 154
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableWindowBoundarySelector$WindowBoundaryMainObserver;->resources:Lio/reactivex/disposables/CompositeDisposable;
@@ -648,7 +648,7 @@
 .end method
 
 .method public onError(Ljava/lang/Throwable;)V
-    .locals 5
+    .locals 4
 
     .line 124
     iget-boolean v0, p0, Lio/reactivex/internal/observers/QueueDrainObserver;->done:Z
@@ -689,9 +689,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 136
     iget-object v0, p0, Lio/reactivex/internal/operators/observable/ObservableWindowBoundarySelector$WindowBoundaryMainObserver;->resources:Lio/reactivex/disposables/CompositeDisposable;

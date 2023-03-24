@@ -292,7 +292,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -357,7 +357,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -488,7 +488,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x1
@@ -500,7 +500,7 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     if-ge v6, v5, :cond_0
@@ -514,7 +514,7 @@
 
     const v9, -0xc1cc
 
-    mul-int v9, v9, v3
+    mul-int/2addr v9, v3
 
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

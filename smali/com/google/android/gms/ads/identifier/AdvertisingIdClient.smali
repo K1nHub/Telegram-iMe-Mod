@@ -463,7 +463,7 @@
 .end method
 
 .method private final zza()V
-    .locals 6
+    .locals 5
 
     iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->zzh:Ljava/lang/Object;
 
@@ -495,9 +495,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v5, :cond_1
+    if-lez v1, :cond_1
 
     new-instance v1, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;
 

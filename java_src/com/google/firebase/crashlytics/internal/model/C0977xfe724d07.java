@@ -67,7 +67,7 @@ final class C0977xfe724d07 extends CrashlyticsReport.Session.Event.Application.E
         long j2 = this.size;
         int hashCode = (((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.name.hashCode()) * 1000003;
         String str = this.uuid;
-        return (str == null ? 0 : str.hashCode()) ^ hashCode;
+        return hashCode ^ (str == null ? 0 : str.hashCode());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -259,7 +259,7 @@
     .line 122
     iget v2, v0, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewX:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -276,7 +276,7 @@
     .line 123
     iget v0, v0, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewY:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 
@@ -296,7 +296,7 @@
     .line 125
     iget v2, v0, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -305,7 +305,7 @@
     .line 126
     iget v0, v0, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->y:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 
@@ -375,7 +375,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, p2
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -424,7 +424,7 @@
 
     int-to-float v6, p1
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget v6, v4, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
@@ -435,14 +435,14 @@
     .line 76
     iget v6, v4, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     invoke-virtual {v3, v6}, Landroid/view/View;->setScaleX(F)V
 
     .line 77
     iget v4, v4, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setScaleY(F)V
 
@@ -454,7 +454,7 @@
     .line 79
     iget v7, v4, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 
@@ -466,7 +466,7 @@
 
     iget v4, v4, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->height:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     float-to-int v4, v7
 
@@ -554,7 +554,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-int v1, v1
 
@@ -708,7 +708,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_10
@@ -891,7 +891,7 @@
 
     const v13, 0x3f4ccccd    # 0.8f
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     float-to-int v12, v12
 
@@ -974,7 +974,7 @@
     goto :goto_2
 
     :cond_5
-    const/16 v10, 0x11
+    move v10, v7
 
     .line 231
     :goto_2
@@ -1000,7 +1000,7 @@
     if-eqz v7, :cond_9
 
     :cond_6
-    const/4 v8, 0x3
+    move v8, v11
 
     goto :goto_3
 
@@ -1147,7 +1147,7 @@
 
     const-wide v9, 0x4066800000000000L    # 180.0
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     double-to-float v7, v7
 
@@ -1177,7 +1177,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_0

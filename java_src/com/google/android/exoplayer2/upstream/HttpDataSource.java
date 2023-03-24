@@ -162,7 +162,7 @@ public interface HttpDataSource extends DataSource {
             } else if (iOException instanceof InterruptedIOException) {
                 i2 = 1004;
             } else {
-                i2 = (message == null || !Ascii.toLowerCase(message).matches("cleartext.*not permitted.*")) ? PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED : PlaybackException.ERROR_CODE_IO_CLEARTEXT_NOT_PERMITTED;
+                i2 = (message == null || !Ascii.toLowerCase(message).matches("cleartext.*not permitted.*")) ? PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED : 2007;
             }
             if (i2 == 2007) {
                 return new CleartextNotPermittedException(iOException, dataSpec);

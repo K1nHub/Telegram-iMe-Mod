@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda34;->f$2:Lorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$uwF79H8oOrps_zYrhAOziCNAw94(Lorg/telegram/messenger/MediaDataController;ILorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$3Un8ZBi4PvJ5tfjBqa6dPFyTM70(Lorg/telegram/messenger/MediaDataController;ILorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;)V
 
     return-void
 .end method

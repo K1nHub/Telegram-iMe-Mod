@@ -722,9 +722,9 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 409
     :goto_0
@@ -763,7 +763,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 415
     :cond_2
@@ -820,9 +820,9 @@
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 421
     :goto_1
@@ -858,7 +858,7 @@
 
     if-le v5, v6, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_2
 
@@ -886,13 +886,13 @@
     goto :goto_3
 
     :cond_8
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_4
 
     :cond_9
     :goto_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 434
     :goto_4
@@ -908,7 +908,7 @@
     if-eqz v0, :cond_c
 
     :cond_b
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_c
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
@@ -1135,9 +1135,9 @@
 
     if-eqz v3, :cond_a
 
-    const/4 v3, 0x0
+    move v3, v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 327
     :goto_3
@@ -1160,7 +1160,7 @@
 
     if-eqz v6, :cond_9
 
-    const/4 v5, 0x1
+    move v5, v2
 
     :cond_9
     :goto_4
@@ -1326,12 +1326,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_0
     rsub-int p2, p2, 0xff
 
-    const/16 v1, 0xff
+    move v1, v3
 
     goto :goto_3
 
@@ -1353,12 +1353,12 @@
     goto :goto_1
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_1
     rsub-int p2, p2, 0xc8
 
-    const/16 v1, 0xc8
+    move v1, v2
 
     goto :goto_3
 
@@ -1392,7 +1392,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_2
     rsub-int/lit8 p2, p2, 0x64
@@ -1404,7 +1404,7 @@
 
     const v2, 0x3f333333    # 0.7f
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sub-float/2addr v1, v2
 

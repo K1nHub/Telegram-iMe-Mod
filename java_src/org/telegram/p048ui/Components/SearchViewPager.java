@@ -29,7 +29,7 @@ import java.util.Iterator;
 import org.fork.p046ui.dialog.ForwardCloudBottomSheet;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ForwardingMessagesParams;
 import org.telegram.messenger.LocaleController;
@@ -197,7 +197,7 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             ArrayList<TLRPC$Dialog> dialogsArray = dialogsActivity.getDialogsArray(this.currentAccount, i2, i3, true);
             ArrayList<Long> arrayList = new ArrayList<>();
             for (int i4 = 0; i4 < dialogsArray.size(); i4++) {
-                arrayList.add(Long.valueOf(dialogsArray.get(i4).f1505id));
+                arrayList.add(Long.valueOf(dialogsArray.get(i4).f1506id));
             }
             this.dialogsSearchAdapter.setFilterDialogIds(arrayList);
         }
@@ -292,7 +292,7 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             }
         };
         this.emptyView = stickerEmptyView;
-        stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3286R.string.NoResult));
+        stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3301R.string.NoResult));
         this.emptyView.subtitle.setVisibility(8);
         this.emptyView.setVisibility(8);
         this.emptyView.addView(flickerLoadingView, 0);
@@ -341,6 +341,7 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     public void search(View view, int i, String str, boolean z) {
+        boolean z2;
         DialogsSearchAdapter.DialogsSearchAdapterDelegate dialogsSearchAdapterDelegate = this.dialogsSearchAdapter.delegate;
         long searchForumDialogId = dialogsSearchAdapterDelegate != null ? dialogsSearchAdapterDelegate.getSearchForumDialogId() : 0L;
         long j = i == 0 ? 0L : searchForumDialogId;
@@ -353,9 +354,9 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             if (i4 == 4) {
                 TLObject tLObject = mediaFilterData.chat;
                 if (tLObject instanceof TLRPC$User) {
-                    j = ((TLRPC$User) tLObject).f1639id;
+                    j = ((TLRPC$User) tLObject).f1640id;
                 } else if (tLObject instanceof TLRPC$Chat) {
-                    j = -((TLRPC$Chat) tLObject).f1499id;
+                    j = -((TLRPC$Chat) tLObject).f1500id;
                 }
             } else if (i4 == 6) {
                 FiltersView.DateData dateData = mediaFilterData.dateData;
@@ -390,7 +391,7 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
                 }
                 this.noMediaFiltersSearchView.setTag(null);
             } else {
-                boolean z2 = true;
+                boolean z3 = true;
                 this.noMediaFiltersSearchView.setTag(1);
                 this.noMediaFiltersSearchView.setDelegate(this.filteredSearchViewDelegate, false);
                 this.noMediaFiltersSearchView.animate().setListener(null).cancel();
@@ -403,16 +404,19 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
                         this.noMediaFiltersSearchView.setVisibility(0);
                         this.noMediaFiltersSearchView.setAlpha(BitmapDescriptorFactory.HUE_RED);
                     } else {
-                        z2 = z;
+                        z3 = z;
                     }
                     this.noMediaFiltersSearchView.animate().alpha(1.0f).setDuration(150L).start();
+                    z2 = z3;
                 }
                 this.noMediaFiltersSearchView.search(j, j2, j3, null, i2, str, z2);
                 this.emptyView.setVisibility(8);
             }
             this.emptyView.setKeyboardHeight(this.keyboardSize, false);
             this.noMediaFiltersSearchView.setKeyboardHeight(this.keyboardSize, false);
-        } else if (view instanceof FilteredSearchView) {
+            return;
+        }
+        if (view instanceof FilteredSearchView) {
             FilteredSearchView filteredSearchView = (FilteredSearchView) view;
             filteredSearchView.setUseFromUserAsAvatar(searchForumDialogId != 0);
             filteredSearchView.setKeyboardHeight(this.keyboardSize, false);
@@ -469,13 +473,13 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             this.selectedMessagesCountTextView.setTextColor(Theme.getColor("actionBarActionModeDefaultIcon"));
             this.actionMode.addView(this.selectedMessagesCountTextView, LayoutHelper.createLinear(0, -1, 1.0f, 72, 0, 0, 0));
             this.selectedMessagesCountTextView.setOnTouchListener(SearchViewPager$$ExternalSyntheticLambda2.INSTANCE);
-            ActionBarMenuItem addItemWithWidth = this.actionMode.addItemWithWidth(203, C3286R.C3288drawable.avd_speed, AndroidUtilities.m50dp(54), LocaleController.getString("AccDescrPremiumSpeed", C3286R.string.AccDescrPremiumSpeed));
+            ActionBarMenuItem addItemWithWidth = this.actionMode.addItemWithWidth(203, C3301R.C3303drawable.avd_speed, AndroidUtilities.m50dp(54), LocaleController.getString("AccDescrPremiumSpeed", C3301R.string.AccDescrPremiumSpeed));
             this.speedItem = addItemWithWidth;
             addItemWithWidth.getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarActionModeDefaultIcon"), PorterDuff.Mode.SRC_IN));
-            this.gotoItem = this.actionMode.addItemWithWidth(200, C3286R.C3288drawable.msg_message, AndroidUtilities.m50dp(54), LocaleController.getString("AccDescrGoToMessage", C3286R.string.AccDescrGoToMessage));
-            this.forwardToCloudItem = this.actionMode.addItemWithWidth(IdFabric$Menu.MESSAGE_FORWARD_CLOUD, C3286R.C3288drawable.fork_forward_cloud, AndroidUtilities.m50dp(54));
-            this.forwardItem = this.actionMode.addItemWithWidth(201, C3286R.C3288drawable.msg_forward, AndroidUtilities.m50dp(54), LocaleController.getString("Forward", C3286R.string.Forward));
-            this.deleteItem = this.actionMode.addItemWithWidth(202, C3286R.C3288drawable.msg_delete, AndroidUtilities.m50dp(54), LocaleController.getString("Delete", C3286R.string.Delete));
+            this.gotoItem = this.actionMode.addItemWithWidth(200, C3301R.C3303drawable.msg_message, AndroidUtilities.m50dp(54), LocaleController.getString("AccDescrGoToMessage", C3301R.string.AccDescrGoToMessage));
+            this.forwardToCloudItem = this.actionMode.addItemWithWidth(IdFabric$Menu.MESSAGE_FORWARD_CLOUD, C3301R.C3303drawable.fork_forward_cloud, AndroidUtilities.m50dp(54));
+            this.forwardItem = this.actionMode.addItemWithWidth(201, C3301R.C3303drawable.msg_forward, AndroidUtilities.m50dp(54), LocaleController.getString("Forward", C3301R.string.Forward));
+            this.deleteItem = this.actionMode.addItemWithWidth(202, C3301R.C3303drawable.msg_delete, AndroidUtilities.m50dp(54), LocaleController.getString("Delete", C3301R.string.Delete));
         }
         if (this.selectedMessagesCountTextView != null) {
             DialogsSearchAdapter dialogsSearchAdapter = this.dialogsSearchAdapter;
@@ -546,10 +550,10 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             AlertDialog.Builder builder = new AlertDialog.Builder(this.parent.getParentActivity());
             builder.setTitle(LocaleController.formatPluralString("RemoveDocumentsTitle", this.selectedFiles.size(), new Object[0]));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", this.selectedFiles.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString("RemoveDocumentsAlertMessage", C3286R.string.RemoveDocumentsAlertMessage));
+            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", this.selectedFiles.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString("RemoveDocumentsAlertMessage", C3301R.string.RemoveDocumentsAlertMessage));
             builder.setMessage(spannableStringBuilder);
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), SearchViewPager$$ExternalSyntheticLambda1.INSTANCE);
-            builder.setPositiveButton(LocaleController.getString("Delete", C3286R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda0
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), SearchViewPager$$ExternalSyntheticLambda1.INSTANCE);
+            builder.setPositiveButton(LocaleController.getString("Delete", C3301R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     SearchViewPager.this.lambda$onActionBarItemClick$3(arrayList, dialogInterface, i2);
@@ -765,7 +769,10 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
                 this.dialogsSearchAdapter.setFiltersDelegate(this.filteredSearchViewDelegate, true);
             }
         } else if (view instanceof FilteredSearchView) {
-            ((FilteredSearchView) view).setDelegate(this.filteredSearchViewDelegate, (i2 != 0 || this.noMediaFiltersSearchView.getVisibility() == 0) ? false : false);
+            if (i2 != 0 || this.noMediaFiltersSearchView.getVisibility() == 0) {
+                z = false;
+            }
+            ((FilteredSearchView) view).setDelegate(this.filteredSearchViewDelegate, z);
         }
         if (view2 instanceof FilteredSearchView) {
             ((FilteredSearchView) view2).setDelegate(null, false);
@@ -903,89 +910,89 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x007c, code lost:
-        if (org.telegram.messenger.ChatObject.isChannel(r7, r11.currentAccount) != false) goto L31;
+        if (org.telegram.messenger.ChatObject.isChannel(r6, r10.currentAccount) != false) goto L31;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void messagesDeleted(long r12, java.util.ArrayList<java.lang.Integer> r14) {
+    public void messagesDeleted(long r11, java.util.ArrayList<java.lang.Integer> r13) {
         /*
-            r11 = this;
-            android.util.SparseArray<android.view.View> r0 = r11.viewsByType
+            r10 = this;
+            android.util.SparseArray<android.view.View> r0 = r10.viewsByType
             int r0 = r0.size()
             r1 = 0
-            r2 = 0
+            r2 = r1
         L8:
             if (r2 >= r0) goto L1e
-            android.util.SparseArray<android.view.View> r3 = r11.viewsByType
+            android.util.SparseArray<android.view.View> r3 = r10.viewsByType
             java.lang.Object r3 = r3.valueAt(r2)
             android.view.View r3 = (android.view.View) r3
             boolean r4 = r3 instanceof org.telegram.p048ui.FilteredSearchView
             if (r4 == 0) goto L1b
             org.telegram.ui.FilteredSearchView r3 = (org.telegram.p048ui.FilteredSearchView) r3
-            r3.messagesDeleted(r12, r14)
+            r3.messagesDeleted(r11, r13)
         L1b:
             int r2 = r2 + 1
             goto L8
         L1e:
-            r0 = 0
+            r0 = r1
         L1f:
-            int r2 = r11.getChildCount()
+            int r2 = r10.getChildCount()
             if (r0 >= r2) goto L39
-            android.view.View r2 = r11.getChildAt(r0)
+            android.view.View r2 = r10.getChildAt(r0)
             boolean r2 = r2 instanceof org.telegram.p048ui.FilteredSearchView
             if (r2 == 0) goto L36
-            android.view.View r2 = r11.getChildAt(r0)
+            android.view.View r2 = r10.getChildAt(r0)
             org.telegram.ui.FilteredSearchView r2 = (org.telegram.p048ui.FilteredSearchView) r2
-            r2.messagesDeleted(r12, r14)
+            r2.messagesDeleted(r11, r13)
         L36:
             int r0 = r0 + 1
             goto L1f
         L39:
-            org.telegram.ui.FilteredSearchView r0 = r11.noMediaFiltersSearchView
-            r0.messagesDeleted(r12, r14)
-            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r0 = r11.selectedFiles
+            org.telegram.ui.FilteredSearchView r0 = r10.noMediaFiltersSearchView
+            r0.messagesDeleted(r11, r13)
+            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r0 = r10.selectedFiles
             boolean r0 = r0.isEmpty()
             if (r0 != 0) goto Ldd
             r0 = 0
             java.util.ArrayList r2 = new java.util.ArrayList
-            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r3 = r11.selectedFiles
+            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r3 = r10.selectedFiles
             java.util.Set r3 = r3.keySet()
             r2.<init>(r3)
-            r3 = 0
+            r3 = r1
         L53:
             int r4 = r2.size()
             if (r3 >= r4) goto Laa
             java.lang.Object r4 = r2.get(r3)
             org.telegram.ui.FilteredSearchView$MessageHashId r4 = (org.telegram.p048ui.FilteredSearchView.MessageHashId) r4
-            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r5 = r11.selectedFiles
+            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r5 = r10.selectedFiles
             java.lang.Object r5 = r5.get(r4)
             org.telegram.messenger.MessageObject r5 = (org.telegram.messenger.MessageObject) r5
             if (r5 == 0) goto La7
             long r6 = r5.getDialogId()
             r8 = 0
-            int r10 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
-            if (r10 >= 0) goto L7f
+            int r8 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
+            if (r8 >= 0) goto L7f
             long r6 = -r6
-            int r7 = (int) r6
-            long r8 = (long) r7
-            int r6 = r11.currentAccount
-            boolean r6 = org.telegram.messenger.ChatObject.isChannel(r8, r6)
-            if (r6 == 0) goto L7f
+            int r6 = (int) r6
+            long r7 = (long) r6
+            int r9 = r10.currentAccount
+            boolean r7 = org.telegram.messenger.ChatObject.isChannel(r7, r9)
+            if (r7 == 0) goto L7f
             goto L80
         L7f:
-            r7 = 0
+            r6 = r1
         L80:
-            long r6 = (long) r7
-            int r8 = (r6 > r12 ? 1 : (r6 == r12 ? 0 : -1))
-            if (r8 != 0) goto La7
-            r6 = 0
+            long r6 = (long) r6
+            int r6 = (r6 > r11 ? 1 : (r6 == r11 ? 0 : -1))
+            if (r6 != 0) goto La7
+            r6 = r1
         L86:
-            int r7 = r14.size()
+            int r7 = r13.size()
             if (r6 >= r7) goto La7
             int r7 = r5.getId()
-            java.lang.Object r8 = r14.get(r6)
+            java.lang.Object r8 = r13.get(r6)
             java.lang.Integer r8 = (java.lang.Integer) r8
             int r8 = r8.intValue()
             if (r7 != r8) goto La4
@@ -1000,31 +1007,31 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             goto L53
         Laa:
             if (r0 == 0) goto Ldd
-            int r12 = r0.size()
-            r13 = 0
+            int r11 = r0.size()
+            r12 = r1
         Lb1:
-            if (r13 >= r12) goto Lbf
-            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r14 = r11.selectedFiles
-            java.lang.Object r2 = r0.get(r13)
-            r14.remove(r2)
-            int r13 = r13 + 1
+            if (r12 >= r11) goto Lbf
+            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r13 = r10.selectedFiles
+            java.lang.Object r2 = r0.get(r12)
+            r13.remove(r2)
+            int r12 = r12 + 1
             goto Lb1
         Lbf:
-            org.telegram.ui.Components.NumberTextView r12 = r11.selectedMessagesCountTextView
-            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r13 = r11.selectedFiles
-            int r13 = r13.size()
-            r14 = 1
-            r12.setNumber(r13, r14)
-            org.telegram.ui.ActionBar.ActionBarMenuItem r12 = r11.gotoItem
-            if (r12 == 0) goto Ldd
-            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r13 = r11.selectedFiles
-            int r13 = r13.size()
-            if (r13 != r14) goto Ld8
+            org.telegram.ui.Components.NumberTextView r11 = r10.selectedMessagesCountTextView
+            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r12 = r10.selectedFiles
+            int r12 = r12.size()
+            r13 = 1
+            r11.setNumber(r12, r13)
+            org.telegram.ui.ActionBar.ActionBarMenuItem r11 = r10.gotoItem
+            if (r11 == 0) goto Ldd
+            java.util.HashMap<org.telegram.ui.FilteredSearchView$MessageHashId, org.telegram.messenger.MessageObject> r12 = r10.selectedFiles
+            int r12 = r12.size()
+            if (r12 != r13) goto Ld8
             goto Lda
         Ld8:
             r1 = 8
         Lda:
-            r12.setVisibility(r1)
+            r11.setVisibility(r1)
         Ldd:
             return
         */
@@ -1113,10 +1120,10 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
         @Override // org.telegram.p048ui.Components.ViewPagerFixed.Adapter
         public String getItemTitle(int i) {
             if (this.items.get(i).type == 0) {
-                return LocaleController.getString("SearchAllChatsShort", C3286R.string.SearchAllChatsShort);
+                return LocaleController.getString("SearchAllChatsShort", C3301R.string.SearchAllChatsShort);
             }
             if (this.items.get(i).type == 1) {
-                return LocaleController.getString("DownloadsTabs", C3286R.string.DownloadsTabs);
+                return LocaleController.getString("DownloadsTabs", C3301R.string.DownloadsTabs);
             }
             return FiltersView.filters[this.items.get(i).filterIndex].title;
         }

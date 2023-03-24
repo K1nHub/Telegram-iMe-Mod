@@ -119,7 +119,7 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_0
     const/16 v3, 0x64
@@ -237,11 +237,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v5, v2
 
-    const/4 v5, -0x1
+    move v6, v5
 
-    const/4 v6, -0x1
+    move v4, v3
 
     :goto_0
     if-ge v4, v0, :cond_3
@@ -320,7 +320,7 @@
     .line 527
     iput p1, p0, Lorg/telegram/ui/Charts/PieChartView;->sum:F
 
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_1
     if-ge p2, v1, :cond_6
@@ -338,7 +338,7 @@
     :goto_2
     if-gt v6, v5, :cond_9
 
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_3
     if-ge p2, v1, :cond_8
@@ -473,7 +473,7 @@
 
     if-nez v0, :cond_b
 
-    const/4 v0, 0x0
+    move v0, p1
 
     goto :goto_5
 
@@ -659,18 +659,18 @@
 
     iget v1, v1, Lorg/telegram/ui/Charts/view_data/TransitionParams;->progress:F
 
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
     goto :goto_0
 
     :cond_2
-    const/16 v1, 0xff
+    move v1, v8
 
     .line 73
     :goto_0
@@ -740,7 +740,7 @@
     .line 91
     iget v2, v0, Lorg/telegram/ui/Charts/PieChartView;->emptyDataAlpha:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v12, v1
 
@@ -748,7 +748,7 @@
 
     const v3, 0x3f19999a    # 0.6f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v1
 
@@ -808,7 +808,7 @@
     :goto_2
     const v2, 0x3ee66666    # 0.45f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -881,9 +881,9 @@
 
     move-result v13
 
-    const/4 v1, 0x0
+    move v15, v11
 
-    const/4 v15, 0x0
+    const/4 v1, 0x0
 
     :goto_3
     if-ge v1, v13, :cond_9
@@ -909,7 +909,7 @@
 
     iget v3, v3, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v15, v2
 
@@ -933,9 +933,9 @@
     :cond_b
     const/high16 v16, -0x3d4c0000    # -90.0f
 
-    const/4 v6, 0x0
+    move/from16 v17, v16
 
-    const/high16 v17, -0x3d4c0000    # -90.0f
+    const/4 v6, 0x0
 
     :goto_4
     const/high16 v1, 0x40000000    # 2.0f
@@ -1123,9 +1123,9 @@
 
     int-to-double v11, v2
 
-    mul-double v3, v3, v11
+    mul-double/2addr v3, v11
 
-    mul-double v3, v3, v14
+    mul-double/2addr v3, v14
 
     double-to-float v2, v3
 
@@ -1314,13 +1314,13 @@
 
     if-nez v3, :cond_12
 
+    move v4, v1
+
     move-object v5, v7
 
+    move v2, v8
+
     move/from16 v8, v24
-
-    const/16 v2, 0xff
-
-    const/high16 v4, 0x40000000    # 2.0f
 
     goto/16 :goto_b
 
@@ -1346,7 +1346,7 @@
 
     iget v4, v4, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     div-float v3, v3, v23
 
@@ -1410,11 +1410,11 @@
 
     int-to-double v8, v15
 
-    mul-double v11, v11, v8
+    mul-double/2addr v11, v8
 
     float-to-double v8, v6
 
-    mul-double v11, v11, v8
+    mul-double/2addr v11, v8
 
     double-to-float v6, v11
 
@@ -1433,9 +1433,9 @@
 
     int-to-double v1, v15
 
-    mul-double v11, v11, v1
+    mul-double/2addr v11, v1
 
-    mul-double v11, v11, v8
+    mul-double/2addr v11, v8
 
     double-to-float v1, v11
 
@@ -1445,7 +1445,7 @@
     :cond_13
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -1470,7 +1470,7 @@
 
     const v6, 0x3ed70a3d    # 0.42f
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     float-to-double v8, v2
 
@@ -1482,7 +1482,7 @@
 
     move-result-wide v11
 
-    mul-double v8, v8, v11
+    mul-double/2addr v8, v11
 
     double-to-float v2, v8
 
@@ -1493,7 +1493,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Charts/PieChartView;->MAX_TEXT_SIZE:F
 
-    mul-float v9, v9, v3
+    mul-float/2addr v9, v3
 
     add-float/2addr v8, v9
 
@@ -1516,7 +1516,7 @@
 
     iget v11, v11, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v9, v9, v11
+    mul-float/2addr v9, v11
 
     float-to-int v9, v9
 
@@ -1573,7 +1573,7 @@
 
     move-result-wide v4
 
-    mul-double v10, v10, v4
+    mul-double/2addr v10, v4
 
     add-double/2addr v2, v10
 
@@ -1643,17 +1643,17 @@
     :goto_b
     add-int/lit8 v14, v14, 0x1
 
+    move v1, v4
+
     move-object v7, v5
 
     move/from16 v24, v8
 
-    const/high16 v1, 0x40000000    # 2.0f
+    const/high16 v10, 0x3f800000    # 1.0f
+
+    move v8, v2
 
     const/16 v2, 0x8
-
-    const/16 v8, 0xff
-
-    const/high16 v10, 0x3f800000    # 1.0f
 
     goto/16 :goto_9
 
@@ -1699,7 +1699,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 215
     :goto_0
@@ -1745,9 +1745,9 @@
 
     iget v5, v0, Lorg/telegram/ui/Charts/BaseChartView;->pickerWidth:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1
     if-ge v5, v1, :cond_a
@@ -1769,7 +1769,7 @@
 
     sub-float/2addr v8, v4
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v6, v7
 
@@ -1777,13 +1777,13 @@
 
     const/4 v8, 0x1
 
-    const/4 v9, 0x0
+    move v9, v3
 
-    const/4 v10, 0x0
+    move v11, v9
 
-    const/4 v11, 0x0
+    move v10, v7
 
-    const/4 v12, 0x1
+    move v12, v8
 
     :goto_2
     if-ge v9, v2, :cond_3
@@ -1822,7 +1822,7 @@
 
     iget v13, v13, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v15, v15, v13
+    mul-float/2addr v15, v13
 
     add-float/2addr v10, v15
 
@@ -1834,7 +1834,7 @@
 
     if-eqz v14, :cond_2
 
-    const/4 v12, 0x0
+    move v12, v3
 
     :cond_2
     :goto_3
@@ -1843,9 +1843,9 @@
     goto :goto_2
 
     :cond_3
-    const/4 v9, 0x0
+    move v9, v3
 
-    const/4 v13, 0x0
+    move v13, v7
 
     :goto_4
     if-ge v9, v2, :cond_9
@@ -1903,7 +1903,7 @@
     if-nez v16, :cond_7
 
     :goto_5
-    const/4 v15, 0x0
+    move v15, v7
 
     goto :goto_6
 
@@ -1919,9 +1919,9 @@
 
     iget v7, v14, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v15, v15, v7
+    mul-float/2addr v15, v7
 
-    mul-float v15, v15, v7
+    mul-float/2addr v15, v7
 
     goto :goto_6
 
@@ -1935,7 +1935,7 @@
 
     iget v15, v14, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    mul-float v15, v15, v7
+    mul-float/2addr v15, v7
 
     .line 265
     :goto_6
@@ -1943,7 +1943,7 @@
 
     int-to-float v8, v7
 
-    mul-float v15, v15, v8
+    mul-float/2addr v15, v8
 
     .line 268
     iget-object v8, v14, Lorg/telegram/ui/Charts/view_data/LineViewData;->linesPath:[F
@@ -2112,7 +2112,7 @@
 
     const/high16 v3, 0x43b40000    # 360.0f
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     const/high16 v4, 0x43340000    # 180.0f
 
@@ -2371,7 +2371,7 @@
     :goto_0
     const p2, 0x3ee66666    # 0.45f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-int p1, p1
 
@@ -2554,9 +2554,9 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v8, v3
 
-    const/4 v8, 0x0
+    move v7, v6
 
     .line 343
     :goto_0
@@ -2636,7 +2636,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 355
     :goto_2
@@ -2731,7 +2731,7 @@
 
     float-to-double v11, v1
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/high16 v1, 0x42b40000    # 90.0f
 
@@ -2747,7 +2747,7 @@
 
     move-result-wide v15
 
-    mul-double v15, v15, v11
+    mul-double/2addr v15, v11
 
     add-double/2addr v9, v15
 
@@ -2760,7 +2760,7 @@
 
     float-to-double v6, v3
 
-    mul-float v8, v8, v4
+    mul-float/2addr v8, v4
 
     sub-float/2addr v8, v1
 
@@ -2774,7 +2774,7 @@
 
     move-result-wide v15
 
-    mul-double v15, v15, v11
+    mul-double/2addr v15, v11
 
     add-double/2addr v6, v15
 
@@ -2853,7 +2853,7 @@
 
     move-result-wide v2
 
-    mul-double v2, v2, v11
+    mul-double/2addr v2, v11
 
     add-double/2addr v5, v2
 
@@ -2874,7 +2874,7 @@
 
     move-result-wide v7
 
-    mul-double v11, v11, v7
+    mul-double/2addr v11, v7
 
     add-double/2addr v2, v11
 
@@ -3030,9 +3030,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -3124,7 +3124,7 @@
 
     int-to-float v2, v3
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     iput v2, p1, Lorg/telegram/ui/Charts/ChartPickerDelegate;->pickerStart:F
 

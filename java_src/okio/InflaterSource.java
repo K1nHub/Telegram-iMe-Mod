@@ -53,9 +53,8 @@ public final class InflaterSource implements Source {
             }
             try {
                 Segment writableSegment$okio = sink.writableSegment$okio(1);
-                int min = (int) Math.min(j, 8192 - writableSegment$okio.limit);
                 refill();
-                int inflate = this.inflater.inflate(writableSegment$okio.data, writableSegment$okio.limit, min);
+                int inflate = this.inflater.inflate(writableSegment$okio.data, writableSegment$okio.limit, (int) Math.min(j, 8192 - writableSegment$okio.limit));
                 releaseBytesAfterInflate();
                 if (inflate > 0) {
                     writableSegment$okio.limit += inflate;

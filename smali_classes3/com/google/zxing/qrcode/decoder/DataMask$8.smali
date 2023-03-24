@@ -33,7 +33,7 @@
 
     add-int v0, p1, p2
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     .line 115
     rem-int/lit8 p1, p1, 0x3

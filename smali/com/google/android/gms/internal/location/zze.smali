@@ -36,6 +36,12 @@
 
     move-object v11, v1
 
+    move v5, v2
+
+    move v6, v5
+
+    move v10, v6
+
     move-object v7, v3
 
     move-object v8, v7
@@ -43,12 +49,6 @@
     move-object v9, v8
 
     move-object v12, v9
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v10, 0x0
 
     .line 3
     :goto_0

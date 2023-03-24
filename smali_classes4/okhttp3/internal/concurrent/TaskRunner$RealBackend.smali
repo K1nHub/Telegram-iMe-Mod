@@ -97,7 +97,7 @@
     .line 291
     div-long v2, p2, v0
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     sub-long v0, p2, v0
 
@@ -107,9 +107,9 @@
 
     if-gtz v6, :cond_0
 
-    cmp-long v6, p2, v4
+    cmp-long p2, p2, v4
 
-    if-lez v6, :cond_1
+    if-lez p2, :cond_1
 
     :cond_0
     long-to-int p2, v0

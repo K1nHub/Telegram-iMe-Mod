@@ -63,7 +63,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 417
+    .line 416
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -72,7 +72,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
     .locals 1
 
-    .line 444
+    .line 443
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -83,7 +83,7 @@
 
     return-object p0
 
-    .line 446
+    .line 445
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -109,13 +109,13 @@
 
     throw p0
 
-    .line 451
+    .line 450
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;-><init>()V
 
-    .line 452
+    .line 451
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -126,7 +126,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 5
 
-    .line 457
+    .line 456
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -141,14 +141,14 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 458
+    .line 457
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->view_messages:Z
 
@@ -156,14 +156,14 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 459
+    .line 458
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_messages:Z
 
@@ -171,14 +171,14 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 460
+    .line 459
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
 
@@ -186,14 +186,14 @@
 
     if-eqz v4, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 461
+    .line 460
     :goto_3
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_stickers:Z
 
@@ -201,14 +201,14 @@
 
     if-eqz v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 462
+    .line 461
     :goto_4
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_gifs:Z
 
@@ -216,14 +216,14 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_5
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 463
+    .line 462
     :goto_5
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_games:Z
 
@@ -231,14 +231,14 @@
 
     if-eqz v4, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_6
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 464
+    .line 463
     :goto_6
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_inline:Z
 
@@ -246,14 +246,14 @@
 
     if-eqz v4, :cond_7
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_7
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 465
+    .line 464
     :goto_7
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->embed_links:Z
 
@@ -261,14 +261,14 @@
 
     if-eqz v4, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_8
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 466
+    .line 465
     :goto_8
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_polls:Z
 
@@ -276,14 +276,14 @@
 
     if-eqz v4, :cond_9
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_9
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 467
+    .line 466
     :goto_9
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
 
@@ -293,14 +293,14 @@
 
     if-eqz v4, :cond_a
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_a
 
     :cond_a
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 468
+    .line 467
     :goto_a
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
@@ -310,14 +310,14 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_b
 
     :cond_b
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 469
+    .line 468
     :goto_b
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
@@ -327,14 +327,14 @@
 
     if-eqz v4, :cond_c
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_c
 
     :cond_c
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 470
+    .line 469
     :goto_c
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->manage_topics:Z
 
@@ -344,14 +344,14 @@
 
     if-eqz v4, :cond_d
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_d
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 471
+    .line 470
     :goto_d
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_photos:Z
 
@@ -361,14 +361,14 @@
 
     if-eqz v4, :cond_e
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_e
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 472
+    .line 471
     :goto_e
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_videos:Z
 
@@ -378,14 +378,14 @@
 
     if-eqz v4, :cond_f
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_f
 
     :cond_f
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 473
+    .line 472
     :goto_f
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_roundvideos:Z
 
@@ -395,14 +395,14 @@
 
     if-eqz v4, :cond_10
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_10
 
     :cond_10
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 474
+    .line 473
     :goto_10
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_audios:Z
 
@@ -412,14 +412,14 @@
 
     if-eqz v4, :cond_11
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_11
 
     :cond_11
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 475
+    .line 474
     :goto_11
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_voices:Z
 
@@ -429,14 +429,14 @@
 
     if-eqz v4, :cond_12
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_12
 
     :cond_12
-    const/4 v4, 0x0
+    move v4, v2
 
-    .line 476
+    .line 475
     :goto_12
     iput-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_docs:Z
 
@@ -446,33 +446,33 @@
 
     if-eqz v0, :cond_13
 
-    const/4 v2, 0x1
+    move v2, v3
 
-    .line 477
+    .line 476
     :cond_13
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_plain:Z
 
     if-eqz v1, :cond_14
 
-    .line 479
+    .line 478
     iput-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_photos:Z
 
-    .line 480
+    .line 479
     iput-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_videos:Z
 
-    .line 481
+    .line 480
     iput-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_roundvideos:Z
 
-    .line 482
+    .line 481
     iput-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_audios:Z
 
-    .line 483
+    .line 482
     iput-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_voices:Z
 
-    .line 484
+    .line 483
     iput-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_docs:Z
 
-    .line 486
+    .line 485
     :cond_14
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -486,12 +486,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 490
+    .line 489
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 491
+    .line 490
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_photos:Z
 
     const/4 v1, 0x0
@@ -520,16 +520,16 @@
 
     if-eqz v3, :cond_0
 
-    .line 492
+    .line 491
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
 
     goto :goto_0
 
-    .line 494
+    .line 493
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
 
-    .line 496
+    .line 495
     :goto_0
     iget-boolean v3, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_plain:Z
 
@@ -539,16 +539,16 @@
 
     if-eqz v4, :cond_1
 
-    .line 497
+    .line 496
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_messages:Z
 
     goto :goto_1
 
-    .line 499
+    .line 498
     :cond_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_messages:Z
 
-    .line 501
+    .line 500
     :goto_1
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->view_messages:Z
 
@@ -568,7 +568,7 @@
     :goto_2
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 502
+    .line 501
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_messages:Z
 
     if-eqz v2, :cond_3
@@ -583,7 +583,7 @@
     :goto_3
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 503
+    .line 502
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
 
     if-eqz v2, :cond_4
@@ -598,7 +598,7 @@
     :goto_4
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 504
+    .line 503
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_stickers:Z
 
     if-eqz v2, :cond_5
@@ -613,7 +613,7 @@
     :goto_5
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 505
+    .line 504
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_gifs:Z
 
     if-eqz v2, :cond_6
@@ -628,7 +628,7 @@
     :goto_6
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 506
+    .line 505
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_games:Z
 
     if-eqz v2, :cond_7
@@ -643,7 +643,7 @@
     :goto_7
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 507
+    .line 506
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_inline:Z
 
     if-eqz v2, :cond_8
@@ -658,7 +658,7 @@
     :goto_8
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 508
+    .line 507
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->embed_links:Z
 
     if-eqz v2, :cond_9
@@ -673,7 +673,7 @@
     :goto_9
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 509
+    .line 508
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_polls:Z
 
     if-eqz v2, :cond_a
@@ -688,7 +688,7 @@
     :goto_a
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 510
+    .line 509
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->change_info:Z
 
     if-eqz v2, :cond_b
@@ -703,7 +703,7 @@
     :goto_b
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 511
+    .line 510
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->invite_users:Z
 
     if-eqz v2, :cond_c
@@ -722,7 +722,7 @@
     :goto_c
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 512
+    .line 511
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->pin_messages:Z
 
     if-eqz v2, :cond_d
@@ -741,7 +741,7 @@
     :goto_d
     iput v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 513
+    .line 512
     iget-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->manage_topics:Z
 
     if-eqz v2, :cond_e
@@ -773,11 +773,11 @@
 
     and-int/2addr v0, v1
 
-    .line 514
+    .line 513
     :goto_f
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 515
+    .line 514
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_videos:Z
 
     if-eqz v1, :cond_10
@@ -796,7 +796,7 @@
     :goto_10
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 516
+    .line 515
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_roundvideos:Z
 
     if-eqz v1, :cond_11
@@ -815,7 +815,7 @@
     :goto_11
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 517
+    .line 516
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_audios:Z
 
     if-eqz v1, :cond_12
@@ -834,7 +834,7 @@
     :goto_12
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 518
+    .line 517
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_voices:Z
 
     if-eqz v1, :cond_13
@@ -853,7 +853,7 @@
     :goto_13
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 519
+    .line 518
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_docs:Z
 
     if-eqz v1, :cond_14
@@ -885,14 +885,14 @@
 
     and-int/2addr v0, v1
 
-    .line 520
+    .line 519
     :goto_15
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->flags:I
 
-    .line 521
+    .line 520
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 522
+    .line 521
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->until_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

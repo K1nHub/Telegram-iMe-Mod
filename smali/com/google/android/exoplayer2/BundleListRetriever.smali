@@ -97,9 +97,9 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    move v4, v1
 
-    const/4 v4, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_1

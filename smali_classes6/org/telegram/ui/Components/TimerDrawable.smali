@@ -504,7 +504,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 190
     :goto_2

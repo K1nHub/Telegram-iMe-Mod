@@ -106,12 +106,12 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v7, 0x5
+    move v7, v11
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x3
+    move v7, v12
 
     :goto_1
     or-int/lit8 v7, v7, 0x30
@@ -120,12 +120,12 @@
 
     if-eqz v6, :cond_2
 
-    const/4 v8, 0x0
+    move v8, v13
 
     goto :goto_2
 
     :cond_2
-    const/16 v8, 0x14
+    move v8, v3
 
     :goto_2
     const/16 v9, 0xa
@@ -135,7 +135,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_3
     const/4 v10, 0x0
@@ -216,12 +216,12 @@
 
     if-eqz v3, :cond_5
 
-    const/4 v3, 0x5
+    move v3, v11
 
     goto :goto_5
 
     :cond_5
-    const/4 v3, 0x3
+    move v3, v12
 
     :goto_5
     or-int/lit8 v3, v3, 0x10
@@ -239,12 +239,12 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v5, 0x5
+    move v5, v11
 
     goto :goto_6
 
     :cond_6
-    const/4 v5, 0x3
+    move v5, v12
 
     :goto_6
     or-int/lit8 v16, v5, 0x30
@@ -255,24 +255,24 @@
 
     if-eqz v3, :cond_7
 
-    const/16 v17, 0x17
+    move/from16 v17, v5
 
     goto :goto_7
 
     :cond_7
-    const/16 v17, 0x3d
+    move/from16 v17, v6
 
     :goto_7
     const/16 v18, 0xa
 
     if-eqz v3, :cond_8
 
-    const/16 v19, 0x3d
+    move/from16 v19, v6
 
     goto :goto_8
 
     :cond_8
-    const/16 v19, 0x17
+    move/from16 v19, v5
 
     :goto_8
     const/16 v20, 0x0
@@ -328,12 +328,12 @@
 
     if-eqz v2, :cond_a
 
-    const/4 v2, 0x5
+    move v2, v11
 
     goto :goto_a
 
     :cond_a
-    const/4 v2, 0x3
+    move v2, v12
 
     :goto_a
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
@@ -378,7 +378,7 @@
     goto :goto_b
 
     :cond_b
-    const/4 v11, 0x3
+    move v11, v12
 
     :goto_b
     or-int/lit8 v15, v11, 0x30
@@ -387,24 +387,24 @@
 
     if-eqz v2, :cond_c
 
-    const/16 v16, 0x11
+    move/from16 v16, v3
 
     goto :goto_c
 
     :cond_c
-    const/16 v16, 0x3d
+    move/from16 v16, v6
 
     :goto_c
     const/16 v17, 0x23
 
     if-eqz v2, :cond_d
 
-    const/16 v18, 0x3d
+    move/from16 v18, v6
 
     goto :goto_d
 
     :cond_d
-    const/16 v18, 0x11
+    move/from16 v18, v3
 
     :goto_d
     const/16 v19, 0x0
@@ -437,12 +437,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x3c
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -467,7 +467,7 @@
 
     if-eqz v3, :cond_1
 
-    const/16 v1, 0x3c
+    move v1, v2
 
     :cond_1
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

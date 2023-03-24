@@ -125,7 +125,7 @@
 
     if-eqz p3, :cond_3
 
-    const/4 p3, 0x0
+    move p3, v0
 
     goto :goto_1
 

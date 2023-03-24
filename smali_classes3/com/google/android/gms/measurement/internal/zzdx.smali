@@ -261,10 +261,8 @@
     :try_end_6
     .catch Ljava/lang/SecurityException; {:try_start_6 .. :try_end_6} :catch_1
 
-    :catch_1
-    nop
-
     .line 8
+    :catch_1
     :cond_5
     iget-object p1, p0, Lcom/google/android/gms/measurement/internal/zzdx;->zzc:Lcom/google/android/gms/measurement/internal/zzdu;
 

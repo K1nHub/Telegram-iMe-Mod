@@ -158,9 +158,9 @@
 
     sub-float/2addr v0, p3
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     add-float/2addr p1, p2
 
@@ -294,14 +294,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x2
 
     if-ge v1, v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 222
     :goto_1
@@ -417,22 +417,22 @@
 
     sub-float v6, v5, v0
 
-    const v7, 0x3da3d70a    # 0.08f
-
     cmpl-float v1, v5, v1
+
+    const v5, 0x3da3d70a    # 0.08f
 
     if-eqz v1, :cond_0
 
-    mul-float v1, v6, v7
+    mul-float v1, v6, v5
 
     .line 246
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
 
-    const v5, 0x3e99999a    # 0.3f
+    const v7, 0x3e99999a    # 0.3f
 
-    cmpg-float v1, v1, v5
+    cmpg-float v1, v1, v7
 
     if-gez v1, :cond_0
 
@@ -448,7 +448,7 @@
     .line 250
     iget v0, p0, Lorg/telegram/ui/Components/Premium/CarouselView;->offsetAngle:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v5
 
     add-float/2addr v0, v6
 
@@ -545,9 +545,9 @@
 
     div-double v5, v2, v5
 
-    cmpl-double v9, v7, v5
+    cmpl-double v5, v7, v5
 
-    if-lez v9, :cond_5
+    if-lez v5, :cond_5
 
     cmpg-float v1, v0, v1
 
@@ -626,7 +626,7 @@
 
     const v5, 0x3fa66666    # 1.3f
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
@@ -644,13 +644,13 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const v1, 0x3f19999a    # 0.6f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 278
     :goto_2
@@ -678,7 +678,7 @@
 
     int-to-double v9, v5
 
-    mul-double v9, v9, v2
+    mul-double/2addr v9, v2
 
     add-double/2addr v7, v9
 
@@ -698,7 +698,7 @@
 
     const-wide/high16 v11, 0x403e000000000000L    # 30.0
 
-    mul-double v7, v7, v11
+    mul-double/2addr v7, v11
 
     sub-double/2addr v9, v7
 
@@ -713,7 +713,7 @@
 
     double-to-float v7, v7
 
-    mul-float v7, v7, v0
+    mul-float/2addr v7, v0
 
     iget v8, p0, Lorg/telegram/ui/Components/Premium/CarouselView;->cX:I
 
@@ -736,7 +736,7 @@
 
     iput v7, v6, Lorg/telegram/ui/Components/Premium/CarouselView$DrawingObject;->yRelative:F
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     .line 286
     iget v8, p0, Lorg/telegram/ui/Components/Premium/CarouselView;->cY:I
@@ -789,7 +789,7 @@
 
     add-float/2addr v3, v5
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     const/high16 v2, 0x40000000    # 2.0f
 
@@ -989,11 +989,11 @@
 
     int-to-float v0, v0
 
+    cmpl-float v0, p1, v0
+
     const/4 v1, 0x0
 
     const/4 v2, 0x1
-
-    cmpl-float v0, p1, v0
 
     if-gez v0, :cond_0
 
@@ -1044,27 +1044,27 @@
     iput v1, p0, Lorg/telegram/ui/Components/Premium/CarouselView;->offsetAngle:F
 
     :cond_2
-    const/4 v0, 0x0
+    cmpl-float v0, p1, v1
 
-    cmpl-float v3, p1, v1
+    const/4 v3, 0x0
 
-    if-nez v3, :cond_3
+    if-nez v0, :cond_3
 
-    const/4 v3, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_3
-    const/4 v3, 0x0
+    move v0, v3
 
     .line 320
     :goto_0
-    invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/Premium/CarouselView;->setAutoPlayEnabled(Z)V
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Premium/CarouselView;->setAutoPlayEnabled(Z)V
 
     .line 321
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
-    move-result v3
+    move-result v0
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1074,16 +1074,16 @@
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    cmpg-float v3, v3, v4
+    cmpg-float v0, v0, v4
 
-    if-gez v3, :cond_4
+    if-gez v0, :cond_4
 
     goto :goto_1
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/Premium/CarouselView;->setFirstScrollEnabled(Z)V

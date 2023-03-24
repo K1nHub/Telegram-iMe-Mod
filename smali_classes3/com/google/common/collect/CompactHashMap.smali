@@ -1007,7 +1007,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 901
     :goto_0
@@ -1384,7 +1384,7 @@
 
     if-ltz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 

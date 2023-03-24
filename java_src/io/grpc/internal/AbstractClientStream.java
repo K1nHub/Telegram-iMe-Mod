@@ -238,7 +238,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
                 io.grpc.internal.GzipInflatingBuffer r0 = new io.grpc.internal.GzipInflatingBuffer
                 r0.<init>()
                 r5.setFullStreamDecompressor(r0)
-                r0 = 1
+                r0 = r1
                 goto L50
             L2f:
                 java.lang.String r2 = "identity"
@@ -254,7 +254,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
                 r5.deframeFailed(r6)
                 return
             L4f:
-                r0 = 0
+                r0 = r3
             L50:
                 io.grpc.Metadata$Key<java.lang.String> r2 = io.grpc.internal.GrpcUtil.MESSAGE_ENCODING_KEY
                 java.lang.Object r2 = r6.get(r2)

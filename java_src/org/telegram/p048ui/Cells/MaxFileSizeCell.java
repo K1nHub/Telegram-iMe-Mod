@@ -13,7 +13,7 @@ import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -93,7 +93,7 @@ public class MaxFileSizeCell extends FrameLayout {
                         if (f > 0.25f) {
                             i = (int) (104857600 + (((float) (FileLoader.DEFAULT_MAX_FILE_SIZE - 104857600)) * ((f - 0.25f) / 0.25f)));
                             long j = i;
-                            MaxFileSizeCell.this.sizeTextView.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", C3286R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j)));
+                            MaxFileSizeCell.this.sizeTextView.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", C3301R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j)));
                             MaxFileSizeCell.this.currentSize = j;
                             MaxFileSizeCell.this.didChangedSizeValue(i);
                         }
@@ -103,7 +103,7 @@ public class MaxFileSizeCell extends FrameLayout {
                 }
                 i = (int) (f2 + ((f / 0.25f) * f3));
                 long j2 = i;
-                MaxFileSizeCell.this.sizeTextView.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", C3286R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j2)));
+                MaxFileSizeCell.this.sizeTextView.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", C3301R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j2)));
                 MaxFileSizeCell.this.currentSize = j2;
                 MaxFileSizeCell.this.didChangedSizeValue(i);
             }
@@ -165,7 +165,7 @@ public class MaxFileSizeCell extends FrameLayout {
         float max;
         float f;
         this.currentSize = j;
-        this.sizeTextView.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", C3286R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j)));
+        this.sizeTextView.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", C3301R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j)));
         long j2 = j - 512000;
         if (j2 < 536576) {
             f = Math.max((float) BitmapDescriptorFactory.HUE_RED, ((float) j2) / 536576.0f) * 0.25f;

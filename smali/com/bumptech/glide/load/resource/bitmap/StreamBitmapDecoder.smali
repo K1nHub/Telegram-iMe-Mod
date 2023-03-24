@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public decode(Ljava/io/InputStream;IILcom/bumptech/glide/load/Options;)Lcom/bumptech/glide/load/engine/Resource;
-    .locals 8
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,9 +91,11 @@
 
     const/4 p1, 0x1
 
-    move-object p1, v0
+    move-object v8, v0
 
-    const/4 v0, 0x1
+    move v0, p1
+
+    move-object p1, v8
 
     .line 53
     :goto_0

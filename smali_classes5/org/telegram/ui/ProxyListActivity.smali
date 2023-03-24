@@ -466,9 +466,9 @@
 
     const-wide/32 v5, 0x1d4c0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-gez v7, :cond_0
+    if-gez v3, :cond_0
 
     goto :goto_1
 
@@ -516,7 +516,7 @@
 .end method
 
 .method private static synthetic lambda$checkProxyList$5(Lorg/telegram/messenger/SharedConfig$ProxyInfo;J)V
-    .locals 5
+    .locals 3
 
     .line 740
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -530,13 +530,13 @@
     .line 741
     iput-boolean v0, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->checking:Z
 
-    const/4 v1, 0x1
+    const-wide/16 v1, -0x1
 
-    const-wide/16 v2, -0x1
+    cmp-long v1, p1, v1
 
-    cmp-long v4, p1, v2
+    const/4 v2, 0x1
 
-    if-nez v4, :cond_0
+    if-nez v1, :cond_0
 
     .line 743
     iput-boolean v0, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
@@ -553,7 +553,7 @@
     iput-wide p1, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->ping:J
 
     .line 747
-    iput-boolean v1, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
+    iput-boolean v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->available:Z
 
     .line 749
     :goto_0
@@ -563,7 +563,7 @@
 
     sget p2, Lorg/telegram/messenger/NotificationCenter;->proxyCheckDone:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     aput-object p0, v1, v0
 
@@ -1195,12 +1195,12 @@
 
     if-ne v5, v1, :cond_b
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_3
 
     :cond_b
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_3
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ProxyListActivity$TextDetailProxyCell;->setChecked(Z)V
@@ -1507,7 +1507,7 @@
 
     int-to-long v5, p1
 
-    mul-long v5, v5, v3
+    mul-long/2addr v5, v3
 
     goto :goto_2
 
@@ -1532,7 +1532,7 @@
 
     int-to-long p0, p0
 
-    mul-long p0, p0, v3
+    mul-long/2addr p0, v3
 
     goto :goto_3
 
@@ -1551,7 +1551,7 @@
 .end method
 
 .method private updateRows(Z)V
-    .locals 9
+    .locals 8
 
     const/4 v0, 0x0
 
@@ -1723,17 +1723,17 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_3
+    if-nez v4, :cond_3
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-nez v1, :cond_7
@@ -1744,7 +1744,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 680
     :cond_7
@@ -1835,7 +1835,7 @@
 
     if-eq v1, v3, :cond_b
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 714
     :cond_b
@@ -1873,7 +1873,7 @@
 
     if-ne v1, v3, :cond_d
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 706
     :cond_d
@@ -2435,12 +2435,12 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v0, p2, v3
+    cmp-long p2, p2, v3
 
-    if-nez v0, :cond_5
+    if-nez p2, :cond_5
 
     :cond_6
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_7
     if-nez v1, :cond_8
@@ -3283,12 +3283,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/ProxyListActivity;->useProxySettings:Z

@@ -149,7 +149,7 @@
 
     const/high16 v5, 0x43b40000    # 360.0f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     div-float/2addr v3, v4
 
@@ -223,7 +223,7 @@
 
     rem-float/2addr v1, v2
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     div-float/2addr v1, v2
 
@@ -366,7 +366,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
@@ -404,7 +404,7 @@
 
     div-float/2addr v0, v3
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 

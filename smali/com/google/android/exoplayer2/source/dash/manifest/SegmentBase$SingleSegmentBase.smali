@@ -67,9 +67,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, v4, v0
+    cmp-long v0, v4, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x0
 

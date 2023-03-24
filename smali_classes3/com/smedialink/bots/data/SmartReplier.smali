@@ -283,7 +283,7 @@
     if-eqz v13, :cond_6
 
     :cond_5
-    const/4 v11, 0x1
+    move v11, v12
 
     :cond_6
     if-nez v11, :cond_4
@@ -508,11 +508,11 @@
 
     const-wide/16 v13, 0x0
 
-    const/4 v10, 0x2
+    cmp-long v1, v1, v13
 
-    cmp-long v15, v1, v13
+    const/4 v2, 0x2
 
-    if-eqz v15, :cond_d
+    if-eqz v1, :cond_d
 
     .line 101
     invoke-interface {v8, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -521,7 +521,7 @@
 
     if-eqz v1, :cond_d
 
-    new-array v1, v10, [Lcom/smedialink/bots/data/model/Response;
+    new-array v1, v2, [Lcom/smedialink/bots/data/model/Response;
 
     aput-object v5, v1, v11
 
@@ -551,7 +551,7 @@
 
     aput-object v7, v1, v12
 
-    aput-object v4, v1, v10
+    aput-object v4, v1, v2
 
     .line 104
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;

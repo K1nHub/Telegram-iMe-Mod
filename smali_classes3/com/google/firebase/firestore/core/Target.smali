@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -145,9 +145,9 @@
 
     iget-wide v4, p1, Lcom/google/firebase/firestore/core/Target;->limit:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_4
+    if-eqz v2, :cond_4
 
     return v1
 
@@ -237,7 +237,7 @@
     goto :goto_2
 
     :cond_b
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     return v0
@@ -578,16 +578,16 @@
 .end method
 
 .method public hasLimit()Z
-    .locals 5
+    .locals 4
 
     .line 105
     iget-wide v0, p0, Lcom/google/firebase/firestore/core/Target;->limit:J
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -626,7 +626,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     add-int/2addr v0, v1
@@ -682,7 +682,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     add-int/2addr v0, v1
@@ -793,7 +793,7 @@
     .line 391
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 392
     :goto_0

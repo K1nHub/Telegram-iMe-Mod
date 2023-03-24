@@ -35,7 +35,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     new-array v0, v0, [Ljava/lang/Object;
@@ -79,7 +79,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p3
 
     :goto_0
     new-array p3, p3, [Ljava/lang/Object;

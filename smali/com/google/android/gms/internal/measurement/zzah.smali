@@ -266,9 +266,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     const-string v0, "Infinity"
 

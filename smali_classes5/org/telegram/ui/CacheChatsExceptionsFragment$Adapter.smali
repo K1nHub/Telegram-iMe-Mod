@@ -271,13 +271,13 @@
     :cond_3
     const/4 p1, 0x0
 
-    const/4 v7, 0x0
+    move v7, p1
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    const/4 v7, 0x1
+    move v7, v0
 
     :goto_2
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;IZ)V

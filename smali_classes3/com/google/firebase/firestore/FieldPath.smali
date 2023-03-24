@@ -158,12 +158,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     new-array v3, v2, [Ljava/lang/Object;
@@ -172,7 +172,7 @@
 
     invoke-static {v0, v4, v3}, Lcom/google/firebase/firestore/util/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 59
     :goto_1
@@ -194,12 +194,12 @@
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_2
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     new-instance v4, Ljava/lang/StringBuilder;

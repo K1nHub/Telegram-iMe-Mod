@@ -1150,7 +1150,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -1170,77 +1170,77 @@
 
     add-int/2addr v0, v1
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1044
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->maxVideoHeight:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1045
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->maxVideoFrameRate:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1046
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->maxVideoBitrate:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1047
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->minVideoWidth:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1048
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->minVideoHeight:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1049
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->minVideoFrameRate:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1050
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->minVideoBitrate:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1051
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->viewportOrientationMayChange:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1052
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->viewportWidth:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1053
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->viewportHeight:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1054
     iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredVideoMimeTypes:Lcom/google/common/collect/ImmutableList;
@@ -1251,14 +1251,14 @@
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1055
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredVideoRoleFlags:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1057
     iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredAudioLanguages:Lcom/google/common/collect/ImmutableList;
@@ -1269,28 +1269,28 @@
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1058
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredAudioRoleFlags:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1059
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->maxAudioChannelCount:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1060
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->maxAudioBitrate:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1061
     iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredAudioMimeTypes:Lcom/google/common/collect/ImmutableList;
@@ -1301,7 +1301,7 @@
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1063
     iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredTextLanguages:Lcom/google/common/collect/ImmutableList;
@@ -1312,42 +1312,42 @@
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1064
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->preferredTextRoleFlags:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1065
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->ignoredTextSelectionFlags:I
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1066
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->selectUndeterminedTextLanguage:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1068
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->forceLowestBitrate:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1069
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->forceHighestSupportedBitrate:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1070
     iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->overrides:Lcom/google/common/collect/ImmutableMap;
@@ -1358,7 +1358,7 @@
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1071
     iget-object v1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionParameters;->disabledTrackTypes:Lcom/google/common/collect/ImmutableSet;

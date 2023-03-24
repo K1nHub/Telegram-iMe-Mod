@@ -29,7 +29,7 @@ public final class WalletSettingsPresenter extends BasePresenter<WalletSettingsV
         int collectionSizeOrDefault;
         List<SettingUiItem> mutableList;
         SettingMenuItem[] settingMenuItemArr = new SettingMenuItem[3];
-        settingMenuItemArr[0] = this.cryptoAccessManager.isCurrentBlockchainWalletCreated() ? SettingMenuItem.ETH_ACCOUNT : null;
+        settingMenuItemArr[0] = this.cryptoAccessManager.isAnyWalletCreated() ? SettingMenuItem.CRYPTO_ACCOUNT : null;
         settingMenuItemArr[1] = SettingMenuItem.INTERFACE;
         settingMenuItemArr[2] = SettingMenuItem.HELP;
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(settingMenuItemArr);

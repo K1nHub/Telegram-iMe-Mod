@@ -504,7 +504,7 @@
     if-eq v0, p1, :cond_1
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1
@@ -694,7 +694,7 @@
     if-ne p1, v0, :cond_5
 
     :cond_4
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     return v1
@@ -1099,12 +1099,12 @@
 
     if-eq v3, v7, :cond_7
 
-    const/4 v15, 0x1
+    move v15, v4
 
     goto :goto_2
 
     :cond_7
-    const/4 v15, 0x0
+    move v15, v5
 
     :goto_2
     move-object v9, v1
@@ -1561,15 +1561,15 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v2, 0x0
+    move v2, v5
 
-    const/4 v6, 0x0
+    move v6, v2
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    const/4 v12, 0x0
+    move v12, v8
 
     .line 869
     :goto_a
@@ -1594,7 +1594,7 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v6, 0x1
+    move v6, v4
 
     :cond_12
     if-nez v8, :cond_13
@@ -1608,7 +1608,7 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v8, 0x1
+    move v8, v4
 
     :cond_13
     if-nez v12, :cond_14
@@ -1622,7 +1622,7 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v12, 0x1
+    move v12, v4
 
     :cond_14
     add-int/lit8 v2, v2, 0x1
@@ -1790,7 +1790,7 @@
     :cond_1c
     if-eqz v3, :cond_1d
 
-    const/4 v5, 0x1
+    move v5, v4
 
     :cond_1d
     move-object v12, v1
@@ -1917,7 +1917,7 @@
     goto :goto_e
 
     :cond_20
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_e
     invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V

@@ -224,7 +224,7 @@
 
     const/high16 v7, 0x3e800000    # 0.25f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     div-float/2addr v1, v3
 
@@ -255,7 +255,7 @@
 
     const v5, 0x3f333333    # 0.7f
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     div-float/2addr v0, v3
 

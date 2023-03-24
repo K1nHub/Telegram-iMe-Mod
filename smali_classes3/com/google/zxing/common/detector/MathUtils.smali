@@ -15,9 +15,9 @@
 
     float-to-double p0, p1
 
-    mul-double v0, v0, v0
+    mul-double/2addr v0, v0
 
-    mul-double p0, p0, p0
+    mul-double/2addr p0, p0
 
     add-double/2addr v0, p0
 
@@ -42,9 +42,9 @@
 
     int-to-double p0, p1
 
-    mul-double v0, v0, v0
+    mul-double/2addr v0, v0
 
-    mul-double p0, p0, p0
+    mul-double/2addr p0, p0
 
     add-double/2addr v0, p0
 

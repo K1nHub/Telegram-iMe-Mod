@@ -146,7 +146,7 @@
     .line 13579
     array-length v6, v3
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     const-string v9, "dialogTextBlack"

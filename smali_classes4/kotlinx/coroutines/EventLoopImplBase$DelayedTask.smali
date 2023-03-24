@@ -301,9 +301,9 @@
 
     sub-long/2addr p1, v3
 
-    cmp-long p4, p1, v1
+    cmp-long p1, p1, v1
 
-    if-gez p4, :cond_5
+    if-gez p1, :cond_5
 
     iput-wide v3, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
 
@@ -404,7 +404,7 @@
 .end method
 
 .method public final timeToExecute(J)Z
-    .locals 3
+    .locals 2
 
     .line 428
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
@@ -413,9 +413,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 

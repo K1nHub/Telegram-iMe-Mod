@@ -2630,7 +2630,7 @@
 
     if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -4124,12 +4124,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x8
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/ImageButton;->setVisibility(I)V
@@ -4139,7 +4139,7 @@
 
     if-eqz p1, :cond_1
 
-    const/16 v1, 0x8
+    move v1, v2
 
     :cond_1
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -4207,12 +4207,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     if-nez v0, :cond_1
@@ -4220,7 +4220,7 @@
     if-eqz p1, :cond_2
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 3982
     :cond_2
@@ -4926,12 +4926,12 @@
     iput-object v2, p0, Lcom/google/android/material/textfield/TextInputLayout;->startDummyDrawable:Landroid/graphics/drawable/Drawable;
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 3870
     :goto_1
@@ -5238,12 +5238,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 1510
     :goto_0
@@ -5257,12 +5257,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 1511
     :goto_1
@@ -5828,7 +5828,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2501
     :goto_0
@@ -6254,7 +6254,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 4135
     :goto_0
@@ -6278,7 +6278,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     invoke-virtual {p0, v0}, Lcom/google/android/material/textfield/TextInputLayout;->updateLabelState(Z)V
@@ -9541,13 +9541,9 @@
     :cond_0
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
+    move v0, p2
 
     :catch_0
-    nop
-
     :goto_0
     if-eqz v0, :cond_1
 
@@ -9662,12 +9658,12 @@
 
     if-le p1, v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2195
     :goto_0
@@ -9923,13 +9919,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 4154
     :goto_1
@@ -9952,13 +9948,13 @@
     goto :goto_2
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const/4 v3, 0x1
+    move v3, v2
 
     .line 4157
     :goto_3
@@ -10089,7 +10085,7 @@
 
     if-eqz v4, :cond_c
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 4179
     :cond_c

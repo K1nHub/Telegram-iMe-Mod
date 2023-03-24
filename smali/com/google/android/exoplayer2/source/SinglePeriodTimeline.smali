@@ -529,9 +529,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, p3, v5
+    cmp-long v5, p3, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
     .line 314
     iget-wide v5, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDurationUs:J
@@ -548,9 +548,9 @@
     :cond_0
     add-long v1, v1, p3
 
-    cmp-long v7, v1, v5
+    cmp-long v5, v1, v5
 
-    if-lez v7, :cond_1
+    if-lez v5, :cond_1
 
     goto :goto_0
 

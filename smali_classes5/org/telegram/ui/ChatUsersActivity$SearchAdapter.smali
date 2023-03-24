@@ -357,12 +357,12 @@
 
     if-eqz v4, :cond_3
 
-    const/4 v8, 0x1
+    move v8, v7
 
     goto :goto_0
 
     :cond_3
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_0
     add-int/2addr v8, v7
@@ -844,9 +844,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_12
+    if-nez v4, :cond_12
 
     move-object/from16 v9, v19
 
@@ -1214,12 +1214,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_4
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_4
     const/4 v9, 0x0
@@ -2128,7 +2128,7 @@
 
     move-result-object v7
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_2
 
@@ -2138,7 +2138,7 @@
     :cond_c
     move-object v7, v6
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_2
     const-string v10, "@"
@@ -2213,7 +2213,7 @@
     :goto_3
     move v6, v0
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_4
 
@@ -2561,14 +2561,14 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_0
 
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_0
     const/4 v5, 0x0

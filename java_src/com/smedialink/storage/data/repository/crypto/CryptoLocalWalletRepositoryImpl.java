@@ -43,8 +43,12 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[BlockchainType.TON.ordinal()] = 2;
+                iArr[BlockchainType.TRON.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[BlockchainType.TON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -66,9 +70,9 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> map = this.walletManager.createWallet(guid, password, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1726x33bae8b9(this, password)));
+        Observable<R> map = this.walletManager.createWallet(guid, password, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1734x33bae8b9(this, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<Wallet>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1725x26a9e708(this.errorHandler)));
+        Observable<Result<Wallet>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1733x26a9e708(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -92,7 +96,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
             arrayList2.add(this.walletManager.unlockWallet(newGuid, oldGuid, CryptoExtKt.safeAesDecrypt(this.cryptoPreferenceHelper.getWalletSeedByGuid(oldGuid, blockchainType2), password), password, blockchainType2));
         }
         if (CollectionExtKt.isSingletonList(arrayList2)) {
-            Observable<Result<List<Wallet>>> map = ((Observable) CollectionsKt.first((List<? extends Object>) arrayList2)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1731x36424441(this, password)));
+            Observable<Result<List<Wallet>>> map = ((Observable) CollectionsKt.first((List<? extends Object>) arrayList2)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1739x36424441(this, password)));
             Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
             return map;
         }
@@ -147,7 +151,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
-        if (i == 1) {
+        if (i == 1 || i == 2) {
             fromCallable = Observable.fromCallable(new Callable() { // from class: com.smedialink.storage.data.repository.crypto.CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda4
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
@@ -156,7 +160,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
                     return isValidSeed$lambda$6;
                 }
             });
-        } else if (i != 2) {
+        } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
             Observable<Result<String>> generateAddressByMnemonic = this.walletManager.generateAddressByMnemonic(seed, blockchainType);
@@ -206,7 +210,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(linkedAddress, "linkedAddress");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> flatMap = isValidSeed(seed, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1729x2157d0e9(this, seed, blockchainType, linkedAddress)));
+        Observable<R> flatMap = isValidSeed(seed, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1737x2157d0e9(this, seed, blockchainType, linkedAddress)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         final CryptoLocalWalletRepositoryImpl$isValidRestoredAddress$2 cryptoLocalWalletRepositoryImpl$isValidRestoredAddress$2 = CryptoLocalWalletRepositoryImpl$isValidRestoredAddress$2.INSTANCE;
         Observable<Result<Boolean>> onErrorReturn = flatMap.onErrorReturn(new Function() { // from class: com.smedialink.storage.data.repository.crypto.CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda3
@@ -233,9 +237,9 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> map = this.walletManager.importWallet(guid, seed, password, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1728x966593e2(this, password)));
+        Observable<R> map = this.walletManager.importWallet(guid, seed, password, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1736x966593e2(this, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<Wallet>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1727x1954a0ff(this.errorHandler)));
+        Observable<Result<Wallet>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1735x1954a0ff(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

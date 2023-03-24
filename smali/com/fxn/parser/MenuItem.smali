@@ -84,14 +84,9 @@
 
     const/4 p6, 0x0
 
-    const/4 v6, 0x0
-
-    goto :goto_0
-
     :cond_0
     move v6, p6
 
-    :goto_0
     move-object v0, p0
 
     move v1, p1
@@ -358,7 +353,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     add-int/2addr v0, v1

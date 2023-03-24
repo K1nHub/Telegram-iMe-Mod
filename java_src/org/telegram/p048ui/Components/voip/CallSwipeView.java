@@ -80,7 +80,7 @@ public class CallSwipeView extends View {
             float f = BitmapDescriptorFactory.HUE_RED;
             if (action == 2) {
                 View view = this.viewToDrag;
-                float f2 = this.dragFromRight ? -(getWidth() - getDraggedViewWidth()) : BitmapDescriptorFactory.HUE_RED;
+                float f2 = this.dragFromRight ? -(getWidth() - getDraggedViewWidth()) : 0.0f;
                 float x = motionEvent.getX() - this.dragStartX;
                 if (!this.dragFromRight) {
                     f = getWidth() - getDraggedViewWidth();

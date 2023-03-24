@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 6
 
     .line 95
     iget-object v0, p0, Landroidx/room/AutoCloser$2;->this$0:Landroidx/room/AutoCloser;
@@ -59,9 +59,9 @@
 
     iget-wide v4, v3, Landroidx/room/AutoCloser;->mAutoCloseTimeoutInMs:J
 
-    cmp-long v6, v1, v4
+    cmp-long v1, v1, v4
 
-    if-gez v6, :cond_0
+    if-gez v1, :cond_0
 
     .line 101
     monitor-exit v0

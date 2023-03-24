@@ -374,7 +374,7 @@
 .end method
 
 .method private isLightStatusBar()Z
-    .locals 5
+    .locals 4
 
     const-string v0, "dialogBackground"
 
@@ -389,9 +389,9 @@
 
     const-wide v2, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -532,11 +532,11 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v0, v1
 
@@ -627,7 +627,7 @@
 
     if-gez v5, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 268
     :cond_1
@@ -642,7 +642,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     iget-boolean v6, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->wasDrawn:Z

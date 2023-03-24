@@ -349,7 +349,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
             int r3 = r3.getNumRows()     // Catch: java.lang.Throwable -> L76
             goto L2f
         L2e:
-            r3 = 0
+            r3 = r5
         L2f:
             if (r3 >= r2) goto L63
             boolean r6 = r0.moveToPosition(r3)     // Catch: java.lang.Throwable -> L76

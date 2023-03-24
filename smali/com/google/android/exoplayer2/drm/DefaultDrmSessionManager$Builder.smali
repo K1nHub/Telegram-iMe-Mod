@@ -185,19 +185,19 @@
 .end method
 
 .method public setSessionKeepaliveMs(J)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gtz v2, :cond_1
+    if-gtz v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
@@ -228,7 +228,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -246,7 +246,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 180
     :cond_1

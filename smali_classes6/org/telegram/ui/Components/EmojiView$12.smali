@@ -245,7 +245,7 @@
 .end method
 
 .method protected onTabClick(I)Z
-    .locals 9
+    .locals 8
 
     .line 2339
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$12;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -410,7 +410,7 @@
 
     if-ge p1, v4, :cond_7
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 2365
     :goto_1
@@ -453,9 +453,9 @@
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_5
+    if-nez v4, :cond_5
 
     goto :goto_2
 
@@ -503,7 +503,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_3
     if-eqz v0, :cond_8

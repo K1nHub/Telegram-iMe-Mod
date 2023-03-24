@@ -558,7 +558,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v5
 
     .line 337
     :goto_2
@@ -594,9 +594,9 @@
 
     move/from16 v22, v12
 
-    const/4 v9, 0x3
+    move v12, v3
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v9, v6
 
     goto/16 :goto_14
 
@@ -616,7 +616,7 @@
 
     iget v15, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v5, v5, v15
+    mul-float/2addr v5, v15
 
     sub-float v5, v1, v5
 
@@ -629,7 +629,7 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v15, v15, v10
+    mul-float/2addr v15, v10
 
     add-float/2addr v15, v1
 
@@ -642,7 +642,7 @@
 
     iget v13, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v10, v10, v13
+    mul-float/2addr v10, v13
 
     add-float/2addr v10, v1
 
@@ -688,7 +688,7 @@
     iget v14, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
     :goto_4
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     add-float/2addr v13, v1
 
@@ -723,7 +723,7 @@
 
     sub-float v14, v3, v14
 
-    mul-float v13, v13, v14
+    mul-float/2addr v13, v14
 
     float-to-int v13, v13
 
@@ -790,9 +790,9 @@
 
     iget v14, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
     iget-boolean v14, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->isMini:Z
 
@@ -872,7 +872,7 @@
 
     const/high16 v4, 0x42d00000    # 104.0f
 
-    mul-float v14, v14, v4
+    mul-float/2addr v14, v4
 
     sub-float v4, v14, v3
 
@@ -894,7 +894,7 @@
 
     sub-float v1, v10, v13
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     add-float/2addr v13, v1
 
@@ -924,7 +924,7 @@
 
     sub-float v3, v14, v25
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     const/4 v2, 0x7
 
@@ -940,7 +940,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     mul-float v3, v25, v21
 
@@ -972,7 +972,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1085,7 +1085,7 @@
 
     const v3, 0x3e19999a    # 0.15f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -1096,7 +1096,7 @@
 
     if-eqz v1, :cond_11
 
-    const/4 v1, 0x2
+    move v1, v6
 
     goto :goto_c
 
@@ -1176,7 +1176,7 @@
 
     move/from16 v22, v12
 
-    const/4 v12, 0x2
+    move v12, v6
 
     sub-float v8, v9, v2
 
@@ -1217,7 +1217,7 @@
 
     move/from16 v22, v12
 
-    const/4 v12, 0x2
+    move v12, v6
 
     :goto_d
     if-eqz v23, :cond_15
@@ -1258,11 +1258,11 @@
 
     move/from16 v22, v12
 
+    move v12, v3
+
+    move v9, v6
+
     const/high16 v6, 0x3f800000    # 1.0f
-
-    const/4 v9, 0x3
-
-    const/4 v12, 0x2
 
     if-ne v14, v12, :cond_17
 
@@ -1278,13 +1278,13 @@
     :goto_10
     sub-float/2addr v13, v5
 
-    mul-float v13, v13, v3
+    mul-float/2addr v13, v3
 
     add-float/2addr v13, v5
 
     sub-float/2addr v10, v15
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     add-float/2addr v10, v15
 
@@ -1299,11 +1299,11 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sub-float v4, v1, v4
 
@@ -1314,11 +1314,11 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     iget v14, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v5, v5, v14
+    mul-float/2addr v5, v14
 
     add-float/2addr v1, v5
 
@@ -1329,11 +1329,11 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     sub-float v2, v10, v5
 
@@ -1361,13 +1361,13 @@
 
     move/from16 v22, v12
 
-    const/16 v3, 0x8
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    const/4 v9, 0x3
-
     const/4 v12, 0x2
+
+    move v9, v6
+
+    move v6, v3
+
+    const/16 v3, 0x8
 
     int-to-float v1, v11
 
@@ -1380,7 +1380,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float v2, v1, v2
 
@@ -1393,7 +1393,7 @@
 
     iget v10, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     add-float/2addr v1, v4
 
@@ -1406,7 +1406,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float v3, v15, v3
 
@@ -1436,7 +1436,7 @@
 
     move v5, v15
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v6
 
     move-object/from16 v6, v23
 
@@ -1445,7 +1445,7 @@
     goto :goto_13
 
     :cond_19
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v6
 
     :goto_13
     int-to-float v6, v11
@@ -1530,7 +1530,7 @@
 
     const/4 v14, 0x0
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     :cond_1d
     const/16 v13, 0xd
@@ -1580,7 +1580,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->overrideAlpha:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -1593,7 +1593,7 @@
     .line 592
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatedDownloadProgress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
@@ -1661,7 +1661,7 @@
     :cond_21
     move/from16 v13, v22
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     :cond_22
     :goto_19
@@ -1699,11 +1699,11 @@
 
     int-to-float v1, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     mul-float v3, v3, v21
 
@@ -1712,48 +1712,48 @@
     goto :goto_1a
 
     :cond_23
-    const/4 v1, 0x0
+    move v5, v14
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
     :goto_1a
     move v15, v5
 
-    const/4 v2, 0x0
+    move v3, v12
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/4 v2, 0x0
 
     const/4 v4, 0x0
 
     :goto_1b
     const/4 v5, 0x0
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     :cond_24
     const/16 v2, 0xf
 
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_2d
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2d
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_2d
 
-    if-eq v1, v10, :cond_2c
+    if-eq v1, v10, :cond_2d
 
     const/16 v2, 0x8
 
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_2d
 
     const/16 v2, 0x9
 
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_2d
 
     const/4 v2, 0x7
 
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_2d
 
     const/4 v3, 0x6
 
@@ -1784,7 +1784,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     mul-float v2, v3, v21
 
@@ -1850,11 +1850,11 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
+
+    move v3, v12
 
     const/4 v2, 0x0
-
-    const/high16 v3, 0x3f800000    # 1.0f
 
     const/4 v4, 0x0
 
@@ -1862,7 +1862,7 @@
 
     const/16 v15, 0xff
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     .line 511
     :cond_29
@@ -1887,11 +1887,11 @@
     :cond_2a
     const/high16 v2, 0x42340000    # 45.0f
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     move v2, v3
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v12
 
     :goto_1e
     const/4 v4, 0x7
@@ -1905,7 +1905,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     mul-float v1, v1, v21
 
@@ -1954,13 +1954,19 @@
 
     move v2, v6
 
-    goto :goto_22
+    goto :goto_23
 
     :cond_2c
+    move v2, v3
+
+    goto :goto_21
+
+    :cond_2d
     :goto_20
     const/4 v2, 0x6
 
-    if-ne v1, v2, :cond_2d
+    :goto_21
+    if-ne v1, v2, :cond_2e
 
     .line 483
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
@@ -1971,13 +1977,13 @@
 
     move-result v1
 
-    goto :goto_21
+    goto :goto_22
 
     .line 485
-    :cond_2d
+    :cond_2e
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
-    :goto_21
+    :goto_22
     sub-float v3, v12, v1
 
     .line 491
@@ -2003,15 +2009,15 @@
 
     int-to-float v4, v5
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     const/high16 v5, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     .line 494
     invoke-static {v12, v5}, Ljava/lang/Math;->min(FF)F
@@ -2032,10 +2038,10 @@
 
     move/from16 v1, v31
 
-    :goto_22
+    :goto_23
     cmpl-float v23, v3, v12
 
-    if-eqz v23, :cond_2e
+    if-eqz v23, :cond_2f
 
     .line 536
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -2043,12 +2049,12 @@
     .line 537
     invoke-virtual {v7, v3, v3, v4, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    :cond_2e
+    :cond_2f
     const/4 v2, 0x0
 
     cmpl-float v25, v5, v2
 
-    if-eqz v25, :cond_2f
+    if-eqz v25, :cond_30
 
     .line 540
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -2062,13 +2068,13 @@
     .line 541
     invoke-virtual {v7, v5, v2, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    goto :goto_23
+    goto :goto_24
 
-    :cond_2f
+    :cond_30
     move/from16 v6, v22
 
-    :goto_23
-    if-eqz v15, :cond_32
+    :goto_24
+    if-eqz v15, :cond_33
 
     .line 544
     iget-object v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint:Landroid/graphics/Paint;
@@ -2077,7 +2083,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->overrideAlpha:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -2088,15 +2094,15 @@
 
     const/16 v4, 0xe
 
-    if-eq v2, v4, :cond_31
+    if-eq v2, v4, :cond_32
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v2, v4, :cond_30
+    if-ne v2, v4, :cond_31
 
-    goto :goto_24
+    goto :goto_25
 
-    :cond_30
+    :cond_31
     int-to-float v2, v11
 
     sub-float v18, v2, v1
@@ -2139,10 +2145,10 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    goto :goto_25
+    goto :goto_26
 
-    :cond_31
-    :goto_24
+    :cond_32
+    :goto_25
     move v13, v6
 
     .line 546
@@ -2150,7 +2156,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->overrideAlpha:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -2214,45 +2220,45 @@
 
     invoke-virtual {v7, v1, v3, v2, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    goto :goto_25
+    goto :goto_26
 
-    :cond_32
+    :cond_33
     move v13, v6
 
-    :goto_25
-    if-eqz v25, :cond_33
+    :goto_26
+    if-eqz v25, :cond_34
 
     .line 555
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    :cond_33
-    if-eqz v23, :cond_34
+    :cond_34
+    if-eqz v23, :cond_35
 
     .line 558
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 564
-    :cond_34
+    :cond_35
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-eq v1, v9, :cond_35
+    if-eq v1, v9, :cond_36
 
     const/16 v2, 0xe
 
-    if-eq v1, v2, :cond_35
+    if-eq v1, v2, :cond_36
 
     const/4 v3, 0x4
 
-    if-ne v1, v3, :cond_39
+    if-ne v1, v3, :cond_3a
 
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v1, v2, :cond_35
+    if-eq v1, v2, :cond_36
 
-    if-ne v1, v9, :cond_39
+    if-ne v1, v9, :cond_3a
 
-    :cond_35
-    if-eqz v15, :cond_39
+    :cond_36
+    if-eqz v15, :cond_3a
 
     const/high16 v1, 0x40800000    # 4.0f
 
@@ -2261,7 +2267,7 @@
     .line 565
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatedDownloadProgress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
@@ -2270,16 +2276,16 @@
     .line 566
     iget-boolean v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->isMini:Z
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_37
 
     const/4 v1, 0x2
 
-    goto :goto_26
+    goto :goto_27
 
-    :cond_36
+    :cond_37
     const/4 v1, 0x4
 
-    :goto_26
+    :goto_27
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2318,29 +2324,29 @@
 
     const/16 v2, 0xe
 
-    if-eq v1, v2, :cond_37
+    if-eq v1, v2, :cond_38
 
     const/4 v3, 0x4
 
-    if-ne v1, v3, :cond_38
+    if-ne v1, v3, :cond_39
 
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v2, :cond_38
+    if-ne v1, v2, :cond_39
 
     .line 570
-    :cond_37
+    :cond_38
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint:Landroid/graphics/Paint;
 
     int-to-float v2, v15
 
     const v3, 0x3e19999a    # 0.15f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->overrideAlpha:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2367,7 +2373,7 @@
     invoke-virtual {v1, v15}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 574
-    :cond_38
+    :cond_39
     iget-object v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->rect:Landroid/graphics/RectF;
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->downloadRadOffset:F
@@ -2383,35 +2389,35 @@
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     .line 606
-    :cond_39
-    :goto_27
+    :cond_3a
+    :goto_28
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v2, :cond_3a
+    if-ne v1, v2, :cond_3b
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v12
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v6
 
-    goto :goto_2a
+    goto :goto_2b
 
-    :cond_3a
+    :cond_3b
     const/4 v2, 0x4
 
-    if-eq v1, v2, :cond_3c
+    if-eq v1, v2, :cond_3d
 
-    if-eq v1, v9, :cond_3c
+    if-eq v1, v9, :cond_3d
 
     const/16 v2, 0xe
 
-    if-ne v1, v2, :cond_3b
+    if-ne v1, v2, :cond_3c
 
-    goto :goto_28
+    goto :goto_29
 
     .line 612
-    :cond_3b
+    :cond_3c
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     div-float v1, v1, v20
@@ -2433,40 +2439,40 @@
 
     move-result v1
 
-    goto :goto_29
+    goto :goto_2a
 
     .line 609
-    :cond_3c
-    :goto_28
+    :cond_3d
+    :goto_29
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     sub-float v1, v12, v3
 
-    :goto_29
+    :goto_2a
     move v6, v1
 
     move v15, v3
 
     .line 617
-    :goto_2a
+    :goto_2b
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
     const/16 v2, 0x64
 
-    if-ne v1, v2, :cond_3d
+    if-ne v1, v2, :cond_3e
 
     .line 618
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_backupIconDrawable:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_2b
+    goto :goto_2c
 
     .line 619
-    :cond_3d
+    :cond_3e
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     const/16 v3, 0x64
 
-    if-ne v2, v3, :cond_3e
+    if-ne v2, v3, :cond_3f
 
     .line 620
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_backupIconDrawable:Landroid/graphics/drawable/Drawable;
@@ -2475,18 +2481,18 @@
 
     const/4 v2, 0x0
 
-    goto :goto_2c
+    goto :goto_2d
 
-    :cond_3e
+    :cond_3f
     const/4 v2, 0x0
 
-    :goto_2b
+    :goto_2c
     const/4 v3, 0x0
 
-    :goto_2c
+    :goto_2d
     const/16 v4, 0xf
 
-    if-ne v1, v4, :cond_3f
+    if-ne v1, v4, :cond_40
 
     .line 624
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_updatePath:[Landroid/graphics/Path;
@@ -2495,90 +2501,90 @@
 
     const/4 v4, 0x0
 
-    goto :goto_2e
+    goto :goto_2f
 
     .line 625
-    :cond_3f
+    :cond_40
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     const/16 v5, 0xf
 
-    if-ne v4, v5, :cond_40
+    if-ne v4, v5, :cond_41
 
     .line 626
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_updatePath:[Landroid/graphics/Path;
 
-    goto :goto_2d
+    goto :goto_2e
 
-    :cond_40
+    :cond_41
     const/4 v4, 0x0
 
-    :goto_2d
+    :goto_2e
     const/16 v16, 0x0
 
-    :goto_2e
-    if-ne v1, v10, :cond_41
+    :goto_2f
+    if-ne v1, v10, :cond_42
 
     .line 629
     sget-object v16, Lorg/telegram/ui/ActionBar/Theme;->chat_filePath:[Landroid/graphics/Path;
 
-    goto :goto_2f
+    goto :goto_30
 
     .line 630
-    :cond_41
+    :cond_42
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-ne v5, v10, :cond_42
+    if-ne v5, v10, :cond_43
 
     .line 631
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_filePath:[Landroid/graphics/Path;
 
-    :cond_42
-    :goto_2f
+    :cond_43
+    :goto_30
     move-object v5, v4
 
     move-object/from16 v4, v16
 
     const/4 v10, 0x7
 
-    if-ne v1, v10, :cond_43
+    if-ne v1, v10, :cond_44
 
     .line 634
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_flameIcon:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_30
+    goto :goto_31
 
     .line 635
-    :cond_43
+    :cond_44
     iget v12, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-ne v12, v10, :cond_44
+    if-ne v12, v10, :cond_45
 
     .line 636
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_flameIcon:Landroid/graphics/drawable/Drawable;
 
-    :cond_44
-    :goto_30
+    :cond_45
+    :goto_31
     const/16 v10, 0x8
 
-    if-ne v1, v10, :cond_45
+    if-ne v1, v10, :cond_46
 
     .line 639
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_gifIcon:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_31
+    goto :goto_32
 
     .line 640
-    :cond_45
+    :cond_46
     iget v12, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-ne v12, v10, :cond_46
+    if-ne v12, v10, :cond_47
 
     .line 641
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_gifIcon:Landroid/graphics/drawable/Drawable;
 
-    :cond_46
-    :goto_31
+    :cond_47
+    :goto_32
     move-object v10, v2
 
     move-object v12, v3
@@ -2588,13 +2594,13 @@
 
     const/16 v3, 0x9
 
-    if-eq v2, v3, :cond_48
+    if-eq v2, v3, :cond_49
 
-    if-ne v1, v3, :cond_47
+    if-ne v1, v3, :cond_48
 
-    goto :goto_32
+    goto :goto_33
 
-    :cond_47
+    :cond_48
     move-object/from16 v24, v4
 
     move-object/from16 v25, v5
@@ -2603,11 +2609,11 @@
 
     move-object/from16 v18, v10
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     .line 646
-    :cond_48
-    :goto_32
+    :cond_49
+    :goto_33
     invoke-direct {v0, v14}, Lorg/telegram/ui/Components/MediaActionDrawable;->applyShaderMatrix(Z)V
 
     .line 647
@@ -2617,20 +2623,20 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v2, v3, :cond_49
+    if-ne v2, v3, :cond_4a
 
     const/16 v2, 0xff
 
-    goto :goto_33
+    goto :goto_34
 
-    :cond_49
+    :cond_4a
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     mul-float v2, v2, v21
 
     float-to-int v2, v2
 
-    :goto_33
+    :goto_34
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/4 v1, 0x7
@@ -2654,7 +2660,7 @@
 
     iget v9, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v1, v9, :cond_4a
+    if-eq v1, v9, :cond_4b
 
     .line 651
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -2668,7 +2674,7 @@
 
     invoke-virtual {v7, v1, v1, v9, v14}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    :cond_4a
+    :cond_4b
     const/4 v1, 0x6
 
     .line 654
@@ -2760,25 +2766,25 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v1, v2, :cond_4b
+    if-eq v1, v2, :cond_4c
 
     .line 657
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 660
-    :cond_4b
-    :goto_34
+    :cond_4c
+    :goto_35
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     const/16 v2, 0xc
 
-    if-eq v1, v2, :cond_4c
+    if-eq v1, v2, :cond_4d
 
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v2, :cond_51
+    if-ne v1, v2, :cond_52
 
-    :cond_4c
+    :cond_4d
     const/4 v1, 0x0
 
     .line 661
@@ -2789,24 +2795,24 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v2, :cond_4d
+    if-ne v1, v2, :cond_4e
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    goto :goto_35
+    goto :goto_36
 
-    :cond_4d
+    :cond_4e
     const/16 v3, 0xd
 
-    if-ne v2, v3, :cond_4e
+    if-ne v2, v3, :cond_4f
 
     .line 666
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
-    goto :goto_35
+    goto :goto_36
 
     .line 668
-    :cond_4e
+    :cond_4f
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -2814,21 +2820,21 @@
     sub-float v3, v4, v3
 
     .line 671
-    :goto_35
+    :goto_36
     iget-object v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint:Landroid/graphics/Paint;
 
-    if-ne v1, v2, :cond_4f
+    if-ne v1, v2, :cond_50
 
     const/16 v1, 0xff
 
-    goto :goto_36
+    goto :goto_37
 
-    :cond_4f
+    :cond_50
     mul-float v1, v3, v21
 
     float-to-int v1, v1
 
-    :goto_36
+    :goto_37
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/4 v1, 0x7
@@ -2846,7 +2852,7 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v2, v4, :cond_50
+    if-eq v2, v4, :cond_51
 
     .line 675
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -2859,7 +2865,7 @@
     invoke-virtual {v7, v3, v3, v2, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 679
-    :cond_50
+    :cond_51
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2868,7 +2874,7 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->scale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     int-to-float v2, v11
 
@@ -2911,24 +2917,24 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v1, v2, :cond_51
+    if-eq v1, v2, :cond_52
 
     .line 684
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 687
-    :cond_51
+    :cond_52
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     const/16 v2, 0xd
 
-    if-eq v1, v2, :cond_52
+    if-eq v1, v2, :cond_53
 
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v2, :cond_58
+    if-ne v1, v2, :cond_59
 
-    :cond_52
+    :cond_53
     const/4 v1, 0x0
 
     .line 688
@@ -2939,22 +2945,22 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v3, :cond_53
+    if-ne v1, v3, :cond_54
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    goto :goto_37
+    goto :goto_38
 
-    :cond_53
-    if-ne v3, v2, :cond_54
+    :cond_54
+    if-ne v3, v2, :cond_55
 
     .line 693
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
-    goto :goto_37
+    goto :goto_38
 
     .line 695
-    :cond_54
+    :cond_55
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -2962,7 +2968,7 @@
     sub-float v3, v2, v1
 
     .line 698
-    :goto_37
+    :goto_38
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->textPaint:Landroid/text/TextPaint;
 
     mul-float v2, v3, v21
@@ -2994,7 +3000,7 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v4, v5, :cond_55
+    if-eq v4, v5, :cond_56
 
     .line 702
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -3007,7 +3013,7 @@
     invoke-virtual {v7, v3, v3, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 705
-    :cond_55
+    :cond_56
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatedDownloadProgress:F
 
     mul-float v3, v3, v17
@@ -3017,14 +3023,14 @@
     .line 706
     iget-object v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->percentString:Ljava/lang/String;
 
-    if-eqz v4, :cond_56
+    if-eqz v4, :cond_57
 
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->lastPercent:I
 
-    if-eq v3, v4, :cond_57
+    if-eq v3, v4, :cond_58
 
     .line 707
-    :cond_56
+    :cond_57
     iput v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->lastPercent:I
 
     const/4 v4, 0x1
@@ -3066,7 +3072,7 @@
     iput v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->percentStringWidth:I
 
     .line 711
-    :cond_57
+    :cond_58
     iget-object v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->percentString:Ljava/lang/String;
 
     int-to-float v2, v2
@@ -3082,52 +3088,52 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v1, v2, :cond_58
+    if-eq v1, v2, :cond_59
 
     .line 713
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 716
-    :cond_58
+    :cond_59
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_5a
 
-    if-eq v1, v2, :cond_59
+    if-eq v1, v2, :cond_5a
 
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eqz v3, :cond_59
+    if-eqz v3, :cond_5a
 
-    if-ne v3, v2, :cond_6f
+    if-ne v3, v2, :cond_71
 
-    :cond_59
-    if-nez v1, :cond_5a
+    :cond_5a
+    if-nez v1, :cond_5b
 
     .line 718
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v3, v2, :cond_5b
+    if-eq v3, v2, :cond_5c
 
-    :cond_5a
-    if-ne v1, v2, :cond_5f
+    :cond_5b
+    if-ne v1, v2, :cond_61
 
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-nez v2, :cond_5f
+    if-nez v2, :cond_60
 
     .line 719
-    :cond_5b
+    :cond_5c
     iget-boolean v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatingTransition:Z
 
-    if-eqz v2, :cond_5d
+    if-eqz v2, :cond_5e
 
     .line 720
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-nez v2, :cond_5c
+    if-nez v2, :cond_5d
 
     .line 721
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
@@ -3136,68 +3142,74 @@
 
     sub-float v2, v3, v2
 
-    goto :goto_38
+    goto :goto_39
 
     .line 723
-    :cond_5c
+    :cond_5d
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
-    :goto_38
+    :goto_39
     const/4 v3, 0x1
 
-    goto :goto_3a
+    goto :goto_3c
 
     .line 726
-    :cond_5d
+    :cond_5e
     iget v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_5e
+    if-ne v2, v3, :cond_5f
 
-    :goto_39
+    :goto_3a
     const/high16 v2, 0x3f800000    # 1.0f
 
-    goto :goto_3a
-
-    :cond_5e
-    const/4 v2, 0x0
-
-    goto :goto_3a
+    goto :goto_3c
 
     :cond_5f
-    const/4 v3, 0x1
-
-    if-ne v1, v3, :cond_5e
-
-    goto :goto_39
-
-    .line 732
-    :goto_3a
-    iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
-
-    if-eqz v4, :cond_61
-
-    if-ne v4, v3, :cond_60
+    const/4 v2, 0x0
 
     goto :goto_3c
 
     :cond_60
-    :goto_3b
-    const/4 v3, 0x4
-
-    goto :goto_3d
-
-    :cond_61
-    :goto_3c
-    if-eqz v1, :cond_64
-
-    if-eq v1, v3, :cond_64
+    const/4 v3, 0x1
 
     goto :goto_3b
 
-    :goto_3d
+    :cond_61
+    move v3, v2
+
+    :goto_3b
+    if-ne v1, v3, :cond_5f
+
+    goto :goto_3a
+
+    .line 732
+    :goto_3c
+    iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
+
+    if-eqz v4, :cond_63
+
     if-ne v4, v3, :cond_62
+
+    goto :goto_3e
+
+    :cond_62
+    :goto_3d
+    const/4 v3, 0x4
+
+    goto :goto_3f
+
+    :cond_63
+    :goto_3e
+    if-eqz v1, :cond_66
+
+    if-eq v1, v3, :cond_66
+
+    goto :goto_3d
+
+    :goto_3f
+    if-ne v4, v3, :cond_64
 
     .line 734
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint2:Landroid/graphics/Paint;
@@ -3214,39 +3226,39 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_3f
+    goto :goto_41
 
     .line 736
-    :cond_62
+    :cond_64
     iget-object v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint2:Landroid/graphics/Paint;
 
-    if-ne v1, v4, :cond_63
+    if-ne v1, v4, :cond_65
 
     const/16 v1, 0xff
 
-    goto :goto_3e
+    goto :goto_40
 
-    :cond_63
+    :cond_65
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     mul-float v1, v1, v21
 
     float-to-int v1, v1
 
-    :goto_3e
+    :goto_40
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_3f
+    goto :goto_41
 
     .line 739
-    :cond_64
+    :cond_66
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint2:Landroid/graphics/Paint;
 
     const/16 v3, 0xff
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    :goto_3f
+    :goto_41
     const/4 v1, 0x1
 
     .line 742
@@ -3272,7 +3284,7 @@
 
     sub-float v6, v5, v2
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     add-float/2addr v3, v4
 
@@ -3286,33 +3298,33 @@
 
     const/high16 v3, 0x43fa0000    # 500.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 747
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-ne v3, v1, :cond_65
+    if-ne v3, v1, :cond_67
 
     const/high16 v4, 0x42b40000    # 90.0f
 
-    goto :goto_40
+    goto :goto_42
 
-    :cond_65
+    :cond_67
     const/4 v4, 0x0
 
-    :goto_40
-    if-nez v3, :cond_68
+    :goto_42
+    if-nez v3, :cond_6a
 
     .line 748
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v5, v1, :cond_68
+    if-ne v5, v1, :cond_6a
 
     const/high16 v1, 0x43c00000    # 384.0f
 
     cmpg-float v1, v2, v1
 
-    if-gez v1, :cond_66
+    if-gez v1, :cond_68
 
     const/high16 v1, 0x42be0000    # 95.0f
 
@@ -3327,18 +3339,18 @@
 
     move-result v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     move v4, v3
 
-    goto :goto_41
+    goto :goto_44
 
-    :cond_66
+    :cond_68
     const/high16 v1, 0x43f20000    # 484.0f
 
     cmpg-float v1, v2, v1
 
-    if-gez v1, :cond_67
+    if-gez v1, :cond_69
 
     const/high16 v1, 0x42be0000    # 95.0f
 
@@ -3357,35 +3369,34 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sub-float/2addr v1, v4
 
-    move v4, v1
+    goto :goto_43
 
-    goto :goto_41
-
-    :cond_67
+    :cond_69
     const/high16 v1, 0x42b40000    # 90.0f
 
-    const/high16 v4, 0x42b40000    # 90.0f
+    :goto_43
+    move v4, v1
 
-    :goto_41
+    :goto_44
     add-float v2, v2, v17
 
-    goto :goto_42
+    goto :goto_45
 
-    :cond_68
-    if-ne v3, v1, :cond_6b
+    :cond_6a
+    if-ne v3, v1, :cond_6d
 
     .line 757
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-nez v1, :cond_6b
+    if-nez v1, :cond_6d
 
     cmpg-float v1, v2, v17
 
-    if-gez v1, :cond_69
+    if-gez v1, :cond_6b
 
     const/high16 v1, -0x3f600000    # -5.0f
 
@@ -3400,14 +3411,14 @@
 
     mul-float v4, v3, v1
 
-    goto :goto_42
+    goto :goto_45
 
-    :cond_69
+    :cond_6b
     const/high16 v1, 0x43f20000    # 484.0f
 
     cmpg-float v1, v2, v1
 
-    if-gez v1, :cond_6a
+    if-gez v1, :cond_6c
 
     const/high16 v1, -0x3f600000    # -5.0f
 
@@ -3426,40 +3437,40 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v4, v1
 
-    goto :goto_42
+    goto :goto_45
 
-    :cond_6a
+    :cond_6c
     const/high16 v4, 0x42b40000    # 90.0f
 
     .line 766
-    :cond_6b
-    :goto_42
+    :cond_6d
+    :goto_45
     invoke-virtual {v7, v4}, Landroid/graphics/Canvas;->rotate(F)V
 
     .line 767
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_6e
 
     const/4 v3, 0x1
 
-    if-ne v1, v3, :cond_6d
+    if-ne v1, v3, :cond_6f
 
-    :cond_6c
+    :cond_6e
     const/4 v3, 0x4
 
-    if-ne v1, v3, :cond_6e
+    if-ne v1, v3, :cond_70
 
     .line 768
-    :cond_6d
+    :cond_6f
     invoke-virtual {v7, v15, v15}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 770
-    :cond_6e
+    :cond_70
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->playPauseAnimator:Lorg/telegram/ui/Components/PathAnimator;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint2:Landroid/graphics/Paint;
@@ -3484,18 +3495,18 @@
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 776
-    :cond_6f
+    :cond_71
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
     const/4 v2, 0x6
 
-    if-eq v1, v2, :cond_70
+    if-eq v1, v2, :cond_72
 
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v1, v2, :cond_76
+    if-ne v1, v2, :cond_78
 
-    :cond_70
+    :cond_72
     const/4 v1, 0x0
 
     .line 777
@@ -3504,14 +3515,14 @@
     .line 780
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->currentIcon:I
 
-    if-eq v1, v2, :cond_73
+    if-eq v1, v2, :cond_75
 
     .line 781
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     cmpl-float v2, v1, v20
 
-    if-lez v2, :cond_72
+    if-lez v2, :cond_74
 
     sub-float v1, v1, v20
 
@@ -3530,29 +3541,29 @@
 
     cmpl-float v3, v1, v20
 
-    if-lez v3, :cond_71
+    if-lez v3, :cond_73
 
     sub-float v1, v1, v20
 
     div-float v1, v1, v20
 
-    goto :goto_43
+    goto :goto_46
 
-    :cond_71
+    :cond_73
     const/4 v1, 0x0
 
-    :goto_43
+    :goto_46
     move v3, v2
 
-    goto :goto_44
+    goto :goto_47
 
-    :cond_72
+    :cond_74
     const/4 v1, 0x0
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     .line 789
-    :goto_44
+    :goto_47
     iget-object v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint:Landroid/graphics/Paint;
 
     const/16 v4, 0xff
@@ -3563,15 +3574,15 @@
 
     const/4 v1, 0x7
 
-    goto :goto_46
+    goto :goto_49
 
     .line 793
-    :cond_73
+    :cond_75
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
     const/4 v2, 0x6
 
-    if-eq v1, v2, :cond_74
+    if-eq v1, v2, :cond_76
 
     .line 794
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint:Landroid/graphics/Paint;
@@ -3588,17 +3599,17 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_45
+    goto :goto_48
 
     .line 796
-    :cond_74
+    :cond_76
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint:Landroid/graphics/Paint;
 
     const/16 v2, 0xff
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    :goto_45
+    :goto_48
     const/4 v1, 0x7
 
     const/4 v3, 0x0
@@ -3606,7 +3617,7 @@
     const/high16 v8, 0x3f800000    # 1.0f
 
     .line 799
-    :goto_46
+    :goto_49
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3626,7 +3637,7 @@
 
     cmpg-float v2, v3, v1
 
-    if-gez v2, :cond_75
+    if-gez v2, :cond_77
 
     const/4 v1, 0x6
 
@@ -3655,7 +3666,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     sub-float/2addr v5, v6
 
@@ -3667,7 +3678,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     sub-float/2addr v6, v1
 
@@ -3687,12 +3698,12 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_75
+    :cond_77
     const/4 v1, 0x0
 
     cmpl-float v2, v8, v1
 
-    if-lez v2, :cond_76
+    if-lez v2, :cond_78
 
     int-to-float v2, v10
 
@@ -3707,7 +3718,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     add-float/2addr v4, v2
 
@@ -3717,7 +3728,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     sub-float v5, v3, v1
 
@@ -3727,12 +3738,12 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_76
+    :cond_78
     move-object/from16 v2, v18
 
-    if-eqz v12, :cond_78
+    if-eqz v12, :cond_7a
 
-    if-eq v12, v2, :cond_78
+    if-eq v12, v2, :cond_7a
 
     .line 810
     invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -3741,7 +3752,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v14
+    mul-float/2addr v1, v14
 
     float-to-int v1, v1
 
@@ -3752,7 +3763,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v14
+    mul-float/2addr v3, v14
 
     float-to-int v3, v3
 
@@ -3766,13 +3777,13 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v4, v5, :cond_77
+    if-ne v4, v5, :cond_79
 
     const/16 v4, 0xff
 
-    goto :goto_47
+    goto :goto_4a
 
-    :cond_77
+    :cond_79
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     const/high16 v5, 0x3f800000    # 1.0f
@@ -3783,7 +3794,7 @@
 
     float-to-int v4, v4
 
-    :goto_47
+    :goto_4a
     invoke-virtual {v12, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     const/4 v4, 0x2
@@ -3806,8 +3817,8 @@
     .line 815
     invoke-virtual {v12, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    :cond_78
-    if-eqz v2, :cond_7a
+    :cond_7a
+    if-eqz v2, :cond_7c
 
     .line 818
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -3816,7 +3827,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     float-to-int v1, v1
 
@@ -3827,7 +3838,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v15
+    mul-float/2addr v3, v15
 
     float-to-int v3, v3
 
@@ -3841,20 +3852,20 @@
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v4, v5, :cond_79
+    if-ne v4, v5, :cond_7b
 
     const/16 v4, 0xff
 
-    goto :goto_48
+    goto :goto_4b
 
-    :cond_79
+    :cond_7b
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     mul-float v4, v4, v21
 
     float-to-int v4, v4
 
-    :goto_48
+    :goto_4b
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     const/4 v4, 0x2
@@ -3877,14 +3888,14 @@
     .line 823
     invoke-virtual {v2, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    :cond_7a
+    :cond_7c
     move-object/from16 v1, v24
 
-    if-eqz v25, :cond_7e
+    if-eqz v25, :cond_80
 
     move-object/from16 v4, v25
 
-    if-eq v4, v1, :cond_7e
+    if-eq v4, v1, :cond_80
 
     const/16 v2, 0x18
 
@@ -3907,13 +3918,13 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v5, v6, :cond_7b
+    if-ne v5, v6, :cond_7d
 
     const/16 v5, 0xff
 
-    goto :goto_49
+    goto :goto_4c
 
-    :cond_7b
+    :cond_7d
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     const/high16 v6, 0x3f800000    # 1.0f
@@ -3924,7 +3935,7 @@
 
     float-to-int v5, v5
 
-    :goto_49
+    :goto_4c
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/4 v3, 0x1
@@ -3961,7 +3972,7 @@
     .line 835
     aget-object v3, v4, v2
 
-    if-eqz v3, :cond_7c
+    if-eqz v3, :cond_7e
 
     .line 836
     aget-object v3, v4, v2
@@ -3970,13 +3981,13 @@
 
     invoke-virtual {v7, v3, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    :cond_7c
+    :cond_7e
     const/4 v2, 0x1
 
     .line 838
     aget-object v3, v4, v2
 
-    if-eqz v3, :cond_7d
+    if-eqz v3, :cond_7f
 
     .line 839
     aget-object v3, v4, v2
@@ -3986,11 +3997,11 @@
     invoke-virtual {v7, v3, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 841
-    :cond_7d
+    :cond_7f
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    :cond_7e
-    if-eqz v1, :cond_84
+    :cond_80
+    if-eqz v1, :cond_86
 
     const/16 v2, 0x18
 
@@ -4004,13 +4015,13 @@
 
     iget v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-ne v3, v4, :cond_7f
+    if-ne v3, v4, :cond_81
 
     const/16 v3, 0xff
 
-    goto :goto_4a
+    goto :goto_4d
 
-    :cond_7f
+    :cond_81
     iget v3, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
 
     mul-float v3, v3, v21
@@ -4018,7 +4029,7 @@
     float-to-int v3, v3
 
     .line 846
-    :goto_4a
+    :goto_4d
     iget-object v4, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->paint2:Landroid/graphics/Paint;
 
     sget-object v5, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
@@ -4064,7 +4075,7 @@
     .line 853
     aget-object v4, v1, v2
 
-    if-eqz v4, :cond_80
+    if-eqz v4, :cond_82
 
     .line 854
     aget-object v4, v1, v2
@@ -4074,18 +4085,18 @@
     invoke-virtual {v7, v4, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 856
-    :cond_80
+    :cond_82
     array-length v2, v1
 
     const/4 v4, 0x3
 
-    if-lt v2, v4, :cond_81
+    if-lt v2, v4, :cond_83
 
     const/4 v2, 0x2
 
     aget-object v4, v1, v2
 
-    if-eqz v4, :cond_81
+    if-eqz v4, :cond_83
 
     .line 857
     aget-object v4, v1, v2
@@ -4094,17 +4105,17 @@
 
     invoke-virtual {v7, v4, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    :cond_81
+    :cond_83
     const/4 v2, 0x1
 
     .line 859
     aget-object v4, v1, v2
 
-    if-eqz v4, :cond_83
+    if-eqz v4, :cond_85
 
     const/16 v2, 0xff
 
-    if-eq v3, v2, :cond_82
+    if-eq v3, v2, :cond_84
 
     .line 861
     iget-object v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->backPaint:Landroid/graphics/Paint;
@@ -4122,7 +4133,7 @@
 
     div-float v3, v3, v21
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     float-to-int v3, v5
 
@@ -4142,9 +4153,9 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto :goto_4b
+    goto :goto_4e
 
-    :cond_82
+    :cond_84
     const/4 v3, 0x1
 
     .line 866
@@ -4155,12 +4166,12 @@
     invoke-virtual {v7, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 869
-    :cond_83
-    :goto_4b
+    :cond_85
+    :goto_4e
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 872
-    :cond_84
+    :cond_86
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -4172,14 +4183,14 @@
 
     const-wide/16 v5, 0x11
 
-    cmp-long v8, v3, v5
+    cmp-long v5, v3, v5
 
-    if-lez v8, :cond_85
+    if-lez v5, :cond_87
 
     const-wide/16 v3, 0x11
 
     .line 877
-    :cond_85
+    :cond_87
     iput-wide v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->lastAnimationTime:J
 
     .line 879
@@ -4187,36 +4198,36 @@
 
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_87
+    if-eq v1, v2, :cond_89
 
     const/16 v2, 0xe
 
-    if-eq v1, v2, :cond_87
+    if-eq v1, v2, :cond_89
 
     const/4 v5, 0x4
 
-    if-ne v1, v5, :cond_86
+    if-ne v1, v5, :cond_88
 
     iget v5, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
 
-    if-eq v5, v2, :cond_87
+    if-eq v5, v2, :cond_89
 
-    :cond_86
+    :cond_88
     const/16 v2, 0xa
 
-    if-eq v1, v2, :cond_87
+    if-eq v1, v2, :cond_89
 
     const/16 v2, 0xd
 
-    if-ne v1, v2, :cond_8a
+    if-ne v1, v2, :cond_8c
 
     .line 880
-    :cond_87
+    :cond_89
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->downloadRadOffset:F
 
     const-wide/16 v5, 0x168
 
-    mul-long v5, v5, v3
+    mul-long/2addr v5, v3
 
     long-to-float v2, v5
 
@@ -4240,7 +4251,7 @@
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_89
+    if-eq v1, v2, :cond_8b
 
     .line 884
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->downloadProgress:F
@@ -4253,7 +4264,7 @@
 
     cmpl-float v8, v5, v6
 
-    if-lez v8, :cond_89
+    if-lez v8, :cond_8b
 
     .line 886
     iget v8, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->downloadProgressTime:F
@@ -4268,7 +4279,7 @@
 
     cmpl-float v9, v8, v9
 
-    if-ltz v9, :cond_88
+    if-ltz v9, :cond_8a
 
     .line 888
     iput v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatedDownloadProgress:F
@@ -4279,10 +4290,10 @@
     .line 890
     iput v6, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->downloadProgressTime:F
 
-    goto :goto_4c
+    goto :goto_4f
 
     .line 892
-    :cond_88
+    :cond_8a
     iget-object v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->interpolator:Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v6, 0x43480000    # 200.0f
@@ -4293,22 +4304,22 @@
 
     move-result v1
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     add-float/2addr v2, v5
 
     iput v2, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatedDownloadProgress:F
 
     .line 896
-    :cond_89
-    :goto_4c
+    :cond_8b
+    :goto_4f
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/MediaActionDrawable;->invalidateSelf()V
 
     .line 899
-    :cond_8a
+    :cond_8c
     iget-boolean v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatingTransition:Z
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_8e
 
     .line 900
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->transitionProgress:F
@@ -4317,7 +4328,7 @@
 
     cmpg-float v5, v1, v2
 
-    if-gez v5, :cond_8c
+    if-gez v5, :cond_8e
 
     long-to-float v3, v3
 
@@ -4332,7 +4343,7 @@
 
     cmpl-float v1, v1, v2
 
-    if-ltz v1, :cond_8b
+    if-ltz v1, :cond_8d
 
     .line 903
     iget v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->nextIcon:I
@@ -4348,20 +4359,20 @@
     iput-boolean v1, v0, Lorg/telegram/ui/Components/MediaActionDrawable;->animatingTransition:Z
 
     .line 907
-    :cond_8b
+    :cond_8d
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/MediaActionDrawable;->invalidateSelf()V
 
-    :cond_8c
+    :cond_8e
     move/from16 v1, v27
 
     const/4 v2, 0x1
 
-    if-lt v1, v2, :cond_8d
+    if-lt v1, v2, :cond_8f
 
     .line 911
     invoke-virtual {v7, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    :cond_8d
+    :cond_8f
     return-void
 .end method
 

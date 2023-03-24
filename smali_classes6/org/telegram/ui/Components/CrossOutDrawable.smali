@@ -379,13 +379,13 @@
     .line 96
     iget v1, p0, Lorg/telegram/ui/Components/CrossOutDrawable;->progress:F
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     add-float/2addr v4, v0
 
     sub-float/2addr v6, v2
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     add-float/2addr v6, v2
 
@@ -399,7 +399,7 @@
 
     sub-float v7, v3, v5
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     add-float/2addr v0, v1
 
@@ -407,7 +407,7 @@
 
     sub-float v5, v3, v5
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     add-float/2addr v2, v1
 
@@ -572,7 +572,7 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     .line 54
     :cond_0
@@ -586,7 +586,7 @@
     goto :goto_0
 
     :cond_2
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     .line 56
     :goto_0
@@ -631,7 +631,7 @@
 
     const v1, 0x3fbc28f6    # 1.47f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 

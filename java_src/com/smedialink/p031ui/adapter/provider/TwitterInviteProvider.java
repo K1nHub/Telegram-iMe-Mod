@@ -10,7 +10,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.Cells.StickerSetCell;
 /* compiled from: TwitterInviteProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.TwitterInviteProvider */
@@ -36,7 +36,7 @@ public final class TwitterInviteProvider extends BaseNodeProvider<TwitterInviteI
         this.resourceManager = resourceManager;
         this.onInviteClickAction = TwitterInviteProvider$$ExternalSyntheticLambda0.INSTANCE;
         this.itemViewType = IdFabric$ViewTypes.TWITTER_INVITE;
-        this.layoutId = C3286R.layout.fork_recycle_item_twitter_user;
+        this.layoutId = C3301R.layout.fork_recycle_item_twitter_user;
     }
 
     public final Callbacks$Callback1<TwitterInviteItem> getOnInviteClickAction() {
@@ -66,7 +66,7 @@ public final class TwitterInviteProvider extends BaseNodeProvider<TwitterInviteI
     public void convert(BaseViewHolder helper, TwitterInviteItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3286R.C3289id.frame_container, new TwitterInviteProvider$convert$1(item, this));
+        BaseQuickAdapterExtKt.applyForView(helper, C3301R.C3304id.frame_container, new TwitterInviteProvider$convert$1(item, this));
     }
 
     public void convert(BaseViewHolder helper, final TwitterInviteItem item, List<? extends Object> payloads) {
@@ -75,7 +75,7 @@ public final class TwitterInviteProvider extends BaseNodeProvider<TwitterInviteI
         Intrinsics.checkNotNullParameter(payloads, "payloads");
         StickerSetCell stickerSetCell = this.stickerSetCell;
         if (stickerSetCell != null) {
-            stickerSetCell.setText(item.getNickname(), this.resourceManager.getString(C3286R.string.twitter_search_invite_subtitle), C3286R.C3288drawable.fork_drawer_social_twitter, true);
+            stickerSetCell.setText(item.getNickname(), this.resourceManager.getString(C3301R.string.twitter_search_invite_subtitle), C3301R.C3303drawable.fork_drawer_social_twitter, true);
             stickerSetCell.setCustomButtonAction(new Callbacks$Callback() { // from class: com.smedialink.ui.adapter.provider.TwitterInviteProvider$$ExternalSyntheticLambda1
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {

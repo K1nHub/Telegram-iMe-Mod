@@ -90,12 +90,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 17672
     :goto_0
@@ -114,12 +114,12 @@
     if-eqz p1, :cond_3
 
     :cond_2
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_1
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     invoke-static {v2, p1}, Lorg/telegram/ui/PhotoViewer;->access$30402(Lorg/telegram/ui/PhotoViewer;Z)Z
@@ -204,7 +204,7 @@
 
     move-result v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     const/high16 v4, 0x447a0000    # 1000.0f
 
@@ -332,12 +332,12 @@
 
     if-le p2, v1, :cond_7
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_4
 
     :cond_7
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_4
     invoke-static {p1, p2, v1}, Lorg/telegram/ui/PhotoViewer;->access$31800(Lorg/telegram/ui/PhotoViewer;ZZ)V

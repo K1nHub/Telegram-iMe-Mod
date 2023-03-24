@@ -9,14 +9,14 @@ final class DistinguishedNameParser {
     private int cur;
 
     /* renamed from: dn */
-    private final String f432dn;
+    private final String f433dn;
     private int end;
     private final int length;
     private int pos;
 
     public DistinguishedNameParser(X500Principal x500Principal) {
         String name = x500Principal.getName("RFC2253");
-        this.f432dn = name;
+        this.f433dn = name;
         this.length = name.length();
     }
 
@@ -53,7 +53,7 @@ final class DistinguishedNameParser {
             this.pos = i3 + 1;
         }
         if (i3 >= i4) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f432dn);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f433dn);
         }
         this.end = i3;
         if (this.chars[i3] == ' ') {
@@ -70,7 +70,7 @@ final class DistinguishedNameParser {
                 this.pos = i5 + 1;
             }
             if (this.chars[i5] != '=' || i5 == i6) {
-                throw new IllegalStateException("Unexpected end of DN: " + this.f432dn);
+                throw new IllegalStateException("Unexpected end of DN: " + this.f433dn);
             }
         }
         this.pos++;
@@ -102,7 +102,7 @@ final class DistinguishedNameParser {
         while (true) {
             int i2 = this.pos;
             if (i2 == this.length) {
-                throw new IllegalStateException("Unexpected end of DN: " + this.f432dn);
+                throw new IllegalStateException("Unexpected end of DN: " + this.f433dn);
             }
             char[] cArr = this.chars;
             if (cArr[i2] == '\"') {
@@ -132,7 +132,7 @@ final class DistinguishedNameParser {
         int i;
         int i2 = this.pos;
         if (i2 + 4 >= this.length) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f432dn);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f433dn);
         }
         this.beg = i2;
         this.pos = i2 + 1;
@@ -166,7 +166,7 @@ final class DistinguishedNameParser {
         int i5 = this.beg;
         int i6 = i4 - i5;
         if (i6 < 5 || (i6 & 1) == 0) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f432dn);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f433dn);
         }
         int i7 = i6 / 2;
         byte[] bArr = new byte[i7];
@@ -287,7 +287,7 @@ final class DistinguishedNameParser {
         int i = this.pos + 1;
         this.pos = i;
         if (i == this.length) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f432dn);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f433dn);
         }
         char[] cArr = this.chars;
         char c = cArr[i];
@@ -356,7 +356,7 @@ final class DistinguishedNameParser {
         int i3;
         int i4 = i + 1;
         if (i4 >= this.length) {
-            throw new IllegalStateException("Malformed DN: " + this.f432dn);
+            throw new IllegalStateException("Malformed DN: " + this.f433dn);
         }
         char[] cArr = this.chars;
         char c = cArr[i];
@@ -365,7 +365,7 @@ final class DistinguishedNameParser {
         } else if (c >= 'a' && c <= 'f') {
             i2 = c - 'W';
         } else if (c < 'A' || c > 'F') {
-            throw new IllegalStateException("Malformed DN: " + this.f432dn);
+            throw new IllegalStateException("Malformed DN: " + this.f433dn);
         } else {
             i2 = c - '7';
         }
@@ -375,7 +375,7 @@ final class DistinguishedNameParser {
         } else if (c2 >= 'a' && c2 <= 'f') {
             i3 = c2 - 'W';
         } else if (c2 < 'A' || c2 > 'F') {
-            throw new IllegalStateException("Malformed DN: " + this.f432dn);
+            throw new IllegalStateException("Malformed DN: " + this.f433dn);
         } else {
             i3 = c2 - '7';
         }
@@ -388,7 +388,7 @@ final class DistinguishedNameParser {
         this.beg = 0;
         this.end = 0;
         this.cur = 0;
-        this.chars = this.f432dn.toCharArray();
+        this.chars = this.f433dn.toCharArray();
         String nextAT = nextAT();
         if (nextAT == null) {
             return null;
@@ -415,11 +415,11 @@ final class DistinguishedNameParser {
             }
             char[] cArr = this.chars;
             if (cArr[i2] != ',' && cArr[i2] != ';' && cArr[i2] != '+') {
-                throw new IllegalStateException("Malformed DN: " + this.f432dn);
+                throw new IllegalStateException("Malformed DN: " + this.f433dn);
             }
             this.pos = i2 + 1;
             nextAT = nextAT();
         } while (nextAT != null);
-        throw new IllegalStateException("Malformed DN: " + this.f432dn);
+        throw new IllegalStateException("Malformed DN: " + this.f433dn);
     }
 }

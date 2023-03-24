@@ -56,7 +56,7 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable map = this.walletApi.getDataForCryptoTransfer(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1497xf44f235e(this.firebaseErrorHandler)));
+        Observable map = this.walletApi.getEVMCryptoTransferData(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1499xf44f235e(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -64,7 +64,7 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     @Override // com.smedialink.storage.data.datasource.transfer.WalletTransferDataSource
     public Observable<Result<Boolean>> transfer(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1498xd8190810(this)));
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1500xd8190810(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -79,7 +79,9 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
         RawTransaction createTransactionByType = createTransactionByType(evm);
         long chainId = evm.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
+        String hexString = Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null));
+        Intrinsics.checkNotNullExpressionValue(hexString, "toHexString(signedTransaction)");
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(hexString));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }
@@ -88,11 +90,11 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
         String contractAddress = evm.getContractAddress();
         if (contractAddress == null || contractAddress.length() == 0) {
             RawTransaction createEtherTransaction = RawTransaction.createEtherTransaction(evm.getNonce(), evm.getGasPrice(), evm.getGasLimit(), evm.getRecipientAddress(), NumberExtKt.convertToWei(Double.valueOf(evm.getAmount()), evm.getWeiConvertUnit()));
-            Intrinsics.checkNotNullExpressionValue(createEtherTransaction, "{\n            RawTransac…)\n            )\n        }");
+            Intrinsics.checkNotNullExpressionValue(createEtherTransaction, "{\n                RawTra…          )\n            }");
             return createEtherTransaction;
         }
         RawTransaction createTransaction = RawTransaction.createTransaction(evm.getNonce(), evm.getGasPrice(), evm.getGasLimit(), evm.getContractAddress(), createSmartFunctionParams(evm.getRecipientAddress(), NumberExtKt.convertToWei(Double.valueOf(evm.getAmount()), evm.getWeiConvertUnit())));
-        Intrinsics.checkNotNullExpressionValue(createTransaction, "{\n            RawTransac…)\n            )\n        }");
+        Intrinsics.checkNotNullExpressionValue(createTransaction, "{\n                RawTra…          )\n            }");
         return createTransaction;
     }
 

@@ -568,7 +568,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     float-to-int v1, v4
 
@@ -581,7 +581,7 @@
 
     div-float/2addr v2, v1
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v1, v3
 

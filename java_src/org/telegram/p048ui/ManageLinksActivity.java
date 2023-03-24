@@ -101,7 +101,7 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
@@ -118,7 +118,7 @@ import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.CameraScanActivity;
@@ -553,17 +553,17 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
 
     @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
     public void showSuccessSend(String str) {
-        showActionSuccess(this.resourceManager.getValue().getString(C3286R.string.wallet_amount_success_send_title), str);
+        showActionSuccess(this.resourceManager.getValue().getString(C3301R.string.wallet_amount_success_send_title), str);
     }
 
     @Override // com.smedialink.p031ui.wallet.staking.transaction.StakingTransactionView
     public void showActionSuccess(String str, String str2) {
-        DialogsFactoryKt.showSuccessAlert(this, str, str2, this.resourceManager.getValue().getString(C3286R.string.common_ok), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
+        DialogsFactoryKt.showSuccessAlert(this, str, str2, this.resourceManager.getValue().getString(C3301R.string.common_ok), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
     }
 
     @Override // com.smedialink.p031ui.wallet.staking.transaction.StakingTransactionView
     public void showActionError(String str, String str2) {
-        DialogsFactoryKt.showErrorAlert(this, str, str2, this.resourceManager.getValue().getString(C3286R.string.common_ok), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
+        DialogsFactoryKt.showErrorAlert(this, str, str2, this.resourceManager.getValue().getString(C3301R.string.common_ok), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
     }
 
     @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
@@ -573,12 +573,12 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
 
     @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
     public void showRecipientNotFoundError() {
-        DialogsFactoryKt.showErrorAlert(this, this.resourceManager.getValue().getString(C3286R.string.wallet_amount_error_invalid_user_title), this.resourceManager.getValue().getString(C3286R.string.wallet_amount_error_invalid_user_description), this.resourceManager.getValue().getString(C3286R.string.wallet_amount_error_invalid_user_btn_txt), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
+        DialogsFactoryKt.showErrorAlert(this, this.resourceManager.getValue().getString(C3301R.string.wallet_amount_error_invalid_user_title), this.resourceManager.getValue().getString(C3301R.string.wallet_amount_error_invalid_user_description), this.resourceManager.getValue().getString(C3301R.string.wallet_amount_error_invalid_user_btn_txt), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
     }
 
     @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
     public void showRecipientWalletNotActivatedError() {
-        DialogsFactoryKt.showErrorAlert(this, this.resourceManager.getValue().getString(C3286R.string.wallet_amount_error_invalid_user_title), this.resourceManager.getValue().getString(C3286R.string.wallet_amount_error_user_wallet_not_activated_description), this.resourceManager.getValue().getString(C3286R.string.wallet_amount_error_invalid_user_btn_txt), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
+        DialogsFactoryKt.showErrorAlert(this, this.resourceManager.getValue().getString(C3301R.string.wallet_amount_error_invalid_user_title), this.resourceManager.getValue().getString(C3301R.string.wallet_amount_error_user_wallet_not_activated_description), this.resourceManager.getValue().getString(C3301R.string.wallet_amount_error_invalid_user_btn_txt), new ManageLinksActivity$$ExternalSyntheticLambda29(this));
     }
 
     @Override // com.smedialink.p031ui.wallet.actions.send.amount.WalletSendAmountView
@@ -591,7 +591,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             final CheckBoxCell checkBoxCell = new CheckBoxCell(getParentActivity(), 1);
             checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
             checkBoxCell.setMultiline(true);
-            checkBoxCell.setText(this.resourceManager.getValue().getString(C3286R.string.wallet_amount_send_message_checkbox_title), "", true, false);
+            checkBoxCell.setText(this.resourceManager.getValue().getString(C3301R.string.wallet_amount_send_message_checkbox_title), "", true, false);
             checkBoxCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m50dp(16) : AndroidUtilities.m50dp(8), 0, LocaleController.isRTL ? AndroidUtilities.m50dp(8) : AndroidUtilities.m50dp(16), 0);
             checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
@@ -755,15 +755,15 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString("AppName", C3286R.string.AppName));
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("QRCodePermissionNoCameraWithHint", C3286R.string.QRCodePermissionNoCameraWithHint)));
-            builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3286R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda2
+            builder.setTitle(LocaleController.getString("AppName", C3301R.string.AppName));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("QRCodePermissionNoCameraWithHint", C3301R.string.QRCodePermissionNoCameraWithHint)));
+            builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3301R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     ManageLinksActivity.this.lambda$onRequestPermissionsResultFragment$10(dialogInterface, i2);
                 }
             });
-            builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
+            builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
             builder.show();
         }
     }
@@ -786,7 +786,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
         if (walletDonationsPresenter != null) {
             if (!walletDonationsPresenter.getCurrentDonationsAddress().isEmpty()) {
                 ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getParentActivity(), true, false);
-                actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("GetQRCode", C3286R.string.GetQRCode), C3286R.C3288drawable.msg_qrcode);
+                actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("GetQRCode", C3301R.string.GetQRCode), C3301R.C3303drawable.msg_qrcode);
                 actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -795,7 +795,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 });
                 arrayList.add(actionBarMenuSubItem);
                 ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(getParentActivity(), false, true);
-                actionBarMenuSubItem2.setTextAndIcon(this.resourceManager.getValue().getString(C3286R.string.channel_donations_unlink_address_dialog_title), C3286R.C3288drawable.msg_delete);
+                actionBarMenuSubItem2.setTextAndIcon(this.resourceManager.getValue().getString(C3301R.string.channel_donations_unlink_address_dialog_title), C3301R.C3303drawable.msg_delete);
                 actionBarMenuSubItem2.setColors(Theme.getColor("windowBackgroundWhiteRedText"), Theme.getColor("windowBackgroundWhiteRedText"));
                 actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
@@ -807,7 +807,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             } else if (this.donationsPresenter.getCurrentDonationsAddress().isEmpty()) {
                 if (this.donationsPresenter.isCryptoAddressCreated()) {
                     ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(getParentActivity(), true, false);
-                    actionBarMenuSubItem3.setTextAndIcon(this.resourceManager.getValue().getString(C3286R.string.channel_donations_link_non_castodial_wallet_address_dialog_title), C3286R.C3288drawable.msg_link2);
+                    actionBarMenuSubItem3.setTextAndIcon(this.resourceManager.getValue().getString(C3301R.string.channel_donations_link_non_castodial_wallet_address_dialog_title), C3301R.C3303drawable.msg_link2);
                     actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda7
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -817,7 +817,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                     arrayList.add(actionBarMenuSubItem3);
                 }
                 ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(getParentActivity(), true, false);
-                actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString("AuthAnotherClientScan", C3286R.string.AuthAnotherClientScan), C3286R.C3288drawable.msg_qrcode);
+                actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString("AuthAnotherClientScan", C3301R.string.AuthAnotherClientScan), C3301R.C3303drawable.msg_qrcode);
                 actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -938,7 +938,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 return NetworkType.BINANCE_SMART_CHAIN.getLogo();
             }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(this.resourceManager.getValue().getString(C3286R.string.wallet_receive_dialog_title), this.resourceManager.getValue().getString(C3286R.string.wallet_receive_dialog_btn_text), currentDonationsAddress, TokenCode.UNKNOWN, BlockchainType.EVM);
+        qRCodeBottomSheet.setupWalletTypeReceive(this.resourceManager.getValue().getString(C3301R.string.wallet_receive_dialog_title), this.resourceManager.getValue().getString(C3301R.string.wallet_receive_dialog_btn_text), currentDonationsAddress, TokenCode.UNKNOWN, BlockchainType.EVM);
         showDialog(qRCodeBottomSheet);
     }
 
@@ -953,12 +953,12 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ManageLinksActivity$3 */
     /* loaded from: classes5.dex */
-    public class C59533 implements ChatRightsEditActivity.ChatRightsEditActivityDelegate {
+    public class C59793 implements ChatRightsEditActivity.ChatRightsEditActivityDelegate {
         @Override // org.telegram.p048ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
         public void didChangeOwner(TLRPC$User tLRPC$User) {
         }
 
-        C59533() {
+        C59793() {
         }
 
         @Override // org.telegram.p048ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
@@ -968,7 +968,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ManageLinksActivity$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ManageLinksActivity.C59533.this.lambda$didSetRights$0(user);
+                        ManageLinksActivity.C59793.this.lambda$didSetRights$0(user);
                     }
                 }, 200L);
             }
@@ -985,7 +985,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
     /* JADX INFO: Access modifiers changed from: private */
     public void openAddAdminScreen() {
         ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(AppConfiguration$Wallet.getWalletBotId(), this.currentChatId, null, null, null, null, 0, true, true, null);
-        chatRightsEditActivity.setDelegate(new C59533());
+        chatRightsEditActivity.setDelegate(new C59793());
         presentFragment(chatRightsEditActivity);
     }
 
@@ -1051,7 +1051,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
         if (!this.sendPresenter.getSelectedAmount().isEmpty()) {
             this.sendPresenter.resetStateIfNeed();
         }
-        linkActionView.setText(this.resourceManager.getValue().getString(C3286R.string.wallet_common_token_name_with_ticker, selectableToken.getName(), selectableToken.getTicker()));
+        linkActionView.setText(this.resourceManager.getValue().getString(C3301R.string.wallet_common_token_name_with_ticker, selectableToken.getName(), selectableToken.getTicker()));
         if (selectableToken instanceof SelectableToken.WithResLogo) {
             linkActionView.setAvatar(((SelectableToken.WithResLogo) selectableToken).getLogoRes());
         } else if (selectableToken instanceof SelectableToken.WithLogoUrl) {
@@ -1067,7 +1067,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$openSelectToken$19(final LinkActionView linkActionView, SelectableToken selectableToken) {
-        linkActionView.setText(this.resourceManager.getValue().getString(C3286R.string.wallet_common_token_name_with_ticker, selectableToken.getName(), selectableToken.getTicker()));
+        linkActionView.setText(this.resourceManager.getValue().getString(C3301R.string.wallet_common_token_name_with_ticker, selectableToken.getName(), selectableToken.getTicker()));
         if (selectableToken instanceof SelectableToken.WithLogoUrl.Binance) {
             GlideHelper.loadBinanceImageAsBitmap(getParentActivity(), ((SelectableToken.WithLogoUrl) selectableToken).getLogoUrl(), new Callbacks$Callback1() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda23
                 @Override // org.fork.utils.Callbacks$Callback1
@@ -1094,9 +1094,9 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             WalletSendAmountPresenter walletSendAmountPresenter = this.sendPresenter;
             if (walletSendAmountPresenter != null) {
                 if (TextUtils.isEmpty(walletSendAmountPresenter.getSelectedAddress())) {
-                    string = this.resourceManager.getValue().getString(C3286R.string.binance_replenish_token_choose_token_first_error);
+                    string = this.resourceManager.getValue().getString(C3301R.string.binance_replenish_token_choose_token_first_error);
                 } else {
-                    string = this.resourceManager.getValue().getString(C3286R.string.binance_replenish_token_choose_token_cant_change_error);
+                    string = this.resourceManager.getValue().getString(C3301R.string.binance_replenish_token_choose_token_cant_change_error);
                 }
                 ContextExtKt.toast(string);
                 return;
@@ -1162,14 +1162,14 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
 
     /* JADX INFO: Access modifiers changed from: private */
     public void showCommonInfoAlert(String str, String str2) {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog(this, str, str2, LocaleController.getString("OK", C3286R.string.OK), ManageLinksActivity$$ExternalSyntheticLambda31.INSTANCE));
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog(this, str, str2, LocaleController.getString("OK", C3301R.string.OK), ManageLinksActivity$$ExternalSyntheticLambda31.INSTANCE));
     }
 
     private void setupStakingReplenishmentInfoMenu() {
-        ActionBarMenuItem addItem = this.actionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3286R.C3288drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.STAKING_CONTRACT, C3286R.C3288drawable.fork_ic_web_26, this.resourceManager.getValue().getString(C3286R.string.staking_details_contract_action));
-        addItem.addSubItem(IdFabric$Menu.STAKING_CONDITIONS, C3286R.C3288drawable.fork_ic_description_26, this.resourceManager.getValue().getString(C3286R.string.staking_deposit_conditions));
+        ActionBarMenuItem addItem = this.actionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3301R.C3303drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.STAKING_CONTRACT, C3301R.C3303drawable.fork_ic_web_26, this.resourceManager.getValue().getString(C3301R.string.staking_details_contract_action));
+        addItem.addSubItem(IdFabric$Menu.STAKING_CONDITIONS, C3301R.C3303drawable.fork_ic_description_26, this.resourceManager.getValue().getString(C3301R.string.staking_deposit_conditions));
     }
 
     private int getStakingLastRow() {
@@ -1221,7 +1221,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             int i = 0;
             if (!ManageLinksActivity.this.isBinancePayCreateCollectionType && !ManageLinksActivity.this.isWalletTransferType && !ManageLinksActivity.this.isBinanceReplenishType && !ManageLinksActivity.this.isDonationsType && !ManageLinksActivity.this.isDonationsTransferType && !ManageLinksActivity.this.isStakingDepositType && !ManageLinksActivity.this.isStakingWithdrawType && !ManageLinksActivity.this.isStakingCalculatorType) {
                 if (ManageLinksActivity.this.isStakingProfitType) {
-                    this.lottieImageView.setImageResource(C3286R.C3288drawable.fork_ic_staking_profit);
+                    this.lottieImageView.setImageResource(C3301R.C3303drawable.fork_ic_staking_profit);
                     return;
                 }
                 TLRPC$TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(this.currentAccount).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
@@ -1244,22 +1244,22 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                         if (!ManageLinksActivity.this.isStakingDepositType) {
                             if (!ManageLinksActivity.this.isStakingWithdrawType) {
                                 if (ManageLinksActivity.this.isStakingCalculatorType) {
-                                    i = C3286R.C3291raw.fork_staking_calculator;
+                                    i = C3301R.C3306raw.fork_staking_calculator;
                                 }
                             } else {
-                                i = C3286R.C3291raw.fork_staking_withdraw;
+                                i = C3301R.C3306raw.fork_staking_withdraw;
                             }
                         } else {
-                            i = C3286R.C3291raw.fork_staking_replenish;
+                            i = C3301R.C3306raw.fork_staking_replenish;
                         }
                     } else {
-                        i = C3286R.C3291raw.fork_donations;
+                        i = C3301R.C3306raw.fork_donations;
                     }
                 } else {
-                    i = C3286R.C3291raw.fork_crypto_transfers;
+                    i = C3301R.C3306raw.fork_crypto_transfers;
                 }
             } else {
-                i = C3286R.C3291raw.fork_binance_pay_create_collection;
+                i = C3301R.C3306raw.fork_binance_pay_create_collection;
             }
             this.lottieImageView.setAnimation(i, 104, 104);
             this.lottieImageView.playAnimation();
@@ -1320,7 +1320,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
         };
         boolean z = false;
         this.loadRevoked = false;
-        this.linkEditActivityCallback = new C59599();
+        this.linkEditActivityCallback = new C59859();
         this.animationIndex = -1;
         this.currentChatId = j;
         this.invitesCount = i;
@@ -1423,7 +1423,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             }
             for (int i2 = 0; i2 < tLRPC$TL_messages_chatAdminsWithInvites.users.size(); i2++) {
                 TLRPC$User tLRPC$User = tLRPC$TL_messages_chatAdminsWithInvites.users.get(i2);
-                this.users.put(Long.valueOf(tLRPC$User.f1639id), tLRPC$User);
+                this.users.put(Long.valueOf(tLRPC$User.f1640id), tLRPC$User);
             }
         }
         this.adminsLoaded = true;
@@ -1820,35 +1820,35 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment, org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(final Context context) {
         super.createView(context);
-        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (this.isStakingCalculatorType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.staking_calculator_title));
-            this.actionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3286R.C3288drawable.msg_info);
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.staking_calculator_title));
+            this.actionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3301R.C3303drawable.msg_info);
         } else if (this.isStakingDepositType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.staking_replenishment_title));
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.staking_replenishment_title));
             setupStakingReplenishmentInfoMenu();
         } else if (this.isStakingProfitType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.staking_profit_title));
-            this.actionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3286R.C3288drawable.msg_info);
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.staking_profit_title));
+            this.actionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3301R.C3303drawable.msg_info);
         } else if (this.isStakingWithdrawType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.staking_withdraw_title));
-            this.actionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3286R.C3288drawable.msg_info);
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.staking_withdraw_title));
+            this.actionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3301R.C3303drawable.msg_info);
         } else if (this.isBinancePayCreateCollectionType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.wallet_binance_pay_action_receive));
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.wallet_binance_pay_action_receive));
         } else if (this.isWalletTransferType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.profile_user_id_action_transfer));
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.profile_user_id_action_transfer));
         } else if (this.isBinanceReplenishType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.binance_replenish_token_toolbar_title));
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.binance_replenish_token_toolbar_title));
         } else if (this.isDonationsType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.channel_donations_toolbar_title));
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.channel_donations_toolbar_title));
         } else if (this.isDonationsTransferType) {
-            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3286R.string.transfer_donations_toolbar_title));
+            this.actionBar.setTitle(this.resourceManager.getValue().getString(C3301R.string.transfer_donations_toolbar_title));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("InviteLinks", C3286R.string.InviteLinks));
+            this.actionBar.setTitle(LocaleController.getString("InviteLinks", C3301R.string.InviteLinks));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ManageLinksActivity.5
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ManageLinksActivity.5
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 StakingTransactionPresenter stakingTransactionPresenter;
                 if (i == IdFabric$Menu.STAKING_CONTRACT) {
@@ -1869,7 +1869,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                         if (ManageLinksActivity.this.isStakingWithdrawType) {
                             ManageLinksActivity manageLinksActivity2 = ManageLinksActivity.this;
                             if (manageLinksActivity2.stakingTransactionPresenter != null) {
-                                manageLinksActivity2.showCommonInfoAlert(((ResourceManager) manageLinksActivity2.resourceManager.getValue()).getString(C3286R.string.wallet_crypto_buy_information_dialog_title), ManageLinksActivity.this.stakingTransactionPresenter.getWithdrawalHelpAlertText());
+                                manageLinksActivity2.showCommonInfoAlert(((ResourceManager) manageLinksActivity2.resourceManager.getValue()).getString(C3301R.string.wallet_crypto_buy_information_dialog_title), ManageLinksActivity.this.stakingTransactionPresenter.getWithdrawalHelpAlertText());
                                 return;
                             }
                             return;
@@ -1877,10 +1877,10 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                         return;
                     }
                     ManageLinksActivity manageLinksActivity3 = ManageLinksActivity.this;
-                    manageLinksActivity3.showCommonInfoAlert(((ResourceManager) manageLinksActivity3.resourceManager.getValue()).getString(C3286R.string.wallet_crypto_buy_information_dialog_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3286R.string.staking_profit_help_alert));
+                    manageLinksActivity3.showCommonInfoAlert(((ResourceManager) manageLinksActivity3.resourceManager.getValue()).getString(C3301R.string.wallet_crypto_buy_information_dialog_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3301R.string.staking_profit_help_alert));
                 } else {
                     ManageLinksActivity manageLinksActivity4 = ManageLinksActivity.this;
-                    manageLinksActivity4.showCommonInfoAlert(((ResourceManager) manageLinksActivity4.resourceManager.getValue()).getString(C3286R.string.staking_calculator_help_alert_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3286R.string.staking_calculator_help_alert_description));
+                    manageLinksActivity4.showCommonInfoAlert(((ResourceManager) manageLinksActivity4.resourceManager.getValue()).getString(C3301R.string.staking_calculator_help_alert_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3301R.string.staking_calculator_help_alert_description));
                 }
             }
         });
@@ -1951,8 +1951,8 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 return lambda$createView$33;
             }
         });
-        this.linkIcon = ContextCompat.getDrawable(context, C3286R.C3288drawable.msg_link_1);
-        this.linkIconRevoked = ContextCompat.getDrawable(context, C3286R.C3288drawable.msg_link_2);
+        this.linkIcon = ContextCompat.getDrawable(context, C3301R.C3303drawable.msg_link_1);
+        this.linkIconRevoked = ContextCompat.getDrawable(context, C3301R.C3303drawable.msg_link_2);
         this.linkIcon.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         updateRows(true);
         this.timeDif = getConnectionsManager().getCurrentTime() - (System.currentTimeMillis() / 1000);
@@ -1972,7 +1972,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             TLRPC$User tLRPC$User = this.users.get(Long.valueOf(this.invite.admin_id));
             if (tLRPC$User != null) {
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", tLRPC$User.f1639id);
+                bundle.putLong("user_id", tLRPC$User.f1640id);
                 MessagesController.getInstance(UserConfig.selectedAccount).putUser(tLRPC$User, false);
                 presentFragment(new ProfileActivity(bundle));
             }
@@ -1999,15 +1999,15 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                     return;
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setTitle(LocaleController.getString("DeleteAllRevokedLinks", C3286R.string.DeleteAllRevokedLinks));
-                builder.setMessage(LocaleController.getString("DeleteAllRevokedLinkHelp", C3286R.string.DeleteAllRevokedLinkHelp));
-                builder.setPositiveButton(LocaleController.getString("Delete", C3286R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda1
+                builder.setTitle(LocaleController.getString("DeleteAllRevokedLinks", C3301R.string.DeleteAllRevokedLinks));
+                builder.setMessage(LocaleController.getString("DeleteAllRevokedLinkHelp", C3301R.string.DeleteAllRevokedLinkHelp));
+                builder.setPositiveButton(LocaleController.getString("Delete", C3301R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i5) {
                         ManageLinksActivity.this.lambda$createView$31(dialogInterface, i5);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
                 showDialog(builder.create());
             } else {
                 int i5 = this.adminsStartRow;
@@ -2111,30 +2111,30 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             this.messageTextView.setTextSize(1, 14.0f);
             this.messageTextView.setGravity(17);
             if (manageLinksActivity.isStakingCalculatorType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.staking_calculator_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.staking_calculator_description));
             } else if (manageLinksActivity.isStakingDepositType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.staking_replenishment_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.staking_replenishment_description));
             } else if (manageLinksActivity.isStakingProfitType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.staking_profit_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.staking_profit_description));
             } else if (manageLinksActivity.isStakingWithdrawType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.staking_withdraw_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.staking_withdraw_description));
             } else if (manageLinksActivity.isBinancePayCreateCollectionType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.wallet_binance_receive_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.wallet_binance_receive_description));
             } else if (manageLinksActivity.isWalletTransferType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.wallet_banner_slide_crypto_transfers_long_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.wallet_banner_slide_crypto_transfers_long_description));
             } else if (manageLinksActivity.isBinanceReplenishType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.binance_replenish_token_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.binance_replenish_token_description));
             } else if (manageLinksActivity.isDonationsType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.channel_donations_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.channel_donations_description));
             } else if (manageLinksActivity.isDonationsTransferType) {
-                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.transfer_donations_description));
+                this.messageTextView.setText(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.transfer_donations_description));
             } else {
                 TextView textView2 = this.messageTextView;
                 if (manageLinksActivity.isChannel) {
-                    i = C3286R.string.PrimaryLinkHelpChannel;
+                    i = C3301R.string.PrimaryLinkHelpChannel;
                     str = "PrimaryLinkHelpChannel";
                 } else {
-                    i = C3286R.string.PrimaryLinkHelp;
+                    i = C3301R.string.PrimaryLinkHelp;
                     str = "PrimaryLinkHelp";
                 }
                 textView2.setText(LocaleController.getString(str, i));
@@ -2244,7 +2244,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                     headerCellWithImageViewButtonWrapper = new HeaderCellWithNetworkViewWrapper(headerCell);
                 } else if (i == IdFabric$ViewTypes.HEADER_WITH_IMAGE_VIEW_BUTTON) {
                     HeaderCellWithImageViewButtonWrapper headerCellWithImageViewButtonWrapper2 = new HeaderCellWithImageViewButtonWrapper(new HeaderCell(this.mContext, 23));
-                    headerCellWithImageViewButtonWrapper2.getImageView().setImageResource(C3286R.C3288drawable.msg_info);
+                    headerCellWithImageViewButtonWrapper2.getImageView().setImageResource(C3301R.C3303drawable.msg_info);
                     headerCellWithImageViewButtonWrapper = headerCellWithImageViewButtonWrapper2;
                 } else if (i == IdFabric$ViewTypes.TRANSACTION) {
                     linkActionView = new DonationTransactionView(this.mContext);
@@ -2323,36 +2323,36 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                             break;
                         case 7:
                             View shadowSectionCell = new ShadowSectionCell(this.mContext);
-                            shadowSectionCell.setBackground(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                            shadowSectionCell.setBackground(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                             linkActionView = shadowSectionCell;
                             break;
                         case 8:
                             TextSettingsCell textSettingsCell = new TextSettingsCell(this.mContext);
                             textSettingsCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                            textSettingsCell.setText(LocaleController.getString("DeleteAllRevokedLinks", C3286R.string.DeleteAllRevokedLinks), false);
+                            textSettingsCell.setText(LocaleController.getString("DeleteAllRevokedLinks", C3301R.string.DeleteAllRevokedLinks), false);
                             textSettingsCell.setTextColor(Theme.getColor("windowBackgroundWhiteRedText5"));
                             linkActionView = textSettingsCell;
                             break;
                         case 9:
                             TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(this.mContext);
                             if (ManageLinksActivity.this.isDonationsType) {
-                                textInfoPrivacyCell.setText(((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3286R.string.channel_donations_admin_bot_information, AppConfiguration$Wallet.getWalletBotUsernameWithAT()));
+                                textInfoPrivacyCell.setText(((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3301R.string.channel_donations_admin_bot_information, AppConfiguration$Wallet.getWalletBotUsernameWithAT()));
                                 ViewExtKt.setSubstringClickListener(textInfoPrivacyCell.getTextView(), AppConfiguration$Wallet.getWalletBotUsernameWithAT(), new Callbacks$Callback() { // from class: org.telegram.ui.ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda20
                                     @Override // org.fork.utils.Callbacks$Callback
                                     public final void invoke() {
                                         ManageLinksActivity.ListAdapter.this.lambda$onCreateViewHolder$3();
                                     }
                                 });
-                                ViewExtKt.setSubstringClickListener(textInfoPrivacyCell.getTextView(), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3286R.string.channel_donations_admin_bot_link_key), new Callbacks$Callback() { // from class: org.telegram.ui.ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda17
+                                ViewExtKt.setSubstringClickListener(textInfoPrivacyCell.getTextView(), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3301R.string.channel_donations_admin_bot_link_key), new Callbacks$Callback() { // from class: org.telegram.ui.ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda17
                                     @Override // org.fork.utils.Callbacks$Callback
                                     public final void invoke() {
                                         ManageLinksActivity.ListAdapter.this.lambda$onCreateViewHolder$4();
                                     }
                                 });
                             } else {
-                                textInfoPrivacyCell.setText(LocaleController.getString("CreateNewLinkHelp", C3286R.string.CreateNewLinkHelp));
+                                textInfoPrivacyCell.setText(LocaleController.getString("CreateNewLinkHelp", C3301R.string.CreateNewLinkHelp));
                             }
-                            textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                            textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                             linkActionView = textInfoPrivacyCell;
                             break;
                         case 10:
@@ -2362,7 +2362,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                             break;
                         default:
                             View hintInnerCell = new HintInnerCell(ManageLinksActivity.this, this.mContext);
-                            hintInnerCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundWhite"));
+                            hintInnerCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundWhite"));
                             linkActionView = hintInnerCell;
                             break;
                     }
@@ -2411,13 +2411,13 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onBindViewHolder$5() {
             ManageLinksActivity manageLinksActivity = ManageLinksActivity.this;
-            manageLinksActivity.showCommonInfoAlert(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.wallet_crypto_buy_information_dialog_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3286R.string.staking_replenishment_percentage_info_alert));
+            manageLinksActivity.showCommonInfoAlert(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.wallet_crypto_buy_information_dialog_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3301R.string.staking_replenishment_percentage_info_alert));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onBindViewHolder$6() {
             ManageLinksActivity manageLinksActivity = ManageLinksActivity.this;
-            manageLinksActivity.showCommonInfoAlert(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.wallet_crypto_buy_information_dialog_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3286R.string.staking_replenishment_percentage_info_alert));
+            manageLinksActivity.showCommonInfoAlert(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.wallet_crypto_buy_information_dialog_title), ((ResourceManager) ManageLinksActivity.this.resourceManager.getValue()).getString(C3301R.string.staking_replenishment_percentage_info_alert));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2435,7 +2435,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onBindViewHolder$9() {
             ManageLinksActivity manageLinksActivity = ManageLinksActivity.this;
-            manageLinksActivity.showCommonInfoAlert(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3286R.string.staking_withdraw_safe_withdrawal_help_alert_title), ManageLinksActivity.this.stakingTransactionPresenter.getSafeWithdrawalHelpAlertText());
+            manageLinksActivity.showCommonInfoAlert(((ResourceManager) manageLinksActivity.resourceManager.getValue()).getString(C3301R.string.staking_withdraw_safe_withdrawal_help_alert_title), ManageLinksActivity.this.stakingTransactionPresenter.getSafeWithdrawalHelpAlertText());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2646,7 +2646,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             DiffCallback saveListState = saveListState();
             this.revokedInvites.add(0, tLRPC$TL_chatInviteExported);
             updateRecyclerViewAnimated(saveListState);
-            BulletinFactory.m27of(this).createSimpleBulletin(C3286R.C3291raw.linkbroken, LocaleController.getString("InviteRevokedHint", C3286R.string.InviteRevokedHint)).show();
+            BulletinFactory.m27of(this).createSimpleBulletin(C3301R.C3306raw.linkbroken, LocaleController.getString("InviteRevokedHint", C3301R.string.InviteRevokedHint)).show();
         }
     }
 
@@ -2701,7 +2701,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             linearLayout.addView(this.subtitleView, LayoutHelper.createLinear(-1, -2, 0, 6, 0, 0));
             ImageView imageView = new ImageView(context);
             this.optionsView = imageView;
-            imageView.setImageDrawable(ContextCompat.getDrawable(context, C3286R.C3288drawable.ic_ab_other));
+            imageView.setImageDrawable(ContextCompat.getDrawable(context, C3301R.C3303drawable.ic_ab_other));
             this.optionsView.setScaleType(ImageView.ScaleType.CENTER);
             this.optionsView.setColorFilter(Theme.getColor("stickers_menu"));
             this.optionsView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$LinkCell$$ExternalSyntheticLambda3
@@ -2752,7 +2752,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                     Intent intent = new Intent("android.intent.action.SEND");
                     intent.setType("text/plain");
                     intent.putExtra("android.intent.extra.TEXT", this.invite.link);
-                    ManageLinksActivity.this.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteToGroupByLink", C3286R.string.InviteToGroupByLink)), 500);
+                    ManageLinksActivity.this.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteToGroupByLink", C3301R.string.InviteToGroupByLink)), 500);
                 } catch (Exception e2) {
                     FileLog.m45e(e2);
                 }
@@ -2761,29 +2761,29 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             } else if (intValue == 3) {
                 final TLRPC$TL_chatInviteExported tLRPC$TL_chatInviteExported = this.invite;
                 AlertDialog.Builder builder = new AlertDialog.Builder(ManageLinksActivity.this.getParentActivity());
-                builder.setMessage(LocaleController.getString("RevokeAlert", C3286R.string.RevokeAlert));
-                builder.setTitle(LocaleController.getString("RevokeLink", C3286R.string.RevokeLink));
-                builder.setPositiveButton(LocaleController.getString("RevokeButton", C3286R.string.RevokeButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$LinkCell$$ExternalSyntheticLambda1
+                builder.setMessage(LocaleController.getString("RevokeAlert", C3301R.string.RevokeAlert));
+                builder.setTitle(LocaleController.getString("RevokeLink", C3301R.string.RevokeLink));
+                builder.setPositiveButton(LocaleController.getString("RevokeButton", C3301R.string.RevokeButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$LinkCell$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface2, int i2) {
                         ManageLinksActivity.LinkCell.this.lambda$new$0(tLRPC$TL_chatInviteExported, dialogInterface2, i2);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
                 ManageLinksActivity.this.showDialog(builder.create());
             } else if (intValue != 4) {
             } else {
                 final TLRPC$TL_chatInviteExported tLRPC$TL_chatInviteExported2 = this.invite;
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(ManageLinksActivity.this.getParentActivity());
-                builder2.setTitle(LocaleController.getString("DeleteLink", C3286R.string.DeleteLink));
-                builder2.setMessage(LocaleController.getString("DeleteLinkHelp", C3286R.string.DeleteLinkHelp));
-                builder2.setPositiveButton(LocaleController.getString("Delete", C3286R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$LinkCell$$ExternalSyntheticLambda2
+                builder2.setTitle(LocaleController.getString("DeleteLink", C3301R.string.DeleteLink));
+                builder2.setMessage(LocaleController.getString("DeleteLinkHelp", C3301R.string.DeleteLinkHelp));
+                builder2.setPositiveButton(LocaleController.getString("Delete", C3301R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ManageLinksActivity$LinkCell$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface2, int i2) {
                         ManageLinksActivity.LinkCell.this.lambda$new$1(tLRPC$TL_chatInviteExported2, dialogInterface2, i2);
                     }
                 });
-                builder2.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
+                builder2.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
                 ManageLinksActivity.this.showDialog(builder2.create());
             }
         }
@@ -2804,12 +2804,12 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             this.paint2.setStrokeWidth(AndroidUtilities.m50dp(2));
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:61:0x0105, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:61:0x00fe, code lost:
             if (r4.revoked == false) goto L49;
          */
-        /* JADX WARN: Removed duplicated region for block: B:82:0x01c9  */
-        /* JADX WARN: Removed duplicated region for block: B:83:0x01ee  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x0216  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x01c1  */
+        /* JADX WARN: Removed duplicated region for block: B:83:0x01e6  */
+        /* JADX WARN: Removed duplicated region for block: B:86:0x020e  */
         /* JADX WARN: Removed duplicated region for block: B:88:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
         /*
@@ -2818,7 +2818,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
         */
         protected void onDraw(android.graphics.Canvas r16) {
             /*
-                Method dump skipped, instructions count: 572
+                Method dump skipped, instructions count: 564
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.ManageLinksActivity.LinkCell.onDraw(android.graphics.Canvas):void");
@@ -2874,7 +2874,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
             }
             int i4 = tLRPC$TL_chatInviteExported.usage;
             if (i4 == 0 && tLRPC$TL_chatInviteExported.usage_limit == 0 && tLRPC$TL_chatInviteExported.requested == 0) {
-                formatPluralString = LocaleController.getString("NoOneJoinedYet", C3286R.string.NoOneJoinedYet);
+                formatPluralString = LocaleController.getString("NoOneJoinedYet", C3301R.string.NoOneJoinedYet);
             } else {
                 int i5 = tLRPC$TL_chatInviteExported.usage_limit;
                 if (i5 > 0 && i4 == 0 && !tLRPC$TL_chatInviteExported.expired && !tLRPC$TL_chatInviteExported.revoked) {
@@ -2896,11 +2896,11 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 DotDividerSpan dotDividerSpan = new DotDividerSpan();
                 dotDividerSpan.setTopPadding(AndroidUtilities.m51dp(1.5f));
                 spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dotDividerSpan, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
-                spannableStringBuilder2.append((CharSequence) LocaleController.getString("Permanent", C3286R.string.Permanent));
+                spannableStringBuilder2.append((CharSequence) LocaleController.getString("Permanent", C3301R.string.Permanent));
                 this.subtitleView.setText(spannableStringBuilder2);
             } else if (tLRPC$TL_chatInviteExported.expired || tLRPC$TL_chatInviteExported.revoked) {
                 if (tLRPC$TL_chatInviteExported.revoked && tLRPC$TL_chatInviteExported.usage == 0) {
-                    formatPluralString = LocaleController.getString("NoOneJoined", C3286R.string.NoOneJoined);
+                    formatPluralString = LocaleController.getString("NoOneJoined", C3301R.string.NoOneJoined);
                 }
                 SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(formatPluralString);
                 DotDividerSpan dotDividerSpan2 = new DotDividerSpan();
@@ -2909,15 +2909,15 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 boolean z = tLRPC$TL_chatInviteExported.revoked;
                 if (z || (i3 = tLRPC$TL_chatInviteExported.usage_limit) <= 0 || tLRPC$TL_chatInviteExported.usage < i3) {
                     if (z) {
-                        i2 = C3286R.string.Revoked;
+                        i2 = C3301R.string.Revoked;
                         str = "Revoked";
                     } else {
-                        i2 = C3286R.string.Expired;
+                        i2 = C3301R.string.Expired;
                         str = "Expired";
                     }
                     spannableStringBuilder3.append((CharSequence) LocaleController.getString(str, i2));
                 } else {
-                    spannableStringBuilder3.append((CharSequence) LocaleController.getString("LinkLimitReached", C3286R.string.LinkLimitReached));
+                    spannableStringBuilder3.append((CharSequence) LocaleController.getString("LinkLimitReached", C3301R.string.LinkLimitReached));
                 }
                 this.subtitleView.setText(spannableStringBuilder3);
             } else if (tLRPC$TL_chatInviteExported.expire_date > 0) {
@@ -2933,11 +2933,9 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                     spannableStringBuilder4.append((CharSequence) LocaleController.formatPluralString("DaysLeft", (int) (currentTimeMillis / 86400000), new Object[0]));
                 } else {
                     long j = currentTimeMillis / 1000;
-                    int i6 = (int) (j % 60);
                     long j2 = j / 60;
-                    int i7 = (int) (j2 / 60);
                     Locale locale = Locale.ENGLISH;
-                    spannableStringBuilder4.append((CharSequence) String.format(locale, "%02d", Integer.valueOf(i7))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf((int) (j2 % 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf(i6)));
+                    spannableStringBuilder4.append((CharSequence) String.format(locale, "%02d", Integer.valueOf((int) (j2 / 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf((int) (j2 % 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf((int) (j % 60))));
                     this.timerRunning = true;
                 }
                 this.subtitleView.setText(spannableStringBuilder4);
@@ -3037,7 +3035,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 }
             }
             if (getParentActivity() != null) {
-                BulletinFactory.m27of(this).createSimpleBulletin(C3286R.C3291raw.linkbroken, LocaleController.getString("InviteRevokedHint", C3286R.string.InviteRevokedHint)).show();
+                BulletinFactory.m27of(this).createSimpleBulletin(C3301R.C3306raw.linkbroken, LocaleController.getString("InviteRevokedHint", C3301R.string.InviteRevokedHint)).show();
             }
         }
     }
@@ -3045,8 +3043,8 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ManageLinksActivity$9 */
     /* loaded from: classes5.dex */
-    public class C59599 implements LinkEditActivity.Callback {
-        C59599() {
+    public class C59859 implements LinkEditActivity.Callback {
+        C59859() {
         }
 
         @Override // org.telegram.p048ui.LinkEditActivity.Callback
@@ -3055,7 +3053,7 @@ public class ManageLinksActivity extends JavaWalletAuthFragment implements Walle
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ManageLinksActivity$9$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ManageLinksActivity.C59599.this.lambda$onLinkCreated$0(tLObject);
+                        ManageLinksActivity.C59859.this.lambda$onLinkCreated$0(tLObject);
                     }
                 }, 200L);
             }

@@ -484,13 +484,13 @@
 
     const/4 v2, 0x0
 
-    const/high16 v1, -0x80000000
+    move v3, v1
 
-    const v2, 0x7fffffff
+    move v4, v2
 
-    const v3, 0x7fffffff
+    move v1, v0
 
-    const/4 v4, 0x0
+    move v2, v3
 
     .line 44
     :goto_0

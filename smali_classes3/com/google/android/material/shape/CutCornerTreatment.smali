@@ -51,11 +51,11 @@
 
     float-to-double v2, p4
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     float-to-double p3, p3
 
-    mul-double v0, v0, p3
+    mul-double/2addr v0, p3
 
     double-to-float v0, v0
 
@@ -74,9 +74,9 @@
 
     move-result-wide v4
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
-    mul-double v4, v4, p3
+    mul-double/2addr v4, p3
 
     double-to-float p2, v4
 

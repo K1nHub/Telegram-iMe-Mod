@@ -4,7 +4,7 @@ public abstract class TLRPC$InputStickerSet extends TLObject {
     public long access_hash;
 
     /* renamed from: id */
-    public long f1522id;
+    public long f1523id;
     public String short_name;
 
     public static TLRPC$InputStickerSet TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {

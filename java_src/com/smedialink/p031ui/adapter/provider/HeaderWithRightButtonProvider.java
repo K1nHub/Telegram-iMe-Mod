@@ -7,14 +7,14 @@ import com.smedialink.model.wallet.home.HeaderItemWithRightButton;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: HeaderWithRightButtonProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.HeaderWithRightButtonProvider */
 /* loaded from: classes3.dex */
 public final class HeaderWithRightButtonProvider extends BaseNodeProvider<HeaderItemWithRightButton> {
     private boolean isInfoButtonVisible;
     private final int itemViewType = IdFabric$ViewTypes.HEADER_WITH_RIGHT_BUTTON;
-    private final int layoutId = C3286R.layout.fork_recycle_item_header_with_right_button;
+    private final int layoutId = C3301R.layout.fork_recycle_item_header_with_right_button;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -39,11 +39,11 @@ public final class HeaderWithRightButtonProvider extends BaseNodeProvider<Header
     public void convert(BaseViewHolder helper, HeaderItemWithRightButton item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3286R.C3289id.image_info;
+        int i = C3301R.C3304id.image_info;
         BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(helper, i, "chats_actionBackground"), i), i, this.isInfoButtonVisible);
-        int i2 = C3286R.C3289id.text_wallet_header;
+        int i2 = C3301R.C3304id.text_wallet_header;
         BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(visibleElseGone, i2, "windowBackgroundWhiteGrayText2"), i2).setText(i2, item.getTitle());
-        int i3 = C3286R.C3289id.image_header_right_button;
+        int i3 = C3301R.C3304id.image_header_right_button;
         BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(text, i3, "windowBackgroundWhiteGrayText2").setImageResource(i3, item.getIconRes()), i3);
     }
 
@@ -51,6 +51,6 @@ public final class HeaderWithRightButtonProvider extends BaseNodeProvider<Header
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setText(C3286R.C3289id.text_wallet_header, item.getTitle());
+        helper.setText(C3301R.C3304id.text_wallet_header, item.getTitle());
     }
 }

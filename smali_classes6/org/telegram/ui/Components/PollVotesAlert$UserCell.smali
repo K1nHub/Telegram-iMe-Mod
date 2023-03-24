@@ -107,12 +107,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v4, 0x5
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x3
+    move v4, v3
 
     :goto_0
     or-int/lit8 v7, v4, 0x30
@@ -121,24 +121,24 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v8, 0x0
+    move v8, p1
 
     goto :goto_1
 
     :cond_1
-    const/16 v8, 0xe
+    move v8, v4
 
     :goto_1
     const/4 v9, 0x6
 
     if-eqz v1, :cond_2
 
-    const/16 v10, 0xe
+    move v10, v4
 
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, p1
 
     :goto_2
     const/4 v11, 0x0
@@ -194,12 +194,12 @@
 
     if-eqz p2, :cond_3
 
-    const/4 p2, 0x5
+    move p2, v2
 
     goto :goto_3
 
     :cond_3
-    const/4 p2, 0x3
+    move p2, v3
 
     :goto_3
     or-int/lit8 p2, p2, 0x30
@@ -220,7 +220,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v2, 0x3
+    move v2, v3
 
     :goto_4
     or-int/lit8 v6, v2, 0x30
@@ -231,24 +231,24 @@
 
     if-eqz p2, :cond_5
 
-    const/16 v7, 0x1c
+    move v7, v0
 
     goto :goto_5
 
     :cond_5
-    const/16 v7, 0x41
+    move v7, v1
 
     :goto_5
     const/16 v8, 0xe
 
     if-eqz p2, :cond_6
 
-    const/16 v9, 0x41
+    move v9, v1
 
     goto :goto_6
 
     :cond_6
-    const/16 v9, 0x1c
+    move v9, v0
 
     :goto_6
     const/4 v10, 0x0
@@ -329,7 +329,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->placeholderAlpha:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -627,8 +627,6 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v4, 0x0
-
     goto :goto_2
 
     :cond_6
@@ -638,9 +636,9 @@
 
     int-to-float v1, v0
 
+    :goto_2
     move v4, v1
 
-    :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -740,7 +738,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p3
 
     .line 302
     :goto_0
@@ -879,7 +877,7 @@
 .end method
 
 .method public update(I)V
-    .locals 11
+    .locals 10
 
     .line 338
     iget-object v0, p0, Lorg/telegram/ui/Components/PollVotesAlert$UserCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -935,9 +933,9 @@
 
     iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_3
+    if-nez v6, :cond_3
 
     iget v4, v4, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
@@ -946,12 +944,12 @@
     if-eq v4, v6, :cond_4
 
     :cond_3
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-eqz v0, :cond_6
@@ -976,7 +974,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 354
     :goto_2
@@ -984,7 +982,7 @@
 
     if-eq v6, v7, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_6
     if-nez v4, :cond_8

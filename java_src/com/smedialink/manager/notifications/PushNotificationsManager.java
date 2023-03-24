@@ -41,7 +41,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.fork.utils.UserUtils;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -265,7 +265,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 3:
                     Gson globalGson3 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1487In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
+                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1489In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
                     }.getType());
                 case 4:
                     Gson globalGson4 = GsonExtKt.getGlobalGson();
@@ -273,7 +273,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 5:
                     Gson globalGson5 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1488In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
+                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1490In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
                     }.getType());
                 case 6:
                     Gson globalGson6 = GsonExtKt.getGlobalGson();
@@ -323,9 +323,9 @@ public final class PushNotificationsManager {
         intent.putExtra("userId", pushNotificationModel.getUserId());
         PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent, 1107296256);
         if (Build.VERSION.SDK_INT >= 26 && from.getNotificationChannel("iMe Messenger") == null) {
-            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3286R.string.AppName), 3));
+            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3301R.string.AppName), 3));
         }
-        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3286R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3286R.C3288drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3286R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3286R.C3287color.fork_color)).setCategory("msg").build();
+        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3301R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3301R.C3303drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3301R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3301R.C3302color.fork_color)).setCategory("msg").build();
         Intrinsics.checkNotNullExpressionValue(build, "Builder(ApplicationLoade…\n                .build()");
         from.notify((int) System.currentTimeMillis(), build);
     }

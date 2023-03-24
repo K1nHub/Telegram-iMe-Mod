@@ -51,14 +51,9 @@
 
     const/16 p4, 0x1e
 
-    const/16 v4, 0x1e
-
-    goto :goto_0
-
     :cond_1
     move v4, p4
 
-    :goto_0
     and-int/lit8 p3, p6, 0x8
 
     if-eqz p3, :cond_2

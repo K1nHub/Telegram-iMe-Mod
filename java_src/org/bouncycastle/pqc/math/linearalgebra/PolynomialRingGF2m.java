@@ -4,20 +4,20 @@ public class PolynomialRingGF2m {
     private GF2mField field;
 
     /* renamed from: p */
-    private PolynomialGF2mSmallM f1415p;
+    private PolynomialGF2mSmallM f1416p;
     protected PolynomialGF2mSmallM[] sqMatrix;
     protected PolynomialGF2mSmallM[] sqRootMatrix;
 
     public PolynomialRingGF2m(GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM) {
         this.field = gF2mField;
-        this.f1415p = polynomialGF2mSmallM;
+        this.f1416p = polynomialGF2mSmallM;
         computeSquaringMatrix();
         computeSquareRootMatrix();
     }
 
     private void computeSquareRootMatrix() {
         int coefficient;
-        int degree = this.f1415p.getDegree();
+        int degree = this.f1416p.getDegree();
         PolynomialGF2mSmallM[] polynomialGF2mSmallMArr = new PolynomialGF2mSmallM[degree];
         int i = degree - 1;
         for (int i2 = i; i2 >= 0; i2--) {
@@ -61,7 +61,7 @@ public class PolynomialRingGF2m {
 
     private void computeSquaringMatrix() {
         int i;
-        int degree = this.f1415p.getDegree();
+        int degree = this.f1416p.getDegree();
         this.sqMatrix = new PolynomialGF2mSmallM[degree];
         int i2 = 0;
         while (true) {
@@ -79,7 +79,7 @@ public class PolynomialRingGF2m {
             int i4 = i << 1;
             int[] iArr2 = new int[i4 + 1];
             iArr2[i4] = 1;
-            this.sqMatrix[i] = new PolynomialGF2mSmallM(this.field, iArr2).mod(this.f1415p);
+            this.sqMatrix[i] = new PolynomialGF2mSmallM(this.field, iArr2).mod(this.f1416p);
             i++;
         }
     }

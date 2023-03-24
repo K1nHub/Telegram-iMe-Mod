@@ -164,7 +164,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7fffffff
+    move v1, v2
 
     .line 265
     :goto_0
@@ -229,7 +229,7 @@
 
     if-nez v7, :cond_3
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 278
     :goto_2
@@ -286,7 +286,7 @@
 
     invoke-virtual {v8, v5, v6}, Lorg/telegram/ui/Cells/StickerSetCell;->setChecked(ZZ)V
 
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_3
 
@@ -296,7 +296,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_3
     if-nez v7, :cond_4
@@ -329,7 +329,7 @@
 
     if-nez v3, :cond_6
 
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 294
     :goto_4
@@ -392,7 +392,7 @@
 
     invoke-virtual {v4, v6, v6}, Lorg/telegram/ui/Cells/StickerSetCell;->setChecked(ZZ)V
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_5
 
@@ -402,7 +402,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_5
     if-nez v3, :cond_7

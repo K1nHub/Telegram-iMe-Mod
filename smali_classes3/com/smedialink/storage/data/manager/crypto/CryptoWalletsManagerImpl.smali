@@ -19,9 +19,11 @@
 
 .field private final tonBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
+.field private final tronBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+
 
 # direct methods
-.method public constructor <init>(Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;)V
+.method public constructor <init>(Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;)V
     .locals 1
 
     const-string v0, "evmBlockchainCryptoWalletManager"
@@ -32,6 +34,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "tronBlockchainCryptoWalletManager"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,13 +47,16 @@
     .line 12
     iput-object p2, p0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tonBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
+    .line 13
+    iput-object p3, p0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tronBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+
     return-void
 .end method
 
 .method private final getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
     .locals 1
 
-    .line 44
+    .line 45
     sget-object v0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -58,14 +67,18 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_1
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x3
+
     if-ne p1, v0, :cond_0
 
-    .line 46
-    iget-object p1, p0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tonBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+    .line 48
+    iget-object p1, p0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tronBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     goto :goto_0
 
@@ -76,8 +89,14 @@
 
     throw p1
 
-    .line 45
+    .line 47
     :cond_1
+    iget-object p1, p0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->tonBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+
+    goto :goto_0
+
+    .line 46
+    :cond_2
     iget-object p1, p0, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->evmBlockchainCryptoWalletManager:Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     :goto_0
@@ -114,7 +133,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 18
+    .line 19
     invoke-direct {p0, p3}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p3
@@ -137,7 +156,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 28
     invoke-direct {p0, p2}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p2
@@ -170,7 +189,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 31
+    .line 32
     invoke-direct {p0, p2}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p2
@@ -210,7 +229,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 35
     invoke-direct {p0, p3}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p3
@@ -255,7 +274,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 22
     invoke-direct {p0, p4}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p4
@@ -290,7 +309,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 38
     invoke-direct {p0, p2}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p2
@@ -340,7 +359,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 25
     invoke-direct {p0, p5}, Lcom/smedialink/storage/data/manager/crypto/CryptoWalletsManagerImpl;->getWalletManager(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lcom/smedialink/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
     move-result-object p5

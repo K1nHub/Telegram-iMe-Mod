@@ -123,7 +123,7 @@
     if-nez v11, :cond_3
 
     :goto_1
-    const/4 v8, 0x0
+    move v8, v13
 
     goto :goto_2
 
@@ -171,7 +171,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v8, 0x1
+    move v8, v12
 
     goto :goto_2
 
@@ -192,7 +192,7 @@
     if-nez v8, :cond_6
 
     :goto_3
-    const/4 v6, 0x0
+    move v6, v13
 
     goto/16 :goto_4
 
@@ -319,7 +319,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    const/4 v6, 0x1
+    move v6, v12
 
     goto :goto_4
 
@@ -409,7 +409,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v12, 0x0
+    move v12, v13
 
     :goto_5
     sput-boolean v12, Lcom/google/android/gms/internal/icing/zzfn;->zzb:Z
@@ -544,9 +544,9 @@
 
     move-result v3
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    not-int p1, p2
+    not-int p1, p1
 
     and-int/lit8 p1, p1, 0x3
 
@@ -586,9 +586,9 @@
 
     move-result v3
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int/lit8 p1, p2, 0x3
+    and-int/lit8 p1, p1, 0x3
 
     shl-int/lit8 p1, p1, 0x3
 
@@ -1095,9 +1095,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     and-int/lit16 p0, p0, 0xff
 
@@ -1137,9 +1137,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     and-int/lit16 p0, p0, 0xff
 

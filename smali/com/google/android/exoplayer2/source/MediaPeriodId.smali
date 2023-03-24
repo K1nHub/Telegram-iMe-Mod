@@ -189,14 +189,14 @@
 .end method
 
 .method public copyWithWindowSequenceNumber(J)Lcom/google/android/exoplayer2/source/MediaPeriodId;
-    .locals 10
+    .locals 8
 
     .line 157
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     move-object v0, p0
 
@@ -206,19 +206,19 @@
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;
 
-    iget-object v4, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
-    iget v5, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
+    iget v3, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    iget v6, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
+    iget v4, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
-    iget v9, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+    iget v7, p0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-wide v7, p1
+    move-wide v5, p1
 
-    invoke-direct/range {v3 .. v9}, Lcom/google/android/exoplayer2/source/MediaPeriodId;-><init>(Ljava/lang/Object;IIJI)V
+    invoke-direct/range {v1 .. v7}, Lcom/google/android/exoplayer2/source/MediaPeriodId;-><init>(Ljava/lang/Object;IIJI)V
 
     :goto_0
     return-object v0
@@ -287,7 +287,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0

@@ -261,7 +261,7 @@
 
     aput-object v10, v9, v0
 
-    const/4 v1, 0x0
+    move v1, v12
 
     .line 108
     :goto_0
@@ -1396,14 +1396,14 @@
 
     if-ne v4, v5, :cond_2
 
-    const/4 v15, 0x1
+    move v15, v5
 
     goto :goto_0
 
     :cond_2
     const/4 v4, 0x0
 
-    const/4 v15, 0x0
+    move v15, v4
 
     :goto_0
     const/16 v16, 0x0
@@ -1599,7 +1599,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 903
     :goto_0
@@ -1644,7 +1644,7 @@
 
     check-cast v2, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 907
     :goto_1
@@ -1755,7 +1755,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 432
     :goto_0
@@ -1848,7 +1848,7 @@
 
     if-eqz v1, :cond_6
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 367
     :goto_0
@@ -2087,7 +2087,7 @@
 
     if-ne v1, v4, :cond_a
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 391
     :goto_2
@@ -2126,13 +2126,13 @@
     goto :goto_2
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_4
 
     :cond_a
     :goto_3
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_4
     if-eqz v0, :cond_b

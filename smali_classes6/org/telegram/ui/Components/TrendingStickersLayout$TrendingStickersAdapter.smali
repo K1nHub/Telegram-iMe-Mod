@@ -313,12 +313,12 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-eqz v4, :cond_1
@@ -361,13 +361,13 @@
 
     move-object v5, v1
 
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 821
     :goto_1
     invoke-virtual {v0, v5}, Lorg/telegram/messenger/MediaDataController;->preloadStickerSetThumb(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;)V
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 823
     :goto_2
@@ -463,7 +463,7 @@
 
     if-nez v4, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_4
 
@@ -474,7 +474,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 836
     :goto_4
@@ -503,12 +503,12 @@
 
     if-ltz v4, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_5
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 838
     :goto_5
@@ -528,12 +528,12 @@
 
     if-ltz v7, :cond_7
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_6
 
     :cond_7
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_6
     if-eqz v4, :cond_8
@@ -553,7 +553,7 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/LongSparseArray;->remove(J)V
 
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_7
 
@@ -599,12 +599,12 @@
 
     if-eqz v0, :cond_a
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_8
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 847
     :goto_8
@@ -644,7 +644,7 @@
     goto :goto_9
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_c
     :goto_9
@@ -654,11 +654,11 @@
 .end method
 
 .method private installStickerSet(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;Landroid/view/View;)V
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 852
     :goto_0
@@ -750,9 +750,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     return-void
 
@@ -763,7 +763,7 @@
 
     :cond_2
     :goto_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 866
     :goto_2
@@ -799,7 +799,7 @@
 
     aput-object p1, v2, v1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_3
 
@@ -809,7 +809,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_3
     if-nez v1, :cond_6
@@ -879,7 +879,7 @@
 
     move-result p2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_5
     if-ge v1, p2, :cond_9
@@ -904,9 +904,9 @@
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_8
+    if-nez v2, :cond_8
 
     .line 887
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1009,7 +1009,7 @@
 
     move-result p2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 977
     :goto_0
@@ -1103,7 +1103,7 @@
 
     double-to-int p2, v4
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 989
     :goto_1
@@ -1144,10 +1144,10 @@
 
     invoke-virtual {p2, v4, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    const/4 p2, 0x1
+    move p2, v1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 996
     :goto_2
@@ -1174,7 +1174,7 @@
     :cond_5
     iget v3, p0, Lorg/telegram/ui/Components/TrendingStickersLayout$TrendingStickersAdapter;->totalItems:I
 
-    mul-int p2, p2, v5
+    mul-int/2addr p2, v5
 
     add-int/2addr v3, p2
 
@@ -2022,9 +2022,9 @@
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 918
     :goto_0
@@ -2151,7 +2151,7 @@
 
     double-to-int v7, v7
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 936
     :goto_1
@@ -2193,7 +2193,7 @@
     invoke-virtual {v5, v8, v9}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 943
     :goto_2
@@ -2220,7 +2220,7 @@
     :cond_6
     iget v5, p0, Lorg/telegram/ui/Components/TrendingStickersLayout$TrendingStickersAdapter;->totalItems:I
 
-    mul-int v7, v7, v8
+    mul-int/2addr v7, v8
 
     add-int/2addr v5, v7
 

@@ -452,12 +452,12 @@
 
     if-ge v10, v8, :cond_0
 
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v11
 
     :goto_0
     iput-boolean v8, v0, Lorg/telegram/ui/QrActivity$ThemeListViewController;->prevIsPortrait:Z
@@ -1404,7 +1404,7 @@
 
     move-object/from16 v16, v14
 
-    const/4 v14, 0x2
+    move v14, v12
 
     move/from16 v12, v17
 
@@ -1976,7 +1976,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     if-eqz p2, :cond_2

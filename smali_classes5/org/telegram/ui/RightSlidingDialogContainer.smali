@@ -608,9 +608,9 @@
 
     const v4, 0x3f19999a    # 0.6f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
-    mul-float v3, v3, p3
+    mul-float/2addr v3, p3
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
 
@@ -646,7 +646,7 @@
 
     sub-float/2addr v1, p3
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
@@ -716,14 +716,14 @@
 
     :cond_2
     :goto_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/RightSlidingDialogContainer;->currentActionBarView:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-nez v3, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_2
 
@@ -776,9 +776,9 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    const/high16 v8, 0x437f0000    # 255.0f
-
     cmpl-float v0, v7, v0
+
+    const/high16 v8, 0x437f0000    # 255.0f
 
     if-nez v0, :cond_5
 
@@ -906,7 +906,7 @@
 
     move-result v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     cmpl-float v0, v7, v0
 
@@ -940,7 +940,7 @@
 
     move-result v0
 
-    mul-float v0, v0, v8
+    mul-float/2addr v0, v8
 
     float-to-int v5, v0
 
@@ -1740,12 +1740,12 @@
     if-gez p1, :cond_9
 
     :cond_8
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_9
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     if-nez p1, :cond_a
@@ -2326,7 +2326,7 @@
 
     sub-float v3, v1, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationX(F)V
 
@@ -2369,7 +2369,7 @@
 
     sub-float/2addr v1, v3
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 

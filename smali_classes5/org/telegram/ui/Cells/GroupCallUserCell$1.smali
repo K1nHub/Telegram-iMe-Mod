@@ -103,7 +103,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$1;->this$0:Lorg/telegram/ui/Cells/GroupCallUserCell;
 
@@ -115,7 +115,7 @@
 
     move-result v1
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     float-to-int v1, v2
 
@@ -178,7 +178,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell$1;->this$0:Lorg/telegram/ui/Cells/GroupCallUserCell;
 
@@ -190,7 +190,7 @@
 
     move-result v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 

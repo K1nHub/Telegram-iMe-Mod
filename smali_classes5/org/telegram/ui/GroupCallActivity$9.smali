@@ -59,20 +59,20 @@
 
     const v3, 0x7f7fffff    # Float.MAX_VALUE
 
+    cmpl-float v2, v2, v3
+
     const/4 v4, 0x0
 
     const/4 v5, 0x1
 
-    cmpl-float v2, v2, v3
-
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 3163
     :goto_0
@@ -80,7 +80,7 @@
 
     invoke-virtual {v6}, Lorg/telegram/messenger/support/LongSparseIntArray;->clear()V
 
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 3164
     :goto_1
@@ -124,11 +124,11 @@
 
     move-result v6
 
-    const/4 v8, 0x0
+    move v10, v3
 
-    const/4 v9, 0x0
+    move v8, v4
 
-    const v10, 0x7f7fffff    # Float.MAX_VALUE
+    move v9, v8
 
     const/4 v11, 0x0
 
@@ -396,7 +396,7 @@
 
     sub-float v5, v6, v5
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$9;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -406,7 +406,7 @@
 
     iget v5, v5, Lorg/telegram/ui/GroupCallActivity$GroupCallItemAnimator;->animationProgress:F
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     add-float/2addr v2, v5
 
@@ -429,7 +429,7 @@
 
     sub-float/2addr v6, v7
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$9;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -439,7 +439,7 @@
 
     iget v6, v6, Lorg/telegram/ui/GroupCallActivity$GroupCallItemAnimator;->animationProgress:F
 
-    mul-float v11, v11, v6
+    mul-float/2addr v11, v6
 
     add-float/2addr v11, v5
 
@@ -636,7 +636,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 3229
     :goto_0
@@ -668,7 +668,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     invoke-static {v3, v2, v4}, Lorg/telegram/ui/GroupCallActivity;->access$10900(Lorg/telegram/ui/GroupCallActivity;Lorg/telegram/ui/Components/voip/GroupCallGridCell;Z)V

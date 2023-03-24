@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/data/datasource/cancel/WalletCancelDataSource;",
+        "Lcom/smedialink/storage/data/datasource/approve/WalletApproveDataSource;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,97:1\n127#2,5:98\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n*L\n89#1:98,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n127#2,5:106\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n*L\n94#1:106,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/datasource/cancel/WalletCancelDataSource;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/datasource/approve/WalletApproveDataSource;
     .locals 3
 
     const-string v0, "$this$single"
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 89
+    .line 94
     check-cast p2, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 131
-    const-class v1, Lcom/smedialink/storage/data/network/api/own/CancelApi;
+    const-class v1, Lcom/smedialink/storage/data/network/api/own/SwapApi;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,8 +99,8 @@
 
     move-result-object v1
 
-    .line 89
-    check-cast v1, Lcom/smedialink/storage/data/network/api/own/CancelApi;
+    .line 94
+    check-cast v1, Lcom/smedialink/storage/data/network/api/own/SwapApi;
 
     .line 131
     const-class v2, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
@@ -113,12 +113,12 @@
 
     move-result-object p1
 
-    .line 89
+    .line 94
     check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
-    new-instance v0, Lcom/smedialink/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;
+    new-instance v0, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;
 
-    invoke-direct {v0, v1, p1, p2}, Lcom/smedialink/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/CancelApi;Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
+    invoke-direct {v0, v1, p1, p2}, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/SwapApi;Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
     return-object v0
 .end method
@@ -126,12 +126,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 88
+    .line 93
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/datasource/cancel/WalletCancelDataSource;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/data/datasource/approve/WalletApproveDataSource;
 
     move-result-object p1
 

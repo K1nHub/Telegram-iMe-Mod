@@ -118,7 +118,7 @@ public class RegisterRequestParams extends RequestParams {
             }
         }
         this.zzh = hashSet;
-        Preconditions.checkArgument((str == null || str.length() <= 80) ? true : true, "Display Hint cannot be longer than 80 characters");
+        Preconditions.checkArgument((str == null || str.length() <= 80) ? true : z, "Display Hint cannot be longer than 80 characters");
         this.zzg = str;
     }
 

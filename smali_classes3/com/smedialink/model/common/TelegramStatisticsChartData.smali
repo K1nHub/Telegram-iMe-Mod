@@ -241,7 +241,7 @@
 
     const/4 v1, 0x2
 
-    const/4 v8, 0x2
+    move v8, v1
 
     goto :goto_2
 
@@ -1083,7 +1083,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 

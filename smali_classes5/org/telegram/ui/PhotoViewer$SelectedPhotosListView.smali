@@ -185,9 +185,9 @@
 
     const v2, 0x7fffffff
 
-    const v3, 0x7fffffff
+    move v5, v1
 
-    const/high16 v5, -0x80000000
+    move v3, v2
 
     :goto_0
     if-ge v6, v0, :cond_0

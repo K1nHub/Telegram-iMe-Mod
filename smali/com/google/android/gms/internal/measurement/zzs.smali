@@ -139,32 +139,31 @@
 
     if-eq v0, v5, :cond_1
 
-    const/4 v6, 0x3
-
     goto :goto_0
 
     :cond_1
-    const/4 v6, 0x2
+    move v6, v4
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
-    const/4 v6, 0x5
+    move v6, v3
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
-    const/4 v6, 0x1
+    move v6, v1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
     const/4 v2, 0x4
 
-    const/4 v6, 0x4
+    :goto_0
+    move v6, v2
 
     .line 7
-    :goto_0
+    :goto_1
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -214,7 +213,7 @@
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     .line 11
-    :goto_1
+    :goto_2
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
@@ -244,7 +243,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_6
     iget-object p1, p0, Lcom/google/android/gms/internal/measurement/zzs;->zzc:Lcom/google/android/gms/internal/measurement/zzt;

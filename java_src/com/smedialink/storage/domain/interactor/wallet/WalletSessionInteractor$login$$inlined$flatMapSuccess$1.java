@@ -34,7 +34,7 @@ public final class WalletSessionInteractor$login$$inlined$flatMapSuccess$1 exten
             Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
             Observable map = flatMap2.map(new WalletSessionInteractor$sam$io_reactivex_functions_Function$0(new WalletSessionInteractor$login$1$3(result)));
             schedulersProvider = this.this$0.schedulersProvider;
-            Observable subscribeOn = map.subscribeOn(schedulersProvider.mo708io());
+            Observable subscribeOn = map.subscribeOn(schedulersProvider.mo707io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "result ->\n              …(schedulersProvider.io())");
             return subscribeOn;
         } else if (result instanceof Result.Error) {

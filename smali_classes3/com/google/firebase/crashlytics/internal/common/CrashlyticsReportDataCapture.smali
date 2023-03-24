@@ -1135,7 +1135,7 @@
 
     int-to-long v7, v0
 
-    mul-long v5, v5, v7
+    mul-long/2addr v5, v7
 
     .line 181
     iget-object v0, p0, Lcom/google/firebase/crashlytics/internal/common/CrashlyticsReportDataCapture;->context:Landroid/content/Context;

@@ -19,7 +19,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p3, 0x0
+    move p3, p1
 
     :goto_0
     if-ge p3, p4, :cond_0
@@ -75,7 +75,7 @@
 
     :cond_3
     :goto_2
-    const/4 p1, -0x1
+    move p1, v0
 
     goto :goto_3
 

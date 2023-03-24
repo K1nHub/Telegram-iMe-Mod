@@ -21,13 +21,13 @@
 
     const/4 v3, 0x0
 
-    const/high16 v2, -0x80000000
+    move v4, v2
 
-    const v3, 0x7fffffff
+    move v5, v3
 
-    const v4, 0x7fffffff
+    move v2, v1
 
-    const/4 v5, 0x0
+    move v3, v4
 
     :goto_0
     if-ge v5, v0, :cond_0
@@ -132,7 +132,7 @@
 
     int-to-double v10, v9
 
-    mul-double v10, v10, v3
+    mul-double/2addr v10, v3
 
     add-double/2addr v7, v10
 
@@ -144,7 +144,7 @@
 
     int-to-double v8, v9
 
-    mul-double v8, v8, v1
+    mul-double/2addr v8, v1
 
     add-double/2addr v10, v8
 
@@ -169,7 +169,7 @@
 
     int-to-double v10, p0
 
-    mul-double v10, v10, v1
+    mul-double/2addr v10, v1
 
     sub-double/2addr v8, v10
 
@@ -183,7 +183,7 @@
 
     int-to-double v10, p0
 
-    mul-double v10, v10, v3
+    mul-double/2addr v10, v3
 
     add-double/2addr v8, v10
 

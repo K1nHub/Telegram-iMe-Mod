@@ -107,7 +107,7 @@
 
     :cond_1
     :goto_0
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 3120
     :goto_1
@@ -208,7 +208,7 @@
 
     const/high16 v3, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -271,7 +271,7 @@
 
     const/high16 v2, 0x43190000    # 153.0f
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     float-to-int v2, v8
 

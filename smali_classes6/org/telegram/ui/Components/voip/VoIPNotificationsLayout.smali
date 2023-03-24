@@ -241,7 +241,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 129
     :goto_0
@@ -262,7 +262,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/voip/VoIPNotificationsLayout$NotificationView;
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 131
     :goto_1
@@ -319,7 +319,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 141
     :goto_3
@@ -365,7 +365,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 144
     :goto_4
@@ -628,7 +628,7 @@
 
     move-result v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     add-int/2addr v1, v0
 

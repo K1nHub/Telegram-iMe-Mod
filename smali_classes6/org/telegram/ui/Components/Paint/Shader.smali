@@ -133,7 +133,7 @@
 
     invoke-static {v0, v2}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 44
     :goto_0

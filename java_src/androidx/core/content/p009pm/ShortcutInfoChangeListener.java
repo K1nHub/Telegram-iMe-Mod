@@ -13,9 +13,6 @@ public abstract class ShortcutInfoChangeListener {
     public void onShortcutRemoved(List<String> list) {
     }
 
-    public void onShortcutUpdated(List<ShortcutInfoCompat> list) {
-    }
-
     public void onShortcutUsageReported(List<String> list) {
     }
 }

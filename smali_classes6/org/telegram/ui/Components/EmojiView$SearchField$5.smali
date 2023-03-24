@@ -74,12 +74,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     invoke-static {v0, p1, v2}, Lorg/telegram/ui/Components/EmojiView;->access$3200(Lorg/telegram/ui/Components/EmojiView;ZZ)V
@@ -120,7 +120,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->showSelected(Z)V
@@ -164,7 +164,7 @@
 
     if-nez v0, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->showSelected(Z)V

@@ -45,9 +45,9 @@ public final class SimplexRepositoryImpl implements SimplexRepository {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         String value = digitalCurrency.getValue();
         CreateBuyingCryptoPaymentRequest createBuyingCryptoPaymentRequest = new CreateBuyingCryptoPaymentRequest(quoteId, CryptoExtKt.generateUuid(), fiatCurrency.getValue(), i, value, f, networkType.name());
-        Observable<R> map = this.simplexApi.createBuyingCryptoPaymentRequest(createBuyingCryptoPaymentRequest).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1766xab3d1946(this.firebaseErrorHandler, createBuyingCryptoPaymentRequest)));
+        Observable<R> map = this.simplexApi.createBuyingCryptoPaymentRequest(createBuyingCryptoPaymentRequest).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1774xab3d1946(this.firebaseErrorHandler, createBuyingCryptoPaymentRequest)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<BuyingCryptoPayment>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1765x9f6dc81b(this.errorHandler)));
+        Observable<Result<BuyingCryptoPayment>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1773x9f6dc81b(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -63,7 +63,7 @@ public final class SimplexRepositoryImpl implements SimplexRepository {
         }
         Observable<R> map = this.simplexApi.getBuyingCryptoQuote(new GetBuyingCryptoQuoteRequestList(arrayList)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new SimplexRepositoryImpl$getBuyingCryptoQuote$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BuyingCryptoQuote>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1767xe982d2d7(this.errorHandler)));
+        Observable<Result<List<BuyingCryptoQuote>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1775xe982d2d7(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

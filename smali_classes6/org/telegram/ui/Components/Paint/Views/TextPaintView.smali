@@ -111,7 +111,7 @@
     goto :goto_0
 
     :cond_1
-    const/16 p1, 0x11
+    move p1, p2
 
     .line 133
     :goto_0
@@ -141,7 +141,7 @@
     if-eqz p1, :cond_5
 
     :cond_2
-    const/4 v0, 0x3
+    move v0, p2
 
     goto :goto_1
 
@@ -258,7 +258,7 @@
 
     const v0, 0x3ecccccd    # 0.4f
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -583,7 +583,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/16 v2, 0x40
 
@@ -608,7 +608,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/16 v3, 0x34
 
@@ -635,7 +635,7 @@
 
     sub-float/2addr v4, v6
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionY()F
 
@@ -645,11 +645,11 @@
 
     sub-float/2addr v6, v5
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     invoke-direct {v3, v4, v6, v1, v2}, Lorg/telegram/ui/Components/Rect;-><init>(FFFF)V
 
@@ -752,7 +752,7 @@
 
     const v2, 0x3ecccccd    # 0.4f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -791,7 +791,7 @@
 
     check-cast v0, [Lorg/telegram/messenger/Emoji$EmojiSpan;
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 165
     :goto_0

@@ -58,7 +58,7 @@
 
     const-wide/16 v1, 0x3e8
 
-    mul-long p1, p1, v1
+    mul-long/2addr p1, v1
 
     invoke-virtual {v0, p1, p2}, Lcom/otaliastudios/opengl/surface/EglSurface;->setPresentationTime(J)V
 

@@ -127,7 +127,7 @@
 .end method
 
 .method public static g(Lj$/util/stream/z1;Lj$/util/function/m;)[Ljava/lang/Object;
-    .locals 5
+    .locals 4
 
     sget-boolean v0, Lj$/util/stream/Q4;->a:Z
 
@@ -139,17 +139,17 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     invoke-interface {p0}, Lj$/util/stream/A1;->count()J
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-interface {p1, v1}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/m;->apply(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -467,7 +467,7 @@
 .end method
 
 .method public static n(Lj$/util/stream/u1;JJLj$/util/function/m;)Lj$/util/stream/u1;
-    .locals 5
+    .locals 4
 
     const-wide/16 v0, 0x0
 
@@ -502,14 +502,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     int-to-long v2, v1
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     sget-object v2, Lj$/util/stream/t1;->a:Lj$/util/stream/t1;
 
@@ -527,9 +527,9 @@
     :goto_1
     int-to-long p1, v0
 
-    cmp-long v1, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gez v1, :cond_2
+    if-gez p1, :cond_2
 
     invoke-interface {p0, p5}, Lj$/util/s$a;->k(Lj$/util/function/f;)Z
 
@@ -552,7 +552,7 @@
 .end method
 
 .method public static o(Lj$/util/stream/w1;JJLj$/util/function/m;)Lj$/util/stream/w1;
-    .locals 5
+    .locals 4
 
     const-wide/16 v0, 0x0
 
@@ -587,14 +587,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     int-to-long v2, v1
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     sget-object v2, Lj$/util/stream/v1;->a:Lj$/util/stream/v1;
 
@@ -612,9 +612,9 @@
     :goto_1
     int-to-long p1, v0
 
-    cmp-long v1, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gez v1, :cond_2
+    if-gez p1, :cond_2
 
     invoke-interface {p0, p5}, Lj$/util/s$b;->g(Lj$/util/function/l;)Z
 
@@ -637,7 +637,7 @@
 .end method
 
 .method public static p(Lj$/util/stream/y1;JJLj$/util/function/m;)Lj$/util/stream/y1;
-    .locals 5
+    .locals 4
 
     const-wide/16 v0, 0x0
 
@@ -672,14 +672,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     int-to-long v2, v1
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     sget-object v2, Lj$/util/stream/x1;->a:Lj$/util/stream/x1;
 
@@ -697,9 +697,9 @@
     :goto_1
     int-to-long p1, v0
 
-    cmp-long v1, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gez v1, :cond_2
+    if-gez p1, :cond_2
 
     invoke-interface {p0, p5}, Lj$/util/s$c;->i(Lj$/util/function/q;)Z
 
@@ -722,21 +722,21 @@
 .end method
 
 .method public static q(Lj$/util/stream/A1;JJLj$/util/function/m;)Lj$/util/stream/A1;
-    .locals 5
+    .locals 4
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     invoke-interface {p0}, Lj$/util/stream/A1;->count()J
 
     move-result-wide v0
 
-    cmp-long v2, p3, v0
+    cmp-long v0, p3, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-object p0
 
@@ -755,14 +755,14 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     int-to-long v2, v1
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     sget-object v2, Lj$/util/stream/n1;->a:Lj$/util/stream/n1;
 
@@ -780,9 +780,9 @@
     :goto_1
     int-to-long p1, v0
 
-    cmp-long v1, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gez v1, :cond_2
+    if-gez p1, :cond_2
 
     invoke-interface {p0, p5}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
 

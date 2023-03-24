@@ -224,7 +224,7 @@
 
     move-result v3
 
-    mul-int v1, v1, v3
+    mul-int/2addr v1, v3
 
     sub-int/2addr v0, v1
 
@@ -305,7 +305,7 @@
 
     move-result v3
 
-    mul-int v1, v1, v3
+    mul-int/2addr v1, v3
 
     add-int/2addr v0, v1
 
@@ -502,7 +502,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v13
 
     :goto_0
     iput v0, v9, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;->textY:I
@@ -582,7 +582,7 @@
 
     move-result v8
 
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_1
     if-ge v14, v8, :cond_3
@@ -807,7 +807,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     add-int/2addr v0, v3
 
@@ -867,7 +867,7 @@
 
     move-result v1
 
-    mul-int v4, v4, v1
+    mul-int/2addr v4, v1
 
     add-int/2addr v3, v4
 
@@ -1162,7 +1162,7 @@
     goto :goto_5
 
     :cond_d
-    const/4 v0, 0x0
+    move v0, v13
 
     .line 8893
     :goto_5
@@ -1238,7 +1238,7 @@
     add-int/2addr v4, v0
 
     :cond_11
-    const/4 v0, 0x0
+    move v0, v13
 
     .line 8898
     :goto_8

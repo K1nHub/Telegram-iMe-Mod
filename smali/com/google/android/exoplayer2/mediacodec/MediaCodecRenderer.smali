@@ -677,6 +677,8 @@
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/mediacodec/BatchBuffer;->clear()V
 
+    const/4 v0, 0x0
+
     goto :goto_0
 
     :cond_0
@@ -685,10 +687,10 @@
     return v0
 
     :cond_1
-    :goto_0
-    const/4 v0, 0x0
+    move v0, v13
 
     .line 2233
+    :goto_0
     iget-boolean v1, v15, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->inputStreamEnded:Z
 
     if-eqz v1, :cond_2
@@ -795,13 +797,13 @@
     goto :goto_1
 
     :cond_7
-    const/4 v14, 0x0
+    move v14, v0
 
     goto :goto_2
 
     :cond_8
     :goto_1
-    const/4 v14, 0x1
+    move v14, v1
 
     :goto_2
     return v14
@@ -1658,10 +1660,8 @@
 
     goto :goto_0
 
-    :catch_0
-    nop
-
     .line 1830
+    :catch_0
     invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->processEndOfStream()V
 
     .line 1831
@@ -1802,9 +1802,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_9
+    if-nez v1, :cond_9
 
     iget v1, v0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
@@ -1816,9 +1816,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_9
+    if-eqz v3, :cond_9
 
     .line 1879
     iput-wide v1, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
@@ -1842,16 +1842,16 @@
 
     iget-wide v2, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_a
+    if-nez v0, :cond_a
 
-    const/4 v0, 0x1
+    move/from16 v0, v16
 
     goto :goto_1
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v14
 
     :goto_1
     iput-boolean v0, v15, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->isLastOutputBuffer:Z
@@ -1891,7 +1891,7 @@
 
     iget-object v3, v15, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->outputFormat:Lcom/google/android/exoplayer2/Format;
     :try_end_1
-    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
 
     move-object/from16 v0, p0
 
@@ -1901,7 +1901,7 @@
 
     move-wide/from16 v3, p3
 
-    const/16 v18, 0x0
+    move/from16 v18, v14
 
     move-object/from16 v14, v17
 
@@ -1911,20 +1911,15 @@
 
     move-result v0
     :try_end_2
-    .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_3
-
-    :catch_1
-    nop
+    .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_2
 
     goto :goto_2
 
-    :catch_2
-    const/16 v18, 0x0
+    :catch_1
+    move/from16 v18, v14
 
     .line 1904
-    :goto_2
+    :catch_2
     invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->processEndOfStream()V
 
     .line 1905
@@ -1939,7 +1934,7 @@
     return v18
 
     :cond_d
-    const/16 v18, 0x0
+    move/from16 v18, v14
 
     .line 1912
     iget-object v5, v15, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->codec:Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter;
@@ -1973,7 +1968,7 @@
 
     move-result v0
 
-    :goto_3
+    :goto_2
     if-eqz v0, :cond_10
 
     .line 1928
@@ -1992,15 +1987,15 @@
 
     if-eqz v0, :cond_e
 
-    const/4 v14, 0x1
+    move/from16 v14, v16
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_e
-    const/4 v14, 0x0
+    move/from16 v14, v18
 
     .line 1930
-    :goto_4
+    :goto_3
     invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->resetOutputBuffer()V
 
     if-nez v14, :cond_f
@@ -2109,7 +2104,7 @@
 
     if-eqz p3, :cond_6
 
-    const/4 p2, 0x0
+    move p2, v0
 
     goto :goto_0
 
@@ -2305,7 +2300,7 @@
 
     if-ne v0, v3, :cond_8
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1232
     :goto_1
@@ -3079,7 +3074,7 @@
 
     if-ge v0, v3, :cond_0
 
-    const/high16 v3, -0x40800000    # -1.0f
+    move v3, v2
 
     goto :goto_0
 
@@ -3304,13 +3299,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v8
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v0, 0x1
+    move v0, v9
 
     :goto_3
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsEosPropagation:Z
@@ -3335,7 +3330,7 @@
 
     if-eqz v0, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v9
 
     :cond_6
     iput-boolean v8, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->codecNeedsAdaptationWorkaroundBuffer:Z
@@ -3414,7 +3409,7 @@
 .end method
 
 .method private isDecodeOnlyBuffer(J)Z
-    .locals 6
+    .locals 5
 
     .line 2155
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decodeOnlyPresentationTimestamps:Ljava/util/ArrayList;
@@ -3425,7 +3420,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -3443,9 +3438,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v3, p1
+    cmp-long v3, v3, p1
 
-    if-nez v5, :cond_0
+    if-nez v3, :cond_0
 
     .line 2158
     iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->decodeOnlyPresentationTimestamps:Ljava/util/ArrayList;
@@ -3515,7 +3510,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     return v1
@@ -4057,16 +4052,16 @@
 .end method
 
 .method private setOutputStreamOffsetUs(J)V
-    .locals 3
+    .locals 2
 
     .line 2067
     iput-wide p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->outputStreamOffsetUs:J
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 2069
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->onOutputStreamOffsetUsChanged(J)V
@@ -4090,16 +4085,16 @@
 .end method
 
 .method private shouldContinueRendering(J)Z
-    .locals 5
+    .locals 4
 
     .line 1157
     iget-wide v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->renderTimeLimitMs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 1158
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -4110,9 +4105,9 @@
 
     iget-wide p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->renderTimeLimitMs:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-gez v2, :cond_0
+    if-gez p1, :cond_0
 
     goto :goto_0
 
@@ -4443,12 +4438,12 @@
 
     if-lt v0, v2, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -4607,7 +4602,7 @@
 .end method
 
 .method public isReady()Z
-    .locals 5
+    .locals 4
 
     .line 1665
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->inputFormat:Lcom/google/android/exoplayer2/Format;
@@ -4632,9 +4627,9 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 1669
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -4643,9 +4638,9 @@
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->codecHotswapDeadlineMs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     :cond_0
     const/4 v0, 0x1
@@ -4772,7 +4767,7 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
@@ -5050,12 +5045,12 @@
 
     if-eq v2, v3, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_0
     if-eqz v2, :cond_5
@@ -5070,13 +5065,13 @@
     goto :goto_1
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v6
 
     goto :goto_2
 
     :cond_5
     :goto_1
-    const/4 v3, 0x1
+    move v3, v0
 
     :goto_2
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -5174,7 +5169,7 @@
     goto :goto_3
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v6
 
     :cond_b
     :goto_3
@@ -5203,7 +5198,7 @@
     if-nez v0, :cond_d
 
     :goto_4
-    const/16 v7, 0x10
+    move v7, v9
 
     goto :goto_6
 
@@ -5231,7 +5226,7 @@
     if-nez v0, :cond_10
 
     :goto_5
-    const/4 v7, 0x2
+    move v7, v10
 
     goto :goto_6
 
@@ -5240,7 +5235,7 @@
     invoke-direct {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->drainAndReinitializeCodec()V
 
     :cond_10
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 1535
     :goto_6
@@ -5529,7 +5524,7 @@
 .end method
 
 .method protected onStreamChanged([Lcom/google/android/exoplayer2/Format;JJ)V
-    .locals 5
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ExoPlaybackException;
@@ -5541,26 +5536,26 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 p1, 0x1
+    cmp-long p1, v0, v2
 
-    cmp-long v4, v0, v2
+    const/4 v0, 0x1
 
-    if-nez v4, :cond_1
+    if-nez p1, :cond_1
 
     .line 650
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->outputStreamStartPositionUs:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->outputStreamStartPositionUs:J
 
-    cmp-long v4, v0, v2
+    cmp-long p1, v4, v2
 
-    if-nez v4, :cond_0
+    if-nez p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 651
     iput-wide p2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->outputStreamStartPositionUs:J
@@ -5572,74 +5567,74 @@
 
     .line 654
     :cond_1
-    iget v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetCount:I
+    iget p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetCount:I
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetsUs:[J
 
     array-length v1, v1
 
-    if-ne v0, v1, :cond_2
+    if-ne p1, v1, :cond_2
 
     .line 655
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "Too many stream changes, so dropping offset: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetsUs:[J
 
     iget v2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetCount:I
 
-    sub-int/2addr v2, p1
+    sub-int/2addr v2, v0
 
     aget-wide v2, v1, v2
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
     const-string v1, "MediaCodecRenderer"
 
-    invoke-static {v1, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_2
-    add-int/2addr v0, p1
+    add-int/2addr p1, v0
 
     .line 660
-    iput v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetCount:I
+    iput p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetCount:I
 
     .line 662
     :goto_1
-    iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamStartPositionsUs:[J
+    iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamStartPositionsUs:[J
 
     iget v1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetCount:I
 
     add-int/lit8 v2, v1, -0x1
 
-    aput-wide p2, v0, v2
+    aput-wide p2, p1, v2
 
     .line 663
-    iget-object p2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetsUs:[J
+    iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamOffsetsUs:[J
 
-    add-int/lit8 p3, v1, -0x1
+    add-int/lit8 p2, v1, -0x1
 
-    aput-wide p4, p2, p3
+    aput-wide p4, p1, p2
 
     .line 664
-    iget-object p2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamSwitchTimesUs:[J
+    iget-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->pendingOutputStreamSwitchTimesUs:[J
 
-    sub-int/2addr v1, p1
+    sub-int/2addr v1, v0
 
-    iget-wide p3, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->largestQueuedPresentationTimeUs:J
+    iget-wide p2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer;->largestQueuedPresentationTimeUs:J
 
-    aput-wide p3, p2, v1
+    aput-wide p2, p1, v1
 
     :goto_2
     return-void
@@ -5968,7 +5963,7 @@
 
     if-eqz p2, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_8
     if-eqz v1, :cond_9
@@ -6356,7 +6351,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, p2
 
     :goto_0
     if-nez p1, :cond_2

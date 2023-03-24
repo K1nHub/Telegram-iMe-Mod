@@ -530,7 +530,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_3
     invoke-virtual {p1, v0, v7, v1, v2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

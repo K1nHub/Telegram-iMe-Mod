@@ -263,7 +263,7 @@ public class PaintTypeface {
             r3 = 6
             r2.skipBytes(r3)     // Catch: java.lang.Exception -> L9e java.lang.Throwable -> Lab
             r3 = 0
-            r4 = 0
+            r4 = r3
         L2d:
             if (r4 >= r1) goto L9a
             int r5 = r2.readInt()     // Catch: java.lang.Exception -> L9e java.lang.Throwable -> Lab

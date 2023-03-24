@@ -176,12 +176,12 @@
 
     if-eqz v4, :cond_4
 
-    const/4 p2, -0x1
+    move p2, v5
 
     goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_3
 
@@ -413,9 +413,7 @@
 
     const/16 v1, 0x6e
 
-    const/16 v3, 0x6e
-
-    goto :goto_1
+    goto :goto_0
 
     .line 8
     :cond_0
@@ -456,8 +454,7 @@
     iput-object v1, p0, Lcom/android/billingclient/api/ProxyBillingActivity;->priceChangeResultReceiver:Landroid/os/ResultReceiver;
 
     :cond_1
-    :goto_0
-    const/16 v3, 0x64
+    move v3, v5
 
     goto :goto_1
 
@@ -501,14 +498,15 @@
 
     const/16 v1, 0x65
 
-    const/16 v3, 0x65
+    :goto_0
+    move v3, v1
 
     goto :goto_1
 
     :cond_3
-    move-object v0, v11
+    move v3, v5
 
-    goto :goto_0
+    move-object v0, v11
 
     .line 7
     :goto_1

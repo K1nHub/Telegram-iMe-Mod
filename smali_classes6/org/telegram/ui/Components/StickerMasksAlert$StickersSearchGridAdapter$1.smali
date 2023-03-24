@@ -143,7 +143,7 @@
 
     const/4 p4, 0x0
 
-    const/4 v0, 0x0
+    move v0, p4
 
     :goto_0
     if-ge p4, p1, :cond_3
@@ -551,7 +551,7 @@
 
     move-result v6
 
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_0
     if-ge v8, v6, :cond_5
@@ -731,7 +731,7 @@
 
     move-result v6
 
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_3
     if-ge v8, v6, :cond_7
@@ -910,7 +910,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_4
     const/16 v6, 0x20

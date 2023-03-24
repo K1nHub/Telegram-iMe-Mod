@@ -363,6 +363,19 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
     }
 
     @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
+    public void showActivationConfirmationDialog(DialogModel dialogModel, Callbacks$Callback callbacks$Callback) {
+        ShowActivationConfirmationDialogCommand showActivationConfirmationDialogCommand = new ShowActivationConfirmationDialogCommand(this, dialogModel, callbacks$Callback);
+        this.viewCommands.beforeApply(showActivationConfirmationDialogCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showActivationConfirmationDialog(dialogModel, callbacks$Callback);
+        }
+        this.viewCommands.afterApply(showActivationConfirmationDialogCommand);
+    }
+
+    @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
     public void openImportWalletScreen(String str, String str2) {
         OpenImportWalletScreenCommand openImportWalletScreenCommand = new OpenImportWalletScreenCommand(this, str, str2);
         this.viewCommands.beforeApply(openImportWalletScreenCommand);
@@ -881,6 +894,25 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletTokenDetailsView walletTokenDetailsView) {
             walletTokenDetailsView.showAlreadyCreatedWalletWarningDialog(this.dialogModel, this.walletAddress, this.action);
+        }
+    }
+
+    /* compiled from: WalletTokenDetailsView$$State.java */
+    /* renamed from: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowActivationConfirmationDialogCommand */
+    /* loaded from: classes3.dex */
+    public class ShowActivationConfirmationDialogCommand extends ViewCommand<WalletTokenDetailsView> {
+        public final Callbacks$Callback action;
+        public final DialogModel dialogModel;
+
+        ShowActivationConfirmationDialogCommand(WalletTokenDetailsView$$State walletTokenDetailsView$$State, DialogModel dialogModel, Callbacks$Callback callbacks$Callback) {
+            super("showActivationConfirmationDialog", OneExecutionStateStrategy.class);
+            this.dialogModel = dialogModel;
+            this.action = callbacks$Callback;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletTokenDetailsView walletTokenDetailsView) {
+            walletTokenDetailsView.showActivationConfirmationDialog(this.dialogModel, this.action);
         }
     }
 

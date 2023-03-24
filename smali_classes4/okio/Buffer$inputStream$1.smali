@@ -60,9 +60,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method public close()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public read()I
-    .locals 5
+    .locals 4
 
     .line 118
     iget-object v0, p0, Lokio/Buffer$inputStream$1;->this$0:Lokio/Buffer;
@@ -83,9 +83,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 119
     iget-object v0, p0, Lokio/Buffer$inputStream$1;->this$0:Lokio/Buffer;

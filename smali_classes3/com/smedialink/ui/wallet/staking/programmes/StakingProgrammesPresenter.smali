@@ -303,7 +303,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -341,7 +341,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 231
     :goto_1
@@ -609,14 +609,14 @@
 
     if-eqz p4, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
 
     if-eqz p3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 75
     :cond_1
@@ -1115,7 +1115,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, -0x1
+    move v1, v3
 
     :goto_1
     if-ne v1, v3, :cond_2
@@ -1151,7 +1151,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
@@ -1265,9 +1265,9 @@
     .line 136
     sget-object v0, Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType;->Companion:Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType$Companion;
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    invoke-virtual {v0, p2}, Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType$Companion;->mapByOrdinal(I)Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType;
+    invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType$Companion;->mapByOrdinal(I)Lcom/smedialink/storage/domain/model/staking/StakingProgrammesFilterType;
 
     move-result-object p1
 
@@ -1332,7 +1332,7 @@
 .end method
 
 .method public final onStakingProgrammeClick(Lcom/smedialink/model/staking/StakingProgrammeItem;)V
-    .locals 7
+    .locals 6
 
     const-string v0, "stakingProgrammeItem"
 
@@ -1368,9 +1368,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
     const/4 v2, 0x1
 

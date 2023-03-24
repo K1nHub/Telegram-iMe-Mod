@@ -105,7 +105,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 61
     :goto_1
@@ -134,12 +134,12 @@
 
     if-ne v7, v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_2
     if-ne v2, v4, :cond_6
@@ -151,7 +151,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_3
     and-int/2addr v0, v1
@@ -205,12 +205,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-nez v1, :cond_1
@@ -246,9 +246,9 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v7, p0, v5
+    cmp-long v5, p0, v5
 
-    if-eqz v7, :cond_2
+    if-eqz v5, :cond_2
 
     const/4 v7, 0x1
 

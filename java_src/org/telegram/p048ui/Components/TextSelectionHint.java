@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TextSelectionHint */
@@ -28,7 +28,7 @@ import org.telegram.p048ui.ActionBar.Theme;
 public class TextSelectionHint extends View {
 
     /* renamed from: a */
-    Animator f1815a;
+    Animator f1816a;
     int animateToEnd;
     int animateToStart;
     int currentEnd;
@@ -79,12 +79,12 @@ public class TextSelectionHint extends View {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (getMeasuredWidth() != this.lastW || this.textLayout == null) {
-            Animator animator = this.f1815a;
+            Animator animator = this.f1816a;
             if (animator != null) {
                 animator.removeAllListeners();
-                this.f1815a.cancel();
+                this.f1816a.cancel();
             }
-            String string = LocaleController.getString("TextSelectionHit", C3286R.string.TextSelectionHit);
+            String string = LocaleController.getString("TextSelectionHit", C3301R.string.TextSelectionHit);
             Matcher matcher = Pattern.compile("\\*\\*.*\\*\\*").matcher(string);
             String group = matcher.matches() ? matcher.group() : null;
             String replace = string.replace("**", "");
@@ -203,10 +203,10 @@ public class TextSelectionHint extends View {
     private void roundedRect(Path path, float f, float f2, float f3, float f4, float f5, float f6, boolean z, boolean z2) {
         path.reset();
         if (f5 < BitmapDescriptorFactory.HUE_RED) {
-            f5 = BitmapDescriptorFactory.HUE_RED;
+            f5 = 0.0f;
         }
         if (f6 < BitmapDescriptorFactory.HUE_RED) {
-            f6 = BitmapDescriptorFactory.HUE_RED;
+            f6 = 0.0f;
         }
         float f7 = f3 - f;
         float f8 = f4 - f2;
@@ -268,10 +268,10 @@ public class TextSelectionHint extends View {
 
     public void show() {
         AndroidUtilities.cancelRunOnUIThread(this.dismissTunnable);
-        Animator animator = this.f1815a;
+        Animator animator = this.f1816a;
         if (animator != null) {
             animator.removeAllListeners();
-            this.f1815a.cancel();
+            this.f1816a.cancel();
         }
         if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
             this.showOnMeasure = true;
@@ -327,7 +327,7 @@ public class TextSelectionHint extends View {
         ofFloat4.setDuration(900L);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-        this.f1815a = animatorSet;
+        this.f1816a = animatorSet;
         animatorSet.start();
         AndroidUtilities.runOnUIThread(this.dismissTunnable, 5000L);
     }
@@ -369,10 +369,10 @@ public class TextSelectionHint extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void hideInternal() {
-        Animator animator = this.f1815a;
+        Animator animator = this.f1816a;
         if (animator != null) {
             animator.removeAllListeners();
-            this.f1815a.cancel();
+            this.f1816a.cancel();
         }
         this.showing = false;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.prepareProgress, BitmapDescriptorFactory.HUE_RED);
@@ -388,7 +388,7 @@ public class TextSelectionHint extends View {
                 TextSelectionHint.this.setVisibility(4);
             }
         });
-        this.f1815a = ofFloat;
+        this.f1816a = ofFloat;
         ofFloat.start();
     }
 

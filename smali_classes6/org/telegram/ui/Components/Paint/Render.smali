@@ -61,9 +61,9 @@
     .line 116
     invoke-virtual {v6, v5}, Lorg/telegram/ui/Components/Paint/RenderState;->setPosition(I)V
 
-    const/4 v7, 0x0
+    move v7, v5
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     if-ge v7, v2, :cond_3
@@ -346,16 +346,16 @@
     :cond_2
     add-int/lit8 v7, v7, 0x1
 
-    move-object/from16 v6, p0
-
-    const/4 v1, 0x0
+    move v1, v6
 
     const/4 v5, 0x0
+
+    move-object/from16 v6, p0
 
     goto/16 :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v5
 
     .line 192
     invoke-virtual {v3, v1}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
@@ -509,17 +509,17 @@
 
     iget-wide v6, v1, Lorg/telegram/ui/Components/Paint/Point;->z:D
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     iget v6, v8, Lorg/telegram/ui/Components/Paint/RenderState;->scale:F
 
     float-to-double v6, v6
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     const-wide/high16 v6, 0x3ff0000000000000L    # 1.0
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     iget v12, v8, Lorg/telegram/ui/Components/Paint/RenderState;->viewportScale:F
 
@@ -532,7 +532,7 @@
     .line 53
     iget v4, v8, Lorg/telegram/ui/Components/Paint/RenderState;->spacing:F
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
     const/high16 v5, 0x3f800000    # 1.0f
 
@@ -563,7 +563,7 @@
 
     const v3, 0x3f933333    # 1.15f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v5, v2}, Ljava/lang/Math;->min(FF)F
 
@@ -617,7 +617,7 @@
 
     move-wide/from16 v17, v3
 
-    const/4 v3, 0x1
+    move v3, v6
 
     :goto_1
     cmpg-double v4, v17, v9
@@ -650,7 +650,7 @@
 
     move v5, v11
 
-    const/4 v1, 0x1
+    move v1, v6
 
     move/from16 v6, v19
 
@@ -680,18 +680,18 @@
 
     add-double v17, v17, v13
 
-    move-object/from16 v1, p1
+    move v6, v1
 
     move/from16 v7, v19
 
-    const/4 v6, 0x1
+    move-object/from16 v1, p1
 
     goto :goto_1
 
     :cond_4
-    move/from16 v19, v7
+    move v1, v6
 
-    const/4 v1, 0x1
+    move/from16 v19, v7
 
     :goto_3
     if-eqz v3, :cond_5
@@ -735,11 +735,11 @@
 
     iget v1, p1, Lorg/telegram/ui/Components/Paint/RenderState;->scale:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p1, Lorg/telegram/ui/Components/Paint/RenderState;->viewportScale:F
 
@@ -770,7 +770,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 95
     :goto_0

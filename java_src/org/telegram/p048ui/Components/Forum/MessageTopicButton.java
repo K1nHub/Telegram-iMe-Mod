@@ -69,24 +69,19 @@ public class MessageTopicButton {
         this.resourcesProvider = resourcesProvider;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:116:0x0547, code lost:
-        if (r1.type == 5) goto L97;
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x0544, code lost:
+        if (r1.type == 5) goto L96;
      */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0542  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x054a  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x055f  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0567  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0570  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0575  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0584  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0595  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0572  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0581  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0592  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public int set(org.telegram.p048ui.Cells.ChatMessageCell r29, org.telegram.messenger.MessageObject r30, org.telegram.tgnet.TLRPC$TL_forumTopic r31, int r32) {
         /*
-            Method dump skipped, instructions count: 1491
+            Method dump skipped, instructions count: 1488
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Forum.MessageTopicButton.set(org.telegram.ui.Cells.ChatMessageCell, org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$TL_forumTopic, int):int");
@@ -211,6 +206,7 @@ public class MessageTopicButton {
 
     public void draw(Canvas canvas, float f, float f2, float f3) {
         Paint paint;
+        TextPaint textPaint;
         int i;
         int dominantColor;
         if (this.topicIconWaiting) {
@@ -224,9 +220,9 @@ public class MessageTopicButton {
         MessageObject messageObject = this.lastMessageObject;
         if (messageObject != null && messageObject.shouldDrawWithoutBackground()) {
             this.topicPath.offset(f, f2);
-            int i2 = -1;
-            int i3 = (f3 > 1.0f ? 1 : (f3 == 1.0f ? 0 : -1));
-            if (i3 < 0) {
+            int i2 = (f3 > 1.0f ? 1 : (f3 == 1.0f ? 0 : -1));
+            int i3 = -1;
+            if (i2 < 0) {
                 i = getThemedPaint("paintChatActionBackground").getAlpha();
                 getThemedPaint("paintChatActionBackground").setAlpha((int) (i * f3));
             } else {
@@ -234,17 +230,18 @@ public class MessageTopicButton {
             }
             canvas.drawPath(this.topicPath, getThemedPaint("paintChatActionBackground"));
             if (hasGradientService()) {
-                if (i3 < 0) {
-                    i2 = Theme.chat_actionBackgroundGradientDarkenPaint.getAlpha();
-                    Theme.chat_actionBackgroundGradientDarkenPaint.setAlpha((int) (i2 * f3));
+                if (i2 < 0) {
+                    int alpha = Theme.chat_actionBackgroundGradientDarkenPaint.getAlpha();
+                    Theme.chat_actionBackgroundGradientDarkenPaint.setAlpha((int) (alpha * f3));
+                    i3 = alpha;
                 }
                 canvas.drawPath(this.topicPath, Theme.chat_actionBackgroundGradientDarkenPaint);
             }
             if (i >= 0) {
                 getThemedPaint("paintChatActionBackground").setAlpha(i);
             }
-            if (i2 >= 0) {
-                Theme.chat_actionBackgroundGradientDarkenPaint.setAlpha(i2);
+            if (i3 >= 0) {
+                Theme.chat_actionBackgroundGradientDarkenPaint.setAlpha(i3);
             }
             this.topicPath.offset(-f, -f2);
             canvas.translate(f, f2);
@@ -257,10 +254,10 @@ public class MessageTopicButton {
                 } else {
                     paint.setColor(this.topicBackgroundColor);
                 }
-                int alpha = this.topicPaint.getAlpha();
-                this.topicPaint.setAlpha((int) (alpha * f3));
+                int alpha2 = this.topicPaint.getAlpha();
+                this.topicPaint.setAlpha((int) (alpha2 * f3));
                 canvas.drawPath(this.topicPath, this.topicPaint);
-                this.topicPaint.setAlpha(alpha);
+                this.topicPaint.setAlpha(alpha2);
             }
         }
         if (this.topicHitRect == null) {
@@ -282,17 +279,16 @@ public class MessageTopicButton {
             canvas.translate((AndroidUtilities.m50dp(this.isGeneralTopic ? 13 : 17) + Theme.chat_topicTextPaint.getTextSize()) - this.topicNameLeft, AndroidUtilities.m51dp(4.5f));
             AnimatedColor animatedColor2 = this.topicNameColorAnimated;
             if (animatedColor2 != null) {
-                TextPaint textPaint = Theme.chat_topicTextPaint;
-                i4 = animatedColor2.set(this.topicNameColor);
-                textPaint.setColor(i4);
-            } else {
                 TextPaint textPaint2 = Theme.chat_topicTextPaint;
+                i4 = animatedColor2.set(this.topicNameColor);
+                textPaint2.setColor(i4);
+            } else {
+                TextPaint textPaint3 = Theme.chat_topicTextPaint;
                 int i5 = this.topicNameColor;
-                textPaint2.setColor(i5);
+                textPaint3.setColor(i5);
                 i4 = i5;
             }
-            TextPaint textPaint3 = Theme.chat_topicTextPaint;
-            textPaint3.setAlpha((int) (textPaint3.getAlpha() * f3 * (this.topicClosed ? 0.7f : 1.0f)));
+            Theme.chat_topicTextPaint.setAlpha((int) (textPaint.getAlpha() * f3 * (this.topicClosed ? 0.7f : 1.0f)));
             this.topicNameLayout.draw(canvas);
             canvas.restore();
         }

@@ -202,7 +202,7 @@ public final class MediaPeriodQueue {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -264,21 +264,21 @@ public final class MediaPeriodQueue {
             com.google.android.exoplayer2.Timeline$Period r1 = r0.period
             int r4 = r3.adGroupIndex
             boolean r1 = r1.isServerSideInsertedAdGroup(r4)
+        L6a:
             r11 = r1
-            goto L7d
+            goto L7c
         L6c:
             int r1 = r3.nextAdGroupIndex
-            if (r1 == r4) goto L7b
+            if (r1 == r4) goto L7a
             com.google.android.exoplayer2.Timeline$Period r4 = r0.period
             boolean r1 = r4.isServerSideInsertedAdGroup(r1)
-            if (r1 == 0) goto L7b
+            if (r1 == 0) goto L7a
             r1 = 1
-            r11 = 1
-            goto L7d
-        L7b:
+            goto L6a
+        L7a:
             r1 = 0
-            r11 = 0
-        L7d:
+            goto L6a
+        L7c:
             com.google.android.exoplayer2.MediaPeriodInfo r15 = new com.google.android.exoplayer2.MediaPeriodInfo
             long r4 = r2.startPositionUs
             long r1 = r2.requestedContentPositionUs
@@ -446,123 +446,64 @@ public final class MediaPeriodQueue {
         return new MediaPeriodInfo(mediaPeriodId, (adDurationUs == C0468C.TIME_UNSET || adResumePositionUs < adDurationUs) ? adResumePositionUs : Math.max(0L, adDurationUs - 1), j, C0468C.TIME_UNSET, adDurationUs, this.period.isServerSideInsertedAdGroup(mediaPeriodId.adGroupIndex), false, false, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x002a, code lost:
-        if (r9.isServerSideInsertedAdGroup(r9.getRemovedAdGroupCount()) != false) goto L7;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private com.google.android.exoplayer2.MediaPeriodInfo getMediaPeriodInfoForContent(com.google.android.exoplayer2.Timeline r25, java.lang.Object r26, long r27, long r29, long r31) {
-        /*
-            r24 = this;
-            r0 = r24
-            r1 = r25
-            r2 = r26
-            r3 = r27
-            com.google.android.exoplayer2.Timeline$Period r5 = r0.period
-            r1.getPeriodByUid(r2, r5)
-            com.google.android.exoplayer2.Timeline$Period r5 = r0.period
-            int r5 = r5.getAdGroupIndexAfterPositionUs(r3)
-            r6 = 1
-            r7 = -1
-            r8 = 0
-            if (r5 != r7) goto L2d
-            com.google.android.exoplayer2.Timeline$Period r9 = r0.period
-            int r9 = r9.getAdGroupCount()
-            if (r9 <= 0) goto L4c
-            com.google.android.exoplayer2.Timeline$Period r9 = r0.period
-            int r10 = r9.getRemovedAdGroupCount()
-            boolean r9 = r9.isServerSideInsertedAdGroup(r10)
-            if (r9 == 0) goto L4c
-            goto L4a
-        L2d:
-            com.google.android.exoplayer2.Timeline$Period r9 = r0.period
-            boolean r9 = r9.isServerSideInsertedAdGroup(r5)
-            if (r9 == 0) goto L4c
-            com.google.android.exoplayer2.Timeline$Period r9 = r0.period
-            long r9 = r9.getAdGroupTimeUs(r5)
-            com.google.android.exoplayer2.Timeline$Period r11 = r0.period
-            long r12 = r11.durationUs
-            int r14 = (r9 > r12 ? 1 : (r9 == r12 ? 0 : -1))
-            if (r14 != 0) goto L4c
-            boolean r9 = r11.hasPlayedAdGroup(r5)
-            if (r9 == 0) goto L4c
-            r5 = -1
-        L4a:
-            r9 = 1
-            goto L4d
-        L4c:
-            r9 = 0
-        L4d:
-            com.google.android.exoplayer2.source.MediaSource$MediaPeriodId r11 = new com.google.android.exoplayer2.source.MediaSource$MediaPeriodId
-            r12 = r31
-            r11.<init>(r2, r12, r5)
-            boolean r2 = r0.isLastInPeriod(r11)
-            boolean r22 = r0.isLastInWindow(r1, r11)
-            boolean r23 = r0.isLastInTimeline(r1, r11, r2)
-            if (r5 == r7) goto L6d
-            com.google.android.exoplayer2.Timeline$Period r1 = r0.period
-            boolean r1 = r1.isServerSideInsertedAdGroup(r5)
-            if (r1 == 0) goto L6d
-            r20 = 1
-            goto L6f
-        L6d:
-            r20 = 0
-        L6f:
-            r12 = -9223372036854775807(0x8000000000000001, double:-4.9E-324)
-            if (r5 == r7) goto L7f
-            com.google.android.exoplayer2.Timeline$Period r1 = r0.period
-            long r14 = r1.getAdGroupTimeUs(r5)
-        L7c:
-            r16 = r14
-            goto L88
-        L7f:
-            if (r9 == 0) goto L86
-            com.google.android.exoplayer2.Timeline$Period r1 = r0.period
-            long r14 = r1.durationUs
-            goto L7c
-        L86:
-            r16 = r12
-        L88:
-            int r1 = (r16 > r12 ? 1 : (r16 == r12 ? 0 : -1))
-            if (r1 == 0) goto L96
-            r14 = -9223372036854775808
-            int r1 = (r16 > r14 ? 1 : (r16 == r14 ? 0 : -1))
-            if (r1 != 0) goto L93
-            goto L96
-        L93:
-            r18 = r16
-            goto L9c
-        L96:
-            com.google.android.exoplayer2.Timeline$Period r1 = r0.period
-            long r14 = r1.durationUs
-            r18 = r14
-        L9c:
-            int r1 = (r18 > r12 ? 1 : (r18 == r12 ? 0 : -1))
-            if (r1 == 0) goto Lb3
-            int r1 = (r3 > r18 ? 1 : (r3 == r18 ? 0 : -1))
-            if (r1 < 0) goto Lb3
-            if (r23 != 0) goto Laa
-            if (r9 != 0) goto La9
-            goto Laa
-        La9:
-            r6 = 0
-        Laa:
-            r3 = 0
-            long r5 = (long) r6
-            long r5 = r18 - r5
-            long r3 = java.lang.Math.max(r3, r5)
-        Lb3:
-            r12 = r3
-            com.google.android.exoplayer2.MediaPeriodInfo r1 = new com.google.android.exoplayer2.MediaPeriodInfo
-            r10 = r1
-            r14 = r29
-            r21 = r2
-            r10.<init>(r11, r12, r14, r16, r18, r20, r21, r22, r23)
-            return r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.MediaPeriodQueue.getMediaPeriodInfoForContent(com.google.android.exoplayer2.Timeline, java.lang.Object, long, long, long):com.google.android.exoplayer2.MediaPeriodInfo");
+    private MediaPeriodInfo getMediaPeriodInfoForContent(Timeline timeline, Object obj, long j, long j2, long j3) {
+        boolean z;
+        long j4;
+        long j5;
+        long j6;
+        long j7 = j;
+        timeline.getPeriodByUid(obj, this.period);
+        int adGroupIndexAfterPositionUs = this.period.getAdGroupIndexAfterPositionUs(j7);
+        int i = 1;
+        if (adGroupIndexAfterPositionUs == -1) {
+            if (this.period.getAdGroupCount() > 0) {
+                Timeline.Period period = this.period;
+                if (period.isServerSideInsertedAdGroup(period.getRemovedAdGroupCount())) {
+                    z = true;
+                }
+            }
+            z = false;
+        } else {
+            if (this.period.isServerSideInsertedAdGroup(adGroupIndexAfterPositionUs)) {
+                long adGroupTimeUs = this.period.getAdGroupTimeUs(adGroupIndexAfterPositionUs);
+                Timeline.Period period2 = this.period;
+                if (adGroupTimeUs == period2.durationUs && period2.hasPlayedAdGroup(adGroupIndexAfterPositionUs)) {
+                    z = true;
+                    adGroupIndexAfterPositionUs = -1;
+                }
+            }
+            z = false;
+        }
+        MediaSource.MediaPeriodId mediaPeriodId = new MediaSource.MediaPeriodId(obj, j3, adGroupIndexAfterPositionUs);
+        boolean isLastInPeriod = isLastInPeriod(mediaPeriodId);
+        boolean isLastInWindow = isLastInWindow(timeline, mediaPeriodId);
+        boolean isLastInTimeline = isLastInTimeline(timeline, mediaPeriodId, isLastInPeriod);
+        boolean z2 = adGroupIndexAfterPositionUs != -1 && this.period.isServerSideInsertedAdGroup(adGroupIndexAfterPositionUs);
+        if (adGroupIndexAfterPositionUs != -1) {
+            j5 = this.period.getAdGroupTimeUs(adGroupIndexAfterPositionUs);
+        } else if (z) {
+            j5 = this.period.durationUs;
+        } else {
+            j4 = -9223372036854775807L;
+            j6 = (j4 != C0468C.TIME_UNSET || j4 == Long.MIN_VALUE) ? this.period.durationUs : j4;
+            if (j6 != C0468C.TIME_UNSET && j7 >= j6) {
+                if (!isLastInTimeline && z) {
+                    i = 0;
+                }
+                j7 = Math.max(0L, j6 - i);
+            }
+            return new MediaPeriodInfo(mediaPeriodId, j7, j2, j4, j6, z2, isLastInPeriod, isLastInWindow, isLastInTimeline);
+        }
+        j4 = j5;
+        if (j4 != C0468C.TIME_UNSET) {
+        }
+        if (j6 != C0468C.TIME_UNSET) {
+            if (!isLastInTimeline) {
+                i = 0;
+            }
+            j7 = Math.max(0L, j6 - i);
+        }
+        return new MediaPeriodInfo(mediaPeriodId, j7, j2, j4, j6, z2, isLastInPeriod, isLastInWindow, isLastInTimeline);
     }
 
     private boolean isLastInPeriod(MediaSource.MediaPeriodId mediaPeriodId) {

@@ -48,7 +48,7 @@
 .end method
 
 .method public b(Lj$/util/function/Consumer;)Z
-    .locals 6
+    .locals 5
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -82,9 +82,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v3, v0
+    cmp-long v0, v3, v0
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lj$/util/stream/I4;->e:Ljava/lang/Object;
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public forEachRemaining(Lj$/util/function/Consumer;)V
-    .locals 9
+    .locals 8
 
     .line 1
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -159,14 +159,14 @@
 
     const-wide/16 v6, 0x80
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-ltz v8, :cond_2
+    if-ltz v6, :cond_2
 
     :cond_3
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-nez v6, :cond_4
+    if-nez v2, :cond_4
 
     return-void
 
@@ -178,9 +178,9 @@
     :goto_1
     int-to-long v4, v1
 
-    cmp-long v6, v4, v2
+    cmp-long v4, v4, v2
 
-    if-gez v6, :cond_0
+    if-gez v4, :cond_0
 
     .line 5
     iget-object v4, v0, Lj$/util/stream/k4;->b:[Ljava/lang/Object;

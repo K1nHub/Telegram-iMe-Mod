@@ -47,7 +47,7 @@
 
     const-wide v4, 0x404fd4bbab8b494cL    # 63.66197723675813
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     const-wide/high16 v4, 0x4059000000000000L    # 100.0
 
@@ -125,7 +125,7 @@
 
     aget v4, v4, v2
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const/4 v4, 0x1
 
@@ -135,7 +135,7 @@
 
     aget v6, v6, v4
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v3, v5
 
@@ -147,7 +147,7 @@
 
     aget v7, v7, v5
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v3, v6
 
@@ -158,7 +158,7 @@
 
     aget v7, v7, v2
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     aget v7, p0, v4
 
@@ -166,7 +166,7 @@
 
     aget v8, v8, v4
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v6, v7
 
@@ -176,7 +176,7 @@
 
     aget v8, v8, v5
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v6, v7
 
@@ -187,7 +187,7 @@
 
     aget v8, v8, v2
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     aget v8, p0, v4
 
@@ -195,7 +195,7 @@
 
     aget v9, v9, v4
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v7, v8
 
@@ -205,7 +205,7 @@
 
     aget v1, v1, v5
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     add-float/2addr v7, v8
 
@@ -219,13 +219,13 @@
 
     float-to-double v10, v8
 
-    const v12, 0x3f170a3d    # 0.59f
+    const-wide v12, 0x3feccccccccccccdL    # 0.9
 
-    const-wide v13, 0x3feccccccccccccdL    # 0.9
+    cmpl-double v10, v10, v12
 
-    cmpl-double v15, v10, v13
+    const v11, 0x3f170a3d    # 0.59f
 
-    if-ltz v15, :cond_0
+    if-ltz v10, :cond_0
 
     const v9, 0x3f30a3d7    # 0.69f
 
@@ -233,10 +233,10 @@
 
     sub-float v10, v8, v10
 
-    mul-float v10, v10, v1
+    mul-float/2addr v10, v1
 
     .line 139
-    invoke-static {v12, v9, v10}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
+    invoke-static {v11, v9, v10}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
 
     move-result v1
 
@@ -247,9 +247,9 @@
 
     sub-float v9, v8, v9
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
-    invoke-static {v10, v12, v9}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
+    invoke-static {v10, v11, v9}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
 
     move-result v1
 
@@ -260,7 +260,7 @@
 
     if-eqz p4, :cond_1
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v1
 
     goto :goto_1
 
@@ -286,31 +286,31 @@
 
     double-to-float v10, v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     sub-float v9, v1, v10
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     :goto_1
     float-to-double v10, v9
 
     const-wide/high16 v12, 0x3ff0000000000000L    # 1.0
 
-    cmpl-double v14, v10, v12
+    cmpl-double v12, v10, v12
 
-    if-lez v14, :cond_2
+    if-lez v12, :cond_2
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v1
 
     goto :goto_2
 
     :cond_2
     const-wide/16 v12, 0x0
 
-    cmpg-double v14, v10, v12
+    cmpg-double v10, v10, v12
 
-    if-gez v14, :cond_3
+    if-gez v10, :cond_3
 
     const/4 v9, 0x0
 
@@ -324,7 +324,7 @@
 
     div-float v12, v11, v3
 
-    mul-float v12, v12, v9
+    mul-float/2addr v12, v9
 
     add-float/2addr v12, v1
 
@@ -334,7 +334,7 @@
 
     div-float v12, v11, v6
 
-    mul-float v12, v12, v9
+    mul-float/2addr v12, v9
 
     add-float/2addr v12, v1
 
@@ -344,7 +344,7 @@
 
     div-float/2addr v11, v7
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     add-float/2addr v11, v1
 
@@ -354,7 +354,7 @@
 
     const/high16 v9, 0x40a00000    # 5.0f
 
-    mul-float v9, v9, v0
+    mul-float/2addr v9, v0
 
     add-float/2addr v9, v1
 
@@ -362,25 +362,25 @@
 
     mul-float v11, v9, v9
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     sub-float/2addr v1, v11
 
-    mul-float v11, v11, v0
+    mul-float/2addr v11, v0
 
     const v9, 0x3dcccccd    # 0.1f
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     const-wide/high16 v12, 0x4014000000000000L    # 5.0
 
     float-to-double v0, v0
 
-    mul-double v0, v0, v12
+    mul-double/2addr v0, v12
 
     .line 165
     invoke-static {v0, v1}, Ljava/lang/Math;->cbrt(D)D
@@ -389,7 +389,7 @@
 
     double-to-float v0, v0
 
-    mul-float v9, v9, v0
+    mul-float/2addr v9, v0
 
     add-float v0, v11, v9
 
@@ -435,9 +435,9 @@
     .line 181
     aget v6, v14, v2
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     float-to-double v12, v6
 
@@ -457,7 +457,7 @@
 
     aget v3, v14, v4
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     mul-float v3, v3, v16
 
@@ -478,9 +478,9 @@
 
     aget v6, v14, v3
 
-    mul-float v6, v6, v0
+    mul-float/2addr v6, v0
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-double v6, v6
 
@@ -503,7 +503,7 @@
 
     const/high16 v7, 0x43c80000    # 400.0f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     aget v10, v5, v2
 
@@ -517,7 +517,7 @@
 
     aget v6, v5, v4
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     aget v10, v5, v4
 
@@ -531,7 +531,7 @@
 
     aget v9, v5, v6
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     aget v5, v5, v6
 
@@ -546,7 +546,7 @@
     .line 189
     aget v2, v3, v2
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     aget v4, v3, v4
 
@@ -556,7 +556,7 @@
 
     aget v3, v3, v6
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 

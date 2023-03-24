@@ -370,9 +370,9 @@
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    move v4, v1
 
-    const/4 v4, 0x0
+    move v3, v2
 
     :goto_0
     if-eqz v3, :cond_3
@@ -388,12 +388,12 @@
 
     if-eq v3, v5, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-eqz v5, :cond_2

@@ -284,9 +284,9 @@
     .line 2
     invoke-virtual {p0, v1}, Ljava/io/BufferedReader;->mark(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 3
     :goto_0
@@ -298,7 +298,7 @@
 
     if-eq v3, v4, :cond_7
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_1
     if-ge v4, v3, :cond_6
@@ -315,7 +315,7 @@
 
     if-eqz p3, :cond_1
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_2
     if-gtz v6, :cond_1
@@ -395,12 +395,12 @@
 
     move v2, v1
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_4
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_4
     add-int/lit8 v4, v4, 0x1
@@ -691,12 +691,12 @@
 
     if-ne v2, v3, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     const-string v3, "Unexpected non-digit character"
@@ -729,9 +729,9 @@
     throw p1
 
     :cond_4
-    move v0, v2
+    move v7, v0
 
-    const/4 v7, 0x0
+    move v0, v2
 
     :goto_2
     if-ge v0, p1, :cond_8
@@ -877,9 +877,9 @@
 
     if-ne v0, v5, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v4
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v0, v3, :cond_8
@@ -931,7 +931,7 @@
 
     :cond_3
     :goto_1
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_2
     add-int/lit8 v0, v0, 0x1
@@ -953,7 +953,7 @@
     :cond_5
     aput-char v0, p2, v4
 
-    const/4 v0, 0x1
+    move v0, v7
 
     :goto_3
     if-ge v0, v3, :cond_8
@@ -1053,7 +1053,7 @@
 .end method
 
 .method private final zan(Ljava/io/BufferedReader;)J
-    .locals 18
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/gms/common/server/response/FastParser$ParseException;,
@@ -1103,7 +1103,7 @@
 
     if-ne v6, v7, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v10
 
     :cond_2
     const-string v6, "Unexpected non-digit character"
@@ -1158,25 +1158,31 @@
 
     const-wide v13, -0xcccccccccccccccL
 
-    const-string v15, "Number too large"
+    cmp-long v13, v11, v13
 
-    cmp-long v16, v11, v13
+    const-string v14, "Number too large"
 
-    if-ltz v16, :cond_6
+    if-ltz v13, :cond_6
 
-    const-wide/16 v13, 0xa
+    const-wide/16 v15, 0xa
 
-    mul-long v11, v11, v13
+    mul-long/2addr v11, v15
 
-    int-to-long v13, v2
+    move/from16 p1, v1
 
-    add-long v16, v8, v13
+    int-to-long v0, v2
 
-    cmp-long v2, v11, v16
+    add-long v15, v8, v0
+
+    cmp-long v2, v11, v15
 
     if-ltz v2, :cond_5
 
-    sub-long/2addr v11, v13
+    sub-long/2addr v11, v0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, p1
 
     move v2, v3
 
@@ -1184,30 +1190,30 @@
 
     .line 6
     :cond_5
-    new-instance v1, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
+    new-instance v0, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
 
     .line 7
-    invoke-direct {v1, v15}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v14}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 5
     :cond_6
-    new-instance v1, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
+    new-instance v0, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
 
     .line 6
-    invoke-direct {v1, v15}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v14}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 4
     :cond_7
-    new-instance v1, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
+    new-instance v0, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
 
     .line 5
-    invoke-direct {v1, v6}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v6}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_8
     if-eqz v5, :cond_a
@@ -1218,14 +1224,14 @@
 
     .line 7
     :cond_9
-    new-instance v1, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
+    new-instance v0, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
 
-    const-string v2, "No digits to parse"
+    const-string v1, "No digits to parse"
 
     .line 8
-    invoke-direct {v1, v2}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_a
     neg-long v11, v11
@@ -1234,14 +1240,14 @@
     return-wide v11
 
     :cond_b
-    new-instance v1, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
+    new-instance v0, Lcom/google/android/gms/common/server/response/FastParser$ParseException;
 
-    const-string v2, "No number to parse"
+    const-string v1, "No number to parse"
 
     .line 9
-    invoke-direct {v1, v2}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/server/response/FastParser$ParseException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method
 
 .method private final zao(Ljava/io/BufferedReader;)Ljava/lang/String;
@@ -1602,16 +1608,15 @@
     .line 15
     invoke-direct {p0, v10}, Lcom/google/android/gms/common/server/response/FastParser;->zaw(I)V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     .line 16
     :cond_5
     invoke-virtual {p1}, Ljava/io/BufferedReader;->reset()V
 
-    const/4 v0, 0x0
+    move v0, v6
 
-    :cond_6
-    const/4 v11, 0x0
+    move v11, v0
 
     :goto_0
     if-lez v7, :cond_e
@@ -1630,38 +1635,43 @@
 
     if-nez v13, :cond_c
 
-    if-ne v12, v5, :cond_8
+    if-ne v12, v5, :cond_7
 
-    if-nez v11, :cond_7
+    if-nez v11, :cond_6
 
     xor-int/lit8 v0, v0, 0x1
 
+    :cond_6
+    move v12, v5
+
     :cond_7
-    const/16 v12, 0x22
+    if-ne v12, v9, :cond_9
 
-    :cond_8
-    if-ne v12, v9, :cond_a
-
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
     add-int/lit8 v7, v7, 0x1
 
+    :cond_8
+    move v12, v9
+
     :cond_9
-    const/16 v12, 0x5b
+    if-ne v12, v8, :cond_a
 
-    :cond_a
-    if-ne v12, v8, :cond_b
-
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
     add-int/lit8 v7, v7, -0x1
 
-    :cond_b
-    if-ne v12, v1, :cond_6
+    :cond_a
+    if-ne v12, v1, :cond_b
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_b
 
     xor-int/lit8 v11, v11, 0x1
+
+    goto :goto_0
+
+    :cond_b
+    move v11, v6
 
     goto :goto_0
 
@@ -1723,16 +1733,16 @@
 
     aget-char v0, v0, v6
 
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_1
     if-ne v0, v5, :cond_14
 
     if-eqz v10, :cond_11
 
-    const/16 v0, 0x22
+    move v0, v5
 
-    const/4 v10, 0x1
+    move v10, v7
 
     goto :goto_3
 
@@ -1799,7 +1809,7 @@
     goto :goto_4
 
     :cond_15
-    const/4 v10, 0x0
+    move v10, v6
 
     .line 24
     :goto_4
@@ -2348,7 +2358,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1
     :goto_0
@@ -2368,7 +2378,7 @@
 
     if-eq v2, v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     if-ge v3, v2, :cond_1
@@ -2664,7 +2674,7 @@
     .line 38
     invoke-virtual {v2, v5, v10, v9}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->addConcreteTypeArrayInternal(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    goto/16 :goto_3
+    goto :goto_1
 
     :cond_1
     iget-object v12, v1, Lcom/google/android/gms/common/server/response/FastParser;->zat:Ljava/util/Stack;
@@ -2692,7 +2702,7 @@
     .line 41
     invoke-virtual {v2, v5, v10, v12}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->addConcreteTypeArrayInternal(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    goto/16 :goto_3
+    goto :goto_1
 
     .line 63
     :cond_2
@@ -2723,7 +2733,10 @@
     .line 44
     invoke-virtual {v2, v5, v10, v9}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->addConcreteTypeInternal(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/String;Lcom/google/android/gms/common/server/response/FastJsonResponse;)V
 
-    goto/16 :goto_3
+    :goto_1
+    move v5, v11
+
+    goto/16 :goto_5
 
     :cond_4
     iget-object v15, v1, Lcom/google/android/gms/common/server/response/FastParser;->zat:Ljava/util/Stack;
@@ -2750,7 +2763,7 @@
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_3
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -2800,7 +2813,7 @@
 
     move-object v10, v9
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_6
     if-ne v10, v12, :cond_e
@@ -2817,7 +2830,7 @@
     invoke-direct {v10}, Ljava/util/HashMap;-><init>()V
 
     .line 26
-    :goto_1
+    :goto_2
     invoke-direct/range {p0 .. p1}, Lcom/google/android/gms/common/server/response/FastParser;->zai(Ljava/io/BufferedReader;)C
 
     move-result v12
@@ -2830,13 +2843,13 @@
 
     if-eq v12, v14, :cond_7
 
-    goto :goto_1
+    goto :goto_2
 
     .line 33
     :cond_7
     invoke-direct {v1, v7}, Lcom/google/android/gms/common/server/response/FastParser;->zaw(I)V
 
-    goto :goto_2
+    goto :goto_3
 
     .line 26
     :cond_8
@@ -2891,10 +2904,10 @@
     invoke-direct {v1, v7}, Lcom/google/android/gms/common/server/response/FastParser;->zaw(I)V
 
     .line 35
-    :goto_2
+    :goto_3
     invoke-virtual {v2, v5, v10}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zaB(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/Map;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 64
     :cond_9
@@ -2922,7 +2935,7 @@
     :cond_a
     const/4 v11, 0x4
 
-    goto :goto_1
+    goto :goto_2
 
     .line 29
     :cond_b
@@ -3005,7 +3018,7 @@
     .line 51
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zal(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;[B)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 48
     :pswitch_3
@@ -3028,10 +3041,10 @@
     .line 54
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zal(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;[B)V
 
-    :goto_3
+    :goto_4
     const/4 v5, 0x4
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     .line 19
     :pswitch_4
@@ -3048,7 +3061,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zaC(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 21
     :cond_f
@@ -3058,7 +3071,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zaA(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 17
     :pswitch_5
@@ -3075,7 +3088,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zaj(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_10
     const/4 v6, 0x0
@@ -3087,7 +3100,7 @@
 
     invoke-virtual {v2, v5, v10}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zai(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Z)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 15
     :pswitch_6
@@ -3104,7 +3117,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zac(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 17
     :cond_11
@@ -3114,7 +3127,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zaa(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/math/BigDecimal;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 13
     :pswitch_7
@@ -3131,7 +3144,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zao(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 15
     :cond_12
@@ -3141,7 +3154,7 @@
 
     invoke-virtual {v2, v5, v10, v11}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zam(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;D)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 11
     :pswitch_8
@@ -3158,7 +3171,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zas(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 13
     :cond_13
@@ -3168,7 +3181,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zaq(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;F)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 9
     :pswitch_9
@@ -3185,7 +3198,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zay(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 11
     :cond_14
@@ -3195,7 +3208,7 @@
 
     invoke-virtual {v2, v5, v10, v11}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zax(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;J)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 7
     :pswitch_a
@@ -3212,7 +3225,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zag(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 9
     :cond_15
@@ -3222,7 +3235,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zae(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/math/BigInteger;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 33
     :pswitch_b
@@ -3239,7 +3252,7 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zav(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 7
     :cond_16
@@ -3249,10 +3262,10 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/android/gms/common/server/response/FastJsonResponse;->zau(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;I)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 55
-    :goto_4
+    :goto_5
     invoke-direct {v1, v5}, Lcom/google/android/gms/common/server/response/FastParser;->zaw(I)V
 
     const/4 v5, 0x2

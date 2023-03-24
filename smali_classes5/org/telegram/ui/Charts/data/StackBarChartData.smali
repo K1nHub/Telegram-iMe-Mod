@@ -72,7 +72,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Charts/data/StackBarChartData;->ySum:[I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_1
@@ -82,7 +82,7 @@
 
     aput v1, v4, v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
     if-ge v4, v2, :cond_0

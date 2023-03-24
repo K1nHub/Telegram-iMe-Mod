@@ -199,19 +199,19 @@ public final class zzd {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:58:0x00e3, code lost:
-        r9 = true;
+        r7 = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x0108, code lost:
-        if (r9 != false) goto L49;
+        if (r7 != false) goto L49;
      */
     /* JADX WARN: Code restructure failed: missing block: B:73:0x0110, code lost:
-        if (r9 == r10) goto L25;
+        if (r7 == r8) goto L25;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private static void zza(final android.content.Context r9, android.os.ParcelFileDescriptor r10, android.net.Uri r11, com.google.android.gms.internal.mlkit_common.zzh r12) throws java.io.IOException {
+    private static void zza(final android.content.Context r7, android.os.ParcelFileDescriptor r8, android.net.Uri r9, com.google.android.gms.internal.mlkit_common.zzh r10) throws java.io.IOException {
         /*
             Method dump skipped, instructions count: 301
             To view this dump add '--comments-level debug' option
@@ -269,7 +269,10 @@ public final class zzd {
         strArr[1] = i <= 25 ? "com.google.android.inputmethod.latin.inputcontent" : "";
         strArr[2] = i <= 25 ? "com.google.android.inputmethod.latin.dev.inputcontent" : "";
         String str = Build.HARDWARE;
-        strArr[3] = (str.equals("goldfish") || str.equals("ranchu")) ? true : true ? "com.google.android.apps.common.testing.services.storage.runfiles" : "";
+        if (str.equals("goldfish") || str.equals("ranchu")) {
+            z = true;
+        }
+        strArr[3] = z ? "com.google.android.apps.common.testing.services.storage.runfiles" : "";
         zzb = strArr;
     }
 }

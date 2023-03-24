@@ -89,7 +89,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/measurement/internal/zzgy;)V
-    .locals 9
+    .locals 8
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -340,14 +340,14 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_3
+    if-eqz v4, :cond_3
 
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 33
     :goto_1
@@ -1046,7 +1046,7 @@
 
     if-ne p2, v2, :cond_8
 
-    const/16 p2, 0x130
+    move p2, v2
 
     :cond_0
     if-nez p3, :cond_8
@@ -1454,7 +1454,7 @@
 
     if-eqz v2, :cond_0
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 9
     :cond_0
@@ -1489,13 +1489,8 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    nop
-
     :cond_1
-    :goto_0
     if-eqz v3, :cond_3
 
     .line 12
@@ -1625,7 +1620,7 @@
 
     .line 8
     :cond_4
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzfv;->zzay()Lcom/google/android/gms/measurement/internal/zzel;
 
     move-result-object v0
@@ -1760,7 +1755,7 @@
     .line 9
     invoke-direct {p1, v2, v4}, Lcom/google/android/gms/measurement/internal/zzag;-><init>(Ljava/lang/Boolean;Ljava/lang/Boolean;)V
 
-    const/16 v3, -0xa
+    move v3, v5
 
     goto :goto_0
 
@@ -1879,7 +1874,7 @@
 
     if-nez v1, :cond_3
 
-    const/16 v3, 0x1e
+    move v3, v6
 
     :goto_0
     if-eqz p1, :cond_6
@@ -2435,10 +2430,8 @@
 
     goto :goto_1
 
-    :catch_0
-    nop
-
     .line 63
+    :catch_0
     invoke-virtual {p0}, Lcom/google/android/gms/measurement/internal/zzfv;->zzm()Lcom/google/android/gms/measurement/internal/zzfa;
 
     move-result-object p1
@@ -2705,9 +2698,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     .line 2
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -2733,9 +2726,9 @@
 
     const-wide/16 v2, 0x3e8
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_5
+    if-lez v0, :cond_5
 
     :cond_0
     iget-object v0, p0, Lcom/google/android/gms/measurement/internal/zzfv;->zzr:Lcom/google/android/gms/common/util/Clock;
@@ -2818,12 +2811,12 @@
     if-eqz v0, :cond_2
 
     :cond_1
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 5
     :goto_0
@@ -2897,7 +2890,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 12
     :cond_4

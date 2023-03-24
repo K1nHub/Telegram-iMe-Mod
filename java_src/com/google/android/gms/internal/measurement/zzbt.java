@@ -7,7 +7,7 @@ public final class zzbt {
     private static final Method zza;
     private static final Method zzb;
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x003b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x003a A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         /*
             java.lang.Class<java.lang.String> r0 = java.lang.String.class
@@ -17,7 +17,7 @@ public final class zzbt {
             r4 = 24
             java.lang.String r5 = "JobSchedulerCompat"
             r6 = 0
-            if (r1 < r4) goto L34
+            if (r1 < r4) goto L33
             r1 = 4
             java.lang.Class[] r1 = new java.lang.Class[r1]     // Catch: java.lang.NoSuchMethodException -> L28
             java.lang.Class<android.app.job.JobInfo> r7 = android.app.job.JobInfo.class
@@ -32,29 +32,29 @@ public final class zzbt {
             java.lang.Class<android.app.job.JobScheduler> r0 = android.app.job.JobScheduler.class
             java.lang.String r7 = "scheduleAsPackage"
             java.lang.reflect.Method r0 = r0.getDeclaredMethod(r7, r1)     // Catch: java.lang.NoSuchMethodException -> L28
-            goto L35
+            goto L34
         L28:
             boolean r0 = android.util.Log.isLoggable(r5, r2)
-            if (r0 == 0) goto L34
+            if (r0 == 0) goto L33
             java.lang.String r0 = "No scheduleAsPackage method available, falling back to schedule"
             android.util.Log.e(r5, r0)
-        L34:
+        L33:
             r0 = r6
-        L35:
+        L34:
             com.google.android.gms.internal.measurement.zzbt.zza = r0
             int r0 = android.os.Build.VERSION.SDK_INT
-            if (r0 < r4) goto L52
+            if (r0 < r4) goto L50
             java.lang.Class<android.os.UserHandle> r0 = android.os.UserHandle.class
             java.lang.String r1 = "myUserId"
-            java.lang.Class[] r3 = new java.lang.Class[r3]     // Catch: java.lang.NoSuchMethodException -> L46
-            java.lang.reflect.Method r6 = r0.getDeclaredMethod(r1, r3)     // Catch: java.lang.NoSuchMethodException -> L46
-            goto L52
-        L46:
+            java.lang.Class[] r3 = new java.lang.Class[r3]     // Catch: java.lang.NoSuchMethodException -> L45
+            java.lang.reflect.Method r6 = r0.getDeclaredMethod(r1, r3)     // Catch: java.lang.NoSuchMethodException -> L45
+            goto L50
+        L45:
             boolean r0 = android.util.Log.isLoggable(r5, r2)
-            if (r0 == 0) goto L52
+            if (r0 == 0) goto L50
             java.lang.String r0 = "No myUserId method available"
             android.util.Log.e(r5, r0)
-        L52:
+        L50:
             com.google.android.gms.internal.measurement.zzbt.zzb = r6
             return
         */
@@ -102,7 +102,7 @@ public final class zzbt {
             java.lang.String r0 = "myUserId invocation illegal"
             android.util.Log.e(r1, r0, r5)
         L3f:
-            r5 = 0
+            r5 = r8
         L40:
             java.lang.String r0 = "com.google.android.gms"
             java.lang.String r1 = "UploadAlarm"

@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/widget/LinearLayout;ILandroid/widget/HorizontalScrollView;Landroid/util/SparseIntArray;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;[I)V
     .locals 0
 
-    .line 27398
+    .line 27424
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$117;->val$suppressTabsScroll:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$117;->val$tabsView:Landroid/widget/LinearLayout;
@@ -64,7 +64,7 @@
 
     if-nez p1, :cond_0
 
-    .line 27432
+    .line 27458
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$117;->val$suppressTabsScroll:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x0
@@ -78,7 +78,7 @@
 .method public onPageScrolled(IFI)V
     .locals 8
 
-    .line 27401
+    .line 27427
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$117;->val$suppressTabsScroll:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p3}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -91,13 +91,13 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v2, p3
 
-    const/high16 v2, -0x40800000    # -1.0f
+    move v3, v2
 
-    const/high16 v3, -0x40800000    # -1.0f
+    move v1, v0
 
-    .line 27403
+    .line 27429
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$117;->val$tabsView:Landroid/widget/LinearLayout;
 
@@ -109,7 +109,7 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 27404
+    .line 27430
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$117;->val$tabsView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -127,7 +127,7 @@
     :cond_0
     add-int/lit8 v5, p1, 0x1
 
-    .line 27405
+    .line 27431
     iget v6, p0, Lorg/telegram/ui/ChatActivity$117;->val$size:I
 
     rem-int/2addr v5, v6
@@ -148,7 +148,7 @@
 
     if-ne v1, p1, :cond_2
 
-    .line 27407
+    .line 27433
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v2
@@ -176,7 +176,7 @@
 
     if-ne v1, v6, :cond_3
 
-    .line 27410
+    .line 27436
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v3
@@ -213,12 +213,12 @@
 
     if-eqz p3, :cond_5
 
-    .line 27415
+    .line 27441
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$117;->val$tabsScrollView:Landroid/widget/HorizontalScrollView;
 
     sub-float/2addr v3, v2
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     add-float/2addr v2, v3
 
@@ -226,7 +226,7 @@
 
     invoke-virtual {p3, v1}, Landroid/widget/HorizontalScrollView;->setScrollX(I)V
 
-    .line 27417
+    .line 27443
     :cond_5
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$117;->val$cachedHeights:Landroid/util/SparseIntArray;
 
@@ -234,7 +234,7 @@
 
     move-result p3
 
-    .line 27418
+    .line 27444
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$117;->val$cachedHeights:Landroid/util/SparseIntArray;
 
     add-int/lit8 p1, p1, 0x1
@@ -243,7 +243,7 @@
 
     move-result p1
 
-    .line 27419
+    .line 27445
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$117;->val$popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
@@ -258,11 +258,11 @@
 
     sub-float/2addr v5, p2
 
-    mul-float p3, p3, v5
+    mul-float/2addr p3, v5
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     add-float/2addr p3, p1
 
@@ -277,14 +277,14 @@
 .method public onPageSelected(I)V
     .locals 3
 
-    .line 27425
+    .line 27451
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$117;->val$cachedHeights:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result p1
 
-    .line 27426
+    .line 27452
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$117;->val$popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;

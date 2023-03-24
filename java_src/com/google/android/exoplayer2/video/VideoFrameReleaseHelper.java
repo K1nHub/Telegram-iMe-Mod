@@ -178,13 +178,13 @@ public final class VideoFrameReleaseHelper {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x005c, code lost:
-        if (java.lang.Math.abs(r0 - r8.surfaceMediaFrameRate) >= (r8.frameRateEstimator.isSynced() && (r8.frameRateEstimator.getMatchingFrameDurationSumNs() > com.google.android.exoplayer2.video.VideoFrameReleaseHelper.MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS ? 1 : (r8.frameRateEstimator.getMatchingFrameDurationSumNs() == com.google.android.exoplayer2.video.VideoFrameReleaseHelper.MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS ? 0 : -1)) >= 0 ? com.google.android.exoplayer2.video.VideoFrameReleaseHelper.MINIMUM_MEDIA_FRAME_RATE_CHANGE_FOR_UPDATE_HIGH_CONFIDENCE : 1.0f)) goto L26;
+        if (java.lang.Math.abs(r0 - r7.surfaceMediaFrameRate) >= (r7.frameRateEstimator.isSynced() && (r7.frameRateEstimator.getMatchingFrameDurationSumNs() > com.google.android.exoplayer2.video.VideoFrameReleaseHelper.MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS ? 1 : (r7.frameRateEstimator.getMatchingFrameDurationSumNs() == com.google.android.exoplayer2.video.VideoFrameReleaseHelper.MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS ? 0 : -1)) >= 0 ? com.google.android.exoplayer2.video.VideoFrameReleaseHelper.MINIMUM_MEDIA_FRAME_RATE_CHANGE_FOR_UPDATE_HIGH_CONFIDENCE : 1.0f)) goto L26;
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x005f, code lost:
-        r5 = false;
+        r6 = false;
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x006a, code lost:
-        if (r8.frameRateEstimator.getFramesWithoutSyncCount() >= 30) goto L26;
+        if (r7.frameRateEstimator.getFramesWithoutSyncCount() >= 30) goto L26;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -192,47 +192,47 @@ public final class VideoFrameReleaseHelper {
     */
     private void updateSurfaceMediaFrameRate() {
         /*
-            r8 = this;
+            r7 = this;
             int r0 = com.google.android.exoplayer2.util.Util.SDK_INT
             r1 = 30
             if (r0 < r1) goto L73
-            android.view.Surface r0 = r8.surface
+            android.view.Surface r0 = r7.surface
             if (r0 != 0) goto Lc
             goto L73
         Lc:
-            com.google.android.exoplayer2.video.FixedFrameRateEstimator r0 = r8.frameRateEstimator
+            com.google.android.exoplayer2.video.FixedFrameRateEstimator r0 = r7.frameRateEstimator
             boolean r0 = r0.isSynced()
             if (r0 == 0) goto L1b
-            com.google.android.exoplayer2.video.FixedFrameRateEstimator r0 = r8.frameRateEstimator
+            com.google.android.exoplayer2.video.FixedFrameRateEstimator r0 = r7.frameRateEstimator
             float r0 = r0.getFrameRate()
             goto L1d
         L1b:
-            float r0 = r8.formatFrameRate
+            float r0 = r7.formatFrameRate
         L1d:
-            float r2 = r8.surfaceMediaFrameRate
+            float r2 = r7.surfaceMediaFrameRate
             int r3 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
             if (r3 != 0) goto L24
             return
         L24:
             r3 = -1082130432(0xffffffffbf800000, float:-1.0)
-            r4 = 0
-            r5 = 1
-            int r6 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
-            if (r6 == 0) goto L61
+            int r4 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
+            r5 = 0
+            r6 = 1
+            if (r4 == 0) goto L61
             int r2 = (r2 > r3 ? 1 : (r2 == r3 ? 0 : -1))
             if (r2 == 0) goto L61
-            com.google.android.exoplayer2.video.FixedFrameRateEstimator r1 = r8.frameRateEstimator
+            com.google.android.exoplayer2.video.FixedFrameRateEstimator r1 = r7.frameRateEstimator
             boolean r1 = r1.isSynced()
             if (r1 == 0) goto L49
-            com.google.android.exoplayer2.video.FixedFrameRateEstimator r1 = r8.frameRateEstimator
+            com.google.android.exoplayer2.video.FixedFrameRateEstimator r1 = r7.frameRateEstimator
             long r1 = r1.getMatchingFrameDurationSumNs()
-            r6 = 5000000000(0x12a05f200, double:2.470328229E-314)
-            int r3 = (r1 > r6 ? 1 : (r1 == r6 ? 0 : -1))
-            if (r3 < 0) goto L49
-            r1 = 1
+            r3 = 5000000000(0x12a05f200, double:2.470328229E-314)
+            int r1 = (r1 > r3 ? 1 : (r1 == r3 ? 0 : -1))
+            if (r1 < 0) goto L49
+            r1 = r6
             goto L4a
         L49:
-            r1 = 0
+            r1 = r5
         L4a:
             if (r1 == 0) goto L50
             r1 = 1017370378(0x3ca3d70a, float:0.02)
@@ -240,26 +240,26 @@ public final class VideoFrameReleaseHelper {
         L50:
             r1 = 1065353216(0x3f800000, float:1.0)
         L52:
-            float r2 = r8.surfaceMediaFrameRate
+            float r2 = r7.surfaceMediaFrameRate
             float r2 = r0 - r2
             float r2 = java.lang.Math.abs(r2)
             int r1 = (r2 > r1 ? 1 : (r2 == r1 ? 0 : -1))
             if (r1 < 0) goto L5f
             goto L6c
         L5f:
-            r5 = 0
+            r6 = r5
             goto L6c
         L61:
-            if (r6 == 0) goto L64
+            if (r4 == 0) goto L64
             goto L6c
         L64:
-            com.google.android.exoplayer2.video.FixedFrameRateEstimator r2 = r8.frameRateEstimator
+            com.google.android.exoplayer2.video.FixedFrameRateEstimator r2 = r7.frameRateEstimator
             int r2 = r2.getFramesWithoutSyncCount()
             if (r2 < r1) goto L5f
         L6c:
-            if (r5 == 0) goto L73
-            r8.surfaceMediaFrameRate = r0
-            r8.updateSurfacePlaybackFrameRate(r4)
+            if (r6 == 0) goto L73
+            r7.surfaceMediaFrameRate = r0
+            r7.updateSurfacePlaybackFrameRate(r5)
         L73:
             return
         */

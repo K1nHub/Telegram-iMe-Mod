@@ -401,7 +401,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     add-int/2addr v1, v3
@@ -415,12 +415,12 @@
 
     if-eqz p1, :cond_1
 
-    const/16 v3, 0x8
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -433,7 +433,7 @@
     goto :goto_2
 
     :cond_2
-    const/16 v2, 0x8
+    move v2, v1
 
     :goto_2
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V

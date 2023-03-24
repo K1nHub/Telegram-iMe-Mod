@@ -290,7 +290,7 @@
 
     const/high16 v1, 0x42000000    # 32.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -407,7 +407,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     aput v1, p2, v0
@@ -452,7 +452,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1396
     :goto_1

@@ -58,7 +58,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v5
 
     goto :goto_1
 
@@ -71,7 +71,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x2
+    move p1, v4
 
     goto :goto_1
 
@@ -84,7 +84,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_1
 
@@ -97,7 +97,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x4
+    move p1, v2
 
     goto :goto_1
 
@@ -110,7 +110,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 p1, 0x3
+    move p1, v3
 
     goto :goto_1
 

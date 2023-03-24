@@ -66,7 +66,7 @@
 
     move-result-wide v0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-int v0, v0
 
@@ -233,7 +233,7 @@
 
     move-result v0
 
-    mul-int v0, v0, p2
+    mul-int/2addr v0, p2
 
     iput v0, p1, Lorg/telegram/messenger/SegmentTree$Node;->sum:I
 

@@ -253,9 +253,9 @@
 
     const/16 v5, 0x11
 
-    const/16 v6, 0x11
+    move v7, v1
 
-    const/4 v7, 0x3
+    move v6, v5
 
     :goto_1
     if-lt v6, v1, :cond_4
@@ -304,7 +304,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 7
     :goto_3
@@ -316,12 +316,12 @@
 
     if-lt v6, v9, :cond_5
 
-    const/4 v9, 0x1
+    move v9, v10
 
     goto :goto_4
 
     :cond_5
-    const/4 v9, 0x0
+    move v9, v3
 
     .line 9
     :goto_4
@@ -331,12 +331,12 @@
 
     if-lt v6, v1, :cond_6
 
-    const/4 v9, 0x1
+    move v9, v10
 
     goto :goto_5
 
     :cond_6
-    const/4 v9, 0x0
+    move v9, v3
 
     .line 10
     :goto_5
@@ -352,7 +352,7 @@
     invoke-static {v6, v8}, Lcom/google/android/gms/internal/play_billing/zzb;->zzn(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_7
-    const/16 v6, 0x11
+    move v6, v5
 
     :goto_6
     if-lt v6, v1, :cond_a
@@ -415,12 +415,12 @@
 
     if-lt v4, v5, :cond_b
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_9
 
     :cond_b
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 15
     :goto_9
@@ -436,12 +436,12 @@
 
     if-lt v4, v5, :cond_c
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_a
 
     :cond_c
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 16
     :goto_a
@@ -457,12 +457,12 @@
 
     if-lt v4, v5, :cond_d
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_b
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 17
     :goto_b
@@ -478,12 +478,12 @@
 
     if-lt v4, v5, :cond_e
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_c
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 18
     :goto_c
@@ -499,12 +499,12 @@
 
     if-lt v4, v5, :cond_f
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_d
 
     :cond_f
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 19
     :goto_d
@@ -520,12 +520,12 @@
 
     if-lt v4, v5, :cond_10
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_e
 
     :cond_10
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 20
     :goto_e
@@ -541,12 +541,12 @@
 
     if-lt v4, v5, :cond_11
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_f
 
     :cond_11
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 21
     :goto_f
@@ -562,12 +562,12 @@
 
     if-lt v4, v5, :cond_12
 
-    const/4 v4, 0x1
+    move v4, v10
 
     goto :goto_10
 
     :cond_12
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 22
     :goto_10
@@ -586,7 +586,7 @@
     goto :goto_11
 
     :cond_13
-    const/4 v10, 0x0
+    move v10, v3
 
     .line 23
     :goto_11

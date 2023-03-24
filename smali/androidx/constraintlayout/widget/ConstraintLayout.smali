@@ -570,7 +570,7 @@
 
     const/4 p3, 0x0
 
-    const/4 v1, 0x0
+    move v1, p3
 
     :goto_0
     if-ge v1, p2, :cond_7
@@ -784,7 +784,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, v7, :cond_1
@@ -817,7 +817,7 @@
 
     if-eqz v6, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     if-ge v2, v7, :cond_3
@@ -893,7 +893,7 @@
 
     if-eq v2, v1, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_3
     if-ge v1, v7, :cond_5
@@ -956,7 +956,7 @@
 
     if-lez v1, :cond_7
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_4
     if-ge v2, v1, :cond_7
@@ -978,7 +978,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_5
     if-ge v1, v7, :cond_9
@@ -1027,7 +1027,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_6
     if-ge v1, v7, :cond_a
@@ -1056,7 +1056,7 @@
     goto :goto_6
 
     :cond_a
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_7
     if-ge v8, v7, :cond_c
@@ -1247,7 +1247,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -2213,7 +2213,7 @@
 
     if-lez v1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -2268,7 +2268,7 @@
 
     move-result v6
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     if-ge v7, v6, :cond_3
@@ -2357,7 +2357,7 @@
 
     div-float/2addr v9, v4
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     float-to-int v9, v9
 
@@ -2365,7 +2365,7 @@
 
     div-float/2addr v10, v5
 
-    mul-float v10, v10, v3
+    mul-float/2addr v10, v3
 
     float-to-int v10, v10
 
@@ -2373,7 +2373,7 @@
 
     div-float/2addr v11, v4
 
-    mul-float v11, v11, v1
+    mul-float/2addr v11, v1
 
     float-to-int v11, v11
 
@@ -2381,7 +2381,7 @@
 
     div-float/2addr v8, v5
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     float-to-int v8, v8
 
@@ -2814,12 +2814,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-eqz v0, :cond_1
@@ -2831,7 +2831,7 @@
 
     if-ne v2, v0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     return v1
@@ -2868,7 +2868,7 @@
 
     const/4 p3, 0x0
 
-    const/4 p4, 0x0
+    move p4, p3
 
     :goto_0
     if-ge p4, p1, :cond_3
@@ -3042,7 +3042,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -3967,7 +3967,7 @@
     move-object p2, v2
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, v6
 
     goto :goto_0
 
@@ -4022,7 +4022,7 @@
     if-eq p4, v4, :cond_6
 
     :cond_5
-    const/4 p5, 0x0
+    move p5, v6
 
     goto :goto_1
 

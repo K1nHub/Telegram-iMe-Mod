@@ -273,7 +273,7 @@
 
     invoke-direct {v5, v8}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v8, 0x0
+    move v8, v2
 
     .line 1379
     :goto_0
@@ -329,7 +329,7 @@
 
     move-result-object v9
 
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_1
     if-ge v10, v6, :cond_a
@@ -366,7 +366,7 @@
     const-string v13, "xxxx xxxx xxxx xxxx"
 
     :goto_2
-    const/4 v14, 0x0
+    move v14, v2
 
     .line 1412
     :goto_3

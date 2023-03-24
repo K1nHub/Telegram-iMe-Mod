@@ -85,7 +85,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const-string v2, "onReportServiceBinding must be called on the GoogleApiClient handler thread"

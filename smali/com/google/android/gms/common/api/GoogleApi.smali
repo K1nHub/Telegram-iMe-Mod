@@ -189,13 +189,8 @@
 
     move-object v1, p1
 
-    goto :goto_0
-
     :catch_0
-    nop
-
     :cond_0
-    :goto_0
     iput-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zac:Ljava/lang/String;
 
     iput-object p3, p0, Lcom/google/android/gms/common/api/GoogleApi;->zad:Lcom/google/android/gms/common/api/Api;

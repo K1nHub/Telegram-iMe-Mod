@@ -301,75 +301,19 @@ public final class Hpack {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public void writeHeaders(List<Header> list) throws IOException {
-            int i;
-            int i2;
-            if (this.emitDynamicTableSizeUpdate) {
-                int i3 = this.smallestHeaderTableSizeSetting;
-                if (i3 < this.maxDynamicTableByteCount) {
-                    writeInt(i3, 31, 32);
-                }
-                this.emitDynamicTableSizeUpdate = false;
-                this.smallestHeaderTableSizeSetting = Integer.MAX_VALUE;
-                writeInt(this.maxDynamicTableByteCount, 31, 32);
-            }
-            int size = list.size();
-            for (int i4 = 0; i4 < size; i4++) {
-                Header header = list.get(i4);
-                ByteString asciiLowercase = header.name.toAsciiLowercase();
-                ByteString byteString = header.value;
-                Integer num = (Integer) Hpack.NAME_TO_FIRST_INDEX.get(asciiLowercase);
-                if (num != null) {
-                    i = num.intValue() + 1;
-                    if (i >= 2 && i <= 7) {
-                        if (Hpack.STATIC_HEADER_TABLE[i - 1].value.equals(byteString)) {
-                            i2 = i;
-                        } else if (Hpack.STATIC_HEADER_TABLE[i].value.equals(byteString)) {
-                            i2 = i;
-                            i++;
-                        }
-                    }
-                    i2 = i;
-                    i = -1;
-                } else {
-                    i = -1;
-                    i2 = -1;
-                }
-                if (i == -1) {
-                    int i5 = this.nextDynamicTableIndex;
-                    while (true) {
-                        i5++;
-                        Header[] headerArr = this.dynamicTable;
-                        if (i5 >= headerArr.length) {
-                            break;
-                        } else if (headerArr[i5].name.equals(asciiLowercase)) {
-                            if (this.dynamicTable[i5].value.equals(byteString)) {
-                                i = Hpack.STATIC_HEADER_TABLE.length + (i5 - this.nextDynamicTableIndex);
-                                break;
-                            } else if (i2 == -1) {
-                                i2 = (i5 - this.nextDynamicTableIndex) + Hpack.STATIC_HEADER_TABLE.length;
-                            }
-                        }
-                    }
-                }
-                if (i != -1) {
-                    writeInt(i, 127, 128);
-                } else if (i2 != -1) {
-                    if (asciiLowercase.startsWith(Hpack.PSEUDO_PREFIX) && !Header.TARGET_AUTHORITY.equals(asciiLowercase)) {
-                        writeInt(i2, 15, 0);
-                        writeByteString(byteString);
-                    } else {
-                        writeInt(i2, 63, 64);
-                        writeByteString(byteString);
-                        insertIntoDynamicTable(header);
-                    }
-                } else {
-                    this.out.writeByte(64);
-                    writeByteString(asciiLowercase);
-                    writeByteString(byteString);
-                    insertIntoDynamicTable(header);
-                }
-            }
+        /* JADX WARN: Removed duplicated region for block: B:26:0x0078  */
+        /* JADX WARN: Removed duplicated region for block: B:38:0x00b0  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x00b8  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        public void writeHeaders(java.util.List<io.grpc.okhttp.internal.framed.Header> r14) throws java.io.IOException {
+            /*
+                Method dump skipped, instructions count: 246
+                To view this dump add '--comments-level debug' option
+            */
+            throw new UnsupportedOperationException("Method not decompiled: io.grpc.okhttp.internal.framed.Hpack.Writer.writeHeaders(java.util.List):void");
         }
 
         void writeInt(int i, int i2, int i3) throws IOException {

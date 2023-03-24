@@ -435,16 +435,7 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
-    .locals 0
-
-    .line 54
-    invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss()V
-
-    return-void
-.end method
-
-.method static synthetic access$100(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
+.method static synthetic access$000(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
     .locals 0
 
     .line 54
@@ -453,16 +444,7 @@
     return p0
 .end method
 
-.method static synthetic access$1000(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Landroid/animation/ValueAnimator;
-    .locals 0
-
-    .line 54
-    iget-object p0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->valueAnimator:Landroid/animation/ValueAnimator;
-
-    return-object p0
-.end method
-
-.method static synthetic access$102(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Z
+.method static synthetic access$002(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Z
     .locals 0
 
     .line 54
@@ -471,7 +453,7 @@
     return p1
 .end method
 
-.method static synthetic access$200(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
+.method static synthetic access$100(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
     .locals 0
 
     .line 54
@@ -480,7 +462,7 @@
     return-void
 .end method
 
-.method static synthetic access$300(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Landroid/view/WindowManager$LayoutParams;
+.method static synthetic access$200(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Landroid/view/WindowManager$LayoutParams;
     .locals 0
 
     .line 54
@@ -491,7 +473,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$400(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
+.method static synthetic access$300(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
     .locals 0
 
     .line 54
@@ -500,7 +482,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
+.method static synthetic access$400(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
     .locals 0
 
     .line 54
@@ -509,7 +491,7 @@
     return-void
 .end method
 
-.method static synthetic access$600(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)V
+.method static synthetic access$500(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)V
     .locals 0
 
     .line 54
@@ -518,7 +500,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
+.method static synthetic access$600(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
     .locals 0
 
     .line 54
@@ -527,7 +509,7 @@
     return p0
 .end method
 
-.method static synthetic access$702(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Z
+.method static synthetic access$602(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Z)Z
     .locals 0
 
     .line 54
@@ -536,7 +518,7 @@
     return p1
 .end method
 
-.method static synthetic access$800(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
+.method static synthetic access$700(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Z
     .locals 0
 
     .line 54
@@ -545,7 +527,7 @@
     return p0
 .end method
 
-.method static synthetic access$900(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
+.method static synthetic access$800(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
     .locals 0
 
     .line 54
@@ -554,7 +536,7 @@
     return p0
 .end method
 
-.method static synthetic access$908(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
+.method static synthetic access$808(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)I
     .locals 2
 
     .line 54
@@ -565,6 +547,15 @@
     iput v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->frameDrawCount:I
 
     return v0
+.end method
+
+.method static synthetic access$900(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)Landroid/animation/ValueAnimator;
+    .locals 0
+
+    .line 54
+    iget-object p0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->valueAnimator:Landroid/animation/ValueAnimator;
+
+    return-object p0
 .end method
 
 .method private checkAnimationEnd()V
@@ -730,7 +721,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_0
     sub-int/2addr v0, v4
@@ -922,12 +913,12 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->cascadeAnimation:Z
@@ -1081,55 +1072,6 @@
     return-void
 .end method
 
-.method private dismiss()V
-    .locals 3
-
-    .line 450
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismissed:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    .line 453
-    :cond_0
-    invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->hideVisible()V
-
-    const/4 v0, 0x1
-
-    .line 454
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismissed:Z
-
-    .line 455
-    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->windowView:Landroid/widget/FrameLayout;
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
-
-    const/4 v1, 0x0
-
-    .line 456
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->createTransition(Z)V
-
-    .line 457
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->wasFocused:Z
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    instance-of v2, v1, Lorg/telegram/ui/ChatActivity;
-
-    if-eqz v2, :cond_1
-
-    .line 458
-    check-cast v1, Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {v1, v0, v0}, Lorg/telegram/ui/ChatActivity;->onEditTextDialogClose(ZZ)V
-
-    :cond_1
-    return-void
-.end method
-
 .method private synthetic lambda$createTransition$2(Landroid/animation/ValueAnimator;)V
     .locals 3
 
@@ -1225,7 +1167,7 @@
     if-eqz p1, :cond_0
 
     .line 120
-    invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss()V
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss()V
 
     :cond_0
     return-void
@@ -1280,13 +1222,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 443
-    :goto_0
+    :catch_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->onDismiss:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
@@ -1408,7 +1345,7 @@
 
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
     .line 421
     :goto_0
@@ -1509,9 +1446,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 341
     :goto_0
@@ -1615,7 +1552,7 @@
     .line 355
     invoke-virtual {v5, v8}, Landroid/view/View;->setScaleY(F)V
 
-    const/4 v4, 0x1
+    move v4, v7
 
     :goto_1
     add-int/lit8 v3, v3, 0x1
@@ -1752,7 +1689,7 @@
     .line 374
     invoke-virtual {v3, v8}, Landroid/view/View;->setScaleY(F)V
 
-    const/4 v4, 0x1
+    move v4, v7
 
     :goto_3
     add-int/lit8 v1, v1, 0x1
@@ -1934,7 +1871,7 @@
 
     if-gez v2, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 216
     :cond_2
@@ -1967,6 +1904,55 @@
 
 
 # virtual methods
+.method public dismiss()V
+    .locals 3
+
+    .line 450
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismissed:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 453
+    :cond_0
+    invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->hideVisible()V
+
+    const/4 v0, 0x1
+
+    .line 454
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismissed:Z
+
+    .line 455
+    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->windowView:Landroid/widget/FrameLayout;
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
+
+    const/4 v1, 0x0
+
+    .line 456
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->createTransition(Z)V
+
+    .line 457
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->wasFocused:Z
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    instance-of v2, v1, Lorg/telegram/ui/ChatActivity;
+
+    if-eqz v2, :cond_1
+
+    .line 458
+    check-cast v1, Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v1, v0, v0}, Lorg/telegram/ui/ChatActivity;->onEditTextDialogClose(ZZ)V
+
+    :cond_1
+    return-void
+.end method
+
 .method public dismiss(Z)V
     .locals 2
 

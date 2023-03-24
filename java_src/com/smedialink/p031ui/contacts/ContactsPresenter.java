@@ -31,7 +31,7 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
     }
 
     public final void deleteSelectedContacts() {
-        Completable observeOn = this.contactInteractor.deleteSelectedContacts().observeOn(this.schedulersProvider.mo707ui());
+        Completable observeOn = this.contactInteractor.deleteSelectedContacts().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "contactInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -40,7 +40,7 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
             public final void run() {
                 ContactsPresenter.this.deleteAction();
             }
-        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1907x3873914f((BaseView) getViewState(), this)));
+        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1921x3873914f((BaseView) getViewState(), this)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

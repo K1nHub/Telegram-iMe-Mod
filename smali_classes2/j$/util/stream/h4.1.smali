@@ -41,7 +41,7 @@
 .end method
 
 .method public b(Ljava/lang/Object;J)V
-    .locals 4
+    .locals 3
 
     check-cast p1, Lj$/util/function/l;
 
@@ -50,9 +50,9 @@
     :goto_0
     int-to-long v1, v0
 
-    cmp-long v3, v1, p2
+    cmp-long v1, v1, p2
 
-    if-gez v3, :cond_0
+    if-gez v1, :cond_0
 
     .line 1
     iget-object v1, p0, Lj$/util/stream/h4;->c:[I

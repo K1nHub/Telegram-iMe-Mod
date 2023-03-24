@@ -432,9 +432,9 @@
 
     iget-wide p0, p1, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;->document_id:J
 
-    cmp-long v0, v2, p0
+    cmp-long p0, v2, p0
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
     const/4 v1, 0x1
 
@@ -443,7 +443,7 @@
 .end method
 
 .method private equalsUsersList(Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -476,7 +476,7 @@
     goto :goto_2
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 449
     :goto_0
@@ -509,9 +509,9 @@
 
     iget-wide v2, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-eqz v6, :cond_1
+    if-eqz v2, :cond_1
 
     goto :goto_1
 
@@ -666,7 +666,7 @@
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 368
     :goto_0
@@ -706,9 +706,9 @@
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 373
     :goto_1
@@ -925,7 +925,7 @@
 
     :cond_a
     :goto_3
-    const/4 v2, 0x1
+    move v2, v4
 
     :goto_4
     add-int/lit8 v0, v0, 0x1
@@ -1000,7 +1000,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 423
     :cond_d
@@ -1040,7 +1040,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->fromY:F
 
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 430
     :cond_f
@@ -1056,7 +1056,7 @@
     .line 432
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->fromWidth:I
 
-    const/4 v2, 0x1
+    move v2, v4
 
     .line 436
     :cond_10
@@ -1089,9 +1089,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->animatedReactions:Ljava/util/HashMap;
 
@@ -1403,9 +1403,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v5, :cond_3
+    if-ltz v0, :cond_3
 
     .line 807
     :cond_2
@@ -1660,7 +1660,7 @@
 
     sub-float v7, v6, p2
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     add-float/2addr v3, v5
 
@@ -1669,7 +1669,7 @@
     .line 311
     iget v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->fromY:F
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     add-float/2addr v4, v5
 
@@ -1683,7 +1683,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 315
     :goto_1
@@ -1745,16 +1745,16 @@
 
     int-to-float v12, v11
 
-    const/4 v13, 0x3
+    cmpl-float v13, p2, v6
 
-    cmpl-float v14, p2, v6
+    const/4 v14, 0x3
 
-    if-eqz v14, :cond_4
+    if-eqz v13, :cond_4
 
     .line 323
     iget v15, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animationType:I
 
-    if-ne v15, v13, :cond_4
+    if-ne v15, v14, :cond_4
 
     int-to-float v9, v9
 
@@ -1767,7 +1767,7 @@
 
     sub-float v12, v6, p2
 
-    mul-float v10, v10, v12
+    mul-float/2addr v10, v12
 
     add-float/2addr v10, v9
 
@@ -1780,7 +1780,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float v12, v9, v11
 
@@ -1790,7 +1790,7 @@
 
     const/4 v9, 0x1
 
-    if-eqz v14, :cond_5
+    if-eqz v13, :cond_5
 
     .line 329
     iget v10, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animationType:I
@@ -1821,20 +1821,20 @@
     goto :goto_2
 
     :cond_5
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v6
 
     .line 334
     :goto_2
     iget v8, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->animationType:I
 
-    if-ne v8, v13, :cond_6
+    if-ne v8, v14, :cond_6
 
     move/from16 v8, p2
 
     goto :goto_3
 
     :cond_6
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v6
 
     :goto_3
     if-eqz v2, :cond_7
@@ -1842,7 +1842,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_4
     invoke-virtual {v5, v1, v8, v7, v9}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->draw(Landroid/graphics/Canvas;FFZ)V
@@ -1854,10 +1854,10 @@
     :goto_5
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 338
     :goto_6
@@ -1955,13 +1955,13 @@
 
     sub-float/2addr v1, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->totalHeight:I
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     add-float/2addr v0, v1
 
@@ -1993,13 +1993,13 @@
 
     sub-float/2addr v1, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->width:I
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     add-float/2addr v0, v1
 
@@ -2108,13 +2108,13 @@
     return-void
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 242
     :goto_0
@@ -2228,7 +2228,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v11, 0x0
+    move v11, v3
 
     .line 253
     :goto_1
@@ -2256,13 +2256,13 @@
 
     move-result v14
 
-    mul-int v11, v11, v14
+    mul-int/2addr v11, v14
 
     int-to-float v11, v11
 
     const v14, 0x3f4ccccd    # 0.8f
 
-    mul-float v11, v11, v14
+    mul-float/2addr v11, v14
 
     add-float/2addr v15, v11
 
@@ -2348,7 +2348,7 @@
 
     add-int/2addr v6, v5
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 265
     :cond_4
@@ -2402,9 +2402,9 @@
 
     iget v8, v8, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->y:I
 
-    const/4 v11, 0x0
+    move v11, v3
 
-    const/4 v12, 0x0
+    move v12, v11
 
     .line 275
     :goto_4
@@ -2795,7 +2795,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 460
     :goto_0
@@ -2837,7 +2837,7 @@
     .line 466
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->animateHeight:Z
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 467
     :goto_1
@@ -2932,9 +2932,9 @@
 
     if-eqz v5, :cond_d
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 130
     :goto_0
@@ -2972,7 +2972,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 133
     :goto_1
@@ -3033,9 +3033,9 @@
 
     const-wide/16 v13, 0x0
 
-    cmp-long v15, v11, v13
+    cmp-long v11, v11, v13
 
-    if-lez v15, :cond_5
+    if-lez v11, :cond_5
 
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
@@ -3151,9 +3151,9 @@
 
     if-gt v6, v12, :cond_9
 
-    move-object v12, v9
+    move v11, v4
 
-    const/4 v11, 0x0
+    move-object v12, v9
 
     .line 176
     :goto_3
@@ -3436,7 +3436,7 @@
 
     invoke-static {v5, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 218
     :goto_6

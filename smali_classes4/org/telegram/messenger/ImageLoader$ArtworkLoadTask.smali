@@ -394,13 +394,8 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    goto :goto_3
-
     :catchall_0
-    nop
-
     :cond_3
-    :goto_3
     if-eqz v1, :cond_4
 
     .line 449
@@ -409,7 +404,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    goto :goto_4
+    goto :goto_3
 
     :catchall_1
     move-exception p1
@@ -419,7 +414,7 @@
 
     .line 456
     :cond_4
-    :goto_4
+    :goto_3
     :try_start_7
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_7
@@ -452,13 +447,8 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
-    goto :goto_5
-
     :catchall_2
-    nop
-
     :cond_6
-    :goto_5
     if-eqz v1, :cond_7
 
     .line 449
@@ -467,7 +457,7 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_3
 
-    goto :goto_6
+    goto :goto_4
 
     :catchall_3
     move-exception v0
@@ -477,7 +467,7 @@
 
     .line 456
     :cond_7
-    :goto_6
+    :goto_4
     :try_start_b
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_b
@@ -498,13 +488,8 @@
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_4
 
-    goto :goto_7
-
     :catchall_4
-    nop
-
     :cond_9
-    :goto_7
     if-eqz v1, :cond_a
 
     .line 449
@@ -513,7 +498,7 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_5
 
-    goto :goto_8
+    goto :goto_5
 
     :catchall_5
     move-exception v0
@@ -523,13 +508,13 @@
 
     .line 456
     :cond_a
-    :goto_8
+    :goto_5
     :try_start_e
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_e
     .catch Ljava/lang/Exception; {:try_start_e .. :try_end_e} :catch_3
 
-    goto/16 :goto_d
+    goto/16 :goto_9
 
     :catchall_6
     move-exception v3
@@ -542,7 +527,7 @@
 
     move-object v3, v6
 
-    goto :goto_9
+    goto :goto_6
 
     :catchall_7
     move-exception v2
@@ -555,7 +540,7 @@
 
     move-object v1, v6
 
-    goto :goto_9
+    goto :goto_6
 
     :catchall_8
     move-exception v1
@@ -565,7 +550,7 @@
     move-object v3, v2
 
     .line 425
-    :goto_9
+    :goto_6
     :try_start_f
     instance-of v4, v1, Ljava/net/SocketTimeoutException;
 
@@ -581,7 +566,7 @@
     .line 427
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
-    goto :goto_a
+    goto :goto_7
 
     .line 429
     :cond_b
@@ -592,7 +577,7 @@
     .line 430
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
-    goto :goto_a
+    goto :goto_7
 
     .line 431
     :cond_c
@@ -622,7 +607,7 @@
     .line 433
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
-    goto :goto_a
+    goto :goto_7
 
     .line 435
     :cond_d
@@ -635,7 +620,7 @@
 
     .line 438
     :cond_e
-    :goto_a
+    :goto_7
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_b
@@ -651,13 +636,8 @@
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_9
 
-    goto :goto_b
-
     :catchall_9
-    nop
-
     :cond_f
-    :goto_b
     if-eqz v2, :cond_10
 
     .line 449
@@ -666,7 +646,7 @@
     :try_end_11
     .catchall {:try_start_11 .. :try_end_11} :catchall_a
 
-    goto :goto_c
+    goto :goto_8
 
     :catchall_a
     move-exception v0
@@ -675,7 +655,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_10
-    :goto_c
+    :goto_8
     if-eqz v3, :cond_11
 
     .line 456
@@ -686,7 +666,7 @@
 
     :catch_3
     :cond_11
-    :goto_d
+    :goto_9
     return-object p1
 
     :catchall_b
@@ -703,13 +683,8 @@
     :try_end_13
     .catchall {:try_start_13 .. :try_end_13} :catchall_c
 
-    goto :goto_e
-
     :catchall_c
-    nop
-
     :cond_12
-    :goto_e
     if-eqz v2, :cond_13
 
     .line 449
@@ -718,7 +693,7 @@
     :try_end_14
     .catchall {:try_start_14 .. :try_end_14} :catchall_d
 
-    goto :goto_f
+    goto :goto_a
 
     :catchall_d
     move-exception v0
@@ -727,7 +702,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_13
-    :goto_f
+    :goto_a
     if-eqz v3, :cond_14
 
     .line 456

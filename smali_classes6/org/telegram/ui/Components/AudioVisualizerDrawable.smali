@@ -90,7 +90,7 @@
 
     const v2, 0x3ea8f5c3    # 0.33f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iput v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->IDLE_RADIUS:F
 
@@ -105,7 +105,7 @@
 
     const v2, 0x3eb851ec    # 0.36f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iput v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->WAVE_RADIUS:F
 
@@ -205,7 +205,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x8
@@ -236,7 +236,7 @@
 
     const/high16 v8, 0x41800000    # 16.0f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v4, v7
 
@@ -354,7 +354,7 @@
 
     aget v1, v1, v0
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     cmpl-float v1, v2, v3
 
@@ -367,7 +367,7 @@
     return-void
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     const/4 v3, 0x3
@@ -383,7 +383,7 @@
 
     iget v8, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->WAVE_RADIUS:F
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -403,7 +403,7 @@
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/CircleBezierDrawable;->setAdditionals([I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_3
     if-ge v1, v3, :cond_a
@@ -419,7 +419,7 @@
 
     iget v9, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->WAVE_RADIUS:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     float-to-int v8, v8
 
@@ -457,13 +457,13 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v1, v3
 
     iget v3, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->IDLE_RADIUS:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     add-float/2addr v1, v3
 
@@ -526,7 +526,7 @@
 
     const v2, 0x3d23d70a    # 0.04f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v1, v4
 
@@ -555,7 +555,7 @@
 
     sub-float v0, v4, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v0, v4
 
@@ -612,7 +612,7 @@
 
     int-to-float p6, p6
 
-    mul-float p6, p6, p5
+    mul-float/2addr p6, p5
 
     float-to-int p5, p6
 
@@ -639,7 +639,7 @@
 
     int-to-float p6, p6
 
-    mul-float p6, p6, p5
+    mul-float/2addr p6, p5
 
     float-to-int p5, p6
 
@@ -671,7 +671,7 @@
 .end method
 
 .method public setWaveform(ZZ[F)V
-    .locals 10
+    .locals 9
 
     const/16 v0, 0x20
 
@@ -728,17 +728,17 @@
 
     if-nez v3, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-nez p3, :cond_4
 
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_2
 
@@ -753,9 +753,9 @@
 
     const-wide v7, 0x3fd999999999999aL    # 0.4
 
-    cmpl-double v9, v5, v7
+    cmpl-double v5, v5, v7
 
-    if-lez v9, :cond_6
+    if-lez v5, :cond_6
 
     .line 70
     iget-object v5, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->lastAmplitude:[F
@@ -793,7 +793,7 @@
     :goto_3
     if-eqz v3, :cond_7
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_4
     if-ge v2, p2, :cond_7
@@ -827,7 +827,7 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     .line 86
     :cond_8
@@ -835,9 +835,9 @@
 
     if-le v3, p2, :cond_a
 
-    const/4 v3, 0x0
+    move v4, v0
 
-    const/4 v4, 0x0
+    move v3, v1
 
     :goto_5
     if-ge v3, p2, :cond_9
@@ -871,7 +871,7 @@
 
     sub-float/2addr v4, v5
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     sub-float/2addr v2, v3
 

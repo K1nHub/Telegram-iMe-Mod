@@ -139,7 +139,7 @@
     :pswitch_0
     if-nez p2, :cond_0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     :cond_0
     int-to-byte p1, v0

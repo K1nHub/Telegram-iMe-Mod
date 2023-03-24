@@ -67,8 +67,8 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             ArrayDeque arrayDeque = new ArrayDeque();
             FrameAndTickRate frameAndTickRate2 = DEFAULT_FRAME_AND_TICK_RATE;
             CellResolution cellResolution = DEFAULT_CELL_RESOLUTION;
-            TtmlSubtitle ttmlSubtitle = null;
             int i2 = 0;
+            TtmlSubtitle ttmlSubtitle = null;
             for (int eventType = newPullParser.getEventType(); eventType != 1; eventType = newPullParser.getEventType()) {
                 TtmlNode ttmlNode = (TtmlNode) arrayDeque.peek();
                 if (i2 == 0) {
@@ -526,7 +526,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x00bc, code lost:
         if (r13.equals("ms") == false) goto L21;
      */
     /*
@@ -535,7 +535,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
     */
     private static long parseTimeExpression(java.lang.String r13, com.google.android.exoplayer2.text.ttml.TtmlDecoder.FrameAndTickRate r14) throws com.google.android.exoplayer2.text.SubtitleDecoderException {
         /*
-            Method dump skipped, instructions count: 330
+            Method dump skipped, instructions count: 326
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.text.ttml.TtmlDecoder.parseTimeExpression(java.lang.String, com.google.android.exoplayer2.text.ttml.TtmlDecoder$FrameAndTickRate):long");

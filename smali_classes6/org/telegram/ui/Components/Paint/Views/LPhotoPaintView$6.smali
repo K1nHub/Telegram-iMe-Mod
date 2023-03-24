@@ -167,7 +167,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     const/high16 v4, 0x43160000    # 150.0f
@@ -289,22 +289,22 @@
     :goto_2
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->stickyYAlpha:F
 
-    const/high16 v1, 0x40000000    # 2.0f
+    cmpl-float v1, v0, v6
 
-    const/high16 v2, 0x437f0000    # 255.0f
+    const/high16 v2, 0x40000000    # 2.0f
 
-    cmpl-float v3, v0, v6
+    const/high16 v3, 0x437f0000    # 255.0f
 
-    if-eqz v3, :cond_5
+    if-eqz v1, :cond_5
 
     .line 401
-    iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->linePaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->linePaint:Landroid/graphics/Paint;
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
-    invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 402
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -313,7 +313,7 @@
 
     int-to-float v0, v0
 
-    div-float v11, v0, v1
+    div-float v11, v0, v2
 
     const/4 v8, 0x0
 
@@ -336,18 +336,18 @@
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->stickyXAlpha:F
 
-    cmpl-float v3, v0, v6
+    cmpl-float v1, v0, v6
 
-    if-eqz v3, :cond_6
+    if-eqz v1, :cond_6
 
     .line 406
-    iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->linePaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->linePaint:Landroid/graphics/Paint;
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
-    invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 407
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -356,24 +356,24 @@
 
     int-to-float v0, v0
 
-    div-float v5, v0, v1
+    div-float v6, v0, v2
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 408
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
 
-    int-to-float v6, v0
+    int-to-float v7, v0
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->linePaint:Landroid/graphics/Paint;
+    iget-object v8, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$6;->linePaint:Landroid/graphics/Paint;
 
-    move-object v2, p1
+    move-object v3, p1
 
-    move v3, v5
+    move v4, v6
 
-    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     :cond_6
     return-void

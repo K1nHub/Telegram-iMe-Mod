@@ -81,7 +81,7 @@
 
     if-nez p0, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -280,22 +280,22 @@
 
     if-nez v1, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_0
     if-nez v2, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_1
     invoke-virtual {p0}, Lorg/bouncycastle/math/ec/ECPoint;->isInfinity()Z
@@ -397,7 +397,7 @@
 
     if-eqz p1, :cond_8
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_8
     return v0
@@ -419,7 +419,7 @@
     if-eqz p1, :cond_b
 
     :cond_a
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_b
     return v0

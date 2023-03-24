@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: StakingCalculatorProgrammeProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.StakingCalculatorProgrammeProvider */
 /* loaded from: classes3.dex */
@@ -33,7 +33,7 @@ public final class StakingCalculatorProgrammeProvider extends BaseNodeProvider<S
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.STAKING_PROGRAMME;
-        this.layoutId = C3286R.layout.fork_recycle_item_staking_calculator_programme;
+        this.layoutId = C3301R.layout.fork_recycle_item_staking_calculator_programme;
         lazy = LazyKt__LazyJVMKt.lazy(new StakingCalculatorProgrammeProvider$networkIconCornerSize$2(this));
         this.networkIconCornerSize$delegate = lazy;
     }
@@ -57,19 +57,19 @@ public final class StakingCalculatorProgrammeProvider extends BaseNodeProvider<S
     public void convert(BaseViewHolder helper, StakingProgrammeItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3286R.C3289id.text_name;
+        int i = C3301R.C3304id.text_name;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(helper, i, "chats_actionBackground");
-        int i2 = C3286R.C3289id.text_apr_value;
-        int i3 = C3286R.C3289id.text_apy_value;
+        int i2 = C3301R.C3304id.text_apr_value;
+        int i3 = C3301R.C3304id.text_apy_value;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, "windowBackgroundWhiteBlackText", i2, i3);
-        int i4 = C3286R.C3289id.text_apy_title;
-        int i5 = C3286R.C3289id.text_apr_title;
-        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, "windowBackgroundWhiteGrayText", i4, i5), i4, i5, i3, i2).setImageResource(C3286R.C3289id.image_coin_icon, TokenInfoExtKt.getLogo(item.getTokenBalance().getInfo(), item.getTokenBalance().getNetworkType()));
-        int i6 = C3286R.C3289id.image_network_icon;
+        int i4 = C3301R.C3304id.text_apy_title;
+        int i5 = C3301R.C3304id.text_apr_title;
+        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, "windowBackgroundWhiteGrayText", i4, i5), i4, i5, i3, i2).setImageResource(C3301R.C3304id.image_coin_icon, TokenInfoExtKt.getLogo(item.getTokenBalance().getInfo(), item.getTokenBalance().getNetworkType()));
+        int i6 = C3301R.C3304id.image_network_icon;
         BaseViewHolder imageResource2 = imageResource.setImageResource(i6, item.getTokenBalance().getNetworkType().getLogo());
-        int i7 = C3286R.C3289id.image_info;
-        BaseViewHolder text = BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(imageResource2, i7, "chats_actionBackground"), i7).setText(i4, this.resourceManager.getString(C3286R.string.staking_programme_apy));
-        BaseViewHolder text2 = text.setText(i3, item.getApy() + '%').setText(i5, this.resourceManager.getString(C3286R.string.staking_programme_apr));
+        int i7 = C3301R.C3304id.image_info;
+        BaseViewHolder text = BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(imageResource2, i7, "chats_actionBackground"), i7).setText(i4, this.resourceManager.getString(C3301R.string.staking_programme_apy));
+        BaseViewHolder text2 = text.setText(i3, item.getApy() + '%').setText(i5, this.resourceManager.getString(C3301R.string.staking_programme_apr));
         BaseViewHolder text3 = text2.setText(i2, item.getApr() + '%').setText(i, item.getName());
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setGone(BaseQuickAdapterExtKt.setGone(text3, NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApy())), i4, i3), NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApr())), i5, i2), i6, new StakingCalculatorProgrammeProvider$convert$1$1(this));
@@ -79,12 +79,12 @@ public final class StakingCalculatorProgrammeProvider extends BaseNodeProvider<S
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseViewHolder imageResource = helper.setImageResource(C3286R.C3289id.image_coin_icon, TokenInfoExtKt.getLogo(item.getTokenBalance().getInfo(), item.getTokenBalance().getNetworkType())).setImageResource(C3286R.C3289id.image_network_icon, item.getTokenBalance().getNetworkType().getLogo());
-        int i = C3286R.C3289id.text_apy_value;
+        BaseViewHolder imageResource = helper.setImageResource(C3301R.C3304id.image_coin_icon, TokenInfoExtKt.getLogo(item.getTokenBalance().getInfo(), item.getTokenBalance().getNetworkType())).setImageResource(C3301R.C3304id.image_network_icon, item.getTokenBalance().getNetworkType().getLogo());
+        int i = C3301R.C3304id.text_apy_value;
         BaseViewHolder text = imageResource.setText(i, item.getApy() + '%');
-        int i2 = C3286R.C3289id.text_apr_value;
-        BaseViewHolder text2 = text.setText(i2, item.getApr() + '%').setText(C3286R.C3289id.text_name, item.getName());
+        int i2 = C3301R.C3304id.text_apr_value;
+        BaseViewHolder text2 = text.setText(i2, item.getApr() + '%').setText(C3301R.C3304id.text_name, item.getName());
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
-        BaseQuickAdapterExtKt.setGone(BaseQuickAdapterExtKt.setGone(text2, NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApy())), C3286R.C3289id.text_apy_title, i), NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApr())), C3286R.C3289id.text_apr_title, i2);
+        BaseQuickAdapterExtKt.setGone(BaseQuickAdapterExtKt.setGone(text2, NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApy())), C3301R.C3304id.text_apy_title, i), NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApr())), C3301R.C3304id.text_apr_title, i2);
     }
 }

@@ -195,7 +195,7 @@
 
     const-wide v2, 0x3fc1eb851eb851ecL    # 0.14
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-int p2, v0
 
@@ -566,7 +566,7 @@
 
     int-to-float v0, v2
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v1, v0
 
@@ -605,7 +605,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-double v1, v1
 
@@ -637,14 +637,14 @@
 
     if-gez v1, :cond_0
 
-    const/4 p6, 0x0
+    move p6, v0
 
     :cond_0
     cmpg-float v1, p7, v0
 
     if-gez v1, :cond_1
 
-    const/4 p7, 0x0
+    move p7, v0
 
     :cond_1
     sub-float p2, p4, p2
@@ -675,7 +675,7 @@
 
     sub-float/2addr p2, v2
 
-    mul-float v1, v1, p7
+    mul-float/2addr v1, p7
 
     sub-float/2addr p5, v1
 
@@ -986,7 +986,7 @@
 
     sub-float v2, v14, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -1010,7 +1010,7 @@
 
     iget v2, v10, Lorg/telegram/ui/Components/TextSelectionHint;->endOffsetValue:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -1198,7 +1198,7 @@
 
     sub-float/2addr v14, v2
 
-    mul-float v1, v1, v14
+    mul-float/2addr v1, v14
 
     sub-float/2addr v0, v1
 
@@ -1222,7 +1222,7 @@
 
     iget v2, v10, Lorg/telegram/ui/Components/TextSelectionHint;->startOffsetValue:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -1379,7 +1379,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/TextSelectionHint;->padding:I
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v0
 
     sub-int v6, v2, v3
 
@@ -1434,9 +1434,9 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, p2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 102
     :goto_0
@@ -1598,7 +1598,7 @@
 
     move-result p2
 
-    mul-int/lit8 p2, p2, 0x2
+    mul-int/2addr p2, v0
 
     add-int/2addr p1, p2
 

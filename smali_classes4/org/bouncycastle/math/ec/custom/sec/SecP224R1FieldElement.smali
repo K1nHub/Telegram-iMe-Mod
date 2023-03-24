@@ -125,7 +125,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v9, 0x0
+    move v9, v0
 
     :goto_0
     const/4 v0, 0x7
@@ -281,7 +281,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x1
+    move v5, v2
 
     :goto_0
     const/16 v6, 0x60
@@ -649,7 +649,7 @@
 
     if-ne v0, v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1

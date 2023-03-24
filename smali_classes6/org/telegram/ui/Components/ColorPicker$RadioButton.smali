@@ -102,7 +102,7 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 180
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
@@ -111,7 +111,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     .line 182
     iget-object v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
@@ -147,7 +147,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     invoke-static {v5}, Ljava/lang/Math;->round(F)I
 
@@ -162,7 +162,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     sub-float v2, v0, v4
 
@@ -195,7 +195,7 @@
 
     iget v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checkedState:F
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float/2addr v0, v2
 
@@ -347,7 +347,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     aput v0, p1, v2
@@ -381,7 +381,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->setCheckedState(F)V

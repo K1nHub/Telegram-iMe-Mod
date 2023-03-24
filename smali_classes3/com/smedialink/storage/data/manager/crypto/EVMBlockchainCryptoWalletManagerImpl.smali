@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEVMBlockchainCryptoWalletManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,73:1\n15#2:74\n8#3:75\n8#3:77\n8#3:79\n8#3:81\n8#3:82\n18#4:76\n18#4:78\n18#4:80\n*S KotlinDebug\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n*L\n25#1:74\n38#1:75\n50#1:77\n69#1:79\n56#1:81\n64#1:82\n38#1:76\n50#1:78\n69#1:80\n*E\n"
+    value = "SMAP\nEVMBlockchainCryptoWalletManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,73:1\n15#2:74\n11#3:75\n11#3:77\n11#3:79\n9#3:81\n9#3:82\n18#4:76\n18#4:78\n18#4:80\n*S KotlinDebug\n*F\n+ 1 EVMBlockchainCryptoWalletManagerImpl.kt\ncom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl\n*L\n25#1:74\n38#1:75\n50#1:77\n69#1:79\n56#1:81\n64#1:82\n38#1:76\n50#1:78\n69#1:80\n*E\n"
 .end annotation
 
 
@@ -73,9 +73,9 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
-    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
+    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;
 
-    invoke-virtual {v0, p0}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->createBip44Wallet(Ljava/lang/String;)Lorg/web3j/crypto/Credentials;
+    invoke-virtual {v0, p0}, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->createBip44Wallet(Ljava/lang/String;)Lorg/web3j/crypto/Credentials;
 
     move-result-object p0
 
@@ -87,7 +87,7 @@
 
     move-result-object p0
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -118,7 +118,7 @@
     .locals 4
 
     .line 64
-    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
+    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;
 
     const/4 v1, 0x0
 
@@ -126,7 +126,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->generateNewEntropy$default(Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;IILjava/lang/Object;)[B
+    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->generateNewEntropy$default(Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;IILjava/lang/Object;)[B
 
     move-result-object v0
 
@@ -134,7 +134,7 @@
 
     move-result-object v0
 
-    .line 8
+    .line 9
     sget-object v1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v1, v0}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -333,9 +333,9 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 30
-    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
+    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;
 
-    invoke-virtual {v0, p2}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->createBip44Wallet(Ljava/lang/String;)Lorg/web3j/crypto/Credentials;
+    invoke-virtual {v0, p2}, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->createBip44Wallet(Ljava/lang/String;)Lorg/web3j/crypto/Credentials;
 
     move-result-object v0
 
@@ -373,7 +373,7 @@
 
     invoke-direct {p3, p1, p2, v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/web3j/crypto/Credentials;)V
 
-    .line 8
+    .line 11
     sget-object p1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {p1, p3}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -419,7 +419,7 @@
 
     move-result-object p1
 
-    .line 8
+    .line 11
     sget-object v0, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
@@ -472,9 +472,9 @@
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
-    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;
+    sget-object v0, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->INSTANCE:Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;
 
-    invoke-virtual {v0, p3}, Lcom/smedialink/storage/data/utils/crypto/CryptoWalletUtils;->createBip44Wallet(Ljava/lang/String;)Lorg/web3j/crypto/Credentials;
+    invoke-virtual {v0, p3}, Lcom/smedialink/storage/data/utils/crypto/CryptoEVMUtils;->createBip44Wallet(Ljava/lang/String;)Lorg/web3j/crypto/Credentials;
 
     move-result-object v0
 
@@ -515,7 +515,7 @@
 
     invoke-direct {p2, p1, p3, v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/web3j/crypto/Credentials;)V
 
-    .line 8
+    .line 11
     sget-object p1, Lcom/smedialink/storage/domain/model/Result;->Companion:Lcom/smedialink/storage/domain/model/Result$Companion;
 
     invoke-virtual {p1, p2}, Lcom/smedialink/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;

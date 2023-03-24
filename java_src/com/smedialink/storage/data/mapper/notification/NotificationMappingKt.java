@@ -83,7 +83,7 @@ public final class NotificationMappingKt {
     }
 
     public static final Notification mapToDomain(NotificationResponse notificationResponse) {
-        Notification c1847In;
+        Notification c1860In;
         Intrinsics.checkNotNullParameter(notificationResponse, "<this>");
         NotificationType map = NotificationType.Companion.map(notificationResponse.getType());
         switch (WhenMappings.$EnumSwitchMapping$0[map.ordinal()]) {
@@ -106,7 +106,7 @@ public final class NotificationMappingKt {
                     }
                     NetworkType map2 = companion.map(networkType);
                     Intrinsics.checkNotNullExpressionValue(bigDecimal, "toString()");
-                    c1847In = new Notification.CryptoTransfer.C1847In(id, read, map, date, userId, map2, parseSupportedTokenCode, str, str2, bigDecimal);
+                    c1860In = new Notification.CryptoTransfer.C1860In(id, read, map, date, userId, map2, parseSupportedTokenCode, str, str2, bigDecimal);
                     break;
                 } else {
                     return unsupportedNotification(notificationResponse);
@@ -136,7 +136,7 @@ public final class NotificationMappingKt {
                     }
                     NetworkType map4 = companion3.map(networkType2);
                     Intrinsics.checkNotNullExpressionValue(bigDecimal2, "toString()");
-                    c1847In = new Notification.CryptoTransfer.Out(map3, id2, read2, map, date2, userId2, map4, parseSupportedTokenCode2, str3, str4, bigDecimal2);
+                    c1860In = new Notification.CryptoTransfer.Out(map3, id2, read2, map, date2, userId2, map4, parseSupportedTokenCode2, str3, str4, bigDecimal2);
                     break;
                 } else {
                     return unsupportedNotification(notificationResponse);
@@ -160,7 +160,7 @@ public final class NotificationMappingKt {
                     }
                     NetworkType map5 = companion4.map(networkType3);
                     Intrinsics.checkNotNullExpressionValue(bigDecimal3, "toString()");
-                    c1847In = new Notification.Donation.C1848In(id3, read3, map, date3, userId3, map5, parseSupportedTokenCode3, str5, str6, bigDecimal3);
+                    c1860In = new Notification.Donation.C1861In(id3, read3, map, date3, userId3, map5, parseSupportedTokenCode3, str5, str6, bigDecimal3);
                     break;
                 } else {
                     return unsupportedNotification(notificationResponse);
@@ -190,7 +190,7 @@ public final class NotificationMappingKt {
                     }
                     NetworkType map7 = companion6.map(networkType4);
                     Intrinsics.checkNotNullExpressionValue(bigDecimal4, "toString()");
-                    c1847In = new Notification.Donation.Out(map6, id4, read4, map, date4, userId4, map7, parseSupportedTokenCode4, str7, str8, bigDecimal4);
+                    c1860In = new Notification.Donation.Out(map6, id4, read4, map, date4, userId4, map7, parseSupportedTokenCode4, str7, str8, bigDecimal4);
                     break;
                 } else {
                     return unsupportedNotification(notificationResponse);
@@ -226,7 +226,7 @@ public final class NotificationMappingKt {
                     NetworkType map9 = companion8.map(networkType5);
                     Intrinsics.checkNotNullExpressionValue(bigDecimal5, "toString()");
                     Intrinsics.checkNotNullExpressionValue(bigDecimal6, "amountToSpent?.toBigDecimal() ?: BigDecimal.ZERO");
-                    c1847In = new Notification.Simplex(id5, read5, map, date5, userId5, map9, parseSupportedTokenCode5, str9, bigDecimal5, map8, bigDecimal6, fiatCode);
+                    c1860In = new Notification.Simplex(id5, read5, map, date5, userId5, map9, parseSupportedTokenCode5, str9, bigDecimal5, map8, bigDecimal6, fiatCode);
                     break;
                 } else {
                     return unsupportedNotification(notificationResponse);
@@ -247,7 +247,7 @@ public final class NotificationMappingKt {
                 String networkType6 = notificationResponse.getNetworkType();
                 NetworkType map10 = companion9.map(networkType6 != null ? networkType6 : "");
                 Intrinsics.checkNotNullExpressionValue(bigDecimal7, "toString()");
-                c1847In = new Notification.BinancePayRequestCreated(id6, read6, map, date6, userId6, map10, bigDecimal7, str10, str11, str12);
+                c1860In = new Notification.BinancePayRequestCreated(id6, read6, map, date6, userId6, map10, bigDecimal7, str10, str11, str12);
                 break;
             case 7:
                 String id7 = notificationResponse.getId();
@@ -271,7 +271,7 @@ public final class NotificationMappingKt {
                 String networkType7 = notificationResponse.getNetworkType();
                 NetworkType map12 = companion11.map(networkType7 != null ? networkType7 : "");
                 Intrinsics.checkNotNullExpressionValue(bigDecimal8, "toString()");
-                c1847In = new Notification.BinancePayRequestStatusUpdated(id7, read7, map, date7, userId7, map12, bigDecimal8, str13, str14, str15, map11);
+                c1860In = new Notification.BinancePayRequestStatusUpdated(id7, read7, map, date7, userId7, map12, bigDecimal8, str13, str14, str15, map11);
                 break;
             case 8:
                 String id8 = notificationResponse.getId();
@@ -288,7 +288,7 @@ public final class NotificationMappingKt {
                 Status map13 = companion12.map(status5);
                 NetworkType.Companion companion13 = NetworkType.Companion;
                 String networkType8 = notificationResponse.getNetworkType();
-                c1847In = new Notification.Cancel(id8, read8, map, date8, userId8, companion13.map(networkType8 != null ? networkType8 : ""), str16, map13);
+                c1860In = new Notification.Cancel(id8, read8, map, date8, userId8, companion13.map(networkType8 != null ? networkType8 : ""), str16, map13);
                 break;
             case 9:
                 TokenCode parseSupportedTokenCode6 = parseSupportedTokenCode(notificationResponse.getCryptoCode());
@@ -307,7 +307,7 @@ public final class NotificationMappingKt {
                     Status map14 = companion14.map(status6);
                     NetworkType.Companion companion15 = NetworkType.Companion;
                     String networkType9 = notificationResponse.getNetworkType();
-                    c1847In = new Notification.Approve(id9, read9, map, date9, userId9, companion15.map(networkType9 != null ? networkType9 : ""), parseSupportedTokenCode6, str17, map14);
+                    c1860In = new Notification.Approve(id9, read9, map, date9, userId9, companion15.map(networkType9 != null ? networkType9 : ""), parseSupportedTokenCode6, str17, map14);
                     break;
                 } else {
                     return unsupportedNotification(notificationResponse);
@@ -330,7 +330,7 @@ public final class NotificationMappingKt {
                 String shouldFinishAt = notificationResponse.getShouldFinishAt();
                 String str18 = shouldFinishAt == null ? "" : shouldFinishAt;
                 Intrinsics.checkNotNullExpressionValue(bigDecimal9, "toString()");
-                c1847In = new Notification.StakingSafeWithdrawalStarted(id10, read10, map, date10, userId10, map15, stakingId, stakingName, stakingToken, bigDecimal9, str18);
+                c1860In = new Notification.StakingSafeWithdrawalStarted(id10, read10, map, date10, userId10, map15, stakingId, stakingName, stakingToken, bigDecimal9, str18);
                 break;
             case 11:
                 String id11 = notificationResponse.getId();
@@ -345,7 +345,7 @@ public final class NotificationMappingKt {
                 String stakingToken2 = notificationResponse.getStakingToken();
                 String bigDecimal10 = notificationResponse.getAmount().toString();
                 Intrinsics.checkNotNullExpressionValue(bigDecimal10, "toString()");
-                c1847In = new Notification.StakingSafeWithdrawalFinished(id11, read11, map, date11, userId11, map16, stakingId2, stakingName2, stakingToken2, bigDecimal10);
+                c1860In = new Notification.StakingSafeWithdrawalFinished(id11, read11, map, date11, userId11, map16, stakingId2, stakingName2, stakingToken2, bigDecimal10);
                 break;
             case 12:
                 String id12 = notificationResponse.getId();
@@ -354,7 +354,7 @@ public final class NotificationMappingKt {
                 String userId12 = notificationResponse.getUserId();
                 NetworkType.Companion companion18 = NetworkType.Companion;
                 String networkType12 = notificationResponse.getNetworkType();
-                c1847In = new Notification.StakingStarted(id12, read12, map, date12, userId12, companion18.map(networkType12 != null ? networkType12 : ""), notificationResponse.getStakingId(), notificationResponse.getStakingName(), notificationResponse.getStakingAuthor(), notificationResponse.getStakingWebsite(), notificationResponse.getStakingAPY(), notificationResponse.getStakingAPR(), notificationResponse.getStakingEndsAt(), notificationResponse.getStakingToken());
+                c1860In = new Notification.StakingStarted(id12, read12, map, date12, userId12, companion18.map(networkType12 != null ? networkType12 : ""), notificationResponse.getStakingId(), notificationResponse.getStakingName(), notificationResponse.getStakingAuthor(), notificationResponse.getStakingWebsite(), notificationResponse.getStakingAPY(), notificationResponse.getStakingAPR(), notificationResponse.getStakingEndsAt(), notificationResponse.getStakingToken());
                 break;
             case 13:
                 String id13 = notificationResponse.getId();
@@ -363,14 +363,14 @@ public final class NotificationMappingKt {
                 String userId13 = notificationResponse.getUserId();
                 NetworkType.Companion companion19 = NetworkType.Companion;
                 String networkType13 = notificationResponse.getNetworkType();
-                c1847In = new Notification.StakingFinished(id13, read13, map, date13, userId13, companion19.map(networkType13 != null ? networkType13 : ""), notificationResponse.getStakingId(), notificationResponse.getStakingName(), notificationResponse.getStakingToken(), notificationResponse.getDebtAsToken(), notificationResponse.getDebtAsUsd(), notificationResponse.getProfitAsToken(), notificationResponse.getProfitAsUsd());
+                c1860In = new Notification.StakingFinished(id13, read13, map, date13, userId13, companion19.map(networkType13 != null ? networkType13 : ""), notificationResponse.getStakingId(), notificationResponse.getStakingName(), notificationResponse.getStakingToken(), notificationResponse.getDebtAsToken(), notificationResponse.getDebtAsUsd(), notificationResponse.getProfitAsToken(), notificationResponse.getProfitAsUsd());
                 break;
             case 14:
                 return unsupportedNotification(notificationResponse);
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        return c1847In;
+        return c1860In;
     }
 
     private static final TokenCode parseSupportedTokenCode(String str) {

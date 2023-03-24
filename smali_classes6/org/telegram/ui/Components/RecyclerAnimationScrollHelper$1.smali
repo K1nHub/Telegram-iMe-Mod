@@ -78,7 +78,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -140,7 +140,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, p5
+    mul-float/2addr v4, p5
 
     .line 208
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationY(F)V
@@ -150,7 +150,7 @@
     :cond_1
     int-to-float v4, p3
 
-    mul-float v4, v4, p5
+    mul-float/2addr v4, p5
 
     .line 210
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationY(F)V
@@ -185,7 +185,7 @@
 
     sub-float/2addr v2, p5
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     .line 218
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationY(F)V
@@ -199,7 +199,7 @@
 
     sub-float/2addr v2, p5
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     .line 220
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationY(F)V
@@ -272,15 +272,15 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
-    const/4 p4, 0x0
+    move p4, p3
 
-    const/4 p5, 0x0
+    move p5, p4
 
-    const/4 p6, 0x0
+    move p6, p5
 
-    const/4 p8, 0x0
+    move p8, p6
 
     :goto_0
     const/4 p9, 0x1
@@ -457,7 +457,7 @@
     move p6, p8
 
     :cond_5
-    const/4 p8, 0x1
+    move p8, p9
 
     :cond_6
     add-int/lit8 p3, p3, 0x1
@@ -483,9 +483,9 @@
 
     const p3, 0x7fffffff
 
-    const v0, 0x7fffffff
+    move v1, p2
 
-    const/4 v1, 0x0
+    move v0, p3
 
     :cond_8
     :goto_1
@@ -794,7 +794,7 @@
 
     const/high16 p2, 0x43480000    # 200.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-long p1, p1
 
@@ -845,8 +845,6 @@
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4

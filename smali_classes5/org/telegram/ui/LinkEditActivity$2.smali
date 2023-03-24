@@ -306,7 +306,7 @@
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, p2
 
     .line 184
     :goto_1

@@ -332,13 +332,13 @@
 
     div-float/2addr v2, v3
 
-    const-wide/16 v3, 0xc8
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    const/4 v6, 0x0
-
     cmpl-float p1, p1, v2
+
+    const-wide/16 v2, 0xc8
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    const/4 v5, 0x0
 
     if-lez p1, :cond_8
 
@@ -349,20 +349,20 @@
 
     move-result p1
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getWidth()I
+    invoke-virtual {v6}, Landroid/widget/FrameLayout;->getWidth()I
 
-    move-result v2
+    move-result v6
 
-    int-to-float v2, v2
+    int-to-float v6, v6
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v6
 
     .line 514
-    iget v2, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
+    iget v6, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
-    cmpg-float v7, v2, v6
+    cmpg-float v7, v6, v5
 
     if-gez v7, :cond_4
 
@@ -371,21 +371,21 @@
     if-nez v7, :cond_5
 
     :cond_4
-    cmpl-float v2, v2, v6
+    cmpl-float v6, v6, v5
 
-    if-lez v2, :cond_6
+    if-lez v6, :cond_6
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->needRightAlphaAnimation:Z
+    iget-boolean v6, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->needRightAlphaAnimation:Z
 
-    if-eqz v2, :cond_6
+    if-eqz v6, :cond_6
 
     :cond_5
-    const/4 v2, 0x1
+    move v6, v0
 
     goto :goto_1
 
     :cond_6
-    const/4 v2, 0x0
+    move v6, v1
 
     .line 515
     :goto_1
@@ -399,16 +399,16 @@
 
     move-result-object v7
 
-    if-eqz v2, :cond_7
+    if-eqz v6, :cond_7
 
-    const/4 v5, 0x0
+    move v4, v5
 
     :cond_7
-    invoke-virtual {v7, v5}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v7, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v2, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v4, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
 
@@ -439,15 +439,15 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v6}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1, v5}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    invoke-virtual {p1, v5}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    invoke-virtual {p1, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 

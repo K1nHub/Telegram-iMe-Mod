@@ -116,12 +116,11 @@ public final class SpringForce {
             double pow3 = Math.pow(2.718281828459045d, (-d6) * d18 * d4) * ((Math.cos(this.mDampedFreq * d4) * d5) + (Math.sin(this.mDampedFreq * d4) * d19));
             double d20 = this.mNaturalFreq;
             double d21 = this.mDampingRatio;
-            double d22 = (-d20) * pow3 * d21;
             double pow4 = Math.pow(2.718281828459045d, (-d21) * d20 * d4);
+            double d22 = this.mDampedFreq;
+            double sin = (-d22) * d5 * Math.sin(d22 * d4);
             double d23 = this.mDampedFreq;
-            double sin = (-d23) * d5 * Math.sin(d23 * d4);
-            double d24 = this.mDampedFreq;
-            cos = d22 + (pow4 * (sin + (d19 * d24 * Math.cos(d24 * d4))));
+            cos = ((-d20) * pow3 * d21) + (pow4 * (sin + (d19 * d23 * Math.cos(d23 * d4))));
             d3 = pow3;
         }
         DynamicAnimation.MassState massState = this.mMassState;

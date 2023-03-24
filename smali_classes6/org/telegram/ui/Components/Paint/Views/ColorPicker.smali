@@ -156,7 +156,7 @@
 
     int-to-float v0, v1
 
-    mul-float v0, v0, p3
+    mul-float/2addr v0, p3
 
     add-float/2addr v4, v0
 
@@ -175,7 +175,7 @@
 
     int-to-float v2, v3
 
-    mul-float v2, v2, p3
+    mul-float/2addr v2, p3
 
     add-float/2addr v4, v2
 
@@ -192,7 +192,7 @@
 
     int-to-float p1, p2
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     add-float/2addr v3, p1
 
@@ -277,7 +277,7 @@
 
     const/high16 v1, 0x42960000    # 75.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p2, v0
 
@@ -339,9 +339,9 @@
     :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v1, 0x1
-
     cmpl-float v0, p1, v0
+
+    const/4 v1, 0x1
 
     if-ltz v0, :cond_1
 
@@ -384,7 +384,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, -0x1
+    move v1, v3
 
     .line 166
     :goto_1
@@ -491,7 +491,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/ColorPicker;->location:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v1, v0
 
@@ -516,7 +516,7 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -534,7 +534,7 @@
 
     int-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     goto :goto_0
 
@@ -563,9 +563,9 @@
 
     const/high16 v5, 0x3f000000    # 0.5f
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -612,7 +612,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/Paint/Views/ColorPicker;->weight:F
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     add-float/2addr v3, v2
 
@@ -630,7 +630,7 @@
 
     add-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/high16 v3, 0x40000000    # 2.0f
 
@@ -655,7 +655,7 @@
 
     add-float/2addr v6, v4
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/ColorPicker;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -1073,7 +1073,7 @@
 .end method
 
 .method public setLocation(F)V
-    .locals 6
+    .locals 5
 
     .line 196
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/ColorPicker;->location:F
@@ -1103,9 +1103,9 @@
 
     const-wide v3, 0x3f50624dd2f1a9fcL    # 0.001
 
-    cmpg-double v5, v1, v3
+    cmpg-double v1, v1, v3
 
-    if-gez v5, :cond_0
+    if-gez v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -1113,9 +1113,9 @@
 
     float-to-double v1, v1
 
-    cmpg-double v5, v1, v3
+    cmpg-double v1, v1, v3
 
-    if-gez v5, :cond_0
+    if-gez v1, :cond_0
 
     const/4 v1, 0x2
 
@@ -1140,13 +1140,13 @@
 
     const v1, 0x3e6147ae    # 0.22f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sub-float/2addr p1, v0
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 

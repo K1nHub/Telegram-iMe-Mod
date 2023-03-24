@@ -400,16 +400,14 @@
 
     if-eq p2, p1, :cond_8
 
-    const/4 v7, 0x1
-
     goto :goto_3
 
     :cond_8
     const/4 v1, 0x0
 
-    const/4 v7, 0x0
-
     :goto_3
+    move v7, v1
+
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;IZ)V
 
     :cond_9

@@ -194,13 +194,13 @@
 
     move-result v3
 
+    cmpg-float v3, v0, v3
+
     const v4, 0x455ac000    # 3500.0f
 
     const/4 v5, 0x0
 
     const/4 v6, 0x1
-
-    cmpg-float v3, v0, v3
 
     if-gez v3, :cond_0
 
@@ -234,12 +234,12 @@
     if-ltz p1, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v6
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v2
 
     :goto_0
     if-nez p1, :cond_3
@@ -341,7 +341,7 @@
 
     div-float/2addr v0, v1
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     float-to-int p2, v0
 
@@ -391,8 +391,6 @@
 
     :goto_1
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -549,7 +547,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v4
 
     goto :goto_2
 
@@ -1139,7 +1137,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_3
 
@@ -1233,7 +1231,7 @@
 
     int-to-float v6, v2
 
-    mul-float v6, v6, p2
+    mul-float/2addr v6, p2
 
     float-to-int v6, v6
 
@@ -1344,7 +1342,7 @@
 
     int-to-float v4, v2
 
-    mul-float v4, v4, p2
+    mul-float/2addr v4, p2
 
     float-to-int p2, v4
 
@@ -1544,7 +1542,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 697
     :goto_0
@@ -1620,7 +1618,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 701
     :goto_1
@@ -1698,7 +1696,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_3
     sub-int/2addr v2, v3
@@ -1863,7 +1861,7 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v10
 
     goto :goto_1
 
@@ -1891,7 +1889,7 @@
 
     sub-float/2addr v6, v11
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
@@ -1899,7 +1897,7 @@
 
     if-eqz v11, :cond_1
 
-    const/4 v6, 0x0
+    move v6, v10
 
     goto :goto_0
 
@@ -2158,7 +2156,7 @@
 
     move-result v13
 
-    const/4 v14, 0x0
+    move v14, v10
 
     :goto_3
     if-ge v14, v13, :cond_11
@@ -2198,7 +2196,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v10
 
     :goto_4
     sub-int v6, p5, v2
@@ -2509,7 +2507,7 @@
 
     sub-float v7, v5, v7
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     goto :goto_0
 
@@ -2533,7 +2531,7 @@
 
     sub-float v3, v5, v3
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     sub-float/2addr v2, v0
 
@@ -2601,12 +2599,12 @@
 
     if-le v0, v3, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_2
     iput-boolean v0, v1, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
@@ -2759,7 +2757,7 @@
 
     sub-float/2addr v5, v7
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -2817,7 +2815,7 @@
     goto :goto_4
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_4
     iput-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->isPortrait:Z
@@ -2858,7 +2856,7 @@
 
     const v1, 0x3f4ccccd    # 0.8f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -3137,7 +3135,7 @@
 
     if-gez p3, :cond_1
 
-    const/4 p1, 0x0
+    move p1, p2
 
     .line 274
     :cond_1
@@ -3808,7 +3806,7 @@
     if-nez p1, :cond_12
 
     :cond_11
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_12
     return v1

@@ -86,7 +86,7 @@
 
     if-eqz v5, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_1
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     if-nez p1, :cond_3

@@ -106,7 +106,7 @@
     :goto_0
     div-float/2addr p2, p1
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     add-float/2addr v0, p2
 
@@ -161,7 +161,7 @@
 
     div-float/2addr p2, p1
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     add-float/2addr v1, v0
 

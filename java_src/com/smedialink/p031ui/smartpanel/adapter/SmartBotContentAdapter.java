@@ -150,7 +150,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
     public final long getGifBotId() {
         TLRPC$User tLRPC$User = this.foundContextBot;
         if (tLRPC$User != null) {
-            return tLRPC$User.f1639id;
+            return tLRPC$User.f1640id;
         }
         return 0L;
     }
@@ -316,7 +316,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             this.searchingContextQuery = null;
             return;
         }
-        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1639id;
+        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1640id;
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         RequestDelegate requestDelegate = new RequestDelegate() { // from class: com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate

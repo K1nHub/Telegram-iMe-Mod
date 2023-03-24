@@ -14,6 +14,6 @@ public final /* synthetic */ class NotificationsSoundActivity$1$$ExternalSynthet
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        NotificationsSoundActivity.C59971.lambda$deleteSelectedMessages$2(tLObject, tLRPC$TL_error);
+        NotificationsSoundActivity.C60231.lambda$deleteSelectedMessages$2(tLObject, tLRPC$TL_error);
     }
 }

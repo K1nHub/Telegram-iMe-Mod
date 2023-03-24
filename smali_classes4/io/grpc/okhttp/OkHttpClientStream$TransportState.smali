@@ -310,7 +310,7 @@
 .end method
 
 .method private sendBuffer(Lokio/Buffer;ZZ)V
-    .locals 3
+    .locals 4
 
     .line 398
     iget-boolean v0, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->cancelSent:Z
@@ -330,14 +330,14 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 404
-    iget-object v0, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->pendingData:Lokio/Buffer;
+    iget-object v1, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->pendingData:Lokio/Buffer;
 
-    int-to-long v1, v1
+    int-to-long v2, v0
 
-    invoke-virtual {v0, p1, v1, v2}, Lokio/Buffer;->write(Lokio/Buffer;J)V
+    invoke-virtual {v1, p1, v2, v3}, Lokio/Buffer;->write(Lokio/Buffer;J)V
 
     .line 405
     iget-boolean p1, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->pendingDataHasEndOfStream:Z
@@ -468,7 +468,7 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     cmpg-float p1, p1, v2
 
@@ -609,7 +609,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const-string v2, "the stream has been started with id %s"
@@ -727,16 +727,16 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 347
-    iget v0, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->window:I
+    iget v1, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->window:I
 
-    sub-int/2addr v0, v1
+    sub-int/2addr v1, v0
 
-    iput v0, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->window:I
+    iput v1, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->window:I
 
-    if-gez v0, :cond_0
+    if-gez v1, :cond_0
 
     .line 349
     iget-object p1, p0, Lio/grpc/okhttp/OkHttpClientStream$TransportState;->frameWriter:Lio/grpc/okhttp/ExceptionHandlingFrameWriter;

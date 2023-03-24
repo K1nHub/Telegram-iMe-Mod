@@ -25,7 +25,7 @@ public final class CryptoSwapMetadata {
     private final List<String> path;
     private final String quoteId;
     private final SwapMethod swapMethod;
-    private final TransactionParams transactionParams;
+    private final TransactionParams.Ether transactionParams;
     private final BigInteger value;
 
     public final String component1() {
@@ -52,7 +52,7 @@ public final class CryptoSwapMetadata {
         return this.callData;
     }
 
-    public final TransactionParams component2() {
+    public final TransactionParams.Ether component2() {
         return this.transactionParams;
     }
 
@@ -84,7 +84,7 @@ public final class CryptoSwapMetadata {
         return this.amountBound;
     }
 
-    public final CryptoSwapMetadata copy(String quoteId, TransactionParams transactionParams, TokenCode inputTokenCode, TokenCode outputTokenCode, String str, SwapMethod swapMethod, BigDecimal amountIn, BigDecimal amountOut, BigInteger amountBound, List<String> path, BigDecimal executionPrice, TokenCode feeTokenCode, BigInteger value, String callData) {
+    public final CryptoSwapMetadata copy(String quoteId, TransactionParams.Ether transactionParams, TokenCode inputTokenCode, TokenCode outputTokenCode, String str, SwapMethod swapMethod, BigDecimal amountIn, BigDecimal amountOut, BigInteger amountBound, List<String> path, BigDecimal executionPrice, TokenCode feeTokenCode, BigInteger value, String callData) {
         Intrinsics.checkNotNullParameter(quoteId, "quoteId");
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(inputTokenCode, "inputTokenCode");
@@ -122,7 +122,7 @@ public final class CryptoSwapMetadata {
         return "CryptoSwapMetadata(quoteId=" + this.quoteId + ", transactionParams=" + this.transactionParams + ", inputTokenCode=" + this.inputTokenCode + ", outputTokenCode=" + this.outputTokenCode + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", amountIn=" + this.amountIn + ", amountOut=" + this.amountOut + ", amountBound=" + this.amountBound + ", path=" + this.path + ", executionPrice=" + this.executionPrice + ", feeTokenCode=" + this.feeTokenCode + ", value=" + this.value + ", callData=" + this.callData + ')';
     }
 
-    public CryptoSwapMetadata(String quoteId, TransactionParams transactionParams, TokenCode inputTokenCode, TokenCode outputTokenCode, String str, SwapMethod swapMethod, BigDecimal amountIn, BigDecimal amountOut, BigInteger amountBound, List<String> path, BigDecimal executionPrice, TokenCode feeTokenCode, BigInteger value, String callData) {
+    public CryptoSwapMetadata(String quoteId, TransactionParams.Ether transactionParams, TokenCode inputTokenCode, TokenCode outputTokenCode, String str, SwapMethod swapMethod, BigDecimal amountIn, BigDecimal amountOut, BigInteger amountBound, List<String> path, BigDecimal executionPrice, TokenCode feeTokenCode, BigInteger value, String callData) {
         Intrinsics.checkNotNullParameter(quoteId, "quoteId");
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(inputTokenCode, "inputTokenCode");
@@ -159,7 +159,7 @@ public final class CryptoSwapMetadata {
         return this.quoteId;
     }
 
-    public final TransactionParams getTransactionParams() {
+    public final TransactionParams.Ether getTransactionParams() {
         return this.transactionParams;
     }
 

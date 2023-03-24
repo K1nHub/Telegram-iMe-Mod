@@ -73,6 +73,10 @@
 
     move-object/from16 v31, v7
 
+    move/from16 v21, v8
+
+    move/from16 v28, v21
+
     move-object v11, v9
 
     move-object v12, v11
@@ -100,10 +104,6 @@
     move-object/from16 v26, v25
 
     move-object/from16 v32, v26
-
-    const/16 v21, 0x0
-
-    const/16 v28, 0x0
 
     .line 8
     :goto_0

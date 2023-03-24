@@ -269,41 +269,41 @@
 .method private getPresentationTimeUs(J)J
     .locals 7
 
-    const/4 v0, 0x1
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v1, 0x0
+    cmp-long v2, p1, v0
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    const/4 v3, 0x1
 
-    cmp-long v4, p1, v2
+    const/4 v4, 0x0
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v2, v4
 
     .line 432
     :goto_0
-    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 433
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/text/TextRenderer;->outputStreamOffsetUs:J
+    iget-wide v5, p0, Lcom/google/android/exoplayer2/text/TextRenderer;->outputStreamOffsetUs:J
 
-    cmp-long v6, v4, v2
+    cmp-long v0, v5, v0
 
-    if-eqz v6, :cond_1
+    if-eqz v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v3, v4
 
     :goto_1
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 435
     iget-wide v0, p0, Lcom/google/android/exoplayer2/text/TextRenderer;->outputStreamOffsetUs:J
@@ -782,12 +782,12 @@
 
     move-result-wide v2
 
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_1
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-gtz v4, :cond_5
+    if-gtz v2, :cond_5
 
     .line 227
     iget p3, p0, Lcom/google/android/exoplayer2/text/TextRenderer;->nextSubtitleEventIndex:I
@@ -801,12 +801,12 @@
 
     move-result-wide v2
 
-    const/4 p3, 0x1
+    move p3, p4
 
     goto :goto_1
 
     :cond_4
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 232
     :cond_5
@@ -859,9 +859,9 @@
     :cond_7
     iget-wide v4, v2, Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;->timeUs:J
 
-    cmp-long v6, v4, p1
+    cmp-long v4, v4, p1
 
-    if-gtz v6, :cond_9
+    if-gtz v4, :cond_9
 
     .line 245
     iget-object p3, p0, Lcom/google/android/exoplayer2/text/TextRenderer;->subtitle:Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
@@ -885,7 +885,7 @@
     .line 250
     iput-object v3, p0, Lcom/google/android/exoplayer2/text/TextRenderer;->nextSubtitle:Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
 
-    const/4 p3, 0x1
+    move p3, p4
 
     :cond_9
     :goto_2
@@ -1048,12 +1048,12 @@
 
     if-nez p3, :cond_11
 
-    const/4 p3, 0x1
+    move p3, p4
 
     goto :goto_4
 
     :cond_11
-    const/4 p3, 0x0
+    move p3, v1
 
     :goto_4
     and-int/2addr p2, p3

@@ -24,7 +24,7 @@ import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetailsBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -134,11 +134,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectSessionDetailsBinding binding = getBinding();
         binding.viewHeader.setupViewData(iconUrl, name, url);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_connected), connectedDate, C3286R.C3288drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_address), address, C3286R.C3288drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3301R.string.wallet_connect_session_details_connected), connectedDate, C3301R.C3303drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3301R.string.wallet_connect_session_details_address), address, C3301R.C3303drawable.fork_ic_nav_wallet_24, true);
         DetailsIconCellView viewNetworkCell = binding.viewNetworkCell;
         Intrinsics.checkNotNullExpressionValue(viewNetworkCell, "viewNetworkCell");
-        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3286R.string.wallet_connect_session_details_network), network, C3286R.C3288drawable.msg_language, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3301R.string.wallet_connect_session_details_network), network, C3301R.C3303drawable.msg_language, false, 8, null);
     }
 
     private final void setupColors() {
@@ -151,7 +151,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
     }
 
     private final void setupTexts() {
-        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3286R.string.Disconnect));
+        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3301R.string.Disconnect));
     }
 
     private final void setupListeners() {

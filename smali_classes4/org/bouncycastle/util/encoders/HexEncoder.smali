@@ -130,7 +130,7 @@
     :goto_1
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-ge v1, v0, :cond_5
@@ -270,7 +270,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lorg/bouncycastle/util/encoders/HexEncoder;->decodingTable:[B

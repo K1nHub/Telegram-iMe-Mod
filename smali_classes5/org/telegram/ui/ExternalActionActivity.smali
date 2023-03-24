@@ -1008,9 +1008,9 @@
 
     div-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    sput v1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
+    sput v0, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
     .line 562
     new-instance v0, Lorg/telegram/ui/ExternalActionActivity$4;
@@ -1037,7 +1037,7 @@
 
     int-to-long v4, v1
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     add-long/2addr v4, v2
 
@@ -1596,9 +1596,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v5, :cond_8
+    if-eqz v0, :cond_8
 
     .line 323
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2376,9 +2376,9 @@
 
     div-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    sput v2, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
+    sput v1, Lorg/telegram/messenger/SharedConfig;->lastPauseTime:I
 
     .line 96
     :cond_2
@@ -2756,12 +2756,12 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_4
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_4
     const/4 v7, 0x0

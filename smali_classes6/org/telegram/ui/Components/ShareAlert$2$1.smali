@@ -307,7 +307,7 @@
 
     sub-float/2addr v1, p2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$2$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$2;
 
@@ -317,7 +317,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     add-float/2addr p1, v2
 
@@ -350,7 +350,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     add-float/2addr p1, p2
 
@@ -433,7 +433,7 @@
 
     sub-float/2addr v1, p2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$2$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$2;
 
@@ -443,7 +443,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     add-float/2addr p1, v2
 
@@ -494,7 +494,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     sub-float/2addr p3, v0
 
@@ -536,7 +536,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, v1
+    mul-float/2addr p3, v1
 
     add-float/2addr p2, p3
 

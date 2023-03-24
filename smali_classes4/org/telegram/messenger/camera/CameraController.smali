@@ -338,7 +338,7 @@
 
     move-result v6
 
-    mul-int v6, v6, p3
+    mul-int/2addr v6, p3
 
     div-int/2addr v6, v2
 
@@ -371,7 +371,7 @@
 
     move-result v6
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     mul-int v6, p1, p2
 
@@ -790,7 +790,7 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     add-int/lit8 v2, v1, 0x3
@@ -916,10 +916,14 @@
 
     :cond_8
     :goto_3
+    move v3, v0
+
     move v1, v2
 
+    goto :goto_4
+
     :cond_9
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_4
     if-le v3, v6, :cond_11
@@ -945,7 +949,7 @@
     goto :goto_5
 
     :cond_b
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_5
     add-int/lit8 v2, v1, 0x4
@@ -1287,7 +1291,7 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 254
     :goto_0
@@ -1445,7 +1449,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v7
 
     :goto_0
     if-ge v4, v3, :cond_2
@@ -1468,7 +1472,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_1
     if-ge v10, v9, :cond_0
@@ -1500,7 +1504,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_2
     if-ge v10, v9, :cond_1
@@ -1567,7 +1571,7 @@
 
     const/4 v9, 0x4
 
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_3
     if-ge v10, v4, :cond_f
@@ -1629,7 +1633,7 @@
 
     move-result-object v14
 
-    const/4 v15, 0x0
+    move v15, v7
 
     .line 187
     :goto_5
@@ -2190,7 +2194,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 583
     :goto_0

@@ -155,7 +155,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_0
     iput-boolean p2, p0, Lcom/google/android/gms/internal/vision/zzko;->zzh:Z
@@ -633,9 +633,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_9
+    if-eqz v3, :cond_9
 
     const/4 v15, 0x1
 
@@ -1386,26 +1386,26 @@
 
     and-long v8, p9, v8
 
-    const-string v1, ""
+    cmp-long v1, v8, v10
 
-    cmp-long v6, v8, v10
+    const-string v6, ""
 
-    if-nez v6, :cond_15
+    if-nez v1, :cond_15
 
     .line 3135
     invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
 
-    move-result v4
+    move-result v1
 
     .line 3136
-    iget v6, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
+    iget v4, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
 
-    if-ltz v6, :cond_14
+    if-ltz v4, :cond_14
 
-    if-nez v6, :cond_11
+    if-nez v4, :cond_11
 
     .line 3140
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
@@ -1415,41 +1415,41 @@
 
     sget-object v9, Lcom/google/android/gms/internal/vision/zzjf;->zza:Ljava/nio/charset/Charset;
 
-    invoke-direct {v8, v3, v4, v6, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 3142
     invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_a
-    add-int/2addr v4, v6
+    add-int/2addr v1, v4
 
     :goto_b
-    if-ge v4, v5, :cond_32
+    if-ge v1, v5, :cond_33
 
     .line 3145
-    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
+    invoke-static {v3, v1, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
 
-    move-result v6
+    move-result v4
 
     .line 3146
     iget v8, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
 
-    if-ne v2, v8, :cond_32
+    if-ne v2, v8, :cond_33
 
     .line 3147
-    invoke-static {v3, v6, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
 
-    move-result v4
+    move-result v1
 
     .line 3148
-    iget v6, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
+    iget v4, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
 
-    if-ltz v6, :cond_13
+    if-ltz v4, :cond_13
 
-    if-nez v6, :cond_12
+    if-nez v4, :cond_12
 
     .line 3152
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
@@ -1459,7 +1459,7 @@
 
     sget-object v9, Lcom/google/android/gms/internal/vision/zzjf;->zza:Ljava/nio/charset/Charset;
 
-    invoke-direct {v8, v3, v4, v6, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 3154
     invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1486,25 +1486,25 @@
     :cond_15
     invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
 
-    move-result v4
+    move-result v1
 
     .line 3162
-    iget v6, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
+    iget v4, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
 
-    if-ltz v6, :cond_1b
+    if-ltz v4, :cond_1b
 
-    if-nez v6, :cond_16
+    if-nez v4, :cond_16
 
     .line 3166
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
     :cond_16
-    add-int v8, v4, v6
+    add-int v8, v1, v4
 
     .line 3167
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/internal/vision/zzmd;->zza([BII)Z
+    invoke-static {v3, v1, v8}, Lcom/google/android/gms/internal/vision/zzmd;->zza([BII)Z
 
     move-result v9
 
@@ -1515,49 +1515,49 @@
 
     sget-object v10, Lcom/google/android/gms/internal/vision/zzjf;->zza:Ljava/nio/charset/Charset;
 
-    invoke-direct {v9, v3, v4, v6, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 3170
     invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_c
-    move v4, v8
+    move v1, v8
 
     :goto_d
-    if-ge v4, v5, :cond_32
+    if-ge v1, v5, :cond_33
 
     .line 3173
-    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
+    invoke-static {v3, v1, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
 
-    move-result v6
+    move-result v4
 
     .line 3174
     iget v8, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
 
-    if-ne v2, v8, :cond_32
+    if-ne v2, v8, :cond_33
 
     .line 3175
-    invoke-static {v3, v6, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
 
-    move-result v4
+    move-result v1
 
     .line 3176
-    iget v6, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
+    iget v4, v7, Lcom/google/android/gms/internal/vision/zzhn;->zza:I
 
-    if-ltz v6, :cond_19
+    if-ltz v4, :cond_19
 
-    if-nez v6, :cond_17
+    if-nez v4, :cond_17
 
     .line 3180
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
     :cond_17
-    add-int v8, v4, v6
+    add-int v8, v1, v4
 
     .line 3181
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/internal/vision/zzmd;->zza([BII)Z
+    invoke-static {v3, v1, v8}, Lcom/google/android/gms/internal/vision/zzmd;->zza([BII)Z
 
     move-result v9
 
@@ -1568,7 +1568,7 @@
 
     sget-object v10, Lcom/google/android/gms/internal/vision/zzjf;->zza:Ljava/nio/charset/Charset;
 
-    invoke-direct {v9, v3, v4, v6, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 3184
     invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1636,16 +1636,16 @@
     .line 3113
     iget-wide v5, v7, Lcom/google/android/gms/internal/vision/zzhn;->zzb:J
 
-    cmp-long v8, v5, v10
+    cmp-long v5, v5, v10
 
-    if-eqz v8, :cond_1c
+    if-eqz v5, :cond_1c
 
-    const/4 v5, 0x1
+    move v5, v14
 
     goto :goto_f
 
     :cond_1c
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_f
     invoke-virtual {v12, v5}, Lcom/google/android/gms/internal/vision/zzhr;->zza(Z)V
@@ -1683,12 +1683,12 @@
 
     if-eqz v6, :cond_20
 
-    const/4 v6, 0x1
+    move v6, v14
 
     goto :goto_10
 
     :cond_20
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_10
     invoke-virtual {v12, v6}, Lcom/google/android/gms/internal/vision/zzhr;->zza(Z)V
@@ -1718,12 +1718,12 @@
 
     if-eqz v6, :cond_21
 
-    const/4 v6, 0x1
+    move v6, v14
 
     goto :goto_12
 
     :cond_21
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_12
     invoke-virtual {v12, v6}, Lcom/google/android/gms/internal/vision/zzhr;->zza(Z)V
@@ -2666,9 +2666,9 @@
 
     const-wide/16 p3, 0x0
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -2757,12 +2757,12 @@
 
     if-ne v1, v2, :cond_0
 
-    const/4 v11, 0x1
+    move v11, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v11, 0x0
+    move v11, v3
 
     .line 23
     :goto_0
@@ -2784,7 +2784,7 @@
 
     if-lt v5, v6, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v4
 
     :goto_1
     add-int/lit8 v7, v5, 0x1
@@ -2801,7 +2801,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x1
+    move v7, v4
 
     :cond_2
     add-int/lit8 v5, v7, 0x1
@@ -2852,19 +2852,19 @@
     .line 49
     sget-object v7, Lcom/google/android/gms/internal/vision/zzko;->zza:[I
 
+    move v9, v3
+
+    move v10, v9
+
+    move v12, v10
+
+    move v13, v12
+
+    move v15, v13
+
     move-object v14, v7
 
-    const/4 v7, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v15, 0x0
+    move v7, v15
 
     goto/16 :goto_b
 
@@ -3567,39 +3567,39 @@
 
     move-result-wide v9
 
-    long-to-int v10, v9
+    long-to-int v9, v9
 
     add-int/lit8 v4, v4, 0x1
 
     .line 180
-    aget-object v9, v16, v4
+    aget-object v10, v16, v4
 
-    move/from16 v25, v10
+    move/from16 v25, v9
 
     .line 181
-    instance-of v10, v9, Ljava/lang/reflect/Field;
+    instance-of v9, v10, Ljava/lang/reflect/Field;
 
-    if-eqz v10, :cond_21
+    if-eqz v9, :cond_21
 
     .line 182
-    check-cast v9, Ljava/lang/reflect/Field;
+    check-cast v10, Ljava/lang/reflect/Field;
 
     goto :goto_15
 
     .line 183
     :cond_21
-    check-cast v9, Ljava/lang/String;
+    check-cast v10, Ljava/lang/String;
 
-    invoke-static {v6, v9}, Lcom/google/android/gms/internal/vision/zzko;->zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-static {v6, v10}, Lcom/google/android/gms/internal/vision/zzko;->zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v9
+    move-result-object v10
 
     .line 184
-    aput-object v9, v16, v4
+    aput-object v10, v16, v4
 
     .line 185
     :goto_15
-    invoke-virtual {v8, v9}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    invoke-virtual {v8, v10}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     move-result-wide v9
 
@@ -3607,15 +3607,13 @@
 
     move-object/from16 v30, v1
 
-    move v9, v4
+    move v10, v4
 
     move v1, v11
 
-    move-object/from16 v24, v12
+    move/from16 v9, v25
 
-    move/from16 v10, v25
-
-    move/from16 v11, v31
+    move/from16 v24, v31
 
     const/4 v4, 0x0
 
@@ -3791,21 +3789,21 @@
 
     move-result-wide v9
 
-    long-to-int v10, v9
+    long-to-int v9, v9
 
-    and-int/lit16 v9, v2, 0x1000
+    and-int/lit16 v10, v2, 0x1000
 
     move/from16 v25, v13
 
     const/16 v13, 0x1000
 
-    if-ne v9, v13, :cond_2f
+    if-ne v10, v13, :cond_2f
 
-    const/16 v9, 0x11
+    const/16 v10, 0x11
 
-    if-gt v15, v9, :cond_2f
+    if-gt v15, v10, :cond_2f
 
-    add-int/lit8 v9, v4, 0x1
+    add-int/lit8 v10, v4, 0x1
 
     .line 204
     invoke-virtual {v1, v4}, Ljava/lang/String;->charAt(I)C
@@ -3821,33 +3819,33 @@
     const/16 v18, 0xd
 
     :goto_1c
-    add-int/lit8 v28, v9, 0x1
+    add-int/lit8 v28, v10, 0x1
 
     .line 208
-    invoke-virtual {v1, v9}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v1, v10}, Ljava/lang/String;->charAt(I)C
 
-    move-result v9
+    move-result v10
 
-    if-lt v9, v13, :cond_2c
+    if-lt v10, v13, :cond_2c
 
-    and-int/lit16 v9, v9, 0x1fff
+    and-int/lit16 v10, v10, 0x1fff
 
-    shl-int v9, v9, v18
+    shl-int v10, v10, v18
 
-    or-int/2addr v4, v9
+    or-int/2addr v4, v10
 
     add-int/lit8 v18, v18, 0xd
 
-    move/from16 v9, v28
+    move/from16 v10, v28
 
     goto :goto_1c
 
     :cond_2c
-    shl-int v9, v9, v18
+    shl-int v10, v10, v18
 
-    or-int/2addr v4, v9
+    or-int/2addr v4, v10
 
-    move/from16 v9, v28
+    move/from16 v10, v28
 
     :cond_2d
     const/16 v18, 0x1
@@ -3886,23 +3884,19 @@
     aput-object v13, v16, v24
 
     :goto_1d
-    move v1, v11
+    move/from16 v24, v10
 
-    move-object/from16 v24, v12
+    move v1, v11
 
     .line 219
     invoke-virtual {v8, v13}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    long-to-int v12, v11
+    long-to-int v10, v10
 
     .line 220
     rem-int/lit8 v4, v4, 0x20
-
-    move v11, v9
-
-    move v9, v12
 
     goto :goto_1e
 
@@ -3911,42 +3905,40 @@
 
     move v1, v11
 
-    move-object/from16 v24, v12
-
     const/16 v18, 0x1
 
-    const v9, 0xfffff
+    const v10, 0xfffff
 
-    move v11, v4
+    move/from16 v24, v4
 
     const/4 v4, 0x0
 
     :goto_1e
-    const/16 v12, 0x12
+    const/16 v11, 0x12
 
-    if-lt v15, v12, :cond_30
+    if-lt v15, v11, :cond_30
 
-    const/16 v12, 0x31
+    const/16 v11, 0x31
 
-    if-gt v15, v12, :cond_30
+    if-gt v15, v11, :cond_30
 
-    add-int/lit8 v12, v22, 0x1
+    add-int/lit8 v11, v22, 0x1
 
     .line 225
-    aput v10, v14, v22
+    aput v9, v14, v22
 
-    move/from16 v22, v12
+    move/from16 v22, v11
 
     :cond_30
     move/from16 v13, v25
 
     :goto_1f
-    add-int/lit8 v12, v20, 0x1
+    add-int/lit8 v11, v20, 0x1
 
     .line 226
     aput v7, v5, v20
 
-    add-int/lit8 v7, v12, 0x1
+    add-int/lit8 v7, v11, 0x1
 
     move/from16 v20, v3
 
@@ -3980,41 +3972,39 @@
 
     or-int/2addr v2, v3
 
-    or-int/2addr v2, v10
+    or-int/2addr v2, v9
 
     .line 229
-    aput v2, v5, v12
+    aput v2, v5, v11
 
     add-int/lit8 v2, v7, 0x1
 
     shl-int/lit8 v3, v4, 0x14
 
-    or-int/2addr v3, v9
+    or-int/2addr v3, v10
 
     .line 230
     aput v3, v5, v7
 
-    move v7, v11
+    move v11, v1
+
+    move/from16 v4, v18
 
     move/from16 v3, v20
 
     move/from16 v10, v23
 
-    move-object/from16 v12, v24
+    move/from16 v7, v24
 
     move/from16 v15, v27
 
     move/from16 v9, v29
 
-    const/4 v4, 0x1
-
-    move v11, v1
+    move-object/from16 v1, v30
 
     move/from16 v20, v2
 
     move/from16 v2, v26
-
-    move-object/from16 v1, v30
 
     goto/16 :goto_c
 
@@ -4024,8 +4014,6 @@
     move/from16 v23, v10
 
     move v1, v11
-
-    move-object/from16 v24, v12
 
     move/from16 v27, v15
 
@@ -4037,19 +4025,21 @@
 
     move-result-object v10
 
-    const/4 v12, 0x0
+    const/4 v0, 0x0
 
-    move-object v0, v5
+    move-object v3, v5
 
     move-object v5, v2
 
-    move-object v6, v0
+    move-object v6, v3
 
-    move-object/from16 v7, v24
+    move-object v7, v12
 
     move/from16 v8, v29
 
     move/from16 v9, v23
+
+    move v12, v0
 
     move-object v13, v14
 
@@ -4749,7 +4739,7 @@
 .end method
 
 .method private final zza(Ljava/lang/Object;I)Z
-    .locals 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)Z"
@@ -4767,15 +4757,15 @@
 
     int-to-long v2, v2
 
-    const/4 v4, 0x0
+    const-wide/32 v4, 0xfffff
 
-    const/4 v5, 0x1
+    cmp-long v4, v2, v4
 
-    const-wide/32 v6, 0xfffff
+    const/4 v5, 0x0
 
-    cmp-long v8, v2, v6
+    const/4 v6, 0x1
 
-    if-nez v8, :cond_14
+    if-nez v4, :cond_14
 
     .line 4035
     invoke-direct {p0, p2}, Lcom/google/android/gms/internal/vision/zzko;->zzd(I)I
@@ -4811,10 +4801,10 @@
 
     if-eqz p1, :cond_0
 
-    return v5
+    return v6
 
     :cond_0
-    return v4
+    return v5
 
     .line 4063
     :pswitch_1
@@ -4822,14 +4812,14 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
-    return v5
+    return v6
 
     :cond_1
-    return v4
+    return v5
 
     .line 4062
     :pswitch_2
@@ -4839,10 +4829,10 @@
 
     if-eqz p1, :cond_2
 
-    return v5
+    return v6
 
     :cond_2
-    return v4
+    return v5
 
     .line 4061
     :pswitch_3
@@ -4850,14 +4840,14 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_3
 
-    return v5
+    return v6
 
     :cond_3
-    return v4
+    return v5
 
     .line 4060
     :pswitch_4
@@ -4867,10 +4857,10 @@
 
     if-eqz p1, :cond_4
 
-    return v5
+    return v6
 
     :cond_4
-    return v4
+    return v5
 
     .line 4059
     :pswitch_5
@@ -4880,10 +4870,10 @@
 
     if-eqz p1, :cond_5
 
-    return v5
+    return v6
 
     :cond_5
-    return v4
+    return v5
 
     .line 4058
     :pswitch_6
@@ -4893,10 +4883,10 @@
 
     if-eqz p1, :cond_6
 
-    return v5
+    return v6
 
     :cond_6
-    return v4
+    return v5
 
     .line 4057
     :pswitch_7
@@ -4912,10 +4902,10 @@
 
     if-nez p1, :cond_7
 
-    return v5
+    return v6
 
     :cond_7
-    return v4
+    return v5
 
     .line 4056
     :pswitch_8
@@ -4925,10 +4915,10 @@
 
     if-eqz p1, :cond_8
 
-    return v5
+    return v6
 
     :cond_8
-    return v4
+    return v5
 
     .line 4050
     :pswitch_9
@@ -4950,10 +4940,10 @@
 
     if-nez p1, :cond_9
 
-    return v5
+    return v6
 
     :cond_9
-    return v4
+    return v5
 
     .line 4053
     :cond_a
@@ -4970,10 +4960,10 @@
 
     if-nez p1, :cond_b
 
-    return v5
+    return v6
 
     :cond_b
-    return v4
+    return v5
 
     .line 4055
     :cond_c
@@ -4999,10 +4989,10 @@
 
     if-eqz p1, :cond_d
 
-    return v5
+    return v6
 
     :cond_d
-    return v4
+    return v5
 
     .line 4047
     :pswitch_c
@@ -5010,14 +5000,14 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v0, :cond_e
+    if-eqz p1, :cond_e
 
-    return v5
+    return v6
 
     :cond_e
-    return v4
+    return v5
 
     .line 4046
     :pswitch_d
@@ -5027,10 +5017,10 @@
 
     if-eqz p1, :cond_f
 
-    return v5
+    return v6
 
     :cond_f
-    return v4
+    return v5
 
     .line 4045
     :pswitch_e
@@ -5038,14 +5028,14 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v0, :cond_10
+    if-eqz p1, :cond_10
 
-    return v5
+    return v6
 
     :cond_10
-    return v4
+    return v5
 
     .line 4044
     :pswitch_f
@@ -5053,14 +5043,14 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v0, :cond_11
+    if-eqz p1, :cond_11
 
-    return v5
+    return v6
 
     :cond_11
-    return v4
+    return v5
 
     .line 4043
     :pswitch_10
@@ -5074,10 +5064,10 @@
 
     if-eqz p1, :cond_12
 
-    return v5
+    return v6
 
     :cond_12
-    return v4
+    return v5
 
     .line 4042
     :pswitch_11
@@ -5087,19 +5077,19 @@
 
     const-wide/16 v0, 0x0
 
-    cmpl-double v2, p1, v0
+    cmpl-double p1, p1, v0
 
-    if-eqz v2, :cond_13
+    if-eqz p1, :cond_13
 
-    return v5
+    return v6
 
     :cond_13
-    return v4
+    return v5
 
     :cond_14
     ushr-int/lit8 p2, v0, 0x14
 
-    shl-int p2, v5, p2
+    shl-int p2, v6, p2
 
     .line 4067
     invoke-static {p1, v2, v3}, Lcom/google/android/gms/internal/vision/zzma;->zza(Ljava/lang/Object;J)I
@@ -5110,10 +5100,10 @@
 
     if-eqz p1, :cond_15
 
-    return v5
+    return v6
 
     :cond_15
-    return v4
+    return v5
 
     nop
 
@@ -5320,7 +5310,7 @@
 .end method
 
 .method private final zzb(Ljava/lang/Object;I)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)V"
@@ -5340,9 +5330,9 @@
 
     const-wide/32 v2, 0xfffff
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     return-void
 
@@ -5573,7 +5563,7 @@
     :goto_3
     const/4 v4, 0x0
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     .line 2396
     :pswitch_0
@@ -6224,7 +6214,7 @@
     .line 2264
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zze(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :pswitch_23
     const/4 v15, 0x0
@@ -6244,7 +6234,7 @@
     .line 2258
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzj(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :pswitch_24
     const/4 v15, 0x0
@@ -6264,7 +6254,7 @@
     .line 2252
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzg(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :pswitch_25
     const/4 v15, 0x0
@@ -6284,7 +6274,7 @@
     .line 2246
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzl(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :pswitch_26
     const/4 v15, 0x0
@@ -6304,7 +6294,7 @@
     .line 2240
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzm(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :pswitch_27
     const/4 v15, 0x0
@@ -6324,7 +6314,7 @@
     .line 2234
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzi(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 2226
     :pswitch_28
@@ -6403,7 +6393,7 @@
     .line 2208
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzn(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_2c
     const/4 v15, 0x0
@@ -6423,7 +6413,7 @@
     .line 2202
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzk(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_2d
     const/4 v15, 0x0
@@ -6443,7 +6433,7 @@
     .line 2196
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzf(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_2e
     const/4 v15, 0x0
@@ -6463,7 +6453,7 @@
     .line 2190
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzh(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_2f
     const/4 v15, 0x0
@@ -6483,7 +6473,7 @@
     .line 2184
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzd(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_30
     const/4 v15, 0x0
@@ -6503,7 +6493,7 @@
     .line 2178
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzc(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_31
     const/4 v15, 0x0
@@ -6523,7 +6513,7 @@
     .line 2172
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zzb(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    goto :goto_4
 
     :pswitch_32
     const/4 v15, 0x0
@@ -6543,7 +6533,10 @@
     .line 2166
     invoke-static {v4, v8, v2, v15}, Lcom/google/android/gms/internal/vision/zzle;->zza(ILjava/util/List;Lcom/google/android/gms/internal/vision/zzmr;Z)V
 
-    goto/16 :goto_3
+    :goto_4
+    move v4, v15
+
+    goto/16 :goto_5
 
     :pswitch_33
     const/4 v4, 0x0
@@ -6564,7 +6557,7 @@
     .line 2161
     invoke-interface {v2, v15, v8, v13}, Lcom/google/android/gms/internal/vision/zzmr;->zzb(ILjava/lang/Object;Lcom/google/android/gms/internal/vision/zzlc;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_34
     const/4 v4, 0x0
@@ -6580,7 +6573,7 @@
 
     invoke-interface {v2, v15, v13, v14}, Lcom/google/android/gms/internal/vision/zzmr;->zze(IJ)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_35
     const/4 v4, 0x0
@@ -6596,7 +6589,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zzf(II)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_36
     const/4 v4, 0x0
@@ -6612,7 +6605,7 @@
 
     invoke-interface {v2, v15, v13, v14}, Lcom/google/android/gms/internal/vision/zzmr;->zzb(IJ)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_37
     const/4 v4, 0x0
@@ -6628,7 +6621,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zza(II)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_38
     const/4 v4, 0x0
@@ -6644,7 +6637,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zzb(II)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_39
     const/4 v4, 0x0
@@ -6660,7 +6653,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zze(II)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_3a
     const/4 v4, 0x0
@@ -6678,7 +6671,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zza(ILcom/google/android/gms/internal/vision/zzht;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_3b
     const/4 v4, 0x0
@@ -6699,7 +6692,7 @@
 
     invoke-interface {v2, v15, v8, v13}, Lcom/google/android/gms/internal/vision/zzmr;->zza(ILjava/lang/Object;Lcom/google/android/gms/internal/vision/zzlc;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_3c
     const/4 v4, 0x0
@@ -6715,7 +6708,7 @@
 
     invoke-static {v15, v8, v2}, Lcom/google/android/gms/internal/vision/zzko;->zza(ILjava/lang/Object;Lcom/google/android/gms/internal/vision/zzmr;)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_3d
     const/4 v4, 0x0
@@ -6732,7 +6725,7 @@
     .line 2137
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zza(IZ)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_3e
     const/4 v4, 0x0
@@ -6748,7 +6741,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zzd(II)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_3f
     const/4 v4, 0x0
@@ -6764,7 +6757,7 @@
 
     invoke-interface {v2, v15, v13, v14}, Lcom/google/android/gms/internal/vision/zzmr;->zzd(IJ)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_40
     const/4 v4, 0x0
@@ -6780,7 +6773,7 @@
 
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zzc(II)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_41
     const/4 v4, 0x0
@@ -6796,7 +6789,7 @@
 
     invoke-interface {v2, v15, v13, v14}, Lcom/google/android/gms/internal/vision/zzmr;->zzc(IJ)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_42
     const/4 v4, 0x0
@@ -6812,7 +6805,7 @@
 
     invoke-interface {v2, v15, v13, v14}, Lcom/google/android/gms/internal/vision/zzmr;->zza(IJ)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_43
     const/4 v4, 0x0
@@ -6829,7 +6822,7 @@
     .line 2123
     invoke-interface {v2, v15, v8}, Lcom/google/android/gms/internal/vision/zzmr;->zza(IF)V
 
-    goto :goto_4
+    goto :goto_5
 
     :pswitch_44
     const/4 v4, 0x0
@@ -6847,13 +6840,13 @@
     invoke-interface {v2, v15, v13, v14}, Lcom/google/android/gms/internal/vision/zzmr;->zza(ID)V
 
     :cond_6
-    :goto_4
+    :goto_5
     add-int/lit8 v10, v10, 0x3
 
     goto/16 :goto_1
 
     :cond_7
-    :goto_5
+    :goto_6
     if-eqz v5, :cond_9
 
     .line 2402
@@ -6876,12 +6869,12 @@
 
     move-object v5, v4
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_8
     const/4 v5, 0x0
 
-    goto :goto_5
+    goto :goto_6
 
     .line 2404
     :cond_9
@@ -7309,7 +7302,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -8132,20 +8125,20 @@
 
     move/from16 v0, p3
 
+    move/from16 v2, v16
+
+    move v3, v2
+
+    move v5, v3
+
     const/4 v1, -0x1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x0
 
     const v6, 0xfffff
 
     :goto_0
     const/16 v17, 0x0
 
-    if-ge v0, v13, :cond_25
+    if-ge v0, v13, :cond_26
 
     add-int/lit8 v3, v0, 0x1
 
@@ -8212,15 +8205,15 @@
 
     move/from16 v23, v5
 
+    move/from16 v24, v8
+
     move-object/from16 v31, v10
 
     move v15, v11
 
+    move/from16 v25, v16
+
     const/16 v18, 0x1
-
-    const/16 v24, -0x1
-
-    const/16 v25, 0x0
 
     goto/16 :goto_1b
 
@@ -8248,7 +8241,7 @@
 
     const/16 v4, 0x11
 
-    if-gt v11, v4, :cond_11
+    if-gt v11, v4, :cond_12
 
     add-int/lit8 v24, v2, 0x2
 
@@ -8700,7 +8693,7 @@
 
     const v18, 0xfffff
 
-    if-ne v7, v0, :cond_f
+    if-ne v7, v0, :cond_10
 
     const/high16 v0, 0x20000000
 
@@ -8744,7 +8737,7 @@
 
     const v18, 0xfffff
 
-    if-nez v7, :cond_f
+    if-nez v7, :cond_10
 
     .line 3516
     invoke-static {v12, v3, v9}, Lcom/google/android/gms/internal/vision/zzhl;->zzb([BILcom/google/android/gms/internal/vision/zzhn;)I
@@ -8754,16 +8747,16 @@
     .line 3517
     iget-wide v1, v9, Lcom/google/android/gms/internal/vision/zzhn;->zzb:J
 
-    cmp-long v3, v1, v20
+    cmp-long v1, v1, v20
 
-    if-eqz v3, :cond_e
+    if-eqz v1, :cond_e
 
     const/4 v1, 0x1
 
     goto :goto_c
 
     :cond_e
-    const/4 v1, 0x0
+    move/from16 v1, v16
 
     :goto_c
     invoke-static {v14, v5, v6, v1}, Lcom/google/android/gms/internal/vision/zzma;->zza(Ljava/lang/Object;JZ)V
@@ -8775,6 +8768,8 @@
 
     move v11, v2
 
+    move v0, v5
+
     move/from16 v23, v6
 
     move/from16 p3, v8
@@ -8783,11 +8778,9 @@
 
     move-wide/from16 v5, v27
 
-    const/4 v0, 0x5
-
     const v18, 0xfffff
 
-    if-ne v7, v0, :cond_f
+    if-ne v7, v0, :cond_10
 
     .line 3511
     invoke-static {v12, v3}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BI)I
@@ -8838,6 +8831,11 @@
 
     goto/16 :goto_10
 
+    :cond_f
+    move v2, v0
+
+    goto/16 :goto_15
+
     :pswitch_a
     move v13, v0
 
@@ -8853,7 +8851,7 @@
 
     const v18, 0xfffff
 
-    if-nez v7, :cond_f
+    if-nez v7, :cond_10
 
     .line 3501
     invoke-static {v12, v3, v9}, Lcom/google/android/gms/internal/vision/zzhl;->zza([BILcom/google/android/gms/internal/vision/zzhn;)I
@@ -8882,7 +8880,7 @@
 
     const v18, 0xfffff
 
-    if-nez v7, :cond_f
+    if-nez v7, :cond_10
 
     .line 3496
     invoke-static {v12, v3, v9}, Lcom/google/android/gms/internal/vision/zzhl;->zzb([BILcom/google/android/gms/internal/vision/zzhn;)I
@@ -8918,6 +8916,8 @@
 
     move v11, v2
 
+    move v0, v5
+
     move/from16 v23, v6
 
     move/from16 p3, v8
@@ -8926,11 +8926,9 @@
 
     move-wide/from16 v5, v27
 
-    const/4 v0, 0x5
-
     const v18, 0xfffff
 
-    if-ne v7, v0, :cond_f
+    if-ne v7, v0, :cond_10
 
     .line 3491
     invoke-static {v12, v3}, Lcom/google/android/gms/internal/vision/zzhl;->zzd([BI)F
@@ -8944,7 +8942,7 @@
 
     goto :goto_10
 
-    :cond_f
+    :cond_10
     :goto_f
     const/4 v2, 0x1
 
@@ -8967,7 +8965,7 @@
 
     const v18, 0xfffff
 
-    if-ne v7, v2, :cond_10
+    if-ne v7, v2, :cond_11
 
     .line 3486
     invoke-static {v12, v3}, Lcom/google/android/gms/internal/vision/zzhl;->zzc([BI)D
@@ -8999,11 +8997,13 @@
 
     goto/16 :goto_0
 
-    :cond_10
+    :cond_11
     :goto_15
     move/from16 v6, p3
 
     move/from16 v15, p5
+
+    move/from16 v18, v2
 
     move v2, v3
 
@@ -9015,13 +9015,11 @@
 
     move/from16 v26, v13
 
-    const/16 v18, 0x1
-
     const/16 v24, -0x1
 
     goto/16 :goto_1b
 
-    :cond_11
+    :cond_12
     move/from16 v23, v5
 
     move/from16 v22, v6
@@ -9040,11 +9038,11 @@
 
     const/16 v2, 0x1b
 
-    if-ne v11, v2, :cond_15
+    if-ne v11, v2, :cond_16
 
     const/4 v2, 0x2
 
-    if-ne v7, v2, :cond_14
+    if-ne v7, v2, :cond_15
 
     .line 3582
     invoke-virtual {v10, v14, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -9058,20 +9056,20 @@
 
     move-result v2
 
-    if-nez v2, :cond_13
+    if-nez v2, :cond_14
 
     .line 3584
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_13
 
     const/16 v2, 0xa
 
     goto :goto_16
 
-    :cond_12
+    :cond_13
     shl-int/lit8 v2, v2, 0x1
 
     .line 3587
@@ -9083,7 +9081,7 @@
     .line 3588
     invoke-virtual {v10, v14, v5, v6, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    :cond_13
+    :cond_14
     move-object v5, v1
 
     .line 3590
@@ -9124,7 +9122,7 @@
 
     goto/16 :goto_0
 
-    :cond_14
+    :cond_15
     move/from16 v25, v0
 
     move/from16 v15, p5
@@ -9143,12 +9141,12 @@
 
     goto/16 :goto_18
 
-    :cond_15
+    :cond_16
     move/from16 v25, v0
 
     const/16 v0, 0x31
 
-    if-gt v11, v0, :cond_17
+    if-gt v11, v0, :cond_18
 
     int-to-long v1, v1
 
@@ -9174,7 +9172,7 @@
 
     move/from16 v19, v8
 
-    const/16 v18, 0x1
+    move/from16 v18, v24
 
     const/16 v24, -0x1
 
@@ -9199,11 +9197,11 @@
 
     move/from16 v14, p3
 
-    if-ne v0, v14, :cond_16
+    if-ne v0, v14, :cond_17
 
     goto/16 :goto_1a
 
-    :cond_16
+    :cond_17
     move-object/from16 v14, p1
 
     move-object/from16 v12, p2
@@ -9231,7 +9229,7 @@
 
     goto/16 :goto_0
 
-    :cond_17
+    :cond_18
     move/from16 v15, p5
 
     move v14, v3
@@ -9250,11 +9248,11 @@
 
     const/16 v0, 0x32
 
-    if-ne v11, v0, :cond_19
+    if-ne v11, v0, :cond_1a
 
     const/4 v0, 0x2
 
-    if-ne v7, v0, :cond_18
+    if-ne v7, v0, :cond_19
 
     move-object/from16 v0, p0
 
@@ -9277,11 +9275,11 @@
 
     move-result v0
 
-    if-ne v0, v14, :cond_16
+    if-ne v0, v14, :cond_17
 
     goto :goto_1a
 
-    :cond_18
+    :cond_19
     :goto_18
     move v2, v14
 
@@ -9292,7 +9290,7 @@
 
     goto :goto_1b
 
-    :cond_19
+    :cond_1a
     move-object/from16 v0, p0
 
     move v8, v1
@@ -9322,7 +9320,7 @@
 
     move-result v0
 
-    if-ne v0, v14, :cond_24
+    if-ne v0, v14, :cond_25
 
     :goto_1a
     move v2, v0
@@ -9330,13 +9328,13 @@
     goto :goto_19
 
     :goto_1b
-    if-ne v7, v15, :cond_1b
+    if-ne v7, v15, :cond_1c
 
-    if-nez v15, :cond_1a
+    if-nez v15, :cond_1b
 
     goto :goto_1c
 
-    :cond_1a
+    :cond_1b
     move-object/from16 v8, p0
 
     move-object/from16 v13, p1
@@ -9357,7 +9355,7 @@
 
     goto/16 :goto_26
 
-    :cond_1b
+    :cond_1c
     :goto_1c
     move-object/from16 v8, p0
 
@@ -9366,7 +9364,7 @@
     .line 3609
     iget-boolean v0, v8, Lcom/google/android/gms/internal/vision/zzko;->zzh:Z
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_24
 
     move-object/from16 v10, p6
 
@@ -9377,7 +9375,7 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_23
 
     .line 3611
     iget-object v0, v8, Lcom/google/android/gms/internal/vision/zzko;->zzg:Lcom/google/android/gms/internal/vision/zzkk;
@@ -9392,7 +9390,7 @@
 
     move-result-object v12
 
-    if-nez v12, :cond_1c
+    if-nez v12, :cond_1d
 
     .line 3617
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/vision/zzko;->zze(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzlx;
@@ -9424,7 +9422,7 @@
 
     goto/16 :goto_25
 
-    :cond_1c
+    :cond_1d
     move-object/from16 v13, p1
 
     .line 3619
@@ -9449,7 +9447,7 @@
     .line 3630
     sget-object v1, Lcom/google/android/gms/internal/vision/zzml;->zzn:Lcom/google/android/gms/internal/vision/zzml;
 
-    if-eq v0, v1, :cond_21
+    if-eq v0, v1, :cond_22
 
     .line 3643
     sget-object v15, Lcom/google/android/gms/internal/vision/zzhk;->zza:[I
@@ -9687,14 +9685,14 @@
     .line 3666
     iget-wide v0, v10, Lcom/google/android/gms/internal/vision/zzhn;->zzb:J
 
-    cmp-long v3, v0, v20
+    cmp-long v0, v0, v20
 
-    if-eqz v3, :cond_1d
+    if-eqz v0, :cond_1e
 
     goto :goto_1e
 
-    :cond_1d
-    const/16 v18, 0x0
+    :cond_1e
+    move/from16 v18, v16
 
     :goto_1e
     invoke-static/range {v18 .. v18}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -9841,7 +9839,7 @@
 
     iget-boolean v3, v1, Lcom/google/android/gms/internal/vision/zzjb$zzf;->zzd:Z
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1f
 
     .line 3697
     invoke-virtual {v14, v1, v0}, Lcom/google/android/gms/internal/vision/zziu;->zzb(Lcom/google/android/gms/internal/vision/zziw;Ljava/lang/Object;)V
@@ -9849,7 +9847,7 @@
     goto :goto_23
 
     .line 3700
-    :cond_1e
+    :cond_1f
     iget-object v1, v1, Lcom/google/android/gms/internal/vision/zzjb$zzf;->zzc:Lcom/google/android/gms/internal/vision/zzml;
 
     .line 3701
@@ -9861,23 +9859,23 @@
 
     const/16 v3, 0x11
 
-    if-eq v1, v3, :cond_1f
+    if-eq v1, v3, :cond_20
 
     const/16 v3, 0x12
 
-    if-eq v1, v3, :cond_1f
+    if-eq v1, v3, :cond_20
 
     goto :goto_22
 
     .line 3702
-    :cond_1f
+    :cond_20
     iget-object v1, v12, Lcom/google/android/gms/internal/vision/zzjb$zze;->zzd:Lcom/google/android/gms/internal/vision/zzjb$zzf;
 
     invoke-virtual {v14, v1}, Lcom/google/android/gms/internal/vision/zziu;->zza(Lcom/google/android/gms/internal/vision/zziw;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_21
 
     .line 3704
     invoke-static {v1, v0}, Lcom/google/android/gms/internal/vision/zzjf;->zza(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -9885,7 +9883,7 @@
     move-result-object v0
 
     .line 3705
-    :cond_20
+    :cond_21
     :goto_22
     iget-object v1, v12, Lcom/google/android/gms/internal/vision/zzjb$zze;->zzd:Lcom/google/android/gms/internal/vision/zzjb$zzf;
 
@@ -9896,7 +9894,7 @@
 
     goto :goto_25
 
-    :cond_21
+    :cond_22
     move-object/from16 v11, p2
 
     .line 3631
@@ -9905,14 +9903,14 @@
     .line 3633
     throw v17
 
-    :cond_22
+    :cond_23
     move-object/from16 v13, p1
 
     move-object/from16 v11, p2
 
     goto :goto_24
 
-    :cond_23
+    :cond_24
     move-object/from16 v13, p1
 
     move-object/from16 v11, p2
@@ -9969,7 +9967,7 @@
 
     goto/16 :goto_0
 
-    :cond_24
+    :cond_25
     move/from16 v7, v19
 
     move-object/from16 v14, p1
@@ -9986,7 +9984,7 @@
 
     goto/16 :goto_17
 
-    :cond_25
+    :cond_26
     move/from16 v23, v5
 
     move/from16 v22, v6
@@ -10006,7 +10004,7 @@
     const v2, 0xfffff
 
     :goto_26
-    if-eq v1, v2, :cond_26
+    if-eq v1, v2, :cond_27
 
     int-to-long v1, v1
 
@@ -10016,7 +10014,7 @@
     invoke-virtual {v4, v13, v1, v2, v5}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
     .line 3715
-    :cond_26
+    :cond_27
     iget v1, v8, Lcom/google/android/gms/internal/vision/zzko;->zzm:I
 
     move-object/from16 v2, v17
@@ -10024,7 +10022,7 @@
     :goto_27
     iget v4, v8, Lcom/google/android/gms/internal/vision/zzko;->zzn:I
 
-    if-ge v1, v4, :cond_27
+    if-ge v1, v4, :cond_28
 
     .line 3716
     iget-object v4, v8, Lcom/google/android/gms/internal/vision/zzko;->zzl:[I
@@ -10044,8 +10042,8 @@
 
     goto :goto_27
 
-    :cond_27
-    if-eqz v2, :cond_28
+    :cond_28
+    if-eqz v2, :cond_29
 
     .line 3720
     iget-object v1, v8, Lcom/google/android/gms/internal/vision/zzko;->zzq:Lcom/google/android/gms/internal/vision/zzlu;
@@ -10053,36 +10051,38 @@
     .line 3721
     invoke-virtual {v1, v13, v2}, Lcom/google/android/gms/internal/vision/zzlu;->zzb(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_28
-    if-nez v9, :cond_2a
+    :cond_29
+    if-nez v9, :cond_2b
 
-    if-ne v0, v6, :cond_29
+    if-ne v0, v6, :cond_2a
 
     goto :goto_28
 
     .line 3724
-    :cond_29
+    :cond_2a
     invoke-static {}, Lcom/google/android/gms/internal/vision/zzjk;->zzg()Lcom/google/android/gms/internal/vision/zzjk;
 
     move-result-object v0
 
     throw v0
 
-    :cond_2a
-    if-gt v0, v6, :cond_2b
+    :cond_2b
+    if-gt v0, v6, :cond_2c
 
-    if-ne v3, v9, :cond_2b
+    if-ne v3, v9, :cond_2c
 
     :goto_28
     return v0
 
     .line 3726
-    :cond_2b
+    :cond_2c
     invoke-static {}, Lcom/google/android/gms/internal/vision/zzjk;->zzg()Lcom/google/android/gms/internal/vision/zzjk;
 
     move-result-object v0
 
     throw v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -13914,7 +13914,7 @@
 
     array-length v7, v7
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_6
     if-ge v8, v7, :cond_c
@@ -15737,13 +15737,13 @@
 
     move/from16 v0, p3
 
-    const/4 v1, -0x1
+    move v7, v8
 
-    const/4 v2, 0x0
+    move v1, v10
 
-    const/4 v6, 0x0
+    move/from16 v2, v16
 
-    const v7, 0xfffff
+    move v6, v2
 
     :goto_0
     if-ge v0, v13, :cond_15
@@ -15807,12 +15807,11 @@
 
     move-object/from16 v29, v9
 
-    const/16 v18, 0x0
+    move/from16 v20, v10
 
-    :goto_3
-    const/16 v20, -0x1
+    move/from16 v18, v16
 
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     .line 3748
     :cond_2
@@ -15870,12 +15869,12 @@
     .line 3761
     invoke-virtual {v7, v14, v1, v2, v6}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_3
     move-object/from16 v7, v18
 
-    :goto_4
+    :goto_3
     if-eq v0, v5, :cond_4
 
     int-to-long v1, v0
@@ -15892,29 +15891,29 @@
 
     move v7, v0
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_5
     move-object/from16 v2, v18
 
-    :goto_5
+    :goto_4
     const/4 v0, 0x5
 
     packed-switch v10, :pswitch_data_0
 
     move/from16 v25, p3
 
-    move v5, v4
+    move/from16 v26, v5
 
     move/from16 v10, v20
 
-    const v26, 0xfffff
+    move v5, v4
 
     move/from16 v20, v7
 
     move-object v7, v2
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :pswitch_0
     if-nez v3, :cond_6
@@ -15948,7 +15947,7 @@
 
     move v8, v4
 
-    const v26, 0xfffff
+    move/from16 v26, v5
 
     move-wide/from16 v4, v17
 
@@ -15963,14 +15962,14 @@
 
     move v0, v10
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :cond_6
     move/from16 v25, p3
 
-    move/from16 v8, v20
+    move/from16 v26, v5
 
-    const v26, 0xfffff
+    move/from16 v8, v20
 
     move/from16 v20, v7
 
@@ -15980,14 +15979,14 @@
 
     move v10, v8
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :pswitch_1
     move/from16 v25, p3
 
-    move/from16 v10, v20
+    move/from16 v26, v5
 
-    const v26, 0xfffff
+    move/from16 v10, v20
 
     move/from16 v20, v7
 
@@ -16011,14 +16010,14 @@
     .line 3834
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_2
     move/from16 v25, p3
 
-    move/from16 v10, v20
+    move/from16 v26, v5
 
-    const v26, 0xfffff
+    move/from16 v10, v20
 
     move/from16 v20, v7
 
@@ -16036,16 +16035,16 @@
 
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_3
     move/from16 v25, p3
 
+    move/from16 v26, v5
+
     move/from16 v10, v20
 
     const/4 v0, 0x2
-
-    const v26, 0xfffff
 
     move/from16 v20, v7
 
@@ -16063,16 +16062,16 @@
 
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_4
     move/from16 v25, p3
 
+    move/from16 v26, v5
+
     move/from16 v10, v20
 
     const/4 v0, 0x2
-
-    const v26, 0xfffff
 
     move/from16 v20, v7
 
@@ -16102,7 +16101,7 @@
 
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 3815
     :cond_7
@@ -16116,16 +16115,16 @@
     .line 3817
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_5
     move/from16 v25, p3
 
+    move/from16 v26, v5
+
     move/from16 v10, v20
 
     const/4 v0, 0x2
-
-    const v26, 0xfffff
 
     move/from16 v20, v7
 
@@ -16144,7 +16143,7 @@
 
     move-result v0
 
-    goto :goto_6
+    goto :goto_5
 
     .line 3804
     :cond_8
@@ -16153,19 +16152,19 @@
     move-result v0
 
     .line 3805
-    :goto_6
+    :goto_5
     iget-object v1, v11, Lcom/google/android/gms/internal/vision/zzhn;->zzc:Ljava/lang/Object;
 
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_6
     move/from16 v25, p3
 
-    move/from16 v10, v20
+    move/from16 v26, v5
 
-    const v26, 0xfffff
+    move/from16 v10, v20
 
     move/from16 v20, v7
 
@@ -16183,28 +16182,28 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_9
+    if-eqz v1, :cond_9
 
     const/4 v1, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_9
-    const/4 v1, 0x0
+    move/from16 v1, v16
 
-    :goto_7
+    :goto_6
     invoke-static {v14, v8, v9, v1}, Lcom/google/android/gms/internal/vision/zzma;->zza(Ljava/lang/Object;JZ)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_7
     move/from16 v25, p3
 
-    move/from16 v10, v20
+    move/from16 v26, v5
 
-    const v26, 0xfffff
+    move/from16 v10, v20
 
     move/from16 v20, v7
 
@@ -16221,16 +16220,16 @@
 
     add-int/lit8 v0, v4, 0x4
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :pswitch_8
     move/from16 v25, p3
 
+    move/from16 v26, v5
+
     move/from16 v10, v20
 
     const/4 v0, 0x1
-
-    const v26, 0xfffff
 
     move/from16 v20, v7
 
@@ -16257,21 +16256,21 @@
 
     add-int/lit8 v0, v8, 0x8
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_a
     move v5, v4
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :pswitch_9
     move/from16 v25, p3
 
-    move v5, v4
+    move/from16 v26, v5
 
     move/from16 v10, v20
 
-    const v26, 0xfffff
+    move v5, v4
 
     move/from16 v20, v7
 
@@ -16289,16 +16288,16 @@
 
     invoke-virtual {v7, v14, v8, v9, v1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto :goto_8
+    goto :goto_7
 
     :pswitch_a
     move/from16 v25, p3
 
-    move v5, v4
+    move/from16 v26, v5
 
     move/from16 v10, v20
 
-    const v26, 0xfffff
+    move v5, v4
 
     move/from16 v20, v7
 
@@ -16330,16 +16329,16 @@
 
     move/from16 v0, v17
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :pswitch_b
     move/from16 v25, p3
 
-    move v5, v4
+    move/from16 v26, v5
 
     move/from16 v10, v20
 
-    const v26, 0xfffff
+    move v5, v4
 
     move/from16 v20, v7
 
@@ -16356,18 +16355,18 @@
 
     add-int/lit8 v0, v5, 0x4
 
-    goto :goto_8
+    goto :goto_7
 
     :pswitch_c
     move/from16 v25, p3
 
-    move v5, v4
+    move/from16 v26, v5
 
     move/from16 v10, v20
 
     const/4 v0, 0x1
 
-    const v26, 0xfffff
+    move v5, v4
 
     move/from16 v20, v7
 
@@ -16384,17 +16383,17 @@
 
     add-int/lit8 v0, v5, 0x8
 
-    :goto_8
+    :goto_7
     or-int v6, v6, v23
 
     move-object v9, v7
 
     move v2, v10
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_b
-    :goto_9
+    :goto_8
     move v2, v5
 
     move-object/from16 v29, v7
@@ -16403,7 +16402,9 @@
 
     move/from16 v7, v20
 
-    goto/16 :goto_3
+    const/16 v20, -0x1
+
+    goto/16 :goto_e
 
     :cond_c
     move/from16 v25, p3
@@ -16449,13 +16450,13 @@
 
     const/16 v1, 0xa
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_d
     shl-int/lit8 v1, v1, 0x1
 
     .line 3851
-    :goto_a
+    :goto_9
     invoke-interface {v0, v1}, Lcom/google/android/gms/internal/vision/zzjl;->zza(I)Lcom/google/android/gms/internal/vision/zzjl;
 
     move-result-object v0
@@ -16498,12 +16499,16 @@
 
     move/from16 v2, v18
 
-    :goto_b
+    :goto_a
     move/from16 v7, v20
 
     move/from16 v1, v25
 
-    goto/16 :goto_11
+    move/from16 v8, v26
+
+    const/4 v10, -0x1
+
+    goto/16 :goto_0
 
     :cond_f
     move/from16 v18, v4
@@ -16518,7 +16523,7 @@
 
     const/16 v20, -0x1
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_10
     move/from16 v18, v4
@@ -16563,7 +16568,7 @@
 
     move-wide/from16 v23, v8
 
-    const v9, 0xfffff
+    move/from16 v9, v26
 
     move/from16 v8, v18
 
@@ -16588,7 +16593,7 @@
 
     if-ne v0, v15, :cond_11
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_11
     move-object/from16 v15, p0
@@ -16603,13 +16608,15 @@
 
     move/from16 v2, v18
 
+    move/from16 v10, v20
+
     move/from16 v1, v25
 
     move/from16 v6, v27
 
     move/from16 v7, v28
 
-    goto/16 :goto_10
+    goto/16 :goto_f
 
     :cond_12
     move/from16 p3, v3
@@ -16665,18 +16672,18 @@
 
     if-ne v0, v15, :cond_11
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_13
-    :goto_c
+    :goto_b
     move v2, v15
 
-    :goto_d
+    :goto_c
     move/from16 v6, v27
 
     move/from16 v7, v28
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_14
     move/from16 v7, p3
@@ -16710,13 +16717,13 @@
 
     if-ne v0, v15, :cond_11
 
-    :goto_e
+    :goto_d
     move v2, v0
 
-    goto :goto_d
+    goto :goto_c
 
     .line 3873
-    :goto_f
+    :goto_e
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/vision/zzko;->zze(Ljava/lang/Object;)Lcom/google/android/gms/internal/vision/zzlx;
 
     move-result-object v4
@@ -16746,24 +16753,23 @@
 
     move/from16 v2, v18
 
+    move/from16 v10, v20
+
     move/from16 v1, v25
 
-    :goto_10
+    :goto_f
     move-object/from16 v9, v29
 
-    :goto_11
     const v8, 0xfffff
-
-    const/4 v10, -0x1
 
     goto/16 :goto_0
 
     :cond_15
     move/from16 v27, v6
 
-    move-object/from16 v29, v9
+    move v1, v8
 
-    const v1, 0xfffff
+    move-object/from16 v29, v9
 
     if-eq v7, v1, :cond_16
 
@@ -16854,7 +16860,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x1
@@ -16999,9 +17005,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
@@ -17043,9 +17049,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
@@ -17249,9 +17255,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -17293,9 +17299,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -17316,9 +17322,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -17378,13 +17384,13 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     :cond_0
     :goto_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :cond_1
     :goto_2
@@ -17557,9 +17563,9 @@
     .line 576
     sget-object v2, Lcom/google/android/gms/internal/vision/zzko;->zzb:Lsun/misc/Unsafe;
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 578
     :goto_0
@@ -18979,13 +18985,13 @@
     :cond_5
     sget-object v2, Lcom/google/android/gms/internal/vision/zzko;->zzb:Lsun/misc/Unsafe;
 
-    const/4 v3, 0x0
+    move v6, v7
 
-    const/4 v5, 0x0
+    move v3, v11
 
-    const v6, 0xfffff
+    move v5, v3
 
-    const/4 v12, 0x0
+    move v12, v5
 
     .line 853
     :goto_4
@@ -20514,20 +20520,20 @@
     :goto_10
     add-int/lit8 v3, v3, 0x3
 
+    move v8, v4
+
+    move v11, v10
+
     move-wide v9, v13
 
     const/4 v4, 0x0
 
     const v7, 0xfffff
 
-    const/4 v8, 0x1
-
-    const/4 v11, 0x0
-
     goto/16 :goto_4
 
     :cond_d
-    const/4 v10, 0x0
+    move v10, v11
 
     .line 1143
     iget-object v2, v0, Lcom/google/android/gms/internal/vision/zzko;->zzq:Lcom/google/android/gms/internal/vision/zzlu;
@@ -20550,7 +20556,7 @@
 
     move-result-object v1
 
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 1147
     :goto_11
@@ -21447,11 +21453,11 @@
 
     const/4 v9, 0x0
 
-    const v0, 0xfffff
+    move v0, v8
 
-    const/4 v1, 0x0
+    move v1, v9
 
-    const/4 v10, 0x0
+    move v10, v1
 
     .line 3936
     :goto_0
@@ -21521,12 +21527,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v11
 
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_2
     if-eqz v0, :cond_3
@@ -21681,7 +21687,7 @@
 
     if-nez v2, :cond_5
 
-    const/4 v11, 0x0
+    move v11, v9
 
     :cond_7
     if-nez v11, :cond_d
@@ -21733,7 +21739,7 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    move v2, v9
 
     .line 3966
     :goto_3
@@ -21755,7 +21761,7 @@
 
     if-nez v3, :cond_a
 
-    const/4 v11, 0x0
+    move v11, v9
 
     goto :goto_4
 

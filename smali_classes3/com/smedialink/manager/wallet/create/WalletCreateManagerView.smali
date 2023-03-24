@@ -34,6 +34,9 @@
 .method public abstract openImportWalletScreen(Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
+.method public abstract showActivationConfirmationDialog(Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;)V
+.end method
+
 .method public abstract showAlreadyCreatedWalletWarningDialog(Lcom/smedialink/model/dialog/DialogModel;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;)V
 .end method
 

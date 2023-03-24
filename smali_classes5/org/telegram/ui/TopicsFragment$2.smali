@@ -135,7 +135,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v10, 0x0
+    move v10, v0
 
     :goto_0
     if-ge v10, v8, :cond_0
@@ -347,7 +347,7 @@
     goto/16 :goto_b
 
     :pswitch_0
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 584
     :goto_0
@@ -625,7 +625,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 638
     :goto_4
@@ -660,12 +660,12 @@
 
     if-ne v12, v8, :cond_9
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_5
 
     :cond_9
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_5
     invoke-virtual {v4, v5, v6, v7, v8}, Lorg/telegram/messenger/TopicsController;->toggleCloseTopic(JIZ)V
@@ -692,7 +692,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 645
     :goto_6
@@ -774,7 +774,7 @@
     goto :goto_7
 
     :cond_b
-    const/16 v18, 0x0
+    move/from16 v18, v1
 
     :goto_7
     const/16 v19, 0x0
@@ -956,12 +956,12 @@
 
     if-ne v12, v0, :cond_f
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_9
 
     :cond_f
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_9
     iget-object v8, v11, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;

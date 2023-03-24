@@ -50,6 +50,16 @@
 
     const-wide/32 v8, -0x80000000
 
+    move/from16 v20, v2
+
+    move/from16 v30, v20
+
+    move/from16 v21, v3
+
+    move/from16 v29, v21
+
+    move/from16 v31, v29
+
     move-wide v15, v4
 
     move-wide/from16 v17, v15
@@ -83,16 +93,6 @@
     move-object/from16 v38, v7
 
     move-wide/from16 v22, v8
-
-    const/16 v20, 0x1
-
-    const/16 v21, 0x0
-
-    const/16 v29, 0x0
-
-    const/16 v30, 0x1
-
-    const/16 v31, 0x0
 
     .line 2
     :goto_0

@@ -10,7 +10,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,13 +31,13 @@
         }
     .end annotation
 
-    .line 95
+    .line 96
     check-cast p1, Lcom/google/protobuf/MapFieldLite;
 
-    .line 96
+    .line 97
     check-cast p2, Lcom/google/protobuf/MapEntryLite;
 
-    .line 98
+    .line 99
     invoke-virtual {p1}, Ljava/util/LinkedHashMap;->isEmpty()Z
 
     move-result v0
@@ -48,7 +48,7 @@
 
     return v1
 
-    .line 102
+    .line 103
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->entrySet()Ljava/util/Set;
 
@@ -71,7 +71,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 103
+    .line 104
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -109,32 +109,32 @@
         }
     .end annotation
 
-    .line 76
+    .line 77
     check-cast p0, Lcom/google/protobuf/MapFieldLite;
 
-    .line 77
+    .line 78
     check-cast p1, Lcom/google/protobuf/MapFieldLite;
 
-    .line 78
+    .line 79
     invoke-virtual {p1}, Ljava/util/LinkedHashMap;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 79
+    .line 80
     invoke-virtual {p0}, Lcom/google/protobuf/MapFieldLite;->isMutable()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 80
+    .line 81
     invoke-virtual {p0}, Lcom/google/protobuf/MapFieldLite;->mutableCopy()Lcom/google/protobuf/MapFieldLite;
 
     move-result-object p0
 
-    .line 82
+    .line 83
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MapFieldLite;->mergeFrom(Lcom/google/protobuf/MapFieldLite;)V
 
@@ -156,7 +156,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 51
     check-cast p1, Lcom/google/protobuf/MapFieldLite;
 
     return-object p1
@@ -174,7 +174,7 @@
         }
     .end annotation
 
-    .line 45
+    .line 46
     check-cast p1, Lcom/google/protobuf/MapEntryLite;
 
     invoke-virtual {p1}, Lcom/google/protobuf/MapEntryLite;->getMetadata()Lcom/google/protobuf/MapEntryLite$Metadata;
@@ -196,7 +196,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 41
     check-cast p1, Lcom/google/protobuf/MapFieldLite;
 
     return-object p1
@@ -205,7 +205,7 @@
 .method public getSerializedSize(ILjava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 89
+    .line 90
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/MapFieldSchemaLite;->getSerializedSizeLite(ILjava/lang/Object;Ljava/lang/Object;)I
 
     move-result p1
@@ -216,7 +216,7 @@
 .method public isImmutable(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 55
+    .line 56
     check-cast p1, Lcom/google/protobuf/MapFieldLite;
 
     invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->isMutable()Z
@@ -231,7 +231,7 @@
 .method public mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 71
+    .line 72
     invoke-static {p1, p2}, Lcom/google/protobuf/MapFieldSchemaLite;->mergeFromLite(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/protobuf/MapFieldLite;
 
     move-result-object p1
@@ -242,7 +242,7 @@
 .method public newMapField(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 66
+    .line 67
     invoke-static {}, Lcom/google/protobuf/MapFieldLite;->emptyMapField()Lcom/google/protobuf/MapFieldLite;
 
     move-result-object p1
@@ -257,7 +257,7 @@
 .method public toImmutable(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    .line 60
+    .line 61
     move-object v0, p1
 
     check-cast v0, Lcom/google/protobuf/MapFieldLite;

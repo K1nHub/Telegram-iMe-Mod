@@ -127,9 +127,9 @@
 
     const-wide v2, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
     .line 256
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mDampingRatio:D
@@ -145,9 +145,9 @@
     .line 258
     iget-wide v6, p0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
-    mul-double v0, v0, v0
+    mul-double/2addr v0, v0
 
     sub-double/2addr v0, v2
 
@@ -156,7 +156,7 @@
 
     move-result-wide v0
 
-    mul-double v6, v6, v0
+    mul-double/2addr v6, v0
 
     add-double/2addr v4, v6
 
@@ -169,9 +169,9 @@
 
     iget-wide v6, p0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
-    mul-double v0, v0, v0
+    mul-double/2addr v0, v0
 
     sub-double/2addr v0, v2
 
@@ -180,7 +180,7 @@
 
     move-result-wide v0
 
-    mul-double v6, v6, v0
+    mul-double/2addr v6, v0
 
     sub-double/2addr v4, v6
 
@@ -191,9 +191,9 @@
     :cond_1
     const-wide/16 v4, 0x0
 
-    cmpl-double v6, v0, v4
+    cmpl-double v4, v0, v4
 
-    if-ltz v6, :cond_2
+    if-ltz v4, :cond_2
 
     cmpg-double v4, v0, v2
 
@@ -202,7 +202,7 @@
     .line 264
     iget-wide v4, p0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    mul-double v0, v0, v0
+    mul-double/2addr v0, v0
 
     sub-double/2addr v2, v0
 
@@ -210,7 +210,7 @@
 
     move-result-wide v0
 
-    mul-double v4, v4, v0
+    mul-double/2addr v4, v0
 
     iput-wide v4, p0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
@@ -278,9 +278,9 @@
 
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mValueThreshold:D
 
-    cmpg-double v2, p1, v0
+    cmpg-double p1, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -383,7 +383,7 @@
 
     const-wide v0, 0x404f400000000000L    # 62.5
 
-    mul-double p1, p1, v0
+    mul-double/2addr p1, v0
 
     .line 330
     iput-wide p1, p0, Landroidx/dynamicanimation/animation/SpringForce;->mVelocityThreshold:D
@@ -392,12 +392,12 @@
 .end method
 
 .method updateValues(DDJ)Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
-    .locals 15
+    .locals 16
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
     .line 276
-    invoke-direct {p0}, Landroidx/dynamicanimation/animation/SpringForce;->init()V
+    invoke-direct/range {p0 .. p0}, Landroidx/dynamicanimation/animation/SpringForce;->init()V
 
     move-wide/from16 v1, p5
 
@@ -417,11 +417,11 @@
 
     const-wide/high16 v7, 0x3ff0000000000000L    # 1.0
 
-    const-wide v9, 0x4005bf0a8b145769L    # Math.E
+    cmpl-double v9, v5, v7
 
-    cmpl-double v11, v5, v7
+    const-wide v10, 0x4005bf0a8b145769L    # Math.E
 
-    if-lez v11, :cond_0
+    if-lez v9, :cond_0
 
     .line 284
     iget-wide v5, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaMinus:D
@@ -430,78 +430,78 @@
 
     sub-double v7, v7, p3
 
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaPlus:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaPlus:D
 
-    sub-double v13, v5, v11
+    sub-double v14, v5, v12
 
-    div-double/2addr v7, v13
+    div-double/2addr v7, v14
 
     sub-double v7, v3, v7
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     sub-double v3, v3, p3
 
-    sub-double v11, v5, v11
+    sub-double v12, v5, v12
 
-    div-double/2addr v3, v11
+    div-double/2addr v3, v12
 
-    mul-double v5, v5, v1
+    mul-double/2addr v5, v1
 
     .line 288
-    invoke-static {v9, v10, v5, v6}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v5
 
-    mul-double v5, v5, v7
+    mul-double/2addr v5, v7
 
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaPlus:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaPlus:D
 
-    mul-double v11, v11, v1
+    mul-double/2addr v12, v1
 
     .line 289
-    invoke-static {v9, v10, v11, v12}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    mul-double v11, v11, v3
+    mul-double/2addr v12, v3
 
-    add-double/2addr v5, v11
+    add-double/2addr v5, v12
 
     .line 290
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaMinus:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaMinus:D
 
-    mul-double v7, v7, v11
+    mul-double/2addr v7, v12
 
-    mul-double v11, v11, v1
+    mul-double/2addr v12, v1
 
-    invoke-static {v9, v10, v11, v12}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    mul-double v7, v7, v11
+    mul-double/2addr v7, v12
 
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaPlus:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaPlus:D
 
-    mul-double v3, v3, v11
+    mul-double/2addr v3, v12
 
-    mul-double v11, v11, v1
+    mul-double/2addr v12, v1
 
     .line 291
-    invoke-static {v9, v10, v11, v12}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v1
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     add-double/2addr v7, v3
 
     goto/16 :goto_0
 
     :cond_0
-    cmpl-double v11, v5, v7
+    cmpl-double v9, v5, v7
 
-    if-nez v11, :cond_1
+    if-nez v9, :cond_1
 
     .line 295
     iget-wide v5, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
@@ -510,50 +510,50 @@
 
     add-double v7, p3, v7
 
-    mul-double v11, v7, v1
+    mul-double v12, v7, v1
 
-    add-double/2addr v3, v11
+    add-double/2addr v3, v12
 
     neg-double v5, v5
 
-    mul-double v5, v5, v1
+    mul-double/2addr v5, v1
 
     .line 296
-    invoke-static {v9, v10, v5, v6}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v5
 
-    mul-double v5, v5, v3
+    mul-double/2addr v5, v3
 
     .line 297
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    neg-double v11, v11
+    neg-double v12, v12
 
-    mul-double v11, v11, v1
+    mul-double/2addr v12, v1
 
-    invoke-static {v9, v10, v11, v12}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    mul-double v3, v3, v11
+    mul-double/2addr v3, v12
 
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    neg-double v13, v11
+    neg-double v14, v12
 
-    mul-double v3, v3, v13
+    mul-double/2addr v3, v14
 
-    neg-double v11, v11
+    neg-double v12, v12
 
-    mul-double v11, v11, v1
+    mul-double/2addr v12, v1
 
     .line 298
-    invoke-static {v9, v10, v11, v12}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v1
 
-    mul-double v7, v7, v1
+    mul-double/2addr v7, v1
 
     add-double/2addr v7, v3
 
@@ -561,73 +561,73 @@
 
     .line 302
     :cond_1
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
-    div-double/2addr v7, v11
+    div-double/2addr v7, v12
 
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    mul-double v13, v5, v11
+    mul-double v14, v5, v12
 
-    mul-double v13, v13, v3
+    mul-double/2addr v14, v3
 
-    add-double v13, v13, p3
+    add-double v14, v14, p3
 
-    mul-double v7, v7, v13
+    mul-double/2addr v7, v14
 
     neg-double v5, v5
 
-    mul-double v5, v5, v11
+    mul-double/2addr v5, v12
 
-    mul-double v5, v5, v1
+    mul-double/2addr v5, v1
 
     .line 304
-    invoke-static {v9, v10, v5, v6}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v10, v11, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v5
 
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
-    mul-double v11, v11, v1
+    mul-double/2addr v12, v1
 
     .line 305
-    invoke-static {v11, v12}, Ljava/lang/Math;->cos(D)D
+    invoke-static {v12, v13}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    mul-double v11, v11, v3
+    mul-double/2addr v12, v3
 
-    iget-wide v13, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
+    iget-wide v14, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
-    mul-double v13, v13, v1
+    mul-double/2addr v14, v1
 
     .line 306
-    invoke-static {v13, v14}, Ljava/lang/Math;->sin(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v13
+    move-result-wide v14
 
-    mul-double v13, v13, v7
+    mul-double/2addr v14, v7
 
-    add-double/2addr v11, v13
+    add-double/2addr v12, v14
 
-    mul-double v5, v5, v11
+    mul-double/2addr v5, v12
 
     .line 307
-    iget-wide v11, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
+    iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
 
-    neg-double v13, v11
+    neg-double v14, v12
 
-    mul-double v13, v13, v5
+    mul-double/2addr v14, v5
 
-    iget-wide v9, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampingRatio:D
+    iget-wide v10, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampingRatio:D
 
-    mul-double v13, v13, v9
+    mul-double/2addr v14, v10
 
-    neg-double v9, v9
+    neg-double v9, v10
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v12
 
-    mul-double v9, v9, v1
+    mul-double/2addr v9, v1
 
     const-wide v11, 0x4005bf0a8b145769L    # Math.E
 
@@ -642,35 +642,35 @@
 
     neg-double v5, v11
 
-    mul-double v5, v5, v3
+    mul-double/2addr v5, v3
 
-    mul-double v11, v11, v1
+    mul-double/2addr v11, v1
 
     .line 309
     invoke-static {v11, v12}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v3
 
-    mul-double v5, v5, v3
+    mul-double/2addr v5, v3
 
     iget-wide v3, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
-    mul-double v7, v7, v3
+    mul-double/2addr v7, v3
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     .line 310
     invoke-static {v3, v4}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v1
 
-    mul-double v7, v7, v1
+    mul-double/2addr v7, v1
 
     add-double/2addr v5, v7
 
-    mul-double v9, v9, v5
+    mul-double/2addr v9, v5
 
-    add-double v7, v13, v9
+    add-double v7, v14, v9
 
     move-wide/from16 v5, p1
 

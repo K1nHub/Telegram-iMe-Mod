@@ -167,16 +167,16 @@
 
     sub-float/2addr v3, p1
 
-    mul-float v0, v0, v0
+    mul-float/2addr v0, v0
 
-    mul-float v3, v3, v3
+    mul-float/2addr v3, v3
 
     add-float/2addr v0, v3
 
     .line 458
     iget p1, p0, Lorg/fork/ui/view/PinnedPlayerView$8;->val$touchSlop:F
 
-    mul-float p1, p1, p1
+    mul-float/2addr p1, p1
 
     cmpl-float p1, v0, p1
 

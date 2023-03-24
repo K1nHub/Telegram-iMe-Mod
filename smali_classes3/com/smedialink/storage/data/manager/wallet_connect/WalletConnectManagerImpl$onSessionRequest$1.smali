@@ -109,10 +109,10 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
     .line 359
-    invoke-virtual {v0, v1, v3}, Lcom/trustwallet/walletconnect/WCClient;->approveSession(Ljava/util/List;I)Z
+    invoke-virtual {v0, v1, v2}, Lcom/trustwallet/walletconnect/WCClient;->approveSession(Ljava/util/List;I)Z
 
     return-void
 .end method

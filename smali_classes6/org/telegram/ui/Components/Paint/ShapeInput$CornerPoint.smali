@@ -48,12 +48,12 @@
 
     if-eqz p3, :cond_0
 
-    const/high16 p3, -0x40800000    # -1.0f
+    move p3, p1
 
     goto :goto_0
 
     :cond_0
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, p2
 
     .line 556
     :goto_0
@@ -64,7 +64,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, p2
 
     .line 557
     :goto_1
@@ -93,7 +93,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/Paint/Shape;->radiusX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -104,7 +104,7 @@
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Shape;->radiusY:F
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     add-float/2addr v2, v3
 
@@ -157,7 +157,7 @@
 
     iget v3, v0, Lorg/telegram/ui/Components/Paint/Shape;->radiusX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -170,7 +170,7 @@
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Shape;->radiusY:F
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     add-float/2addr v2, v3
 
@@ -243,7 +243,7 @@
 
     float-to-double v8, v2
 
-    mul-double v4, v4, v8
+    mul-double/2addr v4, v8
 
     .line 585
     invoke-static {v6, v7}, Ljava/lang/Math;->sin(D)D
@@ -256,7 +256,7 @@
 
     float-to-double v8, v2
 
-    mul-double v6, v6, v8
+    mul-double/2addr v6, v8
 
     .line 587
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/ShapeInput$CornerPoint;->shape:Lorg/telegram/ui/Components/Paint/Shape;

@@ -184,7 +184,7 @@
 .end method
 
 .method public d(Ljava/lang/Object;I)V
-    .locals 7
+    .locals 6
 
     int-to-long v0, p2
 
@@ -200,13 +200,13 @@
 
     int-to-long v4, v4
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gtz v6, :cond_3
+    if-gtz v4, :cond_3
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-ltz v4, :cond_3
+    if-ltz v0, :cond_3
 
     iget v0, p0, Lj$/util/stream/e;->c:I
 
@@ -223,7 +223,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     iget v2, p0, Lj$/util/stream/e;->c:I
@@ -280,7 +280,7 @@
 .end method
 
 .method public e()Ljava/lang/Object;
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0}, Lj$/util/stream/e;->count()J
 
@@ -288,13 +288,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {p0, v1}, Lj$/util/stream/Z3;->c(I)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lj$/util/stream/Z3;->c(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -319,7 +319,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget v2, p0, Lj$/util/stream/e;->c:I

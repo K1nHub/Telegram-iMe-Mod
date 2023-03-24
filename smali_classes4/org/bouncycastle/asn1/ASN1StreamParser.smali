@@ -176,7 +176,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_1
     iget-object v3, p0, Lorg/bouncycastle/asn1/ASN1StreamParser;->_in:Ljava/io/InputStream;

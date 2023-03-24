@@ -36,7 +36,7 @@
 .end method
 
 .method public static awaitUninterruptibly(Ljava/util/concurrent/CountDownLatch;J)Z
-    .locals 9
+    .locals 8
 
     .line 128
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -47,7 +47,7 @@
 
     move-wide v3, p1
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 134
     :cond_0
@@ -63,8 +63,6 @@
     goto :goto_0
 
     :catch_0
-    nop
-
     const/4 v5, 0x1
 
     .line 140
@@ -78,9 +76,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v3, v6
+    cmp-long v6, v3, v6
 
-    if-gtz v8, :cond_0
+    if-gtz v6, :cond_0
 
     :goto_0
     if-eqz v5, :cond_1
@@ -338,7 +336,7 @@
 .end method
 
 .method public static joinUninterruptibly(Ljava/lang/Thread;J)Z
-    .locals 9
+    .locals 8
 
     .line 87
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -354,9 +352,9 @@
     :goto_0
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-lez v8, :cond_0
+    if-lez v6, :cond_0
 
     .line 92
     :try_start_0
@@ -376,7 +374,7 @@
 
     sub-long v4, p1, v3
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 

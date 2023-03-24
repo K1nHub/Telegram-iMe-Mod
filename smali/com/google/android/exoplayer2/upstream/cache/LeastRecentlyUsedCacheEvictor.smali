@@ -55,7 +55,7 @@
 .end method
 
 .method private static compare(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)I
-    .locals 9
+    .locals 8
 
     .line 77
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->lastTouchTimestamp:J
@@ -66,9 +66,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_0
+    if-nez v4, :cond_0
 
     .line 80
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->compareTo(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)I
@@ -94,7 +94,7 @@
 .end method
 
 .method private evictCache(Lcom/google/android/exoplayer2/upstream/cache/Cache;J)V
-    .locals 5
+    .locals 4
 
     .line 71
     :goto_0
@@ -104,9 +104,9 @@
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->maxBytes:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
 
@@ -203,9 +203,9 @@
 
     const-wide/16 p2, -0x1
 
-    cmp-long p4, p5, p2
+    cmp-long p2, p5, p2
 
-    if-eqz p4, :cond_0
+    if-eqz p2, :cond_0
 
     .line 47
     invoke-direct {p0, p1, p5, p6}, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->evictCache(Lcom/google/android/exoplayer2/upstream/cache/Cache;J)V

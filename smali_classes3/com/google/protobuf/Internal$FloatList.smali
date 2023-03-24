@@ -24,3 +24,8 @@
         ">;"
     }
 .end annotation
+
+
+# virtual methods
+.method public abstract mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$FloatList;
+.end method

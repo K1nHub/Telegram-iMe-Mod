@@ -363,7 +363,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->allowDrawContent:Z

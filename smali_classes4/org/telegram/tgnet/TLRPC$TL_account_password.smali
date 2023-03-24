@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 34526
+    .line 34536
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$account_Password;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 34530
+    .line 34540
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -43,14 +43,14 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 34531
+    .line 34541
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->has_recovery:Z
 
@@ -58,14 +58,14 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
-    .line 34532
+    .line 34542
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->has_secure_values:Z
 
@@ -73,9 +73,9 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
-    .line 34533
+    .line 34543
     :cond_2
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->has_password:Z
 
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 34535
+    .line 34545
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -94,7 +94,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->current_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
-    .line 34537
+    .line 34547
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -102,14 +102,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 34538
+    .line 34548
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_B:[B
 
-    .line 34540
+    .line 34550
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -117,14 +117,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 34541
+    .line 34551
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_id:J
 
-    .line 34543
+    .line 34553
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -132,14 +132,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 34544
+    .line 34554
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->hint:Ljava/lang/String;
 
-    .line 34546
+    .line 34556
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -147,14 +147,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 34547
+    .line 34557
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->email_unconfirmed_pattern:Ljava/lang/String;
 
-    .line 34549
+    .line 34559
     :cond_7
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -166,7 +166,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->new_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
-    .line 34550
+    .line 34560
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -177,28 +177,28 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->new_secure_algo:Lorg/telegram/tgnet/TLRPC$SecurePasswordKdfAlgo;
 
-    .line 34551
+    .line 34561
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->secure_random:[B
 
-    .line 34552
+    .line 34562
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
     and-int/lit8 v0, v0, 0x20
 
     if-eqz v0, :cond_8
 
-    .line 34553
+    .line 34563
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->pending_reset_date:I
 
-    .line 34555
+    .line 34565
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -206,7 +206,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 34556
+    .line 34566
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -220,12 +220,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 34561
+    .line 34571
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_password;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34562
+    .line 34572
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->has_recovery:Z
 
     if-eqz v0, :cond_0
@@ -244,7 +244,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
-    .line 34563
+    .line 34573
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->has_secure_values:Z
 
     if-eqz v1, :cond_1
@@ -259,7 +259,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
-    .line 34564
+    .line 34574
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->has_password:Z
 
     if-eqz v1, :cond_2
@@ -274,22 +274,22 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
-    .line 34565
+    .line 34575
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34566
+    .line 34576
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_3
 
-    .line 34567
+    .line 34577
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->current_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 34569
+    .line 34579
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -297,12 +297,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 34570
+    .line 34580
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_B:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V
 
-    .line 34572
+    .line 34582
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -310,12 +310,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 34573
+    .line 34583
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 34575
+    .line 34585
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -323,12 +323,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 34576
+    .line 34586
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->hint:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 34578
+    .line 34588
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -336,40 +336,40 @@
 
     if-eqz v0, :cond_7
 
-    .line 34579
+    .line 34589
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->email_unconfirmed_pattern:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 34581
+    .line 34591
     :cond_7
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->new_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 34582
+    .line 34592
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->new_secure_algo:Lorg/telegram/tgnet/TLRPC$SecurePasswordKdfAlgo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 34583
+    .line 34593
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->secure_random:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V
 
-    .line 34584
+    .line 34594
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
     and-int/lit8 v0, v0, 0x20
 
     if-eqz v0, :cond_8
 
-    .line 34585
+    .line 34595
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->pending_reset_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34587
+    .line 34597
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->flags:I
 
@@ -377,7 +377,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 34588
+    .line 34598
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$account_Password;->login_email_pattern:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

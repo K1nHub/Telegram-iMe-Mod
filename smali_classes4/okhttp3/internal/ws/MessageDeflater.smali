@@ -95,7 +95,7 @@
 .end method
 
 .method public final deflate(Lokio/Buffer;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -113,22 +113,22 @@
 
     move-result-wide v0
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    cmp-long v0, v0, v2
 
-    const-wide/16 v4, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v6, v0, v4
+    const/4 v2, 0x0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_3
@@ -149,9 +149,9 @@
 
     invoke-virtual {p1}, Lokio/Buffer;->size()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    invoke-virtual {v0, p1, v4, v5}, Lokio/DeflaterSink;->write(Lokio/Buffer;J)V
+    invoke-virtual {v0, p1, v3, v4}, Lokio/DeflaterSink;->write(Lokio/Buffer;J)V
 
     .line 46
     iget-object v0, p0, Lokhttp3/internal/ws/MessageDeflater;->deflaterSink:Lokio/DeflaterSink;
@@ -163,9 +163,9 @@
 
     invoke-static {}, Lokhttp3/internal/ws/MessageDeflaterKt;->access$getEMPTY_DEFLATE_BLOCK$p()Lokio/ByteString;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-direct {p0, v0, v1}, Lokhttp3/internal/ws/MessageDeflater;->endsWith(Lokio/Buffer;Lokio/ByteString;)Z
+    invoke-direct {p0, v0, v3}, Lokhttp3/internal/ws/MessageDeflater;->endsWith(Lokio/Buffer;Lokio/ByteString;)Z
 
     move-result v0
 
@@ -176,31 +176,31 @@
 
     invoke-virtual {v0}, Lokio/Buffer;->size()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    const/4 v3, 0x4
+    const/4 v0, 0x4
 
-    int-to-long v3, v3
+    int-to-long v4, v0
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v2, v4
 
     .line 50
-    iget-object v3, p0, Lokhttp3/internal/ws/MessageDeflater;->deflatedBytes:Lokio/Buffer;
+    iget-object v0, p0, Lokhttp3/internal/ws/MessageDeflater;->deflatedBytes:Lokio/Buffer;
 
     const/4 v4, 0x0
 
-    invoke-static {v3, v4, v2, v4}, Lokio/Buffer;->readAndWriteUnsafe$default(Lokio/Buffer;Lokio/Buffer$UnsafeCursor;ILjava/lang/Object;)Lokio/Buffer$UnsafeCursor;
+    invoke-static {v0, v4, v1, v4}, Lokio/Buffer;->readAndWriteUnsafe$default(Lokio/Buffer;Lokio/Buffer$UnsafeCursor;ILjava/lang/Object;)Lokio/Buffer$UnsafeCursor;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 51
     :try_start_0
-    invoke-virtual {v2, v0, v1}, Lokio/Buffer$UnsafeCursor;->resizeBuffer(J)J
+    invoke-virtual {v0, v2, v3}, Lokio/Buffer$UnsafeCursor;->resizeBuffer(J)J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
-    invoke-static {v2, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     goto :goto_1
 
@@ -213,17 +213,17 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :catchall_1
-    move-exception v0
+    move-exception v1
 
-    invoke-static {v2, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    throw v0
+    throw v1
 
     .line 55
     :cond_2
     iget-object v0, p0, Lokhttp3/internal/ws/MessageDeflater;->deflatedBytes:Lokio/Buffer;
 
-    invoke-virtual {v0, v3}, Lokio/Buffer;->writeByte(I)Lokio/Buffer;
+    invoke-virtual {v0, v2}, Lokio/Buffer;->writeByte(I)Lokio/Buffer;
 
     .line 58
     :goto_1

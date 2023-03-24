@@ -44,11 +44,11 @@ import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.TabbedFragmentPage;
 import org.fork.utils.TabbedViewPagerDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentStakingBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.ViewPagerFixed;
@@ -304,14 +304,14 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setCastShadows(false);
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.staking_title));
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3286R.C3288drawable.msg_help);
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setCastShadows(false);
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.staking_title));
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3301R.C3303drawable.msg_help);
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StakingFragment.this.finishFragment();
@@ -324,7 +324,7 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3286R.string.staking_info_description), getResourceManager().getString(C3286R.string.staking_info_more), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda3
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3301R.string.staking_info_description), getResourceManager().getString(C3301R.string.staking_info_more), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda3
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
                 StakingFragment.showInfoDialog$lambda$12(StakingFragment.this);
@@ -335,7 +335,7 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
     /* JADX INFO: Access modifiers changed from: private */
     public static final void showInfoDialog$lambda$12(StakingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Browser.openUrl(this$0.getParentActivity(), this$0.getResourceManager().getString(C3286R.string.staking_info_site_url));
+        Browser.openUrl(this$0.getParentActivity(), this$0.getResourceManager().getString(C3301R.string.staking_info_site_url));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

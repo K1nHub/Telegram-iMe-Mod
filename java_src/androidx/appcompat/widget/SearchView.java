@@ -581,7 +581,10 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         this.mSearchButton.setVisibility(i2);
         updateSubmitButton(z2);
         this.mSearchEditFrame.setVisibility(z ? 8 : 0);
-        this.mCollapsedIcon.setVisibility((this.mCollapsedIcon.getDrawable() == null || this.mIconifiedByDefault) ? 8 : 8);
+        if (this.mCollapsedIcon.getDrawable() == null || this.mIconifiedByDefault) {
+            i = 8;
+        }
+        this.mCollapsedIcon.setVisibility(i);
         updateCloseButton();
         updateVoiceButton(!z2);
         updateSubmitArea();

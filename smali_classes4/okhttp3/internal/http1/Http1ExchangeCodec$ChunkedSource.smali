@@ -72,9 +72,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 426
     iget-object v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;->this$0:Lokhttp3/internal/http1/Http1ExchangeCodec;
@@ -126,9 +126,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_4
+    if-ltz v1, :cond_4
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
@@ -143,7 +143,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-eqz v1, :cond_2
@@ -166,9 +166,9 @@
     :cond_2
     iget-wide v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;->bytesRemainingInChunk:J
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-nez v5, :cond_3
+    if-nez v0, :cond_3
 
     .line 440
     iput-boolean v2, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;->hasMoreChunks:Z
@@ -339,39 +339,39 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
-
-    cmp-long v3, p2, v1
-
-    if-ltz v3, :cond_0
+    cmp-long v2, p2, v0
 
     const/4 v3, 0x1
+
+    if-ltz v2, :cond_0
+
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     .line 404
     invoke-virtual {p0}, Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;->getClosed()Z
 
-    move-result v3
+    move-result v2
 
-    xor-int/2addr v0, v3
+    xor-int/2addr v2, v3
 
-    if-eqz v0, :cond_5
+    if-eqz v2, :cond_5
 
     .line 405
-    iget-boolean v0, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;->hasMoreChunks:Z
+    iget-boolean v2, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;->hasMoreChunks:Z
 
     const-wide/16 v3, -0x1
 
-    if-nez v0, :cond_1
+    if-nez v2, :cond_1
 
     return-wide v3
 
@@ -379,7 +379,7 @@
     :cond_1
     iget-wide v5, p0, Lokhttp3/internal/http1/Http1ExchangeCodec$ChunkedSource;->bytesRemainingInChunk:J
 
-    cmp-long v0, v5, v1
+    cmp-long v0, v5, v0
 
     if-eqz v0, :cond_2
 

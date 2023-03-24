@@ -25,7 +25,7 @@ import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
@@ -105,9 +105,9 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
 
     public GroupCallPip(Context context, int i) {
         this.currentAccount = i;
-        C46453 c46453 = new C46453(context, ViewConfiguration.get(context).getScaledTouchSlop());
-        this.windowView = c46453;
-        c46453.setAlpha(0.7f);
+        C46603 c46603 = new C46603(context, ViewConfiguration.get(context).getScaledTouchSlop());
+        this.windowView = c46603;
+        c46603.setAlpha(0.7f);
         GroupCallPipButton groupCallPipButton = new GroupCallPipButton(context, this.currentAccount, false);
         this.button = groupCallPipButton;
         this.windowView.addView(groupCallPipButton, LayoutHelper.createFrame(-1, -1, 17));
@@ -207,7 +207,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.iconView = rLottieImageView;
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-        int i2 = C3286R.C3291raw.group_pip_delete_icon;
+        int i2 = C3301R.C3306raw.group_pip_delete_icon;
         RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m50dp(40), AndroidUtilities.m50dp(40), true, null);
         this.deleteIcon = rLottieDrawable;
         rLottieDrawable.setPlayInDirectionOfCustomEndFrame(true);
@@ -256,7 +256,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
 
     /* renamed from: org.telegram.ui.Components.GroupCallPip$3 */
     /* loaded from: classes6.dex */
-    class C46453 extends FrameLayout {
+    class C46603 extends FrameLayout {
         Runnable micRunnable;
         AnimatorSet moveToBoundsAnimator;
         boolean pressed;
@@ -266,7 +266,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         final /* synthetic */ float val$touchSlop;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C46453(Context context, float f) {
+        C46603(Context context, float f) {
             super(context);
             this.val$touchSlop = f;
             this.pressedRunnable = new Runnable() { // from class: org.telegram.ui.Components.GroupCallPip.3.1
@@ -278,9 +278,9 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
                     }
                     TLRPC$TL_groupCallParticipant tLRPC$TL_groupCallParticipant = sharedInstance.groupCall.participants.get(sharedInstance.getSelfId());
                     if (tLRPC$TL_groupCallParticipant == null || tLRPC$TL_groupCallParticipant.can_self_unmute || !tLRPC$TL_groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
-                        AndroidUtilities.runOnUIThread(C46453.this.micRunnable, 90L);
-                        C46453.this.performHapticFeedback(3, 2);
-                        C46453.this.pressed = true;
+                        AndroidUtilities.runOnUIThread(C46603.this.micRunnable, 90L);
+                        C46603.this.performHapticFeedback(3, 2);
+                        C46603.this.pressed = true;
                     }
                 }
             };
@@ -321,7 +321,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         /* JADX WARN: Code restructure failed: missing block: B:10:0x0022, code lost:
             if (r4 != 3) goto L11;
          */
-        /* JADX WARN: Removed duplicated region for block: B:22:0x0064  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0063  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -329,10 +329,10 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         */
         public boolean onTouchEvent(android.view.MotionEvent r13) {
             /*
-                Method dump skipped, instructions count: 768
+                Method dump skipped, instructions count: 765
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.GroupCallPip.C46453.onTouchEvent(android.view.MotionEvent):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.GroupCallPip.C46603.onTouchEvent(android.view.MotionEvent):boolean");
         }
 
         private void onTap() {
@@ -538,7 +538,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
         ofFloat9.setDuration(350L);
         ofFloat9.setInterpolator(cubicBezierInterpolator3);
         animatorSet.playTogether(ofFloat9);
-        animatorSet.addListener(new C46529(frameLayout, frameLayout2, windowManager, frameLayout3, frameLayout4));
+        animatorSet.addListener(new C46679(frameLayout, frameLayout2, windowManager, frameLayout3, frameLayout4));
         animatorSet.start();
         this.deleteIcon.setCustomEndFrame(66);
         this.iconView.stopAnimation();
@@ -553,14 +553,14 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.GroupCallPip$9 */
     /* loaded from: classes6.dex */
-    public class C46529 extends AnimatorListenerAdapter {
+    public class C46679 extends AnimatorListenerAdapter {
         final /* synthetic */ View val$alert;
         final /* synthetic */ WindowManager val$windowManager;
         final /* synthetic */ View val$windowRemoveTooltipOverlayView;
         final /* synthetic */ View val$windowRemoveTooltipView;
         final /* synthetic */ View val$windowView;
 
-        C46529(View view, View view2, WindowManager windowManager, View view3, View view4) {
+        C46679(View view, View view2, WindowManager windowManager, View view3, View view4) {
             this.val$windowView = view;
             this.val$windowRemoveTooltipView = view2;
             this.val$windowManager = windowManager;
@@ -579,7 +579,7 @@ public class GroupCallPip implements NotificationCenter.NotificationCenterDelega
             notificationCenter.doOnIdle(new Runnable() { // from class: org.telegram.ui.Components.GroupCallPip$9$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCallPip.C46529.lambda$onAnimationEnd$0(view, view2, windowManager, view3, view4);
+                    GroupCallPip.C46679.lambda$onAnimationEnd$0(view, view2, windowManager, view3, view4);
                 }
             });
         }

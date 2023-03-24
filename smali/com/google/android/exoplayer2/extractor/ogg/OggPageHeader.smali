@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public populate(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Z)Z
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -109,9 +109,9 @@
 
     const-wide/32 v3, 0x4f676753
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v0, :cond_0
 
     goto/16 :goto_1
 
@@ -338,20 +338,20 @@
 
     move-result-wide v2
 
-    const/4 v4, 0x0
+    cmp-long v0, v0, v2
 
-    const/4 v5, 0x1
+    const/4 v1, 0x0
 
-    cmp-long v6, v0, v2
+    const/4 v2, 0x1
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -359,71 +359,71 @@
     .line 104
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    const/4 v1, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
+    invoke-virtual {v0, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
     :goto_1
-    const-wide/16 v2, -0x1
+    const-wide/16 v4, -0x1
 
-    cmp-long v0, p2, v2
+    cmp-long v0, p2, v4
 
     if-eqz v0, :cond_1
 
     .line 105
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v2
+    move-result-wide v4
 
     const-wide/16 v6, 0x4
 
-    add-long/2addr v2, v6
+    add-long/2addr v4, v6
 
-    cmp-long v6, v2, p2
+    cmp-long v4, v4, p2
 
-    if-gez v6, :cond_3
+    if-gez v4, :cond_3
 
     :cond_1
-    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    iget-object v4, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     .line 107
-    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+    invoke-virtual {v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    move-result-object v2
+    move-result-object v4
 
     .line 106
-    invoke-static {p1, v2, v4, v1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorUtil;->peekFullyQuietly(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BIIZ)Z
+    invoke-static {p1, v4, v1, v3, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorUtil;->peekFullyQuietly(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BIIZ)Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_3
+    if-eqz v4, :cond_3
 
     .line 108
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {v0, v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     .line 109
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
-    move-result-wide v2
+    move-result-wide v4
 
     const-wide/32 v6, 0x4f676753
 
-    cmp-long v0, v2, v6
+    cmp-long v0, v4, v6
 
     if-nez v0, :cond_2
 
     .line 110
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    return v5
+    return v2
 
     .line 114
     :cond_2
-    invoke-interface {p1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     goto :goto_1
 
@@ -434,24 +434,24 @@
     .line 117
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v1
+    move-result-wide v3
 
-    cmp-long v3, v1, p2
+    cmp-long v3, v3, p2
 
     if-gez v3, :cond_5
 
     .line 118
     :cond_4
-    invoke-interface {p1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skip(I)I
+    invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skip(I)I
 
-    move-result v1
+    move-result v3
 
-    const/4 v2, -0x1
+    const/4 v4, -0x1
 
-    if-eq v1, v2, :cond_5
+    if-eq v3, v4, :cond_5
 
     goto :goto_2
 
     :cond_5
-    return v4
+    return v1
 .end method

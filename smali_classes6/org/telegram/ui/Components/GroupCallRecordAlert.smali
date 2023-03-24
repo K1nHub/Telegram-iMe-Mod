@@ -173,12 +173,12 @@
 
     if-eqz v8, :cond_1
 
-    const/4 v8, 0x5
+    move v8, v9
 
     goto :goto_1
 
     :cond_1
-    const/4 v8, 0x3
+    move v8, v10
 
     :goto_1
     or-int/lit8 v8, v8, 0x30
@@ -196,12 +196,12 @@
 
     if-eqz v13, :cond_2
 
-    const/4 v13, 0x5
+    move v13, v9
 
     goto :goto_2
 
     :cond_2
-    const/4 v13, 0x3
+    move v13, v10
 
     :goto_2
     or-int/lit8 v13, v13, 0x30
@@ -253,12 +253,12 @@
 
     if-eqz v11, :cond_3
 
-    const/4 v11, 0x5
+    move v11, v9
 
     goto :goto_3
 
     :cond_3
-    const/4 v11, 0x3
+    move v11, v10
 
     :goto_3
     or-int/lit8 v11, v11, 0x30
@@ -279,7 +279,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v9, 0x3
+    move v9, v10
 
     :goto_4
     or-int/lit8 v14, v9, 0x30
@@ -652,7 +652,7 @@
 
     invoke-virtual {v8, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 225
     :goto_5
@@ -1019,7 +1019,7 @@
     .line 257
     iget v1, p0, Lorg/telegram/ui/Components/GroupCallRecordAlert;->pageOffset:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sub-float/2addr v2, v0
 
@@ -1059,13 +1059,13 @@
     .line 266
     iget v3, p0, Lorg/telegram/ui/Components/GroupCallRecordAlert;->pageOffset:F
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     const/high16 v4, 0x3f800000    # 1.0f
 
     sub-float v5, v4, v7
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     sub-float/2addr v4, v3
 
@@ -1075,11 +1075,11 @@
     :cond_3
     iget v3, p0, Lorg/telegram/ui/Components/GroupCallRecordAlert;->pageOffset:F
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v3
 
     add-float/2addr v5, v7
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v4, v3
 

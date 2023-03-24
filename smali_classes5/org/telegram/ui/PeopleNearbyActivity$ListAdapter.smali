@@ -334,7 +334,7 @@
 
     if-eq v1, v2, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_3
     invoke-virtual {p1, p2, v3, v0, v4}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IZ)V
@@ -372,12 +372,12 @@
 
     if-le v0, v1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_0
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_0
     invoke-static {p2, v0}, Lorg/telegram/ui/PeopleNearbyActivity;->access$3002(Lorg/telegram/ui/PeopleNearbyActivity;Z)Z
@@ -405,7 +405,7 @@
 
     if-eq v1, v2, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_6
     invoke-virtual {p1, p2, v3, v0, v4}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IZ)V
@@ -437,7 +437,7 @@
 
     if-eq v1, v2, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_8
     invoke-virtual {p1, p2, v3, v0, v4}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IZ)V
@@ -654,7 +654,7 @@
     if-eq p2, v2, :cond_f
 
     :cond_e
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_f
     invoke-virtual {p1, v1, v3, v0, v4}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
@@ -782,7 +782,7 @@
 
     if-eq p2, v1, :cond_13
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_13
     invoke-virtual {p1, v2, v3, v0, v4}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

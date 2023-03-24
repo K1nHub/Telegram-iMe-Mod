@@ -301,7 +301,7 @@
 
     int-to-double v1, v0
 
-    mul-double v1, v1, p0
+    mul-double/2addr v1, p0
 
     .line 620
     invoke-static {v1, v2}, Lcom/bumptech/glide/load/resource/bitmap/Downsampler;->round(D)I
@@ -320,7 +320,7 @@
 
     int-to-double v0, v1
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 623
     invoke-static {p0, p1}, Lcom/bumptech/glide/load/resource/bitmap/Downsampler;->round(D)I
@@ -1212,16 +1212,14 @@
 
     const/4 v0, 0x1
 
-    const/4 v7, 0x1
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v7, 0x0
-
     :goto_0
+    move v7, v0
+
     move-object v1, p0
 
     move-object/from16 v2, p1
@@ -1329,7 +1327,7 @@
 
     :cond_1
     :goto_0
-    const/16 v23, 0x0
+    move/from16 v23, v22
 
     .line 293
     :goto_1
@@ -1445,7 +1443,7 @@
 
     move-object/from16 v2, p4
 
-    const/4 v9, 0x1
+    move v9, v3
 
     move/from16 v3, v23
 
@@ -1473,12 +1471,12 @@
 
     if-lt v0, v1, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v9
 
     goto :goto_4
 
     :cond_6
-    const/4 v3, 0x0
+    move/from16 v3, v22
 
     .line 331
     :goto_4
@@ -1705,7 +1703,7 @@
 
     if-eqz v0, :cond_d
 
-    const/16 v22, 0x1
+    move/from16 v22, v9
 
     :cond_d
     if-eqz v22, :cond_e
@@ -2142,16 +2140,16 @@
     :goto_0
     const-wide v0, 0x41dfffffffc00000L    # 2.147483647E9
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 628
     invoke-static {p0, p1}, Ljava/lang/Math;->round(D)J
 
     move-result-wide p0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method private static getDimensions(Lcom/bumptech/glide/load/resource/bitmap/ImageReader;Landroid/graphics/BitmapFactory$Options;Lcom/bumptech/glide/load/resource/bitmap/Downsampler$DecodeCallbacks;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)[I

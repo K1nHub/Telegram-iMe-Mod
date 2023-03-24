@@ -14,16 +14,16 @@ public class ChartHorizontalLinesData {
         this(i, i2, z, BitmapDescriptorFactory.HUE_RED);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x009b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public ChartHorizontalLinesData(int r8, int r9, boolean r10, float r11) {
         /*
-            Method dump skipped, instructions count: 230
+            Method dump skipped, instructions count: 228
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Charts.view_data.ChartHorizontalLinesData.<init>(int, int, boolean, float):void");

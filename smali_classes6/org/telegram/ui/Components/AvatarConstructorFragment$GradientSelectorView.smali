@@ -89,12 +89,12 @@
 
     if-eqz v1, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     const/4 v4, 0x0
@@ -199,9 +199,9 @@
 
     move-result v7
 
-    const/4 v8, 0x5
-
     cmpl-float v7, v7, v3
+
+    const/4 v8, 0x5
 
     if-nez v7, :cond_3
 
@@ -272,7 +272,7 @@
 
     sub-float v10, v2, v10
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v7, v9
 
@@ -425,7 +425,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -459,7 +459,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float v2, v0, v2
 
@@ -486,7 +486,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v0, v2
 

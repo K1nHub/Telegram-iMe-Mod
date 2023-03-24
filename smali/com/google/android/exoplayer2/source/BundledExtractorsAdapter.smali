@@ -143,7 +143,7 @@
     :cond_1
     array-length p3, p1
 
-    const/4 v0, 0x0
+    move v0, p6
 
     :goto_0
     if-ge v0, p3, :cond_7
@@ -182,9 +182,9 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, p4
+    cmp-long v1, v1, p4
 
-    if-nez v3, :cond_5
+    if-nez v1, :cond_5
 
     goto :goto_1
 
@@ -199,12 +199,12 @@
 
     move-result-wide p2
 
-    cmp-long p8, p2, p4
+    cmp-long p2, p2, p4
 
-    if-nez p8, :cond_4
+    if-nez p2, :cond_4
 
     :cond_3
-    const/4 p6, 0x1
+    move p6, p7
 
     :cond_4
     invoke-static {p6}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -215,10 +215,8 @@
     .line 85
     throw p1
 
-    :catch_0
-    nop
-
     .line 83
+    :catch_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/BundledExtractorsAdapter;->extractor:Lcom/google/android/exoplayer2/extractor/Extractor;
 
     if-nez v1, :cond_6
@@ -227,20 +225,20 @@
 
     move-result-wide v1
 
-    cmp-long v3, v1, p4
+    cmp-long v1, v1, p4
 
-    if-nez v3, :cond_5
+    if-nez v1, :cond_5
 
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, p6
 
     goto :goto_2
 
     :cond_6
     :goto_1
-    const/4 v1, 0x1
+    move v1, p7
 
     :goto_2
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V

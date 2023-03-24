@@ -42,9 +42,9 @@
 
     if-nez v0, :cond_3
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 590
     :goto_0
@@ -92,7 +92,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-ge v5, v4, :cond_1
@@ -155,7 +155,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 606
     :cond_4
@@ -195,7 +195,7 @@
     :cond_6
     if-gez p1, :cond_7
 
-    const/4 p1, 0x0
+    move p1, v1
 
     :cond_7
     if-eqz v3, :cond_8

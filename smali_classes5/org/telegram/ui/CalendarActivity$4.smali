@@ -59,7 +59,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x7
@@ -68,7 +68,7 @@
 
     int-to-float v3, v2
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     const/high16 v4, 0x40000000    # 2.0f
 

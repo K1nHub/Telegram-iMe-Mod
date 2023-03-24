@@ -228,9 +228,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_0
+    if-nez v5, :cond_0
 
     iget-boolean v5, p0, Lio/reactivex/internal/operators/observable/ObservableWindow$WindowSkipObserver;->cancelled:Z
 

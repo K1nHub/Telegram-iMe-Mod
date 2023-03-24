@@ -172,13 +172,8 @@
     :try_end_3
     .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_3
 
-    goto :goto_3
-
-    :catch_3
-    nop
-
     .line 8
-    :goto_3
+    :catch_3
     sput-object v3, Lj$/util/DesugarCollections;->e:Ljava/lang/reflect/Constructor;
 
     if-eqz v3, :cond_3

@@ -110,7 +110,7 @@
 
     move-result p3
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     int-to-float v3, v2
@@ -140,7 +140,7 @@
 
     div-float/2addr p2, p3
 
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 64
     :goto_1
@@ -161,7 +161,7 @@
 
     add-float/2addr v3, v4
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     int-to-float v2, v2
 

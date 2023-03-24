@@ -1165,9 +1165,9 @@
 
     iput v0, v7, Lorg/bouncycastle/crypto/digests/LongDigest;->wOff:I
 
-    const/16 v0, 0x10
+    move v10, v0
 
-    const/4 v10, 0x0
+    const/16 v0, 0x10
 
     :goto_2
     if-ge v10, v0, :cond_2
@@ -1251,7 +1251,7 @@
 
     iput v2, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->xBufOff:I
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     iget-object v4, p0, Lorg/bouncycastle/crypto/digests/LongDigest;->xBuf:[B

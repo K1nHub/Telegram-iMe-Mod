@@ -65,7 +65,7 @@ public class SubstringLayoutAnimator {
             this.animateStableLayout = staticLayout2;
             this.animateTextChange = true;
             this.animateTextChangeOut = z;
-            this.xOffset = indexOf == 0 ? BitmapDescriptorFactory.HUE_RED : -staticLayout2.getPrimaryHorizontal(indexOf);
+            this.xOffset = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
             this.animateOutLayout = null;
             this.replaceAnimation = false;
         } else {

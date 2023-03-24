@@ -24,7 +24,7 @@ public final class WalletRootFragment$airdropPresenter$2 extends Lambda implemen
     @Override // kotlin.jvm.functions.Function0
     public final WalletAirdropPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2016xe282b63a(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2030xe282b63a(this.this$0, null, null));
         return (WalletAirdropPresenter) lazy.getValue();
     }
 }

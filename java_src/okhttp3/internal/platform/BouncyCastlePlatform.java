@@ -46,7 +46,10 @@ public final class BouncyCastlePlatform extends Platform {
         TrustManager[] trustManagers = factory.getTrustManagers();
         Intrinsics.checkNotNull(trustManagers);
         boolean z = true;
-        if (!((trustManagers.length == 1 && (trustManagers[0] instanceof X509TrustManager)) ? false : false)) {
+        if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
+            z = false;
+        }
+        if (!z) {
             StringBuilder sb = new StringBuilder();
             sb.append("Unexpected default trust managers: ");
             String arrays = Arrays.toString(trustManagers);

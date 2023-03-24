@@ -138,24 +138,24 @@
 
     if-lt p1, v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, p5
 
     :goto_0
     if-eqz v1, :cond_7
 
     if-lt p2, p1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, p5
 
     :goto_1
     const-string v2, "Max pool size "
@@ -166,12 +166,12 @@
 
     if-gt p2, v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, p5
 
     :goto_2
     if-eqz v1, :cond_5
@@ -182,12 +182,12 @@
 
     if-lez v3, :cond_3
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_3
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, p5
 
     :goto_3
     if-eqz v3, :cond_4
@@ -432,19 +432,19 @@
 
     and-long v5, v1, v3
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    const-wide v7, 0x3ffffe00000L
+    const-wide v6, 0x3ffffe00000L
 
-    and-long/2addr v1, v7
+    and-long/2addr v1, v6
 
-    const/16 v5, 0x15
+    const/16 v6, 0x15
 
-    shr-long/2addr v1, v5
+    shr-long/2addr v1, v6
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    sub-int v1, v6, v2
+    sub-int v1, v5, v1
 
     const/4 v2, 0x0
 
@@ -454,11 +454,11 @@
     move-result v1
 
     .line 472
-    iget v5, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->corePoolSize:I
+    iget v6, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->corePoolSize:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-lt v1, v5, :cond_1
+    if-lt v1, v6, :cond_1
 
     monitor-exit v0
 
@@ -467,11 +467,11 @@
     .line 473
     :cond_1
     :try_start_2
-    iget v5, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->maxPoolSize:I
+    iget v6, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->maxPoolSize:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-lt v6, v5, :cond_2
+    if-lt v5, v6, :cond_2
 
     monitor-exit v0
 
@@ -484,29 +484,29 @@
 
     and-long/2addr v5, v3
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    add-int/2addr v6, v5
+    add-int/2addr v5, v6
 
-    if-lez v6, :cond_3
+    if-lez v5, :cond_3
 
     .line 476
     iget-object v7, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->workers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    invoke-virtual {v7, v6}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v5}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     if-nez v7, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_0
     if-eqz v7, :cond_6
@@ -514,12 +514,12 @@
     .line 482
     new-instance v7, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;
 
-    invoke-direct {v7, p0, v6}, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;-><init>(Lkotlinx/coroutines/scheduling/CoroutineScheduler;I)V
+    invoke-direct {v7, p0, v5}, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;-><init>(Lkotlinx/coroutines/scheduling/CoroutineScheduler;I)V
 
     .line 483
     iget-object v8, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->workers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    invoke-virtual {v8, v6, v7}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+    invoke-virtual {v8, v5, v7}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
     .line 279
     sget-object v8, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->controlState$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
@@ -530,11 +530,11 @@
 
     and-long/2addr v3, v8
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    if-ne v6, v4, :cond_4
+    if-ne v5, v3, :cond_4
 
-    const/4 v2, 0x1
+    move v2, v6
 
     :cond_4
     if-eqz v2, :cond_5
@@ -544,7 +544,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    add-int/2addr v1, v5
+    add-int/2addr v1, v6
 
     .line 486
     monitor-exit v0
@@ -717,12 +717,12 @@
 
     and-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 207
-    iget-object v0, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->workers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iget-object v1, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->workers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -878,30 +878,30 @@
 .end method
 
 .method private final tryCreateWorker(J)Z
-    .locals 4
+    .locals 3
 
     const-wide/32 v0, 0x1fffff
 
     and-long/2addr v0, p1
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const-wide v2, 0x3ffffe00000L
+    const-wide v1, 0x3ffffe00000L
 
-    and-long/2addr p1, v2
+    and-long/2addr p1, v1
 
-    const/16 v0, 0x15
+    const/16 v1, 0x15
 
-    shr-long/2addr p1, v0
+    shr-long/2addr p1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    sub-int/2addr v1, p2
+    sub-int/2addr v0, p1
 
     const/4 p1, 0x0
 
     .line 434
-    invoke-static {v1, p1}, Lkotlin/ranges/RangesKt;->coerceAtLeast(II)I
+    invoke-static {v0, p1}, Lkotlin/ranges/RangesKt;->coerceAtLeast(II)I
 
     move-result p2
 
@@ -1178,7 +1178,7 @@
 
     and-long/2addr v0, v5
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     const-wide/32 v3, 0x200000
 
@@ -1191,7 +1191,7 @@
     .line 186
     invoke-virtual {p1}, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;->getIndexInArray()I
 
-    move-result v0
+    move-result v1
 
     .line 187
     invoke-static {}, Lkotlinx/coroutines/DebugKt;->getASSERTIONS_ENABLED()Z
@@ -1202,14 +1202,14 @@
 
     if-eqz v7, :cond_3
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    const/4 v7, 0x1
+    move v7, v9
 
     goto :goto_0
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_0
     if-eqz v7, :cond_2
@@ -1228,20 +1228,20 @@
     :goto_1
     iget-object v7, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->workers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    invoke-virtual {v7, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p1, v1}, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;->setNextParkedWorker(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;->setNextParkedWorker(Ljava/lang/Object;)V
 
     .line 194
-    sget-object v1, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->parkedWorkersStack$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->parkedWorkersStack$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    int-to-long v7, v0
+    int-to-long v7, v1
 
     or-long/2addr v7, v3
 
-    move-object v3, v1
+    move-object v3, v0
 
     move-object v4, p0
 
@@ -1266,7 +1266,7 @@
 
     and-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     const-wide/32 v4, 0x200000
 
@@ -1276,33 +1276,35 @@
 
     and-long/2addr v4, v6
 
-    if-ne v1, p2, :cond_2
+    if-ne v0, p2, :cond_2
 
     if-nez p3, :cond_1
 
     .line 155
     invoke-direct {p0, p1}, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->parkedWorkersStackNextIndex(Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;)I
 
-    move-result v1
+    move-result v0
 
     goto :goto_1
 
     :cond_1
-    move v1, p3
+    move v0, p3
 
     :cond_2
     :goto_1
-    if-gez v1, :cond_3
+    if-gez v0, :cond_3
 
     goto :goto_0
 
     .line 163
     :cond_3
-    sget-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->parkedWorkersStack$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v1, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->parkedWorkersStack$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    int-to-long v6, v1
+    int-to-long v6, v0
 
     or-long/2addr v4, v6
+
+    move-object v0, v1
 
     move-object v1, p0
 
@@ -1402,17 +1404,17 @@
 
     and-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
     .line 338
     monitor-exit v3
 
-    if-gt v2, v5, :cond_7
+    if-gt v2, v4, :cond_7
 
-    const/4 v3, 0x1
+    move v3, v2
 
     :goto_0
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v5, v3, 0x1
 
     .line 341
     iget-object v6, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->workers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
@@ -1458,12 +1460,12 @@
 
     if-ne v7, v8, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_2
     if-eqz v7, :cond_3
@@ -1487,12 +1489,12 @@
     invoke-virtual {v6, v7}, Lkotlinx/coroutines/scheduling/WorkQueue;->offloadAllWorkTo(Lkotlinx/coroutines/scheduling/GlobalQueue;)V
 
     :cond_5
-    if-ne v3, v5, :cond_6
+    if-ne v3, v4, :cond_6
 
     goto :goto_4
 
     :cond_6
-    move v3, v4
+    move v3, v5
 
     goto :goto_0
 
@@ -1576,14 +1578,14 @@
 
     shr-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 366
-    iget p1, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->corePoolSize:I
+    iget p2, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler;->corePoolSize:I
 
-    if-ne p2, p1, :cond_b
+    if-ne p1, p2, :cond_b
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_b
     if-eqz v1, :cond_c
@@ -1680,15 +1682,15 @@
 
     if-ge v3, v1, :cond_8
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
-    const/4 v8, 0x1
+    move v8, v3
 
     :goto_0
     add-int/lit8 v9, v8, 0x1
@@ -1837,13 +1839,13 @@
     goto :goto_0
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v6, 0x0
+    move v6, v4
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 548
     :goto_2
@@ -1960,9 +1962,9 @@
 
     and-long/2addr v0, v8
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v0, ", blocking tasks = "
 
@@ -1976,9 +1978,9 @@
 
     shr-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v0, ", CPUs acquired = "
 
@@ -1995,9 +1997,9 @@
 
     shr-long/2addr v1, v4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v0, v1
 
     .line 549
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;

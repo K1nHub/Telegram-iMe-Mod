@@ -128,17 +128,18 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 String string = globalMainSettings.getString("cameraCache", null);
                 CameraController$$ExternalSyntheticLambda17 cameraController$$ExternalSyntheticLambda17 = CameraController$$ExternalSyntheticLambda17.INSTANCE;
                 ArrayList<CameraInfo> arrayList = new ArrayList<>();
+                int i3 = 0;
                 if (string != null) {
                     SerializedData serializedData = new SerializedData(Base64.decode(string, 0));
                     int readInt32 = serializedData.readInt32(false);
-                    for (int i3 = 0; i3 < readInt32; i3++) {
+                    for (int i4 = 0; i4 < readInt32; i4++) {
                         CameraInfo cameraInfo2 = new CameraInfo(serializedData.readInt32(false), serializedData.readInt32(false));
                         int readInt322 = serializedData.readInt32(false);
-                        for (int i4 = 0; i4 < readInt322; i4++) {
+                        for (int i5 = 0; i5 < readInt322; i5++) {
                             cameraInfo2.previewSizes.add(new Size(serializedData.readInt32(false), serializedData.readInt32(false)));
                         }
                         int readInt323 = serializedData.readInt32(false);
-                        for (int i5 = 0; i5 < readInt323; i5++) {
+                        for (int i6 = 0; i6 < readInt323; i6++) {
                             cameraInfo2.pictureSizes.add(new Size(serializedData.readInt32(false), serializedData.readInt32(false)));
                         }
                         arrayList.add(cameraInfo2);
@@ -150,43 +151,43 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 } else {
                     int numberOfCameras = Camera.getNumberOfCameras();
                     Camera.CameraInfo cameraInfo3 = new Camera.CameraInfo();
-                    int i6 = 4;
-                    int i7 = 0;
-                    while (i7 < numberOfCameras) {
+                    int i7 = 4;
+                    int i8 = 0;
+                    while (i8 < numberOfCameras) {
                         try {
-                            Camera.getCameraInfo(i7, cameraInfo3);
-                            CameraInfo cameraInfo4 = new CameraInfo(i7, cameraInfo3.facing);
+                            Camera.getCameraInfo(i8, cameraInfo3);
+                            CameraInfo cameraInfo4 = new CameraInfo(i8, cameraInfo3.facing);
                             if (ApplicationLoader.mainInterfacePaused && ApplicationLoader.externalInterfacePaused) {
                                 throw new RuntimeException(str4);
                             }
                             Camera open = Camera.open(cameraInfo4.getCameraId());
                             Camera.Parameters parameters = open.getParameters();
                             List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
-                            int i8 = 0;
+                            int i9 = i3;
                             while (true) {
                                 cameraInfo = cameraInfo3;
                                 str = str4;
-                                if (i8 >= supportedPreviewSizes.size()) {
+                                if (i9 >= supportedPreviewSizes.size()) {
                                     break;
                                 }
                                 try {
-                                    Camera.Size size = supportedPreviewSizes.get(i8);
-                                    int i9 = size.width;
+                                    Camera.Size size = supportedPreviewSizes.get(i9);
+                                    int i10 = size.width;
                                     List<Camera.Size> list = supportedPreviewSizes;
-                                    if ((i9 != 1280 || size.height == 720) && (i2 = size.height) < 2160 && i9 < 2160) {
+                                    if ((i10 != 1280 || size.height == 720) && (i2 = size.height) < 2160 && i10 < 2160) {
                                         str2 = str3;
-                                        cameraInfo4.previewSizes.add(new Size(i9, i2));
+                                        cameraInfo4.previewSizes.add(new Size(i10, i2));
                                         if (BuildVars.LOGS_ENABLED) {
                                             FileLog.m48d("preview size = " + size.width + " " + size.height);
                                         }
-                                        i8++;
+                                        i9++;
                                         cameraInfo3 = cameraInfo;
                                         str4 = str;
                                         supportedPreviewSizes = list;
                                         str3 = str2;
                                     }
                                     str2 = str3;
-                                    i8++;
+                                    i9++;
                                     cameraInfo3 = cameraInfo;
                                     str4 = str;
                                     supportedPreviewSizes = list;
@@ -220,11 +221,12 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                             arrayList.add(cameraInfo4);
                             Collections.sort(cameraInfo4.previewSizes, cameraController$$ExternalSyntheticLambda17);
                             Collections.sort(cameraInfo4.pictureSizes, cameraController$$ExternalSyntheticLambda17);
-                            i6 += ((cameraInfo4.previewSizes.size() + cameraInfo4.pictureSizes.size()) * 8) + 8;
-                            i7++;
+                            i7 += ((cameraInfo4.previewSizes.size() + cameraInfo4.pictureSizes.size()) * 8) + 8;
+                            i8++;
                             cameraInfo3 = cameraInfo;
                             str4 = str;
                             str3 = str5;
+                            i3 = 0;
                         } catch (Exception e2) {
                             e = e2;
                             str = str4;
@@ -241,23 +243,23 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     }
                     String str6 = str3;
                     str = str4;
-                    SerializedData serializedData2 = new SerializedData(i6);
+                    SerializedData serializedData2 = new SerializedData(i7);
                     serializedData2.writeInt32(arrayList.size());
-                    for (int i10 = 0; i10 < numberOfCameras; i10++) {
-                        CameraInfo cameraInfo5 = arrayList.get(i10);
+                    for (int i11 = 0; i11 < numberOfCameras; i11++) {
+                        CameraInfo cameraInfo5 = arrayList.get(i11);
                         serializedData2.writeInt32(cameraInfo5.cameraId);
                         serializedData2.writeInt32(cameraInfo5.frontCamera);
                         int size3 = cameraInfo5.previewSizes.size();
                         serializedData2.writeInt32(size3);
-                        for (int i11 = 0; i11 < size3; i11++) {
-                            Size size4 = cameraInfo5.previewSizes.get(i11);
+                        for (int i12 = 0; i12 < size3; i12++) {
+                            Size size4 = cameraInfo5.previewSizes.get(i12);
                             serializedData2.writeInt32(size4.mWidth);
                             serializedData2.writeInt32(size4.mHeight);
                         }
                         int size5 = cameraInfo5.pictureSizes.size();
                         serializedData2.writeInt32(size5);
-                        for (int i12 = 0; i12 < size5; i12++) {
-                            Size size6 = cameraInfo5.pictureSizes.get(i12);
+                        for (int i13 = 0; i13 < size5; i13++) {
+                            Size size6 = cameraInfo5.pictureSizes.get(i13);
                             serializedData2.writeInt32(size6.mWidth);
                             serializedData2.writeInt32(size6.mHeight);
                         }
@@ -397,88 +399,86 @@ public class CameraController implements MediaRecorder.OnInfoListener {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:38:0x005f, code lost:
+        r3 = 0;
         r1 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0060, code lost:
-        r3 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0063, code lost:
         if (r3 <= 8) goto L68;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0063, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0065, code lost:
         r2 = pack(r10, r1, 4, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x006a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x006c, code lost:
         if (r2 == 1229531648) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x006f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0071, code lost:
         if (r2 == 1296891946) goto L43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0071, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0073, code lost:
         return 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0072, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0074, code lost:
         if (r2 != 1229531648) goto L44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0075, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0077, code lost:
         r5 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0076, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0078, code lost:
         r2 = pack(r10, r1 + 4, 4, r5) + 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x007f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0081, code lost:
         if (r2 < 10) goto L68;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x0081, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0083, code lost:
         if (r2 <= r3) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0086, code lost:
         r1 = r1 + r2;
         r3 = r3 - r2;
         r2 = pack(r10, r1 - 2, 2, r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x008c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x008e, code lost:
         r4 = r2 - 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x008e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0090, code lost:
         if (r2 <= 0) goto L67;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0092, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0094, code lost:
         if (r3 < 12) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x009a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x009c, code lost:
         if (pack(r10, r1, 2, r5) != 274) goto L55;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x009c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x009e, code lost:
         r10 = pack(r10, r1 + 8, 2, r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00a4, code lost:
         if (r10 == 3) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00a7, code lost:
         if (r10 == 6) goto L64;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00a9, code lost:
         if (r10 == 8) goto L63;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00ab, code lost:
         return 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x00aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00ac, code lost:
         return 270;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00af, code lost:
         return 90;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00b2, code lost:
         return 180;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x00b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x00b5, code lost:
         r1 = r1 + 12;
         r3 = r3 - 12;
         r2 = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x00b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x00bb, code lost:
         return 0;
      */
     /*
@@ -487,7 +487,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
     */
     private static int getOrientation(byte[] r10) {
         /*
-            Method dump skipped, instructions count: 186
+            Method dump skipped, instructions count: 188
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraController.getOrientation(byte[]):int");

@@ -33,7 +33,7 @@
 
     const-wide/32 v0, 0xf4240
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 79
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/FlacSeekTableSeekMap;->flacStreamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
@@ -138,9 +138,9 @@
     .line 69
     iget-wide v5, v4, Lcom/google/android/exoplayer2/extractor/SeekPoint;->timeUs:J
 
-    cmp-long v7, v5, p1
+    cmp-long p1, v5, p1
 
-    if-eqz v7, :cond_3
+    if-eqz p1, :cond_3
 
     array-length p1, v2
 

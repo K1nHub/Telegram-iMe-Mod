@@ -328,7 +328,7 @@
 .end method
 
 .method private static removeExpiredExclusions(JLjava/util/Map;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -380,9 +380,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v3, p0
+    cmp-long v3, v3, p0
 
-    if-gtz v5, :cond_0
+    if-gtz v3, :cond_0
 
     .line 199
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -433,9 +433,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 172
     :goto_0
@@ -468,7 +468,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 177
     :goto_1
@@ -688,7 +688,7 @@
 
     iget v2, v2, Lcom/google/android/exoplayer2/source/dash/manifest/BaseUrl;->priority:I
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 95
     :goto_0

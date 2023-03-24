@@ -56,7 +56,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 261
     :goto_0
@@ -117,7 +117,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->progress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-interface {v3, v4}, Lorg/telegram/ui/Components/Premium/PagerHeaderView;->setOffset(F)V
 
@@ -145,7 +145,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$5;->progress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
@@ -317,7 +317,7 @@
 
     sub-float/2addr v0, v3
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 

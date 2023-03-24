@@ -300,12 +300,12 @@
 
     if-eq v1, v8, :cond_5
 
-    const/4 v12, 0x1
+    move v12, v8
 
     goto :goto_0
 
     :cond_5
-    const/4 v12, 0x0
+    move v12, v5
 
     :goto_0
     const/4 v13, 0x0
@@ -447,7 +447,7 @@
 
     iget v3, v3, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -464,7 +464,7 @@
 
     iget v3, v3, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -621,7 +621,7 @@
     goto :goto_1
 
     :cond_b
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_1
     add-int/2addr v2, v3

@@ -152,7 +152,7 @@
 
     move-result-object v0
 
-    const-wide/16 v1, 0x64
+    const-wide/16 v1, 0xc8
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 

@@ -31,12 +31,12 @@ public final class WalletConnectManagerImpl$onSessionRequest$1 extends Lambda im
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        Wallet.EVM wallet;
+        Wallet.EVM wallet2;
         List<String> listOf;
         CryptoPreferenceHelper cryptoPreferenceHelper;
         WCClient wCClient = this.$client;
-        wallet = this.this$0.getWallet();
-        String address = wallet != null ? wallet.getAddress() : null;
+        wallet2 = this.this$0.getWallet();
+        String address = wallet2 != null ? wallet2.getAddress() : null;
         if (address == null) {
             address = "";
         }

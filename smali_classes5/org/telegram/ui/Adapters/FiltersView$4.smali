@@ -109,11 +109,11 @@
 
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_0
     return v1
@@ -139,11 +139,11 @@
 
     iget-wide p1, p2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    cmp-long v0, v4, p1
+    cmp-long p1, v4, p1
 
-    if-nez v0, :cond_2
+    if-nez p1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_2
     return v1

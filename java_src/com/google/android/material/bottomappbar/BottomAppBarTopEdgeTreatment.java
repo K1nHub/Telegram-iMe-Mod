@@ -34,10 +34,10 @@ public class BottomAppBarTopEdgeTreatment extends EdgeTreatment implements Clone
         boolean z = f11 == -1.0f || Math.abs((f11 * 2.0f) - f6) < 0.1f;
         if (z) {
             f4 = f10;
-            f5 = BitmapDescriptorFactory.HUE_RED;
+            f5 = 0.0f;
         } else {
             f5 = 1.75f;
-            f4 = BitmapDescriptorFactory.HUE_RED;
+            f4 = 0.0f;
         }
         float f13 = f7 + f8;
         float f14 = f4 + f8;

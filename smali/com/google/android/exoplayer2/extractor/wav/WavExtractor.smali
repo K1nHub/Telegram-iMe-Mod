@@ -148,15 +148,15 @@
 
     move-result-wide v0
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -169,9 +169,9 @@
     .line 154
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->dataStartPosition:I
 
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v2, :cond_1
 
     .line 155
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
@@ -194,20 +194,20 @@
     .line 164
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPeekPosition()J
 
-    move-result-wide v0
+    move-result-wide v2
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v2, v4
 
-    long-to-int v1, v0
+    long-to-int v0, v2
 
-    invoke-interface {p1, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     .line 165
-    iput v2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->state:I
+    iput v1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->state:I
 
     return-void
 
@@ -398,56 +398,56 @@
     .line 229
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->dataEndPosition:J
 
-    const/4 v2, 0x0
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x0
 
-    if-eqz v5, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 230
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->dataEndPosition:J
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->dataEndPosition:J
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v2, v4
 
     .line 231
-    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->outputWriter:Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$OutputWriter;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor;->outputWriter:Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$OutputWriter;
 
-    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$OutputWriter;
+    check-cast v0, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$OutputWriter;
 
-    invoke-interface {v3, p1, v0, v1}, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$OutputWriter;->sampleData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;J)Z
+    invoke-interface {v0, p1, v2, v3}, Lcom/google/android/exoplayer2/extractor/wav/WavExtractor$OutputWriter;->sampleData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;J)Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
     :cond_1
-    return v2
+    return v1
 .end method
 
 .method private skipToSampleData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)V
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -490,9 +490,9 @@
 
     const-wide v6, 0xffffffffL
 
-    cmp-long v8, v0, v6
+    cmp-long v6, v0, v6
 
-    if-nez v8, :cond_0
+    if-nez v6, :cond_0
 
     move-wide v0, v2
 
@@ -682,13 +682,13 @@
 .end method
 
 .method public seek(JJ)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 

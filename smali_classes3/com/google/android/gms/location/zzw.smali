@@ -37,17 +37,17 @@
 
     const/4 v7, 0x0
 
+    move v10, v2
+
+    move v11, v10
+
+    move v9, v3
+
     move-wide v12, v4
 
     move-object v14, v6
 
-    const/16 v9, 0x3e8
-
-    const/4 v10, 0x1
-
-    const/4 v11, 0x1
-
-    const/4 v15, 0x0
+    move v15, v7
 
     .line 2
     :goto_0
@@ -151,8 +151,6 @@
     invoke-direct/range {v8 .. v15}, Lcom/google/android/gms/location/LocationAvailability;-><init>(IIIJ[Lcom/google/android/gms/location/zzac;Z)V
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

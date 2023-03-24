@@ -498,7 +498,7 @@
     invoke-virtual {p2, v1, v2, v0, p6}, Lorg/telegram/messenger/MessagesController;->loadFullChat(JIZ)V
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 463
     :goto_0
@@ -949,13 +949,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v6, 0x1
+    move v6, v2
 
     .line 327
     :goto_1
@@ -1113,12 +1113,12 @@
 
     if-le v3, v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 238
     :goto_0
@@ -1131,13 +1131,13 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_2
 
     :cond_3
     :goto_1
-    const/4 v1, 0x1
+    move v1, v4
 
     :goto_2
     if-eqz v1, :cond_4
@@ -1252,7 +1252,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 362
     :goto_0
@@ -1357,7 +1357,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     invoke-virtual {p3, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -1407,7 +1407,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v2, 0x0
@@ -1419,7 +1419,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     if-ne p2, v0, :cond_3
@@ -1984,7 +1984,7 @@
     .line 320
     invoke-direct {p0, v0, v3, v1, v1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->onImportersLoaded(Lorg/telegram/tgnet/TLRPC$TL_messages_chatInviteImporters;Ljava/lang/String;ZZ)V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 324
     :cond_0
@@ -2070,13 +2070,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 405
     :goto_1
@@ -2086,12 +2086,12 @@
 
     if-eqz p1, :cond_2
 
-    const/4 v2, 0x4
+    move v2, v0
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 406
     :goto_2
@@ -2123,13 +2123,13 @@
     goto :goto_3
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    const/4 p1, 0x1
+    move p1, p3
 
     .line 413
     :goto_4
@@ -2148,12 +2148,12 @@
 
     if-eqz p1, :cond_8
 
-    const/4 v2, 0x4
+    move v2, v0
 
     goto :goto_5
 
     :cond_8
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 417
     :goto_5

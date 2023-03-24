@@ -603,25 +603,25 @@ public final class Http2 implements Variant {
         }
 
         static {
+            int i;
             String[] strArr;
-            int i = 0;
             int i2 = 0;
+            int i3 = 0;
             while (true) {
                 String[] strArr2 = BINARY;
-                if (i2 >= strArr2.length) {
+                if (i3 >= strArr2.length) {
                     break;
                 }
-                strArr2[i2] = String.format("%8s", Integer.toBinaryString(i2)).replace(' ', '0');
-                i2++;
+                strArr2[i3] = String.format("%8s", Integer.toBinaryString(i3)).replace(' ', '0');
+                i3++;
             }
             String[] strArr3 = FLAGS;
             strArr3[0] = "";
             strArr3[1] = "END_STREAM";
             int[] iArr = {1};
             strArr3[8] = "PADDED";
-            for (int i3 = 0; i3 < 1; i3++) {
-                int i4 = iArr[i3];
-                FLAGS[i4 | 8] = strArr[i4] + "|PADDED";
+            for (int i4 = 0; i4 < 1; i4++) {
+                FLAGS[iArr[i4] | 8] = strArr[i] + "|PADDED";
             }
             String[] strArr4 = FLAGS;
             strArr4[4] = "END_HEADERS";
@@ -640,13 +640,13 @@ public final class Http2 implements Variant {
             }
             while (true) {
                 String[] strArr6 = FLAGS;
-                if (i >= strArr6.length) {
+                if (i2 >= strArr6.length) {
                     return;
                 }
-                if (strArr6[i] == null) {
-                    strArr6[i] = BINARY[i];
+                if (strArr6[i2] == null) {
+                    strArr6[i2] = BINARY[i2];
                 }
-                i++;
+                i2++;
             }
         }
     }

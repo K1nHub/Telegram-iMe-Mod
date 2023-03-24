@@ -199,8 +199,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
                 }
             }
         } else {
-            Status status = Status.DEADLINE_EXCEEDED;
-            this.stream = new FailingClientStream(status.withDescription("ClientCall started after deadline exceeded: " + effectiveDeadline));
+            this.stream = new FailingClientStream(Status.DEADLINE_EXCEEDED.withDescription("ClientCall started after deadline exceeded: " + effectiveDeadline));
         }
         if (this.callOptions.getAuthority() != null) {
             this.stream.setAuthority(this.callOptions.getAuthority());

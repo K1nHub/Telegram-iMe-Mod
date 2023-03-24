@@ -1,6 +1,6 @@
 package com.smedialink.storage.data.manager.crypto;
 
-import com.smedialink.storage.data.utils.crypto.CryptoWalletUtils;
+import com.smedialink.storage.data.utils.crypto.CryptoEVMUtils;
 import com.smedialink.storage.domain.manager.crypto.BlockchainCryptoWalletManager;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.BlockchainType;
@@ -29,7 +29,7 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     public Observable<Result<Wallet>> createWallet(String guid, String password) {
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable flatMap = generateMnemonic(guid, password).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1688x67d25efc(this, guid, password)));
+        Observable flatMap = generateMnemonic(guid, password).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1695x67d25efc(this, guid, password)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -39,7 +39,7 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(password, "password");
-        Credentials createBip44Wallet = CryptoWalletUtils.INSTANCE.createBip44Wallet(mnemonic);
+        Credentials createBip44Wallet = CryptoEVMUtils.INSTANCE.createBip44Wallet(mnemonic);
         String checksumAddress = Keys.toChecksumAddress(createBip44Wallet.getAddress());
         Intrinsics.checkNotNullExpressionValue(checksumAddress, "toChecksumAddress(credentials.address)");
         BlockchainCryptoWalletManager.saveWalletToPrefs$default(this, guid, checksumAddress, mnemonic, password, false, 16, null);
@@ -54,7 +54,7 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(oldGuid, "oldGuid");
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(password, "password");
-        Credentials createBip44Wallet = CryptoWalletUtils.INSTANCE.createBip44Wallet(mnemonic);
+        Credentials createBip44Wallet = CryptoEVMUtils.INSTANCE.createBip44Wallet(mnemonic);
         if (!Intrinsics.areEqual(guid, oldGuid)) {
             String checksumAddress = Keys.toChecksumAddress(createBip44Wallet.getAddress());
             Intrinsics.checkNotNullExpressionValue(checksumAddress, "toChecksumAddress(credentials.address)");
@@ -92,7 +92,7 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     /* JADX INFO: Access modifiers changed from: private */
     public static final Result generateAddressByMnemonic$lambda$1(String mnemonic) {
         Intrinsics.checkNotNullParameter(mnemonic, "$mnemonic");
-        return Result.Companion.success(Keys.toChecksumAddress(CryptoWalletUtils.INSTANCE.createBip44Wallet(mnemonic).getAddress()));
+        return Result.Companion.success(Keys.toChecksumAddress(CryptoEVMUtils.INSTANCE.createBip44Wallet(mnemonic).getAddress()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -121,7 +121,7 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Result generateMnemonic$lambda$3() {
-        return Result.Companion.success(MnemonicUtils.generateMnemonic(CryptoWalletUtils.generateNewEntropy$default(CryptoWalletUtils.INSTANCE, 0, 1, null)));
+        return Result.Companion.success(MnemonicUtils.generateMnemonic(CryptoEVMUtils.generateNewEntropy$default(CryptoEVMUtils.INSTANCE, 0, 1, null)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

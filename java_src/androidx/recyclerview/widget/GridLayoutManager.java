@@ -410,7 +410,7 @@ public class GridLayoutManager extends LinearLayoutManager {
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r5v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r5v19 */
     @Override // androidx.recyclerview.widget.LinearLayoutManager
     /*
@@ -419,7 +419,7 @@ public class GridLayoutManager extends LinearLayoutManager {
     */
     void layoutChunk(androidx.recyclerview.widget.RecyclerView.Recycler r18, androidx.recyclerview.widget.RecyclerView.State r19, androidx.recyclerview.widget.LinearLayoutManager.LayoutState r20, androidx.recyclerview.widget.LinearLayoutManager.LayoutChunkResult r21) {
         /*
-            Method dump skipped, instructions count: 564
+            Method dump skipped, instructions count: 563
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.GridLayoutManager.layoutChunk(androidx.recyclerview.widget.RecyclerView$Recycler, androidx.recyclerview.widget.RecyclerView$State, androidx.recyclerview.widget.LinearLayoutManager$LayoutState, androidx.recyclerview.widget.LinearLayoutManager$LayoutChunkResult):void");
@@ -471,9 +471,9 @@ public class GridLayoutManager extends LinearLayoutManager {
         int i4 = 0;
         int i5 = -1;
         if (z) {
+            i3 = 1;
             i5 = i;
             i2 = 0;
-            i3 = 1;
         } else {
             i2 = i - 1;
             i3 = -1;
@@ -577,14 +577,14 @@ public class GridLayoutManager extends LinearLayoutManager {
                 int r3 = r3 + r4
                 goto L30
             L20:
-                r2 = 0
-                r3 = 0
+                r2 = r1
+                r3 = r2
             L22:
                 if (r2 >= r6) goto L33
                 int r4 = r5.getSpanSize(r2)
                 int r3 = r3 + r4
                 if (r3 != r7) goto L2d
-                r3 = 0
+                r3 = r1
                 goto L30
             L2d:
                 if (r3 <= r7) goto L30
@@ -620,62 +620,38 @@ public class GridLayoutManager extends LinearLayoutManager {
             return sparseIntArray.keyAt(i4);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:13:0x002d  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0043  */
-        /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public int getSpanGroupIndex(int r7, int r8) {
-            /*
-                r6 = this;
-                boolean r0 = r6.mCacheSpanGroupIndices
-                r1 = 0
-                if (r0 == 0) goto L24
-                android.util.SparseIntArray r0 = r6.mSpanGroupIndexCache
-                int r0 = findFirstKeyLessThan(r0, r7)
-                r2 = -1
-                if (r0 == r2) goto L24
-                android.util.SparseIntArray r2 = r6.mSpanGroupIndexCache
-                int r2 = r2.get(r0)
-                int r3 = r0 + 1
-                int r4 = r6.getCachedSpanIndex(r0, r8)
-                int r0 = r6.getSpanSize(r0)
-                int r4 = r4 + r0
-                if (r4 != r8) goto L27
-                int r2 = r2 + 1
-                goto L26
-            L24:
-                r2 = 0
-                r3 = 0
-            L26:
-                r4 = 0
-            L27:
-                int r0 = r6.getSpanSize(r7)
-            L2b:
-                if (r3 >= r7) goto L40
-                int r5 = r6.getSpanSize(r3)
-                int r4 = r4 + r5
-                if (r4 != r8) goto L38
-                int r2 = r2 + 1
-                r4 = 0
-                goto L3d
-            L38:
-                if (r4 <= r8) goto L3d
-                int r2 = r2 + 1
-                r4 = r5
-            L3d:
-                int r3 = r3 + 1
-                goto L2b
-            L40:
-                int r4 = r4 + r0
-                if (r4 <= r8) goto L45
-                int r2 = r2 + 1
-            L45:
-                return r2
-            */
-            throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup.getSpanGroupIndex(int, int):int");
+        public int getSpanGroupIndex(int i, int i2) {
+            int i3;
+            int i4;
+            int i5;
+            int findFirstKeyLessThan;
+            if (!this.mCacheSpanGroupIndices || (findFirstKeyLessThan = findFirstKeyLessThan(this.mSpanGroupIndexCache, i)) == -1) {
+                i3 = 0;
+                i4 = 0;
+                i5 = 0;
+            } else {
+                i3 = this.mSpanGroupIndexCache.get(findFirstKeyLessThan);
+                i4 = findFirstKeyLessThan + 1;
+                i5 = getCachedSpanIndex(findFirstKeyLessThan, i2) + getSpanSize(findFirstKeyLessThan);
+                if (i5 == i2) {
+                    i3++;
+                    i5 = 0;
+                }
+            }
+            int spanSize = getSpanSize(i);
+            while (i4 < i) {
+                int spanSize2 = getSpanSize(i4);
+                i5 += spanSize2;
+                if (i5 == i2) {
+                    i3++;
+                    i5 = 0;
+                } else if (i5 > i2) {
+                    i3++;
+                    i5 = spanSize2;
+                }
+                i4++;
+            }
+            return i5 + spanSize > i2 ? i3 + 1 : i3;
         }
     }
 

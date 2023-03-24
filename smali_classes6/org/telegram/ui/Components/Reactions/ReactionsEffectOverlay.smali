@@ -295,9 +295,9 @@
 
     move-result-wide v19
 
-    cmp-long v21, v19, v17
+    cmp-long v19, v19, v17
 
-    if-gez v21, :cond_d
+    if-gez v19, :cond_d
 
     const/4 v6, 0x0
 
@@ -488,7 +488,7 @@
 
     const v8, 0x3ecccccd    # 0.4f
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     const v22, 0x3f4ccccd    # 0.8f
 
@@ -568,7 +568,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     div-float/2addr v3, v10
 
@@ -589,7 +589,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     div-float/2addr v3, v10
 
@@ -626,7 +626,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     div-float/2addr v8, v10
 
@@ -697,9 +697,9 @@
 
     sub-float/2addr v8, v7
 
-    mul-float v4, v4, v4
+    mul-float/2addr v4, v4
 
-    mul-float v8, v8, v8
+    mul-float/2addr v8, v8
 
     add-float/2addr v4, v8
 
@@ -843,7 +843,7 @@
 
     move-result v6
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     .line 191
     instance-of v6, v1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
@@ -866,7 +866,7 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     add-float/2addr v6, v4
 
@@ -877,7 +877,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     .line 196
     invoke-virtual/range {p5 .. p5}, Landroid/view/View;->getWidth()I
@@ -975,7 +975,7 @@
 
     move-result v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     :goto_d
     move v10, v0
@@ -1136,7 +1136,7 @@
 
     int-to-float v1, v0
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     .line 224
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -1196,7 +1196,7 @@
 
     const v1, 0x3f4ccccd    # 0.8f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -1265,9 +1265,9 @@
 
     move/from16 v6, p5
 
-    const/16 v22, 0x0
+    move/from16 v23, v7
 
-    const/16 v23, 0x2
+    const/16 v22, 0x0
 
     move/from16 v7, p10
 
@@ -1343,9 +1343,9 @@
     .line 522
     iget-wide v2, v1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    cmp-long v4, v2, v17
+    cmp-long v2, v2, v17
 
-    if-eqz v4, :cond_1a
+    if-eqz v2, :cond_1a
 
     goto :goto_16
 
@@ -1819,12 +1819,12 @@
 
     if-nez v12, :cond_2b
 
-    const/4 v6, 0x1
+    move v6, v11
 
     goto :goto_1d
 
     :cond_2b
-    const/4 v6, 0x0
+    move v6, v15
 
     .line 565
     :goto_1d
@@ -2386,7 +2386,7 @@
 .end method
 
 .method public static isPlaying(IJLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)Z
-    .locals 7
+    .locals 6
 
     .line 737
     sget-object v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->currentOverlay:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
@@ -2409,13 +2409,13 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_1
+    if-eqz v4, :cond_1
 
-    cmp-long v4, p1, v2
+    cmp-long p1, p1, v2
 
-    if-eqz v4, :cond_2
+    if-eqz p1, :cond_2
 
     :cond_1
     iget p1, v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->messageId:I
@@ -2694,7 +2694,7 @@
     goto :goto_1
 
     :cond_6
-    const/4 v13, 0x0
+    move v13, v0
 
     .line 673
     :goto_1
@@ -2815,7 +2815,7 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 839
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -2855,7 +2855,7 @@
 
     const v1, 0x3f333333    # 0.7f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -2873,7 +2873,7 @@
 .end method
 
 .method public static startAnimation()V
-    .locals 5
+    .locals 4
 
     .line 695
     sget-object v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->currentOverlay:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
@@ -2909,9 +2909,9 @@
 
     const-wide/16 v2, 0xc8
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     .line 699
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -2955,7 +2955,7 @@
 .end method
 
 .method public static startShortAnimation()V
-    .locals 5
+    .locals 4
 
     .line 711
     sget-object v0, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->currentShortOverlay:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
@@ -2995,9 +2995,9 @@
 
     const-wide/16 v2, 0xc8
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 715
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J

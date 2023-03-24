@@ -28,6 +28,8 @@
 
 .field public static final enum TON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
+.field public static final enum TRON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+
 
 # instance fields
 .field private final prefix:Ljava/lang/String;
@@ -39,7 +41,7 @@
 .method private static final synthetic $values()[Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
     .locals 3
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
@@ -55,13 +57,19 @@
 
     aput-object v1, v0, v2
 
+    sget-object v1, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->TRON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
     return-object v0
 .end method
 
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 12
 
-    .line 9
+    .line 10
     new-instance v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
     const-string v1, "EVM"
@@ -76,7 +84,7 @@
 
     sput-object v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->EVM:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
-    .line 10
+    .line 11
     new-instance v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
     const-string v1, "TON"
@@ -90,6 +98,27 @@
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->TON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+
+    .line 12
+    new-instance v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+
+    const-string v6, "TRON"
+
+    const/4 v7, 0x2
+
+    const-string v8, "T[a-zA-Z0-9]{33}"
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x2
+
+    const/4 v11, 0x0
+
+    move-object v5, v0
+
+    invoke-direct/range {v5 .. v11}, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->TRON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
     invoke-static {}, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->$values()[Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
@@ -119,14 +148,30 @@
         }
     .end annotation
 
-    .line 5
+    .line 6
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 6
+    .line 7
     iput-object p3, p0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->regex:Ljava/lang/String;
 
-    .line 7
+    .line 8
     iput-object p4, p0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->prefix:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    and-int/lit8 p5, p5, 0x2
+
+    if-eqz p5, :cond_0
+
+    const-string p4, ""
+
+    .line 6
+    :cond_0
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -164,7 +209,7 @@
 .method public final getPrefix()Ljava/lang/String;
     .locals 1
 
-    .line 7
+    .line 8
     iget-object v0, p0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->prefix:Ljava/lang/String;
 
     return-object v0
@@ -173,7 +218,7 @@
 .method public final getRegex()Ljava/lang/String;
     .locals 1
 
-    .line 6
+    .line 7
     iget-object v0, p0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->regex:Ljava/lang/String;
 
     return-object v0

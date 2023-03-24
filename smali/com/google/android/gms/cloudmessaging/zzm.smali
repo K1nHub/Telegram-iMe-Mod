@@ -686,12 +686,12 @@
 
     if-nez p1, :cond_3
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 5
     :goto_0

@@ -156,7 +156,7 @@
 
     aget p6, p2, p6
 
-    mul-float p6, p6, p4
+    mul-float/2addr p6, p4
 
     int-to-float p3, p3
 
@@ -164,7 +164,7 @@
 
     aget p2, p2, p5
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     div-float/2addr p4, p3
 

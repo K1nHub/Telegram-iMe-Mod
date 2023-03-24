@@ -15,6 +15,6 @@ final class SequencesKt___SequencesKt$zipWithNext$1 extends Lambda implements Fu
 
     @Override // kotlin.jvm.functions.Function2
     public final Pair<T, T> invoke(T t, T t2) {
-        return TuplesKt.m100to(t, t2);
+        return TuplesKt.m99to(t, t2);
     }
 }

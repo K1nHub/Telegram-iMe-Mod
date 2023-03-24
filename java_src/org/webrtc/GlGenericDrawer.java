@@ -336,7 +336,7 @@ public class GlGenericDrawer implements RendererCommon.GlDrawer {
         if (z) {
             int i9 = this.texelLocation[i][0];
             float f = BitmapDescriptorFactory.HUE_RED;
-            GLES20.glUniform1f(i9, i8 == 1 ? 1.0f / i2 : BitmapDescriptorFactory.HUE_RED);
+            GLES20.glUniform1f(i9, i8 == 1 ? 1.0f / i2 : 0.0f);
             int i10 = this.texelLocation[i][1];
             if (i8 == 2) {
                 f = 1.0f / i3;

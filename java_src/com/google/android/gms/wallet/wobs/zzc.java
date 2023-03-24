@@ -21,6 +21,8 @@ public final class zzc implements Parcelable.Creator {
         ArrayList newArrayList4 = ArrayUtils.newArrayList();
         ArrayList newArrayList5 = ArrayUtils.newArrayList();
         ArrayList newArrayList6 = ArrayUtils.newArrayList();
+        int i = 0;
+        boolean z = false;
         String str = null;
         String str2 = null;
         String str3 = null;
@@ -32,8 +34,6 @@ public final class zzc implements Parcelable.Creator {
         TimeInterval timeInterval = null;
         String str9 = null;
         String str10 = null;
-        int i = 0;
-        boolean z = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

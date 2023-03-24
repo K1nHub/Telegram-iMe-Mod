@@ -438,7 +438,7 @@ public final class CollapsingTextHelper {
                 this.currentDrawX = this.expandedDrawX;
                 this.currentDrawY = this.expandedDrawY;
                 setInterpolatedTextSize(this.expandedTextSize);
-                f2 = BitmapDescriptorFactory.HUE_RED;
+                f2 = 0.0f;
             } else {
                 this.currentDrawX = this.collapsedDrawX;
                 this.currentDrawY = this.collapsedDrawY - Math.max(0, this.currentOffsetY);
@@ -513,7 +513,7 @@ public final class CollapsingTextHelper {
         }
         CharSequence charSequence2 = this.textToDrawCollapsed;
         float f2 = BitmapDescriptorFactory.HUE_RED;
-        float measureText = charSequence2 != null ? this.textPaint.measureText(charSequence2, 0, charSequence2.length()) : BitmapDescriptorFactory.HUE_RED;
+        float measureText = charSequence2 != null ? this.textPaint.measureText(charSequence2, 0, charSequence2.length()) : 0.0f;
         int absoluteGravity = GravityCompat.getAbsoluteGravity(this.collapsedTextGravity, this.isRtl ? 1 : 0);
         int i = absoluteGravity & 112;
         if (i == 48) {
@@ -532,9 +532,9 @@ public final class CollapsingTextHelper {
             this.collapsedDrawX = this.collapsedBounds.left;
         }
         calculateUsingTextSize(this.expandedTextSize, z);
-        float height = this.textLayout != null ? staticLayout.getHeight() : BitmapDescriptorFactory.HUE_RED;
+        float height = this.textLayout != null ? staticLayout.getHeight() : 0.0f;
         CharSequence charSequence3 = this.textToDraw;
-        float measureText2 = charSequence3 != null ? this.textPaint.measureText(charSequence3, 0, charSequence3.length()) : BitmapDescriptorFactory.HUE_RED;
+        float measureText2 = charSequence3 != null ? this.textPaint.measureText(charSequence3, 0, charSequence3.length()) : 0.0f;
         StaticLayout staticLayout3 = this.textLayout;
         if (staticLayout3 != null && this.maxLines > 1) {
             measureText2 = staticLayout3.getWidth();
@@ -596,7 +596,9 @@ public final class CollapsingTextHelper {
         this.textPaint.setTextSize(this.currentTextSize);
         float f = this.currentDrawX;
         float f2 = this.currentDrawY;
-        z = (!this.useTexture || this.expandedTitleTexture == null) ? false : false;
+        if (!this.useTexture || this.expandedTitleTexture == null) {
+            z = false;
+        }
         float f3 = this.scale;
         if (f3 != 1.0f && !this.fadeModeEnabled) {
             canvas.scale(f3, f3, f, f2);

@@ -13,14 +13,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 34
+    .line 35
     invoke-static {}, Lcom/google/protobuf/NewInstanceSchemas;->loadSchemaForFullRuntime()Lcom/google/protobuf/NewInstanceSchema;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/protobuf/NewInstanceSchemas;->FULL_SCHEMA:Lcom/google/protobuf/NewInstanceSchema;
 
-    .line 35
+    .line 36
     new-instance v0, Lcom/google/protobuf/NewInstanceSchemaLite;
 
     invoke-direct {v0}, Lcom/google/protobuf/NewInstanceSchemaLite;-><init>()V
@@ -33,7 +33,7 @@
 .method static full()Lcom/google/protobuf/NewInstanceSchema;
     .locals 1
 
-    .line 38
+    .line 39
     sget-object v0, Lcom/google/protobuf/NewInstanceSchemas;->FULL_SCHEMA:Lcom/google/protobuf/NewInstanceSchema;
 
     return-object v0
@@ -42,7 +42,7 @@
 .method static lite()Lcom/google/protobuf/NewInstanceSchema;
     .locals 1
 
-    .line 42
+    .line 43
     sget-object v0, Lcom/google/protobuf/NewInstanceSchemas;->LITE_SCHEMA:Lcom/google/protobuf/NewInstanceSchema;
 
     return-object v0
@@ -54,7 +54,7 @@
     :try_start_0
     const-string v0, "com.google.protobuf.NewInstanceSchemaFull"
 
-    .line 47
+    .line 48
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     new-array v2, v1, [Ljava/lang/Class;
 
-    .line 48
+    .line 49
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v0

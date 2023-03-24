@@ -228,7 +228,7 @@
     :goto_2
     iput v0, p0, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->bitrate:I
 
-    mul-int/lit16 v0, v0, 0x90
+    mul-int/2addr v0, v7
 
     .line 99
     iget v4, p0, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->sampleRate:I
@@ -258,7 +258,7 @@
     const/16 v7, 0x48
 
     :cond_b
-    mul-int v7, v7, v0
+    mul-int/2addr v7, v0
 
     .line 103
     iget v0, p0, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->sampleRate:I
@@ -276,7 +276,7 @@
 
     if-ne p1, v2, :cond_c
 
-    const/4 v6, 0x1
+    move v6, v3
 
     .line 106
     :cond_c

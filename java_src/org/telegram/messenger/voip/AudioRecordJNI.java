@@ -21,7 +21,7 @@ public class AudioRecordJNI {
     private boolean needResampling = false;
 
     /* renamed from: ns */
-    private NoiseSuppressor f1489ns;
+    private NoiseSuppressor f1490ns;
     private boolean running;
     private Thread thread;
 
@@ -70,9 +70,9 @@ public class AudioRecordJNI {
                 try {
                     if (NoiseSuppressor.isAvailable()) {
                         NoiseSuppressor create2 = NoiseSuppressor.create(this.audioRecord.getAudioSessionId());
-                        this.f1489ns = create2;
+                        this.f1490ns = create2;
                         if (create2 != null) {
-                            create2.setEnabled(Instance.getGlobalServerConfig().useSystemNs && isGoodAudioEffect(this.f1489ns));
+                            create2.setEnabled(Instance.getGlobalServerConfig().useSystemNs && isGoodAudioEffect(this.f1490ns));
                         }
                     } else {
                         VLog.m35w("NoiseSuppressor is not available on this device :(");
@@ -151,10 +151,10 @@ public class AudioRecordJNI {
             automaticGainControl.release();
             this.agc = null;
         }
-        NoiseSuppressor noiseSuppressor = this.f1489ns;
+        NoiseSuppressor noiseSuppressor = this.f1490ns;
         if (noiseSuppressor != null) {
             noiseSuppressor.release();
-            this.f1489ns = null;
+            this.f1490ns = null;
         }
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         if (acousticEchoCanceler != null) {
@@ -226,7 +226,7 @@ public class AudioRecordJNI {
     public int getEnabledEffectsMask() {
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         int i = (acousticEchoCanceler == null || !acousticEchoCanceler.getEnabled()) ? 0 : 1;
-        NoiseSuppressor noiseSuppressor = this.f1489ns;
+        NoiseSuppressor noiseSuppressor = this.f1490ns;
         return (noiseSuppressor == null || !noiseSuppressor.getEnabled()) ? i : i | 2;
     }
 

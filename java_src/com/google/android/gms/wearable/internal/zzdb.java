@@ -109,15 +109,14 @@ public final class zzdb extends DataClient {
     public final Task<Void> addListener(DataClient.OnDataChangedListener onDataChangedListener, Uri uri, int i) {
         boolean z;
         Asserts.checkNotNull(uri, "uri must not be null");
-        if (i != 0) {
-            if (i != 1) {
-                z = false;
-                Preconditions.checkArgument(z, "invalid filter type");
-                return zza(onDataChangedListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.DATA_CHANGED", uri, i)});
-            }
+        if (i == 0) {
+            z = true;
+        } else if (i == 1) {
             i = 1;
+            z = true;
+        } else {
+            z = false;
         }
-        z = true;
         Preconditions.checkArgument(z, "invalid filter type");
         return zza(onDataChangedListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.DATA_CHANGED", uri, i)});
     }

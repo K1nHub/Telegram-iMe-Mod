@@ -25,11 +25,11 @@ public final class WalletSwapProcessFragment$presenter$2 extends Lambda implemen
     /* compiled from: WalletSwapProcessFragment.kt */
     /* renamed from: com.smedialink.ui.wallet.swap.process.WalletSwapProcessFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C22741 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22881 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletSwapProcessFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C22741(WalletSwapProcessFragment walletSwapProcessFragment) {
+        C22881(WalletSwapProcessFragment walletSwapProcessFragment) {
             super(0);
             this.this$0 = walletSwapProcessFragment;
         }
@@ -45,7 +45,7 @@ public final class WalletSwapProcessFragment$presenter$2 extends Lambda implemen
     public final WalletSwapProcessPresenter invoke() {
         Lazy lazy;
         WalletSwapProcessFragment walletSwapProcessFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2272x3ddaec8b(walletSwapProcessFragment, null, new C22741(walletSwapProcessFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2286x3ddaec8b(walletSwapProcessFragment, null, new C22881(walletSwapProcessFragment)));
         return (WalletSwapProcessPresenter) lazy.getValue();
     }
 }

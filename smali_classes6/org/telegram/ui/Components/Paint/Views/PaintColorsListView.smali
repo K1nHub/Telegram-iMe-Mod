@@ -434,7 +434,7 @@
 
     move-result-wide v7
 
-    mul-double v3, v3, v7
+    mul-double/2addr v3, v7
 
     add-double/2addr p2, v3
 
@@ -459,7 +459,7 @@
 
     move-result-wide v5
 
-    mul-double v7, v7, v5
+    mul-double/2addr v7, v5
 
     add-double/2addr v3, v7
 
@@ -504,7 +504,7 @@
 
     move-result-wide v7
 
-    mul-double v3, v3, v7
+    mul-double/2addr v3, v7
 
     add-double/2addr p2, v3
 
@@ -529,7 +529,7 @@
 
     move-result-wide v5
 
-    mul-double v1, v1, v5
+    mul-double/2addr v1, v5
 
     add-double/2addr v3, v1
 
@@ -717,7 +717,7 @@
 
     if-nez v3, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v0
 
     goto :goto_2
 
@@ -733,7 +733,7 @@
     :cond_2
     int-to-float v3, v1
 
-    mul-float v3, v3, p2
+    mul-float/2addr v3, p2
 
     .line 146
     invoke-static {p1, v3}, Ljava/lang/Math;->min(FF)F

@@ -47,16 +47,16 @@
 .end method
 
 .method private checkRtpReceiverExists()V
-    .locals 5
+    .locals 4
 
     .line 79
     iget-wide v0, p0, Lorg/webrtc/RtpReceiver;->nativeRtpReceiver:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public SetObserver(Lorg/webrtc/RtpReceiver$Observer;)V
-    .locals 5
+    .locals 4
 
     .line 65
     invoke-direct {p0}, Lorg/webrtc/RtpReceiver;->checkRtpReceiverExists()V
@@ -102,9 +102,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 68
     iget-wide v2, p0, Lorg/webrtc/RtpReceiver;->nativeRtpReceiver:J

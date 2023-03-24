@@ -47,7 +47,7 @@ public class MP4Builder {
     private FileOutputStream fos = null;
 
     /* renamed from: fc */
-    private FileChannel f1487fc = null;
+    private FileChannel f1488fc = null;
     private long dataOffset = 0;
     private long wroteSinceLastMdat = 0;
     private boolean writeNewMdat = true;
@@ -61,9 +61,9 @@ public class MP4Builder {
         this.currentMp4Movie = mp4Movie;
         FileOutputStream fileOutputStream = new FileOutputStream(mp4Movie.getCacheFile());
         this.fos = fileOutputStream;
-        this.f1487fc = fileOutputStream.getChannel();
+        this.f1488fc = fileOutputStream.getChannel();
         FileTypeBox createFileTypeBox = createFileTypeBox();
-        createFileTypeBox.getBox(this.f1487fc);
+        createFileTypeBox.getBox(this.f1488fc);
         long size = this.dataOffset + createFileTypeBox.getSize();
         this.dataOffset = size;
         this.wroteSinceLastMdat += size;
@@ -74,10 +74,10 @@ public class MP4Builder {
     }
 
     private void flushCurrentMdat() throws Exception {
-        long position = this.f1487fc.position();
-        this.f1487fc.position(this.mdat.getOffset());
-        this.mdat.getBox(this.f1487fc);
-        this.f1487fc.position(position);
+        long position = this.f1488fc.position();
+        this.f1488fc.position(this.mdat.getOffset());
+        this.mdat.getBox(this.f1488fc);
+        this.f1488fc.position(position);
         this.mdat.setDataOffset(0L);
         this.mdat.setContentSize(0L);
         this.fos.flush();
@@ -87,7 +87,7 @@ public class MP4Builder {
     public long writeSampleData(int i, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z) throws Exception {
         if (this.writeNewMdat) {
             this.mdat.setContentSize(0L);
-            this.mdat.getBox(this.f1487fc);
+            this.mdat.getBox(this.f1488fc);
             this.mdat.setDataOffset(this.dataOffset);
             this.dataOffset += 16;
             this.wroteSinceLastMdat += 16;
@@ -97,8 +97,9 @@ public class MP4Builder {
         interleaveChunkMdat.setContentSize(interleaveChunkMdat.getContentSize() + bufferInfo.size);
         long j = this.wroteSinceLastMdat + bufferInfo.size;
         this.wroteSinceLastMdat = j;
+        int i2 = (j > 32768L ? 1 : (j == 32768L ? 0 : -1));
         boolean z2 = true;
-        if (j >= 32768) {
+        if (i2 >= 0) {
             if (this.splitMdat) {
                 flushCurrentMdat();
                 this.writeNewMdat = true;
@@ -112,18 +113,18 @@ public class MP4Builder {
             this.sizeBuffer.position(0);
             this.sizeBuffer.putInt(bufferInfo.size - 4);
             this.sizeBuffer.position(0);
-            this.f1487fc.write(this.sizeBuffer);
+            this.f1488fc.write(this.sizeBuffer);
             byteBuffer.position(bufferInfo.offset + 4);
         } else {
             byteBuffer.position(bufferInfo.offset);
         }
         byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
-        this.f1487fc.write(byteBuffer);
+        this.f1488fc.write(byteBuffer);
         this.dataOffset += bufferInfo.size;
         if (z2) {
             this.fos.flush();
             this.fos.getFD().sync();
-            return this.f1487fc.position();
+            return this.f1488fc.position();
         }
         return 0L;
     }
@@ -151,10 +152,10 @@ public class MP4Builder {
             }
             this.track2SampleSizes.put(next, jArr);
         }
-        createMovieBox(this.currentMp4Movie).getBox(this.f1487fc);
+        createMovieBox(this.currentMp4Movie).getBox(this.f1488fc);
         this.fos.flush();
         this.fos.getFD().sync();
-        this.f1487fc.close();
+        this.f1488fc.close();
         this.fos.close();
     }
 

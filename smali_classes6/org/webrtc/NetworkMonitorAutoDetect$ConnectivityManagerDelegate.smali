@@ -496,9 +496,9 @@
 
     if-ne v9, v10, :cond_4
 
-    cmp-long v9, v6, v1
+    cmp-long v6, v6, v1
 
-    if-nez v9, :cond_3
+    if-nez v6, :cond_3
 
     .line 323
     invoke-static {v8}, Lorg/webrtc/NetworkMonitorAutoDetect;->access$000(Landroid/net/Network;)J

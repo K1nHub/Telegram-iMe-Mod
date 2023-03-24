@@ -36,7 +36,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/os/Bundle;Lorg/telegram/ui/LaunchActivity;I)V
     .locals 0
 
-    .line 1108
+    .line 1137
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$4;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
@@ -51,22 +51,22 @@
 .method private synthetic lambda$onTransitionAnimationEnd$0(Lorg/telegram/ui/LaunchActivity;I)V
     .locals 3
 
-    .line 1126
+    .line 1155
     new-instance v0, Lorg/telegram/ui/DialogsActivity$4$1;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$4;->chatArgs:Landroid/os/Bundle;
 
     invoke-direct {v0, p0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity$4$1;-><init>(Lorg/telegram/ui/DialogsActivity$4;Landroid/os/Bundle;Lorg/telegram/ui/LaunchActivity;I)V
 
-    .line 1133
+    .line 1162
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->setCurrentAccount(I)V
 
-    .line 1134
+    .line 1163
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$30400(Lorg/telegram/ui/DialogsActivity;)V
 
-    .line 1135
+    .line 1164
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -77,7 +77,7 @@
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->setHighlightActionButtons(Z)V
 
-    .line 1136
+    .line 1165
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance p2, Lorg/fork/ui/view/FragmentPreviewMenu;
@@ -102,13 +102,13 @@
 .method protected onPreviewChatOpened(Landroid/os/Bundle;)V
     .locals 0
 
-    .line 1114
+    .line 1143
     invoke-super {p0, p1}, Lorg/telegram/ui/DialogsActivity;->onPreviewChatOpened(Landroid/os/Bundle;)V
 
-    .line 1115
+    .line 1144
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->chatArgs:Landroid/os/Bundle;
 
-    .line 1116
+    .line 1145
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
     return-void
@@ -117,10 +117,10 @@
 .method public onPreviewOpenAnimationEnd()V
     .locals 3
 
-    .line 1142
+    .line 1171
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPreviewOpenAnimationEnd()V
 
-    .line 1143
+    .line 1172
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$4;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
 
     iget v1, p0, Lorg/telegram/ui/DialogsActivity$4;->val$accountNumberFinal:I
@@ -135,21 +135,21 @@
 .method public onTransitionAnimationEnd(ZZ)V
     .locals 1
 
-    .line 1121
+    .line 1150
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity;->onTransitionAnimationEnd(ZZ)V
 
     if-nez p1, :cond_1
 
     if-eqz p2, :cond_1
 
-    .line 1122
+    .line 1151
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->chatArgs:Landroid/os/Bundle;
 
     if-nez p1, :cond_0
 
     goto :goto_0
 
-    .line 1125
+    .line 1154
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$4;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
 

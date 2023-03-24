@@ -724,7 +724,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 360
     :goto_0
@@ -782,7 +782,7 @@
 
     new-array v13, v3, [F
 
-    const/4 v14, 0x0
+    move v14, v2
 
     .line 369
     :goto_1
@@ -1089,9 +1089,9 @@
 
     div-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    iput v5, v1, Lorg/telegram/messenger/UserConfig;->lastMyLocationShareTime:I
+    iput v4, v1, Lorg/telegram/messenger/UserConfig;->lastMyLocationShareTime:I
 
     .line 445
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
@@ -1363,7 +1363,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5
@@ -1548,9 +1548,9 @@
     :cond_2
     check-cast p4, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    const/4 p2, 0x0
+    move p2, v1
 
-    const/4 p3, 0x0
+    move p3, p2
 
     .line 424
     :goto_0
@@ -1586,7 +1586,7 @@
     iput-object p5, p3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     :goto_1
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_2
 
@@ -1767,12 +1767,12 @@
     .line 1034
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 1037
     :goto_0
@@ -1805,7 +1805,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v7, 0x1
+    move v7, v2
 
     :cond_2
     const-string v8, ", "
@@ -2135,7 +2135,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 939
     :goto_0
@@ -2271,7 +2271,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 698
     :goto_0
@@ -3704,7 +3704,7 @@
 .end method
 
 .method private setLastKnownLocation(Landroid/location/Location;)V
-    .locals 5
+    .locals 4
 
     if-eqz p1, :cond_0
 
@@ -3731,9 +3731,9 @@
 
     const-wide/16 v2, 0x12c
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     return-void
 
@@ -3795,7 +3795,7 @@
 .end method
 
 .method private shouldStopGps()Z
-    .locals 5
+    .locals 4
 
     .line 464
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -3804,9 +3804,9 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/LocationController;->locationEndWatchTime:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -3868,7 +3868,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     if-nez v0, :cond_2
@@ -4306,526 +4306,522 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 17
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, p1
+    .locals 12
 
     .line 175
-    sget v2, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
 
-    const/4 v3, 0x2
+    const/4 v0, 0x2
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    if-ne v1, v2, :cond_9
+    if-ne p1, p2, :cond_9
 
     .line 176
-    aget-object v1, p3, v3
+    aget-object p1, p3, v0
 
-    check-cast v1, Ljava/lang/Boolean;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_0
+    if-eqz p1, :cond_0
 
     return-void
 
     .line 180
     :cond_0
-    aget-object v1, p3, v5
+    aget-object p1, p3, v2
 
-    check-cast v1, Ljava/lang/Long;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v1
+    move-result-wide p1
 
     .line 181
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/LocationController;->isSharingLocation(J)Z
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/LocationController;->isSharingLocation(J)Z
 
-    move-result v6
+    move-result v3
 
-    if-nez v6, :cond_1
+    if-nez v3, :cond_1
 
     return-void
 
     .line 184
     :cond_1
-    iget-object v6, v0, Lorg/telegram/messenger/LocationController;->locationsCache:Landroidx/collection/LongSparseArray;
+    iget-object v3, p0, Lorg/telegram/messenger/LocationController;->locationsCache:Landroidx/collection/LongSparseArray;
 
-    invoke-virtual {v6, v1, v2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v3, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v3
 
-    check-cast v6, Ljava/util/ArrayList;
+    check-cast v3, Ljava/util/ArrayList;
 
-    if-nez v6, :cond_2
+    if-nez v3, :cond_2
 
     return-void
 
     .line 188
     :cond_2
-    aget-object v7, p3, v4
+    aget-object p3, p3, v1
 
-    check-cast v7, Ljava/util/ArrayList;
+    check-cast p3, Ljava/util/ArrayList;
 
-    const/4 v8, 0x0
+    move v4, v2
 
-    const/4 v9, 0x0
+    move v5, v4
 
     .line 190
     :goto_0
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result v10
+    move-result v6
 
-    if-ge v8, v10, :cond_8
+    if-ge v4, v6, :cond_8
 
     .line 191
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v6
 
-    check-cast v10, Lorg/telegram/messenger/MessageObject;
+    check-cast v6, Lorg/telegram/messenger/MessageObject;
 
     .line 192
-    invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->isLiveLocation()Z
+    invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->isLiveLocation()Z
 
-    move-result v11
+    move-result v7
 
-    if-eqz v11, :cond_6
+    if-eqz v7, :cond_6
 
-    const/4 v9, 0x0
+    move v5, v2
 
     .line 195
     :goto_1
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v11
+    move-result v7
 
-    if-ge v9, v11, :cond_4
+    if-ge v5, v7, :cond_4
 
     .line 196
-    invoke-virtual {v6, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v7
 
-    check-cast v11, Lorg/telegram/tgnet/TLRPC$Message;
+    check-cast v7, Lorg/telegram/tgnet/TLRPC$Message;
 
-    invoke-static {v11}, Lorg/telegram/messenger/MessageObject;->getFromChatId(Lorg/telegram/tgnet/TLRPC$Message;)J
+    invoke-static {v7}, Lorg/telegram/messenger/MessageObject;->getFromChatId(Lorg/telegram/tgnet/TLRPC$Message;)J
 
-    move-result-wide v11
+    move-result-wide v7
 
-    invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
+    invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
-    move-result-wide v13
+    move-result-wide v9
 
-    cmp-long v15, v11, v13
+    cmp-long v7, v7, v9
 
-    if-nez v15, :cond_3
+    if-nez v7, :cond_3
 
     .line 198
-    iget-object v11, v10, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v7, v6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    invoke-virtual {v6, v9, v11}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v7}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v9, 0x1
+    move v5, v1
 
     goto :goto_2
 
     :cond_3
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
     :cond_4
-    const/4 v9, 0x0
+    move v5, v2
 
     :goto_2
-    if-nez v9, :cond_5
+    if-nez v5, :cond_5
 
     .line 203
-    iget-object v9, v10, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v5, v6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    invoke-virtual {v6, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_5
-    const/4 v9, 0x1
+    move v5, v1
 
     goto :goto_3
 
     .line 205
     :cond_6
-    iget-object v11, v10, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v7, v6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v11, v11, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
+    iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
-    instance-of v11, v11, Lorg/telegram/tgnet/TLRPC$TL_messageActionGeoProximityReached;
+    instance-of v7, v7, Lorg/telegram/tgnet/TLRPC$TL_messageActionGeoProximityReached;
 
-    if-eqz v11, :cond_7
+    if-eqz v7, :cond_7
 
     .line 206
-    invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+    invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
-    move-result-wide v10
+    move-result-wide v6
 
     .line 207
-    invoke-static {v10, v11}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
+    invoke-static {v6, v7}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
-    move-result v12
+    move-result v8
 
-    if-eqz v12, :cond_7
+    if-eqz v8, :cond_7
 
     .line 208
-    invoke-virtual {v0, v10, v11, v5, v5}, Lorg/telegram/messenger/LocationController;->setProximityLocation(JIZ)Z
+    invoke-virtual {p0, v6, v7, v2, v2}, Lorg/telegram/messenger/LocationController;->setProximityLocation(JIZ)Z
 
     :cond_7
     :goto_3
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     :cond_8
-    if-eqz v9, :cond_17
+    if-eqz v5, :cond_17
 
     .line 213
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object v6
+    move-result-object p3
 
-    sget v7, Lorg/telegram/messenger/NotificationCenter;->liveLocationsCacheChanged:I
+    sget v3, Lorg/telegram/messenger/NotificationCenter;->liveLocationsCacheChanged:I
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object p1
 
-    aput-object v1, v3, v5
+    aput-object p1, v0, v2
 
-    iget v1, v0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+    iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object p1
 
-    aput-object v1, v3, v4
+    aput-object p1, v0, v1
 
-    invoke-virtual {v6, v7, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {p3, v3, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     goto/16 :goto_c
 
     .line 215
     :cond_9
-    sget v2, Lorg/telegram/messenger/NotificationCenter;->messagesDeleted:I
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->messagesDeleted:I
 
-    if-ne v1, v2, :cond_10
+    if-ne p1, p2, :cond_10
 
     .line 216
-    aget-object v1, p3, v3
+    aget-object p1, p3, v0
 
-    check-cast v1, Ljava/lang/Boolean;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_a
+    if-eqz p1, :cond_a
 
     return-void
 
     .line 220
     :cond_a
-    iget-object v1, v0, Lorg/telegram/messenger/LocationController;->sharingLocationsUI:Ljava/util/ArrayList;
+    iget-object p1, p0, Lorg/telegram/messenger/LocationController;->sharingLocationsUI:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v1
+    move-result p1
 
-    if-nez v1, :cond_17
+    if-nez p1, :cond_17
 
     .line 221
-    aget-object v1, p3, v5
+    aget-object p1, p3, v2
 
-    check-cast v1, Ljava/util/ArrayList;
+    check-cast p1, Ljava/util/ArrayList;
 
     .line 222
-    aget-object v2, p3, v4
+    aget-object p2, p3, v1
 
-    check-cast v2, Ljava/lang/Long;
+    check-cast p2, Ljava/lang/Long;
 
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v2
+    move-result-wide p2
 
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    const/4 v6, 0x0
+    move v1, v2
 
     .line 224
     :goto_4
-    iget-object v7, v0, Lorg/telegram/messenger/LocationController;->sharingLocationsUI:Ljava/util/ArrayList;
+    iget-object v3, p0, Lorg/telegram/messenger/LocationController;->sharingLocationsUI:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v7
+    move-result v3
 
-    if-ge v6, v7, :cond_f
+    if-ge v1, v3, :cond_f
 
     .line 225
-    iget-object v7, v0, Lorg/telegram/messenger/LocationController;->sharingLocationsUI:Ljava/util/ArrayList;
+    iget-object v3, p0, Lorg/telegram/messenger/LocationController;->sharingLocationsUI:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v3
 
-    check-cast v7, Lorg/telegram/messenger/LocationController$SharingLocationInfo;
+    check-cast v3, Lorg/telegram/messenger/LocationController$SharingLocationInfo;
 
     .line 226
-    iget-object v8, v7, Lorg/telegram/messenger/LocationController$SharingLocationInfo;->messageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v4, v3, Lorg/telegram/messenger/LocationController$SharingLocationInfo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    if-eqz v8, :cond_b
+    if-eqz v4, :cond_b
 
-    invoke-virtual {v8}, Lorg/telegram/messenger/MessageObject;->getChannelId()J
+    invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getChannelId()J
 
-    move-result-wide v8
+    move-result-wide v4
 
     goto :goto_5
 
     :cond_b
-    const-wide/16 v8, 0x0
+    const-wide/16 v4, 0x0
 
     :goto_5
-    cmp-long v10, v2, v8
+    cmp-long v4, p2, v4
 
-    if-eqz v10, :cond_c
+    if-eqz v4, :cond_c
 
     goto :goto_6
 
     .line 230
     :cond_c
-    iget v8, v7, Lorg/telegram/messenger/LocationController$SharingLocationInfo;->mid:I
+    iget v4, v3, Lorg/telegram/messenger/LocationController$SharingLocationInfo;->mid:I
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v4
 
-    invoke-virtual {v1, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v4
 
-    if-eqz v8, :cond_e
+    if-eqz v4, :cond_e
 
-    if-nez v4, :cond_d
+    if-nez v0, :cond_d
 
     .line 232
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 234
     :cond_d
-    iget-wide v7, v7, Lorg/telegram/messenger/LocationController$SharingLocationInfo;->did:J
+    iget-wide v3, v3, Lorg/telegram/messenger/LocationController$SharingLocationInfo;->did:J
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_e
     :goto_6
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
     :cond_f
-    if-eqz v4, :cond_17
+    if-eqz v0, :cond_17
 
     .line 238
     :goto_7
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result p1
 
-    if-ge v5, v1, :cond_17
+    if-ge v2, p1, :cond_17
 
     .line 239
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, Ljava/lang/Long;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v1
+    move-result-wide p1
 
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/LocationController;->removeSharingLocation(J)V
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/LocationController;->removeSharingLocation(J)V
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_7
 
     .line 243
     :cond_10
-    sget v2, Lorg/telegram/messenger/NotificationCenter;->replaceMessagesObjects:I
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->replaceMessagesObjects:I
 
-    if-ne v1, v2, :cond_17
+    if-ne p1, p2, :cond_17
 
     .line 244
-    aget-object v1, p3, v5
+    aget-object p1, p3, v2
 
-    check-cast v1, Ljava/lang/Long;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v1
+    move-result-wide p1
 
     .line 245
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/LocationController;->isSharingLocation(J)Z
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/LocationController;->isSharingLocation(J)Z
 
-    move-result v6
+    move-result v3
 
-    if-nez v6, :cond_11
+    if-nez v3, :cond_11
 
     return-void
 
     .line 248
     :cond_11
-    iget-object v6, v0, Lorg/telegram/messenger/LocationController;->locationsCache:Landroidx/collection/LongSparseArray;
+    iget-object v3, p0, Lorg/telegram/messenger/LocationController;->locationsCache:Landroidx/collection/LongSparseArray;
 
-    invoke-virtual {v6, v1, v2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v3, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v3
 
-    check-cast v6, Ljava/util/ArrayList;
+    check-cast v3, Ljava/util/ArrayList;
 
-    if-nez v6, :cond_12
+    if-nez v3, :cond_12
 
     return-void
 
     .line 253
     :cond_12
-    aget-object v7, p3, v4
+    aget-object p3, p3, v1
 
-    check-cast v7, Ljava/util/ArrayList;
+    check-cast p3, Ljava/util/ArrayList;
 
-    const/4 v8, 0x0
+    move v4, v2
 
-    const/4 v9, 0x0
+    move v5, v4
 
     .line 254
     :goto_8
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result v10
+    move-result v6
 
-    if-ge v8, v10, :cond_16
+    if-ge v4, v6, :cond_16
 
     .line 255
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v6
 
-    check-cast v10, Lorg/telegram/messenger/MessageObject;
+    check-cast v6, Lorg/telegram/messenger/MessageObject;
 
-    const/4 v11, 0x0
+    move v7, v2
 
     .line 256
     :goto_9
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v12
+    move-result v8
 
-    if-ge v11, v12, :cond_15
+    if-ge v7, v8, :cond_15
 
     .line 257
-    invoke-virtual {v6, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v8
 
-    check-cast v12, Lorg/telegram/tgnet/TLRPC$Message;
+    check-cast v8, Lorg/telegram/tgnet/TLRPC$Message;
 
-    invoke-static {v12}, Lorg/telegram/messenger/MessageObject;->getFromChatId(Lorg/telegram/tgnet/TLRPC$Message;)J
+    invoke-static {v8}, Lorg/telegram/messenger/MessageObject;->getFromChatId(Lorg/telegram/tgnet/TLRPC$Message;)J
 
-    move-result-wide v12
+    move-result-wide v8
 
-    invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
+    invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
-    move-result-wide v14
+    move-result-wide v10
 
-    cmp-long v16, v12, v14
+    cmp-long v8, v8, v10
 
-    if-nez v16, :cond_14
+    if-nez v8, :cond_14
 
     .line 258
-    invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->isLiveLocation()Z
+    invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->isLiveLocation()Z
 
-    move-result v9
+    move-result v5
 
-    if-nez v9, :cond_13
+    if-nez v5, :cond_13
 
     .line 259
-    invoke-virtual {v6, v11}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     goto :goto_a
 
     .line 261
     :cond_13
-    iget-object v9, v10, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v5, v6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    invoke-virtual {v6, v11, v9}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v7, v5}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     :goto_a
-    const/4 v9, 0x1
+    move v5, v1
 
     goto :goto_b
 
     :cond_14
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_9
 
     :cond_15
     :goto_b
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_8
 
     :cond_16
-    if-eqz v9, :cond_17
+    if-eqz v5, :cond_17
 
     .line 269
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
-    move-result-object v6
+    move-result-object p3
 
-    sget v7, Lorg/telegram/messenger/NotificationCenter;->liveLocationsCacheChanged:I
+    sget v3, Lorg/telegram/messenger/NotificationCenter;->liveLocationsCacheChanged:I
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object p1
 
-    aput-object v1, v3, v5
+    aput-object p1, v0, v2
 
-    iget v1, v0, Lorg/telegram/messenger/BaseController;->currentAccount:I
+    iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object p1
 
-    aput-object v1, v3, v4
+    aput-object p1, v0, v1
 
-    invoke-virtual {v6, v7, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {p3, v3, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     :cond_17
     :goto_c
@@ -5022,7 +5018,7 @@
 
     div-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
     if-eqz v1, :cond_2
 
@@ -5033,7 +5029,7 @@
 
     add-int/lit8 v1, v1, 0x3c
 
-    if-le v1, v3, :cond_2
+    if-le v1, v2, :cond_2
 
     return-void
 
@@ -5041,7 +5037,7 @@
     :cond_2
     iget-object v1, p0, Lorg/telegram/messenger/LocationController;->lastReadLocationTime:Landroidx/collection/LongSparseArray;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
@@ -5578,9 +5574,9 @@
 
     const-wide/16 v3, 0xe10
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
     .line 479
     iput-boolean v2, p0, Lorg/telegram/messenger/LocationController;->shareMyCurrentLocation:Z
@@ -5597,7 +5593,7 @@
 
     if-nez v0, :cond_2
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 482
     :goto_0
@@ -5722,7 +5718,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 507
     :goto_1
@@ -5774,9 +5770,9 @@
 
     const-wide/16 v2, 0x7530
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_8
+    if-lez v0, :cond_8
 
     .line 513
     :cond_7

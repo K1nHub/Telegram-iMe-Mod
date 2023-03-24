@@ -942,9 +942,9 @@
 
     move-result-wide p1
 
-    cmp-long p3, p1, v2
+    cmp-long p1, p1, v2
 
-    if-nez p3, :cond_2
+    if-nez p1, :cond_2
 
     .line 1891
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_getAllSecureValues;
@@ -1571,15 +1571,10 @@
 
     const/16 v1, 0x8
 
-    const/16 v4, 0x8
-
-    goto :goto_0
-
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 1731
-    :goto_0
     new-instance v0, Lorg/telegram/ui/PassportActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/PassportActivity$8;->this$0:Lorg/telegram/ui/PassportActivity;
@@ -1709,7 +1704,7 @@
 
     if-nez v1, :cond_3
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1741
     :cond_3
@@ -1717,16 +1712,16 @@
 
     invoke-static {v1, v0}, Lorg/telegram/ui/PassportActivity;->access$13802(Lorg/telegram/ui/PassportActivity;Lorg/telegram/ui/PassportActivity;)Lorg/telegram/ui/PassportActivity;
 
-    goto :goto_2
+    goto :goto_1
 
     .line 1739
     :cond_4
-    :goto_1
+    :goto_0
     iget-object v1, p0, Lorg/telegram/ui/PassportActivity$8;->this$0:Lorg/telegram/ui/PassportActivity;
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
-    :goto_2
+    :goto_1
     return-void
 .end method
 

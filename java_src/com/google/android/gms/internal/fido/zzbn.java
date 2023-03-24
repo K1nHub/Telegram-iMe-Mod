@@ -95,10 +95,10 @@ public final class zzbn {
             if (r7 == r6) goto L4c
             java.math.RoundingMode r6 = java.math.RoundingMode.HALF_EVEN
             if (r7 != r6) goto L3b
-            r6 = 1
+            r6 = r3
             goto L3c
         L3b:
-            r6 = 0
+            r6 = r4
         L3c:
             r7 = r0 & 1
             r6 = r6 & r7
@@ -114,7 +114,7 @@ public final class zzbn {
             if (r5 >= 0) goto L4b
             goto L4c
         L4b:
-            r3 = 0
+            r3 = r4
         L4c:
             if (r3 == 0) goto L53
         L4e:

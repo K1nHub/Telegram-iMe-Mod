@@ -173,7 +173,7 @@
 
     if-ge v3, v4, :cond_4
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 

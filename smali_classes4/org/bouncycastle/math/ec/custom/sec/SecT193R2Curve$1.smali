@@ -62,9 +62,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     iget v5, p0, Lorg/bouncycastle/math/ec/custom/sec/SecT193R2Curve$1;->val$len:I
@@ -79,7 +79,7 @@
 
     int-to-long v5, v5
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     const/4 v8, 0x4

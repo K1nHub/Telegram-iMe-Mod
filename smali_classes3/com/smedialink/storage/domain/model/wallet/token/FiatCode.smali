@@ -38,7 +38,7 @@
 
     if-eqz p3, :cond_0
 
-    const/4 p2, 0x2
+    move p2, p4
 
     .line 3
     :cond_0

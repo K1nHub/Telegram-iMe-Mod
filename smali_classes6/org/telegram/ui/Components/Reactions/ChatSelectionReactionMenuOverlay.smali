@@ -323,7 +323,7 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v4
 
     goto :goto_0
 
@@ -350,7 +350,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     add-int/2addr v1, v5
@@ -404,7 +404,7 @@
 .end method
 
 .method private findPrimaryObject()Lorg/telegram/messenger/MessageObject;
-    .locals 6
+    .locals 5
 
     .line 277
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->isVisible:Z
@@ -437,9 +437,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     .line 281
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->parentFragment:Lorg/telegram/ui/ChatActivity;
@@ -746,7 +746,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 165
     :goto_1
@@ -824,7 +824,7 @@
 
     :cond_5
     :goto_2
-    const/4 v9, 0x0
+    move v9, v1
 
     :goto_3
     add-int/2addr v8, v9
@@ -848,7 +848,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v10, 0x0
+    move v10, v1
 
     goto :goto_5
 
@@ -1000,10 +1000,9 @@
     .line 198
     iput v7, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->toOffsetY:F
 
-    const/4 v7, 0x0
+    move v7, v1
 
-    :goto_8
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_a
 
@@ -1029,7 +1028,7 @@
 
     if-lez v8, :cond_d
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_d
     const/16 v8, 0x38
@@ -1050,15 +1049,16 @@
     .line 206
     iput v7, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->toOffsetY:F
 
-    const/4 v7, 0x1
+    move v7, v2
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_e
-    :goto_9
-    const/4 v7, 0x0
+    :goto_8
+    move v7, v1
 
-    const/4 v8, 0x0
+    :goto_9
+    move v8, v7
 
     :goto_a
     if-nez p1, :cond_f
@@ -1080,7 +1080,7 @@
 
     iget v9, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->translationOffsetY:F
 
-    mul-float p1, p1, v9
+    mul-float/2addr p1, v9
 
     add-float/2addr v6, p1
 
@@ -1266,7 +1266,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_b
 
@@ -1284,7 +1284,7 @@
 
     move-result v3
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :cond_14
     :goto_b
@@ -1306,7 +1306,7 @@
     .line 252
     iput v4, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 255
     :cond_16
@@ -1317,7 +1317,7 @@
     .line 256
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 259
     :cond_17
@@ -1394,17 +1394,46 @@
     return v0
 .end method
 
+.method public onBackPressed()Z
+    .locals 1
+
+    .line 377
+    iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getReactionsWindow()Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 378
+    iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->dismissWindow()V
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public setHiddenByScroll(Z)V
     .locals 0
 
-    .line 377
+    .line 385
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->hiddenByScroll:Z
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 380
+    .line 388
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->animateVisible(Z)V
 
     :cond_0
@@ -1412,7 +1441,7 @@
 .end method
 
 .method public setSelectedMessages(Ljava/util/List;)V
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1428,13 +1457,21 @@
     .line 306
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->isSecretChat()Z
 
-    move-result-object v0
+    move-result v0
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
+
+    if-nez v0, :cond_4
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->parentFragment:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
@@ -1467,9 +1504,9 @@
 
     const-wide/16 v3, 0x0
 
-    move-wide v5, v3
+    move v0, v2
 
-    const/4 v0, 0x0
+    move-wide v5, v3
 
     :cond_1
     :goto_0
@@ -1502,7 +1539,7 @@
 
     move-result-wide v5
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -1512,9 +1549,9 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v7, v5, v7
 
-    if-nez v9, :cond_4
+    if-nez v7, :cond_4
 
     cmp-long v7, v5, v3
 
@@ -1522,7 +1559,7 @@
 
     :cond_4
     :goto_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 328
     :cond_5

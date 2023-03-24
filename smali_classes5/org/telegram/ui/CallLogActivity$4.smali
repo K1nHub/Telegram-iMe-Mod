@@ -77,7 +77,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x0
@@ -201,7 +201,7 @@
 
     const/high16 v8, 0x42c80000    # 100.0f
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     float-to-int v4, v4
 
@@ -314,8 +314,6 @@
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return v6
-
-    nop
 
     :array_0
     .array-data 4

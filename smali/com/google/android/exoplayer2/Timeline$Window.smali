@@ -474,7 +474,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -554,25 +554,25 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Window;->presentationStartTimeMs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/Timeline$Window;->windowStartTimeMs:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Window;->windowStartTimeMs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/Timeline$Window;->elapsedRealtimeEpochOffsetMs:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Window;->elapsedRealtimeEpochOffsetMs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/Timeline$Window;->isSeekable:Z
 
@@ -596,17 +596,17 @@
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Window;->defaultPositionUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/Timeline$Window;->durationUs:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/Timeline$Window;->durationUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2
+    if-nez v2, :cond_2
 
     iget v2, p0, Lcom/google/android/exoplayer2/Timeline$Window;->firstPeriodIndex:I
 
@@ -631,7 +631,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -754,7 +754,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -794,9 +794,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -807,9 +807,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -820,9 +820,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -854,9 +854,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -867,9 +867,9 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v1, v3
+    add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -915,22 +915,22 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     if-ne v0, v1, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
@@ -943,7 +943,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     return v2
@@ -1034,7 +1034,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 288
     :goto_2
@@ -1212,9 +1212,9 @@
     :cond_8
     iget-wide v1, p0, Lcom/google/android/exoplayer2/Timeline$Window;->durationUs:J
 
-    cmp-long v7, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v7, :cond_9
+    if-eqz v3, :cond_9
 
     .line 471
     sget-object v3, Lcom/google/android/exoplayer2/Timeline$Window;->FIELD_DURATION_US:Ljava/lang/String;

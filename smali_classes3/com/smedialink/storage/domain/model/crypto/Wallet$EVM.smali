@@ -38,7 +38,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 23
     invoke-virtual {p3}, Lorg/web3j/crypto/Credentials;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -51,7 +51,7 @@
 
     invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 24
     sget-object v5, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     const/4 v6, 0x0
@@ -62,16 +62,16 @@
 
     move-object v3, p2
 
-    .line 18
+    .line 20
     invoke-direct/range {v1 .. v6}, Lcom/smedialink/storage/domain/model/crypto/Wallet;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 15
+    .line 17
     iput-object p1, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->guid:Ljava/lang/String;
 
-    .line 16
+    .line 18
     iput-object p2, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->mnemonic:Ljava/lang/String;
 
-    .line 17
+    .line 19
     iput-object p3, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->credentials:Lorg/web3j/crypto/Credentials;
 
     return-void
@@ -238,7 +238,7 @@
 .method public final getCredentials()Lorg/web3j/crypto/Credentials;
     .locals 1
 
-    .line 17
+    .line 19
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->credentials:Lorg/web3j/crypto/Credentials;
 
     return-object v0
@@ -247,7 +247,7 @@
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 15
+    .line 17
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->guid:Ljava/lang/String;
 
     return-object v0
@@ -256,7 +256,7 @@
 .method public getMnemonic()Ljava/lang/String;
     .locals 1
 
-    .line 16
+    .line 18
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->mnemonic:Ljava/lang/String;
 
     return-object v0

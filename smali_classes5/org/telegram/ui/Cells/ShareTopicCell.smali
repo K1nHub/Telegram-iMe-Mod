@@ -311,16 +311,16 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 p4, 0x0
+    cmp-long p4, v2, v4
 
-    cmp-long v6, v2, v4
+    const/4 v2, 0x0
 
-    if-eqz v6, :cond_3
+    if-eqz p4, :cond_3
 
     .line 81
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object p4, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v1, p4}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p4, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 82
     iget-object p4, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -341,37 +341,37 @@
 
     .line 84
     :cond_3
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object p4, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v2, p4}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
+    invoke-virtual {p4, v2}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
     .line 85
-    new-instance v2, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;
+    new-instance p4, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;
 
     iget v3, p2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_color:I
 
-    invoke-direct {v2, v3}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;-><init>(I)V
+    invoke-direct {p4, v3}, Lorg/telegram/ui/Components/Forum/ForumBubbleDrawable;-><init>(I)V
 
     .line 86
     new-instance v3, Lorg/telegram/ui/Components/LetterDrawable;
 
     const/4 v4, 0x1
 
-    invoke-direct {v3, p4, v4}, Lorg/telegram/ui/Components/LetterDrawable;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    invoke-direct {v3, v2, v4}, Lorg/telegram/ui/Components/LetterDrawable;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
 
     .line 87
-    iget-object p4, p2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->title:Ljava/lang/String;
+    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->title:Ljava/lang/String;
 
-    invoke-virtual {p4}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object p4
+    move-result-object v2
 
-    invoke-virtual {p4}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
-    move-result-object p4
+    move-result-object v2
 
     .line 88
-    invoke-virtual {p4}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v5
 
@@ -379,30 +379,30 @@
 
     if-lt v5, v4, :cond_4
 
-    invoke-virtual {p4, v6, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v2, v6, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
     :cond_4
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/LetterDrawable;->setTitle(Ljava/lang/String;)V
 
-    const p4, 0x3fe66666    # 1.8f
+    const v1, 0x3fe66666    # 1.8f
 
     .line 89
-    iput p4, v3, Lorg/telegram/ui/Components/LetterDrawable;->scale:F
+    iput v1, v3, Lorg/telegram/ui/Components/LetterDrawable;->scale:F
 
     .line 90
-    new-instance p4, Lorg/telegram/ui/Components/CombinedDrawable;
+    new-instance v1, Lorg/telegram/ui/Components/CombinedDrawable;
 
-    invoke-direct {p4, v2, v3, v6, v6}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;II)V
+    invoke-direct {v1, p4, v3, v6, v6}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;II)V
 
     .line 91
-    invoke-virtual {p4, v4}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
     .line 92
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object p4, p0, Lorg/telegram/ui/Cells/ShareTopicCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v1, p4}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p4, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 94
     :goto_1

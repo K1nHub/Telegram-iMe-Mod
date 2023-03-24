@@ -501,7 +501,7 @@
 
     sub-float/2addr v2, p2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v1, v0
 

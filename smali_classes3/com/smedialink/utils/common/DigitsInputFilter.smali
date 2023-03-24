@@ -50,14 +50,14 @@
 .end method
 
 .method private final checkMaxValueRule(DLjava/lang/String;)Ljava/lang/CharSequence;
-    .locals 3
+    .locals 2
 
     .line 35
     iget-wide v0, p0, Lcom/smedialink/utils/common/DigitsInputFilter;->max:D
 
-    cmpl-double v2, p1, v0
+    cmpl-double p1, p1, v0
 
-    if-lez v2, :cond_0
+    if-lez p1, :cond_0
 
     const-string p1, ""
 
@@ -185,12 +185,12 @@
 
     if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_3
@@ -209,7 +209,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-eqz v1, :cond_2

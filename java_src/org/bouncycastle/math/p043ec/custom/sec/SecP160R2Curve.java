@@ -12,14 +12,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP160R2Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1332q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFAC73"));
+    public static final BigInteger f1333q = new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFAC73"));
     protected SecP160R2Point infinity;
 
     public SecP160R2Curve() {
-        super(f1332q);
+        super(f1333q);
         this.infinity = new SecP160R2Point(this, null, null);
-        this.f1307a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFAC70")));
-        this.f1308b = fromBigInteger(new BigInteger(1, Hex.decode("B4E134D3FB59EB8BAB57274904664D5AF50388BA")));
+        this.f1308a = fromBigInteger(new BigInteger(1, Hex.decode("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFAC70")));
+        this.f1309b = fromBigInteger(new BigInteger(1, Hex.decode("B4E134D3FB59EB8BAB57274904664D5AF50388BA")));
         this.order = new BigInteger(1, Hex.decode("0100000000000000000000351EE786A818F3A1A16B"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -36,9 +36,9 @@ public class SecP160R2Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawXCoord()).f1335x, 0, iArr, i3);
+            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawXCoord()).f1336x, 0, iArr, i3);
             int i5 = i3 + 5;
-            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawYCoord()).f1335x, 0, iArr, i5);
+            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawYCoord()).f1336x, 0, iArr, i5);
             i3 = i5 + 5;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP160R2Curve.1
@@ -86,7 +86,7 @@ public class SecP160R2Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1332q.bitLength();
+        return f1333q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

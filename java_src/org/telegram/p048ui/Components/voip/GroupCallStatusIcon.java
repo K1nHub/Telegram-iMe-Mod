@@ -3,9 +3,8 @@ package org.telegram.p048ui.Components.voip;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.p048ui.Components.RLottieDrawable;
@@ -70,17 +69,17 @@ public class GroupCallStatusIcon {
         int i = 540;
         int i2 = 420;
         if (nextInt < 32) {
-            i = 120;
             i2 = 0;
+            i = 120;
         } else if (nextInt < 64) {
-            i = PsExtractor.VIDEO_STREAM_MASK;
+            i = 240;
             i2 = 120;
         } else if (nextInt < 97) {
             i = 420;
-            i2 = PsExtractor.VIDEO_STREAM_MASK;
+            i2 = 240;
         } else if (nextInt != 98) {
-            i = 720;
             i2 = 540;
+            i = 720;
         }
         this.shakeHandDrawable.setCustomEndFrame(i);
         this.shakeHandDrawable.setOnFinishCallback(this.shakeHandCallback, i - 1);
@@ -93,9 +92,9 @@ public class GroupCallStatusIcon {
     }
 
     public GroupCallStatusIcon() {
-        int i = C3286R.C3291raw.voice_mini;
+        int i = C3301R.C3306raw.voice_mini;
         this.micDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m50dp(24), AndroidUtilities.m50dp(24), true, null);
-        int i2 = C3286R.C3291raw.hand_2;
+        int i2 = C3301R.C3306raw.hand_2;
         this.shakeHandDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m50dp(15), AndroidUtilities.m50dp(15), true, null);
     }
 

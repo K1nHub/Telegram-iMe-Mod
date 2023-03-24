@@ -251,7 +251,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
             int r1 = r4.left
             if (r5 == r1) goto L13
             r3.leftMargin = r1
-            r5 = 1
+            r5 = r0
             goto L14
         L13:
             r5 = 0
@@ -261,14 +261,14 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
             int r1 = r4.top
             if (r6 == r1) goto L1f
             r3.topMargin = r1
-            r5 = 1
+            r5 = r0
         L1f:
             if (r8 == 0) goto L2a
             int r6 = r3.rightMargin
             int r8 = r4.right
             if (r6 == r8) goto L2a
             r3.rightMargin = r8
-            r5 = 1
+            r5 = r0
         L2a:
             if (r7 == 0) goto L35
             int r6 = r3.bottomMargin

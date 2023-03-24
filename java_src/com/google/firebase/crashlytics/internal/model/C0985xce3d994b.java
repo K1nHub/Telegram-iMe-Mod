@@ -68,7 +68,7 @@ final class C0985xce3d994b extends CrashlyticsReport.Session.Event.Application.E
         String str = this.file;
         int hashCode2 = str == null ? 0 : str.hashCode();
         long j2 = this.offset;
-        return this.importance ^ ((((hashCode ^ hashCode2) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
+        return ((((hashCode ^ hashCode2) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.importance;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -165,7 +165,7 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
                     }
                 }
             } else if (indexOf == i) {
-                for (int i7 = 0; i7 < exoTrackSelection.length(); i7++) {
+                for (int i7 = i3; i7 < exoTrackSelection.length(); i7++) {
                     arrayList.add(new StreamKey(i3, iArr[exoTrackSelection.getIndexInTrackGroup(i7)]));
                 }
                 z2 = true;
@@ -420,17 +420,85 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
         this.enabledSampleStreamWrappers = this.sampleStreamWrappers;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0064  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private void buildAndPrepareMainSampleStreamWrapper(com.google.android.exoplayer2.source.hls.playlist.HlsMultivariantPlaylist r21, long r22, java.util.List<com.google.android.exoplayer2.source.hls.HlsSampleStreamWrapper> r24, java.util.List<int[]> r25, java.util.Map<java.lang.String, com.google.android.exoplayer2.drm.DrmInitData> r26) {
-        /*
-            Method dump skipped, instructions count: 444
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.hls.HlsMediaPeriod.buildAndPrepareMainSampleStreamWrapper(com.google.android.exoplayer2.source.hls.playlist.HlsMultivariantPlaylist, long, java.util.List, java.util.List, java.util.Map):void");
+    private void buildAndPrepareMainSampleStreamWrapper(HlsMultivariantPlaylist hlsMultivariantPlaylist, long j, List<HlsSampleStreamWrapper> list, List<int[]> list2, Map<String, DrmInitData> map) {
+        boolean z;
+        boolean z2;
+        int size = hlsMultivariantPlaylist.variants.size();
+        int[] iArr = new int[size];
+        int i = 0;
+        int i2 = 0;
+        for (int i3 = 0; i3 < hlsMultivariantPlaylist.variants.size(); i3++) {
+            Format format = hlsMultivariantPlaylist.variants.get(i3).format;
+            if (format.height > 0 || Util.getCodecsOfType(format.codecs, 2) != null) {
+                iArr[i3] = 2;
+                i++;
+            } else if (Util.getCodecsOfType(format.codecs, 1) != null) {
+                iArr[i3] = 1;
+                i2++;
+            } else {
+                iArr[i3] = -1;
+            }
+        }
+        if (i > 0) {
+            size = i;
+            z = true;
+            z2 = false;
+        } else if (i2 < size) {
+            size -= i2;
+            z = false;
+            z2 = true;
+        } else {
+            z = false;
+            z2 = false;
+        }
+        Uri[] uriArr = new Uri[size];
+        Format[] formatArr = new Format[size];
+        int[] iArr2 = new int[size];
+        int i4 = 0;
+        for (int i5 = 0; i5 < hlsMultivariantPlaylist.variants.size(); i5++) {
+            if ((!z || iArr[i5] == 2) && (!z2 || iArr[i5] != 1)) {
+                HlsMultivariantPlaylist.Variant variant = hlsMultivariantPlaylist.variants.get(i5);
+                uriArr[i4] = variant.url;
+                formatArr[i4] = variant.format;
+                iArr2[i4] = i5;
+                i4++;
+            }
+        }
+        String str = formatArr[0].codecs;
+        int codecCountOfType = Util.getCodecCountOfType(str, 2);
+        int codecCountOfType2 = Util.getCodecCountOfType(str, 1);
+        boolean z3 = (codecCountOfType2 == 1 || (codecCountOfType2 == 0 && hlsMultivariantPlaylist.audios.isEmpty())) && codecCountOfType <= 1 && codecCountOfType2 + codecCountOfType > 0;
+        HlsSampleStreamWrapper buildSampleStreamWrapper = buildSampleStreamWrapper("main", (z || codecCountOfType2 <= 0) ? 0 : 1, uriArr, formatArr, hlsMultivariantPlaylist.muxedAudioFormat, hlsMultivariantPlaylist.muxedCaptionFormats, map, j);
+        list.add(buildSampleStreamWrapper);
+        list2.add(iArr2);
+        if (this.allowChunklessPreparation && z3) {
+            ArrayList arrayList = new ArrayList();
+            if (codecCountOfType > 0) {
+                Format[] formatArr2 = new Format[size];
+                for (int i6 = 0; i6 < size; i6++) {
+                    formatArr2[i6] = deriveVideoFormat(formatArr[i6]);
+                }
+                arrayList.add(new TrackGroup("main", formatArr2));
+                if (codecCountOfType2 > 0 && (hlsMultivariantPlaylist.muxedAudioFormat != null || hlsMultivariantPlaylist.audios.isEmpty())) {
+                    arrayList.add(new TrackGroup("main:audio", deriveAudioFormat(formatArr[0], hlsMultivariantPlaylist.muxedAudioFormat, false)));
+                }
+                List<Format> list3 = hlsMultivariantPlaylist.muxedCaptionFormats;
+                if (list3 != null) {
+                    for (int i7 = 0; i7 < list3.size(); i7++) {
+                        arrayList.add(new TrackGroup("main:cc:" + i7, list3.get(i7)));
+                    }
+                }
+            } else {
+                Format[] formatArr3 = new Format[size];
+                for (int i8 = 0; i8 < size; i8++) {
+                    formatArr3[i8] = deriveAudioFormat(formatArr[i8], hlsMultivariantPlaylist.muxedAudioFormat, true);
+                }
+                arrayList.add(new TrackGroup("main", formatArr3));
+            }
+            TrackGroup trackGroup = new TrackGroup("main:id3", new Format.Builder().setId("ID3").setSampleMimeType(MimeTypes.APPLICATION_ID3).build());
+            arrayList.add(trackGroup);
+            buildSampleStreamWrapper.prepareWithMultivariantPlaylistInfo((TrackGroup[]) arrayList.toArray(new TrackGroup[0]), 0, arrayList.indexOf(trackGroup));
+        }
     }
 
     private void buildAndPrepareAudioSampleStreamWrappers(long j, List<HlsMultivariantPlaylist.Rendition> list, List<HlsSampleStreamWrapper> list2, List<int[]> list3, Map<String, DrmInitData> map) {
@@ -499,22 +567,22 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
 
     private static Format deriveAudioFormat(Format format, Format format2, boolean z) {
         String str;
-        Metadata metadata;
         int i;
         int i2;
-        int i3;
         String str2;
         String str3;
+        Metadata metadata;
+        int i3;
         if (format2 != null) {
             str2 = format2.codecs;
             metadata = format2.metadata;
             int i4 = format2.channelCount;
-            i2 = format2.selectionFlags;
+            i = format2.selectionFlags;
             int i5 = format2.roleFlags;
             String str4 = format2.language;
             str3 = format2.label;
-            i3 = i4;
-            i = i5;
+            i2 = i4;
+            i3 = i5;
             str = str4;
         } else {
             String codecsOfType = Util.getCodecsOfType(format.codecs, 1);
@@ -526,21 +594,21 @@ public final class HlsMediaPeriod implements MediaPeriod, HlsPlaylistTracker.Pla
                 str = format.language;
                 str2 = codecsOfType;
                 str3 = format.label;
-                i3 = i6;
-                i2 = i7;
+                i2 = i6;
+                i = i7;
                 metadata = metadata2;
-                i = i8;
+                i3 = i8;
             } else {
                 str = null;
-                metadata = metadata2;
                 i = 0;
-                i2 = 0;
-                i3 = -1;
+                i2 = -1;
                 str2 = codecsOfType;
                 str3 = null;
+                metadata = metadata2;
+                i3 = 0;
             }
         }
-        return new Format.Builder().setId(format.f100id).setLabel(str3).setContainerMimeType(format.containerMimeType).setSampleMimeType(MimeTypes.getMediaMimeType(str2)).setCodecs(str2).setMetadata(metadata).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setChannelCount(i3).setSelectionFlags(i2).setRoleFlags(i).setLanguage(str).build();
+        return new Format.Builder().setId(format.f100id).setLabel(str3).setContainerMimeType(format.containerMimeType).setSampleMimeType(MimeTypes.getMediaMimeType(str2)).setCodecs(str2).setMetadata(metadata).setAverageBitrate(z ? format.averageBitrate : -1).setPeakBitrate(z ? format.peakBitrate : -1).setChannelCount(i2).setSelectionFlags(i).setRoleFlags(i3).setLanguage(str).build();
     }
 
     /* loaded from: classes.dex */

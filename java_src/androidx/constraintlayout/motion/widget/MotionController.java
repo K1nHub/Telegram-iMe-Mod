@@ -62,7 +62,7 @@ public class MotionController {
             if (f2 != 1.0d) {
                 float f3 = this.mStaggerOffset;
                 if (position < f3) {
-                    position = BitmapDescriptorFactory.HUE_RED;
+                    position = 0.0f;
                 }
                 if (position > f3 && position < 1.0d) {
                     position = Math.min((position - f3) * f2, 1.0f);
@@ -100,14 +100,14 @@ public class MotionController {
     public boolean interpolate(View child, float global_position, long time, KeyCache keyCache) {
         ViewTimeCycle.PathRotate pathRotate;
         boolean z;
-        char c;
+        int i;
         double d;
         View view;
         float f;
         float adjustedPosition = getAdjustedPosition(global_position, null);
-        int i = this.mQuantizeMotionSteps;
-        if (i != Key.UNSET) {
-            float f2 = 1.0f / i;
+        int i2 = this.mQuantizeMotionSteps;
+        if (i2 != Key.UNSET) {
+            float f2 = 1.0f / i2;
             float floor = ((float) Math.floor(adjustedPosition / f2)) * f2;
             float f3 = (adjustedPosition % f2) / f2;
             if (!Float.isNaN(this.mQuantizeMotionPhase)) {
@@ -189,20 +189,20 @@ public class MotionController {
             }
             if (pathRotate != null) {
                 double[] dArr3 = this.mInterpolateVelocity;
-                c = 1;
+                i = 1;
                 z |= pathRotate.setPathRotate(child, keyCache, f4, time, dArr3[0], dArr3[1]);
             } else {
-                c = 1;
+                i = 1;
             }
-            int i2 = 1;
+            int i3 = i;
             while (true) {
                 CurveFit[] curveFitArr2 = this.mSpline;
-                if (i2 >= curveFitArr2.length) {
+                if (i3 >= curveFitArr2.length) {
                     break;
                 }
-                curveFitArr2[i2].getPos(d, this.mValuesBuff);
-                this.mStartMotionPath.attributes.get(this.mAttributeNames[i2 - 1]).setInterpolatedValue(child, this.mValuesBuff);
-                i2++;
+                curveFitArr2[i3].getPos(d, this.mValuesBuff);
+                this.mStartMotionPath.attributes.get(this.mAttributeNames[i3 - 1]).setInterpolatedValue(child, this.mValuesBuff);
+                i3++;
             }
             MotionConstrainedPoint motionConstrainedPoint = this.mStartPoint;
             if (motionConstrainedPoint.mVisibilityMode == 0) {
@@ -215,18 +215,18 @@ public class MotionController {
                 }
             }
             if (this.mKeyTriggers != null) {
-                int i3 = 0;
+                int i4 = 0;
                 while (true) {
                     KeyTrigger[] keyTriggerArr = this.mKeyTriggers;
-                    if (i3 >= keyTriggerArr.length) {
+                    if (i4 >= keyTriggerArr.length) {
                         break;
                     }
-                    keyTriggerArr[i3].conditionallyFire(f4, child);
-                    i3++;
+                    keyTriggerArr[i4].conditionallyFire(f4, child);
+                    i4++;
                 }
             }
         } else {
-            c = 1;
+            i = 1;
             MotionPaths motionPaths = this.mStartMotionPath;
             float f5 = motionPaths.f32x;
             MotionPaths motionPaths2 = this.mEndMotionPath;
@@ -238,24 +238,24 @@ public class MotionController {
             float f11 = motionPaths.height;
             float f12 = motionPaths2.height;
             float f13 = f6 + 0.5f;
-            int i4 = (int) f13;
+            int i5 = (int) f13;
             float f14 = f8 + 0.5f;
-            int i5 = (int) f14;
-            int i6 = (int) (f13 + ((f10 - f9) * f4) + f9);
-            int i7 = (int) (f14 + ((f12 - f11) * f4) + f11);
-            int i8 = i6 - i4;
+            int i6 = (int) f14;
+            int i7 = (int) (f13 + ((f10 - f9) * f4) + f9);
+            int i8 = (int) (f14 + ((f12 - f11) * f4) + f11);
             int i9 = i7 - i5;
+            int i10 = i8 - i6;
             if (f10 != f9 || f12 != f11) {
-                child.measure(View.MeasureSpec.makeMeasureSpec(i8, 1073741824), View.MeasureSpec.makeMeasureSpec(i9, 1073741824));
+                child.measure(View.MeasureSpec.makeMeasureSpec(i9, 1073741824), View.MeasureSpec.makeMeasureSpec(i10, 1073741824));
             }
-            child.layout(i4, i5, i6, i7);
+            child.layout(i5, i6, i7, i8);
         }
         HashMap<String, ViewOscillator> hashMap4 = this.mCycleMap;
         if (hashMap4 != null) {
             for (ViewOscillator viewOscillator : hashMap4.values()) {
                 if (viewOscillator instanceof ViewOscillator.PathRotateSet) {
                     double[] dArr4 = this.mInterpolateVelocity;
-                    ((ViewOscillator.PathRotateSet) viewOscillator).setPathRotate(child, f4, dArr4[0], dArr4[c]);
+                    ((ViewOscillator.PathRotateSet) viewOscillator).setPathRotate(child, f4, dArr4[0], dArr4[i]);
                 } else {
                     viewOscillator.setProperty(child, f4);
                 }

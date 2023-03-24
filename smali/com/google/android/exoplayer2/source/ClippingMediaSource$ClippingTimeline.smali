@@ -176,7 +176,7 @@
     if-nez p1, :cond_8
 
     :cond_7
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_8
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/source/ClippingMediaSource$ClippingTimeline;->isDynamic:Z

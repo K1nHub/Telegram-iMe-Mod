@@ -649,7 +649,7 @@
 
     array-length p2, p1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_5
     if-ge v0, p2, :cond_a
@@ -669,7 +669,7 @@
 
     array-length p2, p1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_6
     if-ge v0, p2, :cond_a

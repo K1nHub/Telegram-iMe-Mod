@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final getLength()J
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -67,9 +67,9 @@
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 10
     invoke-static {p0}, Lcom/google/android/gms/internal/firebase_ml/zzhq;->zzb(Lcom/google/android/gms/internal/firebase_ml/zzic;)J

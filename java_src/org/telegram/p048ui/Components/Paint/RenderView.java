@@ -72,7 +72,7 @@ public class RenderView extends TextureView {
         this.bitmap = bitmap;
         this.painting = painting;
         painting.setRenderView(this);
-        setSurfaceTextureListener(new TextureView$SurfaceTextureListenerC47631());
+        setSurfaceTextureListener(new TextureView$SurfaceTextureListenerC47781());
         this.input = new Input(this);
         this.shapeInput = new ShapeInput(this, new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
@@ -103,12 +103,12 @@ public class RenderView extends TextureView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Paint.RenderView$1 */
     /* loaded from: classes6.dex */
-    public class TextureView$SurfaceTextureListenerC47631 implements TextureView.SurfaceTextureListener {
+    public class TextureView$SurfaceTextureListenerC47781 implements TextureView.SurfaceTextureListener {
         @Override // android.view.TextureView.SurfaceTextureListener
         public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
 
-        TextureView$SurfaceTextureListenerC47631() {
+        TextureView$SurfaceTextureListenerC47781() {
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
@@ -122,7 +122,7 @@ public class RenderView extends TextureView {
             RenderView.this.post(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.TextureView$SurfaceTextureListenerC47631.this.lambda$onSurfaceTextureAvailable$0();
+                    RenderView.TextureView$SurfaceTextureListenerC47781.this.lambda$onSurfaceTextureAvailable$0();
                 }
             });
             if (RenderView.this.painting.isPaused()) {
@@ -148,7 +148,7 @@ public class RenderView extends TextureView {
             RenderView.this.internal.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RenderView.TextureView$SurfaceTextureListenerC47631.this.lambda$onSurfaceTextureSizeChanged$1();
+                    RenderView.TextureView$SurfaceTextureListenerC47781.this.lambda$onSurfaceTextureSizeChanged$1();
                 }
             });
         }
@@ -166,7 +166,7 @@ public class RenderView extends TextureView {
                 RenderView.this.painting.onPause(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RenderView.TextureView$SurfaceTextureListenerC47631.this.lambda$onSurfaceTextureDestroyed$2();
+                        RenderView.TextureView$SurfaceTextureListenerC47781.this.lambda$onSurfaceTextureDestroyed$2();
                     }
                 });
             }
@@ -387,7 +387,7 @@ public class RenderView extends TextureView {
 
         public CanvasInternal(SurfaceTexture surfaceTexture) {
             super("CanvasInternal");
-            this.drawRunnable = new RunnableC47651();
+            this.drawRunnable = new RunnableC47801();
             this.surfaceTexture = surfaceTexture;
         }
 
@@ -505,8 +505,8 @@ public class RenderView extends TextureView {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$1 */
         /* loaded from: classes6.dex */
-        public class RunnableC47651 implements Runnable {
-            RunnableC47651() {
+        public class RunnableC47801 implements Runnable {
+            RunnableC47801() {
             }
 
             @Override // java.lang.Runnable
@@ -527,7 +527,7 @@ public class RenderView extends TextureView {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.RenderView$CanvasInternal$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            RenderView.CanvasInternal.RunnableC47651.this.lambda$run$0();
+                            RenderView.CanvasInternal.RunnableC47801.this.lambda$run$0();
                         }
                     });
                 }

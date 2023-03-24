@@ -22,16 +22,16 @@
 
 # direct methods
 .method public constructor <init>(IJ)V
-    .locals 3
+    .locals 2
 
     .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 

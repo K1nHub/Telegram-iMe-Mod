@@ -310,7 +310,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-virtual {v0, p1}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 

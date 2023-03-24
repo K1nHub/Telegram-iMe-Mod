@@ -31,18 +31,22 @@
 
 
 # instance fields
+.field final synthetic $forceUpdate:Z
+
 .field final synthetic $isLoadMore:Z
 
 .field final synthetic this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;
 
 
 # direct methods
-.method constructor <init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;Z)V
+.method constructor <init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;ZZ)V
     .locals 0
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;
 
     iput-boolean p2, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$isLoadMore:Z
+
+    iput-boolean p3, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$forceUpdate:Z
 
     const/4 p1, 0x1
 
@@ -130,12 +134,11 @@
 
     move-result-object p1
 
-    .line 135
+    .line 136
     iget-boolean v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$isLoadMore:Z
 
     if-eqz v0, :cond_2
 
-    .line 136
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -148,8 +151,26 @@
 
     goto :goto_0
 
-    .line 138
+    .line 137
     :cond_2
+    iget-boolean v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$forceUpdate:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;
+
+    invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;
+
+    invoke-interface {v0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;->renderInitialItems(Ljava/util/List;)V
+
+    goto :goto_0
+
+    .line 138
+    :cond_3
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;

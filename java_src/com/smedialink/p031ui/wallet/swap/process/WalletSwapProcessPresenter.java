@@ -78,7 +78,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: WalletSwapProcessPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter */
@@ -283,11 +283,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     public final void approve() {
         ApproveArgs resolveApproveArgs;
         if (isValidForApprove() && (resolveApproveArgs = resolveApproveArgs()) != null) {
-            Observable<Result<String>> observeOn = this.swapInteractor.approveToken(resolveApproveArgs).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<String>> observeOn = this.swapInteractor.approveToken(resolveApproveArgs).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "swapInteractor\n         …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2275x8810b3d1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2276x8810b3d2((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2289x8810b3d1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2290x8810b3d2((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -328,13 +328,13 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     public final DialogModel getApproveTokenDescriptionModel() {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3286R.string.wallet_swap_process_what_is_approve_dialog_description), null, this.resourceManager.getString(C3286R.string.common_ok), 4, null);
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3301R.string.wallet_swap_process_what_is_approve_dialog_description), null, this.resourceManager.getString(C3301R.string.common_ok), 4, null);
     }
 
     public final DialogModel getApproveConfirmationDialogModel() {
-        String string = this.resourceManager.getString(C3286R.string.wallet_swap_process_confirm_approve_alert_title);
+        String string = this.resourceManager.getString(C3301R.string.wallet_swap_process_confirm_approve_alert_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3286R.string.wallet_swap_process_confirm_approve_alert_description;
+        int i = C3301R.string.wallet_swap_process_confirm_approve_alert_description;
         Object[] objArr = new Object[1];
         SelectableToken selectableToken = this.inputToken;
         String ticker = selectableToken != null ? selectableToken.getTicker() : null;
@@ -342,7 +342,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             ticker = "";
         }
         objArr[0] = ticker;
-        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_swap_process_confirm_approve_alert_action));
+        return new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.wallet_swap_process_confirm_approve_alert_action));
     }
 
     public final void startSelectTokenDialog(final SwapSide side) {
@@ -373,7 +373,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             } else if (i == 2) {
                 if (this.inputToken == null) {
-                    ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_swap_process_give_token_validation));
+                    ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_swap_process_give_token_validation));
                     return;
                 }
                 Pair<String, ? extends List<OutputConvertToken>> pair = this.binanceAvailableOppositeSelectableSwapTokens;
@@ -639,7 +639,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     public final void setupSwapInformation() {
         WalletSwapProcessFragment.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
-            ((WalletSwapProcessView) getViewState()).setupScreenForSwap(this.resourceManager.getString(C3286R.string.binance_convert_toolbar_title), this.resourceManager.getString(C3286R.string.binance_convert_description), C3286R.C3288drawable.fork_ic_bnb_logo, false, WalletSwapProcessFragment.NetworkSwitchType.GLOBAL);
+            ((WalletSwapProcessView) getViewState()).setupScreenForSwap(this.resourceManager.getString(C3301R.string.binance_convert_toolbar_title), this.resourceManager.getString(C3301R.string.binance_convert_description), C3301R.C3303drawable.fork_ic_bnb_logo, false, WalletSwapProcessFragment.NetworkSwitchType.GLOBAL);
         } else if (screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) {
             Pair<WalletSwapProcessFragment.NetworkSwitchType, Boolean> networkSwitchState = getNetworkSwitchState();
             WalletSwapProcessFragment.NetworkSwitchType component1 = networkSwitchState.component1();
@@ -654,21 +654,21 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             if (i == 2 || i == 3 || i == 4) {
                 WalletSwapProcessFragment.NetworkSwitchType networkSwitchType = WalletSwapProcessFragment.NetworkSwitchType.GLOBAL;
                 WalletSwapProcessFragment.ScreenType screenType = this.screenType;
-                return TuplesKt.m100to(networkSwitchType, Boolean.valueOf(((screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) && ((WalletSwapProcessFragment.ScreenType.Crypto) screenType).getForcedNetworkType() == null) ? false : false));
+                return TuplesKt.m99to(networkSwitchType, Boolean.valueOf(((screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) && ((WalletSwapProcessFragment.ScreenType.Crypto) screenType).getForcedNetworkType() == null) ? false : false));
             }
-            return TuplesKt.m100to(WalletSwapProcessFragment.NetworkSwitchType.GLOBAL, Boolean.FALSE);
+            return TuplesKt.m99to(WalletSwapProcessFragment.NetworkSwitchType.GLOBAL, Boolean.FALSE);
         }
-        return TuplesKt.m100to(WalletSwapProcessFragment.NetworkSwitchType.CROSS_CHAIN, Boolean.TRUE);
+        return TuplesKt.m99to(WalletSwapProcessFragment.NetworkSwitchType.CROSS_CHAIN, Boolean.TRUE);
     }
 
     private final void swapCrypto() {
         SwapArgs resolveSwapArgs;
         if (isValidForCryptoSwap() && (resolveSwapArgs = resolveSwapArgs()) != null) {
-            Observable<Result<String>> observeOn = this.swapInteractor.swap(resolveSwapArgs).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<String>> observeOn = this.swapInteractor.swap(resolveSwapArgs).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "swapInteractor\n         …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2295x471dfc16(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2296x471dfc17((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2309x471dfc16(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2310x471dfc17((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -682,11 +682,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             if (quoteId == null) {
                 quoteId = "";
             }
-            Observable<Result<Boolean>> observeOn = binanceInternalInteractor.confirmConvertQuote(quoteId).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<Boolean>> observeOn = binanceInternalInteractor.confirmConvertQuote(quoteId).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2293x71745cc7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2294x71745cc8((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2307x71745cc7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2308x71745cc8((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -694,11 +694,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     private final void prepareForSwapBinance(String str, String str2, String str3) {
         if (isValidForPrepareSwap(str)) {
-            Observable<Result<BinanceConvertQuote>> observeOn = this.binanceInternalInteractor.getConvertQuote(str2, str3, str).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<BinanceConvertQuote>> observeOn = this.binanceInternalInteractor.getConvertQuote(str2, str3, str).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2289x90737ee5(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2290x90737ee6((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2303x90737ee5(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2304x90737ee6((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -708,11 +708,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         if (isValidForPrepareSwap(str)) {
             SwapInteractor swapInteractor = this.swapInteractor;
             TokenCode.Companion companion = TokenCode.Companion;
-            Observable<Result<CryptoSwapMetadata>> observeOn = swapInteractor.getQuoteToSwap(companion.map(str2), companion.map(str3), str, TradeType.EXACT_INPUT, SwapSlippage.PERCENT_5.getPercent(), getSelectedNetworkTypeBySwapSide(SwapSide.INPUT), getSelectedNetworkTypeBySwapSide(SwapSide.OUTPUT), swapProtocol).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<CryptoSwapMetadata>> observeOn = swapInteractor.getQuoteToSwap(companion.map(str2), companion.map(str3), str, TradeType.EXACT_INPUT, SwapSlippage.PERCENT_5.getPercent(), getSelectedNetworkTypeBySwapSide(SwapSide.INPUT), getSelectedNetworkTypeBySwapSide(SwapSide.OUTPUT), swapProtocol).observeOn(this.schedulersProvider.mo706ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "swapInteractor\n         …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2291xdcc31e38(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2292xdcc31e39((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2305xdcc31e38(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2306xdcc31e39((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -728,17 +728,17 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     private final void loadBalanceBinance(SelectableToken selectableToken) {
-        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2285x263949c2(this, selectableToken)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2286x263949c3((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2299x263949c2(this, selectableToken)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2300x263949c3((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadBalanceCrypto(TokenCode tokenCode) {
-        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, tokenCode, false, getSelectedNetworkTypeBySwapSide$default(this, null, 1, null), 2, null).observeOn(this.schedulersProvider.mo707ui());
+        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, tokenCode, false, getSelectedNetworkTypeBySwapSide$default(this, null, 1, null), 2, null).observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2287xe9da03bb(this, tokenCode)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2288xe9da03bc((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2301xe9da03bb(this, tokenCode)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2302xe9da03bc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -759,7 +759,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     private final void loadAvailableSwapTokensCrypto(SwapSide swapSide, boolean z, Callbacks$Callback callbacks$Callback) {
         if (this.screenType instanceof WalletSwapProcessFragment.ScreenType.Crypto) {
             NetworkType selectedNetworkTypeBySwapSide = getSelectedNetworkTypeBySwapSide(swapSide);
-            Observable<Result<List<TokenInfo>>> observeOn = this.swapInteractor.getAvailableTokensToSwap(selectedNetworkTypeBySwapSide, this.swapProtocol).observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<List<TokenInfo>>> observeOn = this.swapInteractor.getAvailableTokensToSwap(selectedNetworkTypeBySwapSide, this.swapProtocol).observeOn(this.schedulersProvider.mo706ui());
             final WalletSwapProcessPresenter$loadAvailableSwapTokensCrypto$2 walletSwapProcessPresenter$loadAvailableSwapTokensCrypto$2 = new WalletSwapProcessPresenter$loadAvailableSwapTokensCrypto$2(z, this);
             Observable<R> compose = observeOn.compose(new ObservableTransformer() { // from class: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda1
                 @Override // io.reactivex.ObservableTransformer
@@ -770,7 +770,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             });
             Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAvailabl…     .autoDispose()\n    }");
-            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2283x5065f295(this, selectedNetworkTypeBySwapSide, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2284x5065f296((BaseView) getViewState())));
+            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2297x5065f295(this, selectedNetworkTypeBySwapSide, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2298x5065f296((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -795,7 +795,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     private final void loadAvailableSwapTokensBinance(boolean z, Callbacks$Callback callbacks$Callback) {
         if (this.screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
-            Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForConvert().observeOn(this.schedulersProvider.mo707ui());
+            Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForConvert().observeOn(this.schedulersProvider.mo706ui());
             final WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2 walletSwapProcessPresenter$loadAvailableSwapTokensBinance$2 = new WalletSwapProcessPresenter$loadAvailableSwapTokensBinance$2(z, this);
             Observable<R> compose = observeOn.compose(new ObservableTransformer() { // from class: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda0
                 @Override // io.reactivex.ObservableTransformer
@@ -806,7 +806,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             });
             Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAvailabl…     .autoDispose()\n    }");
-            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2281x912b3628(this, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2282x912b3629((BaseView) getViewState())));
+            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2295x912b3628(this, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2296x912b3629((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -831,8 +831,8 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     private final void loadAvailableOppositeSwapTokensBinance(String str, boolean z, Callbacks$Callback callbacks$Callback) {
         if (this.screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
-            Observable<Result<List<OutputConvertToken>>> observeOn = this.binanceInternalInteractor.getOppositeTokensForConvertByToken(str).observeOn(this.schedulersProvider.mo707ui());
-            final C2297xa8fd99cc c2297xa8fd99cc = new C2297xa8fd99cc(z, this);
+            Observable<Result<List<OutputConvertToken>>> observeOn = this.binanceInternalInteractor.getOppositeTokensForConvertByToken(str).observeOn(this.schedulersProvider.mo706ui());
+            final C2311xa8fd99cc c2311xa8fd99cc = new C2311xa8fd99cc(z, this);
             Observable<R> compose = observeOn.compose(new ObservableTransformer() { // from class: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda2
                 @Override // io.reactivex.ObservableTransformer
                 public final ObservableSource apply(Observable observable) {
@@ -842,7 +842,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             });
             Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAvailabl…     .autoDispose()\n    }");
-            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2279x9b0acc81(this, str, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2280x9b0acc82((BaseView) getViewState())));
+            Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2293x9b0acc81(this, str, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2294x9b0acc82((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -891,14 +891,14 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                     loadApproveTokensInfo$lambda$27 = WalletSwapProcessPresenter.loadApproveTokensInfo$lambda$27(Function1.this, obj);
                     return loadApproveTokensInfo$lambda$27;
                 }
-            }).observeOn(this.schedulersProvider.mo707ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda3
+            }).observeOn(this.schedulersProvider.mo706ui()).doFinally(new Action() { // from class: com.smedialink.ui.wallet.swap.process.WalletSwapProcessPresenter$$ExternalSyntheticLambda3
                 @Override // io.reactivex.functions.Action
                 public final void run() {
                     WalletSwapProcessPresenter.loadApproveTokensInfo$lambda$28(z2, this);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(doFinally, "private fun loadApproveT…}\n                }\n    }");
-            Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2277x9faf7813(this, selectedNetworkTypeBySwapSide$default, z, z2)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2278x9faf7814((BaseView) getViewState())));
+            Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2291x9faf7813(this, selectedNetworkTypeBySwapSide$default, z, z2)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2292x9faf7814((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             this.loadApproveMetadataDisposable = subscribe;
         }
@@ -1056,8 +1056,8 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 TokenInfo map2 = TokenInfo.Companion.map(map);
                 Intrinsics.checkNotNull(map2, "null cannot be cast to non-null type com.smedialink.storage.domain.model.wallet.token.TokenInfo.Crypto.Ethereum");
                 TokenInfo.Crypto.Ethereum ethereum = (TokenInfo.Crypto.Ethereum) map2;
-                Wallet wallet = this.accessManager.getWallet(this.cryptoPreferenceHelper.getCurrentBlockchainType());
-                String address = wallet != null ? wallet.getAddress() : null;
+                Wallet wallet2 = this.accessManager.getWallet(this.cryptoPreferenceHelper.getCurrentBlockchainType());
+                String address = wallet2 != null ? wallet2.getAddress() : null;
                 String str = address == null ? "" : address;
                 CryptoTokenApproveMetadata.NeedApprove needApprove = (CryptoTokenApproveMetadata.NeedApprove) cryptoTokenApproveMetadata;
                 BigInteger bigInteger = new BigInteger(needApprove.getValue());
@@ -1153,7 +1153,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         DialogModel feeDialogModel = getFeeDialogModel();
         CryptoTokenApproveMetadata.NeedApprove needApprove = this.approveMetadata;
         Intrinsics.checkNotNull(needApprove);
-        TransactionParams transactionParams = needApprove.getTransactionParams();
+        TransactionParams.Ether transactionParams = needApprove.getTransactionParams();
         TokenInfo.Companion companion = TokenInfo.Companion;
         CryptoTokenApproveMetadata.NeedApprove needApprove2 = this.approveMetadata;
         Intrinsics.checkNotNull(needApprove2);
@@ -1180,13 +1180,13 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         boolean z;
         SelectableToken selectableToken = this.inputToken;
         if (selectableToken == null) {
-            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_swap_process_give_token_validation));
+            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_swap_process_give_token_validation));
         } else {
             SelectableToken selectableToken2 = this.outputToken;
             if (selectableToken2 == null) {
-                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_swap_process_receive_token_amount_validation));
+                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_swap_process_receive_token_amount_validation));
             } else if (Intrinsics.areEqual(selectableToken, selectableToken2)) {
-                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_swap_process_diff_tokens_validation));
+                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_swap_process_diff_tokens_validation));
             } else {
                 if (!(str.length() == 0)) {
                     doubleOrNull = StringsKt__StringNumberConversionsJVMKt.toDoubleOrNull(str);
@@ -1207,12 +1207,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                                 z = true;
                                 return (this.state instanceof SwapUiState.PrepareSwap) && z;
                             }
-                            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_swap_process_approve_info_not_loaded_yet_validation));
+                            ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_swap_process_approve_info_not_loaded_yet_validation));
                             loadApproveTokensInfo(false, true);
                         }
                     }
                 }
-                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_amount_enter_valid_amount_title));
+                ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3301R.string.wallet_amount_enter_valid_amount_title));
             }
         }
         z = false;
@@ -1245,7 +1245,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             boolean r4 = r0.isEmpty()
             if (r4 == 0) goto L23
         L21:
-            r0 = 0
+            r0 = r2
             goto L4c
         L23:
             java.util.Iterator r0 = r0.iterator()
@@ -1265,18 +1265,18 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         L45:
             boolean r4 = kotlin.jvm.internal.Intrinsics.areEqual(r4, r5)
             if (r4 == 0) goto L27
-            r0 = 1
+            r0 = r1
         L4c:
             if (r0 != r1) goto L50
-            r0 = 1
+            r0 = r1
             goto L51
         L50:
-            r0 = 0
+            r0 = r2
         L51:
             if (r0 == 0) goto L54
             goto L55
         L54:
-            r1 = 0
+            r1 = r2
         L55:
             return r1
         */
@@ -1330,7 +1330,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3286R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3301R.string.common_cancel), 6, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1374,11 +1374,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
     private final DialogModel getSwapConfirmationDialogModel() {
         String string;
-        String string2 = this.resourceManager.getString(C3286R.string.wallet_swap_process_confirm_swap_alert_title);
+        String string2 = this.resourceManager.getString(C3301R.string.wallet_swap_process_confirm_swap_alert_title);
         WalletSwapProcessFragment.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletSwapProcessFragment.ScreenType.Binance) {
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3286R.string.wallet_swap_process_confirm_swap_alert_description;
+            int i = C3301R.string.wallet_swap_process_confirm_swap_alert_description;
             Object[] objArr = new Object[4];
             BinanceConvertQuote binanceConvertQuote = this.binanceConvertQuote;
             Number valueOf = binanceConvertQuote != null ? Double.valueOf(binanceConvertQuote.getInputAmount()) : 0;
@@ -1400,7 +1400,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             throw new NoWhenBranchMatchedException();
         } else {
             ResourceManager resourceManager2 = this.resourceManager;
-            int i2 = C3286R.string.wallet_swap_process_confirm_swap_alert_description;
+            int i2 = C3301R.string.wallet_swap_process_confirm_swap_alert_description;
             CryptoSwapMetadata cryptoSwapMetadata = this.swapMetadata;
             Intrinsics.checkNotNull(cryptoSwapMetadata);
             BigDecimal amountIn = cryptoSwapMetadata.getAmountIn();
@@ -1419,12 +1419,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             Intrinsics.checkNotNull(cryptoSwapMetadata6);
             string = resourceManager2.getString(i2, BalanceFormatter.formatBalance(amountIn, cryptoSwapMetadata2.getInputTokenInfo().getDecimals()), resourceManager3.getString(cryptoSwapMetadata3.getInputTokenInfo().getShortName()), BalanceFormatter.formatBalance(amountOut, cryptoSwapMetadata5.getOutputTokenInfo().getDecimals()), resourceManager4.getString(cryptoSwapMetadata6.getOutputTokenInfo().getShortName()));
         }
-        return new DialogModel(string2, string, this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_swap_process_confirm_swap_alert_action));
+        return new DialogModel(string2, string, this.resourceManager.getString(C3301R.string.common_cancel), this.resourceManager.getString(C3301R.string.wallet_swap_process_confirm_swap_alert_action));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String formatBinanceBalance(BinanceTokenBalanceInfo binanceTokenBalanceInfo) {
-        return this.resourceManager.getString(C3286R.string.binance_convert_balance, BinanceTokenBalanceExtKt.getSpotBalanceShortText(binanceTokenBalanceInfo), BinanceTokenBalanceExtKt.getMarginBalanceShortText(binanceTokenBalanceInfo));
+        return this.resourceManager.getString(C3301R.string.binance_convert_balance, BinanceTokenBalanceExtKt.getSpotBalanceShortText(binanceTokenBalanceInfo), BinanceTokenBalanceExtKt.getMarginBalanceShortText(binanceTokenBalanceInfo));
     }
 
     /* compiled from: WalletSwapProcessPresenter.kt */

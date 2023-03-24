@@ -65,7 +65,7 @@
 
     if-nez p3, :cond_0
 
-    const/4 p1, 0x0
+    move p1, p2
 
     goto :goto_0
 
@@ -81,7 +81,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p4, 0x0
+    move p4, p2
 
     .line 307
     :goto_1
@@ -115,7 +115,7 @@
 
     if-nez p3, :cond_0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     goto :goto_0
 
@@ -128,7 +128,7 @@
 
     if-nez p4, :cond_1
 
-    const/4 p3, 0x0
+    move p3, p2
 
     goto :goto_1
 
@@ -183,7 +183,7 @@
 
     if-nez p3, :cond_0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     goto :goto_0
 
@@ -196,7 +196,7 @@
 
     if-nez p4, :cond_1
 
-    const/4 p4, 0x0
+    move p4, p2
 
     goto :goto_1
 
@@ -715,7 +715,7 @@
 
     const/high16 v2, 0x42c80000    # 100.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 

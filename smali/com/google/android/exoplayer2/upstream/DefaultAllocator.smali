@@ -50,12 +50,12 @@
 
     if-lez p2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 63
     :goto_0
@@ -66,7 +66,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 64
     :goto_1
@@ -246,7 +246,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     monitor-exit p0
 

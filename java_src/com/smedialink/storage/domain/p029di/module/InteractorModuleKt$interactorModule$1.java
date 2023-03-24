@@ -116,219 +116,219 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
         List emptyList23;
         List emptyList24;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C18101 c18101 = C18101.INSTANCE;
+        C18181 c18181 = C18181.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, c18101, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, c18181, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C18212 c18212 = C18212.INSTANCE;
+        C18292 c18292 = C18292.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSessionInteractor.class), null, c18212, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSessionInteractor.class), null, c18292, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C18273 c18273 = C18273.INSTANCE;
+        C18353 c18353 = C18353.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, c18273, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, c18353, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C18284 c18284 = C18284.INSTANCE;
+        C18364 c18364 = C18364.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationInteractor.class), null, c18284, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationInteractor.class), null, c18364, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new Pair(module, singleInstanceFactory4);
-        C18295 c18295 = C18295.INSTANCE;
+        C18375 c18375 = C18375.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(GoogleServicesInteractor.class), null, c18295, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(GoogleServicesInteractor.class), null, c18375, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new Pair(module, singleInstanceFactory5);
-        C18306 c18306 = C18306.INSTANCE;
+        C18386 c18386 = C18386.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(RemoteConfigInteractor.class), null, c18306, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(RemoteConfigInteractor.class), null, c18386, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new Pair(module, singleInstanceFactory6);
-        C18317 c18317 = C18317.INSTANCE;
+        C18397 c18397 = C18397.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, c18317, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, c18397, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new Pair(module, singleInstanceFactory7);
-        C18328 c18328 = C18328.INSTANCE;
+        C18408 c18408 = C18408.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(KiklikoInteractor.class), null, c18328, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(KiklikoInteractor.class), null, c18408, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new Pair(module, singleInstanceFactory8);
-        C18339 c18339 = C18339.INSTANCE;
+        C18419 c18419 = C18419.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, c18339, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, c18419, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new Pair(module, singleInstanceFactory9);
-        C181110 c181110 = C181110.INSTANCE;
+        C181910 c181910 = C181910.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, c181110, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, c181910, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new Pair(module, singleInstanceFactory10);
-        C181211 c181211 = C181211.INSTANCE;
+        C182011 c182011 = C182011.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, c181211, kind, emptyList11));
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, c182011, kind, emptyList11));
         module.indexPrimaryType(singleInstanceFactory11);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory11);
         }
         new Pair(module, singleInstanceFactory11);
-        C181312 c181312 = C181312.INSTANCE;
+        C182112 c182112 = C182112.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(PinCodeInteractor.class), null, c181312, kind, emptyList12));
+        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(PinCodeInteractor.class), null, c182112, kind, emptyList12));
         module.indexPrimaryType(singleInstanceFactory12);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory12);
         }
         new Pair(module, singleInstanceFactory12);
-        C181413 c181413 = C181413.INSTANCE;
+        C182213 c182213 = C182213.INSTANCE;
         StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
         emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, c181413, kind, emptyList13));
+        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, c182213, kind, emptyList13));
         module.indexPrimaryType(singleInstanceFactory13);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory13);
         }
         new Pair(module, singleInstanceFactory13);
-        C181514 c181514 = C181514.INSTANCE;
+        C182314 c182314 = C182314.INSTANCE;
         StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
         emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, c181514, kind, emptyList14));
+        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, c182314, kind, emptyList14));
         module.indexPrimaryType(singleInstanceFactory14);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory14);
         }
         new Pair(module, singleInstanceFactory14);
-        C181615 c181615 = C181615.INSTANCE;
+        C182415 c182415 = C182415.INSTANCE;
         StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
         emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, c181615, kind, emptyList15));
+        SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, c182415, kind, emptyList15));
         module.indexPrimaryType(singleInstanceFactory15);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory15);
         }
         new Pair(module, singleInstanceFactory15);
-        C181716 c181716 = C181716.INSTANCE;
+        C182516 c182516 = C182516.INSTANCE;
         StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
         emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CancelInteractor.class), null, c181716, kind, emptyList16));
+        SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CancelInteractor.class), null, c182516, kind, emptyList16));
         module.indexPrimaryType(singleInstanceFactory16);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory16);
         }
         new Pair(module, singleInstanceFactory16);
-        C181817 c181817 = C181817.INSTANCE;
+        C182617 c182617 = C182617.INSTANCE;
         StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
         emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(DonationsInteractor.class), null, c181817, kind, emptyList17));
+        SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(DonationsInteractor.class), null, c182617, kind, emptyList17));
         module.indexPrimaryType(singleInstanceFactory17);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory17);
         }
         new Pair(module, singleInstanceFactory17);
-        C181918 c181918 = C181918.INSTANCE;
+        C182718 c182718 = C182718.INSTANCE;
         StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
         emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(BoostInteractor.class), null, c181918, kind, emptyList18));
+        SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(BoostInteractor.class), null, c182718, kind, emptyList18));
         module.indexPrimaryType(singleInstanceFactory18);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory18);
         }
         new Pair(module, singleInstanceFactory18);
-        C182019 c182019 = C182019.INSTANCE;
+        C182819 c182819 = C182819.INSTANCE;
         StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
         emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CryptoPermissionInteractor.class), null, c182019, kind, emptyList19));
+        SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CryptoPermissionInteractor.class), null, c182819, kind, emptyList19));
         module.indexPrimaryType(singleInstanceFactory19);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory19);
         }
         new Pair(module, singleInstanceFactory19);
-        C182220 c182220 = C182220.INSTANCE;
+        C183020 c183020 = C183020.INSTANCE;
         StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
         emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, c182220, kind, emptyList20));
+        SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, c183020, kind, emptyList20));
         module.indexPrimaryType(singleInstanceFactory20);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory20);
         }
         new Pair(module, singleInstanceFactory20);
-        C182321 c182321 = C182321.INSTANCE;
+        C183121 c183121 = C183121.INSTANCE;
         StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
         emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(WalletConnectInteractor.class), null, c182321, kind, emptyList21));
+        SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(WalletConnectInteractor.class), null, c183121, kind, emptyList21));
         module.indexPrimaryType(singleInstanceFactory21);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory21);
         }
         new Pair(module, singleInstanceFactory21);
-        C182422 c182422 = C182422.INSTANCE;
+        C183222 c183222 = C183222.INSTANCE;
         StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
         emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(AirdropInteractor.class), null, c182422, kind, emptyList22));
+        SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(AirdropInteractor.class), null, c183222, kind, emptyList22));
         module.indexPrimaryType(singleInstanceFactory22);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory22);
         }
         new Pair(module, singleInstanceFactory22);
-        C182523 c182523 = C182523.INSTANCE;
+        C183323 c183323 = C183323.INSTANCE;
         StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
         emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(NftAvatarInteractor.class), null, c182523, kind, emptyList23));
+        SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(NftAvatarInteractor.class), null, c183323, kind, emptyList23));
         module.indexPrimaryType(singleInstanceFactory23);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory23);
         }
         new Pair(module, singleInstanceFactory23);
-        C182624 c182624 = C182624.INSTANCE;
+        C183424 c183424 = C183424.INSTANCE;
         StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
         emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(ReactionInteractor.class), null, c182624, kind, emptyList24));
+        SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(ReactionInteractor.class), null, c183424, kind, emptyList24));
         module.indexPrimaryType(singleInstanceFactory24);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory24);
@@ -340,10 +340,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C18284 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationInteractor> {
-        public static final C18284 INSTANCE = new C18284();
+    public static final class C18364 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationInteractor> {
+        public static final C18364 INSTANCE = new C18364();
 
-        C18284() {
+        C18364() {
             super(2);
         }
 
@@ -359,10 +359,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C18295 extends Lambda implements Function2<Scope, ParametersHolder, GoogleServicesInteractor> {
-        public static final C18295 INSTANCE = new C18295();
+    public static final class C18375 extends Lambda implements Function2<Scope, ParametersHolder, GoogleServicesInteractor> {
+        public static final C18375 INSTANCE = new C18375();
 
-        C18295() {
+        C18375() {
             super(2);
         }
 
@@ -378,10 +378,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C18306 extends Lambda implements Function2<Scope, ParametersHolder, RemoteConfigInteractor> {
-        public static final C18306 INSTANCE = new C18306();
+    public static final class C18386 extends Lambda implements Function2<Scope, ParametersHolder, RemoteConfigInteractor> {
+        public static final C18386 INSTANCE = new C18386();
 
-        C18306() {
+        C18386() {
             super(2);
         }
 
@@ -397,10 +397,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C18317 extends Lambda implements Function2<Scope, ParametersHolder, DynamicLinksInteractor> {
-        public static final C18317 INSTANCE = new C18317();
+    public static final class C18397 extends Lambda implements Function2<Scope, ParametersHolder, DynamicLinksInteractor> {
+        public static final C18397 INSTANCE = new C18397();
 
-        C18317() {
+        C18397() {
             super(2);
         }
 
@@ -416,10 +416,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C18328 extends Lambda implements Function2<Scope, ParametersHolder, KiklikoInteractor> {
-        public static final C18328 INSTANCE = new C18328();
+    public static final class C18408 extends Lambda implements Function2<Scope, ParametersHolder, KiklikoInteractor> {
+        public static final C18408 INSTANCE = new C18408();
 
-        C18328() {
+        C18408() {
             super(2);
         }
 
@@ -435,10 +435,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C18339 extends Lambda implements Function2<Scope, ParametersHolder, CatalogInteractor> {
-        public static final C18339 INSTANCE = new C18339();
+    public static final class C18419 extends Lambda implements Function2<Scope, ParametersHolder, CatalogInteractor> {
+        public static final C18419 INSTANCE = new C18419();
 
-        C18339() {
+        C18419() {
             super(2);
         }
 
@@ -454,10 +454,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C181110 extends Lambda implements Function2<Scope, ParametersHolder, TwitterInteractor> {
-        public static final C181110 INSTANCE = new C181110();
+    public static final class C181910 extends Lambda implements Function2<Scope, ParametersHolder, TwitterInteractor> {
+        public static final C181910 INSTANCE = new C181910();
 
-        C181110() {
+        C181910() {
             super(2);
         }
 
@@ -473,10 +473,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$13 */
     /* loaded from: classes3.dex */
-    public static final class C181413 extends Lambda implements Function2<Scope, ParametersHolder, SimplexInteractor> {
-        public static final C181413 INSTANCE = new C181413();
+    public static final class C182213 extends Lambda implements Function2<Scope, ParametersHolder, SimplexInteractor> {
+        public static final C182213 INSTANCE = new C182213();
 
-        C181413() {
+        C182213() {
             super(2);
         }
 
@@ -492,10 +492,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$14 */
     /* loaded from: classes3.dex */
-    public static final class C181514 extends Lambda implements Function2<Scope, ParametersHolder, SwapInteractor> {
-        public static final C181514 INSTANCE = new C181514();
+    public static final class C182314 extends Lambda implements Function2<Scope, ParametersHolder, SwapInteractor> {
+        public static final C182314 INSTANCE = new C182314();
 
-        C181514() {
+        C182314() {
             super(2);
         }
 
@@ -511,10 +511,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$17 */
     /* loaded from: classes3.dex */
-    public static final class C181817 extends Lambda implements Function2<Scope, ParametersHolder, DonationsInteractor> {
-        public static final C181817 INSTANCE = new C181817();
+    public static final class C182617 extends Lambda implements Function2<Scope, ParametersHolder, DonationsInteractor> {
+        public static final C182617 INSTANCE = new C182617();
 
-        C181817() {
+        C182617() {
             super(2);
         }
 
@@ -530,10 +530,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$18 */
     /* loaded from: classes3.dex */
-    public static final class C181918 extends Lambda implements Function2<Scope, ParametersHolder, BoostInteractor> {
-        public static final C181918 INSTANCE = new C181918();
+    public static final class C182718 extends Lambda implements Function2<Scope, ParametersHolder, BoostInteractor> {
+        public static final C182718 INSTANCE = new C182718();
 
-        C181918() {
+        C182718() {
             super(2);
         }
 
@@ -549,10 +549,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$19 */
     /* loaded from: classes3.dex */
-    public static final class C182019 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPermissionInteractor> {
-        public static final C182019 INSTANCE = new C182019();
+    public static final class C182819 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPermissionInteractor> {
+        public static final C182819 INSTANCE = new C182819();
 
-        C182019() {
+        C182819() {
             super(2);
         }
 
@@ -568,10 +568,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$20 */
     /* loaded from: classes3.dex */
-    public static final class C182220 extends Lambda implements Function2<Scope, ParametersHolder, BinanceInternalInteractor> {
-        public static final C182220 INSTANCE = new C182220();
+    public static final class C183020 extends Lambda implements Function2<Scope, ParametersHolder, BinanceInternalInteractor> {
+        public static final C183020 INSTANCE = new C183020();
 
-        C182220() {
+        C183020() {
             super(2);
         }
 
@@ -587,10 +587,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$21 */
     /* loaded from: classes3.dex */
-    public static final class C182321 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectInteractor> {
-        public static final C182321 INSTANCE = new C182321();
+    public static final class C183121 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectInteractor> {
+        public static final C183121 INSTANCE = new C183121();
 
-        C182321() {
+        C183121() {
             super(2);
         }
 
@@ -606,10 +606,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$24 */
     /* loaded from: classes3.dex */
-    public static final class C182624 extends Lambda implements Function2<Scope, ParametersHolder, ReactionInteractor> {
-        public static final C182624 INSTANCE = new C182624();
+    public static final class C183424 extends Lambda implements Function2<Scope, ParametersHolder, ReactionInteractor> {
+        public static final C183424 INSTANCE = new C183424();
 
-        C182624() {
+        C183424() {
             super(2);
         }
 
@@ -625,10 +625,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C18101 extends Lambda implements Function2<Scope, ParametersHolder, TranslationInteractor> {
-        public static final C18101 INSTANCE = new C18101();
+    public static final class C18181 extends Lambda implements Function2<Scope, ParametersHolder, TranslationInteractor> {
+        public static final C18181 INSTANCE = new C18181();
 
-        C18101() {
+        C18181() {
             super(2);
         }
 
@@ -644,10 +644,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C181211 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletInteractor> {
-        public static final C181211 INSTANCE = new C181211();
+    public static final class C182011 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletInteractor> {
+        public static final C182011 INSTANCE = new C182011();
 
-        C181211() {
+        C182011() {
             super(2);
         }
 
@@ -667,10 +667,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C181312 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeInteractor> {
-        public static final C181312 INSTANCE = new C181312();
+    public static final class C182112 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeInteractor> {
+        public static final C182112 INSTANCE = new C182112();
 
-        C181312() {
+        C182112() {
             super(2);
         }
 
@@ -687,10 +687,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$15 */
     /* loaded from: classes3.dex */
-    public static final class C181615 extends Lambda implements Function2<Scope, ParametersHolder, AccountLevelInteractor> {
-        public static final C181615 INSTANCE = new C181615();
+    public static final class C182415 extends Lambda implements Function2<Scope, ParametersHolder, AccountLevelInteractor> {
+        public static final C182415 INSTANCE = new C182415();
 
-        C181615() {
+        C182415() {
             super(2);
         }
 
@@ -706,10 +706,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$16 */
     /* loaded from: classes3.dex */
-    public static final class C181716 extends Lambda implements Function2<Scope, ParametersHolder, CancelInteractor> {
-        public static final C181716 INSTANCE = new C181716();
+    public static final class C182516 extends Lambda implements Function2<Scope, ParametersHolder, CancelInteractor> {
+        public static final C182516 INSTANCE = new C182516();
 
-        C181716() {
+        C182516() {
             super(2);
         }
 
@@ -725,10 +725,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C18212 extends Lambda implements Function2<Scope, ParametersHolder, WalletSessionInteractor> {
-        public static final C18212 INSTANCE = new C18212();
+    public static final class C18292 extends Lambda implements Function2<Scope, ParametersHolder, WalletSessionInteractor> {
+        public static final C18292 INSTANCE = new C18292();
 
-        C18212() {
+        C18292() {
             super(2);
         }
 
@@ -747,10 +747,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$22 */
     /* loaded from: classes3.dex */
-    public static final class C182422 extends Lambda implements Function2<Scope, ParametersHolder, AirdropInteractor> {
-        public static final C182422 INSTANCE = new C182422();
+    public static final class C183222 extends Lambda implements Function2<Scope, ParametersHolder, AirdropInteractor> {
+        public static final C183222 INSTANCE = new C183222();
 
-        C182422() {
+        C183222() {
             super(2);
         }
 
@@ -766,10 +766,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$23 */
     /* loaded from: classes3.dex */
-    public static final class C182523 extends Lambda implements Function2<Scope, ParametersHolder, NftAvatarInteractor> {
-        public static final C182523 INSTANCE = new C182523();
+    public static final class C183323 extends Lambda implements Function2<Scope, ParametersHolder, NftAvatarInteractor> {
+        public static final C183323 INSTANCE = new C183323();
 
-        C182523() {
+        C183323() {
             super(2);
         }
 
@@ -785,10 +785,10 @@ final class InteractorModuleKt$interactorModule$1 extends Lambda implements Func
     /* compiled from: InteractorModule.kt */
     /* renamed from: com.smedialink.storage.domain.di.module.InteractorModuleKt$interactorModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C18273 extends Lambda implements Function2<Scope, ParametersHolder, WalletInteractor> {
-        public static final C18273 INSTANCE = new C18273();
+    public static final class C18353 extends Lambda implements Function2<Scope, ParametersHolder, WalletInteractor> {
+        public static final C18353 INSTANCE = new C18353();
 
-        C18273() {
+        C18353() {
             super(2);
         }
 

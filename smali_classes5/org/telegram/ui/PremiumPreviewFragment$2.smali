@@ -64,7 +64,7 @@
 
     iget v5, v4, Lorg/telegram/ui/PremiumPreviewFragment;->progressToFull:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     sub-float/2addr v1, v3
 
@@ -108,7 +108,7 @@
 
     iget v5, v5, Lorg/telegram/ui/PremiumPreviewFragment;->progressToFull:F
 
-    mul-float v2, v2, v5
+    mul-float/2addr v2, v5
 
     add-float/2addr v4, v2
 

@@ -75,13 +75,17 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     boolean isQuotationsVisible();
 
+    void resetAllTokensSettings();
+
     void resetBinanceAccount();
 
     void resetBinanceTokensSettings();
 
     void resetOldWalletData();
 
-    void resetTokensSettings();
+    void resetTokensSettingsByBlockchainType(BlockchainType blockchainType);
+
+    void resetTokensSettingsByNetwork(NetworkType networkType);
 
     void saveTokensSettings(WalletCryptoTokensSettingsMetadata walletCryptoTokensSettingsMetadata, NetworkType networkType);
 

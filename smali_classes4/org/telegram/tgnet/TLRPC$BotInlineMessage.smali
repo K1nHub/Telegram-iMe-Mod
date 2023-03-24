@@ -53,10 +53,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 19414
+    .line 19424
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 19424
+    .line 19434
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 19447
+    .line 19457
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaAuto;
 
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 19438
+    .line 19448
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaVenue_layer77;
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 19444
+    .line 19454
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaGeo_layer71;
 
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 19453
+    .line 19463
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaContact_layer81;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 19468
+    .line 19478
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaInvoice;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 19456
+    .line 19466
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaContact;
 
@@ -123,7 +123,7 @@
 
     goto :goto_0
 
-    .line 19450
+    .line 19460
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaAuto_layer74;
 
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 19465
+    .line 19475
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaGeo;
 
@@ -139,7 +139,7 @@
 
     goto :goto_0
 
-    .line 19462
+    .line 19472
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaGeo_layer119;
 
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 19459
+    .line 19469
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageText;
 
@@ -155,7 +155,7 @@
 
     goto :goto_0
 
-    .line 19441
+    .line 19451
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaVenue;
 
@@ -168,7 +168,7 @@
 
     goto :goto_1
 
-    .line 19472
+    .line 19482
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -198,7 +198,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 19475
+    .line 19485
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

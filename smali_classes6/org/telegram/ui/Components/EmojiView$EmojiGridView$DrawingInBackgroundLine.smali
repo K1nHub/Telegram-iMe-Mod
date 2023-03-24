@@ -115,13 +115,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_1
     if-nez v0, :cond_5
@@ -165,12 +165,12 @@
 
     if-gez v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 3967
     :goto_2
@@ -272,7 +272,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 4015
     :goto_0
@@ -403,7 +403,7 @@
     if-nez v7, :cond_1
 
     :goto_1
-    const/4 v12, 0x0
+    move v12, v3
 
     goto/16 :goto_5
 
@@ -417,7 +417,7 @@
 
     const v9, 0x3cf5c28f    # 0.03f
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     float-to-int v8, v8
 
@@ -467,138 +467,138 @@
     .line 4044
     iget v8, v6, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->pressedProgress:F
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    cmpl-float v10, v8, v3
 
-    cmpl-float v11, v8, v3
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    if-eqz v11, :cond_2
+    if-eqz v10, :cond_2
 
-    const v11, 0x3f4ccccd    # 0.8f
+    const v10, 0x3f4ccccd    # 0.8f
 
     const v12, 0x3e4ccccd    # 0.2f
 
-    sub-float v8, v10, v8
+    sub-float v8, v11, v8
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
-    add-float/2addr v8, v11
+    add-float/2addr v8, v10
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v11
 
     goto :goto_2
 
     :cond_2
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v11
 
     .line 4047
     :goto_2
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v11, v11, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/EmojiView;->access$14100(Lorg/telegram/ui/Components/EmojiView;)J
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14100(Lorg/telegram/ui/Components/EmojiView;)J
 
-    move-result-wide v11
+    move-result-wide v12
 
-    const-wide/16 v13, 0x0
+    const-wide/16 v14, 0x0
 
-    cmp-long v15, v11, v13
+    cmp-long v10, v12, v14
 
-    if-lez v15, :cond_3
+    if-lez v10, :cond_3
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v11
+    move-result-wide v12
 
-    iget-object v15, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v15, v15, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v15}, Lorg/telegram/ui/Components/EmojiView;->access$14100(Lorg/telegram/ui/Components/EmojiView;)J
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14100(Lorg/telegram/ui/Components/EmojiView;)J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    sub-long/2addr v11, v15
+    sub-long v12, v12, v16
 
-    iget-object v15, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    invoke-virtual {v15}, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->animateExpandDuration()J
+    invoke-virtual {v10}, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->animateExpandDuration()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    cmp-long v17, v11, v15
+    cmp-long v10, v12, v16
 
-    if-gez v17, :cond_3
+    if-gez v10, :cond_3
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
     goto :goto_3
 
     :cond_3
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     :goto_3
-    if-eqz v11, :cond_4
+    if-eqz v10, :cond_4
 
     .line 4048
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v11, v11, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/EmojiView;->access$14300(Lorg/telegram/ui/Components/EmojiView;)I
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14300(Lorg/telegram/ui/Components/EmojiView;)I
 
-    move-result v11
+    move-result v10
 
-    if-ltz v11, :cond_4
+    if-ltz v10, :cond_4
 
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v11, v11, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/EmojiView;->access$14400(Lorg/telegram/ui/Components/EmojiView;)I
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14400(Lorg/telegram/ui/Components/EmojiView;)I
 
-    move-result v11
+    move-result v10
 
-    if-ltz v11, :cond_4
+    if-ltz v10, :cond_4
 
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v11, v11, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/EmojiView;->access$14100(Lorg/telegram/ui/Components/EmojiView;)J
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14100(Lorg/telegram/ui/Components/EmojiView;)J
 
-    move-result-wide v11
+    move-result-wide v12
 
-    cmp-long v15, v11, v13
+    cmp-long v10, v12, v14
 
-    if-lez v15, :cond_4
+    if-lez v10, :cond_4
 
     .line 4049
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    invoke-virtual {v11, v6}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
+    invoke-virtual {v10, v6}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v6
 
     .line 4050
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v11, v11, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/EmojiView;->access$14300(Lorg/telegram/ui/Components/EmojiView;)I
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14300(Lorg/telegram/ui/Components/EmojiView;)I
 
-    move-result v11
+    move-result v10
 
-    sub-int/2addr v6, v11
+    sub-int/2addr v6, v10
 
     .line 4051
-    iget-object v11, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
+    iget-object v10, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
-    iget-object v11, v11, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
+    iget-object v10, v10, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/EmojiView;->access$14400(Lorg/telegram/ui/Components/EmojiView;)I
+    invoke-static {v10}, Lorg/telegram/ui/Components/EmojiView;->access$14400(Lorg/telegram/ui/Components/EmojiView;)I
 
-    move-result v11
+    move-result v10
 
     iget-object v12, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
 
@@ -608,11 +608,11 @@
 
     move-result v12
 
-    sub-int/2addr v11, v12
+    sub-int/2addr v10, v12
 
     if-ltz v6, :cond_4
 
-    if-ge v6, v11, :cond_4
+    if-ge v6, v10, :cond_4
 
     .line 4053
     iget-object v12, v0, Lorg/telegram/ui/Components/EmojiView$EmojiGridView$DrawingInBackgroundLine;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -651,13 +651,13 @@
 
     const v14, 0x3ee66666    # 0.45f
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     sub-float/2addr v2, v14
 
     div-float/2addr v2, v13
 
-    invoke-static {v2, v3, v10}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    invoke-static {v2, v3, v11}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result v2
 
@@ -684,7 +684,7 @@
 
     const/4 v12, 0x0
 
-    invoke-static {v3, v12, v10}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+    invoke-static {v3, v12, v11}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result v3
 
@@ -694,7 +694,7 @@
 
     int-to-float v13, v6
 
-    int-to-float v14, v11
+    int-to-float v14, v10
 
     const/high16 v15, 0x40a00000    # 5.0f
 
@@ -713,17 +713,17 @@
     move-result v13
 
     .line 4059
-    div-int/lit8 v14, v11, 0x4
+    div-int/lit8 v14, v10, 0x4
 
     add-int/2addr v6, v14
 
     int-to-float v6, v6
 
-    add-int/2addr v11, v14
+    add-int/2addr v10, v14
 
-    int-to-float v11, v11
+    int-to-float v10, v10
 
-    invoke-static {v3, v6, v11, v2}, Lorg/telegram/messenger/AndroidUtilities;->cascade(FFFF)F
+    invoke-static {v3, v6, v10, v2}, Lorg/telegram/messenger/AndroidUtilities;->cascade(FFFF)F
 
     move-result v2
 
@@ -736,23 +736,23 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v3
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
-    mul-float v4, v4, v13
+    mul-float/2addr v4, v13
 
     goto :goto_4
 
     :cond_4
-    const/4 v12, 0x0
+    move v12, v3
 
     :goto_4
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -762,7 +762,7 @@
     .line 4065
     invoke-virtual {v7, v9}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    cmpl-float v2, v8, v10
+    cmpl-float v2, v8, v11
 
     if-eqz v2, :cond_5
 
@@ -799,7 +799,7 @@
     :goto_5
     add-int/lit8 v5, v5, 0x1
 
-    const/4 v3, 0x0
+    move v3, v12
 
     goto/16 :goto_0
 
@@ -1016,7 +1016,7 @@
 
     const v4, 0x3cf5c28f    # 0.03f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

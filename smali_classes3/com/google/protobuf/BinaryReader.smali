@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 77
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +27,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/BinaryReader$1;)V
     .locals 0
 
-    .line 52
+    .line 53
     invoke-direct {p0}, Lcom/google/protobuf/BinaryReader;-><init>()V
 
     return-void
@@ -36,21 +36,21 @@
 .method public static newInstance(Ljava/nio/ByteBuffer;Z)Lcom/google/protobuf/BinaryReader;
     .locals 1
 
-    .line 68
+    .line 69
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 70
+    .line 71
     new-instance v0, Lcom/google/protobuf/BinaryReader$SafeHeapReader;
 
     invoke-direct {v0, p0, p1}, Lcom/google/protobuf/BinaryReader$SafeHeapReader;-><init>(Ljava/nio/ByteBuffer;Z)V
 
     return-object v0
 
-    .line 73
+    .line 74
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

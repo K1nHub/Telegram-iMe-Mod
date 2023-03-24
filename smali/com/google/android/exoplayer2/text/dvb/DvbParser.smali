@@ -341,36 +341,36 @@
 
     if-eqz v4, :cond_0
 
-    const/16 v4, 0xff
+    move v4, v5
 
     goto :goto_1
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     and-int/lit8 v6, v3, 0x2
 
     if-eqz v6, :cond_1
 
-    const/16 v6, 0xff
+    move v6, v5
 
     goto :goto_2
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_2
     and-int/lit8 v7, v3, 0x4
 
     if-eqz v7, :cond_2
 
-    const/16 v7, 0xff
+    move v7, v5
 
     goto :goto_3
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 564
     :goto_3
@@ -389,24 +389,24 @@
 
     if-eqz v4, :cond_4
 
-    const/16 v4, 0x7f
+    move v4, v6
 
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_4
     and-int/lit8 v7, v3, 0x2
 
     if-eqz v7, :cond_5
 
-    const/16 v7, 0x7f
+    move v7, v6
 
     goto :goto_5
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_5
     and-int/lit8 v8, v3, 0x4
@@ -416,7 +416,7 @@
     goto :goto_6
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 571
     :goto_6
@@ -446,7 +446,7 @@
 
     aput v2, v1, v2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_20
@@ -463,24 +463,24 @@
 
     if-eqz v6, :cond_0
 
-    const/16 v6, 0xff
+    move v6, v5
 
     goto :goto_1
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     and-int/lit8 v7, v3, 0x2
 
     if-eqz v7, :cond_1
 
-    const/16 v7, 0xff
+    move v7, v5
 
     goto :goto_2
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_2
     and-int/lit8 v8, v3, 0x4
@@ -490,7 +490,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 587
     :goto_3
@@ -532,24 +532,24 @@
 
     if-eqz v4, :cond_5
 
-    const/16 v4, 0x2b
+    move v4, v7
 
     goto :goto_4
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_4
     and-int/lit8 v6, v3, 0x10
 
     if-eqz v6, :cond_6
 
-    const/16 v6, 0x55
+    move v6, v8
 
     goto :goto_5
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_5
     add-int/2addr v4, v6
@@ -558,24 +558,24 @@
 
     if-eqz v6, :cond_7
 
-    const/16 v6, 0x2b
+    move v6, v7
 
     goto :goto_6
 
     :cond_7
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_6
     and-int/lit8 v9, v3, 0x20
 
     if-eqz v9, :cond_8
 
-    const/16 v9, 0x55
+    move v9, v8
 
     goto :goto_7
 
     :cond_8
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_7
     add-int/2addr v6, v9
@@ -587,7 +587,7 @@
     goto :goto_8
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_8
     and-int/lit8 v9, v3, 0x40
@@ -597,7 +597,7 @@
     goto :goto_9
 
     :cond_a
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_9
     add-int/2addr v7, v8
@@ -616,12 +616,12 @@
 
     if-eqz v4, :cond_c
 
-    const/16 v4, 0x2b
+    move v4, v7
 
     goto :goto_a
 
     :cond_c
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_a
     add-int/2addr v4, v9
@@ -630,12 +630,12 @@
 
     if-eqz v6, :cond_d
 
-    const/16 v6, 0x55
+    move v6, v8
 
     goto :goto_b
 
     :cond_d
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_b
     add-int/2addr v4, v6
@@ -644,12 +644,12 @@
 
     if-eqz v6, :cond_e
 
-    const/16 v6, 0x2b
+    move v6, v7
 
     goto :goto_c
 
     :cond_e
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_c
     add-int/2addr v6, v9
@@ -658,12 +658,12 @@
 
     if-eqz v10, :cond_f
 
-    const/16 v10, 0x55
+    move v10, v8
 
     goto :goto_d
 
     :cond_f
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_d
     add-int/2addr v6, v10
@@ -675,7 +675,7 @@
     goto :goto_e
 
     :cond_10
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_e
     add-int/2addr v7, v9
@@ -687,7 +687,7 @@
     goto :goto_f
 
     :cond_11
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_f
     add-int/2addr v7, v8
@@ -706,24 +706,24 @@
 
     if-eqz v4, :cond_13
 
-    const/16 v4, 0x55
+    move v4, v8
 
     goto :goto_10
 
     :cond_13
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_10
     and-int/lit8 v5, v3, 0x10
 
     if-eqz v5, :cond_14
 
-    const/16 v5, 0xaa
+    move v5, v7
 
     goto :goto_11
 
     :cond_14
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_11
     add-int/2addr v4, v5
@@ -732,24 +732,24 @@
 
     if-eqz v5, :cond_15
 
-    const/16 v5, 0x55
+    move v5, v8
 
     goto :goto_12
 
     :cond_15
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_12
     and-int/lit8 v6, v3, 0x20
 
     if-eqz v6, :cond_16
 
-    const/16 v6, 0xaa
+    move v6, v7
 
     goto :goto_13
 
     :cond_16
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_13
     add-int/2addr v5, v6
@@ -761,7 +761,7 @@
     goto :goto_14
 
     :cond_17
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_14
     and-int/lit8 v6, v3, 0x40
@@ -771,7 +771,7 @@
     goto :goto_15
 
     :cond_18
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_15
     add-int/2addr v8, v7
@@ -790,24 +790,24 @@
 
     if-eqz v4, :cond_1a
 
-    const/16 v4, 0x55
+    move v4, v8
 
     goto :goto_16
 
     :cond_1a
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_16
     and-int/lit8 v6, v3, 0x10
 
     if-eqz v6, :cond_1b
 
-    const/16 v6, 0xaa
+    move v6, v7
 
     goto :goto_17
 
     :cond_1b
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_17
     add-int/2addr v4, v6
@@ -816,24 +816,24 @@
 
     if-eqz v6, :cond_1c
 
-    const/16 v6, 0x55
+    move v6, v8
 
     goto :goto_18
 
     :cond_1c
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_18
     and-int/lit8 v9, v3, 0x20
 
     if-eqz v9, :cond_1d
 
-    const/16 v9, 0xaa
+    move v9, v7
 
     goto :goto_19
 
     :cond_1d
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_19
     add-int/2addr v6, v9
@@ -845,7 +845,7 @@
     goto :goto_1a
 
     :cond_1e
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_1a
     and-int/lit8 v9, v3, 0x40
@@ -855,7 +855,7 @@
     goto :goto_1b
 
     :cond_1f
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1b
     add-int/2addr v8, v7
@@ -907,7 +907,7 @@
 
     move/from16 v10, p3
 
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_0
     const/4 v3, 0x2
@@ -923,8 +923,7 @@
 
     move v11, v2
 
-    :goto_1
-    const/4 v12, 0x1
+    move v12, v5
 
     goto :goto_4
 
@@ -950,7 +949,7 @@
 
     move-result v3
 
-    :goto_2
+    :goto_1
     move v11, v2
 
     move v12, v4
@@ -969,9 +968,12 @@
 
     move v11, v2
 
-    const/4 v4, 0x0
+    move v12, v5
 
-    goto :goto_1
+    :goto_2
+    move v4, v9
+
+    goto :goto_4
 
     .line 766
     :cond_2
@@ -989,10 +991,10 @@
 
     move v11, v2
 
-    const/4 v4, 0x0
-
     :goto_3
-    const/4 v12, 0x0
+    move v4, v9
+
+    move v12, v4
 
     goto :goto_4
 
@@ -1011,7 +1013,7 @@
 
     move-result v3
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_4
     const/4 v4, 0x4
@@ -1028,21 +1030,17 @@
 
     move-result v3
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     move v11, v2
 
-    const/4 v4, 0x0
+    move v12, v3
 
-    const/4 v12, 0x2
-
-    goto :goto_4
+    goto :goto_2
 
     :cond_6
-    const/4 v4, 0x0
-
-    const/4 v11, 0x1
+    move v11, v5
 
     goto :goto_3
 
@@ -1110,7 +1108,7 @@
 
     move/from16 v10, p3
 
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_0
     const/4 v3, 0x4
@@ -1128,8 +1126,7 @@
 
     move v11, v2
 
-    :goto_1
-    const/4 v12, 0x1
+    move v12, v6
 
     goto/16 :goto_4
 
@@ -1141,39 +1138,39 @@
 
     const/4 v7, 0x3
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_3
 
     .line 813
     invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     add-int/lit8 v5, v3, 0x2
 
+    :cond_1
     move v11, v2
 
     move v12, v5
 
-    const/4 v4, 0x0
+    :goto_1
+    move v4, v9
 
     goto :goto_4
 
-    :cond_1
-    const/4 v4, 0x0
-
-    const/4 v11, 0x1
+    :cond_2
+    move v11, v6
 
     goto :goto_3
 
     .line 820
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
-    if-nez v4, :cond_3
+    if-nez v4, :cond_4
 
     .line 821
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
@@ -1195,29 +1192,29 @@
     goto :goto_4
 
     .line 824
-    :cond_3
+    :cond_4
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     if-eqz v4, :cond_7
 
-    if-eq v4, v6, :cond_6
+    if-eq v4, v6, :cond_1
 
-    if-eq v4, v5, :cond_5
+    if-eq v4, v5, :cond_6
 
-    if-eq v4, v7, :cond_4
+    if-eq v4, v7, :cond_5
 
     move v11, v2
 
-    const/4 v4, 0x0
-
     :goto_3
-    const/4 v12, 0x0
+    move v4, v9
+
+    move v12, v4
 
     goto :goto_4
 
-    :cond_4
+    :cond_5
     const/16 v4, 0x8
 
     .line 836
@@ -1235,7 +1232,7 @@
     goto :goto_2
 
     .line 832
-    :cond_5
+    :cond_6
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1249,19 +1246,10 @@
 
     goto :goto_2
 
-    :cond_6
-    move v11, v2
-
-    const/4 v4, 0x0
-
-    const/4 v12, 0x2
-
-    goto :goto_4
-
     :cond_7
     move v11, v2
 
-    const/4 v4, 0x0
+    move v12, v6
 
     goto :goto_1
 
@@ -1325,7 +1313,7 @@
 
     move/from16 v10, p3
 
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_0
     const/16 v3, 0x8
@@ -1341,7 +1329,7 @@
 
     move v11, v2
 
-    const/4 v12, 0x1
+    move v12, v5
 
     goto :goto_1
 
@@ -1366,16 +1354,16 @@
 
     move v12, v3
 
-    const/4 v4, 0x0
+    move v4, v9
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v11, v5
 
-    const/4 v11, 0x1
+    move v4, v9
 
-    const/4 v12, 0x0
+    move v12, v4
 
     goto :goto_1
 
@@ -1874,11 +1862,11 @@
 
     if-nez v9, :cond_3
 
+    move v13, v15
+
     const/4 v11, 0x0
 
     const/4 v12, 0x0
-
-    const/16 v13, 0xff
 
     :cond_3
     and-int/2addr v13, v15
@@ -2047,13 +2035,13 @@
     goto :goto_0
 
     :cond_0
+    move v5, v2
+
+    move v7, v5
+
     move v6, v3
 
     move v8, v4
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
 
     .line 358
     :goto_0
@@ -2110,7 +2098,7 @@
 
     move-result v2
 
-    mul-int/lit8 v2, v2, 0x10
+    mul-int/2addr v2, v0
 
     .line 530
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
@@ -2377,9 +2365,9 @@
     goto :goto_1
 
     :cond_0
-    const/16 v23, 0x0
+    move/from16 v23, v17
 
-    const/16 v24, 0x0
+    move/from16 v24, v23
 
     goto :goto_2
 
@@ -2415,9 +2403,9 @@
 
     invoke-virtual {v1, v2, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    move/from16 v14, v25
+    move v2, v14
 
-    const/4 v2, 0x4
+    move/from16 v14, v25
 
     const/4 v5, 0x2
 
@@ -2878,7 +2866,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 159
     :goto_2
@@ -2996,7 +2984,7 @@
     :cond_5
     iget-object v15, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
 
-    const/4 v14, 0x0
+    move v14, v4
 
     .line 189
     :goto_3

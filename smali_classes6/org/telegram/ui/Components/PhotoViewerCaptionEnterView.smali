@@ -1300,7 +1300,7 @@
 
     :cond_1
     :goto_0
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_1
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->showPopup(IZ)V
@@ -1346,13 +1346,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 393
-    :goto_0
+    :catch_0
     iget p3, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1641,7 +1636,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->showPopup(IZ)V
@@ -2754,7 +2749,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 946
     :goto_2
@@ -3096,13 +3091,13 @@
 
     const v4, 0x3ed70a3d    # 0.42f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     const v4, 0x3f147ae1    # 0.58f
 
     add-float/2addr v3, v4
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 

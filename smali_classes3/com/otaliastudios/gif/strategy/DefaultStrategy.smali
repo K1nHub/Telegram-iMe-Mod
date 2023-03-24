@@ -63,11 +63,11 @@
 
     const v0, 0x3e0f5c29    # 0.14f
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     int-to-float p1, p1
 
-    mul-float p0, p0, p1
+    mul-float/2addr p0, p1
 
     const/16 p1, 0x18
 
@@ -78,7 +78,7 @@
 
     int-to-float p1, p1
 
-    mul-float p0, p0, p1
+    mul-float/2addr p0, p1
 
     float-to-long p0, p0
 
@@ -142,7 +142,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     const-string v6, "height"
@@ -189,7 +189,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 293
     :goto_1
@@ -202,7 +202,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 294
     :goto_2
@@ -237,9 +237,9 @@
 
     const v5, 0x7f7fffff    # Float.MAX_VALUE
 
-    const/4 v5, 0x0
+    move v8, v5
 
-    const v8, 0x7f7fffff    # Float.MAX_VALUE
+    move v5, v3
 
     :goto_4
     if-ge v3, v0, :cond_5
@@ -332,7 +332,7 @@
 
     const v0, 0x7fffffff
 
-    const v1, 0x7fffffff
+    move v1, v0
 
     :cond_0
     :goto_0
@@ -380,7 +380,7 @@
 
 # virtual methods
 .method public createOutputFormat(Ljava/util/List;Landroid/media/MediaFormat;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -630,9 +630,9 @@
 
     const-wide/high16 v4, -0x8000000000000000L
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_4
+    if-nez v2, :cond_4
 
     .line 265
     invoke-static {v1, v0, p1}, Lcom/otaliastudios/gif/strategy/DefaultStrategy;->estimateBitRate(III)J

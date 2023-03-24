@@ -18,6 +18,10 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         doubleArrayList.makeImmutable();
     }
 
+    public static DoubleArrayList emptyList() {
+        return EMPTY_LIST;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public DoubleArrayList() {
         this(new double[10], 0);
@@ -70,7 +74,7 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         return i;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     /* renamed from: mutableCopyWithCapacity */
     public Internal.ProtobufList<Double> mutableCopyWithCapacity2(int i) {
         if (i < this.size) {

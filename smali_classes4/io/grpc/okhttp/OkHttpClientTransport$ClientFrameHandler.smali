@@ -336,7 +336,7 @@
 
     const/high16 p3, 0x3f000000    # 0.5f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     cmpl-float p1, p1, p2
 
@@ -732,7 +732,7 @@
     invoke-virtual {p2, p1, p6, p4}, Lio/grpc/internal/AbstractClientStream$TransportState;->transportReportStatus(Lio/grpc/Status;ZLio/grpc/Metadata;)V
 
     :goto_2
-    const/4 p4, 0x0
+    move p4, p6
 
     .line 1219
     :cond_5
@@ -1086,18 +1086,16 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v6, 0x0
-
     goto :goto_1
 
     :cond_1
     :goto_0
     const/4 v0, 0x1
 
-    const/4 v6, 0x1
+    :goto_1
+    move v6, v0
 
     .line 1243
-    :goto_1
     iget-object v0, p0, Lio/grpc/okhttp/OkHttpClientTransport$ClientFrameHandler;->this$0:Lio/grpc/okhttp/OkHttpClientTransport;
 
     invoke-static {v0}, Lio/grpc/okhttp/OkHttpClientTransport;->access$100(Lio/grpc/okhttp/OkHttpClientTransport;)Ljava/lang/Object;
@@ -1459,7 +1457,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 1272
     :goto_0
@@ -1533,9 +1531,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     const-string p2, "Received 0 flow control window increment."
 
@@ -1601,9 +1599,9 @@
 
     const/4 v0, 0x0
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    invoke-virtual {p1, v0, p3}, Lio/grpc/okhttp/OutboundFlowController;->windowUpdate(Lio/grpc/okhttp/OkHttpClientStream;I)I
+    invoke-virtual {p1, v0, p2}, Lio/grpc/okhttp/OutboundFlowController;->windowUpdate(Lio/grpc/okhttp/OkHttpClientStream;I)I
 
     .line 1375
     monitor-exit v1
@@ -1637,9 +1635,9 @@
 
     move-result-object v3
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    invoke-virtual {v3, v2, p3}, Lio/grpc/okhttp/OutboundFlowController;->windowUpdate(Lio/grpc/okhttp/OkHttpClientStream;I)I
+    invoke-virtual {v3, v2, p2}, Lio/grpc/okhttp/OutboundFlowController;->windowUpdate(Lio/grpc/okhttp/OkHttpClientStream;I)I
 
     goto :goto_1
 

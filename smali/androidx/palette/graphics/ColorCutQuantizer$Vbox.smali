@@ -184,17 +184,17 @@
 
     const/4 v5, 0x0
 
-    const v4, 0x7fffffff
+    move v6, v4
 
-    const v5, 0x7fffffff
+    move v7, v6
 
-    const/high16 v6, -0x80000000
+    move v8, v7
 
-    const/high16 v7, -0x80000000
+    move v9, v5
 
-    const/high16 v8, -0x80000000
+    move v4, v3
 
-    const/4 v9, 0x0
+    move v5, v4
 
     :goto_0
     iget v10, p0, Landroidx/palette/graphics/ColorCutQuantizer$Vbox;->mUpperIndex:I
@@ -299,11 +299,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     iget v7, p0, Landroidx/palette/graphics/ColorCutQuantizer$Vbox;->mUpperIndex:I
@@ -323,7 +323,7 @@
 
     move-result v9
 
-    mul-int v9, v9, v8
+    mul-int/2addr v9, v8
 
     add-int/2addr v3, v9
 
@@ -332,7 +332,7 @@
 
     move-result v9
 
-    mul-int v9, v9, v8
+    mul-int/2addr v9, v8
 
     add-int/2addr v5, v9
 
@@ -341,7 +341,7 @@
 
     move-result v7
 
-    mul-int v8, v8, v7
+    mul-int/2addr v8, v7
 
     add-int/2addr v6, v8
 
@@ -473,7 +473,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget v1, p0, Landroidx/palette/graphics/ColorCutQuantizer$Vbox;->mMaxBlue:I
 
@@ -483,7 +483,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method

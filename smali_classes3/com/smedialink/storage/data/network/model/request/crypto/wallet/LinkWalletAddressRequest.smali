@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field private final blockchainPlatform:Ljava/lang/String;
-
 .field private final networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
 .field private final walletAddress:Ljava/lang/String;
@@ -14,7 +12,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "walletAddress"
@@ -24,10 +22,6 @@
     const-string v0, "networkType"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "blockchainPlatform"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,46 +33,36 @@
     iput-object p2, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     .line 8
-    iput-object p3, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    .line 9
-    iput-object p4, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
+    iput-object p3, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
+.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;ILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
     .locals 0
 
-    and-int/lit8 p6, p5, 0x1
+    and-int/lit8 p5, p4, 0x1
 
-    if-eqz p6, :cond_0
+    if-eqz p5, :cond_0
 
     iget-object p1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletAddress:Ljava/lang/String;
 
     :cond_0
-    and-int/lit8 p6, p5, 0x2
+    and-int/lit8 p5, p4, 0x2
 
-    if-eqz p6, :cond_1
+    if-eqz p5, :cond_1
 
     iget-object p2, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     :cond_1
-    and-int/lit8 p6, p5, 0x4
+    and-int/lit8 p4, p4, 0x4
 
-    if-eqz p6, :cond_2
+    if-eqz p4, :cond_2
 
-    iget-object p3, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
+    iget-object p3, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
 
     :cond_2
-    and-int/lit8 p5, p5, 0x8
-
-    if-eqz p5, :cond_3
-
-    iget-object p4, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
-
-    :cond_3
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
 
     move-result-object p0
 
@@ -106,20 +90,12 @@
 .method public final component3()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final component4()Ljava/lang/String;
-    .locals 1
-
     iget-object v0, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
+.method public final copy(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
     .locals 1
 
     const-string v0, "walletAddress"
@@ -130,13 +106,9 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "blockchainPlatform"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -184,19 +156,6 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
 
     iget-object p1, p1, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
@@ -205,21 +164,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_4
 
     return v2
 
-    :cond_5
+    :cond_4
     return v0
-.end method
-
-.method public final getBlockchainPlatform()Ljava/lang/String;
-    .locals 1
-
-    .line 8
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method public final getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -243,7 +193,7 @@
 .method public final getWalletPublicKey()Ljava/lang/String;
     .locals 1
 
-    .line 9
+    .line 8
     iget-object v0, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->walletPublicKey:Ljava/lang/String;
 
     return-object v0
@@ -263,16 +213,6 @@
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -321,14 +261,6 @@
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", blockchainPlatform="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;->blockchainPlatform:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", walletPublicKey="
 

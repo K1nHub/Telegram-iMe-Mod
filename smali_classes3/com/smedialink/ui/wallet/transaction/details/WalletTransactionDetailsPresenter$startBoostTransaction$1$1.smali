@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 196
+    .line 165
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 2
 
-    .line 197
+    .line 166
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;->this$0:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;->$this_with:Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
@@ -74,7 +74,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->boostTransaction(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->access$boostTransaction(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Ljava/lang/String;)V
 
     return-void
 .end method

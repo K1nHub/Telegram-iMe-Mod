@@ -146,7 +146,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_0
     iput-boolean v5, v1, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->isKeyboardVisible:Z

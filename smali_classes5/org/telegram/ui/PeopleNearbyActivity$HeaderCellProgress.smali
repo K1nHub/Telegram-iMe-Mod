@@ -92,24 +92,24 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v6, 0x2
+    move v6, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_1
     const/4 v7, 0x3
 
     if-eqz v1, :cond_2
 
-    const/4 v8, 0x0
+    move v8, v0
 
     goto :goto_2
 
     :cond_2
-    const/4 v8, 0x2
+    move v8, v2
 
     :goto_2
     const/4 v9, 0x0

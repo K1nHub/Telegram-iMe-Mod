@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SlidingWindow.kt */
-@DebugMetadata(m99c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", m98f = "SlidingWindow.kt", m97l = {34, 40, 49, 55, 58}, m96m = "invokeSuspend")
+@DebugMetadata(m98c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", m97f = "SlidingWindow.kt", m96l = {34, 40, 49, 55, 58}, m95m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super List<? extends T>>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Iterator<T> $iterator;

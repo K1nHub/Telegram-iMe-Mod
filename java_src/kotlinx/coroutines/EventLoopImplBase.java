@@ -18,7 +18,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
     private volatile /* synthetic */ int _isCompleted = 0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     public final boolean isCompleted() {
         return this._isCompleted;
     }
@@ -121,7 +121,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
             boolean r5 = r9.enqueueImpl(r5)     // Catch: java.lang.Throwable -> L42
             goto L35
         L34:
-            r5 = 0
+            r5 = r8
         L35:
             if (r5 == 0) goto L3c
             kotlinx.coroutines.internal.ThreadSafeHeapNode r5 = r0.removeAtImpl(r8)     // Catch: java.lang.Throwable -> L42
@@ -150,7 +150,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo1471dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo1487dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 

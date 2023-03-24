@@ -395,7 +395,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PhotoCropView;->thumbAnimationProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -406,7 +406,7 @@
 
     sub-float/2addr v6, v4
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     add-float/2addr v4, v6
 
@@ -425,7 +425,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/PhotoCropView;->thumbAnimationProgress:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v5, v6
 
@@ -462,29 +462,29 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x437f0000    # 255.0f
-
     cmpl-float v3, v3, v4
+
+    const/high16 v4, 0x437f0000    # 255.0f
 
     if-lez v3, :cond_0
 
     .line 224
     iget-object v3, p0, Lorg/telegram/ui/Components/PhotoCropView;->circlePaint:Landroid/graphics/Paint;
 
-    const/4 v4, -0x1
+    const/4 v5, -0x1
 
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 225
     iget-object v3, p0, Lorg/telegram/ui/Components/PhotoCropView;->circlePaint:Landroid/graphics/Paint;
 
-    iget v4, p0, Lorg/telegram/ui/Components/PhotoCropView;->flashAlpha:F
+    iget v5, p0, Lorg/telegram/ui/Components/PhotoCropView;->flashAlpha:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v5, v4
 
-    float-to-int v4, v4
+    float-to-int v5, v5
 
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 226
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
@@ -493,7 +493,7 @@
 
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerY()F
 
-    move-result v4
+    move-result v5
 
     invoke-virtual {p2}, Landroid/graphics/RectF;->width()F
 
@@ -503,7 +503,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/PhotoCropView;->circlePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v3, v4, p2, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v3, v5, p2, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 229
     :cond_0
@@ -522,15 +522,15 @@
 
     const/16 v3, 0xff
 
-    iget v4, p0, Lorg/telegram/ui/Components/PhotoCropView;->thumbAnimationProgress:F
+    iget v5, p0, Lorg/telegram/ui/Components/PhotoCropView;->thumbAnimationProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v5, v4
 
-    iget v5, p0, Lorg/telegram/ui/Components/PhotoCropView;->thumbImageVisibleProgress:F
+    iget v4, p0, Lorg/telegram/ui/Components/PhotoCropView;->thumbImageVisibleProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v5, v4
 
-    float-to-int v4, v4
+    float-to-int v4, v5
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
@@ -1049,7 +1049,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_0
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/Crop/CropRotationWheel;->setRotated(Z)V
@@ -1131,12 +1131,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 276
     :goto_0

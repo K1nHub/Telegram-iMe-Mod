@@ -394,7 +394,7 @@
 
     mul-float v3, v1, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_docBackPaint:Landroid/graphics/Paint;
 

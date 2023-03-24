@@ -256,7 +256,7 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v12, 0x1
+    move v12, v2
 
     goto :goto_1
 
@@ -273,7 +273,7 @@
 
     if-eqz v13, :cond_3
 
-    const/4 v14, 0x1
+    move v14, v2
 
     goto :goto_2
 
@@ -545,7 +545,7 @@
 
     const-wide/32 v5, 0xea60
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     sub-long/2addr v1, v3
 
@@ -700,7 +700,7 @@
 
     const-wide/32 v6, 0xea60
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     add-long/2addr v2, v4
 

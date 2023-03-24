@@ -140,7 +140,7 @@
 
     move-result-object v2
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_0
 
@@ -155,7 +155,7 @@
 
     move-result-object v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 53
     :goto_0
@@ -297,7 +297,7 @@
 
     if-nez v6, :cond_4
 
-    const/4 v1, 0x0
+    move v1, v8
 
     goto :goto_1
 
@@ -472,7 +472,7 @@
     sub-float v1, v2, v1
 
     :goto_0
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 102
     invoke-virtual {p2}, Landroid/text/TextPaint;->getAlpha()I
@@ -532,7 +532,7 @@
 
     int-to-float v8, v1
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     float-to-int v8, v8
 
@@ -547,7 +547,7 @@
 
     if-eqz v8, :cond_3
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v3, v7
 
@@ -617,7 +617,7 @@
     sub-float/2addr v2, v9
 
     :goto_3
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     float-to-int v2, v8
 
@@ -631,7 +631,7 @@
 
     if-eqz v2, :cond_7
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     add-float/2addr v3, v7
 

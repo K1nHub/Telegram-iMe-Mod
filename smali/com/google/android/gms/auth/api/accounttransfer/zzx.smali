@@ -34,6 +34,8 @@
 
     const/4 v3, 0x0
 
+    move v5, v1
+
     move-object v4, v3
 
     move-object v6, v4
@@ -42,9 +44,7 @@
 
     move-object v8, v7
 
-    const/4 v3, 0x0
-
-    const/4 v5, 0x0
+    move v3, v5
 
     .line 3
     :goto_0

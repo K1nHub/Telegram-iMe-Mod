@@ -45,7 +45,7 @@
 .end method
 
 .method static zza(I)I
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x2
 
@@ -74,13 +74,13 @@
 
     const-wide v3, 0x3fe6666666666666L    # 0.7
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     int-to-double v3, p0
 
-    cmpg-double v5, v1, v3
+    cmpg-double v1, v1, v3
 
-    if-gez v5, :cond_0
+    if-gez v1, :cond_0
 
     shl-int/lit8 v0, v0, 0x1
 

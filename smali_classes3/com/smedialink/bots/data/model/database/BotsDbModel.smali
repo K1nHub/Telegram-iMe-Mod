@@ -501,7 +501,7 @@
 
     if-eqz v4, :cond_c
 
-    const/16 v22, 0x0
+    move/from16 v22, v21
 
     goto :goto_c
 
@@ -513,7 +513,7 @@
 
     if-eqz v4, :cond_d
 
-    const/16 v23, 0x0
+    move/from16 v23, v21
 
     goto :goto_d
 
@@ -527,7 +527,7 @@
 
     if-eqz v4, :cond_e
 
-    const/16 v24, 0x0
+    move/from16 v24, v21
 
     goto :goto_e
 
@@ -541,7 +541,7 @@
 
     if-eqz v4, :cond_f
 
-    const/16 v25, 0x0
+    move/from16 v25, v21
 
     goto :goto_f
 
@@ -2195,7 +2195,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 

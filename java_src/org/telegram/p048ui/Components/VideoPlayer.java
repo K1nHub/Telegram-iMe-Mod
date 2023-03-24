@@ -1220,7 +1220,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
         ExoPlayer exoPlayer = this.player;
         float f = BitmapDescriptorFactory.HUE_RED;
         if (exoPlayer != null) {
-            exoPlayer.setVolume(z ? BitmapDescriptorFactory.HUE_RED : 1.0f);
+            exoPlayer.setVolume(z ? 0.0f : 1.0f);
         }
         ExoPlayer exoPlayer2 = this.audioPlayer;
         if (exoPlayer2 != null) {
@@ -1464,8 +1464,8 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
                         this.byteBuffer.rewind();
                         this.position = 0;
                         this.fft.forward(this.real);
+                        float f = 0.0f;
                         int i4 = 0;
-                        float f = BitmapDescriptorFactory.HUE_RED;
                         while (true) {
                             float f2 = 1.0f;
                             if (i4 >= 1024) {
@@ -1475,7 +1475,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
                             float f4 = this.fft.getSpectrumImaginary()[i4];
                             float sqrt = ((float) Math.sqrt((f3 * f3) + (f4 * f4))) / 30.0f;
                             if (sqrt <= 1.0f) {
-                                f2 = sqrt < BitmapDescriptorFactory.HUE_RED ? BitmapDescriptorFactory.HUE_RED : sqrt;
+                                f2 = sqrt < BitmapDescriptorFactory.HUE_RED ? 0.0f : sqrt;
                             }
                             f += f2 * f2;
                             i4++;

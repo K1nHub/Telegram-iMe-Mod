@@ -59,10 +59,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C15141 extends Lambda implements Function2<Scope, ParametersHolder, AppMainDatabase> {
-        public static final C15141 INSTANCE = new C15141();
+    public static final class C15201 extends Lambda implements Function2<Scope, ParametersHolder, AppMainDatabase> {
+        public static final C15201 INSTANCE = new C15201();
 
-        C15141() {
+        C15201() {
             super(2);
         }
 
@@ -82,10 +82,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C15202 extends Lambda implements Function2<Scope, ParametersHolder, AppCacheDatabase> {
-        public static final C15202 INSTANCE = new C15202();
+    public static final class C15262 extends Lambda implements Function2<Scope, ParametersHolder, AppCacheDatabase> {
+        public static final C15262 INSTANCE = new C15262();
 
-        C15202() {
+        C15262() {
             super(2);
         }
 
@@ -118,129 +118,129 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
         List emptyList13;
         List emptyList14;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C15141 c15141 = C15141.INSTANCE;
+        C15201 c15201 = C15201.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AppMainDatabase.class), null, c15141, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AppMainDatabase.class), null, c15201, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C15202 c15202 = C15202.INSTANCE;
+        C15262 c15262 = C15262.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(AppCacheDatabase.class), null, c15202, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(AppCacheDatabase.class), null, c15262, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C15213 c15213 = C15213.INSTANCE;
+        C15273 c15273 = C15273.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HistoryDialogDao.class), null, c15213, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HistoryDialogDao.class), null, c15273, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C15224 c15224 = C15224.INSTANCE;
+        C15284 c15284 = C15284.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FiltersDao.class), null, c15224, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FiltersDao.class), null, c15284, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new Pair(module, singleInstanceFactory4);
-        C15235 c15235 = C15235.INSTANCE;
+        C15295 c15295 = C15295.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(DialogTranslationSettingsDao.class), null, c15235, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(DialogTranslationSettingsDao.class), null, c15295, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new Pair(module, singleInstanceFactory5);
-        C15246 c15246 = C15246.INSTANCE;
+        C15306 c15306 = C15306.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(TopicsDao.class), null, c15246, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(TopicsDao.class), null, c15306, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new Pair(module, singleInstanceFactory6);
-        C15257 c15257 = C15257.INSTANCE;
+        C15317 c15317 = C15317.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletConnectSessionsDao.class), null, c15257, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletConnectSessionsDao.class), null, c15317, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new Pair(module, singleInstanceFactory7);
-        C15268 c15268 = C15268.INSTANCE;
+        C15328 c15328 = C15328.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(TemplatesDao.class), null, c15268, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(TemplatesDao.class), null, c15328, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new Pair(module, singleInstanceFactory8);
-        C15279 c15279 = C15279.INSTANCE;
+        C15339 c15339 = C15339.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(BookmarksDao.class), null, c15279, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(BookmarksDao.class), null, c15339, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new Pair(module, singleInstanceFactory9);
-        C151510 c151510 = C151510.INSTANCE;
+        C152110 c152110 = C152110.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(PlaylistsDao.class), null, c151510, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(PlaylistsDao.class), null, c152110, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new Pair(module, singleInstanceFactory10);
-        C151611 c151611 = C151611.INSTANCE;
+        C152211 c152211 = C152211.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CatalogCategoryDao.class), null, c151611, kind, emptyList11));
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CatalogCategoryDao.class), null, c152211, kind, emptyList11));
         module.indexPrimaryType(singleInstanceFactory11);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory11);
         }
         new Pair(module, singleInstanceFactory11);
-        C151712 c151712 = C151712.INSTANCE;
+        C152312 c152312 = C152312.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CatalogLanguageDao.class), null, c151712, kind, emptyList12));
+        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CatalogLanguageDao.class), null, c152312, kind, emptyList12));
         module.indexPrimaryType(singleInstanceFactory12);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory12);
         }
         new Pair(module, singleInstanceFactory12);
-        C151813 c151813 = C151813.INSTANCE;
+        C152413 c152413 = C152413.INSTANCE;
         StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
         emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletTokenBalanceDao.class), null, c151813, kind, emptyList13));
+        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletTokenBalanceDao.class), null, c152413, kind, emptyList13));
         module.indexPrimaryType(singleInstanceFactory13);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory13);
         }
         new Pair(module, singleInstanceFactory13);
-        C151914 c151914 = C151914.INSTANCE;
+        C152514 c152514 = C152514.INSTANCE;
         StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
         emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(AlbumsDao.class), null, c151914, kind, emptyList14));
+        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(AlbumsDao.class), null, c152514, kind, emptyList14));
         module.indexPrimaryType(singleInstanceFactory14);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory14);
@@ -252,10 +252,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C151510 extends Lambda implements Function2<Scope, ParametersHolder, PlaylistsDao> {
-        public static final C151510 INSTANCE = new C151510();
+    public static final class C152110 extends Lambda implements Function2<Scope, ParametersHolder, PlaylistsDao> {
+        public static final C152110 INSTANCE = new C152110();
 
-        C151510() {
+        C152110() {
             super(2);
         }
 
@@ -271,10 +271,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C151611 extends Lambda implements Function2<Scope, ParametersHolder, CatalogCategoryDao> {
-        public static final C151611 INSTANCE = new C151611();
+    public static final class C152211 extends Lambda implements Function2<Scope, ParametersHolder, CatalogCategoryDao> {
+        public static final C152211 INSTANCE = new C152211();
 
-        C151611() {
+        C152211() {
             super(2);
         }
 
@@ -290,10 +290,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C151712 extends Lambda implements Function2<Scope, ParametersHolder, CatalogLanguageDao> {
-        public static final C151712 INSTANCE = new C151712();
+    public static final class C152312 extends Lambda implements Function2<Scope, ParametersHolder, CatalogLanguageDao> {
+        public static final C152312 INSTANCE = new C152312();
 
-        C151712() {
+        C152312() {
             super(2);
         }
 
@@ -309,10 +309,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$13 */
     /* loaded from: classes3.dex */
-    public static final class C151813 extends Lambda implements Function2<Scope, ParametersHolder, WalletTokenBalanceDao> {
-        public static final C151813 INSTANCE = new C151813();
+    public static final class C152413 extends Lambda implements Function2<Scope, ParametersHolder, WalletTokenBalanceDao> {
+        public static final C152413 INSTANCE = new C152413();
 
-        C151813() {
+        C152413() {
             super(2);
         }
 
@@ -328,10 +328,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$14 */
     /* loaded from: classes3.dex */
-    public static final class C151914 extends Lambda implements Function2<Scope, ParametersHolder, AlbumsDao> {
-        public static final C151914 INSTANCE = new C151914();
+    public static final class C152514 extends Lambda implements Function2<Scope, ParametersHolder, AlbumsDao> {
+        public static final C152514 INSTANCE = new C152514();
 
-        C151914() {
+        C152514() {
             super(2);
         }
 
@@ -347,10 +347,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C15213 extends Lambda implements Function2<Scope, ParametersHolder, HistoryDialogDao> {
-        public static final C15213 INSTANCE = new C15213();
+    public static final class C15273 extends Lambda implements Function2<Scope, ParametersHolder, HistoryDialogDao> {
+        public static final C15273 INSTANCE = new C15273();
 
-        C15213() {
+        C15273() {
             super(2);
         }
 
@@ -366,10 +366,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C15224 extends Lambda implements Function2<Scope, ParametersHolder, FiltersDao> {
-        public static final C15224 INSTANCE = new C15224();
+    public static final class C15284 extends Lambda implements Function2<Scope, ParametersHolder, FiltersDao> {
+        public static final C15284 INSTANCE = new C15284();
 
-        C15224() {
+        C15284() {
             super(2);
         }
 
@@ -385,10 +385,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C15235 extends Lambda implements Function2<Scope, ParametersHolder, DialogTranslationSettingsDao> {
-        public static final C15235 INSTANCE = new C15235();
+    public static final class C15295 extends Lambda implements Function2<Scope, ParametersHolder, DialogTranslationSettingsDao> {
+        public static final C15295 INSTANCE = new C15295();
 
-        C15235() {
+        C15295() {
             super(2);
         }
 
@@ -404,10 +404,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C15246 extends Lambda implements Function2<Scope, ParametersHolder, TopicsDao> {
-        public static final C15246 INSTANCE = new C15246();
+    public static final class C15306 extends Lambda implements Function2<Scope, ParametersHolder, TopicsDao> {
+        public static final C15306 INSTANCE = new C15306();
 
-        C15246() {
+        C15306() {
             super(2);
         }
 
@@ -423,10 +423,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C15257 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectSessionsDao> {
-        public static final C15257 INSTANCE = new C15257();
+    public static final class C15317 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectSessionsDao> {
+        public static final C15317 INSTANCE = new C15317();
 
-        C15257() {
+        C15317() {
             super(2);
         }
 
@@ -442,10 +442,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C15268 extends Lambda implements Function2<Scope, ParametersHolder, TemplatesDao> {
-        public static final C15268 INSTANCE = new C15268();
+    public static final class C15328 extends Lambda implements Function2<Scope, ParametersHolder, TemplatesDao> {
+        public static final C15328 INSTANCE = new C15328();
 
-        C15268() {
+        C15328() {
             super(2);
         }
 
@@ -461,10 +461,10 @@ final class DatabaseModuleKt$databaseModule$1 extends Lambda implements Function
     /* compiled from: DatabaseModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.DatabaseModuleKt$databaseModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C15279 extends Lambda implements Function2<Scope, ParametersHolder, BookmarksDao> {
-        public static final C15279 INSTANCE = new C15279();
+    public static final class C15339 extends Lambda implements Function2<Scope, ParametersHolder, BookmarksDao> {
+        public static final C15339 INSTANCE = new C15339();
 
-        C15279() {
+        C15339() {
             super(2);
         }
 

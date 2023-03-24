@@ -223,7 +223,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, -0x1
+    move v2, v3
 
     .line 207
     :goto_0
@@ -309,7 +309,7 @@
 
     const/4 p0, 0x3
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :sswitch_5
     const-string p0, "audio/3gpp"
@@ -320,7 +320,7 @@
 
     if-eqz p0, :cond_2
 
-    const/4 p0, 0x1
+    move p0, v10
 
     goto :goto_2
 
@@ -385,7 +385,7 @@
 
     if-eqz p0, :cond_2
 
-    const/4 p0, 0x0
+    move p0, v9
 
     goto :goto_2
 
@@ -398,7 +398,7 @@
 
     if-eqz p0, :cond_2
 
-    const/4 p0, 0x2
+    move p0, v8
 
     goto :goto_2
 
@@ -430,7 +430,7 @@
 
     :cond_2
     :goto_1
-    const/4 p0, -0x1
+    move p0, v3
 
     :goto_2
     const/16 v1, 0xf0
@@ -533,12 +533,12 @@
     :pswitch_7
     if-eq v2, v3, :cond_3
 
-    const/4 p0, 0x1
+    move p0, v10
 
     goto :goto_3
 
     :cond_3
-    const/4 p0, 0x0
+    move p0, v9
 
     .line 245
     :goto_3
@@ -548,12 +548,12 @@
 
     if-ne v5, p0, :cond_4
 
-    const/4 p0, 0x1
+    move p0, v10
 
     goto :goto_4
 
     :cond_4
-    const/4 p0, 0x0
+    move p0, v9
 
     :goto_4
     const-string v1, "Invalid OPUS clock rate."
@@ -566,12 +566,12 @@
     :pswitch_8
     if-ne v2, v10, :cond_5
 
-    const/4 p0, 0x1
+    move p0, v10
 
     goto :goto_5
 
     :cond_5
-    const/4 p0, 0x0
+    move p0, v9
 
     :goto_5
     const-string v1, "Multi channel AMR is not currently supported."
@@ -622,12 +622,12 @@
     :pswitch_9
     if-eq v2, v3, :cond_6
 
-    const/4 p0, 0x1
+    move p0, v10
 
     goto :goto_6
 
     :cond_6
-    const/4 p0, 0x0
+    move p0, v9
 
     .line 210
     :goto_6
@@ -675,12 +675,12 @@
 
     if-eqz p0, :cond_7
 
-    const/4 p0, 0x1
+    move p0, v10
 
     goto :goto_7
 
     :cond_7
-    const/4 p0, 0x0
+    move p0, v9
 
     :goto_7
     const-string v1, "Only supports cpresent=0 in AAC audio."
@@ -711,12 +711,12 @@
 
     if-nez v1, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_8
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_8
     new-instance v3, Ljava/lang/StringBuilder;
@@ -767,7 +767,7 @@
     :goto_9
     if-lez v5, :cond_a
 
-    const/4 v9, 0x1
+    move v9, v10
 
     .line 287
     :cond_a
@@ -786,6 +786,8 @@
     invoke-direct/range {v2 .. v7}, Lcom/google/android/exoplayer2/source/rtsp/RtpPayloadFormat;-><init>(Lcom/google/android/exoplayer2/Format;IILjava/util/Map;Ljava/lang/String;)V
 
     return-object p0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -909,12 +911,12 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, p0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     const-string v3, "Only supports audio mux version 0."
@@ -928,12 +930,12 @@
 
     if-ne v1, p0, :cond_1
 
-    const/4 v1, 0x1
+    move v1, p0
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     const-string v3, "Only supports allStreamsSameTimeFraming."
@@ -954,12 +956,12 @@
 
     if-nez v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, p0
 
     goto :goto_2
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     const-string v3, "Only supports one program."
@@ -978,7 +980,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 p0, 0x0
+    move p0, v2
 
     :goto_3
     const-string v1, "Only supports one numLayer."
@@ -1127,12 +1129,12 @@
 
     if-ne v1, v4, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -1287,7 +1289,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -1633,7 +1635,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0

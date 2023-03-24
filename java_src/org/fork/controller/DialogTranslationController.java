@@ -105,7 +105,7 @@ public final class DialogTranslationController extends BaseController implements
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(allTranslationSettingsForUser, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (DialogTranslationSettingsDb dialogTranslationSettingsDb : allTranslationSettingsForUser) {
-            arrayList.add(TuplesKt.m100to(Long.valueOf(dialogTranslationSettingsDb.getDialogId()), DialogSettingsMappingKt.mapToDomain(dialogTranslationSettingsDb)));
+            arrayList.add(TuplesKt.m99to(Long.valueOf(dialogTranslationSettingsDb.getDialogId()), DialogSettingsMappingKt.mapToDomain(dialogTranslationSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -217,7 +217,7 @@ public final class DialogTranslationController extends BaseController implements
 
     static {
         Map<String, String> mapOf;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m100to("ru-RU", "Russian (Russia)"), TuplesKt.m100to("ja-JP", "Japanese (Japan)"), TuplesKt.m100to("hi-IN", "Hindi (India)"), TuplesKt.m100to("fr-FR", "French (France)"), TuplesKt.m100to("pt-PT", "Portuguese (Portugal)"), TuplesKt.m100to("tr-TR", "Turkish (Turkey)"), TuplesKt.m100to("fa-IR", "Persian (Iran)"), TuplesKt.m100to("es-ES", "Spanish (Spain)"), TuplesKt.m100to("de-DE", "German (Germany)"), TuplesKt.m100to("ko-KR", "Korean (South Korea)"), TuplesKt.m100to("it-IT", "Italian (Italy)"), TuplesKt.m100to("ar-AE", "Arabic (United Arab Emirates)"), TuplesKt.m100to("jv-ID", "Javanese (Indonesia)"), TuplesKt.m100to("yue-Hant-HK", "Vietnamese (Vietnam)"), TuplesKt.m100to("vi-VN", "Chinese, Cantonese (Traditional, Hong Kong)"), TuplesKt.m100to("zh-TW (cmn-Hant-TW)", "Chinese, Mandarin (Traditional, Taiwan)"), TuplesKt.m100to("az-AZ", "Azerbaijani (Azerbaijan)"), TuplesKt.m100to("uz-UZ", "Uzbek (Uzbekistan)"), TuplesKt.m100to("uk-UA", "Ukrainian (Ukraine)"), TuplesKt.m100to("en-US", "English (United States)"), TuplesKt.m100to("en-GB", "English (United Kingdom)"));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m99to("ru-RU", "Russian (Russia)"), TuplesKt.m99to("ja-JP", "Japanese (Japan)"), TuplesKt.m99to("hi-IN", "Hindi (India)"), TuplesKt.m99to("fr-FR", "French (France)"), TuplesKt.m99to("pt-PT", "Portuguese (Portugal)"), TuplesKt.m99to("tr-TR", "Turkish (Turkey)"), TuplesKt.m99to("fa-IR", "Persian (Iran)"), TuplesKt.m99to("es-ES", "Spanish (Spain)"), TuplesKt.m99to("de-DE", "German (Germany)"), TuplesKt.m99to("ko-KR", "Korean (South Korea)"), TuplesKt.m99to("it-IT", "Italian (Italy)"), TuplesKt.m99to("ar-AE", "Arabic (United Arab Emirates)"), TuplesKt.m99to("jv-ID", "Javanese (Indonesia)"), TuplesKt.m99to("yue-Hant-HK", "Vietnamese (Vietnam)"), TuplesKt.m99to("vi-VN", "Chinese, Cantonese (Traditional, Hong Kong)"), TuplesKt.m99to("zh-TW (cmn-Hant-TW)", "Chinese, Mandarin (Traditional, Taiwan)"), TuplesKt.m99to("az-AZ", "Azerbaijani (Azerbaijan)"), TuplesKt.m99to("uz-UZ", "Uzbek (Uzbekistan)"), TuplesKt.m99to("uk-UA", "Ukrainian (Ukraine)"), TuplesKt.m99to("en-US", "English (United States)"), TuplesKt.m99to("en-GB", "English (United Kingdom)"));
         voiceTranslateLanguages = mapOf;
         accountInstances = new ConcurrentHashMap<>(5);
     }

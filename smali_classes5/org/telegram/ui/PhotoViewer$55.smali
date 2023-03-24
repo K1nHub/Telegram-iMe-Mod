@@ -438,7 +438,7 @@
 .end method
 
 .method public onRenderedFirstFrame(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)V
-    .locals 5
+    .locals 4
 
     .line 8852
     iget-wide v0, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->eventPlaybackPositionMs:J
@@ -449,9 +449,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 8853
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$55;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -1447,7 +1447,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     float-to-int v1, p1
 
@@ -1458,7 +1458,7 @@
 
     int-to-float v2, p2
 
-    mul-float p4, p4, v2
+    mul-float/2addr p4, v2
 
     float-to-int p4, p4
 

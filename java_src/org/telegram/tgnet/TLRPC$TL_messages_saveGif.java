@@ -4,7 +4,7 @@ public class TLRPC$TL_messages_saveGif extends TLObject {
     public static int constructor = 846868683;
 
     /* renamed from: id */
-    public TLRPC$InputDocument f1602id;
+    public TLRPC$InputDocument f1603id;
     public boolean unsave;
 
     @Override // org.telegram.tgnet.TLObject
@@ -15,7 +15,7 @@ public class TLRPC$TL_messages_saveGif extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        this.f1602id.serializeToStream(abstractSerializedData);
+        this.f1603id.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeBool(this.unsave);
     }
 }

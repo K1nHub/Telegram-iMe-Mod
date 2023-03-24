@@ -70,7 +70,7 @@
 
     move-result-object v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     goto :goto_1
 
@@ -113,7 +113,7 @@
     const/4 v4, 0x0
 
     :goto_0
-    const/4 v6, 0x1
+    move v6, v3
 
     .line 113
     :goto_1
@@ -250,12 +250,12 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v15, 0x0
+    move v15, v5
 
     goto :goto_2
 
     :cond_2
-    const/16 v15, 0x1b
+    move v15, v8
 
     .line 129
     :goto_2
@@ -311,17 +311,15 @@
 
     if-eqz v6, :cond_3
 
-    const/16 v15, 0x1b
-
     goto :goto_3
 
     :cond_3
     const/16 v8, 0xb
 
-    const/16 v15, 0xb
+    :goto_3
+    move v15, v8
 
     .line 138
-    :goto_3
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1

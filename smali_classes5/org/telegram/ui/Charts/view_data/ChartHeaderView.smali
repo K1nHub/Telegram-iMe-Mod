@@ -390,7 +390,7 @@
 
     const p3, 0x3f333333    # 0.7f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setPivotX(F)V
 
@@ -403,7 +403,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setPivotX(F)V
 
@@ -470,7 +470,7 @@
 .end method
 
 .method public setDates(JJ)V
-    .locals 5
+    .locals 4
 
     .line 98
     iget-boolean v0, p0, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->showDate:Z
@@ -506,9 +506,9 @@
 
     const-wide/32 v2, 0x5265c00
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_2
+    if-ltz v0, :cond_2
 
     .line 108
     new-instance v0, Ljava/lang/StringBuilder;

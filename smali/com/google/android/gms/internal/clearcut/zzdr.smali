@@ -60,7 +60,7 @@
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_0
     const-string v10, "get"
@@ -545,12 +545,12 @@
     if-nez v7, :cond_d
 
     :goto_9
-    const/4 v7, 0x1
+    move v7, v13
 
-    goto :goto_b
+    goto/16 :goto_b
 
     :cond_d
-    const/4 v7, 0x0
+    move v7, v8
 
     goto :goto_b
 
@@ -674,7 +674,7 @@
     goto :goto_c
 
     :cond_15
-    const/4 v13, 0x0
+    move v13, v8
 
     goto :goto_c
 
@@ -852,7 +852,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     const/16 v2, 0x20

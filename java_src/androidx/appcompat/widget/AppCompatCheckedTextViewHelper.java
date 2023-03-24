@@ -55,7 +55,7 @@ class AppCompatCheckedTextViewHelper {
             r10 = 1
             goto L3b
         L3a:
-            r10 = 0
+            r10 = r8
         L3b:
             if (r10 != 0) goto L58
             int r10 = androidx.appcompat.R$styleable.CheckedTextView_android_checkMark     // Catch: java.lang.Throwable -> L84

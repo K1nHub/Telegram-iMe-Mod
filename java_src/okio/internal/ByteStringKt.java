@@ -34,7 +34,7 @@ public final class ByteStringKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x0068, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x006b, code lost:
         return -1;
      */
     /*
@@ -43,7 +43,7 @@ public final class ByteStringKt {
     */
     public static final int codePointIndexToCharIndex(byte[] r19, int r20) {
         /*
-            Method dump skipped, instructions count: 478
+            Method dump skipped, instructions count: 495
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: okio.internal.ByteStringKt.codePointIndexToCharIndex(byte[], int):int");

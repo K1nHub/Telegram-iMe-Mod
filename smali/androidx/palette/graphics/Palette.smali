@@ -199,7 +199,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 409
     :goto_0
@@ -207,11 +207,11 @@
 
     move-result v3
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    cmpl-float v3, v3, v4
 
-    cmpl-float v3, v3, v5
+    const/high16 v5, 0x3f800000    # 1.0f
 
     if-lez v3, :cond_1
 
@@ -233,14 +233,14 @@
 
     move-result v2
 
-    sub-float v2, v4, v2
+    sub-float v2, v5, v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 413
     :goto_1
@@ -248,7 +248,7 @@
 
     move-result v2
 
-    cmpl-float v2, v2, v5
+    cmpl-float v2, v2, v4
 
     if-lez v2, :cond_2
 
@@ -272,14 +272,14 @@
 
     move-result v0
 
-    sub-float/2addr v4, v0
+    sub-float/2addr v5, v0
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v5
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 417
     :goto_2
@@ -287,7 +287,7 @@
 
     move-result v0
 
-    cmpl-float v0, v0, v5
+    cmpl-float v0, v0, v4
 
     if-lez v0, :cond_3
 
@@ -307,12 +307,12 @@
 
     div-float/2addr p1, v0
 
-    mul-float v5, p2, p1
+    mul-float v4, p2, p1
 
     :cond_3
     add-float/2addr v3, v2
 
-    add-float/2addr v3, v5
+    add-float/2addr v3, v4
 
     return v3
 .end method

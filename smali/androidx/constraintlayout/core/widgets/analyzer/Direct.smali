@@ -149,13 +149,13 @@
     goto :goto_1
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_2
 
     :cond_5
     :goto_1
-    const/4 v5, 0x1
+    move v5, v4
 
     :goto_2
     if-eq v0, v1, :cond_8
@@ -213,13 +213,13 @@
     goto :goto_3
 
     :cond_7
-    const/4 p0, 0x0
+    move p0, v3
 
     goto :goto_4
 
     :cond_8
     :goto_3
-    const/4 p0, 0x1
+    move p0, v4
 
     .line 790
     :goto_4
@@ -241,7 +241,7 @@
 
     if-eqz p0, :cond_b
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_b
     return v3
@@ -497,7 +497,7 @@
     if-eqz v8, :cond_8
 
     :cond_7
-    const/4 v8, 0x1
+    move v8, v4
 
     goto :goto_1
 
@@ -733,7 +733,7 @@
     if-eqz v12, :cond_13
 
     :cond_12
-    const/4 v12, 0x1
+    move v12, v4
 
     goto :goto_4
 
@@ -994,7 +994,7 @@
 
     if-ne v1, v2, :cond_0
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v5
 
     goto :goto_0
 
@@ -1024,7 +1024,7 @@
 
     int-to-float v4, v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     add-float/2addr v0, v5
 
@@ -1033,7 +1033,7 @@
     :cond_2
     int-to-float v4, v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     :goto_1
     float-to-int v0, v0
@@ -1153,11 +1153,11 @@
 
     move-result v3
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     int-to-float p1, p1
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     float-to-int v3, v3
 
@@ -1194,7 +1194,7 @@
 
     int-to-float p1, v2
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v0, v6
 
@@ -1264,7 +1264,7 @@
 
     if-ne v1, v2, :cond_0
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v5
 
     goto :goto_0
 
@@ -1294,7 +1294,7 @@
 
     int-to-float v4, v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     add-float/2addr v0, v5
 
@@ -1303,7 +1303,7 @@
     :cond_2
     int-to-float v4, v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     :goto_1
     float-to-int v0, v0
@@ -1424,7 +1424,7 @@
 
     int-to-float p1, p1
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     float-to-int v3, v3
 
@@ -1461,7 +1461,7 @@
 
     int-to-float p1, v2
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v0, v6
 
@@ -1517,7 +1517,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_0
     if-ge v5, v4, :cond_0
@@ -1561,11 +1561,11 @@
     invoke-virtual {p0, v2}, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->setFinalLeft(I)V
 
     :goto_1
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v6, 0x0
+    move v6, v0
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     const/high16 v8, 0x3f000000    # 0.5f
@@ -1662,7 +1662,7 @@
 
     int-to-float v9, v9
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     add-float/2addr v6, v8
 
@@ -1673,7 +1673,7 @@
 
     :cond_4
     :goto_3
-    const/4 v6, 0x1
+    move v6, v10
 
     goto :goto_4
 
@@ -1693,7 +1693,7 @@
 
     if-nez v8, :cond_6
 
-    const/4 v7, 0x1
+    move v7, v10
 
     :cond_6
     :goto_4
@@ -1704,7 +1704,7 @@
     :cond_7
     if-eqz v6, :cond_9
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_5
     if-ge v0, v4, :cond_9
@@ -1745,7 +1745,7 @@
 
     if-eqz v7, :cond_b
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_6
     if-ge v0, v4, :cond_b
@@ -1800,11 +1800,11 @@
     invoke-virtual {p0, v2}, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->setFinalTop(I)V
 
     :goto_7
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_8
     if-ge v0, v4, :cond_12
@@ -1895,7 +1895,7 @@
 
     int-to-float v11, v11
 
-    mul-float v1, v1, v11
+    mul-float/2addr v1, v11
 
     add-float/2addr v1, v8
 
@@ -1906,7 +1906,7 @@
 
     :cond_f
     :goto_9
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_a
 
@@ -1926,7 +1926,7 @@
 
     if-ne v7, v10, :cond_11
 
-    const/4 v6, 0x1
+    move v6, v10
 
     :cond_11
     :goto_a
@@ -1937,7 +1937,7 @@
     :cond_12
     if-eqz v1, :cond_14
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_b
     if-ge v0, v4, :cond_14
@@ -1978,7 +1978,7 @@
 
     if-eqz v6, :cond_16
 
-    const/4 p0, 0x0
+    move p0, v2
 
     :goto_c
     if-ge p0, v4, :cond_16
@@ -2014,7 +2014,7 @@
     goto :goto_c
 
     :cond_16
-    const/4 p0, 0x0
+    move p0, v2
 
     :goto_d
     if-ge p0, v4, :cond_1a
@@ -2340,12 +2340,12 @@
     if-eqz v7, :cond_8
 
     :cond_7
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_1
 
     :cond_8
-    const/4 v7, 0x0
+    move v7, v10
 
     :goto_1
     if-eqz v7, :cond_2
@@ -2570,12 +2570,12 @@
     if-eqz v12, :cond_13
 
     :cond_12
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_4
 
     :cond_13
-    const/4 v12, 0x0
+    move v12, v10
 
     .line 526
     :goto_4

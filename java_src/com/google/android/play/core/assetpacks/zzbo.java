@@ -28,7 +28,7 @@ final class zzbo extends AssetPackStates {
 
     public final int hashCode() {
         long j = this.zza;
-        return this.zzb.hashCode() ^ ((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003);
+        return ((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.zzb.hashCode();
     }
 
     @Override // com.google.android.play.core.assetpacks.AssetPackStates

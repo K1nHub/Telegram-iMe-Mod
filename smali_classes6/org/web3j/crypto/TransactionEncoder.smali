@@ -227,7 +227,7 @@
 
     const-wide/16 v1, 0x2
 
-    mul-long p1, p1, v1
+    mul-long/2addr p1, v1
 
     .line 65
     invoke-static {p1, p2}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;

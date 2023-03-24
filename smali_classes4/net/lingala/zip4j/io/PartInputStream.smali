@@ -107,7 +107,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, p3
 
     :goto_0
     iput-boolean p2, p0, Lnet/lingala/zip4j/io/PartInputStream;->isAESEncryptedFile:Z
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public available()I
-    .locals 5
+    .locals 4
 
     .line 52
     iget-wide v0, p0, Lnet/lingala/zip4j/io/PartInputStream;->length:J
@@ -129,18 +129,18 @@
 
     const-wide/32 v2, 0x7fffffff
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     const v0, 0x7fffffff
 
     return v0
 
     :cond_0
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
 .method protected checkAndReadAESMacBytes()V
@@ -277,7 +277,7 @@
 .end method
 
 .method public read()I
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -289,19 +289,19 @@
 
     iget-wide v2, p0, Lnet/lingala/zip4j/io/PartInputStream;->length:J
 
-    const/4 v4, -0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, -0x1
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
-    return v4
+    return v1
 
     .line 62
     :cond_0
     iget-boolean v0, p0, Lnet/lingala/zip4j/io/PartInputStream;->isAESEncryptedFile:Z
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_4
 
@@ -310,9 +310,9 @@
 
     if-eqz v0, :cond_1
 
-    const/16 v2, 0x10
+    const/16 v3, 0x10
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v3, :cond_3
 
     .line 64
     :cond_1
@@ -322,13 +322,13 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_2
+    if-ne v0, v1, :cond_2
 
-    return v4
+    return v1
 
     .line 67
     :cond_2
-    iput v1, p0, Lnet/lingala/zip4j/io/PartInputStream;->aesBytesReturned:I
+    iput v2, p0, Lnet/lingala/zip4j/io/PartInputStream;->aesBytesReturned:I
 
     .line 69
     :cond_3
@@ -350,25 +350,25 @@
     :cond_4
     iget-object v0, p0, Lnet/lingala/zip4j/io/PartInputStream;->oneByteBuff:[B
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {p0, v0, v1, v2}, Lnet/lingala/zip4j/io/PartInputStream;->read([BII)I
+    invoke-virtual {p0, v0, v2, v3}, Lnet/lingala/zip4j/io/PartInputStream;->read([BII)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_5
+    if-ne v0, v1, :cond_5
 
     goto :goto_0
 
     :cond_5
     iget-object v0, p0, Lnet/lingala/zip4j/io/PartInputStream;->oneByteBuff:[B
 
-    aget-byte v0, v0, v1
+    aget-byte v0, v0, v2
 
-    and-int/lit16 v4, v0, 0xff
+    and-int/lit16 v1, v0, 0xff
 
     :goto_0
-    return v4
+    return v1
 .end method
 
 .method public read([B)I
@@ -392,7 +392,7 @@
 .end method
 
 .method public read([BII)I
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -408,9 +408,9 @@
 
     sub-long v6, v2, v4
 
-    cmp-long v8, v0, v6
+    cmp-long v0, v0, v6
 
-    if-lez v8, :cond_0
+    if-lez v0, :cond_0
 
     sub-long/2addr v2, v4
 
@@ -446,9 +446,9 @@
 
     iget-wide v2, p0, Lnet/lingala/zip4j/io/PartInputStream;->length:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     .line 90
     rem-int/lit8 v0, p3, 0x10
@@ -587,9 +587,9 @@
 
     iget-wide v0, p0, Lnet/lingala/zip4j/io/PartInputStream;->length:J
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-ltz p3, :cond_6
+    if-ltz p1, :cond_6
 
     .line 120
     invoke-virtual {p0}, Lnet/lingala/zip4j/io/PartInputStream;->checkAndReadAESMacBytes()V
@@ -613,7 +613,7 @@
 .end method
 
 .method public skip(J)J
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -622,9 +622,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     .line 155
     iget-wide v0, p0, Lnet/lingala/zip4j/io/PartInputStream;->length:J
@@ -633,9 +633,9 @@
 
     sub-long v4, v0, v2
 
-    cmp-long v6, p1, v4
+    cmp-long v4, p1, v4
 
-    if-lez v6, :cond_0
+    if-lez v4, :cond_0
 
     sub-long p1, v0, v2
 

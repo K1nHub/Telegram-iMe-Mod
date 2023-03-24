@@ -255,7 +255,7 @@
 
     div-float/2addr v0, p4
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 1387
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -284,7 +284,7 @@
 
     const/high16 v0, 0x43160000    # 150.0f
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     float-to-int p4, p4
 
@@ -668,7 +668,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_3
@@ -776,7 +776,7 @@
 
     move-result v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 1800
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
@@ -794,7 +794,7 @@
 
     add-int/2addr v0, p1
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     return p2
 
@@ -829,7 +829,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p2, :cond_2
@@ -1193,7 +1193,7 @@
     if-lt p3, p4, :cond_1
 
     :goto_0
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
@@ -1534,7 +1534,7 @@
 
     iget v3, p0, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->offsetToChildIndexOnLayoutPerc:F
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -1557,12 +1557,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     and-int/lit8 v4, v0, 0x2
@@ -1777,10 +1777,6 @@
 
     add-int/2addr p7, p4
 
-    move v4, p4
-
-    move v5, p7
-
     goto :goto_0
 
     .line 1312
@@ -1793,11 +1789,11 @@
 
     const/4 p7, 0x0
 
+    :goto_0
     move v4, p4
 
-    const/4 v5, 0x0
+    move v5, p7
 
-    :goto_0
     if-eq v4, v5, :cond_1
 
     const/4 p4, 0x1
@@ -2005,7 +2001,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_2
@@ -2315,16 +2311,14 @@
 
     const/4 p3, -0x1
 
-    const/4 v6, -0x1
-
     goto :goto_1
 
     :cond_2
     const/4 p3, 0x1
 
-    const/4 v6, 0x1
-
     :goto_1
+    move v6, p3
+
     const/4 v7, 0x0
 
     move-object v2, p0

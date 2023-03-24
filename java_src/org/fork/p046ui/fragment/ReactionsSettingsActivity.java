@@ -30,7 +30,7 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.fork.enums.DialogType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -38,7 +38,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.BottomSheet;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -113,12 +113,12 @@ public final class ReactionsSettingsActivity extends BaseFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getString("Reactions", C3286R.string.Reactions));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ReactionsSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getString("Reactions", C3301R.string.Reactions));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ReactionsSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ReactionsSettingsActivity.this.finishFragment();
@@ -199,7 +199,7 @@ public final class ReactionsSettingsActivity extends BaseFragment {
         int collectionSizeOrDefault;
         int lastIndex;
         final BottomSheet.Builder builder = new BottomSheet.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_message_popup_items), true);
+        builder.setTitle(LocaleController.getInternalString(C3301R.string.settings_interface_message_popup_items), true);
         boolean z = false;
         builder.setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
@@ -242,7 +242,7 @@ public final class ReactionsSettingsActivity extends BaseFragment {
         frameLayout2.setPadding(m50dp, m50dp, m50dp, m50dp);
         TextView textView = new TextView(getParentActivity());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3286R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3301R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
@@ -261,7 +261,7 @@ public final class ReactionsSettingsActivity extends BaseFragment {
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, 36, 8388659));
         TextView textView2 = new TextView(getParentActivity());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3286R.string.Save);
+        String string2 = LocaleController.getString("Save", C3301R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -311,8 +311,8 @@ public final class ReactionsSettingsActivity extends BaseFragment {
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         asSequence = CollectionsKt___CollectionsKt.asSequence(cells);
-        filter = SequencesKt___SequencesKt.filter(asSequence, C3152xecddff80.INSTANCE);
-        map = SequencesKt___SequencesKt.map(filter, C3153xecddff81.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(asSequence, C3166xecddff80.INSTANCE);
+        map = SequencesKt___SequencesKt.map(filter, C3167xecddff81.INSTANCE);
         set = SequencesKt___SequencesKt.toSet(map);
         builder.getDismissRunnable().run();
         SharedConfig.setSelectedDialogTypesForMessagePopupReactions(set);
@@ -413,18 +413,18 @@ public final class ReactionsSettingsActivity extends BaseFragment {
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == ReactionsSettingsActivity.this.enableRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getString("EnableReactions", C3286R.string.EnableReactions), SharedConfig.isReactionsEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getString("EnableReactions", C3301R.string.EnableReactions), SharedConfig.isReactionsEnabled, needDivider);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
                 ReactionsSettingsActivity reactionsSettingsActivity = ReactionsSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == reactionsSettingsActivity.enableSectionRow && !SharedConfig.isReactionsEnabled) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.settings_reactions_enable_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3301R.string.settings_reactions_enable_hint));
                     textInfoPrivacyCell.setFixedSize(0);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                 textInfoPrivacyCell.setText(null);
                 textInfoPrivacyCell.setFixedSize(12);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATION_CHECK && (view instanceof NotificationsCheckCell)) {
@@ -434,17 +434,17 @@ public final class ReactionsSettingsActivity extends BaseFragment {
                 List<String> mapEnumsToTitles = companion.mapEnumsToTitles(selectedDialogTypesForMessagePopupReactions);
                 boolean z = !mapEnumsToTitles.isEmpty();
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
-                String internalString2 = LocaleController.getInternalString(C3286R.string.settings_tools_message_popup_reactions);
+                String internalString2 = LocaleController.getInternalString(C3301R.string.settings_tools_message_popup_reactions);
                 if (z) {
                     internalString = TextUtils.join(", ", mapEnumsToTitles);
                 } else {
-                    internalString = LocaleController.getInternalString(C3286R.string.common_off);
+                    internalString = LocaleController.getInternalString(C3301R.string.common_off);
                 }
                 notificationsCheckCell.setTextAndValueAndCheck(internalString2, internalString, z, needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS && (view instanceof TextSettingsCell)) {
                 ReactionsSettingsActivity reactionsSettingsActivity2 = ReactionsSettingsActivity.this;
                 TextSettingsCell textSettingsCell = (TextSettingsCell) view;
-                textSettingsCell.setText(LocaleController.getString("DoubleTapSetting", C3286R.string.DoubleTapSetting), needDivider);
+                textSettingsCell.setText(LocaleController.getString("DoubleTapSetting", C3301R.string.DoubleTapSetting), needDivider);
                 if (reactionsSettingsActivity2.getForkCommonController().isQuickReactionEnabled()) {
                     BackupImageView valueBackupImageView = textSettingsCell.getValueBackupImageView();
                     Intrinsics.checkNotNullExpressionValue(valueBackupImageView, "valueBackupImageView");
@@ -454,7 +454,7 @@ public final class ReactionsSettingsActivity extends BaseFragment {
                     BackupImageView valueBackupImageView2 = textSettingsCell.getValueBackupImageView();
                     Intrinsics.checkNotNullExpressionValue(valueBackupImageView2, "valueBackupImageView");
                     ViewExtKt.gone(valueBackupImageView2);
-                    textSettingsCell.setValue(LocaleController.getInternalString(C3286R.string.common_off));
+                    textSettingsCell.setValue(LocaleController.getInternalString(C3301R.string.common_off));
                 }
                 String doubleTapReaction = MediaDataController.getInstance(((BaseFragment) reactionsSettingsActivity2).currentAccount).getDoubleTapReaction();
                 if (doubleTapReaction == null || (tLRPC$TL_availableReaction = MediaDataController.getInstance(((BaseFragment) reactionsSettingsActivity2).currentAccount).getReactionsMap().get(doubleTapReaction)) == null) {

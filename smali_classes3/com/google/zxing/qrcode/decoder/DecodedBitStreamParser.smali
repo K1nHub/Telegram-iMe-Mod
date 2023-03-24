@@ -72,13 +72,13 @@
 
     const/4 v12, 0x0
 
+    move v13, v1
+
+    move v14, v2
+
+    move v15, v14
+
     move-object/from16 v16, v12
-
-    const/4 v13, 0x0
-
-    const/4 v14, -0x1
-
-    const/4 v15, -0x1
 
     .line 68
     :goto_0
@@ -145,7 +145,7 @@
 
     move-result v2
 
-    if-ne v1, v11, :cond_1
+    if-ne v1, v11, :cond_3
 
     .line 105
     invoke-static {v7, v9, v2}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decodeHanziSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;I)V
@@ -163,17 +163,12 @@
 
     move-result-object v16
 
-    if-eqz v16, :cond_2
+    if-eqz v16, :cond_1
 
-    :cond_1
-    :goto_3
-    :pswitch_2
-    move-object v11, v6
-
-    goto :goto_5
+    goto :goto_3
 
     .line 96
-    :cond_2
+    :cond_1
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
     move-result-object v0
@@ -181,14 +176,14 @@
     throw v0
 
     .line 83
-    :pswitch_3
+    :pswitch_2
     invoke-virtual {v7}, Lcom/google/zxing/common/BitSource;->available()I
 
     move-result v1
 
     const/16 v2, 0x10
 
-    if-lt v1, v2, :cond_3
+    if-lt v1, v2, :cond_2
 
     const/16 v1, 0x8
 
@@ -209,17 +204,20 @@
     goto :goto_3
 
     .line 84
-    :cond_3
+    :cond_2
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
     move-result-object v0
 
     throw v0
 
+    :pswitch_3
+    move v13, v11
+
+    :cond_3
+    :goto_3
     :pswitch_4
     move-object v11, v6
-
-    const/4 v13, 0x1
 
     goto :goto_5
 
@@ -364,14 +362,12 @@
 
     throw v0
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x5
-        :pswitch_2
-        :pswitch_4
         :pswitch_4
         :pswitch_3
+        :pswitch_3
+        :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch

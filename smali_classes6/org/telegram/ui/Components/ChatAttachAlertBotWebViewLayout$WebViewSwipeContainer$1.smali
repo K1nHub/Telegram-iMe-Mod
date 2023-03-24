@@ -55,9 +55,9 @@
     :cond_0
     const/high16 p1, 0x442f0000    # 700.0f
 
-    const/4 p2, 0x1
-
     cmpl-float p1, p4, p1
+
+    const/4 p2, 0x1
 
     if-ltz p1, :cond_4
 
@@ -289,9 +289,9 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x3fc00000    # 1.5f
-
     cmpl-float p1, p1, v1
+
+    const/high16 v1, 0x3fc00000    # 1.5f
 
     if-ltz p1, :cond_3
 
@@ -299,13 +299,13 @@
 
     move-result p1
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v1
 
     invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
-    move-result v1
+    move-result v2
 
-    cmpl-float p1, p1, v1
+    cmpl-float p1, p1, v2
 
     if-ltz p1, :cond_3
 
@@ -315,13 +315,13 @@
 
     move-result p1
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->access$1400(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->access$1400(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
 
-    move-result v1
+    move-result v2
 
-    neg-float v1, v1
+    neg-float v2, v2
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
 
@@ -329,9 +329,9 @@
 
     move-result v3
 
-    add-float/2addr v1, v3
+    add-float/2addr v2, v3
 
-    cmpl-float p1, p1, v1
+    cmpl-float p1, p1, v2
 
     if-nez p1, :cond_1
 
@@ -429,19 +429,19 @@
 
     move-result-object p1
 
-    cmpl-float v1, p3, p2
+    cmpl-float v2, p3, p2
 
-    if-ltz v1, :cond_4
+    if-ltz v2, :cond_4
 
-    const/4 v1, 0x1
+    move v2, v0
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
     :goto_1
-    invoke-virtual {p1, v1}, Landroid/webkit/WebView;->canScrollHorizontally(I)Z
+    invoke-virtual {p1, v2}, Landroid/webkit/WebView;->canScrollHorizontally(I)Z
 
     move-result p1
 
@@ -452,11 +452,11 @@
 
     move-result p1
 
-    iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$1;->val$touchSlop:I
+    iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$1;->val$touchSlop:I
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    cmpl-float p1, p1, v1
+    cmpl-float p1, p1, v2
 
     if-ltz p1, :cond_7
 
@@ -464,7 +464,7 @@
 
     move-result p1
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v1
 
     invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 

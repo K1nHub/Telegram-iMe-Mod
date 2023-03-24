@@ -172,9 +172,10 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, -0x1
+    move v2, v0
 
     .line 465
+    :catch_0
     :cond_0
     :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
@@ -202,30 +203,25 @@
 
     move-result-object v4
     :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
     if-eqz v4, :cond_1
 
     move-object v1, v4
 
     .line 476
-    :catch_0
+    :catch_1
     :cond_1
     :try_start_1
     invoke-static {v3}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->parseAlignmentOverride(Ljava/lang/String;)I
 
     move-result v3
     :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
 
     if-eq v3, v0, :cond_0
 
     move v2, v3
-
-    goto :goto_0
-
-    :catch_1
-    nop
 
     goto :goto_0
 

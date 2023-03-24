@@ -49,15 +49,15 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_9
+    if-eqz v2, :cond_9
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto/16 :goto_3
 
@@ -101,7 +101,7 @@
     const-wide/16 v10, 0x3
 
     :goto_0
-    mul-long v6, v6, v10
+    mul-long/2addr v6, v10
 
     goto :goto_1
 
@@ -122,7 +122,7 @@
     :goto_1
     long-to-float v0, v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     long-to-float v1, v6
 
@@ -140,7 +140,7 @@
 
     if-gez v2, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 410
     :cond_3
@@ -195,9 +195,9 @@
 
     const-wide/16 v5, 0xc8
 
-    cmp-long v7, v8, v5
+    cmp-long v5, v8, v5
 
-    if-gtz v7, :cond_5
+    if-gtz v5, :cond_5
 
     .line 416
     iget-object v2, v2, Lorg/fork/ui/view/PinnedPlayerView$8;->this$0:Lorg/fork/ui/view/PinnedPlayerView;

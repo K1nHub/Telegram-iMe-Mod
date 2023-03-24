@@ -417,7 +417,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x4
+    move v1, v2
 
     :cond_0
     return v1
@@ -665,7 +665,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v1
+    mul-int/2addr v2, v1
 
     .line 5767
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -682,7 +682,7 @@
 
     int-to-float p1, v2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     int-to-float p1, v1
 
@@ -883,12 +883,12 @@
 
     if-eq p2, v0, :cond_3
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_2
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_2
     invoke-virtual {p1, v1, p2}, Lorg/telegram/ui/Cells/SharedAudioCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Z)V
@@ -923,12 +923,12 @@
 
     if-nez v0, :cond_4
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_3
     aget-object p2, p2, v0
@@ -943,7 +943,7 @@
 
     if-ltz p2, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -1010,12 +1010,12 @@
 
     if-eq p2, v0, :cond_8
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_4
 
     :cond_8
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_4
     invoke-virtual {p1, v1, p2}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setDocument(Lorg/telegram/messenger/MessageObject;Z)V
@@ -1050,12 +1050,12 @@
 
     if-nez v0, :cond_9
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_5
 
     :cond_9
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_5
     aget-object p2, p2, v0
@@ -1070,7 +1070,7 @@
 
     if-ltz p2, :cond_a
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_a
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedDocumentsAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -1381,7 +1381,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 5797
     :goto_0

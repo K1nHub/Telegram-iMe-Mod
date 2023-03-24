@@ -151,7 +151,7 @@
 .end method
 
 .method public declared-synchronized blockUntilDelivered(J)Z
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;,
@@ -207,9 +207,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, p1, v3
+    cmp-long v3, p1, v3
 
-    if-lez v5, :cond_1
+    if-lez v3, :cond_1
 
     .line 358
     iget-object v2, p0, Lcom/google/android/exoplayer2/PlayerMessage;->clock:Lcom/google/android/exoplayer2/util/Clock;

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1387:1\n1864#2,3:1388\n1549#2:1391\n1620#2,3:1392\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n*L\n753#1:1388,3\n775#1:1391\n775#1:1392,3\n*E\n"
+    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1363:1\n1864#2,3:1364\n1549#2:1367\n1620#2,3:1368\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1\n*L\n754#1:1364,3\n776#1:1367\n776#1:1368,3\n*E\n"
 .end annotation
 
 
@@ -67,7 +67,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 728
+    .line 729
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->invoke(Landroid/view/View;)V
@@ -84,7 +84,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 729
+    .line 730
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -95,21 +95,21 @@
 
     return-void
 
-    .line 730
+    .line 731
     :cond_0
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$hideHint(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 731
+    .line 732
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object p1
 
-    .line 732
-    instance-of v0, p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
+    .line 733
+    instance-of v0, p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
     const/4 v1, 0x1
 
@@ -117,16 +117,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 733
+    .line 734
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
+    check-cast p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;->getAddress()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getAddress()Ljava/lang/String;
 
     move-result-object p1
 
@@ -139,77 +139,77 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 734
+    .line 735
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 735
+    .line 736
     sget-object v0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
-    .line 736
-    new-instance v1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;
-
     .line 737
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
-
-    invoke-virtual {v2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;->getSecretWords()Ljava/util/List;
-
-    move-result-object v2
+    new-instance v1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
     .line 738
-    iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
-    invoke-static {v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
-    check-cast v3, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
+    invoke-virtual {v2}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getSecretWords()Ljava/util/List;
 
-    invoke-virtual {v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;->getPassword()Ljava/lang/String;
-
-    move-result-object v3
+    move-result-object v2
 
     .line 739
+    iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+
+    invoke-static {v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+
+    invoke-virtual {v3}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getPassword()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 740
     iget-object v4, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    invoke-static {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object v4
 
-    check-cast v4, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
+    check-cast v4, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
-    invoke-virtual {v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;->getPin()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getPin()Ljava/lang/String;
 
     move-result-object v4
+
+    .line 737
+    invoke-direct {v1, v2, v3, v4}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 736
-    invoke-direct {v1, v2, v3, v4}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 735
-    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-virtual {v0, v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v0
 
-    .line 741
+    .line 742
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 742
+    .line 743
     invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$setFragmentToRemove$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 734
+    .line 735
     invoke-virtual {p1, v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto/16 :goto_4
 
-    .line 746
+    .line 747
     :cond_2
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -217,13 +217,13 @@
 
     goto/16 :goto_4
 
-    .line 749
+    .line 750
     :cond_3
-    instance-of v0, p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;
+    instance-of v0, p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
     if-eqz v0, :cond_8
 
-    .line 750
+    .line 751
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$checkEditTexts(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Z
@@ -234,7 +234,7 @@
 
     return-void
 
-    .line 753
+    .line 754
     :cond_4
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -249,7 +249,7 @@
 
     move-result-object p1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
@@ -275,14 +275,14 @@
 
     move-result v3
 
-    .line 754
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    .line 755
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object v5
 
-    check-cast v5, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;
+    check-cast v5, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
-    invoke-virtual {v5}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;->getSecretWords()Ljava/util/List;
+    invoke-virtual {v5}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getSecretWords()Ljava/util/List;
 
     move-result-object v5
 
@@ -314,48 +314,48 @@
 
     if-nez v1, :cond_6
 
-    .line 756
+    .line 757
     new-instance p1, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 757
+    .line 758
     sget v1, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_title:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 758
+    .line 759
     sget v3, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_text:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 759
+    .line 760
     sget v4, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_button_see:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 760
+    .line 761
     sget v5, Lorg/telegram/messenger/R$string;->wallet_backup_test_time_alert_button_try:I
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 756
+    .line 757
     invoke-direct {p1, v1, v3, v4, v5}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda1;->INSTANCE:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda1;
 
-    .line 763
+    .line 764
     new-instance v3, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)V
 
-    .line 755
+    .line 756
     invoke-virtual {v0, p1, v1, v3, v2}, Lcom/smedialink/ui/base/mvp/MvpFragment;->showAlertDialog(Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;Z)V
 
     return-void
@@ -365,7 +365,7 @@
 
     goto :goto_1
 
-    .line 769
+    .line 770
     :cond_7
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -377,13 +377,13 @@
 
     goto :goto_4
 
-    .line 771
+    .line 772
     :cond_8
-    instance-of v0, p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;
+    instance-of v0, p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
     if-eqz v0, :cond_b
 
-    .line 772
+    .line 773
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$checkEditTexts(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Z
@@ -394,7 +394,7 @@
 
     return-void
 
-    .line 775
+    .line 776
     :cond_9
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createButtonTextView$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -438,7 +438,7 @@
     .line 1621
     check-cast v2, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    .line 775
+    .line 776
     invoke-virtual {v2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -452,7 +452,7 @@
 
     goto :goto_2
 
-    .line 775
+    .line 776
     :cond_a
     invoke-static {v1}, Lcom/smedialink/storage/data/utils/extentions/StringExtKt;->joinBySpace(Ljava/util/List;)Ljava/lang/String;
 
@@ -462,17 +462,17 @@
 
     goto :goto_4
 
-    .line 777
+    .line 778
     :cond_b
-    instance-of v0, p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Ready;
+    instance-of v0, p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Ready;
 
     if-eqz v0, :cond_c
 
     goto :goto_3
 
-    .line 778
+    .line 779
     :cond_c
-    instance-of v1, p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$TooBad;
+    instance-of v1, p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$TooBad;
 
     :goto_3
     if-eqz v1, :cond_d

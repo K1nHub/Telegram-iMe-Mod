@@ -250,9 +250,9 @@
 
     const-wide/16 p1, 0x0
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-lez v2, :cond_3
+    if-lez p1, :cond_3
 
     .line 418
     iget-object p1, p0, Lorg/telegram/messenger/MusicBrowserService$MediaSessionCallback;->this$0:Lorg/telegram/messenger/MusicBrowserService;
@@ -390,7 +390,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 464
     :goto_0
@@ -633,9 +633,9 @@
 
     move-result-object v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    invoke-virtual {v0, p2}, Lorg/telegram/messenger/MediaController;->playMessageAtIndex(I)V
+    invoke-virtual {v0, p1}, Lorg/telegram/messenger/MediaController;->playMessageAtIndex(I)V
 
     .line 388
     iget-object p1, p0, Lorg/telegram/messenger/MusicBrowserService$MediaSessionCallback;->this$0:Lorg/telegram/messenger/MusicBrowserService;

@@ -369,7 +369,7 @@
 
     const/4 v10, 0x0
 
-    const/4 v3, 0x0
+    move v3, v10
 
     .line 345
     :goto_0

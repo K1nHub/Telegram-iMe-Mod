@@ -54,9 +54,9 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 250
     :goto_0
@@ -87,7 +87,7 @@
 
     move-result-object v7
 
-    const/4 v10, 0x0
+    move v10, v1
 
     .line 251
     :goto_1
@@ -210,7 +210,7 @@
     if-nez p0, :cond_9
 
     :cond_8
-    const/4 v1, 0x1
+    move v1, v8
 
     :cond_9
     return v1
@@ -312,7 +312,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 255
     :goto_0

@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaFull;
 
     const/4 v1, 0x0
@@ -31,7 +31,7 @@
 
     sput-object v0, Lcom/google/protobuf/ListFieldSchema;->FULL_INSTANCE:Lcom/google/protobuf/ListFieldSchema;
 
-    .line 46
+    .line 47
     new-instance v0, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;
 
     invoke-direct {v0, v1}, Lcom/google/protobuf/ListFieldSchema$ListFieldSchemaLite;-><init>(Lcom/google/protobuf/ListFieldSchema$1;)V
@@ -44,7 +44,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 43
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,7 +53,7 @@
 .method synthetic constructor <init>(Lcom/google/protobuf/ListFieldSchema$1;)V
     .locals 0
 
-    .line 41
+    .line 42
     invoke-direct {p0}, Lcom/google/protobuf/ListFieldSchema;-><init>()V
 
     return-void
@@ -62,7 +62,7 @@
 .method static full()Lcom/google/protobuf/ListFieldSchema;
     .locals 1
 
-    .line 55
+    .line 56
     sget-object v0, Lcom/google/protobuf/ListFieldSchema;->FULL_INSTANCE:Lcom/google/protobuf/ListFieldSchema;
 
     return-object v0
@@ -71,7 +71,7 @@
 .method static lite()Lcom/google/protobuf/ListFieldSchema;
     .locals 1
 
-    .line 59
+    .line 60
     sget-object v0, Lcom/google/protobuf/ListFieldSchema;->LITE_INSTANCE:Lcom/google/protobuf/ListFieldSchema;
 
     return-object v0

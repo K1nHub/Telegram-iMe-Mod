@@ -37,9 +37,9 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/2addr p2, v2
+    add-int/2addr p2, v1
 
     invoke-interface {v0, p1, p2}, Lj$/util/stream/z1;->d(Ljava/lang/Object;I)V
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public e()Ljava/lang/Object;
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0}, Lj$/util/stream/C1;->count()J
 
@@ -55,13 +55,13 @@
 
     const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v2, :cond_0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-interface {p0, v1}, Lj$/util/stream/z1;->c(I)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lj$/util/stream/z1;->c(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -110,23 +110,23 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 8
+    .locals 5
 
     invoke-virtual {p0}, Lj$/util/stream/C1;->count()J
 
     move-result-wide v0
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x20
 
-    const/4 v3, 0x0
+    cmp-long v0, v0, v2
 
-    const/4 v4, 0x2
+    const/4 v1, 0x1
 
-    const-wide/16 v5, 0x20
+    const/4 v2, 0x0
 
-    cmp-long v7, v0, v5
+    const/4 v3, 0x2
 
-    if-gez v7, :cond_0
+    if-gez v0, :cond_0
 
     const/4 v0, 0x3
 
@@ -134,21 +134,21 @@
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    aput-object v1, v0, v3
+    aput-object v4, v0, v2
 
-    iget-object v1, p0, Lj$/util/stream/C1;->a:Lj$/util/stream/A1;
+    iget-object v2, p0, Lj$/util/stream/C1;->a:Lj$/util/stream/A1;
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     iget-object v1, p0, Lj$/util/stream/C1;->b:Lj$/util/stream/A1;
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v3
 
     const-string v1, "%s[%s.%s]"
 
@@ -159,27 +159,27 @@
     return-object v0
 
     :cond_0
-    new-array v0, v4, [Ljava/lang/Object;
+    new-array v0, v3, [Ljava/lang/Object;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    aput-object v1, v0, v3
+    aput-object v3, v0, v2
 
     invoke-virtual {p0}, Lj$/util/stream/C1;->count()J
 
-    move-result-wide v3
+    move-result-wide v2
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v2
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     const-string v1, "%s[size=%d]"
 

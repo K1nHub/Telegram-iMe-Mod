@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="@dimen/margin_under_normal" android:paddingBottom="@dimen/margin_under_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/margin_under_normal"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.smedialink.ui.custom.BigActionButton android:id="@id/button_action" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <androidx.appcompat.widget.AppCompatTextView android:gravity="center" android:id="@id/button_approve_info" android:padding="@dimen/margin_small" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_under_normal" />
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal" android:gravity="center" android:id="@id/button_conditions" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/wallet_enter_pin_height" android:layout_marginTop="@dimen/margin_under_normal" />
-</androidx.appcompat.widget.LinearLayoutCompat>

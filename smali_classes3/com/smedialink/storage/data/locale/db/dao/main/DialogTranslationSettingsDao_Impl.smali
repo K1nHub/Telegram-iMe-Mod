@@ -286,12 +286,12 @@
 
     if-eqz v13, :cond_0
 
-    const/4 v15, 0x1
+    move v15, v2
 
     goto :goto_1
 
     :cond_0
-    const/4 v15, 0x0
+    move v15, v4
 
     .line 311
     :goto_1
@@ -321,12 +321,12 @@
 
     if-eqz v13, :cond_2
 
-    const/16 v17, 0x1
+    move/from16 v17, v2
 
     goto :goto_3
 
     :cond_2
-    const/16 v17, 0x0
+    move/from16 v17, v4
 
     .line 321
     :goto_3

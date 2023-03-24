@@ -133,11 +133,11 @@
     sget-object v10, Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;->ETHER:Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
 
     .line 91
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getChain()Lcom/smedialink/storage/domain/model/crypto/Chain;
+    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getChain()Lcom/smedialink/storage/domain/model/crypto/Chain;
 
     move-result-object v7
 
@@ -155,11 +155,11 @@
     move-result-wide v8
 
     .line 93
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getFastest()Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
+    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getFastest()Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object v7
 
@@ -170,11 +170,11 @@
     move-result-object v16
 
     .line 94
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getFastest()Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
+    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getFastest()Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object v7
 
@@ -183,11 +183,11 @@
     move-result-object v15
 
     .line 95
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams;->getNonce()Ljava/math/BigInteger;
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v14
 

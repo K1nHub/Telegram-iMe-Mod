@@ -35,7 +35,7 @@ public class DocumentObject {
             if (tLRPC$WallPaper instanceof TLRPC$TL_wallPaper) {
                 TLRPC$Document tLRPC$Document = ((TLRPC$TL_wallPaper) tLRPC$WallPaper).document;
                 this.wallpaper = tLRPC$Document;
-                this.f1507id = tLRPC$Document.f1507id;
+                this.f1508id = tLRPC$Document.f1508id;
                 this.access_hash = tLRPC$Document.access_hash;
                 this.file_reference = tLRPC$Document.file_reference;
                 this.user_id = tLRPC$Document.user_id;
@@ -47,11 +47,11 @@ public class DocumentObject {
                 this.version = tLRPC$Document.version;
                 this.dc_id = tLRPC$Document.dc_id;
                 this.key = tLRPC$Document.key;
-                this.f1508iv = tLRPC$Document.f1508iv;
+                this.f1509iv = tLRPC$Document.f1509iv;
                 this.attributes = tLRPC$Document.attributes;
                 return;
             }
-            this.f1507id = -2147483648L;
+            this.f1508id = -2147483648L;
             this.dc_id = Integer.MIN_VALUE;
         }
     }
@@ -66,8 +66,8 @@ public class DocumentObject {
             if (tLRPC$PhotoSize instanceof TLRPC$TL_photoPathSize) {
                 tLRPC$TL_photoPathSize = (TLRPC$TL_photoPathSize) tLRPC$PhotoSize;
             } else {
-                i = tLRPC$PhotoSize.f1530w;
-                i2 = tLRPC$PhotoSize.f1529h;
+                i = tLRPC$PhotoSize.f1531w;
+                i2 = tLRPC$PhotoSize.f1530h;
             }
             if (tLRPC$TL_photoPathSize != null && i != 0 && i2 != 0) {
                 SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tLRPC$TL_photoPathSize.svgPath, i, i2);
@@ -147,8 +147,8 @@ public class DocumentObject {
                     }
                     i4++;
                 }
-                int i5 = tLRPC$DocumentAttribute.f1510w;
-                int i6 = tLRPC$DocumentAttribute.f1509h;
+                int i5 = tLRPC$DocumentAttribute.f1511w;
+                int i6 = tLRPC$DocumentAttribute.f1510h;
                 i = i5;
                 i2 = i6;
                 if (i != 0 && i2 != 0 && (svgDrawable = SvgHelper.getDrawableByPath(((TLRPC$TL_photoPathSize) tLRPC$PhotoSize).svgPath, (int) (i * f2), (int) (i2 * f2))) != null) {

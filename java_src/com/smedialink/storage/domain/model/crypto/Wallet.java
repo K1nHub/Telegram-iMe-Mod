@@ -4,6 +4,7 @@ import drinkless.org.ton.TonApi;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.web3j.crypto.Credentials;
+import wallet.core.jni.HDWallet;
 /* compiled from: Wallet.kt */
 /* loaded from: classes3.dex */
 public abstract class Wallet {
@@ -141,6 +142,96 @@ public abstract class Wallet {
                 return
             */
             throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.crypto.Wallet.EVM.<init>(java.lang.String, java.lang.String, org.web3j.crypto.Credentials):void");
+        }
+    }
+
+    /* compiled from: Wallet.kt */
+    /* loaded from: classes3.dex */
+    public static final class TRON extends Wallet {
+        private final String guid;
+        private final HDWallet hdWallet;
+
+        public static /* synthetic */ TRON copy$default(TRON tron, String str, HDWallet hDWallet, int i, Object obj) {
+            if ((i & 1) != 0) {
+                str = tron.getGuid();
+            }
+            if ((i & 2) != 0) {
+                hDWallet = tron.hdWallet;
+            }
+            return tron.copy(str, hDWallet);
+        }
+
+        public final String component1() {
+            return getGuid();
+        }
+
+        public final HDWallet component2() {
+            return this.hdWallet;
+        }
+
+        public final TRON copy(String guid, HDWallet hdWallet) {
+            Intrinsics.checkNotNullParameter(guid, "guid");
+            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
+            return new TRON(guid, hdWallet);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof TRON) {
+                TRON tron = (TRON) obj;
+                return Intrinsics.areEqual(getGuid(), tron.getGuid()) && Intrinsics.areEqual(this.hdWallet, tron.hdWallet);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (getGuid().hashCode() * 31) + this.hdWallet.hashCode();
+        }
+
+        public String toString() {
+            return "TRON(guid=" + getGuid() + ", hdWallet=" + this.hdWallet + ')';
+        }
+
+        @Override // com.smedialink.storage.domain.model.crypto.Wallet
+        public String getGuid() {
+            return this.guid;
+        }
+
+        public final HDWallet getHdWallet() {
+            return this.hdWallet;
+        }
+
+        /* JADX WARN: Illegal instructions before constructor call */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        public TRON(java.lang.String r8, wallet.core.jni.HDWallet r9) {
+            /*
+                r7 = this;
+                java.lang.String r0 = "guid"
+                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, r0)
+                java.lang.String r0 = "hdWallet"
+                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, r0)
+                java.lang.String r3 = r9.mnemonic()
+                java.lang.String r0 = "hdWallet.mnemonic()"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r0)
+                wallet.core.jni.CoinType r0 = wallet.core.jni.CoinType.TRON
+                java.lang.String r4 = r9.getAddressForCoin(r0)
+                java.lang.String r0 = "hdWallet.getAddressForCoin(CoinType.TRON)"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, r0)
+                com.smedialink.storage.domain.model.crypto.BlockchainType r5 = com.smedialink.storage.domain.model.crypto.BlockchainType.TRON
+                r6 = 0
+                r1 = r7
+                r2 = r8
+                r1.<init>(r2, r3, r4, r5, r6)
+                r7.guid = r8
+                r7.hdWallet = r9
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: com.smedialink.storage.domain.model.crypto.Wallet.TRON.<init>(java.lang.String, wallet.core.jni.HDWallet):void");
         }
     }
 

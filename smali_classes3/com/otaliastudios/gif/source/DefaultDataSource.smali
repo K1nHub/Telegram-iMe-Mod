@@ -293,9 +293,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 91
     invoke-direct {p0}, Lcom/otaliastudios/gif/source/DefaultDataSource;->ensureGifHeader()V
@@ -370,7 +370,7 @@
 
     const-wide/16 v7, 0x3e8
 
-    mul-long v5, v5, v7
+    mul-long/2addr v5, v7
 
     add-long/2addr v0, v5
 
@@ -491,14 +491,14 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 123
-    iget-object v0, p0, Lcom/otaliastudios/gif/source/DefaultDataSource;->mFormat:Landroid/media/MediaFormat;
+    iget-object v1, p0, Lcom/otaliastudios/gif/source/DefaultDataSource;->mFormat:Landroid/media/MediaFormat;
 
     const-string v2, "frame-rate"
 
-    invoke-virtual {v0, v2, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 125
     :cond_0
@@ -595,7 +595,7 @@
 
     int-to-long v4, v4
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     add-long/2addr v0, v4
 
@@ -628,7 +628,7 @@
 
     int-to-long v4, v4
 
-    mul-long v4, v4, v2
+    mul-long/2addr v4, v2
 
     add-long/2addr v0, v4
 

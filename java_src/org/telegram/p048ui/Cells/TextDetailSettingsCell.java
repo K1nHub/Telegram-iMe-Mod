@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -85,9 +86,9 @@ public class TextDetailSettingsCell extends FrameLayout {
         this.valueTextView.setPadding(0, 0, 0, 0);
     }
 
-    public void setTextAndValue(String str, CharSequence charSequence, boolean z) {
-        this.textView.setText(str);
-        this.valueTextView.setText(charSequence);
+    public void setTextAndValue(CharSequence charSequence, CharSequence charSequence2, boolean z) {
+        this.textView.setText(charSequence);
+        this.valueTextView.setText(charSequence2);
         this.needDivider = z;
         this.imageView.setVisibility(8);
         setWillNotDraw(!z);
@@ -108,6 +109,14 @@ public class TextDetailSettingsCell extends FrameLayout {
         this.valueTextView.setText(charSequence);
     }
 
+    public void setTextWithEmojiAnd21Value(String str, CharSequence charSequence, boolean z) {
+        TextView textView = this.textView;
+        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(14), false));
+        this.valueTextView.setText(charSequence);
+        this.needDivider = z;
+        setWillNotDraw(!z);
+    }
+
     @Override // android.view.View
     public void invalidate() {
         super.invalidate();
@@ -126,6 +135,7 @@ public class TextDetailSettingsCell extends FrameLayout {
         } else {
             m50dp = AndroidUtilities.m50dp(this.imageView.getVisibility() == 0 ? 71 : 20);
         }
+        float f = m50dp;
         float measuredHeight = getMeasuredHeight() - 1;
         int measuredWidth = getMeasuredWidth();
         if (LocaleController.isRTL) {
@@ -133,6 +143,6 @@ public class TextDetailSettingsCell extends FrameLayout {
         } else {
             i = 0;
         }
-        canvas.drawLine(m50dp, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
+        canvas.drawLine(f, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
     }
 }

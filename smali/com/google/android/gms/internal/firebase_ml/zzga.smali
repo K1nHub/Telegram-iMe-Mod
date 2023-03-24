@@ -104,62 +104,62 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-ltz v5, :cond_2
+    if-ltz v3, :cond_2
 
     .line 20
     invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "Content-Length"
+    const-string v5, "Content-Length"
 
-    invoke-virtual {v0, v4, v3}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v5, v4}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 21
     :cond_2
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getRequestMethod()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "POST"
+    const-string v5, "POST"
 
     .line 22
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
     const/4 v6, 0x0
 
     const/4 v7, 0x1
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    const-string v4, "PUT"
+    const-string v5, "PUT"
 
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_3
 
     goto :goto_1
 
     :cond_3
-    if-nez v5, :cond_4
+    if-nez v3, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v7
 
     goto :goto_0
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_0
     new-array v2, v7, [Ljava/lang/Object;
 
-    aput-object v3, v2, v6
+    aput-object v4, v2, v6
 
     if-eqz v1, :cond_5
 
@@ -184,18 +184,18 @@
     :goto_1
     invoke-virtual {v0, v7}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
-    if-ltz v5, :cond_7
+    if-ltz v3, :cond_7
 
     const-wide/32 v3, 0x7fffffff
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-gtz v5, :cond_7
+    if-gtz v3, :cond_7
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     .line 25
-    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setFixedLengthStreamingMode(I)V
+    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setFixedLengthStreamingMode(I)V
 
     goto :goto_2
 

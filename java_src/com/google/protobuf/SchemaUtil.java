@@ -17,7 +17,7 @@ public final class SchemaUtil {
     public static void requireGeneratedMessage(Class<?> cls) {
         Class<?> cls2;
         if (!GeneratedMessageLite.class.isAssignableFrom(cls) && (cls2 = GENERATED_MESSAGE_CLASS) != null && !cls2.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+            throw new IllegalArgumentException("Message classes must extend GeneratedMessageV3 or GeneratedMessageLite");
         }
     }
 

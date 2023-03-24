@@ -577,7 +577,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -600,7 +600,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 187
     :goto_1
@@ -625,7 +625,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 191
     :goto_2
@@ -973,7 +973,7 @@
 
     const/high16 v5, -0x40800000    # -1.0f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     aput v4, v3, v1
 
@@ -1006,9 +1006,9 @@
 
     neg-float v1, v0
 
-    const/4 v2, 0x1
-
     cmpl-float v1, p2, v1
+
+    const/4 v2, 0x1
 
     if-lez v1, :cond_0
 
@@ -1077,7 +1077,7 @@
     .line 352
     iget v2, p0, Landroidx/constraintlayout/core/SolverVariableValues;->head:I
 
-    const/4 v4, -0x1
+    move v4, v3
 
     :goto_0
     if-ge v1, v0, :cond_7
@@ -1504,7 +1504,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_1
@@ -1532,7 +1532,7 @@
 
     aget-object v4, v6, v4
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     .line 458
     invoke-virtual {p0, v4, v5, p2}, Landroidx/constraintlayout/core/SolverVariableValues;->add(Landroidx/constraintlayout/core/SolverVariable;FZ)V

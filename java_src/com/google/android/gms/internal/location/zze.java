@@ -12,13 +12,13 @@ public final class zze implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         List zzk = zzds.zzk();
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
         String str = null;
         String str2 = null;
         String str3 = null;
         zzd zzdVar = null;
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

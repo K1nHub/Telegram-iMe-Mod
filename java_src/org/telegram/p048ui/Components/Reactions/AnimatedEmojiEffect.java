@@ -6,7 +6,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
@@ -141,7 +141,7 @@ public class AnimatedEmojiEffect {
             this.effectImageReceiver.setAutoRepeat(0);
             return;
         }
-        int i = C3286R.C3291raw.custom_emoji_reaction;
+        int i = C3301R.C3306raw.custom_emoji_reaction;
         this.effectImageReceiver.setImageBitmap(new RLottieDrawable(i, "" + i, AndroidUtilities.m50dp(60), AndroidUtilities.m50dp(60), false, null));
     }
 
@@ -174,6 +174,8 @@ public class AnimatedEmojiEffect {
         }
 
         public void generate() {
+            AnimatedEmojiEffect animatedEmojiEffect;
+            AnimatedEmojiEffect animatedEmojiEffect2;
             float f = BitmapDescriptorFactory.HUE_RED;
             this.progress = BitmapDescriptorFactory.HUE_RED;
             float randX = randX();
@@ -196,8 +198,7 @@ public class AnimatedEmojiEffect {
                     f = f2;
                 }
             }
-            AnimatedEmojiEffect animatedEmojiEffect = AnimatedEmojiEffect.this;
-            float f6 = animatedEmojiEffect.longAnimation ? 0.8f : 0.5f;
+            float f6 = AnimatedEmojiEffect.this.longAnimation ? 0.8f : 0.5f;
             this.toX = randX;
             if (randX > animatedEmojiEffect.bounds.width() * f6) {
                 this.fromX = AnimatedEmojiEffect.this.bounds.width() * f6;
@@ -209,8 +210,7 @@ public class AnimatedEmojiEffect {
                 }
             }
             this.fromY = (AnimatedEmojiEffect.this.bounds.height() * 0.45f) + (AnimatedEmojiEffect.this.bounds.height() * 0.1f * (Math.abs(Utilities.fastRandom.nextInt() % 100) / 100.0f));
-            AnimatedEmojiEffect animatedEmojiEffect2 = AnimatedEmojiEffect.this;
-            if (animatedEmojiEffect2.longAnimation) {
+            if (AnimatedEmojiEffect.this.longAnimation) {
                 float width2 = (animatedEmojiEffect2.bounds.width() * 0.05f) + (AnimatedEmojiEffect.this.bounds.width() * 0.1f * (Math.abs(Utilities.fastRandom.nextInt() % 100) / 100.0f));
                 this.fromSize = width2;
                 this.toSize = width2 * (((Math.abs(Utilities.fastRandom.nextInt() % 100) / 100.0f) * 1.5f) + 1.5f);
@@ -242,14 +242,14 @@ public class AnimatedEmojiEffect {
             return animatedEmojiEffect.bounds.width() * (Math.abs(Utilities.fastRandom.nextInt() % 100) / 100.0f);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0096  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0093  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public void draw(android.graphics.Canvas r11) {
             /*
-                Method dump skipped, instructions count: 221
+                Method dump skipped, instructions count: 216
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Reactions.AnimatedEmojiEffect.Particle.draw(android.graphics.Canvas):void");

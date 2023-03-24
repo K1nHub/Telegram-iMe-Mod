@@ -258,7 +258,7 @@
     .line 291
     iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_0
 
@@ -278,7 +278,7 @@
     .line 295
     iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    const/4 p3, 0x1
+    move p3, v0
 
     :cond_1
     if-eqz p6, :cond_2
@@ -293,7 +293,7 @@
     .line 299
     iput p6, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    const/4 p3, 0x1
+    move p3, v0
 
     :cond_2
     if-eqz p5, :cond_3
@@ -415,12 +415,12 @@
 
     if-nez v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 169
     :goto_0
@@ -440,7 +440,7 @@
 
     if-ge v0, v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     iput-boolean v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mIgnoreWindowContentOverlay:Z
@@ -645,7 +645,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 548
     :goto_0
@@ -748,7 +748,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 328
     :cond_1
@@ -769,7 +769,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     if-eqz v0, :cond_3
@@ -1113,7 +1113,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 368
     :cond_0
@@ -1379,7 +1379,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-eqz v0, :cond_1
@@ -1430,7 +1430,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 451
     :cond_3
@@ -2088,19 +2088,19 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     and-int/lit16 p1, p1, 0x100
 
     if-eqz p1, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 261
     :cond_2

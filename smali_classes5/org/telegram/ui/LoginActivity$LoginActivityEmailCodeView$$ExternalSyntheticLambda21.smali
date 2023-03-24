@@ -2,38 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$2:Landroid/os/Bundle;
+
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lorg/telegram/tgnet/TLObject;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-    iput-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$1:Ljava/lang/String;
+    iput-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/tgnet/TLObject;
+
+    iput-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$2:Landroid/os/Bundle;
+
+    iput-object p4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p5, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$4:Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+.method public final run()V
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;
 
-    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$1:Ljava/lang/String;
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->$r8$lambda$s9fjsDiesaoirnt_P5GhjomqPkM(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$2:Landroid/os/Bundle;
+
+    iget-object v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;->f$4:Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->$r8$lambda$zeGWzjDLt_bbByCU3ufoaev5mUc(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lorg/telegram/tgnet/TLObject;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;)V
 
     return-void
 .end method

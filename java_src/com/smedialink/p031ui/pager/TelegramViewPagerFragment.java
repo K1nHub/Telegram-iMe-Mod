@@ -41,10 +41,10 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import org.fork.p046ui.view.FloatingActionButton;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.AnimationProperties;
@@ -272,16 +272,16 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getToolbarTitle());
-        c3351ActionBar.setExtraHeight(AndroidUtilities.m51dp(getAdditionalActionBarHeight() + 44.0f));
-        c3351ActionBar.setAllowOverlayTitle(false);
-        c3351ActionBar.setAddToContainer(false);
-        c3351ActionBar.setClipContent(true);
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getToolbarTitle());
+        c3366ActionBar.setExtraHeight(AndroidUtilities.m51dp(getAdditionalActionBarHeight() + 44.0f));
+        c3366ActionBar.setAllowOverlayTitle(false);
+        c3366ActionBar.setAddToContainer(false);
+        c3366ActionBar.setClipContent(true);
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TelegramViewPagerFragment.this.finishFragment();
@@ -291,26 +291,26 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             }
         });
         ViewExtKt.visible(getScrollSlidingTextTabStrip());
-        ViewParent parent = c3351ActionBar.getParent();
+        ViewParent parent = c3366ActionBar.getParent();
         ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
         if (viewGroup != null) {
-            viewGroup.removeView(c3351ActionBar);
+            viewGroup.removeView(c3366ActionBar);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkScroll(RecyclerView recyclerView) {
         int childCount = recyclerView.getChildCount();
-        int i = 0;
-        int i2 = Integer.MAX_VALUE;
+        int i = Integer.MAX_VALUE;
+        int i2 = 0;
         for (int i3 = 0; i3 < childCount; i3++) {
             View childAt = recyclerView.getChildAt(i3);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             int bottom = childAt.getBottom();
-            i2 = RangesKt___RangesKt.coerceAtMost(i2, childAt.getTop());
-            i = RangesKt___RangesKt.coerceAtLeast(bottom, i);
+            i = RangesKt___RangesKt.coerceAtMost(i, childAt.getTop());
+            i2 = RangesKt___RangesKt.coerceAtLeast(bottom, i2);
         }
-        if (i == 0 || i >= recyclerView.getMeasuredHeight() - recyclerView.getPaddingBottom()) {
+        if (i2 == 0 || i2 >= recyclerView.getMeasuredHeight() - recyclerView.getPaddingBottom()) {
             return;
         }
         resetScroll();
@@ -458,7 +458,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                     if (i != 1) {
                         int i2 = (int) (-((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY());
-                        int currentActionBarHeight = C3351ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3366ActionBar.getCurrentActionBarHeight();
                         if (i2 == 0 || i2 == currentActionBarHeight) {
                             return;
                         }
@@ -476,10 +476,10 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     if (recyclerView == TelegramViewPagerFragment.this.getViewPages()[0].getListView()) {
                         float translationY = ((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY();
                         float f = translationY - i2;
-                        if (f < (-C3351ActionBar.getCurrentActionBarHeight())) {
-                            f = -C3351ActionBar.getCurrentActionBarHeight();
+                        if (f < (-C3366ActionBar.getCurrentActionBarHeight())) {
+                            f = -C3366ActionBar.getCurrentActionBarHeight();
                         } else if (f > BitmapDescriptorFactory.HUE_RED) {
-                            f = BitmapDescriptorFactory.HUE_RED;
+                            f = 0.0f;
                         }
                         if (f == translationY) {
                             return;
@@ -752,8 +752,8 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     Intrinsics.checkNotNull(velocityTracker3);
                     velocityTracker3.computeCurrentVelocity(1000, getMaximumVelocity());
                     if (motionEvent == null || motionEvent.getAction() == 3) {
-                        f = BitmapDescriptorFactory.HUE_RED;
-                        f2 = BitmapDescriptorFactory.HUE_RED;
+                        f = 0.0f;
+                        f2 = 0.0f;
                     } else {
                         VelocityTracker velocityTracker4 = this.velocityTracker;
                         Intrinsics.checkNotNull(velocityTracker4);

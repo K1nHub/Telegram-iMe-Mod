@@ -361,18 +361,18 @@
 
     const-wide/32 v9, -0x80000000
 
-    cmp-long v12, v7, v9
+    cmp-long v7, v7, v9
 
-    if-eqz v12, :cond_7
+    if-eqz v7, :cond_7
 
     .line 33
     invoke-virtual {v4}, Lcom/google/android/gms/measurement/internal/zzg;->zzb()J
 
     move-result-wide v7
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    invoke-virtual {v15, v8}, Lcom/google/android/gms/internal/measurement/zzfx;->zzE(I)Lcom/google/android/gms/internal/measurement/zzfx;
+    invoke-virtual {v15, v7}, Lcom/google/android/gms/internal/measurement/zzfx;->zzE(I)Lcom/google/android/gms/internal/measurement/zzfx;
 
     .line 34
     :cond_7
@@ -717,9 +717,9 @@
 
     move-result-wide v8
 
-    long-to-int v9, v8
+    long-to-int v8, v8
 
-    invoke-virtual {v15, v9}, Lcom/google/android/gms/internal/measurement/zzfx;->zzaf(I)Lcom/google/android/gms/internal/measurement/zzfx;
+    invoke-virtual {v15, v8}, Lcom/google/android/gms/internal/measurement/zzfx;->zzaf(I)Lcom/google/android/gms/internal/measurement/zzfx;
 
     iget-object v8, v2, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 

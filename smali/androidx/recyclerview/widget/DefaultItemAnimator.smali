@@ -1230,7 +1230,7 @@
 .end method
 
 .method protected animateRemoveImpl(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
-    .locals 7
+    .locals 6
 
     .line 226
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -1252,9 +1252,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_0
+    if-lez v2, :cond_0
 
     .line 231
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
@@ -2385,7 +2385,7 @@
     .line 565
     iput-object v2, p1, Landroidx/recyclerview/widget/DefaultItemAnimator$ChangeInfo;->oldHolder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    const/4 v3, 0x1
+    move v3, v1
 
     .line 570
     :goto_0

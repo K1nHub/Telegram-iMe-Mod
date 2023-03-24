@@ -50,7 +50,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 99
+    .line 100
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$pageTabs$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$pageTabs$2;->this$0:Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->access$initPageTabs(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;)Ljava/util/List;

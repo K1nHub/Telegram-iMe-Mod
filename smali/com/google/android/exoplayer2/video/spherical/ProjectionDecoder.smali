@@ -227,7 +227,7 @@
 
     int-to-double v9, v0
 
-    mul-double v9, v9, v5
+    mul-double/2addr v9, v5
 
     .line 185
     invoke-static {v9, v10}, Ljava/lang/Math;->log(D)D
@@ -258,7 +258,7 @@
 
     const/16 v12, 0x8
 
-    mul-int/lit8 v11, v11, 0x8
+    mul-int/2addr v11, v12
 
     invoke-virtual {v10, v11}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->setPosition(I)V
 
@@ -386,7 +386,7 @@
 
     int-to-double v12, v4
 
-    mul-double v12, v12, v5
+    mul-double/2addr v12, v5
 
     .line 216
     invoke-static {v12, v13}, Ljava/lang/Math;->log(D)D

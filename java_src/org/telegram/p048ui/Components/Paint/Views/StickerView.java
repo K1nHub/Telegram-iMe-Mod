@@ -70,7 +70,7 @@ public class StickerView extends EntityView {
             if (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeSticker) {
                 TLRPC$TL_maskCoords tLRPC$TL_maskCoords = tLRPC$DocumentAttribute.mask_coords;
                 if (tLRPC$TL_maskCoords != null) {
-                    this.anchor = tLRPC$TL_maskCoords.f1576n;
+                    this.anchor = tLRPC$TL_maskCoords.f1577n;
                 }
             } else {
                 i++;

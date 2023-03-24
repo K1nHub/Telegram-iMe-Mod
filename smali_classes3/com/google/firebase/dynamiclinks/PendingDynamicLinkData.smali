@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/firebase/dynamiclinks/internal/DynamicLinkData;)V
-    .locals 5
+    .locals 4
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
@@ -36,9 +36,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 51
     invoke-static {}, Lcom/google/android/gms/common/util/DefaultClock;->getInstance()Lcom/google/android/gms/common/util/Clock;

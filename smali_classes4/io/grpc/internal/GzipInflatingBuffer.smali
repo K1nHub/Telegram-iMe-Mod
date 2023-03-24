@@ -191,12 +191,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     const-string v3, "inflater is null"
@@ -210,12 +210,12 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     const-string v3, "inflaterInput has unconsumed bytes"
@@ -671,9 +671,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const v0, 0xffff
+    const v1, 0xffff
 
     and-int/2addr v0, v1
 
@@ -838,7 +838,7 @@
 .end method
 
 .method private processTrailer()Z
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/util/zip/ZipException;
@@ -901,9 +901,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     iget-wide v0, p0, Lio/grpc/internal/GzipInflatingBuffer;->expectedGzipTrailerIsize:J
 
@@ -914,9 +914,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 470
     iget-object v0, p0, Lio/grpc/internal/GzipInflatingBuffer;->crc:Ljava/util/zip/CRC32;
@@ -1094,9 +1094,10 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x1
+    move v3, v0
 
-    const/4 v3, 0x0
+    :cond_0
+    move v2, v1
 
     :goto_0
     if-eqz v2, :cond_1
@@ -1181,11 +1182,6 @@
 
     goto :goto_0
 
-    :cond_0
-    const/4 v2, 0x1
-
-    goto :goto_0
-
     .line 287
     :pswitch_3
     invoke-direct {p0}, Lio/grpc/internal/GzipInflatingBuffer;->initializeInflater()Z
@@ -1266,7 +1262,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_3
     :goto_1

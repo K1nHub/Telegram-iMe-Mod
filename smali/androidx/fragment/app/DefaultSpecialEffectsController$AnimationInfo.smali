@@ -80,7 +80,7 @@
 
     if-ne v1, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 

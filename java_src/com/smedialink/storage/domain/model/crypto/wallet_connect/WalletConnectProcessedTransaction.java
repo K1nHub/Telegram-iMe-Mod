@@ -12,10 +12,10 @@ public final class WalletConnectProcessedTransaction {
 
     /* renamed from: to */
     private final String f329to;
-    private final TransactionParams transactionParams;
+    private final TransactionParams.Ether transactionParams;
     private final String value;
 
-    public WalletConnectProcessedTransaction(String from, String to, String value, String data, TransactionParams transactionParams, String networkType, String feeTokenCode) {
+    public WalletConnectProcessedTransaction(String from, String to, String value, String data, TransactionParams.Ether transactionParams, String networkType, String feeTokenCode) {
         Intrinsics.checkNotNullParameter(from, "from");
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -48,7 +48,7 @@ public final class WalletConnectProcessedTransaction {
         return this.data;
     }
 
-    public final TransactionParams getTransactionParams() {
+    public final TransactionParams.Ether getTransactionParams() {
         return this.transactionParams;
     }
 

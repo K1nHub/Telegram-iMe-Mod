@@ -95,7 +95,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -266,6 +266,22 @@
     sget-object p0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
     const-string v0, "orZero"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public static final orZero(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    .locals 1
+
+    if-nez p0, :cond_0
+
+    .line 35
+    sget-object p0, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
+
+    const-string v0, "ZERO"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

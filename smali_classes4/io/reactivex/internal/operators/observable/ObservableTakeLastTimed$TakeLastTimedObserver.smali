@@ -211,12 +211,12 @@
 
     if-nez v5, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_1
     if-eqz v6, :cond_5
@@ -332,20 +332,20 @@
     .line 90
     iget-wide v5, p0, Lio/reactivex/internal/operators/observable/ObservableTakeLastTimed$TakeLastTimedObserver;->count:J
 
-    const/4 v7, 0x1
+    const-wide v7, 0x7fffffffffffffffL
 
-    const-wide v8, 0x7fffffffffffffffL
-
-    cmp-long v10, v5, v8
-
-    if-nez v10, :cond_0
+    cmp-long v7, v5, v7
 
     const/4 v8, 0x1
+
+    if-nez v7, :cond_0
+
+    move v7, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     .line 93
     :goto_0
@@ -380,14 +380,14 @@
 
     if-lez p1, :cond_1
 
-    if-nez v8, :cond_2
+    if-nez v7, :cond_2
 
     .line 97
     invoke-virtual {v0}, Lio/reactivex/internal/queue/SpscLinkedArrayQueue;->size()I
 
     move-result p1
 
-    shr-int/2addr p1, v7
+    shr-int/2addr p1, v8
 
     int-to-long v9, p1
 

@@ -66,6 +66,7 @@ public class FontProvider {
         try {
             String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
             ContentResolver contentResolver = context.getContentResolver();
+            int i3 = 0;
             if (Build.VERSION.SDK_INT > 16) {
                 cursor = Api16Impl.query(contentResolver, build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null, cancellationSignal);
             } else {
@@ -80,16 +81,16 @@ public class FontProvider {
                 int columnIndex5 = cursor.getColumnIndex("font_weight");
                 int columnIndex6 = cursor.getColumnIndex("font_italic");
                 while (cursor.moveToNext()) {
-                    int i3 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                    int i4 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
+                    int i4 = columnIndex != -1 ? cursor.getInt(columnIndex) : i3;
+                    int i5 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : i3;
                     if (columnIndex3 == -1) {
-                        i = i3;
+                        i = i4;
                         withAppendedId = ContentUris.withAppendedId(build, cursor.getLong(columnIndex2));
                     } else {
-                        i = i3;
+                        i = i4;
                         withAppendedId = ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
                     }
-                    int i5 = columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400;
+                    int i6 = columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400;
                     if (columnIndex6 == -1 || cursor.getInt(columnIndex6) != 1) {
                         i2 = i;
                         z = false;
@@ -97,7 +98,8 @@ public class FontProvider {
                         i2 = i;
                         z = true;
                     }
-                    arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i4, i5, z, i2));
+                    arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i5, i6, z, i2));
+                    i3 = 0;
                 }
                 arrayList = arrayList2;
             }

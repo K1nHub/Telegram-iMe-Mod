@@ -176,12 +176,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v3, 0x0
@@ -237,7 +237,7 @@
 
     if-eqz v4, :cond_4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 187
     :goto_2
@@ -285,7 +285,7 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v5, 0x1
+    move v5, v2
 
     :cond_2
     add-int/lit8 v1, v1, 0x1

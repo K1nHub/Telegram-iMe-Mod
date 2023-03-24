@@ -174,16 +174,16 @@
 .end method
 
 .method private isFlushingOrShutdown()Z
-    .locals 5
+    .locals 4
 
     .line 275
     iget-wide v0, p0, Lcom/google/android/exoplayer2/mediacodec/AsynchronousMediaCodecCallback;->pendingFlushCount:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/mediacodec/AsynchronousMediaCodecCallback;->shutDown:Z
 
@@ -297,9 +297,9 @@
     return-void
 
     :cond_1
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_2
+    if-gez v1, :cond_2
 
     .line 250
     new-instance v1, Ljava/lang/IllegalStateException;

@@ -193,7 +193,7 @@
 
     if-ne v2, v3, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_4
     iput-boolean v1, v0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->isRtl:Z

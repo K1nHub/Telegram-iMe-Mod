@@ -260,7 +260,7 @@
 
     :catch_0
     :cond_0
-    const/4 p1, 0x0
+    move p1, v8
 
     :goto_0
     if-nez p1, :cond_1

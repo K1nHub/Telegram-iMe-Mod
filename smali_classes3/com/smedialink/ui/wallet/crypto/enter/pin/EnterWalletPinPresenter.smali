@@ -169,7 +169,7 @@
 
     if-lez v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     if-eqz v1, :cond_1
@@ -290,12 +290,12 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v7
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_0
     const/4 v5, 0x2

@@ -59,7 +59,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_3
@@ -324,17 +324,17 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-ltz v4, :cond_1
+    if-ltz v2, :cond_1
 
     const v2, 0x7fffffff
 
     int-to-long v2, v2
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v2, :cond_1
 
     .line 706
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I

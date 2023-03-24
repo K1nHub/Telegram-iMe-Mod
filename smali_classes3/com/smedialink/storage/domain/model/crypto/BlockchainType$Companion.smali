@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainType.kt\ncom/smedialink/storage/domain/model/crypto/BlockchainType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,31:1\n1#2:32\n*E\n"
+    value = "SMAP\nBlockchainType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainType.kt\ncom/smedialink/storage/domain/model/crypto/BlockchainType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,41:1\n1#2:42\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 26
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,6 +38,41 @@
 
 
 # virtual methods
+.method public final getBip39PhraseBasedBlockchains()Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/smedialink/storage/domain/model/crypto/BlockchainType;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    .line 38
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TRON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public final map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
     .locals 5
 
@@ -45,7 +80,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 28
+    .line 36
     invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->values()[Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0

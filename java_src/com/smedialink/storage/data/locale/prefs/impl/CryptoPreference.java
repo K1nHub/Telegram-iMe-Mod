@@ -410,10 +410,30 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.smedialink.storage.domain.storage.CryptoPreferenceHelper
-    public void resetTokensSettings() {
+    public void resetAllTokensSettings() {
         SharedPreferences.Editor edit = getMPref().edit();
         edit.remove(BasePreferenceHelper.DefaultImpls.withTgAccount$default(this, "tokens_only_positive", null, 2, null));
         for (NetworkType networkType : NetworkType.values()) {
+            edit.remove(BasePreferenceHelper.DefaultImpls.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null));
+        }
+        edit.apply();
+    }
+
+    @Override // com.smedialink.storage.domain.storage.CryptoPreferenceHelper
+    public void resetTokensSettingsByNetwork(NetworkType networkType) {
+        Intrinsics.checkNotNullParameter(networkType, "networkType");
+        SharedPreferences.Editor edit = getMPref().edit();
+        edit.remove(BasePreferenceHelper.DefaultImpls.withTgAccount$default(this, "tokens_only_positive", null, 2, null));
+        edit.remove(BasePreferenceHelper.DefaultImpls.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null));
+        edit.apply();
+    }
+
+    @Override // com.smedialink.storage.domain.storage.CryptoPreferenceHelper
+    public void resetTokensSettingsByBlockchainType(BlockchainType blockchainType) {
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        SharedPreferences.Editor edit = getMPref().edit();
+        edit.remove(BasePreferenceHelper.DefaultImpls.withTgAccount$default(this, "tokens_only_positive", null, 2, null));
+        for (NetworkType networkType : NetworkType.Companion.getNetworksByBlockchain(blockchainType)) {
             edit.remove(BasePreferenceHelper.DefaultImpls.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null));
         }
         edit.apply();

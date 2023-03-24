@@ -49,9 +49,9 @@ public final class SwapRepositoryImpl implements SwapRepository {
     public Observable<Result<List<TokenInfo>>> getAvailableTokensToSwap(NetworkType networkType, SwapProtocol protocol) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<R> map = this.swapApi.getAvailableTokensToSwap(new NetworkAndProtocolSwapRequest(protocol.name(), networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1769xd64aae2f(this.firebaseErrorHandler)));
+        Observable<R> map = this.swapApi.getAvailableTokensToSwap(new NetworkAndProtocolSwapRequest(protocol.name(), networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1777xd64aae2f(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<TokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1768xd612d052(this.errorHandler)));
+        Observable<Result<List<TokenInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1776xd612d052(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

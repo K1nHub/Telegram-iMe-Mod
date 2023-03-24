@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,7 +41,7 @@ public final class NoPermissionMusicCell$requestButton$2 extends Lambda implemen
         int color = Theme.getColor(str);
         str2 = noPermissionMusicCell.buttonPressedColor;
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(m51dp, color, Theme.getColor(str2)));
-        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3286R.string.PeopleNearbyAllowAccess));
+        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3301R.string.PeopleNearbyAllowAccess));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 14.0f);
         str3 = noPermissionMusicCell.buttonTextColor;

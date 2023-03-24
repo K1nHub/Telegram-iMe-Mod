@@ -23,7 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback1;
 import org.fork.utils.Callbacks$Callback2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BottomSheet;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -208,12 +208,12 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            String string = LocaleController.getString("Cancel", C3286R.string.Cancel);
+            String string = LocaleController.getString("Cancel", C3301R.string.Cancel);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
             upperCase = string.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         } else {
-            String string2 = LocaleController.getString("Save", C3286R.string.Save);
+            String string2 = LocaleController.getString("Save", C3301R.string.Save);
             Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
             upperCase = string2.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -243,7 +243,7 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         List mutableList;
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.textTranslateLanguages);
         if (i != this.textOut) {
-            String internalString = LocaleController.getInternalString(C3286R.string.language_settings_app_language);
+            String internalString = LocaleController.getInternalString(C3301R.string.language_settings_app_language);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ge_settings_app_language)");
             mutableList.add(0, new TranslationLanguageUiModel(null, internalString));
         }
@@ -347,19 +347,19 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3286R.string.language_settings_text_messages));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3301R.string.language_settings_text_messages));
                 return;
             }
             boolean z = false;
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3286R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3301R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATION_CHECK && (view instanceof NotificationsCheckCell)) {
                 String langCode = ChatLanguageSettingsBottomSheet.this.getLangCode(i);
-                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3286R.string.language_settings_in_text_translate : C3286R.string.language_settings_out_text_translate);
+                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3301R.string.language_settings_in_text_translate : C3301R.string.language_settings_out_text_translate);
                 if (langCode == null) {
-                    formatStringInternal = LocaleController.getInternalString(C3286R.string.language_settings_app_language);
+                    formatStringInternal = LocaleController.getInternalString(C3301R.string.language_settings_app_language);
                 } else {
-                    int i2 = C3286R.string.language_settings_selected_language;
+                    int i2 = C3301R.string.language_settings_selected_language;
                     Object[] objArr = new Object[1];
                     Iterator<T> it = ChatLanguageSettingsBottomSheet.this.getTextTranslateLanguages().iterator();
                     while (true) {
@@ -376,7 +376,12 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
                     objArr[0] = ((TranslationLanguageUiModel) obj).getDisplayLanguage();
                     formatStringInternal = LocaleController.formatStringInternal(i2, objArr);
                 }
-                ((NotificationsCheckCell) view).setTextAndValueAndCheck(internalString, formatStringInternal, i == ChatLanguageSettingsBottomSheet.this.textIn ? ChatLanguageSettingsBottomSheet.this.getNewSettings().isInTextTranslateEnabled() : ChatLanguageSettingsBottomSheet.this.getNewSettings().isOutTextTranslateEnabled(), (i == ChatLanguageSettingsBottomSheet.this.textOut && ChatLanguageSettingsBottomSheet.this.autoTranslateRow == -1) ? true : true);
+                boolean isInTextTranslateEnabled = i == ChatLanguageSettingsBottomSheet.this.textIn ? ChatLanguageSettingsBottomSheet.this.getNewSettings().isInTextTranslateEnabled() : ChatLanguageSettingsBottomSheet.this.getNewSettings().isOutTextTranslateEnabled();
+                NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
+                if (i != ChatLanguageSettingsBottomSheet.this.textOut || ChatLanguageSettingsBottomSheet.this.autoTranslateRow != -1) {
+                    z = true;
+                }
+                notificationsCheckCell.setTextAndValueAndCheck(internalString, formatStringInternal, isInTextTranslateEnabled, z);
             }
         }
     }

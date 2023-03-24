@@ -200,9 +200,9 @@
 
     const-wide/16 p0, 0x0
 
-    cmp-long p2, p3, p0
+    cmp-long p0, p3, p0
 
-    if-eqz p2, :cond_2
+    if-eqz p0, :cond_2
 
     return-void
 
@@ -676,9 +676,9 @@
 
     const-wide/16 v2, 0x3e8
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
-    mul-long p0, p0, v2
+    mul-long/2addr p0, v2
 
     const-wide v2, 0x100000000L
 
@@ -735,99 +735,99 @@
 .method private static writeTimestamp([BIJ)V
     .locals 11
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long v0, p2, v0
 
-    cmp-long v3, p2, v1
+    const/4 v1, 0x0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     add-int/lit8 p2, p1, 0x8
 
     .line 230
-    invoke-static {p0, p1, p2, v0}, Ljava/util/Arrays;->fill([BIIB)V
+    invoke-static {p0, p1, p2, v1}, Ljava/util/Arrays;->fill([BIIB)V
 
     return-void
 
     :cond_0
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
     .line 234
-    div-long v3, p2, v1
+    div-long v4, p2, v2
 
-    mul-long v5, v3, v1
+    mul-long v6, v4, v2
 
-    sub-long/2addr p2, v5
+    sub-long/2addr p2, v6
 
-    const-wide v5, 0x83aa7e80L
+    const-wide v6, 0x83aa7e80L
 
-    add-long/2addr v3, v5
+    add-long/2addr v4, v6
 
-    add-int/lit8 v5, p1, 0x1
+    add-int/lit8 v0, p1, 0x1
 
     const/16 v6, 0x18
 
-    shr-long v7, v3, v6
+    shr-long v7, v4, v6
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    int-to-byte v7, v8
+    int-to-byte v7, v7
 
     .line 239
     aput-byte v7, p0, p1
 
-    add-int/lit8 p1, v5, 0x1
+    add-int/lit8 p1, v0, 0x1
 
     const/16 v7, 0x10
 
-    shr-long v8, v3, v7
+    shr-long v8, v4, v7
 
-    long-to-int v9, v8
+    long-to-int v8, v8
 
-    int-to-byte v8, v9
+    int-to-byte v8, v8
 
     .line 240
-    aput-byte v8, p0, v5
+    aput-byte v8, p0, v0
 
-    add-int/lit8 v5, p1, 0x1
+    add-int/lit8 v0, p1, 0x1
 
     const/16 v8, 0x8
 
-    shr-long v9, v3, v8
+    shr-long v9, v4, v8
 
-    long-to-int v10, v9
+    long-to-int v9, v9
 
-    int-to-byte v9, v10
+    int-to-byte v9, v9
 
     .line 241
     aput-byte v9, p0, p1
 
-    add-int/lit8 p1, v5, 0x1
+    add-int/lit8 p1, v0, 0x1
 
-    shr-long/2addr v3, v0
+    shr-long/2addr v4, v1
 
-    long-to-int v0, v3
+    long-to-int v1, v4
 
-    int-to-byte v0, v0
+    int-to-byte v1, v1
 
     .line 242
-    aput-byte v0, p0, v5
+    aput-byte v1, p0, v0
 
-    const-wide v3, 0x100000000L
+    const-wide v0, 0x100000000L
 
-    mul-long p2, p2, v3
+    mul-long/2addr p2, v0
 
     .line 244
-    div-long/2addr p2, v1
+    div-long/2addr p2, v2
 
     add-int/lit8 v0, p1, 0x1
 
     shr-long v1, p2, v6
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    int-to-byte v1, v2
+    int-to-byte v1, v1
 
     .line 246
     aput-byte v1, p0, p1
@@ -836,9 +836,9 @@
 
     shr-long v1, p2, v7
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    int-to-byte v1, v2
+    int-to-byte v1, v1
 
     .line 247
     aput-byte v1, p0, v0
@@ -847,9 +847,9 @@
 
     shr-long/2addr p2, v8
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
-    int-to-byte p2, p3
+    int-to-byte p2, p2
 
     .line 248
     aput-byte p2, p0, p1
@@ -861,7 +861,7 @@
 
     const-wide v1, 0x406fe00000000000L    # 255.0
 
-    mul-double p1, p1, v1
+    mul-double/2addr p1, v1
 
     double-to-int p1, p1
 

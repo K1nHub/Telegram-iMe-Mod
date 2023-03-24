@@ -91,6 +91,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
     @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         String str;
+        char c;
         String sb;
         boolean equals;
         Charset UTF_8;
@@ -173,16 +174,18 @@ public final class HttpLoggingInterceptor implements Interceptor {
             if (proceed.message().length() == 0) {
                 str = "-byte body omitted)";
                 sb = "";
+                c = ' ';
             } else {
                 String message = proceed.message();
                 StringBuilder sb5 = new StringBuilder();
                 str = "-byte body omitted)";
+                c = ' ';
                 sb5.append(String.valueOf(' '));
                 sb5.append(message);
                 sb = sb5.toString();
             }
             sb4.append(sb);
-            sb4.append(' ');
+            sb4.append(c);
             sb4.append(proceed.request().url());
             sb4.append(" (");
             sb4.append(millis);

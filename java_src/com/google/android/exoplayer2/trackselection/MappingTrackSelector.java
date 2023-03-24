@@ -123,23 +123,23 @@ public abstract class MappingTrackSelector extends TrackSelector {
 
         public int getAdaptiveSupport(int i, int i2, int[] iArr) {
             int i3 = 0;
+            int i4 = 16;
             String str = null;
             boolean z = false;
-            int i4 = 0;
-            int i5 = 16;
+            int i5 = 0;
             while (i3 < iArr.length) {
                 String str2 = this.rendererTrackGroups[i].get(i2).getFormat(iArr[i3]).sampleMimeType;
-                int i6 = i4 + 1;
-                if (i4 == 0) {
+                int i6 = i5 + 1;
+                if (i5 == 0) {
                     str = str2;
                 } else {
                     z |= !Util.areEqual(str, str2);
                 }
-                i5 = Math.min(i5, RendererCapabilities.CC.getAdaptiveSupport(this.rendererFormatSupports[i][i2][i3]));
+                i4 = Math.min(i4, RendererCapabilities.CC.getAdaptiveSupport(this.rendererFormatSupports[i][i2][i3]));
                 i3++;
-                i4 = i6;
+                i5 = i6;
             }
-            return z ? Math.min(i5, this.rendererMixedMimeTypeAdaptiveSupports[i]) : i5;
+            return z ? Math.min(i4, this.rendererMixedMimeTypeAdaptiveSupports[i]) : i4;
         }
 
         public TrackGroupArray getUnmappedTrackGroups() {
@@ -199,8 +199,8 @@ public abstract class MappingTrackSelector extends TrackSelector {
 
     private static int findRenderer(RendererCapabilities[] rendererCapabilitiesArr, TrackGroup trackGroup, int[] iArr, boolean z) throws ExoPlaybackException {
         int length = rendererCapabilitiesArr.length;
-        int i = 0;
         boolean z2 = true;
+        int i = 0;
         for (int i2 = 0; i2 < rendererCapabilitiesArr.length; i2++) {
             RendererCapabilities rendererCapabilities = rendererCapabilitiesArr[i2];
             int i3 = 0;

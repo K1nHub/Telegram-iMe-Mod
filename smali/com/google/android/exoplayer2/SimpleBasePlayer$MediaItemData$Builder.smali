@@ -388,13 +388,13 @@
 .end method
 
 .method public setDefaultPositionUs(J)Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -414,19 +414,19 @@
 .end method
 
 .method public setDurationUs(J)Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData$Builder;
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     goto :goto_0
 
@@ -522,7 +522,7 @@
 .end method
 
 .method public setPeriods(Ljava/util/List;)Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData$Builder;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -540,7 +540,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     add-int/lit8 v3, v0, -0x1
@@ -558,42 +558,34 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v7, 0x1
+    cmp-long v3, v3, v5
 
-    cmp-long v8, v3, v5
+    const/4 v4, 0x1
 
-    if-eqz v8, :cond_0
+    if-eqz v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
-    const-string v4, "Periods other than last need a duration"
+    const-string v5, "Periods other than last need a duration"
 
     .line 1510
-    invoke-static {v3, v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v3, v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     add-int/lit8 v3, v2, 0x1
 
-    move v4, v3
+    move v5, v3
 
     :goto_2
-    if-ge v4, v0, :cond_1
+    if-ge v5, v0, :cond_1
 
     .line 1514
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/android/exoplayer2/SimpleBasePlayer$PeriodData;
-
-    iget-object v5, v5, Lcom/google/android/exoplayer2/SimpleBasePlayer$PeriodData;->uid:Ljava/lang/Object;
-
-    invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -601,18 +593,26 @@
 
     iget-object v6, v6, Lcom/google/android/exoplayer2/SimpleBasePlayer$PeriodData;->uid:Ljava/lang/Object;
 
-    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result v5
+    move-result-object v7
 
-    xor-int/2addr v5, v7
+    check-cast v7, Lcom/google/android/exoplayer2/SimpleBasePlayer$PeriodData;
 
-    const-string v6, "Duplicate PeriodData UIDs in period list"
+    iget-object v7, v7, Lcom/google/android/exoplayer2/SimpleBasePlayer$PeriodData;->uid:Ljava/lang/Object;
+
+    invoke-virtual {v6, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    xor-int/2addr v6, v4
+
+    const-string v7, "Duplicate PeriodData UIDs in period list"
 
     .line 1513
-    invoke-static {v5, v6}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v6, v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
@@ -633,13 +633,13 @@
 .end method
 
 .method public setPositionInFirstPeriodUs(J)Lcom/google/android/exoplayer2/SimpleBasePlayer$MediaItemData$Builder;
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 

@@ -33,15 +33,14 @@ public final class zzfl implements MessageApi {
     public final PendingResult<Status> addListener(GoogleApiClient googleApiClient, MessageApi.MessageListener messageListener, Uri uri, int i) {
         boolean z;
         Preconditions.checkNotNull(uri, "uri must not be null");
-        if (i != 0) {
-            if (i != 1) {
-                z = false;
-                Preconditions.checkArgument(z, "invalid filter type");
-                return zza(googleApiClient, messageListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.MESSAGE_RECEIVED", uri, i)});
-            }
+        if (i == 0) {
+            z = true;
+        } else if (i == 1) {
             i = 1;
+            z = true;
+        } else {
+            z = false;
         }
-        z = true;
         Preconditions.checkArgument(z, "invalid filter type");
         return zza(googleApiClient, messageListener, new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.MESSAGE_RECEIVED", uri, i)});
     }

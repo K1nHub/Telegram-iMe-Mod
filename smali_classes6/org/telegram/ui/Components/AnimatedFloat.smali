@@ -611,9 +611,9 @@
 
     iget-wide v4, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDelay:J
 
-    cmp-long v2, p1, v4
+    cmp-long p1, p1, v4
 
-    if-ltz v2, :cond_4
+    if-ltz p1, :cond_4
 
     .line 144
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionInterpolator:Landroid/animation/TimeInterpolator;

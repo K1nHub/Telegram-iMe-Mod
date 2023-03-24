@@ -410,11 +410,11 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     const/high16 v10, 0x437f0000    # 255.0f
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     float-to-int v5, v5
 
@@ -947,7 +947,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -981,7 +981,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v10
+    mul-float/2addr v2, v10
 
     float-to-int v2, v2
 
@@ -1036,13 +1036,13 @@
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-virtual {v9}, Landroid/view/View;->getAlpha()F
 
     move-result v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1075,7 +1075,7 @@
 
     sub-float/2addr v8, v2
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     sub-float/2addr v12, v1
 

@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 152
+    .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,7 +55,7 @@
         }
     .end annotation
 
-    .line 160
+    .line 161
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "This should never be called."

@@ -242,7 +242,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_0
     const-string v7, "windowBackgroundWhiteGrayText4"
@@ -412,16 +412,14 @@
 
     const/16 v8, 0xc
 
-    const/16 v17, 0xc
-
     goto :goto_2
 
     :cond_3
     const/4 v8, -0x6
 
-    const/16 v17, -0x6
-
     :goto_2
+    move/from16 v17, v8
+
     const/16 v18, 0x0
 
     const/16 v19, 0x0
@@ -675,7 +673,7 @@
 .end method
 
 .method private switchSubtitle(I)V
-    .locals 7
+    .locals 5
 
     .line 1568
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -688,71 +686,71 @@
 
     sub-long/2addr v0, v2
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x28
 
-    const/4 v3, 0x1
+    cmp-long v0, v0, v2
 
-    const-wide/16 v4, 0x28
+    const/4 v1, 0x0
 
-    cmp-long v6, v0, v4
+    const/4 v2, 0x1
 
-    if-lez v6, :cond_0
+    if-lez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1569
     :goto_0
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    aget-object v1, v1, v2
+    aget-object v3, v3, v1
 
     if-nez p1, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_1
-    invoke-direct {p0, v1, v4, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
+    invoke-direct {p0, v3, v4, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
 
     .line 1570
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
-    aget-object v1, v1, v3
+    aget-object v3, v3, v2
 
-    if-ne p1, v3, :cond_2
+    if-ne p1, v2, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_2
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_2
-    invoke-direct {p0, v1, v4, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
+    invoke-direct {p0, v3, v4, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
 
     .line 1571
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
+    iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->subtitle:[Landroid/widget/TextView;
 
     const/4 v4, 0x2
 
-    aget-object v1, v1, v4
+    aget-object v3, v3, v4
 
     if-ne p1, v4, :cond_3
 
-    const/4 v2, 0x1
+    move v1, v2
 
     :cond_3
-    invoke-direct {p0, v1, v2, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
+    invoke-direct {p0, v3, v1, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->updateViewVisible(Landroid/view/View;ZZ)V
 
     return-void
 .end method
@@ -774,7 +772,7 @@
 
     if-nez v0, :cond_1
 
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 1582
     :cond_1
@@ -826,7 +824,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 1586
     :goto_1
@@ -998,12 +996,12 @@
 
     if-nez v2, :cond_0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_0
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -1017,7 +1015,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v9
 
     goto :goto_1
 
@@ -1038,7 +1036,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v9
 
     goto :goto_2
 
@@ -1072,7 +1070,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
     float-to-int v2, v2
 
@@ -1102,13 +1100,13 @@
 
     move-result v2
 
-    mul-float v2, v2, v12
+    mul-float/2addr v2, v12
 
     invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     add-float/2addr v0, v1
 
@@ -1129,13 +1127,13 @@
 
     move-result v3
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
 
-    mul-float v2, v2, v15
+    mul-float/2addr v2, v15
 
     add-float/2addr v1, v2
 
@@ -1171,9 +1169,9 @@
 
     iget v1, v14, Landroid/graphics/RectF;->right:F
 
-    const/16 v17, 0x3
-
     cmpg-float v0, v0, v1
+
+    const/16 v17, 0x3
 
     if-gez v0, :cond_3
 
@@ -1218,7 +1216,7 @@
 
     move-object v2, v14
 
-    const/16 v19, 0x1
+    move/from16 v19, v5
 
     move-object/from16 v5, v18
 
@@ -1227,7 +1225,7 @@
     goto :goto_3
 
     :cond_3
-    const/16 v19, 0x1
+    move/from16 v19, v5
 
     .line 1644
     :goto_3
@@ -1242,9 +1240,9 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
-    mul-float v1, v1, v10
+    mul-float/2addr v1, v10
 
     float-to-int v1, v1
 
@@ -1289,7 +1287,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     float-to-int v1, v1
 
@@ -1313,13 +1311,13 @@
 
     move-result v2
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
     invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    mul-float v1, v1, v15
+    mul-float/2addr v1, v15
 
     add-float/2addr v0, v1
 
@@ -1350,13 +1348,13 @@
 
     move-result v4
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
     invoke-static {v3, v4}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    mul-float v3, v3, v15
+    mul-float/2addr v3, v15
 
     add-float/2addr v1, v3
 
@@ -1378,9 +1376,9 @@
 
     int-to-float v1, v1
 
-    const v13, 0x3f7851ec    # 0.97f
-
     cmpl-float v0, v0, v1
+
+    const v13, 0x3f7851ec    # 0.97f
 
     if-lez v0, :cond_5
 
@@ -1395,12 +1393,12 @@
 
     if-lez v0, :cond_4
 
-    const/4 v0, 0x2
+    move v0, v7
 
     goto :goto_4
 
     :cond_4
-    const/4 v0, 0x1
+    move/from16 v0, v19
 
     :goto_4
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1440,7 +1438,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     float-to-int v1, v1
 
@@ -1465,13 +1463,13 @@
 
     move-result v3
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
 
-    mul-float v15, v15, v2
+    mul-float/2addr v15, v2
 
     add-float/2addr v15, v1
 
@@ -1495,7 +1493,7 @@
     goto :goto_5
 
     :cond_6
-    const/4 v7, 0x1
+    move/from16 v7, v19
 
     :goto_5
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1559,7 +1557,7 @@
 
     const-wide v4, 0x3fe999999999999aL    # 0.8
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
 
@@ -1585,9 +1583,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1609
     :goto_0
@@ -1617,7 +1615,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     sub-int/2addr v4, v5
@@ -1720,9 +1718,9 @@
 
     const v1, 0x3c23d70a    # 0.01f
 
-    const/4 v2, 0x1
-
     cmpg-float v1, p2, v1
+
+    const/4 v2, 0x1
 
     if-gez v1, :cond_1
 
@@ -1818,7 +1816,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_3
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
@@ -1838,7 +1836,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_4
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;

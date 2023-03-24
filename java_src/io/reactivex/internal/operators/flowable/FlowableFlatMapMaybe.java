@@ -244,7 +244,7 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:37:0x0077, code lost:
-            if (r13 != 0) goto L66;
+            if (r12 != 0) goto L66;
          */
         /* JADX WARN: Code restructure failed: missing block: B:39:0x007b, code lost:
             if (r17.cancelled == false) goto L38;
@@ -288,13 +288,13 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
             if (r7.isEmpty() == false) goto L52;
          */
         /* JADX WARN: Code restructure failed: missing block: B:56:0x00b3, code lost:
-            r12 = true;
+            r13 = true;
          */
         /* JADX WARN: Code restructure failed: missing block: B:57:0x00b4, code lost:
             if (r6 == false) goto L66;
          */
         /* JADX WARN: Code restructure failed: missing block: B:58:0x00b6, code lost:
-            if (r12 == false) goto L66;
+            if (r13 == false) goto L66;
          */
         /* JADX WARN: Code restructure failed: missing block: B:59:0x00b8, code lost:
             r2 = r17.errors.terminate();

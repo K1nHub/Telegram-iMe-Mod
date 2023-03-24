@@ -199,12 +199,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x2
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_0
     const-string v2, "context"
@@ -222,7 +222,7 @@
 
     sget-object p1, La/a/a/a/b/a;->c:La/a/a/a/b/a;
 
-    goto :goto_2
+    goto :goto_1
 
     .line 2
     :cond_1
@@ -251,12 +251,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
     :catch_0
-    nop
-
-    :goto_1
     int-to-float p1, p1
 
     cmpg-float p1, v2, p1
@@ -266,13 +261,13 @@
     .line 3
     sget-object p1, La/a/a/a/b/a;->b:La/a/a/a/b/a;
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_2
     sget-object p1, La/a/a/a/b/a;->a:La/a/a/a/b/a;
 
     .line 4
-    :goto_2
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
@@ -287,7 +282,7 @@
 
     if-eq p1, v0, :cond_3
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 
     .line 5
     :cond_3
@@ -329,7 +324,7 @@
 
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 8
     :cond_4
@@ -371,7 +366,7 @@
 
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 11
     :cond_5
@@ -402,13 +397,13 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_3
+    goto :goto_2
 
     :catch_1
     move-exception p1
 
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    :goto_3
+    :goto_2
     return-void
 .end method

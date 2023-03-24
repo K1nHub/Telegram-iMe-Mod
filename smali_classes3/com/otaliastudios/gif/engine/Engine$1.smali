@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public interpolate(J)J
-    .locals 5
+    .locals 4
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -75,9 +75,9 @@
     :cond_0
     iget-wide v2, p0, Lcom/otaliastudios/gif/engine/Engine$1;->mFirstInputTime:J
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     iput-wide p1, p0, Lcom/otaliastudios/gif/engine/Engine$1;->mFirstInputTime:J
 

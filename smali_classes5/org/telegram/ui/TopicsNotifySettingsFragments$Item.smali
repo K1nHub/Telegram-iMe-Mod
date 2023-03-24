@@ -102,7 +102,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :cond_4
     :goto_0

@@ -71,10 +71,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 24349
+    .line 24359
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 24354
+    .line 24364
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -93,7 +93,7 @@
 
     goto/16 :goto_0
 
-    .line 24433
+    .line 24443
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatEditPhoto;
 
@@ -101,7 +101,7 @@
 
     goto/16 :goto_0
 
-    .line 24415
+    .line 24425
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionGroupCall;
 
@@ -109,7 +109,7 @@
 
     goto/16 :goto_0
 
-    .line 24508
+    .line 24518
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionInviteToGroupCall_layer131;
 
@@ -117,7 +117,7 @@
 
     goto/16 :goto_0
 
-    .line 24463
+    .line 24473
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatAddUser_old;
 
@@ -125,7 +125,7 @@
 
     goto/16 :goto_0
 
-    .line 24499
+    .line 24509
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSuggestProfilePhoto;
 
@@ -133,7 +133,7 @@
 
     goto/16 :goto_0
 
-    .line 24385
+    .line 24395
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;
 
@@ -141,7 +141,7 @@
 
     goto/16 :goto_0
 
-    .line 24382
+    .line 24392
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionLoginUnknownLocation;
 
@@ -149,7 +149,7 @@
 
     goto/16 :goto_0
 
-    .line 24448
+    .line 24458
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionCreatedBroadcastList;
 
@@ -157,7 +157,7 @@
 
     goto/16 :goto_0
 
-    .line 24466
+    .line 24476
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTTLChange;
 
@@ -165,7 +165,7 @@
 
     goto/16 :goto_0
 
-    .line 24460
+    .line 24470
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionUserUpdatedPhoto;
 
@@ -173,7 +173,7 @@
 
     goto/16 :goto_0
 
-    .line 24451
+    .line 24461
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionUserJoined;
 
@@ -181,7 +181,7 @@
 
     goto/16 :goto_0
 
-    .line 24406
+    .line 24416
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatMigrateTo_layer131;
 
@@ -189,7 +189,7 @@
 
     goto/16 :goto_0
 
-    .line 24397
+    .line 24407
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionInviteToGroupCall;
 
@@ -197,7 +197,7 @@
 
     goto/16 :goto_0
 
-    .line 24442
+    .line 24452
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatAddUser_layer131;
 
@@ -205,7 +205,7 @@
 
     goto/16 :goto_0
 
-    .line 24478
+    .line 24488
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionWebViewDataSentMe;
 
@@ -213,7 +213,7 @@
 
     goto/16 :goto_0
 
-    .line 24421
+    .line 24431
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionScreenshotTaken;
 
@@ -221,7 +221,7 @@
 
     goto/16 :goto_0
 
-    .line 24529
+    .line 24539
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionPaymentSent_layer140;
 
@@ -229,7 +229,7 @@
 
     goto/16 :goto_0
 
-    .line 24469
+    .line 24479
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetMessagesTTL;
 
@@ -237,7 +237,7 @@
 
     goto/16 :goto_0
 
-    .line 24400
+    .line 24410
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatAddUser;
 
@@ -245,7 +245,7 @@
 
     goto/16 :goto_0
 
-    .line 24514
+    .line 24524
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicCreate;
 
@@ -253,7 +253,7 @@
 
     goto/16 :goto_0
 
-    .line 24436
+    .line 24446
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatJoinedByLink;
 
@@ -261,7 +261,7 @@
 
     goto/16 :goto_0
 
-    .line 24424
+    .line 24434
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionPhoneNumberRequest;
 
@@ -269,7 +269,7 @@
 
     goto/16 :goto_0
 
-    .line 24547
+    .line 24557
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionRequestedPeer;
 
@@ -277,7 +277,7 @@
 
     goto/16 :goto_0
 
-    .line 24388
+    .line 24398
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionCustomAction;
 
@@ -285,7 +285,7 @@
 
     goto/16 :goto_0
 
-    .line 24484
+    .line 24494
     :sswitch_18
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatJoinedByLink_layer131;
 
@@ -293,7 +293,7 @@
 
     goto/16 :goto_0
 
-    .line 24487
+    .line 24497
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionContactSignUp;
 
@@ -301,7 +301,7 @@
 
     goto/16 :goto_0
 
-    .line 24427
+    .line 24437
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatJoinedByRequest;
 
@@ -309,7 +309,7 @@
 
     goto/16 :goto_0
 
-    .line 24412
+    .line 24422
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChannelMigrateFrom;
 
@@ -317,7 +317,7 @@
 
     goto/16 :goto_0
 
-    .line 24502
+    .line 24512
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionAttachMenuBotAllowed;
 
@@ -325,7 +325,7 @@
 
     goto/16 :goto_0
 
-    .line 24409
+    .line 24419
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatMigrateTo;
 
@@ -333,7 +333,7 @@
 
     goto/16 :goto_0
 
-    .line 24475
+    .line 24485
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSecureValuesSent;
 
@@ -341,7 +341,7 @@
 
     goto/16 :goto_0
 
-    .line 24523
+    .line 24533
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionBotAllowed;
 
@@ -349,7 +349,7 @@
 
     goto/16 :goto_0
 
-    .line 24457
+    .line 24467
     :sswitch_20
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit;
 
@@ -357,7 +357,7 @@
 
     goto/16 :goto_0
 
-    .line 24394
+    .line 24404
     :sswitch_21
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatCreate;
 
@@ -365,7 +365,7 @@
 
     goto/16 :goto_0
 
-    .line 24532
+    .line 24542
     :sswitch_22
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionEmpty;
 
@@ -373,7 +373,7 @@
 
     goto/16 :goto_0
 
-    .line 24517
+    .line 24527
     :sswitch_23
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatEditTitle;
 
@@ -381,7 +381,7 @@
 
     goto/16 :goto_0
 
-    .line 24481
+    .line 24491
     :sswitch_24
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionWebViewDataSent;
 
@@ -389,7 +389,7 @@
 
     goto/16 :goto_0
 
-    .line 24538
+    .line 24548
     :sswitch_25
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionGroupCallScheduled;
 
@@ -397,7 +397,7 @@
 
     goto/16 :goto_0
 
-    .line 24445
+    .line 24455
     :sswitch_26
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatDeleteUser_layer131;
 
@@ -405,7 +405,7 @@
 
     goto/16 :goto_0
 
-    .line 24454
+    .line 24464
     :sswitch_27
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit_layer149;
 
@@ -413,7 +413,7 @@
 
     goto/16 :goto_0
 
-    .line 24439
+    .line 24449
     :sswitch_28
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChannelMigrateFrom_layer131;
 
@@ -421,7 +421,7 @@
 
     goto :goto_0
 
-    .line 24520
+    .line 24530
     :sswitch_29
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionBotAllowed_layer153;
 
@@ -429,7 +429,7 @@
 
     goto :goto_0
 
-    .line 24544
+    .line 24554
     :sswitch_2a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionGiftPremium;
 
@@ -437,7 +437,7 @@
 
     goto :goto_0
 
-    .line 24418
+    .line 24428
     :sswitch_2b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetChatTheme;
 
@@ -445,7 +445,7 @@
 
     goto :goto_0
 
-    .line 24472
+    .line 24482
     :sswitch_2c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetMessagesTTL_layer149;
 
@@ -453,7 +453,7 @@
 
     goto :goto_0
 
-    .line 24391
+    .line 24401
     :sswitch_2d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatCreate_layer131;
 
@@ -461,7 +461,7 @@
 
     goto :goto_0
 
-    .line 24403
+    .line 24413
     :sswitch_2e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatDeleteUser;
 
@@ -469,7 +469,7 @@
 
     goto :goto_0
 
-    .line 24430
+    .line 24440
     :sswitch_2f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionHistoryClear;
 
@@ -477,7 +477,7 @@
 
     goto :goto_0
 
-    .line 24496
+    .line 24506
     :sswitch_30
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionGeoProximityReached;
 
@@ -485,7 +485,7 @@
 
     goto :goto_0
 
-    .line 24526
+    .line 24536
     :sswitch_31
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionPaymentSent;
 
@@ -493,7 +493,7 @@
 
     goto :goto_0
 
-    .line 24505
+    .line 24515
     :sswitch_32
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatDeletePhoto;
 
@@ -501,7 +501,7 @@
 
     goto :goto_0
 
-    .line 24490
+    .line 24500
     :sswitch_33
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChannelCreate;
 
@@ -509,7 +509,7 @@
 
     goto :goto_0
 
-    .line 24493
+    .line 24503
     :sswitch_34
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionPinMessage;
 
@@ -517,7 +517,7 @@
 
     goto :goto_0
 
-    .line 24535
+    .line 24545
     :sswitch_35
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionGameScore;
 
@@ -525,7 +525,7 @@
 
     goto :goto_0
 
-    .line 24541
+    .line 24551
     :sswitch_36
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionPaymentSentMe;
 
@@ -533,7 +533,7 @@
 
     goto :goto_0
 
-    .line 24511
+    .line 24521
     :sswitch_37
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionPhoneCall;
 
@@ -546,7 +546,7 @@
 
     goto :goto_1
 
-    .line 24551
+    .line 24561
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -576,7 +576,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 24554
+    .line 24564
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

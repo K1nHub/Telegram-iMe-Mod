@@ -142,7 +142,7 @@
     .line 537
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LinkPath;->setAllowReset(Z)V
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 538
     :goto_0
@@ -191,7 +191,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 543
     :goto_1
@@ -218,7 +218,7 @@
     goto :goto_3
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_3
     invoke-virtual {v6, v5}, Lorg/telegram/ui/Components/LinkPath;->setBaselineShift(I)V

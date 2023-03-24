@@ -140,7 +140,7 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
     }
 
     private final void getWalletBalance(boolean z) {
-        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui());
+        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo706ui());
         final WalletAttachAlertPresenter$getWalletBalance$1 walletAttachAlertPresenter$getWalletBalance$1 = new WalletAttachAlertPresenter$getWalletBalance$1(this);
         Consumer consumer = new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
@@ -218,7 +218,7 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
                 walletTransactions$lambda$6 = WalletAttachAlertPresenter.getWalletTransactions$lambda$6(Function1.this, obj);
                 return walletTransactions$lambda$6;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo707ui());
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo706ui());
         final WalletAttachAlertPresenter$getWalletTransactions$2 walletAttachAlertPresenter$getWalletTransactions$2 = new WalletAttachAlertPresenter$getWalletTransactions$2(this, tokenCode);
         Consumer consumer = new Consumer() { // from class: com.smedialink.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer

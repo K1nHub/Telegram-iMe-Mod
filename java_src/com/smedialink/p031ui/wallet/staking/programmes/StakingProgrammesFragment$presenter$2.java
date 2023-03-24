@@ -26,11 +26,11 @@ public final class StakingProgrammesFragment$presenter$2 extends Lambda implemen
     /* compiled from: StakingProgrammesFragment.kt */
     /* renamed from: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C22481 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22621 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ StakingProgrammesFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C22481(StakingProgrammesFragment stakingProgrammesFragment) {
+        C22621(StakingProgrammesFragment stakingProgrammesFragment) {
             super(0);
             this.this$0 = stakingProgrammesFragment;
         }
@@ -48,7 +48,7 @@ public final class StakingProgrammesFragment$presenter$2 extends Lambda implemen
     public final StakingProgrammesPresenter invoke() {
         Lazy lazy;
         StakingProgrammesFragment stakingProgrammesFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2247x7bd24720(stakingProgrammesFragment, null, new C22481(stakingProgrammesFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2261x7bd24720(stakingProgrammesFragment, null, new C22621(stakingProgrammesFragment)));
         return (StakingProgrammesPresenter) lazy.getValue();
     }
 }

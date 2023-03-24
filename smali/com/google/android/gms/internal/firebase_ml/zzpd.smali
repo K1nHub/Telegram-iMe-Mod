@@ -808,7 +808,7 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v1, :cond_2
@@ -832,7 +832,7 @@
 
     if-nez v5, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :cond_1
     add-int/lit8 v4, v4, 0x1

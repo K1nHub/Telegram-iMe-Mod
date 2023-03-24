@@ -1667,12 +1667,12 @@
 
     if-ne p2, v2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     invoke-interface {v0, p1, p2}, Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;->didSelectTab(Lorg/telegram/ui/Components/FilterTabsView$TabView;Z)Z
@@ -1790,12 +1790,12 @@
 
     if-ge v0, p2, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     const/4 v4, -0x1
@@ -1908,7 +1908,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_0
@@ -2417,9 +2417,9 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x1
@@ -2483,7 +2483,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_3
 
@@ -2585,7 +2585,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_4
 
@@ -2678,7 +2678,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -2753,7 +2753,7 @@
 
     sub-float v5, v1, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-static {p4}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView$TabView;)I
 
@@ -2763,7 +2763,7 @@
 
     iget v6, p4, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -2800,7 +2800,7 @@
 
     sub-float v4, v1, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-static {p4}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView$TabView;)I
 
@@ -2810,7 +2810,7 @@
 
     iget v5, p4, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -2839,7 +2839,7 @@
 
     sub-float v5, v1, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     invoke-virtual {p4}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2849,7 +2849,7 @@
 
     iget v6, p4, Lorg/telegram/ui/Components/FilterTabsView$TabView;->changeProgress:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     add-float/2addr v4, v5
 
@@ -2883,9 +2883,9 @@
     goto/16 :goto_7
 
     :cond_6
-    const/4 p4, 0x0
+    move p4, v2
 
-    const/4 v3, 0x0
+    move v3, p4
 
     goto/16 :goto_7
 
@@ -2972,7 +2972,7 @@
     .line 1623
     iget v7, p0, Lorg/telegram/ui/Components/FilterTabsView;->animatingIndicatorProgress:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr p4, v6
 
@@ -3009,7 +3009,7 @@
     .line 1626
     iget v7, p0, Lorg/telegram/ui/Components/FilterTabsView;->animatingIndicatorProgress:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v8, v6
 
@@ -3079,7 +3079,7 @@
     .line 1632
     iget v5, p0, Lorg/telegram/ui/Components/FilterTabsView;->animatingIndicatorProgress:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -3234,12 +3234,12 @@
 
     if-gtz v6, :cond_d
 
-    const/4 v6, 0x1
+    move v6, p2
 
     goto :goto_9
 
     :cond_d
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_9
     long-to-float v7, v3
@@ -3286,7 +3286,7 @@
 
     if-ltz v6, :cond_10
 
-    const/4 v0, 0x1
+    move v0, p2
 
     :cond_10
     long-to-float v6, v3
@@ -3327,7 +3327,7 @@
 
     :cond_12
     :goto_a
-    const/4 v0, 0x1
+    move v0, p2
 
     :cond_13
     const/high16 p4, 0x43340000    # 180.0f
@@ -3538,7 +3538,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, -0x1
+    move p1, v2
 
     :goto_0
     add-int/2addr v1, p1
@@ -3748,7 +3748,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     return v1
@@ -3806,7 +3806,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2214
     :goto_0
@@ -4253,7 +4253,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     iput v0, p0, Lorg/telegram/ui/Components/FilterTabsView;->additionalTabWidth:I
@@ -4418,30 +4418,30 @@
     return-void
 
     :cond_0
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    cmpg-float v3, p2, v2
 
-    cmpg-float v4, p2, v3
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    if-gez v4, :cond_1
+    if-gez v3, :cond_1
 
-    const/4 p2, 0x0
+    move p2, v2
 
     goto :goto_0
 
     :cond_1
-    cmpl-float v4, p2, v2
+    cmpl-float v3, p2, v4
 
-    if-lez v4, :cond_2
+    if-lez v3, :cond_2
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v4
 
     :cond_2
     :goto_0
-    cmpl-float v3, p2, v3
+    cmpl-float v2, p2, v2
 
-    if-lez v3, :cond_3
+    if-lez v2, :cond_3
 
     .line 1802
     iput v0, p0, Lorg/telegram/ui/Components/FilterTabsView;->manualScrollingToPosition:I
@@ -4466,9 +4466,9 @@
     invoke-direct {p0}, Lorg/telegram/ui/Components/FilterTabsView;->notifySwipeProgressChanged()V
 
     .line 1810
-    iget-object v3, p0, Lorg/telegram/ui/Components/FilterTabsView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
     .line 1811
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -4476,7 +4476,7 @@
     .line 1812
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/FilterTabsView;->scrollToChild(I)V
 
-    cmpl-float p2, p2, v2
+    cmpl-float p2, p2, v4
 
     if-ltz p2, :cond_5
 
@@ -4637,7 +4637,7 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_1
@@ -4711,7 +4711,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_2
     if-ge v3, v2, :cond_3
@@ -4815,7 +4815,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 2223
     :goto_0

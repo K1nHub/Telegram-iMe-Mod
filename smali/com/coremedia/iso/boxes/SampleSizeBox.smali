@@ -253,7 +253,7 @@
 
 # virtual methods
 .method public _parseDetails(Ljava/nio/ByteBuffer;)V
-    .locals 6
+    .locals 5
 
     .line 90
     invoke-virtual {p0, p1}, Lcom/googlecode/mp4parser/AbstractFullBox;->parseVersionAndFlags(Ljava/nio/ByteBuffer;)J
@@ -281,9 +281,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_1
+    if-nez v1, :cond_1
 
     .line 95
     new-array v0, v0, [J
@@ -335,9 +335,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 109
     iget-object v0, p0, Lcom/coremedia/iso/boxes/SampleSizeBox;->sampleSizes:[J
@@ -383,16 +383,16 @@
 .end method
 
 .method protected getContentSize()J
-    .locals 5
+    .locals 4
 
     .line 85
     iget-wide v0, p0, Lcom/coremedia/iso/boxes/SampleSizeBox;->sampleSize:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/coremedia/iso/boxes/SampleSizeBox;->sampleSizes:[J
 
@@ -414,7 +414,7 @@
 .end method
 
 .method public getSampleCount()J
-    .locals 5
+    .locals 4
 
     sget-object v0, Lcom/coremedia/iso/boxes/SampleSizeBox;->ajc$tjp_3:Lorg/aspectj/lang/JoinPoint$StaticPart;
 
@@ -433,9 +433,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 69
     iget v0, p0, Lcom/coremedia/iso/boxes/SampleSizeBox;->sampleCount:I

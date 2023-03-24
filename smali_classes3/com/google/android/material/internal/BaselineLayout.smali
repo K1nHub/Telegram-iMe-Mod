@@ -161,15 +161,15 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v6, v1
 
-    const/4 v4, 0x0
+    move v7, v6
 
-    const/4 v5, 0x0
+    move v3, v2
 
-    const/4 v6, -0x1
+    move v4, v3
 
-    const/4 v7, -0x1
+    move v5, v4
 
     :goto_0
     if-ge v2, v0, :cond_2

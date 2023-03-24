@@ -732,7 +732,7 @@
 
     sub-double v15, v13, v8
 
-    mul-double v15, v15, v1
+    mul-double/2addr v15, v1
 
     iget-wide v10, v10, Lorg/telegram/ui/Components/Paint/ShapeDetector$Point;->y:D
 
@@ -754,7 +754,7 @@
 
     sub-double/2addr v13, v8
 
-    mul-double v13, v13, v3
+    mul-double/2addr v13, v3
 
     sub-double/2addr v10, v5
 
@@ -823,7 +823,7 @@
 
     const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     mul-double v2, v0, p4
 
@@ -891,9 +891,9 @@
 
     move-result-wide v16
 
-    cmpl-double v18, v16, p8
+    cmpl-double v16, v16, p8
 
-    if-lez v18, :cond_1
+    if-lez v16, :cond_1
 
     cmpg-double v16, v12, v14
 
@@ -1087,15 +1087,15 @@
 
     add-double/2addr v12, v14
 
-    mul-double v4, v4, v4
+    mul-double/2addr v4, v4
 
     sub-double/2addr v12, v4
 
     const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
-    mul-double v8, v8, v4
+    mul-double/2addr v8, v4
 
-    mul-double v8, v8, v10
+    mul-double/2addr v8, v10
 
     div-double/2addr v12, v8
 
@@ -1110,13 +1110,13 @@
 
     const-wide v7, 0x4066800000000000L    # 180.0
 
-    mul-double v4, v4, v7
+    mul-double/2addr v4, v7
 
     const-wide/high16 v7, 0x4032000000000000L    # 18.0
 
-    cmpl-double v9, v4, v7
+    cmpl-double v4, v4, v7
 
-    if-lez v9, :cond_1
+    if-lez v4, :cond_1
 
     if-lez v1, :cond_0
 
@@ -1272,7 +1272,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
@@ -1512,11 +1512,11 @@
 
     move-wide/from16 v18, v1
 
-    const/4 v9, 0x0
+    move v9, v12
 
-    const/4 v10, -0x1
+    move/from16 v10, v17
 
-    const/16 v20, -0x1
+    move/from16 v20, v10
 
     .line 250
     :goto_0
@@ -1614,11 +1614,11 @@
 
     const-wide v3, 0x3fe999999999999aL    # 0.8
 
-    cmpg-double v5, v1, v3
+    cmpg-double v1, v1, v3
 
-    if-gez v5, :cond_4
+    if-gez v1, :cond_4
 
-    const/4 v1, -0x1
+    move/from16 v1, v17
 
     goto :goto_2
 
@@ -1824,7 +1824,7 @@
 
     if-lt v9, v10, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_1
     if-ge v5, v3, :cond_0
@@ -1928,7 +1928,7 @@
 
     move-result v3
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 187
     :goto_2
@@ -1957,7 +1957,7 @@
 
     if-gt v10, v11, :cond_2
 
-    const/4 v9, 0x0
+    move v9, v6
 
     goto :goto_4
 
@@ -2042,9 +2042,9 @@
     :goto_4
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v5, 0x0
+    move v6, v9
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     goto :goto_2
 
@@ -2085,7 +2085,7 @@
     .line 511
     invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    move v1, p2
 
     .line 512
     :goto_0
@@ -2127,7 +2127,7 @@
 
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x0
+    move v3, p2
 
     .line 518
     :goto_1
@@ -2201,9 +2201,9 @@
 
     const/high16 v3, 0x42c80000    # 100.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
@@ -2496,7 +2496,7 @@
 
     div-double/2addr v2, v6
 
-    const/4 v8, 0x1
+    move v8, v4
 
     const-wide/16 v9, 0x0
 
@@ -2569,7 +2569,7 @@
 
     sub-double/2addr v12, v4
 
-    mul-double v12, v12, v9
+    mul-double/2addr v12, v9
 
     add-double/2addr v6, v12
 
@@ -2602,7 +2602,7 @@
 
     sub-double/2addr v12, v2
 
-    mul-double v9, v9, v12
+    mul-double/2addr v9, v12
 
     add-double/2addr v4, v9
 
@@ -2740,7 +2740,7 @@
 
     sub-double v12, v8, v10
 
-    mul-double v12, v12, v1
+    mul-double/2addr v12, v1
 
     iget-wide v14, v7, Lorg/telegram/ui/Components/Paint/ShapeDetector$Point;->y:D
 
@@ -2758,11 +2758,11 @@
 
     sub-double/2addr v8, v10
 
-    mul-double v8, v8, v3
+    mul-double/2addr v8, v3
 
     sub-double/2addr v14, v5
 
-    mul-double v14, v14, v1
+    mul-double/2addr v14, v1
 
     add-double/2addr v8, v14
 
@@ -2833,7 +2833,7 @@
 
     div-double v8, p2, v1
 
-    mul-double v6, v6, v8
+    mul-double/2addr v6, v8
 
     iput-wide v6, v5, Lorg/telegram/ui/Components/Paint/ShapeDetector$Point;->x:D
 
@@ -2842,7 +2842,7 @@
 
     div-double v8, p2, v3
 
-    mul-double v6, v6, v8
+    mul-double/2addr v6, v8
 
     iput-wide v6, v5, Lorg/telegram/ui/Components/Paint/ShapeDetector$Point;->y:D
 

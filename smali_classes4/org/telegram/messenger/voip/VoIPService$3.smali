@@ -67,12 +67,12 @@
 
     if-ne p2, v3, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_0
     invoke-static {p1, p2}, Lorg/telegram/messenger/voip/VoIPService;->access$902(Lorg/telegram/messenger/voip/VoIPService;Z)Z
@@ -293,7 +293,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_3
     invoke-static {p1, v3}, Lorg/telegram/messenger/voip/VoIPService;->access$1400(Lorg/telegram/messenger/voip/VoIPService;Z)V
@@ -394,12 +394,12 @@
 
     if-ne p1, v2, :cond_e
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_4
 
     :cond_e
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_4
     invoke-static {p2, v1}, Lorg/telegram/messenger/voip/VoIPService;->access$502(Lorg/telegram/messenger/voip/VoIPService;Z)Z
@@ -409,12 +409,12 @@
 
     if-ne p1, v3, :cond_f
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_5
 
     :cond_f
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_5
     invoke-static {p2, p1}, Lorg/telegram/messenger/voip/VoIPService;->access$402(Lorg/telegram/messenger/voip/VoIPService;Z)Z
@@ -588,7 +588,7 @@
 
     if-eqz p1, :cond_14
 
-    const/4 p1, 0x0
+    move p1, v4
 
     .line 458
     :goto_8

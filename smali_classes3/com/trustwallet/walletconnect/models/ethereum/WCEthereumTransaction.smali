@@ -260,7 +260,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -278,7 +278,7 @@
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 
@@ -296,7 +296,7 @@
 
     if-nez v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_2
 
@@ -314,7 +314,7 @@
 
     if-nez v1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_3
 
@@ -332,7 +332,7 @@
 
     if-nez v1, :cond_4
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_4
 
@@ -350,7 +350,7 @@
 
     if-nez v1, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_5
 
@@ -368,7 +368,7 @@
 
     if-nez v1, :cond_6
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_6
 

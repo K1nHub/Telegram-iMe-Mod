@@ -37,6 +37,19 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     @Override // com.smedialink.p031ui.twitter.TwitterView
+    public void renderInitialItems(List<BaseNode> list) {
+        RenderInitialItemsCommand renderInitialItemsCommand = new RenderInitialItemsCommand(this, list);
+        this.viewCommands.beforeApply(renderInitialItemsCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.renderInitialItems(list);
+        }
+        this.viewCommands.afterApply(renderInitialItemsCommand);
+    }
+
+    @Override // com.smedialink.p031ui.twitter.TwitterView
     public void renderItems(List<BaseNode> list) {
         RenderItemsCommand renderItemsCommand = new RenderItemsCommand(this, list);
         this.viewCommands.beforeApply(renderItemsCommand);
@@ -73,6 +86,19 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
             view.showLoadingDialog(z, z2, disposable);
         }
         this.viewCommands.afterApply(showLoadingDialogCommand);
+    }
+
+    @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreItems(List<BaseNode> list) {
+        OnLoadMoreItemsCommand onLoadMoreItemsCommand = new OnLoadMoreItemsCommand(this, list);
+        this.viewCommands.beforeApply(onLoadMoreItemsCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onLoadMoreItems(list);
+        }
+        this.viewCommands.afterApply(onLoadMoreItemsCommand);
     }
 
     @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
@@ -149,6 +175,23 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
+    /* renamed from: com.smedialink.ui.twitter.TwitterView$$State$RenderInitialItemsCommand */
+    /* loaded from: classes3.dex */
+    public class RenderInitialItemsCommand extends ViewCommand<TwitterView> {
+        public final List<BaseNode> items;
+
+        RenderInitialItemsCommand(TwitterView$$State twitterView$$State, List<BaseNode> list) {
+            super("renderInitialItems", AddToEndSingleStrategy.class);
+            this.items = list;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(TwitterView twitterView) {
+            twitterView.renderInitialItems(this.items);
+        }
+    }
+
+    /* compiled from: TwitterView$$State.java */
     /* renamed from: com.smedialink.ui.twitter.TwitterView$$State$RenderItemsCommand */
     /* loaded from: classes3.dex */
     public class RenderItemsCommand extends ViewCommand<TwitterView> {
@@ -200,6 +243,23 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
         @Override // moxy.viewstate.ViewCommand
         public void apply(TwitterView twitterView) {
             twitterView.showLoadingDialog(this.show, this.cancellable, this.actionToCancel);
+        }
+    }
+
+    /* compiled from: TwitterView$$State.java */
+    /* renamed from: com.smedialink.ui.twitter.TwitterView$$State$OnLoadMoreItemsCommand */
+    /* loaded from: classes3.dex */
+    public class OnLoadMoreItemsCommand extends ViewCommand<TwitterView> {
+        public final List<BaseNode> items;
+
+        OnLoadMoreItemsCommand(TwitterView$$State twitterView$$State, List<BaseNode> list) {
+            super("onLoadMoreItems", AddToEndSingleStrategy.class);
+            this.items = list;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(TwitterView twitterView) {
+            twitterView.onLoadMoreItems(this.items);
         }
     }
 

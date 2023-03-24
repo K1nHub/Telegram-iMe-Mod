@@ -95,9 +95,9 @@
 
     and-long v4, p1, v2
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     aput-byte v4, v0, v1
 
@@ -114,9 +114,9 @@
 
     and-long/2addr v4, v2
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     aput-byte v4, v0, v1
 
@@ -133,9 +133,9 @@
 
     and-long/2addr v4, v2
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    int-to-byte v4, v5
+    int-to-byte v4, v4
 
     aput-byte v4, v0, v1
 
@@ -152,9 +152,9 @@
 
     and-long/2addr p1, v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     aput-byte p1, v0, p0
 
@@ -239,25 +239,25 @@
 
 # virtual methods
 .method protected onSeekEnd(J)V
-    .locals 4
+    .locals 2
 
     .line 68
     invoke-super {p0, p1, p2}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->onSeekEnd(J)V
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long p1, p1, v0
 
-    cmp-long v3, p1, v1
+    const/4 p2, 0x0
 
-    if-eqz v3, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p2
 
     .line 69
     :goto_0
@@ -268,10 +268,10 @@
 
     if-eqz p1, :cond_1
 
-    iget v0, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
+    iget p2, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
 
     :cond_1
-    iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
+    iput p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
 
     return-void
 .end method

@@ -233,7 +233,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 175
     :goto_0
@@ -259,7 +259,7 @@
 
     check-cast v3, Ljava/util/List;
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 178
     :goto_1

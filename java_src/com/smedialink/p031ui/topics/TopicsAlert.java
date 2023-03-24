@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.TextUtils;
@@ -35,10 +37,11 @@ import org.fork.controller.ForkTopicsController;
 import org.fork.enums.FilterActivityType;
 import org.fork.p046ui.view.CircleCheckCell;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.BottomSheet;
+import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.RecyclerListView;
 import org.telegram.p048ui.FilterCreateActivity;
@@ -78,6 +81,10 @@ public final class TopicsAlert extends BottomSheet {
     @Override // org.telegram.p048ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
+    }
+
+    public static final /* synthetic */ TextView access$initBottomButton(TopicsAlert topicsAlert, boolean z) {
+        return topicsAlert.initBottomButton(z);
     }
 
     public final BaseFragment getParentFragment() {
@@ -223,7 +230,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3286R.string.topics_select));
+        textView.setText(LocaleController.getInternalString(C3301R.string.topics_select));
         textView.setTextColor(getThemedColor("dialogTextBlack"));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor("dialogTextLink"));
@@ -239,7 +246,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         if (z) {
-            textView.setText(LocaleController.getString("Create", C3286R.string.Create));
+            textView.setText(LocaleController.getString("Create", C3301R.string.Create));
             textView.setTextColor(getThemedColor("dialogTextBlue2"));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
@@ -248,7 +255,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else if (this.selectedTopicId == null) {
-            textView.setText(LocaleController.getString("Close", C3286R.string.Close));
+            textView.setText(LocaleController.getString("Close", C3301R.string.Close));
             textView.setTextColor(getThemedColor("dialogTextBlue2"));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -257,7 +264,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else {
-            textView.setText(LocaleController.getInternalString(C3286R.string.topics_remove));
+            textView.setText(LocaleController.getInternalString(C3301R.string.topics_remove));
             textView.setTextColor(getThemedColor("dialogTextRed"));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -494,21 +501,51 @@ public final class TopicsAlert extends BottomSheet {
             super.requestLayout();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x00ad  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x00b2  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0146  */
-        /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        protected void onDraw(android.graphics.Canvas r12) {
-            /*
-                Method dump skipped, instructions count: 403
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.smedialink.p031ui.topics.TopicsAlert.RootView.onDraw(android.graphics.Canvas):void");
+        protected void onDraw(Canvas canvas) {
+            int i;
+            float f;
+            Intrinsics.checkNotNullParameter(canvas, "canvas");
+            int m50dp = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
+            int m50dp2 = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(15) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
+            int i2 = AndroidUtilities.statusBarHeight;
+            int i3 = m50dp2 + i2;
+            int i4 = m50dp + i2;
+            if (this.fullHeight) {
+                int i5 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3;
+                int i6 = AndroidUtilities.statusBarHeight;
+                if (i5 < i6 * 2) {
+                    int min = Math.min(i6, ((i6 * 2) - i3) - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop);
+                    i3 -= min;
+                    measuredHeight += min;
+                    f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+                } else {
+                    f = 1.0f;
+                }
+                int i7 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3;
+                int i8 = AndroidUtilities.statusBarHeight;
+                i = i7 < i8 ? Math.min(i8, (i8 - i3) - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) : 0;
+            } else {
+                i = 0;
+                f = 1.0f;
+            }
+            ((BottomSheet) TopicsAlert.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), measuredHeight);
+            ((BottomSheet) TopicsAlert.this).shadowDrawable.draw(canvas);
+            if (!(f == 1.0f)) {
+                Theme.dialogs_onlineCirclePaint.setColor(TopicsAlert.this.getThemedColor("dialogBackground"));
+                this.rect.set(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3 + AndroidUtilities.m50dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+            }
+            int m50dp3 = AndroidUtilities.m50dp(36);
+            this.rect.set((getMeasuredWidth() - m50dp3) / 2.0f, i4, (getMeasuredWidth() + m50dp3) / 2.0f, i4 + AndroidUtilities.m50dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(TopicsAlert.this.getThemedColor("key_sheet_scrollUp"));
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            if (i > 0) {
+                int themedColor = TopicsAlert.this.getThemedColor("dialogBackground");
+                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
+                canvas.drawRect(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
+            }
         }
     }
 

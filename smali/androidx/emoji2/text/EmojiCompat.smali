@@ -525,7 +525,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const-string v0, "Set metadataLoadStrategy to LOAD_STRATEGY_MANUAL to execute manual loading"
@@ -762,7 +762,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -850,12 +850,12 @@
 
     if-gt p2, p3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     const-string v3, "start should be <= than end"
@@ -877,12 +877,12 @@
 
     if-gt p2, v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     const-string v3, "start should be < than charSequence length"
@@ -896,12 +896,12 @@
 
     if-gt p3, v2, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_2
     const-string v3, "end should be < than charSequence length"
@@ -929,17 +929,13 @@
     .line 953
     iget-boolean v0, p0, Landroidx/emoji2/text/EmojiCompat;->mReplaceAll:Z
 
+    :cond_5
     move v6, v0
 
     goto :goto_3
 
-    :cond_5
-    const/4 v6, 0x0
-
-    goto :goto_3
-
     :cond_6
-    const/4 v6, 0x1
+    move v6, v1
 
     .line 957
     :goto_3

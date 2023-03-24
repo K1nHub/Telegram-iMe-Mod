@@ -537,7 +537,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     new-array v1, v1, [Ljava/lang/Object;
@@ -1075,12 +1075,12 @@
 
     if-ne p1, v1, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     new-array v1, v1, [Ljava/lang/Object;
@@ -1282,7 +1282,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_1
     new-array v1, v6, [Ljava/lang/Object;

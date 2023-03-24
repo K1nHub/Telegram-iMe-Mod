@@ -808,7 +808,7 @@
 
     move-result v1
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     if-ge v6, v1, :cond_3

@@ -147,13 +147,13 @@
 
     const-wide v11, 0x3fdae147ae147ae1L    # 0.42
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     const-wide v11, 0x3fe28f5c28f5c28fL    # 0.58
 
     add-double/2addr v9, v11
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     double-to-int v7, v7
 

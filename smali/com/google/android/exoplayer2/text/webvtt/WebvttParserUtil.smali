@@ -216,7 +216,7 @@
 
     const-wide/16 v6, 0x3c
 
-    mul-long v3, v3, v6
+    mul-long/2addr v3, v6
 
     .line 70
     invoke-static {v5}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -232,7 +232,7 @@
     :cond_0
     const-wide/16 v0, 0x3e8
 
-    mul-long v3, v3, v0
+    mul-long/2addr v3, v0
 
     .line 73
     array-length v2, p0
@@ -253,7 +253,7 @@
     add-long/2addr v3, v5
 
     :cond_1
-    mul-long v3, v3, v0
+    mul-long/2addr v3, v0
 
     return-wide v3
 .end method

@@ -132,9 +132,9 @@
 
     ushr-long p0, v1, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static addBothTo([I[I[I)I
@@ -306,9 +306,9 @@
 
     ushr-long p0, v1, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static copy([II[II)V
@@ -558,7 +558,7 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_0
     const/4 v3, 0x5
@@ -585,7 +585,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x5
@@ -710,7 +710,7 @@
 
     ushr-long/2addr v3, v0
 
-    mul-long v8, v8, v14
+    mul-long/2addr v8, v14
 
     add-long/2addr v3, v8
 
@@ -722,18 +722,18 @@
 
     ushr-long/2addr v3, v0
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    const/4 v3, 0x5
+    const/4 v4, 0x5
 
-    aput v4, p2, v3
+    aput v3, p2, v4
 
     :goto_0
-    if-ge v5, v3, :cond_0
+    if-ge v5, v4, :cond_0
 
-    aget v4, p0, v5
+    aget v3, p0, v5
 
-    int-to-long v8, v4
+    int-to-long v8, v3
 
     const-wide v10, 0xffffffffL
 
@@ -741,13 +741,13 @@
 
     mul-long v16, v8, v1
 
-    add-int/lit8 v4, v5, 0x0
+    add-int/lit8 v3, v5, 0x0
 
-    aget v3, p2, v4
+    aget v4, p2, v3
 
     move-wide/from16 v23, v1
 
-    int-to-long v0, v3
+    int-to-long v0, v4
 
     and-long/2addr v0, v10
 
@@ -755,9 +755,9 @@
 
     add-long v0, v16, v21
 
-    long-to-int v3, v0
+    long-to-int v4, v0
 
-    aput v3, p2, v4
+    aput v4, p2, v3
 
     const/16 v2, 0x20
 
@@ -851,9 +851,11 @@
 
     add-int/lit8 v5, v5, 0x5
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    aput v1, p2, v5
+    aput v0, p2, v5
+
+    move v0, v2
 
     move/from16 v5, v16
 
@@ -863,9 +865,7 @@
 
     move-wide/from16 v6, v25
 
-    const/16 v0, 0x20
-
-    const/4 v3, 0x5
+    const/4 v4, 0x5
 
     goto :goto_0
 
@@ -1022,7 +1022,7 @@
 
     and-long/2addr v6, v2
 
-    mul-long v0, v0, v6
+    mul-long/2addr v0, v6
 
     add-long/2addr v0, v9
 
@@ -1094,7 +1094,7 @@
 
     ushr-long v13, p1, v1
 
-    mul-long v3, v3, v13
+    mul-long/2addr v3, v13
 
     add-long/2addr v3, v7
 
@@ -1186,7 +1186,7 @@
 
     and-long/2addr p0, v2
 
-    mul-long v0, v0, p0
+    mul-long/2addr v0, p0
 
     add-int/lit8 v4, p3, 0x0
 
@@ -1244,9 +1244,9 @@
 
     ushr-long/2addr p0, v4
 
-    cmp-long v0, p0, v5
+    cmp-long p0, p0, v5
 
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
@@ -1423,7 +1423,7 @@
 
     ushr-long/2addr v2, v1
 
-    mul-long v13, v13, v11
+    mul-long/2addr v13, v11
 
     add-int/lit8 v5, v0, 0x4
 
@@ -1496,7 +1496,7 @@
 
     and-long/2addr p0, v2
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     add-int/lit8 v0, p3, 0x0
 
@@ -1536,9 +1536,9 @@
 
     ushr-long/2addr p0, v0
 
-    cmp-long v0, p0, v4
+    cmp-long p0, p0, v4
 
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
@@ -1558,7 +1558,7 @@
 .end method
 
 .method public static square([I[I)V
-    .locals 31
+    .locals 32
 
     const/4 v0, 0x0
 
@@ -1574,9 +1574,9 @@
 
     const/16 v6, 0xa
 
-    const/4 v7, 0x4
+    move v8, v0
 
-    const/4 v8, 0x0
+    move v7, v5
 
     :goto_0
     add-int/lit8 v9, v7, -0x1
@@ -1587,7 +1587,7 @@
 
     and-long/2addr v10, v3
 
-    mul-long v10, v10, v10
+    mul-long/2addr v10, v10
 
     add-int/lit8 v6, v6, -0x1
 
@@ -1597,9 +1597,9 @@
 
     ushr-long v12, v10, v8
 
-    long-to-int v13, v12
+    long-to-int v12, v12
 
-    or-int/2addr v7, v13
+    or-int/2addr v7, v12
 
     aput v7, p1, v6
 
@@ -1609,57 +1609,57 @@
 
     ushr-long v12, v10, v7
 
-    long-to-int v13, v12
+    long-to-int v12, v12
 
-    aput v13, p1, v6
+    aput v12, p1, v6
 
-    long-to-int v11, v10
+    long-to-int v10, v10
 
     if-gtz v9, :cond_0
 
-    mul-long v9, v1, v1
+    mul-long v11, v1, v1
 
-    shl-int/lit8 v6, v11, 0x1f
+    shl-int/lit8 v6, v10, 0x1f
 
-    int-to-long v11, v6
+    int-to-long v9, v6
 
-    and-long/2addr v11, v3
+    and-long/2addr v9, v3
 
-    ushr-long v13, v9, v8
+    ushr-long v13, v11, v8
 
-    or-long/2addr v11, v13
+    or-long v8, v9, v13
 
-    long-to-int v6, v9
+    long-to-int v6, v11
 
     aput v6, p1, v0
 
     const/16 v0, 0x20
 
-    ushr-long v8, v9, v0
+    ushr-long v10, v11, v0
 
-    long-to-int v6, v8
+    long-to-int v6, v10
 
     and-int/2addr v6, v7
 
-    aget v8, p0, v7
+    aget v10, p0, v7
 
-    int-to-long v8, v8
+    int-to-long v10, v10
 
-    and-long/2addr v8, v3
+    and-long/2addr v10, v3
 
-    const/4 v10, 0x2
+    const/4 v12, 0x2
 
-    aget v13, p1, v10
+    aget v13, p1, v12
 
     int-to-long v13, v13
 
     and-long/2addr v13, v3
 
-    mul-long v15, v8, v1
+    mul-long v15, v10, v1
 
-    add-long/2addr v11, v15
+    add-long/2addr v8, v15
 
-    long-to-int v15, v11
+    long-to-int v15, v8
 
     shl-int/lit8 v16, v15, 0x1
 
@@ -1669,289 +1669,285 @@
 
     ushr-int/lit8 v6, v15, 0x1f
 
-    ushr-long/2addr v11, v0
+    ushr-long/2addr v8, v0
 
-    add-long/2addr v13, v11
+    add-long/2addr v13, v8
 
-    aget v11, p0, v10
+    aget v8, p0, v12
 
-    int-to-long v11, v11
+    int-to-long v8, v8
 
-    and-long/2addr v11, v3
+    and-long/2addr v8, v3
 
     const/4 v15, 0x3
 
     aget v7, p1, v15
 
-    move-wide/from16 v17, v1
+    move-wide/from16 v18, v13
 
-    int-to-long v0, v7
+    int-to-long v12, v7
 
-    and-long/2addr v0, v3
+    and-long/2addr v12, v3
 
     aget v7, p1, v5
 
-    move/from16 v19, v6
+    move/from16 v20, v6
 
     int-to-long v5, v7
 
     and-long/2addr v5, v3
 
-    mul-long v20, v11, v17
+    mul-long v21, v8, v1
 
-    add-long v13, v13, v20
+    add-long v14, v18, v21
 
-    long-to-int v7, v13
+    long-to-int v7, v14
 
-    shl-int/lit8 v20, v7, 0x1
+    shl-int/lit8 v19, v7, 0x1
 
-    or-int v19, v20, v19
+    or-int v19, v19, v20
 
-    aput v19, p1, v10
+    const/16 v17, 0x2
 
-    ushr-int/lit8 v7, v7, 0x1f
+    aput v19, p1, v17
 
-    const/16 v2, 0x20
+    ushr-int/lit8 v17, v7, 0x1f
 
-    ushr-long/2addr v13, v2
+    ushr-long/2addr v14, v0
 
-    mul-long v19, v11, v8
+    mul-long v19, v8, v10
 
-    add-long v13, v13, v19
+    add-long v14, v14, v19
 
-    add-long/2addr v0, v13
+    add-long/2addr v12, v14
 
-    ushr-long v13, v0, v2
+    ushr-long v14, v12, v0
 
-    add-long/2addr v5, v13
-
-    and-long/2addr v0, v3
-
-    aget v10, p0, v15
-
-    int-to-long v13, v10
-
-    and-long/2addr v13, v3
-
-    const/4 v10, 0x5
-
-    aget v15, p1, v10
-
-    move-wide/from16 v20, v11
-
-    int-to-long v10, v15
-
-    and-long/2addr v10, v3
-
-    ushr-long v22, v5, v2
-
-    add-long v10, v10, v22
-
-    and-long/2addr v5, v3
-
-    const/4 v15, 0x6
-
-    aget v12, p1, v15
-
-    move-wide/from16 v23, v5
-
-    int-to-long v5, v12
-
-    and-long/2addr v5, v3
-
-    ushr-long v25, v10, v2
-
-    add-long v5, v5, v25
-
-    and-long/2addr v10, v3
-
-    mul-long v25, v13, v17
-
-    add-long v0, v0, v25
-
-    long-to-int v12, v0
-
-    shl-int/lit8 v25, v12, 0x1
-
-    or-int v7, v25, v7
-
-    const/16 v19, 0x3
-
-    aput v7, p1, v19
-
-    ushr-int/lit8 v7, v12, 0x1f
-
-    ushr-long/2addr v0, v2
-
-    mul-long v25, v13, v8
-
-    add-long v0, v0, v25
-
-    add-long v0, v23, v0
-
-    ushr-long v23, v0, v2
-
-    mul-long v25, v13, v20
-
-    add-long v23, v23, v25
-
-    add-long v10, v10, v23
-
-    and-long/2addr v0, v3
-
-    ushr-long v23, v10, v2
-
-    add-long v5, v5, v23
-
-    and-long/2addr v10, v3
-
-    const/4 v12, 0x4
-
-    aget v15, p0, v12
-
-    move-wide/from16 v23, v13
-
-    int-to-long v12, v15
+    add-long/2addr v5, v14
 
     and-long/2addr v12, v3
 
-    const/4 v14, 0x7
+    const/4 v7, 0x3
 
-    aget v15, p1, v14
+    aget v14, p0, v7
 
-    int-to-long v14, v15
+    int-to-long v14, v14
+
+    and-long v18, v14, v3
+
+    const/4 v15, 0x5
+
+    aget v14, p1, v15
+
+    move-wide/from16 v20, v8
+
+    int-to-long v7, v14
+
+    and-long/2addr v7, v3
+
+    ushr-long v23, v5, v0
+
+    add-long v7, v7, v23
+
+    and-long/2addr v5, v3
+
+    const/16 v22, 0x6
+
+    aget v14, p1, v22
+
+    move-wide/from16 v23, v10
+
+    int-to-long v9, v14
+
+    and-long/2addr v9, v3
+
+    ushr-long v25, v7, v0
+
+    add-long v9, v9, v25
+
+    and-long/2addr v7, v3
+
+    mul-long v25, v18, v1
+
+    add-long v12, v12, v25
+
+    long-to-int v14, v12
+
+    shl-int/lit8 v25, v14, 0x1
+
+    or-int v17, v25, v17
+
+    const/4 v11, 0x3
+
+    aput v17, p1, v11
+
+    ushr-int/lit8 v11, v14, 0x1f
+
+    ushr-long/2addr v12, v0
+
+    mul-long v25, v18, v23
+
+    add-long v12, v12, v25
+
+    add-long/2addr v5, v12
+
+    ushr-long v12, v5, v0
+
+    mul-long v25, v18, v20
+
+    add-long v12, v12, v25
+
+    add-long/2addr v7, v12
+
+    and-long/2addr v5, v3
+
+    ushr-long v12, v7, v0
+
+    add-long/2addr v9, v12
+
+    and-long/2addr v7, v3
+
+    const/4 v12, 0x4
+
+    aget v13, p0, v12
+
+    int-to-long v12, v13
+
+    and-long/2addr v12, v3
+
+    const/16 v17, 0x7
+
+    aget v14, p1, v17
+
+    int-to-long v14, v14
 
     and-long/2addr v14, v3
 
-    ushr-long v25, v5, v2
+    ushr-long v26, v9, v0
 
-    add-long v14, v14, v25
+    add-long v14, v14, v26
 
-    and-long/2addr v5, v3
+    and-long/2addr v9, v3
 
-    const/16 v25, 0x8
+    const/16 v26, 0x8
 
-    aget v2, p1, v25
+    aget v0, p1, v26
 
-    move-wide/from16 v27, v5
+    move-wide/from16 v28, v9
 
-    int-to-long v5, v2
+    int-to-long v9, v0
 
-    and-long/2addr v5, v3
+    and-long/2addr v9, v3
 
-    const/16 v2, 0x20
+    const/16 v0, 0x20
 
-    ushr-long v29, v14, v2
+    ushr-long v30, v14, v0
 
-    add-long v5, v5, v29
+    add-long v9, v9, v30
 
     and-long/2addr v3, v14
 
-    mul-long v14, v12, v17
+    mul-long/2addr v1, v12
 
-    add-long/2addr v0, v14
+    add-long/2addr v5, v1
 
-    long-to-int v14, v0
+    long-to-int v1, v5
 
-    shl-int/lit8 v15, v14, 0x1
+    shl-int/lit8 v2, v1, 0x1
 
-    or-int/2addr v7, v15
+    or-int/2addr v2, v11
 
-    const/4 v15, 0x4
+    const/4 v11, 0x4
 
-    aput v7, p1, v15
+    aput v2, p1, v11
 
-    ushr-int/lit8 v7, v14, 0x1f
+    ushr-int/lit8 v1, v1, 0x1f
 
-    ushr-long/2addr v0, v2
+    ushr-long/2addr v5, v0
 
-    mul-long v8, v8, v12
+    mul-long v14, v12, v23
 
-    add-long/2addr v0, v8
+    add-long/2addr v5, v14
 
-    add-long/2addr v10, v0
+    add-long/2addr v7, v5
 
-    ushr-long v0, v10, v2
+    ushr-long v5, v7, v0
 
-    mul-long v8, v12, v20
+    mul-long v14, v12, v20
 
-    add-long/2addr v0, v8
+    add-long/2addr v5, v14
 
-    add-long v0, v27, v0
+    add-long v5, v28, v5
 
-    ushr-long v8, v0, v2
+    ushr-long v14, v5, v0
 
-    mul-long v12, v12, v23
+    mul-long v12, v12, v18
 
-    add-long/2addr v8, v12
+    add-long/2addr v14, v12
 
-    add-long/2addr v3, v8
+    add-long/2addr v3, v14
 
-    ushr-long v8, v3, v2
+    ushr-long v11, v3, v0
 
-    add-long/2addr v5, v8
+    add-long/2addr v9, v11
 
-    long-to-int v8, v10
+    long-to-int v0, v7
 
-    shl-int/lit8 v9, v8, 0x1
+    shl-int/lit8 v2, v0, 0x1
 
-    or-int/2addr v7, v9
+    or-int/2addr v1, v2
 
-    const/4 v9, 0x5
+    const/4 v2, 0x5
 
-    aput v7, p1, v9
+    aput v1, p1, v2
 
-    ushr-int/lit8 v7, v8, 0x1f
+    ushr-int/lit8 v0, v0, 0x1f
 
-    long-to-int v1, v0
+    long-to-int v1, v5
 
-    shl-int/lit8 v0, v1, 0x1
+    shl-int/lit8 v2, v1, 0x1
 
-    or-int/2addr v0, v7
+    or-int/2addr v0, v2
 
-    const/4 v7, 0x6
-
-    aput v0, p1, v7
+    aput v0, p1, v22
 
     ushr-int/lit8 v0, v1, 0x1f
 
     long-to-int v1, v3
 
-    shl-int/lit8 v3, v1, 0x1
+    shl-int/lit8 v2, v1, 0x1
 
-    or-int/2addr v0, v3
+    or-int/2addr v0, v2
 
-    const/4 v3, 0x7
-
-    aput v0, p1, v3
+    aput v0, p1, v17
 
     ushr-int/lit8 v0, v1, 0x1f
 
-    long-to-int v1, v5
+    long-to-int v1, v9
 
-    shl-int/lit8 v3, v1, 0x1
+    shl-int/lit8 v2, v1, 0x1
 
-    or-int/2addr v0, v3
+    or-int/2addr v0, v2
 
-    aput v0, p1, v25
+    aput v0, p1, v26
 
     ushr-int/lit8 v0, v1, 0x1f
 
     const/16 v1, 0x9
 
-    aget v3, p1, v1
+    aget v2, p1, v1
 
-    const/16 v2, 0x20
+    const/16 v3, 0x20
 
-    ushr-long v4, v5, v2
+    ushr-long v3, v9, v3
 
-    long-to-int v2, v4
+    long-to-int v3, v3
 
-    add-int/2addr v3, v2
+    add-int/2addr v2, v3
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    shl-int/lit8 v2, v3, 0x1
+    shl-int/2addr v2, v3
 
     or-int/2addr v0, v2
 
@@ -1962,7 +1958,7 @@
     :cond_0
     move v7, v9
 
-    move v8, v11
+    move v8, v10
 
     goto/16 :goto_0
 .end method
@@ -2096,9 +2092,9 @@
 
     shr-long p0, v1, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static subFrom([I[I)I
@@ -2230,9 +2226,9 @@
 
     shr-long p0, v1, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static toBigInteger([I)Ljava/math/BigInteger;

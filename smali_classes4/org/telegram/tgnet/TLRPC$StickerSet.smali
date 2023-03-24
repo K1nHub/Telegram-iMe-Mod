@@ -57,10 +57,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 44442
+    .line 44452
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 44459
+    .line 44469
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 44475
+    .line 44485
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer97;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 44472
+    .line 44482
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer96;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 44481
+    .line 44491
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer126;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 44490
+    .line 44500
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 44478
+    .line 44488
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer121;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 44487
+    .line 44497
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer143;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 44484
+    .line 44494
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer75;
 
@@ -135,7 +135,7 @@
 
     goto :goto_0
 
-    .line 44469
+    .line 44479
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_old;
 
@@ -148,7 +148,7 @@
 
     goto :goto_1
 
-    .line 44494
+    .line 44504
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -178,7 +178,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 44497
+    .line 44507
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

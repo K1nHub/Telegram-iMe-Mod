@@ -101,7 +101,7 @@
 
     long-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v2, v3
 
@@ -118,7 +118,7 @@
 
     long-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v3, v2
 
@@ -127,13 +127,13 @@
     :goto_0
     const/high16 v3, 0x3f800000    # 1.0f
 
+    cmpl-float v3, p2, v3
+
     const v4, 0x3f4ccccd    # 0.8f
 
     const/4 v5, 0x1
 
     const/4 v6, 0x0
-
-    cmpl-float v3, p2, v3
 
     if-ltz v3, :cond_1
 

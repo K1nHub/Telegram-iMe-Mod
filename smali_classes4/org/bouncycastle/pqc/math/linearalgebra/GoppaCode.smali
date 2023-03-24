@@ -52,7 +52,7 @@
 
     check-cast v10, [[I
 
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_0
     if-ge v11, v5, :cond_0
@@ -74,12 +74,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 v11, 0x1
+    move v11, v4
 
     :goto_1
     if-ge v11, v6, :cond_2
 
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_2
     if-ge v12, v5, :cond_1
@@ -108,17 +108,17 @@
     goto :goto_1
 
     :cond_2
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_3
     if-ge v11, v6, :cond_5
 
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_4
     if-ge v12, v5, :cond_4
 
-    const/4 v13, 0x0
+    move v13, v9
 
     :goto_5
     if-gt v13, v11, :cond_3
@@ -200,7 +200,7 @@
 
     check-cast v0, [[I
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_6
     if-ge v2, v5, :cond_9
@@ -211,7 +211,7 @@
 
     shl-int v9, v7, v9
 
-    const/4 v10, 0x0
+    move v10, v1
 
     :goto_7
     if-ge v10, v6, :cond_8
@@ -220,7 +220,7 @@
 
     aget v11, v11, v2
 
-    const/4 v12, 0x0
+    move v12, v1
 
     :goto_8
     if-ge v12, v3, :cond_7
@@ -233,7 +233,7 @@
 
     add-int/lit8 v13, v10, 0x1
 
-    mul-int v13, v13, v3
+    mul-int/2addr v13, v3
 
     sub-int/2addr v13, v12
 

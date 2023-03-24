@@ -68,7 +68,7 @@
 .end method
 
 .method private static a(JI)Lj$/time/Duration;
-    .locals 5
+    .locals 4
 
     int-to-long v0, p2
 
@@ -76,9 +76,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     sget-object p0, Lj$/time/Duration;->c:Lj$/time/Duration;
 
@@ -101,22 +101,22 @@
 
     rem-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    if-gez p1, :cond_0
+    if-gez p0, :cond_0
 
-    int-to-long p0, p1
+    int-to-long p0, p0
 
     add-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
     const-wide/16 v0, 0x1
 
     sub-long/2addr v2, v0
 
     :cond_0
-    invoke-static {v2, v3, p1}, Lj$/time/Duration;->a(JI)Lj$/time/Duration;
+    invoke-static {v2, v3, p0}, Lj$/time/Duration;->a(JI)Lj$/time/Duration;
 
     move-result-object p0
 
@@ -147,30 +147,30 @@
 
     sub-long v4, p2, v4
 
-    const-wide/16 v6, 0x1
+    const-wide/16 v6, 0x0
 
-    const/16 v8, 0x3f
+    cmp-long v4, v4, v6
 
-    const-wide/16 v9, 0x0
+    const-wide/16 v8, 0x1
 
-    cmp-long v11, v4, v9
+    const/16 v5, 0x3f
 
-    if-nez v11, :cond_0
+    if-nez v4, :cond_0
 
     goto :goto_0
 
     :cond_0
-    xor-long v4, p2, v0
+    xor-long v10, p2, v0
 
-    shr-long/2addr v4, v8
+    shr-long/2addr v10, v5
 
-    or-long/2addr v4, v6
+    or-long/2addr v10, v8
 
-    cmp-long v11, v4, v9
+    cmp-long v4, v10, v6
 
-    if-gez v11, :cond_1
+    if-gez v4, :cond_1
 
-    sub-long/2addr v2, v6
+    sub-long/2addr v2, v8
 
     .line 2
     :cond_1
@@ -182,7 +182,7 @@
     .line 3
     rem-long v2, p2, v0
 
-    cmp-long v4, v2, v9
+    cmp-long v4, v2, v6
 
     if-nez v4, :cond_2
 
@@ -191,13 +191,13 @@
     :cond_2
     xor-long/2addr p2, v0
 
-    shr-long/2addr p2, v8
+    shr-long/2addr p2, v5
 
-    or-long/2addr p2, v6
+    or-long/2addr p2, v8
 
-    cmp-long v4, p2, v9
+    cmp-long p2, p2, v6
 
-    if-lez v4, :cond_3
+    if-lez p2, :cond_3
 
     goto :goto_1
 
@@ -205,10 +205,10 @@
     add-long/2addr v2, v0
 
     :goto_1
-    move-wide v9, v2
+    move-wide v6, v2
 
     :goto_2
-    long-to-int p2, v9
+    long-to-int p2, v6
 
     .line 4
     invoke-static {p0, p1, p2}, Lj$/time/Duration;->a(JI)Lj$/time/Duration;
@@ -284,7 +284,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -304,15 +304,15 @@
 
     xor-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    iget v0, p0, Lj$/time/Duration;->b:I
+    iget v1, p0, Lj$/time/Duration;->b:I
 
-    mul-int/lit8 v0, v0, 0x33
+    mul-int/lit8 v1, v1, 0x33
 
-    add-int/2addr v0, v1
+    add-int/2addr v1, v0
 
-    return v0
+    return v1
 .end method
 
 .method public toMillis()J
@@ -353,9 +353,9 @@
 
     if-le v3, v2, :cond_0
 
-    mul-long v0, v0, v4
+    mul-long/2addr v0, v4
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     const/16 v2, 0x40
@@ -364,39 +364,36 @@
 
     const-wide/16 v2, 0x0
 
+    cmp-long v2, v0, v2
+
+    const/4 v3, 0x0
+
     const/4 v6, 0x1
 
-    cmp-long v7, v0, v2
+    if-ltz v2, :cond_1
 
-    if-ltz v7, :cond_1
-
-    const/4 v2, 0x1
-
-    goto :goto_0
+    move v3, v6
 
     :cond_1
-    const/4 v2, 0x0
+    or-int/2addr v3, v6
 
-    :goto_0
-    or-int/2addr v2, v6
+    if-eqz v3, :cond_3
 
-    if-eqz v2, :cond_3
+    mul-long v6, v0, v4
 
-    mul-long v2, v0, v4
+    if-eqz v2, :cond_2
 
-    if-eqz v7, :cond_2
+    div-long v0, v6, v0
 
-    div-long v0, v2, v0
+    cmp-long v0, v0, v4
 
-    cmp-long v6, v0, v4
-
-    if-nez v6, :cond_3
+    if-nez v0, :cond_3
 
     :cond_2
-    move-wide v0, v2
+    move-wide v0, v6
 
     .line 2
-    :goto_1
+    :goto_0
     iget v2, p0, Lj$/time/Duration;->b:I
 
     const v3, 0xf4240
@@ -444,51 +441,51 @@
 
     div-long/2addr v2, v6
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
     rem-long/2addr v0, v6
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/16 v2, 0x18
+    const/16 v3, 0x18
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v2, "PT"
+    const-string v3, "PT"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-wide/16 v6, 0x0
 
-    cmp-long v2, v4, v6
+    cmp-long v3, v4, v6
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0x48
+    const/16 v3, 0x48
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_1
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const/16 v2, 0x4d
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_2
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     iget v2, p0, Lj$/time/Duration;->b:I
 
     if-nez v2, :cond_3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
@@ -496,14 +493,14 @@
 
     if-le v2, v3, :cond_3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
     :cond_3
-    if-gez v1, :cond_5
+    if-gez v0, :cond_5
 
     iget v2, p0, Lj$/time/Duration;->b:I
 
@@ -511,94 +508,94 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_4
+    if-ne v0, v2, :cond_4
 
     const-string v2, "-0"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :cond_4
-    add-int/lit8 v2, v1, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :cond_5
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     :goto_0
     iget v2, p0, Lj$/time/Duration;->b:I
 
     if-lez v2, :cond_8
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
-    if-gez v1, :cond_6
+    if-gez v0, :cond_6
 
-    iget v1, p0, Lj$/time/Duration;->b:I
+    iget v0, p0, Lj$/time/Duration;->b:I
 
-    int-to-long v3, v1
+    int-to-long v3, v0
 
     const-wide/32 v5, 0x77359400
 
     sub-long/2addr v5, v3
 
-    invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
     :cond_6
-    iget v1, p0, Lj$/time/Duration;->b:I
+    iget v0, p0, Lj$/time/Duration;->b:I
 
-    int-to-long v3, v1
+    int-to-long v3, v0
 
     const-wide/32 v5, 0x3b9aca00
 
     add-long/2addr v3, v5
 
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     :goto_1
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->charAt(I)C
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
     const/16 v3, 0x30
 
-    if-ne v1, v3, :cond_7
+    if-ne v0, v3, :cond_7
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
     goto :goto_1
 
     :cond_7
-    const/16 v1, 0x2e
+    const/16 v0, 0x2e
 
-    invoke-virtual {v0, v2, v1}, Ljava/lang/StringBuilder;->setCharAt(IC)V
+    invoke-virtual {v1, v2, v0}, Ljava/lang/StringBuilder;->setCharAt(IC)V
 
     :cond_8
-    const/16 v1, 0x53
+    const/16 v0, 0x53
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

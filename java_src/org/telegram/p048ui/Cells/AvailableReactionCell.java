@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -84,10 +84,12 @@ public class AvailableReactionCell extends FrameLayout {
         this.react = tLRPC$TL_availableReaction;
         this.textView.setText(tLRPC$TL_availableReaction.title);
         this.imageView.setImage(ImageLocation.getForDocument(tLRPC$TL_availableReaction.activate_animation), "30_30_pcache", "tgs", DocumentObject.getSvgThumb(tLRPC$TL_availableReaction.static_icon, "windowBackgroundGray", 1.0f), tLRPC$TL_availableReaction);
-        z2 = (this.canLock && tLRPC$TL_availableReaction.premium && !UserConfig.getInstance(i).isPremium()) ? false : false;
+        if (!this.canLock || !tLRPC$TL_availableReaction.premium || UserConfig.getInstance(i).isPremium()) {
+            z2 = false;
+        }
         this.locked = z2;
         if (z2) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3286R.C3288drawable.other_lockedfolders2);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3301R.C3303drawable.other_lockedfolders2);
             drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
             this.textView.setRightDrawable(drawable);
         } else {

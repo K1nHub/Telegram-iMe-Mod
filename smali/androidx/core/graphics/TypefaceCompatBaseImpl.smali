@@ -154,7 +154,7 @@
 
     const v3, 0x7fffffff
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v0, :cond_3
@@ -181,7 +181,7 @@
 
     if-ne v7, p2, :cond_0
 
-    const/4 v7, 0x0
+    move v7, v1
 
     goto :goto_1
 

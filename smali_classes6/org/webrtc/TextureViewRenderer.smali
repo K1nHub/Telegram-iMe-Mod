@@ -424,7 +424,7 @@
 
     int-to-float v1, v3
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v1, v1
 
@@ -1754,9 +1754,9 @@
     move-result v2
 
     :goto_2
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
-    mul-float v7, v7, v2
+    mul-float/2addr v7, v2
 
     div-float v3, v5, v7
 
@@ -1784,7 +1784,7 @@
 
     move-result v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     :cond_5
     if-ne v1, v6, :cond_6

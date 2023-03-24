@@ -154,7 +154,7 @@
 
     move-object v5, v4
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 302
     :goto_0
@@ -195,9 +195,9 @@
 
     iget-wide v10, v5, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->realtimeMs:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-lez v12, :cond_2
+    if-lez v8, :cond_2
 
     :cond_1
     move-object v5, v6

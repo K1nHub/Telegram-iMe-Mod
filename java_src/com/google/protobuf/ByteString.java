@@ -2,6 +2,7 @@ package com.google.protobuf;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Collection;
@@ -33,6 +34,8 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
     public static int toInt(byte b) {
         return b & 255;
     }
+
+    public abstract ByteBuffer asReadOnlyByteBuffer();
 
     public abstract byte byteAt(int i);
 
@@ -79,12 +82,12 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
                 ?? iterator2 = byteString.iterator2();
                 ?? iterator22 = byteString2.iterator2();
                 while (iterator2.hasNext() && iterator22.hasNext()) {
-                    int compare = Integer.compare(ByteString.toInt(iterator2.nextByte()), ByteString.toInt(iterator22.nextByte()));
-                    if (compare != 0) {
-                        return compare;
+                    int compareTo = Integer.valueOf(ByteString.toInt(iterator2.nextByte())).compareTo(Integer.valueOf(ByteString.toInt(iterator22.nextByte())));
+                    if (compareTo != 0) {
+                        return compareTo;
                     }
                 }
-                return Integer.compare(byteString.size(), byteString2.size());
+                return Integer.valueOf(byteString.size()).compareTo(Integer.valueOf(byteString2.size()));
             }
         };
     }
@@ -177,6 +180,14 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    public static ByteString wrap(ByteBuffer byteBuffer) {
+        if (byteBuffer.hasArray()) {
+            return wrap(byteBuffer.array(), byteBuffer.arrayOffset() + byteBuffer.position(), byteBuffer.remaining());
+        }
+        return new NioByteString(byteBuffer);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static ByteString wrap(byte[] bArr) {
         return new LiteralByteString(bArr);
     }
@@ -266,9 +277,6 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         @Override // com.google.protobuf.ByteString
         protected final boolean isBalanced() {
             return true;
-        }
-
-        LeafByteString() {
         }
 
         @Override // com.google.protobuf.ByteString, java.lang.Iterable
@@ -398,6 +406,11 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         @Override // com.google.protobuf.ByteString
         protected void copyToInternal(byte[] bArr, int i, int i2, int i3) {
             System.arraycopy(this.bytes, i, bArr, i2, i3);
+        }
+
+        @Override // com.google.protobuf.ByteString
+        public final ByteBuffer asReadOnlyByteBuffer() {
+            return ByteBuffer.wrap(this.bytes, getOffsetIntoBytes(), size()).asReadOnlyBuffer();
         }
 
         @Override // com.google.protobuf.ByteString

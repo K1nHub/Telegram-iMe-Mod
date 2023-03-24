@@ -197,7 +197,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_2
@@ -456,10 +456,10 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_2
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_3
     if-ge v5, v3, :cond_3
@@ -590,10 +590,10 @@
     goto :goto_6
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_6
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_7
     if-ge v6, v5, :cond_a

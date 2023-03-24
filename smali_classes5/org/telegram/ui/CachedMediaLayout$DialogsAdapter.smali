@@ -70,7 +70,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 10
+    .locals 9
 
     .line 539
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -130,12 +130,12 @@
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 546
     :goto_0
@@ -143,9 +143,9 @@
 
     const-wide v7, 0x7fffffffffffffffL
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_2
+    if-nez v5, :cond_2
 
     .line 547
     sget v5, Lorg/telegram/messenger/R$string;->CacheOtherChats:I
@@ -249,7 +249,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_3
     invoke-virtual {p1, v5, v2, v1}, Lorg/telegram/ui/CacheControlActivity$UserCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

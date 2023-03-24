@@ -34,13 +34,14 @@
 
     const/16 p2, 0x10
 
-    if-ge p1, p2, :cond_0
+    if-ge p1, p2, :cond_1
 
-    const/16 p1, 0x10
+    :cond_0
+    move p1, p2
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
     add-int/lit8 p3, p1, -0x1
 
     and-int/2addr p3, p1
@@ -48,14 +49,11 @@
     if-eqz p3, :cond_2
 
     :goto_0
-    if-ge p2, p1, :cond_1
+    if-ge p2, p1, :cond_0
 
     add-int/2addr p2, p2
 
     goto :goto_0
-
-    :cond_1
-    move p1, p2
 
     .line 241
     :cond_2
@@ -135,9 +133,9 @@
 
     ushr-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/2addr v2, v1
+    add-int/2addr v2, v0
 
     or-int/lit8 v0, v2, 0x1
 

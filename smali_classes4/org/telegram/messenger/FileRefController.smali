@@ -518,7 +518,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -545,12 +545,12 @@
 
     const/4 v3, 0x1
 
-    const/4 v8, 0x1
+    move v8, v3
 
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_1
     const/4 v9, 0x0
@@ -590,9 +590,9 @@
 
     const-wide/32 v2, 0x927c0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     return-void
 
@@ -653,9 +653,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v5, v2
+    cmp-long v5, v5, v2
 
-    if-ltz v7, :cond_1
+    if-ltz v5, :cond_1
 
     if-nez v0, :cond_2
 
@@ -707,7 +707,7 @@
 .end method
 
 .method private getCachedResponse(Ljava/lang/String;)Lorg/telegram/messenger/FileRefController$CachedResult;
-    .locals 6
+    .locals 5
 
     .line 1025
     iget-object v0, p0, Lorg/telegram/messenger/FileRefController;->responseCache:Ljava/util/HashMap;
@@ -737,9 +737,9 @@
 
     const-wide/32 v3, 0x927c0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v1, :cond_0
 
     .line 1027
     iget-object v0, p0, Lorg/telegram/messenger/FileRefController;->responseCache:Ljava/util/HashMap;
@@ -931,7 +931,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_4
@@ -1119,7 +1119,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_5
@@ -1382,7 +1382,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_4
@@ -1403,7 +1403,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     if-ge v5, v4, :cond_3
@@ -1448,7 +1448,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-ge v2, v0, :cond_6
@@ -3313,7 +3313,7 @@
 
     if-nez v16, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v13
 
     goto :goto_3
 
@@ -3335,7 +3335,7 @@
 
     if-eqz v0, :cond_7
 
-    const/16 v16, 0x1
+    move/from16 v16, v13
 
     :cond_7
     :goto_4
@@ -3409,14 +3409,14 @@
 
     move-object/from16 v18, v0
 
-    :goto_7
+    move v11, v13
+
     const/4 v0, 0x0
 
-    const/4 v11, 0x1
-
+    :goto_7
     const/4 v14, 0x0
 
-    goto/16 :goto_21
+    goto/16 :goto_22
 
     .line 732
     :cond_c
@@ -3631,7 +3631,10 @@
     :cond_16
     const/4 v15, 0x0
 
-    goto :goto_a
+    :goto_a
+    move v0, v15
+
+    goto :goto_b
 
     :cond_17
     const/4 v0, 0x0
@@ -3647,9 +3650,9 @@
     :cond_18
     move-object/from16 v18, v0
 
-    :goto_a
     const/4 v0, 0x0
 
+    :goto_b
     if-nez v8, :cond_1a
 
     .line 766
@@ -3683,16 +3686,16 @@
     .line 768
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_19
     move-object/from16 v18, v0
 
     :cond_1a
-    :goto_b
+    :goto_c
     const/4 v14, 0x0
 
-    goto/16 :goto_1f
+    goto/16 :goto_20
 
     :cond_1b
     move-object/from16 v18, v0
@@ -3735,7 +3738,7 @@
 
     if-eqz v8, :cond_1c
 
-    goto :goto_b
+    goto :goto_c
 
     .line 780
     :cond_1d
@@ -3765,11 +3768,11 @@
 
     div-long v12, v19, v12
 
-    long-to-int v13, v12
+    long-to-int v12, v12
 
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    invoke-virtual {v2, v14, v15, v13, v12}, Lorg/telegram/messenger/MediaDataController;->processLoadedReactions(Ljava/util/List;IIZ)V
+    invoke-virtual {v2, v14, v15, v12, v13}, Lorg/telegram/messenger/MediaDataController;->processLoadedReactions(Ljava/util/List;IIZ)V
 
     .line 784
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_availableReactions;->reactions:Ljava/util/ArrayList;
@@ -3804,7 +3807,7 @@
 
     if-eqz v8, :cond_1f
 
-    goto :goto_c
+    goto :goto_d
 
     .line 789
     :cond_1f
@@ -3820,7 +3823,7 @@
 
     if-eqz v8, :cond_20
 
-    goto :goto_c
+    goto :goto_d
 
     .line 793
     :cond_20
@@ -3836,7 +3839,7 @@
 
     if-eqz v8, :cond_21
 
-    goto :goto_c
+    goto :goto_d
 
     .line 797
     :cond_21
@@ -3852,7 +3855,7 @@
 
     if-eqz v8, :cond_22
 
-    goto :goto_c
+    goto :goto_d
 
     .line 801
     :cond_22
@@ -3868,7 +3871,7 @@
 
     if-eqz v8, :cond_23
 
-    goto :goto_c
+    goto :goto_d
 
     .line 805
     :cond_23
@@ -3884,7 +3887,7 @@
 
     if-eqz v8, :cond_24
 
-    goto :goto_c
+    goto :goto_d
 
     .line 809
     :cond_24
@@ -3900,8 +3903,8 @@
 
     if-eqz v8, :cond_1e
 
-    :goto_c
-    goto/16 :goto_b
+    :goto_d
+    goto/16 :goto_c
 
     .line 814
     :cond_25
@@ -3966,6 +3969,10 @@
 
     move/from16 v7, p5
 
+    const/4 v0, 0x0
+
+    const/4 v11, 0x1
+
     goto/16 :goto_7
 
     .line 829
@@ -3980,7 +3987,7 @@
 
     move-result-object v8
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 831
     :cond_27
@@ -4050,7 +4057,7 @@
     const/4 v15, 0x0
 
     .line 842
-    :goto_d
+    :goto_e
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
     move-result v12
@@ -4071,14 +4078,14 @@
 
     iget-wide v7, v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
 
-    cmp-long v21, v12, v7
+    cmp-long v7, v12, v7
 
-    if-nez v21, :cond_2a
+    if-nez v7, :cond_2a
 
     .line 845
     invoke-virtual {v14, v15, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_2a
     add-int/lit8 v15, v15, 0x1
@@ -4087,13 +4094,13 @@
 
     move-object/from16 v8, v25
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_2b
     move-object/from16 v25, v8
 
     .line 849
-    :goto_e
+    :goto_f
     iput-object v14, v2, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBots;->bots:Ljava/util/ArrayList;
 
     .line 850
@@ -4111,7 +4118,7 @@
 
     div-long/2addr v12, v14
 
-    long-to-int v13, v12
+    long-to-int v12, v12
 
     const/16 v24, 0x0
 
@@ -4121,19 +4128,19 @@
 
     move-wide/from16 v21, v7
 
-    move/from16 v23, v13
+    move/from16 v23, v12
 
     invoke-virtual/range {v19 .. v24}, Lorg/telegram/messenger/MediaDataController;->processLoadedMenuBots(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBots;JIZ)V
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_2c
     move-object/from16 v25, v8
 
-    :goto_f
+    :goto_10
     move-object/from16 v8, v25
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 852
     :cond_2d
@@ -4171,10 +4178,10 @@
     move-result-object v2
 
     :cond_2e
-    :goto_10
+    :goto_11
     move-object v8, v2
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 858
     :cond_2f
@@ -4197,7 +4204,7 @@
 
     move-object v8, v0
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 860
     :cond_30
@@ -4219,7 +4226,7 @@
 
     const/4 v7, 0x0
 
-    :goto_11
+    :goto_12
     if-ge v7, v2, :cond_32
 
     .line 863
@@ -4243,15 +4250,15 @@
 
     if-eqz v8, :cond_31
 
-    goto :goto_12
+    goto :goto_13
 
     :cond_31
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_32
-    :goto_12
+    :goto_13
     if-eqz v8, :cond_1a
 
     if-eqz p4, :cond_1a
@@ -4267,7 +4274,7 @@
 
     invoke-virtual {v2, v0, v7}, Lorg/telegram/messenger/MessagesStorage;->putWallpapers(Ljava/util/ArrayList;I)V
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 871
     :cond_33
@@ -4312,7 +4319,7 @@
 
     invoke-virtual {v0, v7, v8}, Lorg/telegram/messenger/MessagesStorage;->putWallpapers(Ljava/util/ArrayList;I)V
 
-    goto :goto_10
+    goto :goto_11
 
     .line 879
     :cond_34
@@ -4347,7 +4354,7 @@
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    goto/16 :goto_10
+    goto/16 :goto_11
 
     .line 885
     :cond_35
@@ -4378,7 +4385,7 @@
 
     const/4 v15, 0x0
 
-    :goto_13
+    :goto_14
     if-ge v15, v2, :cond_1a
 
     .line 889
@@ -4437,12 +4444,12 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    goto :goto_14
+    goto :goto_15
 
     :cond_36
     move-object/from16 v19, v0
 
-    goto :goto_14
+    goto :goto_15
 
     :cond_37
     move-object/from16 v19, v0
@@ -4498,17 +4505,17 @@
     move-object v8, v0
 
     :cond_39
-    :goto_14
+    :goto_15
     if-eqz v8, :cond_3a
 
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     :cond_3a
     add-int/lit8 v15, v15, 0x1
 
     move-object/from16 v0, v19
 
-    goto :goto_13
+    goto :goto_14
 
     .line 914
     :cond_3b
@@ -4539,7 +4546,7 @@
 
     const/4 v15, 0x0
 
-    :goto_15
+    :goto_16
     if-ge v15, v2, :cond_1a
 
     .line 918
@@ -4590,14 +4597,14 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_20
 
     :cond_3c
     const/4 v14, 0x0
 
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_3d
     const/4 v14, 0x0
@@ -4621,7 +4628,7 @@
 
     const/4 v15, 0x0
 
-    :goto_16
+    :goto_17
     if-ge v15, v2, :cond_3f
 
     .line 934
@@ -4643,15 +4650,15 @@
 
     if-eqz v8, :cond_3e
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_3e
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_16
+    goto :goto_17
 
     :cond_3f
-    :goto_17
+    :goto_18
     if-eqz p4, :cond_4b
 
     .line 940
@@ -4673,7 +4680,7 @@
 
     invoke-virtual/range {v19 .. v24}, Lorg/telegram/messenger/MediaDataController;->processLoadedRecentDocuments(ILjava/util/ArrayList;ZIZ)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_20
 
     .line 942
     :cond_40
@@ -4697,7 +4704,7 @@
 
     const/4 v15, 0x0
 
-    :goto_18
+    :goto_19
     if-ge v15, v2, :cond_42
 
     .line 946
@@ -4719,15 +4726,15 @@
 
     if-eqz v8, :cond_41
 
-    goto :goto_19
+    goto :goto_1a
 
     :cond_41
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_42
-    :goto_19
+    :goto_1a
     if-eqz p4, :cond_4b
 
     .line 953
@@ -4737,7 +4744,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_20
 
     .line 955
     :cond_43
@@ -4759,7 +4766,7 @@
 
     const/4 v15, 0x0
 
-    :goto_1a
+    :goto_1b
     if-ge v15, v2, :cond_45
 
     .line 958
@@ -4781,15 +4788,15 @@
 
     if-eqz v8, :cond_44
 
-    goto :goto_1b
+    goto :goto_1c
 
     :cond_44
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_1a
+    goto :goto_1b
 
     :cond_45
-    :goto_1b
+    :goto_1c
     if-eqz p4, :cond_4b
 
     .line 964
@@ -4811,7 +4818,7 @@
 
     invoke-virtual/range {v19 .. v24}, Lorg/telegram/messenger/MediaDataController;->processLoadedRecentDocuments(ILjava/util/ArrayList;ZIZ)V
 
-    goto :goto_1f
+    goto :goto_20
 
     .line 966
     :cond_46
@@ -4833,7 +4840,7 @@
 
     const/4 v15, 0x0
 
-    :goto_1c
+    :goto_1d
     if-ge v15, v2, :cond_48
 
     .line 969
@@ -4855,15 +4862,15 @@
 
     if-eqz v8, :cond_47
 
-    goto :goto_1d
+    goto :goto_1e
 
     :cond_47
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_1c
+    goto :goto_1d
 
     :cond_48
-    :goto_1d
+    :goto_1e
     if-eqz p4, :cond_4b
 
     .line 975
@@ -4885,7 +4892,7 @@
 
     invoke-virtual/range {v19 .. v24}, Lorg/telegram/messenger/MediaDataController;->processLoadedRecentDocuments(ILjava/util/ArrayList;ZIZ)V
 
-    goto :goto_1f
+    goto :goto_20
 
     .line 977
     :cond_49
@@ -4907,7 +4914,7 @@
 
     const/4 v15, 0x0
 
-    :goto_1e
+    :goto_1f
     if-ge v15, v2, :cond_4b
 
     .line 980
@@ -4929,15 +4936,15 @@
 
     if-eqz v8, :cond_4a
 
-    goto :goto_1f
+    goto :goto_20
 
     :cond_4a
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_1e
+    goto :goto_1f
 
     :cond_4b
-    :goto_1f
+    :goto_20
     if-eqz v8, :cond_4d
 
     const/4 v0, 0x0
@@ -4949,14 +4956,14 @@
 
     move/from16 v7, p5
 
-    goto :goto_20
+    goto :goto_21
 
     :cond_4c
     move/from16 v7, p5
 
     move-object v2, v14
 
-    :goto_20
+    :goto_21
     invoke-direct {v6, v11, v8, v2, v7}, Lorg/telegram/messenger/FileRefController;->onUpdateObjectReference(Lorg/telegram/messenger/FileRefController$Requester;[BLorg/telegram/tgnet/TLRPC$InputFileLocation;Z)Z
 
     move-result v2
@@ -4967,7 +4974,7 @@
 
     const/16 v16, 0x1
 
-    goto :goto_21
+    goto :goto_22
 
     :cond_4d
     move/from16 v7, p5
@@ -4984,14 +4991,14 @@
     invoke-direct {v6, v2, v11}, Lorg/telegram/messenger/FileRefController;->sendErrorToObject([Ljava/lang/Object;I)V
 
     :cond_4e
-    :goto_21
+    :goto_22
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v7, p1
 
-    move-object/from16 v0, v18
+    move v13, v11
 
-    const/4 v13, 0x1
+    move-object/from16 v0, v18
 
     goto/16 :goto_6
 
@@ -5190,9 +5197,9 @@
     .line 538
     invoke-virtual {p2, p1, p4}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    const/4 p1, 0x0
+    move p1, v1
 
-    const/4 p4, 0x1
+    move p4, v2
 
     .line 541
     :goto_1
@@ -5209,7 +5216,7 @@
 
     if-eqz v3, :cond_7
 
-    const/4 p4, 0x0
+    move p4, v1
 
     :cond_7
     add-int/lit8 p1, p1, 0x1
@@ -5840,7 +5847,7 @@
 
     invoke-virtual {p4, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 333
     :cond_0
@@ -5869,7 +5876,7 @@
 
     invoke-virtual {p4, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 337
     :cond_1
@@ -5909,7 +5916,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 342
     :cond_2
@@ -5949,7 +5956,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 347
     :cond_3
@@ -6016,7 +6023,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_4
     cmp-long p4, v0, v2
@@ -6063,7 +6070,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 361
     :cond_5
@@ -6095,7 +6102,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 365
     :cond_6
@@ -6140,7 +6147,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 373
     :cond_7
@@ -6190,7 +6197,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 382
     :cond_8
@@ -6225,7 +6232,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 388
     :cond_9
@@ -6265,7 +6272,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 393
     :cond_a
@@ -6308,7 +6315,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 399
     :cond_b
@@ -6341,7 +6348,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 404
     :cond_c
@@ -6396,7 +6403,7 @@
 
     invoke-virtual {p1, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_e
     const-string v0, "gif"
@@ -6443,7 +6450,7 @@
 
     invoke-virtual {p1, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_10
     const-string v0, "recent"
@@ -6490,7 +6497,7 @@
 
     invoke-virtual {p1, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_12
     const-string v0, "fav"
@@ -6537,7 +6544,7 @@
 
     invoke-virtual {p1, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_14
     const-string v0, "update"
@@ -6578,13 +6585,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 437
-    :goto_0
+    :catch_0
     iget-object p4, p1, Lorg/telegram/tgnet/TLRPC$TL_help_getAppUpdate;->source:Ljava/lang/String;
 
     if-nez p4, :cond_15
@@ -6604,7 +6606,7 @@
 
     invoke-virtual {p4, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_16
     const-string v0, "avatar_"
@@ -6625,95 +6627,95 @@
 
     move-result-wide v5
 
-    const/16 p1, 0x50
+    cmp-long p1, v5, v2
 
-    cmp-long p4, v5, v2
+    const/16 p4, 0x50
 
-    if-lez p4, :cond_17
+    if-lez p1, :cond_17
 
     .line 444
-    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;
 
-    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;-><init>()V
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;-><init>()V
 
     .line 445
-    iput p1, p4, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->limit:I
+    iput p4, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->limit:I
 
     .line 446
-    iput v1, p4, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->offset:I
+    iput v1, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->offset:I
 
     .line 447
-    iput-wide v2, p4, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->max_id:J
+    iput-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->max_id:J
 
     .line 448
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object p1
+    move-result-object p4
 
-    invoke-virtual {p1, v5, v6}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
+    invoke-virtual {p4, v5, v6}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    move-result-object p1
+    move-result-object p4
 
-    iput-object p1, p4, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
+    iput-object p4, p1, Lorg/telegram/tgnet/TLRPC$TL_photos_getUserPhotos;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
     .line 449
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object p1
+    move-result-object p4
 
     new-instance v0, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda22;
 
     invoke-direct {v0, p0, p2, p3}, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/messenger/FileRefController;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p4, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 451
     :cond_17
-    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_messages_search;
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_search;
 
-    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_messages_search;-><init>()V
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_search;-><init>()V
 
     .line 452
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterChatPhotos;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterChatPhotos;-><init>()V
 
-    iput-object v0, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
+    iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
     .line 453
-    iput p1, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->limit:I
+    iput p4, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->limit:I
 
     .line 454
-    iput v1, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
+    iput v1, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
 
     .line 455
-    iput-object v4, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->q:Ljava/lang/String;
+    iput-object v4, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->q:Ljava/lang/String;
 
     .line 456
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object p1
+    move-result-object p4
 
-    invoke-virtual {p1, v5, v6}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
+    invoke-virtual {p4, v5, v6}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    move-result-object p1
+    move-result-object p4
 
-    iput-object p1, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object p4, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     .line 457
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object p1
+    move-result-object p4
 
     new-instance v0, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda24;
 
     invoke-direct {v0, p0, p2, p3}, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/messenger/FileRefController;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p4, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_18
     const-string v0, "sent_"
@@ -6752,16 +6754,16 @@
 
     move-result-wide v0
 
-    const/4 p4, 0x2
+    cmp-long p4, v0, v2
 
-    cmp-long v4, v0, v2
+    const/4 v2, 0x2
 
-    if-eqz v4, :cond_19
+    if-eqz p4, :cond_19
 
     .line 464
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;
+    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;
 
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;-><init>()V
+    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;-><init>()V
 
     .line 465
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -6772,12 +6774,12 @@
 
     move-result-object v0
 
-    iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
+    iput-object v0, p4, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     .line 466
-    iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;->id:Ljava/util/ArrayList;
+    iget-object v0, p4, Lorg/telegram/tgnet/TLRPC$TL_channels_getMessages;->id:Ljava/util/ArrayList;
 
-    aget-object p1, p1, p4
+    aget-object p1, p1, v2
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -6790,55 +6792,55 @@
 
     move-result-object p1
 
-    new-instance p4, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda28;
+    new-instance v0, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda28;
 
-    invoke-direct {p4, p0, p2, p3}, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/messenger/FileRefController;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2, p3}, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/messenger/FileRefController;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p1, v2, p4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 469
     :cond_19
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
+    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;-><init>()V
+    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;-><init>()V
 
     .line 470
-    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;->id:Ljava/util/ArrayList;
+    iget-object v0, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;->id:Ljava/util/ArrayList;
 
-    aget-object p1, p1, p4
+    aget-object p1, p1, v2
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 471
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
 
-    new-instance p4, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda21;
+    new-instance v0, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda21;
 
-    invoke-direct {p4, p0, p2, p3}, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/messenger/FileRefController;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2, p3}, Lorg/telegram/messenger/FileRefController$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/messenger/FileRefController;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0, p4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 474
     :cond_1a
     invoke-direct {p0, p4, v1}, Lorg/telegram/messenger/FileRefController;->sendErrorToObject([Ljava/lang/Object;I)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 477
     :cond_1b
     invoke-direct {p0, p4, v1}, Lorg/telegram/messenger/FileRefController;->sendErrorToObject([Ljava/lang/Object;I)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 479
     :cond_1c
@@ -6884,7 +6886,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 486
     :cond_1d
@@ -6930,7 +6932,7 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 493
     :cond_1e
@@ -6959,14 +6961,14 @@
 
     invoke-virtual {p1, p4, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 498
     :cond_1f
     invoke-direct {p0, p4, v1}, Lorg/telegram/messenger/FileRefController;->sendErrorToObject([Ljava/lang/Object;I)V
 
     :cond_20
-    :goto_1
+    :goto_0
     return-void
 .end method
 
@@ -7355,7 +7357,7 @@
 
     move-result p2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, p2, :cond_5
@@ -8045,7 +8047,7 @@
 
     invoke-virtual {v1, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 262
     :cond_18

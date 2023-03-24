@@ -459,7 +459,7 @@ public class FilterShaders {
                         if (f5 > 255.0f) {
                             f5 = 255.0f;
                         } else if (f5 < BitmapDescriptorFactory.HUE_RED) {
-                            f5 = BitmapDescriptorFactory.HUE_RED;
+                            f5 = 0.0f;
                         }
                         arrayList3.add(new PointF(f3, f5));
                         i3 = i4 + 1;
@@ -518,13 +518,13 @@ public class FilterShaders {
                     c2 = 0;
                     d = 0.0d;
                 }
+                char c3 = c2;
                 double[][] dArr6 = dArr;
                 double d2 = d;
-                char c3 = 0;
-                dArr2[0] = d2;
+                dArr2[c3] = d2;
                 dArr2[i] = d2;
                 dArr6[i][1] = 1.0d;
-                dArr6[i][0] = d2;
+                dArr6[i][c3] = d2;
                 dArr6[i][2] = d2;
                 int i4 = 1;
                 while (i4 < size) {
@@ -1099,7 +1099,7 @@ public class FilterShaders {
             GLES20.glUniform3f(this.shadowsTintColorHandle, ((tintShadowsColor >> 16) & 255) / 255.0f, ((tintShadowsColor >> 8) & 255) / 255.0f, (tintShadowsColor & 255) / 255.0f);
             GLES20.glUniform1f(this.shadowsTintIntensityHandle, this.delegate.getTintShadowsIntensityValue());
             boolean shouldDrawCurvesPass = this.delegate.shouldDrawCurvesPass();
-            GLES20.glUniform1f(this.skipToneHandle, shouldDrawCurvesPass ? BitmapDescriptorFactory.HUE_RED : 1.0f);
+            GLES20.glUniform1f(this.skipToneHandle, shouldDrawCurvesPass ? 0.0f : 1.0f);
             if (shouldDrawCurvesPass) {
                 ByteBuffer fillAndGetCurveBuffer = this.delegate.fillAndGetCurveBuffer();
                 GLES20.glActiveTexture(33985);
@@ -1291,7 +1291,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.radialBlurExcludeSizeHandle, this.delegate.getBlurExcludeSize());
             GLES20.glUniform1f(this.radialBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             Point blurExcludePoint = this.delegate.getBlurExcludePoint();
-            GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.f1757x, blurExcludePoint.f1758y);
+            GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.f1758x, blurExcludePoint.f1759y);
             GLES20.glUniform1f(this.radialBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.radialBlurInputTexCoordHandle);
             GLES20.glVertexAttribPointer(this.radialBlurInputTexCoordHandle, 2, 5126, false, 8, (Buffer) this.textureBuffer);
@@ -1305,7 +1305,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.linearBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             GLES20.glUniform1f(this.linearBlurAngleHandle, this.delegate.getBlurAngle());
             Point blurExcludePoint2 = this.delegate.getBlurExcludePoint();
-            GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.f1757x, blurExcludePoint2.f1758y);
+            GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.f1758x, blurExcludePoint2.f1759y);
             GLES20.glUniform1f(this.linearBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.linearBlurInputTexCoordHandle);
             GLES20.glVertexAttribPointer(this.linearBlurInputTexCoordHandle, 2, 5126, false, 8, (Buffer) this.textureBuffer);

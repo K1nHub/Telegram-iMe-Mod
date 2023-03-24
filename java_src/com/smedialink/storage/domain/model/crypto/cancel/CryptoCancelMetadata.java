@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class CryptoCancelMetadata {
     private final TokenCode feeTokenCode;
-    private final TransactionParams transactionParams;
+    private final TransactionParams.Ether transactionParams;
     private final String value;
 
-    public static /* synthetic */ CryptoCancelMetadata copy$default(CryptoCancelMetadata cryptoCancelMetadata, TransactionParams transactionParams, TokenCode tokenCode, String str, int i, Object obj) {
+    public static /* synthetic */ CryptoCancelMetadata copy$default(CryptoCancelMetadata cryptoCancelMetadata, TransactionParams.Ether ether, TokenCode tokenCode, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            transactionParams = cryptoCancelMetadata.transactionParams;
+            ether = cryptoCancelMetadata.transactionParams;
         }
         if ((i & 2) != 0) {
             tokenCode = cryptoCancelMetadata.feeTokenCode;
@@ -20,10 +20,10 @@ public final class CryptoCancelMetadata {
         if ((i & 4) != 0) {
             str = cryptoCancelMetadata.value;
         }
-        return cryptoCancelMetadata.copy(transactionParams, tokenCode, str);
+        return cryptoCancelMetadata.copy(ether, tokenCode, str);
     }
 
-    public final TransactionParams component1() {
+    public final TransactionParams.Ether component1() {
         return this.transactionParams;
     }
 
@@ -35,7 +35,7 @@ public final class CryptoCancelMetadata {
         return this.value;
     }
 
-    public final CryptoCancelMetadata copy(TransactionParams transactionParams, TokenCode feeTokenCode, String value) {
+    public final CryptoCancelMetadata copy(TransactionParams.Ether transactionParams, TokenCode feeTokenCode, String value) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -61,7 +61,7 @@ public final class CryptoCancelMetadata {
         return "CryptoCancelMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", value=" + this.value + ')';
     }
 
-    public CryptoCancelMetadata(TransactionParams transactionParams, TokenCode feeTokenCode, String value) {
+    public CryptoCancelMetadata(TransactionParams.Ether transactionParams, TokenCode feeTokenCode, String value) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -70,7 +70,7 @@ public final class CryptoCancelMetadata {
         this.value = value;
     }
 
-    public final TransactionParams getTransactionParams() {
+    public final TransactionParams.Ether getTransactionParams() {
         return this.transactionParams;
     }
 

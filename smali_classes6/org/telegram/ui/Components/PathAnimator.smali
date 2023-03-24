@@ -100,7 +100,7 @@
     .line 71
     iget v2, p0, Lorg/telegram/ui/Components/PathAnimator;->durationScale:F
 
-    mul-float p2, p2, v2
+    mul-float/2addr p2, v2
 
     iput p2, v0, Lorg/telegram/ui/Components/PathAnimator$KeyFrame;->time:F
 
@@ -113,7 +113,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v2, 0x0
+    move v2, p2
 
     .line 73
     :goto_0
@@ -163,7 +163,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$MoveTo;->x:F
 
@@ -182,7 +182,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$MoveTo;->y:F
 
@@ -214,7 +214,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$LineTo;->x:F
 
@@ -233,7 +233,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$LineTo;->y:F
 
@@ -265,7 +265,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$CurveTo;->x1:F
 
@@ -284,7 +284,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$CurveTo;->y1:F
 
@@ -303,7 +303,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$CurveTo;->x2:F
 
@@ -322,7 +322,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$CurveTo;->y2:F
 
@@ -341,7 +341,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$CurveTo;->x:F
 
@@ -360,7 +360,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/PathAnimator;->scale:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     iput v4, v3, Lorg/telegram/ui/Components/PathAnimator$CurveTo;->y:F
 
@@ -420,7 +420,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    move v5, v3
 
     const/4 v6, 0x0
 
@@ -615,7 +615,7 @@
 
     sub-float/2addr v12, v11
 
-    mul-float v12, v12, v10
+    mul-float/2addr v12, v10
 
     add-float/2addr v11, v12
 
@@ -629,7 +629,7 @@
 
     sub-float/2addr v8, v5
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     add-float/2addr v5, v8
 
@@ -684,7 +684,7 @@
 
     sub-float/2addr v12, v11
 
-    mul-float v12, v12, v10
+    mul-float/2addr v12, v10
 
     add-float/2addr v11, v12
 
@@ -698,7 +698,7 @@
 
     sub-float/2addr v8, v5
 
-    mul-float v8, v8, v10
+    mul-float/2addr v8, v10
 
     add-float/2addr v5, v8
 
@@ -753,7 +753,7 @@
 
     sub-float/2addr v12, v9
 
-    mul-float v12, v12, v10
+    mul-float/2addr v12, v10
 
     add-float/2addr v9, v12
 
@@ -767,7 +767,7 @@
 
     sub-float/2addr v13, v9
 
-    mul-float v13, v13, v10
+    mul-float/2addr v13, v10
 
     add-float/2addr v9, v13
 
@@ -781,7 +781,7 @@
 
     sub-float/2addr v14, v9
 
-    mul-float v14, v14, v10
+    mul-float/2addr v14, v10
 
     add-float/2addr v9, v14
 
@@ -796,7 +796,7 @@
 
     sub-float/2addr v15, v9
 
-    mul-float v15, v15, v10
+    mul-float/2addr v15, v10
 
     add-float/2addr v9, v15
 
@@ -810,7 +810,7 @@
 
     sub-float/2addr v4, v9
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     add-float/2addr v9, v4
 
@@ -825,7 +825,7 @@
 
     sub-float/2addr v5, v4
 
-    mul-float v5, v5, v10
+    mul-float/2addr v5, v10
 
     add-float/2addr v4, v5
 

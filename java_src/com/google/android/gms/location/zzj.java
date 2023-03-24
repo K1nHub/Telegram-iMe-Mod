@@ -16,9 +16,9 @@ public final class zzj implements Parcelable.Creator {
         long j = Long.MAX_VALUE;
         long j2 = Long.MAX_VALUE;
         int i = 0;
-        int i2 = 102;
         boolean z = false;
-        int i3 = 0;
+        int i2 = 0;
+        int i3 = 102;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {
@@ -29,7 +29,7 @@ public final class zzj implements Parcelable.Creator {
                     i = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 3:
-                    i2 = SafeParcelReader.readInt(parcel, readHeader);
+                    i3 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 4:
                     j2 = SafeParcelReader.readLong(parcel, readHeader);
@@ -41,7 +41,7 @@ public final class zzj implements Parcelable.Creator {
                     workSource = (WorkSource) SafeParcelReader.createParcelable(parcel, readHeader, WorkSource.CREATOR);
                     break;
                 case 7:
-                    i3 = SafeParcelReader.readInt(parcel, readHeader);
+                    i2 = SafeParcelReader.readInt(parcel, readHeader);
                     break;
                 case 8:
                     str = SafeParcelReader.createString(parcel, readHeader);
@@ -55,7 +55,7 @@ public final class zzj implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new CurrentLocationRequest(j, i, i2, j2, z, i3, str, workSource, zzdVar);
+        return new CurrentLocationRequest(j, i, i3, j2, z, i2, str, workSource, zzdVar);
     }
 
     @Override // android.os.Parcelable.Creator

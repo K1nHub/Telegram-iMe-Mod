@@ -219,7 +219,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v7
 
     :goto_0
     return v0

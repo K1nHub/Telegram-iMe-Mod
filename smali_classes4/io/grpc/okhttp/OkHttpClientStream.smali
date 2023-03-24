@@ -101,12 +101,12 @@
 
     const/4 v0, 0x1
 
-    const/4 v6, 0x1
+    move v6, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v6, 0x0
+    move v6, v7
 
     :goto_0
     move-object v0, p0

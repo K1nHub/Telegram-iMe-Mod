@@ -187,7 +187,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1240
     :goto_0
@@ -237,7 +237,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, -0x1
+    move v3, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -385,7 +385,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1092
     :goto_0
@@ -410,7 +410,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-ge v2, v0, :cond_3
@@ -457,7 +457,7 @@
 
     if-nez v4, :cond_2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_3
 
@@ -506,7 +506,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -577,7 +577,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1127
     :goto_0
@@ -822,7 +822,7 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 1254
     :goto_0
@@ -1451,7 +1451,7 @@
 
     int-to-float v3, p1
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     div-float/2addr v3, p2
 
@@ -1533,7 +1533,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1312
     :goto_0
@@ -1544,7 +1544,7 @@
     .line 1313
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/TableLayout$Axis;->init([I)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     if-ge v4, v0, :cond_2
@@ -1552,9 +1552,9 @@
     .line 1317
     array-length v5, p1
 
-    const/4 v6, 0x0
+    move v6, v2
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     if-ge v6, v5, :cond_0
@@ -1593,7 +1593,7 @@
 
     new-array v4, v4, [Z
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     if-ge v5, v0, :cond_5
@@ -1601,7 +1601,7 @@
     .line 1331
     array-length v6, p1
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_4
     if-ge v7, v6, :cond_4
@@ -1629,7 +1629,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 1336
     :goto_5
@@ -1704,7 +1704,7 @@
 
     move-result v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     const/4 v2, 0x1
 
@@ -1724,7 +1724,7 @@
 
     const/4 v4, -0x1
 
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     if-ge v5, v0, :cond_2
@@ -2163,7 +2163,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_0
@@ -2186,7 +2186,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     if-ge v3, v0, :cond_1

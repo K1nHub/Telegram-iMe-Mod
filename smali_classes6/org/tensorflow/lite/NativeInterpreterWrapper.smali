@@ -560,7 +560,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 90
     :goto_0
@@ -593,7 +593,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 96
     :goto_1
@@ -698,7 +698,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 197
     :goto_0
@@ -878,7 +878,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 219
     :goto_0
@@ -1115,7 +1115,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 126
     :goto_0
@@ -1166,7 +1166,7 @@
     iput-boolean v2, p0, Lorg/tensorflow/lite/NativeInterpreterWrapper;->isMemoryAllocated:Z
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 140
     :goto_1

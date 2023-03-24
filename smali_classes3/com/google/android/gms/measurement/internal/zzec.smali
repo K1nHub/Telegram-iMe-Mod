@@ -313,12 +313,12 @@
 
     if-eqz v2, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_5
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_5
     iget-object v6, p0, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
@@ -1027,9 +1027,9 @@
 
     const-wide/16 v11, 0x0
 
-    const/4 v2, 0x0
-
     cmp-long v0, v9, v11
+
+    const/4 v2, 0x0
 
     if-nez v0, :cond_4
 

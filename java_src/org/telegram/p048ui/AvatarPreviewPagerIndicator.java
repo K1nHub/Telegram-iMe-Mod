@@ -16,7 +16,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.Components.CubicBezierInterpolator;
 import org.telegram.p048ui.Components.ProfileGalleryView;
 /* renamed from: org.telegram.ui.AvatarPreviewPagerIndicator */
@@ -168,7 +168,7 @@ public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryV
 
     @Override // android.view.View
     protected void onSizeChanged(int i, int i2, int i3, int i4) {
-        int currentActionBarHeight = C3351ActionBar.getCurrentActionBarHeight() + 0;
+        int currentActionBarHeight = C3366ActionBar.getCurrentActionBarHeight() + 0;
         this.topOverlayRect.set(0, 0, i, (int) (currentActionBarHeight * 0.5f));
         this.bottomOverlayRect.set(0, (int) (i2 - (AndroidUtilities.m51dp(72.0f) * 0.5f)), i, i2);
         this.topOverlayGradient.setBounds(0, this.topOverlayRect.bottom, i, currentActionBarHeight + AndroidUtilities.m51dp(16.0f));
@@ -179,12 +179,12 @@ public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryV
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0302  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0305  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x020b  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x020e  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x02f4  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x02f7  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0203  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -192,7 +192,7 @@ public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryV
     */
     public void onDraw(android.graphics.Canvas r23) {
         /*
-            Method dump skipped, instructions count: 920
+            Method dump skipped, instructions count: 904
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.AvatarPreviewPagerIndicator.onDraw(android.graphics.Canvas):void");

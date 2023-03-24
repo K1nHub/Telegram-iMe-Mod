@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>(Lj$/util/stream/s2;Lj$/util/s;JJI)V
-    .locals 3
+    .locals 2
 
     invoke-direct {p0, p1}, Ljava/util/concurrent/CountedCompleter;-><init>(Ljava/util/concurrent/CountedCompleter;)V
 
@@ -77,9 +77,9 @@
 
     if-ltz v0, :cond_0
 
-    cmp-long v0, p5, p1
+    cmp-long p1, p5, p1
 
-    if-ltz v0, :cond_0
+    if-ltz p1, :cond_0
 
     add-long p1, p3, p5
 
@@ -89,9 +89,9 @@
 
     int-to-long v0, p7
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez p1, :cond_0
 
     return-void
 
@@ -204,9 +204,9 @@
 
     iget-wide v2, v7, Lj$/util/stream/s2;->c:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     invoke-interface {v6}, Lj$/util/s;->trySplit()Lj$/util/s;
 
@@ -279,25 +279,25 @@
 .end method
 
 .method public n(J)V
-    .locals 3
+    .locals 2
 
     iget-wide v0, p0, Lj$/util/stream/s2;->e:J
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gtz v2, :cond_0
+    if-gtz p1, :cond_0
 
     iget-wide p1, p0, Lj$/util/stream/s2;->d:J
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    iput p2, p0, Lj$/util/stream/s2;->f:I
+    iput p1, p0, Lj$/util/stream/s2;->f:I
 
-    long-to-int p1, v0
+    long-to-int p2, v0
 
-    add-int/2addr p2, p1
+    add-int/2addr p1, p2
 
-    iput p2, p0, Lj$/util/stream/s2;->g:I
+    iput p1, p0, Lj$/util/stream/s2;->g:I
 
     return-void
 

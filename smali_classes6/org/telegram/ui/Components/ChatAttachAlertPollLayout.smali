@@ -916,9 +916,9 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 578
     :goto_0
@@ -957,7 +957,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 585
     :cond_2
@@ -1014,20 +1014,20 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_5
     :goto_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
-    const/4 v4, 0x0
+    move v4, v1
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 591
     :goto_3
@@ -1063,16 +1063,16 @@
 
     if-le v6, v7, :cond_6
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_4
 
     :cond_6
     add-int/lit8 v5, v5, 0x1
 
-    const/4 v6, 0x1
+    move v6, v3
 
     :cond_7
     add-int/lit8 v4, v4, 0x1
@@ -1093,7 +1093,7 @@
     if-ge v2, v3, :cond_a
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 604
     :cond_a
@@ -1151,7 +1151,7 @@
     if-eqz v0, :cond_f
 
     :cond_e
-    const/4 v1, 0x1
+    move v1, v3
 
     :cond_f
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
@@ -1383,7 +1383,7 @@
 
     invoke-virtual {v3, v4}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    goto :goto_5
+    goto/16 :goto_5
 
     .line 290
     :cond_3
@@ -1489,9 +1489,9 @@
 
     if-eqz v3, :cond_a
 
-    const/4 v3, 0x0
+    move v3, v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 314
     :goto_3
@@ -1514,7 +1514,7 @@
 
     if-eqz v6, :cond_9
 
-    const/4 v5, 0x1
+    move v5, v2
 
     :cond_9
     :goto_4
@@ -1708,12 +1708,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_0
     rsub-int p2, p2, 0xff
 
-    const/16 v1, 0xff
+    move v1, v3
 
     goto :goto_3
 
@@ -1735,12 +1735,12 @@
     goto :goto_1
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_1
     rsub-int p2, p2, 0xc8
 
-    const/16 v1, 0xc8
+    move v1, v2
 
     goto :goto_3
 
@@ -1774,7 +1774,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_2
     rsub-int/lit8 p2, p2, 0x64
@@ -1786,7 +1786,7 @@
 
     const v2, 0x3f333333    # 0.7f
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sub-float/2addr v1, v2
 
@@ -3181,7 +3181,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 403
     :goto_0
@@ -3280,7 +3280,7 @@
 
     invoke-direct {p1, v1}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 420
     :goto_1
@@ -3622,7 +3622,7 @@
 
     if-gez p1, :cond_2
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 515
     :cond_2

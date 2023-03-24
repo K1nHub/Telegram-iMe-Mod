@@ -184,7 +184,7 @@
 
     iget v2, v2, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->bytesPerFrame:I
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     new-array v0, v0, [B
 
@@ -193,7 +193,7 @@
     .line 165
     iget v0, p0, Lcom/google/android/exoplayer2/audio/TrimmingAudioProcessor;->trimStartFrames:I
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/TrimmingAudioProcessor;->pendingTrimStartBytes:I
 

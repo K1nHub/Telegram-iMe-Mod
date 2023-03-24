@@ -8,10 +8,10 @@ public class GLVTypeBParameters {
     protected final int bits;
 
     /* renamed from: g1 */
-    protected final BigInteger f1377g1;
+    protected final BigInteger f1378g1;
 
     /* renamed from: g2 */
-    protected final BigInteger f1378g2;
+    protected final BigInteger f1379g2;
     protected final BigInteger v1A;
     protected final BigInteger v1B;
     protected final BigInteger v2A;
@@ -25,8 +25,8 @@ public class GLVTypeBParameters {
         this.v1B = bigIntegerArr[1];
         this.v2A = bigIntegerArr2[0];
         this.v2B = bigIntegerArr2[1];
-        this.f1377g1 = bigInteger3;
-        this.f1378g2 = bigInteger4;
+        this.f1378g1 = bigInteger3;
+        this.f1379g2 = bigInteger4;
         this.bits = i;
     }
 
@@ -45,11 +45,11 @@ public class GLVTypeBParameters {
     }
 
     public BigInteger getG1() {
-        return this.f1377g1;
+        return this.f1378g1;
     }
 
     public BigInteger getG2() {
-        return this.f1378g2;
+        return this.f1379g2;
     }
 
     public BigInteger getV1A() {

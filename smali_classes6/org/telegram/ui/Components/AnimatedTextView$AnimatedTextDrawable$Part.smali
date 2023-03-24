@@ -66,7 +66,7 @@
 
     :cond_1
     :goto_0
-    const/4 p4, 0x0
+    move p4, p3
 
     :goto_1
     iput p4, p0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable$Part;->left:F

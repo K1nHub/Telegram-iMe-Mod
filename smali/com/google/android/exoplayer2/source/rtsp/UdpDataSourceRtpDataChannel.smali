@@ -95,7 +95,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 v0, -0x1
+    move v0, v1
 
     :cond_0
     return v0
@@ -127,12 +127,12 @@
 
     if-eq v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 55
     :goto_0

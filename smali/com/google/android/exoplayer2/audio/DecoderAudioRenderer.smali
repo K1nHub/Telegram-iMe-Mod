@@ -1124,16 +1124,16 @@
 .end method
 
 .method private setOutputStreamOffsetUs(J)V
-    .locals 3
+    .locals 2
 
     .line 470
     iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->outputStreamOffsetUs:J
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 472
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->audioSink:Lcom/google/android/exoplayer2/audio/AudioSink;
@@ -1159,7 +1159,7 @@
 .end method
 
 .method private updateCurrentPosition()V
-    .locals 5
+    .locals 4
 
     .line 815
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->audioSink:Lcom/google/android/exoplayer2/audio/AudioSink;
@@ -1174,9 +1174,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     .line 818
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->allowPositionDiscontinuity:Z
@@ -1686,7 +1686,7 @@
 .end method
 
 .method protected onQueueInputBuffer(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;)V
-    .locals 5
+    .locals 4
 
     .line 803
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->allowFirstBufferPositionDiscontinuity:Z
@@ -1712,9 +1712,9 @@
 
     const-wide/32 v2, 0x7a120
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 808
     iget-wide v0, p1, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
@@ -1777,9 +1777,9 @@
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long p3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez p3, :cond_0
+    if-nez p1, :cond_0
 
     .line 641
     invoke-direct {p0, p4, p5}, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->setOutputStreamOffsetUs(J)V

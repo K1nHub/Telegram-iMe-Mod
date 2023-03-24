@@ -35,6 +35,7 @@ public final class NetworkType {
     public static final NetworkType FANTOM;
     public static final NetworkType POLYGON;
     public static final NetworkType THE_OPEN_NETWORK;
+    public static final NetworkType TRON;
     private final int backgroundColor;
     private final BlockchainType blockchainType;
     private final int logo;
@@ -44,7 +45,7 @@ public final class NetworkType {
     private final int shortName;
     private final int smallIcon;
     private final int textColor;
-    private final int title;
+    private final int titleResId;
 
     /* compiled from: NetworkType.kt */
     /* loaded from: classes3.dex */
@@ -74,19 +75,7 @@ public final class NetworkType {
     }
 
     private static final /* synthetic */ NetworkType[] $values() {
-        return new NetworkType[]{BINANCE_SMART_CHAIN, ETHEREUM, POLYGON, FANTOM, THE_OPEN_NETWORK};
-    }
-
-    public static final List<NetworkType> getAvailableNetworks() {
-        return Companion.getAvailableNetworks();
-    }
-
-    public static final List<NetworkType> getEVMNetworks() {
-        return Companion.getEVMNetworks();
-    }
-
-    public static final List<NetworkType> getNetworksByBlockchains(List<? extends BlockchainType> list) {
-        return Companion.getNetworksByBlockchains(list);
+        return new NetworkType[]{BINANCE_SMART_CHAIN, ETHEREUM, POLYGON, FANTOM, TRON, THE_OPEN_NETWORK};
     }
 
     public static final NetworkType map(String str) {
@@ -104,7 +93,7 @@ public final class NetworkType {
     private NetworkType(String str, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, TokenCode tokenCode, BlockchainType blockchainType) {
         this.logo = i2;
         this.smallIcon = i3;
-        this.title = i4;
+        this.titleResId = i4;
         this.shortName = i5;
         this.scannerName = i6;
         this.scannerIcon = i7;
@@ -122,8 +111,8 @@ public final class NetworkType {
         return this.smallIcon;
     }
 
-    public final int getTitle() {
-        return this.title;
+    public final int getTitleResId() {
+        return this.titleResId;
     }
 
     public final int getShortName() {
@@ -168,7 +157,8 @@ public final class NetworkType {
         ETHEREUM = new NetworkType("ETHEREUM", 1, R$drawable.fork_ic_eth_logo, R$drawable.fork_ic_erc_small_logo, R$string.wallet_network_type_erc20, R$string.wallet_network_type_eth_short_name, R$string.wallet_network_scanner_eth, i6, R$color.wallet_network_type_erc20, 17170443, TokenCode.ETHER, blockchainType);
         POLYGON = new NetworkType("POLYGON", 2, R$drawable.fork_ic_polygon_logo, R$drawable.fork_ic_polygon_small_logo, R$string.wallet_network_type_polygon, R$string.wallet_network_type_polygon_short_name, R$string.wallet_network_scanner_polygon, R$drawable.fork_ic_polygon_26, R$color.wallet_network_type_polygon, 17170443, TokenCode.MATIC, blockchainType);
         FANTOM = new NetworkType("FANTOM", 3, R$drawable.fork_ic_fantom_logo, R$drawable.fork_ic_fantom_small_logo, R$string.wallet_network_type_fantom, R$string.wallet_network_type_fantom_short_name, R$string.wallet_network_scanner_fantom, R$drawable.fork_ic_ftmscan, R$color.wallet_network_type_fantom, 17170443, TokenCode.FTM, blockchainType);
-        THE_OPEN_NETWORK = new NetworkType("THE_OPEN_NETWORK", 4, R$drawable.fork_ic_ton_58, R$drawable.fork_ic_ton_small_logo, R$string.wallet_network_type_ton, R$string.wallet_network_type_ton_short_name, R$string.wallet_network_scanner_ton, R$drawable.fork_ic_tonscan, R$color.wallet_network_type_ton, 17170443, TokenCode.TON, BlockchainType.TON);
+        TRON = new NetworkType("TRON", 4, R$drawable.fork_ic_tron_logo, R$drawable.fork_ic_tron_small_logo, R$string.wallet_network_type_tron, R$string.wallet_network_type_tron_short_name, R$string.wallet_network_scanner_tron, R$drawable.fork_ic_tronscan, R$color.wallet_network_type_tron, 17170443, TokenCode.TRX, BlockchainType.TRON);
+        THE_OPEN_NETWORK = new NetworkType("THE_OPEN_NETWORK", 5, R$drawable.fork_ic_ton_logo, R$drawable.fork_ic_ton_small_logo, R$string.wallet_network_type_ton, R$string.wallet_network_type_ton_short_name, R$string.wallet_network_scanner_ton, R$drawable.fork_ic_tonscan, R$color.wallet_network_type_ton, 17170443, TokenCode.TON, BlockchainType.TON);
         $VALUES = $values();
         Companion = new Companion(null);
     }
@@ -231,10 +221,42 @@ public final class NetworkType {
         private Companion() {
         }
 
+        public final NetworkType map(String type) {
+            NetworkType networkType;
+            Intrinsics.checkNotNullParameter(type, "type");
+            NetworkType[] values = NetworkType.values();
+            int length = values.length;
+            int i = 0;
+            while (true) {
+                if (i >= length) {
+                    networkType = null;
+                    break;
+                }
+                networkType = values[i];
+                if (Intrinsics.areEqual(networkType.name(), type)) {
+                    break;
+                }
+                i++;
+            }
+            return networkType == null ? NetworkType.BINANCE_SMART_CHAIN : networkType;
+        }
+
         public final List<NetworkType> getAvailableNetworks() {
             List<NetworkType> list;
             list = ArraysKt___ArraysKt.toList(NetworkType.values());
             return list;
+        }
+
+        public final List<NetworkType> getNetworksByBlockchain(BlockchainType blockchainType) {
+            Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+            NetworkType[] values = NetworkType.values();
+            ArrayList arrayList = new ArrayList();
+            for (NetworkType networkType : values) {
+                if (networkType.getBlockchainType() == blockchainType) {
+                    arrayList.add(networkType);
+                }
+            }
+            return arrayList;
         }
 
         public final List<NetworkType> getNetworksByBlockchains(List<? extends BlockchainType> blockchainTypes) {
@@ -258,26 +280,6 @@ public final class NetworkType {
                 }
             }
             return arrayList;
-        }
-
-        public final NetworkType map(String type) {
-            NetworkType networkType;
-            Intrinsics.checkNotNullParameter(type, "type");
-            NetworkType[] values = NetworkType.values();
-            int length = values.length;
-            int i = 0;
-            while (true) {
-                if (i >= length) {
-                    networkType = null;
-                    break;
-                }
-                networkType = values[i];
-                if (Intrinsics.areEqual(networkType.name(), type)) {
-                    break;
-                }
-                i++;
-            }
-            return networkType == null ? NetworkType.BINANCE_SMART_CHAIN : networkType;
         }
 
         public final NetworkType fromChainId(long j) {

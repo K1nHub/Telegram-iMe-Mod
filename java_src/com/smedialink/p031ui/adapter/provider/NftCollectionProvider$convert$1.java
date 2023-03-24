@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.Components.BackupImageView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NftCollectionProvider.kt */
@@ -41,7 +41,7 @@ public final class NftCollectionProvider$convert$1 extends Lambda implements Fun
         applyForView.setAspectFit(true);
         applyForView.setLayerNum(1);
         resourceManager = this.this$0.resourceManager;
-        applyForView.setRoundRadius((int) resourceManager.getDimens(C3286R.dimen.telegram_avatar_size_medium));
+        applyForView.setRoundRadius((int) resourceManager.getDimens(C3301R.dimen.telegram_avatar_size_medium));
         NftTokenItem nftTokenItem = (NftTokenItem) CollectionsKt.firstOrNull(this.$item.getTokens());
         String image = (nftTokenItem == null || (token = nftTokenItem.getToken()) == null) ? null : token.getImage();
         if (image == null) {

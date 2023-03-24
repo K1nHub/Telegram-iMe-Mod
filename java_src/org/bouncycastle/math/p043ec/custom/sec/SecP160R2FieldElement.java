@@ -10,46 +10,46 @@ import org.bouncycastle.util.Arrays;
 public class SecP160R2FieldElement extends ECFieldElement.AbstractFp {
 
     /* renamed from: Q */
-    public static final BigInteger f1334Q = SecP160R2Curve.f1332q;
+    public static final BigInteger f1335Q = SecP160R2Curve.f1333q;
 
     /* renamed from: x */
-    protected int[] f1335x;
+    protected int[] f1336x;
 
     public SecP160R2FieldElement() {
-        this.f1335x = Nat160.create();
+        this.f1336x = Nat160.create();
     }
 
     public SecP160R2FieldElement(BigInteger bigInteger) {
-        if (bigInteger == null || bigInteger.signum() < 0 || bigInteger.compareTo(f1334Q) >= 0) {
+        if (bigInteger == null || bigInteger.signum() < 0 || bigInteger.compareTo(f1335Q) >= 0) {
             throw new IllegalArgumentException("x value invalid for SecP160R2FieldElement");
         }
-        this.f1335x = SecP160R2Field.fromBigInteger(bigInteger);
+        this.f1336x = SecP160R2Field.fromBigInteger(bigInteger);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public SecP160R2FieldElement(int[] iArr) {
-        this.f1335x = iArr;
+        this.f1336x = iArr;
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement add(ECFieldElement eCFieldElement) {
         int[] create = Nat160.create();
-        SecP160R2Field.add(this.f1335x, ((SecP160R2FieldElement) eCFieldElement).f1335x, create);
+        SecP160R2Field.add(this.f1336x, ((SecP160R2FieldElement) eCFieldElement).f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement addOne() {
         int[] create = Nat160.create();
-        SecP160R2Field.addOne(this.f1335x, create);
+        SecP160R2Field.addOne(this.f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement divide(ECFieldElement eCFieldElement) {
         int[] create = Nat160.create();
-        Mod.invert(SecP160R2Field.f1333P, ((SecP160R2FieldElement) eCFieldElement).f1335x, create);
-        SecP160R2Field.multiply(create, this.f1335x, create);
+        Mod.invert(SecP160R2Field.f1334P, ((SecP160R2FieldElement) eCFieldElement).f1336x, create);
+        SecP160R2Field.multiply(create, this.f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
@@ -58,54 +58,54 @@ public class SecP160R2FieldElement extends ECFieldElement.AbstractFp {
             return true;
         }
         if (obj instanceof SecP160R2FieldElement) {
-            return Nat160.m67eq(this.f1335x, ((SecP160R2FieldElement) obj).f1335x);
+            return Nat160.m67eq(this.f1336x, ((SecP160R2FieldElement) obj).f1336x);
         }
         return false;
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public int getFieldSize() {
-        return f1334Q.bitLength();
+        return f1335Q.bitLength();
     }
 
     public int hashCode() {
-        return f1334Q.hashCode() ^ Arrays.hashCode(this.f1335x, 0, 5);
+        return f1335Q.hashCode() ^ Arrays.hashCode(this.f1336x, 0, 5);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement invert() {
         int[] create = Nat160.create();
-        Mod.invert(SecP160R2Field.f1333P, this.f1335x, create);
+        Mod.invert(SecP160R2Field.f1334P, this.f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public boolean isOne() {
-        return Nat160.isOne(this.f1335x);
+        return Nat160.isOne(this.f1336x);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public boolean isZero() {
-        return Nat160.isZero(this.f1335x);
+        return Nat160.isZero(this.f1336x);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement multiply(ECFieldElement eCFieldElement) {
         int[] create = Nat160.create();
-        SecP160R2Field.multiply(this.f1335x, ((SecP160R2FieldElement) eCFieldElement).f1335x, create);
+        SecP160R2Field.multiply(this.f1336x, ((SecP160R2FieldElement) eCFieldElement).f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement negate() {
         int[] create = Nat160.create();
-        SecP160R2Field.negate(this.f1335x, create);
+        SecP160R2Field.negate(this.f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement sqrt() {
-        int[] iArr = this.f1335x;
+        int[] iArr = this.f1336x;
         if (Nat160.isZero(iArr) || Nat160.isOne(iArr)) {
             return this;
         }
@@ -154,17 +154,17 @@ public class SecP160R2FieldElement extends ECFieldElement.AbstractFp {
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public ECFieldElement square() {
         int[] create = Nat160.create();
-        SecP160R2Field.square(this.f1335x, create);
+        SecP160R2Field.square(this.f1336x, create);
         return new SecP160R2FieldElement(create);
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public boolean testBitZero() {
-        return Nat160.getBit(this.f1335x, 0) == 1;
+        return Nat160.getBit(this.f1336x, 0) == 1;
     }
 
     @Override // org.bouncycastle.math.p043ec.ECFieldElement
     public BigInteger toBigInteger() {
-        return Nat160.toBigInteger(this.f1335x);
+        return Nat160.toBigInteger(this.f1336x);
     }
 }

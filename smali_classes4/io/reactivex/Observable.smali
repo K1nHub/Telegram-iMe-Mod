@@ -4926,7 +4926,7 @@
 .end method
 
 .method public static range(II)Lio/reactivex/Observable;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -4974,9 +4974,9 @@
 
     const-wide/32 v2, 0x7fffffff
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_2
+    if-gtz v0, :cond_2
 
     .line 3627
     new-instance v0, Lio/reactivex/internal/operators/observable/ObservableRange;
@@ -5075,9 +5075,9 @@
 
     if-lez v4, :cond_3
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-ltz v4, :cond_2
+    if-ltz v0, :cond_2
 
     goto :goto_0
 
@@ -10553,9 +10553,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 8342
     new-instance v0, Lio/reactivex/internal/operators/observable/ObservableElementAtMaybe;
@@ -10592,7 +10592,7 @@
 .end method
 
 .method public final elementAt(JLjava/lang/Object;)Lio/reactivex/Single;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JTT;)",
@@ -10603,9 +10603,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-string v0, "defaultItem is null"
 
@@ -10658,9 +10658,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 8399
     new-instance v0, Lio/reactivex/internal/operators/observable/ObservableElementAtSingle;
@@ -12829,11 +12829,11 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 10437
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
@@ -13589,7 +13589,7 @@
 .end method
 
 .method public final retry(JLio/reactivex/functions/Predicate;)Lio/reactivex/Observable;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -13604,9 +13604,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-string v0, "predicate is null"
 
@@ -14236,7 +14236,7 @@
 .end method
 
 .method public final skip(J)Lio/reactivex/Observable;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -14247,9 +14247,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     .line 11673
     invoke-static {p0}, Lio/reactivex/plugins/RxJavaPlugins;->onAssembly(Lio/reactivex/Observable;)Lio/reactivex/Observable;
@@ -15603,9 +15603,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 12738
     new-instance v0, Lio/reactivex/internal/operators/observable/ObservableTake;
@@ -15879,9 +15879,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     .line 12928
     new-instance v10, Lio/reactivex/internal/operators/observable/ObservableTakeLastTimed;

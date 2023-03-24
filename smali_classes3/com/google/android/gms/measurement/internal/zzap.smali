@@ -49,69 +49,69 @@
     .line 2
     invoke-static/range {p2 .. p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotEmpty(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v9, 0x1
+    const-wide/16 v9, 0x0
 
-    const/4 v10, 0x0
+    cmp-long v11, v1, v9
 
-    const-wide/16 v11, 0x0
+    const/4 v12, 0x1
 
-    cmp-long v13, v1, v11
+    const/4 v13, 0x0
 
-    if-ltz v13, :cond_0
+    if-ltz v11, :cond_0
 
-    const/4 v13, 0x1
+    move v11, v12
 
     goto :goto_0
 
     :cond_0
-    const/4 v13, 0x0
+    move v11, v13
 
     .line 3
     :goto_0
-    invoke-static {v13}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v11}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
 
-    cmp-long v13, v3, v11
+    cmp-long v11, v3, v9
 
-    if-ltz v13, :cond_1
+    if-ltz v11, :cond_1
 
-    const/4 v13, 0x1
+    move v11, v12
 
     goto :goto_1
 
     :cond_1
-    const/4 v13, 0x0
+    move v11, v13
 
     .line 4
     :goto_1
-    invoke-static {v13}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v11}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
 
-    cmp-long v13, v5, v11
+    cmp-long v11, v5, v9
 
-    if-ltz v13, :cond_2
+    if-ltz v11, :cond_2
 
-    const/4 v13, 0x1
+    move v11, v12
 
     goto :goto_2
 
     :cond_2
-    const/4 v13, 0x0
+    move v11, v13
 
     .line 5
     :goto_2
-    invoke-static {v13}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v11}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
 
-    cmp-long v13, v7, v11
+    cmp-long v9, v7, v9
 
-    if-ltz v13, :cond_3
+    if-ltz v9, :cond_3
 
     goto :goto_3
 
     :cond_3
-    const/4 v9, 0x0
+    move v12, v13
 
     .line 6
     :goto_3
-    invoke-static {v9}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
+    invoke-static {v12}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(Z)V
 
     move-object v9, p1
 

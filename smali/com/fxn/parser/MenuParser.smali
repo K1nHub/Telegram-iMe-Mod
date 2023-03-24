@@ -120,7 +120,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_1
 

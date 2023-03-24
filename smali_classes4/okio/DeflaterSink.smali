@@ -361,9 +361,9 @@
     :goto_0
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     .line 59
     iget-object v0, p1, Lokio/Buffer;->head:Lokio/Segment;
@@ -384,44 +384,44 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     .line 61
-    iget-object v1, p0, Lokio/DeflaterSink;->deflater:Ljava/util/zip/Deflater;
+    iget-object v2, p0, Lokio/DeflaterSink;->deflater:Ljava/util/zip/Deflater;
 
     iget-object v3, v0, Lokio/Segment;->data:[B
 
     iget v4, v0, Lokio/Segment;->pos:I
 
-    invoke-virtual {v1, v3, v4, v2}, Ljava/util/zip/Deflater;->setInput([BII)V
+    invoke-virtual {v2, v3, v4, v1}, Ljava/util/zip/Deflater;->setInput([BII)V
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 64
-    invoke-direct {p0, v1}, Lokio/DeflaterSink;->deflate(Z)V
+    invoke-direct {p0, v2}, Lokio/DeflaterSink;->deflate(Z)V
 
     .line 67
     invoke-virtual {p1}, Lokio/Buffer;->size()J
 
-    move-result-wide v3
+    move-result-wide v2
 
-    int-to-long v5, v2
+    int-to-long v4, v1
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v2, v4
 
-    invoke-virtual {p1, v3, v4}, Lokio/Buffer;->setSize$okio(J)V
+    invoke-virtual {p1, v2, v3}, Lokio/Buffer;->setSize$okio(J)V
 
     .line 68
-    iget v1, v0, Lokio/Segment;->pos:I
+    iget v2, v0, Lokio/Segment;->pos:I
 
-    add-int/2addr v1, v2
+    add-int/2addr v2, v1
 
-    iput v1, v0, Lokio/Segment;->pos:I
+    iput v2, v0, Lokio/Segment;->pos:I
 
     .line 69
-    iget v2, v0, Lokio/Segment;->limit:I
+    iget v1, v0, Lokio/Segment;->limit:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v2, v1, :cond_0
 
     .line 70
     invoke-virtual {v0}, Lokio/Segment;->pop()Lokio/Segment;
@@ -434,7 +434,7 @@
     invoke-static {v0}, Lokio/SegmentPool;->recycle(Lokio/Segment;)V
 
     :cond_0
-    sub-long/2addr p2, v5
+    sub-long/2addr p2, v4
 
     goto :goto_0
 

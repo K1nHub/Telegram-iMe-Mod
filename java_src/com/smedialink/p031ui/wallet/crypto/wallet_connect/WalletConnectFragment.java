@@ -52,14 +52,14 @@ import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenu;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -222,13 +222,13 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_connect_title));
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.createMenu();
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.wallet_connect_title));
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.createMenu();
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletConnectPresenter presenter;
                 if (i == -1) {
@@ -239,7 +239,7 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
                 }
             }
         });
-        ActionBarMenu createMenu = c3351ActionBar.createMenu();
+        ActionBarMenu createMenu = c3366ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
@@ -336,22 +336,22 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         repeat = StringsKt__StringsJVMKt.repeat(" ", 2);
         spannableStringBuilder.append((CharSequence) repeat);
-        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3286R.C3288drawable.msg_mini_qr);
+        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3301R.C3303drawable.msg_mini_qr);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
         spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m50dp(8)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3286R.string.wallet_connect_new_connection));
+        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3301R.string.wallet_connect_new_connection));
         bigActionButton.setText(spannableStringBuilder);
         bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed")));
         RLottieImageView rLottieImageView = binding.imageHeader;
         updateAnimationColors();
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3286R.C3291raw.fork_wallet_connect, 300, 170, this.colors);
+        rLottieImageView.setAnimation(C3301R.C3306raw.fork_wallet_connect, 300, 170, this.colors);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textSessionsTitle.setText(getResourceManager().getString(C3286R.string.wallet_connect_active_sessions));
-        binding.textDescription.setText(getResourceManager().getString(C3286R.string.wallet_connect_description));
-        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3286R.string.wallet_connect_terminate_all), C3286R.C3288drawable.msg_block2, false);
+        binding.textSessionsTitle.setText(getResourceManager().getString(C3301R.string.wallet_connect_active_sessions));
+        binding.textDescription.setText(getResourceManager().getString(C3301R.string.wallet_connect_description));
+        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3301R.string.wallet_connect_terminate_all), C3301R.C3303drawable.msg_block2, false);
     }
 
     private final void openQRScan() {

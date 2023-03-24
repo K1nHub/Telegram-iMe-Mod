@@ -211,17 +211,17 @@
     :goto_1
     const-wide/16 v9, 0x3c
 
-    mul-long v5, v5, v9
+    mul-long/2addr v5, v9
 
     add-long/2addr v5, v7
 
-    mul-long v5, v5, v9
+    mul-long/2addr v5, v9
 
     const-wide/16 v7, 0x3e8
 
-    mul-long v5, v5, v7
+    mul-long/2addr v5, v7
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     sub-long/2addr v1, v3
 

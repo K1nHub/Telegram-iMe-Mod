@@ -71,8 +71,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
-
     goto :goto_0
 
     .line 49
@@ -81,9 +79,9 @@
 
     mul-int/lit8 v0, v0, 0x8
 
+    :goto_0
     move v4, v0
 
-    :goto_0
     move-object v1, p0
 
     move-object v2, p1

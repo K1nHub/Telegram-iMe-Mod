@@ -54,16 +54,16 @@
 
 # virtual methods
 .method public createSeekMap()Lcom/google/android/exoplayer2/extractor/SeekMap;
-    .locals 5
+    .locals 4
 
     .line 157
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -93,11 +93,11 @@
     .line 138
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J
 
+    const-wide/16 v2, 0x0
+
+    cmp-long p1, v0, v2
+
     const-wide/16 v2, -0x1
-
-    const-wide/16 v4, 0x0
-
-    cmp-long p1, v0, v4
 
     if-ltz p1, :cond_0
 

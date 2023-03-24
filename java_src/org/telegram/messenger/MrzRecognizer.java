@@ -130,9 +130,9 @@ public class MrzRecognizer {
                     }
                 }
                 if ("USA".equals(result.issuingCountry)) {
-                    i = 4;
                     i4 = 2;
                     i5 = 0;
+                    i = 4;
                 }
                 try {
                     String str3 = valueAt.driverLicense.birthDate;
@@ -180,21 +180,19 @@ public class MrzRecognizer {
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x03f4  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0252 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0271 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x022c  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x03c6  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0246 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0265 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x01e8  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0231  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0247  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private static org.telegram.messenger.MrzRecognizer.Result recognizeMRZ(android.graphics.Bitmap r25) {
         /*
-            Method dump skipped, instructions count: 1921
+            Method dump skipped, instructions count: 1909
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MrzRecognizer.recognizeMRZ(android.graphics.Bitmap):org.telegram.messenger.MrzRecognizer$Result");
@@ -280,8 +278,8 @@ public class MrzRecognizer {
 
     private static String cyrillicToLatin(String str) {
         String[] strArr = {"A", "B", "V", "G", "D", "E", "E", "ZH", "Z", "I", "I", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "KH", "TS", "CH", "SH", "SHCH", "IE", "Y", "", "E", "IU", "IA"};
-        String str2 = str;
         int i = 0;
+        String str2 = str;
         while (i < 33) {
             int i2 = i + 1;
             str2 = str2.replace("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".substring(i, i2), strArr[i]);

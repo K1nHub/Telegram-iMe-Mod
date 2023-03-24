@@ -1116,7 +1116,7 @@
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 786
     :goto_2
@@ -1238,7 +1238,7 @@
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowChatParticipants;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v5
 
     .line 806
     :goto_4
@@ -1584,9 +1584,9 @@
     :cond_1
     const/4 v1, -0x1
 
-    const/4 v5, 0x0
+    move v6, v1
 
-    const/4 v6, -0x1
+    move v5, v4
 
     .line 881
     :goto_0
@@ -1618,7 +1618,7 @@
 
     move-result v8
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_1
     if-ge v9, v8, :cond_8
@@ -1666,7 +1666,7 @@
 
     move-result v8
 
-    const/4 v9, 0x0
+    move v9, v4
 
     :goto_2
     if-ge v9, v8, :cond_8
@@ -1742,7 +1742,7 @@
 
     if-eqz v6, :cond_6
 
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_3
 
@@ -1752,12 +1752,12 @@
 
     if-eqz v6, :cond_7
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_3
 
     :cond_7
-    const/4 v6, 0x2
+    move v6, v2
 
     :cond_8
     :goto_3
@@ -1934,7 +1934,7 @@
     goto :goto_a
 
     :cond_12
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 934
     :goto_9
@@ -2840,7 +2840,7 @@
 
     if-eqz v3, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_9
     const-string v3, "chatAddType"
@@ -2889,29 +2889,29 @@
 
     if-eq v5, v6, :cond_c
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_3
 
     :cond_c
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_3
     iget v7, p0, Lorg/telegram/ui/PrivacyControlActivity;->alwaysShareRow:I
 
     if-ne p2, v7, :cond_d
 
-    const/4 v7, 0x1
+    move v7, v1
 
     goto :goto_4
 
     :cond_d
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_4
     if-ne v5, v2, :cond_e
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_e
     move-object v2, p1
@@ -2946,7 +2946,7 @@
     goto :goto_6
 
     :cond_10
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 656
     :goto_6
@@ -2972,7 +2972,7 @@
     :goto_7
     if-ne p2, p1, :cond_13
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_8
 
@@ -3011,7 +3011,7 @@
     :goto_9
     if-ne p2, p1, :cond_17
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 578
     :cond_17
@@ -4060,12 +4060,12 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -4074,12 +4074,12 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
@@ -4091,7 +4091,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
@@ -4591,7 +4591,7 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_c
     if-ge v1, p1, :cond_1f
@@ -4620,7 +4620,7 @@
 
     if-nez v4, :cond_13
 
-    goto :goto_15
+    goto/16 :goto_15
 
     .line 1096
     :cond_13
@@ -4664,12 +4664,12 @@
 
     if-ne v4, v6, :cond_16
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_d
 
     :cond_16
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 1125
     :goto_d
@@ -4677,12 +4677,12 @@
 
     if-ne v6, v4, :cond_17
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_e
 
     :cond_17
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_e
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Cells/RadioCell;->setChecked(ZZ)V
@@ -4693,7 +4693,7 @@
     :goto_f
     if-ne v4, v6, :cond_19
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_10
 
@@ -4703,12 +4703,12 @@
 
     if-ne v4, v6, :cond_1a
 
-    const/4 v4, 0x2
+    move v4, v9
 
     goto :goto_10
 
     :cond_1a
-    const/4 v4, 0x1
+    move v4, v5
 
     .line 1117
     :goto_10
@@ -4716,12 +4716,12 @@
 
     if-ne v6, v4, :cond_1b
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_11
 
     :cond_1b
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_11
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Cells/RadioCell;->setChecked(ZZ)V
@@ -4732,12 +4732,12 @@
     :goto_12
     if-ne v4, v6, :cond_1d
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_13
 
     :cond_1d
-    const/4 v4, 0x1
+    move v4, v5
 
     .line 1106
     :goto_13
@@ -4745,12 +4745,12 @@
 
     if-ne v6, v4, :cond_1e
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_14
 
     :cond_1e
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_14
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Cells/RadioCell;->setChecked(ZZ)V
@@ -5073,12 +5073,12 @@
 
     if-eqz v0, :cond_9
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     goto :goto_1
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     invoke-virtual {v1, v5}, Landroid/view/View;->setAlpha(F)V
@@ -5088,12 +5088,12 @@
 
     if-eqz v0, :cond_a
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     goto :goto_2
 
     :cond_a
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_2
     invoke-virtual {v1, v5}, Landroid/view/View;->setScaleX(F)V
@@ -5106,7 +5106,7 @@
     goto :goto_3
 
     :cond_b
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_3
     invoke-virtual {v1, v3}, Landroid/view/View;->setScaleY(F)V

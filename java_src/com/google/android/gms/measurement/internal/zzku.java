@@ -840,7 +840,7 @@ public final class zzku extends zzki {
             if (r5 == 0) goto L54
             android.os.Parcelable[] r3 = (android.os.Parcelable[]) r3
             int r5 = r3.length
-            r7 = 0
+            r7 = r6
         L40:
             if (r7 >= r5) goto L82
             r8 = r3[r7]
@@ -857,7 +857,7 @@ public final class zzku extends zzki {
             if (r5 == 0) goto L75
             java.util.ArrayList r3 = (java.util.ArrayList) r3
             int r5 = r3.size()
-            r7 = 0
+            r7 = r6
         L5f:
             if (r7 >= r5) goto L82
             java.lang.Object r8 = r3.get(r7)

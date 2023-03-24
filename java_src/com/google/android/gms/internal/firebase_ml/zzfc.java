@@ -122,8 +122,8 @@ public final class zzfc extends zzho {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        boolean z = true;
         int i = 0;
+        boolean z = true;
         while (z) {
             int indexOf = str.indexOf(47, i);
             boolean z2 = indexOf != -1;

@@ -70,7 +70,7 @@
     if-ne p1, v0, :cond_0
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -86,7 +86,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_2
@@ -106,7 +106,7 @@
     if-ne p1, v0, :cond_3
 
     :goto_2
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_3
 

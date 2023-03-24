@@ -450,7 +450,7 @@
 
     move/from16 v16, v6
 
-    const/4 v6, 0x2
+    move v6, v15
 
     goto :goto_5
 
@@ -547,9 +547,9 @@
 
     invoke-virtual {v15, v10}, Landroidx/core/os/CancellationSignal;->setOnCancelListener(Landroidx/core/os/CancellationSignal$OnCancelListener;)V
 
-    const/4 v15, 0x2
-
     move-object/from16 v5, p0
+
+    move v15, v6
 
     move/from16 v6, v16
 
@@ -1607,9 +1607,9 @@
 
     invoke-interface {v8, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v1, p5
+    move v15, v1
 
-    const/4 v15, 0x0
+    move-object/from16 v1, p5
 
     .line 563
     invoke-interface {v8, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2120,7 +2120,7 @@
     if-ne v10, v1, :cond_2c
 
     :cond_2b
-    const/4 v12, 0x1
+    move/from16 v12, v23
 
     goto :goto_19
 
@@ -2726,7 +2726,7 @@
     if-ne v2, v8, :cond_6
 
     :goto_2
-    const/4 v7, 0x1
+    move v7, v3
 
     .line 102
     :cond_6

@@ -18,6 +18,6 @@ public final class StakingTransactionActionToFeeUiMappingKt {
         Intrinsics.checkNotNullParameter(model, "model");
         TokenInfo map = TokenInfo.Companion.map(stakingTransactionAction.getGas().getToken().getTicker());
         GasPriceInfo gasPriceInfo = new GasPriceInfo(stakingTransactionAction.getTransaction().getGasPrice(), stakingTransactionAction.getTransaction().getGasLimit(), stakingTransactionAction.getGas().getDuration(), stakingTransactionAction.getGas().getAsNativeToken().doubleValue(), stakingTransactionAction.getGas().getAsUsd().floatValue());
-        return new FeeView.ChooseFeeType.Default(model, new TransactionParams(null, gasPriceInfo, null, stakingTransactionAction.getTransaction().getNonce(), Chain.Companion.getChainById(stakingTransactionAction.getTransaction().getChainId())), map, new GasPriceItem(TransactionSpeedLevel.MEDIUM, map, gasPriceInfo), StakingTransactionActionToFeeUiMappingKt$mapToUi$1.INSTANCE);
+        return new FeeView.ChooseFeeType.Default(model, new TransactionParams.Ether(gasPriceInfo, null, null, stakingTransactionAction.getTransaction().getNonce(), Chain.Companion.getChainById(stakingTransactionAction.getTransaction().getChainId())), map, new GasPriceItem(TransactionSpeedLevel.MEDIUM, map, gasPriceInfo), StakingTransactionActionToFeeUiMappingKt$mapToUi$1.INSTANCE);
     }
 }

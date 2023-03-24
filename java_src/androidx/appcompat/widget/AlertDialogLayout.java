@@ -184,13 +184,13 @@ public class AlertDialogLayout extends LinearLayoutCompat {
             android.graphics.drawable.Drawable r1 = r17.getDividerDrawable()
             r2 = 0
             if (r1 != 0) goto L54
-            r12 = 0
+            r12 = r2
             goto L59
         L54:
             int r1 = r1.getIntrinsicHeight()
             r12 = r1
         L59:
-            r13 = 0
+            r13 = r2
         L5a:
             if (r13 >= r10) goto Lbf
             android.view.View r1 = r6.getChildAt(r13)

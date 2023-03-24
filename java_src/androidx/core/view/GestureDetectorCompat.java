@@ -117,8 +117,8 @@ public final class GestureDetectorCompat {
             this.mIsLongpressEnabled = z;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:107:0x0208  */
-        /* JADX WARN: Removed duplicated region for block: B:110:0x021f  */
+        /* JADX WARN: Removed duplicated region for block: B:107:0x0204  */
+        /* JADX WARN: Removed duplicated region for block: B:110:0x021b  */
         @Override // androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -126,7 +126,7 @@ public final class GestureDetectorCompat {
         */
         public boolean onTouchEvent(android.view.MotionEvent r13) {
             /*
-                Method dump skipped, instructions count: 593
+                Method dump skipped, instructions count: 589
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImplBase.onTouchEvent(android.view.MotionEvent):boolean");

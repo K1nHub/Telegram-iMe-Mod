@@ -149,7 +149,7 @@ public final class DtsUtil {
             int r7 = r7 >> 2
             r7 = r7 | r0
             int r7 = r7 + r5
-            r0 = 1
+            r0 = r5
             goto L5d
         L4a:
             r1 = r7[r6]

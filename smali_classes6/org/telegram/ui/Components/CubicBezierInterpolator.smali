@@ -266,7 +266,7 @@
 
     const/high16 v3, 0x40400000    # 3.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iput v2, v0, Landroid/graphics/PointF;->x:F
 
@@ -281,7 +281,7 @@
 
     sub-float/2addr v5, v1
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     sub-float/2addr v5, v2
 
@@ -305,15 +305,15 @@
 
     iget v1, v4, Landroid/graphics/PointF;->x:F
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v1, v3
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     add-float/2addr v0, v1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     return p1
 .end method
@@ -332,7 +332,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->a:Landroid/graphics/PointF;
 
@@ -340,13 +340,13 @@
 
     const/high16 v3, 0x40400000    # 3.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     add-float/2addr v1, v2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     add-float/2addr v0, p1
 
@@ -367,7 +367,7 @@
 
     const/high16 v3, 0x40400000    # 3.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     iput v2, v0, Landroid/graphics/PointF;->y:F
 
@@ -382,7 +382,7 @@
 
     sub-float/2addr v5, v1
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     sub-float/2addr v5, v2
 
@@ -406,15 +406,15 @@
 
     iget v1, v4, Landroid/graphics/PointF;->y:F
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v1, v3
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     add-float/2addr v0, v1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     return p1
 .end method
@@ -435,7 +435,7 @@
 .end method
 
 .method protected getXForTime(F)F
-    .locals 8
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -462,9 +462,9 @@
 
     const-wide v5, 0x3f50624dd2f1a9fcL    # 0.001
 
-    cmpg-double v7, v3, v5
+    cmpg-double v3, v3, v5
 
-    if-gez v7, :cond_0
+    if-gez v3, :cond_0
 
     goto :goto_1
 

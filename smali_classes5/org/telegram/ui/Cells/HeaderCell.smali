@@ -211,12 +211,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x5
+    move v3, v11
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x3
+    move v3, v12
 
     :goto_0
     or-int/lit8 v3, v3, 0x10
@@ -261,12 +261,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x5
+    move v2, v11
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x3
+    move v2, v12
 
     :goto_1
     or-int/lit8 v5, v2, 0x30
@@ -275,7 +275,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v9, 0x0
+    move v9, v2
 
     goto :goto_2
 
@@ -320,12 +320,12 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v2, 0x3
+    move v2, v12
 
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x5
+    move v2, v11
 
     :goto_3
     or-int/lit8 v2, v2, 0x30
@@ -343,7 +343,7 @@
 
     if-eqz v2, :cond_4
 
-    const/4 v11, 0x3
+    move v11, v12
 
     :cond_4
     or-int/lit8 v5, v11, 0x30
@@ -693,7 +693,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_0
     aput v0, v4, v5
@@ -715,7 +715,7 @@
     goto :goto_1
 
     :cond_2
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_1
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V

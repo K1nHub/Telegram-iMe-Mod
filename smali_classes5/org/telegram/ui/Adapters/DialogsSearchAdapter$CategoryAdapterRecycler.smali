@@ -103,13 +103,13 @@
 
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    const/4 v3, 0x0
+    const-wide/16 v3, 0x0
 
-    const-wide/16 v4, 0x0
+    cmp-long v5, v1, v3
 
-    cmp-long v6, v1, v4
+    const/4 v6, 0x0
 
-    if-eqz v6, :cond_0
+    if-eqz v5, :cond_0
 
     .line 221
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$CategoryAdapterRecycler;->currentAccount:I
@@ -120,9 +120,9 @@
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_topPeer;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    iget-wide v4, p2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+    iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
@@ -130,9 +130,9 @@
 
     move-result-object p2
 
-    move-object v7, v3
+    move-object v7, v6
 
-    move-object v3, p2
+    move-object v6, p2
 
     move-object p2, v7
 
@@ -142,9 +142,9 @@
     :cond_0
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    cmp-long v6, v1, v4
+    cmp-long v5, v1, v3
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
     neg-long v1, v1
 
@@ -157,9 +157,9 @@
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_topPeer;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    iget-wide v4, p2, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+    iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
@@ -173,7 +173,7 @@
     :cond_1
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v2, v0, v4
+    cmp-long v2, v0, v3
 
     if-eqz v2, :cond_2
 
@@ -188,9 +188,9 @@
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_topPeer;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    iget-wide v4, p2, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+    iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
@@ -201,9 +201,9 @@
     goto :goto_0
 
     :cond_2
-    move-object p2, v3
+    move-wide v1, v3
 
-    move-wide v1, v4
+    move-object p2, v6
 
     .line 229
     :goto_0
@@ -213,10 +213,10 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    if-eqz v3, :cond_3
+    if-eqz v6, :cond_3
 
     .line 232
-    invoke-static {v3}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
+    invoke-static {v6}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object p2
 

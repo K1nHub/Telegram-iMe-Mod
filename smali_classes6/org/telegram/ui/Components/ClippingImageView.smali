@@ -225,7 +225,7 @@
 
     move-result v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v1, v2
 
@@ -275,7 +275,7 @@
 
     move-result v0
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v1, v2
 
@@ -357,7 +357,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -376,7 +376,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -1035,7 +1035,7 @@
 
     sub-float/2addr v4, v0
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v2, v4
 
@@ -1060,7 +1060,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     add-float/2addr v0, v2
 
@@ -1095,7 +1095,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     add-float/2addr v0, v5
 
@@ -1122,7 +1122,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v0, v4
 
@@ -1149,7 +1149,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v0, v4
 
@@ -1178,7 +1178,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v0, v4
 
@@ -1207,7 +1207,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v0, v4
 
@@ -1215,7 +1215,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ClippingImageView;->setClipBottom(I)V
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 110
     :goto_0
@@ -1246,7 +1246,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     add-float/2addr v4, v6
 
@@ -1290,7 +1290,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     add-float/2addr v0, v4
 
@@ -1319,7 +1319,7 @@
 
     iget p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->animationProgress:F
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v0, v3
 

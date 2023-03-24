@@ -23,7 +23,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -110,7 +110,7 @@ public class LimitPreviewView extends LinearLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("LimitFree", C3286R.string.LimitFree));
+        textView.setText(LocaleController.getString("LimitFree", C3301R.string.LimitFree));
         textView.setGravity(16);
         textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
         textView.setPadding(AndroidUtilities.m50dp(12), 0, 0, 0);
@@ -126,7 +126,7 @@ public class LimitPreviewView extends LinearLayout {
         FrameLayout frameLayout2 = new FrameLayout(context);
         TextView textView3 = new TextView(context);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("LimitPremium", C3286R.string.LimitPremium));
+        textView3.setText(LocaleController.getString("LimitPremium", C3301R.string.LimitPremium));
         textView3.setGravity(16);
         textView3.setTextColor(-1);
         textView3.setPadding(AndroidUtilities.m50dp(12), 0, 0, 0);
@@ -187,11 +187,11 @@ public class LimitPreviewView extends LinearLayout {
             int m50dp2 = AndroidUtilities.m50dp(14);
             float measuredWidth = (m50dp2 + ((getMeasuredWidth() - (m50dp2 * 2)) * this.position)) - (this.limitIcon.getMeasuredWidth() / 2.0f);
             if (measuredWidth > (getMeasuredWidth() - m50dp2) - this.limitIcon.getMeasuredWidth()) {
-                f = (getMeasuredWidth() - m50dp2) - this.limitIcon.getMeasuredWidth();
-                f2 = 1.0f;
+                f2 = (getMeasuredWidth() - m50dp2) - this.limitIcon.getMeasuredWidth();
+                f = 1.0f;
             } else {
-                f = measuredWidth;
-                f2 = 0.5f;
+                f = 0.5f;
+                f2 = measuredWidth;
             }
             this.limitIcon.setAlpha(1.0f);
             this.limitIcon.setTranslationX(BitmapDescriptorFactory.HUE_RED);
@@ -201,8 +201,8 @@ public class LimitPreviewView extends LinearLayout {
             this.limitIcon.setScaleY(BitmapDescriptorFactory.HUE_RED);
             this.limitIcon.createAnimationLayouts();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
-            final float f3 = f;
-            final float f4 = f2;
+            final float f3 = f2;
+            final float f4 = f;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.LimitPreviewView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -415,13 +415,13 @@ public class LimitPreviewView extends LinearLayout {
                 AnimatedLayout animatedLayout = this.animatedLayouts.get(i);
                 canvas.save();
                 if (animatedLayout.direction) {
-                    canvas.translate(animatedLayout.f1769x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1770x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i2 = 0; i2 < animatedLayout.staticLayouts.size(); i2++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, measuredHeight);
                         animatedLayout.staticLayouts.get(i2).draw(canvas);
                     }
                 } else {
-                    canvas.translate(animatedLayout.f1769x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1770x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i3 = 0; i3 < animatedLayout.staticLayouts.size(); i3++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, -measuredHeight);
                         animatedLayout.staticLayouts.get(i3).draw(canvas);
@@ -443,13 +443,13 @@ public class LimitPreviewView extends LinearLayout {
         void createAnimationLayouts() {
             this.animatedLayouts.clear();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.text);
-            boolean z = true;
             int i = 0;
+            boolean z = true;
             for (int i2 = 0; i2 < this.text.length(); i2++) {
                 if (Character.isDigit(this.text.charAt(i2))) {
                     AnimatedLayout animatedLayout = new AnimatedLayout();
                     this.animatedLayouts.add(animatedLayout);
-                    animatedLayout.f1769x = this.textLayout.getSecondaryHorizontal(i2);
+                    animatedLayout.f1770x = this.textLayout.getSecondaryHorizontal(i2);
                     animatedLayout.direction = z;
                     if (i >= 1) {
                         z = !z;
@@ -534,7 +534,7 @@ public class LimitPreviewView extends LinearLayout {
             ValueAnimator valueAnimator;
 
             /* renamed from: x */
-            float f1769x;
+            float f1770x;
 
             private AnimatedLayout(CounterView counterView) {
                 this.staticLayouts = new ArrayList<>();

@@ -33,12 +33,12 @@
 
     if-eqz p3, :cond_0
 
-    const/4 p3, 0x1
+    move p3, p1
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     iput-boolean p3, p0, Lorg/web3j/crypto/Bip32ECKeyPair;->parentHasPrivate:Z
@@ -95,7 +95,7 @@
 
     if-nez v2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     .line 182
     :cond_0

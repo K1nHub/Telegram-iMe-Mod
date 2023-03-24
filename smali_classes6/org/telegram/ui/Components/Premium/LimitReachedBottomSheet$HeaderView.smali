@@ -410,7 +410,7 @@
     :goto_0
     move-object v8, v6
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_2
 
@@ -536,9 +536,9 @@
 
     move-result v14
 
-    const/4 v3, 0x0
+    move v3, v7
 
-    const/4 v15, 0x0
+    move v15, v3
 
     :goto_4
     if-ge v3, v14, :cond_f
@@ -907,16 +907,14 @@
 
     if-eqz v6, :cond_1f
 
-    const/16 v13, 0x8
-
     goto :goto_c
 
     :cond_1f
     const/16 v5, 0x16
 
-    const/16 v13, 0x16
-
     :goto_c
+    move v13, v5
+
     const/4 v14, 0x0
 
     const/16 v15, 0xa

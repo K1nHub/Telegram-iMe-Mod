@@ -35,12 +35,12 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentTwitterBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: TwitterFragment.kt */
 /* renamed from: com.smedialink.ui.twitter.TwitterFragment */
@@ -112,9 +112,23 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
     }
 
     @Override // com.smedialink.p031ui.twitter.TwitterView
+    public void renderInitialItems(List<BaseNode> items) {
+        Intrinsics.checkNotNullParameter(items, "items");
+        getTweetsRecycleAdapter().setNewInstance(items);
+    }
+
+    @Override // com.smedialink.p031ui.twitter.TwitterView
     public void renderItems(List<BaseNode> items) {
         Intrinsics.checkNotNullParameter(items, "items");
         BaseQuickAdapter.setDiffNewData$default(getTweetsRecycleAdapter(), items, null, 2, null);
+    }
+
+    @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreItems(List<BaseNode> items) {
+        Intrinsics.checkNotNullParameter(items, "items");
+        TweetsRecycleAdapter tweetsRecycleAdapter = getTweetsRecycleAdapter();
+        tweetsRecycleAdapter.getLoadMoreModule().loadMoreComplete();
+        BaseQuickAdapter.setDiffNewData$default(tweetsRecycleAdapter, items, null, 2, null);
     }
 
     @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
@@ -166,15 +180,15 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setAllowOverlayTitle(true);
-        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.twitter_title));
-        ActionBarMenuItem addItem = c3351ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3286R.C3288drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3286R.C3288drawable.fork_drawer_social_twitter, getResourceManager().getString(C3286R.string.twitter_open_in_twitter));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.twitter.TwitterFragment$setupActionBar$1$2
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setAllowOverlayTitle(true);
+        c3366ActionBar.setTitle(LocaleController.getInternalString(C3301R.string.twitter_title));
+        ActionBarMenuItem addItem = c3366ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3301R.C3303drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3301R.C3303drawable.fork_drawer_social_twitter, getResourceManager().getString(C3301R.string.twitter_open_in_twitter));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.twitter.TwitterFragment$setupActionBar$1$2
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TwitterPresenter presenter;
                 if (i == -1) {
@@ -214,7 +228,6 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
                 TwitterFragment.setupLoadMore$lambda$12$lambda$11$lambda$10(TwitterFragment.this);
             }
         });
-        tweetsRecycleAdapter.setAnimationEnable(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -246,7 +259,7 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
-        if ((baseNode instanceof TweetItem) && view.getId() == C3286R.C3289id.image_share) {
+        if ((baseNode instanceof TweetItem) && view.getId() == C3301R.C3304id.image_share) {
             this$0.getPresenter().onShareClick((TweetItem) baseNode);
         }
     }

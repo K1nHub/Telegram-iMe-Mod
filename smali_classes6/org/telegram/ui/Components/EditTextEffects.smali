@@ -288,7 +288,7 @@
     .line 139
     array-length v4, v1
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_1
     if-ge v5, v4, :cond_5
@@ -341,7 +341,7 @@
     .line 145
     iput-boolean v3, p0, Lorg/telegram/ui/Components/EditTextEffects;->postedSpoilerTimeout:Z
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
@@ -772,12 +772,12 @@
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 248
     :goto_0
@@ -790,7 +790,7 @@
     if-eqz v0, :cond_3
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     return v1
@@ -1587,7 +1587,7 @@
     .line 259
     array-length v3, v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v3, :cond_1
@@ -1708,7 +1708,7 @@
 
     :cond_1
     :goto_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-nez p1, :cond_2

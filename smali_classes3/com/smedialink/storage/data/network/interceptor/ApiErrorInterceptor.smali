@@ -562,12 +562,12 @@
 
     if-ne v3, v5, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v5
 
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     if-eqz v3, :cond_7
@@ -593,7 +593,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    goto :goto_2
+    goto/16 :goto_2
 
     .line 79
     :pswitch_0
@@ -623,7 +623,7 @@
 
     if-lez v2, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_2
     if-eqz v4, :cond_4
@@ -764,6 +764,8 @@
     :cond_7
     :goto_2
     return-object v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

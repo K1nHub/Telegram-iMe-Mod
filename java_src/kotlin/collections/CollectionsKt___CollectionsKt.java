@@ -525,22 +525,22 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
             int r3 = r0 % r11
             r4 = 1
             if (r3 != 0) goto L20
-            r3 = 0
+            r3 = r1
             goto L21
         L20:
-            r3 = 1
+            r3 = r4
         L21:
             int r2 = r2 + r3
             java.util.ArrayList r3 = new java.util.ArrayList
             r3.<init>(r2)
-            r2 = 0
+            r2 = r1
         L28:
             if (r2 < 0) goto L2e
             if (r2 >= r0) goto L2e
-            r5 = 1
+            r5 = r4
             goto L2f
         L2e:
-            r5 = 0
+            r5 = r1
         L2f:
             if (r5 == 0) goto L54
             int r5 = r0 - r2
@@ -550,7 +550,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         L3b:
             java.util.ArrayList r6 = new java.util.ArrayList
             r6.<init>(r5)
-            r7 = 0
+            r7 = r1
         L41:
             if (r7 >= r5) goto L4f
             int r8 = r7 + r2
@@ -593,7 +593,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m100to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m99to(it.next(), it2.next()));
         }
         return arrayList;
     }
@@ -610,7 +610,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         T next = it.next();
         while (it.hasNext()) {
             T next2 = it.next();
-            arrayList.add(TuplesKt.m100to(next, next2));
+            arrayList.add(TuplesKt.m99to(next, next2));
             next = next2;
         }
         return arrayList;
@@ -648,7 +648,10 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         }
         String str = (i2 & 2) != 0 ? "" : charSequence2;
         String str2 = (i2 & 4) == 0 ? charSequence3 : "";
-        int i3 = (i2 & 8) != 0 ? -1 : i;
+        if ((i2 & 8) != 0) {
+            i = -1;
+        }
+        int i3 = i;
         if ((i2 & 16) != 0) {
             charSequence4 = "...";
         }

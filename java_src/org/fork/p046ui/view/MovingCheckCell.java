@@ -19,7 +19,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.CheckBoxSquare;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -168,7 +168,7 @@ public final class MovingCheckCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3286R.C3288drawable.list_reorder);
+        imageView.setImageResource(C3301R.C3303drawable.list_reorder);
         return imageView;
     }
 

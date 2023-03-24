@@ -75,7 +75,7 @@
 
     if-ne p1, v0, :cond_0
 
-    const/4 p0, 0x5
+    move p0, v0
 
     goto :goto_0
 
@@ -99,7 +99,7 @@
 
     :cond_3
     :goto_1
-    const/4 p0, 0x6
+    move p0, v2
 
     :cond_4
     const/4 v0, 0x4

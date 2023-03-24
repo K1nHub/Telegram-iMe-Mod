@@ -165,7 +165,7 @@
     .line 131
     invoke-virtual {v1, p1, v0}, Landroidx/constraintlayout/core/widgets/ConstraintWidget;->addToSolver(Landroidx/constraintlayout/core/LinearSystem;Z)V
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 132
     :goto_0

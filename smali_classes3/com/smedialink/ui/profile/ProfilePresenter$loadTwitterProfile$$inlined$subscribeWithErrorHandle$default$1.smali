@@ -65,7 +65,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -160,9 +160,9 @@
 
     move-result-wide v3
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/smedialink/ui/profile/ProfilePresenter$loadTwitterProfile$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 

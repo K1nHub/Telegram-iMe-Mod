@@ -127,9 +127,9 @@
 
     aget-wide v4, p0, v4
 
-    cmp-long v2, p3, v4
+    cmp-long p3, p3, v4
 
-    if-gez v2, :cond_0
+    if-gez p3, :cond_0
 
     aget-wide p3, p0, v0
 
@@ -144,7 +144,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     return v1
@@ -169,12 +169,12 @@
 
     if-lt v0, p2, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x0
@@ -197,12 +197,12 @@
 
     if-lez v3, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_2
     const-string v5, "childAtomSize must be positive"
@@ -402,12 +402,12 @@
 
     move-result-wide v7
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
     .line 1426
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedIntToInt()I
 
-    move-result v7
+    move-result v8
 
     const/16 v10, 0x14
 
@@ -456,9 +456,7 @@
     invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
     :cond_4
-    move v8, v7
-
-    move v7, v14
+    move v8, v14
 
     .line 1436
     :goto_2
@@ -916,9 +914,9 @@
 
     if-lez v15, :cond_25
 
-    move v8, v15
+    move v7, v15
 
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
     goto :goto_b
 
@@ -969,12 +967,12 @@
     move-result-object v1
 
     .line 1568
-    invoke-virtual {v1, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+    invoke-virtual {v1, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v1
 
     .line 1569
-    invoke-virtual {v1, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+    invoke-virtual {v1, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v1
 
@@ -1087,9 +1085,9 @@
 
     move-result-object v21
 
-    const/4 v9, -0x1
+    move/from16 v16, v9
 
-    const/16 v16, 0x4
+    const/4 v9, -0x1
 
     goto/16 :goto_c
 
@@ -1147,17 +1145,25 @@
 
     move-result-object v21
 
-    move v7, v1
+    move v7, v8
 
-    goto :goto_e
+    move/from16 v18, v9
+
+    const/4 v9, -0x1
+
+    move v8, v1
+
+    goto :goto_11
 
     :cond_2a
     const/4 v9, 0x0
 
     :goto_e
+    move/from16 v18, v9
+
     const/4 v9, -0x1
 
-    goto/16 :goto_c
+    goto :goto_11
 
     :cond_2b
     :goto_f
@@ -1220,10 +1226,10 @@
     move-result-object v2
 
     .line 1533
-    iget v8, v2, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->sampleRateHz:I
+    iget v7, v2, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->sampleRateHz:I
 
     .line 1534
-    iget v7, v2, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->channelCount:I
+    iget v8, v2, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->channelCount:I
 
     .line 1535
     iget-object v2, v2, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->codecs:Ljava/lang/String;
@@ -1279,12 +1285,12 @@
     move-result-object v0
 
     .line 1613
-    invoke-virtual {v0, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+    invoke-virtual {v0, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v0
 
     .line 1614
-    invoke-virtual {v0, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+    invoke-virtual {v0, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v0
 
@@ -1376,13 +1382,13 @@
 
     const/4 v3, 0x0
 
+    move v5, v1
+
     move-object v4, v2
 
     move-object v6, v4
 
-    const/4 v5, -0x1
-
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_0
     sub-int v8, v0, p1
@@ -1497,12 +1503,12 @@
 
     if-eqz v6, :cond_6
 
-    const/4 p2, 0x1
+    move p2, p1
 
     goto :goto_3
 
     :cond_6
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_3
     const-string v0, "frma atom is mandatory"
@@ -1512,12 +1518,12 @@
 
     if-eq v5, v1, :cond_7
 
-    const/4 p2, 0x1
+    move p2, p1
 
     goto :goto_4
 
     :cond_7
-    const/4 p2, 0x0
+    move p2, v3
 
     :goto_4
     const-string v0, "schi atom is mandatory"
@@ -1532,7 +1538,7 @@
 
     if-eqz p0, :cond_8
 
-    const/4 v3, 0x1
+    move v3, p1
 
     :cond_8
     const-string p1, "tenc atom is mandatory"
@@ -1788,7 +1794,7 @@
 
     if-eqz v1, :cond_3
 
-    goto :goto_1
+    goto :goto_2
 
     .line 1696
     :cond_3
@@ -1823,11 +1829,11 @@
     .line 1707
     new-instance p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$EsdsData;
 
-    const-wide/16 v7, -0x1
+    const-wide/16 v7, 0x0
 
-    const-wide/16 v9, 0x0
+    cmp-long p1, v4, v7
 
-    cmp-long p1, v4, v9
+    const-wide/16 v9, -0x1
 
     if-lez p1, :cond_4
 
@@ -1836,16 +1842,21 @@
     goto :goto_0
 
     :cond_4
-    move-wide v11, v7
+    move-wide v11, v9
 
     :goto_0
-    cmp-long p1, v0, v9
+    cmp-long p1, v0, v7
 
     if-lez p1, :cond_5
 
     move-wide v7, v0
 
+    goto :goto_1
+
     :cond_5
+    move-wide v7, v9
+
+    :goto_1
     move-object v2, p0
 
     move-object v4, v6
@@ -1859,7 +1870,7 @@
 
     .line 1689
     :cond_6
-    :goto_1
+    :goto_2
     new-instance p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$EsdsData;
 
     const/4 v4, 0x0
@@ -2011,7 +2022,7 @@
 
     if-nez v1, :cond_0
 
-    const/16 v2, 0x8
+    move v2, v0
 
     goto :goto_0
 
@@ -2588,9 +2599,9 @@
     .line 1799
     invoke-virtual {p0, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    const/4 v8, 0x0
+    move v8, v0
 
-    const/4 v9, 0x0
+    move v9, v8
 
     goto :goto_1
 
@@ -2618,12 +2629,12 @@
 
     if-ne p1, p2, :cond_1
 
-    const/4 v4, 0x1
+    move v4, p2
 
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 1806
     :goto_2
@@ -2893,12 +2904,12 @@
 
     check-cast v7, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;
 
-    const/4 v9, 0x1
+    move v9, v8
 
     goto :goto_1
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v6
 
     .line 397
     :goto_1
@@ -3010,7 +3021,7 @@
     goto :goto_4
 
     :cond_5
-    const/4 v15, 0x0
+    move v15, v6
 
     :goto_4
     const/4 v4, -0x1
@@ -3034,21 +3045,22 @@
 
     add-int/lit8 v16, v16, -0x1
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_6
+    move/from16 v16, v4
+
     const/4 v12, 0x0
 
     goto :goto_5
 
     :cond_7
-    const/4 v7, 0x0
+    move/from16 v16, v4
 
-    :goto_5
-    const/16 v16, -0x1
+    move v7, v6
 
     .line 441
-    :goto_6
+    :goto_5
     invoke-interface {v5}, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$SampleSizeBox;->getFixedSampleSize()I
 
     move-result v6
@@ -3098,14 +3110,14 @@
 
     const/4 v4, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_9
     move/from16 p1, v7
 
     const/4 v4, 0x0
 
-    :goto_7
+    :goto_6
     if-eqz v4, :cond_b
 
     .line 461
@@ -3117,7 +3129,7 @@
     new-array v0, v0, [I
 
     .line 463
-    :goto_8
+    :goto_7
     invoke-virtual {v13}, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$ChunkIterator;->moveNext()Z
 
     move-result v5
@@ -3136,7 +3148,7 @@
 
     aput v9, v0, v5
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_a
     int-to-long v9, v14
@@ -3180,7 +3192,7 @@
 
     move-object v12, v9
 
-    goto/16 :goto_14
+    goto/16 :goto_13
 
     .line 477
     :cond_b
@@ -3223,7 +3235,7 @@
 
     move/from16 v9, p1
 
-    :goto_9
+    :goto_8
     move/from16 p1, v37
 
     const-string v10, "AtomParsers"
@@ -3236,7 +3248,7 @@
 
     const/16 v22, 0x1
 
-    :goto_a
+    :goto_9
     if-nez v27, :cond_c
 
     .line 487
@@ -3268,7 +3280,7 @@
 
     move/from16 v3, v32
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_c
     move/from16 v32, v3
@@ -3310,12 +3322,12 @@
 
     move/from16 v1, v27
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_d
     if-eqz v0, :cond_f
 
-    :goto_b
+    :goto_a
     if-nez v23, :cond_e
 
     if-lez v16, :cond_e
@@ -3332,7 +3344,7 @@
 
     add-int/lit8 v16, v16, -0x1
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_e
     add-int/lit8 v23, v23, -0x1
@@ -3372,13 +3384,13 @@
 
     const/4 v10, 0x1
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_11
     const/4 v10, 0x0
 
     .line 524
-    :goto_c
+    :goto_b
     aput v10, v8, v1
 
     if-ne v1, v2, :cond_12
@@ -3434,14 +3446,14 @@
 
     add-int/lit8 v14, p1, -0x1
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_13
     move v3, v14
 
     move/from16 v14, p1
 
-    :goto_d
+    :goto_c
     move/from16 p1, v2
 
     .line 548
@@ -3471,7 +3483,7 @@
 
     move/from16 v14, p1
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_14
     move/from16 v32, v3
@@ -3482,14 +3494,14 @@
 
     move/from16 v1, v22
 
-    :goto_e
+    :goto_d
     int-to-long v12, v2
 
     add-long v12, v25, v12
 
     if-eqz v0, :cond_16
 
-    :goto_f
+    :goto_e
     if-lez v16, :cond_16
 
     .line 558
@@ -3501,7 +3513,7 @@
 
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_f
 
     .line 562
     :cond_15
@@ -3509,12 +3521,12 @@
 
     add-int/lit8 v16, v16, -0x1
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_16
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_f
     if-nez v9, :cond_18
 
     if-nez v30, :cond_18
@@ -3529,19 +3541,19 @@
 
     if-nez v0, :cond_17
 
-    goto :goto_11
+    goto :goto_10
 
     :cond_17
     move-object/from16 v14, p0
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_18
     move/from16 v2, v23
 
     .line 572
     :cond_19
-    :goto_11
+    :goto_10
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3594,13 +3606,13 @@
 
     const-string v0, ", ctts invalid"
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_1a
     const-string v0, ""
 
     .line 586
-    :goto_12
+    :goto_11
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -3610,7 +3622,7 @@
     .line 572
     invoke-static {v10, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_13
+    :goto_12
     move v0, v3
 
     move-object v2, v4
@@ -3625,7 +3637,7 @@
 
     move-object v13, v8
 
-    :goto_14
+    :goto_13
     const-wide/32 v7, 0xf4240
 
     .line 589
@@ -3797,21 +3809,21 @@
 
     if-gtz v8, :cond_1f
 
-    cmp-long v8, v0, v6
+    cmp-long v6, v0, v6
 
-    if-gtz v8, :cond_1f
+    if-gtz v6, :cond_1f
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    move-object/from16 v4, p2
+    move-object/from16 v5, p2
 
     .line 622
-    iput v5, v4, Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;->encoderDelay:I
+    iput v4, v5, Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;->encoderDelay:I
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 623
-    iput v1, v4, Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;->encoderPadding:I
+    iput v0, v5, Lcom/google/android/exoplayer2/extractor/GaplessInfoHolder;->encoderPadding:I
 
     .line 624
     iget-wide v0, v14, Lcom/google/android/exoplayer2/extractor/mp4/Track;->timescale:J
@@ -3875,9 +3887,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_21
+    if-nez v4, :cond_21
 
     .line 638
     iget-object v0, v14, Lcom/google/android/exoplayer2/extractor/mp4/Track;->editListMediaTimes:[J
@@ -3893,7 +3905,7 @@
     const/4 v6, 0x0
 
     .line 639
-    :goto_15
+    :goto_14
     array-length v0, v12
 
     if-ge v6, v0, :cond_20
@@ -3918,7 +3930,7 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_20
     sub-long v17, v15, v4
@@ -3962,13 +3974,13 @@
 
     const/4 v10, 0x1
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_22
     const/4 v10, 0x0
 
     .line 657
-    :goto_16
+    :goto_15
     array-length v1, v0
 
     new-array v1, v1, [I
@@ -3996,7 +4008,7 @@
     const/4 v8, 0x0
 
     .line 660
-    :goto_17
+    :goto_16
     iget-object v9, v14, Lcom/google/android/exoplayer2/extractor/mp4/Track;->editListDurations:[J
 
     array-length v11, v9
@@ -4059,7 +4071,7 @@
     aput v2, v0, v5
 
     .line 675
-    :goto_18
+    :goto_17
     aget v2, v1, v5
 
     aget v3, v0, v5
@@ -4081,7 +4093,7 @@
 
     aput v2, v1, v5
 
-    goto :goto_18
+    goto :goto_17
 
     .line 683
     :cond_23
@@ -4100,20 +4112,20 @@
 
     if-eq v3, v2, :cond_24
 
-    const/4 v2, 0x1
+    move v2, v8
 
-    goto :goto_19
+    goto :goto_18
 
     :cond_24
-    const/4 v2, 0x0
+    move v2, v6
 
-    :goto_19
+    :goto_18
     or-int v2, p2, v2
 
     .line 685
     aget v3, v0, v5
 
-    goto :goto_1a
+    goto :goto_19
 
     :cond_25
     move/from16 p2, v6
@@ -4128,7 +4140,7 @@
 
     move/from16 v2, p2
 
-    :goto_1a
+    :goto_19
     add-int/lit8 v5, v5, 0x1
 
     move v6, v2
@@ -4139,7 +4151,7 @@
 
     move-object v3, v15
 
-    goto :goto_17
+    goto :goto_16
 
     :cond_26
     move-object v11, v2
@@ -4156,12 +4168,12 @@
 
     if-eq v7, v3, :cond_27
 
-    goto :goto_1b
+    goto :goto_1a
 
     :cond_27
-    const/4 v8, 0x0
+    move v8, v6
 
-    :goto_1b
+    :goto_1a
     or-int v2, p2, v8
 
     if-eqz v2, :cond_28
@@ -4169,45 +4181,45 @@
     .line 691
     new-array v3, v7, [J
 
-    goto :goto_1c
+    goto :goto_1b
 
     :cond_28
     move-object v3, v11
 
-    :goto_1c
+    :goto_1b
     if-eqz v2, :cond_29
 
     .line 692
     new-array v4, v7, [I
 
-    goto :goto_1d
+    goto :goto_1c
 
     :cond_29
     move-object v4, v15
 
-    :goto_1d
+    :goto_1c
     if-eqz v2, :cond_2a
 
-    const/4 v5, 0x0
+    move v5, v6
 
-    goto :goto_1e
+    goto :goto_1d
 
     :cond_2a
     move/from16 v5, p1
 
-    :goto_1e
+    :goto_1d
     if-eqz v2, :cond_2b
 
     .line 694
     new-array v8, v7, [I
 
-    goto :goto_1f
+    goto :goto_1e
 
     :cond_2b
     move-object v8, v13
 
     .line 695
-    :goto_1f
+    :goto_1e
     new-array v7, v7, [J
 
     move/from16 p2, v5
@@ -4216,10 +4228,10 @@
 
     const-wide/16 v9, 0x0
 
-    const/4 v15, 0x0
+    move v15, v6
 
     .line 698
-    :goto_20
+    :goto_1f
     iget-object v5, v14, Lcom/google/android/exoplayer2/extractor/mp4/Track;->editListDurations:[J
 
     array-length v5, v5
@@ -4258,17 +4270,17 @@
     .line 706
     invoke-static {v13, v5, v8, v15, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_21
+    goto :goto_20
 
     :cond_2c
     move-object/from16 v28, v11
 
     move-object/from16 v11, p1
 
-    :goto_21
+    :goto_20
     move/from16 v0, p2
 
-    :goto_22
+    :goto_21
     if-ge v5, v1, :cond_2f
 
     const-wide/32 v23, 0xf4240
@@ -4336,7 +4348,7 @@
     .line 715
     aget v0, v11, v5
 
-    goto :goto_23
+    goto :goto_22
 
     :cond_2d
     move/from16 v1, v29
@@ -4344,7 +4356,7 @@
     :cond_2e
     move v0, v1
 
-    :goto_23
+    :goto_22
     add-int/lit8 v15, v15, 0x1
 
     add-int/lit8 v5, v5, 0x1
@@ -4359,7 +4371,7 @@
 
     move-object/from16 v8, v30
 
-    goto :goto_22
+    goto :goto_21
 
     :cond_2f
     move v1, v0
@@ -4401,7 +4413,7 @@
 
     move-object/from16 v8, v30
 
-    goto/16 :goto_20
+    goto/16 :goto_1f
 
     :cond_30
     move-object/from16 v30, v8
@@ -4485,7 +4497,7 @@
 
     const/4 v14, 0x0
 
-    const/4 v15, 0x0
+    move v15, v14
 
     :goto_0
     if-ge v15, v12, :cond_9
@@ -4507,7 +4519,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v14
 
     :goto_1
     const-string v1, "childAtomSize must be positive"
@@ -4989,12 +5001,12 @@
 
     if-nez v1, :cond_0
 
-    const/16 v3, 0x8
+    move v3, v0
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x10
+    move v3, v2
 
     .line 818
     :goto_0
@@ -5017,12 +5029,12 @@
 
     if-nez v1, :cond_1
 
-    const/4 v0, 0x4
+    move v0, v4
 
     :cond_1
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_1
     if-ge v7, v0, :cond_3
@@ -5040,7 +5052,7 @@
 
     if-eq v8, v9, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v6
 
     goto :goto_2
 
@@ -6352,9 +6364,9 @@
     .line 1215
     div-long v2, v31, v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    int-to-short v2, v3
+    int-to-short v2, v2
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
@@ -6525,17 +6537,17 @@
     goto/16 :goto_14
 
     :cond_1f
-    const/16 v16, 0x3
+    move/from16 v16, v3
 
     goto/16 :goto_14
 
     :cond_20
-    const/16 v16, 0x2
+    move/from16 v16, v4
 
     goto/16 :goto_14
 
     :cond_21
-    const/16 v16, 0x1
+    move/from16 v16, v6
 
     goto/16 :goto_14
 
@@ -6620,7 +6632,7 @@
 
     if-eqz v8, :cond_26
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_11
 
@@ -6635,12 +6647,12 @@
 
     if-eqz v8, :cond_27
 
-    const/16 v18, 0x1
+    move/from16 v18, v6
 
     goto :goto_12
 
     :cond_27
-    const/16 v18, 0x2
+    move/from16 v18, v4
 
     .line 1272
     :goto_12

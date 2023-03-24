@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$1:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$2:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$1:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$2:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda357;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$YC12_F3Tjji1mfDPHnNwCI-PECM(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$msv2adklKcpx3usyJHCy647S8R4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

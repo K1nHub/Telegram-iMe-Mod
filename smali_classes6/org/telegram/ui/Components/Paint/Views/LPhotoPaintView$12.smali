@@ -66,7 +66,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$12;->val$base:F
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-int p1, v1
 

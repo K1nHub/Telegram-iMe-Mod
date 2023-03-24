@@ -90,12 +90,12 @@
 
     if-ne v0, v4, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     invoke-static {v0}, Lorg/webrtc/audio/WebRtcAudioRecord;->access$100(Z)V

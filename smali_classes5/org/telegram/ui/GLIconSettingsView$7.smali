@@ -54,7 +54,7 @@
 
     const/high16 p1, 0x40000000    # 2.0f
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     .line 222
     sput p2, Lorg/telegram/ui/GLIconSettingsView;->smallStarsSize:F

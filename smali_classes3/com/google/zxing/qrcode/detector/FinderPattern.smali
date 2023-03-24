@@ -52,9 +52,9 @@
 
     move-result p2
 
-    const/4 v0, 0x0
-
     cmpg-float p2, p2, p1
+
+    const/4 v0, 0x0
 
     if-gtz p2, :cond_1
 
@@ -116,7 +116,7 @@
 
     move-result v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v0, p2
 
@@ -133,7 +133,7 @@
 
     move-result v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, p1
 
@@ -146,7 +146,7 @@
 
     iget v3, p0, Lcom/google/zxing/qrcode/detector/FinderPattern;->estimatedModuleSize:F
 
-    mul-float p1, p1, v3
+    mul-float/2addr p1, v3
 
     add-float/2addr p1, p3
 

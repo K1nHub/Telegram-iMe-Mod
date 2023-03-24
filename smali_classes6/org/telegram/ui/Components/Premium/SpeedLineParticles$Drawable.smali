@@ -184,7 +184,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 68
     :goto_0
@@ -227,9 +227,9 @@
 
     move-result-wide v5
 
-    cmp-long v7, v0, v5
+    cmp-long v5, v0, v5
 
-    if-gtz v7, :cond_1
+    if-gtz v5, :cond_1
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/SpeedLineParticles$Drawable;->screenRect:Landroid/graphics/RectF;
 

@@ -29,7 +29,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: BlockchainsManagementPresenter.kt */
 @InjectViewState
@@ -58,6 +58,10 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
                 iArr[BlockchainType.TON.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
+            try {
+                iArr[BlockchainType.TRON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -81,7 +85,7 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
     }
 
     public final void showResetAllWalletsDialog() {
-        ((BlockchainsManagementView) getViewState()).showResetAllWalletsConfirmationDialog(new DialogModel(this.resourceManager.getString(C3286R.string.wallet_reset_all_title), this.resourceManager.getString(C3286R.string.wallet_reset_all_description), LocaleController.getString("Cancel", C3286R.string.Cancel), LocaleController.getString("Reset", C3286R.string.Reset)));
+        ((BlockchainsManagementView) getViewState()).showResetAllWalletsConfirmationDialog(new DialogModel(this.resourceManager.getString(C3301R.string.wallet_reset_all_title), this.resourceManager.getString(C3301R.string.wallet_reset_all_description), LocaleController.getString("Cancel", C3301R.string.Cancel), LocaleController.getString("Reset", C3301R.string.Reset)));
     }
 
     public final void resetAllWallets() {
@@ -90,7 +94,7 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
 
     public final void resetWallet(BlockchainWalletItem walletItem) {
         Intrinsics.checkNotNullParameter(walletItem, "walletItem");
-        handleWalletDeletionResult(CryptoWalletInteractor.deleteWallet$default(this.cryptoWalletInteractor, walletItem.getBlockchainType(), false, 2, null));
+        handleWalletDeletionResult(CryptoWalletInteractor.deleteWallet$default(this.cryptoWalletInteractor, walletItem.getBlockchainType(), false, false, 6, null));
     }
 
     public final void showWalletBackup(BlockchainWalletItem walletItem) {
@@ -117,19 +121,19 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
         List<Wallet> allWallets = this.cryptoAccessManager.getAllWallets();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(allWallets, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (Wallet wallet : allWallets) {
-            arrayList.add(new BlockchainWalletItem(wallet.getBlockchainType(), wallet.getAddress(), getWalletCreationDateText(wallet.getBlockchainType()), StringExtKt.splitBySpace(wallet.getMnemonic())));
+        for (Wallet wallet2 : allWallets) {
+            arrayList.add(new BlockchainWalletItem(wallet2.getBlockchainType(), wallet2.getAddress(), getWalletCreationDateText(wallet2.getBlockchainType()), StringExtKt.splitBySpace(wallet2.getMnemonic())));
         }
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
         blockchainsManagementView.setupWalletsItems(mutableList);
     }
 
     private final <T> void handleWalletDeletionResult(Observable<Result<T>> observable) {
-        Observable<Result<T>> observeOn = observable.observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<T>> observeOn = observable.observeOn(this.schedulersProvider.mo706ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "observable\n             …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2080x42676ad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2081x42676ae((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2094x42676ad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2095x42676ae((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -137,12 +141,15 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
     private final DialogModel getInfoDialogModel(BlockchainType blockchainType) {
         int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
         if (i != 1) {
-            if (i == 2) {
-                return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_details_info_ton_title), this.resourceManager.getString(C3286R.string.wallet_details_info_ton_description), null, LocaleController.getString("OK", C3286R.string.OK), 4, null);
+            if (i != 2) {
+                if (i == 3) {
+                    return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_details_info_tron_title), this.resourceManager.getString(C3301R.string.wallet_details_info_tron_description), null, LocaleController.getString("OK", C3301R.string.OK), 4, null);
+                }
+                throw new NoWhenBranchMatchedException();
             }
-            throw new NoWhenBranchMatchedException();
+            return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_details_info_ton_title), this.resourceManager.getString(C3301R.string.wallet_details_info_ton_description), null, LocaleController.getString("OK", C3301R.string.OK), 4, null);
         }
-        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_details_info_evm_title), this.resourceManager.getString(C3286R.string.wallet_details_info_evm_description), null, LocaleController.getString("OK", C3286R.string.OK), 4, null);
+        return new DialogModel(this.resourceManager.getString(C3301R.string.wallet_details_info_evm_title), this.resourceManager.getString(C3301R.string.wallet_details_info_evm_description), null, LocaleController.getString("OK", C3301R.string.OK), 4, null);
     }
 
     private final String getWalletCreationDateText(BlockchainType blockchainType) {

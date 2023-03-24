@@ -201,7 +201,7 @@
 .end method
 
 .method drainLoop()V
-    .locals 14
+    .locals 13
 
     .line 406
     iget-object v0, p0, Lio/reactivex/internal/observers/QueueDrainObserver;->queue:Lio/reactivex/internal/fuseable/SimplePlainQueue;
@@ -216,7 +216,7 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 414
     :cond_0
@@ -249,7 +249,7 @@
 
     if-nez v6, :cond_2
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_1
 
@@ -326,9 +326,9 @@
 
     iget-wide v5, v6, Lio/reactivex/internal/operators/observable/ObservableWindowTimed$WindowExactBoundedObserver$ConsumerIndexHolder;->index:J
 
-    cmp-long v11, v7, v5
+    cmp-long v5, v7, v5
 
-    if-nez v11, :cond_0
+    if-nez v5, :cond_0
 
     .line 448
     :cond_7
@@ -370,9 +370,9 @@
     .line 461
     iget-wide v11, p0, Lio/reactivex/internal/operators/observable/ObservableWindowTimed$WindowExactBoundedObserver;->maxSize:J
 
-    cmp-long v13, v5, v11
+    cmp-long v11, v5, v11
 
-    if-ltz v13, :cond_9
+    if-ltz v11, :cond_9
 
     .line 462
     iget-wide v5, p0, Lio/reactivex/internal/operators/observable/ObservableWindowTimed$WindowExactBoundedObserver;->producerIndex:J

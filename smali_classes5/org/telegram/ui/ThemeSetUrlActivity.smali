@@ -357,7 +357,7 @@
     goto/16 :goto_3
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 464
     :goto_0
@@ -1039,7 +1039,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v10
 
     :goto_0
     if-ge v1, v0, :cond_2

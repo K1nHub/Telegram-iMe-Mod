@@ -830,7 +830,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_6
@@ -906,7 +906,7 @@
 
     move-result v5
 
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_1
     if-ge v6, v5, :cond_4
@@ -1293,7 +1293,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1337,7 +1337,7 @@
 .end method
 
 .method private itemsEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -1393,9 +1393,9 @@
 
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_2
+    if-nez v1, :cond_2
 
     return v0
 
@@ -1421,9 +1421,9 @@
 
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_3
+    if-nez v1, :cond_3
 
     return v0
 
@@ -1680,7 +1680,7 @@
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter;->searchResultBotWebViewSwitch:Lorg/telegram/tgnet/TLRPC$TL_inlineBotWebView;
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 748
     :goto_1
@@ -1790,7 +1790,7 @@
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter;->nextQueryOffset:Ljava/lang/String;
 
     :cond_9
-    const/4 p1, 0x1
+    move p1, p4
 
     goto :goto_3
 
@@ -1806,7 +1806,7 @@
 
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter;->contextMedia:Z
 
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 767
     :goto_3
@@ -1869,13 +1869,13 @@
     goto :goto_4
 
     :cond_c
-    const/4 p5, 0x0
+    move p5, v0
 
     goto :goto_5
 
     :cond_d
     :goto_4
-    const/4 p5, 0x1
+    move p5, p4
 
     :goto_5
     invoke-interface {p2, p5}, Lorg/telegram/ui/Adapters/MentionsAdapter$MentionsAdapterDelegate;->needChangePanelVisibility(Z)V
@@ -1892,7 +1892,7 @@
     if-eqz p1, :cond_f
 
     :cond_e
-    const/4 v0, 0x1
+    move v0, p4
 
     .line 782
     :cond_f
@@ -2022,7 +2022,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 315
     :goto_0
@@ -2056,7 +2056,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 317
     :goto_1
@@ -2088,7 +2088,7 @@
 
     if-lez v2, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_3
     invoke-interface {p2, v0}, Lorg/telegram/ui/Adapters/MentionsAdapter$MentionsAdapterDelegate;->needChangePanelVisibility(Z)V
@@ -2892,9 +2892,9 @@
 
     move-result-wide v1
 
-    cmpl-double v3, v1, v13
+    cmpl-double v1, v1, v13
 
-    if-eqz v3, :cond_5
+    if-eqz v1, :cond_5
 
     iget-object v1, v8, Lorg/telegram/ui/Adapters/MentionsAdapter;->lastKnownLocation:Landroid/location/Location;
 
@@ -3005,9 +3005,9 @@
 
     const-wide v3, -0x3f70c00000000000L    # -1000.0
 
-    cmpl-double v5, v1, v3
+    cmpl-double v1, v1, v3
 
-    if-eqz v5, :cond_7
+    if-eqz v1, :cond_7
 
     .line 798
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getInlineBotResults;->flags:I
@@ -3864,7 +3864,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_3
     :goto_0
@@ -4283,12 +4283,12 @@
 
     if-eq v0, v2, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 344
     :goto_0
@@ -4299,7 +4299,7 @@
     .line 345
     new-array v6, v2, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_1
     if-ge v7, v2, :cond_2
@@ -4344,7 +4344,7 @@
     :cond_3
     invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    const/4 v4, 0x1
+    move v4, v3
 
     :cond_4
     add-int/lit8 v1, v1, 0x1
@@ -4587,13 +4587,13 @@
     goto :goto_0
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_1
 
     :cond_5
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 1610
     :goto_1
@@ -4667,24 +4667,24 @@
 
     if-eq p2, p1, :cond_9
 
-    const/4 v8, 0x1
+    move v8, v1
 
     goto :goto_3
 
     :cond_9
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_3
     if-eqz v0, :cond_a
 
     if-nez p2, :cond_a
 
-    const/4 v9, 0x1
+    move v9, v1
 
     goto :goto_4
 
     :cond_a
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter;->searchingContextUsername:Ljava/lang/String;
@@ -5279,7 +5279,7 @@
 
     if-le v7, v12, :cond_4
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     .line 834
     :cond_4
@@ -5328,12 +5328,12 @@
 
     if-gt v13, v14, :cond_6
 
-    const/4 v13, 0x1
+    move v13, v11
 
     goto :goto_2
 
     :cond_6
-    const/4 v13, 0x0
+    move v13, v10
 
     :goto_2
     if-eqz v13, :cond_b
@@ -5345,7 +5345,7 @@
 
     move-object v11, v6
 
-    const/4 v9, 0x0
+    move v9, v10
 
     :goto_3
     if-ge v9, v15, :cond_a
@@ -6220,7 +6220,7 @@
     :goto_1a
     const/4 v10, 0x0
 
-    goto/16 :goto_22
+    goto/16 :goto_23
 
     :cond_2e
     :goto_1b
@@ -6384,11 +6384,13 @@
     .line 1041
     invoke-virtual {v12, v0, v5}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
 
+    move v10, v0
+
     const/4 v0, -0x1
 
     const/4 v5, 0x1
 
-    goto/16 :goto_19
+    goto :goto_22
 
     .line 1044
     :cond_36
@@ -6518,9 +6520,10 @@
 
     const/4 v0, -0x1
 
+    :goto_22
     const/4 v7, -0x1
 
-    :goto_22
+    :goto_23
     if-ne v5, v0, :cond_3c
 
     .line 1069
@@ -6540,7 +6543,7 @@
 
     const/4 v5, 0x0
 
-    :goto_23
+    :goto_24
     const/16 v1, 0x64
 
     .line 1074
@@ -6592,7 +6595,7 @@
     :cond_3d
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_23
+    goto :goto_24
 
     .line 1080
     :cond_3e
@@ -6615,13 +6618,13 @@
 
     const/4 v1, 0x1
 
-    goto :goto_24
+    goto :goto_25
 
     :cond_3f
     const/4 v1, 0x0
 
     .line 1082
-    :goto_24
+    :goto_25
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
@@ -6665,7 +6668,7 @@
     const/4 v12, 0x0
 
     .line 1088
-    :goto_25
+    :goto_26
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
     move-result v13
@@ -6693,7 +6696,7 @@
 
     if-nez v13, :cond_40
 
-    goto :goto_26
+    goto :goto_27
 
     .line 1093
     :cond_40
@@ -6745,17 +6748,17 @@
 
     if-ne v12, v13, :cond_43
 
-    goto :goto_27
+    goto :goto_28
 
     :cond_43
-    :goto_26
+    :goto_27
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_25
+    goto :goto_26
 
     .line 1107
     :cond_44
-    :goto_27
+    :goto_28
     iget-object v7, v8, Lorg/telegram/ui/Adapters/MentionsAdapter;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v7, :cond_45
@@ -6772,7 +6775,7 @@
 
     move-result v11
 
-    goto :goto_29
+    goto :goto_2a
 
     .line 1110
     :cond_45
@@ -6791,15 +6794,15 @@
 
     move-result-object v7
 
-    goto :goto_28
+    goto :goto_29
 
     :cond_46
     const/4 v7, 0x0
 
-    :goto_28
+    :goto_29
     const/4 v11, 0x0
 
-    :goto_29
+    :goto_2a
     if-eqz v7, :cond_54
 
     .line 1117
@@ -6826,16 +6829,16 @@
 
     const/16 v16, -0x1
 
-    goto :goto_2a
+    goto :goto_2b
 
     :cond_48
     const/16 v16, 0x0
 
-    :goto_2a
+    :goto_2b
     move/from16 v4, v16
 
     .line 1118
-    :goto_2b
+    :goto_2c
     iget-object v12, v8, Lorg/telegram/ui/Adapters/MentionsAdapter;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     iget-object v12, v12, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
@@ -6862,7 +6865,7 @@
     .line 1126
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_2d
+    goto/16 :goto_2e
 
     .line 1129
     :cond_49
@@ -6890,7 +6893,7 @@
 
     move-object v12, v7
 
-    goto :goto_2c
+    goto :goto_2d
 
     .line 1135
     :cond_4a
@@ -6937,7 +6940,7 @@
 
     if-ltz v13, :cond_4c
 
-    goto :goto_2d
+    goto :goto_2e
 
     .line 1140
     :cond_4c
@@ -6955,7 +6958,7 @@
     .line 1142
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2d
+    goto :goto_2e
 
     .line 1146
     :cond_4d
@@ -6981,7 +6984,7 @@
     move-object/from16 v14, v19
 
     .line 1152
-    :goto_2c
+    :goto_2d
     invoke-static {v14}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v16
@@ -7059,21 +7062,21 @@
     .line 1157
     invoke-virtual {v10, v2, v3, v12}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    goto :goto_2e
+    goto :goto_2f
 
     :cond_52
-    :goto_2d
+    :goto_2e
     move-object/from16 p1, v2
 
     :cond_53
-    :goto_2e
+    :goto_2f
     add-int/lit8 v4, v4, 0x1
 
     move-object/from16 v2, p1
 
     move/from16 v3, p4
 
-    goto/16 :goto_2b
+    goto/16 :goto_2c
 
     .line 1161
     :cond_54
@@ -7136,7 +7139,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    goto :goto_2f
+    goto :goto_30
 
     :cond_55
     const/4 v0, 0x1
@@ -7145,7 +7148,7 @@
     invoke-direct {v8, v6, v10, v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->showUsersResult(Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Z)V
 
     .line 1210
-    :goto_2f
+    :goto_30
     new-instance v12, Lorg/telegram/ui/Adapters/MentionsAdapter$7;
 
     move-object v0, v12
@@ -7172,7 +7175,7 @@
 
     invoke-static {v12, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :cond_56
     const/4 v0, 0x1
@@ -7180,7 +7183,7 @@
     .line 1269
     invoke-direct {v8, v6, v10, v0}, Lorg/telegram/ui/Adapters/MentionsAdapter;->showUsersResult(Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Z)V
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :cond_57
     const/4 v0, 0x1
@@ -7211,7 +7214,7 @@
     const/4 v10, 0x0
 
     .line 1275
-    :goto_30
+    :goto_31
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -7246,7 +7249,7 @@
     :cond_58
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_30
+    goto :goto_31
 
     .line 1281
     :cond_59
@@ -7293,7 +7296,7 @@
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter$MentionsAdapterDelegate;->needChangePanelVisibility(Z)V
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :cond_5a
     const/4 v0, 0x2
@@ -7327,7 +7330,7 @@
     const/4 v5, 0x0
 
     .line 1296
-    :goto_31
+    :goto_32
     iget-object v4, v8, Lorg/telegram/ui/Adapters/MentionsAdapter;->botInfo:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v4}, Landroidx/collection/LongSparseArray;->size()I
@@ -7348,7 +7351,7 @@
     const/4 v6, 0x0
 
     .line 1298
-    :goto_32
+    :goto_33
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$BotInfo;->commands:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
@@ -7419,12 +7422,12 @@
     :cond_5b
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_32
+    goto :goto_33
 
     :cond_5c
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_31
+    goto :goto_32
 
     :cond_5d
     const/4 v4, 0x0
@@ -7469,7 +7472,7 @@
 
     invoke-interface {v1, v0}, Lorg/telegram/ui/Adapters/MentionsAdapter$MentionsAdapterDelegate;->needChangePanelVisibility(Z)V
 
-    goto :goto_33
+    goto :goto_34
 
     :cond_5e
     const/4 v0, 0x3
@@ -7526,7 +7529,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/MediaDataController;->getEmojiSuggestions([Ljava/lang/String;Ljava/lang/String;ZLorg/telegram/messenger/MediaDataController$KeywordResultCallback;Z)V
 
-    goto :goto_33
+    goto :goto_34
 
     :cond_60
     const/4 v0, 0x4
@@ -7557,11 +7560,11 @@
     iput-object v0, v8, Lorg/telegram/ui/Adapters/MentionsAdapter;->searchResultCommandsUsers:Ljava/util/ArrayList;
 
     :cond_61
-    :goto_33
+    :goto_34
     return-void
 
     :cond_62
-    :goto_34
+    :goto_35
     move-object v0, v9
 
     .line 827

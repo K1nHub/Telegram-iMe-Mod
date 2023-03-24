@@ -83,20 +83,21 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         int[] iArr = new int[exoTrackSelectionArr.length];
         int[] iArr2 = new int[exoTrackSelectionArr.length];
         int i = 0;
+        int i2 = 0;
         while (true) {
             exoTrackSelection = null;
-            if (i >= exoTrackSelectionArr.length) {
+            if (i2 >= exoTrackSelectionArr.length) {
                 break;
             }
-            Integer num = sampleStreamArr[i] != null ? this.streamPeriodIndices.get(sampleStreamArr[i]) : null;
-            iArr[i] = num == null ? -1 : num.intValue();
-            if (exoTrackSelectionArr[i] != null) {
-                String str = exoTrackSelectionArr[i].getTrackGroup().f126id;
-                iArr2[i] = Integer.parseInt(str.substring(0, str.indexOf(":")));
+            Integer num = sampleStreamArr[i2] != null ? this.streamPeriodIndices.get(sampleStreamArr[i2]) : null;
+            iArr[i2] = num == null ? -1 : num.intValue();
+            if (exoTrackSelectionArr[i2] != null) {
+                String str = exoTrackSelectionArr[i2].getTrackGroup().f126id;
+                iArr2[i2] = Integer.parseInt(str.substring(0, str.indexOf(":")));
             } else {
-                iArr2[i] = -1;
+                iArr2[i2] = -1;
             }
-            i++;
+            i2++;
         }
         this.streamPeriodIndices.clear();
         int length = exoTrackSelectionArr.length;
@@ -105,46 +106,48 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         ExoTrackSelection[] exoTrackSelectionArr2 = new ExoTrackSelection[exoTrackSelectionArr.length];
         ArrayList arrayList = new ArrayList(this.periods.length);
         long j2 = j;
-        int i2 = 0;
-        while (i2 < this.periods.length) {
-            for (int i3 = 0; i3 < exoTrackSelectionArr.length; i3++) {
-                sampleStreamArr3[i3] = iArr[i3] == i2 ? sampleStreamArr[i3] : exoTrackSelection;
-                if (iArr2[i3] == i2) {
-                    ExoTrackSelection exoTrackSelection2 = (ExoTrackSelection) Assertions.checkNotNull(exoTrackSelectionArr[i3]);
-                    exoTrackSelectionArr2[i3] = new ForwardingTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull(this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
+        int i3 = 0;
+        while (i3 < this.periods.length) {
+            for (int i4 = i; i4 < exoTrackSelectionArr.length; i4++) {
+                sampleStreamArr3[i4] = iArr[i4] == i3 ? sampleStreamArr[i4] : exoTrackSelection;
+                if (iArr2[i4] == i3) {
+                    ExoTrackSelection exoTrackSelection2 = (ExoTrackSelection) Assertions.checkNotNull(exoTrackSelectionArr[i4]);
+                    exoTrackSelectionArr2[i4] = new ForwardingTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull(this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
                 } else {
-                    exoTrackSelectionArr2[i3] = exoTrackSelection;
+                    exoTrackSelectionArr2[i4] = exoTrackSelection;
                 }
             }
-            int i4 = i2;
+            int i5 = i3;
             ArrayList arrayList2 = arrayList;
             ExoTrackSelection[] exoTrackSelectionArr3 = exoTrackSelectionArr2;
-            long selectTracks = this.periods[i2].selectTracks(exoTrackSelectionArr2, zArr, sampleStreamArr3, zArr2, j2);
-            if (i4 == 0) {
+            long selectTracks = this.periods[i3].selectTracks(exoTrackSelectionArr2, zArr, sampleStreamArr3, zArr2, j2);
+            if (i5 == 0) {
                 j2 = selectTracks;
             } else if (selectTracks != j2) {
                 throw new IllegalStateException("Children enabled at different positions.");
             }
             boolean z = false;
-            for (int i5 = 0; i5 < exoTrackSelectionArr.length; i5++) {
-                if (iArr2[i5] == i4) {
-                    sampleStreamArr2[i5] = sampleStreamArr3[i5];
-                    this.streamPeriodIndices.put((SampleStream) Assertions.checkNotNull(sampleStreamArr3[i5]), Integer.valueOf(i4));
+            for (int i6 = 0; i6 < exoTrackSelectionArr.length; i6++) {
+                if (iArr2[i6] == i5) {
+                    sampleStreamArr2[i6] = sampleStreamArr3[i6];
+                    this.streamPeriodIndices.put((SampleStream) Assertions.checkNotNull(sampleStreamArr3[i6]), Integer.valueOf(i5));
                     z = true;
-                } else if (iArr[i5] == i4) {
-                    Assertions.checkState(sampleStreamArr3[i5] == null);
+                } else if (iArr[i6] == i5) {
+                    Assertions.checkState(sampleStreamArr3[i6] == null);
                 }
             }
             if (z) {
-                arrayList2.add(this.periods[i4]);
+                arrayList2.add(this.periods[i5]);
             }
-            i2 = i4 + 1;
+            i3 = i5 + 1;
             arrayList = arrayList2;
             exoTrackSelectionArr2 = exoTrackSelectionArr3;
+            i = 0;
             exoTrackSelection = null;
         }
-        System.arraycopy(sampleStreamArr2, 0, sampleStreamArr, 0, length);
-        MediaPeriod[] mediaPeriodArr = (MediaPeriod[]) arrayList.toArray(new MediaPeriod[0]);
+        int i7 = i;
+        System.arraycopy(sampleStreamArr2, i7, sampleStreamArr, i7, length);
+        MediaPeriod[] mediaPeriodArr = (MediaPeriod[]) arrayList.toArray(new MediaPeriod[i7]);
         this.enabledPeriods = mediaPeriodArr;
         this.compositeSequenceableLoader = this.compositeSequenceableLoaderFactory.createCompositeSequenceableLoader(mediaPeriodArr);
         return j2;

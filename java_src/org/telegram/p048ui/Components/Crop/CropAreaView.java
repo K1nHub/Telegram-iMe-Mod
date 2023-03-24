@@ -80,10 +80,10 @@ public class CropAreaView extends ViewGroup {
     private RectF topRightCorner;
 
     /* renamed from: tx */
-    public float f1700tx;
+    public float f1701tx;
 
     /* renamed from: ty */
-    public float f1701ty;
+    public float f1702ty;
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$AreaViewListener */
     /* loaded from: classes6.dex */
@@ -140,8 +140,8 @@ public class CropAreaView extends ViewGroup {
         this.targetRect = new RectF();
         this.rotate = BitmapDescriptorFactory.HUE_RED;
         this.scale = 1.0f;
-        this.f1700tx = BitmapDescriptorFactory.HUE_RED;
-        this.f1701ty = BitmapDescriptorFactory.HUE_RED;
+        this.f1701tx = BitmapDescriptorFactory.HUE_RED;
+        this.f1702ty = BitmapDescriptorFactory.HUE_RED;
         this.inBubbleMode = context instanceof BubbleActivity;
         this.frameVisible = true;
         this.dimVisibile = true;
@@ -265,8 +265,8 @@ public class CropAreaView extends ViewGroup {
     public void setRotationScaleTranslation(float f, float f2, float f3, float f4) {
         this.rotate = f;
         this.scale = f2;
-        this.f1700tx = f3;
-        this.f1701ty = f4;
+        this.f1701tx = f3;
+        this.f1702ty = f4;
         invalidate();
     }
 
@@ -292,7 +292,7 @@ public class CropAreaView extends ViewGroup {
             int i10 = ((int) (rectF.right - f2)) + i9;
             int i11 = i9 + ((int) (rectF.bottom - f3));
             canvas.save();
-            canvas.translate(this.f1700tx, this.f1701ty);
+            canvas.translate(this.f1701tx, this.f1702ty);
             float f4 = this.scale;
             float f5 = (i10 / 2) + i7;
             float f6 = (i11 / 2) + i8;
@@ -820,7 +820,7 @@ public class CropAreaView extends ViewGroup {
             this.previousX = x;
             this.previousY = y;
             boolean z = Math.abs(f4) > Math.abs(f5);
-            switch (C44423.$SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control[this.activeControl.ordinal()]) {
+            switch (C44573.$SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control[this.activeControl.ordinal()]) {
                 case 1:
                     RectF rectF = this.tempRect;
                     rectF.left += f4;
@@ -1000,7 +1000,7 @@ public class CropAreaView extends ViewGroup {
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$3 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C44423 {
+    static /* synthetic */ class C44573 {
         static final /* synthetic */ int[] $SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control;
 
         static {

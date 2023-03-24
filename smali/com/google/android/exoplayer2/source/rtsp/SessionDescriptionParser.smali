@@ -148,9 +148,9 @@
 
     const/4 v3, 0x0
 
-    move-object v5, v3
+    move v4, v2
 
-    const/4 v4, 0x0
+    move-object v5, v3
 
     :goto_0
     if-ge v4, v1, :cond_c
@@ -243,7 +243,7 @@
 
     if-eqz v9, :cond_1
 
-    const/4 v11, 0x0
+    move v11, v2
 
     goto/16 :goto_1
 
@@ -282,7 +282,7 @@
 
     if-eqz v9, :cond_1
 
-    const/4 v11, 0x2
+    move v11, v10
 
     goto/16 :goto_1
 
@@ -321,7 +321,7 @@
 
     if-eqz v9, :cond_1
 
-    const/4 v11, 0x1
+    move v11, v8
 
     goto :goto_1
 
@@ -537,12 +537,12 @@
 
     if-ne v7, v10, :cond_6
 
-    const/4 v7, 0x1
+    move v7, v8
 
     goto :goto_2
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_2
     invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V

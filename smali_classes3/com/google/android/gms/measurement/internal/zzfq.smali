@@ -62,9 +62,9 @@
 
     const-wide p2, 0x7fffffffffffffffL
 
-    cmp-long p4, v0, p2
+    cmp-long p2, v0, p2
 
-    if-nez p4, :cond_0
+    if-nez p2, :cond_0
 
     iget-object p1, p1, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
@@ -125,9 +125,9 @@
 
     const-wide p2, 0x7fffffffffffffffL
 
-    cmp-long p4, v0, p2
+    cmp-long p2, v0, p2
 
-    if-nez p4, :cond_0
+    if-nez p2, :cond_0
 
     iget-object p1, p1, Lcom/google/android/gms/measurement/internal/zzgo;->zzs:Lcom/google/android/gms/measurement/internal/zzfv;
 
@@ -185,7 +185,7 @@
 
     if-gez p1, :cond_2
 
-    const/4 v2, -0x1
+    move v2, v3
 
     goto :goto_0
 

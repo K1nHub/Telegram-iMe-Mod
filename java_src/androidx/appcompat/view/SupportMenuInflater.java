@@ -214,8 +214,8 @@ public class SupportMenuInflater extends MenuInflater {
             r4 = 0
             r5 = 0
             r8 = r4
-            r6 = 0
-            r7 = 0
+            r6 = r5
+            r7 = r6
         L40:
             if (r6 != 0) goto Lc6
             if (r15 == r3) goto Lbe
@@ -231,7 +231,7 @@ public class SupportMenuInflater extends MenuInflater {
             boolean r11 = r15.equals(r8)
             if (r11 == 0) goto L5e
             r8 = r4
-            r7 = 0
+            r7 = r5
             goto Lb9
         L5e:
             boolean r10 = r15.equals(r10)
@@ -255,7 +255,7 @@ public class SupportMenuInflater extends MenuInflater {
         L86:
             boolean r15 = r15.equals(r2)
             if (r15 == 0) goto Lb9
-            r6 = 1
+            r6 = r3
             goto Lb9
         L8e:
             if (r7 == 0) goto L91
@@ -279,7 +279,7 @@ public class SupportMenuInflater extends MenuInflater {
             goto Lb9
         Lb7:
             r8 = r15
-            r7 = 1
+            r7 = r3
         Lb9:
             int r15 = r13.next()
             goto L40

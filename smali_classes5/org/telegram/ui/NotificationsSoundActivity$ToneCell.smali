@@ -77,12 +77,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v5, 0x5
+    move v5, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x3
+    move v5, v4
 
     :goto_0
     or-int/lit8 v8, v5, 0x10
@@ -91,24 +91,24 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v9, 0x0
+    move v9, v5
 
     goto :goto_1
 
     :cond_1
-    const/16 v9, 0x14
+    move v9, v1
 
     :goto_1
     const/4 v10, 0x0
 
     if-eqz v2, :cond_2
 
-    const/16 v11, 0x14
+    move v11, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v11, 0x0
+    move v11, v5
 
     :goto_2
     const/4 v12, 0x0
@@ -162,12 +162,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v2, 0x5
+    move v2, v3
 
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x3
+    move v2, v4
 
     :goto_3
     or-int/lit8 v8, v2, 0x10
@@ -176,24 +176,24 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v9, 0x0
+    move v9, v5
 
     goto :goto_4
 
     :cond_4
-    const/16 v9, 0x12
+    move v9, v2
 
     :goto_4
     const/4 v10, 0x0
 
     if-eqz v1, :cond_5
 
-    const/16 v11, 0x12
+    move v11, v2
 
     goto :goto_5
 
     :cond_5
-    const/4 v11, 0x0
+    move v11, v5
 
     :goto_5
     const/4 v12, 0x0
@@ -263,12 +263,12 @@
 
     if-eqz p2, :cond_6
 
-    const/4 p2, 0x5
+    move p2, v3
 
     goto :goto_6
 
     :cond_6
-    const/4 p2, 0x3
+    move p2, v4
 
     :goto_6
     or-int/lit8 p2, p2, 0x10
@@ -289,7 +289,7 @@
     goto :goto_7
 
     :cond_7
-    const/4 v3, 0x3
+    move v3, v4
 
     :goto_7
     or-int/lit8 v7, v3, 0x10
@@ -300,24 +300,24 @@
 
     if-eqz p2, :cond_8
 
-    const/16 v8, 0x17
+    move v8, v0
 
     goto :goto_8
 
     :cond_8
-    const/16 v8, 0x3d
+    move v8, v1
 
     :goto_8
     const/4 v9, 0x0
 
     if-eqz p2, :cond_9
 
-    const/16 v10, 0x3d
+    move v10, v1
 
     goto :goto_9
 
     :cond_9
-    const/16 v10, 0x17
+    move v10, v0
 
     :goto_9
     const/4 v11, 0x0
@@ -386,12 +386,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x3c
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -416,7 +416,7 @@
 
     if-eqz v3, :cond_1
 
-    const/16 v1, 0x3c
+    move v1, v2
 
     :cond_1
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

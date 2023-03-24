@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 64555
+    .line 64582
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 64562
+    .line 64589
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;
 
     move-result-object p1
@@ -45,17 +45,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 64566
+    .line 64593
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getBotApp;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 64567
+    .line 64594
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getBotApp;->app:Lorg/telegram/tgnet/TLRPC$InputBotApp;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 64568
+    .line 64595
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getBotApp;->hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

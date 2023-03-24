@@ -68,12 +68,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     and-int/lit8 v3, p3, 0x20
@@ -83,7 +83,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     if-nez v1, :cond_3
@@ -312,12 +312,12 @@
 
     const/4 v1, 0x1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_0
     and-int/lit8 v1, p3, 0x8
@@ -420,7 +420,7 @@
 
     if-eqz p3, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 338
     :cond_0
@@ -482,7 +482,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -768,7 +768,7 @@
 
     invoke-direct {p3}, Lio/grpc/okhttp/internal/framed/Settings;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p2, :cond_6

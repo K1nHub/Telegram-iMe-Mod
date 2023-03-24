@@ -417,7 +417,7 @@
 .end method
 
 .method public final zzb(J)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -431,16 +431,16 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     :try_start_0
     iget-object v0, p0, Lcom/google/android/gms/internal/clearcut/zzbn$zzd;->zzgd:Ljava/nio/ByteBuffer;
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 

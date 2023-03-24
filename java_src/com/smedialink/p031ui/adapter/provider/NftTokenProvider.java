@@ -7,7 +7,7 @@ import com.smedialink.model.wallet.home.nft.NftTokenItem;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: NftTokenProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.NftTokenProvider */
 /* loaded from: classes3.dex */
@@ -15,7 +15,7 @@ public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
     private int spanCount = 4;
     private int spacing = AndroidUtilities.m50dp(16);
     private final int itemViewType = IdFabric$ViewTypes.NFT_AVATAR;
-    private final int layoutId = C3286R.layout.fork_recycle_item_nft_token;
+    private final int layoutId = C3301R.layout.fork_recycle_item_nft_token;
 
     public final void setSpanCount(int i) {
         this.spanCount = i;
@@ -40,7 +40,7 @@ public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
         int i2 = indexOf % i;
         int i3 = this.spacing;
         int i4 = ((i2 + 1) * i3) / i;
-        int i5 = C3286R.C3289id.card_nft_token;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i5, false), i5, "windowBackgroundWhite"), C3286R.C3289id.nft_root_view, new NftTokenProvider$convert$1(item, i3 - ((i2 * i3) / i), i4)), C3286R.C3289id.image_nft_image, new NftTokenProvider$convert$2(item));
+        int i5 = C3301R.C3304id.card_nft_token;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i5, false), i5, "windowBackgroundWhite"), C3301R.C3304id.nft_root_view, new NftTokenProvider$convert$1(item, i3 - ((i2 * i3) / i), i4)), C3301R.C3304id.image_nft_image, new NftTokenProvider$convert$2(item));
     }
 }

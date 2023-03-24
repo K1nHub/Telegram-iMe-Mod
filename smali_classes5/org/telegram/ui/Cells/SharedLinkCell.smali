@@ -485,24 +485,24 @@
 
     if-eqz p3, :cond_1
 
-    const/4 v6, 0x0
+    move v6, v0
 
     goto :goto_1
 
     :cond_1
-    const/16 v6, 0x2c
+    move v6, v1
 
     :goto_1
     const/16 v7, 0x2c
 
     if-eqz p3, :cond_2
 
-    const/16 v8, 0x2c
+    move v8, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_2
     const/4 v9, 0x0
@@ -864,7 +864,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 689
     :goto_3
@@ -952,7 +952,7 @@
 
     :cond_5
     :goto_5
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_6
     if-gt p1, v4, :cond_b
@@ -1063,7 +1063,7 @@
     goto :goto_8
 
     :cond_8
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 710
     :goto_9
@@ -1366,7 +1366,7 @@
 
     if-eqz v0, :cond_1
 
-    const/16 v0, 0x8
+    move v0, v13
 
     goto :goto_0
 
@@ -1382,7 +1382,7 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v12
 
     goto :goto_1
 
@@ -1422,7 +1422,7 @@
 
     if-eqz v0, :cond_4
 
-    const/16 v0, 0x8
+    move v0, v13
 
     goto :goto_2
 
@@ -1511,7 +1511,7 @@
 
     if-eqz v0, :cond_8
 
-    const/16 v0, 0x8
+    move v0, v13
 
     goto :goto_4
 
@@ -1566,7 +1566,7 @@
 
     if-eqz v0, :cond_a
 
-    const/16 v0, 0x8
+    move v0, v13
 
     goto :goto_5
 
@@ -1643,7 +1643,7 @@
 
     if-eqz v0, :cond_c
 
-    const/16 v0, 0x8
+    move v0, v13
 
     goto :goto_6
 
@@ -1718,9 +1718,9 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    const/4 v0, 0x0
+    move v0, v12
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 817
     :goto_7
@@ -1765,7 +1765,7 @@
 
     if-eqz v4, :cond_e
 
-    const/16 v4, 0x8
+    move v4, v13
 
     goto :goto_8
 
@@ -2329,12 +2329,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v14
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 252
     :goto_0
@@ -2357,13 +2357,13 @@
     goto :goto_1
 
     :cond_3
+    move v15, v2
+
     move-object v6, v3
 
     move-object v7, v6
 
     move-object v8, v7
-
-    const/4 v15, 0x0
 
     .line 259
     :goto_1
@@ -2381,9 +2381,9 @@
 
     if-nez v0, :cond_1c
 
-    move-object v0, v3
+    move v9, v2
 
-    const/4 v9, 0x0
+    move-object v0, v3
 
     .line 260
     :goto_2
@@ -2918,7 +2918,7 @@
     goto :goto_9
 
     :cond_16
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 330
     :goto_9
@@ -4241,7 +4241,7 @@
     :cond_35
     const/4 v7, 0x0
 
-    const/4 v0, 0x0
+    move v0, v7
 
     .line 488
     :goto_1e
@@ -4361,7 +4361,7 @@
     add-int/2addr v0, v2
 
     :cond_38
-    const/4 v2, 0x0
+    move v2, v7
 
     .line 501
     :goto_1f
@@ -4598,9 +4598,9 @@
 
     float-to-int v5, v0
 
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 564
     :goto_1
@@ -4961,15 +4961,14 @@
 
     :cond_c
     :goto_4
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_5
 
     :cond_d
-    const/4 v0, 0x0
+    move v0, v2
 
-    :goto_5
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_6
 
@@ -4982,9 +4981,10 @@
     goto/16 :goto_1
 
     :cond_10
-    const/4 v0, 0x0
+    move v0, v2
 
-    const/4 v6, 0x0
+    :goto_5
+    move v6, v0
 
     .line 630
     :goto_6
@@ -5083,9 +5083,9 @@
     .line 636
     iput v3, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
-    const/4 v0, 0x1
+    move v0, v3
 
-    const/4 v6, 0x1
+    move v6, v0
 
     .line 643
     :cond_13
@@ -5180,9 +5180,9 @@
     invoke-direct {v1, v4, v5, v2}, Lorg/telegram/ui/Cells/SharedLinkCell;->startSpoilerRipples(III)V
 
     :goto_8
-    const/4 v0, 0x1
+    move v0, v3
 
-    const/4 v6, 0x1
+    move v6, v0
 
     :cond_16
     if-nez v6, :cond_19
@@ -5198,7 +5198,7 @@
 
     :cond_18
     :goto_9
-    const/4 v0, 0x0
+    move v0, v2
 
     :cond_19
     :goto_a
@@ -5212,7 +5212,7 @@
     if-eqz v0, :cond_1b
 
     :cond_1a
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_1b
     return v2

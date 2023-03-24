@@ -164,7 +164,7 @@
 
     move-result-wide p1
 
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 1239
     :goto_0

@@ -748,7 +748,7 @@
 
     if-eqz v0, :cond_b
 
-    const/4 v5, 0x2
+    move v5, v3
 
     :cond_b
     invoke-direct {p0, v5}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;->setState(I)V

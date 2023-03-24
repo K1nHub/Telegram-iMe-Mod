@@ -529,7 +529,7 @@
 .end method
 
 .method private static final initListView$lambda$5$lambda$4(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
-    .locals 3
+    .locals 2
 
     const-string p1, "this$0"
 
@@ -546,9 +546,9 @@
 
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 114
     iget-object p1, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;

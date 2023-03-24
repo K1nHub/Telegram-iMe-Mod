@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/manager/wallet/create/WalletCreateManager;
 
-    invoke-static {v0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->$r8$lambda$LIG7VgnDZp_XgjjWEY_A8NarOEY(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
+    invoke-static {v0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->$r8$lambda$_pmeqegRQWbucUcZM56NJOEP_yI(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
 
     return-void
 .end method

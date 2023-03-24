@@ -73,9 +73,9 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-nez v6, :cond_1
+    if-nez v4, :cond_1
 
     goto/16 :goto_4
 
@@ -111,7 +111,7 @@
     const-wide/16 v8, 0x3
 
     :goto_0
-    mul-long v6, v6, v8
+    mul-long/2addr v6, v8
 
     goto :goto_1
 
@@ -158,9 +158,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v2
+    cmp-long v4, v4, v2
 
-    if-gez v6, :cond_5
+    if-gez v4, :cond_5
 
     .line 53
     iget-object v4, p0, Lorg/telegram/messenger/video/VideoPlayerRewinder$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerRewinder;
@@ -177,9 +177,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v0
+    cmp-long v4, v4, v0
 
-    if-lez v6, :cond_6
+    if-lez v4, :cond_6
 
     .line 55
     iget-object v4, p0, Lorg/telegram/messenger/video/VideoPlayerRewinder$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerRewinder;
@@ -209,9 +209,9 @@
 
     const-wide/16 v6, 0x15e
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-lez v8, :cond_7
+    if-lez v4, :cond_7
 
     .line 58
     iget-object v4, p0, Lorg/telegram/messenger/video/VideoPlayerRewinder$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerRewinder;
@@ -280,9 +280,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v2
+    cmp-long v2, v4, v2
 
-    if-eqz v6, :cond_8
+    if-eqz v2, :cond_8
 
     iget-object v2, p0, Lorg/telegram/messenger/video/VideoPlayerRewinder$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerRewinder;
 
@@ -290,9 +290,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-ltz v4, :cond_a
+    if-ltz v0, :cond_a
 
     .line 67
     :cond_8

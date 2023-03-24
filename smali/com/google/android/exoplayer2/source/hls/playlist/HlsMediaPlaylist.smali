@@ -301,9 +301,9 @@
     :goto_1
     iput-wide v6, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
 
-    cmp-long v3, v1, v4
+    cmp-long v1, v1, v4
 
-    if-ltz v3, :cond_4
+    if-ltz v1, :cond_4
 
     const/4 v1, 0x1
 
@@ -536,7 +536,7 @@
 .end method
 
 .method public isNewerThan(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -554,13 +554,13 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    cmp-long v1, v1, v3
 
-    cmp-long v6, v1, v3
+    const/4 v2, 0x0
 
-    if-gez v6, :cond_1
+    if-gez v1, :cond_1
 
-    return v5
+    return v2
 
     .line 560
     :cond_1
@@ -570,13 +570,13 @@
 
     move-result v1
 
-    iget-object v2, p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
+    iget-object v3, p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v3
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v1, v3
 
     if-eqz v1, :cond_3
 
@@ -585,7 +585,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -599,15 +599,15 @@
     move-result v1
 
     .line 565
-    iget-object v2, p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->trailingParts:Ljava/util/List;
+    iget-object v3, p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->trailingParts:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v3
 
-    if-gt v1, v2, :cond_5
+    if-gt v1, v3, :cond_5
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v3, :cond_4
 
     .line 566
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->hasEndTag:Z
@@ -621,7 +621,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :cond_5
     :goto_1

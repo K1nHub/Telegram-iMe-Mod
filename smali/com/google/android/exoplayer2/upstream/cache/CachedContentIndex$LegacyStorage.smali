@@ -59,13 +59,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v2, 0x1
+    move v2, v1
 
     .line 520
     :goto_1
@@ -82,7 +82,7 @@
 
     if-ne v3, v4, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_2
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
@@ -199,9 +199,7 @@
 
     xor-long/2addr p1, v1
 
-    long-to-int p2, p1
-
-    add-int/2addr v0, p2
+    long-to-int p1, p1
 
     goto :goto_0
 
@@ -217,9 +215,9 @@
 
     move-result p1
 
+    :goto_0
     add-int/2addr v0, p1
 
-    :goto_0
     return v0
 .end method
 
@@ -456,9 +454,9 @@
 
     move-result v3
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_2
     if-ge v5, v3, :cond_5
@@ -509,12 +507,12 @@
 
     if-ne p2, v0, :cond_6
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_3
 
     :cond_6
-    const/4 p2, 0x0
+    move p2, v2
 
     :goto_3
     if-ne p1, v6, :cond_8
@@ -566,8 +564,6 @@
     throw p1
 
     :catch_3
-    nop
-
     :goto_7
     if-eqz v0, :cond_b
 
@@ -678,12 +674,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 661
     :goto_1

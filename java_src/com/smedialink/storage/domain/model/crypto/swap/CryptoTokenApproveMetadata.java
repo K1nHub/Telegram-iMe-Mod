@@ -212,11 +212,11 @@ public abstract class CryptoTokenApproveMetadata {
         private final TokenApproveStatus status;
         private final TokenCode tokenCode;
         private final String tokenContractAddress;
-        private final TransactionParams transactionParams;
+        private final TransactionParams.Ether transactionParams;
         private final String value;
 
-        public /* synthetic */ NeedApprove(TokenCode tokenCode, TokenApproveStatus tokenApproveStatus, String str, TransactionParams transactionParams, String str2, String str3, TokenCode tokenCode2, DefaultConstructorMarker defaultConstructorMarker) {
-            this(tokenCode, tokenApproveStatus, str, transactionParams, str2, str3, tokenCode2);
+        public /* synthetic */ NeedApprove(TokenCode tokenCode, TokenApproveStatus tokenApproveStatus, String str, TransactionParams.Ether ether, String str2, String str3, TokenCode tokenCode2, DefaultConstructorMarker defaultConstructorMarker) {
+            this(tokenCode, tokenApproveStatus, str, ether, str2, str3, tokenCode2);
         }
 
         @Override // com.smedialink.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata
@@ -234,7 +234,7 @@ public abstract class CryptoTokenApproveMetadata {
             return this.value;
         }
 
-        public TransactionParams getTransactionParams() {
+        public TransactionParams.Ether getTransactionParams() {
             return this.transactionParams;
         }
 
@@ -250,12 +250,12 @@ public abstract class CryptoTokenApproveMetadata {
             return this.feeTokenCode;
         }
 
-        private NeedApprove(TokenCode tokenCode, TokenApproveStatus tokenApproveStatus, String str, TransactionParams transactionParams, String str2, String str3, TokenCode tokenCode2) {
+        private NeedApprove(TokenCode tokenCode, TokenApproveStatus tokenApproveStatus, String str, TransactionParams.Ether ether, String str2, String str3, TokenCode tokenCode2) {
             super(tokenCode, tokenApproveStatus, str, null);
             this.tokenCode = tokenCode;
             this.status = tokenApproveStatus;
             this.value = str;
-            this.transactionParams = transactionParams;
+            this.transactionParams = ether;
             this.tokenContractAddress = str2;
             this.spenderContractAddress = str3;
             this.feeTokenCode = tokenCode2;
@@ -269,10 +269,10 @@ public abstract class CryptoTokenApproveMetadata {
             private final TokenApproveStatus status;
             private final TokenCode tokenCode;
             private final String tokenContractAddress;
-            private final TransactionParams transactionParams;
+            private final TransactionParams.Ether transactionParams;
             private final String value;
 
-            public static /* synthetic */ NotAllowed copy$default(NotAllowed notAllowed, TokenCode tokenCode, TokenApproveStatus tokenApproveStatus, String str, TransactionParams transactionParams, String str2, String str3, TokenCode tokenCode2, int i, Object obj) {
+            public static /* synthetic */ NotAllowed copy$default(NotAllowed notAllowed, TokenCode tokenCode, TokenApproveStatus tokenApproveStatus, String str, TransactionParams.Ether ether, String str2, String str3, TokenCode tokenCode2, int i, Object obj) {
                 if ((i & 1) != 0) {
                     tokenCode = notAllowed.getTokenCode();
                 }
@@ -285,9 +285,9 @@ public abstract class CryptoTokenApproveMetadata {
                 }
                 String str4 = str;
                 if ((i & 8) != 0) {
-                    transactionParams = notAllowed.getTransactionParams();
+                    ether = notAllowed.getTransactionParams();
                 }
-                TransactionParams transactionParams2 = transactionParams;
+                TransactionParams.Ether ether2 = ether;
                 if ((i & 16) != 0) {
                     str2 = notAllowed.getTokenContractAddress();
                 }
@@ -299,7 +299,7 @@ public abstract class CryptoTokenApproveMetadata {
                 if ((i & 64) != 0) {
                     tokenCode2 = notAllowed.getFeeTokenCode();
                 }
-                return notAllowed.copy(tokenCode, tokenApproveStatus2, str4, transactionParams2, str5, str6, tokenCode2);
+                return notAllowed.copy(tokenCode, tokenApproveStatus2, str4, ether2, str5, str6, tokenCode2);
             }
 
             public final TokenCode component1() {
@@ -314,7 +314,7 @@ public abstract class CryptoTokenApproveMetadata {
                 return getValue();
             }
 
-            public final TransactionParams component4() {
+            public final TransactionParams.Ether component4() {
                 return getTransactionParams();
             }
 
@@ -330,7 +330,7 @@ public abstract class CryptoTokenApproveMetadata {
                 return getFeeTokenCode();
             }
 
-            public final NotAllowed copy(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode) {
+            public final NotAllowed copy(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams.Ether transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode) {
                 Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(value, "value");
@@ -376,7 +376,7 @@ public abstract class CryptoTokenApproveMetadata {
             }
 
             @Override // com.smedialink.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata.NeedApprove
-            public TransactionParams getTransactionParams() {
+            public TransactionParams.Ether getTransactionParams() {
                 return this.transactionParams;
             }
 
@@ -396,7 +396,7 @@ public abstract class CryptoTokenApproveMetadata {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public NotAllowed(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode) {
+            public NotAllowed(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams.Ether transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode) {
                 super(tokenCode, status, value, transactionParams, tokenContractAddress, spenderContractAddress, feeTokenCode, null);
                 Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
                 Intrinsics.checkNotNullParameter(status, "status");
@@ -424,7 +424,7 @@ public abstract class CryptoTokenApproveMetadata {
             private final TokenApproveStatus status;
             private final TokenCode tokenCode;
             private final String tokenContractAddress;
-            private final TransactionParams transactionParams;
+            private final TransactionParams.Ether transactionParams;
             private final String value;
 
             public final TokenCode component1() {
@@ -439,7 +439,7 @@ public abstract class CryptoTokenApproveMetadata {
                 return getValue();
             }
 
-            public final TransactionParams component4() {
+            public final TransactionParams.Ether component4() {
                 return getTransactionParams();
             }
 
@@ -459,7 +459,7 @@ public abstract class CryptoTokenApproveMetadata {
                 return this.lastErrorMessage;
             }
 
-            public final Error copy(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode, String lastErrorMessage) {
+            public final Error copy(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams.Ether transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode, String lastErrorMessage) {
                 Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(value, "value");
@@ -506,7 +506,7 @@ public abstract class CryptoTokenApproveMetadata {
             }
 
             @Override // com.smedialink.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata.NeedApprove
-            public TransactionParams getTransactionParams() {
+            public TransactionParams.Ether getTransactionParams() {
                 return this.transactionParams;
             }
 
@@ -530,7 +530,7 @@ public abstract class CryptoTokenApproveMetadata {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Error(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode, String lastErrorMessage) {
+            public Error(TokenCode tokenCode, TokenApproveStatus status, String value, TransactionParams.Ether transactionParams, String tokenContractAddress, String spenderContractAddress, TokenCode feeTokenCode, String lastErrorMessage) {
                 super(tokenCode, status, value, transactionParams, tokenContractAddress, spenderContractAddress, feeTokenCode, null);
                 Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
                 Intrinsics.checkNotNullParameter(status, "status");

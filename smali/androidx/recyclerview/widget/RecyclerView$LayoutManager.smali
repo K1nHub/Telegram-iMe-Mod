@@ -421,24 +421,23 @@
 
     if-eq p1, v3, :cond_3
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_1
     if-ltz p3, :cond_2
 
     :goto_0
-    const/high16 p1, 0x40000000    # 2.0f
+    move p1, v3
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_2
     if-ne p3, v1, :cond_4
 
     :cond_3
-    :goto_1
     move p3, p0
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_4
     if-ne p3, v0, :cond_7
@@ -447,27 +446,31 @@
 
     if-ne p1, v3, :cond_5
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
-    const/4 p1, 0x0
+    move p3, p0
 
-    goto :goto_1
+    move p1, p2
+
+    goto :goto_3
 
     :cond_6
-    :goto_2
-    const/high16 p1, -0x80000000
+    :goto_1
+    move p3, p0
 
-    goto :goto_1
+    move p1, v2
+
+    goto :goto_3
 
     :cond_7
-    :goto_3
-    const/4 p1, 0x0
+    :goto_2
+    move p1, p2
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 9475
-    :goto_4
+    :goto_3
     invoke-static {p3, p1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p0
@@ -606,7 +609,7 @@
     :cond_1
     if-ne p1, p0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     return v1
@@ -617,7 +620,7 @@
     :cond_4
     if-lt p1, p0, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_5
     return v1
@@ -2147,7 +2150,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -2338,7 +2341,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
@@ -2937,7 +2940,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 10442
     :goto_0
@@ -2951,14 +2954,9 @@
 
     move-result p2
 
+    :cond_1
     move v2, p2
 
-    goto :goto_1
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_1
     const/4 v1, 0x1
 
     const/4 v3, 0x1
@@ -3170,20 +3168,19 @@
 
     const/4 v0, 0x1
 
-    if-eq p3, p4, :cond_4
+    if-eq p3, p4, :cond_3
 
     const/16 p4, 0x2000
 
-    if-eq p3, p4, :cond_2
+    if-eq p3, p4, :cond_1
 
-    const/4 p1, 0x0
+    move p1, p2
 
-    :cond_1
-    const/4 p3, 0x0
+    move p3, p1
 
     goto :goto_2
 
-    :cond_2
+    :cond_1
     const/4 p3, -0x1
 
     .line 10560
@@ -3191,7 +3188,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     .line 10561
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getHeight()I
@@ -3214,8 +3211,8 @@
 
     goto :goto_0
 
-    :cond_3
-    const/4 p1, 0x0
+    :cond_2
+    move p1, p2
 
     .line 10563
     :goto_0
@@ -3225,7 +3222,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_5
 
     .line 10564
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getWidth()I
@@ -3249,12 +3246,12 @@
     goto :goto_2
 
     .line 10568
-    :cond_4
+    :cond_3
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->canScrollVertically(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     .line 10569
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getHeight()I
@@ -3275,8 +3272,8 @@
 
     goto :goto_1
 
-    :cond_5
-    const/4 p1, 0x0
+    :cond_4
+    move p1, p2
 
     .line 10571
     :goto_1
@@ -3286,7 +3283,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_5
 
     .line 10572
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getWidth()I
@@ -3304,6 +3301,11 @@
     move-result p4
 
     sub-int/2addr p3, p4
+
+    goto :goto_2
+
+    :cond_5
+    move p3, p2
 
     :goto_2
     if-nez p1, :cond_6
@@ -3888,11 +3890,11 @@
 
     const v3, 0x7fffffff
 
-    const/high16 v3, -0x80000000
+    move v4, v3
 
-    const v4, 0x7fffffff
+    move v5, v4
 
-    const v5, 0x7fffffff
+    move v3, v2
 
     :goto_0
     if-ge v1, v0, :cond_5

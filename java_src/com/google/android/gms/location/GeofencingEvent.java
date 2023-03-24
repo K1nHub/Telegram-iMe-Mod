@@ -39,7 +39,7 @@ public class GeofencingEvent {
             r4 = 4
             if (r3 != r2) goto L16
         L14:
-            r3 = -1
+            r3 = r2
             goto L1f
         L16:
             r5 = 1
@@ -47,7 +47,7 @@ public class GeofencingEvent {
             r5 = 2
             if (r3 == r5) goto L1f
             if (r3 != r4) goto L14
-            r3 = 4
+            r3 = r4
         L1f:
             java.lang.String r4 = "com.google.android.location.intent.extra.geofence_list"
             java.io.Serializable r4 = r12.getSerializableExtra(r4)
@@ -61,7 +61,7 @@ public class GeofencingEvent {
             r5.<init>(r6)
             int r6 = r4.size()
             r7 = 0
-            r8 = 0
+            r8 = r7
         L3a:
             if (r8 >= r6) goto L5e
             java.lang.Object r9 = r4.get(r8)

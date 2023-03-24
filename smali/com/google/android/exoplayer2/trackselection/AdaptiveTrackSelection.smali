@@ -133,7 +133,7 @@
     .line 399
     iput-wide v5, v0, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection;->maxDurationForQualityDecreaseUs:J
 
-    mul-long v1, v1, v3
+    mul-long/2addr v1, v3
 
     .line 400
     iput-wide v1, v0, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection;->minDurationToRetainAfterDiscardUs:J
@@ -255,7 +255,7 @@
 
     const-wide/16 v1, 0x0
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 807
     :goto_0
@@ -312,7 +312,7 @@
 .end method
 
 .method private determineIdealSelectedIndex(JJ)I
-    .locals 5
+    .locals 4
 
     .line 590
     invoke-direct {p0, p3, p4}, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection;->getAllocatedBandwidth(J)J
@@ -321,7 +321,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 592
     :goto_0
@@ -331,9 +331,9 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 593
     invoke-virtual {p0, v0, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->isBlacklisted(IJ)Z
@@ -392,7 +392,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 704
     :goto_0
@@ -461,7 +461,7 @@
 
     new-array v7, v7, [J
 
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 718
     :goto_2
@@ -501,7 +501,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v1
 
     .line 724
     :goto_4
@@ -544,7 +544,7 @@
     goto :goto_4
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 731
     :goto_5
@@ -564,7 +564,7 @@
 
     const-wide/16 v5, 0x2
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     aput-wide v3, v7, v2
 
@@ -649,7 +649,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 666
     :goto_0
@@ -674,9 +674,9 @@
 
     iget-wide v2, v2, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection$AdaptationCheckpoint;->totalBandwidth:J
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-gez v4, :cond_1
+    if-gez v2, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
@@ -727,7 +727,7 @@
 
     long-to-float p2, v0
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-long p1, p1
 
@@ -878,7 +878,7 @@
 .end method
 
 .method private static getSortedTrackBitrates([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;)[[J
-    .locals 11
+    .locals 10
 
     .line 747
     array-length v0, p0
@@ -887,7 +887,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 748
     :goto_0
@@ -917,7 +917,7 @@
 
     aput-object v4, v0, v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 755
     :goto_1
@@ -945,9 +945,9 @@
 
     const-wide/16 v8, -0x1
 
-    cmp-long v10, v5, v8
+    cmp-long v8, v5, v8
 
-    if-nez v10, :cond_1
+    if-nez v8, :cond_1
 
     const-wide/16 v5, 0x0
 
@@ -1001,7 +1001,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 776
     :goto_0
@@ -1028,7 +1028,7 @@
 
     new-array v5, v4, [D
 
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 781
     :goto_1
@@ -1081,7 +1081,7 @@
 
     sub-double/2addr v6, v10
 
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_3
     if-ge v10, v4, :cond_4
@@ -1097,7 +1097,7 @@
 
     add-double/2addr v13, v15
 
-    mul-double v13, v13, v11
+    mul-double/2addr v13, v11
 
     cmpl-double v11, v6, v8
 
@@ -1163,7 +1163,7 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection;->bandwidthFraction:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-long v0, v0
 
@@ -1180,9 +1180,9 @@
 
     if-eqz v6, :cond_1
 
-    cmp-long v6, p1, v4
+    cmp-long v4, p1, v4
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     goto :goto_0
 
@@ -1207,7 +1207,7 @@
 
     long-to-float v0, v0
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     div-float/2addr v0, p1
 
@@ -1244,9 +1244,9 @@
     return-wide p1
 
     :cond_0
-    cmp-long v2, p3, v0
+    cmp-long v0, p3, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     sub-long/2addr p1, p3
 
@@ -1256,7 +1256,7 @@
     .line 618
     iget p2, p0, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection;->bufferedFractionToLiveEdgeForQualityIncrease:F
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-long p1, p1
 
@@ -1273,13 +1273,13 @@
 
 # virtual methods
 .method protected canSelectFormat(Lcom/google/android/exoplayer2/Format;IJ)Z
-    .locals 1
+    .locals 0
 
     int-to-long p1, p2
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gtz v0, :cond_0
+    if-gtz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1420,9 +1420,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-gez v8, :cond_3
+    if-gez v4, :cond_3
 
     return v2
 
@@ -1556,7 +1556,7 @@
 .end method
 
 .method protected shouldEvaluateQueueSize(JLjava/util/List;)Z
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -1572,17 +1572,17 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     sub-long/2addr p1, v0
 
     const-wide/16 v0, 0x3e8
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gez v2, :cond_1
+    if-gez p1, :cond_1
 
     .line 568
     invoke-interface {p3}, Ljava/util/List;->isEmpty()Z
@@ -1678,7 +1678,7 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, -0x1
+    move v3, v4
 
     goto :goto_0
 
@@ -1744,9 +1744,9 @@
 
     if-le p2, p1, :cond_3
 
-    cmp-long v0, p3, p5
+    cmp-long p5, p3, p5
 
-    if-gez v0, :cond_3
+    if-gez p5, :cond_3
 
     goto :goto_1
 
@@ -1756,9 +1756,9 @@
     .line 469
     iget-wide p1, p0, Lcom/google/android/exoplayer2/trackselection/AdaptiveTrackSelection;->maxDurationForQualityDecreaseUs:J
 
-    cmp-long p5, p3, p1
+    cmp-long p1, p3, p1
 
-    if-ltz p5, :cond_4
+    if-ltz p1, :cond_4
 
     :goto_1
     move p7, v2

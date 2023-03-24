@@ -1,7 +1,7 @@
 package com.smedialink.p031ui.dialogs;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum ARCHIVE_ALBUMS uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -66,23 +66,23 @@ public final class EmptyCellType {
     }
 
     static {
-        int i = C3286R.C3291raw.filter_no_chats;
-        int i2 = C3286R.string.cloud_albums_empty_title;
-        ARCHIVE_ALBUMS = new EmptyCellType("ARCHIVE_ALBUMS", 0, i, i2, C3286R.string.cloud_albums_empty_subtitle_archibe);
-        ARCHIVE = new EmptyCellType("ARCHIVE", 1, i, C3286R.string.archive_empty_title, C3286R.string.archive_empty_subtitle);
-        ALBUMS = new EmptyCellType("ALBUMS", 2, i, i2, C3286R.string.cloud_albums_empty_subtitle);
-        MUSIC_ALBUMS = new EmptyCellType("MUSIC_ALBUMS", 3, i, C3286R.string.music_albums_empty_title, C3286R.string.music_albums_empty_subtitle);
-        MUSIC_CHANNELS = new EmptyCellType("MUSIC_CHANNELS", 4, i, C3286R.string.music_channels_empty_title, C3286R.string.music_channels_empty_subtitle);
-        MUSIC_BOTS = new EmptyCellType("MUSIC_BOTS", 5, i, C3286R.string.music_bots_empty_title, C3286R.string.music_bots_empty_subtitle);
-        MUSIC_DEVICE = new EmptyCellType("MUSIC_DEVICE", 6, i, C3286R.string.music_device_empty_title, C3286R.string.music_device_empty_subtitle);
-        BOOKMARKS = new EmptyCellType("BOOKMARKS", 7, i, C3286R.string.chat_bookmarks_empty, C3286R.string.chat_bookmarks_empty_subtitle);
-        DRAFTS = new EmptyCellType("DRAFTS", 8, i, C3286R.string.chat_drafts_empty, C3286R.string.chat_drafts_empty_subtitle);
+        int i = C3301R.C3306raw.filter_no_chats;
+        int i2 = C3301R.string.cloud_albums_empty_title;
+        ARCHIVE_ALBUMS = new EmptyCellType("ARCHIVE_ALBUMS", 0, i, i2, C3301R.string.cloud_albums_empty_subtitle_archibe);
+        ARCHIVE = new EmptyCellType("ARCHIVE", 1, i, C3301R.string.archive_empty_title, C3301R.string.archive_empty_subtitle);
+        ALBUMS = new EmptyCellType("ALBUMS", 2, i, i2, C3301R.string.cloud_albums_empty_subtitle);
+        MUSIC_ALBUMS = new EmptyCellType("MUSIC_ALBUMS", 3, i, C3301R.string.music_albums_empty_title, C3301R.string.music_albums_empty_subtitle);
+        MUSIC_CHANNELS = new EmptyCellType("MUSIC_CHANNELS", 4, i, C3301R.string.music_channels_empty_title, C3301R.string.music_channels_empty_subtitle);
+        MUSIC_BOTS = new EmptyCellType("MUSIC_BOTS", 5, i, C3301R.string.music_bots_empty_title, C3301R.string.music_bots_empty_subtitle);
+        MUSIC_DEVICE = new EmptyCellType("MUSIC_DEVICE", 6, i, C3301R.string.music_device_empty_title, C3301R.string.music_device_empty_subtitle);
+        BOOKMARKS = new EmptyCellType("BOOKMARKS", 7, i, C3301R.string.chat_bookmarks_empty, C3301R.string.chat_bookmarks_empty_subtitle);
+        DRAFTS = new EmptyCellType("DRAFTS", 8, i, C3301R.string.chat_drafts_empty, C3301R.string.chat_drafts_empty_subtitle);
         $VALUES = $values();
         Companion = new Companion(null);
     }
 
     /* renamed from: id */
-    public final int m706id() {
+    public final int m705id() {
         return ordinal() + 100;
     }
 

@@ -166,16 +166,19 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         };
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:48:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0162 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0154 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0166 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0156 A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r9v4 */
+    /* JADX WARN: Type inference failed for: r9v5, types: [int] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private java.util.Map<java.lang.String, com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.BoundField> getBoundFields(com.google.gson.Gson r29, com.google.gson.reflect.TypeToken<?> r30, java.lang.Class<?> r31, boolean r32, boolean r33) {
         /*
-            Method dump skipped, instructions count: 411
+            Method dump skipped, instructions count: 415
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(com.google.gson.Gson, com.google.gson.reflect.TypeToken, java.lang.Class, boolean, boolean):java.util.Map");

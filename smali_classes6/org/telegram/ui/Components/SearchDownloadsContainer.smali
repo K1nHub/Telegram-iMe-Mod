@@ -535,7 +535,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 239
     :goto_0
@@ -636,7 +636,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 226
     :goto_0
@@ -878,12 +878,12 @@
 
     if-eqz p3, :cond_4
 
-    const/4 p3, 0x1
+    move p3, v5
 
     goto :goto_0
 
     :cond_4
-    const/4 p3, 0x0
+    move p3, v2
 
     .line 144
     :goto_0
@@ -893,13 +893,13 @@
 
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    const/4 v6, 0x0
+    const-wide/16 v6, 0x0
 
-    const-wide/16 v7, 0x0
+    cmp-long v3, v3, v6
 
-    cmp-long v9, v3, v7
+    const/4 v4, 0x0
 
-    if-eqz v9, :cond_5
+    if-eqz v3, :cond_5
 
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -907,24 +907,24 @@
 
     move-result-object v3
 
-    iget-object v4, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v8, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    iget-wide v9, v4, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+    iget-wide v8, v8, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v8
 
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v3, v8}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v3
 
     goto :goto_1
 
     :cond_5
-    move-object v3, v6
+    move-object v3, v4
 
     :goto_1
     if-nez v3, :cond_7
@@ -934,11 +934,11 @@
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
+    iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    cmp-long v9, v3, v7
+    cmp-long v3, v8, v6
 
-    if-eqz v9, :cond_6
+    if-eqz v3, :cond_6
 
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -958,10 +958,10 @@
 
     invoke-virtual {v3, v0}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v6
+    move-result-object v4
 
     :cond_6
-    move-object v3, v6
+    move-object v3, v4
 
     :cond_7
     if-eqz v3, :cond_8
@@ -975,7 +975,7 @@
     if-eqz p3, :cond_a
 
     :cond_9
-    const/4 v2, 0x1
+    move v2, v5
 
     :cond_a
     move p1, v2
@@ -1353,7 +1353,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 295
     :goto_0
@@ -1440,7 +1440,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 304
     :goto_1
@@ -2761,7 +2761,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/FileLoader;->getRecentLoadingFiles(Ljava/util/ArrayList;)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 264
     :goto_2
@@ -2791,7 +2791,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 267
     :goto_3

@@ -220,7 +220,10 @@ public final class zzel extends zzgp {
         } else if (!zzo.zzx()) {
             Log.println(6, zzq(), "Scheduler not initialized. Not logging error/warn");
         } else {
-            zzo.zzp(new zzei(this, i >= 9 ? 8 : i, str, obj, obj2, obj3));
+            if (i >= 9) {
+                i = 8;
+            }
+            zzo.zzp(new zzei(this, i, str, obj, obj2, obj3));
         }
     }
 }

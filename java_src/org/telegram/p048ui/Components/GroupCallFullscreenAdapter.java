@@ -312,7 +312,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
             super.dispatchDraw(canvas);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:21:0x003a  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x0039  */
         /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -325,38 +325,38 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 r1 = 1037726734(0x3dda740e, float:0.10666667)
                 r2 = 0
                 r3 = 1065353216(0x3f800000, float:1.0)
-                if (r0 == 0) goto L1f
+                if (r0 == 0) goto L1e
                 float r4 = r6.selectionProgress
                 int r5 = (r4 > r3 ? 1 : (r4 == r3 ? 0 : -1))
-                if (r5 == 0) goto L1f
+                if (r5 == 0) goto L1e
                 float r4 = r4 + r1
                 int r0 = (r4 > r3 ? 1 : (r4 == r3 ? 0 : -1))
-                if (r0 <= 0) goto L18
-                r4 = 1065353216(0x3f800000, float:1.0)
-                goto L1b
-            L18:
+                if (r0 <= 0) goto L17
+                r4 = r3
+                goto L1a
+            L17:
                 r6.invalidate()
-            L1b:
+            L1a:
                 r6.setSelectedProgress(r4)
-                goto L34
-            L1f:
-                if (r0 != 0) goto L34
+                goto L33
+            L1e:
+                if (r0 != 0) goto L33
                 float r0 = r6.selectionProgress
                 int r4 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-                if (r4 == 0) goto L34
+                if (r4 == 0) goto L33
                 float r0 = r0 - r1
                 int r1 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-                if (r1 >= 0) goto L2e
-                r0 = 0
-                goto L31
-            L2e:
+                if (r1 >= 0) goto L2d
+                r0 = r2
+                goto L30
+            L2d:
                 r6.invalidate()
-            L31:
+            L30:
                 r6.setSelectedProgress(r0)
-            L34:
+            L33:
                 float r0 = r6.selectionProgress
                 int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-                if (r0 <= 0) goto L7a
+                if (r0 <= 0) goto L78
                 int r0 = r6.getMeasuredWidth()
                 float r0 = (float) r0
                 r1 = 1073741824(0x40000000, float:2.0)
@@ -386,7 +386,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
                 float r0 = (float) r0
                 android.graphics.Paint r3 = r6.selectionPaint
                 r7.drawRoundRect(r2, r1, r0, r3)
-            L7a:
+            L78:
                 return
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.GroupCallFullscreenAdapter.GroupCallUserCell.drawSelection(android.graphics.Canvas):void");

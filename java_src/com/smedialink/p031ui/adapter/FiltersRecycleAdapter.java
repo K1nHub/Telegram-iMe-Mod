@@ -6,13 +6,13 @@ import com.smedialink.model.common.FilterItem;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: FiltersRecycleAdapter.kt */
 /* renamed from: com.smedialink.ui.adapter.FiltersRecycleAdapter */
 /* loaded from: classes3.dex */
 public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, BaseViewHolder> {
     public FiltersRecycleAdapter() {
-        super(C3286R.layout.fork_recycle_item_filter, null, 2, null);
+        super(C3301R.layout.fork_recycle_item_filter, null, 2, null);
     }
 
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
@@ -25,7 +25,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
     public void convert(BaseViewHolder holder, FilterItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(holder, C3286R.C3289id.view_filter, new FiltersRecycleAdapter$convert$1(item));
+        BaseQuickAdapterExtKt.applyForView(holder, C3301R.C3304id.view_filter, new FiltersRecycleAdapter$convert$1(item));
     }
 
     /* renamed from: convert  reason: avoid collision after fix types in other method */
@@ -33,6 +33,6 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(holder, C3286R.C3289id.view_filter, new FiltersRecycleAdapter$convert$2(item));
+        BaseQuickAdapterExtKt.applyForView(holder, C3301R.C3304id.view_filter, new FiltersRecycleAdapter$convert$2(item));
     }
 }

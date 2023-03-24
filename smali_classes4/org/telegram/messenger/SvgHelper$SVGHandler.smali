@@ -224,7 +224,7 @@
 
     move-result p2
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     float-to-int p2, p2
 
@@ -731,7 +731,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, p3
 
     goto :goto_0
 
@@ -747,7 +747,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     packed-switch v1, :pswitch_data_0
@@ -771,7 +771,7 @@
 
     move-result-object p1
 
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 1468
     :goto_1
@@ -1040,7 +1040,7 @@
     :cond_4
     const/16 v3, 0x8
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :sswitch_4
     const-string v4, "path"
@@ -1118,7 +1118,7 @@
     goto :goto_0
 
     :cond_9
-    const/4 v3, 0x3
+    move v3, v6
 
     goto :goto_0
 
@@ -1132,7 +1132,7 @@
     goto :goto_0
 
     :cond_a
-    const/4 v3, 0x2
+    move v3, v9
 
     goto :goto_0
 
@@ -1148,7 +1148,7 @@
     goto :goto_0
 
     :cond_b
-    const/4 v3, 0x1
+    move v3, v10
 
     goto :goto_0
 
@@ -1164,7 +1164,7 @@
     goto :goto_0
 
     :cond_c
-    const/4 v3, 0x0
+    move v3, v8
 
     :goto_0
     const-string v4, "rx"
@@ -1989,11 +1989,11 @@
 
     iput v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->scale:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -2047,7 +2047,7 @@
 
     mul-float v4, v3, v2
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Canvas;->scale(FF)V
 

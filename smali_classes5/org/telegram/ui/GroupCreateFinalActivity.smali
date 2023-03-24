@@ -590,7 +590,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     new-instance v2, Lorg/telegram/ui/GroupCreateFinalActivity$$ExternalSyntheticLambda4;
@@ -1161,7 +1161,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1858,7 +1858,7 @@
 
     if-ne v1, v12, :cond_1
 
-    const/16 v1, 0x10
+    move v1, v2
 
     goto :goto_0
 
@@ -1916,12 +1916,12 @@
 
     if-eqz v3, :cond_2
 
-    const/4 v4, 0x5
+    move v4, v12
 
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x3
+    move/from16 v4, v21
 
     :goto_1
     or-int/lit8 v16, v4, 0x30
@@ -1930,24 +1930,24 @@
 
     if-eqz v3, :cond_3
 
-    const/16 v17, 0x0
+    move/from16 v17, v5
 
     goto :goto_2
 
     :cond_3
-    const/16 v17, 0x10
+    move/from16 v17, v2
 
     :goto_2
     const/16 v18, 0x10
 
     if-eqz v3, :cond_4
 
-    const/16 v19, 0x10
+    move/from16 v19, v2
 
     goto :goto_3
 
     :cond_4
-    const/16 v19, 0x0
+    move/from16 v19, v5
 
     :goto_3
     const/16 v20, 0x10
@@ -1986,36 +1986,36 @@
 
     if-eqz v3, :cond_5
 
-    const/4 v4, 0x5
+    move v4, v12
 
     goto :goto_4
 
     :cond_5
-    const/4 v4, 0x3
+    move/from16 v4, v21
 
     :goto_4
     or-int/lit8 v16, v4, 0x30
 
     if-eqz v3, :cond_6
 
-    const/16 v17, 0x0
+    move/from16 v17, v5
 
     goto :goto_5
 
     :cond_6
-    const/16 v17, 0x10
+    move/from16 v17, v2
 
     :goto_5
     const/16 v18, 0x10
 
     if-eqz v3, :cond_7
 
-    const/16 v19, 0x10
+    move/from16 v19, v2
 
     goto :goto_6
 
     :cond_7
-    const/16 v19, 0x0
+    move/from16 v19, v5
 
     :goto_6
     const/16 v20, 0x10
@@ -2129,12 +2129,12 @@
 
     if-eqz v3, :cond_8
 
-    const/4 v4, 0x5
+    move v4, v12
 
     goto :goto_7
 
     :cond_8
-    const/4 v4, 0x3
+    move/from16 v4, v21
 
     :goto_7
     or-int/lit8 v16, v4, 0x30
@@ -2143,24 +2143,24 @@
 
     if-eqz v3, :cond_9
 
-    const/16 v17, 0x0
+    move/from16 v17, v5
 
     goto :goto_8
 
     :cond_9
-    const/16 v17, 0xf
+    move/from16 v17, v4
 
     :goto_8
     const/16 v18, 0x10
 
     if-eqz v3, :cond_a
 
-    const/16 v19, 0xf
+    move/from16 v19, v4
 
     goto :goto_9
 
     :cond_a
-    const/16 v19, 0x0
+    move/from16 v19, v5
 
     :goto_9
     const/16 v20, 0x10
@@ -2210,36 +2210,36 @@
 
     if-eqz v3, :cond_b
 
-    const/4 v4, 0x5
+    move v4, v12
 
     goto :goto_a
 
     :cond_b
-    const/4 v4, 0x3
+    move/from16 v4, v21
 
     :goto_a
     or-int/lit8 v16, v4, 0x30
 
     if-eqz v3, :cond_c
 
-    const/16 v17, 0x0
+    move/from16 v17, v5
 
     goto :goto_b
 
     :cond_c
-    const/16 v17, 0x10
+    move/from16 v17, v2
 
     :goto_b
     const/16 v18, 0x10
 
     if-eqz v3, :cond_d
 
-    const/16 v19, 0x10
+    move/from16 v19, v2
 
     goto :goto_c
 
     :cond_d
-    const/16 v19, 0x0
+    move/from16 v19, v5
 
     :goto_c
     const/16 v20, 0x10
@@ -2268,7 +2268,7 @@
 
     move-object/from16 v3, p0
 
-    const/4 v10, 0x0
+    move v10, v5
 
     move v5, v15
 
@@ -2356,24 +2356,24 @@
 
     if-eqz v3, :cond_11
 
-    const/16 v26, 0x5
+    move/from16 v26, v12
 
     goto :goto_f
 
     :cond_11
-    const/16 v26, 0x60
+    move/from16 v26, v4
 
     :goto_f
     const/16 v27, 0x0
 
     if-eqz v3, :cond_12
 
-    const/16 v28, 0x60
+    move/from16 v28, v4
 
     goto :goto_10
 
     :cond_12
-    const/16 v28, 0x5
+    move/from16 v28, v12
 
     :goto_10
     const/16 v29, 0x0
@@ -2430,12 +2430,12 @@
 
     if-eqz v2, :cond_13
 
-    const/4 v2, 0x1
+    move v2, v8
 
     goto :goto_11
 
     :cond_13
-    const/4 v2, 0x2
+    move v2, v3
 
     :goto_11
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
@@ -2676,7 +2676,7 @@
     goto :goto_13
 
     :cond_16
-    const/16 v23, 0x3c
+    move/from16 v23, v22
 
     :goto_13
     if-lt v4, v5, :cond_17
@@ -2686,14 +2686,14 @@
     goto :goto_14
 
     :cond_17
-    const/16 v24, 0x3c
+    move/from16 v24, v22
 
     :goto_14
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_18
 
-    const/4 v12, 0x3
+    move/from16 v12, v21
 
     goto :goto_15
 
@@ -2707,24 +2707,24 @@
 
     if-eqz v2, :cond_19
 
-    const/16 v26, 0xe
+    move/from16 v26, v8
 
     goto :goto_16
 
     :cond_19
-    const/16 v26, 0x0
+    move/from16 v26, v10
 
     :goto_16
     const/16 v27, 0x0
 
     if-eqz v2, :cond_1a
 
-    const/16 v28, 0x0
+    move/from16 v28, v10
 
     goto :goto_17
 
     :cond_1a
-    const/16 v28, 0xe
+    move/from16 v28, v8
 
     :goto_17
     const/16 v29, 0xe
@@ -2816,7 +2816,7 @@
     goto :goto_18
 
     :cond_1b
-    const/16 v3, 0x3c
+    move/from16 v3, v22
 
     :goto_18
     if-lt v4, v5, :cond_1c
@@ -2826,7 +2826,7 @@
     goto :goto_19
 
     :cond_1c
-    const/16 v4, 0x3c
+    move/from16 v4, v22
 
     :goto_19
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -4110,7 +4110,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/GroupCreateFinalActivity;->selectedContacts:Ljava/util/ArrayList;
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 163
     :goto_0
@@ -4139,7 +4139,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 168
     :goto_1

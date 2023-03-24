@@ -138,11 +138,11 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
     cmpg-float p1, p1, v0
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     if-gez p1, :cond_2
 
@@ -154,14 +154,14 @@
 
     if-eqz p1, :cond_2
 
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog$2;->val$partlydone:[Z
+    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog$2;->val$partlydone:[Z
 
-    aget-boolean v3, v0, v2
+    aget-boolean v3, v2, v1
 
     if-nez v3, :cond_2
 
     .line 4942
-    aput-boolean v1, v0, v2
+    aput-boolean v0, v2, v1
 
     .line 4943
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -184,7 +184,7 @@
 
     move-result-object p1
 
-    iput-boolean v2, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
+    iput-boolean v1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->notDraw:Z
 
     .line 4949
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;
@@ -201,9 +201,9 @@
 
     move-result-object p1
 
-    sget v0, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
+    sget v2, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     const/4 v3, 0x4
 
@@ -211,9 +211,9 @@
 
     move-result-object v3
 
-    aput-object v3, v1, v2
+    aput-object v3, v0, v1
 
-    invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     .line 4953
     :cond_4

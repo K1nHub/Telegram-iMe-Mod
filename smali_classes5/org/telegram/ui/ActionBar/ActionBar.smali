@@ -238,12 +238,12 @@
 
     if-lt p1, v2, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBar;->occupyStatusBar:Z
@@ -1200,7 +1200,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     invoke-virtual {p1, v0, p2, v0, v0}, Landroid/widget/LinearLayout;->setPadding(IIII)V
@@ -1499,7 +1499,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_0
     int-to-float v5, v5
@@ -1692,7 +1692,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v2, v3
 
@@ -2035,7 +2035,7 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 893
     :goto_0
@@ -2149,9 +2149,9 @@
 
     const-wide v7, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpg-double v5, v2, v7
+    cmpg-double v2, v2, v7
 
-    if-gez v5, :cond_6
+    if-gez v2, :cond_6
 
     .line 915
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -2522,7 +2522,7 @@
 .end method
 
 .method protected onDetachedFromWindow()V
-    .locals 6
+    .locals 5
 
     .line 1747
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
@@ -2568,9 +2568,9 @@
 
     const-wide v3, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpg-double v5, v1, v3
+    cmpg-double v1, v1, v3
 
-    if-gez v5, :cond_1
+    if-gez v1, :cond_1
 
     .line 1755
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -2755,7 +2755,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_4
     :goto_1
@@ -2779,7 +2779,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1344
     :goto_0
@@ -2821,7 +2821,7 @@
 
     if-eqz v3, :cond_1
 
-    const/16 v3, 0x50
+    move v3, v4
 
     goto :goto_1
 
@@ -2928,7 +2928,7 @@
     invoke-virtual {v7, v6, v1, v8, v9}, Landroid/widget/LinearLayout;->layout(IIII)V
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_6
     const/4 v7, 0x1
@@ -3367,7 +3367,7 @@
 
     move-result v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_9
     if-ge v3, v1, :cond_1a
@@ -3608,7 +3608,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v9
 
     :goto_0
     invoke-virtual {v3, v9, v4, v9, v9}, Landroid/widget/LinearLayout;->setPadding(IIII)V
@@ -3627,7 +3627,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_1
     add-int/2addr v1, v3
@@ -3768,7 +3768,7 @@
     goto :goto_5
 
     :cond_7
-    const/16 v12, 0x42
+    move v12, v13
 
     :goto_5
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3821,7 +3821,7 @@
     goto :goto_6
 
     :cond_9
-    const/16 v12, 0x42
+    move v12, v13
 
     :goto_6
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3870,7 +3870,7 @@
     invoke-virtual {v4, v12, v2}, Landroid/widget/LinearLayout;->measure(II)V
 
     :cond_c
-    const/4 v2, 0x0
+    move v2, v9
 
     :goto_8
     const/4 v4, 0x2
@@ -3916,7 +3916,7 @@
     goto :goto_9
 
     :cond_f
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_9
     sub-int v12, v0, v12
@@ -3986,7 +3986,7 @@
     goto :goto_a
 
     :cond_12
-    const/16 v4, 0x14
+    move v4, v15
 
     :goto_a
     invoke-virtual {v13, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
@@ -4037,7 +4037,7 @@
 
     if-eqz v14, :cond_14
 
-    const/16 v14, 0x14
+    move v14, v15
 
     goto :goto_b
 
@@ -4057,12 +4057,12 @@
 
     if-eqz v14, :cond_16
 
-    const/16 v14, 0x10
+    move v14, v13
 
     goto :goto_c
 
     :cond_16
-    const/16 v14, 0xe
+    move/from16 v14, v17
 
     :goto_c
     invoke-virtual {v4, v14}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
@@ -4082,12 +4082,12 @@
     goto :goto_d
 
     :cond_17
-    const/16 v13, 0xe
+    move/from16 v13, v17
 
     :goto_d
     invoke-virtual {v4, v13}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    goto :goto_10
+    goto/16 :goto_10
 
     .line 1286
     :cond_18
@@ -4133,7 +4133,7 @@
     goto :goto_e
 
     :cond_19
-    const/16 v3, 0x14
+    move v3, v15
 
     :goto_e
     invoke-virtual {v14, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
@@ -4171,12 +4171,12 @@
 
     if-ne v14, v4, :cond_1b
 
-    const/16 v14, 0xe
+    move/from16 v14, v17
 
     goto :goto_f
 
     :cond_1b
-    const/16 v14, 0x10
+    move v14, v13
 
     :goto_f
     invoke-virtual {v3, v14}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
@@ -4206,7 +4206,7 @@
 
     if-ne v14, v4, :cond_1d
 
-    const/16 v13, 0xe
+    move/from16 v13, v17
 
     :cond_1d
     invoke-virtual {v3, v13}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
@@ -4443,7 +4443,7 @@
 
     move-result v7
 
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_12
     if-ge v11, v7, :cond_27
@@ -4654,7 +4654,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
@@ -4675,12 +4675,12 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     goto :goto_1
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     const/4 v7, 0x1
@@ -4707,7 +4707,7 @@
 
     invoke-virtual {v6, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 1079
     :goto_2
@@ -4752,12 +4752,12 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v13, 0x0
+    move v13, v4
 
     goto :goto_3
 
     :cond_6
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v5
 
     :goto_3
     aput v13, v12, v2
@@ -4781,12 +4781,12 @@
 
     if-eqz p1, :cond_7
 
-    const v13, 0x3f733333    # 0.95f
+    move v13, v8
 
     goto :goto_4
 
     :cond_7
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v5
 
     :goto_4
     aput v13, v12, v2
@@ -4813,7 +4813,7 @@
     goto :goto_5
 
     :cond_8
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v5
 
     :goto_5
     aput v8, v12, v2
@@ -4852,12 +4852,12 @@
 
     if-eqz p1, :cond_a
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    move v11, v5
 
     goto :goto_6
 
     :cond_a
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_6
     aput v11, v10, v2
@@ -4920,7 +4920,7 @@
 
     if-eqz p1, :cond_c
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v5
 
     .line 1134
     :cond_c
@@ -5146,7 +5146,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -5652,7 +5652,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     invoke-virtual {v0, v1, p1, v1, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
@@ -6048,7 +6048,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
@@ -6194,12 +6194,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/high16 v3, 0x3f800000    # 1.0f
@@ -6237,12 +6237,12 @@
 
     if-eqz p2, :cond_3
 
-    const/4 v6, 0x0
+    move v6, v4
 
     goto :goto_1
 
     :cond_3
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v3
 
     :goto_1
     invoke-virtual {v5, v6}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -6608,22 +6608,22 @@
 
     invoke-virtual {v4, p2, v2}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->wrap(Landroid/text/SpannableString;I)V
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_2
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_2
     if-eqz p1, :cond_8
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_3
 
     :cond_8
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1490
     :goto_3
@@ -7107,7 +7107,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_1
     :goto_0
@@ -7226,7 +7226,7 @@
 
     if-eqz v3, :cond_2
 
-    const/4 v11, 0x0
+    move v11, v12
 
     .line 733
     :goto_0
@@ -7315,9 +7315,9 @@
 
     const-wide v5, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpg-double v3, v1, v5
+    cmpg-double v1, v1, v5
 
-    if-gez v3, :cond_5
+    if-gez v1, :cond_5
 
     .line 754
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -7464,7 +7464,7 @@
 
     if-eqz v3, :cond_b
 
-    const/4 v7, 0x0
+    move v7, v12
 
     .line 826
     :goto_2
@@ -7527,9 +7527,9 @@
 
     const-wide v5, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpg-double v3, v1, v5
+    cmpg-double v1, v1, v5
 
-    if-gez v3, :cond_e
+    if-gez v1, :cond_e
 
     .line 847
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -7614,7 +7614,7 @@
 
     if-eqz v1, :cond_14
 
-    const/4 v1, 0x0
+    move v1, v12
 
     .line 866
     :goto_4

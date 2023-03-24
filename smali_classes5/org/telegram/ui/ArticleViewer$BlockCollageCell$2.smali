@@ -123,11 +123,11 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
-    const/4 v0, 0x0
+    move v0, p3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 8284
     :goto_1
@@ -140,7 +140,7 @@
     .line 8285
     aget v2, v2, v0
 
-    mul-float v2, v2, p4
+    mul-float/2addr v2, p4
 
     float-to-double v2, v2
 
@@ -170,7 +170,7 @@
 
     move-result v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     add-int/2addr v1, v0
 
@@ -240,7 +240,7 @@
     .line 8295
     iget p2, v2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
 
-    mul-float p4, p4, p2
+    mul-float/2addr p4, p2
 
     float-to-double p2, p4
 

@@ -1087,12 +1087,12 @@
     :goto_2
     if-ge p1, v0, :cond_d
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_3
 
     :cond_d
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_3
     const v8, 0x1e13380
@@ -1100,7 +1100,7 @@
     if-eqz v7, :cond_e
 
     :goto_4
-    const/4 v9, 0x0
+    move v9, v3
 
     goto :goto_5
 
@@ -1112,7 +1112,7 @@
     goto :goto_4
 
     :cond_f
-    const/4 v9, 0x2
+    move v9, v1
 
     .line 893
     :goto_5
@@ -1131,12 +1131,12 @@
 
     if-ge p1, v0, :cond_10
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_6
 
     :cond_10
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_6
     if-eqz v7, :cond_11
@@ -1249,12 +1249,12 @@
 
     if-eq p2, p1, :cond_15
 
-    const/4 v10, 0x1
+    move v10, v4
 
     goto :goto_9
 
     :cond_15
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_9
     move-object v6, v2
@@ -1300,7 +1300,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, p2, v0, v3}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {p1, p2, v0, v3}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     goto/16 :goto_a
 

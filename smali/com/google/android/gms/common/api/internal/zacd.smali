@@ -274,7 +274,7 @@
 
 # virtual methods
 .method public final onComplete(Lcom/google/android/gms/tasks/Task;)V
-    .locals 22
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -347,30 +347,30 @@
 
     iget-wide v4, v0, Lcom/google/android/gms/common/api/internal/zacd;->zad:J
 
-    const/4 v6, 0x1
+    const-wide/16 v6, 0x0
 
-    const-wide/16 v7, 0x0
+    cmp-long v4, v4, v6
 
-    const/4 v9, 0x0
+    const/4 v5, 0x1
 
-    cmp-long v10, v4, v7
+    const/4 v8, 0x0
 
-    if-lez v10, :cond_4
+    if-lez v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v8
 
     .line 7
     :goto_1
     invoke-virtual {v3}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getGCoreServiceId()I
 
-    move-result v20
+    move-result v19
 
-    const/16 v5, 0x64
+    const/16 v9, 0x64
 
     if-eqz v1, :cond_8
 
@@ -430,14 +430,14 @@
 
     iget-wide v3, v0, Lcom/google/android/gms/common/api/internal/zacd;->zad:J
 
-    cmp-long v11, v3, v7
+    cmp-long v3, v3, v6
 
-    if-lez v11, :cond_6
+    if-lez v3, :cond_6
 
     goto :goto_2
 
     :cond_6
-    const/4 v6, 0x0
+    move v5, v8
 
     .line 15
     :goto_2
@@ -445,7 +445,7 @@
 
     move-result v11
 
-    move v4, v6
+    move v4, v5
 
     :cond_7
     move v2, v10
@@ -457,14 +457,14 @@
     :cond_8
     const/16 v10, 0x1388
 
-    const/4 v1, 0x0
+    move v1, v8
 
-    const/16 v2, 0x1388
+    move v3, v9
 
-    const/16 v3, 0x64
+    move v2, v10
 
     :goto_3
-    iget-object v6, v0, Lcom/google/android/gms/common/api/internal/zacd;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+    iget-object v5, v0, Lcom/google/android/gms/common/api/internal/zacd;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
 
     .line 16
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/tasks/Task;->isSuccessful()Z
@@ -475,9 +475,7 @@
 
     if-eqz v10, :cond_9
 
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
+    move v12, v8
 
     goto :goto_6
 
@@ -485,14 +483,14 @@
     :cond_9
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/tasks/Task;->isCanceled()Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_a
+    if-eqz v8, :cond_a
 
-    const/16 v12, 0x64
+    move v8, v9
 
     :goto_4
-    const/4 v13, -0x1
+    move v12, v11
 
     goto :goto_6
 
@@ -500,53 +498,51 @@
     :cond_a
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/tasks/Task;->getException()Ljava/lang/Exception;
 
-    move-result-object v5
+    move-result-object v8
 
     .line 19
-    instance-of v9, v5, Lcom/google/android/gms/common/api/ApiException;
+    instance-of v9, v8, Lcom/google/android/gms/common/api/ApiException;
 
     if-eqz v9, :cond_c
 
     .line 20
-    check-cast v5, Lcom/google/android/gms/common/api/ApiException;
+    check-cast v8, Lcom/google/android/gms/common/api/ApiException;
 
-    invoke-virtual {v5}, Lcom/google/android/gms/common/api/ApiException;->getStatus()Lcom/google/android/gms/common/api/Status;
+    invoke-virtual {v8}, Lcom/google/android/gms/common/api/ApiException;->getStatus()Lcom/google/android/gms/common/api/Status;
 
-    move-result-object v5
+    move-result-object v8
 
     .line 21
-    invoke-virtual {v5}, Lcom/google/android/gms/common/api/Status;->getStatusCode()I
+    invoke-virtual {v8}, Lcom/google/android/gms/common/api/Status;->getStatusCode()I
 
     move-result v9
 
     .line 22
-    invoke-virtual {v5}, Lcom/google/android/gms/common/api/Status;->getConnectionResult()Lcom/google/android/gms/common/ConnectionResult;
+    invoke-virtual {v8}, Lcom/google/android/gms/common/api/Status;->getConnectionResult()Lcom/google/android/gms/common/ConnectionResult;
 
-    move-result-object v5
+    move-result-object v8
 
-    if-nez v5, :cond_b
+    if-nez v8, :cond_b
 
-    const/4 v5, -0x1
+    move v8, v11
 
     goto :goto_5
 
     .line 23
     :cond_b
-    invoke-virtual {v5}, Lcom/google/android/gms/common/ConnectionResult;->getErrorCode()I
+    invoke-virtual {v8}, Lcom/google/android/gms/common/ConnectionResult;->getErrorCode()I
 
-    move-result v5
+    move-result v8
 
     :goto_5
-    move v13, v5
+    move v12, v8
 
-    move v12, v9
+    move v8, v9
 
     goto :goto_6
 
     :cond_c
-    const/16 v9, 0x65
-
-    const/16 v12, 0x65
+    const/16 v8, 0x65
 
     goto :goto_4
 
@@ -554,57 +550,61 @@
     if-eqz v4, :cond_d
 
     .line 16
-    iget-wide v7, v0, Lcom/google/android/gms/common/api/internal/zacd;->zad:J
+    iget-wide v6, v0, Lcom/google/android/gms/common/api/internal/zacd;->zad:J
 
     .line 24
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v9
 
     .line 25
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v9
+    move-result-wide v13
 
-    iget-wide v14, v0, Lcom/google/android/gms/common/api/internal/zacd;->zae:J
+    move-wide v15, v6
 
-    sub-long/2addr v9, v14
+    iget-wide v6, v0, Lcom/google/android/gms/common/api/internal/zacd;->zae:J
 
-    long-to-int v10, v9
+    sub-long/2addr v13, v6
 
-    move-wide/from16 v16, v4
+    long-to-int v4, v13
 
-    move-wide v14, v7
+    move/from16 v20, v4
 
-    move/from16 v21, v10
+    move-wide v13, v15
+
+    move-wide v15, v9
 
     goto :goto_7
 
     :cond_d
-    move-wide v14, v7
+    move-wide v13, v6
 
-    move-wide/from16 v16, v14
+    move-wide v15, v13
 
-    const/16 v21, -0x1
+    move/from16 v20, v11
 
     .line 26
     :goto_7
     new-instance v4, Lcom/google/android/gms/common/internal/MethodInvocation;
 
-    iget v11, v0, Lcom/google/android/gms/common/api/internal/zacd;->zab:I
+    iget v10, v0, Lcom/google/android/gms/common/api/internal/zacd;->zab:I
+
+    const/16 v17, 0x0
 
     const/16 v18, 0x0
 
-    const/16 v19, 0x0
+    move-object v9, v4
 
-    move-object v10, v4
+    move v11, v8
 
     .line 27
-    invoke-direct/range {v10 .. v21}, Lcom/google/android/gms/common/internal/MethodInvocation;-><init>(IIIJJLjava/lang/String;Ljava/lang/String;II)V
+    invoke-direct/range {v9 .. v20}, Lcom/google/android/gms/common/internal/MethodInvocation;-><init>(IIIJJLjava/lang/String;Ljava/lang/String;II)V
 
     int-to-long v14, v2
 
-    move-object v11, v6
+    move-object v11, v5
 
     move-object v12, v4
 

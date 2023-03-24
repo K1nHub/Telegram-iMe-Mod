@@ -229,7 +229,7 @@
 
     add-int/2addr v4, v2
 
-    mul-int v4, v4, v8
+    mul-int/2addr v4, v8
 
     iget v3, v3, Landroid/graphics/Rect;->left:I
 
@@ -266,7 +266,7 @@
 
     move-result v3
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     .line 917
     iget v3, p0, Landroidx/palette/graphics/Palette$Builder;->mResizeArea:I
@@ -334,7 +334,7 @@
 
     int-to-double v3, v0
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     invoke-static {v3, v4}, Ljava/lang/Math;->ceil(D)D
 
@@ -349,7 +349,7 @@
 
     int-to-double v3, v3
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     invoke-static {v3, v4}, Ljava/lang/Math;->ceil(D)D
 
@@ -414,7 +414,7 @@
 
     int-to-double v4, v4
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
 
@@ -429,7 +429,7 @@
 
     int-to-double v4, v4
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
 
@@ -444,7 +444,7 @@
 
     int-to-double v4, v4
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
 
@@ -469,7 +469,7 @@
 
     int-to-double v4, v4
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
 

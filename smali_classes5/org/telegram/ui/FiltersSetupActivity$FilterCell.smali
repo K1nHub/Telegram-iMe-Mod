@@ -129,12 +129,12 @@
 
     if-eqz v7, :cond_0
 
-    const/4 v7, 0x5
+    move v7, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x3
+    move v7, v9
 
     :goto_0
     const/16 v10, 0x10
@@ -192,12 +192,12 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x5
+    move v7, v8
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x3
+    move v7, v9
 
     :goto_1
     or-int/2addr v7, v10
@@ -244,12 +244,12 @@
 
     if-eqz v7, :cond_2
 
-    const/4 v13, 0x5
+    move v13, v8
 
     goto :goto_2
 
     :cond_2
-    const/4 v13, 0x3
+    move v13, v9
 
     :goto_2
     or-int/lit8 v13, v13, 0x30
@@ -260,24 +260,24 @@
 
     if-eqz v7, :cond_3
 
-    const/16 v14, 0x50
+    move/from16 v14, v18
 
     goto :goto_3
 
     :cond_3
-    const/16 v14, 0x40
+    move/from16 v14, v19
 
     :goto_3
     const/16 v15, 0xe
 
     if-eqz v7, :cond_4
 
-    const/16 v16, 0x40
+    move/from16 v16, v19
 
     goto :goto_4
 
     :cond_4
-    const/16 v16, 0x50
+    move/from16 v16, v18
 
     :goto_4
     const/16 v17, 0x0
@@ -318,12 +318,12 @@
 
     if-eqz v7, :cond_5
 
-    const/4 v7, 0x5
+    move v7, v8
 
     goto :goto_5
 
     :cond_5
-    const/4 v7, 0x3
+    move v7, v9
 
     :goto_5
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setGravity(I)V
@@ -366,36 +366,36 @@
 
     if-eqz v5, :cond_6
 
-    const/4 v7, 0x5
+    move v7, v8
 
     goto :goto_6
 
     :cond_6
-    const/4 v7, 0x3
+    move v7, v9
 
     :goto_6
     or-int/lit8 v13, v7, 0x30
 
     if-eqz v5, :cond_7
 
-    const/16 v14, 0x50
+    move/from16 v14, v18
 
     goto :goto_7
 
     :cond_7
-    const/16 v14, 0x40
+    move/from16 v14, v19
 
     :goto_7
     const/16 v15, 0x23
 
     if-eqz v5, :cond_8
 
-    const/16 v16, 0x40
+    move/from16 v16, v19
 
     goto :goto_8
 
     :cond_8
-    const/16 v16, 0x50
+    move/from16 v16, v18
 
     :goto_8
     const/16 v17, 0x0
@@ -491,7 +491,7 @@
 
     if-eqz v4, :cond_9
 
-    const/4 v8, 0x3
+    move v8, v9
 
     :cond_9
     or-int/lit8 v13, v8, 0x10
@@ -637,7 +637,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_0
 
@@ -807,7 +807,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, -0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -836,7 +836,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 532
     :goto_2

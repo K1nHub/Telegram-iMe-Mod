@@ -373,7 +373,7 @@
 
     move-result-object v2
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     const/16 v7, 0x14
@@ -547,9 +547,9 @@
 
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    invoke-interface {v1, v2, v6}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     .line 395
     new-instance v2, Lorg/telegram/tgnet/SerializedData;

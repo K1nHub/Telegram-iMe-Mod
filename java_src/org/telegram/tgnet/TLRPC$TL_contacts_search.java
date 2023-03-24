@@ -5,7 +5,7 @@ public class TLRPC$TL_contacts_search extends TLObject {
     public int limit;
 
     /* renamed from: q */
-    public String f1548q;
+    public String f1549q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -15,7 +15,7 @@ public class TLRPC$TL_contacts_search extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeString(this.f1548q);
+        abstractSerializedData.writeString(this.f1549q);
         abstractSerializedData.writeInt32(this.limit);
     }
 }

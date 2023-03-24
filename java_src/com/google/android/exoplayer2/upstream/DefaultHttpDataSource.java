@@ -18,6 +18,7 @@ import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.NoRouteToHostException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -323,19 +324,55 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00ad, code lost:
-        return r0;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private java.net.HttpURLConnection makeConnection(com.google.android.exoplayer2.upstream.DataSpec r26) throws java.io.IOException {
-        /*
-            Method dump skipped, instructions count: 223
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.upstream.DefaultHttpDataSource.makeConnection(com.google.android.exoplayer2.upstream.DataSpec):java.net.HttpURLConnection");
+    private HttpURLConnection makeConnection(DataSpec dataSpec) throws IOException {
+        HttpURLConnection makeConnection;
+        URL url = new URL(dataSpec.uri.toString());
+        int i = dataSpec.httpMethod;
+        byte[] bArr = dataSpec.httpBody;
+        long j = dataSpec.position;
+        long j2 = dataSpec.length;
+        boolean isFlagSet = dataSpec.isFlagSet(1);
+        if (this.allowCrossProtocolRedirects || this.keepPostFor302Redirects) {
+            URL url2 = url;
+            int i2 = i;
+            byte[] bArr2 = bArr;
+            int i3 = 0;
+            while (true) {
+                int i4 = i3 + 1;
+                if (i3 <= 20) {
+                    int i5 = i2;
+                    long j3 = j;
+                    URL url3 = url2;
+                    long j4 = j2;
+                    makeConnection = makeConnection(url2, i2, bArr2, j, j2, isFlagSet, false, dataSpec.httpRequestHeaders);
+                    int responseCode = makeConnection.getResponseCode();
+                    String headerField = makeConnection.getHeaderField(RtspHeaders.LOCATION);
+                    if ((i5 == 1 || i5 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == HTTP_STATUS_TEMPORARY_REDIRECT || responseCode == HTTP_STATUS_PERMANENT_REDIRECT)) {
+                        makeConnection.disconnect();
+                        url2 = handleRedirect(url3, headerField, dataSpec);
+                        i2 = i5;
+                    } else if (i5 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
+                        break;
+                    } else {
+                        makeConnection.disconnect();
+                        if (this.keepPostFor302Redirects && responseCode == 302) {
+                            i2 = i5;
+                        } else {
+                            bArr2 = null;
+                            i2 = 1;
+                        }
+                        url2 = handleRedirect(url3, headerField, dataSpec);
+                    }
+                    i3 = i4;
+                    j = j3;
+                    j2 = j4;
+                } else {
+                    throw new HttpDataSource.HttpDataSourceException(new NoRouteToHostException("Too many redirects: " + i4), dataSpec, (int) PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED, 1);
+                }
+            }
+            return makeConnection;
+        }
+        return makeConnection(url, i, bArr, j, j2, isFlagSet, true, dataSpec.httpRequestHeaders);
     }
 
     private HttpURLConnection makeConnection(URL url, int i, byte[] bArr, long j, long j2, boolean z, boolean z2, Map<String, String> map) throws IOException {

@@ -440,7 +440,7 @@
     if-eqz p2, :cond_8
 
     :cond_7
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_8
     invoke-virtual {p1, v0, v5, v6, v3}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V

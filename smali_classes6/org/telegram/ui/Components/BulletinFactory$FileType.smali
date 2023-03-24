@@ -278,7 +278,7 @@
 
     move-object/from16 v9, v19
 
-    const/16 v21, 0xa
+    move/from16 v21, v13
 
     move/from16 v13, v20
 

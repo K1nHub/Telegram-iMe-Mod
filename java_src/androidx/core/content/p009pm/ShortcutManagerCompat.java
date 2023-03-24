@@ -4,15 +4,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
-import android.os.Bundle;
 import androidx.core.content.p009pm.ShortcutInfoCompat;
 import androidx.core.content.p009pm.ShortcutInfoCompatSaver;
 import androidx.core.graphics.drawable.IconCompat;
@@ -22,7 +18,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 /* renamed from: androidx.core.content.pm.ShortcutManagerCompat */
 /* loaded from: classes.dex */
 public class ShortcutManagerCompat {
@@ -108,28 +103,6 @@ public class ShortcutManagerCompat {
         return false;
     }
 
-    public static boolean addDynamicShortcuts(Context context, List<ShortcutInfoCompat> list) {
-        List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface = removeShortcutsExcludedFromSurface(list, 1);
-        int i = Build.VERSION.SDK_INT;
-        if (i <= 29) {
-            convertUriIconsToBitmapIcons(context, removeShortcutsExcludedFromSurface);
-        }
-        if (i >= 25) {
-            ArrayList arrayList = new ArrayList();
-            for (ShortcutInfoCompat shortcutInfoCompat : removeShortcutsExcludedFromSurface) {
-                arrayList.add(shortcutInfoCompat.toShortcutInfo());
-            }
-            if (!((ShortcutManager) context.getSystemService(ShortcutManager.class)).addDynamicShortcuts(arrayList)) {
-                return false;
-            }
-        }
-        getShortcutInfoSaverInstance(context).addShortcuts(removeShortcutsExcludedFromSurface);
-        for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
-            shortcutInfoChangeListener.onShortcutAdded(list);
-        }
-        return true;
-    }
-
     public static int getMaxShortcutCountPerActivity(Context context) {
         Preconditions.checkNotNull(context);
         if (Build.VERSION.SDK_INT >= 25) {
@@ -165,28 +138,6 @@ public class ShortcutManagerCompat {
         }
     }
 
-    public static boolean updateShortcuts(Context context, List<ShortcutInfoCompat> list) {
-        List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface = removeShortcutsExcludedFromSurface(list, 1);
-        int i = Build.VERSION.SDK_INT;
-        if (i <= 29) {
-            convertUriIconsToBitmapIcons(context, removeShortcutsExcludedFromSurface);
-        }
-        if (i >= 25) {
-            ArrayList arrayList = new ArrayList();
-            for (ShortcutInfoCompat shortcutInfoCompat : removeShortcutsExcludedFromSurface) {
-                arrayList.add(shortcutInfoCompat.toShortcutInfo());
-            }
-            if (!((ShortcutManager) context.getSystemService(ShortcutManager.class)).updateShortcuts(arrayList)) {
-                return false;
-            }
-        }
-        getShortcutInfoSaverInstance(context).addShortcuts(removeShortcutsExcludedFromSurface);
-        for (ShortcutInfoChangeListener shortcutInfoChangeListener : getShortcutInfoListeners(context)) {
-            shortcutInfoChangeListener.onShortcutUpdated(list);
-        }
-        return true;
-    }
-
     static boolean convertUriIconToBitmapIcon(Context context, ShortcutInfoCompat shortcutInfoCompat) {
         Bitmap decodeStream;
         IconCompat createWithBitmap;
@@ -209,14 +160,6 @@ public class ShortcutManagerCompat {
             return true;
         }
         return true;
-    }
-
-    static void convertUriIconsToBitmapIcons(Context context, List<ShortcutInfoCompat> list) {
-        for (ShortcutInfoCompat shortcutInfoCompat : new ArrayList(list)) {
-            if (!convertUriIconToBitmapIcon(context, shortcutInfoCompat)) {
-                list.remove(shortcutInfoCompat);
-            }
-        }
     }
 
     public static void removeDynamicShortcuts(Context context, List<String> list) {
@@ -323,44 +266,73 @@ public class ShortcutManagerCompat {
         return sShortcutInfoCompatSaver;
     }
 
-    private static List<ShortcutInfoChangeListener> getShortcutInfoListeners(Context context) {
-        Bundle bundle;
-        String string;
-        if (sShortcutInfoChangeListeners == null) {
-            ArrayList arrayList = new ArrayList();
-            if (Build.VERSION.SDK_INT >= 21) {
-                PackageManager packageManager = context.getPackageManager();
-                Intent intent = new Intent("androidx.core.content.pm.SHORTCUT_LISTENER");
-                intent.setPackage(context.getPackageName());
-                for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(intent, 128)) {
-                    ActivityInfo activityInfo = resolveInfo.activityInfo;
-                    if (activityInfo != null && (bundle = activityInfo.metaData) != null && (string = bundle.getString("androidx.core.content.pm.shortcut_listener_impl")) != null) {
-                        try {
-                            arrayList.add((ShortcutInfoChangeListener) Class.forName(string, false, ShortcutManagerCompat.class.getClassLoader()).getMethod("getInstance", Context.class).invoke(null, context));
-                        } catch (Exception unused) {
-                        }
-                    }
-                }
-            }
-            if (sShortcutInfoChangeListeners == null) {
-                sShortcutInfoChangeListeners = arrayList;
-            }
-        }
-        return sShortcutInfoChangeListeners;
-    }
-
-    private static List<ShortcutInfoCompat> removeShortcutsExcludedFromSurface(List<ShortcutInfoCompat> list, int i) {
-        Objects.requireNonNull(list);
-        if (Build.VERSION.SDK_INT > 31) {
-            return list;
-        }
-        ArrayList arrayList = new ArrayList(list);
-        for (ShortcutInfoCompat shortcutInfoCompat : list) {
-            if (shortcutInfoCompat.isExcludedFromSurfaces(i)) {
-                arrayList.remove(shortcutInfoCompat);
-            }
-        }
-        return arrayList;
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0031  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private static java.util.List<androidx.core.content.p009pm.ShortcutInfoChangeListener> getShortcutInfoListeners(android.content.Context r8) {
+        /*
+            java.util.List<androidx.core.content.pm.ShortcutInfoChangeListener> r0 = androidx.core.content.p009pm.ShortcutManagerCompat.sShortcutInfoChangeListeners
+            if (r0 != 0) goto L77
+            java.util.ArrayList r0 = new java.util.ArrayList
+            r0.<init>()
+            int r1 = android.os.Build.VERSION.SDK_INT
+            r2 = 21
+            if (r1 < r2) goto L71
+            android.content.pm.PackageManager r1 = r8.getPackageManager()
+            android.content.Intent r2 = new android.content.Intent
+            java.lang.String r3 = "androidx.core.content.pm.SHORTCUT_LISTENER"
+            r2.<init>(r3)
+            java.lang.String r3 = r8.getPackageName()
+            r2.setPackage(r3)
+            r3 = 128(0x80, float:1.794E-43)
+            java.util.List r1 = r1.queryIntentActivities(r2, r3)
+            java.util.Iterator r1 = r1.iterator()
+        L2b:
+            boolean r2 = r1.hasNext()
+            if (r2 == 0) goto L71
+            java.lang.Object r2 = r1.next()
+            android.content.pm.ResolveInfo r2 = (android.content.pm.ResolveInfo) r2
+            android.content.pm.ActivityInfo r2 = r2.activityInfo
+            if (r2 != 0) goto L3c
+            goto L2b
+        L3c:
+            android.os.Bundle r2 = r2.metaData
+            if (r2 != 0) goto L41
+            goto L2b
+        L41:
+            java.lang.String r3 = "androidx.core.content.pm.shortcut_listener_impl"
+            java.lang.String r2 = r2.getString(r3)
+            if (r2 != 0) goto L4a
+            goto L2b
+        L4a:
+            java.lang.Class<androidx.core.content.pm.ShortcutManagerCompat> r3 = androidx.core.content.p009pm.ShortcutManagerCompat.class
+            java.lang.ClassLoader r3 = r3.getClassLoader()     // Catch: java.lang.Exception -> L2b
+            r4 = 0
+            java.lang.Class r2 = java.lang.Class.forName(r2, r4, r3)     // Catch: java.lang.Exception -> L2b
+            java.lang.String r3 = "getInstance"
+            r5 = 1
+            java.lang.Class[] r6 = new java.lang.Class[r5]     // Catch: java.lang.Exception -> L2b
+            java.lang.Class<android.content.Context> r7 = android.content.Context.class
+            r6[r4] = r7     // Catch: java.lang.Exception -> L2b
+            java.lang.reflect.Method r2 = r2.getMethod(r3, r6)     // Catch: java.lang.Exception -> L2b
+            r3 = 0
+            java.lang.Object[] r5 = new java.lang.Object[r5]     // Catch: java.lang.Exception -> L2b
+            r5[r4] = r8     // Catch: java.lang.Exception -> L2b
+            java.lang.Object r2 = r2.invoke(r3, r5)     // Catch: java.lang.Exception -> L2b
+            androidx.core.content.pm.ShortcutInfoChangeListener r2 = (androidx.core.content.p009pm.ShortcutInfoChangeListener) r2     // Catch: java.lang.Exception -> L2b
+            r0.add(r2)     // Catch: java.lang.Exception -> L2b
+            goto L2b
+        L71:
+            java.util.List<androidx.core.content.pm.ShortcutInfoChangeListener> r8 = androidx.core.content.p009pm.ShortcutManagerCompat.sShortcutInfoChangeListeners
+            if (r8 != 0) goto L77
+            androidx.core.content.p009pm.ShortcutManagerCompat.sShortcutInfoChangeListeners = r0
+        L77:
+            java.util.List<androidx.core.content.pm.ShortcutInfoChangeListener> r8 = androidx.core.content.p009pm.ShortcutManagerCompat.sShortcutInfoChangeListeners
+            return r8
+        */
+        throw new UnsupportedOperationException("Method not decompiled: androidx.core.content.p009pm.ShortcutManagerCompat.getShortcutInfoListeners(android.content.Context):java.util.List");
     }
 
     /* renamed from: androidx.core.content.pm.ShortcutManagerCompat$Api25Impl */

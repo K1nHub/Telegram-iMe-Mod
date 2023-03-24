@@ -36,7 +36,7 @@ public class PBKDF2Engine {
         byte[] bArr3 = new byte[ceil * hLen];
         int i4 = 0;
         for (int i5 = 1; i5 <= ceil; i5++) {
-            m93_F(bArr3, i4, prf, bArr2, i, i5);
+            m92_F(bArr3, i4, prf, bArr2, i, i5);
             i4 += hLen;
         }
         if (i3 < hLen) {
@@ -52,7 +52,7 @@ public class PBKDF2Engine {
     }
 
     /* renamed from: _F */
-    protected void m93_F(byte[] bArr, int i, PRF prf, byte[] bArr2, int i2, int i3) {
+    protected void m92_F(byte[] bArr, int i, PRF prf, byte[] bArr2, int i2, int i3) {
         int hLen = prf.getHLen();
         byte[] bArr3 = new byte[hLen];
         byte[] bArr4 = new byte[bArr2.length + 4];

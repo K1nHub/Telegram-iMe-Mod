@@ -3,6 +3,7 @@ package com.google.protobuf;
 import com.google.protobuf.Utf8;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.ByteBuffer;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -407,10 +408,8 @@ public abstract class CodedOutputStream extends ByteOutput {
         try {
             writeUInt32NoTag(bytes.length);
             writeLazy(bytes, 0, bytes.length);
-        } catch (OutOfSpaceException e) {
-            throw e;
-        } catch (IndexOutOfBoundsException e2) {
-            throw new OutOfSpaceException(e2);
+        } catch (IndexOutOfBoundsException e) {
+            throw new OutOfSpaceException(e);
         }
     }
 
@@ -453,11 +452,6 @@ public abstract class CodedOutputStream extends ByteOutput {
     @Deprecated
     static int computeGroupSizeNoTag(MessageLite messageLite, Schema schema) {
         return ((AbstractMessageLite) messageLite).getSerializedSize(schema);
-    }
-
-    @Deprecated
-    public static int computeRawVarint32Size(int i) {
-        return computeUInt32SizeNoTag(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -605,73 +599,21 @@ public abstract class CodedOutputStream extends ByteOutput {
 
         @Override // com.google.protobuf.CodedOutputStream
         public final void writeUInt32NoTag(int i) throws IOException {
-            if (!CodedOutputStream.HAS_UNSAFE_ARRAY_OPERATIONS || Android.isOnAndroidDevice() || spaceLeft() < 5) {
-                while ((i & (-128)) != 0) {
-                    try {
-                        byte[] bArr = this.buffer;
-                        int i2 = this.position;
-                        this.position = i2 + 1;
-                        bArr[i2] = (byte) ((i & 127) | 128);
-                        i >>>= 7;
-                    } catch (IndexOutOfBoundsException e) {
-                        throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
-                    }
+            while ((i & (-128)) != 0) {
+                try {
+                    byte[] bArr = this.buffer;
+                    int i2 = this.position;
+                    this.position = i2 + 1;
+                    bArr[i2] = (byte) ((i & 127) | 128);
+                    i >>>= 7;
+                } catch (IndexOutOfBoundsException e) {
+                    throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
                 }
-                byte[] bArr2 = this.buffer;
-                int i3 = this.position;
-                this.position = i3 + 1;
-                bArr2[i3] = (byte) i;
-            } else if ((i & (-128)) == 0) {
-                byte[] bArr3 = this.buffer;
-                int i4 = this.position;
-                this.position = i4 + 1;
-                UnsafeUtil.putByte(bArr3, i4, (byte) i);
-            } else {
-                byte[] bArr4 = this.buffer;
-                int i5 = this.position;
-                this.position = i5 + 1;
-                UnsafeUtil.putByte(bArr4, i5, (byte) (i | 128));
-                int i6 = i >>> 7;
-                if ((i6 & (-128)) == 0) {
-                    byte[] bArr5 = this.buffer;
-                    int i7 = this.position;
-                    this.position = i7 + 1;
-                    UnsafeUtil.putByte(bArr5, i7, (byte) i6);
-                    return;
-                }
-                byte[] bArr6 = this.buffer;
-                int i8 = this.position;
-                this.position = i8 + 1;
-                UnsafeUtil.putByte(bArr6, i8, (byte) (i6 | 128));
-                int i9 = i6 >>> 7;
-                if ((i9 & (-128)) == 0) {
-                    byte[] bArr7 = this.buffer;
-                    int i10 = this.position;
-                    this.position = i10 + 1;
-                    UnsafeUtil.putByte(bArr7, i10, (byte) i9);
-                    return;
-                }
-                byte[] bArr8 = this.buffer;
-                int i11 = this.position;
-                this.position = i11 + 1;
-                UnsafeUtil.putByte(bArr8, i11, (byte) (i9 | 128));
-                int i12 = i9 >>> 7;
-                if ((i12 & (-128)) == 0) {
-                    byte[] bArr9 = this.buffer;
-                    int i13 = this.position;
-                    this.position = i13 + 1;
-                    UnsafeUtil.putByte(bArr9, i13, (byte) i12);
-                    return;
-                }
-                byte[] bArr10 = this.buffer;
-                int i14 = this.position;
-                this.position = i14 + 1;
-                UnsafeUtil.putByte(bArr10, i14, (byte) (i12 | 128));
-                byte[] bArr11 = this.buffer;
-                int i15 = this.position;
-                this.position = i15 + 1;
-                UnsafeUtil.putByte(bArr11, i15, (byte) (i12 >>> 7));
             }
+            byte[] bArr2 = this.buffer;
+            int i3 = this.position;
+            this.position = i3 + 1;
+            bArr2[i3] = (byte) i;
         }
 
         @Override // com.google.protobuf.CodedOutputStream
@@ -773,6 +715,21 @@ public abstract class CodedOutputStream extends ByteOutput {
         @Override // com.google.protobuf.ByteOutput
         public final void writeLazy(byte[] bArr, int i, int i2) throws IOException {
             write(bArr, i, i2);
+        }
+
+        public final void write(ByteBuffer byteBuffer) throws IOException {
+            int remaining = byteBuffer.remaining();
+            try {
+                byteBuffer.get(this.buffer, this.position, remaining);
+                this.position += remaining;
+            } catch (IndexOutOfBoundsException e) {
+                throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), Integer.valueOf(remaining)), e);
+            }
+        }
+
+        @Override // com.google.protobuf.ByteOutput
+        public final void writeLazy(ByteBuffer byteBuffer) throws IOException {
+            write(byteBuffer);
         }
 
         @Override // com.google.protobuf.CodedOutputStream
@@ -1202,6 +1159,44 @@ public abstract class CodedOutputStream extends ByteOutput {
         @Override // com.google.protobuf.ByteOutput
         public void writeLazy(byte[] bArr, int i, int i2) throws IOException {
             write(bArr, i, i2);
+        }
+
+        public void write(ByteBuffer byteBuffer) throws IOException {
+            int remaining = byteBuffer.remaining();
+            int i = this.limit;
+            int i2 = this.position;
+            if (i - i2 >= remaining) {
+                byteBuffer.get(this.buffer, i2, remaining);
+                this.position += remaining;
+                this.totalBytesWritten += remaining;
+                return;
+            }
+            int i3 = i - i2;
+            byteBuffer.get(this.buffer, i2, i3);
+            int i4 = remaining - i3;
+            this.position = this.limit;
+            this.totalBytesWritten += i3;
+            doFlush();
+            while (true) {
+                int i5 = this.limit;
+                if (i4 > i5) {
+                    byteBuffer.get(this.buffer, 0, i5);
+                    this.out.write(this.buffer, 0, this.limit);
+                    int i6 = this.limit;
+                    i4 -= i6;
+                    this.totalBytesWritten += i6;
+                } else {
+                    byteBuffer.get(this.buffer, 0, i4);
+                    this.position = i4;
+                    this.totalBytesWritten += i4;
+                    return;
+                }
+            }
+        }
+
+        @Override // com.google.protobuf.ByteOutput
+        public void writeLazy(ByteBuffer byteBuffer) throws IOException {
+            write(byteBuffer);
         }
 
         private void flushIfNotAvailable(int i) throws IOException {

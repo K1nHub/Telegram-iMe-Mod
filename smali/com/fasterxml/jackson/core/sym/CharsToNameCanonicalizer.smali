@@ -47,9 +47,9 @@
 
     ushr-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    add-int/2addr v2, v1
+    add-int/2addr v2, v0
 
     or-int/lit8 v0, v2, 0x1
 

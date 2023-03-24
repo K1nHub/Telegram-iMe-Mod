@@ -63,7 +63,7 @@
 .end method
 
 .method private f()Z
-    .locals 6
+    .locals 4
 
     :cond_0
     :goto_0
@@ -75,11 +75,11 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, 0x1
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v2
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_3
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Lj$/util/stream/f4;->e:Lj$/util/stream/m3;
 
@@ -93,9 +93,9 @@
 
     check-cast v0, Lj$/util/stream/b;
 
-    iget v1, v0, Lj$/util/stream/b;->a:I
+    iget v2, v0, Lj$/util/stream/b;->a:I
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v2, :pswitch_data_0
 
     goto :goto_1
 
@@ -106,11 +106,11 @@
     check-cast v0, Lj$/util/stream/s4;
 
     .line 2
-    iget-object v1, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
+    iget-object v2, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
 
     iget-object v0, v0, Lj$/util/stream/f4;->e:Lj$/util/stream/m3;
 
-    invoke-interface {v1, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v2, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
 
     move-result v0
 
@@ -123,11 +123,11 @@
     check-cast v0, Lj$/util/stream/q4;
 
     .line 4
-    iget-object v1, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
+    iget-object v2, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
 
     iget-object v0, v0, Lj$/util/stream/f4;->e:Lj$/util/stream/m3;
 
-    invoke-interface {v1, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v2, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
 
     move-result v0
 
@@ -140,11 +140,11 @@
     check-cast v0, Lj$/util/stream/o4;
 
     .line 6
-    iget-object v1, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
+    iget-object v2, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
 
     iget-object v0, v0, Lj$/util/stream/f4;->e:Lj$/util/stream/m3;
 
-    invoke-interface {v1, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v2, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
 
     move-result v0
 
@@ -157,11 +157,11 @@
     check-cast v0, Lj$/util/stream/L4;
 
     .line 8
-    iget-object v1, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
+    iget-object v2, v0, Lj$/util/stream/f4;->d:Lj$/util/s;
 
     iget-object v0, v0, Lj$/util/stream/f4;->e:Lj$/util/stream/m3;
 
-    invoke-interface {v1, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
+    invoke-interface {v2, v0}, Lj$/util/s;->b(Lj$/util/function/Consumer;)Z
 
     move-result v0
 
@@ -183,12 +183,12 @@
 
     invoke-interface {v0}, Lj$/util/stream/m3;->m()V
 
-    iput-boolean v4, p0, Lj$/util/stream/f4;->i:Z
+    iput-boolean v1, p0, Lj$/util/stream/f4;->i:Z
 
     goto :goto_0
 
     :cond_3
-    return v4
+    return v1
 
     nop
 

@@ -615,9 +615,9 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
 
     private void startLiftOnScrollElevationOverlayAnimation(final MaterialShapeDrawable materialShapeDrawable, boolean z) {
         float dimension = getResources().getDimension(R$dimen.design_appbar_elevation);
-        float f = z ? BitmapDescriptorFactory.HUE_RED : dimension;
+        float f = z ? 0.0f : dimension;
         if (!z) {
-            dimension = BitmapDescriptorFactory.HUE_RED;
+            dimension = 0.0f;
         }
         ValueAnimator valueAnimator = this.elevationOverlayAnimator;
         if (valueAnimator != null) {
@@ -915,15 +915,16 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
             int i5;
             if (i2 != 0) {
                 if (i2 < 0) {
-                    int i6 = -t.getTotalScrollRange();
-                    i4 = i6;
-                    i5 = t.getDownNestedPreScrollRange() + i6;
+                    i4 = -t.getTotalScrollRange();
+                    i5 = t.getDownNestedPreScrollRange() + i4;
                 } else {
                     i4 = -t.getUpNestedPreScrollRange();
                     i5 = 0;
                 }
-                if (i4 != i5) {
-                    iArr[1] = scroll(coordinatorLayout, t, i2, i4, i5);
+                int i6 = i4;
+                int i7 = i5;
+                if (i6 != i7) {
+                    iArr[1] = scroll(coordinatorLayout, t, i2, i6, i7);
                 }
             }
             if (t.isLiftOnScroll()) {

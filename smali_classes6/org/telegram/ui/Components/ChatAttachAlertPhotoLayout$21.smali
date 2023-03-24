@@ -218,7 +218,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v6
 
     :goto_1
     if-eqz v5, :cond_4

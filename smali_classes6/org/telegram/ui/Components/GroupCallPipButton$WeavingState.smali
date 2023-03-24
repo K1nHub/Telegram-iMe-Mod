@@ -102,7 +102,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     div-float/2addr v0, v3
 
@@ -121,7 +121,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     div-float/2addr v1, v3
 
@@ -147,7 +147,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     div-float/2addr v1, v3
 
@@ -164,7 +164,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     div-float/2addr v0, v3
 
@@ -186,7 +186,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v2, v0
 
@@ -553,15 +553,15 @@
 
     add-float/2addr v6, v5
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     sget v5, Lorg/telegram/ui/Components/BlobDrawable;->GRADIENT_SPEED_MAX:F
 
     const/high16 v7, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     mul-float v3, v3, p3
 
@@ -602,11 +602,11 @@
 
     sub-float/2addr v5, v3
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     add-float/2addr v3, v5
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     const/high16 v5, 0x43480000    # 200.0f
 
@@ -619,11 +619,11 @@
 
     sub-float/2addr v8, v6
 
-    mul-float v8, v8, v2
+    mul-float/2addr v8, v2
 
     add-float/2addr v6, v8
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     sub-float/2addr v6, v5
 
@@ -642,7 +642,7 @@
 
     div-float/2addr v1, v2
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     .line 178
     iget-object v2, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->matrix:Landroid/graphics/Matrix;

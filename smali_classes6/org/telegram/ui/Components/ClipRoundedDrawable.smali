@@ -57,7 +57,7 @@
 
     const-wide v2, 0x416312cfe0000000L    # 9999999.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
 
@@ -103,7 +103,7 @@
 
     const-wide v2, 0x416312cfe0000000L    # 9999999.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
 
@@ -449,7 +449,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v4
 
     .line 78
     :cond_1

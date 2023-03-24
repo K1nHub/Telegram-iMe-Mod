@@ -32,7 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -145,7 +145,7 @@ public class AboutLinkCell extends FrameLayout {
         this.needSpace = false;
         this.backgroundPaint = new Paint();
         this.SPACE = AndroidUtilities.m51dp(3.0f);
-        this.longPressedRunnable = new RunnableC35952();
+        this.longPressedRunnable = new RunnableC36102();
         this.expandT = BitmapDescriptorFactory.HUE_RED;
         this.lastMaxWidth = 0;
         this.shouldExpand = false;
@@ -169,7 +169,7 @@ public class AboutLinkCell extends FrameLayout {
         this.valueTextView.setFocusable(false);
         this.container.addView(this.valueTextView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 80, 23, 0, 23, 10));
         this.bottomShadow = new FrameLayout(context);
-        Drawable mutate = context.getResources().getDrawable(C3286R.C3288drawable.gradient_bottom).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3301R.C3303drawable.gradient_bottom).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhite", resourcesProvider), PorterDuff.Mode.SRC_ATOP));
         this.bottomShadow.setBackground(mutate);
         addView(this.bottomShadow, LayoutHelper.createFrame(-1, 12, 87, 0, 0, 0, 0));
@@ -207,7 +207,7 @@ public class AboutLinkCell extends FrameLayout {
         this.showMoreTextView.setLines(1);
         this.showMoreTextView.setMaxLines(1);
         this.showMoreTextView.setSingleLine(true);
-        this.showMoreTextView.setText(LocaleController.getString("DescriptionMore", C3286R.string.DescriptionMore));
+        this.showMoreTextView.setText(LocaleController.getString("DescriptionMore", C3301R.string.DescriptionMore));
         this.showMoreTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.AboutLinkCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -216,7 +216,7 @@ public class AboutLinkCell extends FrameLayout {
         });
         this.showMoreTextView.setPadding(AndroidUtilities.m50dp(2), 0, AndroidUtilities.m50dp(2), 0);
         this.showMoreTextBackgroundView = new FrameLayout(context);
-        Drawable mutate2 = context.getResources().getDrawable(C3286R.C3288drawable.gradient_left).mutate();
+        Drawable mutate2 = context.getResources().getDrawable(C3301R.C3303drawable.gradient_left).mutate();
         this.showMoreBackgroundDrawable = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhite", resourcesProvider), PorterDuff.Mode.MULTIPLY));
         this.showMoreTextBackgroundView.setBackground(this.showMoreBackgroundDrawable);
@@ -343,7 +343,7 @@ public class AboutLinkCell extends FrameLayout {
             staticLayout.draw(canvas);
             int lineCount = this.firstThreeLinesLayout.getLineCount() - 1;
             float lineTop = this.firstThreeLinesLayout.getLineTop(lineCount) + this.firstThreeLinesLayout.getTopPadding();
-            float lineRight = this.firstThreeLinesLayout.getLineRight(lineCount) + (this.needSpace ? this.SPACE : BitmapDescriptorFactory.HUE_RED);
+            float lineRight = this.firstThreeLinesLayout.getLineRight(lineCount) + (this.needSpace ? this.SPACE : 0.0f);
             float lineBottom = (this.firstThreeLinesLayout.getLineBottom(lineCount) - this.firstThreeLinesLayout.getLineTop(lineCount)) - this.firstThreeLinesLayout.getBottomPadding();
             float easeInOutCubic = easeInOutCubic(1.0f - ((float) Math.pow(this.expandT, 0.25d)));
             if (this.nextLinesLayouts != null) {
@@ -441,8 +441,8 @@ public class AboutLinkCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.AboutLinkCell$2 */
     /* loaded from: classes5.dex */
-    public class RunnableC35952 implements Runnable {
-        RunnableC35952() {
+    public class RunnableC36102 implements Runnable {
+        RunnableC36102() {
         }
 
         @Override // java.lang.Runnable
@@ -458,16 +458,16 @@ public class AboutLinkCell extends FrameLayout {
                 final ClickableSpan clickableSpan = (ClickableSpan) AboutLinkCell.this.pressedLink.getSpan();
                 BottomSheet.Builder builder = new BottomSheet.Builder(AboutLinkCell.this.parentFragment.getParentActivity());
                 builder.setTitle(url);
-                builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3286R.string.Open), LocaleController.getString("Copy", C3286R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.AboutLinkCell$2$$ExternalSyntheticLambda0
+                builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3301R.string.Open), LocaleController.getString("Copy", C3301R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.AboutLinkCell$2$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        AboutLinkCell.RunnableC35952.this.lambda$run$0(clickableSpan, layout, f, url, dialogInterface, i);
+                        AboutLinkCell.RunnableC36102.this.lambda$run$0(clickableSpan, layout, f, url, dialogInterface, i);
                     }
                 });
                 builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Cells.AboutLinkCell$2$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
-                        AboutLinkCell.RunnableC35952.this.lambda$run$1(dialogInterface);
+                        AboutLinkCell.RunnableC36102.this.lambda$run$1(dialogInterface);
                     }
                 });
                 builder.show();
@@ -483,11 +483,11 @@ public class AboutLinkCell extends FrameLayout {
                 AndroidUtilities.addToClipboard(str);
                 if (AndroidUtilities.shouldShowClipboardToast()) {
                     if (str.startsWith("@")) {
-                        BulletinFactory.m27of(AboutLinkCell.this.parentFragment).createSimpleBulletin(C3286R.C3291raw.copy, LocaleController.getString("UsernameCopied", C3286R.string.UsernameCopied)).show();
+                        BulletinFactory.m27of(AboutLinkCell.this.parentFragment).createSimpleBulletin(C3301R.C3306raw.copy, LocaleController.getString("UsernameCopied", C3301R.string.UsernameCopied)).show();
                     } else if (str.startsWith("#") || str.startsWith("$")) {
-                        BulletinFactory.m27of(AboutLinkCell.this.parentFragment).createSimpleBulletin(C3286R.C3291raw.copy, LocaleController.getString("HashtagCopied", C3286R.string.HashtagCopied)).show();
+                        BulletinFactory.m27of(AboutLinkCell.this.parentFragment).createSimpleBulletin(C3301R.C3306raw.copy, LocaleController.getString("HashtagCopied", C3301R.string.HashtagCopied)).show();
                     } else {
-                        BulletinFactory.m27of(AboutLinkCell.this.parentFragment).createSimpleBulletin(C3286R.C3291raw.copy, LocaleController.getString("LinkCopied", C3286R.string.LinkCopied)).show();
+                        BulletinFactory.m27of(AboutLinkCell.this.parentFragment).createSimpleBulletin(C3301R.C3306raw.copy, LocaleController.getString("LinkCopied", C3301R.string.LinkCopied)).show();
                     }
                 }
             }
@@ -570,15 +570,15 @@ public class AboutLinkCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void onLinkClick(ClickableSpan clickableSpan, Layout layout, float f) {
         Browser.Progress progress = this.currentProgress;
-        C35963 c35963 = null;
+        C36113 c36113 = null;
         if (progress != null) {
             progress.cancel();
             this.currentProgress = null;
         }
         if (layout != null && clickableSpan != null) {
-            c35963 = new C35963(layout, clickableSpan, f);
+            c36113 = new C36113(layout, clickableSpan, f);
         }
-        this.currentProgress = c35963;
+        this.currentProgress = c36113;
         if (clickableSpan instanceof URLSpanNoUnderline) {
             String url = ((URLSpanNoUnderline) clickableSpan).getURL();
             if (url.startsWith("@") || url.startsWith("#") || url.startsWith("/")) {
@@ -599,13 +599,13 @@ public class AboutLinkCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.AboutLinkCell$3 */
     /* loaded from: classes5.dex */
-    public class C35963 extends Browser.Progress {
+    public class C36113 extends Browser.Progress {
         LoadingDrawable thisLoading;
         final /* synthetic */ Layout val$layout;
         final /* synthetic */ ClickableSpan val$pressedLink;
         final /* synthetic */ float val$yOffset;
 
-        C35963(Layout layout, ClickableSpan clickableSpan, float f) {
+        C36113(Layout layout, ClickableSpan clickableSpan, float f) {
             this.val$layout = layout;
             this.val$pressedLink = clickableSpan;
             this.val$yOffset = f;
@@ -630,7 +630,7 @@ public class AboutLinkCell extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.AboutLinkCell$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AboutLinkCell.C35963.this.lambda$end$0();
+                    AboutLinkCell.C36113.this.lambda$end$0();
                 }
             }, z ? 0L : 350L);
         }
@@ -682,7 +682,7 @@ public class AboutLinkCell extends FrameLayout {
             this.collapseAnimator = null;
         }
         final float f = this.expandT;
-        final float f2 = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        final float f2 = z ? 1.0f : 0.0f;
         if (z2) {
             if (f2 > BitmapDescriptorFactory.HUE_RED) {
                 didExtend();

@@ -420,7 +420,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, -0x1
+    move p1, v1
 
     :goto_1
     if-ne p1, v1, :cond_2
@@ -598,7 +598,7 @@
     return v3
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 714
     :cond_1
@@ -1305,16 +1305,16 @@
 .end method
 
 .method isPendingReset()Z
-    .locals 5
+    .locals 4
 
     .line 723
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1658,13 +1658,13 @@
 
     add-int/lit8 v10, v2, -0x1
 
-    const/4 v11, 0x0
-
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v12, v2
+    cmp-long v2, v12, v2
 
-    if-eqz v4, :cond_1
+    const/4 v11, 0x0
+
+    if-eqz v2, :cond_1
 
     if-eqz v14, :cond_1
 
@@ -1678,13 +1678,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v11
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v8, 0x1
+    move v8, v15
 
     .line 492
     :goto_1
@@ -1848,9 +1848,9 @@
 
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v8, v2, v6
+    cmp-long v6, v2, v6
 
-    if-eqz v8, :cond_6
+    if-eqz v6, :cond_6
 
     const/4 v6, 0x0
 
@@ -2232,7 +2232,7 @@
 .end method
 
 .method public seekToUs(J)V
-    .locals 10
+    .locals 9
 
     .line 257
     iput-wide p1, p0, Lcom/google/android/exoplayer2/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
@@ -2254,7 +2254,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 266
     :goto_0
@@ -2278,25 +2278,25 @@
     .line 268
     iget-wide v4, v3, Lcom/google/android/exoplayer2/source/chunk/Chunk;->startTimeUs:J
 
-    cmp-long v6, v4, p1
+    cmp-long v4, v4, p1
 
-    if-nez v6, :cond_1
+    if-nez v4, :cond_1
 
     .line 269
-    iget-wide v4, v3, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->clippedStartTimeUs:J
+    iget-wide v5, v3, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->clippedStartTimeUs:J
 
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v9, v4, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_1
+    if-nez v5, :cond_1
 
     move-object v0, v3
 
     goto :goto_1
 
     :cond_1
-    if-lez v6, :cond_2
+    if-lez v4, :cond_2
 
     goto :goto_1
 
@@ -2333,16 +2333,16 @@
 
     move-result-wide v3
 
-    cmp-long v5, p1, v3
+    cmp-long v3, p1, v3
 
-    if-gez v5, :cond_5
+    if-gez v3, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_2
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 287
     :goto_2

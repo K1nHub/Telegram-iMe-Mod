@@ -303,18 +303,18 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v0, 0x2
+    move v0, v3
 
     .line 1718
     :goto_1
@@ -732,7 +732,7 @@
 
     const/high16 v3, 0x41800000    # 16.0f
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     add-float/2addr v1, v3
 
@@ -806,7 +806,7 @@
     .line 1662
     iget v2, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;->amplitude:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v2, v1
 
@@ -933,7 +933,7 @@
 
     const/high16 v4, 0x42980000    # 76.0f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -975,7 +975,7 @@
     .line 1690
     iget v2, p0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView$NoVideoStubLayout;->amplitude:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v2, v1
 
@@ -1057,7 +1057,7 @@
 
     const v1, 0x3df5c28f    # 0.12f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     :goto_0
     add-float/2addr p2, v0
@@ -1100,24 +1100,24 @@
 
     div-float/2addr p1, p2
 
-    const/4 p2, 0x0
+    const/high16 p2, 0x3f800000    # 1.0f
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    cmpl-float v0, p1, p2
 
-    cmpl-float v1, p1, v0
+    const/4 v1, 0x0
 
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, p2
 
     goto :goto_0
 
     :cond_0
-    cmpg-float v0, p1, p2
+    cmpg-float p2, p1, v1
 
-    if-gez v0, :cond_1
+    if-gez p2, :cond_1
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 1753
     :cond_1

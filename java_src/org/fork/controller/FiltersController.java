@@ -284,7 +284,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1439id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1440id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -408,7 +408,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterSettings, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (FilterSettingsDb filterSettingsDb : filterSettings) {
-            arrayList.add(TuplesKt.m100to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
+            arrayList.add(TuplesKt.m99to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -466,8 +466,8 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m100to = TuplesKt.m100to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1439id).name(), TuplesKt.m100to(arrayList, arrayList2));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1440id).name(), TuplesKt.m99to(arrayList, arrayList2));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;

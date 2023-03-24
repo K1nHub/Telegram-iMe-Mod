@@ -198,7 +198,7 @@
 .end method
 
 .method public start()V
-    .locals 7
+    .locals 6
 
     .line 68
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
@@ -233,9 +233,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-ltz v6, :cond_1
+    if-ltz v4, :cond_1
 
     .line 71
     invoke-virtual {v1, v2, v3}, Landroidx/core/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;

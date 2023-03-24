@@ -1776,7 +1776,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1907,7 +1907,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_0
     const/4 v10, 0x0
@@ -3592,12 +3592,12 @@
 
     if-nez v1, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_6
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 178
     :goto_6

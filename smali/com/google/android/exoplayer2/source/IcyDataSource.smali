@@ -37,7 +37,7 @@
 
     if-lez p2, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_0
 
@@ -115,7 +115,7 @@
 
     move v5, v0
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_0
     if-lez v5, :cond_3

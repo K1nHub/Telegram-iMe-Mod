@@ -719,7 +719,7 @@
     packed-switch p0, :pswitch_data_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -2031,7 +2031,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 66
     :goto_0
@@ -2108,7 +2108,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 195
     :goto_0

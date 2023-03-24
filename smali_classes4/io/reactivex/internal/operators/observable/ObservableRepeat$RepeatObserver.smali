@@ -87,16 +87,16 @@
 
 # virtual methods
 .method public onComplete()V
-    .locals 5
+    .locals 4
 
     .line 70
     iget-wide v0, p0, Lio/reactivex/internal/operators/observable/ObservableRepeat$RepeatObserver;->remaining:J
 
     const-wide v2, 0x7fffffffffffffffL
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     const-wide/16 v2, 0x1
 
@@ -108,9 +108,9 @@
     :cond_0
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     .line 75
     invoke-virtual {p0}, Lio/reactivex/internal/operators/observable/ObservableRepeat$RepeatObserver;->subscribeNext()V

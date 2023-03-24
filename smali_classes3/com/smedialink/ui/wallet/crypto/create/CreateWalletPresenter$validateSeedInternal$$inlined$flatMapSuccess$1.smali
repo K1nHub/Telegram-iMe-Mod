@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CreateWalletPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter\n+ 3 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,81:1\n165#2,11:82\n176#2:94\n27#3:93\n*S KotlinDebug\n*F\n+ 1 CreateWalletPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n175#1:93\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CreateWalletPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter\n+ 3 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,81:1\n166#2,11:82\n177#2:94\n27#3:93\n*S KotlinDebug\n*F\n+ 1 CreateWalletPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n176#1:93\n*E\n"
 .end annotation
 
 
@@ -119,13 +119,13 @@
     .line 85
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;
 
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;->access$getScreenType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
+    invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;->access$getScreenType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;
+    check-cast p1, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
-    invoke-virtual {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;->getPassword()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/smedialink/model/wallet/crypto/create/CreateWalletScreenType$Import;->getPassword()Ljava/lang/String;
 
     move-result-object v1
 

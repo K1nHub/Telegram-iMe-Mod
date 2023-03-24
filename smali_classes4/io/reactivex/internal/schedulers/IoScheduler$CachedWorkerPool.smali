@@ -131,7 +131,7 @@
 
 # virtual methods
 .method evictExpiredWorkers()V
-    .locals 7
+    .locals 6
 
     .line 124
     iget-object v0, p0, Lio/reactivex/internal/schedulers/IoScheduler$CachedWorkerPool;->expiringWorkerQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;
@@ -173,9 +173,9 @@
 
     move-result-wide v4
 
-    cmp-long v6, v4, v0
+    cmp-long v4, v4, v0
 
-    if-gtz v6, :cond_1
+    if-gtz v4, :cond_1
 
     .line 129
     iget-object v4, p0, Lio/reactivex/internal/schedulers/IoScheduler$CachedWorkerPool;->expiringWorkerQueue:Ljava/util/concurrent/ConcurrentLinkedQueue;

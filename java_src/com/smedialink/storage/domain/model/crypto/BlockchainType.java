@@ -2,13 +2,16 @@ package com.smedialink.storage.domain.model.crypto;
 
 import com.smedialink.storage.R$drawable;
 import com.smedialink.storage.R$string;
+import java.util.List;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BlockchainType.kt */
 /* loaded from: classes3.dex */
 public enum BlockchainType {
     EVM("ETHEREUM_VM", R$drawable.fork_ic_evm_logo, R$string.wallet_crypto_blockchains_evm_title, R$string.wallet_crypto_blockchains_evm_subtitle),
-    TON("TON_VM", R$drawable.fork_ic_ton_58, R$string.wallet_crypto_blockchains_ton_title, R$string.wallet_crypto_blockchains_ton_subtitle);
+    TRON("TRON_VM", R$drawable.fork_ic_tron_logo, R$string.wallet_crypto_blockchains_tron_title, R$string.wallet_crypto_blockchains_tron_subtitle),
+    TON("TON_VM", R$drawable.fork_ic_ton_logo, R$string.wallet_crypto_blockchains_ton_title, R$string.wallet_crypto_blockchains_ton_subtitle);
     
     public static final Companion Companion = new Companion(null);
     private final String backendName;
@@ -43,6 +46,10 @@ public enum BlockchainType {
         return this.subtitleResId;
     }
 
+    public final boolean isBip39PhraseBased() {
+        return Companion.getBip39PhraseBasedBlockchains().contains(this);
+    }
+
     /* compiled from: BlockchainType.kt */
     /* loaded from: classes3.dex */
     public static final class Companion {
@@ -71,6 +78,12 @@ public enum BlockchainType {
                 i++;
             }
             return blockchainType == null ? BlockchainType.EVM : blockchainType;
+        }
+
+        public final List<BlockchainType> getBip39PhraseBasedBlockchains() {
+            List<BlockchainType> listOf;
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON});
+            return listOf;
         }
     }
 }

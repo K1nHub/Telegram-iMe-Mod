@@ -8,14 +8,14 @@ public final class zzk implements Parcelable.Creator<zzi> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ zzi createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        int i = 0;
+        int i2 = 0;
         String str = null;
         String str2 = null;
         byte[] bArr = null;
         long j = 0;
         double d = 0.0d;
-        boolean z = false;
-        int i = 0;
-        int i2 = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

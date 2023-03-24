@@ -120,7 +120,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v6, 0x0
+    move v6, v0
 
     .line 788
     :goto_0
@@ -398,7 +398,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v8, 0x1
+    move v8, v5
 
     :goto_1
     invoke-static {v0, v8}, Lorg/telegram/messenger/SendMessagesHelper;->createVideoThumbnail(Ljava/lang/String;I)Landroid/graphics/Bitmap;
@@ -450,7 +450,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v8, 0x1
+    move v8, v5
 
     :goto_2
     invoke-static {v0, v8}, Lorg/telegram/messenger/SendMessagesHelper;->createVideoThumbnail(Ljava/lang/String;I)Landroid/graphics/Bitmap;

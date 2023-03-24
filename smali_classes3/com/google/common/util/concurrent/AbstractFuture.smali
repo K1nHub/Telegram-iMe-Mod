@@ -1414,12 +1414,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 635
     :goto_0
@@ -1464,9 +1464,9 @@
     invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_2
-    const/4 v5, 0x0
-
     move-object v4, p0
+
+    move v5, v2
 
     .line 658
     :cond_3
@@ -1513,12 +1513,12 @@
 
     if-nez v0, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_4
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 680
     :goto_4
@@ -1528,7 +1528,7 @@
 
     if-eqz v5, :cond_9
 
-    const/4 v5, 0x1
+    move v5, v1
 
     goto :goto_3
 
@@ -1552,7 +1552,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_9
     :goto_5
@@ -1590,12 +1590,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 546
     :goto_0
@@ -1657,12 +1657,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 566
     :goto_1
@@ -1765,7 +1765,7 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v9, 0x1
+    move v9, v8
 
     goto :goto_0
 
@@ -1857,7 +1857,7 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v5, 0x1
+    move v5, v8
 
     goto :goto_2
 
@@ -1941,7 +1941,7 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v5, 0x1
+    move v5, v8
 
     goto :goto_4
 
@@ -2048,9 +2048,9 @@
 
     add-long v11, v4, v13
 
-    cmp-long v15, v11, v9
+    cmp-long v11, v11, v9
 
-    if-gez v15, :cond_14
+    if-gez v11, :cond_14
 
     .line 502
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -2096,7 +2096,7 @@
 
     :cond_10
     :goto_5
-    const/16 v16, 0x1
+    move/from16 v16, v8
 
     :goto_6
     if-lez v3, :cond_12
@@ -2309,7 +2309,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 

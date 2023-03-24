@@ -48,7 +48,7 @@
 .end method
 
 .method private synthetic lambda$seekTo$0()V
-    .locals 5
+    .locals 4
 
     .line 5725
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -92,9 +92,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 5729
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 
@@ -311,7 +311,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -323,7 +323,7 @@
 
     move-result v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-long v0, v1
 
@@ -339,7 +339,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -351,7 +351,7 @@
 
     move-result v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-long v0, v1
 
@@ -388,7 +388,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -396,7 +396,7 @@
 
     move-result v0
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-long v0, v1
 

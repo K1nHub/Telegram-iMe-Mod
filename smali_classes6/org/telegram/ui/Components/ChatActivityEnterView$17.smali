@@ -151,12 +151,12 @@
 
     if-eqz v5, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v6
 
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v7
 
     :goto_1
     const-string v8, "chat_messagePanelVoicePressed"
@@ -172,7 +172,7 @@
 
     move-result v10
 
-    const/4 v11, 0x1
+    move v11, v6
 
     goto :goto_2
 
@@ -184,7 +184,7 @@
 
     move-result v10
 
-    const/4 v11, 0x2
+    move v11, v3
 
     .line 2797
     :goto_2
@@ -669,7 +669,7 @@
 
     move-result v8
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     float-to-int v7, v7
 
@@ -889,7 +889,7 @@
 
     move-result v4
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     :goto_6
     add-float/2addr v3, v5
@@ -935,7 +935,7 @@
 
     move-result v4
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     sub-float/2addr v5, v6
 
@@ -971,7 +971,7 @@
 
     move-result v4
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     add-float/2addr v6, v5
 
@@ -987,7 +987,7 @@
 
     sub-float/2addr v15, v5
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     float-to-int v4, v15
 

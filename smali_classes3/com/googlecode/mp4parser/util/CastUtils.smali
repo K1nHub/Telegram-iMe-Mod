@@ -9,19 +9,19 @@
 
     const-wide/32 v0, 0x7fffffff
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     const-wide/32 v0, -0x80000000
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 
     .line 30
     :cond_0

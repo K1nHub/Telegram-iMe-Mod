@@ -63,7 +63,7 @@
 
     int-to-float v1, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 313
     iget v1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->lastX:F

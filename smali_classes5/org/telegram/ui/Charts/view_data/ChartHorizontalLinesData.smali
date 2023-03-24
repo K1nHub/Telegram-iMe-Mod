@@ -154,7 +154,7 @@
     const/4 v2, 0x3
 
     :goto_2
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v5
 
     goto :goto_3
 
@@ -236,7 +236,7 @@
     goto :goto_4
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_4
     if-ge v1, v2, :cond_d
@@ -246,7 +246,7 @@
 
     int-to-float v5, v1
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     float-to-int v5, v5
 

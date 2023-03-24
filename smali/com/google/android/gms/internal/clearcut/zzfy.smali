@@ -126,7 +126,7 @@
 
     if-nez p0, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -136,7 +136,7 @@
     :goto_0
     if-nez p1, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
@@ -144,9 +144,9 @@
     array-length v2, p1
 
     :goto_1
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     if-ge v3, v1, :cond_2
@@ -176,22 +176,22 @@
 
     if-lt v3, v1, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_4
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_4
     if-lt v4, v2, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_5
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_5
     if-eqz v6, :cond_6
@@ -283,7 +283,7 @@
 
     if-nez p0, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -291,7 +291,7 @@
     array-length v1, p0
 
     :goto_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v0, v1, :cond_2
@@ -324,7 +324,7 @@
 
     if-nez p0, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -332,7 +332,7 @@
     array-length v1, p0
 
     :goto_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v0, v1, :cond_2
@@ -384,7 +384,7 @@
 
     if-nez p0, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -394,7 +394,7 @@
     :goto_0
     if-nez p1, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
@@ -402,9 +402,9 @@
     array-length v2, p1
 
     :goto_1
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     if-ge v3, v1, :cond_2
@@ -434,22 +434,22 @@
 
     if-lt v3, v1, :cond_4
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_4
 
     :cond_4
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_4
     if-lt v4, v2, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v5
 
     goto :goto_5
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v0
 
     :goto_5
     if-eqz v6, :cond_6

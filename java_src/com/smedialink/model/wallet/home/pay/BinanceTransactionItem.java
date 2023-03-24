@@ -13,7 +13,7 @@ import com.smedialink.utils.formatter.BalanceFormatter;
 import com.smedialink.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: BinanceTransactionItem.kt */
 /* loaded from: classes3.dex */
 public final class BinanceTransactionItem extends NoChildNode {
@@ -65,7 +65,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return BinancePayExtKt.icon(binanceTransaction.getDirection());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return C3286R.C3288drawable.fork_ic_transaction_binance_convert;
+            return C3301R.C3303drawable.fork_ic_transaction_binance_convert;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -77,7 +77,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return resourceManager.getString(binanceTransaction.getDirection().getTitle());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return resourceManager.getString(C3286R.string.binance_convert_toolbar_title);
+            return resourceManager.getString(C3301R.string.binance_convert_toolbar_title);
         }
         throw new NoWhenBranchMatchedException();
     }

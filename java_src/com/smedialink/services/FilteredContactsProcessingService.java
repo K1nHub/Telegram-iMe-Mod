@@ -24,7 +24,7 @@ import org.fork.utils.CollectionsUtilsKt;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -170,7 +170,7 @@ public final class FilteredContactsProcessingService extends Service implements 
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3286R.C3288drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3301R.C3303drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -183,7 +183,7 @@ public final class FilteredContactsProcessingService extends Service implements 
                 }
             });
         } else {
-            stopServiceWithToast(C3286R.string.contacts_processing_success);
+            stopServiceWithToast(C3301R.string.contacts_processing_success);
         }
     }
 
@@ -253,7 +253,7 @@ public final class FilteredContactsProcessingService extends Service implements 
         if (th == null) {
             this$0.processNextContactsPart();
         } else {
-            this$0.stopServiceWithToast(C3286R.string.contacts_processing_error);
+            this$0.stopServiceWithToast(C3301R.string.contacts_processing_error);
         }
     }
 
@@ -276,9 +276,9 @@ public final class FilteredContactsProcessingService extends Service implements 
             return;
         }
         if (WhenMappings.$EnumSwitchMapping$1[state.ordinal()] == 1) {
-            string = LocaleController.formatStringInternal(C3286R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
+            string = LocaleController.formatStringInternal(C3301R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
         } else {
-            string = LocaleController.getString("WaitingForNetwork", C3286R.string.WaitingForNetwork);
+            string = LocaleController.getString("WaitingForNetwork", C3301R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

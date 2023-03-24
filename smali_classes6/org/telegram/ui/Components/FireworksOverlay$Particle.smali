@@ -356,7 +356,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/FireworksOverlay$Particle;->moveY:F
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     add-float/2addr v0, v2
 
@@ -382,7 +382,7 @@
 
     const/high16 v1, 0x3f000000    # 0.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 121
     iget-byte v1, p0, Lorg/telegram/ui/Components/FireworksOverlay$Particle;->xFinished:B
@@ -394,7 +394,7 @@
 
     mul-float v5, v0, p1
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     add-float/2addr v1, v5
 
@@ -415,7 +415,7 @@
 
     mul-float v5, v0, p1
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     sub-float/2addr v1, v5
 
@@ -444,7 +444,7 @@
 
     if-lez v0, :cond_3
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     sub-float/2addr v1, v3
 
@@ -470,7 +470,7 @@
 
     if-gez v0, :cond_3
 
-    mul-float v3, v3, p1
+    mul-float/2addr v3, p1
 
     add-float/2addr v1, v3
 
@@ -509,25 +509,25 @@
     .line 152
     iget v3, p0, Lorg/telegram/ui/Components/FireworksOverlay$Particle;->moveY:F
 
-    const/4 v5, 0x0
+    cmpg-float v5, v3, v1
 
-    cmpg-float v6, v3, v1
+    const/4 v6, 0x0
 
-    if-gez v6, :cond_4
+    if-gez v5, :cond_4
 
-    const/4 v6, 0x1
+    move v5, v4
 
     goto :goto_1
 
     :cond_4
-    const/4 v6, 0x0
+    move v5, v6
 
     :goto_1
-    const/high16 v7, 0x40400000    # 3.0f
+    cmpl-float v7, v3, v1
 
-    cmpl-float v8, v3, v1
+    const/high16 v8, 0x40400000    # 3.0f
 
-    if-lez v8, :cond_5
+    if-lez v7, :cond_5
 
     .line 154
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -536,9 +536,9 @@
 
     int-to-float v0, v0
 
-    div-float/2addr v0, v7
+    div-float/2addr v0, v8
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     iget-object v7, p0, Lorg/telegram/ui/Components/FireworksOverlay$Particle;->this$0:Lorg/telegram/ui/Components/FireworksOverlay;
 
@@ -546,7 +546,7 @@
 
     move-result v7
 
-    mul-float v0, v0, v7
+    mul-float/2addr v0, v7
 
     add-float/2addr v3, v0
 
@@ -562,16 +562,16 @@
 
     int-to-float v0, v0
 
-    div-float/2addr v0, v7
+    div-float/2addr v0, v8
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v3, v0
 
     iput v3, p0, Lorg/telegram/ui/Components/FireworksOverlay$Particle;->moveY:F
 
     :goto_2
-    if-eqz v6, :cond_6
+    if-eqz v5, :cond_6
 
     .line 158
     iget v0, p0, Lorg/telegram/ui/Components/FireworksOverlay$Particle;->moveY:F
@@ -601,7 +601,7 @@
 
     const/high16 v1, 0x41200000    # 10.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     add-float/2addr v0, p1
 
@@ -641,7 +641,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_3
     return v4

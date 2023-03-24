@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAirdropDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAirdropDialog.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,218:1\n56#2,6:219\n*S KotlinDebug\n*F\n+ 1 WalletAirdropDialog.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$presenter$2\n*L\n44#1:219,6\n*E\n"
+    value = "SMAP\nWalletAirdropDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAirdropDialog.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,219:1\n56#2,6:220\n*S KotlinDebug\n*F\n+ 1 WalletAirdropDialog.kt\ncom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$presenter$2\n*L\n45#1:220,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;
     .locals 4
 
-    .line 44
+    .line 45
     iget-object v0, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$presenter$2;->this$0:Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 44
+    .line 45
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 44
+    .line 45
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$presenter$2;->invoke()Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter;
 
     move-result-object v0

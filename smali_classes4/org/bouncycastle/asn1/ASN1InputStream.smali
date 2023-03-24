@@ -505,7 +505,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -737,7 +737,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     new-instance v2, Lorg/bouncycastle/asn1/DefiniteLengthInputStream;
@@ -972,7 +972,7 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v3
 
     goto :goto_0
 

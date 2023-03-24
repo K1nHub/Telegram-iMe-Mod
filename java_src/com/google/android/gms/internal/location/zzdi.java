@@ -3,7 +3,6 @@ package com.google.android.gms.internal.location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 /* loaded from: classes.dex */
 public final class zzdi implements Parcelable.Creator {
@@ -12,12 +11,12 @@ public final class zzdi implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         double d = 0.0d;
         double d2 = 0.0d;
-        String str = null;
-        long j = 0;
         int i = 0;
         short s = 0;
-        float f = BitmapDescriptorFactory.HUE_RED;
         int i2 = 0;
+        String str = null;
+        float f = 0.0f;
+        long j = 0;
         int i3 = -1;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);

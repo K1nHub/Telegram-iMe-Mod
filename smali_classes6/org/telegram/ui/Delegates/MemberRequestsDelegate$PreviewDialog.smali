@@ -940,7 +940,7 @@
 
     sub-float v1, v0, p1
 
-    mul-float v1, v1, p6
+    mul-float/2addr v1, p6
 
     add-float/2addr p1, v1
 
@@ -961,7 +961,7 @@
 
     sub-float p6, v0, p6
 
-    mul-float p2, p2, p6
+    mul-float/2addr p2, p6
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
@@ -972,7 +972,7 @@
 
     sub-float p2, v0, p2
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
@@ -981,7 +981,7 @@
 
     sub-float p1, v0, p1
 
-    mul-float p4, p4, p1
+    mul-float/2addr p4, p1
 
     float-to-int p1, p4
 
@@ -995,7 +995,7 @@
 
     const/high16 p2, 0x40000000    # 2.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     sub-float/2addr p1, v0
 
@@ -1035,7 +1035,7 @@
 
     sub-float/2addr v0, p5
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     invoke-virtual {p2, p4}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
@@ -1052,7 +1052,7 @@
     .line 874
     iget p4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animationProgress:F
 
-    mul-float p4, p4, p3
+    mul-float/2addr p4, p3
 
     float-to-int p3, p4
 
@@ -1113,7 +1113,7 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->getContentWidth()I
 
@@ -1157,7 +1157,7 @@
 
     sub-float v9, v3, v2
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     div-float/2addr v8, v5
 
@@ -1186,7 +1186,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v9
+    mul-float/2addr v11, v9
 
     div-float/2addr v11, v5
 
@@ -1215,12 +1215,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_0
 
     :cond_1
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v3
 
     :goto_0
     aput v5, v0, v4
@@ -1230,7 +1230,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     aput v3, v0, v6

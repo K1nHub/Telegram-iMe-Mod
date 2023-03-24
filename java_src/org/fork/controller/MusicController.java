@@ -115,8 +115,8 @@ public final class MusicController extends BaseController implements KoinCompone
         filter = SequencesKt___SequencesKt.filter(asSequence, MusicController$loadPlaylists$1.INSTANCE);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (PlaylistsDb playlistsDb : filter) {
-            Pair m100to = TuplesKt.m100to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
-            linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
+            Pair m99to = TuplesKt.m99to(Long.valueOf(playlistsDb.getDialogId()), PlaylistsMappingKt.mapToDomain(playlistsDb));
+            linkedHashMap.put(m99to.getFirst(), m99to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.playlists = mutableMap;

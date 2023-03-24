@@ -1,17 +1,17 @@
 package io.grpc;
 
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CallCredentials {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static abstract class MetadataApplier {
         public abstract void apply(Metadata metadata);
 
         public abstract void fail(Status status);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static abstract class RequestInfo {
     }
 

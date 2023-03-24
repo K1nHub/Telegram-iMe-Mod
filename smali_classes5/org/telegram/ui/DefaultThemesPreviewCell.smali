@@ -110,12 +110,12 @@
 
     if-nez v10, :cond_0
 
-    const/4 v10, 0x0
+    move v10, v11
 
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x1
+    move v10, v5
 
     :goto_0
     invoke-direct {v8, v9, v3, v10}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;-><init>(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
@@ -531,7 +531,7 @@
 
     if-nez v3, :cond_4
 
-    const/4 v11, 0x2
+    move v11, v6
 
     :cond_4
     iput v11, v2, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->themeIndex:I
@@ -805,7 +805,7 @@
     .line 112
     iput p3, p0, Lorg/telegram/ui/DefaultThemesPreviewCell;->selectedPosition:I
 
-    const/4 p3, 0x0
+    move p3, v5
 
     .line 113
     :goto_2
@@ -834,12 +834,12 @@
 
     if-ne p3, v2, :cond_5
 
-    const/4 v2, 0x1
+    move v2, v7
 
     goto :goto_3
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_3
     iput-boolean v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->isSelected:Z
@@ -856,7 +856,7 @@
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->setSelectedItem(I)V
 
-    const/4 p3, 0x0
+    move p3, v5
 
     .line 118
     :goto_4
@@ -982,7 +982,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 380
     :goto_0
@@ -1215,7 +1215,7 @@
     iput v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell;->selectedPosition:I
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 409
     :goto_2
@@ -1244,12 +1244,12 @@
 
     if-ne v0, v4, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_3
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     iput-boolean v4, v2, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->isSelected:Z
@@ -1394,7 +1394,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     iput v1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell;->themeIndex:I
@@ -1542,7 +1542,7 @@
 
     if-eqz v0, :cond_b
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 367
     :goto_2
@@ -1613,7 +1613,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 312
     :goto_0

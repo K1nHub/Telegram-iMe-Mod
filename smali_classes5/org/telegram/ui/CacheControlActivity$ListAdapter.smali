@@ -224,7 +224,7 @@
 .end method
 
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
-    .locals 5
+    .locals 4
 
     .line 1968
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
@@ -240,9 +240,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -260,9 +260,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -423,12 +423,12 @@
 
     if-gez v7, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_2
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_2
     invoke-static {v1, v5, v6, v7}, Lorg/telegram/ui/CacheControlActivity;->access$4600(Lorg/telegram/ui/CacheControlActivity;Ljava/lang/CharSequence;IZ)Ljava/lang/CharSequence;
@@ -461,7 +461,7 @@
     if-nez v6, :cond_5
 
     :goto_3
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_5
     invoke-virtual {p1, v1, v5, p2, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
@@ -568,7 +568,7 @@
 
     if-lez p2, :cond_9
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 2223
     :cond_9
@@ -578,73 +578,22 @@
 
     move-result-wide v0
 
-    const/4 p2, 0x0
-
-    cmp-long v2, v0, v5
-
-    if-gtz v2, :cond_a
+    cmp-long p2, v0, v5
 
     const/4 v0, 0x0
+
+    if-gtz p2, :cond_a
+
+    move p2, v0
 
     goto :goto_6
 
     :cond_a
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$3200(Lorg/telegram/ui/CacheControlActivity;)J
-
-    move-result-wide v0
-
-    long-to-float v0, v0
-
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$4200(Lorg/telegram/ui/CacheControlActivity;)J
-
-    move-result-wide v1
-
-    long-to-float v1, v1
-
-    div-float/2addr v0, v1
-
-    .line 2224
-    :goto_6
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$4300(Lorg/telegram/ui/CacheControlActivity;)J
-
-    move-result-wide v1
-
-    cmp-long v4, v1, v5
-
-    if-lez v4, :cond_c
-
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$4200(Lorg/telegram/ui/CacheControlActivity;)J
-
-    move-result-wide v1
-
-    cmp-long v4, v1, v5
-
-    if-gtz v4, :cond_b
-
-    goto :goto_7
-
-    :cond_b
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$4200(Lorg/telegram/ui/CacheControlActivity;)J
+    invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$3200(Lorg/telegram/ui/CacheControlActivity;)J
 
     move-result-wide v1
-
-    iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$4300(Lorg/telegram/ui/CacheControlActivity;)J
-
-    move-result-wide v4
-
-    sub-long/2addr v1, v4
 
     long-to-float p2, v1
 
@@ -658,10 +607,61 @@
 
     div-float/2addr p2, v1
 
+    .line 2224
+    :goto_6
+    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$4300(Lorg/telegram/ui/CacheControlActivity;)J
+
+    move-result-wide v1
+
+    cmp-long v1, v1, v5
+
+    if-lez v1, :cond_c
+
+    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$4200(Lorg/telegram/ui/CacheControlActivity;)J
+
+    move-result-wide v1
+
+    cmp-long v1, v1, v5
+
+    if-gtz v1, :cond_b
+
+    goto :goto_7
+
+    :cond_b
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$4200(Lorg/telegram/ui/CacheControlActivity;)J
+
+    move-result-wide v0
+
+    iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$4300(Lorg/telegram/ui/CacheControlActivity;)J
+
+    move-result-wide v4
+
+    sub-long/2addr v0, v4
+
+    long-to-float v0, v0
+
+    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$4200(Lorg/telegram/ui/CacheControlActivity;)J
+
+    move-result-wide v1
+
+    long-to-float v1, v1
+
+    div-float/2addr v0, v1
+
     .line 2221
     :cond_c
     :goto_7
-    invoke-virtual {p1, v3, v0, p2}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->setData(ZFF)V
+    invoke-virtual {p1, v3, p2, v0}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->setData(ZFF)V
 
     goto/16 :goto_9
 
@@ -1194,7 +1194,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 2189
     :goto_0
@@ -1614,7 +1614,7 @@
 
     if-ne p1, v2, :cond_8
 
-    const/4 p1, 0x0
+    move p1, v3
 
     goto :goto_2
 

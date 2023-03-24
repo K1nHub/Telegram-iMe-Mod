@@ -132,7 +132,7 @@
 
     const/4 p3, 0x0
 
-    const/4 v0, 0x0
+    move v0, p3
 
     :goto_0
     const/4 v1, 0x3
@@ -150,7 +150,7 @@
 
     int-to-float v5, p1
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     aput v4, v1, v3
 
@@ -161,7 +161,7 @@
 
     int-to-float v4, p2
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     aput v2, v1, v3
 
@@ -233,9 +233,9 @@
 
     move-result-wide p0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method public static drawTexture(Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/VideoFrame$TextureBuffer;Landroid/graphics/Matrix;IIIIIIIIZ)V

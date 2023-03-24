@@ -109,12 +109,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4302(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)Z
@@ -196,7 +196,7 @@
     add-int/lit8 p1, p1, -0x1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 1319
     :goto_0
@@ -258,7 +258,7 @@
 
     move-result v5
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v3
 
     invoke-static {v5, v4}, Ljava/lang/Math;->min(II)I
 
@@ -302,12 +302,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x2
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x0
@@ -365,7 +365,7 @@
 
     move-result v5
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v1
 
     invoke-static {v5, v4}, Ljava/lang/Math;->min(II)I
 
@@ -411,12 +411,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x2
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_0
     const/4 v3, 0x0
@@ -479,7 +479,7 @@
 
     move-result v5
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v1
 
     invoke-static {v5, v4}, Ljava/lang/Math;->min(II)I
 
@@ -622,9 +622,9 @@
     add-int/lit8 p2, p2, -0x1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 1279
     :goto_0
@@ -679,7 +679,7 @@
 
     move-result v7
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/2addr v7, v1
 
     invoke-static {v7, v6}, Ljava/lang/Math;->min(II)I
 
@@ -756,7 +756,7 @@
 
     if-eqz p2, :cond_9
 
-    const/4 p2, 0x0
+    move p2, v3
 
     .line 1292
     :goto_3
@@ -791,7 +791,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 1299
     :goto_4
@@ -849,7 +849,7 @@
 
     check-cast p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 1246
     :goto_6
@@ -904,7 +904,7 @@
 
     move-result v6
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v1
 
     invoke-static {v6, v5}, Ljava/lang/Math;->min(II)I
 
@@ -974,9 +974,9 @@
 
     iget-wide v3, p2, Lorg/telegram/ui/Components/EmojiView$CustomEmoji;->documentId:J
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-eqz v5, :cond_16
+    if-eqz v0, :cond_16
 
     :cond_13
     if-nez p2, :cond_14

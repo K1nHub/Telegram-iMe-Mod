@@ -77,14 +77,14 @@
 .end method
 
 .method public isExpired(J)Z
-    .locals 3
+    .locals 2
 
     .line 47
     iget-wide v0, p0, Lcom/google/firebase/crashlytics/internal/settings/model/SettingsData;->expiresAtMillis:J
 
-    cmp-long v2, v0, p1
+    cmp-long p1, v0, p1
 
-    if-gez v2, :cond_0
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 

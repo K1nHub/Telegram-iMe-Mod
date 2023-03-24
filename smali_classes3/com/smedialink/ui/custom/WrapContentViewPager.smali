@@ -253,7 +253,7 @@
     .line 43
     iput-boolean v3, p0, Lcom/smedialink/ui/custom/WrapContentViewPager;->dataChangedFlag:Z
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 46
     :cond_0
@@ -337,7 +337,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_1
     if-ge v8, v7, :cond_3

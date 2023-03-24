@@ -156,7 +156,10 @@ public final class AdPlaybackState implements Bundleable {
             boolean z = false;
             Assertions.checkArgument(i3 == -1 || i2 < i3);
             int[] copyStatesWithSpaceForAdCount = copyStatesWithSpaceForAdCount(this.states, i2 + 1);
-            Assertions.checkArgument((copyStatesWithSpaceForAdCount[i2] == 0 || copyStatesWithSpaceForAdCount[i2] == 1 || copyStatesWithSpaceForAdCount[i2] == i) ? true : true);
+            if (copyStatesWithSpaceForAdCount[i2] == 0 || copyStatesWithSpaceForAdCount[i2] == 1 || copyStatesWithSpaceForAdCount[i2] == i) {
+                z = true;
+            }
+            Assertions.checkArgument(z);
             long[] jArr = this.durationsUs;
             if (jArr.length != copyStatesWithSpaceForAdCount.length) {
                 jArr = copyDurationsUsWithSpaceForAdCount(jArr, copyStatesWithSpaceForAdCount.length);

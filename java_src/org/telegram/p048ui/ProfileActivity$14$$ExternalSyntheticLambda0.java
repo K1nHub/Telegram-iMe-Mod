@@ -14,6 +14,6 @@ public final /* synthetic */ class ProfileActivity$14$$ExternalSyntheticLambda0 
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        ProfileActivity.DialogInterface$OnClickListenerC627214.lambda$onClick$0(tLObject, tLRPC$TL_error);
+        ProfileActivity.DialogInterface$OnClickListenerC629814.lambda$onClick$0(tLObject, tLRPC$TL_error);
     }
 }

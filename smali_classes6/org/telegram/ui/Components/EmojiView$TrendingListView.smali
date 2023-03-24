@@ -143,7 +143,7 @@
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_1
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V

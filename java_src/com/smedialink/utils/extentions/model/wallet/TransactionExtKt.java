@@ -7,7 +7,7 @@ import com.smedialink.storage.domain.model.wallet.transaction.TransactionDirecti
 import com.smedialink.storage.domain.model.wallet.transaction.TransactionProcessingType;
 import com.smedialink.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TransactionExt.kt */
 /* loaded from: classes3.dex */
 public final class TransactionExtKt {
@@ -21,7 +21,7 @@ public final class TransactionExtKt {
         static {
             int[] iArr = new int[TransactionDirection.values().length];
             try {
-                iArr[TransactionDirection.f370IN.ordinal()] = 1;
+                iArr[TransactionDirection.f371IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -66,48 +66,48 @@ public final class TransactionExtKt {
     public static final int getIcon(Transaction transaction) {
         Intrinsics.checkNotNullParameter(transaction, "<this>");
         if (transaction.getStatus() == Status.CANCELLED) {
-            return C3286R.C3288drawable.fork_ic_transaction_cancelled;
+            return C3301R.C3303drawable.fork_ic_transaction_cancelled;
         }
         if (transaction instanceof Transaction.Crypto.Donation) {
             int i = WhenMappings.$EnumSwitchMapping$0[transaction.getDirection().ordinal()];
             if (i != 1) {
                 if (i == 2 || i == 3) {
-                    return C3286R.C3288drawable.fork_ic_transaction_donate_out;
+                    return C3301R.C3303drawable.fork_ic_transaction_donate_out;
                 }
                 return TransactionDirectionExtKt.icon(transaction.getDirection());
             }
-            return C3286R.C3288drawable.fork_ic_transaction_donate_in;
+            return C3301R.C3303drawable.fork_ic_transaction_donate_in;
         }
         if (transaction instanceof Transaction.Transfer ? true : transaction instanceof Transaction.Unsupported ? true : transaction instanceof Transaction.Crypto.Transfer ? true : transaction instanceof Transaction.Refund) {
             return TransactionDirectionExtKt.icon(transaction.getDirection());
         }
         if (transaction instanceof Transaction.Referral ? true : transaction instanceof Transaction.Lottery ? true : transaction instanceof Transaction.Registration) {
-            return C3286R.C3288drawable.fork_ic_transaction_bonus;
+            return C3301R.C3303drawable.fork_ic_transaction_bonus;
         }
         if (transaction instanceof Transaction.Purchase) {
-            return C3286R.C3288drawable.fork_ic_transaction_purchase;
+            return C3301R.C3303drawable.fork_ic_transaction_purchase;
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return C3286R.C3288drawable.fork_ic_transaction_simplex;
+            return C3301R.C3303drawable.fork_ic_transaction_simplex;
         }
         if (transaction instanceof Transaction.Crypto.Approve) {
-            return C3286R.C3288drawable.fork_ic_transaction_approve;
+            return C3301R.C3303drawable.fork_ic_transaction_approve;
         }
         if (transaction instanceof Transaction.Crypto.Swap) {
             int i2 = WhenMappings.$EnumSwitchMapping$1[transaction.getProcessingType().ordinal()];
             if (i2 == 1 || i2 == 2) {
-                return C3286R.C3288drawable.fork_ic_transaction_uniswap;
+                return C3301R.C3303drawable.fork_ic_transaction_uniswap;
             }
             if (i2 != 3) {
                 if (i2 != 4) {
                     if (i2 == 5) {
-                        return C3286R.C3288drawable.fork_ic_transaction_symbiosis;
+                        return C3301R.C3303drawable.fork_ic_transaction_symbiosis;
                     }
-                    return C3286R.C3288drawable.fork_ic_transaction_uniswap;
+                    return C3301R.C3303drawable.fork_ic_transaction_uniswap;
                 }
-                return C3286R.C3288drawable.fork_ic_transaction_1_inch;
+                return C3301R.C3303drawable.fork_ic_transaction_1_inch;
             }
-            return C3286R.C3288drawable.fork_ic_transaction_pancakeswap;
+            return C3301R.C3303drawable.fork_ic_transaction_pancakeswap;
         }
         return TransactionDirectionExtKt.icon(transaction.getDirection());
     }
@@ -118,36 +118,36 @@ public final class TransactionExtKt {
             return transaction.getDirection().getTitle();
         }
         if (transaction instanceof Transaction.Referral) {
-            return C3286R.string.wallet_transactions_type_referral_title;
+            return C3301R.string.wallet_transactions_type_referral_title;
         }
         if (transaction instanceof Transaction.Lottery) {
-            return C3286R.string.wallet_transactions_type_lottery_title;
+            return C3301R.string.wallet_transactions_type_lottery_title;
         }
         if (transaction instanceof Transaction.Registration) {
-            return C3286R.string.wallet_transactions_type_welcome_title;
+            return C3301R.string.wallet_transactions_type_welcome_title;
         }
         if (transaction instanceof Transaction.Purchase) {
-            return C3286R.string.wallet_transactions_type_in_app_purchase_title;
+            return C3301R.string.wallet_transactions_type_in_app_purchase_title;
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return C3286R.string.wallet_transactions_type_simplex_title;
+            return C3301R.string.wallet_transactions_type_simplex_title;
         }
         if (!(transaction instanceof Transaction.Crypto.Swap)) {
-            return transaction instanceof Transaction.Refund ? C3286R.string.wallet_transactions_type_refund_title : transaction.getDirection().getTitle();
+            return transaction instanceof Transaction.Refund ? C3301R.string.wallet_transactions_type_refund_title : transaction.getDirection().getTitle();
         }
         int i = WhenMappings.$EnumSwitchMapping$1[transaction.getProcessingType().ordinal()];
         if (i == 1 || i == 2) {
-            return C3286R.string.wallet_transactions_type_uniswap_title;
+            return C3301R.string.wallet_transactions_type_uniswap_title;
         }
         if (i != 3) {
             if (i != 4) {
                 if (i == 5) {
-                    return C3286R.string.wallet_transactions_type_symbiosis_title;
+                    return C3301R.string.wallet_transactions_type_symbiosis_title;
                 }
-                return C3286R.string.wallet_transactions_type_uniswap_title;
+                return C3301R.string.wallet_transactions_type_uniswap_title;
             }
-            return C3286R.string.wallet_transactions_type_1inch_title;
+            return C3301R.string.wallet_transactions_type_1inch_title;
         }
-        return C3286R.string.wallet_transactions_type_pancakeswap_title;
+        return C3301R.string.wallet_transactions_type_pancakeswap_title;
     }
 }

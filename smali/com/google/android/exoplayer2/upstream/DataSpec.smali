@@ -231,61 +231,61 @@
 
     add-long v8, v1, v4
 
-    const/4 v10, 0x1
+    const-wide/16 v10, 0x0
 
-    const/4 v11, 0x0
+    cmp-long v12, v8, v10
 
-    const-wide/16 v12, 0x0
+    const/4 v13, 0x1
 
-    cmp-long v14, v8, v12
+    const/4 v14, 0x0
 
-    if-ltz v14, :cond_0
+    if-ltz v12, :cond_0
 
-    const/4 v14, 0x1
+    move v12, v13
 
     goto :goto_0
 
     :cond_0
-    const/4 v14, 0x0
+    move v12, v14
 
     .line 660
     :goto_0
-    invoke-static {v14}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v12}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    cmp-long v14, v4, v12
+    cmp-long v12, v4, v10
 
-    if-ltz v14, :cond_1
+    if-ltz v12, :cond_1
 
-    const/4 v14, 0x1
+    move v12, v13
 
     goto :goto_1
 
     :cond_1
-    const/4 v14, 0x0
+    move v12, v14
 
     .line 661
     :goto_1
-    invoke-static {v14}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v12}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    cmp-long v14, v6, v12
+    cmp-long v10, v6, v10
 
-    if-gtz v14, :cond_3
+    if-gtz v10, :cond_3
 
-    const-wide/16 v12, -0x1
+    const-wide/16 v10, -0x1
 
-    cmp-long v14, v6, v12
+    cmp-long v10, v6, v10
 
-    if-nez v14, :cond_2
+    if-nez v10, :cond_2
 
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x0
+    move v13, v14
 
     .line 662
     :cond_3
     :goto_2
-    invoke-static {v10}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v13}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
     move-object/from16 v10, p1
 
@@ -531,16 +531,14 @@
 
     const/4 v0, 0x2
 
-    const/4 v2, 0x2
-
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x1
 
-    const/4 v2, 0x1
-
     :goto_0
+    move v2, v0
+
     move-object v0, p0
 
     move-object v1, p1
@@ -682,16 +680,16 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p1, v1
+    cmp-long v1, p1, v1
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     .line 717
     iget-wide v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    cmp-long v3, v1, p3
+    cmp-long v1, v1, p3
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     return-object v0
 

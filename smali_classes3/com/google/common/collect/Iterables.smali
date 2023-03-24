@@ -301,9 +301,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 200
     :goto_0
@@ -373,7 +373,7 @@
 
     if-eq v1, v2, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v4
 
     :cond_3
     return v0

@@ -184,7 +184,7 @@
 
     int-to-float v9, v1
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     aput v9, v8, v4
 

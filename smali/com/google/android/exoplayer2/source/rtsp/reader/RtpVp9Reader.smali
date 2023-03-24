@@ -237,12 +237,12 @@
 
     if-nez p2, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_1
     const-string v6, "VP9 flexible mode is not supported."
@@ -304,7 +304,7 @@
     return v5
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_2
     if-ge v1, v0, :cond_8
@@ -347,7 +347,7 @@
     return v5
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_3
     if-ge v0, p2, :cond_b
@@ -429,7 +429,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 

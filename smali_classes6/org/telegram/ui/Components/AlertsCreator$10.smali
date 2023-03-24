@@ -72,7 +72,7 @@
 
     if-nez v1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     :cond_0
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V

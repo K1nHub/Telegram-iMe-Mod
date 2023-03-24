@@ -355,9 +355,9 @@
 
     move-result-wide v5
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    invoke-static {v4, v6}, Lorg/telegram/messenger/LocaleController;->formatPluralStringInternal(II)Ljava/lang/String;
+    invoke-static {v4, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralStringInternal(II)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1707,12 +1707,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x8
+    move v2, v1
 
     .line 141
     :goto_0
@@ -1750,7 +1750,7 @@
     goto :goto_3
 
     :cond_4
-    const/16 v0, 0x8
+    move v0, v1
 
     :goto_3
     invoke-virtual {v2, v0}, Landroid/widget/ProgressBar;->setVisibility(I)V

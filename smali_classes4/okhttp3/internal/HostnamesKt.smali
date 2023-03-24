@@ -14,7 +14,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_3
@@ -117,7 +117,7 @@
     :cond_2
     move v2, p1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ge v2, p2, :cond_6
@@ -219,11 +219,11 @@
 
     move/from16 v12, p1
 
+    move v14, v11
+
+    move v15, v14
+
     const/4 v13, 0x0
-
-    const/4 v14, -0x1
-
-    const/4 v15, -0x1
 
     :goto_0
     const/16 v16, 0x0
@@ -463,9 +463,9 @@
 
     const/4 v1, -0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 202
     :goto_0
@@ -754,7 +754,7 @@
 
     if-nez v0, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_5
     if-eqz v1, :cond_6

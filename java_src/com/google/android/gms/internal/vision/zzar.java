@@ -3,7 +3,6 @@ package com.google.android.gms.internal.vision;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 /* loaded from: classes3.dex */
 public final class zzar implements Parcelable.Creator<zzao> {
@@ -20,7 +19,7 @@ public final class zzar implements Parcelable.Creator<zzao> {
         zzab zzabVar2 = null;
         String str = null;
         String str2 = null;
-        float f = BitmapDescriptorFactory.HUE_RED;
+        float f = 0.0f;
         boolean z = false;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);

@@ -379,7 +379,7 @@
 
     const p2, 0x3e126e98    # 0.143f
 
-    mul-float p0, p0, p2
+    mul-float/2addr p0, p2
 
     const/high16 p2, 0x3f800000    # 1.0f
 

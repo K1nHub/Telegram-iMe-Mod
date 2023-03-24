@@ -902,7 +902,7 @@
 
     const/high16 p7, 0x437f0000    # 255.0f
 
-    mul-float p2, p2, p7
+    mul-float/2addr p2, p7
 
     float-to-int v6, p2
 
@@ -1033,7 +1033,7 @@
 
     const/high16 p5, 0x437f0000    # 255.0f
 
-    mul-float p2, p2, p5
+    mul-float/2addr p2, p5
 
     float-to-int v6, p2
 
@@ -1395,7 +1395,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     sub-int/2addr v1, v2
@@ -1568,7 +1568,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 694
     :goto_0
@@ -2309,7 +2309,7 @@
 
     const/high16 v7, 0x41200000    # 10.0f
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     iget-object v8, v11, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;->bottomBitmap:Landroid/graphics/Bitmap;
 
@@ -2453,7 +2453,7 @@
 
     const/high16 v2, 0x40200000    # 2.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -2461,7 +2461,7 @@
 
     sget v2, Lorg/telegram/ui/BlurSettingsBottomSheet;->blurRadius:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 

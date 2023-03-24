@@ -1258,7 +1258,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
@@ -1305,12 +1305,12 @@
 
     if-ne v8, v2, :cond_0
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_1
     or-int/2addr v5, v8

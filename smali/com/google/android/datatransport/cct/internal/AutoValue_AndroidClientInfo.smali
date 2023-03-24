@@ -416,7 +416,7 @@
     goto :goto_b
 
     :cond_d
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_b
     return v0
@@ -543,7 +543,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -557,14 +557,14 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 180
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->model:Ljava/lang/String;
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 
@@ -576,14 +576,14 @@
     :goto_1
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 182
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->hardware:Ljava/lang/String;
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_2
 
@@ -595,14 +595,14 @@
     :goto_2
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 184
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->device:Ljava/lang/String;
 
     if-nez v3, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_3
 
@@ -614,14 +614,14 @@
     :goto_3
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 186
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->product:Ljava/lang/String;
 
     if-nez v3, :cond_4
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_4
 
@@ -633,14 +633,14 @@
     :goto_4
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 188
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->osBuild:Ljava/lang/String;
 
     if-nez v3, :cond_5
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_5
 
@@ -652,14 +652,14 @@
     :goto_5
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 190
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->manufacturer:Ljava/lang/String;
 
     if-nez v3, :cond_6
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_6
 
@@ -671,14 +671,14 @@
     :goto_6
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 192
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->fingerprint:Ljava/lang/String;
 
     if-nez v3, :cond_7
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_7
 
@@ -690,14 +690,14 @@
     :goto_7
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 194
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->locale:Ljava/lang/String;
 
     if-nez v3, :cond_8
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_8
 
@@ -709,14 +709,14 @@
     :goto_8
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 196
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->country:Ljava/lang/String;
 
     if-nez v3, :cond_9
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_9
 
@@ -728,14 +728,14 @@
     :goto_9
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 198
     iget-object v3, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->mccMnc:Ljava/lang/String;
 
     if-nez v3, :cond_a
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_a
 
@@ -747,7 +747,7 @@
     :goto_a
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 200
     iget-object v2, p0, Lcom/google/android/datatransport/cct/internal/AutoValue_AndroidClientInfo;->applicationBuild:Ljava/lang/String;

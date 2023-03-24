@@ -117,7 +117,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v5
 
     goto :goto_0
 
@@ -291,9 +291,9 @@
 
     iget-wide v6, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v17, v6, v15
+    cmp-long v6, v6, v15
 
-    if-eqz v17, :cond_6
+    if-eqz v6, :cond_6
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -305,7 +305,7 @@
 
     if-eqz v6, :cond_6
 
-    const/4 v6, 0x1
+    move v6, v9
 
     goto :goto_2
 
@@ -313,7 +313,7 @@
     move-object v12, v7
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_2
     if-eqz v2, :cond_7
@@ -348,12 +348,12 @@
 
     if-ne v7, v6, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v9
 
     goto :goto_4
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_4
     new-array v7, v9, [Z
@@ -485,7 +485,7 @@
 
     if-eqz v13, :cond_9
 
-    const/4 v13, 0x5
+    move v13, v14
 
     goto :goto_5
 
@@ -878,7 +878,7 @@
 
     if-eqz v5, :cond_11
 
-    const/16 v23, 0x14
+    move/from16 v23, v19
 
     goto :goto_a
 

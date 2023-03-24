@@ -146,7 +146,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupLayoutLeftOffset:F
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 115
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -448,7 +448,7 @@
 
     move-result v9
 
-    mul-int v9, v9, v6
+    mul-int/2addr v9, v6
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -533,7 +533,7 @@
 
     const/high16 v3, 0x3e800000    # 0.25f
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     iput v1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupLayoutLeftOffset:F
 
@@ -616,7 +616,7 @@
     goto :goto_4
 
     :cond_d
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 75
     :goto_4
@@ -954,7 +954,7 @@
 
     sub-float/2addr v2, p1
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomViewReactionsOffset:F
 

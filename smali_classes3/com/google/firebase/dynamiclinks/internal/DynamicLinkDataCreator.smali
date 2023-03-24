@@ -121,9 +121,9 @@
 
     move-object v12, v11
 
-    move-wide v9, v3
+    move v8, v2
 
-    const/4 v8, 0x0
+    move-wide v9, v3
 
     .line 45
     :goto_0

@@ -54,12 +54,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x8
+    move v0, v2
 
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -75,12 +75,12 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/16 v0, 0x8
+    move v0, v2
 
     :goto_1
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
@@ -99,7 +99,7 @@
     goto :goto_2
 
     :cond_2
-    const/16 v1, 0x8
+    move v1, v2
 
     :goto_2
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setVisibility(I)V

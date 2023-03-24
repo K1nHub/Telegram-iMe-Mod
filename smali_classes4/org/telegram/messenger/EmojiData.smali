@@ -29429,7 +29429,7 @@
 
     const/16 v29, 0xd1
 
-    const-string/jumbo v30, "\u2122"
+    const-string/jumbo v30, "\u2122\ufe0f"
 
     aput-object v30, v15, v29
 
@@ -31532,7 +31532,7 @@
 
     sput-object v1, Lorg/telegram/messenger/EmojiData;->emojiAliasMap:Ljava/util/HashMap;
 
-    const/4 v0, 0x0
+    move v0, v6
 
     .line 554
     :goto_0
@@ -31560,7 +31560,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v6
 
     .line 557
     :goto_1
@@ -31602,7 +31602,7 @@
 
     invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    const/4 v0, 0x0
+    move v0, v6
 
     .line 562
     :goto_2

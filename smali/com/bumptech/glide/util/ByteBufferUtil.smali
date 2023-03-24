@@ -55,15 +55,15 @@
 
     const-wide/32 v1, 0x7fffffff
 
-    cmp-long v3, v5, v1
+    cmp-long v1, v5, v1
 
-    if-gtz v3, :cond_1
+    if-gtz v1, :cond_1
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, v5, v1
+    cmp-long v1, v5, v1
 
-    if-eqz v3, :cond_0
+    if-eqz v1, :cond_0
 
     .line 41
     new-instance v7, Ljava/io/RandomAccessFile;
@@ -155,13 +155,8 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    goto :goto_1
-
     :catch_2
-    nop
-
     :cond_2
-    :goto_1
     if-eqz v7, :cond_3
 
     .line 54
@@ -431,13 +426,8 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    goto :goto_1
-
     :catch_2
-    nop
-
     :cond_0
-    :goto_1
     if-eqz v2, :cond_1
 
     .line 83

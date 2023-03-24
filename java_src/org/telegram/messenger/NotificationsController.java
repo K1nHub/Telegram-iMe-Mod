@@ -51,7 +51,9 @@ import org.telegram.tgnet.TLRPC$EncryptedChat;
 import org.telegram.tgnet.TLRPC$Message;
 import org.telegram.tgnet.TLRPC$MessageAction;
 import org.telegram.tgnet.TLRPC$MessageFwdHeader;
+import org.telegram.tgnet.TLRPC$MessageMedia;
 import org.telegram.tgnet.TLRPC$Peer;
+import org.telegram.tgnet.TLRPC$Poll;
 import org.telegram.tgnet.TLRPC$TL_account_updateNotifySettings;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_inputNotifyBroadcasts;
@@ -60,12 +62,43 @@ import org.telegram.tgnet.TLRPC$TL_inputNotifyForumTopic;
 import org.telegram.tgnet.TLRPC$TL_inputNotifyPeer;
 import org.telegram.tgnet.TLRPC$TL_inputNotifyUsers;
 import org.telegram.tgnet.TLRPC$TL_inputPeerNotifySettings;
+import org.telegram.tgnet.TLRPC$TL_messageActionChannelCreate;
+import org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatCreate;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatDeletePhoto;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatDeleteUser;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatEditPhoto;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatEditTitle;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByLink;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByRequest;
+import org.telegram.tgnet.TLRPC$TL_messageActionChatMigrateTo;
 import org.telegram.tgnet.TLRPC$TL_messageActionContactSignUp;
 import org.telegram.tgnet.TLRPC$TL_messageActionEmpty;
+import org.telegram.tgnet.TLRPC$TL_messageActionGameScore;
+import org.telegram.tgnet.TLRPC$TL_messageActionGeoProximityReached;
+import org.telegram.tgnet.TLRPC$TL_messageActionGroupCall;
+import org.telegram.tgnet.TLRPC$TL_messageActionGroupCallScheduled;
+import org.telegram.tgnet.TLRPC$TL_messageActionInviteToGroupCall;
+import org.telegram.tgnet.TLRPC$TL_messageActionLoginUnknownLocation;
+import org.telegram.tgnet.TLRPC$TL_messageActionPaymentSent;
+import org.telegram.tgnet.TLRPC$TL_messageActionPhoneCall;
 import org.telegram.tgnet.TLRPC$TL_messageActionPinMessage;
+import org.telegram.tgnet.TLRPC$TL_messageActionScreenshotTaken;
+import org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme;
 import org.telegram.tgnet.TLRPC$TL_messageActionSetMessagesTTL;
 import org.telegram.tgnet.TLRPC$TL_messageActionUserJoined;
+import org.telegram.tgnet.TLRPC$TL_messageActionUserUpdatedPhoto;
 import org.telegram.tgnet.TLRPC$TL_messageEntitySpoiler;
+import org.telegram.tgnet.TLRPC$TL_messageMediaContact;
+import org.telegram.tgnet.TLRPC$TL_messageMediaDocument;
+import org.telegram.tgnet.TLRPC$TL_messageMediaGame;
+import org.telegram.tgnet.TLRPC$TL_messageMediaGeo;
+import org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive;
+import org.telegram.tgnet.TLRPC$TL_messageMediaPhoto;
+import org.telegram.tgnet.TLRPC$TL_messageMediaPoll;
+import org.telegram.tgnet.TLRPC$TL_messageMediaVenue;
+import org.telegram.tgnet.TLRPC$TL_messageService;
 import org.telegram.tgnet.TLRPC$TL_notificationSoundDefault;
 import org.telegram.tgnet.TLRPC$TL_notificationSoundLocal;
 import org.telegram.tgnet.TLRPC$TL_notificationSoundNone;
@@ -555,15 +588,16 @@ public class NotificationsController extends BaseController {
         int i = this.total_unread_count;
         getAccountInstance().getNotificationsSettings();
         int i2 = 0;
-        while (i2 < longSparseArray.size()) {
-            long keyAt = longSparseArray2.keyAt(i2);
+        int i3 = 0;
+        while (i3 < longSparseArray.size()) {
+            long keyAt = longSparseArray2.keyAt(i3);
             SparseArray<MessageObject> sparseArray = this.pushMessagesDict.get(keyAt);
             if (sparseArray != null) {
                 ArrayList arrayList2 = (ArrayList) longSparseArray2.get(keyAt);
                 int size = arrayList2.size();
-                int i3 = 0;
-                while (i3 < size) {
-                    int intValue = ((Integer) arrayList2.get(i3)).intValue();
+                int i4 = i2;
+                while (i4 < size) {
+                    int intValue = ((Integer) arrayList2.get(i4)).intValue();
                     MessageObject messageObject = sparseArray.get(intValue);
                     if (messageObject == null || (z && !messageObject.isReactionPush)) {
                         j = keyAt;
@@ -583,9 +617,9 @@ public class NotificationsController extends BaseController {
                         }
                         if (!num.equals(num2)) {
                             if (getMessagesController().isForum(dialogId)) {
-                                int i4 = this.total_unread_count - (num2.intValue() > 0 ? 1 : 0);
-                                this.total_unread_count = i4;
-                                this.total_unread_count = i4 + (num.intValue() > 0 ? 1 : 0);
+                                int i5 = this.total_unread_count - (num2.intValue() > 0 ? 1 : 0);
+                                this.total_unread_count = i5;
+                                this.total_unread_count = i5 + (num.intValue() > 0 ? 1 : 0);
                             } else {
                                 int intValue2 = this.total_unread_count - num2.intValue();
                                 this.total_unread_count = intValue2;
@@ -605,7 +639,7 @@ public class NotificationsController extends BaseController {
                         }
                         arrayList.add(messageObject);
                     }
-                    i3++;
+                    i4++;
                     keyAt = j;
                 }
                 long j2 = keyAt;
@@ -613,8 +647,9 @@ public class NotificationsController extends BaseController {
                     this.pushMessagesDict.remove(j2);
                 }
             }
-            i2++;
+            i3++;
             longSparseArray2 = longSparseArray;
+            i2 = 0;
         }
         if (!arrayList.isEmpty()) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda29
@@ -675,23 +710,24 @@ public class NotificationsController extends BaseController {
         Integer num;
         int i = this.total_unread_count;
         getAccountInstance().getNotificationsSettings();
-        Integer num2 = 0;
         int i2 = 0;
+        Integer num2 = 0;
+        int i3 = 0;
         while (true) {
-            if (i2 >= longSparseIntArray.size()) {
+            if (i3 >= longSparseIntArray.size()) {
                 break;
             }
-            long keyAt = longSparseIntArray.keyAt(i2);
+            long keyAt = longSparseIntArray.keyAt(i3);
             long j = -keyAt;
             long j2 = longSparseIntArray.get(keyAt);
             Integer num3 = this.pushDialogs.get(j);
             if (num3 == null) {
                 num3 = num2;
             }
+            int i4 = i2;
             Integer num4 = num3;
-            int i3 = 0;
-            while (i3 < this.pushMessages.size()) {
-                MessageObject messageObject = this.pushMessages.get(i3);
+            while (i4 < this.pushMessages.size()) {
+                MessageObject messageObject = this.pushMessages.get(i4);
                 if (messageObject.getDialogId() == j) {
                     num = num2;
                     if (messageObject.getId() <= j2) {
@@ -704,7 +740,7 @@ public class NotificationsController extends BaseController {
                         }
                         this.delayedPushMessages.remove(messageObject);
                         this.pushMessages.remove(messageObject);
-                        i3--;
+                        i4--;
                         if (isPersonalMessage(messageObject)) {
                             this.personalCount--;
                         }
@@ -714,7 +750,7 @@ public class NotificationsController extends BaseController {
                 } else {
                     num = num2;
                 }
-                i3++;
+                i4++;
                 num2 = num;
             }
             Integer num5 = num2;
@@ -724,9 +760,9 @@ public class NotificationsController extends BaseController {
             }
             if (!num4.equals(num3)) {
                 if (getMessagesController().isForum(j)) {
-                    int i4 = this.total_unread_count - (num3.intValue() > 0 ? 1 : 0);
-                    this.total_unread_count = i4;
-                    this.total_unread_count = i4 + (num4.intValue() <= 0 ? 0 : 1);
+                    int i5 = this.total_unread_count - (num3.intValue() > 0 ? 1 : 0);
+                    this.total_unread_count = i5;
+                    this.total_unread_count = i5 + (num4.intValue() <= 0 ? 0 : 1);
                 } else {
                     int intValue = this.total_unread_count - num3.intValue();
                     this.total_unread_count = intValue;
@@ -738,8 +774,9 @@ public class NotificationsController extends BaseController {
                 this.pushDialogs.remove(j);
                 this.pushDialogsOverrideMention.remove(j);
             }
-            i2++;
+            i3++;
             num2 = num5;
+            i2 = 0;
         }
         if (arrayList.isEmpty()) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda30
@@ -851,7 +888,7 @@ public class NotificationsController extends BaseController {
             int r0 = r9.getInt(r0, r1)
             goto L35
         L34:
-            r0 = 0
+            r0 = r1
         L35:
             if (r0 != 0) goto L50
             if (r8 == 0) goto L40
@@ -877,18 +914,18 @@ public class NotificationsController extends BaseController {
             r6 = 2
             if (r0 != r6) goto L59
         L58:
-            r0 = 0
+            r0 = r1
         L59:
             if (r0 == 0) goto L6e
             org.telegram.tgnet.TLRPC$Message r6 = r5.messageOwner
             org.telegram.tgnet.TLRPC$Peer r6 = r6.peer_id
             long r6 = r6.channel_id
             r8 = 0
-            int r2 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
-            if (r2 == 0) goto L6e
+            int r6 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
+            if (r6 == 0) goto L6e
             boolean r6 = r5.isSupergroup()
             if (r6 != 0) goto L6e
-            r0 = 0
+            r0 = r1
         L6e:
             if (r0 == 0) goto L73
             r4.add(r1, r5)
@@ -1077,9 +1114,12 @@ public class NotificationsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processLoadedUnreadMessages$23(ArrayList arrayList, LongSparseArray longSparseArray, ArrayList arrayList2) {
         boolean z;
+        int i;
+        int intValue;
+        int i2;
         boolean z2;
         TLRPC$MessageFwdHeader tLRPC$MessageFwdHeader;
-        int i;
+        int i3;
         SparseArray<MessageObject> sparseArray;
         long j;
         boolean z3;
@@ -1094,23 +1134,23 @@ public class NotificationsController extends BaseController {
         SharedPreferences notificationsSettings = getAccountInstance().getNotificationsSettings();
         LongSparseArray longSparseArray2 = new LongSparseArray();
         long j2 = 0;
-        int i2 = 1;
+        int i4 = 1;
         if (arrayList3 != null) {
-            int i3 = 0;
-            while (i3 < arrayList.size()) {
-                TLRPC$Message tLRPC$Message = (TLRPC$Message) arrayList3.get(i3);
+            int i5 = 0;
+            while (i5 < arrayList.size()) {
+                TLRPC$Message tLRPC$Message = (TLRPC$Message) arrayList3.get(i5);
                 if (tLRPC$Message != null && ((tLRPC$MessageFwdHeader = tLRPC$Message.fwd_from) == null || !tLRPC$MessageFwdHeader.imported)) {
                     TLRPC$MessageAction tLRPC$MessageAction = tLRPC$Message.action;
                     if (!(tLRPC$MessageAction instanceof TLRPC$TL_messageActionSetMessagesTTL) && (!tLRPC$Message.silent || (!(tLRPC$MessageAction instanceof TLRPC$TL_messageActionContactSignUp) && !(tLRPC$MessageAction instanceof TLRPC$TL_messageActionUserJoined)))) {
                         long j3 = tLRPC$Message.peer_id.channel_id;
                         long j4 = j3 != j2 ? -j3 : j2;
                         SparseArray<MessageObject> sparseArray3 = this.pushMessagesDict.get(j4);
-                        if (sparseArray3 == null || sparseArray3.indexOfKey(tLRPC$Message.f1523id) < 0) {
+                        if (sparseArray3 == null || sparseArray3.indexOfKey(tLRPC$Message.f1524id) < 0) {
                             MessageObject messageObject = new MessageObject(this.currentAccount, tLRPC$Message, z4, z4);
                             if (isPersonalMessage(messageObject)) {
-                                this.personalCount += i2;
+                                this.personalCount += i4;
                             }
-                            i = i3;
+                            i3 = i5;
                             long dialogId = messageObject.getDialogId();
                             int topicId = MessageObject.getTopicId(messageObject.messageOwner, getMessagesController().isForum(messageObject));
                             if (messageObject.messageOwner.mentioned) {
@@ -1139,35 +1179,37 @@ public class NotificationsController extends BaseController {
                                 } else {
                                     sparseArray2 = sparseArray;
                                 }
-                                sparseArray2.put(tLRPC$Message.f1523id, messageObject);
+                                sparseArray2.put(tLRPC$Message.f1524id, messageObject);
                                 appendMessage(messageObject);
                                 if (dialogId != j) {
                                     Integer num = this.pushDialogsOverrideMention.get(dialogId);
                                     this.pushDialogsOverrideMention.put(dialogId, Integer.valueOf(num == null ? 1 : num.intValue() + 1));
                                 }
                             }
-                            i3 = i + 1;
+                            i5 = i3 + 1;
                             arrayList3 = arrayList;
                             z4 = false;
                             j2 = 0;
-                            i2 = 1;
+                            i4 = 1;
                         }
                     }
                 }
-                i = i3;
-                i3 = i + 1;
+                i3 = i5;
+                i5 = i3 + 1;
                 arrayList3 = arrayList;
                 z4 = false;
                 j2 = 0;
-                i2 = 1;
+                i4 = 1;
             }
         }
-        for (int i4 = 0; i4 < longSparseArray.size(); i4++) {
-            long keyAt = longSparseArray.keyAt(i4);
+        for (int i6 = 0; i6 < longSparseArray.size(); i6++) {
+            long keyAt = longSparseArray.keyAt(i6);
             int indexOfKey2 = longSparseArray2.indexOfKey(keyAt);
             if (indexOfKey2 >= 0) {
                 z2 = ((Boolean) longSparseArray2.valueAt(indexOfKey2)).booleanValue();
+                i2 = 0;
             } else {
+                i2 = 0;
                 int notifyOverride2 = getNotifyOverride(notificationsSettings, keyAt, 0);
                 if (notifyOverride2 == -1) {
                     z2 = isGlobalNotificationsEnabled(keyAt);
@@ -1177,18 +1219,18 @@ public class NotificationsController extends BaseController {
                 longSparseArray2.put(keyAt, Boolean.valueOf(z2));
             }
             if (z2) {
-                int intValue = ((Integer) longSparseArray.valueAt(i4)).intValue();
-                this.pushDialogs.put(keyAt, Integer.valueOf(intValue));
+                int intValue2 = ((Integer) longSparseArray.valueAt(i6)).intValue();
+                this.pushDialogs.put(keyAt, Integer.valueOf(intValue2));
                 if (getMessagesController().isForum(keyAt)) {
-                    this.total_unread_count += intValue > 0 ? 1 : 0;
+                    this.total_unread_count += intValue2 > 0 ? 1 : i2;
                 } else {
-                    this.total_unread_count += intValue;
+                    this.total_unread_count += intValue2;
                 }
             }
         }
         if (arrayList2 != null) {
-            for (int i5 = 0; i5 < arrayList2.size(); i5++) {
-                MessageObject messageObject2 = (MessageObject) arrayList2.get(i5);
+            for (int i7 = 0; i7 < arrayList2.size(); i7++) {
+                MessageObject messageObject2 = (MessageObject) arrayList2.get(i7);
                 int id = messageObject2.getId();
                 if (this.pushMessagesDict.indexOfKey(id) < 0) {
                     if (isPersonalMessage(messageObject2)) {
@@ -1227,22 +1269,32 @@ public class NotificationsController extends BaseController {
                         appendMessage(messageObject2);
                         if (dialogId2 != fromChatId) {
                             Integer num2 = this.pushDialogsOverrideMention.get(dialogId2);
-                            this.pushDialogsOverrideMention.put(dialogId2, Integer.valueOf(num2 == null ? 1 : num2.intValue() + 1));
+                            LongSparseArray<Integer> longSparseArray3 = this.pushDialogsOverrideMention;
+                            if (num2 == null) {
+                                intValue = 1;
+                                i = 1;
+                            } else {
+                                i = 1;
+                                intValue = num2.intValue() + 1;
+                            }
+                            longSparseArray3.put(dialogId2, Integer.valueOf(intValue));
+                        } else {
+                            i = 1;
                         }
                         Integer num3 = this.pushDialogs.get(fromChatId);
-                        int intValue2 = num3 != null ? num3.intValue() + 1 : 1;
+                        int intValue3 = num3 != null ? num3.intValue() + 1 : i;
                         if (getMessagesController().isForum(fromChatId)) {
                             if (num3 != null) {
-                                this.total_unread_count -= num3.intValue() > 0 ? 1 : 0;
+                                this.total_unread_count -= num3.intValue() > 0 ? i : 0;
                             }
-                            this.total_unread_count += intValue2 > 0 ? 1 : 0;
+                            this.total_unread_count += intValue3 > 0 ? i : 0;
                         } else {
                             if (num3 != null) {
                                 this.total_unread_count -= num3.intValue();
                             }
-                            this.total_unread_count += intValue2;
+                            this.total_unread_count += intValue3;
                         }
-                        this.pushDialogs.put(fromChatId, Integer.valueOf(intValue2));
+                        this.pushDialogs.put(fromChatId, Integer.valueOf(intValue3));
                     }
                 }
             }
@@ -1284,7 +1336,7 @@ public class NotificationsController extends BaseController {
                                 int size2 = arrayList.size();
                                 for (int i3 = 0; i3 < size2; i3++) {
                                     TLRPC$Dialog tLRPC$Dialog = (TLRPC$Dialog) arrayList.get(i3);
-                                    if ((tLRPC$Dialog == null || !DialogObject.isChatDialog(tLRPC$Dialog.f1505id) || !ChatObject.isNotInChat(getMessagesController().getChat(Long.valueOf(-tLRPC$Dialog.f1505id)))) && tLRPC$Dialog != null) {
+                                    if ((tLRPC$Dialog == null || !DialogObject.isChatDialog(tLRPC$Dialog.f1506id) || !ChatObject.isNotInChat(getMessagesController().getChat(Long.valueOf(-tLRPC$Dialog.f1506id)))) && tLRPC$Dialog != null) {
                                         i += MessagesController.getInstance(i2).getDialogUnreadCount(tLRPC$Dialog);
                                     }
                                 }
@@ -1299,7 +1351,7 @@ public class NotificationsController extends BaseController {
                             int size3 = MessagesController.getInstance(i2).allDialogs.size();
                             for (int i4 = 0; i4 < size3; i4++) {
                                 TLRPC$Dialog tLRPC$Dialog2 = MessagesController.getInstance(i2).allDialogs.get(i4);
-                                if ((!DialogObject.isChatDialog(tLRPC$Dialog2.f1505id) || !ChatObject.isNotInChat(getMessagesController().getChat(Long.valueOf(-tLRPC$Dialog2.f1505id)))) && MessagesController.getInstance(i2).getDialogUnreadCount(tLRPC$Dialog2) != 0) {
+                                if ((!DialogObject.isChatDialog(tLRPC$Dialog2.f1506id) || !ChatObject.isNotInChat(getMessagesController().getChat(Long.valueOf(-tLRPC$Dialog2.f1506id)))) && MessagesController.getInstance(i2).getDialogUnreadCount(tLRPC$Dialog2) != 0) {
                                     i++;
                                 }
                             }
@@ -1338,1155 +1390,1155 @@ public class NotificationsController extends BaseController {
         NotificationBadge.applyCount(i);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0243, code lost:
-        if (r12.getBoolean("EnablePreviewAll", true) == false) goto L769;
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x024a, code lost:
+        if (r6.getBoolean(r7, true) == false) goto L769;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x024f, code lost:
-        if (r12.getBoolean("EnablePreviewGroup", r6) != false) goto L131;
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x0259, code lost:
+        if (r6.getBoolean(r24, r11) != false) goto L131;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x0259, code lost:
-        if (r12.getBoolean(r24, r6) != false) goto L131;
+    /* JADX WARN: Code restructure failed: missing block: B:158:0x0263, code lost:
+        if (r6.getBoolean(r23, r11) != false) goto L131;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x025b, code lost:
-        r1 = r26.messageOwner;
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x0265, code lost:
+        r2 = r26.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x026b, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageService) == false) goto L659;
+    /* JADX WARN: Code restructure failed: missing block: B:160:0x0275, code lost:
+        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageService) == false) goto L659;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x026d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x0277, code lost:
         r27[0] = null;
-        r2 = r1.action;
+        r6 = r2.action;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x0275, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGeoProximityReached) == false) goto L137;
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x027e, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGeoProximityReached) == false) goto L137;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x027d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x0286, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x0280, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionUserJoined) != false) goto L657;
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x0289, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionUserJoined) != false) goto L657;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x0284, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionContactSignUp) == false) goto L141;
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x028d, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionContactSignUp) == false) goto L141;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x028a, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionUserUpdatedPhoto) == false) goto L145;
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x0293, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionUserUpdatedPhoto) == false) goto L145;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:174:0x029a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationContactNewPhoto", org.telegram.messenger.C3286R.string.NotificationContactNewPhoto, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:173:0x02a3, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationContactNewPhoto", org.telegram.messenger.C3301R.string.NotificationContactNewPhoto, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:176:0x029e, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionLoginUnknownLocation) == false) goto L149;
+    /* JADX WARN: Code restructure failed: missing block: B:175:0x02a7, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionLoginUnknownLocation) == false) goto L149;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x02a0, code lost:
-        r1 = org.telegram.messenger.LocaleController.formatString("formatDateAtTime", org.telegram.messenger.C3286R.string.formatDateAtTime, org.telegram.messenger.LocaleController.getInstance().formatterYear.format(r26.messageOwner.date * 1000), org.telegram.messenger.LocaleController.getInstance().formatterDay.format(r26.messageOwner.date * 1000));
-        r2 = org.telegram.messenger.C3286R.string.NotificationUnrecognizedDevice;
+    /* JADX WARN: Code restructure failed: missing block: B:176:0x02a9, code lost:
+        r1 = org.telegram.messenger.LocaleController.formatString("formatDateAtTime", org.telegram.messenger.C3301R.string.formatDateAtTime, org.telegram.messenger.LocaleController.getInstance().formatterYear.format(r26.messageOwner.date * 1000), org.telegram.messenger.LocaleController.getInstance().formatterDay.format(r26.messageOwner.date * 1000));
+        r2 = org.telegram.messenger.C3301R.string.NotificationUnrecognizedDevice;
         r0 = r26.messageOwner.action;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:178:0x02fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x0303, code lost:
         return org.telegram.messenger.LocaleController.formatString("NotificationUnrecognizedDevice", r2, getUserConfig().getCurrentUser().first_name, r1, r0.title, r0.address);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x02ff, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGameScore) != false) goto L655;
+    /* JADX WARN: Code restructure failed: missing block: B:179:0x0306, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGameScore) != false) goto L655;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x0303, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPaymentSent) == false) goto L153;
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x030a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPaymentSent) == false) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x0309, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPhoneCall) == false) goto L161;
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x0310, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPhoneCall) == false) goto L161;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x030d, code lost:
-        if (r2.video == false) goto L159;
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x0314, code lost:
+        if (r6.video == false) goto L159;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0317, code lost:
-        return org.telegram.messenger.LocaleController.getString("CallMessageVideoIncomingMissed", org.telegram.messenger.C3286R.string.CallMessageVideoIncomingMissed);
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x031e, code lost:
+        return org.telegram.messenger.LocaleController.getString("CallMessageVideoIncomingMissed", org.telegram.messenger.C3301R.string.CallMessageVideoIncomingMissed);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x0320, code lost:
-        return org.telegram.messenger.LocaleController.getString("CallMessageIncomingMissed", org.telegram.messenger.C3286R.string.CallMessageIncomingMissed);
+    /* JADX WARN: Code restructure failed: missing block: B:190:0x0327, code lost:
+        return org.telegram.messenger.LocaleController.getString("CallMessageIncomingMissed", org.telegram.messenger.C3301R.string.CallMessageIncomingMissed);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:193:0x0323, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser) == false) goto L208;
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x032a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser) == false) goto L208;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x0325, code lost:
-        r3 = r2.user_id;
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x032c, code lost:
+        r2 = r6.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x032b, code lost:
-        if (r3 != 0) goto L168;
+    /* JADX WARN: Code restructure failed: missing block: B:194:0x0332, code lost:
+        if (r2 != 0) goto L168;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x0334, code lost:
-        if (r2.users.size() != 1) goto L168;
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x033b, code lost:
+        if (r6.users.size() != 1) goto L168;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:198:0x0336, code lost:
-        r3 = r26.messageOwner.action.users.get(0).longValue();
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x033d, code lost:
+        r2 = r26.messageOwner.action.users.get(0).longValue();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x034b, code lost:
-        if (r3 == 0) goto L193;
+    /* JADX WARN: Code restructure failed: missing block: B:199:0x0352, code lost:
+        if (r2 == 0) goto L193;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:202:0x0355, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:201:0x035c, code lost:
         if (r26.messageOwner.peer_id.channel_id == 0) goto L176;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x0359, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:203:0x0360, code lost:
         if (r5.megagroup != false) goto L176;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:206:0x036e, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelAddedByNotification", org.telegram.messenger.C3286R.string.ChannelAddedByNotification, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:205:0x0375, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChannelAddedByNotification", org.telegram.messenger.C3301R.string.ChannelAddedByNotification, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:208:0x0371, code lost:
-        if (r3 != r19) goto L180;
+    /* JADX WARN: Code restructure failed: missing block: B:207:0x0378, code lost:
+        if (r2 != r19) goto L180;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:210:0x0386, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroup", org.telegram.messenger.C3286R.string.NotificationInvitedToGroup, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:209:0x038d, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroup", org.telegram.messenger.C3301R.string.NotificationInvitedToGroup, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:211:0x0387, code lost:
-        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r3));
+    /* JADX WARN: Code restructure failed: missing block: B:210:0x038e, code lost:
+        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:212:0x0393, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:211:0x039a, code lost:
         if (r0 != null) goto L183;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:213:0x0395, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:212:0x039c, code lost:
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:216:0x039b, code lost:
-        if (r9 != r0.f1639id) goto L191;
+    /* JADX WARN: Code restructure failed: missing block: B:214:0x03a1, code lost:
+        if (r9 != r0.f1640id) goto L191;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:218:0x039f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:216:0x03a5, code lost:
         if (r5.megagroup == false) goto L189;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:220:0x03b4, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelfMega", org.telegram.messenger.C3286R.string.NotificationGroupAddSelfMega, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:218:0x03ba, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelfMega", org.telegram.messenger.C3301R.string.NotificationGroupAddSelfMega, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:222:0x03c8, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelf", org.telegram.messenger.C3286R.string.NotificationGroupAddSelf, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:220:0x03ce, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelf", org.telegram.messenger.C3301R.string.NotificationGroupAddSelf, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:224:0x03e2, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3286R.string.NotificationGroupAddMember, r7, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
+    /* JADX WARN: Code restructure failed: missing block: B:222:0x03e8, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3301R.string.NotificationGroupAddMember, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:225:0x03e3, code lost:
-        r1 = new java.lang.StringBuilder();
-        r2 = 0;
+    /* JADX WARN: Code restructure failed: missing block: B:223:0x03e9, code lost:
+        r2 = new java.lang.StringBuilder();
+        r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:227:0x03f3, code lost:
-        if (r2 >= r26.messageOwner.action.users.size()) goto L205;
+    /* JADX WARN: Code restructure failed: missing block: B:225:0x03f9, code lost:
+        if (r3 >= r26.messageOwner.action.users.size()) goto L205;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:228:0x03f5, code lost:
-        r3 = getMessagesController().getUser(r26.messageOwner.action.users.get(r2));
+    /* JADX WARN: Code restructure failed: missing block: B:226:0x03fb, code lost:
+        r4 = getMessagesController().getUser(r26.messageOwner.action.users.get(r3));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:229:0x0409, code lost:
-        if (r3 == null) goto L204;
+    /* JADX WARN: Code restructure failed: missing block: B:227:0x040f, code lost:
+        if (r4 == null) goto L204;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:230:0x040b, code lost:
-        r3 = org.telegram.messenger.UserObject.getUserName(r3);
+    /* JADX WARN: Code restructure failed: missing block: B:228:0x0411, code lost:
+        r4 = org.telegram.messenger.UserObject.getUserName(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:231:0x0413, code lost:
-        if (r1.length() == 0) goto L201;
+    /* JADX WARN: Code restructure failed: missing block: B:229:0x0419, code lost:
+        if (r2.length() == 0) goto L201;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:232:0x0415, code lost:
-        r1.append(", ");
+    /* JADX WARN: Code restructure failed: missing block: B:230:0x041b, code lost:
+        r2.append(", ");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:233:0x041a, code lost:
-        r1.append(r3);
+    /* JADX WARN: Code restructure failed: missing block: B:231:0x0420, code lost:
+        r2.append(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:234:0x041d, code lost:
-        r2 = r2 + 1;
+    /* JADX WARN: Code restructure failed: missing block: B:232:0x0423, code lost:
+        r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:236:0x0439, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3286R.string.NotificationGroupAddMember, r7, r5.title, r1.toString());
+    /* JADX WARN: Code restructure failed: missing block: B:234:0x043f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3301R.string.NotificationGroupAddMember, r1, r5.title, r2.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:238:0x043d, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCall) == false) goto L212;
+    /* JADX WARN: Code restructure failed: missing block: B:236:0x0443, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCall) == false) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:240:0x0451, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupCreatedCall", org.telegram.messenger.C3286R.string.NotificationGroupCreatedCall, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:238:0x0457, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupCreatedCall", org.telegram.messenger.C3301R.string.NotificationGroupCreatedCall, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:242:0x0454, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCallScheduled) == false) goto L216;
+    /* JADX WARN: Code restructure failed: missing block: B:240:0x045a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCallScheduled) == false) goto L216;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:244:0x045c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:242:0x0462, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:246:0x045f, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionInviteToGroupCall) == false) goto L249;
+    /* JADX WARN: Code restructure failed: missing block: B:244:0x0465, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionInviteToGroupCall) == false) goto L249;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:247:0x0461, code lost:
-        r3 = r2.user_id;
+    /* JADX WARN: Code restructure failed: missing block: B:245:0x0467, code lost:
+        r2 = r6.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:248:0x0467, code lost:
-        if (r3 != 0) goto L223;
+    /* JADX WARN: Code restructure failed: missing block: B:246:0x046d, code lost:
+        if (r2 != 0) goto L223;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:250:0x0470, code lost:
-        if (r2.users.size() != 1) goto L223;
+    /* JADX WARN: Code restructure failed: missing block: B:248:0x0476, code lost:
+        if (r6.users.size() != 1) goto L223;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:251:0x0472, code lost:
-        r3 = r26.messageOwner.action.users.get(0).longValue();
+    /* JADX WARN: Code restructure failed: missing block: B:249:0x0478, code lost:
+        r2 = r26.messageOwner.action.users.get(0).longValue();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:253:0x0487, code lost:
-        if (r3 == 0) goto L234;
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x048d, code lost:
+        if (r2 == 0) goto L234;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:255:0x048b, code lost:
-        if (r3 != r19) goto L229;
+    /* JADX WARN: Code restructure failed: missing block: B:253:0x0491, code lost:
+        if (r2 != r19) goto L229;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:257:0x04a0, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedYouToCall", org.telegram.messenger.C3286R.string.NotificationGroupInvitedYouToCall, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:255:0x04a6, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedYouToCall", org.telegram.messenger.C3301R.string.NotificationGroupInvitedYouToCall, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:258:0x04a1, code lost:
-        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r3));
+    /* JADX WARN: Code restructure failed: missing block: B:256:0x04a7, code lost:
+        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:259:0x04ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:257:0x04b3, code lost:
         if (r0 != null) goto L232;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:260:0x04af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:258:0x04b5, code lost:
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x04ca, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3286R.string.NotificationGroupInvitedToCall, r7, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
+    /* JADX WARN: Code restructure failed: missing block: B:260:0x04cf, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3301R.string.NotificationGroupInvitedToCall, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:264:0x04cb, code lost:
-        r1 = new java.lang.StringBuilder();
-        r2 = 0;
+    /* JADX WARN: Code restructure failed: missing block: B:261:0x04d0, code lost:
+        r2 = new java.lang.StringBuilder();
+        r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x04db, code lost:
-        if (r2 >= r26.messageOwner.action.users.size()) goto L246;
+    /* JADX WARN: Code restructure failed: missing block: B:263:0x04e0, code lost:
+        if (r3 >= r26.messageOwner.action.users.size()) goto L246;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:267:0x04dd, code lost:
-        r3 = getMessagesController().getUser(r26.messageOwner.action.users.get(r2));
+    /* JADX WARN: Code restructure failed: missing block: B:264:0x04e2, code lost:
+        r4 = getMessagesController().getUser(r26.messageOwner.action.users.get(r3));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:268:0x04f1, code lost:
-        if (r3 == null) goto L245;
+    /* JADX WARN: Code restructure failed: missing block: B:265:0x04f6, code lost:
+        if (r4 == null) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:269:0x04f3, code lost:
-        r3 = org.telegram.messenger.UserObject.getUserName(r3);
+    /* JADX WARN: Code restructure failed: missing block: B:266:0x04f8, code lost:
+        r4 = org.telegram.messenger.UserObject.getUserName(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:270:0x04fb, code lost:
-        if (r1.length() == 0) goto L242;
+    /* JADX WARN: Code restructure failed: missing block: B:267:0x0500, code lost:
+        if (r2.length() == 0) goto L242;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:271:0x04fd, code lost:
-        r1.append(", ");
+    /* JADX WARN: Code restructure failed: missing block: B:268:0x0502, code lost:
+        r2.append(", ");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:272:0x0502, code lost:
-        r1.append(r3);
+    /* JADX WARN: Code restructure failed: missing block: B:269:0x0507, code lost:
+        r2.append(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:273:0x0505, code lost:
-        r2 = r2 + 1;
+    /* JADX WARN: Code restructure failed: missing block: B:270:0x050a, code lost:
+        r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:275:0x0521, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3286R.string.NotificationGroupInvitedToCall, r7, r5.title, r1.toString());
+    /* JADX WARN: Code restructure failed: missing block: B:272:0x0526, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3301R.string.NotificationGroupInvitedToCall, r1, r5.title, r2.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:277:0x0525, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByLink) == false) goto L253;
+    /* JADX WARN: Code restructure failed: missing block: B:274:0x052a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByLink) == false) goto L253;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:279:0x053a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroupByLink", org.telegram.messenger.C3286R.string.NotificationInvitedToGroupByLink, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:276:0x053f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroupByLink", org.telegram.messenger.C3301R.string.NotificationInvitedToGroupByLink, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:281:0x0540, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditTitle) == false) goto L257;
+    /* JADX WARN: Code restructure failed: missing block: B:278:0x0545, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditTitle) == false) goto L257;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:283:0x0552, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupName", org.telegram.messenger.C3286R.string.NotificationEditedGroupName, r7, r2.title);
+    /* JADX WARN: Code restructure failed: missing block: B:280:0x0557, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupName", org.telegram.messenger.C3301R.string.NotificationEditedGroupName, r1, r6.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:285:0x0555, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditPhoto) != false) goto L639;
+    /* JADX WARN: Code restructure failed: missing block: B:282:0x055a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditPhoto) != false) goto L639;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:287:0x0559, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatDeletePhoto) == false) goto L261;
+    /* JADX WARN: Code restructure failed: missing block: B:284:0x055e, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatDeletePhoto) == false) goto L261;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:290:0x055f, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatDeleteUser) == false) goto L276;
+    /* JADX WARN: Code restructure failed: missing block: B:287:0x0564, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatDeleteUser) == false) goto L276;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:291:0x0561, code lost:
-        r1 = r2.user_id;
+    /* JADX WARN: Code restructure failed: missing block: B:288:0x0566, code lost:
+        r2 = r6.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:292:0x0565, code lost:
-        if (r1 != r19) goto L267;
+    /* JADX WARN: Code restructure failed: missing block: B:289:0x056a, code lost:
+        if (r2 != r19) goto L267;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:294:0x057a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickYou", org.telegram.messenger.C3286R.string.NotificationGroupKickYou, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:291:0x057f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickYou", org.telegram.messenger.C3301R.string.NotificationGroupKickYou, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:296:0x0580, code lost:
-        if (r1 != r9) goto L271;
+    /* JADX WARN: Code restructure failed: missing block: B:293:0x0585, code lost:
+        if (r2 != r9) goto L271;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:298:0x0592, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupLeftMember", org.telegram.messenger.C3286R.string.NotificationGroupLeftMember, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:295:0x0597, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupLeftMember", org.telegram.messenger.C3301R.string.NotificationGroupLeftMember, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:299:0x0593, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:296:0x0598, code lost:
         r0 = getMessagesController().getUser(java.lang.Long.valueOf(r26.messageOwner.action.user_id));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:300:0x05a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:297:0x05aa, code lost:
         if (r0 != null) goto L274;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:301:0x05a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:298:0x05ac, code lost:
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:304:0x05c3, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickMember", org.telegram.messenger.C3286R.string.NotificationGroupKickMember, r7, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
+    /* JADX WARN: Code restructure failed: missing block: B:300:0x05c7, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickMember", org.telegram.messenger.C3301R.string.NotificationGroupKickMember, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:306:0x05c6, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatCreate) == false) goto L280;
+    /* JADX WARN: Code restructure failed: missing block: B:302:0x05ca, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatCreate) == false) goto L280;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:308:0x05ce, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:304:0x05d2, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:310:0x05d1, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelCreate) == false) goto L284;
+    /* JADX WARN: Code restructure failed: missing block: B:306:0x05d5, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelCreate) == false) goto L284;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:312:0x05d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:308:0x05dd, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:314:0x05dc, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatMigrateTo) == false) goto L288;
+    /* JADX WARN: Code restructure failed: missing block: B:310:0x05e0, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatMigrateTo) == false) goto L288;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x05ee, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3286R.string.ActionMigrateFromGroupNotify, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:312:0x05f2, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3301R.string.ActionMigrateFromGroupNotify, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:318:0x05f3, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) == false) goto L292;
+    /* JADX WARN: Code restructure failed: missing block: B:314:0x05f7, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) == false) goto L292;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:320:0x0603, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3286R.string.ActionMigrateFromGroupNotify, r2.title);
+    /* JADX WARN: Code restructure failed: missing block: B:316:0x0607, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3301R.string.ActionMigrateFromGroupNotify, r6.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:322:0x0606, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionScreenshotTaken) == false) goto L296;
+    /* JADX WARN: Code restructure failed: missing block: B:318:0x060a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionScreenshotTaken) == false) goto L296;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:324:0x060e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:320:0x0612, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:326:0x0611, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPinMessage) == false) goto L618;
+    /* JADX WARN: Code restructure failed: missing block: B:322:0x0615, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPinMessage) == false) goto L618;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:328:0x0617, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:324:0x061b, code lost:
         if (r5 == null) goto L408;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:330:0x061d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:326:0x0621, code lost:
         if (org.telegram.messenger.ChatObject.isChannel(r5) == false) goto L304;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:332:0x0621, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:328:0x0625, code lost:
         if (r5.megagroup == false) goto L408;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:333:0x0623, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:329:0x0627, code lost:
         r0 = r26.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x0625, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:330:0x0629, code lost:
         if (r0 != null) goto L308;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:336:0x063a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoText, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:332:0x063e, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3301R.string.NotificationActionPinnedNoText, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:338:0x0642, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:334:0x0646, code lost:
         if (r0.isMusic() == false) goto L312;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:340:0x0654, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusic", org.telegram.messenger.C3286R.string.NotificationActionPinnedMusic, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:336:0x0658, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusic", org.telegram.messenger.C3301R.string.NotificationActionPinnedMusic, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:342:0x065b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x065f, code lost:
         if (r0.isVideo() == false) goto L322;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:344:0x0661, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x0665, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L320;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:346:0x066b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:342:0x066f, code lost:
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L320;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:348:0x0694, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r7, "📹 " + r0.messageOwner.message, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x0698, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3301R.string.NotificationActionPinnedText, r1, "📹 " + r0.messageOwner.message, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x06a8, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideo", org.telegram.messenger.C3286R.string.NotificationActionPinnedVideo, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:346:0x06ac, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideo", org.telegram.messenger.C3301R.string.NotificationActionPinnedVideo, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:352:0x06ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x06b1, code lost:
         if (r0.isGif() == false) goto L332;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:354:0x06b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:350:0x06b7, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L330;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:356:0x06bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:352:0x06c1, code lost:
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L330;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x06e6, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r7, "🎬 " + r0.messageOwner.message, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:354:0x06ea, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3301R.string.NotificationActionPinnedText, r1, "🎬 " + r0.messageOwner.message, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:360:0x06fa, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGif", org.telegram.messenger.C3286R.string.NotificationActionPinnedGif, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:356:0x06fe, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGif", org.telegram.messenger.C3301R.string.NotificationActionPinnedGif, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:362:0x0702, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:358:0x0706, code lost:
         if (r0.isVoice() == false) goto L336;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:364:0x0714, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoice", org.telegram.messenger.C3286R.string.NotificationActionPinnedVoice, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:360:0x0718, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoice", org.telegram.messenger.C3301R.string.NotificationActionPinnedVoice, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:366:0x0719, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:362:0x071d, code lost:
         if (r0.isRoundVideo() == false) goto L340;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:368:0x072b, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRound", org.telegram.messenger.C3286R.string.NotificationActionPinnedRound, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:364:0x072f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRound", org.telegram.messenger.C3301R.string.NotificationActionPinnedRound, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:370:0x0730, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:366:0x0734, code lost:
         if (r0.isSticker() != false) goto L402;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x0736, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:368:0x073a, code lost:
         if (r0.isAnimatedSticker() == false) goto L344;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:374:0x073a, code lost:
-        r3 = r0.messageOwner;
-        r6 = r3.media;
+    /* JADX WARN: Code restructure failed: missing block: B:370:0x073e, code lost:
+        r4 = r0.messageOwner;
+        r7 = r4.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:375:0x0740, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L354;
+    /* JADX WARN: Code restructure failed: missing block: B:371:0x0744, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L354;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:377:0x0746, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:373:0x074a, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L352;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:379:0x074e, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L352;
+    /* JADX WARN: Code restructure failed: missing block: B:375:0x0752, code lost:
+        if (android.text.TextUtils.isEmpty(r4.message) != false) goto L352;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:381:0x0777, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r7, "📎 " + r0.messageOwner.message, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:377:0x077b, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3301R.string.NotificationActionPinnedText, r1, "📎 " + r0.messageOwner.message, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:383:0x078b, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFile", org.telegram.messenger.C3286R.string.NotificationActionPinnedFile, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:379:0x078f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFile", org.telegram.messenger.C3301R.string.NotificationActionPinnedFile, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:385:0x078e, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L400;
+    /* JADX WARN: Code restructure failed: missing block: B:381:0x0792, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L400;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:387:0x0792, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L358;
+    /* JADX WARN: Code restructure failed: missing block: B:383:0x0796, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L358;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:390:0x0798, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L362;
+    /* JADX WARN: Code restructure failed: missing block: B:386:0x079c, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L362;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:392:0x07ad, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLive", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoLive, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:388:0x07b1, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLive", org.telegram.messenger.C3301R.string.NotificationActionPinnedGeoLive, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:394:0x07b2, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L366;
+    /* JADX WARN: Code restructure failed: missing block: B:390:0x07b6, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L366;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:395:0x07b4, code lost:
-        r6 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r6;
+    /* JADX WARN: Code restructure failed: missing block: B:391:0x07b8, code lost:
+        r7 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x07d2, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContact2", org.telegram.messenger.C3286R.string.NotificationActionPinnedContact2, r7, r5.title, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
+    /* JADX WARN: Code restructure failed: missing block: B:392:0x07d6, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContact2", org.telegram.messenger.C3301R.string.NotificationActionPinnedContact2, r1, r5.title, org.telegram.messenger.ContactsController.formatName(r7.first_name, r7.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:398:0x07d5, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L374;
+    /* JADX WARN: Code restructure failed: missing block: B:394:0x07d9, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L374;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:399:0x07d7, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r6).poll;
+    /* JADX WARN: Code restructure failed: missing block: B:395:0x07db, code lost:
+        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r7).poll;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:400:0x07dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x07e1, code lost:
         if (r0.quiz == false) goto L372;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:402:0x07f7, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuiz2", org.telegram.messenger.C3286R.string.NotificationActionPinnedQuiz2, r7, r5.title, r0.question);
+    /* JADX WARN: Code restructure failed: missing block: B:398:0x07fb, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuiz2", org.telegram.messenger.C3301R.string.NotificationActionPinnedQuiz2, r1, r5.title, r0.question);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:404:0x0810, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPoll2", org.telegram.messenger.C3286R.string.NotificationActionPinnedPoll2, r7, r5.title, r0.question);
+    /* JADX WARN: Code restructure failed: missing block: B:400:0x0814, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPoll2", org.telegram.messenger.C3301R.string.NotificationActionPinnedPoll2, r1, r5.title, r0.question);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:406:0x0813, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L384;
+    /* JADX WARN: Code restructure failed: missing block: B:402:0x0817, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L384;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:408:0x0819, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:404:0x081d, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L382;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:410:0x0821, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L382;
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x0825, code lost:
+        if (android.text.TextUtils.isEmpty(r4.message) != false) goto L382;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:412:0x084a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r7, "🖼 " + r0.messageOwner.message, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:408:0x084e, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3301R.string.NotificationActionPinnedText, r1, "🖼 " + r0.messageOwner.message, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:414:0x085e, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhoto", org.telegram.messenger.C3286R.string.NotificationActionPinnedPhoto, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:410:0x0862, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhoto", org.telegram.messenger.C3301R.string.NotificationActionPinnedPhoto, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:416:0x0864, code lost:
-        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L388;
+    /* JADX WARN: Code restructure failed: missing block: B:412:0x0868, code lost:
+        if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L388;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:418:0x0876, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGame", org.telegram.messenger.C3286R.string.NotificationActionPinnedGame, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:414:0x087a, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGame", org.telegram.messenger.C3301R.string.NotificationActionPinnedGame, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:419:0x0877, code lost:
-        r3 = r0.messageText;
+    /* JADX WARN: Code restructure failed: missing block: B:415:0x087b, code lost:
+        r4 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:420:0x0879, code lost:
-        if (r3 == null) goto L398;
+    /* JADX WARN: Code restructure failed: missing block: B:416:0x087d, code lost:
+        if (r4 == null) goto L398;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x087f, code lost:
-        if (r3.length() <= 0) goto L398;
+    /* JADX WARN: Code restructure failed: missing block: B:418:0x0883, code lost:
+        if (r4.length() <= 0) goto L398;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:423:0x0881, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:419:0x0885, code lost:
         r0 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:424:0x0887, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:420:0x088b, code lost:
         if (r0.length() <= 20) goto L397;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:425:0x0889, code lost:
-        r3 = new java.lang.StringBuilder();
-        r6 = 0;
-        r3.append((java.lang.Object) r0.subSequence(0, 20));
-        r3.append("...");
-        r0 = r3.toString();
+    /* JADX WARN: Code restructure failed: missing block: B:421:0x088d, code lost:
+        r4 = new java.lang.StringBuilder();
+        r7 = 0;
+        r4.append((java.lang.Object) r0.subSequence(0, 20));
+        r4.append("...");
+        r0 = r4.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:426:0x089e, code lost:
-        r6 = 0;
+    /* JADX WARN: Code restructure failed: missing block: B:422:0x08a2, code lost:
+        r7 = 0;
         r0 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:427:0x089f, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationActionPinnedText;
-        r2 = new java.lang.Object[3];
-        r2[r6] = r7;
-        r2[1] = r0;
-        r2[2] = r5.title;
+    /* JADX WARN: Code restructure failed: missing block: B:423:0x08a3, code lost:
+        r2 = org.telegram.messenger.C3301R.string.NotificationActionPinnedText;
+        r3 = new java.lang.Object[3];
+        r3[r7] = r1;
+        r3[1] = r0;
+        r3[2] = r5.title;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x08b2, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", r1, r2);
+    /* JADX WARN: Code restructure failed: missing block: B:424:0x08b6, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", r2, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x08c6, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoText, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:426:0x08ca, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3301R.string.NotificationActionPinnedNoText, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x08da, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeo", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeo, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:428:0x08de, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeo", org.telegram.messenger.C3301R.string.NotificationActionPinnedGeo, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:433:0x08db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:429:0x08df, code lost:
         r0 = r0.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:434:0x08e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x08e5, code lost:
         if (r0 == null) goto L406;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:436:0x08f7, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmoji", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerEmoji, r7, r5.title, r0);
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x08fb, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmoji", org.telegram.messenger.C3301R.string.NotificationActionPinnedStickerEmoji, r1, r5.title, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:438:0x0909, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedSticker", org.telegram.messenger.C3286R.string.NotificationActionPinnedSticker, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:434:0x090d, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedSticker", org.telegram.messenger.C3301R.string.NotificationActionPinnedSticker, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:440:0x090b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:436:0x090f, code lost:
         if (r5 == null) goto L514;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:441:0x090d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x0911, code lost:
         r0 = r26.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:442:0x090f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:438:0x0913, code lost:
         if (r0 != null) goto L414;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:444:0x0920, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoTextChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:440:0x0924, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedNoTextChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:446:0x0926, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:442:0x092a, code lost:
         if (r0.isMusic() == false) goto L418;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:448:0x0936, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedMusicChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:444:0x093a, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedMusicChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:450:0x093d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:446:0x0941, code lost:
         if (r0.isVideo() == false) goto L428;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x0943, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:448:0x0947, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L426;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:454:0x094d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:450:0x0951, code lost:
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L426;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:456:0x0973, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r5.title, "📹 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:452:0x0977, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextChannel, r5.title, "📹 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:458:0x0984, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedVideoChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:454:0x0988, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedVideoChannel, r5.title);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:456:0x098d, code lost:
+        if (r0.isGif() == false) goto L438;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:458:0x0993, code lost:
+        if (android.os.Build.VERSION.SDK_INT < 19) goto L436;
      */
     /* JADX WARN: Code restructure failed: missing block: B:45:0x00b1, code lost:
         if (r12.getBoolean("EnablePreviewGroup", true) != false) goto L44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:460:0x0989, code lost:
-        if (r0.isGif() == false) goto L438;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:462:0x098f, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L436;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x0999, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:460:0x099d, code lost:
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L436;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:466:0x09bf, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r5.title, "🎬 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:462:0x09c3, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextChannel, r5.title, "🎬 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:468:0x09d0, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGifChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:464:0x09d4, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedGifChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:470:0x09d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:466:0x09db, code lost:
         if (r0.isVoice() == false) goto L442;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:472:0x09e7, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedVoiceChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:468:0x09eb, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedVoiceChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:474:0x09ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:470:0x09f0, code lost:
         if (r0.isRoundVideo() == false) goto L446;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:476:0x09fc, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedRoundChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:472:0x0a00, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedRoundChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:478:0x0a01, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:474:0x0a05, code lost:
         if (r0.isSticker() != false) goto L508;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:480:0x0a07, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:476:0x0a0b, code lost:
         if (r0.isAnimatedSticker() == false) goto L450;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:482:0x0a0b, code lost:
-        r3 = r0.messageOwner;
-        r6 = r3.media;
+    /* JADX WARN: Code restructure failed: missing block: B:478:0x0a0f, code lost:
+        r1 = r0.messageOwner;
+        r6 = r1.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:483:0x0a11, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:479:0x0a15, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L460;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:485:0x0a17, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:481:0x0a1b, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L458;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:487:0x0a1f, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L458;
+    /* JADX WARN: Code restructure failed: missing block: B:483:0x0a23, code lost:
+        if (android.text.TextUtils.isEmpty(r1.message) != false) goto L458;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:489:0x0a45, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r5.title, "📎 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:485:0x0a49, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextChannel, r5.title, "📎 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:491:0x0a56, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedFileChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:487:0x0a5a, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedFileChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:493:0x0a59, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:489:0x0a5d, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L506;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:495:0x0a5d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:491:0x0a61, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L464;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:498:0x0a63, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:494:0x0a67, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L468;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:500:0x0a75, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoLiveChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:496:0x0a79, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedGeoLiveChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:502:0x0a79, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:498:0x0a7d, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L472;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:503:0x0a7b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:499:0x0a7f, code lost:
         r6 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:504:0x0a97, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactChannel2", org.telegram.messenger.C3286R.string.NotificationActionPinnedContactChannel2, r5.title, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
+    /* JADX WARN: Code restructure failed: missing block: B:500:0x0a9b, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactChannel2", org.telegram.messenger.C3301R.string.NotificationActionPinnedContactChannel2, r5.title, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:506:0x0a9a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:502:0x0a9e, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L480;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:507:0x0a9c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:503:0x0aa0, code lost:
         r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r6).poll;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:508:0x0aa2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:504:0x0aa6, code lost:
         if (r0.quiz == false) goto L478;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:510:0x0ab9, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizChannel2", org.telegram.messenger.C3286R.string.NotificationActionPinnedQuizChannel2, r5.title, r0.question);
+    /* JADX WARN: Code restructure failed: missing block: B:506:0x0abd, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizChannel2", org.telegram.messenger.C3301R.string.NotificationActionPinnedQuizChannel2, r5.title, r0.question);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:512:0x0acf, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollChannel2", org.telegram.messenger.C3286R.string.NotificationActionPinnedPollChannel2, r5.title, r0.question);
+    /* JADX WARN: Code restructure failed: missing block: B:508:0x0ad3, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollChannel2", org.telegram.messenger.C3301R.string.NotificationActionPinnedPollChannel2, r5.title, r0.question);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:514:0x0ad2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:510:0x0ad6, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L490;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:516:0x0ad8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:512:0x0adc, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L488;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:518:0x0ae0, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L488;
+    /* JADX WARN: Code restructure failed: missing block: B:514:0x0ae4, code lost:
+        if (android.text.TextUtils.isEmpty(r1.message) != false) goto L488;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:516:0x0b0a, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextChannel, r5.title, "🖼 " + r0.messageOwner.message);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:518:0x0b1b, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedPhotoChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x00bd, code lost:
         if (r12.getBoolean("EnablePreviewChannel", r2) == false) goto L49;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:520:0x0b06, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r5.title, "🖼 " + r0.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:522:0x0b17, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedPhotoChannel, r5.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:524:0x0b1c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:520:0x0b20, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L494;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:526:0x0b2c, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGameChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:522:0x0b30, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedGameChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:527:0x0b2d, code lost:
-        r3 = r0.messageText;
+    /* JADX WARN: Code restructure failed: missing block: B:523:0x0b31, code lost:
+        r1 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:528:0x0b2f, code lost:
-        if (r3 == null) goto L504;
+    /* JADX WARN: Code restructure failed: missing block: B:524:0x0b33, code lost:
+        if (r1 == null) goto L504;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:530:0x0b35, code lost:
-        if (r3.length() <= 0) goto L504;
+    /* JADX WARN: Code restructure failed: missing block: B:526:0x0b39, code lost:
+        if (r1.length() <= 0) goto L504;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:531:0x0b37, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:527:0x0b3b, code lost:
         r0 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:532:0x0b3d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:528:0x0b41, code lost:
         if (r0.length() <= 20) goto L503;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:533:0x0b3f, code lost:
-        r3 = new java.lang.StringBuilder();
-        r9 = 0;
-        r3.append((java.lang.Object) r0.subSequence(0, 20));
-        r3.append("...");
-        r0 = r3.toString();
+    /* JADX WARN: Code restructure failed: missing block: B:529:0x0b43, code lost:
+        r1 = new java.lang.StringBuilder();
+        r6 = 0;
+        r1.append((java.lang.Object) r0.subSequence(0, 20));
+        r1.append("...");
+        r0 = r1.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:534:0x0b54, code lost:
-        r9 = 0;
+    /* JADX WARN: Code restructure failed: missing block: B:530:0x0b58, code lost:
+        r6 = 0;
         r0 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:535:0x0b55, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel;
+    /* JADX WARN: Code restructure failed: missing block: B:531:0x0b59, code lost:
+        r1 = org.telegram.messenger.C3301R.string.NotificationActionPinnedTextChannel;
         r2 = new java.lang.Object[2];
-        r2[r9] = r5.title;
+        r2[r6] = r5.title;
         r2[1] = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:536:0x0b65, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:532:0x0b69, code lost:
         return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", r1, r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:538:0x0b76, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoTextChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:534:0x0b7a, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedNoTextChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:540:0x0b87, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:536:0x0b8b, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedGeoChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:541:0x0b88, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:537:0x0b8c, code lost:
         r0 = r0.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:542:0x0b8d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:538:0x0b91, code lost:
         if (r0 == null) goto L512;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:544:0x0ba1, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerEmojiChannel, r5.title, r0);
+    /* JADX WARN: Code restructure failed: missing block: B:540:0x0ba5, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedStickerEmojiChannel, r5.title, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:546:0x0bb1, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerChannel, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:542:0x0bb5, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerChannel", org.telegram.messenger.C3301R.string.NotificationActionPinnedStickerChannel, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:547:0x0bb2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:543:0x0bb6, code lost:
         r0 = r26.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:548:0x0bb5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:544:0x0bb9, code lost:
         if (r0 != null) goto L518;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:550:0x0bc3, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoTextUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:546:0x0bc7, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedNoTextUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:552:0x0bc8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:548:0x0bcc, code lost:
         if (r0.isMusic() == false) goto L522;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:554:0x0bd6, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedMusicUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:550:0x0bda, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedMusicUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:556:0x0bdd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:552:0x0be1, code lost:
         if (r0.isVideo() == false) goto L532;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:558:0x0be3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:554:0x0be7, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L530;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:560:0x0bed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:556:0x0bf1, code lost:
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L530;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:562:0x0c11, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextUser, r7, "📹 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:558:0x0c15, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextUser, r1, "📹 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:564:0x0c20, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedVideoUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:560:0x0c24, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedVideoUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:566:0x0c25, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:562:0x0c29, code lost:
         if (r0.isGif() == false) goto L542;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:568:0x0c2b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:564:0x0c2f, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L540;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:570:0x0c35, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:566:0x0c39, code lost:
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L540;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:572:0x0c59, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextUser, r7, "🎬 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:568:0x0c5d, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextUser, r1, "🎬 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:574:0x0c68, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedGifUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:570:0x0c6c, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedGifUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:576:0x0c6f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:572:0x0c73, code lost:
         if (r0.isVoice() == false) goto L546;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:578:0x0c7d, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedVoiceUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:574:0x0c81, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedVoiceUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:580:0x0c82, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:576:0x0c86, code lost:
         if (r0.isRoundVideo() == false) goto L550;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:582:0x0c90, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedRoundUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:578:0x0c94, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedRoundUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:584:0x0c95, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:580:0x0c99, code lost:
         if (r0.isSticker() != false) goto L612;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:586:0x0c9b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:582:0x0c9f, code lost:
         if (r0.isAnimatedSticker() == false) goto L554;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0c9f, code lost:
-        r3 = r0.messageOwner;
-        r5 = r3.media;
+    /* JADX WARN: Code restructure failed: missing block: B:584:0x0ca3, code lost:
+        r4 = r0.messageOwner;
+        r6 = r4.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:589:0x0ca5, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L564;
+    /* JADX WARN: Code restructure failed: missing block: B:585:0x0ca9, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L564;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:591:0x0cab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:587:0x0caf, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L562;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:593:0x0cb3, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L562;
+    /* JADX WARN: Code restructure failed: missing block: B:589:0x0cb7, code lost:
+        if (android.text.TextUtils.isEmpty(r4.message) != false) goto L562;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:595:0x0cd7, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextUser, r7, "📎 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:591:0x0cdb, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextUser, r1, "📎 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:597:0x0ce6, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedFileUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:593:0x0cea, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedFileUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:599:0x0ce9, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L610;
+    /* JADX WARN: Code restructure failed: missing block: B:595:0x0ced, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L610;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:601:0x0ced, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L568;
+    /* JADX WARN: Code restructure failed: missing block: B:597:0x0cf1, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L568;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:604:0x0cf3, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L572;
+    /* JADX WARN: Code restructure failed: missing block: B:600:0x0cf7, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L572;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:606:0x0d03, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoLiveUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:602:0x0d07, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedGeoLiveUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:608:0x0d07, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L576;
+    /* JADX WARN: Code restructure failed: missing block: B:604:0x0d0b, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L576;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:609:0x0d09, code lost:
-        r5 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r5;
+    /* JADX WARN: Code restructure failed: missing block: B:605:0x0d0d, code lost:
+        r6 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:610:0x0d23, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedContactUser, r7, org.telegram.messenger.ContactsController.formatName(r5.first_name, r5.last_name));
+    /* JADX WARN: Code restructure failed: missing block: B:606:0x0d27, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedContactUser, r1, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:612:0x0d26, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L584;
+    /* JADX WARN: Code restructure failed: missing block: B:608:0x0d2a, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L584;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:613:0x0d28, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r5).poll;
+    /* JADX WARN: Code restructure failed: missing block: B:609:0x0d2c, code lost:
+        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r6).poll;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:614:0x0d2e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:610:0x0d32, code lost:
         if (r0.quiz == false) goto L582;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:616:0x0d43, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedQuizUser, r7, r0.question);
+    /* JADX WARN: Code restructure failed: missing block: B:612:0x0d47, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedQuizUser, r1, r0.question);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:618:0x0d57, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedPollUser, r7, r0.question);
+    /* JADX WARN: Code restructure failed: missing block: B:614:0x0d5b, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedPollUser, r1, r0.question);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:620:0x0d5a, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L594;
+    /* JADX WARN: Code restructure failed: missing block: B:616:0x0d5e, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L594;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:622:0x0d60, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:618:0x0d64, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L592;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:624:0x0d68, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L592;
+    /* JADX WARN: Code restructure failed: missing block: B:620:0x0d6c, code lost:
+        if (android.text.TextUtils.isEmpty(r4.message) != false) goto L592;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:626:0x0d8c, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextUser, r7, "🖼 " + r0.messageOwner.message);
+    /* JADX WARN: Code restructure failed: missing block: B:622:0x0d90, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedTextUser, r1, "🖼 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:628:0x0d9b, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedPhotoUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:624:0x0d9f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedPhotoUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:630:0x0da0, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L598;
+    /* JADX WARN: Code restructure failed: missing block: B:626:0x0da4, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L598;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:632:0x0dae, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedGameUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:628:0x0db2, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedGameUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:633:0x0daf, code lost:
-        r3 = r0.messageText;
+    /* JADX WARN: Code restructure failed: missing block: B:629:0x0db3, code lost:
+        r4 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:634:0x0db1, code lost:
-        if (r3 == null) goto L608;
+    /* JADX WARN: Code restructure failed: missing block: B:630:0x0db5, code lost:
+        if (r4 == null) goto L608;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:636:0x0db7, code lost:
-        if (r3.length() <= 0) goto L608;
+    /* JADX WARN: Code restructure failed: missing block: B:632:0x0dbb, code lost:
+        if (r4.length() <= 0) goto L608;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:637:0x0db9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:633:0x0dbd, code lost:
         r0 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:638:0x0dbf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:634:0x0dc3, code lost:
         if (r0.length() <= 20) goto L607;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:639:0x0dc1, code lost:
-        r3 = new java.lang.StringBuilder();
-        r5 = 0;
-        r3.append((java.lang.Object) r0.subSequence(0, 20));
-        r3.append("...");
-        r0 = r3.toString();
+    /* JADX WARN: Code restructure failed: missing block: B:635:0x0dc5, code lost:
+        r4 = new java.lang.StringBuilder();
+        r6 = 0;
+        r4.append((java.lang.Object) r0.subSequence(0, 20));
+        r4.append("...");
+        r0 = r4.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:640:0x0dd6, code lost:
-        r5 = 0;
+    /* JADX WARN: Code restructure failed: missing block: B:636:0x0dda, code lost:
+        r6 = 0;
         r0 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:641:0x0dd7, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationActionPinnedTextUser;
-        r2 = new java.lang.Object[2];
-        r2[r5] = r7;
-        r2[1] = r0;
+    /* JADX WARN: Code restructure failed: missing block: B:637:0x0ddb, code lost:
+        r2 = org.telegram.messenger.C3301R.string.NotificationActionPinnedTextUser;
+        r3 = new java.lang.Object[2];
+        r3[r6] = r1;
+        r3[1] = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:642:0x0de5, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", r1, r2);
+    /* JADX WARN: Code restructure failed: missing block: B:638:0x0de9, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", r2, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:644:0x0df4, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoTextUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:640:0x0df8, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedNoTextUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:646:0x0e03, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:642:0x0e07, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedGeoUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:647:0x0e04, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:643:0x0e08, code lost:
         r0 = r0.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:648:0x0e0a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:644:0x0e0e, code lost:
         if (r0 == null) goto L616;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:650:0x0e1b, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerEmojiUser, r7, r0);
+    /* JADX WARN: Code restructure failed: missing block: B:646:0x0e1f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedStickerEmojiUser, r1, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:652:0x0e28, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerUser", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerUser, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:648:0x0e2c, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerUser", org.telegram.messenger.C3301R.string.NotificationActionPinnedStickerUser, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:654:0x0e2b, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) == false) goto L634;
+    /* JADX WARN: Code restructure failed: missing block: B:650:0x0e2f, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) == false) goto L634;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:655:0x0e2d, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) r2).emoticon;
+    /* JADX WARN: Code restructure failed: missing block: B:651:0x0e31, code lost:
+        r0 = ((org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) r6).emoticon;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:656:0x0e35, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:652:0x0e39, code lost:
         if (android.text.TextUtils.isEmpty(r0) == false) goto L628;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:658:0x0e39, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:654:0x0e3d, code lost:
         if (r3 != r19) goto L626;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:662:0x0e5d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:658:0x0e61, code lost:
         if (r3 != r19) goto L632;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:665:0x0e7b, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeTo", org.telegram.messenger.C3286R.string.ChatThemeChangedTo, r7, r0);
+    /* JADX WARN: Code restructure failed: missing block: B:661:0x0e7f, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeTo", org.telegram.messenger.C3301R.string.ChatThemeChangedTo, r1, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:667:0x0e7e, code lost:
-        if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByRequest) == false) goto L638;
+    /* JADX WARN: Code restructure failed: missing block: B:663:0x0e82, code lost:
+        if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByRequest) == false) goto L638;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:669:0x0e86, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:665:0x0e8a, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:670:0x0e87, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:666:0x0e8b, code lost:
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:673:0x0e91, code lost:
-        if (r1.peer_id.channel_id == 0) goto L649;
+    /* JADX WARN: Code restructure failed: missing block: B:668:0x0e94, code lost:
+        if (r2.peer_id.channel_id == 0) goto L649;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:675:0x0e95, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:670:0x0e98, code lost:
         if (r5.megagroup != false) goto L649;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:677:0x0e9b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:672:0x0e9e, code lost:
         if (r26.isVideoAvatar() == false) goto L647;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:679:0x0ead, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelVideoEditNotification", org.telegram.messenger.C3286R.string.ChannelVideoEditNotification, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:674:0x0eb0, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChannelVideoEditNotification", org.telegram.messenger.C3301R.string.ChannelVideoEditNotification, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:681:0x0ebe, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelPhotoEditNotification", org.telegram.messenger.C3286R.string.ChannelPhotoEditNotification, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:676:0x0ec1, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChannelPhotoEditNotification", org.telegram.messenger.C3301R.string.ChannelPhotoEditNotification, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:683:0x0ec4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:678:0x0ec7, code lost:
         if (r26.isVideoAvatar() == false) goto L653;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:685:0x0ed8, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupVideo", org.telegram.messenger.C3286R.string.NotificationEditedGroupVideo, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:680:0x0edb, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupVideo", org.telegram.messenger.C3301R.string.NotificationEditedGroupVideo, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:687:0x0eeb, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupPhoto", org.telegram.messenger.C3286R.string.NotificationEditedGroupPhoto, r7, r5.title);
+    /* JADX WARN: Code restructure failed: missing block: B:682:0x0eee, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupPhoto", org.telegram.messenger.C3301R.string.NotificationEditedGroupPhoto, r1, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:689:0x0ef2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:684:0x0ef5, code lost:
         return r26.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:691:0x0f01, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationContactJoined", org.telegram.messenger.C3286R.string.NotificationContactJoined, r7);
+    /* JADX WARN: Code restructure failed: missing block: B:686:0x0f04, code lost:
+        return org.telegram.messenger.LocaleController.formatString("NotificationContactJoined", org.telegram.messenger.C3301R.string.NotificationContactJoined, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:693:0x0f06, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:688:0x0f09, code lost:
         if (r26.isMediaEmpty() == false) goto L667;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:695:0x0f10, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:690:0x0f13, code lost:
         if (android.text.TextUtils.isEmpty(r26.messageOwner.message) != false) goto L665;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:697:0x0f16, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:692:0x0f19, code lost:
         return replaceSpoilers(r26);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:699:0x0f1f, code lost:
-        return org.telegram.messenger.LocaleController.getString(r23, org.telegram.messenger.C3286R.string.Message);
+    /* JADX WARN: Code restructure failed: missing block: B:694:0x0f22, code lost:
+        return org.telegram.messenger.LocaleController.getString(r22, org.telegram.messenger.C3301R.string.Message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:700:0x0f20, code lost:
-        r1 = r23;
+    /* JADX WARN: Code restructure failed: missing block: B:695:0x0f23, code lost:
+        r1 = r22;
         r2 = r26.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:701:0x0f28, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:696:0x0f2b, code lost:
         if ((r2.media instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L681;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:703:0x0f2e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:698:0x0f31, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L675;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:705:0x0f36, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:700:0x0f39, code lost:
         if (android.text.TextUtils.isEmpty(r2.message) != false) goto L675;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:707:0x0f4b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:702:0x0f4e, code lost:
         return "🖼 " + replaceSpoilers(r26);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:709:0x0f52, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:704:0x0f55, code lost:
         if (r26.messageOwner.media.ttl_seconds == 0) goto L679;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:711:0x0f5c, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachDestructingPhoto", org.telegram.messenger.C3286R.string.AttachDestructingPhoto);
+    /* JADX WARN: Code restructure failed: missing block: B:706:0x0f5f, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachDestructingPhoto", org.telegram.messenger.C3301R.string.AttachDestructingPhoto);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:713:0x0f65, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachPhoto", org.telegram.messenger.C3286R.string.AttachPhoto);
+    /* JADX WARN: Code restructure failed: missing block: B:708:0x0f68, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachPhoto", org.telegram.messenger.C3301R.string.AttachPhoto);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:715:0x0f6a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:710:0x0f6d, code lost:
         if (r26.isVideo() == false) goto L695;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:717:0x0f70, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:712:0x0f73, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L689;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:719:0x0f7a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:714:0x0f7d, code lost:
         if (android.text.TextUtils.isEmpty(r26.messageOwner.message) != false) goto L689;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:721:0x0f8f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:716:0x0f92, code lost:
         return "📹 " + replaceSpoilers(r26);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:723:0x0f96, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:718:0x0f99, code lost:
         if (r26.messageOwner.media.ttl_seconds == 0) goto L693;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:725:0x0fa0, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachDestructingVideo", org.telegram.messenger.C3286R.string.AttachDestructingVideo);
+    /* JADX WARN: Code restructure failed: missing block: B:720:0x0fa3, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachDestructingVideo", org.telegram.messenger.C3301R.string.AttachDestructingVideo);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:727:0x0fa9, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachVideo", org.telegram.messenger.C3286R.string.AttachVideo);
+    /* JADX WARN: Code restructure failed: missing block: B:722:0x0fac, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachVideo", org.telegram.messenger.C3301R.string.AttachVideo);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:729:0x0fae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:724:0x0fb1, code lost:
         if (r26.isGame() == false) goto L699;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:731:0x0fb8, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachGame", org.telegram.messenger.C3286R.string.AttachGame);
+    /* JADX WARN: Code restructure failed: missing block: B:726:0x0fbb, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachGame", org.telegram.messenger.C3301R.string.AttachGame);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:733:0x0fbd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:728:0x0fc0, code lost:
         if (r26.isVoice() == false) goto L703;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:735:0x0fc7, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachAudio", org.telegram.messenger.C3286R.string.AttachAudio);
+    /* JADX WARN: Code restructure failed: missing block: B:730:0x0fca, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachAudio", org.telegram.messenger.C3301R.string.AttachAudio);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:737:0x0fcc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:732:0x0fcf, code lost:
         if (r26.isRoundVideo() == false) goto L707;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:739:0x0fd6, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachRound", org.telegram.messenger.C3286R.string.AttachRound);
+    /* JADX WARN: Code restructure failed: missing block: B:734:0x0fd9, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachRound", org.telegram.messenger.C3301R.string.AttachRound);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:741:0x0fdb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:736:0x0fde, code lost:
         if (r26.isMusic() == false) goto L711;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:743:0x0fe5, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachMusic", org.telegram.messenger.C3286R.string.AttachMusic);
+    /* JADX WARN: Code restructure failed: missing block: B:738:0x0fe8, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachMusic", org.telegram.messenger.C3301R.string.AttachMusic);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:744:0x0fe6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:739:0x0fe9, code lost:
         r2 = r26.messageOwner.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:745:0x0fec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:740:0x0fef, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L715;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:747:0x0ff6, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachContact", org.telegram.messenger.C3286R.string.AttachContact);
+    /* JADX WARN: Code restructure failed: missing block: B:742:0x0ff9, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachContact", org.telegram.messenger.C3301R.string.AttachContact);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:749:0x0ff9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:744:0x0ffc, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L723;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:751:0x1001, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:746:0x1004, code lost:
         if (((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r2).poll.quiz == false) goto L721;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:753:0x100b, code lost:
-        return org.telegram.messenger.LocaleController.getString("QuizPoll", org.telegram.messenger.C3286R.string.QuizPoll);
+    /* JADX WARN: Code restructure failed: missing block: B:748:0x100e, code lost:
+        return org.telegram.messenger.LocaleController.getString("QuizPoll", org.telegram.messenger.C3301R.string.QuizPoll);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:755:0x1014, code lost:
-        return org.telegram.messenger.LocaleController.getString("Poll", org.telegram.messenger.C3286R.string.Poll);
+    /* JADX WARN: Code restructure failed: missing block: B:750:0x1017, code lost:
+        return org.telegram.messenger.LocaleController.getString("Poll", org.telegram.messenger.C3301R.string.Poll);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:757:0x1017, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:752:0x101a, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L767;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:759:0x101b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:754:0x101e, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L727;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:762:0x1021, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:757:0x1024, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L731;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:764:0x102b, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachLiveLocation", org.telegram.messenger.C3286R.string.AttachLiveLocation);
+    /* JADX WARN: Code restructure failed: missing block: B:759:0x102e, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachLiveLocation", org.telegram.messenger.C3301R.string.AttachLiveLocation);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:766:0x102e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:761:0x1031, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L761;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:768:0x1034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:763:0x1037, code lost:
         if (r26.isSticker() != false) goto L755;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:770:0x103a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:765:0x103d, code lost:
         if (r26.isAnimatedSticker() == false) goto L737;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:773:0x1041, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:768:0x1044, code lost:
         if (r26.isGif() == false) goto L747;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:775:0x1047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:770:0x104a, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L745;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:777:0x1051, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:772:0x1054, code lost:
         if (android.text.TextUtils.isEmpty(r26.messageOwner.message) != false) goto L745;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:779:0x1066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:774:0x1069, code lost:
         return "🎬 " + replaceSpoilers(r26);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:781:0x106f, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachGif", org.telegram.messenger.C3286R.string.AttachGif);
+    /* JADX WARN: Code restructure failed: missing block: B:776:0x1072, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachGif", org.telegram.messenger.C3301R.string.AttachGif);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:783:0x1074, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:778:0x1077, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L753;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:785:0x107e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:780:0x1081, code lost:
         if (android.text.TextUtils.isEmpty(r26.messageOwner.message) != false) goto L753;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:787:0x1093, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:782:0x1096, code lost:
         return "📎 " + replaceSpoilers(r26);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:789:0x109c, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachDocument", org.telegram.messenger.C3286R.string.AttachDocument);
+    /* JADX WARN: Code restructure failed: missing block: B:784:0x109f, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachDocument", org.telegram.messenger.C3301R.string.AttachDocument);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:790:0x109d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:785:0x10a0, code lost:
         r0 = r26.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:791:0x10a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:786:0x10a4, code lost:
         if (r0 == null) goto L759;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:793:0x10bf, code lost:
-        return r0 + " " + org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3286R.string.AttachSticker);
+    /* JADX WARN: Code restructure failed: missing block: B:788:0x10c2, code lost:
+        return r0 + " " + org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3301R.string.AttachSticker);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:795:0x10c8, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3286R.string.AttachSticker);
+    /* JADX WARN: Code restructure failed: missing block: B:790:0x10cb, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3301R.string.AttachSticker);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:797:0x10cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:792:0x10d2, code lost:
         if (android.text.TextUtils.isEmpty(r26.messageText) != false) goto L765;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:799:0x10d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:794:0x10d8, code lost:
         return replaceSpoilers(r26);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:801:0x10dc, code lost:
-        return org.telegram.messenger.LocaleController.getString(r1, org.telegram.messenger.C3286R.string.Message);
+    /* JADX WARN: Code restructure failed: missing block: B:796:0x10df, code lost:
+        return org.telegram.messenger.LocaleController.getString(r1, org.telegram.messenger.C3301R.string.Message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:803:0x10e5, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachLocation", org.telegram.messenger.C3286R.string.AttachLocation);
+    /* JADX WARN: Code restructure failed: missing block: B:798:0x10e8, code lost:
+        return org.telegram.messenger.LocaleController.getString("AttachLocation", org.telegram.messenger.C3301R.string.AttachLocation);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:817:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabledYou", org.telegram.messenger.C3286R.string.ChatThemeDisabledYou, new java.lang.Object[0]);
+    /* JADX WARN: Code restructure failed: missing block: B:812:?, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabledYou", org.telegram.messenger.C3301R.string.ChatThemeDisabledYou, new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:818:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.C3286R.string.ChatThemeDisabled, r7, r0);
+    /* JADX WARN: Code restructure failed: missing block: B:813:?, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.C3301R.string.ChatThemeDisabled, r1, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:819:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeYou", org.telegram.messenger.C3286R.string.ChatThemeChangedYou, r0);
+    /* JADX WARN: Code restructure failed: missing block: B:814:?, code lost:
+        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeYou", org.telegram.messenger.C3301R.string.ChatThemeChangedYou, r0);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2494,7 +2546,7 @@ public class NotificationsController extends BaseController {
     */
     private java.lang.String getShortStringForMessage(org.telegram.messenger.MessageObject r26, java.lang.String[] r27, boolean[] r28) {
         /*
-            Method dump skipped, instructions count: 4347
+            Method dump skipped, instructions count: 4350
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsController.getShortStringForMessage(org.telegram.messenger.MessageObject, java.lang.String[], boolean[]):java.lang.String");
@@ -2519,1138 +2571,732 @@ public class NotificationsController extends BaseController {
         return sb.toString();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:257:0x05ec, code lost:
-        if (r12.getBoolean(r22, true) == false) goto L817;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:262:0x05f8, code lost:
-        if (r12.getBoolean("EnablePreviewChannel", r13) != false) goto L272;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x05fa, code lost:
-        r8 = r27.messageOwner;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:264:0x05fe, code lost:
-        if ((r8 instanceof org.telegram.tgnet.TLRPC$TL_messageService) == false) goto L608;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:265:0x0600, code lost:
-        r9 = r8.action;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x0604, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser) == false) goto L315;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:267:0x0606, code lost:
-        r3 = r9.user_id;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:268:0x060c, code lost:
-        if (r3 != 0) goto L281;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:270:0x0615, code lost:
-        if (r9.users.size() != 1) goto L281;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:271:0x0617, code lost:
-        r3 = r27.messageOwner.action.users.get(0).longValue();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:273:0x062c, code lost:
-        if (r3 == 0) goto L301;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:275:0x0636, code lost:
-        if (r27.messageOwner.peer_id.channel_id == 0) goto L288;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:277:0x063a, code lost:
-        if (r14.megagroup != false) goto L288;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:278:0x063c, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChannelAddedByNotification", org.telegram.messenger.C3286R.string.ChannelAddedByNotification, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:280:0x0653, code lost:
-        if (r3 != r19) goto L291;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:281:0x0655, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroup", org.telegram.messenger.C3286R.string.NotificationInvitedToGroup, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:282:0x066a, code lost:
-        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:283:0x0676, code lost:
-        if (r0 != null) goto L294;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:284:0x0678, code lost:
-        return null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:287:0x067e, code lost:
-        if (r24 != r0.f1639id) goto L300;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:289:0x0682, code lost:
-        if (r14.megagroup == false) goto L299;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:290:0x0684, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelfMega", org.telegram.messenger.C3286R.string.NotificationGroupAddSelfMega, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:291:0x0699, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelf", org.telegram.messenger.C3286R.string.NotificationGroupAddSelf, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:292:0x06ae, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3286R.string.NotificationGroupAddMember, r2, r14.title, org.telegram.messenger.UserObject.getUserName(r0));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:293:0x06c9, code lost:
-        r1 = new java.lang.StringBuilder();
-        r3 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:295:0x06d9, code lost:
-        if (r3 >= r27.messageOwner.action.users.size()) goto L313;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:296:0x06db, code lost:
-        r4 = getMessagesController().getUser(r27.messageOwner.action.users.get(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:297:0x06ef, code lost:
-        if (r4 == null) goto L312;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:298:0x06f1, code lost:
-        r4 = org.telegram.messenger.UserObject.getUserName(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:299:0x06f9, code lost:
-        if (r1.length() == 0) goto L309;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:300:0x06fb, code lost:
-        r1.append(", ");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:301:0x0700, code lost:
-        r1.append(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:302:0x0703, code lost:
-        r3 = r3 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:303:0x0706, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3286R.string.NotificationGroupAddMember, r2, r14.title, r1.toString());
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:305:0x0724, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCall) == false) goto L319;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:308:0x073c, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCallScheduled) == false) goto L323;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:311:0x0748, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionInviteToGroupCall) == false) goto L353;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:312:0x074a, code lost:
-        r3 = r9.user_id;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:313:0x0750, code lost:
-        if (r3 != 0) goto L330;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:315:0x0759, code lost:
-        if (r9.users.size() != 1) goto L330;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x075b, code lost:
-        r3 = r27.messageOwner.action.users.get(0).longValue();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:318:0x0770, code lost:
-        if (r3 == 0) goto L339;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:320:0x0774, code lost:
-        if (r3 != r19) goto L335;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:321:0x0776, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedYouToCall", org.telegram.messenger.C3286R.string.NotificationGroupInvitedYouToCall, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:322:0x078b, code lost:
-        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:323:0x0797, code lost:
-        if (r0 != null) goto L338;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:324:0x0799, code lost:
-        return null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:326:0x079b, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3286R.string.NotificationGroupInvitedToCall, r2, r14.title, org.telegram.messenger.UserObject.getUserName(r0));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:327:0x07b6, code lost:
-        r1 = new java.lang.StringBuilder();
-        r3 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:329:0x07c6, code lost:
-        if (r3 >= r27.messageOwner.action.users.size()) goto L351;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:330:0x07c8, code lost:
-        r4 = getMessagesController().getUser(r27.messageOwner.action.users.get(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:331:0x07dc, code lost:
-        if (r4 == null) goto L350;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:332:0x07de, code lost:
-        r4 = org.telegram.messenger.UserObject.getUserName(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:333:0x07e6, code lost:
-        if (r1.length() == 0) goto L347;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x07e8, code lost:
-        r1.append(", ");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:335:0x07ed, code lost:
-        r1.append(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:336:0x07f0, code lost:
-        r3 = r3 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:337:0x07f3, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3286R.string.NotificationGroupInvitedToCall, r2, r14.title, r1.toString());
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:339:0x0811, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByLink) == false) goto L357;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:342:0x082b, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditTitle) == false) goto L361;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:345:0x0841, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditPhoto) != false) goto L592;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:347:0x0845, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatDeletePhoto) == false) goto L365;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x084b, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatDeleteUser) == false) goto L380;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:351:0x084d, code lost:
-        r3 = r9.user_id;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:352:0x0851, code lost:
-        if (r3 != r19) goto L371;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:355:0x086d, code lost:
-        if (r3 != r24) goto L375;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:357:0x0881, code lost:
-        r0 = getMessagesController().getUser(java.lang.Long.valueOf(r27.messageOwner.action.user_id));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x0893, code lost:
-        if (r0 != null) goto L378;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x0895, code lost:
-        return null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:362:0x08b2, code lost:
-        r11 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:363:0x08b5, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatCreate) == false) goto L384;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:366:0x08c1, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelCreate) == false) goto L388;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:369:0x08cd, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatMigrateTo) == false) goto L392;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x08e5, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) == false) goto L396;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:375:0x08f9, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionScreenshotTaken) == false) goto L400;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:378:0x0905, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionPinMessage) == false) goto L572;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:380:0x090d, code lost:
-        if (org.telegram.messenger.ChatObject.isChannel(r14) == false) goto L489;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:382:0x0911, code lost:
-        if (r14.megagroup == false) goto L406;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:384:0x0915, code lost:
-        r2 = r27.replyMessageObject;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:385:0x0917, code lost:
-        if (r2 != null) goto L410;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:388:0x0931, code lost:
-        if (r2.isMusic() == false) goto L413;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:389:0x0933, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedMusicChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:391:0x0949, code lost:
-        if (r2.isVideo() == false) goto L421;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:393:0x094f, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L420;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:395:0x0959, code lost:
-        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L420;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x095b, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r14.title, "📹 " + r2.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:397:0x0981, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedVideoChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:399:0x0997, code lost:
-        if (r2.isGif() == false) goto L429;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:401:0x099d, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L428;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:403:0x09a7, code lost:
-        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L428;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:404:0x09a9, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r14.title, "🎬 " + r2.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:405:0x09cf, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGifChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:407:0x09e7, code lost:
-        if (r2.isVoice() == false) goto L432;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:408:0x09e9, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedVoiceChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:410:0x09fd, code lost:
-        if (r2.isRoundVideo() == false) goto L435;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:411:0x09ff, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedRoundChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:413:0x0a13, code lost:
-        if (r2.isSticker() != false) goto L485;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:415:0x0a19, code lost:
-        if (r2.isAnimatedSticker() == false) goto L439;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:417:0x0a1d, code lost:
-        r3 = r2.messageOwner;
-        r5 = r3.media;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:418:0x0a23, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L447;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:420:0x0a29, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L446;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x0a31, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L446;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:423:0x0a33, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r14.title, "📎 " + r2.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:424:0x0a59, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedFileChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:426:0x0a6d, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L484;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x0a71, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L451;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:431:0x0a77, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L454;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x0a79, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoLiveChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:434:0x0a8d, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L457;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x0a8f, code lost:
-        r0 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r27.messageOwner.media;
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactChannel2", org.telegram.messenger.C3286R.string.NotificationActionPinnedContactChannel2, r14.title, org.telegram.messenger.ContactsController.formatName(r0.first_name, r0.last_name));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:437:0x0ab4, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L463;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:438:0x0ab6, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r5).poll;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:439:0x0abc, code lost:
-        if (r0.quiz == false) goto L462;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:440:0x0abe, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizChannel2", org.telegram.messenger.C3286R.string.NotificationActionPinnedQuizChannel2, r14.title, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:441:0x0ad5, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollChannel2", org.telegram.messenger.C3286R.string.NotificationActionPinnedPollChannel2, r14.title, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:443:0x0aee, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L471;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x0af4, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L470;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:447:0x0afc, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L470;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:448:0x0afe, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel, r14.title, "🖼 " + r2.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:449:0x0b24, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedPhotoChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:451:0x0b3a, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L474;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x0b3c, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGameChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:453:0x0b4c, code lost:
-        r0 = r2.messageText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:454:0x0b4e, code lost:
-        if (r0 == null) goto L483;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:456:0x0b54, code lost:
-        if (r0.length() <= 0) goto L483;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:457:0x0b56, code lost:
-        r0 = r2.messageText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:458:0x0b5c, code lost:
-        if (r0.length() <= 20) goto L482;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:459:0x0b5e, code lost:
-        r1 = new java.lang.StringBuilder();
-        r3 = 0;
-        r1.append((java.lang.Object) r0.subSequence(0, 20));
-        r1.append("...");
-        r0 = r1.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:460:0x0b75, code lost:
-        r3 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:461:0x0b76, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationActionPinnedTextChannel;
-        r2 = new java.lang.Object[2];
-        r2[r3] = r14.title;
-        r2[1] = r0;
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", r1, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:462:0x0b88, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoTextChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:463:0x0b9a, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x0bac, code lost:
-        r0 = r2.getStickerEmoji();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:465:0x0bb1, code lost:
-        if (r0 == null) goto L488;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:466:0x0bb3, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerEmojiChannel, r14.title, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:467:0x0bc7, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:468:0x0bd8, code lost:
-        r8 = r27.replyMessageObject;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:469:0x0bdb, code lost:
-        if (r8 != null) goto L493;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:472:0x0bf7, code lost:
-        if (r8.isMusic() == false) goto L496;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:473:0x0bf9, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusic", org.telegram.messenger.C3286R.string.NotificationActionPinnedMusic, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:475:0x0c11, code lost:
-        if (r8.isVideo() == false) goto L504;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:477:0x0c17, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L503;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:479:0x0c21, code lost:
-        if (android.text.TextUtils.isEmpty(r8.messageOwner.message) != false) goto L503;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:480:0x0c23, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r2, "📹 " + r8.messageOwner.message, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:481:0x0c4b, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideo", org.telegram.messenger.C3286R.string.NotificationActionPinnedVideo, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:483:0x0c64, code lost:
-        if (r8.isGif() == false) goto L512;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:485:0x0c6a, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L511;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:487:0x0c74, code lost:
-        if (android.text.TextUtils.isEmpty(r8.messageOwner.message) != false) goto L511;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:488:0x0c76, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r2, "🎬 " + r8.messageOwner.message, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:489:0x0c9e, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGif", org.telegram.messenger.C3286R.string.NotificationActionPinnedGif, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:491:0x0cba, code lost:
-        if (r8.isVoice() == false) goto L515;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:492:0x0cbc, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoice", org.telegram.messenger.C3286R.string.NotificationActionPinnedVoice, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:494:0x0cd2, code lost:
-        if (r8.isRoundVideo() == false) goto L518;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:495:0x0cd4, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRound", org.telegram.messenger.C3286R.string.NotificationActionPinnedRound, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:497:0x0cea, code lost:
-        if (r8.isSticker() != false) goto L568;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:499:0x0cf0, code lost:
-        if (r8.isAnimatedSticker() == false) goto L522;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:501:0x0cf4, code lost:
-        r3 = r8.messageOwner;
-        r5 = r3.media;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:502:0x0cfa, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L530;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:504:0x0d00, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L529;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:506:0x0d08, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L529;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:507:0x0d0a, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r2, "📎 " + r8.messageOwner.message, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:508:0x0d32, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFile", org.telegram.messenger.C3286R.string.NotificationActionPinnedFile, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:510:0x0d49, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L567;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:512:0x0d4d, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L534;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:515:0x0d53, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L537;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:516:0x0d55, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLive", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeoLive, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:518:0x0d6c, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L540;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:519:0x0d6e, code lost:
-        r0 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r27.messageOwner.media;
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContact2", org.telegram.messenger.C3286R.string.NotificationActionPinnedContact2, r2, r14.title, org.telegram.messenger.ContactsController.formatName(r0.first_name, r0.last_name));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:521:0x0d95, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L546;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:522:0x0d97, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r5).poll;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:523:0x0d9d, code lost:
-        if (r0.quiz == false) goto L545;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:524:0x0d9f, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuiz2", org.telegram.messenger.C3286R.string.NotificationActionPinnedQuiz2, r2, r14.title, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:525:0x0db8, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPoll2", org.telegram.messenger.C3286R.string.NotificationActionPinnedPoll2, r2, r14.title, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:527:0x0dd3, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L554;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:529:0x0dd9, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L553;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:531:0x0de1, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L553;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:532:0x0de3, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3286R.string.NotificationActionPinnedText, r2, "🖼 " + r8.messageOwner.message, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:533:0x0e0b, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhoto", org.telegram.messenger.C3286R.string.NotificationActionPinnedPhoto, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:535:0x0e25, code lost:
-        if ((r5 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L557;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:536:0x0e27, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGame", org.telegram.messenger.C3286R.string.NotificationActionPinnedGame, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:537:0x0e39, code lost:
-        r0 = r8.messageText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:538:0x0e3b, code lost:
-        if (r0 == null) goto L566;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:540:0x0e41, code lost:
-        if (r0.length() <= 0) goto L566;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:541:0x0e43, code lost:
-        r0 = r8.messageText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:542:0x0e49, code lost:
-        if (r0.length() <= 20) goto L565;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:543:0x0e4b, code lost:
-        r1 = new java.lang.StringBuilder();
-        r3 = 0;
-        r1.append((java.lang.Object) r0.subSequence(0, 20));
-        r1.append("...");
-        r0 = r1.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:544:0x0e62, code lost:
-        r3 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:545:0x0e63, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationActionPinnedText;
-        r4 = new java.lang.Object[3];
-        r4[r3] = r2;
-        r4[1] = r0;
-        r4[2] = r14.title;
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", r1, r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:546:0x0e77, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoText, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:547:0x0e8c, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeo", org.telegram.messenger.C3286R.string.NotificationActionPinnedGeo, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:548:0x0ea1, code lost:
-        r0 = r8.getStickerEmoji();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:549:0x0ea7, code lost:
-        if (r0 == null) goto L571;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:550:0x0ea9, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmoji", org.telegram.messenger.C3286R.string.NotificationActionPinnedStickerEmoji, r2, r14.title, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:551:0x0ebe, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedSticker", org.telegram.messenger.C3286R.string.NotificationActionPinnedSticker, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:553:0x0ed3, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGameScore) == false) goto L576;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:556:0x0edf, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) == false) goto L588;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:557:0x0ee1, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) r9).emoticon;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:558:0x0ee9, code lost:
-        if (android.text.TextUtils.isEmpty(r0) == false) goto L584;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:560:0x0eed, code lost:
-        if (r3 != r19) goto L583;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:561:0x0eef, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChatThemeDisabledYou", org.telegram.messenger.C3286R.string.ChatThemeDisabledYou, new java.lang.Object[0]);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:562:0x0efc, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.C3286R.string.ChatThemeDisabled, r2, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:564:0x0f13, code lost:
-        if (r3 != r19) goto L587;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:565:0x0f15, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChangedChatThemeYou", org.telegram.messenger.C3286R.string.ChatThemeChangedYou, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:566:0x0f23, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChangedChatThemeTo", org.telegram.messenger.C3286R.string.ChatThemeChangedTo, r2, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:568:0x0f36, code lost:
-        if ((r9 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByRequest) == false) goto L134;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:571:0x0f48, code lost:
-        if (r8.peer_id.channel_id == 0) goto L602;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:573:0x0f4c, code lost:
-        if (r14.megagroup != false) goto L602;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:575:0x0f52, code lost:
-        if (r27.isVideoAvatar() == false) goto L600;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:579:0x0f7d, code lost:
-        if (r27.isVideoAvatar() == false) goto L606;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:583:0x0fab, code lost:
-        if (org.telegram.messenger.ChatObject.isChannel(r14) == false) goto L713;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:585:0x0faf, code lost:
-        if (r14.megagroup != false) goto L713;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:587:0x0fb5, code lost:
-        if (r27.isMediaEmpty() == false) goto L621;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0fb7, code lost:
-        if (r28 != false) goto L619;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:590:0x0fc1, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L619;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:591:0x0fc3, code lost:
-        r14 = org.telegram.messenger.LocaleController.formatString("NotificationMessageText", org.telegram.messenger.C3286R.string.NotificationMessageText, r2, r27.messageOwner.message);
-        r29[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:593:0x0fea, code lost:
-        r4 = r27.messageOwner;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:594:0x0ff2, code lost:
-        if ((r4.media instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L632;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:595:0x0ff4, code lost:
-        if (r28 != false) goto L630;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:597:0x0ffa, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L630;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:599:0x1002, code lost:
-        if (android.text.TextUtils.isEmpty(r4.message) != false) goto L630;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:600:0x1004, code lost:
-        r3 = org.telegram.messenger.C3286R.string.NotificationMessageText;
-        r14 = org.telegram.messenger.LocaleController.formatString("NotificationMessageText", r3, r2, "🖼 " + r27.messageOwner.message);
-        r29[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:603:0x103e, code lost:
-        if (r27.isVideo() == false) goto L643;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:604:0x1040, code lost:
-        if (r28 != false) goto L641;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:606:0x1046, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L641;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:608:0x1050, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L641;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:609:0x1052, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationMessageText;
-        r14 = org.telegram.messenger.LocaleController.formatString("NotificationMessageText", r1, r2, "📹 " + r27.messageOwner.message);
-        r29[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:612:0x108e, code lost:
-        if (r27.isVoice() == false) goto L647;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:615:0x10a2, code lost:
-        if (r27.isRoundVideo() == false) goto L651;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:618:0x10b6, code lost:
-        if (r27.isMusic() == false) goto L655;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:620:0x10c6, code lost:
-        r1 = r27.messageOwner.media;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x10cc, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L659;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:622:0x10ce, code lost:
-        r1 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:624:0x10ec, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L665;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:625:0x10ee, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r1).poll;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:626:0x10f4, code lost:
-        if (r0.quiz == false) goto L664;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:627:0x10f6, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChannelMessageQuiz2", org.telegram.messenger.C3286R.string.ChannelMessageQuiz2, r2, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:628:0x110b, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChannelMessagePoll2", org.telegram.messenger.C3286R.string.ChannelMessagePoll2, r2, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:630:0x1122, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L711;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:632:0x1126, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L669;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:635:0x112c, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L673;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:638:0x1140, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L703;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:640:0x1146, code lost:
-        if (r27.isSticker() != false) goto L699;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:642:0x114c, code lost:
-        if (r27.isAnimatedSticker() == false) goto L679;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:645:0x1154, code lost:
-        if (r27.isGif() == false) goto L690;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:646:0x1156, code lost:
-        if (r28 != false) goto L688;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:648:0x115c, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L688;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:650:0x1166, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L688;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:651:0x1168, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationMessageText;
-        r14 = org.telegram.messenger.LocaleController.formatString("NotificationMessageText", r1, r2, "🎬 " + r27.messageOwner.message);
-        r29[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:653:0x119e, code lost:
-        if (r28 != false) goto L697;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:655:0x11a4, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L697;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:657:0x11ae, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L697;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:658:0x11b0, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationMessageText;
-        r14 = org.telegram.messenger.LocaleController.formatString("NotificationMessageText", r1, r2, "📎 " + r27.messageOwner.message);
-        r29[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:660:0x11e6, code lost:
-        r0 = r27.getStickerEmoji();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:661:0x11ec, code lost:
-        if (r0 == null) goto L702;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:662:0x11ee, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChannelMessageStickerEmoji", org.telegram.messenger.C3286R.string.ChannelMessageStickerEmoji, r2, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:663:0x11ff, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("ChannelMessageSticker", org.telegram.messenger.C3286R.string.ChannelMessageSticker, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:665:0x120e, code lost:
-        if (r28 != false) goto L709;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:667:0x1216, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageText) != false) goto L709;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:668:0x1218, code lost:
-        r14 = org.telegram.messenger.LocaleController.formatString("NotificationMessageText", org.telegram.messenger.C3286R.string.NotificationMessageText, r2, r27.messageText);
-        r29[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:672:0x124f, code lost:
-        if (r27.isMediaEmpty() == false) goto L722;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:673:0x1251, code lost:
-        if (r28 != false) goto L720;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:675:0x125b, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L720;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:678:0x128b, code lost:
-        r3 = r27.messageOwner;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:679:0x1293, code lost:
-        if ((r3.media instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L733;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:680:0x1295, code lost:
-        if (r28 != false) goto L731;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:682:0x129b, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L731;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:684:0x12a3, code lost:
-        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L731;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:685:0x12a5, code lost:
-        r3 = org.telegram.messenger.C3286R.string.NotificationMessageGroupText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:688:0x12e6, code lost:
-        if (r27.isVideo() == false) goto L744;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:689:0x12e8, code lost:
-        if (r28 != false) goto L742;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:691:0x12ee, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L742;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:693:0x12f8, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L742;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:694:0x12fa, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationMessageGroupText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:697:0x133e, code lost:
-        if (r27.isVoice() == false) goto L748;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:700:0x1356, code lost:
-        if (r27.isRoundVideo() == false) goto L752;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:703:0x136e, code lost:
-        if (r27.isMusic() == false) goto L756;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:705:0x1382, code lost:
-        r1 = r27.messageOwner.media;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:706:0x1388, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L760;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:707:0x138a, code lost:
-        r1 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:709:0x13ad, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L766;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:710:0x13af, code lost:
-        r0 = ((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r1).poll;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:711:0x13b5, code lost:
-        if (r0.quiz == false) goto L765;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:712:0x13b7, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupQuiz2", org.telegram.messenger.C3286R.string.NotificationMessageGroupQuiz2, r2, r14.title, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:713:0x13d0, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupPoll2", org.telegram.messenger.C3286R.string.NotificationMessageGroupPoll2, r2, r14.title, r0.question);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:715:0x13eb, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L770;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:718:0x140a, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L815;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:720:0x140e, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaVenue) == false) goto L774;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:723:0x1414, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L778;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:726:0x142d, code lost:
-        if ((r1 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L808;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:728:0x1433, code lost:
-        if (r27.isSticker() != false) goto L804;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:730:0x1439, code lost:
-        if (r27.isAnimatedSticker() == false) goto L784;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:733:0x1441, code lost:
-        if (r27.isGif() == false) goto L795;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:734:0x1443, code lost:
-        if (r28 != false) goto L793;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:736:0x1449, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L793;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:738:0x1453, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L793;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:739:0x1455, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationMessageGroupText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:741:0x1492, code lost:
-        if (r28 != false) goto L802;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:743:0x1498, code lost:
-        if (android.os.Build.VERSION.SDK_INT < 19) goto L802;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:745:0x14a2, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L802;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:746:0x14a4, code lost:
-        r1 = org.telegram.messenger.C3286R.string.NotificationMessageGroupText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:748:0x14e1, code lost:
-        r0 = r27.getStickerEmoji();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:749:0x14e7, code lost:
-        if (r0 == null) goto L807;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:750:0x14e9, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupStickerEmoji", org.telegram.messenger.C3286R.string.NotificationMessageGroupStickerEmoji, r2, r14.title, r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:751:0x14fe, code lost:
-        r0 = org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupSticker", org.telegram.messenger.C3286R.string.NotificationMessageGroupSticker, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:752:0x1511, code lost:
-        if (r28 != false) goto L813;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:754:0x1519, code lost:
-        if (android.text.TextUtils.isEmpty(r27.messageText) != false) goto L813;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:811:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupCreatedCall", org.telegram.messenger.C3286R.string.NotificationGroupCreatedCall, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:812:?, code lost:
-        return r27.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:813:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroupByLink", org.telegram.messenger.C3286R.string.NotificationInvitedToGroupByLink, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:814:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupName", org.telegram.messenger.C3286R.string.NotificationEditedGroupName, r2, r9.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:815:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickYou", org.telegram.messenger.C3286R.string.NotificationGroupKickYou, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:816:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupLeftMember", org.telegram.messenger.C3286R.string.NotificationGroupLeftMember, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:817:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickMember", org.telegram.messenger.C3286R.string.NotificationGroupKickMember, r2, r14.title, org.telegram.messenger.UserObject.getUserName(r0));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:818:?, code lost:
-        return r27.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:819:?, code lost:
-        return r27.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:820:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3286R.string.ActionMigrateFromGroupNotify, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:821:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3286R.string.ActionMigrateFromGroupNotify, r9.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:822:?, code lost:
-        return r27.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:823:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoTextChannel, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:824:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3286R.string.NotificationActionPinnedNoText, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:825:?, code lost:
-        return r27.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:826:?, code lost:
-        return r27.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:827:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelVideoEditNotification", org.telegram.messenger.C3286R.string.ChannelVideoEditNotification, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:828:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelPhotoEditNotification", org.telegram.messenger.C3286R.string.ChannelPhotoEditNotification, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:829:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupVideo", org.telegram.messenger.C3286R.string.NotificationEditedGroupVideo, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:830:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupPhoto", org.telegram.messenger.C3286R.string.NotificationEditedGroupPhoto, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:831:?, code lost:
-        return r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:832:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageNoText", org.telegram.messenger.C3286R.string.ChannelMessageNoText, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:833:?, code lost:
-        return r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:834:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessagePhoto", org.telegram.messenger.C3286R.string.ChannelMessagePhoto, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:835:?, code lost:
-        return r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:836:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageVideo", org.telegram.messenger.C3286R.string.ChannelMessageVideo, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:837:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageAudio", org.telegram.messenger.C3286R.string.ChannelMessageAudio, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:838:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageRound", org.telegram.messenger.C3286R.string.ChannelMessageRound, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:839:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageMusic", org.telegram.messenger.C3286R.string.ChannelMessageMusic, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:840:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageContact2", org.telegram.messenger.C3286R.string.ChannelMessageContact2, r2, org.telegram.messenger.ContactsController.formatName(r1.first_name, r1.last_name));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:841:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageLiveLocation", org.telegram.messenger.C3286R.string.ChannelMessageLiveLocation, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:842:?, code lost:
-        return r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:843:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageGIF", org.telegram.messenger.C3286R.string.ChannelMessageGIF, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:844:?, code lost:
-        return r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:845:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageDocument", org.telegram.messenger.C3286R.string.ChannelMessageDocument, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:846:?, code lost:
-        return r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:847:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageNoText", org.telegram.messenger.C3286R.string.ChannelMessageNoText, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:848:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelMessageMap", org.telegram.messenger.C3286R.string.ChannelMessageMap, r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:849:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupText", org.telegram.messenger.C3286R.string.NotificationMessageGroupText, r2, r14.title, r27.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:850:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupNoText", org.telegram.messenger.C3286R.string.NotificationMessageGroupNoText, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:851:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupText", r3, r2, r14.title, "🖼 " + r27.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:852:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupPhoto", org.telegram.messenger.C3286R.string.NotificationMessageGroupPhoto, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:853:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupText", r1, r2, r14.title, "📹 " + r27.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:854:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString(" ", org.telegram.messenger.C3286R.string.NotificationMessageGroupVideo, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:855:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupAudio", org.telegram.messenger.C3286R.string.NotificationMessageGroupAudio, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:856:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupRound", org.telegram.messenger.C3286R.string.NotificationMessageGroupRound, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:857:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupMusic", org.telegram.messenger.C3286R.string.NotificationMessageGroupMusic, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:858:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupContact2", org.telegram.messenger.C3286R.string.NotificationMessageGroupContact2, r2, r14.title, org.telegram.messenger.ContactsController.formatName(r1.first_name, r1.last_name));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:859:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupGame", org.telegram.messenger.C3286R.string.NotificationMessageGroupGame, r2, r14.title, r1.game.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:860:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupLiveLocation", org.telegram.messenger.C3286R.string.NotificationMessageGroupLiveLocation, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:861:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupText", r1, r2, r14.title, "🎬 " + r27.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:862:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupGif", org.telegram.messenger.C3286R.string.NotificationMessageGroupGif, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:863:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupText", r1, r2, r14.title, "📎 " + r27.messageOwner.message);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:864:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupDocument", org.telegram.messenger.C3286R.string.NotificationMessageGroupDocument, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:865:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupText", org.telegram.messenger.C3286R.string.NotificationMessageGroupText, r2, r14.title, r27.messageText);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:866:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupNoText", org.telegram.messenger.C3286R.string.NotificationMessageGroupNoText, r2, r14.title);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:867:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupMap", org.telegram.messenger.C3286R.string.NotificationMessageGroupMap, r2, r14.title);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private java.lang.String getStringForMessage(org.telegram.messenger.MessageObject r27, boolean r28, boolean[] r29, boolean[] r30) {
-        /*
-            Method dump skipped, instructions count: 5522
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsController.getStringForMessage(org.telegram.messenger.MessageObject, boolean, boolean[], boolean[]):java.lang.String");
+    private String getStringForMessage(MessageObject messageObject, boolean z, boolean[] zArr, boolean[] zArr2) {
+        String str;
+        String str2;
+        String str3;
+        TLRPC$Chat tLRPC$Chat;
+        String formatString;
+        char c;
+        char c2;
+        char c3;
+        boolean z2;
+        String formatString2;
+        boolean z3;
+        boolean z4;
+        if (AndroidUtilities.needShowPasscode() || SharedConfig.isWaitingForPasscodeEnter) {
+            return LocaleController.getString("YouHaveNewMessage", C3301R.string.YouHaveNewMessage);
+        }
+        TLRPC$Message tLRPC$Message = messageObject.messageOwner;
+        long j = tLRPC$Message.dialog_id;
+        TLRPC$Peer tLRPC$Peer = tLRPC$Message.peer_id;
+        long j2 = tLRPC$Peer.chat_id;
+        if (j2 == 0) {
+            j2 = tLRPC$Peer.channel_id;
+        }
+        long j3 = tLRPC$Peer.user_id;
+        if (zArr2 != null) {
+            zArr2[0] = true;
+        }
+        SharedPreferences notificationsSettings = getAccountInstance().getNotificationsSettings();
+        boolean z5 = notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CONTENT_PREVIEW + j, true);
+        if (messageObject.isFcmMessage()) {
+            int i = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
+            if (i != 0 || j3 == 0) {
+                z3 = true;
+                if (i != 0) {
+                    if (z5 && (messageObject.localChannel || notificationsSettings.getBoolean("EnablePreviewGroup", true))) {
+                        if (messageObject.localChannel) {
+                            if (notificationsSettings.getBoolean("EnablePreviewChannel", true)) {
+                                z4 = true;
+                                zArr[0] = z4;
+                                return (String) messageObject.messageText;
+                            }
+                        }
+                    }
+                    if (zArr2 != null) {
+                        zArr2[0] = false;
+                    }
+                    return (messageObject.messageOwner.peer_id.channel_id == 0 || messageObject.isSupergroup()) ? LocaleController.formatString("NotificationMessageGroupNoText", C3301R.string.NotificationMessageGroupNoText, messageObject.localUserName, messageObject.localName) : LocaleController.formatString("ChannelMessageNoText", C3301R.string.ChannelMessageNoText, messageObject.localName);
+                }
+            } else {
+                z3 = true;
+                if (!z5 || !notificationsSettings.getBoolean("EnablePreviewAll", true)) {
+                    if (zArr2 != null) {
+                        zArr2[0] = false;
+                    }
+                    return LocaleController.formatString("NotificationMessageNoText", C3301R.string.NotificationMessageNoText, messageObject.localName);
+                }
+            }
+            z4 = z3;
+            zArr[0] = z4;
+            return (String) messageObject.messageText;
+        }
+        long clientUserId = getUserConfig().getClientUserId();
+        if (j3 == 0) {
+            j3 = messageObject.getFromChatId();
+            if (j3 == 0) {
+                j3 = -j2;
+            }
+        } else if (j3 == clientUserId) {
+            j3 = messageObject.getFromChatId();
+        }
+        if (j == 0) {
+            if (j2 != 0) {
+                j = -j2;
+            } else if (j3 != 0) {
+                j = j3;
+            }
+        }
+        int i2 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
+        if (i2 > 0) {
+            if (!messageObject.messageOwner.from_scheduled) {
+                str = "NotificationMessageGroupNoText";
+                TLRPC$User user = getMessagesController().getUser(Long.valueOf(j3));
+                str3 = user != null ? UserObject.getUserName(user) : null;
+            } else if (j == clientUserId) {
+                str = "NotificationMessageGroupNoText";
+                str3 = LocaleController.getString("MessageScheduledReminderNotification", C3301R.string.MessageScheduledReminderNotification);
+            } else {
+                str = "NotificationMessageGroupNoText";
+                str3 = LocaleController.getString("NotificationMessageScheduledName", C3301R.string.NotificationMessageScheduledName);
+            }
+            str2 = "NotificationMessageNoText";
+        } else {
+            str = "NotificationMessageGroupNoText";
+            str2 = "NotificationMessageNoText";
+            TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(-j3));
+            str3 = chat != null ? chat.title : null;
+        }
+        if (str3 == null) {
+            return null;
+        }
+        int i3 = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
+        if (i3 != 0) {
+            tLRPC$Chat = getMessagesController().getChat(Long.valueOf(j2));
+            if (tLRPC$Chat == null) {
+                return null;
+            }
+        } else {
+            tLRPC$Chat = null;
+        }
+        if (DialogObject.isEncryptedDialog(j)) {
+            return LocaleController.getString("YouHaveNewMessage", C3301R.string.YouHaveNewMessage);
+        }
+        long j4 = j3;
+        if (i3 == 0 && i2 != 0) {
+            if (!z5 || !notificationsSettings.getBoolean("EnablePreviewAll", true)) {
+                String str4 = str2;
+                if (zArr2 != null) {
+                    zArr2[0] = false;
+                }
+                return LocaleController.formatString(str4, C3301R.string.NotificationMessageNoText, str3);
+            } else {
+                TLRPC$Message tLRPC$Message2 = messageObject.messageOwner;
+                if (tLRPC$Message2 instanceof TLRPC$TL_messageService) {
+                    TLRPC$MessageAction tLRPC$MessageAction = tLRPC$Message2.action;
+                    if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionGeoProximityReached) {
+                        return messageObject.messageText.toString();
+                    }
+                    if ((tLRPC$MessageAction instanceof TLRPC$TL_messageActionUserJoined) || (tLRPC$MessageAction instanceof TLRPC$TL_messageActionContactSignUp)) {
+                        return LocaleController.formatString("NotificationContactJoined", C3301R.string.NotificationContactJoined, str3);
+                    }
+                    if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionUserUpdatedPhoto) {
+                        return LocaleController.formatString("NotificationContactNewPhoto", C3301R.string.NotificationContactNewPhoto, str3);
+                    }
+                    if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionLoginUnknownLocation) {
+                        String formatString3 = LocaleController.formatString("formatDateAtTime", C3301R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(messageObject.messageOwner.date * 1000), LocaleController.getInstance().formatterDay.format(messageObject.messageOwner.date * 1000));
+                        int i4 = C3301R.string.NotificationUnrecognizedDevice;
+                        TLRPC$MessageAction tLRPC$MessageAction2 = messageObject.messageOwner.action;
+                        return LocaleController.formatString("NotificationUnrecognizedDevice", i4, getUserConfig().getCurrentUser().first_name, formatString3, tLRPC$MessageAction2.title, tLRPC$MessageAction2.address);
+                    } else if ((tLRPC$MessageAction instanceof TLRPC$TL_messageActionGameScore) || (tLRPC$MessageAction instanceof TLRPC$TL_messageActionPaymentSent)) {
+                        return messageObject.messageText.toString();
+                    } else {
+                        if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionPhoneCall) {
+                            if (tLRPC$MessageAction.video) {
+                                return LocaleController.getString("CallMessageVideoIncomingMissed", C3301R.string.CallMessageVideoIncomingMissed);
+                            }
+                            return LocaleController.getString("CallMessageIncomingMissed", C3301R.string.CallMessageIncomingMissed);
+                        } else if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionSetChatTheme) {
+                            String str5 = ((TLRPC$TL_messageActionSetChatTheme) tLRPC$MessageAction).emoticon;
+                            if (!TextUtils.isEmpty(str5)) {
+                                c3 = 0;
+                                z2 = true;
+                                if (j == clientUserId) {
+                                    formatString2 = LocaleController.formatString("ChangedChatThemeYou", C3301R.string.ChatThemeChangedYou, str5);
+                                } else {
+                                    formatString2 = LocaleController.formatString("ChangedChatThemeTo", C3301R.string.ChatThemeChangedTo, str3, str5);
+                                }
+                            } else if (j == clientUserId) {
+                                c3 = 0;
+                                formatString2 = LocaleController.formatString("ChatThemeDisabledYou", C3301R.string.ChatThemeDisabledYou, new Object[0]);
+                                z2 = true;
+                            } else {
+                                c3 = 0;
+                                z2 = true;
+                                formatString2 = LocaleController.formatString("ChatThemeDisabled", C3301R.string.ChatThemeDisabled, str3, str5);
+                            }
+                            String str6 = formatString2;
+                            zArr[c3] = z2;
+                            return str6;
+                        } else {
+                            return null;
+                        }
+                    }
+                } else if (messageObject.isMediaEmpty()) {
+                    if (!z && !TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                        String formatString4 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, messageObject.messageOwner.message);
+                        zArr[0] = true;
+                        return formatString4;
+                    }
+                    return LocaleController.formatString(str2, C3301R.string.NotificationMessageNoText, str3);
+                } else {
+                    String str7 = str2;
+                    TLRPC$Message tLRPC$Message3 = messageObject.messageOwner;
+                    if (tLRPC$Message3.media instanceof TLRPC$TL_messageMediaPhoto) {
+                        if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(tLRPC$Message3.message)) {
+                            return messageObject.messageOwner.media.ttl_seconds != 0 ? LocaleController.formatString("NotificationMessageSDPhoto", C3301R.string.NotificationMessageSDPhoto, str3) : LocaleController.formatString("NotificationMessagePhoto", C3301R.string.NotificationMessagePhoto, str3);
+                        }
+                        String formatString5 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "🖼 " + messageObject.messageOwner.message);
+                        zArr[0] = true;
+                        return formatString5;
+                    } else if (messageObject.isVideo()) {
+                        if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                            return messageObject.messageOwner.media.ttl_seconds != 0 ? LocaleController.formatString("NotificationMessageSDVideo", C3301R.string.NotificationMessageSDVideo, str3) : LocaleController.formatString("NotificationMessageVideo", C3301R.string.NotificationMessageVideo, str3);
+                        }
+                        String formatString6 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "📹 " + messageObject.messageOwner.message);
+                        zArr[0] = true;
+                        return formatString6;
+                    } else if (messageObject.isGame()) {
+                        return LocaleController.formatString("NotificationMessageGame", C3301R.string.NotificationMessageGame, str3, messageObject.messageOwner.media.game.title);
+                    } else {
+                        if (messageObject.isVoice()) {
+                            return LocaleController.formatString("NotificationMessageAudio", C3301R.string.NotificationMessageAudio, str3);
+                        }
+                        if (messageObject.isRoundVideo()) {
+                            return LocaleController.formatString("NotificationMessageRound", C3301R.string.NotificationMessageRound, str3);
+                        }
+                        if (messageObject.isMusic()) {
+                            return LocaleController.formatString("NotificationMessageMusic", C3301R.string.NotificationMessageMusic, str3);
+                        }
+                        TLRPC$MessageMedia tLRPC$MessageMedia = messageObject.messageOwner.media;
+                        if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaContact) {
+                            TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact = (TLRPC$TL_messageMediaContact) tLRPC$MessageMedia;
+                            return LocaleController.formatString("NotificationMessageContact2", C3301R.string.NotificationMessageContact2, str3, ContactsController.formatName(tLRPC$TL_messageMediaContact.first_name, tLRPC$TL_messageMediaContact.last_name));
+                        } else if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaPoll) {
+                            TLRPC$Poll tLRPC$Poll = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia).poll;
+                            if (tLRPC$Poll.quiz) {
+                                formatString = LocaleController.formatString("NotificationMessageQuiz2", C3301R.string.NotificationMessageQuiz2, str3, tLRPC$Poll.question);
+                            } else {
+                                formatString = LocaleController.formatString("NotificationMessagePoll2", C3301R.string.NotificationMessagePoll2, str3, tLRPC$Poll.question);
+                            }
+                        } else if ((tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaVenue)) {
+                            return LocaleController.formatString("NotificationMessageMap", C3301R.string.NotificationMessageMap, str3);
+                        } else {
+                            if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaGeoLive) {
+                                return LocaleController.formatString("NotificationMessageLiveLocation", C3301R.string.NotificationMessageLiveLocation, str3);
+                            }
+                            if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaDocument) {
+                                if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
+                                    String stickerEmoji = messageObject.getStickerEmoji();
+                                    if (stickerEmoji != null) {
+                                        formatString = LocaleController.formatString("NotificationMessageStickerEmoji", C3301R.string.NotificationMessageStickerEmoji, str3, stickerEmoji);
+                                    } else {
+                                        formatString = LocaleController.formatString("NotificationMessageSticker", C3301R.string.NotificationMessageSticker, str3);
+                                    }
+                                } else if (messageObject.isGif()) {
+                                    if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                                        return LocaleController.formatString("NotificationMessageGif", C3301R.string.NotificationMessageGif, str3);
+                                    }
+                                    String formatString7 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "🎬 " + messageObject.messageOwner.message);
+                                    zArr[0] = true;
+                                    return formatString7;
+                                } else if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                                    return LocaleController.formatString("NotificationMessageDocument", C3301R.string.NotificationMessageDocument, str3);
+                                } else {
+                                    String formatString8 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "📎 " + messageObject.messageOwner.message);
+                                    zArr[0] = true;
+                                    return formatString8;
+                                }
+                            } else if (z || TextUtils.isEmpty(messageObject.messageText)) {
+                                return LocaleController.formatString(str7, C3301R.string.NotificationMessageNoText, str3);
+                            } else {
+                                String formatString9 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, messageObject.messageText);
+                                zArr[0] = true;
+                                return formatString9;
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            if (i3 == 0) {
+                return null;
+            }
+            boolean z6 = ChatObject.isChannel(tLRPC$Chat) && !tLRPC$Chat.megagroup;
+            if (!z5 || ((z6 || !notificationsSettings.getBoolean("EnablePreviewGroup", true)) && !(z6 && notificationsSettings.getBoolean("EnablePreviewChannel", true)))) {
+                String str8 = str;
+                if (zArr2 != null) {
+                    zArr2[0] = false;
+                }
+                return (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup) ? LocaleController.formatString(str8, C3301R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("ChannelMessageNoText", C3301R.string.ChannelMessageNoText, str3);
+            }
+            TLRPC$Message tLRPC$Message4 = messageObject.messageOwner;
+            if (tLRPC$Message4 instanceof TLRPC$TL_messageService) {
+                TLRPC$MessageAction tLRPC$MessageAction3 = tLRPC$Message4.action;
+                if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatAddUser) {
+                    long j5 = tLRPC$MessageAction3.user_id;
+                    if (j5 == 0 && tLRPC$MessageAction3.users.size() == 1) {
+                        j5 = messageObject.messageOwner.action.users.get(0).longValue();
+                    }
+                    if (j5 != 0) {
+                        if (messageObject.messageOwner.peer_id.channel_id != 0 && !tLRPC$Chat.megagroup) {
+                            formatString = LocaleController.formatString("ChannelAddedByNotification", C3301R.string.ChannelAddedByNotification, str3, tLRPC$Chat.title);
+                        } else if (j5 == clientUserId) {
+                            formatString = LocaleController.formatString("NotificationInvitedToGroup", C3301R.string.NotificationInvitedToGroup, str3, tLRPC$Chat.title);
+                        } else {
+                            TLRPC$User user2 = getMessagesController().getUser(Long.valueOf(j5));
+                            if (user2 == null) {
+                                return null;
+                            }
+                            if (j4 == user2.f1640id) {
+                                if (tLRPC$Chat.megagroup) {
+                                    formatString = LocaleController.formatString("NotificationGroupAddSelfMega", C3301R.string.NotificationGroupAddSelfMega, str3, tLRPC$Chat.title);
+                                } else {
+                                    formatString = LocaleController.formatString("NotificationGroupAddSelf", C3301R.string.NotificationGroupAddSelf, str3, tLRPC$Chat.title);
+                                }
+                            } else {
+                                formatString = LocaleController.formatString("NotificationGroupAddMember", C3301R.string.NotificationGroupAddMember, str3, tLRPC$Chat.title, UserObject.getUserName(user2));
+                            }
+                        }
+                    } else {
+                        StringBuilder sb = new StringBuilder();
+                        for (int i5 = 0; i5 < messageObject.messageOwner.action.users.size(); i5++) {
+                            TLRPC$User user3 = getMessagesController().getUser(messageObject.messageOwner.action.users.get(i5));
+                            if (user3 != null) {
+                                String userName = UserObject.getUserName(user3);
+                                if (sb.length() != 0) {
+                                    sb.append(", ");
+                                }
+                                sb.append(userName);
+                            }
+                        }
+                        formatString = LocaleController.formatString("NotificationGroupAddMember", C3301R.string.NotificationGroupAddMember, str3, tLRPC$Chat.title, sb.toString());
+                    }
+                } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionGroupCall) {
+                    return LocaleController.formatString("NotificationGroupCreatedCall", C3301R.string.NotificationGroupCreatedCall, str3, tLRPC$Chat.title);
+                } else {
+                    if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionGroupCallScheduled) {
+                        return messageObject.messageText.toString();
+                    }
+                    if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionInviteToGroupCall) {
+                        long j6 = tLRPC$MessageAction3.user_id;
+                        if (j6 == 0 && tLRPC$MessageAction3.users.size() == 1) {
+                            j6 = messageObject.messageOwner.action.users.get(0).longValue();
+                        }
+                        if (j6 == 0) {
+                            StringBuilder sb2 = new StringBuilder();
+                            for (int i6 = 0; i6 < messageObject.messageOwner.action.users.size(); i6++) {
+                                TLRPC$User user4 = getMessagesController().getUser(messageObject.messageOwner.action.users.get(i6));
+                                if (user4 != null) {
+                                    String userName2 = UserObject.getUserName(user4);
+                                    if (sb2.length() != 0) {
+                                        sb2.append(", ");
+                                    }
+                                    sb2.append(userName2);
+                                }
+                            }
+                            formatString = LocaleController.formatString("NotificationGroupInvitedToCall", C3301R.string.NotificationGroupInvitedToCall, str3, tLRPC$Chat.title, sb2.toString());
+                        } else if (j6 == clientUserId) {
+                            formatString = LocaleController.formatString("NotificationGroupInvitedYouToCall", C3301R.string.NotificationGroupInvitedYouToCall, str3, tLRPC$Chat.title);
+                        } else {
+                            TLRPC$User user5 = getMessagesController().getUser(Long.valueOf(j6));
+                            if (user5 == null) {
+                                return null;
+                            }
+                            formatString = LocaleController.formatString("NotificationGroupInvitedToCall", C3301R.string.NotificationGroupInvitedToCall, str3, tLRPC$Chat.title, UserObject.getUserName(user5));
+                        }
+                    } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatJoinedByLink) {
+                        return LocaleController.formatString("NotificationInvitedToGroupByLink", C3301R.string.NotificationInvitedToGroupByLink, str3, tLRPC$Chat.title);
+                    } else {
+                        if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatEditTitle) {
+                            return LocaleController.formatString("NotificationEditedGroupName", C3301R.string.NotificationEditedGroupName, str3, tLRPC$MessageAction3.title);
+                        }
+                        if ((tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatEditPhoto) || (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatDeletePhoto)) {
+                            return (tLRPC$Message4.peer_id.channel_id == 0 || tLRPC$Chat.megagroup) ? messageObject.isVideoAvatar() ? LocaleController.formatString("NotificationEditedGroupVideo", C3301R.string.NotificationEditedGroupVideo, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationEditedGroupPhoto", C3301R.string.NotificationEditedGroupPhoto, str3, tLRPC$Chat.title) : messageObject.isVideoAvatar() ? LocaleController.formatString("ChannelVideoEditNotification", C3301R.string.ChannelVideoEditNotification, tLRPC$Chat.title) : LocaleController.formatString("ChannelPhotoEditNotification", C3301R.string.ChannelPhotoEditNotification, tLRPC$Chat.title);
+                        } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatDeleteUser) {
+                            long j7 = tLRPC$MessageAction3.user_id;
+                            if (j7 == clientUserId) {
+                                return LocaleController.formatString("NotificationGroupKickYou", C3301R.string.NotificationGroupKickYou, str3, tLRPC$Chat.title);
+                            }
+                            if (j7 == j4) {
+                                return LocaleController.formatString("NotificationGroupLeftMember", C3301R.string.NotificationGroupLeftMember, str3, tLRPC$Chat.title);
+                            }
+                            TLRPC$User user6 = getMessagesController().getUser(Long.valueOf(messageObject.messageOwner.action.user_id));
+                            if (user6 == null) {
+                                return null;
+                            }
+                            return LocaleController.formatString("NotificationGroupKickMember", C3301R.string.NotificationGroupKickMember, str3, tLRPC$Chat.title, UserObject.getUserName(user6));
+                        } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatCreate) {
+                            return messageObject.messageText.toString();
+                        } else {
+                            if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChannelCreate) {
+                                return messageObject.messageText.toString();
+                            }
+                            if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatMigrateTo) {
+                                return LocaleController.formatString("ActionMigrateFromGroupNotify", C3301R.string.ActionMigrateFromGroupNotify, tLRPC$Chat.title);
+                            }
+                            if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChannelMigrateFrom) {
+                                return LocaleController.formatString("ActionMigrateFromGroupNotify", C3301R.string.ActionMigrateFromGroupNotify, tLRPC$MessageAction3.title);
+                            }
+                            if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionScreenshotTaken) {
+                                return messageObject.messageText.toString();
+                            }
+                            if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionPinMessage) {
+                                if (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup) {
+                                    MessageObject messageObject2 = messageObject.replyMessageObject;
+                                    if (messageObject2 == null) {
+                                        return LocaleController.formatString("NotificationActionPinnedNoText", C3301R.string.NotificationActionPinnedNoText, str3, tLRPC$Chat.title);
+                                    }
+                                    if (messageObject2.isMusic()) {
+                                        formatString = LocaleController.formatString("NotificationActionPinnedMusic", C3301R.string.NotificationActionPinnedMusic, str3, tLRPC$Chat.title);
+                                    } else if (messageObject2.isVideo()) {
+                                        if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject2.messageOwner.message)) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedText", C3301R.string.NotificationActionPinnedText, str3, "📹 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                        } else {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedVideo", C3301R.string.NotificationActionPinnedVideo, str3, tLRPC$Chat.title);
+                                        }
+                                    } else if (messageObject2.isGif()) {
+                                        if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject2.messageOwner.message)) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedText", C3301R.string.NotificationActionPinnedText, str3, "🎬 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                        } else {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGif", C3301R.string.NotificationActionPinnedGif, str3, tLRPC$Chat.title);
+                                        }
+                                    } else if (messageObject2.isVoice()) {
+                                        formatString = LocaleController.formatString("NotificationActionPinnedVoice", C3301R.string.NotificationActionPinnedVoice, str3, tLRPC$Chat.title);
+                                    } else if (messageObject2.isRoundVideo()) {
+                                        formatString = LocaleController.formatString("NotificationActionPinnedRound", C3301R.string.NotificationActionPinnedRound, str3, tLRPC$Chat.title);
+                                    } else if (messageObject2.isSticker() || messageObject2.isAnimatedSticker()) {
+                                        String stickerEmoji2 = messageObject2.getStickerEmoji();
+                                        if (stickerEmoji2 != null) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerEmoji", C3301R.string.NotificationActionPinnedStickerEmoji, str3, tLRPC$Chat.title, stickerEmoji2);
+                                        } else {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedSticker", C3301R.string.NotificationActionPinnedSticker, str3, tLRPC$Chat.title);
+                                        }
+                                    } else {
+                                        TLRPC$Message tLRPC$Message5 = messageObject2.messageOwner;
+                                        TLRPC$MessageMedia tLRPC$MessageMedia2 = tLRPC$Message5.media;
+                                        if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaDocument) {
+                                            if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message5.message)) {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedText", C3301R.string.NotificationActionPinnedText, str3, "📎 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedFile", C3301R.string.NotificationActionPinnedFile, str3, tLRPC$Chat.title);
+                                            }
+                                        } else if ((tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaVenue)) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeo", C3301R.string.NotificationActionPinnedGeo, str3, tLRPC$Chat.title);
+                                        } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGeoLive) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoLive", C3301R.string.NotificationActionPinnedGeoLive, str3, tLRPC$Chat.title);
+                                        } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaContact) {
+                                            TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact2 = (TLRPC$TL_messageMediaContact) messageObject.messageOwner.media;
+                                            formatString = LocaleController.formatString("NotificationActionPinnedContact2", C3301R.string.NotificationActionPinnedContact2, str3, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact2.first_name, tLRPC$TL_messageMediaContact2.last_name));
+                                        } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaPoll) {
+                                            TLRPC$Poll tLRPC$Poll2 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia2).poll;
+                                            if (tLRPC$Poll2.quiz) {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedQuiz2", C3301R.string.NotificationActionPinnedQuiz2, str3, tLRPC$Chat.title, tLRPC$Poll2.question);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPoll2", C3301R.string.NotificationActionPinnedPoll2, str3, tLRPC$Chat.title, tLRPC$Poll2.question);
+                                            }
+                                        } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaPhoto) {
+                                            if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message5.message)) {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedText", C3301R.string.NotificationActionPinnedText, str3, "🖼 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPhoto", C3301R.string.NotificationActionPinnedPhoto, str3, tLRPC$Chat.title);
+                                            }
+                                        } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGame) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGame", C3301R.string.NotificationActionPinnedGame, str3, tLRPC$Chat.title);
+                                        } else {
+                                            CharSequence charSequence = messageObject2.messageText;
+                                            if (charSequence != null && charSequence.length() > 0) {
+                                                CharSequence charSequence2 = messageObject2.messageText;
+                                                if (charSequence2.length() > 20) {
+                                                    StringBuilder sb3 = new StringBuilder();
+                                                    c = 0;
+                                                    sb3.append((Object) charSequence2.subSequence(0, 20));
+                                                    sb3.append("...");
+                                                    charSequence2 = sb3.toString();
+                                                } else {
+                                                    c = 0;
+                                                }
+                                                int i7 = C3301R.string.NotificationActionPinnedText;
+                                                Object[] objArr = new Object[3];
+                                                objArr[c] = str3;
+                                                objArr[1] = charSequence2;
+                                                objArr[2] = tLRPC$Chat.title;
+                                                formatString = LocaleController.formatString("NotificationActionPinnedText", i7, objArr);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedNoText", C3301R.string.NotificationActionPinnedNoText, str3, tLRPC$Chat.title);
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    MessageObject messageObject3 = messageObject.replyMessageObject;
+                                    if (messageObject3 == null) {
+                                        return LocaleController.formatString("NotificationActionPinnedNoTextChannel", C3301R.string.NotificationActionPinnedNoTextChannel, tLRPC$Chat.title);
+                                    }
+                                    if (messageObject3.isMusic()) {
+                                        formatString = LocaleController.formatString("NotificationActionPinnedMusicChannel", C3301R.string.NotificationActionPinnedMusicChannel, tLRPC$Chat.title);
+                                    } else if (messageObject3.isVideo()) {
+                                        if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject3.messageOwner.message)) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3301R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "📹 " + messageObject3.messageOwner.message);
+                                        } else {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedVideoChannel", C3301R.string.NotificationActionPinnedVideoChannel, tLRPC$Chat.title);
+                                        }
+                                    } else if (messageObject3.isGif()) {
+                                        if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject3.messageOwner.message)) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3301R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "🎬 " + messageObject3.messageOwner.message);
+                                        } else {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGifChannel", C3301R.string.NotificationActionPinnedGifChannel, tLRPC$Chat.title);
+                                        }
+                                    } else if (messageObject3.isVoice()) {
+                                        formatString = LocaleController.formatString("NotificationActionPinnedVoiceChannel", C3301R.string.NotificationActionPinnedVoiceChannel, tLRPC$Chat.title);
+                                    } else if (messageObject3.isRoundVideo()) {
+                                        formatString = LocaleController.formatString("NotificationActionPinnedRoundChannel", C3301R.string.NotificationActionPinnedRoundChannel, tLRPC$Chat.title);
+                                    } else if (messageObject3.isSticker() || messageObject3.isAnimatedSticker()) {
+                                        String stickerEmoji3 = messageObject3.getStickerEmoji();
+                                        if (stickerEmoji3 != null) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", C3301R.string.NotificationActionPinnedStickerEmojiChannel, tLRPC$Chat.title, stickerEmoji3);
+                                        } else {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerChannel", C3301R.string.NotificationActionPinnedStickerChannel, tLRPC$Chat.title);
+                                        }
+                                    } else {
+                                        TLRPC$Message tLRPC$Message6 = messageObject3.messageOwner;
+                                        TLRPC$MessageMedia tLRPC$MessageMedia3 = tLRPC$Message6.media;
+                                        if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaDocument) {
+                                            if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message6.message)) {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3301R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "📎 " + messageObject3.messageOwner.message);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedFileChannel", C3301R.string.NotificationActionPinnedFileChannel, tLRPC$Chat.title);
+                                            }
+                                        } else if ((tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaVenue)) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoChannel", C3301R.string.NotificationActionPinnedGeoChannel, tLRPC$Chat.title);
+                                        } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaGeoLive) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", C3301R.string.NotificationActionPinnedGeoLiveChannel, tLRPC$Chat.title);
+                                        } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaContact) {
+                                            TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact3 = (TLRPC$TL_messageMediaContact) messageObject.messageOwner.media;
+                                            formatString = LocaleController.formatString("NotificationActionPinnedContactChannel2", C3301R.string.NotificationActionPinnedContactChannel2, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact3.first_name, tLRPC$TL_messageMediaContact3.last_name));
+                                        } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaPoll) {
+                                            TLRPC$Poll tLRPC$Poll3 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia3).poll;
+                                            if (tLRPC$Poll3.quiz) {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedQuizChannel2", C3301R.string.NotificationActionPinnedQuizChannel2, tLRPC$Chat.title, tLRPC$Poll3.question);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPollChannel2", C3301R.string.NotificationActionPinnedPollChannel2, tLRPC$Chat.title, tLRPC$Poll3.question);
+                                            }
+                                        } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaPhoto) {
+                                            if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message6.message)) {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3301R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "🖼 " + messageObject3.messageOwner.message);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPhotoChannel", C3301R.string.NotificationActionPinnedPhotoChannel, tLRPC$Chat.title);
+                                            }
+                                        } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaGame) {
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGameChannel", C3301R.string.NotificationActionPinnedGameChannel, tLRPC$Chat.title);
+                                        } else {
+                                            CharSequence charSequence3 = messageObject3.messageText;
+                                            if (charSequence3 != null && charSequence3.length() > 0) {
+                                                CharSequence charSequence4 = messageObject3.messageText;
+                                                if (charSequence4.length() > 20) {
+                                                    StringBuilder sb4 = new StringBuilder();
+                                                    c2 = 0;
+                                                    sb4.append((Object) charSequence4.subSequence(0, 20));
+                                                    sb4.append("...");
+                                                    charSequence4 = sb4.toString();
+                                                } else {
+                                                    c2 = 0;
+                                                }
+                                                int i8 = C3301R.string.NotificationActionPinnedTextChannel;
+                                                Object[] objArr2 = new Object[2];
+                                                objArr2[c2] = tLRPC$Chat.title;
+                                                objArr2[1] = charSequence4;
+                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", i8, objArr2);
+                                            } else {
+                                                formatString = LocaleController.formatString("NotificationActionPinnedNoTextChannel", C3301R.string.NotificationActionPinnedNoTextChannel, tLRPC$Chat.title);
+                                            }
+                                        }
+                                    }
+                                }
+                            } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionGameScore) {
+                                return messageObject.messageText.toString();
+                            } else {
+                                if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionSetChatTheme) {
+                                    String str9 = ((TLRPC$TL_messageActionSetChatTheme) tLRPC$MessageAction3).emoticon;
+                                    if (TextUtils.isEmpty(str9)) {
+                                        if (j == clientUserId) {
+                                            formatString = LocaleController.formatString("ChatThemeDisabledYou", C3301R.string.ChatThemeDisabledYou, new Object[0]);
+                                        } else {
+                                            formatString = LocaleController.formatString("ChatThemeDisabled", C3301R.string.ChatThemeDisabled, str3, str9);
+                                        }
+                                    } else if (j == clientUserId) {
+                                        formatString = LocaleController.formatString("ChangedChatThemeYou", C3301R.string.ChatThemeChangedYou, str9);
+                                    } else {
+                                        formatString = LocaleController.formatString("ChangedChatThemeTo", C3301R.string.ChatThemeChangedTo, str3, str9);
+                                    }
+                                } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatJoinedByRequest) {
+                                    return messageObject.messageText.toString();
+                                } else {
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if (ChatObject.isChannel(tLRPC$Chat) && !tLRPC$Chat.megagroup) {
+                if (messageObject.isMediaEmpty()) {
+                    if (z || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                        return LocaleController.formatString("ChannelMessageNoText", C3301R.string.ChannelMessageNoText, str3);
+                    }
+                    String formatString10 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, messageObject.messageOwner.message);
+                    zArr[0] = true;
+                    return formatString10;
+                }
+                TLRPC$Message tLRPC$Message7 = messageObject.messageOwner;
+                if (tLRPC$Message7.media instanceof TLRPC$TL_messageMediaPhoto) {
+                    if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(tLRPC$Message7.message)) {
+                        return LocaleController.formatString("ChannelMessagePhoto", C3301R.string.ChannelMessagePhoto, str3);
+                    }
+                    String formatString11 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "🖼 " + messageObject.messageOwner.message);
+                    zArr[0] = true;
+                    return formatString11;
+                } else if (messageObject.isVideo()) {
+                    if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                        return LocaleController.formatString("ChannelMessageVideo", C3301R.string.ChannelMessageVideo, str3);
+                    }
+                    String formatString12 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "📹 " + messageObject.messageOwner.message);
+                    zArr[0] = true;
+                    return formatString12;
+                } else if (messageObject.isVoice()) {
+                    return LocaleController.formatString("ChannelMessageAudio", C3301R.string.ChannelMessageAudio, str3);
+                } else {
+                    if (messageObject.isRoundVideo()) {
+                        return LocaleController.formatString("ChannelMessageRound", C3301R.string.ChannelMessageRound, str3);
+                    }
+                    if (messageObject.isMusic()) {
+                        return LocaleController.formatString("ChannelMessageMusic", C3301R.string.ChannelMessageMusic, str3);
+                    }
+                    TLRPC$MessageMedia tLRPC$MessageMedia4 = messageObject.messageOwner.media;
+                    if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaContact) {
+                        TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact4 = (TLRPC$TL_messageMediaContact) tLRPC$MessageMedia4;
+                        return LocaleController.formatString("ChannelMessageContact2", C3301R.string.ChannelMessageContact2, str3, ContactsController.formatName(tLRPC$TL_messageMediaContact4.first_name, tLRPC$TL_messageMediaContact4.last_name));
+                    } else if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaPoll) {
+                        TLRPC$Poll tLRPC$Poll4 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia4).poll;
+                        if (tLRPC$Poll4.quiz) {
+                            formatString = LocaleController.formatString("ChannelMessageQuiz2", C3301R.string.ChannelMessageQuiz2, str3, tLRPC$Poll4.question);
+                        } else {
+                            formatString = LocaleController.formatString("ChannelMessagePoll2", C3301R.string.ChannelMessagePoll2, str3, tLRPC$Poll4.question);
+                        }
+                    } else if ((tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaVenue)) {
+                        return LocaleController.formatString("ChannelMessageMap", C3301R.string.ChannelMessageMap, str3);
+                    } else {
+                        if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaGeoLive) {
+                            return LocaleController.formatString("ChannelMessageLiveLocation", C3301R.string.ChannelMessageLiveLocation, str3);
+                        }
+                        if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaDocument) {
+                            if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
+                                String stickerEmoji4 = messageObject.getStickerEmoji();
+                                if (stickerEmoji4 != null) {
+                                    formatString = LocaleController.formatString("ChannelMessageStickerEmoji", C3301R.string.ChannelMessageStickerEmoji, str3, stickerEmoji4);
+                                } else {
+                                    formatString = LocaleController.formatString("ChannelMessageSticker", C3301R.string.ChannelMessageSticker, str3);
+                                }
+                            } else if (messageObject.isGif()) {
+                                if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                                    return LocaleController.formatString("ChannelMessageGIF", C3301R.string.ChannelMessageGIF, str3);
+                                }
+                                String formatString13 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "🎬 " + messageObject.messageOwner.message);
+                                zArr[0] = true;
+                                return formatString13;
+                            } else if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                                return LocaleController.formatString("ChannelMessageDocument", C3301R.string.ChannelMessageDocument, str3);
+                            } else {
+                                String formatString14 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, "📎 " + messageObject.messageOwner.message);
+                                zArr[0] = true;
+                                return formatString14;
+                            }
+                        } else if (z || TextUtils.isEmpty(messageObject.messageText)) {
+                            return LocaleController.formatString("ChannelMessageNoText", C3301R.string.ChannelMessageNoText, str3);
+                        } else {
+                            String formatString15 = LocaleController.formatString("NotificationMessageText", C3301R.string.NotificationMessageText, str3, messageObject.messageText);
+                            zArr[0] = true;
+                            return formatString15;
+                        }
+                    }
+                }
+            } else if (messageObject.isMediaEmpty()) {
+                return (z || TextUtils.isEmpty(messageObject.messageOwner.message)) ? LocaleController.formatString(str, C3301R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationMessageGroupText", C3301R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, messageObject.messageOwner.message);
+            } else {
+                String str10 = str;
+                TLRPC$Message tLRPC$Message8 = messageObject.messageOwner;
+                if (tLRPC$Message8.media instanceof TLRPC$TL_messageMediaPhoto) {
+                    if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(tLRPC$Message8.message)) {
+                        return LocaleController.formatString("NotificationMessageGroupPhoto", C3301R.string.NotificationMessageGroupPhoto, str3, tLRPC$Chat.title);
+                    }
+                    return LocaleController.formatString("NotificationMessageGroupText", C3301R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "🖼 " + messageObject.messageOwner.message);
+                } else if (messageObject.isVideo()) {
+                    if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                        return LocaleController.formatString(" ", C3301R.string.NotificationMessageGroupVideo, str3, tLRPC$Chat.title);
+                    }
+                    return LocaleController.formatString("NotificationMessageGroupText", C3301R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "📹 " + messageObject.messageOwner.message);
+                } else if (messageObject.isVoice()) {
+                    return LocaleController.formatString("NotificationMessageGroupAudio", C3301R.string.NotificationMessageGroupAudio, str3, tLRPC$Chat.title);
+                } else {
+                    if (messageObject.isRoundVideo()) {
+                        return LocaleController.formatString("NotificationMessageGroupRound", C3301R.string.NotificationMessageGroupRound, str3, tLRPC$Chat.title);
+                    }
+                    if (messageObject.isMusic()) {
+                        return LocaleController.formatString("NotificationMessageGroupMusic", C3301R.string.NotificationMessageGroupMusic, str3, tLRPC$Chat.title);
+                    }
+                    TLRPC$MessageMedia tLRPC$MessageMedia5 = messageObject.messageOwner.media;
+                    if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaContact) {
+                        TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact5 = (TLRPC$TL_messageMediaContact) tLRPC$MessageMedia5;
+                        return LocaleController.formatString("NotificationMessageGroupContact2", C3301R.string.NotificationMessageGroupContact2, str3, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact5.first_name, tLRPC$TL_messageMediaContact5.last_name));
+                    } else if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaPoll) {
+                        TLRPC$Poll tLRPC$Poll5 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia5).poll;
+                        if (tLRPC$Poll5.quiz) {
+                            formatString = LocaleController.formatString("NotificationMessageGroupQuiz2", C3301R.string.NotificationMessageGroupQuiz2, str3, tLRPC$Chat.title, tLRPC$Poll5.question);
+                        } else {
+                            formatString = LocaleController.formatString("NotificationMessageGroupPoll2", C3301R.string.NotificationMessageGroupPoll2, str3, tLRPC$Chat.title, tLRPC$Poll5.question);
+                        }
+                    } else if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaGame) {
+                        return LocaleController.formatString("NotificationMessageGroupGame", C3301R.string.NotificationMessageGroupGame, str3, tLRPC$Chat.title, tLRPC$MessageMedia5.game.title);
+                    } else {
+                        if ((tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaVenue)) {
+                            return LocaleController.formatString("NotificationMessageGroupMap", C3301R.string.NotificationMessageGroupMap, str3, tLRPC$Chat.title);
+                        }
+                        if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaGeoLive) {
+                            return LocaleController.formatString("NotificationMessageGroupLiveLocation", C3301R.string.NotificationMessageGroupLiveLocation, str3, tLRPC$Chat.title);
+                        }
+                        if (!(tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaDocument)) {
+                            return (z || TextUtils.isEmpty(messageObject.messageText)) ? LocaleController.formatString(str10, C3301R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationMessageGroupText", C3301R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, messageObject.messageText);
+                        } else if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
+                            String stickerEmoji5 = messageObject.getStickerEmoji();
+                            if (stickerEmoji5 != null) {
+                                formatString = LocaleController.formatString("NotificationMessageGroupStickerEmoji", C3301R.string.NotificationMessageGroupStickerEmoji, str3, tLRPC$Chat.title, stickerEmoji5);
+                            } else {
+                                formatString = LocaleController.formatString("NotificationMessageGroupSticker", C3301R.string.NotificationMessageGroupSticker, str3, tLRPC$Chat.title);
+                            }
+                        } else if (messageObject.isGif()) {
+                            if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                                return LocaleController.formatString("NotificationMessageGroupGif", C3301R.string.NotificationMessageGroupGif, str3, tLRPC$Chat.title);
+                            }
+                            return LocaleController.formatString("NotificationMessageGroupText", C3301R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "🎬 " + messageObject.messageOwner.message);
+                        } else if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
+                            return LocaleController.formatString("NotificationMessageGroupDocument", C3301R.string.NotificationMessageGroupDocument, str3, tLRPC$Chat.title);
+                        } else {
+                            return LocaleController.formatString("NotificationMessageGroupText", C3301R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "📎 " + messageObject.messageOwner.message);
+                        }
+                    }
+                }
+            }
+        }
+        return formatString;
     }
 
     private void scheduleNotificationRepeat() {
@@ -3779,7 +3425,7 @@ public class NotificationsController extends BaseController {
             }
             if (this.soundIn == 0 && !this.soundInLoaded) {
                 this.soundInLoaded = true;
-                this.soundIn = this.soundPool.load(ApplicationLoader.applicationContext, C3286R.C3291raw.sound_in, 1);
+                this.soundIn = this.soundPool.load(ApplicationLoader.applicationContext, C3301R.C3306raw.sound_in, 1);
             }
             int i = this.soundIn;
             if (i != 0) {
@@ -4020,19 +3666,19 @@ public class NotificationsController extends BaseController {
         return Build.VERSION.SDK_INT < 29 || !SharedConfig.chatBubbles;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00ef A[Catch: Exception -> 0x014d, TryCatch #0 {Exception -> 0x014d, blocks: (B:9:0x0020, B:12:0x0060, B:14:0x0068, B:18:0x0078, B:20:0x00a1, B:22:0x00b1, B:24:0x00bb, B:26:0x00ef, B:28:0x00f7, B:30:0x0100, B:38:0x011f, B:42:0x0136, B:32:0x0107, B:34:0x010d, B:36:0x0112, B:35:0x0110, B:37:0x0117, B:27:0x00f3, B:17:0x0074, B:13:0x0064), top: B:49:0x0020 }] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00f3 A[Catch: Exception -> 0x014d, TryCatch #0 {Exception -> 0x014d, blocks: (B:9:0x0020, B:12:0x0060, B:14:0x0068, B:18:0x0078, B:20:0x00a1, B:22:0x00b1, B:24:0x00bb, B:26:0x00ef, B:28:0x00f7, B:30:0x0100, B:38:0x011f, B:42:0x0136, B:32:0x0107, B:34:0x010d, B:36:0x0112, B:35:0x0110, B:37:0x0117, B:27:0x00f3, B:17:0x0074, B:13:0x0064), top: B:49:0x0020 }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0100 A[Catch: Exception -> 0x014d, TryCatch #0 {Exception -> 0x014d, blocks: (B:9:0x0020, B:12:0x0060, B:14:0x0068, B:18:0x0078, B:20:0x00a1, B:22:0x00b1, B:24:0x00bb, B:26:0x00ef, B:28:0x00f7, B:30:0x0100, B:38:0x011f, B:42:0x0136, B:32:0x0107, B:34:0x010d, B:36:0x0112, B:35:0x0110, B:37:0x0117, B:27:0x00f3, B:17:0x0074, B:13:0x0064), top: B:49:0x0020 }] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00f5 A[Catch: Exception -> 0x0154, TryCatch #0 {Exception -> 0x0154, blocks: (B:9:0x0021, B:12:0x0061, B:14:0x006b, B:18:0x007b, B:20:0x00a4, B:22:0x00b4, B:24:0x00be, B:26:0x00f5, B:28:0x00fe, B:30:0x0107, B:38:0x0126, B:42:0x013d, B:32:0x010e, B:34:0x0114, B:36:0x0119, B:35:0x0117, B:37:0x011e, B:27:0x00fa, B:17:0x0077, B:13:0x0066), top: B:47:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00fa A[Catch: Exception -> 0x0154, TryCatch #0 {Exception -> 0x0154, blocks: (B:9:0x0021, B:12:0x0061, B:14:0x006b, B:18:0x007b, B:20:0x00a4, B:22:0x00b4, B:24:0x00be, B:26:0x00f5, B:28:0x00fe, B:30:0x0107, B:38:0x0126, B:42:0x013d, B:32:0x010e, B:34:0x0114, B:36:0x0119, B:35:0x0117, B:37:0x011e, B:27:0x00fa, B:17:0x0077, B:13:0x0066), top: B:47:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0107 A[Catch: Exception -> 0x0154, TryCatch #0 {Exception -> 0x0154, blocks: (B:9:0x0021, B:12:0x0061, B:14:0x006b, B:18:0x007b, B:20:0x00a4, B:22:0x00b4, B:24:0x00be, B:26:0x00f5, B:28:0x00fe, B:30:0x0107, B:38:0x0126, B:42:0x013d, B:32:0x010e, B:34:0x0114, B:36:0x0119, B:35:0x0117, B:37:0x011e, B:27:0x00fa, B:17:0x0077, B:13:0x0066), top: B:47:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x013c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private java.lang.String createNotificationShortcut(androidx.core.app.NotificationCompat.Builder r18, long r19, java.lang.String r21, org.telegram.tgnet.TLRPC$User r22, org.telegram.tgnet.TLRPC$Chat r23, androidx.core.app.Person r24) {
+    private java.lang.String createNotificationShortcut(androidx.core.app.NotificationCompat.Builder r17, long r18, java.lang.String r20, org.telegram.tgnet.TLRPC$User r21, org.telegram.tgnet.TLRPC$Chat r22, androidx.core.app.Person r23) {
         /*
-            Method dump skipped, instructions count: 341
+            Method dump skipped, instructions count: 345
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsController.createNotificationShortcut(androidx.core.app.NotificationCompat$Builder, long, java.lang.String, org.telegram.tgnet.TLRPC$User, org.telegram.tgnet.TLRPC$Chat, androidx.core.app.Person):java.lang.String");
@@ -4125,16 +3771,16 @@ public class NotificationsController extends BaseController {
             String str6 = user != null ? " (" + ContactsController.formatName(user.first_name, user.last_name) + ")" : "";
             ArrayList arrayList = new ArrayList();
             if (str2 != null) {
-                arrayList.add(new NotificationChannelGroup(str2, LocaleController.getString("NotificationsChannels", C3286R.string.NotificationsChannels) + str6));
+                arrayList.add(new NotificationChannelGroup(str2, LocaleController.getString("NotificationsChannels", C3301R.string.NotificationsChannels) + str6));
             }
             if (str3 != null) {
-                arrayList.add(new NotificationChannelGroup(str3, LocaleController.getString("NotificationsGroups", C3286R.string.NotificationsGroups) + str6));
+                arrayList.add(new NotificationChannelGroup(str3, LocaleController.getString("NotificationsGroups", C3301R.string.NotificationsGroups) + str6));
             }
             if (str5 != null) {
-                arrayList.add(new NotificationChannelGroup(str5, LocaleController.getString("NotificationsPrivateChats", C3286R.string.NotificationsPrivateChats) + str6));
+                arrayList.add(new NotificationChannelGroup(str5, LocaleController.getString("NotificationsPrivateChats", C3301R.string.NotificationsPrivateChats) + str6));
             }
             if (str4 != null) {
-                arrayList.add(new NotificationChannelGroup(str4, LocaleController.getString("NotificationsOther", C3286R.string.NotificationsOther) + str6));
+                arrayList.add(new NotificationChannelGroup(str4, LocaleController.getString("NotificationsOther", C3301R.string.NotificationsOther) + str6));
             }
             systemNotificationManager.createNotificationChannelGroups(arrayList);
         }
@@ -4156,56 +3802,56 @@ public class NotificationsController extends BaseController {
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsController.validateChannelId(long, int, java.lang.String, long[], int, android.net.Uri, int, boolean, boolean, boolean, int):java.lang.String");
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:381:0x08c6, code lost:
-        if (android.os.Build.VERSION.SDK_INT >= 26) goto L343;
+    /* JADX WARN: Code restructure failed: missing block: B:381:0x08c2, code lost:
+        if (android.os.Build.VERSION.SDK_INT >= 26) goto L346;
      */
     /* JADX WARN: Code restructure failed: missing block: B:85:0x0164, code lost:
-        if (r21 == 0) goto L464;
+        if (r20 == 0) goto L465;
      */
     /* JADX WARN: Code restructure failed: missing block: B:86:0x0166, code lost:
-        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenChatName", org.telegram.messenger.C3286R.string.NotificationHiddenChatName);
+        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenChatName", org.telegram.messenger.C3301R.string.NotificationHiddenChatName);
      */
     /* JADX WARN: Code restructure failed: missing block: B:87:0x016f, code lost:
-        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenName", org.telegram.messenger.C3286R.string.NotificationHiddenName);
+        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenName", org.telegram.messenger.C3301R.string.NotificationHiddenName);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x01cc A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x01e8 A[Catch: Exception -> 0x0b86, TRY_ENTER, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0207 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0259 A[Catch: Exception -> 0x0b86, TRY_ENTER, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02cc A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x01cc A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x01e8 A[Catch: Exception -> 0x0b82, TRY_ENTER, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0207 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0259 A[Catch: Exception -> 0x0b82, TRY_ENTER, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x02cc A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
     /* JADX WARN: Removed duplicated region for block: B:148:0x0385 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:158:0x039c  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0458 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0479  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0487  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x048a  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x04a6 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0520  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x0531  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x05b8  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0612  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x0616  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x061e A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x062e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0635 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0642  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x064d A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x0676  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x068d  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x06c4 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0757 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:324:0x07e6 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x0833 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0881  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0887  */
-    /* JADX WARN: Removed duplicated region for block: B:425:0x09c8 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:426:0x09d2  */
-    /* JADX WARN: Removed duplicated region for block: B:429:0x09d9 A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:430:0x09e7  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x014a A[Catch: Exception -> 0x0b86, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x0457 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0486  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x04a5 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x051f  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0530  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x05b7  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x060f  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0613  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x061b A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x062b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x0632 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x063f  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x064a A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x0673  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x068a  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x06c1 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0754 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x07e3 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x0830 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x087c  */
+    /* JADX WARN: Removed duplicated region for block: B:354:0x0882  */
+    /* JADX WARN: Removed duplicated region for block: B:425:0x09c4 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:426:0x09ce  */
+    /* JADX WARN: Removed duplicated region for block: B:429:0x09d5 A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:430:0x09e3  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x014a A[Catch: Exception -> 0x0b82, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
     /* JADX WARN: Removed duplicated region for block: B:83:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x018c A[Catch: Exception -> 0x0b86, TRY_ENTER, TryCatch #5 {Exception -> 0x0b86, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f3, B:168:0x03fd, B:179:0x0458, B:184:0x047d, B:188:0x048c, B:190:0x04a6, B:192:0x04dc, B:194:0x0504, B:196:0x0512, B:202:0x0533, B:204:0x053d, B:206:0x0552, B:225:0x0618, B:227:0x061e, B:236:0x0635, B:238:0x063b, B:246:0x064d, B:249:0x0657, B:252:0x0660, B:269:0x0688, B:272:0x0691, B:274:0x06c4, B:277:0x06cf, B:282:0x06eb, B:284:0x06f1, B:287:0x06f7, B:289:0x0700, B:292:0x0708, B:294:0x070c, B:296:0x0710, B:298:0x0718, B:322:0x0779, B:325:0x07e8, B:327:0x07ec, B:329:0x07f2, B:337:0x0833, B:339:0x0840, B:360:0x088e, B:388:0x08d2, B:397:0x0911, B:399:0x0919, B:401:0x091d, B:403:0x0925, B:407:0x092e, B:425:0x09c8, B:429:0x09d9, B:446:0x0a41, B:448:0x0a47, B:450:0x0a4b, B:452:0x0a56, B:454:0x0a5c, B:456:0x0a67, B:458:0x0a76, B:460:0x0a82, B:462:0x0aa3, B:463:0x0aa8, B:465:0x0ad7, B:466:0x0ae9, B:470:0x0b14, B:472:0x0b1a, B:474:0x0b22, B:476:0x0b28, B:478:0x0b3a, B:479:0x0b51, B:480:0x0b67, B:432:0x09ea, B:440:0x0a0e, B:442:0x0a22, B:408:0x0958, B:409:0x095d, B:410:0x0960, B:412:0x0966, B:415:0x0970, B:417:0x0978, B:421:0x09b6, B:422:0x09be, B:391:0x08dc, B:393:0x08e4, B:395:0x090c, B:445:0x0a2e, B:370:0x08a1, B:374:0x08ad, B:377:0x08b6, B:380:0x08c0, B:304:0x0731, B:306:0x0735, B:308:0x0739, B:310:0x0741, B:280:0x06e1, B:316:0x0757, B:318:0x0764, B:320:0x076f, B:205:0x054a, B:207:0x0575, B:209:0x0581, B:211:0x0596, B:210:0x058e, B:214:0x05bd, B:216:0x05c7, B:218:0x05dc, B:217:0x05d4, B:193:0x04ee, B:169:0x0415, B:171:0x0428, B:172:0x0434, B:174:0x0438, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:419:0x0982, B:262:0x0679, B:331:0x080a), top: B:493:0x002c }] */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x018c A[Catch: Exception -> 0x0b82, TRY_ENTER, TryCatch #4 {Exception -> 0x0b82, blocks: (B:13:0x002c, B:15:0x0050, B:17:0x0054, B:19:0x0062, B:21:0x0066, B:23:0x007a, B:25:0x0080, B:29:0x0094, B:33:0x00a2, B:35:0x00ae, B:36:0x00b4, B:38:0x00c4, B:40:0x00d2, B:42:0x00d8, B:51:0x00f5, B:53:0x0101, B:62:0x011e, B:64:0x0124, B:69:0x0134, B:71:0x013c, B:76:0x0144, B:78:0x014a, B:90:0x0181, B:93:0x018c, B:95:0x0194, B:98:0x01c1, B:100:0x01cc, B:109:0x0243, B:112:0x0259, B:117:0x0276, B:123:0x02b8, B:149:0x0387, B:161:0x03a2, B:163:0x03be, B:166:0x03f2, B:168:0x03fc, B:179:0x0457, B:184:0x047c, B:188:0x048b, B:190:0x04a5, B:192:0x04db, B:194:0x0503, B:196:0x0511, B:202:0x0532, B:204:0x053c, B:206:0x0551, B:225:0x0615, B:227:0x061b, B:236:0x0632, B:238:0x0638, B:246:0x064a, B:249:0x0654, B:252:0x065d, B:269:0x0685, B:272:0x068e, B:274:0x06c1, B:277:0x06cc, B:282:0x06e8, B:284:0x06ee, B:287:0x06f4, B:289:0x06fd, B:292:0x0705, B:294:0x0709, B:296:0x070d, B:298:0x0715, B:322:0x0776, B:325:0x07e5, B:327:0x07e9, B:329:0x07ef, B:337:0x0830, B:339:0x083d, B:359:0x0889, B:388:0x08ce, B:397:0x090d, B:399:0x0915, B:401:0x0919, B:403:0x0921, B:407:0x092a, B:425:0x09c4, B:429:0x09d5, B:446:0x0a3d, B:448:0x0a43, B:450:0x0a47, B:452:0x0a52, B:454:0x0a58, B:456:0x0a63, B:458:0x0a72, B:460:0x0a7e, B:462:0x0a9f, B:463:0x0aa4, B:465:0x0ad3, B:466:0x0ae5, B:470:0x0b10, B:472:0x0b16, B:474:0x0b1e, B:476:0x0b24, B:478:0x0b36, B:479:0x0b4d, B:480:0x0b63, B:432:0x09e6, B:440:0x0a0a, B:442:0x0a1e, B:408:0x0954, B:409:0x0959, B:410:0x095c, B:412:0x0962, B:415:0x096c, B:417:0x0974, B:421:0x09b2, B:422:0x09ba, B:391:0x08d8, B:393:0x08e0, B:395:0x0908, B:445:0x0a2a, B:377:0x08b3, B:369:0x089d, B:373:0x08a9, B:380:0x08bc, B:304:0x072e, B:306:0x0732, B:308:0x0736, B:310:0x073e, B:280:0x06de, B:316:0x0754, B:318:0x0761, B:320:0x076c, B:205:0x0549, B:207:0x0574, B:209:0x0580, B:211:0x0595, B:210:0x058d, B:214:0x05bc, B:216:0x05c6, B:218:0x05db, B:217:0x05d3, B:193:0x04ed, B:169:0x0414, B:171:0x0427, B:172:0x0433, B:174:0x0437, B:118:0x028a, B:120:0x028f, B:121:0x02a3, B:124:0x02cc, B:126:0x02f0, B:128:0x0308, B:133:0x0312, B:134:0x0318, B:138:0x0325, B:139:0x0339, B:141:0x033e, B:142:0x0352, B:143:0x0365, B:145:0x036d, B:146:0x0376, B:104:0x01db, B:107:0x01e8, B:108:0x0207, B:96:0x01a1, B:86:0x0166, B:87:0x016f, B:88:0x0178, B:67:0x012d, B:68:0x0130, B:43:0x00db, B:45:0x00e1, B:28:0x0092, B:331:0x0807, B:262:0x0676, B:419:0x097e), top: B:494:0x002c, inners: #2, #3 }] */
     /* JADX WARN: Removed duplicated region for block: B:97:0x01c0  */
     /* JADX WARN: Type inference failed for: r2v16 */
     /* JADX WARN: Type inference failed for: r2v17 */
@@ -4219,7 +3865,7 @@ public class NotificationsController extends BaseController {
     */
     private void showOrUpdateNotification(boolean r50) {
         /*
-            Method dump skipped, instructions count: 2960
+            Method dump skipped, instructions count: 2956
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsController.showOrUpdateNotification(boolean):void");
@@ -4245,7 +3891,7 @@ public class NotificationsController extends BaseController {
         }
         SharedPreferences.Editor edit = getAccountInstance().getNotificationsSettings().edit();
         String uri3 = uri2.toString();
-        String string = LocaleController.getString("DefaultRingtone", C3286R.string.DefaultRingtone);
+        String string = LocaleController.getString("DefaultRingtone", C3301R.string.DefaultRingtone);
         if (z) {
             if (i4 == 2) {
                 edit.putString("ChannelSound", string);
@@ -4272,14 +3918,14 @@ public class NotificationsController extends BaseController {
         notificationManager.notify(this.notificationId, builder.build());
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(68:68|(2:70|(1:72)(5:478|(1:480)|481|482|483))(3:484|(1:494)(2:488|(59:492|74|(1:76)(2:475|(1:477))|77|78|(3:80|(1:82)(1:473)|83)(1:474)|(3:85|(2:87|(1:89)(3:460|461|(3:463|(1:465)(1:467)|466)))(1:471)|468)(1:472)|(3:91|(1:97)|98)(1:459)|99|(3:454|(1:456)(1:458)|457)(1:102)|103|(1:105)|106|(1:446)(1:110)|111|(3:114|(1:116)|(3:118|119|(41:123|124|125|(4:129|130|131|132)|137|(1:439)(1:140)|141|(1:438)|148|(1:437)(1:155)|156|(7:159|(1:161)(4:166|(1:168)(2:345|(3:347|(1:349)|(3:171|(1:173)(1:175)|174)(22:176|(1:178)|179|(2:341|(1:343)(1:344))(1:185)|186|(12:(1:189)(2:337|(1:339))|190|(3:(2:193|(2:(2:196|(1:198))(1:330)|199)(3:331|(1:333)|334))|335|334)(1:336)|(3:300|(1:329)(3:306|(1:328)(4:309|(1:313)|(1:327)(1:323)|324)|325)|326)(1:203)|204|205|(6:207|(1:298)(7:220|(1:297)(3:224|(12:273|274|275|276|277|278|279|280|281|282|283|284)(1:226)|227)|228|(1:230)(1:272)|231|(2:267|268)(3:233|(1:235)|266)|(6:237|(1:239)|240|(1:242)|243|(2:248|(3:250|(2:255|256)(1:252)|(1:254)))))|265|(0)|243|(3:246|248|(0)))(1:299)|259|(3:263|264|165)|163|164|165)|340|190|(0)(0)|(1:201)|300|(1:302)|329|326|204|205|(0)(0)|259|(4:261|263|264|165)|163|164|165)))|169|(0)(0))|162|163|164|165|157)|350|351|(1:353)(2:433|(1:435)(1:436))|354|(1:356)|357|(1:359)|360|(2:362|(1:364)(1:428))(2:429|(1:431)(1:432))|(1:366)(1:427)|367|368|369|(1:371)|(1:373)|(1:375)|376|(1:423)(1:380)|381|(1:383)|(1:385)|386|(3:391|(4:393|(3:395|(4:397|(1:399)|400|401)(2:403|404)|402)|405|406)|407)|408|(1:422)(2:411|(1:415))|416|(1:418)|419|420)))|445|137|(0)|439|141|(1:143)|438|148|(1:151)|437|156|(1:157)|350|351|(0)(0)|354|(0)|357|(0)|360|(0)(0)|(0)(0)|367|368|369|(0)|(0)|(0)|376|(1:378)|423|381|(0)|(0)|386|(4:388|391|(0)|407)|408|(0)|422|416|(0)|419|420))|493)|73|74|(0)(0)|77|78|(0)(0)|(0)(0)|(0)(0)|99|(0)|448|450|452|454|(0)(0)|457|103|(0)|106|(1:108)|446|111|(3:114|(0)|(0))|445|137|(0)|439|141|(0)|438|148|(0)|437|156|(1:157)|350|351|(0)(0)|354|(0)|357|(0)|360|(0)(0)|(0)(0)|367|368|369|(0)|(0)|(0)|376|(0)|423|381|(0)|(0)|386|(0)|408|(0)|422|416|(0)|419|420) */
+    /* JADX WARN: Can't wrap try/catch for region: R(68:68|(2:70|(1:72)(5:476|(1:478)|479|480|481))(3:482|(1:492)(2:486|(59:490|74|(1:76)(2:473|(1:475))|77|78|(3:80|(1:82)(1:471)|83)(1:472)|(3:85|(2:87|(1:89)(3:458|459|(3:461|(1:463)(1:465)|464)))(1:469)|466)(1:470)|(3:91|(1:97)|98)(1:457)|99|(3:452|(1:454)(1:456)|455)(1:102)|103|(1:105)|106|(1:444)(1:110)|111|(3:114|(1:116)|(3:118|119|(41:123|124|125|(4:129|130|131|132)|137|(1:437)(1:140)|141|(1:436)|148|(1:435)(1:155)|156|(7:159|(1:161)(3:166|(1:168)(2:343|(1:347))|(3:170|(1:172)|173)(22:174|(1:176)|177|(2:339|(1:341)(1:342))(1:183)|184|(12:(1:187)(2:335|(1:337))|188|(3:(2:191|(2:(2:194|(1:196))(1:328)|197)(3:329|(1:331)|332))|333|332)(1:334)|(3:298|(1:327)(3:304|(1:326)(4:307|(1:311)|(1:325)(1:321)|322)|323)|324)(1:201)|202|203|(6:205|(1:296)(7:218|(1:295)(3:222|(12:271|272|273|274|275|276|277|278|279|280|281|282)(1:224)|225)|226|(1:228)(1:270)|229|(2:265|266)(3:231|(1:233)|264)|(6:235|(1:237)|238|(1:240)|241|(2:246|(3:248|(2:253|254)(1:250)|(1:252)))))|263|(0)|241|(3:244|246|(0)))(1:297)|257|(3:261|262|165)|163|164|165)|338|188|(0)(0)|(1:199)|298|(1:300)|327|324|202|203|(0)(0)|257|(4:259|261|262|165)|163|164|165))|162|163|164|165|157)|348|349|(1:351)(2:431|(1:433)(1:434))|352|(1:354)|355|(1:357)|358|(2:360|(1:362)(1:426))(2:427|(1:429)(1:430))|(1:364)(1:425)|365|366|367|(1:369)|(1:371)|(1:373)|374|(1:421)(1:378)|379|(1:381)|(1:383)|384|(3:389|(4:391|(3:393|(4:395|(1:397)|398|399)(2:401|402)|400)|403|404)|405)|406|(1:420)(2:409|(1:413))|414|(1:416)|417|418)))|443|137|(0)|437|141|(1:143)|436|148|(1:151)|435|156|(1:157)|348|349|(0)(0)|352|(0)|355|(0)|358|(0)(0)|(0)(0)|365|366|367|(0)|(0)|(0)|374|(1:376)|421|379|(0)|(0)|384|(4:386|389|(0)|405)|406|(0)|420|414|(0)|417|418))|491)|73|74|(0)(0)|77|78|(0)(0)|(0)(0)|(0)(0)|99|(0)|446|448|450|452|(0)(0)|455|103|(0)|106|(1:108)|444|111|(3:114|(0)|(0))|443|137|(0)|437|141|(0)|436|148|(0)|435|156|(1:157)|348|349|(0)(0)|352|(0)|355|(0)|358|(0)(0)|(0)(0)|365|366|367|(0)|(0)|(0)|374|(0)|421|379|(0)|(0)|384|(0)|406|(0)|420|414|(0)|417|418) */
     /* JADX WARN: Code restructure failed: missing block: B:117:0x02c7, code lost:
-        if (r9.local_id != 0) goto L516;
+        if (r9.local_id != 0) goto L514;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:474:0x0caa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:472:0x0ca6, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:475:0x0cab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:473:0x0ca7, code lost:
         org.telegram.messenger.FileLog.m45e(r0);
      */
     /* JADX WARN: Removed duplicated region for block: B:128:0x0301  */
@@ -4300,39 +3946,37 @@ public class NotificationsController extends BaseController {
     /* JADX WARN: Removed duplicated region for block: B:241:0x05dd  */
     /* JADX WARN: Removed duplicated region for block: B:249:0x05f2 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:260:0x0624  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x067e  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x06b0  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0726  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x075d  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x080c  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x0914  */
-    /* JADX WARN: Removed duplicated region for block: B:402:0x0917  */
-    /* JADX WARN: Removed duplicated region for block: B:409:0x0941  */
-    /* JADX WARN: Removed duplicated region for block: B:414:0x0997  */
-    /* JADX WARN: Removed duplicated region for block: B:421:0x09d1  */
-    /* JADX WARN: Removed duplicated region for block: B:424:0x09e0 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:429:0x09f2  */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x0a38  */
-    /* JADX WARN: Removed duplicated region for block: B:440:0x0a4d  */
-    /* JADX WARN: Removed duplicated region for block: B:447:0x0ab6  */
-    /* JADX WARN: Removed duplicated region for block: B:448:0x0ac0  */
-    /* JADX WARN: Removed duplicated region for block: B:454:0x0af1  */
-    /* JADX WARN: Removed duplicated region for block: B:457:0x0b0f  */
-    /* JADX WARN: Removed duplicated region for block: B:460:0x0b67  */
-    /* JADX WARN: Removed duplicated region for block: B:464:0x0b9e  */
-    /* JADX WARN: Removed duplicated region for block: B:469:0x0bc3  */
-    /* JADX WARN: Removed duplicated region for block: B:470:0x0be6  */
-    /* JADX WARN: Removed duplicated region for block: B:477:0x0cb0  */
-    /* JADX WARN: Removed duplicated region for block: B:479:0x0cbb  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x0cc0  */
-    /* JADX WARN: Removed duplicated region for block: B:484:0x0cca  */
-    /* JADX WARN: Removed duplicated region for block: B:490:0x0cde  */
-    /* JADX WARN: Removed duplicated region for block: B:492:0x0ce3  */
-    /* JADX WARN: Removed duplicated region for block: B:495:0x0cef  */
-    /* JADX WARN: Removed duplicated region for block: B:500:0x0cfc  */
-    /* JADX WARN: Removed duplicated region for block: B:513:0x0d83 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:522:0x0db4  */
-    /* JADX WARN: Removed duplicated region for block: B:574:0x0920 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x0722  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0759  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0808  */
+    /* JADX WARN: Removed duplicated region for block: B:399:0x0910  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x0913  */
+    /* JADX WARN: Removed duplicated region for block: B:407:0x093d  */
+    /* JADX WARN: Removed duplicated region for block: B:412:0x0993  */
+    /* JADX WARN: Removed duplicated region for block: B:419:0x09cd  */
+    /* JADX WARN: Removed duplicated region for block: B:422:0x09dc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:427:0x09ee  */
+    /* JADX WARN: Removed duplicated region for block: B:435:0x0a34  */
+    /* JADX WARN: Removed duplicated region for block: B:438:0x0a49  */
+    /* JADX WARN: Removed duplicated region for block: B:445:0x0ab2  */
+    /* JADX WARN: Removed duplicated region for block: B:446:0x0abc  */
+    /* JADX WARN: Removed duplicated region for block: B:452:0x0aed  */
+    /* JADX WARN: Removed duplicated region for block: B:455:0x0b0b  */
+    /* JADX WARN: Removed duplicated region for block: B:458:0x0b63  */
+    /* JADX WARN: Removed duplicated region for block: B:462:0x0b9a  */
+    /* JADX WARN: Removed duplicated region for block: B:467:0x0bbf  */
+    /* JADX WARN: Removed duplicated region for block: B:468:0x0be2  */
+    /* JADX WARN: Removed duplicated region for block: B:475:0x0cac  */
+    /* JADX WARN: Removed duplicated region for block: B:477:0x0cb7  */
+    /* JADX WARN: Removed duplicated region for block: B:479:0x0cbc  */
+    /* JADX WARN: Removed duplicated region for block: B:482:0x0cc6  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x0cda  */
+    /* JADX WARN: Removed duplicated region for block: B:490:0x0cdf  */
+    /* JADX WARN: Removed duplicated region for block: B:493:0x0ceb  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x0cf8  */
+    /* JADX WARN: Removed duplicated region for block: B:511:0x0d7f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:520:0x0db0  */
+    /* JADX WARN: Removed duplicated region for block: B:580:0x091c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:586:0x0566 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:90:0x0216  */
     /* JADX WARN: Removed duplicated region for block: B:91:0x021f  */
@@ -4356,7 +4000,7 @@ public class NotificationsController extends BaseController {
         long dialogId;
 
         /* renamed from: id */
-        int f1442id;
+        int f1443id;
         String name;
         NotificationCompat.Builder notification;
         int topicId;
@@ -4383,7 +4027,7 @@ public class NotificationsController extends BaseController {
             this.val$isInApp = z2;
             this.val$isSilent = z3;
             this.val$chatType = i6;
-            this.f1442id = i;
+            this.f1443id = i;
             this.name = str;
             this.user = tLRPC$User;
             this.chat = tLRPC$Chat;
@@ -4394,10 +4038,10 @@ public class NotificationsController extends BaseController {
 
         void call() {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m43w("show dialog notification with id " + this.f1442id + " " + this.dialogId + " user=" + this.user + " chat=" + this.chat);
+                FileLog.m43w("show dialog notification with id " + this.f1443id + " " + this.dialogId + " user=" + this.user + " chat=" + this.chat);
             }
             try {
-                NotificationsController.notificationManager.notify(this.f1442id, this.notification.build());
+                NotificationsController.notificationManager.notify(this.f1443id, this.notification.build());
             } catch (SecurityException e) {
                 FileLog.m45e(e);
                 NotificationsController.this.resetNotificationSound(this.notification, this.dialogId, this.val$lastTopicId, this.val$chatName, this.val$vibrationPattern, this.val$ledColor, this.val$sound, this.val$importance, this.val$isDefault, this.val$isInApp, this.val$isSilent, this.val$chatType);
@@ -4475,7 +4119,7 @@ public class NotificationsController extends BaseController {
             }
             if (this.soundOut == 0 && !this.soundOutLoaded) {
                 this.soundOutLoaded = true;
-                this.soundOut = this.soundPool.load(ApplicationLoader.applicationContext, C3286R.C3291raw.sound_out, 1);
+                this.soundOut = this.soundPool.load(ApplicationLoader.applicationContext, C3301R.C3306raw.sound_out, 1);
             }
             int i = this.soundOut;
             if (i != 0) {
@@ -4595,7 +4239,7 @@ public class NotificationsController extends BaseController {
         tLRPC$TL_inputPeerNotifySettings4.flags = tLRPC$TL_inputPeerNotifySettings4.flags | 8;
         if (j2 != 0) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = new TLRPC$TL_notificationSoundRingtone();
-            tLRPC$TL_notificationSoundRingtone.f1612id = j2;
+            tLRPC$TL_notificationSoundRingtone.f1613id = j2;
             tLRPC$TL_account_updateNotifySettings.settings.sound = tLRPC$TL_notificationSoundRingtone;
         } else if (string != null) {
             if (string.equals("NoSound")) {
@@ -4674,7 +4318,7 @@ public class NotificationsController extends BaseController {
         String string = notificationsSettings.getString(str3, "NoSound");
         if (j != 0) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = new TLRPC$TL_notificationSoundRingtone();
-            tLRPC$TL_notificationSoundRingtone.f1612id = j;
+            tLRPC$TL_notificationSoundRingtone.f1613id = j;
             tLRPC$TL_account_updateNotifySettings.settings.sound = tLRPC$TL_notificationSoundRingtone;
         } else if (string != null) {
             if (string.equals("NoSound")) {
@@ -4717,7 +4361,7 @@ public class NotificationsController extends BaseController {
             if (r4 == 0) goto L11
             goto L2c
         L11:
-            r1 = 0
+            r1 = r2
             goto L2c
         L13:
             org.telegram.messenger.MessagesController r6 = r3.getMessagesController()

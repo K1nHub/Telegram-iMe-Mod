@@ -268,7 +268,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
@@ -285,7 +285,7 @@
 
     sub-float/2addr v3, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTranslationX(F)V
 
@@ -376,7 +376,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     :cond_1
     aput v0, p2, v2
@@ -418,7 +418,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v1
 
     .line 2398
     :cond_3
@@ -439,7 +439,7 @@
 
     sub-float v2, v1, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setTranslationX(F)V
 
@@ -456,7 +456,7 @@
 
     sub-float/2addr v1, v0
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTranslationX(F)V
 

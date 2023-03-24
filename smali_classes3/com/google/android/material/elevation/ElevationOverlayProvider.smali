@@ -126,7 +126,7 @@
 
     double-to-float p1, v1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     const/high16 v0, 0x40000000    # 2.0f
 

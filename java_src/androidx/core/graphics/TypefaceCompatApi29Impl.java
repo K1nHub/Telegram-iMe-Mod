@@ -48,14 +48,11 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
 
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl
     public Typeface createFromFontInfo(Context context, CancellationSignal cancellationSignal, FontsContractCompat.FontInfo[] fontInfoArr, int i) {
-        int i2;
         ParcelFileDescriptor openFileDescriptor;
         ContentResolver contentResolver = context.getContentResolver();
         try {
-            int length = fontInfoArr.length;
             FontFamily.Builder builder = null;
-            while (i2 < length) {
-                FontsContractCompat.FontInfo fontInfo = fontInfoArr[i2];
+            for (FontsContractCompat.FontInfo fontInfo : fontInfoArr) {
                 try {
                     openFileDescriptor = contentResolver.openFileDescriptor(fontInfo.getUri(), "r", cancellationSignal);
                 } catch (IOException unused) {
@@ -77,8 +74,7 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
                         throw th;
                         break;
                     }
-                } else {
-                    i2 = openFileDescriptor == null ? i2 + 1 : 0;
+                } else if (openFileDescriptor == null) {
                 }
                 openFileDescriptor.close();
             }

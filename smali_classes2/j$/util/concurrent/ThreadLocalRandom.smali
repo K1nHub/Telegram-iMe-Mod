@@ -282,7 +282,7 @@
 
     const-wide v1, -0xae502812aa7333L
 
-    mul-long p0, p0, v1
+    mul-long/2addr p0, v1
 
     ushr-long v0, p0, v0
 
@@ -290,15 +290,15 @@
 
     const-wide v0, -0x3b314601e57a13adL    # -2.902039044684214E23
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     const/16 v0, 0x20
 
     ushr-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 .method private static h(J)J
@@ -312,7 +312,7 @@
 
     const-wide v1, -0xae502812aa7333L
 
-    mul-long p0, p0, v1
+    mul-long/2addr p0, v1
 
     ushr-long v1, p0, v0
 
@@ -320,7 +320,7 @@
 
     const-wide v1, -0x3b314601e57a13adL    # -2.902039044684214E23
 
-    mul-long p0, p0, v1
+    mul-long/2addr p0, v1
 
     ushr-long v0, p0, v0
 
@@ -346,7 +346,7 @@
 
     const-wide/high16 v2, 0x3ca0000000000000L
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     cmpg-double v2, p1, p3
 
@@ -354,7 +354,7 @@
 
     sub-double v2, p3, p1
 
-    mul-double v2, v2, v0
+    mul-double/2addr v2, v0
 
     add-double v0, v2, p1
 
@@ -533,28 +533,28 @@
 .end method
 
 .method public doubles(J)Ljava/util/stream/DoubleStream;
-    .locals 12
+    .locals 10
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 6
     new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$b;
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide v8, 0x7fefffffffffffffL    # Double.MAX_VALUE
+    const-wide v6, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
-    const-wide/16 v10, 0x0
+    const-wide/16 v8, 0x0
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-wide v6, p1
+    move-wide v4, p1
 
-    invoke-direct/range {v3 .. v11}, Lj$/util/concurrent/ThreadLocalRandom$b;-><init>(JJDD)V
+    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$b;-><init>(JJDD)V
 
     const/4 p1, 0x0
 
@@ -585,9 +585,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     cmpg-double v0, p3, p5
 
@@ -642,7 +642,7 @@
 .end method
 
 .method final e(JJ)J
-    .locals 11
+    .locals 10
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->i()J
 
@@ -666,9 +666,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_0
+    if-nez v6, :cond_0
 
     and-long p3, v0, v4
 
@@ -828,28 +828,28 @@
 .end method
 
 .method public ints(J)Ljava/util/stream/IntStream;
-    .locals 10
+    .locals 8
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 6
     new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$c;
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v2, 0x0
 
-    const v8, 0x7fffffff
+    const v6, 0x7fffffff
 
-    const/4 v9, 0x0
+    const/4 v7, 0x0
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-wide v6, p1
+    move-wide v4, p1
 
-    invoke-direct/range {v3 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
+    invoke-direct/range {v1 .. v7}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
 
     const/4 p1, 0x0
 
@@ -876,30 +876,30 @@
 .end method
 
 .method public ints(JII)Ljava/util/stream/IntStream;
-    .locals 10
+    .locals 8
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     if-ge p3, p4, :cond_0
 
     .line 9
     new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$c;
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v2, 0x0
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-wide v6, p1
+    move-wide v4, p1
 
-    move v8, p3
+    move v6, p3
 
-    move v9, p4
+    move v7, p4
 
-    invoke-direct/range {v3 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
+    invoke-direct/range {v1 .. v7}, Lj$/util/concurrent/ThreadLocalRandom$c;-><init>(JJII)V
 
     const/4 p1, 0x0
 
@@ -967,28 +967,28 @@
 .end method
 
 .method public longs(J)Ljava/util/stream/LongStream;
-    .locals 12
+    .locals 10
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     .line 3
     new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$d;
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide v8, 0x7fffffffffffffffL
+    const-wide v6, 0x7fffffffffffffffL
 
-    const-wide/16 v10, 0x0
+    const-wide/16 v8, 0x0
 
-    move-object v3, v0
+    move-object v1, v0
 
-    move-wide v6, p1
+    move-wide v4, p1
 
-    invoke-direct/range {v3 .. v11}, Lj$/util/concurrent/ThreadLocalRandom$d;-><init>(JJJJ)V
+    invoke-direct/range {v1 .. v9}, Lj$/util/concurrent/ThreadLocalRandom$d;-><init>(JJJJ)V
 
     const/4 p1, 0x0
 
@@ -1065,9 +1065,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-ltz v2, :cond_1
+    if-ltz v0, :cond_1
 
     cmp-long v0, p3, p5
 
@@ -1184,7 +1184,7 @@
 
     const-wide/high16 v2, 0x3ca0000000000000L
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     return-wide v0
 .end method
@@ -1206,7 +1206,7 @@
 
     const/high16 v1, 0x33800000
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -1241,7 +1241,7 @@
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 
@@ -1251,7 +1251,7 @@
 
     move-result-wide v6
 
-    mul-double v6, v6, v2
+    mul-double/2addr v6, v2
 
     sub-double/2addr v6, v4
 
@@ -1267,9 +1267,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmpl-double v4, v8, v2
+    cmpl-double v2, v8, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-static {v8, v9}, Ljava/lang/StrictMath;->log(D)D
 
@@ -1277,7 +1277,7 @@
 
     const-wide/high16 v4, -0x4000000000000000L    # -2.0
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     div-double/2addr v2, v8
 
@@ -1289,13 +1289,13 @@
 
     new-instance v5, Ljava/lang/Double;
 
-    mul-double v6, v6, v2
+    mul-double/2addr v6, v2
 
     invoke-direct {v5, v6, v7}, Ljava/lang/Double;-><init>(D)V
 
     invoke-virtual {v4, v5}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     return-wide v0
 .end method

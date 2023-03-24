@@ -40,15 +40,15 @@
 
     const-wide/16 v2, 0x0
 
+    move v5, v1
+
+    move v6, v5
+
+    move v7, v6
+
+    move v10, v7
+
     move-wide v8, v2
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v10, 0x0
 
     .line 13
     :goto_0

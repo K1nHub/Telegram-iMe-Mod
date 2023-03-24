@@ -101,7 +101,7 @@
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 

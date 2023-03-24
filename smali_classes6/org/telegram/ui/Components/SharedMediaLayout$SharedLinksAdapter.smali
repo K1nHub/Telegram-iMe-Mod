@@ -350,7 +350,7 @@
     if-eqz v1, :cond_2
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v4
 
     :cond_2
     add-int/2addr v0, v2
@@ -664,13 +664,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v3
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 p1, 0x1
+    move p1, v4
 
     :goto_1
     invoke-virtual {p3, v2, p1}, Lorg/telegram/ui/Cells/SharedLinkCell;->setLink(Lorg/telegram/messenger/MessageObject;Z)V
@@ -705,12 +705,12 @@
 
     if-nez p2, :cond_4
 
-    const/4 p2, 0x0
+    move p2, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 p2, 0x1
+    move p2, v4
 
     :goto_2
     aget-object p1, p1, p2
@@ -725,7 +725,7 @@
 
     if-ltz p1, :cond_5
 
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedLinksAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;

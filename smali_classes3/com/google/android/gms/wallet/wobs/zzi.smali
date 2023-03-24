@@ -41,13 +41,13 @@
 
     move-object v14, v11
 
+    move v10, v3
+
     move-wide v12, v4
 
     move-wide v15, v6
 
-    const/4 v10, 0x0
-
-    const/16 v17, -0x1
+    move/from16 v17, v8
 
     .line 2
     :goto_0

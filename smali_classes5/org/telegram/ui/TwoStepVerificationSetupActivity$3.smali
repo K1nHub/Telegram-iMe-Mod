@@ -112,7 +112,7 @@
 
     const p3, 0x3ecccccd    # 0.4f
 
-    mul-float p3, p3, p1
+    mul-float/2addr p3, p1
 
     float-to-int p4, p3
 
@@ -120,7 +120,7 @@
 
     const p5, 0x3e6147ae    # 0.22f
 
-    mul-float p5, p5, p2
+    mul-float/2addr p5, p2
 
     float-to-int p5, p5
 
@@ -159,7 +159,7 @@
 
     const p5, 0x3ec7ae14    # 0.39f
 
-    mul-float p5, p5, p2
+    mul-float/2addr p5, p2
 
     float-to-int p5, p5
 
@@ -198,7 +198,7 @@
 
     const p4, 0x3f19999a    # 0.6f
 
-    mul-float p1, p1, p4
+    mul-float/2addr p1, p4
 
     .line 513
     iget-object p4, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$3;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
@@ -225,7 +225,7 @@
 
     const p3, 0x3f23d70a    # 0.64f
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     float-to-int p2, p2
 
@@ -269,7 +269,7 @@
 
     const p4, 0x3e99999a    # 0.3f
 
-    mul-float p3, p3, p4
+    mul-float/2addr p3, p4
 
     float-to-int p3, p3
 
@@ -541,7 +541,7 @@
 
     const v4, 0x3ee66666    # 0.45f
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -553,7 +553,7 @@
 
     const v6, 0x3f2e147b    # 0.68f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -572,7 +572,7 @@
 
     const v4, 0x3f19999a    # 0.6f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 

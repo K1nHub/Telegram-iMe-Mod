@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -172,8 +172,8 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             this.bitmapPaint = new Paint(3);
             this.shaderMatrix = new Matrix();
             setWillNotDraw(false);
-            this.inDrawable = context.getResources().getDrawable(C3286R.C3288drawable.minibubble_in).mutate();
-            this.outDrawable = context.getResources().getDrawable(C3286R.C3288drawable.minibubble_out).mutate();
+            this.inDrawable = context.getResources().getDrawable(C3301R.C3303drawable.minibubble_in).mutate();
+            this.outDrawable = context.getResources().getDrawable(C3301R.C3303drawable.minibubble_out).mutate();
             this.textPaint.setTextSize(AndroidUtilities.m50dp(13));
             RadioButton radioButton = new RadioButton(context);
             this.button = radioButton;
@@ -217,6 +217,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             Throwable th;
             boolean z;
             int i;
+            String substring;
             String[] split;
             int intValue;
             char c;
@@ -244,12 +245,9 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                                         String str = new String(bArr, i6, i7 - 1, "UTF-8");
                                         if (str.startsWith("WLS=")) {
                                             try {
-                                                String substring = str.substring(4);
-                                                Uri parse = Uri.parse(substring);
+                                                Uri parse = Uri.parse(str.substring(4));
                                                 this.themeInfo.slug = parse.getQueryParameter("slug");
-                                                Theme.ThemeInfo themeInfo2 = this.themeInfo;
-                                                File filesDirFixed = ApplicationLoader.getFilesDirFixed();
-                                                themeInfo2.pathToWallpaper = new File(filesDirFixed, Utilities.MD5(substring) + ".wp").getAbsolutePath();
+                                                this.themeInfo.pathToWallpaper = new File(ApplicationLoader.getFilesDirFixed(), Utilities.MD5(substring) + ".wp").getAbsolutePath();
                                                 String queryParameter = parse.getQueryParameter("mode");
                                                 if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
                                                     int i8 = 0;
@@ -291,9 +289,9 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                                                     if (!TextUtils.isEmpty(queryParameter4)) {
                                                         this.themeInfo.patternIntensity = Utilities.parseInt((CharSequence) queryParameter4).intValue();
                                                     }
-                                                    Theme.ThemeInfo themeInfo3 = this.themeInfo;
-                                                    if (themeInfo3.patternIntensity == 0) {
-                                                        themeInfo3.patternIntensity = 50;
+                                                    Theme.ThemeInfo themeInfo2 = this.themeInfo;
+                                                    if (themeInfo2.patternIntensity == 0) {
+                                                        themeInfo2.patternIntensity = 50;
                                                     }
                                                 }
                                             } catch (Throwable th2) {
@@ -436,20 +434,20 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             } catch (Throwable th5) {
                 FileLog.m45e(th5);
             }
-            Theme.ThemeInfo themeInfo4 = this.themeInfo;
-            if (themeInfo4.pathToWallpaper != null && !themeInfo4.badWallpaper && !new File(this.themeInfo.pathToWallpaper).exists()) {
+            Theme.ThemeInfo themeInfo3 = this.themeInfo;
+            if (themeInfo3.pathToWallpaper != null && !themeInfo3.badWallpaper && !new File(this.themeInfo.pathToWallpaper).exists()) {
                 if (ThemesHorizontalListCell.this.loadingWallpapers.containsKey(this.themeInfo)) {
                     return false;
                 }
                 HashMap hashMap = ThemesHorizontalListCell.this.loadingWallpapers;
-                Theme.ThemeInfo themeInfo5 = this.themeInfo;
-                hashMap.put(themeInfo5, themeInfo5.slug);
+                Theme.ThemeInfo themeInfo4 = this.themeInfo;
+                hashMap.put(themeInfo4, themeInfo4.slug);
                 TLRPC$TL_account_getWallPaper tLRPC$TL_account_getWallPaper = new TLRPC$TL_account_getWallPaper();
                 TLRPC$TL_inputWallPaperSlug tLRPC$TL_inputWallPaperSlug = new TLRPC$TL_inputWallPaperSlug();
-                Theme.ThemeInfo themeInfo6 = this.themeInfo;
-                tLRPC$TL_inputWallPaperSlug.slug = themeInfo6.slug;
+                Theme.ThemeInfo themeInfo5 = this.themeInfo;
+                tLRPC$TL_inputWallPaperSlug.slug = themeInfo5.slug;
                 tLRPC$TL_account_getWallPaper.wallpaper = tLRPC$TL_inputWallPaperSlug;
-                ConnectionsManager.getInstance(themeInfo6.account).sendRequest(tLRPC$TL_account_getWallPaper, new RequestDelegate() { // from class: org.telegram.ui.Cells.ThemesHorizontalListCell$InnerThemeView$$ExternalSyntheticLambda1
+                ConnectionsManager.getInstance(themeInfo5.account).sendRequest(tLRPC$TL_account_getWallPaper, new RequestDelegate() { // from class: org.telegram.ui.Cells.ThemesHorizontalListCell$InnerThemeView$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                         ThemesHorizontalListCell.InnerThemeView.this.lambda$parseTheme$1(tLObject, tLRPC$TL_error);
@@ -495,7 +493,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                 updateColors(false);
                 this.optionsDrawable = null;
             } else {
-                this.optionsDrawable = getResources().getDrawable(C3286R.C3288drawable.preview_dots).mutate();
+                this.optionsDrawable = getResources().getDrawable(C3301R.C3303drawable.preview_dots).mutate();
                 int previewBackgroundColor = this.themeInfo.getPreviewBackgroundColor();
                 this.backColor = previewBackgroundColor;
                 this.oldBackColor = previewBackgroundColor;
@@ -566,7 +564,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                     if (tLRPC$TL_theme.document != null) {
                         themeInfo2.themeLoaded = false;
                         this.placeholderAlpha = 1.0f;
-                        Drawable mutate = getResources().getDrawable(C3286R.C3288drawable.msg_theme).mutate();
+                        Drawable mutate = getResources().getDrawable(C3301R.C3303drawable.msg_theme).mutate();
                         this.loadingDrawable = mutate;
                         int color = Theme.getColor("windowBackgroundWhiteGrayText7");
                         this.loadingColor = color;
@@ -581,7 +579,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                             }
                         }
                     } else {
-                        Drawable mutate2 = getResources().getDrawable(C3286R.C3288drawable.preview_custom).mutate();
+                        Drawable mutate2 = getResources().getDrawable(C3301R.C3303drawable.preview_custom).mutate();
                         this.loadingDrawable = mutate2;
                         int color2 = Theme.getColor("windowBackgroundWhiteGrayText7");
                         this.loadingColor = color2;
@@ -824,7 +822,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             accessibilityNodeInfo.setEnabled(true);
             if (Build.VERSION.SDK_INT >= 21) {
                 accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK);
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrMoreOptions", C3301R.string.AccDescrMoreOptions)));
             }
         }
     }

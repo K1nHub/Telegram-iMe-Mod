@@ -229,7 +229,7 @@
 
     const-wide/16 v1, 0x168
 
-    mul-long v1, v1, p1
+    mul-long/2addr v1, p1
 
     long-to-float v1, v1
 
@@ -323,13 +323,13 @@
     .line 151
     iget v0, p0, Lorg/telegram/ui/Components/RadialProgressView;->toCircleProgress:F
 
+    cmpl-float v0, v0, v3
+
     const/high16 v5, 0x43850000    # 266.0f
 
     const/high16 v6, 0x43870000    # 270.0f
 
     const/high16 v7, 0x43fa0000    # 500.0f
-
-    cmpl-float v0, v0, v3
 
     if-nez v0, :cond_5
 
@@ -366,7 +366,7 @@
 
     move-result p1
 
-    mul-float p1, p1, v5
+    mul-float/2addr p1, v5
 
     add-float/2addr p1, v4
 
@@ -388,7 +388,7 @@
 
     sub-float/2addr v2, p1
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     sub-float/2addr v4, v2
 
@@ -450,7 +450,7 @@
 
     move-result p2
 
-    mul-float p2, p2, v5
+    mul-float/2addr p2, v5
 
     add-float/2addr p2, v4
 
@@ -459,7 +459,7 @@
     .line 174
     iget v0, p0, Lorg/telegram/ui/Components/RadialProgressView;->toCircleProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr p2, v0
 
@@ -499,7 +499,7 @@
 
     sub-float/2addr v2, p2
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     sub-float/2addr v4, v2
 
@@ -510,7 +510,7 @@
     .line 182
     iget v0, p0, Lorg/telegram/ui/Components/RadialProgressView;->toCircleProgress:F
 
-    mul-float v0, v0, p2
+    mul-float/2addr v0, p2
 
     sub-float/2addr v4, v0
 
@@ -588,7 +588,7 @@
 
     move-result p1
 
-    mul-float v5, v5, p1
+    mul-float/2addr v5, p1
 
     add-float/2addr v2, v5
 
@@ -599,7 +599,7 @@
     :goto_2
     iget p1, p0, Lorg/telegram/ui/Components/RadialProgressView;->animatedProgress:F
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-static {v4, p1}, Ljava/lang/Math;->max(FF)F
 
@@ -788,7 +788,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 

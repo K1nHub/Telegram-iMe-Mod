@@ -146,7 +146,7 @@
 .end method
 
 .method public handlePendingSeek(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/extractor/PositionHolder;)I
-    .locals 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -186,14 +186,14 @@
 
     int-to-long v7, v7
 
-    const/4 v9, 0x0
+    cmp-long v3, v3, v7
 
-    cmp-long v10, v3, v7
+    const/4 v4, 0x0
 
-    if-gtz v10, :cond_0
+    if-gtz v3, :cond_0
 
     .line 186
-    invoke-virtual {p0, v9, v1, v2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->markSeekOperationFinished(ZJ)V
+    invoke-virtual {p0, v4, v1, v2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->markSeekOperationFinished(ZJ)V
 
     .line 187
     invoke-virtual {p0, p1, v1, v2, p2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->seekToPosition(Lcom/google/android/exoplayer2/extractor/ExtractorInput;JLcom/google/android/exoplayer2/extractor/PositionHolder;)I
@@ -323,7 +323,7 @@
 
     .line 215
     :cond_5
-    invoke-virtual {p0, v9, v5, v6}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->markSeekOperationFinished(ZJ)V
+    invoke-virtual {p0, v4, v5, v6}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->markSeekOperationFinished(ZJ)V
 
     .line 216
     invoke-virtual {p0, p1, v5, v6, p2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->seekToPosition(Lcom/google/android/exoplayer2/extractor/ExtractorInput;JLcom/google/android/exoplayer2/extractor/PositionHolder;)I
@@ -403,7 +403,7 @@
 .end method
 
 .method public final setSeekTargetUs(J)V
-    .locals 3
+    .locals 2
 
     .line 154
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->seekOperationParams:Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$SeekOperationParams;
@@ -414,9 +414,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
@@ -432,7 +432,7 @@
 .end method
 
 .method protected final skipInputUntilPosition(Lcom/google/android/exoplayer2/extractor/ExtractorInput;J)Z
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -448,20 +448,20 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-ltz v2, :cond_0
+    if-ltz v0, :cond_0
 
     const-wide/32 v0, 0x40000
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
-    long-to-int p3, p2
+    long-to-int p2, p2
 
     .line 248
-    invoke-interface {p1, p3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+    invoke-interface {p1, p2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     const/4 p1, 0x1
 

@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -117,7 +117,7 @@ public class UserCell2 extends FrameLayout {
             boolean z5 = LocaleController.isRTL;
             addView(checkBoxSquare, LayoutHelper.createFrame(18, 18, (z5 ? 3 : 5) | 16, z5 ? 19 : 0, 0, z5 ? 0 : 19, 0));
         } else if (i2 == 1) {
-            CheckBox checkBox = new CheckBox(context, C3286R.C3288drawable.round_check2);
+            CheckBox checkBox = new CheckBox(context, C3301R.C3303drawable.round_check2);
             this.checkBox = checkBox;
             checkBox.setVisibility(4);
             this.checkBox.setColor(Theme.getColor("checkbox", resourcesProvider), Theme.getColor("checkboxCheck", resourcesProvider));
@@ -174,7 +174,7 @@ public class UserCell2 extends FrameLayout {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:55:0x0087, code lost:
-        if (r13.equals(r12.lastName) == false) goto L37;
+        if (r12.equals(r11.lastName) == false) goto L37;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v2 */
@@ -182,9 +182,9 @@ public class UserCell2 extends FrameLayout {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void update(int r13) {
+    public void update(int r12) {
         /*
-            Method dump skipped, instructions count: 633
+            Method dump skipped, instructions count: 632
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Cells.UserCell2.update(int):void");

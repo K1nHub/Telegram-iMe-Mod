@@ -8,6 +8,7 @@ import com.smedialink.storage.data.manager.crypto.CryptoAccessManagerImpl;
 import com.smedialink.storage.data.manager.crypto.CryptoWalletsManagerImpl;
 import com.smedialink.storage.data.manager.crypto.EVMBlockchainCryptoWalletManagerImpl;
 import com.smedialink.storage.data.manager.crypto.TONBlockchainCryptoWalletManagerImpl;
+import com.smedialink.storage.data.manager.crypto.TRONBlockchainCryptoWalletManagerImpl;
 import com.smedialink.storage.data.manager.review.AppReviewManager;
 import com.smedialink.storage.data.manager.ton.TonControllerImpl;
 import com.smedialink.storage.data.manager.update.UpdateManager;
@@ -66,10 +67,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C15321 extends Lambda implements Function2<Scope, ParametersHolder, TonController> {
-        public static final C15321 INSTANCE = new C15321();
+    public static final class C15381 extends Lambda implements Function2<Scope, ParametersHolder, TonController> {
+        public static final C15381 INSTANCE = new C15381();
 
-        C15321() {
+        C15381() {
             super(2);
         }
 
@@ -93,111 +94,122 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
         List emptyList8;
         List emptyList9;
         List emptyList10;
+        List emptyList11;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C15321 c15321 = C15321.INSTANCE;
+        C15381 c15381 = C15381.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TonController.class), null, c15321, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TonController.class), null, c15381, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
         StringQualifier evm_blockchain_crypto_wallet_manager = ManagerModuleKt.getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-        C15342 c15342 = C15342.INSTANCE;
+        C15412 c15412 = C15412.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), evm_blockchain_crypto_wallet_manager, c15342, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), evm_blockchain_crypto_wallet_manager, c15412, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
         StringQualifier ton_blockchain_crypto_wallet_manager = ManagerModuleKt.getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-        C15353 c15353 = C15353.INSTANCE;
+        C15423 c15423 = C15423.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ton_blockchain_crypto_wallet_manager, c15353, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ton_blockchain_crypto_wallet_manager, c15423, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C15364 c15364 = C15364.INSTANCE;
+        StringQualifier tron_blockchain_crypto_wallet_manager = ManagerModuleKt.getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
+        C15434 c15434 = C15434.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(CryptoWalletsManager.class), null, c15364, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), tron_blockchain_crypto_wallet_manager, c15434, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new Pair(module, singleInstanceFactory4);
-        C15375 c15375 = C15375.INSTANCE;
+        C15445 c15445 = C15445.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, c15375, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CryptoWalletsManager.class), null, c15445, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new Pair(module, singleInstanceFactory5);
-        C15386 c15386 = C15386.INSTANCE;
+        C15456 c15456 = C15456.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, c15386, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, c15456, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new Pair(module, singleInstanceFactory6);
-        C15397 c15397 = C15397.INSTANCE;
+        C15467 c15467 = C15467.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(AuthManager.class), null, c15397, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, c15467, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new Pair(module, singleInstanceFactory7);
-        C15408 c15408 = C15408.INSTANCE;
+        C15478 c15478 = C15478.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, c15408, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(AuthManager.class), null, c15478, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new Pair(module, singleInstanceFactory8);
-        C15419 c15419 = C15419.INSTANCE;
+        C15489 c15489 = C15489.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(UpdateManager.class), null, c15419, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, c15489, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new Pair(module, singleInstanceFactory9);
-        C153310 c153310 = C153310.INSTANCE;
+        C153910 c153910 = C153910.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(AppReviewManager.class), null, c153310, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(UpdateManager.class), null, c153910, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new Pair(module, singleInstanceFactory10);
+        C154011 c154011 = C154011.INSTANCE;
+        StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
+        emptyList11 = CollectionsKt__CollectionsKt.emptyList();
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(AppReviewManager.class), null, c154011, kind, emptyList11));
+        module.indexPrimaryType(singleInstanceFactory11);
+        if (module.get_createdAtStart()) {
+            module.prepareForCreationAtStart(singleInstanceFactory11);
+        }
+        new Pair(module, singleInstanceFactory11);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C15342 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
-        public static final C15342 INSTANCE = new C15342();
+    public static final class C15412 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C15412 INSTANCE = new C15412();
 
-        C15342() {
+        C15412() {
             super(2);
         }
 
@@ -213,10 +225,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C15353 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
-        public static final C15353 INSTANCE = new C15353();
+    public static final class C15423 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C15423 INSTANCE = new C15423();
 
-        C15353() {
+        C15423() {
             super(2);
         }
 
@@ -230,50 +242,31 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$10 */
-    /* loaded from: classes3.dex */
-    public static final class C153310 extends Lambda implements Function2<Scope, ParametersHolder, AppReviewManager> {
-        public static final C153310 INSTANCE = new C153310();
-
-        C153310() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final AppReviewManager invoke(Scope single, ParametersHolder parametersHolder) {
-            Intrinsics.checkNotNullParameter(single, "$this$single");
-            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
-            return new AppReviewManager((Activity) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Activity.class)), (PreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, null));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: ManagerModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C15364 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletsManager> {
-        public static final C15364 INSTANCE = new C15364();
+    public static final class C15434 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C15434 INSTANCE = new C15434();
 
-        C15364() {
+        C15434() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final CryptoWalletsManager invoke(Scope single, ParametersHolder it) {
+        public final BlockchainCryptoWalletManager invoke(Scope single, ParametersHolder it) {
             Intrinsics.checkNotNullParameter(single, "$this$single");
             Intrinsics.checkNotNullParameter(it, "it");
-            return new CryptoWalletsManagerImpl((BlockchainCryptoWalletManager) single.get(Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ManagerModuleKt.getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER(), null), (BlockchainCryptoWalletManager) single.get(Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ManagerModuleKt.getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER(), null));
+            return new TRONBlockchainCryptoWalletManagerImpl((CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$9 */
+    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C15419 extends Lambda implements Function2<Scope, ParametersHolder, UpdateManager> {
-        public static final C15419 INSTANCE = new C15419();
+    public static final class C153910 extends Lambda implements Function2<Scope, ParametersHolder, UpdateManager> {
+        public static final C153910 INSTANCE = new C153910();
 
-        C15419() {
+        C153910() {
             super(2);
         }
 
@@ -290,12 +283,50 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
+    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$11 */
+    /* loaded from: classes3.dex */
+    public static final class C154011 extends Lambda implements Function2<Scope, ParametersHolder, AppReviewManager> {
+        public static final C154011 INSTANCE = new C154011();
+
+        C154011() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final AppReviewManager invoke(Scope single, ParametersHolder parametersHolder) {
+            Intrinsics.checkNotNullParameter(single, "$this$single");
+            Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
+            return new AppReviewManager((Activity) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(Activity.class)), (PreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ManagerModule.kt */
     /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C15375 extends Lambda implements Function2<Scope, ParametersHolder, CryptoAccessManager> {
-        public static final C15375 INSTANCE = new C15375();
+    public static final class C15445 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletsManager> {
+        public static final C15445 INSTANCE = new C15445();
 
-        C15375() {
+        C15445() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final CryptoWalletsManager invoke(Scope single, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(single, "$this$single");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new CryptoWalletsManagerImpl((BlockchainCryptoWalletManager) single.get(Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ManagerModuleKt.getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER(), null), (BlockchainCryptoWalletManager) single.get(Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ManagerModuleKt.getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER(), null), (BlockchainCryptoWalletManager) single.get(Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ManagerModuleKt.getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER(), null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ManagerModule.kt */
+    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$6 */
+    /* loaded from: classes3.dex */
+    public static final class C15456 extends Lambda implements Function2<Scope, ParametersHolder, CryptoAccessManager> {
+        public static final C15456 INSTANCE = new C15456();
+
+        C15456() {
             super(2);
         }
 
@@ -309,12 +340,12 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$6 */
+    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C15386 extends Lambda implements Function2<Scope, ParametersHolder, BinancePayManager> {
-        public static final C15386 INSTANCE = new C15386();
+    public static final class C15467 extends Lambda implements Function2<Scope, ParametersHolder, BinancePayManager> {
+        public static final C15467 INSTANCE = new C15467();
 
-        C15386() {
+        C15467() {
             super(2);
         }
 
@@ -328,12 +359,12 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$8 */
+    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C15408 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectManager> {
-        public static final C15408 INSTANCE = new C15408();
+    public static final class C15489 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectManager> {
+        public static final C15489 INSTANCE = new C15489();
 
-        C15408() {
+        C15489() {
             super(2);
         }
 
@@ -347,12 +378,12 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ManagerModule.kt */
-    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$7 */
+    /* renamed from: com.smedialink.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C15397 extends Lambda implements Function2<Scope, ParametersHolder, AuthManager> {
-        public static final C15397 INSTANCE = new C15397();
+    public static final class C15478 extends Lambda implements Function2<Scope, ParametersHolder, AuthManager> {
+        public static final C15478 INSTANCE = new C15478();
 
-        C15397() {
+        C15478() {
             super(2);
         }
 

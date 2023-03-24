@@ -25,7 +25,7 @@
 
     const-wide/16 v2, 0x0
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v0, :cond_0

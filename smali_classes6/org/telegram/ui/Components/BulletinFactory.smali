@@ -366,7 +366,7 @@
 .end method
 
 .method public static createForwardedBulletin(Landroid/content/Context;Landroid/widget/FrameLayout;IJIII)Lorg/telegram/ui/Components/Bulletin;
-    .locals 4
+    .locals 5
 
     .line 862
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
@@ -625,9 +625,11 @@
     invoke-virtual {v0, p3, p6, p6, p4}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
     :goto_3
-    move-object p0, p2
+    move-object v4, p2
 
-    const/16 p2, 0x12c
+    move p2, p0
+
+    move-object p0, v4
 
     .line 901
     :goto_4
@@ -658,7 +660,7 @@
 .end method
 
 .method public static createInviteSentBulletin(Landroid/content/Context;Landroid/widget/FrameLayout;IJIII)Lorg/telegram/ui/Components/Bulletin;
-    .locals 3
+    .locals 4
 
     .line 828
     new-instance p5, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
@@ -712,7 +714,7 @@
 
     const/4 p2, -0x1
 
-    goto :goto_2
+    goto/16 :goto_2
 
     .line 836
     :cond_0
@@ -841,9 +843,11 @@
     invoke-virtual {p5, p3, p7, p7, p4}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
     :goto_1
-    move-object p0, p2
+    move-object v3, p2
 
-    const/16 p2, 0x12c
+    move p2, p0
+
+    move-object p0, v3
 
     .line 851
     :goto_2
@@ -943,9 +947,9 @@
 
     move-result-object p1
 
-    const/4 p2, 0x1
+    move p2, v3
 
-    goto :goto_2
+    goto :goto_1
 
     .line 735
     :cond_0
@@ -965,7 +969,9 @@
 
     move-result-object p1
 
-    const/4 p2, 0x0
+    move p2, v2
+
+    move v3, p2
 
     goto :goto_1
 
@@ -1044,12 +1050,11 @@
     move-result-object p1
 
     :goto_0
-    const/4 p2, 0x1
+    move p2, v3
+
+    move v3, v2
 
     :goto_1
-    const/4 v3, 0x0
-
-    :goto_2
     if-eqz v3, :cond_6
 
     .line 739
@@ -1059,7 +1064,7 @@
 
     invoke-virtual {v0, p2, p3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
     if-eqz p2, :cond_7
@@ -1083,7 +1088,7 @@
 
     invoke-virtual {v0, p2, p3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 743
     :cond_7
@@ -1104,7 +1109,7 @@
     invoke-virtual {v0, p2, p3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
     .line 746
-    :goto_3
+    :goto_2
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -1567,7 +1572,7 @@
 
     move-result-object p1
 
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_0
 
@@ -3696,16 +3701,14 @@
 
     const/16 v0, 0x5dc
 
-    const/16 v5, 0x5dc
-
     goto :goto_0
 
     :cond_0
     const/16 v0, 0xabe
 
-    const/16 v5, 0xabe
-
     :goto_0
+    move v5, v0
+
     move-object v1, p0
 
     move v2, p1
@@ -4220,12 +4223,12 @@
 
     if-eqz p3, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/BulletinFactory;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -4236,9 +4239,9 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 300
     :goto_1
@@ -4335,7 +4338,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 318
     :goto_3

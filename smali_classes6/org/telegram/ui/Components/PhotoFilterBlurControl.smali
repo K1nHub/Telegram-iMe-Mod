@@ -226,7 +226,7 @@
 
     const v0, 0x40490fdb    # (float)Math.PI
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     const/high16 v0, 0x43340000    # 180.0f
 
@@ -261,7 +261,7 @@
 
     iget v4, v4, Lorg/telegram/ui/Components/Point;->x:F
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     add-float/2addr v1, v4
 
@@ -313,7 +313,7 @@
 
     iget v3, v3, Lorg/telegram/ui/Components/Point;->y:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -338,7 +338,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->falloff:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -359,7 +359,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->size:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 .end method
@@ -407,11 +407,11 @@
 
     sub-float/2addr v1, v3
 
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
     sub-float/2addr v0, p1
 
-    mul-float v0, v0, v0
+    mul-float/2addr v0, v0
 
     add-float/2addr v1, v0
 
@@ -488,12 +488,12 @@
     .line 212
     iget v9, v0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->falloff:F
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     .line 213
     iget v10, v0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->size:F
 
-    mul-float v10, v10, v8
+    mul-float/2addr v10, v8
 
     float-to-double v11, v5
 
@@ -514,7 +514,7 @@
 
     move-result-wide v13
 
-    mul-double v11, v11, v13
+    mul-double/2addr v11, v13
 
     float-to-double v5, v6
 
@@ -532,7 +532,7 @@
 
     move-result-wide v13
 
-    mul-double v5, v5, v13
+    mul-double/2addr v5, v13
 
     add-double/2addr v11, v5
 
@@ -632,12 +632,12 @@
 
     if-lez v7, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v12
 
     goto :goto_0
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 289
     :goto_0
@@ -647,12 +647,12 @@
 
     if-lez v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v12
 
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 291
     :goto_1
@@ -668,12 +668,12 @@
 
     if-lez v8, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v12
 
     goto :goto_2
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v6
 
     :goto_2
     if-nez v7, :cond_7
@@ -694,7 +694,7 @@
     if-lez v4, :cond_d
 
     :goto_3
-    const/4 v6, 0x1
+    move v6, v12
 
     goto :goto_4
 
@@ -756,9 +756,9 @@
 
     :cond_d
     :goto_4
-    mul-float v1, v1, v1
+    mul-float/2addr v1, v1
 
-    mul-float v5, v5, v5
+    mul-float/2addr v5, v5
 
     add-float/2addr v1, v5
 
@@ -774,13 +774,13 @@
     .line 335
     iget v4, v0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->angle:F
 
-    mul-int/lit8 v6, v6, 0x2
+    mul-int/2addr v6, v13
 
     sub-int/2addr v6, v12
 
     int-to-float v5, v6
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     const v5, 0x40490fdb    # (float)Math.PI
 
@@ -1275,12 +1275,12 @@
 
     if-gez v1, :cond_19
 
-    const/4 v6, 0x1
+    move v6, v12
 
     :cond_19
     if-eqz v6, :cond_1a
 
-    const/4 v1, 0x0
+    move v1, v11
 
     goto :goto_6
 
@@ -1557,7 +1557,7 @@
 
     const v2, 0x3c23d70a    # 0.01f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr p2, v1
 
@@ -1568,7 +1568,7 @@
     .line 406
     iget v2, p0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->falloff:F
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
 
@@ -1585,7 +1585,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->pointerScale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static {p2, v1}, Ljava/lang/Math;->max(FF)F
 
@@ -1853,7 +1853,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v12
+    mul-float/2addr v1, v12
 
     sub-float v12, v1, v13
 
@@ -1926,7 +1926,7 @@
 
     const v3, 0x4182cccd    # 16.35f
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     const/4 v5, 0x0
 
@@ -1962,7 +1962,7 @@
 
     const v3, 0x40b3d70a    # 5.62f
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     const/4 v5, 0x0
 
@@ -2141,11 +2141,11 @@
     .line 126
     iget v2, v7, Lorg/telegram/ui/Components/Point;->x:F
 
-    mul-float v2, v2, v2
+    mul-float/2addr v2, v2
 
     iget v3, v7, Lorg/telegram/ui/Components/Point;->y:F
 
-    mul-float v3, v3, v3
+    mul-float/2addr v3, v3
 
     add-float/2addr v2, v3
 
@@ -2180,19 +2180,19 @@
 
     if-gez v8, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_1
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_1
     const/4 v9, 0x0
 
     if-eqz v8, :cond_7
 
-    const/4 v10, 0x0
+    move v10, v9
 
     goto :goto_2
 
@@ -2236,7 +2236,7 @@
 
     move-result-wide v13
 
-    mul-double v11, v11, v13
+    mul-double/2addr v11, v13
 
     iget v7, v7, Lorg/telegram/ui/Components/Point;->y:F
 
@@ -2256,7 +2256,7 @@
 
     move-result-wide v13
 
-    mul-double v7, v7, v13
+    mul-double/2addr v7, v13
 
     add-double/2addr v11, v7
 

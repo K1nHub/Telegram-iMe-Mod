@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/binance/android/binancepay/api/BinancePay;
     .locals 3
 
-    .line 56
+    .line 55
     sget-object v0, Lcom/binance/android/binancepay/api/BinancePayFactory;->Companion:Lcom/binance/android/binancepay/api/BinancePayFactory$Companion;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$binancePayApi$2;->this$0:Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;
@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 56
+    .line 55
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$binancePayApi$2;->invoke()Lcom/binance/android/binancepay/api/BinancePay;
 
     move-result-object v0

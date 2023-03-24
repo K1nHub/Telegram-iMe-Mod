@@ -126,7 +126,7 @@
 
 # virtual methods
 .method final zza(Ljava/lang/String;)Landroid/util/Pair;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -165,9 +165,9 @@
 
     iget-wide v4, p0, Lcom/google/android/gms/measurement/internal/zzjp;->zzi:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-ltz v6, :cond_0
+    if-ltz v4, :cond_0
 
     goto :goto_0
 

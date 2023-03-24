@@ -158,7 +158,7 @@
 
     array-length v5, v4
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_0
     if-ge v6, v5, :cond_4
@@ -229,7 +229,7 @@
 
     if-nez v7, :cond_1
 
-    const/4 v8, 0x0
+    move v8, v2
 
     goto :goto_1
 
@@ -239,7 +239,7 @@
     move-result v8
 
     :goto_1
-    const/4 v10, 0x0
+    move v10, v2
 
     :goto_2
     if-ge v10, v8, :cond_3
@@ -269,7 +269,7 @@
 
     array-length v4, v1
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     if-ge v5, v4, :cond_8
@@ -468,7 +468,7 @@
 
     invoke-direct {v3, p0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_6
     if-ge v4, p0, :cond_d
@@ -539,7 +539,7 @@
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    const/4 p0, 0x0
+    move p0, v2
 
     :goto_8
     array-length v3, p1

@@ -917,7 +917,7 @@
 
     move-object/from16 v3, p2
 
-    const/4 v11, 0x2
+    move v11, v7
 
     move-object v7, v10
 
@@ -1309,7 +1309,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 p1, 0x1
@@ -1353,12 +1353,12 @@
     :cond_4
     if-eqz p1, :cond_5
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v0
 
     goto :goto_1
 
     :cond_5
-    const/4 p2, 0x0
+    move p2, v1
 
     .line 1690
     :goto_1
@@ -1369,12 +1369,12 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_2
 
     :cond_6
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     :goto_2
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setScaleX(F)V
@@ -1384,12 +1384,12 @@
 
     if-eqz p1, :cond_7
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_3
 
     :cond_7
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     :goto_3
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setScaleY(F)V
@@ -1399,12 +1399,12 @@
 
     if-eqz p1, :cond_8
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_4
 
     :cond_8
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     :goto_4
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1414,12 +1414,12 @@
 
     if-eqz p1, :cond_9
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_5
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_5
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setScaleX(F)V
@@ -1429,12 +1429,12 @@
 
     if-eqz p1, :cond_a
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v0
 
     goto :goto_6
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_6
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setScaleY(F)V
@@ -1447,7 +1447,7 @@
     goto :goto_7
 
     :cond_b
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_7
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
@@ -1805,7 +1805,7 @@
     goto :goto_5
 
     :cond_c
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_5
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->toggle(ZZ)V

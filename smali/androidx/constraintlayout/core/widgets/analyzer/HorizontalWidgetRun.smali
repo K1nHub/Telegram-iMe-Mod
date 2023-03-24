@@ -75,7 +75,7 @@
     :cond_0
     int-to-float p2, p3
 
-    mul-float p2, p2, p6
+    mul-float/2addr p2, p6
 
     add-float/2addr p2, v0
 
@@ -92,7 +92,7 @@
     :cond_1
     int-to-float p2, p5
 
-    mul-float p2, p2, p6
+    mul-float/2addr p2, p6
 
     add-float/2addr p2, v0
 
@@ -109,7 +109,7 @@
     :cond_2
     int-to-float p2, p5
 
-    mul-float p2, p2, p6
+    mul-float/2addr p2, p6
 
     add-float/2addr p2, v0
 
@@ -1517,7 +1517,7 @@
 
     if-eq v0, v9, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v10
 
     goto :goto_3
 
@@ -1576,7 +1576,7 @@
     move-result v0
 
     :goto_1
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     :goto_2
     add-float/2addr v1, v11
@@ -1608,12 +1608,12 @@
 
     if-eqz v1, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v9
 
     goto :goto_5
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v10
 
     .line 337
     :goto_5
@@ -1623,12 +1623,12 @@
 
     if-eqz v2, :cond_a
 
-    const/4 v2, 0x1
+    move v2, v9
 
     goto :goto_6
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 338
     :goto_6
@@ -1638,12 +1638,12 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v4, 0x1
+    move v4, v9
 
     goto :goto_7
 
     :cond_b
-    const/4 v4, 0x0
+    move v4, v10
 
     .line 339
     :goto_7
@@ -1653,12 +1653,12 @@
 
     if-eqz v5, :cond_c
 
-    const/4 v5, 0x1
+    move v5, v9
 
     goto :goto_8
 
     :cond_c
-    const/4 v5, 0x0
+    move v5, v10
 
     .line 341
     :goto_8
@@ -2132,7 +2132,7 @@
 
     int-to-float v1, v3
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr v1, v11
 
@@ -2165,7 +2165,7 @@
 
     int-to-float v2, v1
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v2, v11
 
@@ -2279,7 +2279,7 @@
 
     int-to-float v2, v1
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     add-float/2addr v2, v11
 
@@ -2342,7 +2342,7 @@
 
     int-to-float v1, v3
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     add-float/2addr v1, v11
 
@@ -2396,7 +2396,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr v0, v11
 
@@ -2708,7 +2708,7 @@
     .line 550
     iget v3, v1, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->value:I
 
-    const/high16 v4, 0x3f000000    # 0.5f
+    move v4, v11
 
     :cond_2b
     sub-int/2addr v3, v2
@@ -2729,7 +2729,7 @@
 
     int-to-float v2, v3
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     add-float/2addr v1, v2
 

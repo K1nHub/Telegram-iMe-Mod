@@ -106,8 +106,8 @@ public class VoIPToggleButton extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0042  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0054  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x007e  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0299  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0296  */
     /* JADX WARN: Removed duplicated region for block: B:81:? A[RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
@@ -116,7 +116,7 @@ public class VoIPToggleButton extends FrameLayout {
     */
     protected void onDraw(android.graphics.Canvas r19) {
         /*
-            Method dump skipped, instructions count: 728
+            Method dump skipped, instructions count: 725
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.voip.VoIPToggleButton.onDraw(android.graphics.Canvas):void");
@@ -188,7 +188,7 @@ public class VoIPToggleButton extends FrameLayout {
                 this.backgroundColor = i3;
             }
             this.textView[0].setText(str);
-            this.crossProgress = this.drawCross ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.crossProgress = this.drawCross ? 1.0f : 0.0f;
             this.iconChangeColor = false;
             this.replaceProgress = BitmapDescriptorFactory.HUE_RED;
             invalidate();
@@ -315,7 +315,7 @@ public class VoIPToggleButton extends FrameLayout {
                 }
                 float[] fArr = new float[2];
                 fArr[0] = this.checkedProgress;
-                fArr[1] = this.checked ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+                fArr[1] = this.checked ? 1.0f : 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                 this.checkAnimator = ofFloat;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPToggleButton$$ExternalSyntheticLambda0
@@ -337,7 +337,7 @@ public class VoIPToggleButton extends FrameLayout {
                 this.checkAnimator.start();
                 return;
             }
-            this.checkedProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.checkedProgress = z ? 1.0f : 0.0f;
             setBackgroundColor(this.backgroundCheck1, this.backgroundCheck2);
         }
     }
@@ -368,7 +368,7 @@ public class VoIPToggleButton extends FrameLayout {
 
     public void showText(boolean z, boolean z2) {
         if (z2) {
-            float f = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            float f = z ? 1.0f : 0.0f;
             if (this.textLayoutContainer.getAlpha() != f) {
                 this.textLayoutContainer.animate().alpha(f).start();
                 return;
@@ -376,6 +376,6 @@ public class VoIPToggleButton extends FrameLayout {
             return;
         }
         this.textLayoutContainer.animate().cancel();
-        this.textLayoutContainer.setAlpha(z ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        this.textLayoutContainer.setAlpha(z ? 1.0f : 0.0f);
     }
 }

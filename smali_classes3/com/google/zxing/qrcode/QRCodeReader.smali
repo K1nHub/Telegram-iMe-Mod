@@ -159,7 +159,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
     float-to-int v10, v10
 
@@ -189,7 +189,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -220,27 +220,27 @@
 
     invoke-direct {v1, v8, v7, v3}, Lcom/google/zxing/common/BitMatrix;-><init>(III)V
 
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_3
     if-ge v3, v7, :cond_8
 
     int-to-float v5, v3
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     float-to-int v5, v5
 
     add-int/2addr v5, v4
 
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_4
     if-ge v9, v8, :cond_7
 
     int-to-float v10, v9
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
     float-to-int v10, v10
 
@@ -330,7 +330,7 @@
     .line 201
     aget v5, p0, v4
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_0
     if-ge v3, v1, :cond_2

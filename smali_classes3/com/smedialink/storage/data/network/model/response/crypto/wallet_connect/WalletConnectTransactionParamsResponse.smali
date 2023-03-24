@@ -6,17 +6,17 @@
 # instance fields
 .field private final chainId:J
 
-.field private final fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.field private final fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
-.field private final fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.field private final fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
 .field private final nonce:Ljava/math/BigInteger;
 
-.field private final safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.field private final safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
 
 # direct methods
-.method public constructor <init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Ljava/math/BigInteger;J)V
+.method public constructor <init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;J)V
     .locals 1
 
     const-string v0, "fast"
@@ -31,13 +31,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
-    iput-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iput-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     .line 8
-    iput-object p2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iput-object p2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     .line 9
-    iput-object p3, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iput-object p3, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     .line 10
     iput-object p4, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->nonce:Ljava/math/BigInteger;
@@ -48,21 +48,21 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Ljava/math/BigInteger;JILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
+.method public static synthetic copy$default(Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;JILjava/lang/Object;)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
     .locals 4
 
     and-int/lit8 p8, p7, 0x1
 
     if-eqz p8, :cond_0
 
-    iget-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object p1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     :cond_0
     and-int/lit8 p8, p7, 0x2
 
     if-eqz p8, :cond_1
 
-    iget-object p2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object p2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     :cond_1
     move-object p8, p2
@@ -71,7 +71,7 @@
 
     if-eqz p2, :cond_2
 
-    iget-object p3, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object p3, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     :cond_2
     move-object v0, p3
@@ -106,7 +106,7 @@
 
     move-wide p7, v2
 
-    invoke-virtual/range {p2 .. p8}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Ljava/math/BigInteger;J)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
+    invoke-virtual/range {p2 .. p8}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;J)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
 
     move-result-object p0
 
@@ -115,26 +115,26 @@
 
 
 # virtual methods
-.method public final component1()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.method public final component1()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     return-object v0
 .end method
 
-.method public final component2()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.method public final component2()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     return-object v0
 .end method
 
-.method public final component3()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.method public final component3()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     return-object v0
 .end method
@@ -155,7 +155,7 @@
     return-wide v0
 .end method
 
-.method public final copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Ljava/math/BigInteger;J)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
+.method public final copy(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;J)Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
     .locals 8
 
     const-string v0, "fast"
@@ -180,7 +180,7 @@
 
     move-wide v6, p5
 
-    invoke-direct/range {v1 .. v7}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;-><init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;Ljava/math/BigInteger;J)V
+    invoke-direct/range {v1 .. v7}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;-><init>(Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;J)V
 
     return-object v0
 .end method
@@ -206,9 +206,9 @@
     :cond_1
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
-    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -219,9 +219,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
-    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -232,9 +232,9 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
-    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v3, p1, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -281,20 +281,20 @@
     return-wide v0
 .end method
 
-.method public final getFast()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.method public final getFast()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 1
 
     .line 8
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     return-object v0
 .end method
 
-.method public final getFastest()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.method public final getFastest()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 1
 
     .line 7
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     return-object v0
 .end method
@@ -308,11 +308,11 @@
     return-object v0
 .end method
 
-.method public final getSafeLow()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+.method public final getSafeLow()Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 1
 
     .line 9
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     return-object v0
 .end method
@@ -320,27 +320,27 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v0, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;->hashCode()I
+    invoke-virtual {v0}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->hashCode()I
 
     move-result v0
 
     :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;->hashCode()I
+    invoke-virtual {v2}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->hashCode()I
 
     move-result v2
 
@@ -348,14 +348,14 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v2, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     if-nez v2, :cond_1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v2}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;->hashCode()I
+    invoke-virtual {v2}, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->hashCode()I
 
     move-result v1
 
@@ -396,7 +396,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fastest:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -404,7 +404,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->fast:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -412,7 +412,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceOneItem;
+    iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet_connect/WalletConnectTransactionParamsResponse;->safeLow:Lcom/smedialink/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

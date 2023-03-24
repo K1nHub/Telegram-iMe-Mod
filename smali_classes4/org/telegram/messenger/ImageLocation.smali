@@ -845,7 +845,7 @@
 
     const-wide v2, 0x408f400000000000L    # 1000.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-int p0, v0
 
@@ -986,9 +986,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_b
+    if-eqz v1, :cond_b
 
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
@@ -1812,7 +1812,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 p3, 0x0
+    move p3, v2
 
     :goto_0
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -1858,9 +1858,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v0, p2, v2
+    cmp-long p2, p2, v2
 
-    if-eqz v0, :cond_9
+    if-eqz p2, :cond_9
 
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 

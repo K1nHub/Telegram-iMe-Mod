@@ -111,9 +111,9 @@
 
     const-wide/16 v5, -0x1
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v7, :cond_2
+    if-nez v3, :cond_2
 
     iget-object v3, p0, Lcom/google/android/play/core/assetpacks/zzds;->zza:[B
 

@@ -29,12 +29,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x3c
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -59,7 +59,7 @@
 
     if-eqz v3, :cond_1
 
-    const/16 v1, 0x3c
+    move v1, v2
 
     :cond_1
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

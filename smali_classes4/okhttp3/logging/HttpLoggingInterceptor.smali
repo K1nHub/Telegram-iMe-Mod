@@ -113,7 +113,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     :cond_0
     return v0
@@ -872,7 +872,7 @@
     :goto_a
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v8, 0x20
+    move/from16 v8, p1
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 

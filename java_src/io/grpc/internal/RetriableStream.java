@@ -71,8 +71,8 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
 
     static {
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        GRPC_PREVIOUS_RPC_ATTEMPTS = Metadata.Key.m700of("grpc-previous-rpc-attempts", asciiMarshaller);
-        GRPC_RETRY_PUSHBACK_MS = Metadata.Key.m700of("grpc-retry-pushback-ms", asciiMarshaller);
+        GRPC_PREVIOUS_RPC_ATTEMPTS = Metadata.Key.m699of("grpc-previous-rpc-attempts", asciiMarshaller);
+        GRPC_RETRY_PUSHBACK_MS = Metadata.Key.m699of("grpc-retry-pushback-ms", asciiMarshaller);
         CANCELLED_BECAUSE_COMMITTED = Status.CANCELLED.withDescription("Stream thrown away because RetriableStream committed");
         random = new Random();
     }
@@ -661,15 +661,15 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:35:0x00e7  */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x00e9  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x00e5  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x00e7  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         private io.grpc.internal.RetriableStream.RetryPlan makeRetryDecision(io.grpc.Status r13, io.grpc.Metadata r14) {
             /*
-                Method dump skipped, instructions count: 239
+                Method dump skipped, instructions count: 237
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: io.grpc.internal.RetriableStream.Sublistener.makeRetryDecision(io.grpc.Status, io.grpc.Metadata):io.grpc.internal.RetriableStream$RetryPlan");
@@ -718,7 +718,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
             Preconditions.checkState(!z2 || list == null, "passThrough should imply buffer is null");
             Preconditions.checkState((z2 && substream == null) ? false : true, "passThrough should imply winningSubstream != null");
             Preconditions.checkState(!z2 || (collection.size() == 1 && collection.contains(substream)) || (collection.size() == 0 && substream.closed), "passThrough should imply winningSubstream is drained");
-            Preconditions.checkState((z && substream == null) ? true : true, "cancelled should imply committed");
+            Preconditions.checkState((z && substream == null) ? z4 : true, "cancelled should imply committed");
         }
 
         State cancelled() {
@@ -766,8 +766,8 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
             List<BufferEntry> list2 = this.buffer;
             if (this.drainedSubstreams.contains(substream)) {
                 list = null;
-                emptyList = Collections.singleton(substream);
                 z = true;
+                emptyList = Collections.singleton(substream);
             } else {
                 list = list2;
                 emptyList = Collections.emptyList();

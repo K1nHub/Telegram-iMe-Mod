@@ -483,7 +483,7 @@
 
     invoke-static {v11, v12}, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->access$502(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;[Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;)[Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_1
     if-ge v11, v5, :cond_7
@@ -518,7 +518,7 @@
 
     if-nez v11, :cond_6
 
-    const/4 v13, 0x0
+    move v13, v10
 
     goto :goto_2
 

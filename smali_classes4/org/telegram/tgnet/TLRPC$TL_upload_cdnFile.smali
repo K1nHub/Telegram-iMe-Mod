@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 63605
+    .line 63632
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$upload_CdnFile;-><init>()V
 
     return-void
@@ -28,25 +28,25 @@
 .method public freeResources()V
     .locals 1
 
-    .line 63620
+    .line 63647
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 63623
+    .line 63650
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_CdnFile;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
     if-eqz v0, :cond_1
 
-    .line 63624
+    .line 63651
     invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     const/4 v0, 0x0
 
-    .line 63625
+    .line 63652
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_CdnFile;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
     :cond_1
@@ -56,7 +56,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 63610
+    .line 63637
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteBuffer(Z)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object p1
@@ -69,12 +69,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 63614
+    .line 63641
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63615
+    .line 63642
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_CdnFile;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteBuffer(Lorg/telegram/tgnet/NativeByteBuffer;)V

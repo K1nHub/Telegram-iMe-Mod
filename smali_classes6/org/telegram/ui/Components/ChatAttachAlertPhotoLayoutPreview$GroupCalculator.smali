@@ -127,7 +127,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_1
@@ -238,7 +238,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_1
@@ -388,11 +388,11 @@
     .line 377
     new-array v0, v11, [C
 
-    const/4 v2, 0x0
+    move v2, v13
+
+    move v4, v2
 
     const/high16 v3, 0x3f800000    # 1.0f
-
-    const/4 v4, 0x0
 
     :goto_0
     const v14, 0x3f99999a    # 1.2f
@@ -421,12 +421,12 @@
 
     if-ne v2, v12, :cond_1
 
-    const/4 v12, 0x1
+    move v12, v15
 
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v13
 
     .line 384
     :goto_1
@@ -562,13 +562,13 @@
     if-eq v1, v5, :cond_7
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v13
 
     goto :goto_5
 
     :cond_7
     :goto_4
-    const/4 v1, 0x1
+    move v1, v15
 
     :goto_5
     move v5, v1
@@ -576,7 +576,7 @@
     goto :goto_6
 
     :catch_0
-    const/4 v5, 0x0
+    move v5, v13
 
     .line 415
     :goto_6
@@ -641,7 +641,7 @@
 
     if-lez v1, :cond_b
 
-    const/4 v4, 0x1
+    move v4, v15
 
     .line 436
     :cond_b
@@ -776,7 +776,7 @@
 
     move-result v2
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v3
 
     sub-int/2addr v1, v2
 
@@ -795,7 +795,7 @@
 
     const/high16 v4, 0x3f000000    # 0.5f
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     const/16 v21, 0x0
 
@@ -809,7 +809,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     .line 454
     iget v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
@@ -1194,7 +1194,7 @@
     .line 486
     iget v1, v8, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     iget v5, v14, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
@@ -1221,11 +1221,11 @@
     .line 488
     iget v7, v14, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v7, v7, v1
+    mul-float/2addr v7, v1
 
     iget v9, v8, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     invoke-static {v7, v9}, Ljava/lang/Math;->min(FF)F
 
@@ -1250,7 +1250,7 @@
     .line 490
     iget v6, v2, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v6, v6, v13
+    mul-float/2addr v6, v13
 
     int-to-float v0, v0
 
@@ -1563,7 +1563,7 @@
     .line 522
     iget v4, v8, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     const/high16 v5, 0x43c80000    # 400.0f
 
@@ -1586,7 +1586,7 @@
 
     iget v5, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v5, v5, v1
+    mul-float/2addr v5, v1
 
     invoke-static {v2, v5}, Ljava/lang/Math;->max(FF)F
 
@@ -1769,7 +1769,7 @@
     .line 544
     iget v7, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->aspectRatio:F
 
-    mul-float v7, v7, v13
+    mul-float/2addr v7, v13
 
     int-to-float v0, v0
 
@@ -2014,7 +2014,7 @@
 
     move v2, v4
 
-    const/4 v14, 0x2
+    move v14, v3
 
     move/from16 v3, v21
 
@@ -2034,18 +2034,18 @@
 
     :cond_1e
     :goto_e
+    move v14, v3
+
     move/from16 v21, v4
 
     move-object v13, v5
-
-    const/4 v14, 0x2
 
     :goto_f
     add-int/lit8 v4, v21, 0x1
 
     move-object v5, v13
 
-    const/4 v3, 0x2
+    move v3, v14
 
     const/4 v7, 0x4
 
@@ -2056,9 +2056,9 @@
     goto :goto_d
 
     :cond_1f
-    move-object v13, v5
+    move v14, v3
 
-    const/4 v14, 0x2
+    move-object v13, v5
 
     const/4 v7, 0x1
 
@@ -2091,7 +2091,7 @@
     goto :goto_12
 
     :cond_20
-    const/4 v1, 0x3
+    move v1, v0
 
     :goto_12
     if-gt v5, v1, :cond_22
@@ -2371,9 +2371,9 @@
 
     const v5, 0x7f7fffff    # Float.MAX_VALUE
 
-    const/4 v5, 0x0
+    move v6, v5
 
-    const v6, 0x7f7fffff    # Float.MAX_VALUE
+    const/4 v5, 0x0
 
     const/4 v7, 0x0
 
@@ -2480,7 +2480,7 @@
     const v7, 0x3f99999a    # 1.2f
 
     :goto_1e
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     goto :goto_1f
 
@@ -2500,7 +2500,7 @@
 
     const/high16 v6, 0x3fc00000    # 1.5f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     :cond_31
     if-eqz v0, :cond_32
@@ -2527,9 +2527,9 @@
     return-void
 
     :cond_35
-    const/4 v1, 0x0
+    move v1, v8
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 640
     :goto_20
@@ -2555,7 +2555,7 @@
 
     move v5, v2
 
-    const/4 v2, 0x0
+    move v2, v8
 
     :goto_21
     if-ge v2, v3, :cond_3a
@@ -2563,7 +2563,7 @@
     .line 646
     aget v9, v11, v5
 
-    mul-float v9, v9, v4
+    mul-float/2addr v9, v4
 
     float-to-int v9, v9
 
@@ -2582,12 +2582,12 @@
 
     if-nez v1, :cond_36
 
-    const/4 v12, 0x4
+    move/from16 v12, v21
 
     goto :goto_22
 
     :cond_36
-    const/4 v12, 0x0
+    move v12, v8
 
     .line 654
     :goto_22
@@ -2688,9 +2688,9 @@
 
     :cond_3c
     :goto_24
-    move/from16 v0, v18
+    move v1, v8
 
-    const/4 v1, 0x0
+    move/from16 v0, v18
 
     :goto_25
     if-ge v1, v0, :cond_3f
@@ -2777,7 +2777,7 @@
     goto :goto_25
 
     :cond_3f
-    const/4 v13, 0x0
+    move v13, v8
 
     :goto_27
     if-ge v13, v0, :cond_40
@@ -2843,7 +2843,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_1
@@ -2931,7 +2931,7 @@
 
     move-result v3
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v3, :cond_1

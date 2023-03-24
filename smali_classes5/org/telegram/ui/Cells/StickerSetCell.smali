@@ -185,7 +185,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x3
+    move v10, v9
 
     :goto_0
     or-int/lit8 v13, v10, 0x30
@@ -196,12 +196,12 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v14, 0x0
+    move v14, v15
 
     goto :goto_1
 
     :cond_1
-    const/16 v14, 0xd
+    move v14, v10
 
     :goto_1
     const/16 v16, 0x9
@@ -211,7 +211,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v15
 
     :goto_2
     const/16 v17, 0x0
@@ -220,7 +220,7 @@
 
     const/16 v12, 0x28
 
-    const/4 v7, 0x0
+    move v7, v15
 
     move/from16 v15, v16
 
@@ -317,7 +317,7 @@
 
     if-eqz v10, :cond_4
 
-    const/4 v10, 0x3
+    move v10, v9
 
     goto :goto_3
 
@@ -483,7 +483,7 @@
 
     if-eqz v4, :cond_6
 
-    const/4 v10, 0x3
+    move v10, v9
 
     goto :goto_4
 
@@ -500,14 +500,14 @@
     goto :goto_5
 
     :cond_7
-    const/16 v19, 0x0
+    move/from16 v19, v7
 
     :goto_5
     const/16 v20, 0x9
 
     if-eqz v4, :cond_8
 
-    const/16 v21, 0x0
+    move/from16 v21, v7
 
     goto :goto_6
 
@@ -650,7 +650,7 @@
 
     if-eqz v14, :cond_a
 
-    const/4 v14, 0x3
+    move v14, v9
 
     goto :goto_8
 
@@ -776,7 +776,7 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v4, 0x3
+    move v4, v9
 
     goto :goto_9
 
@@ -913,13 +913,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_a
-
-    :catch_0
-    nop
-
     .line 187
-    :goto_a
+    :catch_0
     iget-object v2, v0, Lorg/telegram/ui/Cells/StickerSetCell;->sideButtons:Landroid/widget/FrameLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/StickerSetCell;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
@@ -928,14 +923,14 @@
 
     if-eqz v4, :cond_c
 
-    const/4 v4, 0x3
+    move v4, v9
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_c
     const/4 v4, 0x5
 
-    :goto_b
+    :goto_a
     or-int/lit8 v4, v4, 0x10
 
     invoke-static {v8, v15, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrameRelatively(FFI)Landroid/widget/FrameLayout$LayoutParams;
@@ -970,14 +965,14 @@
 
     if-eqz v3, :cond_d
 
-    const/16 v20, 0x3
+    move/from16 v20, v9
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_d
     const/16 v20, 0x5
 
-    :goto_c
+    :goto_b
     const/16 v21, 0x0
 
     const/16 v22, 0x0
@@ -1423,7 +1418,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     return v1
@@ -1446,7 +1441,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     return v1
@@ -1486,8 +1481,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -1497,9 +1490,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
@@ -1807,7 +1800,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v7
 
     .line 419
     :cond_1
@@ -1817,12 +1810,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v7
 
     goto :goto_0
 
     :cond_2
-    const v0, 0x3dcccccd    # 0.1f
+    move v0, v8
 
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
@@ -1834,7 +1827,7 @@
     goto :goto_1
 
     :cond_3
-    const v7, 0x3dcccccd    # 0.1f
+    move v7, v8
 
     :goto_1
     invoke-virtual {p2, v7}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
@@ -1858,7 +1851,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v5, 0x4
+    move v5, v6
 
     :goto_2
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -1910,7 +1903,7 @@
 
     if-eqz p1, :cond_7
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v7
 
     .line 444
     :cond_7
@@ -1920,12 +1913,12 @@
 
     if-eqz p1, :cond_8
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v7
 
     goto :goto_3
 
     :cond_8
-    const v0, 0x3dcccccd    # 0.1f
+    move v0, v8
 
     :goto_3
     invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
@@ -1937,7 +1930,7 @@
     goto :goto_4
 
     :cond_9
-    const v7, 0x3dcccccd    # 0.1f
+    move v7, v8
 
     :goto_4
     invoke-virtual {p2, v7}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
@@ -1961,7 +1954,7 @@
     goto :goto_5
 
     :cond_b
-    const/4 v5, 0x4
+    move v5, v6
 
     :goto_5
     invoke-virtual {p2, v5}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -2078,12 +2071,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     const/4 v6, 0x0
@@ -2095,7 +2088,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     :goto_1
     aput v3, v2, v1
@@ -2106,19 +2099,19 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_2
 
     :cond_2
-    const v5, 0x3f28f5c3    # 0.66f
+    move v5, v3
 
     :goto_2
     aput v5, v0, v6
 
     if-eqz p1, :cond_3
 
-    const v4, 0x3f28f5c3    # 0.66f
+    move v4, v3
 
     :cond_3
     aput v4, v0, v1
@@ -2312,12 +2305,12 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v4, 0x0
+    move v4, v6
 
     goto :goto_3
 
     :cond_6
-    const/16 v4, 0x8
+    move v4, v3
 
     :goto_3
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -2353,7 +2346,7 @@
 
     if-eqz p1, :cond_7
 
-    const/16 v6, 0x8
+    move v6, v3
 
     :cond_7
     invoke-virtual {p2, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -2387,7 +2380,7 @@
 
     if-eqz p1, :cond_9
 
-    const/16 v6, 0x8
+    move v6, v3
 
     :cond_9
     invoke-virtual {p2, v6}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -2668,12 +2661,12 @@
 
     if-eqz v1, :cond_2
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 
     :cond_2
-    const/16 v1, 0x8
+    move v1, v5
 
     :goto_1
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -2688,7 +2681,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_2
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -2741,7 +2734,7 @@
 
     invoke-virtual {v7, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 334
     :goto_4
@@ -3233,13 +3226,13 @@
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v5
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    const/4 v6, 0x1
+    move v6, v3
 
     :goto_2
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setEnabled(Z)V
@@ -3251,12 +3244,12 @@
 
     if-ne v1, v6, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_3
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_3
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setEnabled(Z)V
@@ -3268,12 +3261,12 @@
 
     if-ne v1, v7, :cond_6
 
-    const/4 v8, 0x1
+    move v8, v3
 
     goto :goto_4
 
     :cond_6
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_4
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setEnabled(Z)V
@@ -3313,13 +3306,13 @@
     goto :goto_5
 
     :cond_7
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
     goto :goto_6
 
     :cond_8
     :goto_5
-    const/high16 v16, 0x3f800000    # 1.0f
+    move/from16 v16, v10
 
     :goto_6
     aput v16, v15, v5
@@ -3344,13 +3337,13 @@
     goto :goto_7
 
     :cond_9
-    const v16, 0x3f19999a    # 0.6f
+    move/from16 v16, v9
 
     goto :goto_8
 
     :cond_a
     :goto_7
-    const/high16 v16, 0x3f800000    # 1.0f
+    move/from16 v16, v10
 
     :goto_8
     aput v16, v15, v5
@@ -3375,13 +3368,13 @@
     goto :goto_9
 
     :cond_b
-    const v16, 0x3f19999a    # 0.6f
+    move/from16 v16, v9
 
     goto :goto_a
 
     :cond_c
     :goto_9
-    const/high16 v16, 0x3f800000    # 1.0f
+    move/from16 v16, v10
 
     :goto_a
     aput v16, v15, v5
@@ -3401,12 +3394,12 @@
 
     if-ne v1, v6, :cond_d
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_b
 
     :cond_d
-    const/4 v15, 0x0
+    move v15, v8
 
     :goto_b
     aput v15, v14, v5
@@ -3426,12 +3419,12 @@
 
     if-ne v1, v6, :cond_e
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v15, v10
 
     goto :goto_c
 
     :cond_e
-    const v15, 0x3f19999a    # 0.6f
+    move v15, v9
 
     :goto_c
     aput v15, v14, v5
@@ -3453,12 +3446,12 @@
 
     if-ne v1, v6, :cond_f
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v10
 
     goto :goto_d
 
     :cond_f
-    const v6, 0x3f19999a    # 0.6f
+    move v6, v9
 
     :goto_d
     aput v6, v15, v5
@@ -3480,7 +3473,7 @@
 
     if-ne v1, v7, :cond_10
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     :cond_10
     aput v8, v14, v5
@@ -3502,12 +3495,12 @@
 
     if-ne v1, v7, :cond_11
 
-    const/high16 v14, 0x3f800000    # 1.0f
+    move v14, v10
 
     goto :goto_e
 
     :cond_11
-    const v14, 0x3f19999a    # 0.6f
+    move v14, v9
 
     :goto_e
     aput v14, v13, v5
@@ -3527,7 +3520,7 @@
 
     if-ne v1, v7, :cond_12
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :cond_12
     aput v9, v3, v5
@@ -3587,13 +3580,13 @@
     goto :goto_f
 
     :cond_14
-    const/4 v12, 0x0
+    move v12, v8
 
     goto :goto_10
 
     :cond_15
     :goto_f
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v10
 
     :goto_10
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -3608,13 +3601,13 @@
     goto :goto_11
 
     :cond_16
-    const v12, 0x3f19999a    # 0.6f
+    move v12, v9
 
     goto :goto_12
 
     :cond_17
     :goto_11
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v10
 
     :goto_12
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setScaleX(F)V
@@ -3629,13 +3622,13 @@
     goto :goto_13
 
     :cond_18
-    const v12, 0x3f19999a    # 0.6f
+    move v12, v9
 
     goto :goto_14
 
     :cond_19
     :goto_13
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v12, v10
 
     :goto_14
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setScaleY(F)V
@@ -3650,13 +3643,13 @@
     goto :goto_15
 
     :cond_1a
-    const/16 v2, 0x8
+    move v2, v4
 
     goto :goto_16
 
     :cond_1b
     :goto_15
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_16
     invoke-virtual {v11, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -3666,12 +3659,12 @@
 
     if-ne v1, v6, :cond_1c
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v10
 
     goto :goto_17
 
     :cond_1c
-    const/4 v3, 0x0
+    move v3, v8
 
     :goto_17
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setAlpha(F)V
@@ -3681,12 +3674,12 @@
 
     if-ne v1, v6, :cond_1d
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v10
 
     goto :goto_18
 
     :cond_1d
-    const v3, 0x3f19999a    # 0.6f
+    move v3, v9
 
     :goto_18
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setScaleX(F)V
@@ -3696,12 +3689,12 @@
 
     if-ne v1, v6, :cond_1e
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v10
 
     goto :goto_19
 
     :cond_1e
-    const v3, 0x3f19999a    # 0.6f
+    move v3, v9
 
     :goto_19
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setScaleY(F)V
@@ -3711,12 +3704,12 @@
 
     if-ne v1, v6, :cond_1f
 
-    const/4 v3, 0x0
+    move v3, v5
 
     goto :goto_1a
 
     :cond_1f
-    const/16 v3, 0x8
+    move v3, v4
 
     :goto_1a
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
@@ -3726,7 +3719,7 @@
 
     if-ne v1, v7, :cond_20
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v10
 
     :cond_20
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setAlpha(F)V
@@ -3736,12 +3729,12 @@
 
     if-ne v1, v7, :cond_21
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v10
 
     goto :goto_1b
 
     :cond_21
-    const v3, 0x3f19999a    # 0.6f
+    move v3, v9
 
     :goto_1b
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setScaleX(F)V
@@ -3751,7 +3744,7 @@
 
     if-ne v1, v7, :cond_22
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v10
 
     :cond_22
     invoke-virtual {v2, v9}, Landroid/widget/TextView;->setScaleY(F)V
@@ -3764,7 +3757,7 @@
     goto :goto_1c
 
     :cond_23
-    const/16 v5, 0x8
+    move v5, v4
 
     :goto_1c
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V

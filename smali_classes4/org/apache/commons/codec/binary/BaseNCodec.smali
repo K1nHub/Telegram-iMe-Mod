@@ -68,7 +68,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_0
     if-eqz v0, :cond_1
@@ -119,7 +119,7 @@
     goto :goto_0
 
     :cond_0
-    const p0, 0x7ffffff7
+    move p0, v0
 
     :goto_0
     return p0
@@ -244,7 +244,7 @@
     :cond_0
     array-length v1, p1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_3
@@ -488,7 +488,7 @@
 
     int-to-long v2, p1
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     .line 610
     iget p1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->lineLength:I
@@ -512,7 +512,7 @@
 
     int-to-long v4, p1
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     add-long/2addr v0, v2
 

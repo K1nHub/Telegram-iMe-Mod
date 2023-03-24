@@ -887,7 +887,7 @@
 .end method
 
 .method private synthetic lambda$new$0(Landroid/content/DialogInterface;I)V
-    .locals 6
+    .locals 5
 
     .line 234
     iget-object p1, p0, Lorg/telegram/ui/DataUsage2Activity$ListView;->removedSegments:Ljava/util/ArrayList;
@@ -896,7 +896,7 @@
 
     const/4 p1, 0x0
 
-    const/4 p2, 0x0
+    move p2, p1
 
     .line 235
     :goto_0
@@ -913,9 +913,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v1, :cond_0
 
     .line 238
     iget-object v1, p0, Lorg/telegram/ui/DataUsage2Activity$ListView;->removedSegments:Ljava/util/ArrayList;
@@ -1179,7 +1179,7 @@
 .end method
 
 .method private varargs min([J)J
-    .locals 6
+    .locals 5
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -1194,9 +1194,9 @@
     .line 764
     aget-wide v3, p1, v2
 
-    cmp-long v5, v0, v3
+    cmp-long v3, v0, v3
 
-    if-lez v5, :cond_0
+    if-lez v3, :cond_0
 
     .line 765
     aget-wide v0, p1, v2
@@ -1264,7 +1264,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v12, 0x0
+    move v12, v0
 
     .line 287
     :goto_0
@@ -1436,16 +1436,16 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 v6, 0x1
+    cmp-long v1, v1, v4
 
-    cmp-long v7, v1, v4
+    const/4 v2, 0x1
 
-    if-lez v7, :cond_0
+    if-lez v1, :cond_0
 
     .line 349
     sget v1, Lorg/telegram/messenger/R$string;->YourNetworkUsageSince:I
 
-    new-array v2, v6, [Ljava/lang/Object;
+    new-array v6, v2, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -1461,11 +1461,11 @@
 
     move-result-object v7
 
-    aput-object v7, v2, v3
+    aput-object v7, v6, v3
 
     const-string v7, "YourNetworkUsageSince"
 
-    invoke-static {v7, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v7, v1, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1475,7 +1475,7 @@
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->NoNetworkUsageSince:I
 
-    new-array v2, v6, [Ljava/lang/Object;
+    new-array v6, v2, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -1491,30 +1491,30 @@
 
     move-result-object v7
 
-    aput-object v7, v2, v3
+    aput-object v7, v6, v3
 
     const-string v7, "NoNetworkUsageSince"
 
-    invoke-static {v7, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v7, v1, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     .line 351
     :goto_0
-    iget-object v2, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
+    iget-object v6, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
 
     invoke-static {v1}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asSubtitle(Ljava/lang/String;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
 
     move-result-object v7
 
-    invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 353
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 354
     :goto_1
@@ -1558,13 +1558,13 @@
     goto :goto_2
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v3
 
     goto :goto_3
 
     :cond_2
     :goto_2
-    const/4 v9, 0x1
+    move v9, v2
 
     :goto_3
     cmp-long v15, v13, v4
@@ -1687,7 +1687,7 @@
 
     const-string v8, "  "
 
-    aput-object v8, v10, v6
+    aput-object v8, v10, v2
 
     const/4 v8, 0x2
 
@@ -1708,7 +1708,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_5
     add-int/lit8 v7, v7, 0x1
@@ -1719,7 +1719,7 @@
 
     .line 376
     :cond_5
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v4
 
@@ -1796,7 +1796,7 @@
 
     invoke-direct {v8, v9, v12}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-virtual {v4, v8, v3, v6, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v4, v8, v3, v2, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 384
     new-instance v8, Landroid/text/SpannableString;
@@ -1859,20 +1859,20 @@
 
     invoke-direct {v12, v9, v11}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-virtual {v8, v12, v3, v6, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v8, v12, v3, v2, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    const/4 v9, 0x0
+    move v9, v3
 
     .line 390
     :goto_6
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
     if-ge v9, v10, :cond_13
 
     .line 391
-    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
@@ -1910,9 +1910,9 @@
 
     const-wide/16 v13, 0x0
 
-    cmp-long v15, v11, v13
+    cmp-long v11, v11, v13
 
-    if-gtz v15, :cond_6
+    if-gtz v11, :cond_6
 
     iget v11, v10, Lorg/telegram/ui/DataUsage2Activity$ListView$Size;->outCount:I
 
@@ -1945,7 +1945,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v2, v9, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .line 402
     :cond_7
@@ -1953,9 +1953,9 @@
 
     const-wide/16 v13, 0x0
 
-    cmp-long v15, v11, v13
+    cmp-long v11, v11, v13
 
-    if-gtz v15, :cond_8
+    if-gtz v11, :cond_8
 
     iget v11, v10, Lorg/telegram/ui/DataUsage2Activity$ListView$Size;->inCount:I
 
@@ -1988,7 +1988,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v2, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     :cond_9
     :goto_7
@@ -2010,7 +2010,7 @@
 
     const-string v12, " "
 
-    if-eq v11, v6, :cond_e
+    if-eq v11, v2, :cond_e
 
     .line 410
     iget-wide v13, v10, Lorg/telegram/ui/DataUsage2Activity$ListView$Size;->outSize:J
@@ -2034,7 +2034,7 @@
 
     aput-object v4, v13, v3
 
-    aput-object v12, v13, v6
+    aput-object v12, v13, v2
 
     .line 411
     iget v11, v10, Lorg/telegram/ui/DataUsage2Activity$ListView$Size;->outCount:I
@@ -2072,7 +2072,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v2, v9, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .line 417
     :cond_c
@@ -2097,7 +2097,7 @@
 
     aput-object v8, v13, v3
 
-    aput-object v12, v13, v6
+    aput-object v12, v13, v2
 
     .line 418
     iget v11, v10, Lorg/telegram/ui/DataUsage2Activity$ListView$Size;->inCount:I
@@ -2135,7 +2135,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v2, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     goto :goto_7
 
@@ -2162,7 +2162,7 @@
 
     aput-object v4, v13, v3
 
-    aput-object v12, v13, v6
+    aput-object v12, v13, v2
 
     .line 426
     sget v11, Lorg/telegram/messenger/R$string;->BytesSent:I
@@ -2194,7 +2194,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v2, v9, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .line 432
     :cond_10
@@ -2227,7 +2227,7 @@
 
     aput-object v8, v13, v3
 
-    aput-object v12, v13, v6
+    aput-object v12, v13, v2
 
     .line 433
     sget v11, Lorg/telegram/messenger/R$string;->BytesReceived:I
@@ -2259,10 +2259,10 @@
 
     move-result-object v10
 
-    invoke-virtual {v2, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     :goto_9
-    add-int/2addr v9, v6
+    add-int/2addr v9, v2
 
     goto/16 :goto_6
 
@@ -2270,7 +2270,7 @@
     :cond_13
     iget-object v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     .line 445
     iget-boolean v3, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->empty:Z
@@ -2387,7 +2387,7 @@
 
     .line 468
     :cond_15
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
@@ -2411,7 +2411,7 @@
     if-eqz v1, :cond_1a
 
     .line 473
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
@@ -2458,18 +2458,18 @@
     .line 484
     iget v1, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->currentType:I
 
-    if-eq v1, v6, :cond_19
+    if-eq v1, v2, :cond_19
 
-    const/4 v4, 0x3
+    const/4 v2, 0x3
 
-    if-eq v1, v4, :cond_18
+    if-eq v1, v2, :cond_18
 
     .line 493
     sget v1, Lorg/telegram/messenger/R$string;->AutomaticDownloadSettingsInfoWiFi:I
 
-    const-string v4, "AutomaticDownloadSettingsInfoWiFi"
+    const-string v2, "AutomaticDownloadSettingsInfoWiFi"
 
-    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2479,9 +2479,9 @@
     :cond_18
     sget v1, Lorg/telegram/messenger/R$string;->AutomaticDownloadSettingsInfoRoaming:I
 
-    const-string v4, "AutomaticDownloadSettingsInfoRoaming"
+    const-string v2, "AutomaticDownloadSettingsInfoRoaming"
 
-    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2491,25 +2491,25 @@
     :cond_19
     sget v1, Lorg/telegram/messenger/R$string;->AutomaticDownloadSettingsInfoMobile:I
 
-    const-string v4, "AutomaticDownloadSettingsInfoMobile"
+    const-string v2, "AutomaticDownloadSettingsInfoMobile"
 
-    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
     .line 496
     :goto_a
-    iget-object v4, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
+    iget-object v2, v0, Lorg/telegram/ui/DataUsage2Activity$ListView;->itemInners:Ljava/util/ArrayList;
 
     invoke-static {v1}, Lorg/telegram/ui/DataUsage2Activity$ItemInner;->asSeparator(Ljava/lang/String;)Lorg/telegram/ui/DataUsage2Activity$ItemInner;
 
     move-result-object v1
 
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 499
     :cond_1a
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
@@ -2591,7 +2591,7 @@
 .end method
 
 .method public setType(I)V
-    .locals 5
+    .locals 4
 
     .line 269
     iput p1, p0, Lorg/telegram/ui/DataUsage2Activity$ListView;->currentType:I
@@ -2608,29 +2608,29 @@
 
     move-result-wide v0
 
-    const/4 p1, 0x0
-
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long p1, v0, v2
 
-    if-gtz v4, :cond_0
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    if-gtz p1, :cond_0
+
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move p1, v0
 
     :goto_0
-    iput-boolean v0, p0, Lorg/telegram/ui/DataUsage2Activity$ListView;->empty:Z
+    iput-boolean p1, p0, Lorg/telegram/ui/DataUsage2Activity$ListView;->empty:Z
 
     .line 273
     invoke-direct {p0}, Lorg/telegram/ui/DataUsage2Activity$ListView;->setup()V
 
     .line 274
-    invoke-direct {p0, p1}, Lorg/telegram/ui/DataUsage2Activity$ListView;->updateRows(Z)V
+    invoke-direct {p0, v0}, Lorg/telegram/ui/DataUsage2Activity$ListView;->updateRows(Z)V
 
     return-void
 .end method

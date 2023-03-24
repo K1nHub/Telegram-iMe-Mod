@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/telegram/ui/PrivacyControlActivity;Landroid/content/Context;)V
-    .locals 10
+    .locals 9
 
     .line 328
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -81,18 +81,18 @@
 
     div-long/2addr v1, v3
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/lit16 v2, v2, -0xe10
+    add-int/lit16 v1, v1, -0xe10
 
     .line 338
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$100(Lorg/telegram/ui/PrivacyControlActivity;)I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v1
+    move-result-object v2
 
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$000(Lorg/telegram/ui/PrivacyControlActivity;)I
 
@@ -110,9 +110,9 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 340
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_message;
@@ -130,32 +130,32 @@
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    add-int/lit8 v2, v2, 0x3c
+    add-int/lit8 v1, v1, 0x3c
 
     .line 342
-    iput v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->date:I
+    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v4, 0x1
 
     .line 343
     iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
-    const/16 v2, 0x105
+    const/16 v1, 0x105
 
     .line 344
-    iput v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
+    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     .line 345
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
+    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
-    iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     .line 346
-    iput v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->id:I
+    iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
     .line 347
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader;
@@ -165,32 +165,32 @@
     iput-object v6, v3, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
     .line 348
-    iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
+    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
+    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
-    invoke-static {v7, v1}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v2}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    iput-object v1, v6, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
+    iput-object v2, v6, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
 
     .line 349
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     .line 350
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
     .line 351
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
-    iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+    iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     .line 352
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$200(Lorg/telegram/ui/PrivacyControlActivity;)I
@@ -205,38 +205,38 @@
 
     move-result-wide v6
 
-    iput-wide v6, v1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+    iput-wide v6, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     .line 353
-    new-instance v1, Lorg/telegram/messenger/MessageObject;
+    new-instance v2, Lorg/telegram/messenger/MessageObject;
 
     invoke-static {p1}, Lorg/telegram/ui/PrivacyControlActivity;->access$300(Lorg/telegram/ui/PrivacyControlActivity;)I
 
     move-result v6
 
-    invoke-direct {v1, v6, v3, v2, v0}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
+    invoke-direct {v2, v6, v3, v1, v0}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
+    iput-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     .line 354
-    iput-wide v4, v1, Lorg/telegram/messenger/MessageObject;->eventId:J
+    iput-wide v4, v2, Lorg/telegram/messenger/MessageObject;->eventId:J
 
     .line 355
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->resetLayout()V
+    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->resetLayout()V
 
     .line 357
-    new-instance v1, Lorg/telegram/ui/Cells/ChatMessageCell;
+    new-instance v2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-direct {v1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, p2}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iput-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     .line 358
     new-instance v3, Lorg/telegram/ui/PrivacyControlActivity$MessageCell$1;
 
     invoke-direct {v3, p0, p1}, Lorg/telegram/ui/PrivacyControlActivity$MessageCell$1;-><init>(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;Lorg/telegram/ui/PrivacyControlActivity;)V
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDelegate(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->setDelegate(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
 
     .line 361
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -244,25 +244,25 @@
     iput-boolean v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
 
     .line 362
-    invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setFullyDraw(Z)V
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setFullyDraw(Z)V
 
     .line 363
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    iget-object v1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v2, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v3, 0x0
 
-    invoke-virtual {p1, v1, v3, v0, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
+    invoke-virtual {p1, v2, v3, v0, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
 
     .line 364
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v0, -0x1
 
-    const/4 v1, -0x2
+    const/4 v2, -0x2
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v0, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
@@ -271,26 +271,24 @@
     .line 366
     new-instance p1, Lorg/telegram/ui/Components/HintView;
 
-    invoke-direct {p1, p2, v2, v2}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZ)V
+    invoke-direct {p1, p2, v1, v1}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZ)V
 
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$MessageCell;->hintView:Lorg/telegram/ui/Components/HintView;
 
     const/4 v3, -0x2
 
-    const/4 v4, -0x2
+    const/16 v4, 0x33
 
-    const/16 v5, 0x33
+    const/16 v5, 0x13
 
-    const/16 v6, 0x13
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/16 v7, 0x13
 
-    const/16 v8, 0x13
-
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     .line 367
-    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
@@ -569,7 +567,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-double v3, v3
 
@@ -588,7 +586,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     float-to-double v4, v4
 

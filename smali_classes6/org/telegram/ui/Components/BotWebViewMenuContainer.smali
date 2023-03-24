@@ -818,12 +818,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v2
 
     .line 452
     :goto_0
@@ -848,7 +848,7 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     .line 458
     :cond_3
@@ -856,7 +856,7 @@
 
     move-result v4
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     invoke-direct {v5, v1}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
 
@@ -1250,7 +1250,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setBotWebViewButtonOffsetX(F)V
 
@@ -1570,11 +1570,11 @@
 
     move-result v0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v2
+    const/high16 v2, 0x3f800000    # 1.0f
 
     if-lez v0, :cond_0
 
@@ -1611,9 +1611,9 @@
 
     div-float/2addr v4, v5
 
-    sub-float v4, v1, v4
+    sub-float v4, v2, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1676,7 +1676,7 @@
 
     div-float/2addr v0, v3
 
-    sub-float/2addr v1, v0
+    sub-float/2addr v2, v0
 
     .line 334
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -1688,12 +1688,12 @@
     goto :goto_1
 
     :cond_1
-    move v2, v1
+    move v1, v2
 
     :goto_1
     const/high16 v0, 0x3f000000    # 0.5f
 
-    cmpl-float v0, v2, v0
+    cmpl-float v0, v1, v0
 
     if-lez v0, :cond_2
 
@@ -1709,7 +1709,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     .line 338
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
@@ -1889,22 +1889,22 @@
 
     move-result-object p2
 
-    const/4 p4, 0x1
+    const/4 p4, 0x0
 
-    const/4 v0, 0x0
+    cmpl-float p4, p3, p4
+
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    cmpl-float v1, p3, v1
+    if-nez p4, :cond_0
 
-    if-nez v1, :cond_0
-
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 492
     :goto_0
@@ -1915,26 +1915,26 @@
 
     move-result-object p2
 
-    if-nez v1, :cond_1
+    if-nez p4, :cond_1
 
-    const/4 v1, 0x1
+    move p4, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move p4, v1
 
     :goto_1
-    invoke-virtual {p2, v1}, Landroid/view/View;->setClickable(Z)V
+    invoke-virtual {p2, p4}, Landroid/view/View;->setClickable(Z)V
 
     .line 495
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getActionBar()Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p2
 
-    const/high16 v1, 0x42c80000    # 100.0f
+    const/high16 p4, 0x42c80000    # 100.0f
 
-    cmpl-float p3, p3, v1
+    cmpl-float p3, p3, p4
 
     if-nez p3, :cond_2
 
@@ -1948,7 +1948,7 @@
     if-eqz p3, :cond_2
 
     .line 497
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ChatActivity;->showHeaderItem(Z)V
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/ChatActivity;->showHeaderItem(Z)V
 
     .line 498
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->checkBotMenuItem()V
@@ -1956,7 +1956,7 @@
     .line 499
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->botMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 500
     new-instance p1, Lorg/telegram/ui/Components/BotWebViewMenuContainer$4;
@@ -1969,7 +1969,7 @@
 
     .line 527
     :cond_2
-    invoke-virtual {p1, p4}, Lorg/telegram/ui/ChatActivity;->showHeaderItem(Z)V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ChatActivity;->showHeaderItem(Z)V
 
     .line 528
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->botMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -2484,7 +2484,7 @@
 .end method
 
 .method private updateLightStatusBar()V
-    .locals 6
+    .locals 5
 
     const-string v0, "windowBackgroundWhite"
 
@@ -2504,9 +2504,9 @@
 
     const-wide v3, 0x3feccccccccccccdL    # 0.9
 
-    cmpl-double v5, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v0, :cond_0
 
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->actionBarTransitionProgress:F
 
@@ -2596,9 +2596,9 @@
     .line 893
     iget-wide v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->queryId:J
 
-    cmp-long p3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez p3, :cond_1
+    if-nez p1, :cond_1
 
     .line 894
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->dismiss()V
@@ -2739,7 +2739,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3387,7 +3387,7 @@
 
     sub-float/2addr v3, v4
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     .line 649
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->swipeContainer:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -3547,11 +3547,11 @@
 
     move-result v0
 
+    cmpl-float v0, v0, p1
+
     const/4 v1, 0x0
 
     const/4 v2, 0x1
-
-    cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_1
 
@@ -3560,12 +3560,12 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->stickTo(F)V
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 573
     :goto_0
@@ -3752,7 +3752,7 @@
 .end method
 
 .method public show(IJLjava/lang/String;)V
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -3766,9 +3766,9 @@
 
     iget-wide v1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->botId:J
 
-    cmp-long v3, v1, p2
+    cmp-long v1, v1, p2
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->botUrl:Ljava/lang/String;
 

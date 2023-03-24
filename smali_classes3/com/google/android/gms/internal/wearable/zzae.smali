@@ -5,7 +5,7 @@
 
 # direct methods
 .method static synthetic zza([JJII)I
-    .locals 3
+    .locals 2
 
     :goto_0
     if-ge p3, p4, :cond_1
@@ -13,9 +13,9 @@
     .line 1
     aget-wide v0, p0, p3
 
-    cmp-long v2, v0, p1
+    cmp-long v0, v0, p1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_1
 

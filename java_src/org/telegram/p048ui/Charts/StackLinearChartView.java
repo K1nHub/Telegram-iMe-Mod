@@ -42,22 +42,22 @@ public class StackLinearChartView<T extends StackLinearViewData> extends BaseCha
         return (T) new StackLinearViewData(line);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:111:0x03a7  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x03f3  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x03f9  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x03fb  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x03ff A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0455  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0459  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0463  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x046f  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01fd  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0203  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0218 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0249  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x024c  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0259 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0396  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x03e0  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x03e6  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x03e8  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x03ec A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0440  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0444  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x044d  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0459  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01f4  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x01fa  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x020e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0241  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x024e A[ADDED_TO_REGION] */
     @Override // org.telegram.p048ui.Charts.BaseChartView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,7 +65,7 @@ public class StackLinearChartView<T extends StackLinearViewData> extends BaseCha
     */
     protected void drawChart(android.graphics.Canvas r38) {
         /*
-            Method dump skipped, instructions count: 1575
+            Method dump skipped, instructions count: 1559
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Charts.StackLinearChartView.drawChart(android.graphics.Canvas):void");
@@ -84,12 +84,12 @@ public class StackLinearChartView<T extends StackLinearViewData> extends BaseCha
         return 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00e4 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0102  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0112 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00e1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x010e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x015a  */
     @Override // org.telegram.p048ui.Charts.BaseChartView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -97,7 +97,7 @@ public class StackLinearChartView<T extends StackLinearViewData> extends BaseCha
     */
     protected void drawPickerChart(android.graphics.Canvas r20) {
         /*
-            Method dump skipped, instructions count: 420
+            Method dump skipped, instructions count: 416
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Charts.StackLinearChartView.drawPickerChart(android.graphics.Canvas):void");
@@ -128,8 +128,8 @@ public class StackLinearChartView<T extends StackLinearViewData> extends BaseCha
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0135  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x013a  */
     @Override // org.telegram.p048ui.Charts.BaseChartView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -137,7 +137,7 @@ public class StackLinearChartView<T extends StackLinearViewData> extends BaseCha
     */
     public void fillTransitionParams(org.telegram.p048ui.Charts.view_data.TransitionParams r18) {
         /*
-            Method dump skipped, instructions count: 344
+            Method dump skipped, instructions count: 338
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Charts.StackLinearChartView.fillTransitionParams(org.telegram.ui.Charts.view_data.TransitionParams):void");

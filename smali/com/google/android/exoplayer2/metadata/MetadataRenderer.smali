@@ -248,41 +248,41 @@
 .method private getPresentationTimeUs(J)J
     .locals 7
 
-    const/4 v0, 0x1
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v1, 0x0
+    cmp-long v2, p1, v0
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    const/4 v3, 0x1
 
-    cmp-long v4, p1, v2
+    const/4 v4, 0x0
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v4, 0x1
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v2, v4
 
     .line 280
     :goto_0
-    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 281
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/metadata/MetadataRenderer;->outputStreamOffsetUs:J
+    iget-wide v5, p0, Lcom/google/android/exoplayer2/metadata/MetadataRenderer;->outputStreamOffsetUs:J
 
-    cmp-long v6, v4, v2
+    cmp-long v0, v5, v0
 
-    if-eqz v6, :cond_1
+    if-eqz v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v3, v4
 
     :goto_1
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 283
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/MetadataRenderer;->outputStreamOffsetUs:J
@@ -351,9 +351,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, v2, p1
+    cmp-long p1, v2, p1
 
-    if-gtz v0, :cond_1
+    if-gtz p1, :cond_1
 
     .line 256
     :cond_0
@@ -366,7 +366,7 @@
     .line 257
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/MetadataRenderer;->pendingMetadata:Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 

@@ -987,12 +987,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v6
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x8
+    move v3, v4
 
     .line 262
     :goto_0
@@ -1084,12 +1084,12 @@
 
     if-eqz v3, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v6
 
     goto :goto_1
 
     :cond_1
-    const/16 v3, 0x8
+    move v3, v4
 
     .line 262
     :goto_1
@@ -1223,7 +1223,7 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 262
     :cond_3

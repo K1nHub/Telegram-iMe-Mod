@@ -70,9 +70,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v5, v3, v5
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
     invoke-static {v1, v2}, Lj$/util/stream/f;->h(J)J
 
@@ -109,9 +109,9 @@
     if-nez v9, :cond_5
 
     :cond_1
-    cmp-long v9, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v9, :cond_4
+    if-lez v1, :cond_4
 
     invoke-interface {v0}, Lj$/util/s;->trySplit()Lj$/util/s;
 

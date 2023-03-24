@@ -663,7 +663,7 @@
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    move v12, v11
 
     :goto_0
     if-ge v12, v8, :cond_f
@@ -744,7 +744,7 @@
 
     invoke-direct {v9, v12, v4}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    goto/16 :goto_3
 
     :cond_1
     const/4 v12, 0x2
@@ -756,7 +756,7 @@
 
     invoke-direct {v9, v12, v5}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     if-ne v14, v12, :cond_3
@@ -764,13 +764,13 @@
     .line 225
     sget-object v9, Lorg/telegram/messenger/time/FastDatePrinter$TwoDigitMonthField;->INSTANCE:Lorg/telegram/messenger/time/FastDatePrinter$TwoDigitMonthField;
 
-    goto :goto_2
+    goto :goto_3
 
     .line 227
     :cond_3
     sget-object v9, Lorg/telegram/messenger/time/FastDatePrinter$UnpaddedMonthField;->INSTANCE:Lorg/telegram/messenger/time/FastDatePrinter$UnpaddedMonthField;
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_1
     const/4 v12, 0x2
@@ -782,7 +782,7 @@
 
     invoke-direct {v9, v12, v4}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_4
     if-ne v14, v9, :cond_5
@@ -792,7 +792,7 @@
 
     invoke-direct {v9, v12, v5}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_5
     if-ne v14, v12, :cond_6
@@ -800,13 +800,13 @@
     .line 214
     sget-object v9, Lorg/telegram/messenger/time/FastDatePrinter$TwoDigitMonthField;->INSTANCE:Lorg/telegram/messenger/time/FastDatePrinter$TwoDigitMonthField;
 
-    goto :goto_2
+    goto :goto_3
 
     .line 216
     :cond_6
     sget-object v9, Lorg/telegram/messenger/time/FastDatePrinter$UnpaddedMonthField;->INSTANCE:Lorg/telegram/messenger/time/FastDatePrinter$UnpaddedMonthField;
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_2
     const/16 v9, 0xa
@@ -816,7 +816,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_3
     const/16 v9, 0xb
@@ -826,7 +826,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     .line 199
     :pswitch_4
@@ -836,7 +836,14 @@
 
     invoke-direct {v9, v11, v3}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    move v15, v11
+
+    :goto_1
+    move-object v11, v9
+
+    const/4 v9, 0x1
+
+    goto/16 :goto_5
 
     :pswitch_5
     const/16 v9, 0x8
@@ -846,7 +853,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     .line 249
     :pswitch_6
@@ -858,15 +865,15 @@
 
     move-object v11, v7
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_7
     move-object v11, v6
 
-    :goto_1
+    :goto_2
     invoke-direct {v9, v12, v11}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_7
     const/4 v9, 0x6
@@ -876,12 +883,12 @@
 
     move-result-object v9
 
-    :goto_2
+    :goto_3
     move-object v11, v9
 
     const/4 v9, 0x1
 
-    :goto_3
+    :goto_4
     const/4 v15, 0x0
 
     goto/16 :goto_5
@@ -892,7 +899,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_1
     const/16 v9, 0xd
@@ -902,7 +909,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_2
     const/16 v9, 0xc
@@ -912,7 +919,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     .line 267
     :sswitch_3
@@ -926,7 +933,7 @@
 
     invoke-direct {v9, v11}, Lorg/telegram/messenger/time/FastDatePrinter$TwentyFourHourField;-><init>(Lorg/telegram/messenger/time/FastDatePrinter$NumberRule;)V
 
-    goto :goto_2
+    goto :goto_3
 
     .line 234
     :sswitch_4
@@ -940,7 +947,7 @@
 
     invoke-direct {v9, v11}, Lorg/telegram/messenger/time/FastDatePrinter$TwelveHourField;-><init>(Lorg/telegram/messenger/time/FastDatePrinter$NumberRule;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_5
     const/4 v9, 0x5
@@ -950,7 +957,7 @@
 
     move-result-object v9
 
-    goto :goto_2
+    goto :goto_3
 
     .line 264
     :sswitch_6
@@ -960,7 +967,7 @@
 
     invoke-direct {v9, v11, v1}, Lorg/telegram/messenger/time/FastDatePrinter$TextField;-><init>(I[Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :sswitch_7
     const/4 v9, 0x1
@@ -970,13 +977,13 @@
     .line 281
     sget-object v11, Lorg/telegram/messenger/time/FastDatePrinter$TimeZoneNumberRule;->INSTANCE_NO_COLON:Lorg/telegram/messenger/time/FastDatePrinter$TimeZoneNumberRule;
 
-    goto :goto_3
+    goto :goto_4
 
     .line 283
     :cond_8
     sget-object v11, Lorg/telegram/messenger/time/FastDatePrinter$TimeZoneNumberRule;->INSTANCE_COLON:Lorg/telegram/messenger/time/FastDatePrinter$TimeZoneNumberRule;
 
-    goto :goto_3
+    goto :goto_4
 
     :sswitch_8
     const/4 v9, 0x1
@@ -986,7 +993,7 @@
 
     move-result-object v11
 
-    goto :goto_3
+    goto :goto_4
 
     :sswitch_9
     const/4 v9, 0x1
@@ -998,7 +1005,7 @@
 
     move-result-object v11
 
-    goto :goto_3
+    goto :goto_4
 
     :sswitch_a
     const/4 v9, 0x1
@@ -1026,7 +1033,7 @@
 
     invoke-direct {v9, v11}, Lorg/telegram/messenger/time/FastDatePrinter$CharacterLiteral;-><init>(C)V
 
-    goto :goto_2
+    goto :goto_3
 
     .line 291
     :cond_9
@@ -1034,7 +1041,7 @@
 
     invoke-direct {v9, v11}, Lorg/telegram/messenger/time/FastDatePrinter$StringLiteral;-><init>(Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_a
     if-lt v14, v11, :cond_b
@@ -1050,7 +1057,11 @@
 
     invoke-direct {v9, v11, v12, v14}, Lorg/telegram/messenger/time/FastDatePrinter$TimeZoneNameRule;-><init>(Ljava/util/TimeZone;Ljava/util/Locale;I)V
 
-    goto :goto_2
+    move-object v11, v9
+
+    move v9, v14
+
+    goto :goto_4
 
     .line 276
     :cond_b
@@ -1064,7 +1075,7 @@
 
     invoke-direct {v9, v11, v12, v15}, Lorg/telegram/messenger/time/FastDatePrinter$TimeZoneNameRule;-><init>(Ljava/util/TimeZone;Ljava/util/Locale;I)V
 
-    goto :goto_4
+    goto/16 :goto_1
 
     :cond_c
     const/4 v9, 0x2
@@ -1076,22 +1087,17 @@
     .line 203
     sget-object v9, Lorg/telegram/messenger/time/FastDatePrinter$TwoDigitYearField;->INSTANCE:Lorg/telegram/messenger/time/FastDatePrinter$TwoDigitYearField;
 
-    :goto_4
-    move-object v11, v9
-
-    const/4 v9, 0x1
-
-    goto :goto_5
+    goto/16 :goto_1
 
     :cond_d
-    const/4 v9, 0x1
-
     if-ge v14, v11, :cond_e
 
-    const/4 v14, 0x4
+    move v14, v11
+
+    :cond_e
+    const/4 v9, 0x1
 
     .line 205
-    :cond_e
     invoke-virtual {v0, v9, v14}, Lorg/telegram/messenger/time/FastDatePrinter;->selectNumberRule(II)Lorg/telegram/messenger/time/FastDatePrinter$NumberRule;
 
     move-result-object v11
@@ -1102,13 +1108,15 @@
 
     add-int/lit8 v12, v13, 0x1
 
-    const/4 v11, 0x0
+    move v11, v15
 
     goto/16 :goto_0
 
     :cond_f
     :goto_6
     return-object v2
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -1211,7 +1219,7 @@
     .line 334
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 v9, 0x0
+    move v9, v1
 
     :goto_1
     if-ge v2, v3, :cond_8

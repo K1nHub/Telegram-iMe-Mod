@@ -77,7 +77,7 @@
     :cond_0
     array-length v2, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v2, :cond_2
@@ -1582,7 +1582,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const-string v2, "geofenceRequestIds can\'t be null nor empty."

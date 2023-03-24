@@ -24,7 +24,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 12
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 16
     sget-object v0, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData$Companion$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -58,14 +58,18 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_1
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x3
+
     if-ne p1, v0, :cond_0
 
-    .line 16
-    sget-object p1, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->TON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+    .line 19
+    sget-object p1, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->TRON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
     goto :goto_0
 
@@ -76,8 +80,14 @@
 
     throw p1
 
-    .line 15
+    .line 18
     :cond_1
+    sget-object p1, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->TON:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
+
+    goto :goto_0
+
+    .line 17
+    :cond_2
     sget-object p1, Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;->EVM:Lcom/smedialink/model/wallet/crypto/BlockchainAddressData;
 
     :goto_0

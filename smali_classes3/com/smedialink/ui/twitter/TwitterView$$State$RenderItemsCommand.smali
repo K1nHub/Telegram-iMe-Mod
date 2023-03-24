@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 243
+    .line 274
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "renderItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 245
+    .line 276
     iput-object p2, p0, Lcom/smedialink/ui/twitter/TwitterView$$State$RenderItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/smedialink/ui/twitter/TwitterView;)V
     .locals 1
 
-    .line 250
+    .line 281
     iget-object v0, p0, Lcom/smedialink/ui/twitter/TwitterView$$State$RenderItemsCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/twitter/TwitterView;->renderItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 239
+    .line 270
     check-cast p1, Lcom/smedialink/ui/twitter/TwitterView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/twitter/TwitterView$$State$RenderItemsCommand;->apply(Lcom/smedialink/ui/twitter/TwitterView;)V

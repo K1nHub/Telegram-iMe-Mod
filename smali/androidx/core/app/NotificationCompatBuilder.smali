@@ -161,12 +161,12 @@
 
     if-eqz v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v7
 
     .line 83
     :goto_1
@@ -180,12 +180,12 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_2
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v7
 
     .line 84
     :goto_2
@@ -201,12 +201,12 @@
 
     if-eqz v4, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_3
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v7
 
     .line 85
     :goto_3
@@ -264,12 +264,12 @@
 
     if-eqz v9, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v6
 
     goto :goto_4
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v7
 
     .line 92
     :goto_4
@@ -696,7 +696,7 @@
 
     invoke-direct {v9}, Landroid/os/Bundle;-><init>()V
 
-    const/4 v10, 0x0
+    move v10, v7
 
     .line 184
     :goto_9
@@ -1144,7 +1144,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 365
     :goto_1

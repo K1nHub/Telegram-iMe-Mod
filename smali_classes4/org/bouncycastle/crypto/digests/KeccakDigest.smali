@@ -1130,7 +1130,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     iget-object v3, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->state:[J
@@ -1224,7 +1224,7 @@
 
     and-int/lit8 v0, v0, 0x3f
 
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_0
     if-ge v4, v1, :cond_1
@@ -1325,7 +1325,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :cond_0
     :goto_0
@@ -1373,7 +1373,7 @@
 
     invoke-direct {p0, v0, v2}, Lorg/bouncycastle/crypto/digests/KeccakDigest;->KeccakAbsorb([BI)V
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 
@@ -1558,9 +1558,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_3
+    if-nez v2, :cond_3
 
     :goto_0
     cmp-long v2, v4, p3
@@ -1590,9 +1590,9 @@
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    iget-object v2, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
+    iget-object v3, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->dataQueue:[B
 
     iget v6, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->rate:I
 
@@ -1604,21 +1604,21 @@
 
     div-long v7, v4, v0
 
-    long-to-int v8, v7
+    long-to-int v7, v7
 
-    add-int/2addr v8, p2
+    add-int/2addr v7, p2
 
-    div-int/lit8 v7, v3, 0x8
+    div-int/lit8 v8, v2, 0x8
 
-    invoke-static {v2, v6, p1, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v3, v6, p1, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    iget v2, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+    iget v3, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v3, v2
 
-    iput v2, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
+    iput v3, p0, Lorg/bouncycastle/crypto/digests/KeccakDigest;->bitsInQueue:I
 
-    int-to-long v2, v3
+    int-to-long v2, v2
 
     add-long/2addr v4, v2
 

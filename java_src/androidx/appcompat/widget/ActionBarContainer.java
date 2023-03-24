@@ -289,9 +289,8 @@ public class ActionBarContainer extends FrameLayout {
             Drawable drawable2 = this.mSplitBackground;
             if (drawable2 != null) {
                 drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            } else {
-                z2 = false;
             }
+            z2 = z3;
         } else {
             if (this.mBackground != null) {
                 if (this.mActionBarView.getVisibility() == 0) {
@@ -307,11 +306,10 @@ public class ActionBarContainer extends FrameLayout {
                 z3 = true;
             }
             this.mIsStacked = z4;
-            if (!z4 || (drawable = this.mStackedBackground) == null) {
-                z2 = z3;
-            } else {
+            if (z4 && (drawable = this.mStackedBackground) != null) {
                 drawable.setBounds(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
             }
+            z2 = z3;
         }
         if (z2) {
             invalidate();

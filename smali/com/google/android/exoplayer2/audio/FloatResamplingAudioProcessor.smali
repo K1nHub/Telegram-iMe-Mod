@@ -41,7 +41,7 @@
 
     const-wide v2, 0x3e00000000200000L    # 4.656612875245797E-10
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float p0, v0
 

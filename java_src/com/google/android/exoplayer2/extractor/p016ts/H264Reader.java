@@ -246,14 +246,14 @@ public final class H264Reader implements ElementaryStreamReader {
         /* JADX WARN: Removed duplicated region for block: B:56:0x0106  */
         /* JADX WARN: Removed duplicated region for block: B:60:0x0118  */
         /* JADX WARN: Removed duplicated region for block: B:63:0x011e  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x014e  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x0152  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public void appendToNalUnit(byte[] r24, int r25, int r26) {
             /*
-                Method dump skipped, instructions count: 408
+                Method dump skipped, instructions count: 414
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.extractor.p016ts.H264Reader.SampleReader.appendToNalUnit(byte[], int, int):void");

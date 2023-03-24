@@ -36,9 +36,9 @@
 
     move-result p2
 
-    const/4 v0, 0x0
-
     cmpg-float p2, p2, p1
+
+    const/4 v0, 0x0
 
     if-gtz p2, :cond_1
 

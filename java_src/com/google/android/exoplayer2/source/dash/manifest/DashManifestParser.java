@@ -77,17 +77,17 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:78:0x01bf  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x01e6 A[LOOP:0: B:25:0x00a4->B:82:0x01e6, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x01a2 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01e0  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x01e7 A[LOOP:0: B:25:0x00a4->B:82:0x01e7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x01a3 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     protected com.google.android.exoplayer2.source.dash.manifest.DashManifest parseMediaPresentationDescription(org.xmlpull.v1.XmlPullParser r47, android.net.Uri r48) throws org.xmlpull.v1.XmlPullParserException, java.io.IOException {
         /*
-            Method dump skipped, instructions count: 499
+            Method dump skipped, instructions count: 501
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseMediaPresentationDescription(org.xmlpull.v1.XmlPullParser, android.net.Uri):com.google.android.exoplayer2.source.dash.manifest.DashManifest");
@@ -106,11 +106,11 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
     }
 
     protected ServiceDescriptionElement parseServiceDescription(XmlPullParser xmlPullParser) throws XmlPullParserException, IOException {
+        float f = -3.4028235E38f;
+        float f2 = -3.4028235E38f;
         long j = -9223372036854775807L;
         long j2 = -9223372036854775807L;
         long j3 = -9223372036854775807L;
-        float f = -3.4028235E38f;
-        float f2 = -3.4028235E38f;
         while (true) {
             xmlPullParser.next();
             if (XmlPullParserUtil.isStartTag(xmlPullParser, "Latency")) {
@@ -157,10 +157,10 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         ArrayList arrayList5 = new ArrayList();
         ArrayList arrayList6 = new ArrayList();
         long j9 = j2;
+        boolean z2 = false;
         long j10 = -9223372036854775807L;
         SegmentBase.SingleSegmentBase singleSegmentBase = null;
         Descriptor descriptor = null;
-        boolean z2 = false;
         while (true) {
             xmlPullParser.next();
             if (XmlPullParserUtil.isStartTag(xmlPullParser2, "BaseURL")) {
@@ -247,7 +247,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         return new Period(str, j, list, list2, descriptor);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:71:0x030d A[LOOP:0: B:3:0x007c->B:71:0x030d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x030e A[LOOP:0: B:3:0x007c->B:71:0x030e, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:72:0x02ce A[EDGE_INSN: B:72:0x02ce->B:65:0x02ce ?: BREAK  , SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -255,7 +255,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
     */
     protected com.google.android.exoplayer2.source.dash.manifest.AdaptationSet parseAdaptationSet(org.xmlpull.v1.XmlPullParser r55, java.util.List<com.google.android.exoplayer2.source.dash.manifest.BaseUrl> r56, com.google.android.exoplayer2.source.dash.manifest.SegmentBase r57, long r58, long r60, long r62, long r64, long r66, boolean r68) throws org.xmlpull.v1.XmlPullParserException, java.io.IOException {
         /*
-            Method dump skipped, instructions count: 809
+            Method dump skipped, instructions count: 810
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseAdaptationSet(org.xmlpull.v1.XmlPullParser, java.util.List, com.google.android.exoplayer2.source.dash.manifest.SegmentBase, long, long, long, long, long, boolean):com.google.android.exoplayer2.source.dash.manifest.AdaptationSet");
@@ -599,9 +599,9 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
     protected List<SegmentBase.SegmentTimelineElement> parseSegmentTimeline(XmlPullParser xmlPullParser, long j, long j2) throws XmlPullParserException, IOException {
         ArrayList arrayList = new ArrayList();
         long j3 = 0;
-        long j4 = -9223372036854775807L;
         boolean z = false;
         int i = 0;
+        long j4 = -9223372036854775807L;
         do {
             xmlPullParser.next();
             if (XmlPullParserUtil.isStartTag(xmlPullParser, "S")) {
@@ -614,8 +614,8 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
                 }
                 j4 = parseLong(xmlPullParser, "d", C0468C.TIME_UNSET);
                 i = parseInt(xmlPullParser, "r", 0);
-                j3 = parseLong;
                 z = true;
+                j3 = parseLong;
             } else {
                 maybeSkipTag(xmlPullParser);
             }

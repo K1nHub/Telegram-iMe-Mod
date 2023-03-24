@@ -206,7 +206,7 @@
 
     const v4, 0x3e991687    # 0.299f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     aget v4, v9, v2
 
@@ -219,7 +219,7 @@
 
     const v5, 0x3f1645a2    # 0.587f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -234,7 +234,7 @@
 
     const v5, 0x3de978d5    # 0.114f
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 

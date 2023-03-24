@@ -40,14 +40,14 @@
 
     const/high16 v1, 0x447a0000    # 1000.0f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     float-to-int p2, p2
 
     .line 1286
     iput p2, p0, Lio/grpc/internal/RetriableStream$Throttle;->tokenRatio:I
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
@@ -106,7 +106,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0

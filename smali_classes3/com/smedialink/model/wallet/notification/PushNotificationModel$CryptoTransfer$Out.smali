@@ -453,7 +453,7 @@
 .end method
 
 .method public getMessage()Ljava/lang/String;
-    .locals 8
+    .locals 9
 
     .line 238
     sget-object v0, Lcom/smedialink/storage/data/network/model/response/base/Status;->Companion:Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;
@@ -486,15 +486,15 @@
 
     const-string v0, ""
 
-    goto :goto_0
+    goto/16 :goto_1
 
-    .line 245
+    .line 249
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_crypto_transfer_out_failed_description:I
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 246
+    .line 250
     new-instance v5, Ljava/math/BigDecimal;
 
     iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
@@ -519,7 +519,7 @@
 
     aput-object v5, v1, v4
 
-    .line 247
+    .line 251
     iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
     invoke-virtual {v6, v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
@@ -532,7 +532,7 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v5, v4}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v5, v4}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -542,73 +542,87 @@
 
     aput-object v3, v1, v2
 
-    .line 244
-    invoke-virtual {p0, v0, v1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 248
+    invoke-virtual {p0, v0, v1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 240
     :cond_1
-    sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_crypto_transfer_out_success_description:I
+    sget-object v0, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
+
+    iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+
+    move-result-object v5
+
+    .line 242
+    sget v6, Lorg/telegram/messenger/R$string;->push_notification_wallet_crypto_transfer_out_success_description:I
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 241
-    new-instance v5, Ljava/math/BigDecimal;
+    .line 243
+    new-instance v7, Ljava/math/BigDecimal;
 
-    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
+    iget-object v8, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
 
-    invoke-direct {v5, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v7, v8}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    sget-object v6, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
+    iget-object v8, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
-    iget-object v7, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
+    invoke-virtual {v0, v8}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 
-    invoke-virtual {v6, v7}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    move-result-object v0
 
-    move-result-object v7
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
 
-    invoke-virtual {v7}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    move-result v0
 
-    move-result v7
+    invoke-static {v7, v0}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
-    invoke-static {v5, v7}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v5
+    aput-object v0, v1, v4
 
-    aput-object v5, v1, v4
+    .line 244
+    invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->isUnknown()Z
 
-    .line 242
-    iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
+    move-result v0
 
-    invoke-virtual {v6, v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    if-eqz v0, :cond_2
 
-    move-result-object v5
+    iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
+    goto :goto_0
+
+    :cond_2
     invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
 
-    move-result v5
+    move-result v0
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v5, v4}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v1, v3
-
-    iget-object v3, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->toWalletAddress:Ljava/lang/String;
-
-    aput-object v3, v1, v2
-
-    .line 239
-    invoke-virtual {p0, v0, v1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v4}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     :goto_0
+    aput-object v0, v1, v3
+
+    .line 245
+    iget-object v0, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->toWalletAddress:Ljava/lang/String;
+
+    aput-object v0, v1, v2
+
+    .line 241
+    invoke-virtual {p0, v6, v1}, Lcom/smedialink/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_1
     return-object v0
 .end method
 

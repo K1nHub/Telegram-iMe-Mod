@@ -110,12 +110,12 @@
 
     if-eqz v5, :cond_0
 
-    const/4 v10, 0x5
+    move v10, v6
 
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x3
+    move v10, v7
 
     :goto_0
     const/16 v11, 0xc
@@ -141,12 +141,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x5
+    move v2, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x3
+    move v2, v7
 
     :goto_1
     invoke-virtual {v3, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -194,24 +194,24 @@
 
     if-eqz v9, :cond_2
 
-    const/16 v13, 0xc
+    move/from16 v13, v17
 
     goto :goto_2
 
     :cond_2
-    const/16 v13, 0x4a
+    move/from16 v13, v18
 
     :goto_2
     const/16 v14, 0xc
 
     if-eqz v9, :cond_3
 
-    const/16 v15, 0x4a
+    move/from16 v15, v18
 
     goto :goto_3
 
     :cond_3
-    const/16 v15, 0xc
+    move/from16 v15, v17
 
     :goto_3
     const/16 v16, 0x0
@@ -227,12 +227,12 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v3, 0x5
+    move v3, v6
 
     goto :goto_4
 
     :cond_4
-    const/4 v3, 0x3
+    move v3, v7
 
     :goto_4
     invoke-virtual {v4, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -265,24 +265,24 @@
 
     if-eqz v3, :cond_5
 
-    const/16 v12, 0xc
+    move/from16 v12, v17
 
     goto :goto_5
 
     :cond_5
-    const/16 v12, 0x4a
+    move/from16 v12, v18
 
     :goto_5
     const/16 v13, 0x24
 
     if-eqz v3, :cond_6
 
-    const/16 v14, 0x4a
+    move/from16 v14, v18
 
     goto :goto_6
 
     :cond_6
-    const/16 v14, 0xc
+    move/from16 v14, v17
 
     :goto_6
     const/4 v15, 0x0
@@ -329,12 +329,12 @@
 
     if-eqz v5, :cond_7
 
-    const/4 v5, 0x5
+    move v5, v6
 
     goto :goto_7
 
     :cond_7
-    const/4 v5, 0x3
+    move v5, v7
 
     :goto_7
     or-int/lit8 v5, v5, 0x10
@@ -405,36 +405,36 @@
 
     if-eqz v9, :cond_9
 
-    const/4 v13, 0x5
+    move v13, v6
 
     goto :goto_9
 
     :cond_9
-    const/4 v13, 0x3
+    move v13, v7
 
     :goto_9
     const/16 v14, 0x49
 
     if-eqz v9, :cond_a
 
-    const/4 v15, 0x0
+    move v15, v10
 
     goto :goto_a
 
     :cond_a
-    const/16 v15, 0x49
+    move v15, v14
 
     :goto_a
     const/16 v16, 0x3e
 
     if-eqz v9, :cond_b
 
-    const/16 v9, 0x49
+    move v9, v14
 
     goto :goto_b
 
     :cond_b
-    const/4 v9, 0x0
+    move v9, v10
 
     :goto_b
     const/16 v17, 0x0
@@ -509,12 +509,12 @@
 
     if-eqz v11, :cond_c
 
-    const/4 v11, 0x5
+    move v11, v6
 
     goto :goto_c
 
     :cond_c
-    const/4 v11, 0x3
+    move v11, v7
 
     :goto_c
     or-int/lit8 v11, v11, 0x10
@@ -582,7 +582,7 @@
     goto :goto_d
 
     :cond_d
-    const/4 v6, 0x3
+    move v6, v7
 
     :goto_d
     invoke-direct {v1, v2, v3, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
@@ -603,7 +603,7 @@
 
     if-eqz v2, :cond_e
 
-    const/4 v2, 0x0
+    move v2, v10
 
     goto :goto_e
 
@@ -736,8 +736,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -747,9 +745,9 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0

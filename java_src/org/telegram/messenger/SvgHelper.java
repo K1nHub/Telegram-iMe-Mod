@@ -45,22 +45,22 @@ public class SvgHelper {
     public static class Line {
 
         /* renamed from: x1 */
-        float f1467x1;
+        float f1468x1;
 
         /* renamed from: x2 */
-        float f1468x2;
+        float f1469x2;
 
         /* renamed from: y1 */
-        float f1469y1;
+        float f1470y1;
 
         /* renamed from: y2 */
-        float f1470y2;
+        float f1471y2;
 
         public Line(float f, float f2, float f3, float f4) {
-            this.f1467x1 = f;
-            this.f1469y1 = f2;
-            this.f1468x2 = f3;
-            this.f1470y2 = f4;
+            this.f1468x1 = f;
+            this.f1470y1 = f2;
+            this.f1469x2 = f3;
+            this.f1471y2 = f4;
         }
     }
 
@@ -69,14 +69,14 @@ public class SvgHelper {
         float rad;
 
         /* renamed from: x1 */
-        float f1465x1;
+        float f1466x1;
 
         /* renamed from: y1 */
-        float f1466y1;
+        float f1467y1;
 
         public Circle(float f, float f2, float f3) {
-            this.f1465x1 = f;
-            this.f1466y1 = f2;
+            this.f1466x1 = f;
+            this.f1467y1 = f2;
             this.rad = f3;
         }
     }
@@ -97,11 +97,11 @@ public class SvgHelper {
         RectF rect;
 
         /* renamed from: rx */
-        float f1473rx;
+        float f1474rx;
 
         public RoundRect(RectF rectF, float f) {
             this.rect = rectF;
-            this.f1473rx = f;
+            this.f1474rx = f;
         }
     }
 
@@ -277,16 +277,16 @@ public class SvgHelper {
                         canvas.drawRect((RectF) obj, paint);
                     } else if (obj instanceof Line) {
                         Line line = (Line) obj;
-                        canvas.drawLine(line.f1467x1, line.f1469y1, line.f1468x2, line.f1470y2, paint);
+                        canvas.drawLine(line.f1468x1, line.f1470y1, line.f1469x2, line.f1471y2, paint);
                     } else if (obj instanceof Circle) {
                         Circle circle = (Circle) obj;
-                        canvas.drawCircle(circle.f1465x1, circle.f1466y1, circle.rad, paint);
+                        canvas.drawCircle(circle.f1466x1, circle.f1467y1, circle.rad, paint);
                     } else if (obj instanceof Oval) {
                         canvas.drawOval(((Oval) obj).rect, paint);
                     } else if (obj instanceof RoundRect) {
                         RoundRect roundRect = (RoundRect) obj;
                         RectF rectF = roundRect.rect;
-                        float f10 = roundRect.f1473rx;
+                        float f10 = roundRect.f1474rx;
                         canvas.drawRoundRect(rectF, f10, f10, paint);
                     }
                     paint.setAlpha(alpha);
@@ -682,7 +682,7 @@ public class SvgHelper {
                     f2 = ((Float) parseNumbers6.numbers.get(1)).floatValue();
                     f = ((Float) parseNumbers6.numbers.get(2)).floatValue();
                 } else {
-                    f = BitmapDescriptorFactory.HUE_RED;
+                    f = 0.0f;
                 }
                 Matrix matrix6 = new Matrix();
                 matrix6.postTranslate(f2, f);
@@ -703,20 +703,20 @@ public class SvgHelper {
     /* JADX WARN: Removed duplicated region for block: B:44:0x0081  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00f0  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0153  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x018d  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0191 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x018f A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static android.graphics.Path doPath(java.lang.String r23) {
         /*
-            Method dump skipped, instructions count: 500
+            Method dump skipped, instructions count: 498
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SvgHelper.doPath(java.lang.String):android.graphics.Path");
@@ -1560,22 +1560,22 @@ public class SvgHelper {
         private char current;
 
         /* renamed from: n */
-        private int f1471n;
+        private int f1472n;
         public int pos;
 
         /* renamed from: s */
-        private CharSequence f1472s;
+        private CharSequence f1473s;
 
         public ParserHelper(CharSequence charSequence, int i) {
-            this.f1472s = charSequence;
+            this.f1473s = charSequence;
             this.pos = i;
-            this.f1471n = charSequence.length();
+            this.f1472n = charSequence.length();
             this.current = charSequence.charAt(i);
         }
 
         private char read() {
             int i = this.pos;
-            int i2 = this.f1471n;
+            int i2 = this.f1472n;
             if (i < i2) {
                 this.pos = i + 1;
             }
@@ -1583,13 +1583,13 @@ public class SvgHelper {
             if (i3 == i2) {
                 return (char) 0;
             }
-            return this.f1472s.charAt(i3);
+            return this.f1473s.charAt(i3);
         }
 
         public void skipWhitespace() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1471n || !Character.isWhitespace(this.f1472s.charAt(i))) {
+                if (i >= this.f1472n || !Character.isWhitespace(this.f1473s.charAt(i))) {
                     return;
                 }
                 advance();
@@ -1599,10 +1599,10 @@ public class SvgHelper {
         public void skipNumberSeparator() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1471n) {
+                if (i >= this.f1472n) {
                     return;
                 }
-                char charAt = this.f1472s.charAt(i);
+                char charAt = this.f1473s.charAt(i);
                 if (charAt != '\t' && charAt != '\n' && charAt != ' ' && charAt != ',') {
                     return;
                 }
@@ -1617,22 +1617,22 @@ public class SvgHelper {
         /* JADX WARN: Removed duplicated region for block: B:11:0x0025 A[RETURN] */
         /* JADX WARN: Removed duplicated region for block: B:13:0x0028 A[LOOP:0: B:13:0x0028->B:17:0x0034, LOOP_START] */
         /* JADX WARN: Removed duplicated region for block: B:19:0x0038  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x0058  */
-        /* JADX WARN: Removed duplicated region for block: B:31:0x0060  */
-        /* JADX WARN: Removed duplicated region for block: B:47:0x0099 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x00a4  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x00b7  */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x00c1 A[LOOP:3: B:63:0x00c1->B:64:0x00c7, LOOP_START] */
-        /* JADX WARN: Removed duplicated region for block: B:66:0x00cb  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x00e4  */
-        /* JADX WARN: Removed duplicated region for block: B:77:0x00e8  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
+        /* JADX WARN: Removed duplicated region for block: B:30:0x0061  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x009a A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x00a5  */
+        /* JADX WARN: Removed duplicated region for block: B:57:0x00b8  */
+        /* JADX WARN: Removed duplicated region for block: B:62:0x00c2 A[LOOP:3: B:62:0x00c2->B:63:0x00c8, LOOP_START] */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x00cc  */
+        /* JADX WARN: Removed duplicated region for block: B:73:0x00e5  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x00e9  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         public float parseFloat() {
             /*
-                Method dump skipped, instructions count: 506
+                Method dump skipped, instructions count: 508
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SvgHelper.ParserHelper.parseFloat():float");

@@ -82,7 +82,7 @@
 .end method
 
 .method private static doSegmentsOverlap(Ljava/util/List;)Z
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,7 +115,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v4, 0x1
+    move v4, v0
 
     .line 192
     :goto_0
@@ -134,9 +134,9 @@
 
     iget-wide v5, v5, Lcom/google/android/exoplayer2/metadata/mp4/SlowMotionData$Segment;->startTimeMs:J
 
-    cmp-long v7, v5, v2
+    cmp-long v2, v5, v2
 
-    if-gez v7, :cond_1
+    if-gez v2, :cond_1
 
     return v0
 

@@ -429,8 +429,8 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
             }
             Objects.requireNonNull(cancellation);
         }
-        boolean z2 = false;
         AbstractFuture<V> abstractFuture = this;
+        boolean z2 = false;
         while (true) {
             if (ATOMIC_HELPER.casValue(abstractFuture, obj, cancellation)) {
                 if (z) {

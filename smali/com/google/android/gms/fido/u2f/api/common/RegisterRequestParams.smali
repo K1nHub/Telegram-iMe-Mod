@@ -166,12 +166,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, p1
 
     :goto_0
     const-string v1, "empty list of register requests is provided"
@@ -227,13 +227,13 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, p1
 
     goto :goto_3
 
     :cond_4
     :goto_2
-    const/4 v1, 0x1
+    move v1, p2
 
     :goto_3
     const-string v2, "register request has null appId and no request appId is provided"
@@ -293,13 +293,13 @@
     goto :goto_5
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, p1
 
     goto :goto_6
 
     :cond_8
     :goto_5
-    const/4 v0, 0x1
+    move v0, p2
 
     :goto_6
     const-string v1, "registered key has null appId and no request appId is provided"
@@ -341,7 +341,7 @@
     if-gt p3, p4, :cond_b
 
     :cond_a
-    const/4 p1, 0x1
+    move p1, p2
 
     :cond_b
     const-string p2, "Display Hint cannot be longer than 80 characters"

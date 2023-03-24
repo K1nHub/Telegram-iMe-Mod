@@ -338,7 +338,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -369,7 +369,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, -0x1
+    move v2, v4
 
     .line 44
     :goto_1
@@ -409,7 +409,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, -0x1
+    move v1, v4
 
     :goto_3
     if-eq v1, v4, :cond_4

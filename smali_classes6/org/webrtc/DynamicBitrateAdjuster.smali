@@ -66,7 +66,7 @@
 
     move-result-wide v2
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-int v0, v0
 
@@ -127,7 +127,7 @@
 
     const-wide/high16 v2, 0x4008000000000000L    # 3.0
 
-    mul-double v2, v2, v0
+    mul-double/2addr v2, v0
 
     .line 60
     invoke-static {v6, v7, v2, v3}, Ljava/lang/Math;->min(DD)D
@@ -157,9 +157,9 @@
     return-void
 
     :cond_1
-    const-wide/high16 v4, 0x3fe0000000000000L    # 0.5
-
     cmpl-double p1, v2, v0
+
+    const-wide/high16 v4, 0x3fe0000000000000L    # 0.5
 
     if-lez p1, :cond_2
 
@@ -249,7 +249,7 @@
 
     int-to-double v3, p1
 
-    mul-double v1, v1, v3
+    mul-double/2addr v1, v3
 
     int-to-double v3, v0
 

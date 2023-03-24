@@ -1838,19 +1838,19 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
 
     private Player.PositionInfo getPreviousPositionInfo(int i, PlaybackInfo playbackInfo, int i2) {
         int i3;
+        int i4;
         Object obj;
         MediaItem mediaItem;
         Object obj2;
-        int i4;
         long j;
         long requestedContentPositionUs;
         Timeline.Period period = new Timeline.Period();
         if (playbackInfo.timeline.isEmpty()) {
             i3 = i2;
+            i4 = -1;
             obj = null;
             mediaItem = null;
             obj2 = null;
-            i4 = -1;
         } else {
             Object obj3 = playbackInfo.periodId.periodUid;
             playbackInfo.timeline.getPeriodByUid(obj3, period);
@@ -1888,15 +1888,15 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
     }
 
     private Player.PositionInfo getPositionInfo(long j) {
+        int i;
         MediaItem mediaItem;
         Object obj;
-        int i;
         int currentMediaItemIndex = getCurrentMediaItemIndex();
         Object obj2 = null;
         if (this.playbackInfo.timeline.isEmpty()) {
+            i = -1;
             mediaItem = null;
             obj = null;
-            i = -1;
         } else {
             PlaybackInfo playbackInfo = this.playbackInfo;
             Object obj3 = playbackInfo.periodId.periodUid;
@@ -2004,7 +2004,10 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         }
         PlaybackInfo copyWithPlaybackState = maskTimelineAndPosition.copyWithPlaybackState(i3);
         this.internalPlayer.setMediaSources(addMediaSourceHolders, i2, Util.msToUs(j2), this.shuffleOrder);
-        updatePlaybackInfo(copyWithPlaybackState, 0, 1, false, (this.playbackInfo.periodId.periodUid.equals(copyWithPlaybackState.periodId.periodUid) || this.playbackInfo.timeline.isEmpty()) ? false : false, 4, getCurrentPositionUsInternal(copyWithPlaybackState), -1, false);
+        if (this.playbackInfo.periodId.periodUid.equals(copyWithPlaybackState.periodId.periodUid) || this.playbackInfo.timeline.isEmpty()) {
+            z2 = false;
+        }
+        updatePlaybackInfo(copyWithPlaybackState, 0, 1, false, z2, 4, getCurrentPositionUsInternal(copyWithPlaybackState), -1, false);
     }
 
     private List<MediaSourceList.MediaSourceHolder> addMediaSourceHolders(int i, List<MediaSource> list) {
@@ -2147,7 +2150,11 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
     private PlayerMessage createMessageInternal(PlayerMessage.Target target) {
         int currentWindowIndexInternal = getCurrentWindowIndexInternal();
         ExoPlayerImplInternal exoPlayerImplInternal = this.internalPlayer;
-        return new PlayerMessage(exoPlayerImplInternal, target, this.playbackInfo.timeline, currentWindowIndexInternal == -1 ? 0 : currentWindowIndexInternal, this.clock, exoPlayerImplInternal.getPlaybackLooper());
+        Timeline timeline = this.playbackInfo.timeline;
+        if (currentWindowIndexInternal == -1) {
+            currentWindowIndexInternal = 0;
+        }
+        return new PlayerMessage(exoPlayerImplInternal, target, timeline, currentWindowIndexInternal, this.clock, exoPlayerImplInternal.getPlaybackLooper());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2287,7 +2294,12 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         boolean z = true;
         if (playbackState != 1) {
             if (playbackState == 2 || playbackState == 3) {
-                this.wakeLockManager.setStayAwake((!getPlayWhenReady() || experimentalIsSleepingForOffload()) ? false : false);
+                boolean experimentalIsSleepingForOffload = experimentalIsSleepingForOffload();
+                WakeLockManager wakeLockManager = this.wakeLockManager;
+                if (!getPlayWhenReady() || experimentalIsSleepingForOffload) {
+                    z = false;
+                }
+                wakeLockManager.setStayAwake(z);
                 this.wifiLockManager.setStayAwake(getPlayWhenReady());
                 return;
             } else if (playbackState != 4) {

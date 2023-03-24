@@ -277,7 +277,7 @@
 
     add-int/2addr v0, v1
 
-    mul-int/lit8 v0, v0, 0x25
+    mul-int/2addr v0, v1
 
     .line 176
     iget-object v1, p0, Lcom/google/firebase/firestore/model/BasePath;->segments:Ljava/util/List;
@@ -340,7 +340,7 @@
     return v3
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 142
     :goto_0
@@ -400,7 +400,7 @@
     return v2
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 125
     :goto_0
@@ -470,12 +470,12 @@
 
     if-lt v0, p1, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x2

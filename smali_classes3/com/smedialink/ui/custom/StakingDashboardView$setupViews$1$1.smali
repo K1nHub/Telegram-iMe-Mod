@@ -59,7 +59,7 @@
 .method public final invoke()V
     .locals 1
 
-    .line 188
+    .line 187
     iget-object v0, p0, Lcom/smedialink/ui/custom/StakingDashboardView$setupViews$1$1;->this$0:Lcom/smedialink/ui/custom/StakingDashboardView;
 
     invoke-static {v0}, Lcom/smedialink/ui/custom/StakingDashboardView;->access$getOnCalculatorClick$p(Lcom/smedialink/ui/custom/StakingDashboardView;)Lorg/fork/utils/Callbacks$Callback;

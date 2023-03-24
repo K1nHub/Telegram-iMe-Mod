@@ -327,10 +327,10 @@
 
     and-long/2addr v0, v6
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 176
-    sput v1, Lcom/google/android/gms/internal/vision/zzma;->zzw:I
+    sput v0, Lcom/google/android/gms/internal/vision/zzma;->zzw:I
 
     .line 177
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
@@ -715,9 +715,9 @@
 
     move-result v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    not-int p1, p2
+    not-int p1, p1
 
     and-int/lit8 p1, p1, 0x3
 
@@ -790,9 +790,9 @@
 
     move-result v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int/lit8 p1, p2, 0x3
+    and-int/lit8 p1, p1, 0x3
 
     shl-int/lit8 p1, p1, 0x3
 
@@ -1658,9 +1658,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     int-to-byte p0, p0
 
@@ -1687,9 +1687,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     int-to-byte p0, p0
 

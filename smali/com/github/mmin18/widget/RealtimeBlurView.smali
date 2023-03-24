@@ -512,14 +512,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
-
-    :catchall_0
-    nop
-
     .line 79
+    :catchall_0
     :cond_0
-    :goto_0
     sget v0, Lcom/github/mmin18/widget/RealtimeBlurView;->BLUR_IMPL:I
 
     const-string v4, "androidx.renderscript.RenderScript"
@@ -570,14 +565,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_1
-
-    :catchall_1
-    nop
-
     .line 94
+    :catchall_1
     :cond_1
-    :goto_1
     sget v0, Lcom/github/mmin18/widget/RealtimeBlurView;->BLUR_IMPL:I
 
     const/4 v6, 0x2
@@ -626,14 +616,9 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    goto :goto_2
-
-    :catchall_2
-    nop
-
     .line 109
+    :catchall_2
     :cond_2
-    :goto_2
     sget v0, Lcom/github/mmin18/widget/RealtimeBlurView;->BLUR_IMPL:I
 
     if-nez v0, :cond_3
@@ -798,22 +783,22 @@
 
     const/4 v1, 0x0
 
+    cmpl-float v1, v0, v1
+
     const/4 v2, 0x0
 
-    cmpl-float v2, v0, v2
-
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
     .line 171
     invoke-virtual {p0}, Lcom/github/mmin18/widget/RealtimeBlurView;->release()V
 
-    return v1
+    return v2
 
     .line 175
     :cond_0
-    iget v2, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mDownsampleFactor:F
+    iget v1, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mDownsampleFactor:F
 
-    div-float/2addr v0, v2
+    div-float/2addr v0, v1
 
     const/high16 v3, 0x41c80000    # 25.0f
 
@@ -821,11 +806,11 @@
 
     if-lez v4, :cond_1
 
-    mul-float v2, v2, v0
+    mul-float/2addr v1, v0
 
-    div-float/2addr v2, v3
+    div-float/2addr v1, v3
 
-    const/high16 v0, 0x41c80000    # 25.0f
+    move v0, v3
 
     .line 182
     :cond_1
@@ -840,7 +825,7 @@
 
     int-to-float v3, v3
 
-    div-float/2addr v3, v2
+    div-float/2addr v3, v1
 
     float-to-int v3, v3
 
@@ -853,14 +838,14 @@
 
     int-to-float v4, v4
 
-    div-float/2addr v4, v2
+    div-float/2addr v4, v1
 
-    float-to-int v2, v4
+    float-to-int v1, v4
 
     .line 186
-    invoke-static {v5, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v5, v1}, Ljava/lang/Math;->max(II)I
 
-    move-result v2
+    move-result v1
 
     .line 188
     iget-boolean v4, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mDirty:Z
@@ -888,7 +873,7 @@
 
     move-result v6
 
-    if-eq v6, v2, :cond_5
+    if-eq v6, v1, :cond_5
 
     .line 194
     :cond_2
@@ -898,7 +883,7 @@
     :try_start_0
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v3, v2, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v3, v1, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
@@ -912,7 +897,7 @@
     .line 215
     invoke-virtual {p0}, Lcom/github/mmin18/widget/RealtimeBlurView;->release()V
 
-    return v1
+    return v2
 
     .line 202
     :cond_3
@@ -928,30 +913,30 @@
     .line 204
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v3, v2, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v3, v1, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mBlurredBitmap:Landroid/graphics/Bitmap;
+    iput-object v1, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mBlurredBitmap:Landroid/graphics/Bitmap;
     :try_end_1
     .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez v2, :cond_4
+    if-nez v1, :cond_4
 
     .line 215
     invoke-virtual {p0}, Lcom/github/mmin18/widget/RealtimeBlurView;->release()V
 
-    return v1
+    return v2
 
     :cond_4
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_5
     if-eqz v4, :cond_7
 
     .line 222
-    iget-object v2, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mBlurImpl:Lcom/github/mmin18/widget/BlurImpl;
+    iget-object v1, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mBlurImpl:Lcom/github/mmin18/widget/BlurImpl;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -959,19 +944,19 @@
 
     iget-object v4, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mBitmapToBlur:Landroid/graphics/Bitmap;
 
-    invoke-interface {v2, v3, v4, v0}, Lcom/github/mmin18/widget/BlurImpl;->prepare(Landroid/content/Context;Landroid/graphics/Bitmap;F)Z
+    invoke-interface {v1, v3, v4, v0}, Lcom/github/mmin18/widget/BlurImpl;->prepare(Landroid/content/Context;Landroid/graphics/Bitmap;F)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
     .line 223
-    iput-boolean v1, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mDirty:Z
+    iput-boolean v2, p0, Lcom/github/mmin18/widget/RealtimeBlurView;->mDirty:Z
 
     goto :goto_0
 
     :cond_6
-    return v1
+    return v2
 
     :cond_7
     :goto_0
@@ -981,12 +966,12 @@
     :catchall_0
     invoke-virtual {p0}, Lcom/github/mmin18/widget/RealtimeBlurView;->release()V
 
-    return v1
+    return v2
 
     :catch_0
     invoke-virtual {p0}, Lcom/github/mmin18/widget/RealtimeBlurView;->release()V
 
-    return v1
+    return v2
 .end method
 
 .method protected release()V

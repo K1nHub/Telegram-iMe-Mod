@@ -329,7 +329,7 @@
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_0
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_4
 
@@ -463,7 +463,7 @@
     move-object v1, v4
 
     :goto_3
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_4
     if-nez v4, :cond_d
@@ -731,7 +731,7 @@
 
     int-to-float p1, v0
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
@@ -793,7 +793,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v6
 
     goto :goto_0
 
@@ -822,12 +822,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v6
 
     goto :goto_1
 
     :cond_2
-    const v9, 0x3f4ccccd    # 0.8f
+    move v9, v7
 
     :goto_1
     aput v9, v5, v8
@@ -852,7 +852,7 @@
     goto :goto_2
 
     :cond_3
-    const v6, 0x3f4ccccd    # 0.8f
+    move v6, v7
 
     :goto_2
     aput v6, v4, v8
@@ -1015,7 +1015,7 @@
     .line 350
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PipRoundVideoView;->runShowHideAnimation(Z)V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 353
     :cond_1
@@ -1047,13 +1047,8 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_1
-
-    :catch_1
-    nop
-
     .line 363
-    :goto_1
+    :catch_1
     sget-object p1, Lorg/telegram/ui/Components/PipRoundVideoView;->instance:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-ne p1, p0, :cond_3
@@ -1074,7 +1069,7 @@
     invoke-virtual {p1, p0, v0}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
     :cond_4
-    :goto_2
+    :goto_1
     return-void
 .end method
 
@@ -1679,7 +1674,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    move v7, v6
 
     goto :goto_0
 
@@ -1708,12 +1703,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v6
 
     goto :goto_1
 
     :cond_2
-    const v9, 0x3f4ccccd    # 0.8f
+    move v9, v7
 
     :goto_1
     aput v9, v5, v8
@@ -1738,7 +1733,7 @@
     goto :goto_2
 
     :cond_3
-    const v6, 0x3f4ccccd    # 0.8f
+    move v6, v7
 
     :goto_2
     aput v6, v4, v8

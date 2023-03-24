@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 TwitterPresenter.kt\ncom/smedialink/ui/twitter/TwitterPresenter\n*L\n1#1,111:1\n136#2,2:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 TwitterPresenter.kt\ncom/smedialink/ui/twitter/TwitterPresenter\n*L\n1#1,111:1\n139#2,2:112\n*E\n"
 .end annotation
 
 

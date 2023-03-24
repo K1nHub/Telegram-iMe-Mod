@@ -126,7 +126,7 @@
 
     const-wide/32 v5, 0xf4240
 
-    mul-long v3, v3, v5
+    mul-long/2addr v3, v5
 
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/avi/AviStreamHeaderChunk;->rate:I
 

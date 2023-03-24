@@ -228,7 +228,7 @@
     if-le v3, p3, :cond_6
 
     :goto_2
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_3
 
@@ -261,7 +261,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_4
     if-nez v4, :cond_0

@@ -54,7 +54,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
@@ -175,11 +175,11 @@ public class QrActivity extends BaseFragment {
         return super.onFragmentCreate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00e5  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x029c  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x029f  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0297  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x029a  */
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -187,7 +187,7 @@ public class QrActivity extends BaseFragment {
     */
     public android.view.View createView(android.content.Context r25) {
         /*
-            Method dump skipped, instructions count: 700
+            Method dump skipped, instructions count: 695
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.QrActivity.createView(android.content.Context):android.view.View");
@@ -258,7 +258,7 @@ public class QrActivity extends BaseFragment {
     }
 
     private boolean phoneIsPublic() {
-        char c;
+        boolean z;
         ArrayList<TLRPC$PrivacyRule> privacyRules = ContactsController.getInstance(this.currentAccount).getPrivacyRules(6);
         if (privacyRules == null) {
             return false;
@@ -266,17 +266,17 @@ public class QrActivity extends BaseFragment {
         for (int i = 0; i < privacyRules.size(); i++) {
             TLRPC$PrivacyRule tLRPC$PrivacyRule = privacyRules.get(i);
             if (tLRPC$PrivacyRule instanceof TLRPC$TL_privacyValueAllowAll) {
-                c = 0;
+                z = false;
                 break;
             } else if (tLRPC$PrivacyRule instanceof TLRPC$TL_privacyValueDisallowAll) {
                 break;
             } else if (tLRPC$PrivacyRule instanceof TLRPC$TL_privacyValueAllowContacts) {
-                c = 1;
+                z = true;
                 break;
             }
         }
-        c = 2;
-        if (c == 2) {
+        z = true;
+        if (z) {
             ArrayList<TLRPC$PrivacyRule> privacyRules2 = ContactsController.getInstance(this.currentAccount).getPrivacyRules(7);
             if (privacyRules2 == null || privacyRules2.size() == 0) {
                 return true;
@@ -291,7 +291,7 @@ public class QrActivity extends BaseFragment {
                 }
             }
         }
-        return c == 0 || c == 1;
+        return !z || z;
     }
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
@@ -565,7 +565,7 @@ public class QrActivity extends BaseFragment {
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = (Bitmap) pair.second;
-        if (longValue != this.currentTheme.getTlTheme(z ? 1 : 0).f1630id || bitmap == null) {
+        if (longValue != this.currentTheme.getTlTheme(z ? 1 : 0).f1631id || bitmap == null) {
             return;
         }
         onPatternLoaded(bitmap, this.currMotionDrawable.getIntensity(), SystemClock.elapsedRealtime() - j > 150);
@@ -573,7 +573,7 @@ public class QrActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onItemSelected$10() {
-        final Bitmap bitmap = SvgHelper.getBitmap(C3286R.C3291raw.default_pattern, this.backgroundView.getWidth(), this.backgroundView.getHeight(), -16777216);
+        final Bitmap bitmap = SvgHelper.getBitmap(C3301R.C3306raw.default_pattern, this.backgroundView.getWidth(), this.backgroundView.getHeight(), -16777216);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.QrActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
@@ -662,7 +662,7 @@ public class QrActivity extends BaseFragment {
         Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(createBitmap, "qr_tmp.jpg", Bitmap.CompressFormat.JPEG);
         if (bitmapShareUri != null) {
             try {
-                getParentActivity().startActivityForResult(Intent.createChooser(new Intent("android.intent.action.SEND").setType("image/*").putExtra("android.intent.extra.STREAM", bitmapShareUri), LocaleController.getString("InviteByQRCode", C3286R.string.InviteByQRCode)), 500);
+                getParentActivity().startActivityForResult(Intent.createChooser(new Intent("android.intent.action.SEND").setType("image/*").putExtra("android.intent.extra.STREAM", bitmapShareUri), LocaleController.getString("InviteByQRCode", C3301R.string.InviteByQRCode)), 500);
             } catch (ActivityNotFoundException e) {
                 e.printStackTrace();
             }
@@ -959,8 +959,8 @@ public class QrActivity extends BaseFragment {
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:23:0x0091  */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x00fc  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x008d  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x00f7  */
         /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
         /*
@@ -969,7 +969,7 @@ public class QrActivity extends BaseFragment {
         */
         protected void onDraw(android.graphics.Canvas r18) {
             /*
-                Method dump skipped, instructions count: 321
+                Method dump skipped, instructions count: 316
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.QrActivity.QrView.onDraw(android.graphics.Canvas):void");
@@ -1013,7 +1013,7 @@ public class QrActivity extends BaseFragment {
             boolean z = this.hasTimer;
             if (z) {
                 if (z && this.loadingMatrix == null) {
-                    RLottieDrawable rLottieDrawable = new RLottieDrawable(C3286R.C3291raw.qr_matrix, "qr_matrix", AndroidUtilities.m50dp(200), AndroidUtilities.m50dp(200));
+                    RLottieDrawable rLottieDrawable = new RLottieDrawable(C3301R.C3306raw.qr_matrix, "qr_matrix", AndroidUtilities.m50dp(200), AndroidUtilities.m50dp(200));
                     this.loadingMatrix = rLottieDrawable;
                     rLottieDrawable.setMasterParent(this);
                     this.loadingMatrix.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -1103,11 +1103,11 @@ public class QrActivity extends BaseFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x01b1  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x01b3  */
-        /* JADX WARN: Removed duplicated region for block: B:80:0x0217 A[RETURN] */
-        /* JADX WARN: Removed duplicated region for block: B:81:0x0218  */
-        /* JADX WARN: Removed duplicated region for block: B:97:0x01e3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x01b0  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x01b2  */
+        /* JADX WARN: Removed duplicated region for block: B:79:0x0213 A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x0214  */
+        /* JADX WARN: Removed duplicated region for block: B:97:0x01e1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /* renamed from: prepareContent */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1115,7 +1115,7 @@ public class QrActivity extends BaseFragment {
         */
         public void lambda$setData$1(int r31, int r32) {
             /*
-                Method dump skipped, instructions count: 746
+                Method dump skipped, instructions count: 735
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.QrActivity.QrView.lambda$setData$1(int, int):void");
@@ -1221,7 +1221,7 @@ public class QrActivity extends BaseFragment {
                     return super.calculateTimeForScrolling(i) * 6;
                 }
             };
-            Drawable mutate = parentActivity.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
+            Drawable mutate = parentActivity.getResources().getDrawable(C3301R.C3303drawable.sheet_shadow_round).mutate();
             this.backgroundDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(baseFragment.getThemedColor("dialogBackground"), PorterDuff.Mode.MULTIPLY));
             FrameLayout frameLayout = new FrameLayout(parentActivity, QrActivity.this, baseFragment) { // from class: org.telegram.ui.QrActivity.ThemeListViewController.2
@@ -1307,7 +1307,7 @@ public class QrActivity extends BaseFragment {
             frameLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 8388659, 0, 0, 62, 0));
             int themedColor = baseFragment.getThemedColor("featuredStickers_addButton");
             int m50dp = AndroidUtilities.m50dp(28);
-            int i = C3286R.C3291raw.sun_outline;
+            int i = C3301R.C3306raw.sun_outline;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, m50dp, m50dp, false, null);
             this.darkThemeDrawable = rLottieDrawable;
             this.forceDark = Theme.getActiveTheme().isDark() ^ true;
@@ -1319,9 +1319,9 @@ public class QrActivity extends BaseFragment {
                 public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                     super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                     if (QrActivity.this.isCurrentThemeDark) {
-                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3286R.string.AccDescrSwitchToDayTheme));
+                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3301R.string.AccDescrSwitchToDayTheme));
                     } else {
-                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3286R.string.AccDescrSwitchToNightTheme));
+                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3301R.string.AccDescrSwitchToNightTheme));
                     }
                 }
             };
@@ -1375,7 +1375,7 @@ public class QrActivity extends BaseFragment {
             View view = new View(parentActivity);
             this.topShadow = view;
             view.setAlpha(BitmapDescriptorFactory.HUE_RED);
-            int i2 = C3286R.C3288drawable.shadowdown;
+            int i2 = C3301R.C3303drawable.shadowdown;
             view.setBackground(ContextCompat.getDrawable(parentActivity, i2));
             view.setRotation(180.0f);
             frameLayout.addView(view);
@@ -1390,7 +1390,7 @@ public class QrActivity extends BaseFragment {
             textView2.setGravity(17);
             textView2.setLines(1);
             textView2.setSingleLine(true);
-            textView2.setText(LocaleController.getString("ShareQrCode", C3286R.string.ShareQrCode));
+            textView2.setText(LocaleController.getString("ShareQrCode", C3301R.string.ShareQrCode));
             textView2.setTextColor(baseFragment.getThemedColor("featuredStickers_buttonText"));
             textView2.setTextSize(1, 15.0f);
             textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));

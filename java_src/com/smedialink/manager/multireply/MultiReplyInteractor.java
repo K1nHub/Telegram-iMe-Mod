@@ -86,7 +86,7 @@ public final class MultiReplyInteractor {
 
     private final SpannableString buildSpannableStringUser(TLRPC$User tLRPC$User) {
         SpannableString spannableString = new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$User) + ':');
-        addUserNameSpan$default(this, spannableString, String.valueOf(tLRPC$User.f1639id), 0, 0, 4, null);
+        addUserNameSpan$default(this, spannableString, String.valueOf(tLRPC$User.f1640id), 0, 0, 4, null);
         return spannableString;
     }
 

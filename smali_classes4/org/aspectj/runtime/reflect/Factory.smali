@@ -228,10 +228,8 @@
 
     return-object p0
 
-    :catch_0
-    nop
-
     .line 75
+    :catch_0
     sget-object p0, Lorg/aspectj/runtime/reflect/Factory;->class$java$lang$ClassNotFoundException:Ljava/lang/Class;
 
     if-nez p0, :cond_3
@@ -324,7 +322,7 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move v8, v7
 
     :goto_0
     if-ge v8, v4, :cond_0
@@ -362,7 +360,7 @@
     .line 199
     new-array v8, v4, [Ljava/lang/String;
 
-    const/4 v9, 0x0
+    move v9, v7
 
     :goto_1
     if-ge v9, v4, :cond_1

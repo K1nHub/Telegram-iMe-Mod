@@ -68,10 +68,10 @@ public final class C0387a {
             if (r2 == 0) goto Lb
             goto Ld
         Lb:
-            r2 = 0
+            r2 = r0
             goto Le
         Ld:
-            r2 = 1
+            r2 = r1
         Le:
             if (r2 == 0) goto L16
             java.lang.String r2 = "clientId cannot be null"

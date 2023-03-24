@@ -197,8 +197,8 @@ public class PaintWeightChooserView extends View {
     /* JADX WARN: Removed duplicated region for block: B:17:0x0071  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0214  */
     /* JADX WARN: Removed duplicated region for block: B:38:? A[RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
@@ -207,7 +207,7 @@ public class PaintWeightChooserView extends View {
     */
     protected void onDraw(android.graphics.Canvas r17) {
         /*
-            Method dump skipped, instructions count: 541
+            Method dump skipped, instructions count: 536
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.Paint.Views.PaintWeightChooserView.onDraw(android.graphics.Canvas):void");

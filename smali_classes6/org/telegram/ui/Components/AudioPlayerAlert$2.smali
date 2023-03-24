@@ -294,7 +294,7 @@
 
     sub-float/2addr v6, v0
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     float-to-int v0, v6
 
@@ -309,7 +309,7 @@
     goto :goto_0
 
     :cond_2
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v8
 
     .line 427
     :goto_0
@@ -432,7 +432,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -440,7 +440,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -521,9 +521,9 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 
@@ -630,7 +630,7 @@
     if-gez v0, :cond_1
 
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
@@ -781,7 +781,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_1
 
@@ -931,7 +931,7 @@
 
     move-result v6
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     add-int/2addr v4, v5
 
@@ -972,7 +972,7 @@
 
     const/high16 v4, 0x40600000    # 3.5f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1006,7 +1006,7 @@
     :cond_8
     if-gez v3, :cond_a
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_4
 
@@ -1055,7 +1055,7 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_5
 
@@ -1095,7 +1095,7 @@
 
     if-lt v1, p2, :cond_d
 
-    const/4 v2, 0x1
+    move v2, v0
 
     :cond_d
     invoke-static {p1, v2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$1502(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z

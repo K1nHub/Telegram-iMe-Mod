@@ -251,12 +251,12 @@
 
     packed-switch v6, :pswitch_data_0
 
-    const/4 v6, -0x1
+    move v6, v0
 
     goto :goto_2
 
     :pswitch_0
-    const/16 v6, 0xe
+    move v6, v7
 
     goto :goto_2
 
@@ -328,7 +328,7 @@
     goto :goto_3
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v8
 
     :goto_3
     if-eqz v5, :cond_2
@@ -437,6 +437,8 @@
     iput p1, p0, Lcom/google/firebase/ml/vision/face/FirebaseVisionFace;->zzbbs:F
 
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

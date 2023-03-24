@@ -352,7 +352,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-ge v4, v0, :cond_1

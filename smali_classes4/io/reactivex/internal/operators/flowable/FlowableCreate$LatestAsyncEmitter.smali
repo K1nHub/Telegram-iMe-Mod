@@ -99,7 +99,7 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     .line 658
     :cond_1
@@ -112,13 +112,13 @@
     move-wide v9, v7
 
     :goto_0
-    const/4 v11, 0x0
+    cmp-long v11, v9, v5
 
     const/4 v12, 0x0
 
-    cmp-long v13, v9, v5
+    const/4 v13, 0x0
 
-    if-eqz v13, :cond_7
+    if-eqz v11, :cond_7
 
     .line 662
     invoke-virtual/range {p0 .. p0}, Lio/reactivex/internal/operators/flowable/FlowableCreate$BaseEmitter;->isCancelled()Z
@@ -128,7 +128,7 @@
     if-eqz v14, :cond_2
 
     .line 663
-    invoke-virtual {v2, v12}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    invoke-virtual {v2, v13}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
     return-void
 
@@ -137,18 +137,18 @@
     iget-boolean v14, v0, Lio/reactivex/internal/operators/flowable/FlowableCreate$LatestAsyncEmitter;->done:Z
 
     .line 669
-    invoke-virtual {v2, v12}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
 
     if-nez v15, :cond_3
 
-    const/16 v16, 0x1
+    move/from16 v16, v3
 
     goto :goto_1
 
     :cond_3
-    const/16 v16, 0x0
+    move/from16 v16, v12
 
     :goto_1
     if-eqz v14, :cond_5
@@ -189,7 +189,7 @@
 
     :cond_7
     :goto_3
-    if-nez v13, :cond_b
+    if-nez v11, :cond_b
 
     .line 693
     invoke-virtual/range {p0 .. p0}, Lio/reactivex/internal/operators/flowable/FlowableCreate$BaseEmitter;->isCancelled()Z
@@ -199,7 +199,7 @@
     if-eqz v5, :cond_8
 
     .line 694
-    invoke-virtual {v2, v12}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    invoke-virtual {v2, v13}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
     return-void
 
@@ -214,12 +214,12 @@
 
     if-nez v6, :cond_9
 
-    const/4 v11, 0x1
+    move v12, v3
 
     :cond_9
     if-eqz v5, :cond_b
 
-    if-eqz v11, :cond_b
+    if-eqz v12, :cond_b
 
     .line 703
     iget-object v1, v0, Lio/reactivex/internal/operators/flowable/FlowableCreate$LatestAsyncEmitter;->error:Ljava/lang/Throwable;

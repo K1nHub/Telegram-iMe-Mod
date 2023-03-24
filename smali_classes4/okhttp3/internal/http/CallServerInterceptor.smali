@@ -109,14 +109,14 @@
     .line 47
     invoke-virtual {v0}, Lokhttp3/internal/connection/Exchange;->responseHeadersStart()V
 
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_0
 
     :cond_0
     move-object v4, v5
 
-    const/4 v8, 0x1
+    move v8, v7
 
     :goto_0
     if-nez v4, :cond_2
@@ -189,7 +189,7 @@
 
     move-object v4, v5
 
-    const/4 v8, 0x1
+    move v8, v7
 
     :cond_4
     :goto_1
@@ -221,7 +221,7 @@
     .line 81
     invoke-virtual {v0}, Lokhttp3/internal/connection/Exchange;->responseHeadersStart()V
 
-    const/4 v8, 0x0
+    move v8, v6
 
     .line 86
     :cond_7
@@ -443,9 +443,9 @@
     :goto_3
     const-wide/16 v2, 0x0
 
-    cmp-long v6, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v6, :cond_10
+    if-lez v0, :cond_10
 
     .line 125
     new-instance v0, Ljava/net/ProtocolException;

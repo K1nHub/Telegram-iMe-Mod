@@ -100,7 +100,7 @@
 
     move-result v3
 
-    mul-int v3, v3, v0
+    mul-int/2addr v3, v0
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -115,7 +115,7 @@
 
     move-result v3
 
-    mul-int v3, v3, v0
+    mul-int/2addr v3, v0
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -130,7 +130,7 @@
 
     move-result v2
 
-    mul-int v2, v2, v0
+    mul-int/2addr v2, v0
 
     iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 

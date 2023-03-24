@@ -69,7 +69,7 @@
 
     int-to-long v2, p1
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     invoke-virtual {p2}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
@@ -83,7 +83,7 @@
 
     int-to-long p1, p1
 
-    mul-long v2, v2, p1
+    mul-long/2addr v2, p1
 
     sub-long/2addr v0, v2
 

@@ -300,7 +300,7 @@
 
     mul-int/lit8 p2, p2, 0x5
 
-    mul-int/lit8 p4, p4, 0x2
+    mul-int/2addr p4, v5
 
     if-lt p2, p4, :cond_8
 
@@ -335,7 +335,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x3
@@ -400,7 +400,7 @@
     .line 258
     aget v5, p1, v2
 
-    mul-int/lit8 v5, v5, 0x2
+    mul-int/2addr v5, v3
 
     invoke-direct {p0, p2, v4, v5, v1}, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->crossCheckVertical(IIII)F
 
@@ -523,7 +523,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v6, v1, :cond_9
@@ -578,7 +578,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v11, 0x0
+    move v11, v5
 
     :goto_3
     if-ge v10, v2, :cond_7
@@ -632,7 +632,7 @@
 
     aput v5, v4, v8
 
-    const/4 v11, 0x1
+    move v11, v9
 
     goto :goto_4
 

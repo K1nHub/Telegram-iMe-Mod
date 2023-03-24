@@ -81,72 +81,72 @@
 .end method
 
 .method public constructor <init>(IIJJJIZLcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;)V
-    .locals 17
+    .locals 21
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v2, 0x0
+    cmp-long v2, p5, v0
 
-    cmp-long v4, p5, v2
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
-    move-wide v9, v0
+    move-wide v13, v8
 
     goto :goto_0
 
     :cond_0
-    const-wide/32 v6, 0xf4240
+    const-wide/32 v4, 0xf4240
 
-    move-wide/from16 v4, p5
+    move-wide/from16 v2, p5
 
-    move-wide/from16 v8, p3
+    move-wide/from16 v6, p3
 
     .line 296
-    invoke-static/range {v4 .. v9}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
+    invoke-static/range {v2 .. v7}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    move-wide v9, v4
+    move-wide v13, v2
 
     :goto_0
-    cmp-long v4, p7, v2
+    cmp-long v0, p7, v0
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const-wide/32 v13, 0xf4240
+    const-wide/32 v4, 0xf4240
 
-    move-wide/from16 v11, p7
+    move-wide/from16 v2, p7
 
-    move-wide/from16 v15, p3
+    move-wide/from16 v6, p3
 
     .line 299
-    invoke-static/range {v11 .. v16}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
+    invoke-static/range {v2 .. v7}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
 
-    move-result-wide v0
+    move-result-wide v8
 
     :goto_1
-    move-wide v11, v0
+    move-wide v15, v8
 
-    move-object/from16 v6, p0
+    move-object/from16 v10, p0
 
-    move/from16 v7, p1
+    move/from16 v11, p1
 
-    move/from16 v8, p2
+    move/from16 v12, p2
 
-    move/from16 v13, p9
+    move/from16 v17, p9
 
-    move/from16 v14, p10
+    move/from16 v18, p10
 
-    move-object/from16 v15, p11
+    move-object/from16 v19, p11
 
-    move-object/from16 v16, p12
+    move-object/from16 v20, p12
 
     .line 291
-    invoke-direct/range {v6 .. v16}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;-><init>(IIJJIZLcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;)V
+    invoke-direct/range {v10 .. v20}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;-><init>(IIJJIZLcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;)V
 
     return-void
 .end method
@@ -187,7 +187,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 333
     :goto_0

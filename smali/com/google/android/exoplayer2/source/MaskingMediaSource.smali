@@ -48,7 +48,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
@@ -176,7 +176,7 @@
 .end method
 
 .method private setPreparePositionOverrideToUnpreparedMaskingPeriod(J)V
-    .locals 6
+    .locals 5
 
     .line 220
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Lcom/google/android/exoplayer2/source/MaskingMediaPeriod;
@@ -212,9 +212,9 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v1, v3
+    cmp-long v3, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     cmp-long v3, p1, v1
 

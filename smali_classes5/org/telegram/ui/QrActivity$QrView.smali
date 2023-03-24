@@ -523,7 +523,7 @@
 
     const v2, 0x3e19999a    # 0.15f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -545,7 +545,7 @@
 
     const v2, 0x3db851ec    # 0.09f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -700,7 +700,7 @@
 
     move-result v1
 
-    mul-int v1, v1, v8
+    mul-int/2addr v1, v8
 
     div-int/lit8 v1, v1, 0x2
 
@@ -1076,9 +1076,9 @@
 
     div-long/2addr v5, v7
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
-    invoke-static {v9, v6}, Ljava/lang/Math;->min(II)I
+    invoke-static {v9, v5}, Ljava/lang/Math;->min(II)I
 
     move-result v5
 
@@ -1256,7 +1256,7 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    mul-float p3, p3, v0
+    mul-float/2addr p3, v0
 
     sub-float v0, p2, p3
 
@@ -1309,7 +1309,7 @@
 
     if-nez v1, :cond_0
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     .line 1098
     :cond_0
@@ -1456,7 +1456,7 @@
 
     const/4 v14, 0x2
 
-    mul-int/lit8 v9, v9, 0x2
+    mul-int/2addr v9, v14
 
     sub-int/2addr v8, v9
 
@@ -1475,7 +1475,7 @@
 
     if-nez v9, :cond_f
 
-    const/4 v9, 0x0
+    move v9, v12
 
     :goto_1
     if-gt v9, v14, :cond_f
@@ -1654,12 +1654,12 @@
 
     if-lez v9, :cond_c
 
-    const/4 v9, 0x2
+    move v9, v14
 
     goto :goto_3
 
     :cond_c
-    const/4 v9, 0x1
+    move v9, v11
 
     :goto_3
     if-le v9, v11, :cond_d
@@ -1720,7 +1720,7 @@
 
     move v10, v3
 
-    const/16 v17, 0x3
+    move/from16 v17, v13
 
     goto :goto_5
 
@@ -1759,19 +1759,19 @@
 
     move-object v9, v15
 
-    const/4 v7, 0x1
+    move v7, v11
 
     move-object v11, v3
 
-    const/4 v3, 0x0
+    move v3, v12
 
     move v12, v5
 
-    const/4 v5, 0x3
+    move v5, v13
 
     move/from16 v13, v16
 
-    const/16 v24, 0x2
+    move/from16 v24, v14
 
     move/from16 v14, v21
 
@@ -1788,15 +1788,15 @@
     goto :goto_6
 
     :cond_f
+    move v7, v11
+
+    move v3, v12
+
+    move v5, v13
+
+    move/from16 v24, v14
+
     move-object/from16 v21, v15
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x3
-
-    const/4 v7, 0x1
-
-    const/16 v24, 0x2
 
     const/4 v8, 0x0
 
@@ -1814,7 +1814,7 @@
 
     if-nez v8, :cond_10
 
-    const/4 v12, 0x0
+    move v12, v3
 
     goto :goto_7
 
@@ -1827,7 +1827,7 @@
     :goto_7
     int-to-float v10, v12
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     .line 1175
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1864,9 +1864,9 @@
 
     invoke-direct {v12}, Lcom/google/zxing/qrcode/QRCodeWriter;-><init>()V
 
-    const/4 v13, 0x0
+    move v13, v3
 
-    const/4 v14, 0x3
+    move v14, v5
 
     const/16 v20, 0x0
 
@@ -1919,15 +1919,10 @@
 
     move v13, v3
 
-    goto :goto_9
-
     :catch_0
-    nop
-
-    :goto_9
     if-eqz v20, :cond_11
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_11
     add-int/lit8 v14, v14, 0x1
@@ -1937,7 +1932,7 @@
     goto :goto_8
 
     :cond_12
-    :goto_a
+    :goto_9
     move-object/from16 v3, v20
 
     if-nez v3, :cond_13
@@ -1972,7 +1967,7 @@
 
     const v14, 0x3e19999a    # 0.15f
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     if-eqz v8, :cond_14
 
@@ -1985,7 +1980,7 @@
 
     const v14, 0x3e051eb8    # 0.13f
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     .line 1205
     :cond_14
@@ -2013,12 +2008,12 @@
 
     const/16 v16, 0x1
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_15
     const/16 v16, 0x0
 
-    :goto_b
+    :goto_a
     if-nez v16, :cond_16
 
     const v7, 0x3db851ec    # 0.09f
@@ -2054,7 +2049,7 @@
 
     const/high16 v12, 0x3f000000    # 0.5f
 
-    mul-float v7, v7, v12
+    mul-float/2addr v7, v12
 
     add-float/2addr v7, v11
 
@@ -2065,13 +2060,13 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float/2addr v11, v14
 
     int-to-float v15, v13
 
-    mul-float v15, v15, v12
+    mul-float/2addr v15, v12
 
     .line 1215
     invoke-virtual {v10, v7, v11, v15, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
@@ -2091,7 +2086,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v12
+    mul-float/2addr v5, v12
 
     .line 1220
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
@@ -2122,7 +2117,7 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    mul-float v12, v12, v0
+    mul-float/2addr v12, v0
 
     add-float/2addr v15, v12
 
@@ -2192,7 +2187,7 @@
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     :cond_18
-    :goto_c
+    :goto_b
     return-void
 .end method
 
@@ -2274,17 +2269,17 @@
 
     move-result v10
 
-    const/4 v12, 0x1
+    cmpl-float v11, v10, v8
 
-    cmpl-float v13, v10, v8
+    const/4 v13, 0x1
 
-    if-lez v13, :cond_1
+    if-lez v11, :cond_1
 
     cmpg-float v1, v10, v9
 
     if-gez v1, :cond_1
 
-    const/4 v14, 0x1
+    move v14, v13
 
     goto :goto_0
 
@@ -2292,13 +2287,13 @@
     const/4 v14, 0x0
 
     :goto_0
+    cmpg-float v1, v10, v9
+
     const/16 v15, 0x78
 
     const/16 v6, 0x1f
 
     const/16 v5, 0xff
-
-    cmpg-float v1, v10, v9
 
     if-gez v1, :cond_4
 
@@ -2367,7 +2362,7 @@
 
     sub-float v4, v9, v10
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v2, v3
 
@@ -2398,9 +2393,9 @@
 
     move-object/from16 v1, p1
 
-    const/16 v11, 0xff
+    const/16 v12, 0xff
 
-    const/16 v9, 0x1f
+    move v9, v6
 
     move-object/from16 v6, v16
 
@@ -2415,12 +2410,12 @@
     goto :goto_2
 
     :cond_4
-    const/16 v9, 0x1f
+    move v12, v5
 
-    const/16 v11, 0xff
+    move v9, v6
 
     :goto_2
-    if-lez v13, :cond_7
+    if-lez v11, :cond_7
 
     if-eqz v14, :cond_5
 
@@ -2442,7 +2437,7 @@
     invoke-virtual {v1, v8, v8, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 964
-    invoke-virtual {v7, v1, v11, v9}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
+    invoke-virtual {v7, v1, v12, v9}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
     .line 966
     :cond_5
@@ -2458,7 +2453,7 @@
     .line 968
     iget-object v1, v0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    invoke-virtual {v1, v12}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->updateAnimation(Z)V
+    invoke-virtual {v1, v13}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->updateAnimation(Z)V
 
     goto :goto_3
 
@@ -2494,7 +2489,7 @@
 
     sub-float v9, v4, v10
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     add-float/2addr v3, v2
 
@@ -2593,7 +2588,7 @@
     if-eq v1, v2, :cond_8
 
     .line 988
-    invoke-virtual {v0, v12}, Lorg/telegram/ui/QrActivity$QrView;->setForShare(Z)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/QrActivity$QrView;->setForShare(Z)V
 
     .line 990
     :cond_8
@@ -2754,7 +2749,7 @@
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     iget-object p3, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -2777,7 +2772,7 @@
 
     int-to-float p3, p3
 
-    mul-float p3, p3, p2
+    mul-float/2addr p3, p2
 
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$QrView;->gradientDrawable:Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 

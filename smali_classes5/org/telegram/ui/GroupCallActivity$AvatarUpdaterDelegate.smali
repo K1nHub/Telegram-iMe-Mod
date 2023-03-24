@@ -871,9 +871,9 @@
 
     const-wide/16 v8, 0x0
 
-    cmp-long v10, v3, v8
+    cmp-long v3, v3, v8
 
-    if-lez v10, :cond_5
+    if-lez v3, :cond_5
 
     .line 8380
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;

@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.p046ui.view.MessageMoreActionsView;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.RecyclerListView;
@@ -51,7 +51,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         lazy2 = LazyKt__LazyJVMKt.lazy(MessageMoreActionsView$optionItemHeight$2.INSTANCE);
         this.optionItemHeight$delegate = lazy2;
         setTextAndIcon(title, i);
-        setRightIcon(C3286R.C3288drawable.msg_arrowright);
+        setRightIcon(C3301R.C3303drawable.msg_arrowright);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

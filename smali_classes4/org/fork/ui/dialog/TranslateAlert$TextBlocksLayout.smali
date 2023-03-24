@@ -102,12 +102,12 @@
 
     const/4 v0, 0x1
 
-    const/4 v3, 0x1
+    move v3, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v7
 
     :goto_0
     iget v4, p0, Lorg/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->fontSize:I
@@ -235,7 +235,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_0
@@ -288,9 +288,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, p1, :cond_2
@@ -313,7 +313,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v0
 
     .line 1601
     :goto_1

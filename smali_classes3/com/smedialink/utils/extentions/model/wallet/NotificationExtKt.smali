@@ -18,7 +18,7 @@
 
     sget p0, Lorg/telegram/messenger/R$string;->channel_donations_toolbar_title:I
 
-    goto :goto_4
+    goto/16 :goto_4
 
     .line 14
     :cond_0
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -116,7 +116,7 @@
 
     if-eqz v0, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
@@ -126,7 +126,7 @@
     :goto_1
     if-eqz v0, :cond_a
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_2
 

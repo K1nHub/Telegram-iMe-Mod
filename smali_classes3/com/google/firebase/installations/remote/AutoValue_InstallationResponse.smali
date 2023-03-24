@@ -206,7 +206,7 @@
     goto :goto_4
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_4
     return v0
@@ -270,7 +270,7 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_0
 
@@ -284,14 +284,14 @@
 
     xor-int/2addr v0, v2
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 96
     iget-object v3, p0, Lcom/google/firebase/installations/remote/AutoValue_InstallationResponse;->fid:Ljava/lang/String;
 
     if-nez v3, :cond_1
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_1
 
@@ -303,14 +303,14 @@
     :goto_1
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 98
     iget-object v3, p0, Lcom/google/firebase/installations/remote/AutoValue_InstallationResponse;->refreshToken:Ljava/lang/String;
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_2
 
@@ -322,14 +322,14 @@
     :goto_2
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 100
     iget-object v3, p0, Lcom/google/firebase/installations/remote/AutoValue_InstallationResponse;->authToken:Lcom/google/firebase/installations/remote/TokenResult;
 
     if-nez v3, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v1
 
     goto :goto_3
 
@@ -341,7 +341,7 @@
     :goto_3
     xor-int/2addr v0, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     .line 102
     iget-object v2, p0, Lcom/google/firebase/installations/remote/AutoValue_InstallationResponse;->responseCode:Lcom/google/firebase/installations/remote/InstallationResponse$ResponseCode;

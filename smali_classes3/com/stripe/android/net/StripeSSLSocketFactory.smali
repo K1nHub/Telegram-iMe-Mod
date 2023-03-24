@@ -58,9 +58,9 @@
     :goto_0
     array-length v2, v1
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-ge v0, v2, :cond_2
@@ -78,7 +78,7 @@
 
     if-eqz v6, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v7
 
     goto :goto_2
 
@@ -92,7 +92,7 @@
 
     if-eqz v5, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v7
 
     :cond_1
     :goto_2

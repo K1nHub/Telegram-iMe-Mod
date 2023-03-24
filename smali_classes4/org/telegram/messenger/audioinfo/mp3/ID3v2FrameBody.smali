@@ -98,9 +98,9 @@
 
     if-eqz p5, :cond_3
 
-    const/4 p5, 0x0
+    move p5, v1
 
-    const/4 v2, 0x0
+    move v2, p5
 
     :goto_0
     if-ge p5, p3, :cond_3
@@ -144,7 +144,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :cond_2
     add-int/lit8 p5, p5, 0x1
@@ -345,9 +345,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_0
+    if-gtz v0, :cond_0
 
     .line 130
     sget-object v0, Lorg/telegram/messenger/audioinfo/mp3/ID3v2FrameBody;->textBuffer:Ljava/lang/ThreadLocal;
@@ -423,9 +423,9 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p1
 
@@ -444,9 +444,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v1, p1, :cond_3
@@ -506,7 +506,7 @@
     return-object p1
 
     :cond_1
-    const/4 v3, 0x0
+    move v3, v0
 
     :cond_2
     add-int/lit8 v1, v1, 0x1

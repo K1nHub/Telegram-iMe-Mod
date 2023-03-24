@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public addSpan(Lorg/telegram/ui/Components/GroupCreateSpan;Z)V
-    .locals 5
+    .locals 4
 
     .line 292
     iget-object v0, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -113,9 +113,9 @@
 
     const-wide/32 v2, -0x7ffffff9
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     .line 295
     iget-object v2, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -301,7 +301,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p3, 0x0
+    move p3, p2
 
     :goto_0
     if-ge p3, p1, :cond_0
@@ -366,11 +366,11 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     const/16 v7, 0x20
@@ -439,7 +439,7 @@
 
     add-int/2addr v2, v5
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 210
     :cond_1
@@ -464,7 +464,7 @@
 
     add-int/2addr v1, v6
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :cond_2
     const/16 v7, 0xd
@@ -669,7 +669,7 @@
 
     add-int/2addr v2, v4
 
-    const/4 v5, 0x0
+    move v5, v3
 
     :cond_a
     sub-int v4, v0, v6
@@ -981,7 +981,7 @@
 .end method
 
 .method public removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
-    .locals 5
+    .locals 4
 
     .line 327
     iget-object v0, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -997,9 +997,9 @@
 
     const-wide/32 v2, -0x7ffffff9
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     .line 330
     iget-object v2, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;

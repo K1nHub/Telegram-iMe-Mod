@@ -365,12 +365,12 @@
 
     if-nez p5, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p3
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     :goto_0
     if-eqz p1, :cond_1
@@ -398,7 +398,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 p3, 0x0
+    move p3, v0
 
     :goto_2
     if-eqz p3, :cond_4

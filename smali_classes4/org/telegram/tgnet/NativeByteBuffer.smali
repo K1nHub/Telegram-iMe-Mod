@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -69,9 +69,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 55
     invoke-static {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->native_getJavaByteBuffer(J)Ljava/nio/ByteBuffer;
@@ -162,9 +162,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
     .line 27
     sget-object v0, Lorg/telegram/tgnet/NativeByteBuffer;->addressWrappers:Ljava/lang/ThreadLocal;
@@ -531,7 +531,7 @@
 
     or-int/2addr v0, v1
 
-    const/4 v1, 0x4
+    move v1, v2
 
     goto :goto_0
 
@@ -663,7 +663,7 @@
 
     or-int/2addr v0, v1
 
-    const/4 v1, 0x4
+    move v1, v2
 
     goto :goto_0
 
@@ -1075,7 +1075,7 @@
 
     or-int/2addr v1, v2
 
-    const/4 v2, 0x4
+    move v2, v3
 
     goto :goto_0
 
@@ -1169,16 +1169,16 @@
 .end method
 
 .method public reuse()V
-    .locals 5
+    .locals 4
 
     .line 578
     iget-wide v0, p0, Lorg/telegram/tgnet/NativeByteBuffer;->address:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 579
     sget-object v0, Lorg/telegram/tgnet/NativeByteBuffer;->addressWrappers:Ljava/lang/ThreadLocal;
@@ -1489,12 +1489,12 @@
 
     if-gt v0, v1, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x4
+    move v0, v2
 
     .line 282
     :goto_2
@@ -1663,12 +1663,12 @@
     :goto_1
     if-gt p3, v0, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_2
 
     :cond_4
-    const/4 p1, 0x4
+    move p1, v1
 
     :goto_2
     add-int p2, p3, p1
@@ -1845,12 +1845,12 @@
     :goto_1
     if-gt v0, v1, :cond_4
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_2
 
     :cond_4
-    const/4 p1, 0x4
+    move p1, v2
 
     :goto_2
     add-int v1, v0, p1

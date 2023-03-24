@@ -100,9 +100,9 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     const/4 v7, 0x1
@@ -117,7 +117,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_1
     if-ge v8, v7, :cond_0
@@ -156,17 +156,17 @@
 
     const/4 v9, -0x1
 
+    move v15, v5
+
     move-object/from16 v16, v8
 
-    const/4 v5, 0x0
+    move v13, v9
 
-    const/4 v8, 0x0
+    move v14, v13
 
-    const/4 v13, -0x1
+    move v5, v4
 
-    const/4 v14, -0x1
-
-    const/high16 v15, 0x3f800000    # 1.0f
+    move v8, v5
 
     :goto_2
     if-ge v5, v2, :cond_4
@@ -183,7 +183,7 @@
 
     move-result v10
 
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_3
     if-ge v11, v10, :cond_3

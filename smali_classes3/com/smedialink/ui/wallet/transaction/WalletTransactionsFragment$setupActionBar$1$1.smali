@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$setupActionBar$1$1;->this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;
 
-    .line 156
+    .line 159
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 159
+    .line 162
     iget-object p1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$setupActionBar$1$1;->this$0:Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 160
+    .line 163
     :cond_0
     sget v0, Lcom/smedialink/common/IdFabric$Menu;->NETWORK_SWITCH:I
 

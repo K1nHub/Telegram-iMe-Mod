@@ -9,20 +9,20 @@ public class Chain {
         int i2;
         int i3;
         if (i == 0) {
-            i2 = constraintWidgetContainer.mHorizontalChainsSize;
+            i3 = constraintWidgetContainer.mHorizontalChainsSize;
             chainHeadArr = constraintWidgetContainer.mHorizontalChainsArray;
-            i3 = 0;
+            i2 = 0;
         } else {
             int i4 = constraintWidgetContainer.mVerticalChainsSize;
             chainHeadArr = constraintWidgetContainer.mVerticalChainsArray;
-            i2 = i4;
-            i3 = 2;
+            i2 = 2;
+            i3 = i4;
         }
-        for (int i5 = 0; i5 < i2; i5++) {
+        for (int i5 = 0; i5 < i3; i5++) {
             ChainHead chainHead = chainHeadArr[i5];
             chainHead.define();
             if (arrayList == null || arrayList.contains(chainHead.mFirst)) {
-                applyChainConstraints(constraintWidgetContainer, linearSystem, i, i3, chainHead);
+                applyChainConstraints(constraintWidgetContainer, linearSystem, i, i2, chainHead);
             }
         }
     }
@@ -49,17 +49,17 @@ public class Chain {
     /* JADX WARN: Removed duplicated region for block: B:222:0x03b0  */
     /* JADX WARN: Removed duplicated region for block: B:226:0x03bb A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:235:0x03ce  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x04a8  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x04dd  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x04f0 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x04fc  */
-    /* JADX WARN: Removed duplicated region for block: B:300:0x0507  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x050a  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0510  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x0513  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x0527  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x052d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x04a6  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x04db  */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x04ee A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x04fa  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x0505  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0508  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0511  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x0515  */
+    /* JADX WARN: Removed duplicated region for block: B:312:0x0525  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x052b A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:325:0x03b2 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:336:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /*
@@ -68,7 +68,7 @@ public class Chain {
     */
     static void applyChainConstraints(androidx.constraintlayout.core.widgets.ConstraintWidgetContainer r38, androidx.constraintlayout.core.LinearSystem r39, int r40, int r41, androidx.constraintlayout.core.widgets.ChainHead r42) {
         /*
-            Method dump skipped, instructions count: 1358
+            Method dump skipped, instructions count: 1356
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.constraintlayout.core.widgets.Chain.applyChainConstraints(androidx.constraintlayout.core.widgets.ConstraintWidgetContainer, androidx.constraintlayout.core.LinearSystem, int, int, androidx.constraintlayout.core.widgets.ChainHead):void");

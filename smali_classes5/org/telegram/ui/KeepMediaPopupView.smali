@@ -384,7 +384,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const/4 p1, 0x0
+    move p1, v4
 
     .line 135
     :goto_0
@@ -835,7 +835,7 @@
 
     sub-int/2addr v3, v2
 
-    mul-int v1, v1, v3
+    mul-int/2addr v1, v3
 
     int-to-float v1, v1
 
@@ -1030,7 +1030,7 @@
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-ge v1, p1, :cond_1
@@ -1119,12 +1119,12 @@
 
     if-eqz p1, :cond_0
 
-    const/16 p1, 0x8
+    move p1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V

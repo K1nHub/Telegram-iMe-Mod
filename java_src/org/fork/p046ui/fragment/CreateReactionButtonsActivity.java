@@ -62,7 +62,7 @@ import org.fork.p046ui.view.MovingReactionCell;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -70,7 +70,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -333,8 +333,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         Intrinsics.checkNotNullParameter(buttonPosition, "buttonPosition");
         showEmojiView$default(this, false, null, 2, null);
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(getResourceManager().getString(C3286R.string.chat_reaction_button_position));
-        builder.setNegativeButton(getResourceManager().getString(C3286R.string.common_cancel), null);
+        builder.setTitle(getResourceManager().getString(C3301R.string.chat_reaction_button_position));
+        builder.setNegativeButton(getResourceManager().getString(C3301R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
         builder.setView(linearLayout);
@@ -672,7 +672,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initUploadTextView() {
         TextView textView = new TextView(getParentActivity());
-        textView.setText(getResourceManager().getString(C3286R.string.chat_reaction_text_loader));
+        textView.setText(getResourceManager().getString(C3301R.string.chat_reaction_text_loader));
         textView.setTextSize(1, 16.0f);
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
@@ -689,11 +689,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     }
 
     private final void setupActionBar() {
-        C3351ActionBar c3351ActionBar = this.actionBar;
-        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
-        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.chat_reaction_title));
-        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        C3366ActionBar c3366ActionBar = this.actionBar;
+        c3366ActionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
+        c3366ActionBar.setTitle(getResourceManager().getString(C3301R.string.chat_reaction_title));
+        c3366ActionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == 1) {
                     CreateReactionButtonsActivity.this.createMessage();
@@ -702,7 +702,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             }
         });
-        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3351ActionBar.createMenu().addItem(1, getResourceManager().getString(C3286R.string.chat_reaction_create));
+        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3366ActionBar.createMenu().addItem(1, getResourceManager().getString(C3301R.string.chat_reaction_create));
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$20$lambda$19$lambda$18, "setupActionBar$lambda$20$lambda$19$lambda$18");
         ViewExtKt.invisible(setupActionBar$lambda$20$lambda$19$lambda$18);
         this.doneItem = setupActionBar$lambda$20$lambda$19$lambda$18;
@@ -734,7 +734,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final void createMessage() {
         if (!getListAdapter().isAllButtonsValid()) {
-            showToast(getResourceManager().getString(C3286R.string.chat_reaction_empty_field_warning));
+            showToast(getResourceManager().getString(C3301R.string.chat_reaction_empty_field_warning));
         } else {
             getPresenter().prepareTextMessage(getListAdapter().getFixedEmotions(), getListAdapter().getAllButtons(), this.messageText, getListAdapter().getButtonLine(), this.attachedFile, this.replyMessageObject);
         }
@@ -783,7 +783,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         editTextBoldCursor.setText(str);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setTextColor(Theme.getColor("dialogTextBlack"));
-        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3286R.string.URL));
+        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3301R.string.URL));
         editTextBoldCursor.setHeaderHintColor(Theme.getColor("windowBackgroundWhiteBlueHeader"));
         editTextBoldCursor.setTransformHintToHeader(true);
         editTextBoldCursor.setLineColors(Theme.getColor("windowBackgroundWhiteInputField"), Theme.getColor("windowBackgroundWhiteInputFieldActivated"), Theme.getColor("windowBackgroundWhiteRedText3"));
@@ -795,15 +795,15 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         ViewExtKt.setHorizontalPadding(frameLayout, 24);
         frameLayout.addView(editTextBoldCursor);
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString("CreateLink", C3286R.string.CreateLink));
+        builder.setTitle(LocaleController.getString("CreateLink", C3301R.string.CreateLink));
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), new DialogInterface.OnClickListener() { // from class: org.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), new DialogInterface.OnClickListener() { // from class: org.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 CreateReactionButtonsActivity.showURLButtonDialog$lambda$27$lambda$25(CreateReactionButtonsActivity.this, i, editTextBoldCursor, dialogInterface, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), CreateReactionButtonsActivity$$ExternalSyntheticLambda1.INSTANCE);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), CreateReactionButtonsActivity$$ExternalSyntheticLambda1.INSTANCE);
         AlertDialog create = builder.create();
         create.setDismissDialogByButtons(false);
         create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda2
@@ -879,7 +879,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 boolean r1 = r0.isEmpty()
                 if (r1 == 0) goto L20
             L1e:
-                r0 = 1
+                r0 = r4
                 goto L54
             L20:
                 java.util.Iterator r0 = r0.iterator()
@@ -891,31 +891,31 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 java.lang.String r2 = r1.getUrl()
                 int r2 = r2.length()
                 if (r2 <= 0) goto L3c
-                r2 = 1
+                r2 = r4
                 goto L3d
             L3c:
-                r2 = 0
+                r2 = r3
             L3d:
                 if (r2 == 0) goto L50
                 java.lang.String r1 = r1.getTitle()
                 int r1 = r1.length()
                 if (r1 <= 0) goto L4b
-                r1 = 1
+                r1 = r4
                 goto L4c
             L4b:
-                r1 = 0
+                r1 = r3
             L4c:
                 if (r1 == 0) goto L50
-                r1 = 1
+                r1 = r4
                 goto L51
             L50:
-                r1 = 0
+                r1 = r3
             L51:
                 if (r1 != 0) goto L24
-                r0 = 0
+                r0 = r3
             L54:
                 if (r0 == 0) goto L57
-                r3 = 1
+                r3 = r4
             L57:
                 return r3
             */
@@ -993,7 +993,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             if (i < this.this$0.reactionsEndRow && this.this$0.reactionsStartRow <= i) {
                 return ColumnType.EMOJI;
             }
-            if ((i >= this.this$0.buttonsEndRow || this.this$0.buttonsStartRow > i) ? false : false) {
+            int i2 = this.this$0.buttonsStartRow;
+            if (i >= this.this$0.buttonsEndRow || i2 > i) {
+                z = false;
+            }
+            if (z) {
                 return ColumnType.BUTTON;
             }
             return null;
@@ -1136,11 +1140,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 if (i == createReactionButtonsActivity.reactionsSectionRow) {
                     if (6 - createReactionButtonsActivity.reactions.size() > 1) {
                         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3286R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3301R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     } else {
                         StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3286R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3301R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     }
                     textInfoPrivacyCell.setText(format2);
@@ -1148,11 +1152,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
                 if (12 - createReactionButtonsActivity.buttonsCount > 1) {
                     StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3286R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3301R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 } else {
                     StringCompanionObject stringCompanionObject4 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3286R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3301R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 }
                 textInfoPrivacyCell.setText(format);
@@ -1161,13 +1165,13 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 CreateReactionButtonsActivity createReactionButtonsActivity2 = this.this$0;
                 TextCell textCell = (TextCell) view;
                 textCell.setColors(null, "windowBackgroundWhiteBlueText4");
-                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3286R.C3288drawable.poll_add_circle);
-                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3286R.C3288drawable.poll_add_plus)) == null) {
+                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3301R.C3303drawable.poll_add_circle);
+                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3301R.C3303drawable.poll_add_plus)) == null) {
                     return;
                 }
                 drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("switchTrackChecked"), PorterDuff.Mode.MULTIPLY));
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("checkboxCheck"), PorterDuff.Mode.MULTIPLY));
-                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3286R.string.chat_reaction_select_emoji : C3286R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
+                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3301R.string.chat_reaction_select_emoji : C3301R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
             } else if (view instanceof MovingReactionCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 CreateReactionButtonsActivity createReactionButtonsActivity3 = this.this$0;
@@ -1189,7 +1193,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             } else if (view instanceof TextSettingsCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3286R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
+                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3301R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
             }
         }
 
@@ -1291,11 +1295,14 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             if (actionBarMenuItem == null) {
                 return;
             }
-            actionBarMenuItem.setVisibility((this.this$0.buttonsCount == 0 && this.this$0.reactions.isEmpty()) ? false : false ? 4 : 0);
+            if (this.this$0.buttonsCount != 0 || !this.this$0.reactions.isEmpty()) {
+                z = false;
+            }
+            actionBarMenuItem.setVisibility(z ? 4 : 0);
         }
 
         private final String updateHeader(int i) {
-            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3286R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3286R.string.chat_reaction_create_button) : this.resourceManager.getString(C3286R.string.chat_reaction_settings);
+            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3301R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3301R.string.chat_reaction_create_button) : this.resourceManager.getString(C3301R.string.chat_reaction_settings);
         }
 
         private final void removeUrlItem(int i) {

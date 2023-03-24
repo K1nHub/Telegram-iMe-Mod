@@ -1,6 +1,7 @@
 package com.smedialink.storage.domain.model.crypto.send;
 
 import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import com.smedialink.storage.domain.model.crypto.TronBlockHeader;
 import com.smedialink.storage.domain.utils.crypto.Convert;
 import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -260,6 +261,114 @@ public abstract class TransferArgs implements TransactionArgs {
             this.message = str;
             this.sendMode = i;
             this.isUnencrypted = z;
+        }
+    }
+
+    /* compiled from: TransferArgs.kt */
+    /* loaded from: classes3.dex */
+    public static final class TRON extends TransferArgs {
+        private final double amount;
+        private final TronBlockHeader blockHeader;
+        private final String contractAddress;
+        private final BigInteger feeLimit;
+        private final String recipientAddress;
+        private final Convert.Unit weiConvertUnit;
+
+        public final double component1() {
+            return getAmount();
+        }
+
+        public final Convert.Unit component2() {
+            return this.weiConvertUnit;
+        }
+
+        public final String component3() {
+            return this.recipientAddress;
+        }
+
+        public final BigInteger component4() {
+            return this.feeLimit;
+        }
+
+        public final String component5() {
+            return this.contractAddress;
+        }
+
+        public final TronBlockHeader component6() {
+            return this.blockHeader;
+        }
+
+        public final TRON copy(double d, Convert.Unit weiConvertUnit, String recipientAddress, BigInteger feeLimit, String str, TronBlockHeader blockHeader) {
+            Intrinsics.checkNotNullParameter(weiConvertUnit, "weiConvertUnit");
+            Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
+            Intrinsics.checkNotNullParameter(feeLimit, "feeLimit");
+            Intrinsics.checkNotNullParameter(blockHeader, "blockHeader");
+            return new TRON(d, weiConvertUnit, recipientAddress, feeLimit, str, blockHeader);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof TRON) {
+                TRON tron = (TRON) obj;
+                return Double.compare(getAmount(), tron.getAmount()) == 0 && this.weiConvertUnit == tron.weiConvertUnit && Intrinsics.areEqual(this.recipientAddress, tron.recipientAddress) && Intrinsics.areEqual(this.feeLimit, tron.feeLimit) && Intrinsics.areEqual(this.contractAddress, tron.contractAddress) && Intrinsics.areEqual(this.blockHeader, tron.blockHeader);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            int doubleToLongBits = ((((((Double.doubleToLongBits(getAmount()) * 31) + this.weiConvertUnit.hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
+            String str = this.contractAddress;
+            return ((doubleToLongBits + (str == null ? 0 : str.hashCode())) * 31) + this.blockHeader.hashCode();
+        }
+
+        public String toString() {
+            return "TRON(amount=" + getAmount() + ", weiConvertUnit=" + this.weiConvertUnit + ", recipientAddress=" + this.recipientAddress + ", feeLimit=" + this.feeLimit + ", contractAddress=" + this.contractAddress + ", blockHeader=" + this.blockHeader + ')';
+        }
+
+        public /* synthetic */ TRON(double d, Convert.Unit unit, String str, BigInteger bigInteger, String str2, TronBlockHeader tronBlockHeader, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(d, unit, str, bigInteger, (i & 16) != 0 ? null : str2, tronBlockHeader);
+        }
+
+        @Override // com.smedialink.storage.domain.model.crypto.send.TransferArgs
+        public double getAmount() {
+            return this.amount;
+        }
+
+        public final Convert.Unit getWeiConvertUnit() {
+            return this.weiConvertUnit;
+        }
+
+        public final String getRecipientAddress() {
+            return this.recipientAddress;
+        }
+
+        public final BigInteger getFeeLimit() {
+            return this.feeLimit;
+        }
+
+        public final String getContractAddress() {
+            return this.contractAddress;
+        }
+
+        public final TronBlockHeader getBlockHeader() {
+            return this.blockHeader;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public TRON(double d, Convert.Unit weiConvertUnit, String recipientAddress, BigInteger feeLimit, String str, TronBlockHeader blockHeader) {
+            super(d, null);
+            Intrinsics.checkNotNullParameter(weiConvertUnit, "weiConvertUnit");
+            Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
+            Intrinsics.checkNotNullParameter(feeLimit, "feeLimit");
+            Intrinsics.checkNotNullParameter(blockHeader, "blockHeader");
+            this.amount = d;
+            this.weiConvertUnit = weiConvertUnit;
+            this.recipientAddress = recipientAddress;
+            this.feeLimit = feeLimit;
+            this.contractAddress = str;
+            this.blockHeader = blockHeader;
         }
     }
 }

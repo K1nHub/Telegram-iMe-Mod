@@ -63,7 +63,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 193
     :goto_0
@@ -228,7 +228,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 163
     :goto_0
@@ -258,12 +258,12 @@
 
     if-ne v4, v5, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 167
     :goto_1
@@ -285,7 +285,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v6
 
     :cond_2
     return v2
@@ -337,7 +337,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 138
     :goto_0
@@ -381,7 +381,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x1
+    move v3, v4
 
     :goto_1
     add-int/2addr v6, v3
@@ -431,7 +431,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x1
+    move v3, v4
 
     :goto_2
     add-int/2addr v7, v3
@@ -465,14 +465,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_0
     add-int/2addr v0, v2
 
     div-int/lit8 v0, v0, 0x2
 
-    mul-int v1, v1, v0
+    mul-int/2addr v1, v0
 
     return v1
 .end method

@@ -144,7 +144,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/high16 v3, 0x437f0000    # 255.0f
@@ -161,14 +161,14 @@
     .line 752
     iget v5, v4, Landroid/graphics/PointF;->x:F
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     iput v5, v4, Landroid/graphics/PointF;->x:F
 
     .line 753
     iget v5, v4, Landroid/graphics/PointF;->y:F
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     iput v5, v4, Landroid/graphics/PointF;->y:F
 
@@ -394,7 +394,7 @@
 
     aput-wide v10, v7, v4
 
-    const/4 v7, 0x1
+    move v7, v2
 
     :goto_0
     add-int/lit8 v12, v1, -0x1
@@ -521,11 +521,11 @@
     goto :goto_0
 
     :cond_1
+    move v4, v3
+
     move-object/from16 v19, v5
 
     move-wide v2, v10
-
-    const/4 v4, 0x0
 
     .line 835
     aput-wide v2, v6, v4
@@ -585,7 +585,7 @@
 
     aget-wide v12, v5, v11
 
-    mul-double v12, v12, v7
+    mul-double/2addr v12, v7
 
     sub-double/2addr v9, v12
 
@@ -605,7 +605,7 @@
 
     aget-wide v9, v6, v2
 
-    mul-double v7, v7, v9
+    mul-double/2addr v7, v9
 
     sub-double/2addr v3, v7
 
@@ -651,7 +651,7 @@
 
     aget-wide v12, v5, v11
 
-    mul-double v12, v12, v7
+    mul-double/2addr v12, v7
 
     sub-double/2addr v9, v12
 
@@ -671,7 +671,7 @@
 
     aget-wide v2, v6, v2
 
-    mul-double v7, v7, v2
+    mul-double/2addr v7, v2
 
     sub-double/2addr v12, v7
 
@@ -687,7 +687,7 @@
     .line 856
     new-array v0, v1, [D
 
-    const/4 v3, 0x0
+    move v3, v11
 
     :goto_3
     if-ge v3, v1, :cond_4
@@ -830,7 +830,7 @@
 
     float-to-double v11, v15
 
-    mul-double v11, v11, v3
+    mul-double/2addr v11, v3
 
     iget v15, v8, Landroid/graphics/PointF;->y:F
 
@@ -840,11 +840,11 @@
 
     float-to-double v6, v15
 
-    mul-double v6, v6, v13
+    mul-double/2addr v6, v13
 
     add-double/2addr v11, v6
 
-    mul-double v9, v9, v9
+    mul-double/2addr v9, v9
 
     const-wide/high16 v6, 0x4018000000000000L    # 6.0
 
@@ -852,50 +852,50 @@
 
     mul-double v6, v3, v3
 
-    mul-double v6, v6, v3
+    mul-double/2addr v6, v3
 
     sub-double/2addr v6, v3
 
     aget-wide v3, v1, v5
 
-    mul-double v6, v6, v3
+    mul-double/2addr v6, v3
 
     mul-double v3, v13, v13
 
-    mul-double v3, v3, v13
+    mul-double/2addr v3, v13
 
     sub-double/2addr v3, v13
 
     aget-wide v13, v1, v20
 
-    mul-double v3, v3, v13
+    mul-double/2addr v3, v13
 
     add-double/2addr v6, v3
 
-    mul-double v9, v9, v6
+    mul-double/2addr v9, v6
 
     add-double/2addr v11, v9
 
     double-to-float v3, v11
 
-    const/4 v4, 0x0
+    const/high16 v4, 0x437f0000    # 255.0f
 
-    const/high16 v6, 0x437f0000    # 255.0f
+    cmpl-float v6, v3, v4
 
-    cmpl-float v7, v3, v6
+    const/4 v7, 0x0
 
-    if-lez v7, :cond_1
+    if-lez v6, :cond_1
 
-    const/high16 v3, 0x437f0000    # 255.0f
+    move v3, v4
 
     goto :goto_2
 
     :cond_1
-    cmpg-float v6, v3, v4
+    cmpg-float v4, v3, v7
 
-    if-gez v6, :cond_2
+    if-gez v4, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v7
 
     .line 805
     :cond_2
@@ -927,7 +927,7 @@
 
     move/from16 v5, v20
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_4
     move-object v3, v4
@@ -1036,7 +1036,7 @@
 
     if-lt v0, v1, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ge v0, v1, :cond_0

@@ -350,7 +350,7 @@
 
     const/high16 v0, 0x40400000    # 3.0f
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-double v0, p1
 
@@ -510,7 +510,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 388
     :goto_0
@@ -592,7 +592,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     move v4, v2
@@ -688,7 +688,7 @@
     .line 829
     iget v2, p0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->crossfadeProgress:F
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v0
 
     float-to-int v0, v2
 
@@ -783,9 +783,9 @@
     :cond_1
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->overrideRounding:F
 
-    const/4 v9, 0x6
-
     cmpl-float v6, v6, v3
+
+    const/4 v9, 0x6
 
     if-lez v6, :cond_2
 
@@ -969,12 +969,11 @@
 
     if-ge v13, v15, :cond_6
 
-    const/4 v13, 0x1
+    move v13, v14
 
-    :goto_2
-    const/4 v15, 0x1
+    move v15, v13
 
-    goto :goto_5
+    goto :goto_4
 
     .line 880
     :cond_6
@@ -996,7 +995,7 @@
 
     if-ge v13, v15, :cond_8
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_7
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->topY:I
@@ -1011,16 +1010,16 @@
 
     if-ge v13, v15, :cond_8
 
-    :goto_3
-    const/4 v13, 0x1
+    :goto_2
+    move v13, v14
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_8
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 881
-    :goto_4
+    :goto_3
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->topY:I
 
     mul-int/lit8 v16, v6, 0x2
@@ -1029,13 +1028,15 @@
 
     if-ltz v15, :cond_9
 
-    goto :goto_2
+    move v15, v14
+
+    goto :goto_4
 
     :cond_9
-    const/4 v15, 0x0
+    move v15, v12
 
     .line 885
-    :goto_5
+    :goto_4
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->pathDrawCacheParams:Lorg/telegram/ui/ActionBar/Theme$MessageDrawable$PathDrawParams;
 
     if-eqz v3, :cond_a
@@ -1048,15 +1049,15 @@
 
     move-result v3
 
-    goto :goto_6
+    goto :goto_5
 
     .line 889
     :cond_a
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->path:Landroid/graphics/Path;
 
-    const/4 v3, 0x1
+    move v3, v14
 
-    :goto_6
+    :goto_5
     if-nez v3, :cond_b
 
     .line 892
@@ -1102,7 +1103,7 @@
 
     if-eqz v13, :cond_d
 
-    goto :goto_7
+    goto :goto_6
 
     .line 909
     :cond_d
@@ -1149,11 +1150,11 @@
 
     move/from16 v20, v9
 
-    goto :goto_9
+    goto :goto_8
 
     .line 900
     :cond_e
-    :goto_7
+    :goto_6
     iget v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     if-ne v3, v14, :cond_f
@@ -1181,7 +1182,7 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
-    goto :goto_8
+    goto :goto_7
 
     .line 903
     :cond_f
@@ -1206,7 +1207,7 @@
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 905
-    :goto_8
+    :goto_7
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v3, v5
@@ -1266,7 +1267,7 @@
     invoke-virtual {v4, v3, v8, v8, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 912
-    :goto_9
+    :goto_8
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
     if-nez v3, :cond_12
@@ -1281,7 +1282,7 @@
 
     if-eqz v15, :cond_10
 
-    goto :goto_a
+    goto :goto_9
 
     .line 927
     :cond_10
@@ -1335,7 +1336,7 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     .line 931
     :cond_11
@@ -1365,11 +1366,11 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     .line 913
     :cond_12
-    :goto_a
+    :goto_9
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v3, v5
@@ -1435,13 +1436,13 @@
 
     move/from16 v3, v20
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_13
     move v3, v6
 
     .line 918
-    :goto_b
+    :goto_a
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v9, 0x1
@@ -1474,7 +1475,7 @@
 
     const/4 v14, 0x2
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v14
 
     sub-int/2addr v12, v3
 
@@ -1498,7 +1499,7 @@
 
     invoke-virtual {v8, v12, v15, v9, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    goto :goto_c
+    goto :goto_b
 
     .line 922
     :cond_14
@@ -1537,7 +1538,7 @@
 
     const/4 v14, 0x2
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v14
 
     sub-int/2addr v12, v3
 
@@ -1570,7 +1571,7 @@
     invoke-virtual {v8, v12, v14, v9, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 925
-    :goto_c
+    :goto_b
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v8, 0x43870000    # 270.0f
@@ -1582,7 +1583,7 @@
     invoke-virtual {v4, v3, v8, v9, v12}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 934
-    :goto_d
+    :goto_c
     iget v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v8, 0x1
@@ -1593,7 +1594,7 @@
 
     if-eqz v13, :cond_15
 
-    goto :goto_e
+    goto :goto_d
 
     .line 942
     :cond_15
@@ -1615,24 +1616,24 @@
 
     invoke-virtual {v4, v2, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     .line 936
     :cond_16
-    :goto_e
+    :goto_d
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
 
     if-eqz v3, :cond_17
 
     move/from16 v9, v20
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_17
     move v9, v6
 
     .line 938
-    :goto_f
+    :goto_e
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v3, v5
@@ -1658,7 +1659,7 @@
 
     const/4 v8, 0x2
 
-    mul-int/lit8 v9, v9, 0x2
+    mul-int/2addr v9, v8
 
     sub-int/2addr v7, v9
 
@@ -1693,7 +1694,7 @@
 
     invoke-virtual {v4, v2, v5, v3, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     .line 945
     :cond_18
@@ -1709,7 +1710,7 @@
 
     if-eqz v13, :cond_19
 
-    goto :goto_10
+    goto :goto_f
 
     .line 950
     :cond_19
@@ -1737,11 +1738,11 @@
 
     invoke-virtual {v4, v2, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     .line 946
     :cond_1a
-    :goto_10
+    :goto_f
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
     const/high16 v6, 0x41000000    # 8.0f
@@ -1793,7 +1794,7 @@
 
     const/4 v9, 0x2
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/2addr v7, v9
 
     sub-int/2addr v8, v7
 
@@ -1848,7 +1849,7 @@
 
     invoke-virtual {v4, v2, v5, v3, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     :cond_1b
     move/from16 v20, v9
@@ -1868,7 +1869,7 @@
 
     if-eqz v13, :cond_1c
 
-    goto :goto_11
+    goto :goto_10
 
     .line 964
     :cond_1c
@@ -1915,11 +1916,11 @@
 
     invoke-virtual {v4, v3, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto :goto_13
+    goto :goto_12
 
     .line 955
     :cond_1d
-    :goto_11
+    :goto_10
     iget v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v9, 0x1
@@ -1949,7 +1950,7 @@
 
     invoke-virtual {v4, v3, v9}, Landroid/graphics/Path;->moveTo(FF)V
 
-    goto :goto_12
+    goto :goto_11
 
     .line 958
     :cond_1e
@@ -1974,7 +1975,7 @@
     invoke-virtual {v4, v3, v9}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 960
-    :goto_12
+    :goto_11
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v3, v5
@@ -2034,7 +2035,7 @@
     invoke-virtual {v4, v3, v9, v8, v12}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 967
-    :goto_13
+    :goto_12
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->drawFullBubble:Z
 
     if-nez v3, :cond_21
@@ -2049,7 +2050,7 @@
 
     if-eqz v15, :cond_1f
 
-    goto :goto_14
+    goto :goto_13
 
     .line 982
     :cond_1f
@@ -2103,7 +2104,7 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_17
+    goto/16 :goto_16
 
     .line 986
     :cond_20
@@ -2133,11 +2134,11 @@
 
     invoke-virtual {v4, v3, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_17
+    goto/16 :goto_16
 
     .line 968
     :cond_21
-    :goto_14
+    :goto_13
     iget v3, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v3, v5
@@ -2203,13 +2204,13 @@
 
     move/from16 v3, v20
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_22
     move v3, v6
 
     .line 973
-    :goto_15
+    :goto_14
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v9, 0x1
@@ -2266,7 +2267,7 @@
 
     invoke-virtual {v8, v12, v15, v9, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    goto :goto_16
+    goto :goto_15
 
     .line 977
     :cond_23
@@ -2321,7 +2322,7 @@
 
     const/4 v9, 0x2
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v9
 
     add-int/2addr v15, v3
 
@@ -2338,7 +2339,7 @@
     invoke-virtual {v8, v12, v14, v9, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 980
-    :goto_16
+    :goto_15
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->rect:Landroid/graphics/RectF;
 
     const/high16 v8, 0x43870000    # 270.0f
@@ -2350,7 +2351,7 @@
     invoke-virtual {v4, v3, v8, v9, v12}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 989
-    :goto_17
+    :goto_16
     iget v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->currentType:I
 
     const/4 v8, 0x1
@@ -2361,7 +2362,7 @@
 
     if-eqz v13, :cond_24
 
-    goto :goto_18
+    goto :goto_17
 
     .line 997
     :cond_24
@@ -2383,24 +2384,24 @@
 
     invoke-virtual {v4, v2, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     .line 991
     :cond_25
-    :goto_18
+    :goto_17
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isBottomNear:Z
 
     if-eqz v3, :cond_26
 
     move/from16 v9, v20
 
-    goto :goto_19
+    goto :goto_18
 
     :cond_26
     move v9, v6
 
     .line 993
-    :goto_19
+    :goto_18
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v3, v5
@@ -2432,7 +2433,7 @@
 
     const/4 v11, 0x2
 
-    mul-int/lit8 v9, v9, 0x2
+    mul-int/2addr v9, v11
 
     sub-int/2addr v8, v9
 
@@ -2461,7 +2462,7 @@
 
     invoke-virtual {v4, v2, v3, v5, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_1a
 
     .line 1000
     :cond_27
@@ -2477,7 +2478,7 @@
 
     if-eqz v13, :cond_28
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 1005
     :cond_28
@@ -2505,11 +2506,11 @@
 
     invoke-virtual {v4, v2, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 1001
     :cond_29
-    :goto_1a
+    :goto_19
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     const/high16 v6, 0x41000000    # 8.0f
@@ -2555,7 +2556,7 @@
 
     const/4 v8, 0x2
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/2addr v7, v8
 
     sub-int/2addr v6, v7
 
@@ -2617,7 +2618,7 @@
     invoke-virtual {v4, v2, v5, v3, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 1009
-    :goto_1b
+    :goto_1a
     invoke-virtual {v4}, Landroid/graphics/Path;->close()V
 
     .line 1012
@@ -2651,7 +2652,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->alpha:I
 
-    mul-int v5, v5, v6
+    mul-int/2addr v5, v6
 
     int-to-float v5, v5
 
@@ -2802,7 +2803,7 @@
 
     if-lez v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_0
 
@@ -2835,7 +2836,7 @@
     :cond_2
     if-eqz v4, :cond_3
 
-    const/4 v4, 0x2
+    move v4, v5
 
     goto :goto_1
 
@@ -2845,12 +2846,12 @@
 
     if-eqz v4, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_1
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 600
     :goto_1
@@ -2867,12 +2868,12 @@
 
     if-nez v8, :cond_5
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_2
 
     :cond_5
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 604
     :goto_2
@@ -3202,16 +3203,11 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    const/4 v3, 0x1
-
-    goto :goto_5
-
-    :catchall_1
-    nop
+    move v3, v6
 
     .line 651
+    :catchall_1
     :cond_a
-    :goto_5
     iput-boolean v8, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->lastDrawWithShadow:Z
 
     .line 653
@@ -3226,17 +3222,17 @@
 
     const-string v1, "chat_outBubbleSelected"
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_b
     const-string v1, "chat_inBubbleSelected"
 
-    :goto_6
+    :goto_5
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
-    goto :goto_8
+    goto :goto_7
 
     .line 656
     :cond_c
@@ -3246,18 +3242,18 @@
 
     const-string v1, "chat_outBubble"
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_d
     const-string v1, "chat_inBubble"
 
-    :goto_7
+    :goto_6
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     .line 658
-    :goto_8
+    :goto_7
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->backgroundDrawable:[[Landroid/graphics/drawable/Drawable;
 
     aget-object v5, v2, v7
@@ -3540,7 +3536,7 @@
     :cond_2
     if-eqz v3, :cond_3
 
-    const/4 v3, 0x2
+    move v3, v4
 
     goto :goto_0
 
@@ -3550,12 +3546,12 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v3, 0x1
+    move v3, v6
 
     goto :goto_0
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v5
 
     .line 714
     :goto_0
@@ -3801,28 +3797,23 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v5, 0x1
-
-    goto :goto_2
-
-    :catchall_0
-    nop
+    move v5, v6
 
     .line 751
+    :catchall_0
     :cond_8
-    :goto_2
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->isOut:Z
 
     if-eqz v1, :cond_9
 
     const-string v1, "chat_outBubbleShadow"
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_9
     const-string v1, "chat_inBubbleShadow"
 
-    :goto_3
+    :goto_2
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->getColor(Ljava/lang/String;)I
 
     move-result v1
@@ -4107,7 +4098,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -4310,7 +4301,7 @@
 
     if-eqz v9, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v4
 
     goto :goto_2
 
@@ -4339,7 +4330,7 @@
     move-object v8, v7
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_2
     if-eqz v6, :cond_5
@@ -4381,7 +4372,7 @@
 
     if-eqz v2, :cond_9
 
-    const/4 v2, 0x2
+    move v2, v12
 
     goto :goto_3
 
@@ -4391,12 +4382,12 @@
 
     if-ne v2, v12, :cond_a
 
-    const/4 v2, 0x1
+    move v2, v4
 
     goto :goto_3
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 476
     :goto_3
@@ -4507,7 +4498,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v5, -0x1
+    move v5, v15
 
     goto :goto_5
 
@@ -4603,7 +4594,7 @@
 
     move v13, v1
 
-    const/4 v5, -0x1
+    move v5, v15
 
     move v15, v3
 
@@ -4664,7 +4655,7 @@
     goto/16 :goto_7
 
     :cond_11
-    const/4 v5, -0x1
+    move v5, v15
 
     .line 507
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I

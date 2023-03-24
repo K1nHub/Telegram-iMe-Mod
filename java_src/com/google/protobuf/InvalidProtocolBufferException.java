@@ -4,14 +4,29 @@ import java.io.IOException;
 /* loaded from: classes3.dex */
 public class InvalidProtocolBufferException extends IOException {
     private MessageLite unfinishedMessage;
+    private boolean wasThrownFromInputStream;
 
     public InvalidProtocolBufferException(String str) {
         super(str);
     }
 
+    public InvalidProtocolBufferException(IOException iOException) {
+        super(iOException.getMessage(), iOException);
+    }
+
     public InvalidProtocolBufferException setUnfinishedMessage(MessageLite messageLite) {
         this.unfinishedMessage = messageLite;
         return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setThrownFromInputStream() {
+        this.wasThrownFromInputStream = true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean getThrownFromInputStream() {
+        return this.wasThrownFromInputStream;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

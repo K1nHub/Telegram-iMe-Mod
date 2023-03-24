@@ -89,7 +89,7 @@
 
     move-result-wide v3
 
-    mul-double v3, v3, v1
+    mul-double/2addr v3, v1
 
     const-wide v1, 0x403b0f1aa0000000L    # 27.05900001525879
 
@@ -115,9 +115,9 @@
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightBrighnessThreshold:F
 
-    const/4 v2, 0x1
-
     cmpg-float p1, p1, v1
+
+    const/4 v1, 0x1
 
     if-gtz p1, :cond_4
 
@@ -158,7 +158,7 @@
     if-nez p1, :cond_6
 
     .line 7720
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->access$2302(Z)Z
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->access$2302(Z)Z
 
     .line 7721
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3300()Ljava/lang/Runnable;
@@ -200,7 +200,7 @@
     if-nez p1, :cond_6
 
     .line 7730
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->access$2202(Z)Z
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->access$2202(Z)Z
 
     .line 7731
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3200()Ljava/lang/Runnable;

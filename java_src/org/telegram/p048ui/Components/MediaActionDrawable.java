@@ -254,49 +254,55 @@ public class MediaActionDrawable extends Drawable {
         gradientShader.setLocalMatrix(matrix);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x087f, code lost:
-        if (r32.nextIcon == 1) goto L244;
+    /* JADX WARN: Code restructure failed: missing block: B:359:0x084f, code lost:
+        if (r32.nextIcon == 1) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x0881, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:360:0x0851, code lost:
         r2 = 1.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:360:0x0884, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:361:0x0854, code lost:
         r2 = com.google.android.gms.maps.model.BitmapDescriptorFactory.HUE_RED;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:362:0x0887, code lost:
-        if (r1 != 1) goto L245;
+    /* JADX WARN: Code restructure failed: missing block: B:364:0x0859, code lost:
+        if (r1 != r3) goto L246;
      */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x051d  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0528  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0533  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x0537  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x05b2  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x05b5  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x05ba  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x05e0  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x05e2  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x0682  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0688  */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x0696  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x0699  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x06a5  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x06a8  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x06b2  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x06b5  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x06da  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x06dd  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x06f8  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0750  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0767  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x076a  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x077b  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x077e  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0792  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x07c8  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x07df  */
-    /* JADX WARN: Removed duplicated region for block: B:324:0x07e2  */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x0807  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x084d  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x04bf  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x04c8  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x04f5  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0500  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x050b  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x050f  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x0588  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x058b  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0590  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x0597  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x05b5  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x05b7  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x05d7  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0653  */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x0659  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0667  */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x066a  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x0676  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0679  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x0683  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x0686  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x06ab  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x06ae  */
+    /* JADX WARN: Removed duplicated region for block: B:293:0x06c9  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x0721  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0738  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x073b  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x074c  */
+    /* JADX WARN: Removed duplicated region for block: B:311:0x074f  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x0763  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x0798  */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x07af  */
+    /* JADX WARN: Removed duplicated region for block: B:325:0x07b2  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x07d7  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x081d  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x0835  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x0858  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -304,7 +310,7 @@ public class MediaActionDrawable extends Drawable {
     */
     public void draw(android.graphics.Canvas r33) {
         /*
-            Method dump skipped, instructions count: 3133
+            Method dump skipped, instructions count: 3069
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.MediaActionDrawable.draw(android.graphics.Canvas):void");

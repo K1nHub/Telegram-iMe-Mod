@@ -134,7 +134,7 @@
 
     invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 1514
     :goto_0
@@ -235,12 +235,12 @@
 
     if-le v2, v7, :cond_6
 
-    const/4 v2, 0x2
+    move v2, v7
 
     goto :goto_1
 
     :cond_6
-    const/4 v2, 0x1
+    move v2, v0
 
     :goto_1
     new-array v10, v2, [Ljava/lang/String;
@@ -348,13 +348,13 @@
     goto :goto_2
 
     :cond_8
-    const/4 v11, 0x0
+    move v11, v5
 
     goto :goto_3
 
     :cond_9
     :goto_2
-    const/4 v11, 0x1
+    move v11, v0
 
     :goto_3
     if-eqz v11, :cond_a
@@ -372,7 +372,7 @@
     :goto_4
     if-eqz v11, :cond_b
 
-    const/4 v10, 0x1
+    move v10, v0
 
     goto :goto_5
 
@@ -509,7 +509,7 @@
     goto :goto_6
 
     :cond_11
-    const/4 v0, 0x0
+    move v0, v5
 
     goto :goto_7
 
@@ -539,7 +539,7 @@
 
     :cond_13
     :goto_8
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_9
     if-nez v0, :cond_15
@@ -566,7 +566,7 @@
 
     if-eqz v2, :cond_14
 
-    const/4 v4, 0x2
+    move v4, v7
 
     :cond_14
     aget-object v0, v0, v4
@@ -671,7 +671,7 @@
 
     if-eq p1, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity$8;->isYear:Z

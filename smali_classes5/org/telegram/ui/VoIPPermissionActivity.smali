@@ -44,7 +44,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 25
     :goto_0
@@ -138,7 +138,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 45
     :goto_0

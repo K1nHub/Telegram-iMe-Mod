@@ -96,14 +96,14 @@
 
     if-eqz p3, :cond_1
 
-    const/4 v9, 0x0
+    move v9, v3
 
     goto :goto_0
 
     :cond_1
     const/16 p3, 0x10
 
-    const/16 v9, 0x10
+    move v9, p3
 
     :goto_0
     const/16 v10, 0x10
@@ -116,7 +116,7 @@
 
     invoke-virtual {p0, v0, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 p3, 0x0
+    move p3, v3
 
     :goto_1
     if-ge p3, p1, :cond_5
@@ -233,7 +233,7 @@
 
     if-eqz v5, :cond_3
 
-    const/4 v5, 0x0
+    move v5, v3
 
     goto :goto_3
 

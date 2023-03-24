@@ -4,7 +4,7 @@ import com.smedialink.storage.domain.model.binancepay.BinanceTransaction;
 import com.smedialink.storage.domain.model.binancepay.BinanceTransactionDirection;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: BinanceTransactionsGroup.kt */
 /* loaded from: classes3.dex */
 public abstract class BinanceTransactionsGroup {
@@ -44,7 +44,7 @@ public abstract class BinanceTransactionsGroup {
         }
 
         private All() {
-            super(C3286R.C3289id.wallet_token_details_transactions_all, C3286R.string.wallet_token_details_transactions_all, null);
+            super(C3301R.C3304id.wallet_token_details_transactions_all, C3301R.string.wallet_token_details_transactions_all, null);
         }
     }
 
@@ -54,7 +54,7 @@ public abstract class BinanceTransactionsGroup {
         public static final Incoming INSTANCE = new Incoming();
 
         private Incoming() {
-            super(C3286R.C3289id.wallet_token_details_transactions_incoming, C3286R.string.wallet_token_details_transactions_incoming, null);
+            super(C3301R.C3304id.wallet_token_details_transactions_incoming, C3301R.string.wallet_token_details_transactions_incoming, null);
         }
 
         @Override // com.smedialink.model.wallet.home.pay.BinanceTransactionsGroup
@@ -70,7 +70,7 @@ public abstract class BinanceTransactionsGroup {
         public static final Outgoing INSTANCE = new Outgoing();
 
         private Outgoing() {
-            super(C3286R.C3289id.wallet_token_details_transactions_outgoing, C3286R.string.wallet_token_details_transactions_outgoing, null);
+            super(C3301R.C3304id.wallet_token_details_transactions_outgoing, C3301R.string.wallet_token_details_transactions_outgoing, null);
         }
 
         @Override // com.smedialink.model.wallet.home.pay.BinanceTransactionsGroup

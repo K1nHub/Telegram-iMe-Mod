@@ -136,7 +136,7 @@
 
     const/4 v7, 0x4
 
-    const/16 v19, 0x4
+    move/from16 v19, v7
 
     goto :goto_2
 

@@ -218,12 +218,12 @@
 
     if-eqz v4, :cond_1
 
-    const/high16 v4, 0x425e0000    # 55.5f
+    move v4, v5
 
     goto :goto_1
 
     :cond_1
-    const/high16 v4, 0x423e0000    # 47.5f
+    move v4, v6
 
     :goto_1
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -247,7 +247,7 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v5, 0x423e0000    # 47.5f
+    move v5, v6
 
     :goto_2
     const/high16 v6, 0x41000000    # 8.0f
@@ -285,13 +285,13 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     const/high16 v4, 0x40a00000    # 5.0f
 
     const/high16 v5, 0x40800000    # 4.0f
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     add-float/2addr v5, v4
 
@@ -415,7 +415,7 @@
 
     move-result v4
 
-    mul-int v4, v4, v3
+    mul-int/2addr v4, v3
 
     mul-int/lit8 v5, v3, 0x4
 
@@ -452,11 +452,11 @@
 
     const/high16 v9, 0x40000000    # 2.0f
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     sub-float/2addr v7, v8
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     add-float/2addr v7, v5
 

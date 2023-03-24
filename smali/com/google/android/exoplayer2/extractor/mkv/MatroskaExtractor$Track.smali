@@ -426,7 +426,7 @@
 
     if-nez v0, :cond_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_0
     const/16 v0, 0x19
@@ -454,7 +454,7 @@
 
     const v3, 0x47435000    # 50000.0f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     const/high16 v4, 0x3f000000    # 0.5f
 
@@ -469,7 +469,7 @@
     .line 2395
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->primaryRChromaticityY:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -482,7 +482,7 @@
     .line 2396
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->primaryGChromaticityX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -495,7 +495,7 @@
     .line 2397
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->primaryGChromaticityY:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -508,7 +508,7 @@
     .line 2398
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->primaryBChromaticityX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -521,7 +521,7 @@
     .line 2399
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->primaryBChromaticityY:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -534,7 +534,7 @@
     .line 2400
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->whitePointChromaticityX:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -547,7 +547,7 @@
     .line 2401
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->whitePointChromaticityY:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v4
 
@@ -856,7 +856,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     return v1
@@ -909,9 +909,9 @@
 
     const/4 v3, 0x1
 
-    const/4 v5, 0x1
+    move v6, v2
 
-    const/4 v6, 0x0
+    move v5, v3
 
     .line 2468
     :goto_0
@@ -939,7 +939,7 @@
 
     add-int/2addr v6, v5
 
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 2475
     :goto_1
@@ -1145,7 +1145,7 @@
     goto :goto_0
 
     :cond_0
-    const/16 v1, 0x20
+    move v1, v3
 
     goto/16 :goto_1
 
@@ -1286,7 +1286,7 @@
 
     if-nez v1, :cond_9
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_9
     const/16 v1, 0x17
@@ -1401,7 +1401,7 @@
     goto/16 :goto_0
 
     :cond_10
-    const/16 v1, 0x10
+    move v1, v4
 
     goto/16 :goto_1
 
@@ -1529,7 +1529,7 @@
     goto/16 :goto_0
 
     :cond_18
-    const/16 v1, 0x8
+    move v1, v7
 
     goto/16 :goto_1
 
@@ -1609,7 +1609,7 @@
     goto/16 :goto_0
 
     :cond_1d
-    const/4 v1, 0x3
+    move v1, v9
 
     goto :goto_1
 
@@ -1760,13 +1760,7 @@
 
     const-string v17, "audio/opus"
 
-    move-object v3, v8
-
-    const/4 v4, -0x1
-
-    const/16 v6, 0x1680
-
-    goto/16 :goto_a
+    goto/16 :goto_9
 
     .line 2149
     :pswitch_1
@@ -1782,22 +1776,22 @@
 
     const-string v17, "audio/flac"
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :pswitch_2
     const-string v17, "audio/eac3"
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_3
     const-string v17, "video/mpeg2"
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_4
     move-object/from16 v17, v5
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_5
     move-object v1, v8
@@ -1806,7 +1800,7 @@
 
     move-object/from16 v17, v14
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 2081
     :pswitch_6
@@ -1837,7 +1831,7 @@
 
     const-string v17, "video/hevc"
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     .line 2221
     :pswitch_7
@@ -1859,7 +1853,7 @@
 
     move-object/from16 v17, v15
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 2172
     :pswitch_8
@@ -1894,16 +1888,17 @@
 
     invoke-static {v11, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     :cond_21
+    :goto_2
     move v4, v1
 
     move-object v1, v8
 
     move-object v3, v1
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     .line 2186
     :pswitch_9
@@ -1915,22 +1910,16 @@
 
     move-object v3, v1
 
-    const/4 v4, 0x3
+    move v4, v9
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_22
     if-ne v1, v4, :cond_23
 
     const/high16 v1, 0x10000000
 
-    move-object v1, v8
-
-    move-object v3, v1
-
-    const/high16 v4, 0x10000000
-
-    goto :goto_4
+    goto :goto_2
 
     .line 2193
     :cond_23
@@ -1956,7 +1945,7 @@
 
     invoke-static {v11, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     .line 2203
     :pswitch_a
@@ -1970,7 +1959,7 @@
 
     const/4 v4, 0x4
 
-    goto :goto_4
+    goto :goto_5
 
     .line 2208
     :cond_24
@@ -1996,12 +1985,12 @@
 
     invoke-static {v11, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     :pswitch_b
     const-string v17, "video/x-unknown"
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_c
     move-object v1, v8
@@ -2010,43 +1999,43 @@
 
     move-object/from16 v17, v12
 
-    goto :goto_3
+    goto :goto_4
 
     :pswitch_d
     const-string v17, "video/x-vnd.on2.vp9"
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_e
     const-string v17, "video/x-vnd.on2.vp8"
 
-    :goto_2
+    :goto_3
     move-object v1, v8
 
     move-object v3, v1
 
-    :goto_3
+    :goto_4
     const/4 v4, -0x1
 
-    :goto_4
+    :goto_5
     const/4 v6, -0x1
 
-    goto/16 :goto_a
+    goto/16 :goto_d
 
     :pswitch_f
     const-string v17, "video/av01"
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_10
     const-string v17, "audio/vnd.dts"
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_11
     const-string v17, "audio/ac3"
 
-    goto :goto_2
+    goto :goto_3
 
     .line 2114
     :pswitch_12
@@ -2082,12 +2071,12 @@
 
     const-string v17, "audio/mp4a-latm"
 
-    goto :goto_3
+    goto :goto_4
 
     :pswitch_13
     const-string v17, "audio/vnd.dts.hd"
 
-    goto :goto_2
+    goto :goto_3
 
     .line 2228
     :pswitch_14
@@ -2105,7 +2094,7 @@
 
     move-object/from16 v17, v13
 
-    goto :goto_3
+    goto :goto_4
 
     .line 2074
     :pswitch_15
@@ -2136,7 +2125,7 @@
 
     const-string v17, "video/avc"
 
-    :goto_5
+    :goto_6
     const/4 v4, -0x1
 
     const/4 v6, -0x1
@@ -2147,7 +2136,7 @@
 
     move-object/from16 v1, v18
 
-    goto/16 :goto_a
+    goto/16 :goto_d
 
     :pswitch_16
     const/4 v1, 0x4
@@ -2172,7 +2161,7 @@
 
     move-object/from16 v17, v2
 
-    goto :goto_6
+    goto :goto_7
 
     .line 2087
     :pswitch_17
@@ -2203,29 +2192,25 @@
 
     check-cast v1, Ljava/util/List;
 
-    :goto_6
+    :goto_7
     move-object v3, v8
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :pswitch_18
     const-string v17, "audio/mpeg"
 
-    goto :goto_7
+    goto :goto_8
 
     :pswitch_19
     const-string v17, "audio/mpeg-L2"
 
-    :goto_7
+    :goto_8
     move-object v1, v8
 
     move-object v3, v1
 
-    const/4 v4, -0x1
-
-    const/16 v6, 0x1000
-
-    goto/16 :goto_a
+    goto :goto_a
 
     :pswitch_1a
     const/16 v16, 0x2000
@@ -2243,13 +2228,15 @@
 
     const-string v17, "audio/vorbis"
 
+    :goto_9
     move-object v3, v8
+
+    :goto_a
+    move/from16 v6, v16
 
     const/4 v4, -0x1
 
-    const/16 v6, 0x2000
-
-    goto :goto_a
+    goto :goto_d
 
     .line 2138
     :pswitch_1b
@@ -2261,7 +2248,7 @@
 
     const-string v17, "audio/true-hd"
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     .line 2153
     :pswitch_1c
@@ -2313,7 +2300,7 @@
 
     invoke-static {v11, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_8
+    goto :goto_b
 
     .line 2167
     :cond_25
@@ -2333,14 +2320,14 @@
 
     invoke-static {v11, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_8
+    :goto_b
     move-object v1, v8
 
     move-object v3, v1
 
     move-object/from16 v17, v10
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 2070
     :pswitch_1d
@@ -2350,20 +2337,20 @@
 
     move-object v1, v8
 
-    goto :goto_9
+    goto :goto_c
 
     :cond_26
     invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    :goto_9
+    :goto_c
     const-string v17, "video/mp4v-es"
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 2245
-    :goto_a
+    :goto_d
     iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->dolbyVisionConfigBytes:[B
 
     if-eqz v7, :cond_27
@@ -2404,12 +2391,12 @@
 
     const/4 v9, 0x2
 
-    goto :goto_b
+    goto :goto_e
 
     :cond_28
-    const/4 v9, 0x0
+    move v9, v11
 
-    :goto_b
+    :goto_e
     or-int/2addr v9, v10
 
     .line 2260
@@ -2444,7 +2431,7 @@
 
     const/4 v5, 0x1
 
-    goto/16 :goto_10
+    goto/16 :goto_13
 
     .line 2269
     :cond_29
@@ -2481,12 +2468,12 @@
     :cond_2b
     iput v2, v0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->displayHeight:I
 
-    goto :goto_c
+    goto :goto_f
 
     :cond_2c
     const/4 v4, -0x1
 
-    :goto_c
+    :goto_f
     const/high16 v2, -0x40800000    # -1.0f
 
     .line 2276
@@ -2501,13 +2488,13 @@
     .line 2277
     iget v2, v0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->height:I
 
-    mul-int v2, v2, v5
+    mul-int/2addr v2, v5
 
     int-to-float v2, v2
 
     iget v5, v0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->width:I
 
-    mul-int v5, v5, v12
+    mul-int/2addr v5, v12
 
     int-to-float v5, v5
 
@@ -2605,9 +2592,9 @@
 
     if-nez v5, :cond_30
 
-    const/4 v4, 0x0
+    move v4, v11
 
-    goto :goto_e
+    goto :goto_11
 
     .line 2295
     :cond_30
@@ -2623,7 +2610,7 @@
 
     const/16 v4, 0x5a
 
-    goto :goto_e
+    goto :goto_11
 
     .line 2297
     :cond_31
@@ -2648,7 +2635,7 @@
 
     if-nez v5, :cond_32
 
-    goto :goto_d
+    goto :goto_10
 
     .line 2300
     :cond_32
@@ -2664,15 +2651,15 @@
 
     const/16 v4, 0x10e
 
-    goto :goto_e
+    goto :goto_11
 
     :cond_33
-    :goto_d
+    :goto_10
     const/16 v4, 0xb4
 
     .line 2304
     :cond_34
-    :goto_e
+    :goto_11
     iget v5, v0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->width:I
 
     .line 2305
@@ -2716,7 +2703,7 @@
 
     const/4 v5, 0x2
 
-    goto :goto_10
+    goto :goto_13
 
     .line 2312
     :cond_35
@@ -2761,7 +2748,7 @@
 
     if-eqz v2, :cond_36
 
-    goto :goto_f
+    goto :goto_12
 
     :cond_36
     const-string v1, "Unexpected MIME type."
@@ -2774,11 +2761,11 @@
     throw v1
 
     :cond_37
-    :goto_f
+    :goto_12
     const/4 v5, 0x3
 
     .line 2324
-    :goto_10
+    :goto_13
     iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/mkv/MatroskaExtractor$Track;->name:Ljava/lang/String;
 
     if-eqz v2, :cond_38

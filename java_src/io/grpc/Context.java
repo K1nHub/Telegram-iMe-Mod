@@ -7,7 +7,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Context {
     private static final PersistentHashArrayMappedTrie<Object, Object> EMPTY_ENTRIES;
     public static final Context ROOT;
@@ -18,11 +18,11 @@ public class Context {
     private CancellationListener parentListener = new ParentListener(this, null);
 
     /* renamed from: io.grpc.Context$1 */
-    /* loaded from: classes3.dex */
-    class RunnableC23461 implements Runnable {
+    /* loaded from: classes.dex */
+    class RunnableC23601 implements Runnable {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface CancellationListener {
         void cancelled(Context context);
     }
@@ -33,14 +33,14 @@ public class Context {
         ROOT = new Context(null, persistentHashArrayMappedTrie);
     }
 
-    static AbstractC2347Storage storage() {
+    static AbstractC2361Storage storage() {
         return LazyStorage.storage;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class LazyStorage {
-        static final AbstractC2347Storage storage;
+        static final AbstractC2361Storage storage;
 
         static {
             AtomicReference atomicReference = new AtomicReference();
@@ -51,9 +51,9 @@ public class Context {
             }
         }
 
-        private static AbstractC2347Storage createStorage(AtomicReference<? super ClassNotFoundException> atomicReference) {
+        private static AbstractC2361Storage createStorage(AtomicReference<? super ClassNotFoundException> atomicReference) {
             try {
-                return (AbstractC2347Storage) Class.forName("io.grpc.override.ContextStorageOverride").asSubclass(AbstractC2347Storage.class).getConstructor(new Class[0]).newInstance(new Object[0]);
+                return (AbstractC2361Storage) Class.forName("io.grpc.override.ContextStorageOverride").asSubclass(AbstractC2361Storage.class).getConstructor(new Class[0]).newInstance(new Object[0]);
             } catch (ClassNotFoundException e) {
                 atomicReference.set(e);
                 return new ThreadLocalContextStorage();
@@ -193,7 +193,7 @@ public class Context {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class CancellableContext extends Context implements Closeable {
         private Throwable cancellationCause;
         private boolean cancelled;
@@ -272,8 +272,8 @@ public class Context {
     }
 
     /* renamed from: io.grpc.Context$Storage */
-    /* loaded from: classes3.dex */
-    public static abstract class AbstractC2347Storage {
+    /* loaded from: classes.dex */
+    public static abstract class AbstractC2361Storage {
         public abstract Context current();
 
         public abstract void detach(Context context, Context context2);
@@ -291,7 +291,7 @@ public class Context {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public final class ExecutableListener implements Runnable {
         private final Executor executor;
         final CancellationListener listener;
@@ -316,12 +316,12 @@ public class Context {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public final class ParentListener implements CancellationListener {
         private ParentListener() {
         }
 
-        /* synthetic */ ParentListener(Context context, RunnableC23461 runnableC23461) {
+        /* synthetic */ ParentListener(Context context, RunnableC23601 runnableC23601) {
             this();
         }
 
@@ -344,7 +344,7 @@ public class Context {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public enum DirectExecutor implements Executor {
         INSTANCE;
 

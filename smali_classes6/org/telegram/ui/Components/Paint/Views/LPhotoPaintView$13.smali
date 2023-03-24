@@ -180,7 +180,7 @@
 
     if-nez v2, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     goto :goto_1
 
@@ -235,7 +235,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_2
     invoke-static {v0, v1, v5}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F

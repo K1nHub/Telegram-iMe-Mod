@@ -700,12 +700,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 479
     :goto_0
@@ -718,12 +718,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_1
     iput-boolean v2, v7, Lorg/telegram/ui/Components/RLottieDrawable;->fallbackCache:Z
@@ -735,12 +735,12 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_2
     iput-boolean v2, v7, Lorg/telegram/ui/Components/RLottieDrawable;->createdForFirstFrame:Z
@@ -853,9 +853,9 @@
 
     iput-object v8, v7, Lorg/telegram/ui/Components/RLottieDrawable;->bitmapsCache:Lorg/telegram/messenger/utils/BitmapsCache;
 
-    move-object v3, v15
+    move v0, v14
 
-    const/4 v0, 0x1
+    move-object v3, v15
 
     goto :goto_3
 
@@ -883,7 +883,7 @@
 
     move v13, v0
 
-    const/4 v0, 0x1
+    move v0, v14
 
     move-object/from16 v14, p6
 
@@ -1104,12 +1104,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 519
     :goto_0
@@ -1122,12 +1122,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_1
     iput-boolean v2, v7, Lorg/telegram/ui/Components/RLottieDrawable;->createdForFirstFrame:Z
@@ -1239,9 +1239,9 @@
 
     iput-object v8, v7, Lorg/telegram/ui/Components/RLottieDrawable;->bitmapsCache:Lorg/telegram/messenger/utils/BitmapsCache;
 
-    move-object v1, v15
+    move v0, v14
 
-    const/4 v0, 0x1
+    move-object v1, v15
 
     goto :goto_2
 
@@ -1271,7 +1271,7 @@
 
     move v13, v1
 
-    const/4 v0, 0x1
+    move v0, v14
 
     move-object/from16 v14, p7
 
@@ -2230,7 +2230,7 @@
     invoke-virtual {v3, p0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 729
     :cond_3
@@ -2332,9 +2332,9 @@
 
     if-nez v6, :cond_0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     :cond_0
     if-eqz p1, :cond_1
@@ -2661,7 +2661,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_1
     :goto_0
@@ -2680,7 +2680,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     return v1
@@ -2724,12 +2724,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 804
     :goto_0
@@ -2755,7 +2755,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_1
 
@@ -3352,7 +3352,7 @@
     if-ltz p6, :cond_7
 
     :cond_6
-    const/4 v0, 0x1
+    move v0, p5
 
     :cond_7
     iput-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->needScale:Z
@@ -3442,7 +3442,7 @@
     if-ltz v2, :cond_b
 
     :cond_a
-    const/4 v0, 0x1
+    move v0, p5
 
     :cond_b
     move p5, p6
@@ -3603,7 +3603,7 @@
 
     const/high16 v0, 0x447a0000    # 1000.0f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-long v0, v1
 
@@ -3667,9 +3667,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 p1, -0x1
 
@@ -3685,12 +3685,12 @@
 
     const/4 v2, 0x2
 
-    const/4 v9, 0x2
+    move v9, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v9, 0x1
+    move v9, v8
 
     .line 1328
     :goto_0
@@ -3772,16 +3772,16 @@
 .end method
 
 .method public hasBaseDice()Z
-    .locals 5
+    .locals 4
 
     .line 650
     iget-wide v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
 
@@ -4080,9 +4080,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 1312
     iget-object v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->file:Ljava/io/File;
@@ -4465,7 +4465,7 @@
 
     if-eqz v3, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_4
     invoke-static {v0, v1}, Lorg/telegram/messenger/DispatchQueuePoolBackground;->execute(Ljava/lang/Runnable;Z)V
@@ -4555,18 +4555,18 @@
 .end method
 
 .method public setBaseDice(Ljava/io/File;)Z
-    .locals 6
+    .locals 4
 
     .line 624
     iget-wide v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->nativePtr:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_2
+    if-nez v0, :cond_2
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
 
@@ -4585,28 +4585,28 @@
     .line 628
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     return v0
 
     .line 631
     :cond_1
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->loadingInBackground:Z
 
     .line 632
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/ui/Components/RLottieDrawable$$ExternalSyntheticLambda4;
+    new-instance v2, Lorg/telegram/ui/Components/RLottieDrawable$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/RLottieDrawable$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/RLottieDrawable;Ljava/lang/String;)V
+    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Components/RLottieDrawable$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/RLottieDrawable;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     :cond_2
     :goto_0
-    return v2
+    return v1
 .end method
 
 .method public setCurrentFrame(I)V
@@ -4825,18 +4825,18 @@
 .end method
 
 .method public setDiceNumber(Ljava/io/File;Z)Z
-    .locals 6
+    .locals 4
 
     .line 654
     iget-wide v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondNativePtr:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-nez v5, :cond_3
+    if-nez v0, :cond_3
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondLoadingInBackground:Z
 
@@ -4855,9 +4855,9 @@
     .line 658
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     return v0
 
@@ -4883,11 +4883,11 @@
     iput p2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->isDice:I
 
     .line 663
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->setLastFrame:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->setLastFrame:Z
 
     .line 665
     :cond_2
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondLoadingInBackground:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/RLottieDrawable;->secondLoadingInBackground:Z
 
     .line 666
     sget-object p2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
@@ -4900,7 +4900,7 @@
 
     :cond_3
     :goto_0
-    return v2
+    return v1
 .end method
 
 .method public setGeneratingFrame(I)V
@@ -5013,24 +5013,24 @@
 .method public setProgress(FZ)V
     .locals 3
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpg-float v1, p1, v0
 
-    cmpg-float v2, p1, v1
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    if-gez v2, :cond_0
+    if-gez v1, :cond_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    cmpl-float v1, p1, v0
+    cmpl-float v0, p1, v2
 
-    if-lez v1, :cond_1
+    if-lez v0, :cond_1
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v2
 
     .line 1076
     :cond_1
@@ -5043,7 +5043,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int p1, v0
 
@@ -5078,12 +5078,12 @@
 
     rem-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    const/4 p1, 0x1
+    const/4 p2, 0x1
 
     .line 1063
-    invoke-virtual {p0, p2, p1, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
+    invoke-virtual {p0, p1, p2, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
     return-void
 .end method
@@ -5183,9 +5183,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 1221
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -5279,9 +5279,9 @@
 
     int-to-long p2, p1
 
-    cmp-long v0, v3, p2
+    cmp-long p2, v3, p2
 
-    if-ltz v0, :cond_a
+    if-ltz p2, :cond_a
 
     iget-boolean p2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->skipFrameUpdate:Z
 
@@ -5365,9 +5365,9 @@
 
     int-to-long p2, p1
 
-    cmp-long v0, v3, p2
+    cmp-long p2, v3, p2
 
-    if-ltz v0, :cond_a
+    if-ltz p2, :cond_a
 
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/Components/RLottieDrawable;->nextRenderingBitmap:Landroid/graphics/Bitmap;

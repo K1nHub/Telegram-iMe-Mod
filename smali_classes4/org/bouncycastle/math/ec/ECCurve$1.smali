@@ -64,9 +64,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     iget v5, p0, Lorg/bouncycastle/math/ec/ECCurve$1;->val$len:I
@@ -81,7 +81,7 @@
 
     shr-int/lit8 v5, v5, 0x1f
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     iget v7, p0, Lorg/bouncycastle/math/ec/ECCurve$1;->val$FE_BYTES:I

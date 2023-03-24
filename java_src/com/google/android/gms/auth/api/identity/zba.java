@@ -10,12 +10,12 @@ public final class zba implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        int i = 0;
         BeginSignInRequest.PasswordRequestOptions passwordRequestOptions = null;
         BeginSignInRequest.GoogleIdTokenRequestOptions googleIdTokenRequestOptions = null;
         String str = null;
         BeginSignInRequest.PasskeysRequestOptions passkeysRequestOptions = null;
-        boolean z = false;
-        int i = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

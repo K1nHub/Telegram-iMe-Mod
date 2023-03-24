@@ -503,14 +503,14 @@
 
     const-wide v5, 0x3feccccccccccccdL    # 0.9
 
-    cmpl-double v2, v0, v5
+    cmpl-double v0, v0, v5
 
-    if-ltz v2, :cond_5
+    if-ltz v0, :cond_5
 
     goto :goto_1
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     invoke-static {p1, v4}, Lorg/telegram/messenger/AndroidUtilities;->setLightNavigationBar(Landroid/view/Window;Z)V

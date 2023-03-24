@@ -491,9 +491,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -508,9 +508,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -525,9 +525,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -542,9 +542,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -559,9 +559,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -576,9 +576,9 @@
 
     shr-long v3, p1, v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v3, v3, 0xff
 
     int-to-byte v3, v3
 
@@ -594,9 +594,9 @@
 
     shr-long/2addr p1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int/lit16 p1, p2, 0xff
+    and-int/lit16 p1, p1, 0xff
 
     int-to-byte p1, p1
 
@@ -1054,9 +1054,9 @@
 
     int-to-long v1, v1
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     invoke-static {v0, v1, v2, p1}, Lcom/google/android/gms/internal/wearable/zzeo;->zzn([BJB)V
 
@@ -1105,9 +1105,9 @@
 
     iput v2, p0, Lcom/google/android/gms/internal/wearable/zzbb;->zzd:I
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    int-to-byte p1, p2
+    int-to-byte p1, p1
 
     .line 2
     aput-byte p1, v0, v1

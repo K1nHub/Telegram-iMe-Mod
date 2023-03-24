@@ -1654,7 +1654,7 @@
 
     :cond_d
     :goto_7
-    const/4 v0, -0x1
+    move/from16 v0, v16
 
     :goto_8
     packed-switch v0, :pswitch_data_0
@@ -1802,6 +1802,8 @@
     :catch_0
     :cond_12
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -4004,7 +4006,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -4071,7 +4073,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 5891
     :goto_0
@@ -4533,11 +4535,11 @@
 
     move-result v11
 
+    move v13, v2
+
+    move v14, v13
+
     move-object v12, v5
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
 
     :goto_9
     if-ge v13, v11, :cond_13
@@ -5112,7 +5114,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_3
@@ -5346,9 +5348,9 @@
 
     iget-wide v5, p0, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    cmp-long v7, v5, v3
+    cmp-long v5, v5, v3
 
-    if-eqz v7, :cond_b
+    if-eqz v5, :cond_b
 
     .line 3684
     iget-object v5, p0, Lorg/telegram/ui/PassportActivity;->selfieDocument:Lorg/telegram/messenger/SecureDocument;
@@ -5442,7 +5444,7 @@
 
     move-result v0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_1
     if-ge v3, v0, :cond_10
@@ -5521,7 +5523,7 @@
     return v2
 
     :cond_10
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_4
     const/4 v3, 0x2
@@ -5559,10 +5561,10 @@
     :goto_5
     if-nez v5, :cond_13
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     :cond_13
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 3721
     :goto_6
@@ -5760,7 +5762,7 @@
 
     if-eqz v8, :cond_20
 
-    const/4 v7, 0x1
+    move v7, v2
 
     .line 3814
     :cond_20
@@ -5777,7 +5779,7 @@
 
     if-ge v6, v11, :cond_21
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_21
     if-nez v7, :cond_2f
@@ -5798,7 +5800,7 @@
 
     if-ne v6, v9, :cond_22
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_22
     if-nez v0, :cond_23
@@ -5823,7 +5825,7 @@
 
     if-le v8, v9, :cond_25
 
-    const/4 v7, 0x1
+    move v7, v2
 
     :cond_25
     if-nez v0, :cond_26
@@ -5836,9 +5838,9 @@
     if-ne v6, v2, :cond_2e
 
     :cond_27
-    const/4 v9, 0x1
+    move v9, v2
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_28
     if-ne v6, v11, :cond_2e
@@ -5854,7 +5856,7 @@
 
     if-ne v6, v2, :cond_2a
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_2a
     if-ne v6, v10, :cond_2c
@@ -5863,7 +5865,9 @@
 
     :cond_2b
     :goto_9
-    const/4 v7, 0x1
+    move v9, v1
+
+    move v7, v2
 
     goto :goto_a
 
@@ -5897,17 +5901,16 @@
     goto :goto_9
 
     :cond_2e
-    :goto_a
-    const/4 v9, 0x0
+    move v9, v1
 
-    :goto_b
+    :goto_a
     if-nez v7, :cond_2f
 
     if-nez v9, :cond_2f
 
     if-nez v8, :cond_2f
 
-    const/4 v7, 0x1
+    move v7, v2
 
     :cond_2f
     if-eqz v7, :cond_30
@@ -5920,21 +5923,19 @@
     return v2
 
     :cond_30
-    :goto_c
+    :goto_b
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_6
 
     :cond_31
-    :goto_d
+    :goto_c
     add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_4
 
     :cond_32
     return v1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -6044,7 +6045,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 5314
     :goto_0
@@ -6099,7 +6100,7 @@
 
     if-nez v2, :cond_4
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 5318
     :goto_1
@@ -6264,7 +6265,7 @@
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     :goto_4
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_5
     const/4 v3, 0x3
@@ -6555,9 +6556,9 @@
     goto :goto_1
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 6165
     :goto_0
@@ -6602,9 +6603,9 @@
 
     move-result-wide p0
 
-    cmp-long v3, v1, p0
+    cmp-long p0, v1, p0
 
-    if-eqz v3, :cond_3
+    if-eqz p0, :cond_3
 
     return v0
 
@@ -6790,7 +6791,7 @@
 .end method
 
 .method private createAddressInterface(Landroid/content/Context;)V
-    .locals 26
+    .locals 25
 
     move-object/from16 v1, p0
 
@@ -7150,131 +7151,131 @@
     .line 3184
     iget-wide v14, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    const-string v0, ""
+    cmp-long v0, v14, v10
 
-    cmp-long v16, v14, v10
+    const-string v14, ""
 
-    if-eqz v16, :cond_6
+    if-eqz v0, :cond_6
 
     .line 3185
-    sget v14, Lorg/telegram/messenger/R$string;->PassportAddAddressUploadInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddAddressUploadInfo:I
 
     const-string v15, "PassportAddAddressUploadInfo"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3187
     :cond_6
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
+    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
 
     if-eqz v15, :cond_7
 
     .line 3188
-    sget v14, Lorg/telegram/messenger/R$string;->PassportAddAgreementInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddAgreementInfo:I
 
     const-string v15, "PassportAddAgreementInfo"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3189
     :cond_7
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
+    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
 
     if-eqz v15, :cond_8
 
     .line 3190
-    sget v14, Lorg/telegram/messenger/R$string;->PassportAddBillInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddBillInfo:I
 
     const-string v15, "PassportAddBillInfo"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3191
     :cond_8
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
+    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
 
     if-eqz v15, :cond_9
 
     .line 3192
-    sget v14, Lorg/telegram/messenger/R$string;->PassportAddPassportRegistrationInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddPassportRegistrationInfo:I
 
     const-string v15, "PassportAddPassportRegistrationInfo"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3193
     :cond_9
-    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
+    instance-of v15, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
 
     if-eqz v15, :cond_a
 
     .line 3194
-    sget v14, Lorg/telegram/messenger/R$string;->PassportAddTemporaryRegistrationInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTemporaryRegistrationInfo:I
 
     const-string v15, "PassportAddTemporaryRegistrationInfo"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3195
     :cond_a
-    instance-of v14, v14, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
+    instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
 
-    if-eqz v14, :cond_b
+    if-eqz v0, :cond_b
 
     .line 3196
-    sget v14, Lorg/telegram/messenger/R$string;->PassportAddBankInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddBankInfo:I
 
     const-string v15, "PassportAddBankInfo"
 
-    invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3198
     :cond_b
-    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     .line 3202
     :goto_3
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
     .line 3203
     iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
@@ -7297,17 +7298,17 @@
     if-eqz v15, :cond_c
 
     .line 3206
-    new-instance v14, Landroid/text/SpannableStringBuilder;
+    new-instance v0, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v14, v15}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v15}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     .line 3207
-    invoke-virtual {v14, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3208
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllDocumentsErrorText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v14, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3210
     new-instance v4, Landroid/text/style/ForegroundColorSpan;
@@ -7322,333 +7323,335 @@
 
     move-result v8
 
-    invoke-virtual {v14, v4, v7, v8, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, v4, v7, v8, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 3211
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
 
-    invoke-virtual {v4, v11, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v11, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3214
     :cond_c
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-virtual {v4, v14}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3215
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->bottomCell:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    const/4 v11, -0x1
+    const/4 v8, -0x1
 
-    invoke-static {v11, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v14
+    move-result-object v11
 
-    invoke-virtual {v4, v8, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 3217
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    iget-boolean v4, v4, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->translation_required:Z
+    iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->translation_required:Z
 
-    if-eqz v4, :cond_15
+    if-eqz v0, :cond_15
 
     .line 3218
-    new-instance v4, Lorg/telegram/ui/Cells/HeaderCell;
+    new-instance v0, Lorg/telegram/ui/Cells/HeaderCell;
 
-    invoke-direct {v4, v2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
 
     .line 3219
-    sget v8, Lorg/telegram/messenger/R$string;->PassportTranslation:I
+    sget v4, Lorg/telegram/messenger/R$string;->PassportTranslation:I
 
-    const-string v11, "PassportTranslation"
-
-    invoke-static {v11, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v4, v8}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
-
-    .line 3220
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
-
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v8
-
-    invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 3221
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
-
-    const/4 v11, -0x1
-
-    invoke-static {v11, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v14
-
-    invoke-virtual {v4, v8, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 3223
-    new-instance v4, Landroid/widget/LinearLayout;
-
-    invoke-direct {v4, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
-
-    const/4 v8, 0x1
-
-    .line 3224
-    invoke-virtual {v4, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    .line 3225
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    iget-object v14, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
-
-    invoke-static {v11, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v15
-
-    invoke-virtual {v4, v14, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 3227
-    new-instance v4, Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    invoke-direct {v4, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    .line 3228
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v14
-
-    invoke-virtual {v4, v14}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 3229
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
-
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    invoke-static {v11, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v14
-
-    invoke-virtual {v4, v8, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 3230
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    new-instance v8, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda27;
-
-    invoke-direct {v8, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/PassportActivity;)V
-
-    invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 3235
-    new-instance v4, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    invoke-direct {v4, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
-
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
-
-    .line 3236
-    invoke-static {v2, v13, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 3238
-    iget-wide v13, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
-
-    const-wide/16 v17, 0x0
-
-    cmp-long v4, v13, v17
-
-    if-eqz v4, :cond_d
-
-    .line 3239
-    sget v4, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
-
-    const-string v8, "PassportAddTranslationUploadInfo"
+    const-string v8, "PassportTranslation"
 
     invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    invoke-virtual {v0, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
+
+    .line 3220
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    .line 3221
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->headerCell:Lorg/telegram/ui/Cells/HeaderCell;
+
+    const/4 v8, -0x1
+
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v11
+
+    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 3223
+    new-instance v0, Landroid/widget/LinearLayout;
+
+    invoke-direct {v0, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
+
+    const/4 v4, 0x1
+
+    .line 3224
+    invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    .line 3225
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    iget-object v11, v1, Lorg/telegram/ui/PassportActivity;->translationLayout:Landroid/widget/LinearLayout;
+
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v15
+
+    invoke-virtual {v0, v11, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 3227
+    new-instance v0, Lorg/telegram/ui/Cells/TextSettingsCell;
+
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
+
+    .line 3228
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v11
+
+    invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 3229
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
+
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
+
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v11
+
+    invoke-virtual {v0, v4, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 3230
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->uploadTranslationCell:Lorg/telegram/ui/Cells/TextSettingsCell;
+
+    new-instance v4, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda27;
+
+    invoke-direct {v4, v1}, Lorg/telegram/ui/PassportActivity$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/PassportActivity;)V
+
+    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 3235
+    new-instance v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+
+    .line 3236
+    invoke-static {v2, v13, v6}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 3238
+    iget-wide v3, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
+
+    const-wide/16 v16, 0x0
+
+    cmp-long v3, v3, v16
+
+    if-eqz v3, :cond_d
+
+    .line 3239
+    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
+
+    const-string v4, "PassportAddTranslationUploadInfo"
+
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3241
     :cond_d
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v8, v4, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
+    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
 
-    if-eqz v8, :cond_e
+    if-eqz v4, :cond_e
 
     .line 3242
-    sget v4, Lorg/telegram/messenger/R$string;->PassportAddTranslationAgreementInfo:I
+    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationAgreementInfo:I
 
-    const-string v8, "PassportAddTranslationAgreementInfo"
+    const-string v4, "PassportAddTranslationAgreementInfo"
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3243
     :cond_e
-    instance-of v8, v4, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
+    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
 
-    if-eqz v8, :cond_f
+    if-eqz v4, :cond_f
 
     .line 3244
-    sget v4, Lorg/telegram/messenger/R$string;->PassportAddTranslationBillInfo:I
+    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationBillInfo:I
 
-    const-string v8, "PassportAddTranslationBillInfo"
+    const-string v4, "PassportAddTranslationBillInfo"
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3245
     :cond_f
-    instance-of v8, v4, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
+    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
 
-    if-eqz v8, :cond_10
+    if-eqz v4, :cond_10
 
     .line 3246
-    sget v4, Lorg/telegram/messenger/R$string;->PassportAddTranslationPassportRegistrationInfo:I
+    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationPassportRegistrationInfo:I
 
-    const-string v8, "PassportAddTranslationPassportRegistrationInfo"
+    const-string v4, "PassportAddTranslationPassportRegistrationInfo"
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3247
     :cond_10
-    instance-of v8, v4, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
+    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
 
-    if-eqz v8, :cond_11
+    if-eqz v4, :cond_11
 
     .line 3248
-    sget v4, Lorg/telegram/messenger/R$string;->PassportAddTranslationTemporaryRegistrationInfo:I
+    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationTemporaryRegistrationInfo:I
 
-    const-string v8, "PassportAddTranslationTemporaryRegistrationInfo"
+    const-string v4, "PassportAddTranslationTemporaryRegistrationInfo"
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3249
     :cond_11
-    instance-of v4, v4, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
+    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
 
-    if-eqz v4, :cond_12
+    if-eqz v3, :cond_12
 
     .line 3250
-    sget v4, Lorg/telegram/messenger/R$string;->PassportAddTranslationBankInfo:I
+    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationBankInfo:I
 
-    const-string v8, "PassportAddTranslationBankInfo"
+    const-string v4, "PassportAddTranslationBankInfo"
 
-    invoke-static {v8, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_4
 
     .line 3252
     :cond_12
-    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v14, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3256
     :goto_4
-    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3257
-    iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
+    iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
 
-    if-eqz v8, :cond_13
+    if-eqz v4, :cond_13
 
-    const-string v11, "translation_all"
+    const-string v8, "translation_all"
 
     .line 3259
-    invoke-virtual {v8, v11}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v4
 
-    check-cast v8, Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    if-eqz v8, :cond_13
+    if-eqz v4, :cond_13
 
     .line 3260
-    new-instance v4, Landroid/text/SpannableStringBuilder;
+    new-instance v3, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v4, v8}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v3, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     .line 3261
-    invoke-virtual {v4, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v3, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3262
     iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v4, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v3, v10}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3264
     new-instance v10, Landroid/text/style/ForegroundColorSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v13
+    move-result v11
 
-    invoke-direct {v10, v13}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+    invoke-direct {v10, v11}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
-    invoke-virtual {v8}, Ljava/lang/String;->length()I
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    move-result v8
+    move-result v4
 
-    invoke-virtual {v4, v10, v7, v8, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    const/16 v0, 0x21
+
+    invoke-virtual {v3, v10, v7, v4, v0}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 3265
-    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
 
-    invoke-virtual {v3, v11, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3268
     :cond_13
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3269
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -7728,7 +7731,7 @@
     .line 3280
     iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v3, 0x0
+    move v3, v7
 
     :goto_6
     const/16 v8, 0x8
@@ -8249,7 +8252,7 @@
     goto :goto_a
 
     :cond_20
-    const/4 v13, 0x3
+    move v13, v4
 
     :goto_a
     or-int/lit8 v4, v13, 0x10
@@ -8261,21 +8264,21 @@
 
     aget-object v4, v4, v3
 
-    const/16 v19, -0x1
+    const/16 v18, -0x1
 
-    const/16 v20, 0x40
+    const/16 v19, 0x40
 
-    const/16 v21, 0x33
+    const/16 v20, 0x33
 
-    const/16 v22, 0x15
+    const/16 v21, 0x15
 
-    const/16 v23, 0x0
+    const/16 v22, 0x0
 
-    const/16 v24, 0x15
+    const/16 v23, 0x15
 
-    const/16 v25, 0x0
+    const/16 v24, 0x0
 
-    invoke-static/range {v19 .. v25}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v8
 
@@ -9007,7 +9010,7 @@
     .line 2741
     iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v2, 0x0
+    move v2, v6
 
     :goto_0
     if-ge v2, v7, :cond_3
@@ -9354,7 +9357,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, -0x1
@@ -9982,7 +9985,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v14, v3, v5, v0}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {v14, v3, v5, v0}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     .line 3923
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -10069,7 +10072,7 @@
 
     iget-boolean v14, v14, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->translation_required:Z
 
-    invoke-virtual {v0, v3, v5, v14}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {v0, v3, v5, v14}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     .line 3937
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -10249,112 +10252,112 @@
     .line 3970
     iget-wide v14, v1, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    const-string v0, ""
+    cmp-long v0, v14, v11
 
-    cmp-long v3, v14, v11
+    const-string v3, ""
 
-    if-eqz v3, :cond_3
+    if-eqz v0, :cond_3
 
     .line 3971
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddTranslationUploadInfo:I
 
     const-string v5, "PassportAddTranslationUploadInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3973
     :cond_3
-    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->currentDocumentsType:Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;
 
-    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassport;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassport;
 
     if-eqz v5, :cond_4
 
     .line 3974
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddPassportInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddPassportInfo:I
 
     const-string v5, "PassportAddPassportInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3975
     :cond_4
-    instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeInternalPassport;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeInternalPassport;
 
     if-eqz v5, :cond_5
 
     .line 3976
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddInternalPassportInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddInternalPassportInfo:I
 
     const-string v5, "PassportAddInternalPassportInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3977
     :cond_5
-    instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeIdentityCard;
+    instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeIdentityCard;
 
     if-eqz v5, :cond_6
 
     .line 3978
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddIdentityCardInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddIdentityCardInfo:I
 
     const-string v5, "PassportAddIdentityCardInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3979
     :cond_6
-    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeDriverLicense;
+    instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeDriverLicense;
 
-    if-eqz v3, :cond_7
+    if-eqz v0, :cond_7
 
     .line 3980
-    sget v3, Lorg/telegram/messenger/R$string;->PassportAddDriverLicenceInfo:I
+    sget v0, Lorg/telegram/messenger/R$string;->PassportAddDriverLicenceInfo:I
 
     const-string v5, "PassportAddDriverLicenceInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     goto :goto_3
 
     .line 3982
     :cond_7
-    iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3986
     :goto_3
-    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
+    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
     .line 3987
     iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->documentsErrors:Ljava/util/HashMap;
@@ -10373,19 +10376,19 @@
     if-eqz v5, :cond_8
 
     .line 3990
-    new-instance v3, Landroid/text/SpannableStringBuilder;
+    new-instance v0, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v3, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const-string v15, "\n\n"
 
     .line 3991
-    invoke-virtual {v3, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3992
     iget-object v15, v1, Lorg/telegram/ui/PassportActivity;->noAllTranslationErrorText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v3, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 3994
     new-instance v15, Landroid/text/style/ForegroundColorSpan;
@@ -10402,18 +10405,18 @@
 
     const/16 v11, 0x21
 
-    invoke-virtual {v3, v15, v8, v5, v11}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, v15, v8, v5, v11}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 3995
     iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->errorsValues:Ljava/util/HashMap;
 
-    invoke-virtual {v5, v14, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v14, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3998
     :cond_8
-    iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
+    iget-object v3, v1, Lorg/telegram/ui/PassportActivity;->bottomCellTranslation:Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     .line 3999
     iget-object v0, v1, Lorg/telegram/ui/PassportActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -10601,7 +10604,7 @@
 
     iput-object v3, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v3, 0x0
+    move v3, v8
 
     :goto_7
     const-string v11, "windowBackgroundWhiteBlueHeader"
@@ -11341,7 +11344,7 @@
 
     if-eqz v8, :cond_1a
 
-    const/4 v10, 0x5
+    move v10, v4
 
     goto :goto_12
 
@@ -12768,7 +12771,7 @@
 
     move-result v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_1
     if-ge v11, v9, :cond_4
@@ -12834,7 +12837,7 @@
 
     move-object v3, v1
 
-    const/4 v4, 0x1
+    move v4, v8
 
     goto :goto_3
 
@@ -12900,19 +12903,19 @@
 
     move-object v2, v1
 
-    const/4 v4, 0x0
+    move v4, v10
 
     :goto_3
     add-int/lit8 v0, v9, -0x1
 
     if-ne v11, v0, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v8
 
     goto :goto_4
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v10
 
     :goto_4
     move-object/from16 v0, p0
@@ -12949,7 +12952,7 @@
 
     if-eqz v2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 1505
     :goto_0
@@ -12979,9 +12982,9 @@
 
     iget-wide v8, v0, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    cmp-long v10, v6, v8
+    cmp-long v6, v6, v8
 
-    if-nez v10, :cond_0
+    if-nez v6, :cond_0
 
     goto :goto_1
 
@@ -13209,12 +13212,12 @@
 
     if-eqz v10, :cond_4
 
-    const/4 v10, 0x5
+    move v10, v15
 
     goto :goto_3
 
     :cond_4
-    const/4 v10, 0x3
+    move/from16 v10, v16
 
     :goto_3
     or-int/lit8 v10, v10, 0x30
@@ -13366,12 +13369,12 @@
 
     if-eqz v9, :cond_5
 
-    const/4 v9, 0x5
+    move v9, v15
 
     goto :goto_4
 
     :cond_5
-    const/4 v9, 0x3
+    move/from16 v9, v16
 
     :goto_4
     or-int/lit8 v19, v9, 0x30
@@ -13455,12 +13458,12 @@
 
     if-eqz v10, :cond_6
 
-    const/4 v10, 0x5
+    move v10, v15
 
     goto :goto_5
 
     :cond_6
-    const/4 v10, 0x3
+    move/from16 v10, v16
 
     :goto_5
     or-int/lit8 v19, v10, 0x30
@@ -13498,7 +13501,7 @@
     .line 1571
     iput-object v2, v0, Lorg/telegram/ui/PassportActivity;->inputFieldContainers:[Landroid/view/ViewGroup;
 
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_6
     if-ge v2, v6, :cond_8
@@ -13714,12 +13717,12 @@
 
     if-eqz v10, :cond_7
 
-    const/4 v10, 0x5
+    move v10, v15
 
     goto :goto_7
 
     :cond_7
-    const/4 v10, 0x3
+    move/from16 v10, v16
 
     :goto_7
     invoke-virtual {v9, v10}, Landroid/widget/EditText;->setGravity(I)V
@@ -13881,7 +13884,7 @@
     goto :goto_8
 
     :cond_9
-    const/4 v15, 0x3
+    move/from16 v15, v16
 
     :goto_8
     or-int/lit8 v5, v15, 0x30
@@ -14240,7 +14243,7 @@
     .line 2831
     iput-object v0, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_2
     const/4 v11, 0x0
@@ -14737,7 +14740,7 @@
     goto :goto_6
 
     :cond_9
-    const/4 v9, 0x3
+    move v9, v3
 
     :goto_6
     invoke-virtual {v8, v9}, Landroid/widget/EditText;->setGravity(I)V
@@ -15001,7 +15004,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x3
@@ -15049,12 +15052,12 @@
 
     if-eqz v7, :cond_0
 
-    const/16 v7, 0x1a
+    move v7, v8
 
     goto :goto_1
 
     :cond_0
-    const/16 v7, 0x12
+    move v7, v9
 
     :goto_1
     const/16 v10, 0x1e
@@ -15065,7 +15068,7 @@
 
     if-eqz v11, :cond_1
 
-    const/16 v9, 0x1a
+    move v9, v8
 
     :cond_1
     const/4 v11, 0x0
@@ -15125,7 +15128,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v9
 
     .line 1983
     :goto_0
@@ -15155,9 +15158,9 @@
 
     iget-wide v4, v6, Lorg/telegram/ui/PassportActivity;->currentBotId:J
 
-    cmp-long v10, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v10, :cond_0
+    if-nez v2, :cond_0
 
     move-object v10, v1
 
@@ -15411,15 +15414,15 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v0, 0x0
+    move v0, v9
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v8, 0x0
+    move v8, v2
 
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
     :goto_2
     if-ge v0, v5, :cond_f
@@ -15482,7 +15485,7 @@
 
     if-eqz v15, :cond_5
 
-    const/4 v1, 0x1
+    move v1, v12
 
     goto :goto_3
 
@@ -15492,7 +15495,7 @@
 
     if-eqz v14, :cond_6
 
-    const/16 v16, 0x1
+    move/from16 v16, v12
 
     :cond_6
     :goto_3
@@ -15692,7 +15695,7 @@
 
     :cond_11
     :goto_a
-    const/4 v9, 0x1
+    move v9, v0
 
     :goto_b
     if-eqz v16, :cond_13
@@ -16496,10 +16499,10 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 6116
-    new-array v0, v1, [B
+    new-array v0, v0, [B
 
     const/4 v1, 0x0
 
@@ -17300,7 +17303,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 6952
     :goto_0
@@ -17333,7 +17336,7 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 6956
     :goto_1
@@ -17366,7 +17369,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_2
     if-ge v3, v2, :cond_2
@@ -18108,7 +18111,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     const/16 v4, 0xff
@@ -18436,7 +18439,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_e
@@ -18783,7 +18786,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -19580,7 +19583,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_1
@@ -19802,7 +19805,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_5
     if-ge v3, v2, :cond_12
@@ -20774,13 +20777,13 @@
 
     const/16 v8, 0x14
 
+    move v11, v2
+
+    move v13, v11
+
     move-object/from16 v17, v7
 
-    const/4 v11, 0x0
-
-    const/16 v12, 0x14
-
-    const/4 v13, 0x0
+    move v12, v8
 
     goto :goto_0
 
@@ -20798,13 +20801,13 @@
 
     const/16 v9, -0x12
 
+    move v12, v2
+
     move-object/from16 v17, v7
 
-    const/16 v11, -0x78
+    move v11, v8
 
-    const/4 v12, 0x0
-
-    const/16 v13, -0x12
+    move v13, v9
 
     .line 4205
     :goto_0
@@ -20873,21 +20876,21 @@
     goto :goto_1
 
     :cond_2
-    const/4 v14, -0x1
+    move v14, v10
 
-    const/4 v15, -0x1
+    move v15, v14
 
-    const/16 v16, -0x1
+    move/from16 v16, v15
 
     :goto_1
     if-ne v5, v6, :cond_3
 
-    const/16 v18, 0x1
+    move/from16 v18, v3
 
     goto :goto_2
 
     :cond_3
-    const/16 v18, 0x0
+    move/from16 v18, v2
 
     .line 4211
     :goto_2
@@ -22379,7 +22382,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     const/4 v6, 0x1
@@ -22455,7 +22458,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v4
 
     :goto_1
     if-ge v10, v9, :cond_5
@@ -22642,7 +22645,7 @@
 
     move-result v7
 
-    const/4 v8, 0x0
+    move v8, v4
 
     :goto_5
     if-ge v8, v7, :cond_17
@@ -23159,13 +23162,8 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
 
-    goto :goto_b
-
-    :catch_3
-    nop
-
     .line 2352
-    :goto_b
+    :catch_3
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentPayload:Ljava/lang/String;
 
     if-eqz v4, :cond_18
@@ -23178,14 +23176,9 @@
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_4
 
-    goto :goto_c
-
-    :catch_4
-    nop
-
     .line 2359
+    :catch_4
     :cond_18
-    :goto_c
     iget-object v4, v1, Lorg/telegram/ui/PassportActivity;->currentNonce:Ljava/lang/String;
 
     if-eqz v4, :cond_19
@@ -23303,7 +23296,7 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_6
 
-    goto :goto_d
+    goto :goto_b
 
     :catch_6
     move-exception v0
@@ -23312,7 +23305,7 @@
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     .line 2385
-    :goto_d
+    :goto_b
     iget v0, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -23483,7 +23476,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v6
 
     :goto_1
     if-ge v1, v0, :cond_8
@@ -23584,7 +23577,7 @@
     goto :goto_4
 
     :cond_c
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_4
     move-object v0, p0
@@ -23654,7 +23647,7 @@
     goto :goto_5
 
     :cond_f
-    const/4 v10, 0x0
+    move v10, v6
 
     :goto_5
     move-object v0, p0
@@ -24141,7 +24134,7 @@
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;-><init>()V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2657
     :try_start_1
@@ -24159,19 +24152,15 @@
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_0
 
     :catch_0
-    nop
-
-    goto :goto_0
-
-    :catch_1
     move-object v0, p2
 
     .line 2662
+    :catch_1
     :goto_0
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_secureRequiredType;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
@@ -24466,7 +24455,7 @@
 
     move-result v0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_0
     if-ge v6, v0, :cond_7
@@ -24519,7 +24508,7 @@
 
     move-result v0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_1
     if-ge v6, v0, :cond_7
@@ -24572,7 +24561,7 @@
 
     move-result v0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_2
     if-ge v6, v0, :cond_7
@@ -24625,7 +24614,7 @@
 
     move-result v0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_3
     if-ge v6, v0, :cond_7
@@ -25034,7 +25023,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
@@ -25053,9 +25042,9 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_2
     if-ge v6, v4, :cond_5
@@ -25119,9 +25108,9 @@
 
     iget-wide v11, v9, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    long-to-int v12, v11
+    long-to-int v11, v11
 
-    iput v12, v10, Lorg/telegram/tgnet/TLRPC$TL_secureFile;->dc_id:I
+    iput v11, v10, Lorg/telegram/tgnet/TLRPC$TL_secureFile;->dc_id:I
 
     .line 7032
     iget v9, v9, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
@@ -25190,14 +25179,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_4
 
     :catchall_0
     move-exception v0
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_3
 
@@ -26019,7 +26008,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->setOpenWithFrontFaceCamera(Z)V
@@ -26114,7 +26103,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v13, 0x0
+    move v13, v1
 
     .line 5492
     :goto_0
@@ -26140,9 +26129,10 @@
 
     const/4 v4, 0x1
 
-    const/4 v10, 0x1
+    :goto_2
+    move v10, v4
 
-    goto :goto_2
+    goto :goto_3
 
     .line 5496
     :cond_2
@@ -26151,8 +26141,6 @@
     if-eqz v4, :cond_3
 
     const/4 v4, 0x2
-
-    const/4 v10, 0x2
 
     goto :goto_2
 
@@ -26164,8 +26152,6 @@
 
     const/4 v4, 0x3
 
-    const/4 v10, 0x3
-
     goto :goto_2
 
     .line 5500
@@ -26176,12 +26162,12 @@
 
     const/4 v10, 0x4
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_5
-    const/4 v10, -0x1
+    move v10, v6
 
-    :goto_2
+    :goto_3
     if-eq v10, v6, :cond_9
 
     if-nez v12, :cond_6
@@ -26201,13 +26187,13 @@
 
     move-object v9, v4
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_6
     const/4 v9, 0x0
 
     .line 5505
-    :goto_3
+    :goto_4
     iget-object v4, v0, Lorg/telegram/ui/PassportActivity;->errorsMap:Ljava/util/HashMap;
 
     invoke-direct {v0, v3}, Lorg/telegram/ui/PassportActivity;->getNameForType(Lorg/telegram/tgnet/TLRPC$SecureValueType;)Ljava/lang/String;
@@ -26263,14 +26249,14 @@
 
     move-object/from16 v17, v2
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_7
     move-object/from16 v19, v1
 
     const/16 v17, 0x0
 
-    :goto_4
+    :goto_5
     move-object v1, v4
 
     move v2, v10
@@ -26549,7 +26535,7 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 7004
     :goto_0
@@ -26585,7 +26571,7 @@
 
     if-lez v4, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_2
 
@@ -26803,7 +26789,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x3
+    move v0, v2
 
     goto :goto_0
 
@@ -26819,7 +26805,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x2
+    move v0, v3
 
     goto :goto_0
 
@@ -26835,7 +26821,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_0
 
@@ -26851,7 +26837,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_0
     packed-switch v0, :pswitch_data_0
@@ -26949,12 +26935,12 @@
     .line 4769
     invoke-virtual {p2, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_1
 
     :cond_4
-    const/4 p1, 0x0
+    move p1, v5
 
     :goto_1
     if-nez p1, :cond_6
@@ -27226,7 +27212,7 @@
 
     move-object/from16 v17, v14
 
-    const/4 v14, 0x1
+    move v14, v5
 
     move v5, v0
 
@@ -27247,7 +27233,7 @@
     :cond_3
     move-object/from16 v17, v14
 
-    const/4 v14, 0x1
+    move v14, v5
 
     :goto_0
     move-object v1, v0
@@ -28193,13 +28179,13 @@
 
     move-object/from16 v12, p5
 
+    move v1, v4
+
     move-object/from16 v2, v22
 
     move-object/from16 v4, v24
 
     move-object/from16 v17, v25
-
-    const/4 v1, 0x2
 
     goto/16 :goto_9
 
@@ -28736,7 +28722,7 @@
     if-eqz v6, :cond_50
 
     :cond_4f
-    const/4 v5, 0x1
+    move v5, v2
 
     goto :goto_23
 
@@ -29453,12 +29439,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 6276
     :goto_0
@@ -29489,12 +29475,12 @@
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_1
     if-eqz p1, :cond_5
@@ -29625,7 +29611,7 @@
     return-void
 
     :cond_4
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 6301
     :cond_5
@@ -29650,7 +29636,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 6304
     :goto_3
@@ -30314,7 +30300,7 @@
 
     if-eqz v0, :cond_4
 
-    const/16 v3, 0x8
+    move v3, v4
 
     :cond_4
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -30405,7 +30391,7 @@
     goto :goto_0
 
     :cond_a
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 4650
     :cond_b
@@ -30440,7 +30426,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     goto :goto_2
 
@@ -30463,7 +30449,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/CharSequence;Z)V
+    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     .line 4655
     :goto_2
@@ -30473,7 +30459,7 @@
 
     if-eqz v0, :cond_e
 
-    const/16 v3, 0x8
+    move v3, v4
 
     :cond_e
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -30535,7 +30521,7 @@
 
     if-eqz v0, :cond_13
 
-    const/16 v3, 0x8
+    move v3, v4
 
     :cond_13
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -30669,16 +30655,14 @@
 
     const/16 v2, 0x30
 
-    const/16 v12, 0x30
-
     goto :goto_0
 
     :cond_1
     const/4 v2, 0x0
 
-    const/4 v12, 0x0
-
     :goto_0
+    move v12, v2
+
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
@@ -31644,7 +31628,7 @@
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v12
 
     .line 7941
     :goto_0
@@ -32258,7 +32242,7 @@
 
     if-eqz v2, :cond_3
 
-    const/4 v2, 0x0
+    move v2, v12
 
     .line 7974
     :goto_2

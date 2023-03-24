@@ -138,7 +138,7 @@
 
     move-result-object p2
 
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 91
     :goto_1
@@ -221,7 +221,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 103
     :goto_3
@@ -570,60 +570,60 @@
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
 
-    const/16 v2, 0xff
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    cmpl-float v3, v0, v2
 
-    cmpl-float v4, v0, v3
+    const/16 v4, 0xff
 
-    if-nez v4, :cond_2
+    if-nez v3, :cond_2
 
     .line 165
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    const/4 v5, 0x0
+    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/4 v6, 0x0
+
+    const/4 v7, 0x0
 
     .line 166
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
 
-    int-to-float v7, v0
+    int-to-float v8, v0
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
 
-    int-to-float v8, v0
+    int-to-float v9, v0
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
 
-    iget-object v9, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
+    iget-object v10, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
-    move-object v4, p1
+    move-object v5, p1
 
-    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 167
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
     .line 168
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v0, v3}, Landroid/view/View;->setScaleX(F)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setScaleX(F)V
 
     .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v0, v3}, Landroid/view/View;->setScaleY(F)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setScaleY(F)V
 
     .line 170
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextImage:Lorg/telegram/ui/Components/BackupImageView;
@@ -634,18 +634,18 @@
 
     .line 172
     :cond_2
-    sget-object v4, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {v4, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v0
 
     .line 174
-    iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
 
-    iget-object v4, v4, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
+    iget-object v3, v3, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/4 v6, 0x0
 
@@ -654,86 +654,86 @@
     .line 175
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v8, v2
+    int-to-float v8, v3
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v9, v2
+    int-to-float v9, v3
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
 
-    iget-object v10, v2, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
+    iget-object v10, v3, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
     move-object v5, p1
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 176
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
 
-    iget-object v2, v2, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
+    iget-object v3, v3, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v4, v4, v0
+    mul-float/2addr v4, v0
 
     float-to-int v4, v4
 
-    invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 177
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v8, v2
+    int-to-float v8, v3
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v2
+    move-result v3
 
-    int-to-float v9, v2
+    int-to-float v9, v3
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
 
-    iget-object v10, v2, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
+    iget-object v10, v3, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 179
-    iget v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
+    iget v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
 
     const v4, 0x3d83126f    # 0.064f
 
-    add-float/2addr v2, v4
+    add-float/2addr v3, v4
 
-    iput v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
+    iput v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
 
     .line 181
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    sub-float v4, v3, v0
+    sub-float v4, v2, v0
 
-    invoke-virtual {v2, v4}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setAlpha(F)V
 
     .line 182
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v2, v4}, Landroid/view/View;->setScaleX(F)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setScaleX(F)V
 
     .line 183
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v2, v4}, Landroid/view/View;->setScaleY(F)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setScaleY(F)V
 
     .line 184
-    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->currentImage:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v2, v1}, Landroid/view/View;->setPivotY(F)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setPivotY(F)V
 
     .line 185
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextImage:Lorg/telegram/ui/Components/BackupImageView;
@@ -764,12 +764,12 @@
     .line 189
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
 
-    cmpl-float v0, v0, v3
+    cmpl-float v0, v0, v2
 
     if-lez v0, :cond_3
 
     .line 190
-    iput v3, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
+    iput v2, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->progressToNext:F
 
     .line 191
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->nextBackgroundDrawable:Lorg/telegram/ui/Components/GradientTools;
@@ -905,7 +905,7 @@
 
     const v0, 0x3f333333    # 0.7f
 
-    mul-float p2, p2, v0
+    mul-float/2addr p2, v0
 
     float-to-int p2, p2
 
@@ -913,7 +913,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 

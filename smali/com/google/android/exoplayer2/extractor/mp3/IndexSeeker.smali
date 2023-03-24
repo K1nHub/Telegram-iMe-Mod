@@ -111,9 +111,9 @@
     .line 73
     iget-wide v3, v2, Lcom/google/android/exoplayer2/extractor/SeekPoint;->timeUs:J
 
-    cmp-long v5, v3, p1
+    cmp-long p1, v3, p1
 
-    if-eqz v5, :cond_1
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp3/IndexSeeker;->timesUs:Lcom/google/android/exoplayer2/util/LongArray;
 
@@ -197,7 +197,7 @@
 .end method
 
 .method public isTimeUsInIndex(J)Z
-    .locals 4
+    .locals 3
 
     .line 105
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp3/IndexSeeker;->timesUs:Lcom/google/android/exoplayer2/util/LongArray;
@@ -218,9 +218,9 @@
 
     const-wide/32 v0, 0x186a0
 
-    cmp-long v3, p1, v0
+    cmp-long p1, p1, v0
 
-    if-gez v3, :cond_0
+    if-gez p1, :cond_0
 
     goto :goto_0
 

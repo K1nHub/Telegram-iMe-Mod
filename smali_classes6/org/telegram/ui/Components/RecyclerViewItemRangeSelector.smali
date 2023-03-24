@@ -174,13 +174,13 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 73
     :goto_1
@@ -190,7 +190,7 @@
 
     if-nez v0, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
     if-eqz v1, :cond_3
@@ -292,7 +292,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, -0x1
+    move p1, v1
 
     .line 101
     :goto_0
@@ -326,9 +326,9 @@
 
     int-to-float p2, p2
 
-    const/4 v5, 0x0
-
     cmpl-float p2, v2, p2
+
+    const/4 v5, 0x0
 
     if-ltz p2, :cond_3
 

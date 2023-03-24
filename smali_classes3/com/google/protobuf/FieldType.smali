@@ -1391,7 +1391,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 130
     :goto_1
@@ -1567,7 +1567,7 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 276
     :goto_1
@@ -1595,7 +1595,7 @@
 
     if-ne v7, v8, :cond_3
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 288
     :goto_2
@@ -1614,7 +1614,7 @@
     .line 291
     aput-object v6, v3, v4
 
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_3
 
@@ -1624,7 +1624,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_3
     if-eqz v6, :cond_2

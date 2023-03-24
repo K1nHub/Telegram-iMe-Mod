@@ -16,30 +16,30 @@ public class BaselineLayout extends ViewGroup {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         int childCount = getChildCount();
-        int i3 = 0;
-        int i4 = 0;
+        int i3 = -1;
+        int i4 = -1;
         int i5 = 0;
-        int i6 = -1;
-        int i7 = -1;
+        int i6 = 0;
+        int i7 = 0;
         for (int i8 = 0; i8 < childCount; i8++) {
             View childAt = getChildAt(i8);
             if (childAt.getVisibility() != 8) {
                 measureChild(childAt, i, i2);
                 int baseline = childAt.getBaseline();
                 if (baseline != -1) {
-                    i6 = Math.max(i6, baseline);
-                    i7 = Math.max(i7, childAt.getMeasuredHeight() - baseline);
+                    i3 = Math.max(i3, baseline);
+                    i4 = Math.max(i4, childAt.getMeasuredHeight() - baseline);
                 }
-                i4 = Math.max(i4, childAt.getMeasuredWidth());
-                i3 = Math.max(i3, childAt.getMeasuredHeight());
-                i5 = View.combineMeasuredStates(i5, childAt.getMeasuredState());
+                i6 = Math.max(i6, childAt.getMeasuredWidth());
+                i5 = Math.max(i5, childAt.getMeasuredHeight());
+                i7 = View.combineMeasuredStates(i7, childAt.getMeasuredState());
             }
         }
-        if (i6 != -1) {
-            i3 = Math.max(i3, Math.max(i7, getPaddingBottom()) + i6);
-            this.baseline = i6;
+        if (i3 != -1) {
+            i5 = Math.max(i5, Math.max(i4, getPaddingBottom()) + i3);
+            this.baseline = i3;
         }
-        setMeasuredDimension(View.resolveSizeAndState(Math.max(i4, getSuggestedMinimumWidth()), i, i5), View.resolveSizeAndState(Math.max(i3, getSuggestedMinimumHeight()), i2, i5 << 16));
+        setMeasuredDimension(View.resolveSizeAndState(Math.max(i6, getSuggestedMinimumWidth()), i, i7), View.resolveSizeAndState(Math.max(i5, getSuggestedMinimumHeight()), i2, i7 << 16));
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -43,19 +43,19 @@
 
     const/high16 v0, 0x3fe00000    # 1.75f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     float-to-int v0, v0
 
     const/4 v1, 0x0
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     float-to-int v1, v1
 
     const/high16 v2, 0x40600000    # 3.5f
 
-    mul-float v2, v2, p1
+    mul-float/2addr v2, p1
 
     float-to-int v2, v2
 
@@ -105,7 +105,7 @@
 
     const/high16 v1, 0x40800000    # 4.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     .line 78
     invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->setElevation(Landroid/view/View;F)V

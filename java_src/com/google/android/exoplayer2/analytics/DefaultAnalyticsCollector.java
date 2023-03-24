@@ -963,7 +963,10 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         boolean z2 = timeline.equals(this.player.getCurrentTimeline()) && i == this.player.getCurrentMediaItemIndex();
         long j = 0;
         if (mediaPeriodId2 != null && mediaPeriodId2.isAd()) {
-            if ((z2 && this.player.getCurrentAdGroupIndex() == mediaPeriodId2.adGroupIndex && this.player.getCurrentAdIndexInAdGroup() == mediaPeriodId2.adIndexInAdGroup) ? false : false) {
+            if (!z2 || this.player.getCurrentAdGroupIndex() != mediaPeriodId2.adGroupIndex || this.player.getCurrentAdIndexInAdGroup() != mediaPeriodId2.adIndexInAdGroup) {
+                z = false;
+            }
+            if (z) {
                 j = this.player.getCurrentPosition();
             }
         } else if (z2) {

@@ -8,11 +8,11 @@ import org.bouncycastle.math.raw.Nat512;
 public class SecP521R1Field {
 
     /* renamed from: P */
-    static final int[] f1365P = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 511};
+    static final int[] f1366P = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 511};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
         int add = Nat.add(16, iArr, iArr2, iArr3) + iArr[16] + iArr2[16];
-        if (add > 511 || (add == 511 && Nat.m69eq(16, iArr3, f1365P))) {
+        if (add > 511 || (add == 511 && Nat.m69eq(16, iArr3, f1366P))) {
             add = (add + Nat.inc(16, iArr3)) & 511;
         }
         iArr3[16] = add;
@@ -20,7 +20,7 @@ public class SecP521R1Field {
 
     public static void addOne(int[] iArr, int[] iArr2) {
         int inc = Nat.inc(16, iArr, iArr2) + iArr[16];
-        if (inc > 511 || (inc == 511 && Nat.m69eq(16, iArr2, f1365P))) {
+        if (inc > 511 || (inc == 511 && Nat.m69eq(16, iArr2, f1366P))) {
             inc = (inc + Nat.inc(16, iArr2)) & 511;
         }
         iArr2[16] = inc;
@@ -28,7 +28,7 @@ public class SecP521R1Field {
 
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat.fromBigInteger(521, bigInteger);
-        if (Nat.m69eq(17, fromBigInteger, f1365P)) {
+        if (Nat.m69eq(17, fromBigInteger, f1366P)) {
             Nat.zero(17, fromBigInteger);
         }
         return fromBigInteger;
@@ -57,14 +57,14 @@ public class SecP521R1Field {
         if (Nat.isZero(17, iArr)) {
             Nat.zero(17, iArr2);
         } else {
-            Nat.sub(17, f1365P, iArr, iArr2);
+            Nat.sub(17, f1366P, iArr, iArr2);
         }
     }
 
     public static void reduce(int[] iArr, int[] iArr2) {
         int i = iArr[32];
         int shiftDownBits = (Nat.shiftDownBits(16, iArr, 16, 9, i, iArr2, 0) >>> 23) + (i >>> 9) + Nat.addTo(16, iArr, iArr2);
-        if (shiftDownBits > 511 || (shiftDownBits == 511 && Nat.m69eq(16, iArr2, f1365P))) {
+        if (shiftDownBits > 511 || (shiftDownBits == 511 && Nat.m69eq(16, iArr2, f1366P))) {
             shiftDownBits = (shiftDownBits + Nat.inc(16, iArr2)) & 511;
         }
         iArr2[16] = shiftDownBits;
@@ -73,7 +73,7 @@ public class SecP521R1Field {
     public static void reduce23(int[] iArr) {
         int i = iArr[16];
         int addWordTo = Nat.addWordTo(16, i >>> 9, iArr) + (i & 511);
-        if (addWordTo > 511 || (addWordTo == 511 && Nat.m69eq(16, iArr, f1365P))) {
+        if (addWordTo > 511 || (addWordTo == 511 && Nat.m69eq(16, iArr, f1366P))) {
             addWordTo = (addWordTo + Nat.inc(16, iArr)) & 511;
         }
         iArr[16] = addWordTo;

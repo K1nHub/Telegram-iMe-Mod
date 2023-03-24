@@ -91,7 +91,7 @@ public final class ExoPlaybackException extends PlaybackException {
         super(str, th, i, j);
         boolean z2 = false;
         Assertions.checkArgument(!z || i2 == 1);
-        Assertions.checkArgument((th != null || i2 == 3) ? true : true);
+        Assertions.checkArgument((th != null || i2 == 3) ? true : z2);
         this.type = i2;
         this.rendererName = str2;
         this.rendererIndex = i3;

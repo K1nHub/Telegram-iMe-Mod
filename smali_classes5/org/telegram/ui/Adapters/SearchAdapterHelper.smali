@@ -898,7 +898,7 @@
 
     invoke-direct {v3}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 221
     :goto_0
@@ -929,7 +929,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 225
     :goto_1
@@ -960,7 +960,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_2
     const/4 v7, 0x2
@@ -991,7 +991,7 @@
     iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->results:Ljava/util/ArrayList;
 
     :goto_3
-    const/4 v11, 0x0
+    move v11, v4
 
     .line 239
     :goto_4
@@ -1222,9 +1222,9 @@
 
     move-result-wide v14
 
-    cmp-long v12, v8, v14
+    cmp-long v8, v8, v14
 
-    if-nez v12, :cond_e
+    if-nez v8, :cond_e
 
     goto :goto_8
 
@@ -1481,9 +1481,9 @@
 
     neg-long v6, v6
 
-    cmp-long v11, v6, p6
+    cmp-long v6, v6, p6
 
-    if-nez v11, :cond_1d
+    if-nez v6, :cond_1d
 
     goto :goto_e
 
@@ -1966,7 +1966,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 579
     :goto_0
@@ -2346,7 +2346,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v2, :cond_2
@@ -2506,7 +2506,7 @@
 
     if-nez p1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -2519,7 +2519,7 @@
     :goto_0
     if-nez p2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_1
 
@@ -2908,9 +2908,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v0, v3
+    cmp-long v3, v0, v3
 
-    if-eqz v5, :cond_5
+    if-eqz v3, :cond_5
 
     .line 161
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipants;
@@ -3013,7 +3013,7 @@
     iput-object v0, v10, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundChannel:Ljava/lang/String;
 
     :goto_2
-    const/16 v16, 0x0
+    move/from16 v16, v9
 
     goto :goto_3
 
@@ -3030,7 +3030,7 @@
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
-    const/16 v16, 0x1
+    move/from16 v16, v13
 
     :goto_3
     if-eqz p2, :cond_8
@@ -3321,7 +3321,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v9, 0x0
+    move v9, v2
 
     .line 379
     :goto_a

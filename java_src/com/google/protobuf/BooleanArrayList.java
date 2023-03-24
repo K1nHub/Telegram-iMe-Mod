@@ -18,6 +18,10 @@ public final class BooleanArrayList extends AbstractProtobufList<Boolean> implem
         booleanArrayList.makeImmutable();
     }
 
+    public static BooleanArrayList emptyList() {
+        return EMPTY_LIST;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public BooleanArrayList() {
         this(new boolean[10], 0);
@@ -70,7 +74,7 @@ public final class BooleanArrayList extends AbstractProtobufList<Boolean> implem
         return i;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     /* renamed from: mutableCopyWithCapacity */
     public Internal.ProtobufList<Boolean> mutableCopyWithCapacity2(int i) {
         if (i < this.size) {

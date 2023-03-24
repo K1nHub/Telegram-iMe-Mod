@@ -714,7 +714,7 @@
 
     :cond_6
     :goto_2
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 1177
     :goto_3
@@ -723,7 +723,7 @@
     goto :goto_4
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 1179
     :goto_4
@@ -1621,12 +1621,12 @@
     if-le v5, v6, :cond_9
 
     :cond_8
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_2
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v2
 
     .line 859
     :goto_2
@@ -1683,12 +1683,12 @@
     if-ge v6, v7, :cond_b
 
     :cond_a
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_3
 
     :cond_b
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_3
     if-nez v5, :cond_e
@@ -2089,12 +2089,12 @@
 
     if-ltz v1, :cond_1a
 
-    const/4 v9, 0x1
+    move v9, v3
 
     goto :goto_b
 
     :cond_1a
-    const/4 v9, 0x0
+    move v9, v2
 
     :goto_b
     invoke-static {v7, v9}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1902(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
@@ -2115,12 +2115,12 @@
 
     if-eqz v7, :cond_1c
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_c
 
     :cond_1c
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 952
     :goto_c
@@ -2137,7 +2137,7 @@
 
     move-result v8
 
-    const/16 v9, 0xa
+    move v9, v10
 
     goto :goto_d
 
@@ -2168,7 +2168,7 @@
 
     iput v4, v12, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    const/16 v4, 0xa
+    move v4, v10
 
     goto :goto_e
 
@@ -2624,12 +2624,12 @@
 
     if-eqz v7, :cond_35
 
-    const/4 v7, 0x1
+    move v7, v3
 
     goto :goto_15
 
     :cond_35
-    const/4 v7, 0x0
+    move v7, v2
 
     .line 1049
     :goto_15
@@ -2646,12 +2646,12 @@
 
     if-gtz v1, :cond_36
 
-    const/4 v11, 0x1
+    move v11, v3
 
     goto :goto_16
 
     :cond_36
-    const/4 v11, 0x0
+    move v11, v2
 
     :goto_16
     invoke-static {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1902(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
@@ -2676,7 +2676,7 @@
 
     if-eqz v4, :cond_38
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 1053
     :cond_38

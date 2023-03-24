@@ -154,7 +154,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, p1
 
     :goto_0
     iput-boolean p2, p0, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zzbvk:Z
@@ -607,9 +607,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_9
+    if-eqz v3, :cond_9
 
     const/4 v15, 0x1
 
@@ -1360,26 +1360,26 @@
 
     and-long v8, p9, v8
 
-    const-string v1, ""
+    cmp-long v1, v8, v10
 
-    cmp-long v6, v8, v10
+    const-string v6, ""
 
-    if-nez v6, :cond_15
+    if-nez v1, :cond_15
 
     .line 2710
     invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
-    move-result v4
+    move-result v1
 
     .line 2711
-    iget v6, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
+    iget v4, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
 
-    if-ltz v6, :cond_14
+    if-ltz v4, :cond_14
 
-    if-nez v6, :cond_11
+    if-nez v4, :cond_11
 
     .line 2715
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
@@ -1389,41 +1389,41 @@
 
     sget-object v9, Lcom/google/android/gms/internal/firebase_ml/zzuw;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v8, v3, v4, v6, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 2717
     invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_a
-    add-int/2addr v4, v6
+    add-int/2addr v1, v4
 
     :goto_b
-    if-ge v4, v5, :cond_32
+    if-ge v1, v5, :cond_33
 
     .line 2720
-    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
+    invoke-static {v3, v1, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
-    move-result v6
+    move-result v4
 
     .line 2721
     iget v8, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
 
-    if-ne v2, v8, :cond_32
+    if-ne v2, v8, :cond_33
 
     .line 2722
-    invoke-static {v3, v6, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
-    move-result v4
+    move-result v1
 
     .line 2723
-    iget v6, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
+    iget v4, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
 
-    if-ltz v6, :cond_13
+    if-ltz v4, :cond_13
 
-    if-nez v6, :cond_12
+    if-nez v4, :cond_12
 
     .line 2727
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
@@ -1433,7 +1433,7 @@
 
     sget-object v9, Lcom/google/android/gms/internal/firebase_ml/zzuw;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v8, v3, v4, v6, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 2729
     invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1460,25 +1460,25 @@
     :cond_15
     invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
-    move-result v4
+    move-result v1
 
     .line 2737
-    iget v6, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
+    iget v4, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
 
-    if-ltz v6, :cond_1b
+    if-ltz v4, :cond_1b
 
-    if-nez v6, :cond_16
+    if-nez v4, :cond_16
 
     .line 2741
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
     :cond_16
-    add-int v8, v4, v6
+    add-int v8, v1, v4
 
     .line 2742
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/internal/firebase_ml/zzxv;->zzf([BII)Z
+    invoke-static {v3, v1, v8}, Lcom/google/android/gms/internal/firebase_ml/zzxv;->zzf([BII)Z
 
     move-result v9
 
@@ -1489,49 +1489,49 @@
 
     sget-object v10, Lcom/google/android/gms/internal/firebase_ml/zzuw;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v9, v3, v4, v6, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 2745
     invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_c
-    move v4, v8
+    move v1, v8
 
     :goto_d
-    if-ge v4, v5, :cond_32
+    if-ge v1, v5, :cond_33
 
     .line 2748
-    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
+    invoke-static {v3, v1, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
-    move-result v6
+    move-result v4
 
     .line 2749
     iget v8, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
 
-    if-ne v2, v8, :cond_32
+    if-ne v2, v8, :cond_33
 
     .line 2750
-    invoke-static {v3, v6, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
+    invoke-static {v3, v4, v7}, Lcom/google/android/gms/internal/firebase_ml/zztj;->zza([BILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
-    move-result v4
+    move-result v1
 
     .line 2751
-    iget v6, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
+    iget v4, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbop:I
 
-    if-ltz v6, :cond_19
+    if-ltz v4, :cond_19
 
-    if-nez v6, :cond_17
+    if-nez v4, :cond_17
 
     .line 2755
-    invoke-interface {v12, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
     :cond_17
-    add-int v8, v4, v6
+    add-int v8, v1, v4
 
     .line 2756
-    invoke-static {v3, v4, v8}, Lcom/google/android/gms/internal/firebase_ml/zzxv;->zzf([BII)Z
+    invoke-static {v3, v1, v8}, Lcom/google/android/gms/internal/firebase_ml/zzxv;->zzf([BII)Z
 
     move-result v9
 
@@ -1542,7 +1542,7 @@
 
     sget-object v10, Lcom/google/android/gms/internal/firebase_ml/zzuw;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v9, v3, v4, v6, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 2759
     invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1610,16 +1610,16 @@
     .line 2688
     iget-wide v5, v7, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzboq:J
 
-    cmp-long v8, v5, v10
+    cmp-long v5, v5, v10
 
-    if-eqz v8, :cond_1c
+    if-eqz v5, :cond_1c
 
-    const/4 v5, 0x1
+    move v5, v14
 
     goto :goto_f
 
     :cond_1c
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_f
     invoke-virtual {v12, v5}, Lcom/google/android/gms/internal/firebase_ml/zztl;->addBoolean(Z)V
@@ -1657,12 +1657,12 @@
 
     if-eqz v6, :cond_20
 
-    const/4 v6, 0x1
+    move v6, v14
 
     goto :goto_10
 
     :cond_20
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_10
     invoke-virtual {v12, v6}, Lcom/google/android/gms/internal/firebase_ml/zztl;->addBoolean(Z)V
@@ -1692,12 +1692,12 @@
 
     if-eqz v6, :cond_21
 
-    const/4 v6, 0x1
+    move v6, v14
 
     goto :goto_12
 
     :cond_21
-    const/4 v6, 0x0
+    move v6, v1
 
     :goto_12
     invoke-virtual {v12, v6}, Lcom/google/android/gms/internal/firebase_ml/zztl;->addBoolean(Z)V
@@ -2640,9 +2640,9 @@
 
     const-wide/16 p3, 0x0
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -2713,7 +2713,7 @@
     .line 20
     instance-of v1, v0, Lcom/google/android/gms/internal/firebase_ml/zzwv;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_35
 
     .line 21
     check-cast v0, Lcom/google/android/gms/internal/firebase_ml/zzwv;
@@ -2734,7 +2734,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v11, 0x0
+    move v11, v3
 
     .line 23
     :goto_0
@@ -2843,19 +2843,19 @@
     .line 51
     sget-object v9, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zzbvd:[I
 
+    move v6, v3
+
+    move v10, v6
+
+    move v12, v10
+
+    move v13, v12
+
+    move v15, v13
+
     move-object v14, v9
 
-    const/4 v6, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v15, 0x0
+    move v9, v15
 
     goto/16 :goto_d
 
@@ -3285,7 +3285,7 @@
     const/16 v21, 0x0
 
     :goto_e
-    if-ge v6, v2, :cond_33
+    if-ge v6, v2, :cond_34
 
     add-int/lit8 v24, v6, 0x1
 
@@ -3581,41 +3581,41 @@
 
     move-result-wide v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     add-int/lit8 v9, v9, 0x1
 
     .line 182
-    aget-object v0, v17, v9
+    aget-object v1, v17, v9
 
     .line 183
-    instance-of v10, v0, Ljava/lang/reflect/Field;
+    instance-of v10, v1, Ljava/lang/reflect/Field;
 
     if-eqz v10, :cond_21
 
     .line 184
-    check-cast v0, Ljava/lang/reflect/Field;
+    check-cast v1, Ljava/lang/reflect/Field;
 
     goto :goto_17
 
     .line 185
     :cond_21
-    check-cast v0, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-static {v4, v0}, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-static {v4, v1}, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zza(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 186
-    aput-object v0, v17, v9
+    aput-object v1, v17, v9
 
     .line 187
     :goto_17
-    invoke-virtual {v7, v0}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    invoke-virtual {v7, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     move-result-wide v9
 
-    long-to-int v0, v9
+    long-to-int v1, v9
 
     move-object/from16 v19, v4
 
@@ -3629,13 +3629,15 @@
 
     const/16 v16, 0x1
 
-    move v4, v0
+    move v4, v1
+
+    move v1, v0
 
     move v0, v3
 
     const v3, 0xd800
 
-    goto/16 :goto_20
+    goto/16 :goto_21
 
     :cond_22
     move-object/from16 v33, v0
@@ -3814,7 +3816,7 @@
 
     and-int/lit8 v9, v5, 0x1
 
-    if-ne v9, v12, :cond_2f
+    if-ne v9, v12, :cond_30
 
     const/16 v9, 0x11
 
@@ -3912,16 +3914,18 @@
 
     move-result-wide v3
 
-    long-to-int v4, v3
+    long-to-int v3, v3
 
     .line 221
     rem-int/lit8 v12, v12, 0x20
+
+    move v4, v3
 
     move v15, v9
 
     const v3, 0xd800
 
-    goto :goto_1f
+    goto :goto_20
 
     :cond_2f
     move/from16 v31, v0
@@ -3936,18 +3940,34 @@
 
     const/16 v16, 0x1
 
+    goto :goto_1f
+
+    :cond_30
+    move/from16 v31, v0
+
+    move v0, v3
+
+    move-object/from16 v19, v4
+
+    move/from16 v16, v12
+
+    move-object/from16 v10, v34
+
+    const v3, 0xd800
+
+    :goto_1f
     const/4 v4, 0x0
 
     const/4 v12, 0x0
 
-    :goto_1f
+    :goto_20
     const/16 v9, 0x12
 
-    if-lt v11, v9, :cond_30
+    if-lt v11, v9, :cond_31
 
     const/16 v9, 0x31
 
-    if-gt v11, v9, :cond_30
+    if-gt v11, v9, :cond_31
 
     add-int/lit8 v9, v23, 0x1
 
@@ -3956,8 +3976,8 @@
 
     move/from16 v23, v9
 
-    :cond_30
-    :goto_20
+    :cond_31
+    :goto_21
     add-int/lit8 v9, v21, 0x1
 
     .line 227
@@ -3967,28 +3987,28 @@
 
     and-int/lit16 v3, v2, 0x200
 
-    if-eqz v3, :cond_31
+    if-eqz v3, :cond_32
 
     const/high16 v3, 0x20000000
-
-    goto :goto_21
-
-    :cond_31
-    const/4 v3, 0x0
-
-    :goto_21
-    and-int/lit16 v2, v2, 0x100
-
-    if-eqz v2, :cond_32
-
-    const/high16 v2, 0x10000000
 
     goto :goto_22
 
     :cond_32
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_22
+    and-int/lit16 v2, v2, 0x100
+
+    if-eqz v2, :cond_33
+
+    const/high16 v2, 0x10000000
+
+    goto :goto_23
+
+    :cond_33
+    const/4 v2, 0x0
+
+    :goto_23
     or-int/2addr v2, v3
 
     shl-int/lit8 v3, v11, 0x14
@@ -4033,7 +4053,7 @@
 
     goto/16 :goto_e
 
-    :cond_33
+    :cond_34
     move-object/from16 v33, v0
 
     move/from16 v24, v9
@@ -4083,7 +4103,7 @@
     return-object v0
 
     .line 236
-    :cond_34
+    :cond_35
     check-cast v0, Lcom/google/android/gms/internal/firebase_ml/zzxj;
 
     .line 237
@@ -4617,9 +4637,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
     return v3
 
@@ -4645,9 +4665,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_3
 
     return v3
 
@@ -4805,9 +4825,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_e
+    if-eqz p1, :cond_e
 
     return v3
 
@@ -4833,9 +4853,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_10
+    if-eqz p1, :cond_10
 
     return v3
 
@@ -4848,9 +4868,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, v4
+    cmp-long p1, p1, v4
 
-    if-eqz v0, :cond_11
+    if-eqz p1, :cond_11
 
     return v3
 
@@ -4882,9 +4902,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmpl-double v4, p1, v0
+    cmpl-double p1, p1, v0
 
-    if-eqz v4, :cond_13
+    if-eqz p1, :cond_13
 
     return v3
 
@@ -7187,7 +7207,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x1
@@ -7332,9 +7352,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
@@ -7376,9 +7396,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
@@ -7582,9 +7602,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -7626,9 +7646,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -7649,9 +7669,9 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
@@ -7711,13 +7731,13 @@
 
     move-result-wide v6
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v8, :cond_1
+    if-eqz v4, :cond_1
 
     :cond_0
     :goto_1
-    const/4 v3, 0x0
+    move v3, v1
 
     :cond_1
     :goto_2
@@ -7873,7 +7893,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -8716,13 +8736,13 @@
 
     move/from16 v0, p3
 
+    move/from16 v2, v16
+
+    move v3, v2
+
+    move v6, v3
+
     const/4 v1, -0x1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v6, 0x0
 
     const/4 v7, -0x1
 
@@ -8798,9 +8818,9 @@
 
     move v8, v11
 
-    const/16 v19, 0x0
+    move/from16 v19, v16
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     .line 3043
     :cond_2
@@ -8879,12 +8899,11 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
-    :goto_3
     move v7, v4
 
-    goto/16 :goto_10
+    move/from16 v19, v5
+
+    goto/16 :goto_f
 
     :pswitch_0
     const/4 v8, 0x3
@@ -8914,7 +8933,7 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
+    move/from16 v19, v5
 
     move-object/from16 v5, p6
 
@@ -8934,7 +8953,7 @@
 
     invoke-virtual {v10, v14, v12, v13, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_5
     move-object/from16 v5, p6
@@ -8954,7 +8973,7 @@
     .line 3152
     invoke-virtual {v10, v14, v12, v13, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    :goto_4
+    :goto_3
     or-int v6, v6, v22
 
     move-object/from16 v12, p2
@@ -8980,24 +8999,24 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
+    move/from16 v19, v5
 
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :pswitch_1
-    move-object/from16 v5, p6
-
     move v9, v2
 
     move v11, v3
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
+    move/from16 v19, v5
+
+    move-object/from16 v5, p6
 
     if-nez v0, :cond_7
 
@@ -9035,14 +9054,14 @@
 
     move/from16 v0, p3
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_7
     move-object/from16 v12, p2
 
     move-object v13, v5
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :pswitch_2
     move v9, v2
@@ -9053,11 +9072,11 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
 
     if-nez v0, :cond_e
 
@@ -9077,7 +9096,7 @@
     .line 3132
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto :goto_6
+    goto :goto_5
 
     :pswitch_3
     move v9, v2
@@ -9088,11 +9107,11 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
 
     if-nez v0, :cond_e
 
@@ -9118,7 +9137,7 @@
 
     if-eqz v4, :cond_8
 
-    goto :goto_5
+    goto :goto_4
 
     .line 3126
     :cond_8
@@ -9134,14 +9153,14 @@
 
     invoke-virtual {v2, v8, v1}, Lcom/google/android/gms/internal/firebase_ml/zzxp;->zzb(ILjava/lang/Object;)V
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     .line 3124
     :cond_9
-    :goto_5
+    :goto_4
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto :goto_6
+    goto :goto_5
 
     :pswitch_4
     move v9, v2
@@ -9154,11 +9173,11 @@
 
     const/4 v1, 0x2
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
 
     if-ne v0, v1, :cond_e
 
@@ -9172,10 +9191,10 @@
 
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    :goto_6
+    :goto_5
     or-int v6, v6, v22
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :pswitch_5
     move v9, v2
@@ -9188,11 +9207,11 @@
 
     const/4 v1, 0x2
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
 
     if-ne v0, v1, :cond_b
 
@@ -9217,7 +9236,7 @@
 
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     .line 3109
     :cond_a
@@ -9235,16 +9254,14 @@
     .line 3111
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_b
     move/from16 v5, p4
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :pswitch_6
-    move/from16 v5, p4
-
     move v9, v2
 
     move v11, v3
@@ -9255,11 +9272,13 @@
 
     const/4 v1, 0x2
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
+
+    move/from16 v5, p4
 
     if-ne v0, v1, :cond_e
 
@@ -9274,7 +9293,7 @@
 
     move-result v0
 
-    goto :goto_7
+    goto :goto_6
 
     .line 3098
     :cond_c
@@ -9283,16 +9302,14 @@
     move-result v0
 
     .line 3099
-    :goto_7
+    :goto_6
     iget-object v1, v13, Lcom/google/android/gms/internal/firebase_ml/zztm;->zzbor:Ljava/lang/Object;
 
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto :goto_9
+    goto :goto_8
 
     :pswitch_7
-    move/from16 v5, p4
-
     move v9, v2
 
     move v11, v3
@@ -9301,11 +9318,13 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
+
+    move/from16 v5, p4
 
     if-nez v0, :cond_e
 
@@ -9321,29 +9340,27 @@
 
     const-wide/16 v20, 0x0
 
-    cmp-long v4, v0, v20
+    cmp-long v0, v0, v20
 
-    if-eqz v4, :cond_d
+    if-eqz v0, :cond_d
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_d
-    const/4 v0, 0x0
+    move/from16 v0, v16
 
-    :goto_8
+    :goto_7
     invoke-static {v14, v2, v3, v0}, Lcom/google/android/gms/internal/firebase_ml/zzxs;->zza(Ljava/lang/Object;JZ)V
 
     or-int v6, v6, v22
 
     move/from16 v0, p3
 
-    goto :goto_a
+    goto :goto_9
 
     :pswitch_8
-    move/from16 v5, p4
-
     move v9, v2
 
     move v11, v3
@@ -9352,11 +9369,13 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
+
+    move/from16 v5, p4
 
     if-ne v0, v1, :cond_e
 
@@ -9369,10 +9388,10 @@
 
     add-int/lit8 v0, v4, 0x4
 
-    :goto_9
+    :goto_8
     or-int v6, v6, v22
 
-    :goto_a
+    :goto_9
     move v3, v8
 
     move v2, v9
@@ -9388,8 +9407,6 @@
     goto/16 :goto_0
 
     :pswitch_9
-    move/from16 v5, p4
-
     move v9, v2
 
     move v11, v3
@@ -9400,11 +9417,13 @@
 
     const/4 v1, 0x1
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
+
+    move/from16 v19, v5
+
+    move/from16 v5, p4
 
     if-ne v0, v1, :cond_e
 
@@ -9425,13 +9444,15 @@
 
     invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_e
-    :goto_b
+    :goto_a
     move/from16 p3, v7
 
-    goto/16 :goto_3
+    move v7, v4
+
+    goto/16 :goto_f
 
     :pswitch_a
     move v9, v2
@@ -9444,13 +9465,13 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
 
     move v7, v4
+
+    move/from16 v19, v5
 
     if-nez v0, :cond_f
 
@@ -9464,7 +9485,7 @@
 
     invoke-virtual {v10, v14, v2, v3, v1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     :pswitch_b
     move v9, v2
@@ -9477,13 +9498,13 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
 
     move v7, v4
+
+    move/from16 v19, v5
 
     if-nez v0, :cond_f
 
@@ -9515,7 +9536,7 @@
 
     move/from16 v7, p3
 
-    goto :goto_f
+    goto :goto_e
 
     :pswitch_c
     move v9, v2
@@ -9528,13 +9549,13 @@
 
     move/from16 v8, v19
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
 
     move v7, v4
+
+    move/from16 v19, v5
 
     if-ne v0, v1, :cond_f
 
@@ -9547,7 +9568,7 @@
 
     add-int/lit8 v0, v7, 0x4
 
-    goto :goto_d
+    goto :goto_c
 
     :pswitch_d
     move v9, v2
@@ -9562,13 +9583,13 @@
 
     const/4 v1, 0x1
 
-    const/16 v19, -0x1
-
     move-object/from16 v12, p2
 
     move-object/from16 v13, p6
 
     move v7, v4
+
+    move/from16 v19, v5
 
     if-ne v0, v1, :cond_f
 
@@ -9579,15 +9600,15 @@
 
     invoke-static {v14, v2, v3, v0, v1}, Lcom/google/android/gms/internal/firebase_ml/zzxs;->zza(Ljava/lang/Object;JD)V
 
-    :goto_c
+    :goto_b
     add-int/lit8 v0, v7, 0x8
 
-    :goto_d
+    :goto_c
     or-int v6, v6, v22
 
     move/from16 v7, p3
 
-    :goto_e
+    :goto_d
     move v3, v8
 
     move v2, v9
@@ -9596,7 +9617,7 @@
 
     move-object v9, v13
 
-    :goto_f
+    :goto_e
     move/from16 v13, p4
 
     move/from16 v11, p5
@@ -9604,7 +9625,7 @@
     goto/16 :goto_0
 
     :cond_f
-    :goto_10
+    :goto_f
     move v2, v7
 
     move/from16 v19, v9
@@ -9619,7 +9640,7 @@
 
     move/from16 v8, p5
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     :cond_10
     move v5, v3
@@ -9673,13 +9694,13 @@
 
     const/16 v1, 0xa
 
-    goto :goto_11
+    goto :goto_10
 
     :cond_11
     shl-int/lit8 v1, v1, 0x1
 
     .line 3162
-    :goto_11
+    :goto_10
     invoke-interface {v0, v1}, Lcom/google/android/gms/internal/firebase_ml/zzvf;->zzcl(I)Lcom/google/android/gms/internal/firebase_ml/zzvf;
 
     move-result-object v0
@@ -9747,7 +9768,7 @@
 
     move-object/from16 v27, v10
 
-    goto/16 :goto_12
+    goto/16 :goto_11
 
     :cond_14
     move/from16 v22, v6
@@ -9809,7 +9830,7 @@
 
     if-ne v0, v15, :cond_15
 
-    goto/16 :goto_14
+    goto/16 :goto_13
 
     :cond_15
     move-object/from16 v15, p0
@@ -9888,22 +9909,22 @@
 
     if-ne v0, v15, :cond_15
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_17
-    :goto_12
+    :goto_11
     move/from16 v8, p5
 
     move v2, v15
 
-    :goto_13
+    :goto_12
     move/from16 v7, v18
 
     move/from16 v6, v22
 
     move/from16 v9, v26
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_18
     move/from16 v7, p3
@@ -9939,19 +9960,19 @@
 
     if-ne v0, v15, :cond_1e
 
-    :goto_14
+    :goto_13
     move/from16 v8, p5
 
     move v2, v0
 
-    goto :goto_13
+    goto :goto_12
 
-    :goto_15
+    :goto_14
     if-ne v9, v8, :cond_1a
 
     if-nez v8, :cond_19
 
-    goto :goto_16
+    goto :goto_15
 
     :cond_19
     move-object/from16 v10, p0
@@ -9964,10 +9985,10 @@
 
     move v7, v2
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     :cond_1a
-    :goto_16
+    :goto_15
     move-object/from16 v10, p0
 
     .line 3184
@@ -10037,7 +10058,7 @@
 
     move-object/from16 v12, p2
 
-    goto :goto_18
+    goto :goto_17
 
     :cond_1b
     move-object/from16 v13, p1
@@ -10062,14 +10083,14 @@
     :cond_1c
     move-object/from16 v13, p1
 
-    goto :goto_17
+    goto :goto_16
 
     :cond_1d
     move-object/from16 v13, p1
 
     move-object/from16 v11, p6
 
-    :goto_17
+    :goto_16
     move/from16 v12, v25
 
     .line 3200
@@ -10108,7 +10129,7 @@
 
     move/from16 v13, p4
 
-    :goto_18
+    :goto_17
     move v11, v8
 
     goto/16 :goto_0
@@ -10165,7 +10186,7 @@
 
     const/4 v1, -0x1
 
-    :goto_19
+    :goto_18
     if-eq v0, v1, :cond_20
 
     int-to-long v0, v0
@@ -10185,7 +10206,7 @@
 
     move v11, v1
 
-    :goto_1a
+    :goto_19
     iget v0, v10, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zzbvq:I
 
     if-ge v11, v0, :cond_23
@@ -10218,7 +10239,7 @@
 
     if-nez v0, :cond_21
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 3218
     :cond_21
@@ -10228,7 +10249,7 @@
 
     if-nez v4, :cond_22
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 3221
     :cond_22
@@ -10246,12 +10267,12 @@
     move-result-object v5
 
     .line 3224
-    :goto_1b
+    :goto_1a
     check-cast v5, Lcom/google/android/gms/internal/firebase_ml/zzxp;
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_1a
+    goto :goto_19
 
     :cond_23
     if-eqz v5, :cond_24
@@ -10269,7 +10290,7 @@
 
     if-ne v7, v0, :cond_25
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 3231
     :cond_25
@@ -10286,7 +10307,7 @@
 
     if-ne v9, v8, :cond_27
 
-    :goto_1c
+    :goto_1b
     return v7
 
     .line 3233
@@ -10296,8 +10317,6 @@
     move-result-object v0
 
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -12085,7 +12104,7 @@
 
     array-length v7, v7
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_6
     if-ge v8, v7, :cond_c
@@ -13906,9 +13925,9 @@
 
     move/from16 v0, p3
 
-    const/4 v1, -0x1
+    move v1, v10
 
-    const/4 v2, 0x0
+    move/from16 v2, v16
 
     :goto_0
     if-ge v0, v13, :cond_10
@@ -13972,11 +13991,11 @@
 
     move-object/from16 v18, v9
 
-    const/16 v19, 0x0
+    move/from16 v26, v10
 
-    const/16 v26, -0x1
+    move/from16 v19, v16
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
     .line 3253
     :cond_2
@@ -14008,7 +14027,7 @@
 
     packed-switch v3, :pswitch_data_0
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
     :pswitch_0
     if-nez v6, :cond_a
@@ -14194,14 +14213,14 @@
 
     const-wide/16 v19, 0x0
 
-    cmp-long v8, v5, v19
+    cmp-long v5, v5, v19
 
-    if-eqz v8, :cond_5
+    if-eqz v5, :cond_5
 
     goto :goto_4
 
     :cond_5
-    const/4 v0, 0x0
+    move/from16 v0, v16
 
     :goto_4
     invoke-static {v14, v2, v3, v0}, Lcom/google/android/gms/internal/firebase_ml/zzxs;->zza(Ljava/lang/Object;JZ)V
@@ -14231,7 +14250,7 @@
 
     move v1, v7
 
-    goto/16 :goto_f
+    goto/16 :goto_9
 
     :pswitch_8
     move-wide v2, v1
@@ -14342,7 +14361,10 @@
 
     move v2, v10
 
-    goto/16 :goto_f
+    :goto_9
+    const/4 v10, -0x1
+
+    goto/16 :goto_0
 
     :cond_6
     move/from16 v24, v7
@@ -14353,7 +14375,7 @@
 
     move/from16 v19, v10
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_7
     const/16 v0, 0x1b
@@ -14385,13 +14407,13 @@
 
     const/16 v3, 0xa
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_8
     shl-int/lit8 v3, v3, 0x1
 
     .line 3335
-    :goto_9
+    :goto_a
     invoke-interface {v0, v3}, Lcom/google/android/gms/internal/firebase_ml/zzvf;->zzcl(I)Lcom/google/android/gms/internal/firebase_ml/zzvf;
 
     move-result-object v0
@@ -14428,10 +14450,10 @@
 
     move/from16 v2, v19
 
-    goto/16 :goto_f
+    goto :goto_9
 
     :cond_a
-    :goto_a
+    :goto_b
     move/from16 v19, v4
 
     move/from16 v24, v7
@@ -14440,10 +14462,10 @@
 
     move-object/from16 v18, v9
 
-    :goto_b
+    :goto_c
     const/16 v26, -0x1
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
     :cond_b
     move/from16 v19, v4
@@ -14505,7 +14527,7 @@
 
     if-ne v0, v15, :cond_f
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_c
     move-wide/from16 v20, v1
@@ -14555,13 +14577,13 @@
 
     if-ne v0, v15, :cond_f
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_d
-    :goto_c
+    :goto_d
     move v2, v15
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_e
     move/from16 v7, p3
@@ -14595,11 +14617,11 @@
 
     if-ne v0, v15, :cond_f
 
-    :goto_d
+    :goto_e
     move v2, v0
 
     .line 3357
-    :goto_e
+    :goto_f
     invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zzab(Ljava/lang/Object;)Lcom/google/android/gms/internal/firebase_ml/zzxp;
 
     move-result-object v4
@@ -14634,8 +14656,7 @@
 
     move/from16 v1, v24
 
-    :goto_f
-    const/4 v10, -0x1
+    move/from16 v10, v26
 
     goto/16 :goto_0
 
@@ -14675,8 +14696,6 @@
     invoke-virtual/range {v0 .. v6}, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zza(Ljava/lang/Object;[BIIILcom/google/android/gms/internal/firebase_ml/zztm;)I
 
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -14732,9 +14751,9 @@
     .line 576
     sget-object v2, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zzbve:Lsun/misc/Unsafe;
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
     .line 578
     :goto_0
@@ -14793,7 +14812,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v14, 0x0
+    move v14, v11
 
     :goto_1
     packed-switch v15, :pswitch_data_0
@@ -16317,11 +16336,11 @@
 
     const/4 v3, -0x1
 
-    const/4 v5, 0x0
+    move v5, v11
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v12, 0x0
+    move v12, v6
 
     .line 881
     :goto_5
@@ -18044,18 +18063,18 @@
     :goto_11
     add-int/lit8 v5, v5, 0x3
 
+    move v11, v8
+
+    move v8, v4
+
+    move v4, v9
+
     move-wide v9, v13
-
-    const/4 v4, 0x0
-
-    const/4 v8, 0x1
-
-    const/4 v11, 0x0
 
     goto/16 :goto_5
 
     :cond_2b
-    const/4 v8, 0x0
+    move v8, v11
 
     .line 1203
     iget-object v2, v0, Lcom/google/android/gms/internal/firebase_ml/zzwi;->zzbvt:Lcom/google/android/gms/internal/firebase_ml/zzxm;
@@ -18078,7 +18097,7 @@
 
     move-result-object v1
 
-    const/4 v11, 0x0
+    move v11, v8
 
     .line 1207
     :goto_12
@@ -18329,9 +18348,9 @@
 
     const/4 v1, -0x1
 
-    const/4 v2, 0x0
+    move v2, v0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 3402
     :goto_0
@@ -18392,7 +18411,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 v8, 0x0
+    move v8, v0
 
     :cond_1
     :goto_1
@@ -18402,12 +18421,12 @@
 
     if-eqz v10, :cond_2
 
-    const/4 v10, 0x1
+    move v10, v5
 
     goto :goto_2
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v0
 
     :goto_2
     if-eqz v10, :cond_3
@@ -18550,7 +18569,7 @@
 
     if-nez v7, :cond_5
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :cond_7
     if-nez v5, :cond_d
@@ -18602,7 +18621,7 @@
 
     move-result-object v4
 
-    const/4 v7, 0x0
+    move v7, v0
 
     .line 3433
     :goto_3
@@ -18624,7 +18643,7 @@
 
     if-nez v8, :cond_a
 
-    const/4 v5, 0x0
+    move v5, v0
 
     goto :goto_4
 

@@ -374,7 +374,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 205
     :goto_0
@@ -1031,7 +1031,7 @@
     goto :goto_0
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v4
 
     goto/16 :goto_10
 
@@ -1059,11 +1059,11 @@
     if-eqz v5, :cond_6
 
     :cond_9
-    const/4 v9, 0x0
+    move v9, v4
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     .line 531
     :goto_1
@@ -1186,9 +1186,9 @@
 
     iget-wide v4, v15, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v15, v12, v4
+    cmp-long v4, v12, v4
 
-    if-nez v15, :cond_d
+    if-nez v4, :cond_d
 
     add-int/lit8 v11, v11, 0x1
 
@@ -1610,7 +1610,7 @@
 
     div-float v13, v13, v17
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     iput v12, v5, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->randomOffsetX:F
 
@@ -1629,7 +1629,7 @@
 
     div-float v10, v10, v17
 
-    mul-float v6, v6, v10
+    mul-float/2addr v6, v10
 
     iput v6, v5, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->randomOffsetY:F
 
@@ -1676,7 +1676,7 @@
 
     const/high16 v8, 0x40000000    # 2.0f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     .line 614
     sget v8, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -1837,7 +1837,7 @@
 
     const/high16 v4, 0x3fc00000    # 1.5f
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     .line 637
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -2062,9 +2062,9 @@
 
     iget-wide v4, v0, Lorg/telegram/ui/EmojiAnimationsOverlay;->dialogId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_2c
+    if-eqz v2, :cond_2c
 
     .line 662
     iget v2, v0, Lorg/telegram/ui/EmojiAnimationsOverlay;->lastTappedMsgId:I
@@ -2114,9 +2114,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_2a
+    if-nez v2, :cond_2a
 
     .line 671
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -2236,7 +2236,7 @@
 
     :cond_2e
     :goto_11
-    const/4 v1, 0x0
+    move v1, v4
 
     return v1
 .end method
@@ -2389,7 +2389,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_4
@@ -2707,7 +2707,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 128
     :goto_0
@@ -2755,7 +2755,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 131
     :goto_1
@@ -2818,7 +2818,7 @@
 
     invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 137
     :goto_2
@@ -2884,7 +2884,7 @@
 
     move-result-object v6
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_3
     if-ge v7, v4, :cond_5
@@ -2973,9 +2973,9 @@
     .line 165
     iget-wide v2, p0, Lorg/telegram/ui/EmojiAnimationsOverlay;->dialogId:J
 
-    cmp-long v4, p1, v2
+    cmp-long p1, p1, v2
 
-    if-nez v4, :cond_2
+    if-nez p1, :cond_2
 
     sget-object p1, Lorg/telegram/ui/EmojiAnimationsOverlay;->supportedEmoji:Ljava/util/HashSet;
 
@@ -3052,7 +3052,7 @@
 
     const-wide v5, 0x408f400000000000L    # 1000.0
 
-    mul-double v3, v3, v5
+    mul-double/2addr v3, v5
 
     double-to-long v2, v3
 
@@ -3126,7 +3126,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 233
     :goto_0
@@ -3150,7 +3150,7 @@
     .line 235
     iput-boolean v0, v2, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->viewFound:Z
 
-    const/4 v3, 0x0
+    move v3, v0
 
     .line 237
     :goto_1
@@ -3325,7 +3325,7 @@
 
     neg-float v10, v10
 
-    mul-float v10, v10, v6
+    mul-float/2addr v10, v6
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -3386,7 +3386,7 @@
     goto/16 :goto_1
 
     :cond_5
-    const/4 v4, 0x0
+    move v4, v5
 
     .line 276
     :goto_5
@@ -3482,11 +3482,11 @@
 
     const v8, 0x3fbfe7c0
 
-    mul-float v8, v8, v3
+    mul-float/2addr v8, v3
 
     const/high16 v9, 0x3d600000    # 0.0546875f
 
-    mul-float v9, v9, v8
+    mul-float/2addr v9, v8
 
     .line 289
     iget v10, v2, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->lastY:F
@@ -3501,7 +3501,7 @@
 
     const v3, 0x3b36d86f    # 0.00279f
 
-    mul-float v3, v3, v8
+    mul-float/2addr v3, v8
 
     sub-float/2addr v10, v3
 
@@ -3601,7 +3601,7 @@
 
     mul-float v11, v9, v10
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     invoke-virtual {v3, v6, v8, v11, v9}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
@@ -4176,12 +4176,12 @@
 
     if-ne p3, v2, :cond_5
 
-    const/4 p3, 0x0
+    move p3, v1
 
     goto :goto_0
 
     :cond_5
-    const/4 p3, 0x1
+    move p3, v4
 
     :goto_0
     if-eqz p3, :cond_8
@@ -4472,7 +4472,7 @@
 
     move-result p1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
@@ -4582,11 +4582,11 @@
     goto/16 :goto_2
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v3
 
-    const/4 v6, 0x0
+    move v6, v5
 
-    const/4 v7, 0x0
+    move v7, v6
 
     .line 411
     :goto_0
@@ -4691,9 +4691,9 @@
 
     iget-wide v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    cmp-long v12, v8, v10
+    cmp-long v8, v8, v10
 
-    if-nez v12, :cond_5
+    if-nez v8, :cond_5
 
     add-int/lit8 v7, v7, 0x1
 
@@ -4741,7 +4741,7 @@
 
     div-float/2addr v11, v12
 
-    mul-float v10, v10, v11
+    mul-float/2addr v10, v11
 
     iput v10, v6, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->randomOffsetX:F
 
@@ -4760,7 +4760,7 @@
 
     div-float/2addr v9, v12
 
-    mul-float v2, v2, v9
+    mul-float/2addr v2, v9
 
     iput v2, v6, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->randomOffsetY:F
 
@@ -4785,7 +4785,7 @@
 
     const/high16 v2, 0x3fc00000    # 1.5f
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     .line 433
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->density:F
@@ -4815,7 +4815,7 @@
 
     if-nez v7, :cond_8
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_1
 

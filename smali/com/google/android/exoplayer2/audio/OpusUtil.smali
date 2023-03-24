@@ -143,7 +143,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_1
     :goto_0
@@ -191,7 +191,7 @@
 
     int-to-long p0, p0
 
-    mul-long v0, v0, p0
+    mul-long/2addr v0, p0
 
     return-wide v0
 .end method
@@ -272,7 +272,7 @@
 
     const-wide/32 v2, 0xbb80
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/32 v2, 0xf4240
 
@@ -289,7 +289,7 @@
 
     const-wide/32 v0, 0x3b9aca00
 
-    mul-long p0, p0, v0
+    mul-long/2addr p0, v0
 
     const-wide/32 v0, 0xbb80
 

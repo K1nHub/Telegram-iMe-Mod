@@ -653,7 +653,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             if (MotionEventCompat.isFromSource(motionEvent, 2)) {
                 axisValue = motionEvent.getAxisValue(9);
             } else {
-                axisValue = MotionEventCompat.isFromSource(motionEvent, 4194304) ? motionEvent.getAxisValue(26) : BitmapDescriptorFactory.HUE_RED;
+                axisValue = MotionEventCompat.isFromSource(motionEvent, 4194304) ? motionEvent.getAxisValue(26) : 0.0f;
             }
             if (axisValue != BitmapDescriptorFactory.HUE_RED) {
                 int scrollRange = getScrollRange();
@@ -665,8 +665,9 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
                         this.mEdgeGlowTop.onRelease();
                         invalidate();
                         z = 1;
+                    } else {
+                        z = 0;
                     }
-                    z = 0;
                 } else if (verticalScrollFactorCompat > scrollRange) {
                     if (canOverScroll() && !MotionEventCompat.isFromSource(motionEvent, 8194)) {
                         EdgeEffectCompat.onPullDistance(this.mEdgeGlowBottom, (verticalScrollFactorCompat - scrollRange) / getHeight(), 0.5f);
@@ -677,8 +678,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
                     z = i;
                     i = scrollRange;
                 } else {
-                    i = verticalScrollFactorCompat;
                     z = 0;
+                    i = verticalScrollFactorCompat;
                 }
                 if (i != scrollY) {
                     super.scrollTo(getScrollX(), i);
@@ -715,125 +716,45 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         super.scrollTo(i, i2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0083 A[ADDED_TO_REGION] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    boolean overScrollByCompat(int r13, int r14, int r15, int r16, int r17, int r18, int r19, int r20, boolean r21) {
-        /*
-            r12 = this;
-            r0 = r12
-            int r1 = r12.getOverScrollMode()
-            int r2 = r12.computeHorizontalScrollRange()
-            int r3 = r12.computeHorizontalScrollExtent()
-            r4 = 0
-            r5 = 1
-            if (r2 <= r3) goto L13
-            r2 = 1
-            goto L14
-        L13:
-            r2 = 0
-        L14:
-            int r3 = r12.computeVerticalScrollRange()
-            int r6 = r12.computeVerticalScrollExtent()
-            if (r3 <= r6) goto L20
-            r3 = 1
-            goto L21
-        L20:
-            r3 = 0
-        L21:
-            if (r1 == 0) goto L2a
-            if (r1 != r5) goto L28
-            if (r2 == 0) goto L28
-            goto L2a
-        L28:
-            r2 = 0
-            goto L2b
-        L2a:
-            r2 = 1
-        L2b:
-            if (r1 == 0) goto L34
-            if (r1 != r5) goto L32
-            if (r3 == 0) goto L32
-            goto L34
-        L32:
-            r1 = 0
-            goto L35
-        L34:
-            r1 = 1
-        L35:
-            int r3 = r15 + r13
-            if (r2 != 0) goto L3b
-            r2 = 0
-            goto L3d
-        L3b:
-            r2 = r19
-        L3d:
-            int r6 = r16 + r14
-            if (r1 != 0) goto L43
-            r1 = 0
-            goto L45
-        L43:
-            r1 = r20
-        L45:
-            int r7 = -r2
-            int r2 = r2 + r17
-            int r8 = -r1
-            int r1 = r1 + r18
-            if (r3 <= r2) goto L50
-            r3 = r2
-        L4e:
-            r2 = 1
-            goto L55
-        L50:
-            if (r3 >= r7) goto L54
-            r3 = r7
-            goto L4e
-        L54:
-            r2 = 0
-        L55:
-            if (r6 <= r1) goto L5a
-            r6 = r1
-        L58:
-            r1 = 1
-            goto L5f
-        L5a:
-            if (r6 >= r8) goto L5e
-            r6 = r8
-            goto L58
-        L5e:
-            r1 = 0
-        L5f:
-            if (r1 == 0) goto L7e
-            boolean r7 = r12.hasNestedScrollingParent(r5)
-            if (r7 != 0) goto L7e
-            android.widget.OverScroller r7 = r0.mScroller
-            r8 = 0
-            r9 = 0
-            r10 = 0
-            int r11 = r12.getScrollRange()
-            r13 = r7
-            r14 = r3
-            r15 = r6
-            r16 = r8
-            r17 = r9
-            r18 = r10
-            r19 = r11
-            r13.springBack(r14, r15, r16, r17, r18, r19)
-        L7e:
-            r12.onOverScrolled(r3, r6, r2, r1)
-            if (r2 != 0) goto L85
-            if (r1 == 0) goto L86
-        L85:
-            r4 = 1
-        L86:
-            return r4
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.core.widget.NestedScrollView.overScrollByCompat(int, int, int, int, int, int, int, int, boolean):boolean");
+    boolean overScrollByCompat(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z) {
+        boolean z2;
+        boolean z3;
+        int overScrollMode = getOverScrollMode();
+        boolean z4 = computeHorizontalScrollRange() > computeHorizontalScrollExtent();
+        boolean z5 = computeVerticalScrollRange() > computeVerticalScrollExtent();
+        boolean z6 = overScrollMode == 0 || (overScrollMode == 1 && z4);
+        boolean z7 = overScrollMode == 0 || (overScrollMode == 1 && z5);
+        int i9 = i3 + i;
+        int i10 = !z6 ? 0 : i7;
+        int i11 = i4 + i2;
+        int i12 = !z7 ? 0 : i8;
+        int i13 = -i10;
+        int i14 = i10 + i5;
+        int i15 = -i12;
+        int i16 = i12 + i6;
+        if (i9 > i14) {
+            i9 = i14;
+            z2 = true;
+        } else if (i9 < i13) {
+            z2 = true;
+            i9 = i13;
+        } else {
+            z2 = false;
+        }
+        if (i11 > i16) {
+            i11 = i16;
+            z3 = true;
+        } else if (i11 < i15) {
+            z3 = true;
+            i11 = i15;
+        } else {
+            z3 = false;
+        }
+        if (z3 && !hasNestedScrollingParent(1)) {
+            this.mScroller.springBack(i9, i11, 0, 0, 0, getScrollRange());
+        }
+        onOverScrolled(i9, i11, z2, z3);
+        return z2 || z3;
     }
 
     int getScrollRange() {
@@ -1139,7 +1060,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0060  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -1193,9 +1114,9 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             float r4 = (float) r4
             float r1 = r1 * r4
             int r4 = java.lang.Math.round(r1)
-            if (r4 == 0) goto L64
+            if (r4 == 0) goto L63
             r3.invalidate()
-        L64:
+        L63:
             return r4
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.core.widget.NestedScrollView.releaseVerticalGlow(int, float):int");

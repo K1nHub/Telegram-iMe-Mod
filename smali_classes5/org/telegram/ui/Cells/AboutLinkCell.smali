@@ -308,12 +308,12 @@
 
     if-eqz v8, :cond_0
 
-    const/4 v8, 0x5
+    move v8, v9
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x3
+    move v8, v10
 
     :goto_0
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setGravity(I)V
@@ -344,7 +344,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x3
+    move v9, v10
 
     :goto_1
     or-int/lit8 v13, v9, 0x50
@@ -832,12 +832,12 @@
 
     if-lt p2, v0, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/AboutLinkCell;->shouldExpand:Z
@@ -913,12 +913,12 @@
 
     if-eq v5, v6, :cond_4
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_1
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     iput-boolean v5, p0, Lorg/telegram/ui/Cells/AboutLinkCell;->needSpace:Z
@@ -1234,7 +1234,7 @@
 
     if-nez p2, :cond_b
 
-    const/4 p2, 0x0
+    move p2, v1
 
     goto :goto_4
 
@@ -1286,7 +1286,7 @@
     goto :goto_5
 
     :cond_d
-    const/16 v1, 0x8
+    move v1, v2
 
     :goto_5
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setVisibility(I)V
@@ -1632,7 +1632,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v10
 
     :goto_0
     add-float/2addr v2, v3
@@ -1738,7 +1738,7 @@
 
     sub-float v5, v12, v13
 
-    mul-float v5, v5, v0
+    mul-float/2addr v5, v0
 
     add-float/2addr v4, v5
 
@@ -1819,7 +1819,7 @@
 
     sub-float v3, v12, v13
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     add-float/2addr v3, v11
 
@@ -1912,17 +1912,17 @@
 
     const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     const/high16 v0, 0x40800000    # 4.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     goto :goto_0
 
@@ -1931,7 +1931,7 @@
 
     const/high16 v1, -0x40000000    # -2.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     const/high16 v1, 0x40000000    # 2.0f
 
@@ -2215,11 +2215,11 @@
 
     const/high16 p1, 0x447a0000    # 1000.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     const/high16 p1, 0x41000000    # 8.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 652
     invoke-virtual {p5}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -2815,11 +2815,11 @@
 
     const/4 v2, 0x0
 
-    const/high16 v3, 0x437f0000    # 255.0f
+    cmpl-float v3, v1, v2
 
-    cmpl-float v4, v1, v2
+    const/high16 v4, 0x437f0000    # 255.0f
 
-    if-lez v4, :cond_1
+    if-lez v3, :cond_1
 
     .line 308
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -2831,17 +2831,17 @@
     .line 309
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v8, v4
+    int-to-float v8, v3
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v9, v4
+    int-to-float v9, v3
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v4
 
     float-to-int v10, v1
 
@@ -2854,7 +2854,7 @@
     .line 310
     iget-object v1, p0, Lorg/telegram/ui/Cells/AboutLinkCell;->showMoreBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 
@@ -2902,32 +2902,32 @@
     .line 317
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    const/4 v5, 0x0
-
     const/4 v6, 0x0
+
+    const/4 v7, 0x0
 
     .line 318
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
 
-    int-to-float v7, v1
+    int-to-float v8, v1
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v1
 
-    int-to-float v8, v1
+    int-to-float v9, v1
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v4
 
-    float-to-int v9, v0
+    float-to-int v10, v0
 
-    const/16 v10, 0x1f
+    const/16 v11, 0x1f
 
-    move-object v4, p1
+    move-object v5, p1
 
-    invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+    invoke-virtual/range {v5 .. v11}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
     .line 319
     iget-object v0, p0, Lorg/telegram/ui/Cells/AboutLinkCell;->bottomShadow:Landroid/widget/FrameLayout;
@@ -3034,8 +3034,6 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     goto :goto_0
 
     :cond_0
@@ -3045,10 +3043,10 @@
 
     int-to-float v0, v0
 
+    :goto_0
     move v3, v0
 
     .line 104
-    :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -3410,13 +3408,13 @@
     invoke-direct {p0}, Lorg/telegram/ui/Cells/AboutLinkCell;->resetPressedLink()V
 
     :goto_2
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_4
 
     :cond_6
     :goto_3
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_4
     if-nez v0, :cond_7
@@ -3429,7 +3427,7 @@
     if-eqz p1, :cond_8
 
     :cond_7
-    const/4 v3, 0x1
+    move v3, v4
 
     :cond_8
     return v3
@@ -3655,12 +3653,12 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, p1
 
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_0
     if-eqz p2, :cond_3
@@ -3726,11 +3724,11 @@
 
     const p2, 0x449c4000    # 1250.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     const/high16 p2, 0x40000000    # 2.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     .line 646
     new-instance v6, Lorg/telegram/ui/Cells/AboutLinkCell$SpringInterpolator;
@@ -3795,6 +3793,8 @@
 
     :goto_1
     return-void
+
+    nop
 
     :array_0
     .array-data 4

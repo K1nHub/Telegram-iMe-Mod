@@ -83,7 +83,7 @@
     return v2
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 142
     :goto_0
@@ -1595,7 +1595,7 @@
 .end method
 
 .method private static numberEquals(Lcom/google/firestore/v1/Value;Lcom/google/firestore/v1/Value;)Z
-    .locals 5
+    .locals 4
 
     .line 122
     invoke-virtual {p0}, Lcom/google/firestore/v1/Value;->getValueTypeCase()Lcom/google/firestore/v1/Value$ValueTypeCase;
@@ -1626,14 +1626,14 @@
 
     move-result-wide p0
 
-    cmp-long v4, v0, p0
+    cmp-long p0, v0, p0
 
-    if-nez v4, :cond_0
+    if-nez p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     return v2
@@ -1673,14 +1673,14 @@
 
     move-result-wide p0
 
-    cmp-long v4, v0, p0
+    cmp-long p0, v0, p0
 
-    if-nez v4, :cond_2
+    if-nez p0, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_1
     return v2

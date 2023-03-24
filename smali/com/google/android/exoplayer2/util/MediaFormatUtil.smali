@@ -264,7 +264,7 @@
 
     if-nez v5, :cond_2
 
-    const/4 v0, -0x1
+    move v0, v2
 
     .line 220
     :cond_2
@@ -274,7 +274,7 @@
 
     if-nez v5, :cond_3
 
-    const/4 v3, -0x1
+    move v3, v2
 
     .line 223
     :cond_3
@@ -284,7 +284,7 @@
 
     if-nez v5, :cond_4
 
-    const/4 v4, -0x1
+    move v4, v2
 
     :cond_4
     if-ne v0, v2, :cond_6
@@ -521,12 +521,12 @@
     return-void
 
     :cond_1
-    const/4 v0, 0x3
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x2
+    move v0, v2
 
     goto :goto_0
 
@@ -554,58 +554,60 @@
 .end method
 
 .method private static maybeSetPixelAspectRatio(Landroid/media/MediaFormat;F)V
-    .locals 4
+    .locals 5
 
     const-string v0, "exo-pixel-width-height-ratio-float"
 
     .line 252
     invoke-virtual {p0, v0, p1}, Landroid/media/MediaFormat;->setFloat(Ljava/lang/String;F)V
 
-    const/high16 v0, 0x40000000    # 2.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    cmpg-float v1, p1, v0
 
-    const/4 v2, 0x1
+    const/high16 v2, 0x40000000    # 2.0f
 
-    cmpg-float v3, p1, v1
+    const/4 v3, 0x1
 
-    if-gez v3, :cond_0
+    if-gez v1, :cond_0
 
-    int-to-float v1, v0
+    int-to-float v0, v2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v0
 
     float-to-int p1, p1
 
-    move v0, p1
+    move v4, v2
 
-    const/high16 p1, 0x40000000    # 2.0f
+    move v2, p1
+
+    move p1, v4
 
     goto :goto_0
 
     :cond_0
-    cmpl-float v1, p1, v1
+    cmpl-float v0, p1, v0
 
-    if-lez v1, :cond_1
+    if-lez v0, :cond_1
 
-    int-to-float v1, v0
+    int-to-float v0, v2
 
-    div-float/2addr v1, p1
+    div-float/2addr v0, p1
 
-    float-to-int p1, v1
+    float-to-int p1, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v3
 
-    const/4 v0, 0x1
+    move v2, p1
 
     :goto_0
-    const-string v1, "sar-width"
+    const-string v0, "sar-width"
 
     .line 264
-    invoke-virtual {p0, v1, v0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    invoke-virtual {p0, v0, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string v0, "sar-height"
 

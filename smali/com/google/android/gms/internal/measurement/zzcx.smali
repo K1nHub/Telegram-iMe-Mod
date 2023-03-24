@@ -150,12 +150,12 @@
 
     if-ge v0, v3, :cond_2
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 9
     :goto_1

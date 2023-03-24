@@ -144,7 +144,7 @@
     return v3
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     if-ge v2, v1, :cond_3

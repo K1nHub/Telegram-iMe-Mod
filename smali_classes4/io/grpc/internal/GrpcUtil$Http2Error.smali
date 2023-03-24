@@ -380,12 +380,12 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     .line 331
-    new-array v1, v2, [Lio/grpc/internal/GrpcUtil$Http2Error;
+    new-array v1, v1, [Lio/grpc/internal/GrpcUtil$Http2Error;
 
     .line 332
     array-length v2, v0
@@ -402,10 +402,10 @@
 
     move-result-wide v5
 
-    long-to-int v6, v5
+    long-to-int v5, v5
 
     .line 334
-    aput-object v4, v1, v6
+    aput-object v4, v1, v5
 
     add-int/lit8 v3, v3, 0x1
 
@@ -416,7 +416,7 @@
 .end method
 
 .method public static forCode(J)Lio/grpc/internal/GrpcUtil$Http2Error;
-    .locals 4
+    .locals 3
 
     .line 371
     sget-object v0, Lio/grpc/internal/GrpcUtil$Http2Error;->codeMap:[Lio/grpc/internal/GrpcUtil$Http2Error;
@@ -425,23 +425,23 @@
 
     int-to-long v1, v1
 
-    cmp-long v3, p0, v1
+    cmp-long v1, p0, v1
 
-    if-gez v3, :cond_1
+    if-gez v1, :cond_1
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p0, v1
+    cmp-long v1, p0, v1
 
-    if-gez v3, :cond_0
+    if-gez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    long-to-int p1, p0
+    long-to-int p0, p0
 
     .line 374
-    aget-object p0, v0, p1
+    aget-object p0, v0, p0
 
     return-object p0
 

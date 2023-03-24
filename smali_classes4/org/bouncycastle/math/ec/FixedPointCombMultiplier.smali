@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    mul-int v3, v3, v1
+    mul-int/2addr v3, v1
 
     invoke-static {v3, p2}, Lorg/bouncycastle/math/raw/Nat;->fromBigInteger(ILjava/math/BigInteger;)[I
 
@@ -62,14 +62,14 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v1, :cond_1
 
     sub-int v6, v3, v5
 
-    const/4 v7, 0x0
+    move v7, v4
 
     :goto_1
     if-ltz v6, :cond_0

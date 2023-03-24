@@ -535,12 +535,12 @@
 
     if-eqz v6, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v7
 
     goto :goto_2
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 385
     :goto_2
@@ -563,12 +563,12 @@
 
     if-nez p1, :cond_b
 
-    const/4 p1, 0x1
+    move p1, v7
 
     goto :goto_4
 
     :cond_b
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_4
     iput-boolean p1, p0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAsyncFontPending:Z
@@ -576,14 +576,9 @@
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_5
-
-    :catch_0
-    nop
-
     .line 398
+    :catch_0
     :cond_c
-    :goto_5
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface:Landroid/graphics/Typeface;
 
     if-nez p1, :cond_f
@@ -617,7 +612,7 @@
 
     if-eqz v0, :cond_d
 
-    const/4 v4, 0x1
+    move v4, v7
 
     .line 404
     :cond_d
@@ -627,7 +622,7 @@
 
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface:Landroid/graphics/Typeface;
 
-    goto :goto_6
+    goto :goto_5
 
     .line 408
     :cond_e
@@ -640,7 +635,7 @@
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface:Landroid/graphics/Typeface;
 
     :cond_f
-    :goto_6
+    :goto_5
     return-void
 .end method
 
@@ -1126,9 +1121,9 @@
     goto :goto_0
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v12
 
-    const/4 v15, 0x0
+    move v15, v6
 
     .line 148
     :goto_0
@@ -1250,19 +1245,19 @@
     goto :goto_6
 
     :cond_d
+    move v6, v12
+
+    move v15, v6
+
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
-
     const/4 v13, 0x0
 
     const/4 v14, 0x0
-
-    const/4 v15, 0x0
 
     .line 175
     :goto_6

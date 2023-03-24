@@ -719,7 +719,7 @@
 
     const/high16 v2, -0x3c810000    # -255.0f
 
-    mul-float p0, p0, v2
+    mul-float/2addr p0, v2
 
     const/4 v2, 0x4
 
@@ -1951,7 +1951,7 @@
 
     const/high16 v1, 0x3e800000    # 0.25f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr v0, p1
 
@@ -2210,13 +2210,13 @@
 
     const v14, 0x7f7fffff    # Float.MAX_VALUE
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_d
 
     invoke-virtual {v1}, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->isOperational()Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_d
 
     if-eqz v9, :cond_0
 
@@ -2340,9 +2340,9 @@
     :cond_2
     array-length v5, v1
 
-    const/4 v6, 0x1
+    move v6, v13
 
-    const v7, 0x7f7fffff    # Float.MAX_VALUE
+    move v7, v14
 
     :goto_1
     if-ge v12, v5, :cond_3
@@ -2402,7 +2402,7 @@
     goto/16 :goto_a
 
     :cond_5
-    if-eqz v9, :cond_d
+    if-eqz v9, :cond_13
 
     .line 1226
     invoke-direct {v0, v9}, Lorg/telegram/ui/CameraScanActivity;->invert(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -2476,9 +2476,9 @@
     :cond_6
     array-length v5, v1
 
-    const/4 v6, 0x1
+    move v6, v13
 
-    const v7, 0x7f7fffff    # Float.MAX_VALUE
+    move v7, v14
 
     :goto_3
     if-ge v12, v5, :cond_7
@@ -2617,9 +2617,9 @@
     :cond_a
     array-length v5, v1
 
-    const/4 v6, 0x1
+    move v6, v13
 
-    const v7, 0x7f7fffff    # Float.MAX_VALUE
+    move v7, v14
 
     :goto_6
     if-ge v12, v5, :cond_b
@@ -2684,18 +2684,13 @@
 
     goto/16 :goto_a
 
-    :cond_d
-    move-object v4, v10
-
-    goto/16 :goto_a
-
     .line 1282
-    :cond_e
+    :cond_d
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->qrReader:Lcom/google/zxing/qrcode/QRCodeReader;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_12
 
-    if-eqz v9, :cond_f
+    if-eqz v9, :cond_e
 
     .line 1285
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
@@ -2706,7 +2701,7 @@
 
     move-result v2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     new-array v15, v1, [I
 
@@ -2761,7 +2756,7 @@
     goto :goto_8
 
     .line 1291
-    :cond_f
+    :cond_e
     new-instance v1, Lcom/google/zxing/PlanarYUVLuminanceSource;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/camera/Size;->getWidth()I
@@ -2814,7 +2809,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_f
 
     .line 1298
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CameraScanActivity;->onNoQrFound()V
@@ -2822,7 +2817,7 @@
     return-object v10
 
     .line 1301
-    :cond_10
+    :cond_f
     invoke-virtual {v1}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
     move-result-object v4
@@ -2840,24 +2835,24 @@
 
     array-length v5, v5
 
-    if-nez v5, :cond_11
+    if-nez v5, :cond_10
 
     goto/16 :goto_2
 
     .line 1309
-    :cond_11
+    :cond_10
     invoke-virtual {v1}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
     move-result-object v1
 
     array-length v5, v1
 
-    const/4 v6, 0x1
+    move v6, v13
 
-    const v7, 0x7f7fffff    # Float.MAX_VALUE
+    move v7, v14
 
     :goto_9
-    if-ge v12, v5, :cond_12
+    if-ge v12, v5, :cond_11
 
     aget-object v8, v1, v12
 
@@ -2902,15 +2897,16 @@
     goto :goto_9
 
     .line 1315
-    :cond_12
+    :cond_11
     invoke-virtual {v11, v14, v7, v13, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
     goto :goto_a
 
+    :cond_12
+    move v3, v2
+
     :cond_13
     move-object v4, v10
-
-    const/4 v3, 0x1
 
     .line 1320
     :goto_a
@@ -3180,7 +3176,7 @@
 
     if-eqz v1, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v2
 
     goto :goto_0
 
@@ -3248,7 +3244,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-long v3, v3
 
@@ -3296,7 +3292,7 @@
     :goto_1
     const/high16 v4, 0x43fa0000    # 500.0f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     invoke-direct {v1, v3}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
 
@@ -3348,7 +3344,7 @@
 .end method
 
 .method private updateRecognizedBounds(Landroid/graphics/RectF;)V
-    .locals 10
+    .locals 9
 
     .line 888
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -3358,15 +3354,15 @@
     .line 889
     iget-wide v2, p0, Lorg/telegram/ui/CameraScanActivity;->lastBoundsUpdate:J
 
-    const-wide/16 v4, 0x4b
+    const-wide/16 v4, 0x0
 
-    const-wide/16 v6, 0x0
+    cmp-long v4, v2, v4
 
-    cmp-long v8, v2, v6
+    const-wide/16 v5, 0x4b
 
-    if-nez v8, :cond_0
+    if-nez v4, :cond_0
 
-    sub-long/2addr v0, v4
+    sub-long/2addr v0, v5
 
     .line 891
     iput-wide v0, p0, Lorg/telegram/ui/CameraScanActivity;->lastBoundsUpdate:J
@@ -3385,15 +3381,15 @@
 
     .line 896
     :cond_0
-    iget-object v6, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
+    iget-object v4, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
-    if-eqz v6, :cond_1
+    if-eqz v4, :cond_1
 
     sub-long v7, v0, v2
 
-    cmp-long v9, v7, v4
+    cmp-long v5, v7, v5
 
-    if-gez v9, :cond_1
+    if-gez v5, :cond_1
 
     sub-long v2, v0, v2
 
@@ -3426,7 +3422,7 @@
     goto :goto_0
 
     :cond_1
-    if-nez v6, :cond_2
+    if-nez v4, :cond_2
 
     .line 902
     new-instance v2, Landroid/graphics/RectF;
@@ -3964,7 +3960,7 @@
 
     aput-object v12, v5, v8
 
-    const/4 v12, 0x0
+    move v12, v4
 
     :goto_3
     if-ge v12, v9, :cond_a
@@ -5038,7 +5034,7 @@
 
     long-to-float v6, v0
 
-    mul-float p1, p1, v6
+    mul-float/2addr p1, v6
 
     long-to-float v4, v4
 

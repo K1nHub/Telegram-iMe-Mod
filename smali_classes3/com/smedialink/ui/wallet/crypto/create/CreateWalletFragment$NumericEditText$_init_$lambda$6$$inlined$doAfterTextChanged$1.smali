@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTextView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$textWatcher$1\n+ 2 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText\n+ 3 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$1\n+ 4 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$2\n*L\n1#1,97:1\n1245#2,20:98\n71#3:118\n77#4:119\n*E\n"
+    value = "SMAP\nTextView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$textWatcher$1\n+ 2 CreateWalletFragment.kt\ncom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText\n+ 3 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$1\n+ 4 TextView.kt\nandroidx/core/widget/TextViewKt$addTextChangedListener$2\n*L\n1#1,97:1\n1246#2,20:98\n71#3:118\n77#4:119\n*E\n"
 .end annotation
 
 
@@ -114,7 +114,7 @@
 
     invoke-interface {p1, v5, v0, v2}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
 
-    const/4 v0, 0x0
+    move v0, v5
 
     .line 104
     :goto_0
@@ -137,12 +137,12 @@
 
     if-ge v2, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_1
     if-nez v2, :cond_2

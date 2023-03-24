@@ -476,7 +476,7 @@
 
     iget v8, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->enterAnimationProgress:F
 
-    mul-float v8, v8, v5
+    mul-float/2addr v8, v5
 
     float-to-int v5, v8
 
@@ -487,7 +487,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->enterAnimationProgress:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -501,22 +501,22 @@
 
     const v8, 0x3f333333    # 0.7f
 
-    const v9, 0x3e99999a    # 0.3f
+    cmpg-float v9, v3, v8
 
-    cmpg-float v10, v3, v8
+    const v10, 0x3e99999a    # 0.3f
 
-    if-gtz v10, :cond_5
+    if-gtz v9, :cond_5
 
     .line 164
     iget-object v8, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->paint:Landroid/graphics/Paint;
 
-    div-float/2addr v3, v9
+    div-float/2addr v3, v10
 
     invoke-static {v7, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
@@ -527,13 +527,13 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->animationProgress:F
 
-    div-float/2addr v5, v9
+    div-float/2addr v5, v10
 
     invoke-static {v7, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -543,19 +543,19 @@
 
     .line 167
     :cond_5
-    iget-object v10, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->paint:Landroid/graphics/Paint;
+    iget-object v9, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->paint:Landroid/graphics/Paint;
 
     sub-float/2addr v3, v8
 
-    div-float/2addr v3, v9
+    div-float/2addr v3, v10
 
     sub-float v3, v7, v3
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
-    invoke-virtual {v10, v3}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v9, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 168
     iget-object v3, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->textPaint:Landroid/text/TextPaint;
@@ -564,11 +564,11 @@
 
     sub-float/2addr v5, v8
 
-    div-float/2addr v5, v9
+    div-float/2addr v5, v10
 
     sub-float v5, v7, v5
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -598,15 +598,15 @@
 
     if-eqz v5, :cond_6
 
-    const/4 v5, -0x1
+    move v5, v8
 
     goto :goto_3
 
     :cond_6
-    const/4 v5, 0x1
+    move v5, v9
 
     :goto_3
-    mul-int v3, v3, v5
+    mul-int/2addr v3, v5
 
     add-int/2addr v3, v1
 
@@ -660,10 +660,10 @@
     goto :goto_4
 
     :cond_7
-    const/4 v8, 0x1
+    move v8, v9
 
     :goto_4
-    mul-int v3, v3, v8
+    mul-int/2addr v3, v8
 
     add-int/2addr v3, v1
 
@@ -743,13 +743,13 @@
 
     const v1, 0x3f19999a    # 0.6f
 
+    cmpg-float v1, v0, v1
+
     const/16 v2, 0xff
 
     const v3, 0x3ecccccd    # 0.4f
 
     const v4, 0x3e4ccccd    # 0.2f
-
-    cmpg-float v1, v0, v1
 
     if-gtz v1, :cond_c
 
@@ -757,7 +757,7 @@
 
     if-gez v1, :cond_a
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     div-float/2addr v0, v4
 
@@ -777,7 +777,7 @@
 
     sub-float v0, v7, v0
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     float-to-int v0, v0
 
@@ -792,7 +792,7 @@
     .line 192
     iget v1, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->enterAnimationProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -842,7 +842,7 @@
 
     if-gez v8, :cond_d
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     div-float/2addr v1, v4
 
@@ -862,7 +862,7 @@
 
     sub-float v1, v7, v1
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v1, v1
 
@@ -877,7 +877,7 @@
     .line 207
     iget v8, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->enterAnimationProgress:F
 
-    mul-float v1, v1, v8
+    mul-float/2addr v1, v8
 
     float-to-int v1, v1
 
@@ -921,7 +921,7 @@
 
     if-gez v1, :cond_10
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     div-float/2addr v0, v4
 
@@ -941,7 +941,7 @@
 
     sub-float v0, v7, v0
 
-    mul-float v0, v0, v6
+    mul-float/2addr v0, v6
 
     float-to-int v0, v0
 
@@ -956,7 +956,7 @@
     .line 222
     iget v1, p0, Lorg/telegram/ui/Components/VideoForwardDrawable;->enterAnimationProgress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1376,15 +1376,15 @@
     .line 42
     div-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    const/4 p1, 0x0
+    const/4 p2, 0x0
 
-    new-array p1, p1, [Ljava/lang/Object;
+    new-array p2, p2, [Ljava/lang/Object;
 
     const-string v0, "Seconds"
 
-    invoke-static {v0, p2, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

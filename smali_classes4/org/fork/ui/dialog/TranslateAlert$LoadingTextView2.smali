@@ -345,7 +345,7 @@
 
     move v14, v3
 
-    const/4 v3, 0x2
+    move v3, v15
 
     move-object v15, v4
 
@@ -722,7 +722,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_3
@@ -787,7 +787,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_2
     if-nez v6, :cond_2
@@ -940,7 +940,7 @@
 
     iget v1, p0, Lorg/fork/ui/dialog/TranslateAlert$LoadingTextView2;->scaleT:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1099,7 +1099,7 @@
 
     sub-float v6, v0, v1
 
-    mul-float v6, v6, v6
+    mul-float/2addr v6, v6
 
     add-float/2addr v4, v6
 
@@ -1110,7 +1110,7 @@
 
     sub-float v5, v7, v2
 
-    mul-float v5, v5, v5
+    mul-float/2addr v5, v5
 
     add-float/2addr v3, v5
 
@@ -1137,7 +1137,7 @@
     .line 2138
     iget v4, p0, Lorg/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     .line 2139
     iget-object v3, p0, Lorg/fork/ui/dialog/TranslateAlert$LoadingTextView2;->inPath:Landroid/graphics/Path;
@@ -1172,7 +1172,7 @@
 
     const/high16 v9, 0x437f0000    # 255.0f
 
-    mul-float v2, v2, v9
+    mul-float/2addr v2, v9
 
     float-to-int v2, v2
 
@@ -1197,7 +1197,7 @@
 
     iget v3, p0, Lorg/fork/ui/dialog/TranslateAlert$LoadingTextView2;->gradientWidth:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     rem-float/2addr v2, v3
 
@@ -1354,7 +1354,7 @@
 
     iget v1, p0, Lorg/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     float-to-int v1, v1
 

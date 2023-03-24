@@ -57,9 +57,9 @@
     .line 217
     rem-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
-    return p1
+    return p0
 .end method
 
 
@@ -104,9 +104,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
@@ -130,16 +130,16 @@
 .end method
 
 .method public isSynced()Z
-    .locals 5
+    .locals 4
 
     .line 166
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->frameCount:J
 
     const-wide/16 v2, 0xf
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     iget v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
@@ -157,18 +157,18 @@
 .end method
 
 .method public onNextFrame(J)V
-    .locals 11
+    .locals 9
 
     .line 186
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->frameCount:J
 
-    const-wide/16 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v4, 0x0
+    cmp-long v2, v0, v2
 
-    cmp-long v6, v0, v4
+    const-wide/16 v3, 0x1
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     .line 187
     iput-wide p1, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->firstFramePresentationTimeNs:J
@@ -176,9 +176,9 @@
     goto :goto_0
 
     :cond_0
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v3
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     .line 190
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->firstFramePresentationTimeNs:J
@@ -191,15 +191,15 @@
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
 
     .line 192
-    iput-wide v2, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
+    iput-wide v3, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
 
     goto :goto_0
 
     .line 194
     :cond_1
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->lastFramePresentationTimeNs:J
+    iget-wide v5, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->lastFramePresentationTimeNs:J
 
-    sub-long v4, p1, v4
+    sub-long v5, p1, v5
 
     .line 195
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->getRecentFrameOutlierIndex(J)I
@@ -207,52 +207,52 @@
     move-result v0
 
     .line 196
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->firstFrameDurationNs:J
+    iget-wide v1, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->firstFrameDurationNs:J
 
-    sub-long v6, v4, v6
+    sub-long v1, v5, v1
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v1, v2}, Ljava/lang/Math;->abs(J)J
 
-    move-result-wide v6
+    move-result-wide v1
 
-    const-wide/32 v8, 0xf4240
+    const-wide/32 v7, 0xf4240
 
-    const/4 v1, 0x1
+    cmp-long v1, v1, v7
 
-    cmp-long v10, v6, v8
+    const/4 v2, 0x1
 
-    if-gtz v10, :cond_2
+    if-gtz v1, :cond_2
 
     .line 198
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
+    iget-wide v7, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
 
-    add-long/2addr v6, v2
+    add-long/2addr v7, v3
 
-    iput-wide v6, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
+    iput-wide v7, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
 
     .line 199
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
+    iget-wide v7, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
 
-    add-long/2addr v6, v4
+    add-long/2addr v7, v5
 
-    iput-wide v6, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
+    iput-wide v7, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
 
     .line 200
-    iget-object v4, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierFlags:[Z
+    iget-object v1, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierFlags:[Z
 
-    aget-boolean v5, v4, v0
+    aget-boolean v5, v1, v0
 
     if-eqz v5, :cond_3
 
     const/4 v5, 0x0
 
     .line 201
-    aput-boolean v5, v4, v0
+    aput-boolean v5, v1, v0
 
     .line 202
     iget v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
-    sub-int/2addr v0, v1
+    sub-int/2addr v0, v2
 
     iput v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
@@ -260,19 +260,19 @@
 
     .line 205
     :cond_2
-    iget-object v4, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierFlags:[Z
+    iget-object v1, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierFlags:[Z
 
-    aget-boolean v5, v4, v0
+    aget-boolean v5, v1, v0
 
     if-nez v5, :cond_3
 
     .line 206
-    aput-boolean v1, v4, v0
+    aput-boolean v2, v1, v0
 
     .line 207
     iget v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
-    add-int/2addr v0, v1
+    add-int/2addr v0, v2
 
     iput v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
@@ -281,7 +281,7 @@
     :goto_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->frameCount:J
 
-    add-long/2addr v0, v2
+    add-long/2addr v0, v3
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/video/FixedFrameRateEstimator$Matcher;->frameCount:J
 

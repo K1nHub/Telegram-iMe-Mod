@@ -53,7 +53,7 @@
 
     iput p1, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     .line 67
     new-array p1, p1, [I
@@ -106,13 +106,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 474
     :goto_0
@@ -120,7 +120,7 @@
 
     if-ge v2, v3, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 475
     :goto_1
@@ -267,7 +267,7 @@
     .line 191
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     div-int/lit8 v0, p1, 0x20
 
@@ -297,7 +297,7 @@
     .line 164
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     div-int/lit8 v0, p1, 0x20
 
@@ -417,7 +417,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 358
     :goto_0
@@ -459,7 +459,7 @@
     .line 367
     aget v1, v2, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     rsub-int/lit8 v5, v2, 0x1f
@@ -541,7 +541,7 @@
     .line 175
     iget v0, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
-    mul-int p2, p2, v0
+    mul-int/2addr p2, v0
 
     div-int/lit8 v0, p1, 0x20
 
@@ -597,7 +597,7 @@
     .line 247
     iget v1, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
-    mul-int v1, v1, p2
+    mul-int/2addr v1, p2
 
     move v2, p1
 

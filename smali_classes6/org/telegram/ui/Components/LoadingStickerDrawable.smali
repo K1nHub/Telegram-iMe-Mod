@@ -144,7 +144,7 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/LoadingStickerDrawable;->gradientWidth:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x44e10000    # 1800.0f
 
@@ -168,7 +168,7 @@
 
     if-ltz v2, :cond_2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     sub-float/2addr p1, v0
 

@@ -202,6 +202,7 @@ public final class BackupController extends BaseController implements KoinCompon
     }
 
     public final void backup(boolean z) {
+        Backup backup;
         ArrayList arrayListOf;
         ArrayList arrayListOf2;
         if (z && (!this.isAutoBackupEnabled || needSkipAutoBackup())) {
@@ -212,95 +213,94 @@ public final class BackupController extends BaseController implements KoinCompon
             String name = getBackupController().selectedAutoBackupInterval.name();
             Boolean valueOf2 = Boolean.valueOf(SharedConfig.isFilesSendingPreviewAndCaptionEnabled);
             Boolean valueOf3 = Boolean.valueOf(SharedConfig.isVibrationEnabled);
-            Boolean valueOf4 = Boolean.valueOf(SharedConfig.isRaiseToSwitchSpeakerEnabled);
             String name2 = SharedConfig.selectedStickersSize.name();
-            Boolean valueOf5 = Boolean.valueOf(getForkCommonController().isQuickReactionEnabled());
-            Boolean valueOf6 = Boolean.valueOf(getForkCommonController().isPremiumAnimateStickers());
-            Boolean valueOf7 = Boolean.valueOf(getForkCommonController().isShowPremiumBadgeEnabled());
-            Boolean valueOf8 = Boolean.valueOf(getForkCommonController().isShowPremiumStatusEnabled());
-            Boolean valueOf9 = Boolean.valueOf(getForkCommonController().isPremiumAnimateAvatars());
-            Boolean valueOf10 = Boolean.valueOf(SharedConfig.isProxyButtonForceVisible);
+            Boolean valueOf4 = Boolean.valueOf(getForkCommonController().isQuickReactionEnabled());
+            Boolean valueOf5 = Boolean.valueOf(getForkCommonController().isPremiumAnimateStickers());
+            Boolean valueOf6 = Boolean.valueOf(getForkCommonController().isShowPremiumBadgeEnabled());
+            Boolean valueOf7 = Boolean.valueOf(getForkCommonController().isShowPremiumStatusEnabled());
+            Boolean valueOf8 = Boolean.valueOf(getForkCommonController().isPremiumAnimateAvatars());
+            Boolean valueOf9 = Boolean.valueOf(SharedConfig.isProxyButtonForceVisible);
             String name3 = getForkCommonController().getSelectedContactsFilter().name();
-            Boolean valueOf11 = Boolean.valueOf(SharedConfig.isReadAllChatsConfirmationShown);
-            Boolean valueOf12 = Boolean.valueOf(SharedConfig.isProfileInfoHidden);
-            Boolean valueOf13 = Boolean.valueOf(SharedConfig.isMultiForwardingOptionsHintShown);
-            Boolean valueOf14 = Boolean.valueOf(SharedConfig.isSuggestPremiumReactionsEmoji);
+            Boolean valueOf10 = Boolean.valueOf(SharedConfig.isReadAllChatsConfirmationShown);
+            Boolean valueOf11 = Boolean.valueOf(SharedConfig.isProfileInfoHidden);
+            Boolean valueOf12 = Boolean.valueOf(SharedConfig.isMultiForwardingOptionsHintShown);
+            Boolean valueOf13 = Boolean.valueOf(SharedConfig.isSuggestPremiumReactionsEmoji);
             DrawerHeaderSettings drawerHeaderSettings = SharedConfig.getDrawerHeaderSettings();
             DrawerSwitchableItem.Companion companion = DrawerSwitchableItem.Companion;
             try {
                 Set<DrawerSwitchableItem> selectedDrawerItems = SharedConfig.selectedDrawerItems;
                 Intrinsics.checkNotNullExpressionValue(selectedDrawerItems, "selectedDrawerItems");
                 Set<String> mapEnumsToNames = companion.mapEnumsToNames(selectedDrawerItems);
-                Boolean valueOf15 = Boolean.valueOf(SharedConfig.isActionBarAccountSwitchEnabled);
-                Boolean valueOf16 = Boolean.valueOf(SharedConfig.isMainActionBarMenuEnabled);
-                Boolean valueOf17 = Boolean.valueOf(SharedConfig.isDialogsCompactModeEnabled);
-                Boolean valueOf18 = Boolean.valueOf(getToolsController().isSwipeToGoToNextUnreadDialogEnabled());
-                Boolean valueOf19 = Boolean.valueOf(getToolsController().isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled());
+                Boolean valueOf14 = Boolean.valueOf(SharedConfig.isActionBarAccountSwitchEnabled);
+                Boolean valueOf15 = Boolean.valueOf(SharedConfig.isMainActionBarMenuEnabled);
+                Boolean valueOf16 = Boolean.valueOf(SharedConfig.isDialogsCompactModeEnabled);
+                Boolean valueOf17 = Boolean.valueOf(getToolsController().isSwipeToGoToNextUnreadDialogEnabled());
+                Boolean valueOf18 = Boolean.valueOf(getToolsController().isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled());
                 DialogType.Companion companion2 = DialogType.Companion;
                 Set<String> mapEnumsToNames2 = companion2.mapEnumsToNames(getToolsController().getSelectedDialogTypesForSwipeToGoToNextUnreadDialog());
-                Boolean valueOf20 = Boolean.valueOf(getToolsController().isShowChannelBottomPanel());
-                Boolean valueOf21 = Boolean.valueOf(SharedConfig.isHideChatKeyboardOnScrollEnabled);
-                Boolean valueOf22 = Boolean.valueOf(SharedConfig.isChatThemesEnabled);
+                Boolean valueOf19 = Boolean.valueOf(getToolsController().isShowChannelBottomPanel());
+                Boolean valueOf20 = Boolean.valueOf(SharedConfig.isHideChatKeyboardOnScrollEnabled);
+                Boolean valueOf21 = Boolean.valueOf(SharedConfig.isChatThemesEnabled);
                 Map<String, Set<String>> chatAttachAlertButtonsBackupData = getToolsController().getChatAttachAlertButtonsBackupData();
-                Boolean valueOf23 = Boolean.valueOf(SharedConfig.isExtendedAvatarPreviewerEnabled);
-                Boolean valueOf24 = Boolean.valueOf(SharedConfig.isExtendedAvatarPreviewerByTapEnabled);
+                Boolean valueOf22 = Boolean.valueOf(SharedConfig.isExtendedAvatarPreviewerEnabled);
+                Boolean valueOf23 = Boolean.valueOf(SharedConfig.isExtendedAvatarPreviewerByTapEnabled);
                 ExtendedAvatarPreviewerItem.Companion companion3 = ExtendedAvatarPreviewerItem.Companion;
                 List<ExtendedAvatarPreviewerItem> selectedExtendedAvatarPreviewerItems = SharedConfig.selectedExtendedAvatarPreviewerItems;
                 Intrinsics.checkNotNullExpressionValue(selectedExtendedAvatarPreviewerItems, "selectedExtendedAvatarPreviewerItems");
                 Set<String> mapEnumsToNames3 = companion3.mapEnumsToNames(selectedExtendedAvatarPreviewerItems);
                 List<String> messagePopupItemBackupData = getToolsController().getMessagePopupItemBackupData();
-                Boolean valueOf25 = Boolean.valueOf(getToolsController().isMessagePopupAggregatorEnabled());
-                Boolean valueOf26 = Boolean.valueOf(getToolsController().isChannelWidePostsEnabled());
-                Boolean valueOf27 = Boolean.valueOf(SharedConfig.isCallsConfirmationEnabled);
-                Boolean valueOf28 = Boolean.valueOf(SharedConfig.isDeleteCloudConfirmationEnabled);
-                Boolean valueOf29 = Boolean.valueOf(SharedConfig.isSendingGifConfirmationEnabled);
-                Boolean valueOf30 = Boolean.valueOf(SharedConfig.isSendingStickerConfirmationEnabled);
-                Boolean valueOf31 = Boolean.valueOf(SharedConfig.isSpeakWithoutHoldEnabled);
-                Boolean valueOf32 = Boolean.valueOf(SharedConfig.isVideoSpeakWithoutHoldEnabled);
+                Boolean valueOf24 = Boolean.valueOf(getToolsController().isMessagePopupAggregatorEnabled());
+                Boolean valueOf25 = Boolean.valueOf(getToolsController().isChannelWidePostsEnabled());
+                Boolean valueOf26 = Boolean.valueOf(SharedConfig.isCallsConfirmationEnabled);
+                Boolean valueOf27 = Boolean.valueOf(SharedConfig.isDeleteCloudConfirmationEnabled);
+                Boolean valueOf28 = Boolean.valueOf(SharedConfig.isSendingGifConfirmationEnabled);
+                Boolean valueOf29 = Boolean.valueOf(SharedConfig.isSendingStickerConfirmationEnabled);
+                Boolean valueOf30 = Boolean.valueOf(SharedConfig.isSpeakWithoutHoldEnabled);
+                Boolean valueOf31 = Boolean.valueOf(SharedConfig.isVideoSpeakWithoutHoldEnabled);
                 String name4 = SharedConfig.selectedVideoVoiceCamera.name();
-                Boolean valueOf33 = Boolean.valueOf(getRecentChatsController().isRecentChatsEnabled());
-                Boolean valueOf34 = Boolean.valueOf(getRecentChatsController().isSaveArchiveRecentChatsEnabled());
-                Boolean valueOf35 = Boolean.valueOf(getMultiPanelController().isMultiPanelEnabled());
-                Boolean valueOf36 = Boolean.valueOf(getMultiPanelController().isHideMultiPanelOnScrollEnabled());
+                Boolean valueOf32 = Boolean.valueOf(getRecentChatsController().isRecentChatsEnabled());
+                Boolean valueOf33 = Boolean.valueOf(getRecentChatsController().isSaveArchiveRecentChatsEnabled());
+                Boolean valueOf34 = Boolean.valueOf(getMultiPanelController().isMultiPanelEnabled());
+                Boolean valueOf35 = Boolean.valueOf(getMultiPanelController().isHideMultiPanelOnScrollEnabled());
                 Map<String, List<MultiPanelButtonStateBackup>> backupData = getMultiPanelController().getBackupData();
-                Boolean valueOf37 = Boolean.valueOf(SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled);
-                Boolean valueOf38 = Boolean.valueOf(SharedConfig.isCustomSharingModeEnabled);
-                Boolean valueOf39 = Boolean.valueOf(SharedConfig.isMultiReplyEnabled);
+                Boolean valueOf36 = Boolean.valueOf(SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled);
+                Boolean valueOf37 = Boolean.valueOf(SharedConfig.isCustomSharingModeEnabled);
+                Boolean valueOf38 = Boolean.valueOf(SharedConfig.isMultiReplyEnabled);
                 String name5 = SharedConfig.selectedChatProfileTelegramIdMode.name();
-                Boolean valueOf40 = Boolean.valueOf(SharedConfig.isMessageQuickTranslateEnabled);
-                Boolean valueOf41 = Boolean.valueOf(SharedConfig.isBotHelpTranslateEnabled);
-                Boolean valueOf42 = Boolean.valueOf(SharedConfig.isTranslateInSendPopupEnabled);
-                Boolean valueOf43 = Boolean.valueOf(getToolsController().isSilentSendingEnabled());
+                Boolean valueOf39 = Boolean.valueOf(SharedConfig.isMessageQuickTranslateEnabled);
+                Boolean valueOf40 = Boolean.valueOf(SharedConfig.isBotHelpTranslateEnabled);
+                Boolean valueOf41 = Boolean.valueOf(SharedConfig.isTranslateInSendPopupEnabled);
+                Boolean valueOf42 = Boolean.valueOf(getToolsController().isSilentSendingEnabled());
                 String name6 = getToolsController().getSelectedSentMessageFont().name();
-                Boolean valueOf44 = Boolean.valueOf(getToolsController().isRememberLastDialogEnabled());
-                Boolean valueOf45 = Boolean.valueOf(SharedConfig.isCombineMessagesEnabled);
+                Boolean valueOf43 = Boolean.valueOf(getToolsController().isRememberLastDialogEnabled());
+                Boolean valueOf44 = Boolean.valueOf(SharedConfig.isCombineMessagesEnabled);
                 PhotoViewerMenuItem.Companion companion4 = PhotoViewerMenuItem.Companion;
                 Set<PhotoViewerMenuItem> selectedPhotoViewerMenuItems = SharedConfig.selectedPhotoViewerMenuItems;
                 Intrinsics.checkNotNullExpressionValue(selectedPhotoViewerMenuItems, "selectedPhotoViewerMenuItems");
                 Set<String> mapEnumsToNames4 = companion4.mapEnumsToNames(selectedPhotoViewerMenuItems);
-                Boolean valueOf46 = Boolean.valueOf(SharedConfig.isReactionsEnabled);
+                Boolean valueOf45 = Boolean.valueOf(SharedConfig.isReactionsEnabled);
                 Set<DialogType> selectedDialogTypesForMessagePopupReactions = SharedConfig.selectedDialogTypesForMessagePopupReactions;
                 Intrinsics.checkNotNullExpressionValue(selectedDialogTypesForMessagePopupReactions, "selectedDialogTypesForMessagePopupReactions");
-                Backup backup = new Backup(valueOf, name, valueOf2, valueOf3, valueOf4, name2, valueOf5, valueOf6, valueOf7, valueOf8, valueOf9, valueOf10, name3, valueOf11, valueOf12, valueOf13, valueOf14, drawerHeaderSettings, mapEnumsToNames, valueOf15, valueOf16, valueOf17, valueOf18, valueOf19, mapEnumsToNames2, valueOf20, valueOf21, valueOf22, chatAttachAlertButtonsBackupData, valueOf23, valueOf24, mapEnumsToNames3, messagePopupItemBackupData, valueOf25, valueOf26, valueOf27, valueOf28, valueOf29, valueOf30, valueOf31, valueOf32, name4, valueOf33, null, valueOf34, null, valueOf35, valueOf36, backupData, valueOf37, valueOf38, valueOf39, name5, valueOf40, valueOf41, valueOf42, valueOf43, name6, valueOf44, valueOf45, mapEnumsToNames4, valueOf46, companion2.mapEnumsToNames(selectedDialogTypesForMessagePopupReactions), Boolean.valueOf(SharedConfig.isReactionsInSendPopupEnabled), null, null, Boolean.valueOf(SharedConfig.isFilterTabsAtBottomEnabled), SharedConfig.selectedFilterTabsNotificationMode.name(), SharedConfig.selectedFilterTabWidthMode.name(), Boolean.valueOf(SharedConfig.isRememberLastFilterTabEnabled), Boolean.valueOf(getFiltersController().isHideFoldersEnabled()), Boolean.valueOf(getFiltersController().isFoldersFirstEnabled()), getFiltersController().getFiltersBackupData(), Boolean.valueOf(SharedConfig.isChatSortingEnabledByDefault), Boolean.valueOf(getFiltersController().isAllChatsTabEnabled()), Boolean.valueOf(getFiltersController().isIconInsteadAllChatsTabTitleEnabled()), FilterFab.Companion.mapEnumsToNames(getFiltersController().getSelectedAllChatsTabFabs()), Boolean.valueOf(getFiltersController().isSortingEnabled(false)), getFiltersController().getBackupSortingTabs(false), Boolean.valueOf(getFiltersController().isSortingEnabled(true)), getFiltersController().getBackupSortingTabs(true), getFiltersController().getPinnedChats(false), getFiltersController().getPinnedChats(true), Boolean.valueOf(SharedConfig.isCloudAlbumsEnabled), Boolean.valueOf(SharedConfig.isAlbumsIntroShown), Boolean.valueOf(SharedConfig.isSortCloudAlbumsByNameEnabled), Boolean.valueOf(getAlbumsController().isOpenAlbumsInsteadCloudEnabled()), getAlbumsController().getAlbums(), getBookmarksController().getBookmarks(), getDialogTranslationSettingsController().getBackupData(), Boolean.valueOf(SharedConfig.isPlayerPinned), Boolean.valueOf(SharedConfig.isPinnedPlayerMinimized), Boolean.valueOf(SharedConfig.isPinnedPlayerThemeOverridden), Boolean.valueOf(SharedConfig.isPinnedPlayerNightThemeEnabled), Boolean.valueOf(SharedConfig.isMusicIntroShown), getMusicController().getSelectedMusicTab().name(), getMusicController().getPlaylists(), SharedConfig.selectedTemplatesMode.name(), SharedConfig.selectedTemplatesSortingType.name(), Long.valueOf(getTemplatesController().getTemplatesChannelId()), getTemplatesController().getTemplatesBackupData(), Boolean.valueOf(getForkTopicsController().isTopicsBarEnabled()), Boolean.valueOf(getForkTopicsController().isTopicsBarAtBottomEnabled()), Boolean.valueOf(getForkTopicsController().isAutoUpdateTopicsCatalogEnabled()), getForkTopicsController().getSelectedAutoUpdateTopicsCatalogInterval().name(), Boolean.valueOf(getForkTopicsController().isNoTopicFirstEnabled()), getForkTopicsController().getTopicsBackupData(), 12, null, null, 0, 10240, 3, 12288, null);
-                try {
-                    File file = new File(ApplicationLoader.getFilesDirFixed(), buildBackupFileName(getUserConfig().clientUserId));
-                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(file));
-                    outputStreamWriter.write(getGson().toJson(backup));
-                    outputStreamWriter.flush();
-                    AccountInstance accountInstance = getAccountInstance();
-                    arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(file.getAbsolutePath());
-                    arrayListOf2 = CollectionsKt__CollectionsKt.arrayListOf(file.getAbsolutePath());
-                    SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayListOf, arrayListOf2, null, null, null, getUserConfig().clientUserId, null, null, null, null, false, 0, null, true);
-                    if (z) {
-                        resetLastAutoBackupTime();
-                        saveConfig();
-                    }
-                } catch (Exception e) {
-                    e = e;
-                    ContextExtKt.toast(String.valueOf(e.getMessage()));
+                backup = new Backup(valueOf, name, valueOf2, valueOf3, name2, valueOf4, valueOf5, valueOf6, valueOf7, valueOf8, valueOf9, name3, valueOf10, valueOf11, valueOf12, valueOf13, drawerHeaderSettings, mapEnumsToNames, valueOf14, valueOf15, valueOf16, valueOf17, valueOf18, mapEnumsToNames2, valueOf19, valueOf20, valueOf21, chatAttachAlertButtonsBackupData, valueOf22, valueOf23, mapEnumsToNames3, messagePopupItemBackupData, valueOf24, valueOf25, valueOf26, valueOf27, valueOf28, valueOf29, valueOf30, valueOf31, name4, valueOf32, null, valueOf33, null, valueOf34, valueOf35, backupData, valueOf36, valueOf37, valueOf38, name5, valueOf39, valueOf40, valueOf41, valueOf42, name6, valueOf43, valueOf44, mapEnumsToNames4, valueOf45, companion2.mapEnumsToNames(selectedDialogTypesForMessagePopupReactions), Boolean.valueOf(SharedConfig.isReactionsInSendPopupEnabled), null, null, Boolean.valueOf(SharedConfig.isFilterTabsAtBottomEnabled), SharedConfig.selectedFilterTabsNotificationMode.name(), SharedConfig.selectedFilterTabWidthMode.name(), Boolean.valueOf(SharedConfig.isRememberLastFilterTabEnabled), Boolean.valueOf(getFiltersController().isHideFoldersEnabled()), Boolean.valueOf(getFiltersController().isFoldersFirstEnabled()), getFiltersController().getFiltersBackupData(), Boolean.valueOf(SharedConfig.isChatSortingEnabledByDefault), Boolean.valueOf(getFiltersController().isAllChatsTabEnabled()), Boolean.valueOf(getFiltersController().isIconInsteadAllChatsTabTitleEnabled()), FilterFab.Companion.mapEnumsToNames(getFiltersController().getSelectedAllChatsTabFabs()), Boolean.valueOf(getFiltersController().isSortingEnabled(false)), getFiltersController().getBackupSortingTabs(false), Boolean.valueOf(getFiltersController().isSortingEnabled(true)), getFiltersController().getBackupSortingTabs(true), getFiltersController().getPinnedChats(false), getFiltersController().getPinnedChats(true), Boolean.valueOf(SharedConfig.isCloudAlbumsEnabled), Boolean.valueOf(SharedConfig.isAlbumsIntroShown), Boolean.valueOf(SharedConfig.isSortCloudAlbumsByNameEnabled), Boolean.valueOf(getAlbumsController().isOpenAlbumsInsteadCloudEnabled()), getAlbumsController().getAlbums(), getBookmarksController().getBookmarks(), getDialogTranslationSettingsController().getBackupData(), Boolean.valueOf(SharedConfig.isPlayerPinned), Boolean.valueOf(SharedConfig.isPinnedPlayerMinimized), Boolean.valueOf(SharedConfig.isPinnedPlayerThemeOverridden), Boolean.valueOf(SharedConfig.isPinnedPlayerNightThemeEnabled), Boolean.valueOf(SharedConfig.isMusicIntroShown), getMusicController().getSelectedMusicTab().name(), getMusicController().getPlaylists(), SharedConfig.selectedTemplatesMode.name(), SharedConfig.selectedTemplatesSortingType.name(), Long.valueOf(getTemplatesController().getTemplatesChannelId()), getTemplatesController().getTemplatesBackupData(), Boolean.valueOf(getForkTopicsController().isTopicsBarEnabled()), Boolean.valueOf(getForkTopicsController().isTopicsBarAtBottomEnabled()), Boolean.valueOf(getForkTopicsController().isAutoUpdateTopicsCatalogEnabled()), getForkTopicsController().getSelectedAutoUpdateTopicsCatalogInterval().name(), Boolean.valueOf(getForkTopicsController().isNoTopicFirstEnabled()), getForkTopicsController().getTopicsBackupData(), 12, null, null, 0, -2147478528, 1, 6144, null);
+            } catch (Exception e) {
+                e = e;
+            }
+            try {
+                File file = new File(ApplicationLoader.getFilesDirFixed(), buildBackupFileName(getUserConfig().clientUserId));
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(file));
+                outputStreamWriter.write(getGson().toJson(backup));
+                outputStreamWriter.flush();
+                AccountInstance accountInstance = getAccountInstance();
+                arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(file.getAbsolutePath());
+                arrayListOf2 = CollectionsKt__CollectionsKt.arrayListOf(file.getAbsolutePath());
+                SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayListOf, arrayListOf2, null, null, null, getUserConfig().clientUserId, null, null, null, null, false, 0, null, true);
+                if (z) {
+                    resetLastAutoBackupTime();
+                    saveConfig();
                 }
             } catch (Exception e2) {
                 e = e2;
+                ContextExtKt.toast(String.valueOf(e.getMessage()));
             }
         } catch (Exception e3) {
             e = e3;
@@ -338,9 +338,6 @@ public final class BackupController extends BaseController implements KoinCompon
             }
             if (migrateToCurrentVersion.isVibrationEnabled() != null) {
                 SharedConfig.setVibrationEnabled(migrateToCurrentVersion.isVibrationEnabled().booleanValue());
-            }
-            if (migrateToCurrentVersion.isRaiseToSwitchSpeakerEnabled() != null) {
-                SharedConfig.setRaiseToSwitchSpeakerEnabled(migrateToCurrentVersion.isRaiseToSwitchSpeakerEnabled().booleanValue());
             }
             if (migrateToCurrentVersion.getSelectedStickersSize() != null) {
                 SharedConfig.setSelectedStickersSize(StickersSize.Companion.mapNameToEnum(migrateToCurrentVersion.getSelectedStickersSize()));
@@ -596,10 +593,10 @@ public final class BackupController extends BaseController implements KoinCompon
         return "iMeBackup_" + Constants.INSTANCE.getDateDotsFormat().format(new Date()) + "_id" + j + ".ime";
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x00b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x00b8, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new org.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$1());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0282, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x027c, code lost:
         r1 = kotlin.collections.CollectionsKt___CollectionsKt.sortedWith(r1, new org.fork.controller.BackupController$migrateToCurrentVersion$$inlined$sortedBy$2());
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -607,9 +604,9 @@ public final class BackupController extends BaseController implements KoinCompon
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    private final org.fork.models.backup.Backup migrateToCurrentVersion(org.fork.models.backup.Backup r237) {
+    private final org.fork.models.backup.Backup migrateToCurrentVersion(org.fork.models.backup.Backup r235) {
         /*
-            Method dump skipped, instructions count: 1786
+            Method dump skipped, instructions count: 1778
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.fork.controller.BackupController.migrateToCurrentVersion(org.fork.models.backup.Backup):org.fork.models.backup.Backup");

@@ -64,7 +64,7 @@
 .end method
 
 .method public throwExceptionIfDeadlineIsReached(Ljava/lang/Exception;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V^TT;"
@@ -101,9 +101,9 @@
     :cond_0
     iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$PendingExceptionHolder;->throwDeadlineMs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_2
+    if-ltz v0, :cond_2
 
     .line 2265
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$PendingExceptionHolder;->pendingException:Ljava/lang/Exception;

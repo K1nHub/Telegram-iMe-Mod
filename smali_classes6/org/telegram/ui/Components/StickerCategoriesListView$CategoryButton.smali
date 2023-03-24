@@ -374,7 +374,7 @@
 
     const v0, 0x3e19999a    # 0.15f
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     const v0, 0x3f59999a    # 0.85f
 
@@ -382,7 +382,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;->loadProgress:F
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     return v1
 .end method
@@ -511,7 +511,7 @@
 .end method
 
 .method public play()V
-    .locals 5
+    .locals 4
 
     .line 748
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -524,9 +524,9 @@
 
     const-wide/16 v2, 0xfa
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_2
+    if-lez v0, :cond_2
 
     .line 749
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -903,7 +903,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     aput v0, p2, v2
@@ -957,7 +957,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 700
     :goto_1

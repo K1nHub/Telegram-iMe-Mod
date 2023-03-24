@@ -53,7 +53,7 @@
 
     const/16 v2, 0x2000
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     const/4 v4, -0x1
@@ -74,7 +74,7 @@
     .line 3
     invoke-interface {v0, v6}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    const/4 v7, 0x0
+    move v7, v1
 
     :goto_1
     if-ge v7, v5, :cond_1

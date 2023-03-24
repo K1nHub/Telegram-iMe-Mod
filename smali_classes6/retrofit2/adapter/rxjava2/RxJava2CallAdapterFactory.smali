@@ -137,12 +137,12 @@
 
     if-ne p2, p3, :cond_1
 
-    const/4 v8, 0x1
+    move v8, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v8, 0x0
+    move v8, v1
 
     .line 105
     :goto_0
@@ -150,12 +150,12 @@
 
     if-ne p2, p3, :cond_2
 
-    const/4 v9, 0x1
+    move v9, v0
 
     goto :goto_1
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v1
 
     .line 106
     :goto_1
@@ -163,12 +163,12 @@
 
     if-ne p2, p3, :cond_3
 
-    const/4 v10, 0x1
+    move v10, v0
 
     goto :goto_2
 
     :cond_3
-    const/4 v10, 0x0
+    move v10, v1
 
     .line 107
     :goto_2
@@ -281,12 +281,11 @@
 
     move-object v3, p1
 
-    const/4 v6, 0x0
+    move v6, v1
 
-    :goto_4
-    const/4 v7, 0x0
+    move v7, v6
 
-    goto :goto_5
+    goto :goto_4
 
     .line 126
     :cond_9
@@ -318,7 +317,9 @@
 
     move-object v3, p1
 
-    const/4 v6, 0x1
+    move v6, v0
+
+    move v7, v1
 
     goto :goto_4
 
@@ -335,12 +336,12 @@
     :cond_c
     move-object v3, p1
 
-    const/4 v6, 0x0
+    move v7, v0
 
-    const/4 v7, 0x1
+    move v6, v1
 
     .line 142
-    :goto_5
+    :goto_4
     new-instance p1, Lretrofit2/adapter/rxjava2/RxJava2CallAdapter;
 
     iget-object v4, p0, Lretrofit2/adapter/rxjava2/RxJava2CallAdapterFactory;->scheduler:Lio/reactivex/Scheduler;

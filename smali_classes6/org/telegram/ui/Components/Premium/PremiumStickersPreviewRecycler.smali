@@ -259,18 +259,18 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 150
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->hasSelectedView:Z
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 151
     :goto_1
@@ -319,11 +319,11 @@
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    mul-float p0, p0, v0
+    mul-float/2addr p0, v0
 
     iget p1, p1, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler$StickerView;->progress:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     sub-float/2addr p0, p1
 
@@ -518,7 +518,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 188
     :goto_0
@@ -573,21 +573,21 @@
 
     div-float/2addr v4, v3
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    cmpl-float v5, v4, v3
 
-    cmpl-float v6, v4, v5
+    const/high16 v6, 0x40000000    # 2.0f
 
-    if-lez v6, :cond_1
+    if-lez v5, :cond_1
 
-    sub-float v4, v3, v4
+    sub-float v4, v6, v4
 
     :cond_1
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     .line 195
-    invoke-static {v4, v5, v6}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    invoke-static {v4, v3, v5}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v4
 
@@ -595,7 +595,7 @@
     iput v4, v2, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler$StickerView;->progress:F
 
     .line 197
-    iget-object v6, v2, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler$StickerView;->view:Landroid/view/View;
+    iget-object v5, v2, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler$StickerView;->view:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
@@ -605,19 +605,19 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v3
+    mul-float/2addr v7, v6
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->interpolator:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->interpolator:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
-    move-result v3
+    move-result v4
 
-    sub-float/2addr v5, v3
+    sub-float/2addr v3, v4
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v3
 
-    invoke-virtual {v6, v7}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v5, v7}, Landroid/view/View;->setTranslationX(F)V
 
     .line 198
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->sortedView:Ljava/util/ArrayList;

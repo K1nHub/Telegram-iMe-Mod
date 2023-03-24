@@ -231,10 +231,10 @@ public class CheckBox extends View {
         return this.isChecked;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x012c  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -242,7 +242,7 @@ public class CheckBox extends View {
     */
     protected void onDraw(android.graphics.Canvas r14) {
         /*
-            Method dump skipped, instructions count: 399
+            Method dump skipped, instructions count: 394
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.CheckBox.onDraw(android.graphics.Canvas):void");

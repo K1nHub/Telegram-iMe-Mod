@@ -1,6 +1,7 @@
 package com.smedialink.p031ui.wallet.airdrop.dialog;
 
 import android.view.View;
+import com.smedialink.model.wallet.crypto.create.CreateWalletScreenType;
 import com.smedialink.p031ui.wallet.crypto.create.CreateWalletFragment;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -31,7 +32,7 @@ final class WalletAirdropDialog$configureDialogState$1$4$1 extends Lambda implem
         BaseFragment baseFragment;
         Intrinsics.checkNotNullParameter(it, "it");
         baseFragment = this.this$0.fragment;
-        baseFragment.presentFragment(CreateWalletFragment.Companion.newInstance(new CreateWalletFragment.ScreenType.Import(null, null, 3, null)));
+        baseFragment.presentFragment(CreateWalletFragment.Companion.newInstance(new CreateWalletScreenType.Import(null, null, 3, null)));
         this.this$0.finishScreen();
     }
 }

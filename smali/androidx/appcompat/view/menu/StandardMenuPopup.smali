@@ -220,12 +220,12 @@
 
     if-nez v3, :cond_2
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 165
     :goto_0

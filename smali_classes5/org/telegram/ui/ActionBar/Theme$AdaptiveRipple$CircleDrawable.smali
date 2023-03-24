@@ -166,7 +166,7 @@
 
     sub-int/2addr v2, v3
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     iget v2, v0, Landroid/graphics/Rect;->top:I
 
@@ -184,7 +184,7 @@
 
     sub-int/2addr v3, v4
 
-    mul-int v2, v2, v3
+    mul-int/2addr v2, v3
 
     add-int/2addr v1, v2
 

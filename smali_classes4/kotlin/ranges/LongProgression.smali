@@ -53,22 +53,22 @@
 .end method
 
 .method public constructor <init>(JJJ)V
-    .locals 3
+    .locals 2
 
     .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p5, v0
+    cmp-long v0, p5, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    cmp-long v2, p5, v0
+    cmp-long v0, p5, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 154
     iput-wide p1, p0, Lkotlin/ranges/LongProgression;->first:J
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 4
 
     .line 177
     instance-of v0, p1, Lkotlin/ranges/LongProgression;
@@ -140,17 +140,17 @@
 
     iget-wide v2, p1, Lkotlin/ranges/LongProgression;->first:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     iget-wide v0, p0, Lkotlin/ranges/LongProgression;->last:J
 
     iget-wide v2, p1, Lkotlin/ranges/LongProgression;->last:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     iget-wide v0, p0, Lkotlin/ranges/LongProgression;->step:J
 
@@ -226,7 +226,7 @@
 
     xor-long/2addr v2, v5
 
-    mul-long v2, v2, v0
+    mul-long/2addr v2, v0
 
     iget-wide v5, p0, Lkotlin/ranges/LongProgression;->last:J
 
@@ -236,7 +236,7 @@
 
     add-long/2addr v2, v5
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iget-wide v2, p0, Lkotlin/ranges/LongProgression;->step:J
 
@@ -258,38 +258,38 @@
     .line 174
     iget-wide v0, p0, Lkotlin/ranges/LongProgression;->step:J
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    cmp-long v0, v0, v2
 
-    const-wide/16 v4, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v6, v0, v4
+    const/4 v2, 0x0
 
-    iget-wide v0, p0, Lkotlin/ranges/LongProgression;->first:J
+    iget-wide v3, p0, Lkotlin/ranges/LongProgression;->first:J
 
-    iget-wide v4, p0, Lkotlin/ranges/LongProgression;->last:J
+    iget-wide v5, p0, Lkotlin/ranges/LongProgression;->last:J
 
-    if-lez v6, :cond_0
+    if-lez v0, :cond_0
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v3, v5
 
-    if-lez v6, :cond_1
+    if-lez v0, :cond_1
 
     goto :goto_0
 
     :cond_0
-    cmp-long v6, v0, v4
+    cmp-long v0, v3, v5
 
-    if-gez v6, :cond_1
+    if-gez v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v1, v2
 
     :goto_0
-    return v2
+    return v1
 .end method
 
 .method public bridge synthetic iterator()Ljava/util/Iterator;
@@ -323,57 +323,59 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 6
+    .locals 4
 
     .line 183
     iget-wide v0, p0, Lkotlin/ranges/LongProgression;->step:J
 
-    const-string v2, " step "
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const-string v1, " step "
+
+    if-lez v0, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    if-lez v5, :cond_0
-
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-wide v3, p0, Lkotlin/ranges/LongProgression;->first:J
+    iget-wide v2, p0, Lkotlin/ranges/LongProgression;->first:J
 
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, ".."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v3, p0, Lkotlin/ranges/LongProgression;->last:J
-
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v2, ".."
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p0, Lkotlin/ranges/LongProgression;->last:J
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-wide v1, p0, Lkotlin/ranges/LongProgression;->step:J
 
     goto :goto_0
 
     :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-wide v3, p0, Lkotlin/ranges/LongProgression;->first:J
+    iget-wide v2, p0, Lkotlin/ranges/LongProgression;->first:J
 
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, " downTo "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v3, p0, Lkotlin/ranges/LongProgression;->last:J
-
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v2, " downTo "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v2, p0, Lkotlin/ranges/LongProgression;->last:J
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-wide v1, p0, Lkotlin/ranges/LongProgression;->step:J
 

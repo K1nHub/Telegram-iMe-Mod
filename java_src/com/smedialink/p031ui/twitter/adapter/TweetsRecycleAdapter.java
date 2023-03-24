@@ -13,7 +13,7 @@ import com.smedialink.p031ui.adapter.provider.TweetProvider;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* compiled from: TweetsRecycleAdapter.kt */
 /* renamed from: com.smedialink.ui.twitter.adapter.TweetsRecycleAdapter */
 /* loaded from: classes3.dex */
@@ -31,7 +31,7 @@ public final class TweetsRecycleAdapter extends BaseNodeAdapter<BaseNode> implem
         Intrinsics.checkNotNullParameter(tweetsDateProvider, "tweetsDateProvider");
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         this.globalStateProvider = globalStateProvider;
-        addChildClickViewIds(C3286R.C3289id.image_share);
+        addChildClickViewIds(C3301R.C3304id.image_share);
         addItemProvider(BaseQuickAdapterExtKt.asItem(globalStateProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tweetProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tweetsDateProvider));

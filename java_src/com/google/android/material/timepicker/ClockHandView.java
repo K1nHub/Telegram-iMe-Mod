@@ -195,20 +195,7 @@ public class ClockHandView extends View {
         int actionMasked = motionEvent.getActionMasked();
         float x = motionEvent.getX();
         float y = motionEvent.getY();
-        if (actionMasked != 0) {
-            if (actionMasked == 1 || actionMasked == 2) {
-                int i = (int) (x - this.downX);
-                int i2 = (int) (y - this.downY);
-                this.isInTapRegion = (i * i) + (i2 * i2) > this.scaledTouchSlop;
-                boolean z4 = this.changedDuringTouch;
-                z = actionMasked == 1;
-                z2 = z4;
-            } else {
-                z = false;
-                z2 = false;
-            }
-            z3 = false;
-        } else {
+        if (actionMasked == 0) {
             this.downX = x;
             this.downY = y;
             this.isInTapRegion = true;
@@ -216,6 +203,18 @@ public class ClockHandView extends View {
             z = false;
             z2 = false;
             z3 = true;
+        } else if (actionMasked == 1 || actionMasked == 2) {
+            int i = (int) (x - this.downX);
+            int i2 = (int) (y - this.downY);
+            this.isInTapRegion = (i * i) + (i2 * i2) > this.scaledTouchSlop;
+            boolean z4 = this.changedDuringTouch;
+            z = actionMasked == 1;
+            z3 = false;
+            z2 = z4;
+        } else {
+            z = false;
+            z2 = false;
+            z3 = false;
         }
         boolean handleTouchInput = handleTouchInput(x, y, z2, z3, z) | this.changedDuringTouch;
         this.changedDuringTouch = handleTouchInput;

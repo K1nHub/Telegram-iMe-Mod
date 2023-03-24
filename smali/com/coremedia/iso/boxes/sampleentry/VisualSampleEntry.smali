@@ -335,7 +335,7 @@
 .end method
 
 .method public getSize()J
-    .locals 7
+    .locals 6
 
     .line 274
     invoke-virtual {p0}, Lcom/googlecode/mp4parser/BasicContainer;->getContainerSize()J
@@ -357,9 +357,9 @@
 
     const-wide v4, 0x100000000L
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-ltz v6, :cond_0
+    if-ltz v2, :cond_0
 
     goto :goto_0
 

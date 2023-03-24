@@ -1279,11 +1279,11 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v2
+    cmp-long v2, v7, v2
 
-    if-nez v9, :cond_f
+    if-nez v2, :cond_f
 
-    const/4 v5, 0x1
+    move v5, v6
 
     .line 8013
     :cond_f
@@ -1339,7 +1339,7 @@
 
     if-eqz v6, :cond_11
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v4
 
     goto :goto_4
 
@@ -1701,7 +1701,7 @@
 
     if-eq p1, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v5
 
     :cond_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/GroupCallUserCell;->setDrawDivider(Z)V
@@ -1755,7 +1755,7 @@
 
     if-eq p1, v2, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v5
 
     :cond_4
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/GroupCallInvitedCell;->setDrawDivider(Z)V

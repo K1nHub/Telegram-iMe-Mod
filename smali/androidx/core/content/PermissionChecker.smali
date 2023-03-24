@@ -130,7 +130,7 @@
     goto :goto_2
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_2
     if-eqz v0, :cond_6

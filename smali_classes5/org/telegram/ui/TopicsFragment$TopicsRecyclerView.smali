@@ -312,7 +312,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-static {v0, v1}, Lorg/telegram/ui/TopicsFragment;->access$1702(Lorg/telegram/ui/TopicsFragment;I)I
@@ -575,7 +575,7 @@
 
     move-result v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v3, v4
 
@@ -1257,7 +1257,7 @@
 
     const v7, 0x3f59999a    # 0.85f
 
-    mul-float v5, v5, v7
+    mul-float/2addr v5, v7
 
     float-to-int v5, v5
 
@@ -1452,7 +1452,7 @@
 
     div-float/2addr v6, v7
 
-    mul-float v6, v6, v5
+    mul-float/2addr v6, v5
 
     sub-float/2addr v4, v6
 

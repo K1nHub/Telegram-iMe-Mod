@@ -340,9 +340,9 @@
 
     iget v1, p0, Lorg/telegram/ui/Components/StickerTabView;->lastLeft:F
 
-    const/4 v2, 0x0
-
     cmpl-float v0, v0, v1
+
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_1
 
@@ -702,7 +702,7 @@
 
     sub-float/2addr v2, p1
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     const/16 v8, 0x8
 
@@ -712,7 +712,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, p1
+    mul-float/2addr v8, p1
 
     sub-float/2addr v6, v8
 
@@ -723,7 +723,7 @@
 
     sub-float/2addr v1, v7
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v5, v1}, Landroid/view/View;->setTranslationX(F)V
 
@@ -755,7 +755,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTranslationY(F)V
 
@@ -772,7 +772,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTranslationX(F)V
 
@@ -788,7 +788,7 @@
 
     div-float/2addr v4, v0
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     add-float/2addr v4, p1
 

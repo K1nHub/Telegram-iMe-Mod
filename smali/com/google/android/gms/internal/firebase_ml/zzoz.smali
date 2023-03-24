@@ -854,12 +854,12 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v6
 
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-eqz v4, :cond_3
@@ -876,7 +876,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v6
 
     :goto_1
     if-nez v0, :cond_4
@@ -1964,7 +1964,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v4
 
     :cond_2
     :goto_1

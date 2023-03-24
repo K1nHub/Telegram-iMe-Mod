@@ -173,7 +173,7 @@
 
     const v0, 0x3f555555
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     const/16 v0, 0x58
 

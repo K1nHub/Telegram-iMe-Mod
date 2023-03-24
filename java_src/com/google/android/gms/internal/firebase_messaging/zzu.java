@@ -111,31 +111,19 @@ public final class zzu implements ObjectEncoderContext {
     }
 
     private final void zzn(int i) throws IOException {
-        while (true) {
-            int i2 = ((i & (-128)) > 0L ? 1 : ((i & (-128)) == 0L ? 0 : -1));
-            OutputStream outputStream = this.zze;
-            if (i2 == 0) {
-                outputStream.write(i & 127);
-                return;
-            } else {
-                outputStream.write((i & 127) | 128);
-                i >>>= 7;
-            }
+        while ((i & (-128)) != 0) {
+            this.zze.write((i & 127) | 128);
+            i >>>= 7;
         }
+        this.zze.write(i & 127);
     }
 
     private final void zzo(long j) throws IOException {
-        while (true) {
-            int i = (((-128) & j) > 0L ? 1 : (((-128) & j) == 0L ? 0 : -1));
-            OutputStream outputStream = this.zze;
-            if (i == 0) {
-                outputStream.write(((int) j) & 127);
-                return;
-            } else {
-                outputStream.write((((int) j) & 127) | 128);
-                j >>>= 7;
-            }
+        while (((-128) & j) != 0) {
+            this.zze.write((((int) j) & 127) | 128);
+            j >>>= 7;
         }
+        this.zze.write(((int) j) & 127);
     }
 
     public final ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d) throws IOException {

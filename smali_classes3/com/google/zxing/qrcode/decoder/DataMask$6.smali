@@ -31,7 +31,7 @@
 .method isMasked(II)Z
     .locals 0
 
-    mul-int p1, p1, p2
+    mul-int/2addr p1, p2
 
     .line 93
     rem-int/lit8 p1, p1, 0x6

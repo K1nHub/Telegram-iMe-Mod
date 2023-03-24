@@ -291,7 +291,10 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         boolean z = true;
         boolean z2 = windowInsetsCompat != null && windowInsetsCompat.getSystemWindowInsetTop() > 0;
         this.mDrawStatusBarBackground = z2;
-        setWillNotDraw((z2 || getBackground() != null) ? false : false);
+        if (z2 || getBackground() != null) {
+            z = false;
+        }
+        setWillNotDraw(z);
         WindowInsetsCompat dispatchApplyWindowInsetsToBehaviors = dispatchApplyWindowInsetsToBehaviors(windowInsetsCompat);
         requestLayout();
         return dispatchApplyWindowInsetsToBehaviors;
@@ -420,7 +423,7 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
             if (r3 == 0) goto L2b
             goto L16
         L15:
-            r3 = 0
+            r3 = r5
         L16:
             android.view.View r6 = r0.mBehaviorTouchView
             android.view.ViewGroup$LayoutParams r6 = r6.getLayoutParams()
@@ -431,7 +434,7 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
             boolean r6 = r6.onTouchEvent(r0, r7, r1)
             goto L2c
         L2b:
-            r6 = 0
+            r6 = r5
         L2c:
             android.view.View r7 = r0.mBehaviorTouchView
             r8 = 0
@@ -1214,9 +1217,10 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
     @Override // androidx.core.view.NestedScrollingParent3
     public void onNestedScroll(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
         Behavior behavior;
+        boolean z;
         int min;
         int childCount = getChildCount();
-        boolean z = false;
+        boolean z2 = false;
         int i6 = 0;
         int i7 = 0;
         for (int i8 = 0; i8 < childCount; i8++) {
@@ -1231,18 +1235,20 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
                     int[] iArr3 = this.mBehaviorConsumed;
                     i6 = i3 > 0 ? Math.max(i6, iArr3[0]) : Math.min(i6, iArr3[0]);
                     if (i4 > 0) {
+                        z = true;
                         min = Math.max(i7, this.mBehaviorConsumed[1]);
                     } else {
+                        z = true;
                         min = Math.min(i7, this.mBehaviorConsumed[1]);
                     }
                     i7 = min;
-                    z = true;
+                    z2 = z;
                 }
             }
         }
         iArr[0] = iArr[0] + i6;
         iArr[1] = iArr[1] + i7;
-        if (z) {
+        if (z2) {
             onChildViewsChanged(1);
         }
     }

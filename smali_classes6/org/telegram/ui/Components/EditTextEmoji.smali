@@ -254,12 +254,12 @@
 
     if-eqz v3, :cond_0
 
-    const/4 v3, 0x5
+    move v3, p2
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x3
+    move v3, p5
 
     :goto_0
     or-int/lit8 v3, v3, 0x10
@@ -330,14 +330,14 @@
     goto :goto_1
 
     :cond_1
-    const/4 p6, 0x0
+    move p6, v1
 
     :goto_1
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v3, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     goto :goto_2
 
@@ -368,24 +368,24 @@
 
     if-eqz p6, :cond_3
 
-    const/16 v5, 0xb
+    move v5, v0
 
     goto :goto_3
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_3
     const/4 v6, 0x1
 
     if-eqz p6, :cond_4
 
-    const/4 v7, 0x0
+    move v7, v1
 
     goto :goto_4
 
     :cond_4
-    const/16 v7, 0xb
+    move v7, v0
 
     :goto_4
     const/4 v8, 0x0
@@ -532,7 +532,7 @@
 
     if-eqz p3, :cond_6
 
-    const/4 p2, 0x3
+    move p2, p5
 
     :cond_6
     or-int/lit8 v2, p2, 0x10
@@ -1668,7 +1668,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_2
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EditTextEmoji;->keyboardVisible:Z
@@ -1870,12 +1870,12 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x8
+    move v3, v1
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -1898,14 +1898,14 @@
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_2
 
-    const/4 v3, 0x0
+    move v3, v2
 
     goto :goto_2
 
@@ -2035,12 +2035,12 @@
 
     if-nez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 400
     :goto_0

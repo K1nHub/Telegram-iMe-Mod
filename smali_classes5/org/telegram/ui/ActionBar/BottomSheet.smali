@@ -1221,7 +1221,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     add-int/2addr v2, v4
@@ -1313,7 +1313,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v8, 0x0
+    move v8, v1
 
     :goto_1
     aput v8, v7, v1
@@ -1615,7 +1615,7 @@
     goto :goto_1
 
     :cond_7
-    const/4 v11, 0x0
+    move v11, v6
 
     :goto_1
     add-int/2addr v10, v11
@@ -1723,7 +1723,7 @@
 
     const v2, 0x3f19999a    # 0.6f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-long v1, v1
 
@@ -1838,7 +1838,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_0
     add-int/2addr v6, v7
@@ -2025,7 +2025,7 @@
 
     sub-float/2addr v2, v1
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -2044,7 +2044,7 @@
 
     const p3, 0x3f4ccccd    # 0.8f
 
-    mul-float p1, p1, p3
+    mul-float/2addr p1, p3
 
     const/16 p3, 0x1e0
 
@@ -2170,7 +2170,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -2218,7 +2218,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -2262,7 +2262,7 @@
 
     sub-float/2addr v2, v1
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -2525,7 +2525,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v6
 
     :goto_0
     iget v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
@@ -2547,7 +2547,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v11, 0x0
+    move v11, v6
 
     :goto_1
     invoke-virtual {v2, v8, v9, v10, v11}, Landroid/view/ViewGroup;->setPadding(IIII)V
@@ -2701,12 +2701,12 @@
 
     if-eqz v13, :cond_7
 
-    const/16 v13, 0x8
+    move v13, v7
 
     goto :goto_3
 
     :cond_7
-    const/4 v13, 0x0
+    move v13, v6
 
     :goto_3
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2783,12 +2783,12 @@
 
     if-eqz v13, :cond_9
 
-    const/4 v13, -0x2
+    move v13, v10
 
     goto :goto_6
 
     :cond_9
-    const/16 v13, 0x30
+    move v13, v8
 
     :goto_6
     invoke-static {v4, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -2812,7 +2812,7 @@
     goto :goto_7
 
     :cond_a
-    const/4 v8, 0x0
+    move v8, v6
 
     .line 1149
     :cond_b
@@ -3087,7 +3087,7 @@
 
     if-eqz v2, :cond_13
 
-    const/4 v2, 0x0
+    move v2, v6
 
     .line 1183
     :goto_8
@@ -3141,7 +3141,7 @@
     goto :goto_9
 
     :cond_12
-    const/4 v12, 0x0
+    move v12, v6
 
     :goto_9
     iget-boolean v13, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->bigTitle:Z
@@ -3794,7 +3794,7 @@
 .end method
 
 .method public setOverlayNavBarColor(I)V
-    .locals 5
+    .locals 4
 
     .line 1920
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->overlayDrawNavBarColor:I
@@ -3832,9 +3832,9 @@
 
     const-wide v2, 0x3fe7126e978d4fdfL    # 0.721
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -4018,7 +4018,7 @@
 
     const/4 v4, 0x2
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v4
 
     add-int/2addr v2, v3
 
@@ -4097,7 +4097,7 @@
 
     sub-float/2addr v2, v4
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     :cond_4
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getMeasuredHeight()I

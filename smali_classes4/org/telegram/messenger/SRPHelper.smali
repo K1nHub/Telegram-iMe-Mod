@@ -56,7 +56,7 @@
 
     invoke-static {p0, v1, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 18
     :goto_0
@@ -455,7 +455,7 @@
 
     move-result-object v4
 
-    const/4 v5, 0x0
+    move v5, v11
 
     .line 97
     :goto_0

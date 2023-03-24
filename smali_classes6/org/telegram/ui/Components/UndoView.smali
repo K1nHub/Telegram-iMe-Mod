@@ -1640,7 +1640,7 @@
     if-ne v0, v4, :cond_8
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 390
     :goto_0
@@ -1681,13 +1681,13 @@
     goto :goto_1
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v1
 
     goto :goto_2
 
     :cond_7
     :goto_1
-    const/4 v7, 0x1
+    move v7, v3
 
     :goto_2
     invoke-virtual {v6, v4, v5, v7, p1}, Lorg/telegram/messenger/MessagesController;->removeDialogAction(JZZ)V
@@ -1727,7 +1727,7 @@
     goto :goto_3
 
     :cond_9
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v0
 
     :goto_3
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->enterOffsetMargin:I
@@ -1738,7 +1738,7 @@
 
     int-to-float v0, v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     aput p1, v3, v1
 
@@ -1847,7 +1847,7 @@
     goto :goto_5
 
     :cond_c
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v0
 
     :goto_5
     iget p2, p0, Lorg/telegram/ui/Components/UndoView;->enterOffsetMargin:I
@@ -1858,7 +1858,7 @@
 
     int-to-float p2, p2
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/UndoView;->setEnterOffset(F)V
 
@@ -1938,11 +1938,11 @@
     .line 1553
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->additionalTranslationY:F
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v2
+    const/4 v2, 0x1
 
     if-eqz v0, :cond_1
 
@@ -1966,7 +1966,7 @@
 
     add-float/2addr v0, v3
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -1974,7 +1974,7 @@
 
     add-float/2addr v0, v3
 
-    cmpl-float v3, v0, v2
+    cmpl-float v3, v0, v1
 
     if-lez v3, :cond_0
 
@@ -1985,7 +1985,7 @@
 
     int-to-float v3, v3
 
-    invoke-virtual {p1, v2, v2, v3, v0}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
+    invoke-virtual {p1, v1, v1, v3, v0}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
     .line 1559
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
@@ -2013,7 +2013,7 @@
 
     const-wide/16 v3, 0x0
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v2, :cond_2
 
     if-eqz v0, :cond_2
 
@@ -2033,56 +2033,56 @@
     :cond_2
     iget-wide v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    const/4 v0, 0x0
+    cmp-long v0, v5, v3
 
-    cmp-long v7, v5, v3
+    const/4 v7, 0x0
 
-    if-lez v7, :cond_3
+    if-lez v0, :cond_3
 
-    long-to-float v5, v5
+    long-to-float v0, v5
 
-    const/high16 v6, 0x447a0000    # 1000.0f
+    const/high16 v5, 0x447a0000    # 1000.0f
 
-    div-float/2addr v5, v6
+    div-float/2addr v0, v5
 
-    float-to-double v5, v5
+    float-to-double v5, v0
 
     invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v5
 
-    double-to-int v5, v5
+    double-to-int v0, v5
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x0
+    move v0, v7
 
     .line 1569
     :goto_1
-    iget v6, p0, Lorg/telegram/ui/Components/UndoView;->prevSeconds:I
+    iget v5, p0, Lorg/telegram/ui/Components/UndoView;->prevSeconds:I
 
-    if-eq v6, v5, :cond_5
+    if-eq v5, v0, :cond_5
 
     .line 1570
-    iput v5, p0, Lorg/telegram/ui/Components/UndoView;->prevSeconds:I
+    iput v0, p0, Lorg/telegram/ui/Components/UndoView;->prevSeconds:I
 
-    new-array v6, v1, [Ljava/lang/Object;
+    new-array v5, v2, [Ljava/lang/Object;
 
     .line 1571
-    invoke-static {v1, v5}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v0
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v0
 
-    aput-object v5, v6, v0
+    aput-object v0, v5, v7
 
     const-string v0, "%d"
 
-    invoke-static {v0, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2097,23 +2097,23 @@
     iput-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayoutOut:Landroid/text/StaticLayout;
 
     .line 1574
-    iput v2, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
+    iput v1, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     .line 1577
     :cond_4
-    iget-object v2, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
+    iget-object v1, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2, v0}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
+    invoke-virtual {v1, v0}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
     move-result v0
 
-    float-to-double v5, v0
+    float-to-double v0, v0
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v5
+    move-result-wide v0
 
-    double-to-int v0, v5
+    double-to-int v0, v0
 
     iput v0, p0, Lorg/telegram/ui/Components/UndoView;->textWidth:I
 
@@ -2144,9 +2144,9 @@
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    cmpg-float v5, v0, v2
+    cmpg-float v5, v0, v1
 
     if-gez v5, :cond_7
 
@@ -2157,12 +2157,12 @@
     .line 1582
     iput v0, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v1
 
     if-lez v0, :cond_6
 
     .line 1584
-    iput v2, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
+    iput v1, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     goto :goto_2
 
@@ -2190,7 +2190,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    cmpg-float v8, v5, v2
+    cmpg-float v8, v5, v1
 
     if-gez v8, :cond_8
 
@@ -2199,9 +2199,9 @@
 
     int-to-float v9, v0
 
-    sub-float v5, v2, v5
+    sub-float v5, v1, v5
 
-    mul-float v9, v9, v5
+    mul-float/2addr v9, v5
 
     float-to-int v5, v9
 
@@ -2239,7 +2239,7 @@
 
     iget v10, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     add-float/2addr v8, v9
 
@@ -2267,7 +2267,7 @@
     .line 1602
     iget v5, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    cmpl-float v8, v5, v2
+    cmpl-float v8, v5, v1
 
     if-eqz v8, :cond_9
 
@@ -2276,7 +2276,7 @@
 
     int-to-float v9, v0
 
-    mul-float v9, v9, v5
+    mul-float/2addr v9, v5
 
     float-to-int v5, v9
 
@@ -2315,9 +2315,9 @@
 
     iget v8, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    sub-float v8, v2, v8
+    sub-float v8, v1, v8
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     sub-float/2addr v7, v6
 
@@ -2331,14 +2331,14 @@
     .line 1608
     iget v5, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    cmpl-float v2, v5, v2
+    cmpl-float v1, v5, v1
 
-    if-eqz v2, :cond_a
+    if-eqz v1, :cond_a
 
     .line 1609
-    iget-object v2, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
+    iget-object v1, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v2, v0}, Landroid/text/TextPaint;->setAlpha(I)V
+    invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
     .line 1611
     :cond_a
@@ -2354,13 +2354,13 @@
 
     iget-wide v8, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    long-to-float v2, v8
+    long-to-float v1, v8
 
     const v5, 0x459c4000    # 5000.0f
 
-    div-float/2addr v2, v5
+    div-float/2addr v1, v5
 
-    mul-float v8, v2, v0
+    mul-float v8, v1, v0
 
     const/4 v9, 0x0
 
@@ -2374,31 +2374,31 @@
     :cond_c
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v5
+    move-result-wide v0
 
     .line 1620
-    iget-wide v7, p0, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
+    iget-wide v5, p0, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
 
-    sub-long v7, v5, v7
+    sub-long v5, v0, v5
 
     .line 1621
-    iget-wide v9, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
+    iget-wide v7, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    sub-long/2addr v9, v7
+    sub-long/2addr v7, v5
 
-    iput-wide v9, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
+    iput-wide v7, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     .line 1622
-    iput-wide v5, p0, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
+    iput-wide v0, p0, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
 
-    cmp-long p1, v9, v3
+    cmp-long p1, v7, v3
 
     if-gtz p1, :cond_d
 
     .line 1624
     iget p1, p0, Lorg/telegram/ui/Components/UndoView;->hideAnimationType:I
 
-    invoke-virtual {p0, v1, p1}, Lorg/telegram/ui/Components/UndoView;->hide(ZI)V
+    invoke-virtual {p0, v2, p1}, Lorg/telegram/ui/Components/UndoView;->hide(ZI)V
 
     .line 1627
     :cond_d
@@ -3232,7 +3232,7 @@
     move-object v0, v2
 
     :goto_2
-    const/4 v3, 0x0
+    move v3, v10
 
     goto/16 :goto_20
 
@@ -4746,9 +4746,9 @@
     :goto_16
     const-wide/16 v7, 0x0
 
-    cmp-long v13, v11, v7
+    cmp-long v7, v11, v7
 
-    if-eqz v13, :cond_4b
+    if-eqz v7, :cond_4b
 
     .line 832
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
@@ -6746,6 +6746,8 @@
 
     if-ne v6, v4, :cond_66
 
+    const/4 v3, 0x2
+
     goto/16 :goto_2a
 
     :cond_66
@@ -7141,7 +7143,7 @@
 
     if-eq v2, v3, :cond_59
 
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 1465
     :goto_27
@@ -7177,7 +7179,7 @@
     goto :goto_28
 
     :cond_71
-    const/4 v6, 0x0
+    move v6, v10
 
     goto :goto_29
 
@@ -7193,9 +7195,9 @@
     goto :goto_27
 
     :cond_73
-    :goto_2a
-    const/4 v3, 0x2
+    move v3, v4
 
+    :goto_2a
     if-ne v2, v3, :cond_74
 
     .line 1395
@@ -8093,7 +8095,7 @@
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     :goto_34
-    const/4 v0, 0x0
+    move v0, v10
 
     goto/16 :goto_46
 
@@ -8904,9 +8906,9 @@
 
     iget-wide v2, v2, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v9, v11, v2
+    cmp-long v2, v11, v2
 
-    if-nez v9, :cond_90
+    if-nez v2, :cond_90
 
     .line 1063
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -9586,7 +9588,7 @@
 
     :cond_a3
     :goto_44
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 1129
     :goto_45
@@ -9642,9 +9644,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v7, v2
+    cmp-long v2, v7, v2
 
-    if-lez v4, :cond_a4
+    if-lez v2, :cond_a4
 
     .line 1139
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9932,7 +9934,7 @@
 
     :cond_ab
     :goto_47
-    const/16 v15, 0xe
+    move v15, v6
 
     :goto_48
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -10032,7 +10034,7 @@
 
     int-to-float v2, v2
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/UndoView;->setEnterOffset(F)V
 
@@ -10070,7 +10072,7 @@
 
     int-to-float v6, v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     aput v5, v2, v10
 

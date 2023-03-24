@@ -455,9 +455,9 @@
     .line 258
     iget-wide v4, p1, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->totalSamples:J
 
-    cmp-long v7, v4, v0
+    cmp-long v0, v4, v0
 
-    if-lez v7, :cond_2
+    if-lez v0, :cond_2
 
     .line 259
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->getDecodePosition()J
@@ -569,9 +569,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->id3MetadataDisabled:Z
 
@@ -767,13 +767,13 @@
 .end method
 
 .method public seek(JJ)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 

@@ -32,29 +32,29 @@
 
     const-wide/32 v3, 0x7fffffff
 
-    const-string v5, "File "
+    cmp-long v3, v1, v3
 
-    cmp-long v6, v1, v3
+    const-string v4, "File "
 
-    if-gtz v6, :cond_4
+    if-gtz v3, :cond_4
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
     .line 68
     :try_start_1
-    new-array v1, v2, [B
+    new-array v2, v1, [B
 
     const/4 v3, 0x0
 
-    move v4, v2
+    move v5, v1
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_0
-    if-lez v4, :cond_0
+    if-lez v5, :cond_0
 
     .line 70
-    invoke-virtual {v0, v1, v6, v4}, Ljava/io/FileInputStream;->read([BII)I
+    invoke-virtual {v0, v2, v6, v5}, Ljava/io/FileInputStream;->read([BII)I
 
     move-result v7
     :try_end_1
@@ -62,7 +62,7 @@
 
     if-ltz v7, :cond_0
 
-    sub-int/2addr v4, v7
+    sub-int/2addr v5, v7
 
     add-int/2addr v6, v7
 
@@ -73,15 +73,15 @@
 
     const/4 v8, 0x0
 
-    if-lez v4, :cond_1
+    if-lez v5, :cond_1
 
     .line 75
     :try_start_2
-    invoke-static {v1, v6}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v2, v6}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -89,11 +89,11 @@
     :cond_1
     invoke-virtual {v0}, Ljava/io/FileInputStream;->read()I
 
-    move-result v4
+    move-result v5
 
     const/4 v6, -0x1
 
-    if-ne v4, v6, :cond_2
+    if-ne v5, v6, :cond_2
 
     goto :goto_1
 
@@ -106,21 +106,21 @@
     invoke-direct {v6, v9}, Lkotlin/io/ExposingBufferByteArrayOutputStream;-><init>(I)V
 
     .line 85
-    invoke-virtual {v6, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
+    invoke-virtual {v6, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
     .line 86
-    invoke-static {v0, v6, v3, v4, v8}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
+    invoke-static {v0, v6, v3, v5, v8}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
 
     .line 88
     invoke-virtual {v6}, Ljava/io/ByteArrayOutputStream;->size()I
 
-    move-result v4
+    move-result v5
 
-    add-int/2addr v4, v2
+    add-int/2addr v5, v1
 
-    if-ltz v4, :cond_3
+    if-ltz v5, :cond_3
 
     .line 91
     invoke-virtual {v6}, Lkotlin/io/ExposingBufferByteArrayOutputStream;->getBuffer()[B
@@ -128,11 +128,11 @@
     move-result-object p0
 
     .line 92
-    invoke-static {v1, v4}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v2, v5}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 94
     invoke-virtual {v6}, Ljava/io/ByteArrayOutputStream;->size()I
@@ -140,9 +140,9 @@
     move-result v4
 
     .line 91
-    invoke-static {p0, v1, v2, v3, v4}, Lkotlin/collections/ArraysKt;->copyInto([B[BIII)[B
+    invoke-static {p0, v2, v1, v3, v4}, Lkotlin/collections/ArraysKt;->copyInto([B[BIII)[B
 
-    move-result-object v1
+    move-result-object v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -150,7 +150,7 @@
     :goto_1
     invoke-static {v0, v8}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    return-object v1
+    return-object v2
 
     .line 89
     :cond_3
@@ -161,7 +161,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -181,25 +181,25 @@
     :cond_4
     new-instance v3, Ljava/lang/OutOfMemoryError;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p0, " is too big ("
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string p0, " bytes) to fit in memory."
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

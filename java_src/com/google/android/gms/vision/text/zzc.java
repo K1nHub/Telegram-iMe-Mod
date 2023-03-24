@@ -10,16 +10,16 @@ final class zzc {
     public static Rect zza(Text text) {
         Point[] cornerPoints;
         int i = Integer.MIN_VALUE;
-        int i2 = Integer.MIN_VALUE;
-        int i3 = Integer.MAX_VALUE;
+        int i2 = Integer.MAX_VALUE;
+        int i3 = Integer.MIN_VALUE;
         int i4 = Integer.MAX_VALUE;
         for (Point point : text.getCornerPoints()) {
-            i3 = Math.min(i3, point.x);
+            i4 = Math.min(i4, point.x);
             i = Math.max(i, point.x);
-            i4 = Math.min(i4, point.y);
-            i2 = Math.max(i2, point.y);
+            i2 = Math.min(i2, point.y);
+            i3 = Math.max(i3, point.y);
         }
-        return new Rect(i3, i4, i, i2);
+        return new Rect(i4, i2, i, i3);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

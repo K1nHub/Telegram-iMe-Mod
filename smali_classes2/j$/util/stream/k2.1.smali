@@ -31,7 +31,7 @@
 
 # virtual methods
 .method protected final a(Ljava/util/Deque;)Lj$/util/stream/A1;
-    .locals 6
+    .locals 5
 
     :cond_0
     invoke-interface {p1}, Ljava/util/Deque;->pollFirst()Ljava/lang/Object;
@@ -54,9 +54,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v5, :cond_0
+    if-lez v1, :cond_0
 
     return-object v0
 

@@ -14,13 +14,13 @@
 
 .field private final to:Ljava/lang/String;
 
-.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.field private final transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
 .field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "from"
@@ -67,7 +67,7 @@
     iput-object p4, p0, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->data:Ljava/lang/String;
 
     .line 10
-    iput-object p5, p0, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iput-object p5, p0, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     .line 11
     iput-object p6, p0, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->networkType:Ljava/lang/String;
@@ -125,11 +125,11 @@
     return-object v0
 .end method
 
-.method public final getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+.method public final getTransactionParams()Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
     .locals 1
 
     .line 10
-    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams;
+    iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;->transactionParams:Lcom/smedialink/storage/domain/model/crypto/TransactionParams$Ether;
 
     return-object v0
 .end method

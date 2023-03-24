@@ -442,12 +442,12 @@
 
     if-nez v2, :cond_1
 
-    const/4 v15, 0x0
+    move v15, v3
 
     goto :goto_0
 
     :cond_1
-    const/16 v15, 0xc
+    move v15, v9
 
     :goto_0
     const/16 v16, 0xe
@@ -506,11 +506,11 @@
 
     const v1, 0x3dcccccd    # 0.1f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->progress:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
@@ -520,7 +520,7 @@
 
     const v2, 0x3e4ccccd    # 0.2f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v0, v1
 
@@ -577,7 +577,7 @@
 
     const/high16 v3, 0x42700000    # 60.0f
 
-    mul-float p5, p5, v3
+    mul-float/2addr p5, v3
 
     invoke-virtual {v2, p5}, Landroid/view/View;->setRotation(F)V
 
@@ -597,17 +597,17 @@
 
     sub-float v2, v0, v1
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     add-float/2addr p1, p2
 
     invoke-virtual {p5, p1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->setTranslationX(F)V
 
-    mul-float p3, p3, v2
+    mul-float/2addr p3, v2
 
-    mul-float p4, p4, v1
+    mul-float/2addr p4, v1
 
     add-float/2addr p3, p4
 
@@ -618,7 +618,7 @@
 
     const/high16 p1, 0x40000000    # 2.0f
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     .line 233
     invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
@@ -644,7 +644,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, p3
+    mul-float/2addr p2, p3
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setPivotX(F)V
 
@@ -780,7 +780,7 @@
 
     iget v12, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->position:F
 
-    mul-float v11, v11, v12
+    mul-float/2addr v11, v12
 
     add-float/2addr v2, v11
 
@@ -838,14 +838,14 @@
 
     move v12, v0
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v13, v10
 
     goto :goto_0
 
     :cond_0
-    move v12, v2
+    move v13, v1
 
-    const/high16 v13, 0x3f000000    # 0.5f
+    move v12, v2
 
     .line 207
     :goto_0
@@ -966,13 +966,13 @@
 
     move-result v11
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v4
 
     sub-int/2addr v11, v0
 
     int-to-float v0, v11
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     add-float/2addr v2, v0
 
@@ -1091,6 +1091,8 @@
     :cond_5
     :goto_2
     return-void
+
+    nop
 
     :array_0
     .array-data 4

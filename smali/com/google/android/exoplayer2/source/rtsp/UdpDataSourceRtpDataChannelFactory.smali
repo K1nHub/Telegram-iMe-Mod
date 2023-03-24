@@ -69,7 +69,7 @@
 
     if-nez v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_0
     if-eqz v1, :cond_1

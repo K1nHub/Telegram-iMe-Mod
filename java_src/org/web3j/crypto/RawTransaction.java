@@ -12,7 +12,7 @@ public class RawTransaction {
     private BigInteger nonce;
 
     /* renamed from: to */
-    private String f1836to;
+    private String f1837to;
     private BigInteger value;
 
     protected RawTransaction(BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, String str, BigInteger bigInteger4, String str2) {
@@ -23,7 +23,7 @@ public class RawTransaction {
         this.nonce = bigInteger;
         this.gasPrice = bigInteger2;
         this.gasLimit = bigInteger3;
-        this.f1836to = str;
+        this.f1837to = str;
         this.value = bigInteger4;
         this.data = str2 != null ? Numeric.cleanHexPrefix(str2) : null;
         this.gasPremium = bigInteger5;
@@ -55,7 +55,7 @@ public class RawTransaction {
     }
 
     public String getTo() {
-        return this.f1836to;
+        return this.f1837to;
     }
 
     public BigInteger getValue() {

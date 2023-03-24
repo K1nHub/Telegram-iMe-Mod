@@ -267,24 +267,24 @@
 
     invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v8, v2, v6
+    cmp-long v6, v2, v4
 
-    if-ltz v8, :cond_0
+    if-ltz v6, :cond_0
 
-    const/4 v8, 0x1
+    const/4 v6, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     :goto_0
-    if-eqz v8, :cond_a
+    if-eqz v6, :cond_a
 
     :goto_1
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     .line 350
     iget-object v9, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
@@ -314,18 +314,18 @@
     if-eqz v10, :cond_2
 
     .line 355
-    iget-object v8, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v6, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-virtual {v8}, Lokhttp3/internal/http2/Http2Stream;->getErrorException$okhttp()Ljava/io/IOException;
+    invoke-virtual {v6}, Lokhttp3/internal/http2/Http2Stream;->getErrorException$okhttp()Ljava/io/IOException;
 
-    move-result-object v8
+    move-result-object v6
 
-    if-eqz v8, :cond_1
+    if-eqz v6, :cond_1
 
     goto :goto_2
 
     :cond_1
-    new-instance v8, Lokhttp3/internal/http2/StreamResetException;
+    new-instance v6, Lokhttp3/internal/http2/StreamResetException;
 
     iget-object v10, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
@@ -335,7 +335,7 @@
 
     invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-direct {v8, v10}, Lokhttp3/internal/http2/StreamResetException;-><init>(Lokhttp3/internal/http2/ErrorCode;)V
+    invoke-direct {v6, v10}, Lokhttp3/internal/http2/StreamResetException;-><init>(Lokhttp3/internal/http2/ErrorCode;)V
 
     .line 358
     :cond_2
@@ -351,37 +351,37 @@
 
     move-result-wide v10
 
-    const-wide/16 v12, -0x1
+    cmp-long v10, v10, v4
 
-    cmp-long v14, v10, v6
+    const-wide/16 v11, -0x1
 
-    if-lez v14, :cond_3
+    if-lez v10, :cond_3
 
     .line 362
     iget-object v10, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lokio/Buffer;
 
     invoke-virtual {v10}, Lokio/Buffer;->size()J
 
-    move-result-wide v14
+    move-result-wide v13
 
-    invoke-static {v2, v3, v14, v15}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v2, v3, v13, v14}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v14
+    move-result-wide v13
 
-    invoke-virtual {v10, v0, v14, v15}, Lokio/Buffer;->read(Lokio/Buffer;J)J
+    invoke-virtual {v10, v0, v13, v14}, Lokio/Buffer;->read(Lokio/Buffer;J)J
 
-    move-result-wide v10
+    move-result-wide v13
 
     .line 363
-    iget-object v14, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v10, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-virtual {v14}, Lokhttp3/internal/http2/Http2Stream;->getReadBytesTotal()J
+    invoke-virtual {v10}, Lokhttp3/internal/http2/Http2Stream;->getReadBytesTotal()J
 
     move-result-wide v15
 
-    add-long v4, v15, v10
+    add-long v4, v15, v13
 
-    invoke-virtual {v14, v4, v5}, Lokhttp3/internal/http2/Http2Stream;->setReadBytesTotal$okhttp(J)V
+    invoke-virtual {v10, v4, v5}, Lokhttp3/internal/http2/Http2Stream;->setReadBytesTotal$okhttp(J)V
 
     .line 365
     iget-object v4, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
@@ -390,62 +390,62 @@
 
     move-result-wide v4
 
-    iget-object v14, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v10, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-virtual {v14}, Lokhttp3/internal/http2/Http2Stream;->getReadBytesAcknowledged()J
+    invoke-virtual {v10}, Lokhttp3/internal/http2/Http2Stream;->getReadBytesAcknowledged()J
 
-    move-result-wide v14
+    move-result-wide v15
 
-    sub-long/2addr v4, v14
+    sub-long/2addr v4, v15
 
-    if-nez v8, :cond_5
+    if-nez v6, :cond_5
 
     .line 367
-    iget-object v14, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v10, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-virtual {v14}, Lokhttp3/internal/http2/Http2Stream;->getConnection()Lokhttp3/internal/http2/Http2Connection;
+    invoke-virtual {v10}, Lokhttp3/internal/http2/Http2Stream;->getConnection()Lokhttp3/internal/http2/Http2Connection;
 
-    move-result-object v14
+    move-result-object v10
 
-    invoke-virtual {v14}, Lokhttp3/internal/http2/Http2Connection;->getOkHttpSettings()Lokhttp3/internal/http2/Settings;
+    invoke-virtual {v10}, Lokhttp3/internal/http2/Http2Connection;->getOkHttpSettings()Lokhttp3/internal/http2/Settings;
 
-    move-result-object v14
+    move-result-object v10
 
-    invoke-virtual {v14}, Lokhttp3/internal/http2/Settings;->getInitialWindowSize()I
+    invoke-virtual {v10}, Lokhttp3/internal/http2/Settings;->getInitialWindowSize()I
 
-    move-result v14
+    move-result v10
 
-    div-int/lit8 v14, v14, 0x2
+    div-int/lit8 v10, v10, 0x2
 
-    int-to-long v14, v14
+    int-to-long v7, v10
 
-    cmp-long v16, v4, v14
+    cmp-long v7, v4, v7
 
-    if-ltz v16, :cond_5
+    if-ltz v7, :cond_5
 
     .line 370
-    iget-object v14, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v7, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-virtual {v14}, Lokhttp3/internal/http2/Http2Stream;->getConnection()Lokhttp3/internal/http2/Http2Connection;
+    invoke-virtual {v7}, Lokhttp3/internal/http2/Http2Stream;->getConnection()Lokhttp3/internal/http2/Http2Connection;
 
-    move-result-object v14
+    move-result-object v7
 
-    iget-object v15, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
+    iget-object v8, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
-    invoke-virtual {v15}, Lokhttp3/internal/http2/Http2Stream;->getId()I
+    invoke-virtual {v8}, Lokhttp3/internal/http2/Http2Stream;->getId()I
 
-    move-result v15
+    move-result v8
 
-    invoke-virtual {v14, v15, v4, v5}, Lokhttp3/internal/http2/Http2Connection;->writeWindowUpdateLater$okhttp(IJ)V
+    invoke-virtual {v7, v8, v4, v5}, Lokhttp3/internal/http2/Http2Connection;->writeWindowUpdateLater$okhttp(IJ)V
 
     .line 371
     iget-object v4, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
 
     invoke-virtual {v4}, Lokhttp3/internal/http2/Http2Stream;->getReadBytesTotal()J
 
-    move-result-wide v14
+    move-result-wide v7
 
-    invoke-virtual {v4, v14, v15}, Lokhttp3/internal/http2/Http2Stream;->setReadBytesAcknowledged$okhttp(J)V
+    invoke-virtual {v4, v7, v8}, Lokhttp3/internal/http2/Http2Stream;->setReadBytesAcknowledged$okhttp(J)V
 
     goto :goto_3
 
@@ -455,7 +455,7 @@
 
     if-nez v4, :cond_4
 
-    if-nez v8, :cond_4
+    if-nez v6, :cond_4
 
     .line 375
     iget-object v4, v1, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
@@ -464,14 +464,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-wide v10, v12
+    move-wide v13, v11
 
     const/4 v4, 0x1
 
     goto :goto_4
 
     :cond_4
-    move-wide v10, v12
+    move-wide v13, v11
 
     :cond_5
     :goto_3
@@ -498,28 +498,30 @@
 
     if-eqz v4, :cond_6
 
+    const-wide/16 v4, 0x0
+
     goto/16 :goto_1
 
     :cond_6
-    cmp-long v0, v10, v12
+    cmp-long v0, v13, v11
 
     if-eqz v0, :cond_7
 
     .line 391
-    invoke-direct {v1, v10, v11}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V
+    invoke-direct {v1, v13, v14}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V
 
-    return-wide v10
+    return-wide v13
 
     :cond_7
-    if-nez v8, :cond_8
+    if-nez v6, :cond_8
 
-    return-wide v12
+    return-wide v11
 
     .line 400
     :cond_8
-    invoke-static {v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    throw v8
+    throw v6
 
     .line 359
     :cond_9
@@ -587,7 +589,7 @@
 .end method
 
 .method public final receive$okhttp(Lokio/BufferedSource;J)V
-    .locals 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -682,24 +684,24 @@
 
     iget-wide v6, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->maxByteCount:J
 
-    const/4 v8, 0x1
+    cmp-long v4, v4, v6
 
-    const/4 v9, 0x0
+    const/4 v5, 0x1
 
-    cmp-long v10, v4, v6
+    const/4 v6, 0x0
 
-    if-lez v10, :cond_2
+    if-lez v4, :cond_2
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v6
 
     .line 429
     :goto_1
-    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v7, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -736,11 +738,11 @@
 
     move-result-wide v2
 
-    const-wide/16 v4, -0x1
+    const-wide/16 v7, -0x1
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v7
 
-    if-eqz v6, :cond_9
+    if-eqz v4, :cond_9
 
     sub-long/2addr p2, v2
 
@@ -777,14 +779,14 @@
 
     move-result-wide v3
 
-    cmp-long v5, v3, v0
+    cmp-long v3, v3, v0
 
-    if-nez v5, :cond_6
+    if-nez v3, :cond_6
 
     goto :goto_2
 
     :cond_6
-    const/4 v8, 0x0
+    move v5, v6
 
     .line 459
     :goto_2
@@ -794,7 +796,7 @@
 
     invoke-virtual {v3, v4}, Lokio/Buffer;->writeAll(Lokio/Source;)J
 
-    if-eqz v8, :cond_8
+    if-eqz v5, :cond_8
 
     .line 461
     iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;
@@ -825,9 +827,9 @@
     :goto_4
     monitor-exit v2
 
-    cmp-long v2, v3, v0
+    cmp-long v0, v3, v0
 
-    if-lez v2, :cond_1
+    if-lez v0, :cond_1
 
     .line 466
     invoke-direct {p0, v3, v4}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V

@@ -115,7 +115,7 @@
 .end method
 
 .method private synthetic lambda$createView$0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 5
+    .locals 4
 
     .line 93
     invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
@@ -124,7 +124,7 @@
 
     const/4 p2, 0x0
 
-    const/4 p4, 0x0
+    move p4, p1
 
     .line 95
     :goto_0
@@ -136,7 +136,7 @@
 
     if-ge p4, p5, :cond_4
 
-    const/4 p5, 0x0
+    move p5, p1
 
     .line 97
     :goto_1
@@ -167,9 +167,9 @@
 
     iget-wide v2, v2, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 99
     iget-object p2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->exceptionsDialogs:Ljava/util/ArrayList;
@@ -188,7 +188,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 p6, 0x0
+    move p6, p1
 
     :goto_2
     if-nez p6, :cond_3
@@ -264,7 +264,7 @@
 
     if-eqz p2, :cond_7
 
-    const/4 p3, 0x0
+    move p3, p1
 
     .line 116
     :goto_3
@@ -303,9 +303,9 @@
 
     iget-wide v0, p2, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
-    cmp-long v2, p4, v0
+    cmp-long p4, p4, v0
 
-    if-nez v2, :cond_5
+    if-nez p4, :cond_5
 
     move p1, p3
 
@@ -655,11 +655,11 @@
 .end method
 
 .method private synthetic lambda$showPopupFor$5(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 171
     :goto_0
@@ -698,9 +698,9 @@
 
     iget-wide v4, p1, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v2, :cond_0
 
     move v0, v1
 
@@ -793,12 +793,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     const/4 v3, 0x0
@@ -866,7 +866,7 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_2
 

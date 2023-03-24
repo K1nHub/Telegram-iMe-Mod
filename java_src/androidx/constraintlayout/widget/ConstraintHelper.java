@@ -275,7 +275,7 @@ public abstract class ConstraintHelper extends View {
     /* JADX INFO: Access modifiers changed from: protected */
     public void applyLayoutFeatures(ConstraintLayout container) {
         int visibility = getVisibility();
-        float elevation = Build.VERSION.SDK_INT >= 21 ? getElevation() : BitmapDescriptorFactory.HUE_RED;
+        float elevation = Build.VERSION.SDK_INT >= 21 ? getElevation() : 0.0f;
         for (int i = 0; i < this.mCount; i++) {
             View viewById = container.getViewById(this.mIds[i]);
             if (viewById != null) {

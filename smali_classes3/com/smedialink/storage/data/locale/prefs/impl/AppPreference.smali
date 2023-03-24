@@ -65,7 +65,7 @@
 .end method
 
 .method public getCatalogSelectedLanguageId()Ljava/lang/Long;
-    .locals 5
+    .locals 4
 
     .line 53
     invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -80,9 +80,9 @@
 
     move-result-wide v0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 

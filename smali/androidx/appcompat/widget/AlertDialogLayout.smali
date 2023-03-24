@@ -180,7 +180,7 @@
 
     move-object v7, v6
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_0
     const/16 v9, 0x8
@@ -306,7 +306,7 @@
     goto :goto_3
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_3
     if-eqz v6, :cond_8
@@ -340,16 +340,16 @@
     goto :goto_4
 
     :cond_8
-    const/4 v13, 0x0
+    move v13, v5
 
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_4
     if-eqz v7, :cond_a
 
     if-nez v8, :cond_9
 
-    const/4 v15, 0x0
+    move v15, v5
 
     goto :goto_5
 
@@ -647,7 +647,7 @@
 
     if-nez v1, :cond_2
 
-    const/4 v12, 0x0
+    move v12, v2
 
     goto :goto_1
 
@@ -660,7 +660,7 @@
     move v12, v1
 
     :goto_1
-    const/4 v13, 0x0
+    move v13, v2
 
     :goto_2
     if-ge v13, v10, :cond_8

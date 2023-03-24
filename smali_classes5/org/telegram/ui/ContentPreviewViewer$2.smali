@@ -91,9 +91,17 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_6
+
+    iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+
+    move-result-object v0
+
     if-nez v0, :cond_0
 
-    return-void
+    goto/16 :goto_1
 
     .line 664
     :cond_0
@@ -232,6 +240,7 @@
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_6
+    :goto_1
     return-void
 .end method
 
@@ -280,7 +289,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -835,9 +844,9 @@
 
     div-long/2addr v4, v6
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
-    invoke-virtual {v0, v3, v5, v2}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
+    invoke-virtual {v0, v3, v4, v2}, Lorg/telegram/messenger/MediaDataController;->addRecentGif(Lorg/telegram/tgnet/TLRPC$Document;IZ)V
 
     .line 903
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -1017,12 +1026,12 @@
 
     if-nez v7, :cond_11
 
-    const/4 v7, 0x1
+    move v7, v2
 
     goto :goto_2
 
     :cond_11
-    const/4 v7, 0x0
+    move v7, v5
 
     :goto_2
     const/4 v8, 0x0
@@ -1092,7 +1101,7 @@
     goto :goto_4
 
     :cond_14
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_4
     invoke-interface {v0, v3, v4, v2, v5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendGif(Ljava/lang/Object;Ljava/lang/Object;ZI)V
@@ -1171,7 +1180,7 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v0, v1
 
@@ -1252,12 +1261,12 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 421
     :goto_0
@@ -1953,7 +1962,7 @@
 
     new-array v1, v1, [I
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 500
     :goto_5
@@ -2009,7 +2018,7 @@
 
     invoke-direct {v4, v5, v6, v7}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 553
     :goto_6
@@ -2283,7 +2292,7 @@
     :cond_15
     sget v5, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 597
     :goto_8
@@ -2447,7 +2456,7 @@
     goto :goto_b
 
     :cond_18
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_b
     add-int/2addr v5, v7
@@ -2850,7 +2859,7 @@
 
     new-array v6, v6, [I
 
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 654
     :goto_d
@@ -2906,7 +2915,7 @@
 
     invoke-direct {v7, v0, v4}, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;)V
 
-    const/4 v9, 0x0
+    move v9, v3
 
     .line 682
     :goto_e
@@ -2918,12 +2927,12 @@
 
     if-nez v9, :cond_22
 
-    const/16 v18, 0x1
+    move/from16 v18, v2
 
     goto :goto_f
 
     :cond_22
-    const/16 v18, 0x0
+    move/from16 v18, v3
 
     .line 683
     :goto_f
@@ -2935,12 +2944,12 @@
 
     if-ne v9, v11, :cond_23
 
-    const/16 v19, 0x1
+    move/from16 v19, v2
 
     goto :goto_10
 
     :cond_23
-    const/16 v19, 0x0
+    move/from16 v19, v3
 
     :goto_10
     invoke-virtual {v5, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3178,7 +3187,7 @@
     :cond_26
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 721
     :goto_11
@@ -3244,7 +3253,7 @@
     goto :goto_12
 
     :cond_27
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_12
     add-int/2addr v2, v7
@@ -3460,12 +3469,12 @@
 
     if-ne v4, v8, :cond_2a
 
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_13
 
     :cond_2a
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 750
     :goto_13
@@ -3479,12 +3488,12 @@
 
     if-ne v8, v9, :cond_2b
 
-    const/4 v8, 0x1
+    move v8, v2
 
     goto :goto_14
 
     :cond_2b
-    const/4 v8, 0x0
+    move v8, v3
 
     .line 752
     :goto_14
@@ -3967,7 +3976,7 @@
     goto :goto_17
 
     :cond_33
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_17
     if-eqz v4, :cond_34
@@ -4053,7 +4062,7 @@
 
     new-array v2, v2, [I
 
-    const/4 v5, 0x0
+    move v5, v3
 
     .line 842
     :goto_19
@@ -4120,7 +4129,7 @@
 
     invoke-direct {v5, v0, v12}, Lorg/telegram/ui/ContentPreviewViewer$2$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;)V
 
-    const/4 v6, 0x0
+    move v6, v3
 
     .line 925
     :goto_1a
@@ -4168,7 +4177,7 @@
 
     invoke-virtual {v11, v13, v3}, Landroid/widget/LinearLayout;->setTag(ILjava/lang/Object;)V
 
-    const/4 v3, 0x1
+    move/from16 v3, v22
 
     .line 931
     invoke-virtual {v11, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
@@ -4944,8 +4953,6 @@
     :cond_47
     :goto_21
     return-void
-
-    nop
 
     :array_0
     .array-data 4

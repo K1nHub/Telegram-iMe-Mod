@@ -136,7 +136,7 @@
 
     move-result v2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     sub-int/2addr v0, v1
 
@@ -148,17 +148,17 @@
 
     move-result v2
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v7
 
     sub-int/2addr v2, v7
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     sub-int/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$QualityChooseView;->sideSide:I
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v7
 
     sub-int/2addr v0, v1
 
@@ -190,19 +190,19 @@
 
     move-result v2
 
-    mul-int v1, v1, v2
+    mul-int/2addr v1, v2
 
     sub-int/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$QualityChooseView;->gapSize:I
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v7
 
     sub-int/2addr v0, v1
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$QualityChooseView;->sideSide:I
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v7
 
     sub-int/2addr v0, v1
 
@@ -226,7 +226,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v10, 0x0
+    move v10, v0
 
     .line 17251
     :goto_1
@@ -245,7 +245,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer$QualityChooseView;->gapSize:I
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/2addr v2, v7
 
     add-int/2addr v1, v2
 
@@ -253,7 +253,7 @@
 
     add-int/2addr v1, v2
 
-    mul-int v1, v1, v10
+    mul-int/2addr v1, v10
 
     add-int/2addr v0, v1
 
@@ -358,7 +358,7 @@
     goto :goto_4
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 17264
     :goto_4
@@ -608,7 +608,7 @@
 
     :cond_4
     :goto_0
-    const/4 p1, 0x0
+    move p1, v3
 
     .line 17213
     :goto_1
@@ -635,7 +635,7 @@
 
     add-int/2addr v7, v8
 
-    mul-int v7, v7, p1
+    mul-int/2addr v7, p1
 
     add-int/2addr v1, v7
 

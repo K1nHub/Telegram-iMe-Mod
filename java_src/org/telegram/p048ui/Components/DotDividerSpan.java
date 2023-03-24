@@ -10,7 +10,7 @@ public class DotDividerSpan extends ReplacementSpan {
     int color;
 
     /* renamed from: p */
-    Paint f1707p = new Paint(1);
+    Paint f1708p = new Paint(1);
     int topPadding;
 
     @Override // android.text.style.ReplacementSpan
@@ -21,10 +21,10 @@ public class DotDividerSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         if (this.color != paint.getColor()) {
-            this.f1707p.setColor(paint.getColor());
+            this.f1708p.setColor(paint.getColor());
         }
         float dpf2 = AndroidUtilities.dpf2(3.0f) / 2.0f;
-        canvas.drawCircle(f + dpf2, ((i5 - i3) / 2) + this.topPadding, dpf2, this.f1707p);
+        canvas.drawCircle(f + dpf2, ((i5 - i3) / 2) + this.topPadding, dpf2, this.f1708p);
     }
 
     public void setTopPadding(int i) {

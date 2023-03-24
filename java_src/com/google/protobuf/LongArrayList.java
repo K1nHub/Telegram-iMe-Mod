@@ -18,6 +18,10 @@ public final class LongArrayList extends AbstractProtobufList<Long> implements I
         longArrayList.makeImmutable();
     }
 
+    public static LongArrayList emptyList() {
+        return EMPTY_LIST;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public LongArrayList() {
         this(new long[10], 0);
@@ -70,7 +74,7 @@ public final class LongArrayList extends AbstractProtobufList<Long> implements I
         return i;
     }
 
-    @Override // com.google.protobuf.Internal.ProtobufList
+    @Override // com.google.protobuf.Internal.ProtobufList, com.google.protobuf.Internal.BooleanList
     /* renamed from: mutableCopyWithCapacity */
     public Internal.ProtobufList<Long> mutableCopyWithCapacity2(int i) {
         if (i < this.size) {

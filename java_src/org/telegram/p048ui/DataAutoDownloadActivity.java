@@ -17,13 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.BottomSheet;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -101,21 +101,21 @@ public class DataAutoDownloadActivity extends BaseFragment {
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
         int i = this.currentType;
         if (i == 0) {
-            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnMobileData", C3286R.string.AutoDownloadOnMobileData));
+            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnMobileData", C3301R.string.AutoDownloadOnMobileData));
         } else if (i == 1) {
-            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnWiFiData", C3286R.string.AutoDownloadOnWiFiData));
+            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnWiFiData", C3301R.string.AutoDownloadOnWiFiData));
         } else if (i == 2) {
-            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnRoamingData", C3286R.string.AutoDownloadOnRoamingData));
+            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnRoamingData", C3301R.string.AutoDownloadOnRoamingData));
         }
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataAutoDownloadActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataAutoDownloadActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     DataAutoDownloadActivity.this.finishFragment();
@@ -166,7 +166,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
     */
     public /* synthetic */ void lambda$createView$4(final android.view.View r30, final int r31, float r32, float r33) {
         /*
-            Method dump skipped, instructions count: 1451
+            Method dump skipped, instructions count: 1450
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.DataAutoDownloadActivity.lambda$createView$4(android.view.View, int, float, float):void");
@@ -459,7 +459,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                 if (i == DataAutoDownloadActivity.this.autoDownloadRow) {
                     textCheckCell.setDrawCheckRipple(true);
-                    textCheckCell.setTextAndCheck(LocaleController.getString("AutoDownloadMedia", C3286R.string.AutoDownloadMedia), DataAutoDownloadActivity.this.typePreset.enabled, false);
+                    textCheckCell.setTextAndCheck(LocaleController.getString("AutoDownloadMedia", C3301R.string.AutoDownloadMedia), DataAutoDownloadActivity.this.typePreset.enabled, false);
                     textCheckCell.setTag(DataAutoDownloadActivity.this.typePreset.enabled ? "windowBackgroundChecked" : "windowBackgroundUnchecked");
                     textCheckCell.setBackgroundColor(Theme.getColor(DataAutoDownloadActivity.this.typePreset.enabled ? "windowBackgroundChecked" : "windowBackgroundUnchecked"));
                 }
@@ -467,12 +467,12 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i != DataAutoDownloadActivity.this.usageHeaderRow) {
                     if (i == DataAutoDownloadActivity.this.typeHeaderRow) {
-                        headerCell.setText(LocaleController.getString("AutoDownloadTypes", C3286R.string.AutoDownloadTypes));
+                        headerCell.setText(LocaleController.getString("AutoDownloadTypes", C3301R.string.AutoDownloadTypes));
                         return;
                     }
                     return;
                 }
-                headerCell.setText(LocaleController.getString("AutoDownloadDataUsage", C3286R.string.AutoDownloadDataUsage));
+                headerCell.setText(LocaleController.getString("AutoDownloadDataUsage", C3301R.string.AutoDownloadDataUsage));
             } else if (itemViewType == 3) {
                 DataAutoDownloadActivity.this.updatePresetChoseView((SlideChooseView) viewHolder.itemView);
             } else if (itemViewType != 4) {
@@ -483,22 +483,22 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 if (i != DataAutoDownloadActivity.this.typeSectionRow) {
                     if (i == DataAutoDownloadActivity.this.autoDownloadSectionRow) {
                         if (DataAutoDownloadActivity.this.usageHeaderRow == -1) {
-                            textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                            textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                             if (DataAutoDownloadActivity.this.currentType != 0) {
                                 if (DataAutoDownloadActivity.this.currentType != 1) {
                                     if (DataAutoDownloadActivity.this.currentType == 2) {
-                                        textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnRoamingDataInfo", C3286R.string.AutoDownloadOnRoamingDataInfo));
+                                        textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnRoamingDataInfo", C3301R.string.AutoDownloadOnRoamingDataInfo));
                                     }
                                 } else {
-                                    textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnWiFiDataInfo", C3286R.string.AutoDownloadOnWiFiDataInfo));
+                                    textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnWiFiDataInfo", C3301R.string.AutoDownloadOnWiFiDataInfo));
                                 }
                             } else {
-                                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnMobileDataInfo", C3286R.string.AutoDownloadOnMobileDataInfo));
+                                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnMobileDataInfo", C3301R.string.AutoDownloadOnMobileDataInfo));
                             }
                             textInfoPrivacyCell.setImportantForAccessibility(1);
                             return;
                         }
-                        textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                         textInfoPrivacyCell.setText(null);
                         textInfoPrivacyCell.setFixedSize(12);
                         if (Build.VERSION.SDK_INT >= 19) {
@@ -511,22 +511,22 @@ public class DataAutoDownloadActivity extends BaseFragment {
                     }
                     return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadAudioInfo", C3286R.string.AutoDownloadAudioInfo));
-                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadAudioInfo", C3301R.string.AutoDownloadAudioInfo));
+                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider, "windowBackgroundGrayShadow"));
                 textInfoPrivacyCell.setFixedSize(0);
                 textInfoPrivacyCell.setImportantForAccessibility(1);
             } else {
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) viewHolder.itemView;
                 if (i != DataAutoDownloadActivity.this.photosRow) {
                     if (i == DataAutoDownloadActivity.this.videosRow) {
-                        string = LocaleController.getString("AutoDownloadVideos", C3286R.string.AutoDownloadVideos);
+                        string = LocaleController.getString("AutoDownloadVideos", C3301R.string.AutoDownloadVideos);
                         i2 = 4;
                     } else {
                         i2 = 8;
-                        string = LocaleController.getString("AutoDownloadFiles", C3286R.string.AutoDownloadFiles);
+                        string = LocaleController.getString("AutoDownloadFiles", C3301R.string.AutoDownloadFiles);
                     }
                 } else {
-                    string = LocaleController.getString("AutoDownloadPhotos", C3286R.string.AutoDownloadPhotos);
+                    string = LocaleController.getString("AutoDownloadPhotos", C3301R.string.AutoDownloadPhotos);
                     i2 = 1;
                 }
                 DownloadController.Preset currentMobilePreset = DataAutoDownloadActivity.this.currentType == 0 ? DownloadController.getInstance(((BaseFragment) DataAutoDownloadActivity.this).currentAccount).getCurrentMobilePreset() : DataAutoDownloadActivity.this.currentType == 1 ? DownloadController.getInstance(((BaseFragment) DataAutoDownloadActivity.this).currentAccount).getCurrentWiFiPreset() : DownloadController.getInstance(((BaseFragment) DataAutoDownloadActivity.this).currentAccount).getCurrentRoamingPreset();
@@ -544,13 +544,13 @@ public class DataAutoDownloadActivity extends BaseFragment {
                             sb2.append(", ");
                         }
                         if (i3 == 0) {
-                            sb2.append(LocaleController.getString("AutoDownloadContacts", C3286R.string.AutoDownloadContacts));
+                            sb2.append(LocaleController.getString("AutoDownloadContacts", C3301R.string.AutoDownloadContacts));
                         } else if (i3 == 1) {
-                            sb2.append(LocaleController.getString("AutoDownloadPm", C3286R.string.AutoDownloadPm));
+                            sb2.append(LocaleController.getString("AutoDownloadPm", C3301R.string.AutoDownloadPm));
                         } else if (i3 == 2) {
-                            sb2.append(LocaleController.getString("AutoDownloadGroups", C3286R.string.AutoDownloadGroups));
+                            sb2.append(LocaleController.getString("AutoDownloadGroups", C3301R.string.AutoDownloadGroups));
                         } else if (i3 == 3) {
-                            sb2.append(LocaleController.getString("AutoDownloadChannels", C3286R.string.AutoDownloadChannels));
+                            sb2.append(LocaleController.getString("AutoDownloadChannels", C3301R.string.AutoDownloadChannels));
                         }
                         i4++;
                     }
@@ -559,19 +559,19 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 if (i4 == 4) {
                     sb2.setLength(0);
                     if (i == DataAutoDownloadActivity.this.photosRow) {
-                        sb2.append(LocaleController.getString("AutoDownloadOnAllChats", C3286R.string.AutoDownloadOnAllChats));
+                        sb2.append(LocaleController.getString("AutoDownloadOnAllChats", C3301R.string.AutoDownloadOnAllChats));
                     } else {
-                        sb2.append(LocaleController.formatString("AutoDownloadUpToOnAllChats", C3286R.string.AutoDownloadUpToOnAllChats, AndroidUtilities.formatFileSize(j)));
+                        sb2.append(LocaleController.formatString("AutoDownloadUpToOnAllChats", C3301R.string.AutoDownloadUpToOnAllChats, AndroidUtilities.formatFileSize(j)));
                     }
                 } else if (i4 != 0) {
                     if (i == DataAutoDownloadActivity.this.photosRow) {
-                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnFor", C3286R.string.AutoDownloadOnFor, sb2.toString()));
+                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnFor", C3301R.string.AutoDownloadOnFor, sb2.toString()));
                     } else {
-                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnUpToFor", C3286R.string.AutoDownloadOnUpToFor, AndroidUtilities.formatFileSize(j), sb2.toString()));
+                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnUpToFor", C3301R.string.AutoDownloadOnUpToFor, AndroidUtilities.formatFileSize(j), sb2.toString()));
                     }
                     sb2 = sb;
                 } else {
-                    sb2.append(LocaleController.getString("AutoDownloadOff", C3286R.string.AutoDownloadOff));
+                    sb2.append(LocaleController.getString("AutoDownloadOff", C3301R.string.AutoDownloadOff));
                 }
                 if (DataAutoDownloadActivity.this.animateChecked) {
                     notificationsCheckCell.setChecked(i4 != 0);
@@ -654,7 +654,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 slideChooseView = notificationsCheckCell;
             } else {
                 View textInfoPrivacyCell = new TextInfoPrivacyCell(this.mContext);
-                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3301R.C3303drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                 slideChooseView = textInfoPrivacyCell;
             }
             slideChooseView.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
@@ -685,13 +685,13 @@ public class DataAutoDownloadActivity extends BaseFragment {
         for (int i = 0; i < this.presets.size(); i++) {
             DownloadController.Preset preset = this.presets.get(i);
             if (preset == this.lowPreset) {
-                strArr[i] = LocaleController.getString("AutoDownloadLow", C3286R.string.AutoDownloadLow);
+                strArr[i] = LocaleController.getString("AutoDownloadLow", C3301R.string.AutoDownloadLow);
             } else if (preset == this.mediumPreset) {
-                strArr[i] = LocaleController.getString("AutoDownloadMedium", C3286R.string.AutoDownloadMedium);
+                strArr[i] = LocaleController.getString("AutoDownloadMedium", C3301R.string.AutoDownloadMedium);
             } else if (preset == this.highPreset) {
-                strArr[i] = LocaleController.getString("AutoDownloadHigh", C3286R.string.AutoDownloadHigh);
+                strArr[i] = LocaleController.getString("AutoDownloadHigh", C3301R.string.AutoDownloadHigh);
             } else {
-                strArr[i] = LocaleController.getString("AutoDownloadCustom", C3286R.string.AutoDownloadCustom);
+                strArr[i] = LocaleController.getString("AutoDownloadCustom", C3301R.string.AutoDownloadCustom);
             }
         }
         slideChooseView.setOptions(this.selectedPreset, strArr);

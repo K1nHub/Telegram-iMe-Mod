@@ -240,19 +240,19 @@
 
     ushr-long v0, p0, v0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-static {v1, p2, p3}, Lorg/bouncycastle/util/Pack;->intToBigEndian(I[BI)V
+    invoke-static {v0, p2, p3}, Lorg/bouncycastle/util/Pack;->intToBigEndian(I[BI)V
 
     const-wide v0, 0xffffffffL
 
     and-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
     add-int/lit8 p3, p3, 0x4
 
-    invoke-static {p1, p2, p3}, Lorg/bouncycastle/util/Pack;->intToBigEndian(I[BI)V
+    invoke-static {p0, p2, p3}, Lorg/bouncycastle/util/Pack;->intToBigEndian(I[BI)V
 
     return-void
 .end method
@@ -264,19 +264,19 @@
 
     and-long/2addr v0, p0
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    invoke-static {v1, p2, p3}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
+    invoke-static {v0, p2, p3}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
 
     const/16 v0, 0x20
 
     ushr-long/2addr p0, v0
 
-    long-to-int p1, p0
+    long-to-int p0, p0
 
     add-int/lit8 p3, p3, 0x4
 
-    invoke-static {p1, p2, p3}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
+    invoke-static {p0, p2, p3}, Lorg/bouncycastle/util/Pack;->intToLittleEndian(I[BI)V
 
     return-void
 .end method

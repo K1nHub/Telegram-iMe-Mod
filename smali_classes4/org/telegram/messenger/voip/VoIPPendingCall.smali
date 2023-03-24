@@ -259,12 +259,12 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     iget-object v5, p0, Lorg/telegram/messenger/voip/VoIPPendingCall;->activity:Landroid/app/Activity;

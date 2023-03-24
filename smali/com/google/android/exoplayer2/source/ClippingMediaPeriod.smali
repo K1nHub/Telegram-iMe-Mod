@@ -71,7 +71,7 @@
 .end method
 
 .method private clipSeekParameters(JLcom/google/android/exoplayer2/SeekParameters;)Lcom/google/android/exoplayer2/SeekParameters;
-    .locals 9
+    .locals 8
 
     .line 252
     iget-wide v0, p3, Lcom/google/android/exoplayer2/SeekParameters;->toleranceBeforeUs:J
@@ -95,9 +95,9 @@
 
     const-wide/high16 v6, -0x8000000000000000L
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-nez v8, :cond_0
+    if-nez v6, :cond_0
 
     const-wide p1, 0x7fffffffffffffffL
 
@@ -121,15 +121,15 @@
     .line 260
     iget-wide v2, p3, Lcom/google/android/exoplayer2/SeekParameters;->toleranceBeforeUs:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     iget-wide v2, p3, Lcom/google/android/exoplayer2/SeekParameters;->toleranceAfterUs:J
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     return-object p3
 
@@ -143,25 +143,25 @@
 .end method
 
 .method private static shouldKeepInitialDiscontinuity(J[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long p0, p0, v0
 
-    cmp-long v3, p0, v1
+    const/4 p1, 0x0
 
-    if-eqz v3, :cond_1
+    if-eqz p0, :cond_1
 
     .line 280
     array-length p0, p2
 
-    const/4 p1, 0x0
+    move v0, p1
 
     :goto_0
-    if-ge p1, p0, :cond_1
+    if-ge v0, p0, :cond_1
 
-    aget-object v1, p2, p1
+    aget-object v1, p2, v0
 
     if-eqz v1, :cond_0
 
@@ -186,12 +186,12 @@
     return p0
 
     :cond_0
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    return v0
+    return p1
 .end method
 
 
@@ -271,9 +271,9 @@
 
     if-eqz v6, :cond_0
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-ltz v6, :cond_0
+    if-ltz v4, :cond_0
 
     goto :goto_0
 
@@ -308,9 +308,9 @@
 
     if-eqz v6, :cond_0
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-ltz v6, :cond_0
+    if-ltz v4, :cond_0
 
     goto :goto_0
 
@@ -359,16 +359,16 @@
 .end method
 
 .method isPendingInitialDiscontinuity()Z
-    .locals 5
+    .locals 4
 
     .line 248
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->pendingInitialDiscontinuityPositionUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -523,45 +523,45 @@
     :cond_2
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->startUs:J
 
-    const/4 v2, 0x1
+    cmp-long v0, v3, v0
 
-    const/4 v5, 0x0
+    const/4 v1, 0x1
 
-    cmp-long v6, v3, v0
+    const/4 v2, 0x0
 
-    if-ltz v6, :cond_3
+    if-ltz v0, :cond_3
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     .line 173
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->endUs:J
+    iget-wide v5, p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->endUs:J
 
-    const-wide/high16 v6, -0x8000000000000000L
+    const-wide/high16 v7, -0x8000000000000000L
 
-    cmp-long v8, v0, v6
+    cmp-long v0, v5, v7
 
-    if-eqz v8, :cond_5
+    if-eqz v0, :cond_5
 
-    cmp-long v6, v3, v0
+    cmp-long v0, v3, v5
 
-    if-gtz v6, :cond_4
+    if-gtz v0, :cond_4
 
     goto :goto_1
 
     :cond_4
-    const/4 v2, 0x0
+    move v1, v2
 
     :cond_5
     :goto_1
-    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     return-wide v3
 .end method
@@ -578,7 +578,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .locals 6
+    .locals 5
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -592,7 +592,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_1
@@ -617,28 +617,28 @@
 
     move-result-wide v0
 
-    cmp-long v3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-eqz v3, :cond_2
+    if-eqz p1, :cond_2
 
     .line 196
     iget-wide p1, p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->startUs:J
 
-    cmp-long v3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-ltz v3, :cond_3
+    if-ltz p1, :cond_3
 
     iget-wide p1, p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->endUs:J
 
     const-wide/high16 v3, -0x8000000000000000L
 
-    cmp-long v5, p1, v3
+    cmp-long v3, p1, v3
 
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
-    cmp-long v3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-gtz v3, :cond_3
+    if-gtz p1, :cond_3
 
     :cond_2
     const/4 v2, 0x1
@@ -670,7 +670,7 @@
 
     const/4 v10, 0x0
 
-    const/4 v2, 0x0
+    move v2, v10
 
     .line 121
     :goto_0
@@ -764,26 +764,26 @@
     .line 134
     iget-wide v4, v0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->startUs:J
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-ltz v6, :cond_3
+    if-ltz v4, :cond_3
 
     iget-wide v4, v0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->endUs:J
 
     const-wide/high16 v6, -0x8000000000000000L
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-eqz v8, :cond_4
+    if-eqz v6, :cond_4
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-gtz v6, :cond_3
+    if-gtz v4, :cond_3
 
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v10
 
     goto :goto_3
 

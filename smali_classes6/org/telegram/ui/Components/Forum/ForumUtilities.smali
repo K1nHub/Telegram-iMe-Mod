@@ -124,9 +124,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     return-void
 
@@ -786,11 +786,6 @@
 
     goto/16 :goto_4
 
-    :catch_0
-    nop
-
-    goto/16 :goto_4
-
     .line 226
     :cond_4
     iget-wide v6, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J
@@ -869,7 +864,7 @@
 
     const v6, 0x3f266666    # 0.65f
 
-    mul-float p2, p2, v6
+    mul-float/2addr p2, v6
 
     float-to-int p2, p2
 
@@ -879,7 +874,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     float-to-int v6, v7
 
@@ -962,6 +957,7 @@
     invoke-virtual {v0, p1, v5, v4, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 250
+    :catch_0
     :goto_4
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->title:Ljava/lang/String;
 
@@ -1351,7 +1347,7 @@
 .end method
 
 .method public static switchAllFragmentsInStackToForum(JLorg/telegram/ui/ActionBar/INavigationLayout;)V
-    .locals 6
+    .locals 5
 
     .line 365
     invoke-interface {p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -1377,9 +1373,9 @@
 
     neg-long v3, v3
 
-    cmp-long v5, v3, p0
+    cmp-long v3, v3, p0
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     .line 369
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

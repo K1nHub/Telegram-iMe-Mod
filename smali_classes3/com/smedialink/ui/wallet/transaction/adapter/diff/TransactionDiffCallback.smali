@@ -146,7 +146,7 @@
     if-eqz v0, :cond_0
 
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_1
 
@@ -236,9 +236,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, v3, p1
+    cmp-long p1, v3, p1
 
-    if-nez v0, :cond_3
+    if-nez p1, :cond_3
 
     goto :goto_0
 

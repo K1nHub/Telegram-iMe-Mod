@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkType.kt\ncom/smedialink/storage/domain/model/crypto/NetworkType$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,140:1\n3792#2:141\n4307#2,2:142\n3792#2:144\n4307#2,2:145\n1#3:147\n*S KotlinDebug\n*F\n+ 1 NetworkType.kt\ncom/smedialink/storage/domain/model/crypto/NetworkType$Companion\n*L\n121#1:141\n121#1:142,2\n125#1:144\n125#1:145,2\n*E\n"
+    value = "SMAP\nNetworkType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkType.kt\ncom/smedialink/storage/domain/model/crypto/NetworkType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,153:1\n1#2:154\n3792#3:155\n4307#3,2:156\n3792#3:158\n4307#3,2:159\n3792#3:161\n4307#3,2:162\n*S KotlinDebug\n*F\n+ 1 NetworkType.kt\ncom/smedialink/storage/domain/model/crypto/NetworkType$Companion\n*L\n136#1:155\n136#1:156,2\n139#1:158\n139#1:159,2\n142#1:161\n142#1:162,2\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 114
+    .line 127
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,21 +41,21 @@
 .method public final fromChainId(J)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
     .locals 1
 
-    .line 132
+    .line 145
     sget-object v0, Lcom/smedialink/storage/domain/model/crypto/Chain;->Companion:Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;
 
     invoke-virtual {v0, p1, p2}, Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;->getChainById(J)Lcom/smedialink/storage/domain/model/crypto/Chain;
 
     move-result-object p1
 
-    .line 133
+    .line 146
     instance-of p2, p1, Lcom/smedialink/storage/domain/model/crypto/Chain$Ethereum$Main;
 
     const/4 v0, 0x1
 
     if-eqz p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_0
 
@@ -69,13 +69,13 @@
 
     goto :goto_4
 
-    .line 134
+    .line 147
     :cond_1
     instance-of p2, p1, Lcom/smedialink/storage/domain/model/crypto/Chain$BSC$Main;
 
     if-eqz p2, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_1
 
@@ -89,13 +89,13 @@
 
     goto :goto_4
 
-    .line 135
+    .line 148
     :cond_3
     instance-of p2, p1, Lcom/smedialink/storage/domain/model/crypto/Chain$Polygon$Main;
 
     if-eqz p2, :cond_4
 
-    const/4 p2, 0x1
+    move p2, v0
 
     goto :goto_2
 
@@ -109,7 +109,7 @@
 
     goto :goto_4
 
-    .line 136
+    .line 149
     :cond_5
     instance-of p2, p1, Lcom/smedialink/storage/domain/model/crypto/Chain$Fantom$Main;
 
@@ -127,7 +127,7 @@
 
     goto :goto_4
 
-    .line 137
+    .line 150
     :cond_7
     sget-object p1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->ETHEREUM:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
@@ -146,7 +146,7 @@
         }
     .end annotation
 
-    .line 117
+    .line 133
     invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->values()[Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -169,7 +169,7 @@
         }
     .end annotation
 
-    .line 125
+    .line 142
     invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->values()[Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -189,7 +189,7 @@
 
     aget-object v4, v0, v3
 
-    .line 125
+    .line 142
     invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->isEVM()Z
 
     move-result v5
@@ -205,6 +205,74 @@
     goto :goto_0
 
     :cond_1
+    return-object v1
+.end method
+
+.method public final getNetworksByBlockchain(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Ljava/util/List;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/smedialink/storage/domain/model/crypto/BlockchainType;",
+            ")",
+            "Ljava/util/List<",
+            "Lcom/smedialink/storage/domain/model/crypto/NetworkType;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "blockchainType"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 136
+    invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->values()[Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+
+    move-result-object v0
+
+    .line 3792
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 4307
+    array-length v2, v0
+
+    const/4 v3, 0x0
+
+    move v4, v3
+
+    :goto_0
+    if-ge v4, v2, :cond_2
+
+    aget-object v5, v0, v4
+
+    .line 136
+    invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object v6
+
+    if-ne v6, p1, :cond_0
+
+    const/4 v6, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    move v6, v3
+
+    :goto_1
+    if-eqz v6, :cond_1
+
+    .line 4307
+    invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_2
     return-object v1
 .end method
 
@@ -227,7 +295,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 121
+    .line 139
     invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->values()[Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -247,7 +315,7 @@
 
     aget-object v4, v0, v3
 
-    .line 121
+    .line 139
     invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v5
@@ -277,7 +345,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 129
+    .line 131
     invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->values()[Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0

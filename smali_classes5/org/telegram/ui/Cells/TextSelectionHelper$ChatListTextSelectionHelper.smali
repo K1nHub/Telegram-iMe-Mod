@@ -160,7 +160,7 @@
     return-void
 
     :cond_3
-    const/4 p3, 0x0
+    move p3, v1
 
     .line 1920
     :goto_1
@@ -400,13 +400,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 2102
-    :goto_0
+    :catch_0
     iget v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedCellId:I
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -905,7 +900,7 @@
     goto :goto_1
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_1
     neg-int p1, p1
@@ -920,7 +915,7 @@
     return-void
 
     :cond_6
-    const/4 p3, 0x0
+    move p3, v4
 
     .line 1968
     :goto_2
@@ -1109,7 +1104,7 @@
     :cond_4
     if-gez p2, :cond_5
 
-    const/4 p2, 0x1
+    move p2, v1
 
     :cond_5
     int-to-float v2, p2
@@ -1240,7 +1235,7 @@
     goto :goto_2
 
     :cond_9
-    const/4 v0, -0x1
+    move v0, v7
 
     :goto_3
     if-ltz v0, :cond_a
@@ -1769,12 +1764,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
-
     :catch_0
-    nop
-
-    :goto_2
     const/4 v0, 0x0
 
     .line 1780

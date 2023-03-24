@@ -66,7 +66,7 @@
 
     add-int/lit8 v4, v3, -0x1
 
-    mul-int v2, v2, v4
+    mul-int/2addr v2, v4
 
     .line 1999
     iget-object v4, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$maxTextWidth:[I
@@ -75,7 +75,7 @@
 
     aget v4, v4, v5
 
-    mul-int v4, v4, v3
+    mul-int/2addr v4, v3
 
     add-int/2addr v4, v2
 
@@ -91,7 +91,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_0
     if-ge v1, v0, :cond_4
@@ -150,7 +150,7 @@
 
     move-result v2
 
-    const/4 v4, 0x0
+    move v4, v5
 
     :goto_1
     if-ge v4, v2, :cond_1
@@ -217,7 +217,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_2
     if-ge v1, v0, :cond_4
@@ -275,7 +275,7 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :goto_3
     if-ge v1, v0, :cond_4

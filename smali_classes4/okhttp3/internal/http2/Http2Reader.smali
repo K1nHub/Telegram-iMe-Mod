@@ -132,12 +132,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     and-int/lit8 v3, p3, 0x20
@@ -147,7 +147,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-nez v2, :cond_3
@@ -410,7 +410,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     and-int/lit8 v2, p3, 0x8
@@ -566,15 +566,15 @@
 
     const-wide v1, 0x80000000L
 
-    long-to-int v2, v1
+    long-to-int v1, v1
 
-    and-int v1, v0, v2
+    and-int/2addr v1, v0
 
     const/4 v2, 0x1
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
@@ -1001,7 +1001,7 @@
     throw p1
 
     :cond_7
-    const/4 v3, 0x4
+    move v3, v6
 
     goto :goto_1
 
@@ -1073,7 +1073,7 @@
 .end method
 
 .method private final readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;III)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1099,9 +1099,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p2, v0
+    cmp-long v0, p2, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 311
     invoke-interface {p1, p4, p2, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->windowUpdate(IJ)V

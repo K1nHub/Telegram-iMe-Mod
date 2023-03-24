@@ -820,7 +820,7 @@
     .line 203
     div-int/lit8 v2, p1, 0x64
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
@@ -883,7 +883,7 @@
 
     int-to-double v2, v0
 
-    mul-double v2, v2, p3
+    mul-double/2addr v2, p3
 
     double-to-int v0, v2
 
@@ -925,9 +925,9 @@
     :cond_0
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
-    cmpl-double v1, p3, v3
+    cmpl-double p3, p3, v3
 
-    if-lez v1, :cond_1
+    if-lez p3, :cond_1
 
     const/4 p3, 0x0
 
@@ -1597,12 +1597,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-static {v0}, Lorg/webrtc/audio/WebRtcAudioTrack;->assertTrue(Z)V
@@ -1612,12 +1612,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     invoke-static {v0}, Lorg/webrtc/audio/WebRtcAudioTrack;->assertTrue(Z)V
@@ -1751,7 +1751,7 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 

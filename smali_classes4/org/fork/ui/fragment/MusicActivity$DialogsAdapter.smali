@@ -282,7 +282,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
+
+    if-lez v2, :cond_1
 
     .line 469
     iget-object v2, p0, Lorg/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lorg/fork/ui/fragment/MusicActivity;
@@ -290,8 +292,6 @@
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
-
-    if-lez v4, :cond_1
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -304,6 +304,12 @@
     goto :goto_0
 
     :cond_1
+    iget-object v2, p0, Lorg/fork/ui/fragment/MusicActivity$DialogsAdapter;->this$0:Lorg/fork/ui/fragment/MusicActivity;
+
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
     neg-long v3, v0
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -478,7 +484,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, -0x1
+    move v0, v1
 
     .line 461
     :goto_1

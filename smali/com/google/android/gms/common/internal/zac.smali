@@ -50,10 +50,8 @@
 
     return-object p0
 
-    :catch_0
-    nop
-
     .line 3
+    :catch_0
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object p0

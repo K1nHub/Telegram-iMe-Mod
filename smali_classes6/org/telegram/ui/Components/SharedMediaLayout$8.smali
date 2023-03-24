@@ -204,7 +204,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 1887
     :goto_1
@@ -237,9 +237,9 @@
 
     iget-object v6, v4, Lorg/telegram/ui/Components/SharedMediaLayout;->photoVideoOptionsItem:Landroid/widget/ImageView;
 
-    const/4 v7, 0x4
-
     cmpl-float v1, v1, v2
+
+    const/4 v7, 0x4
 
     if-eqz v1, :cond_5
 
@@ -252,13 +252,13 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_3
 
     :cond_5
     :goto_2
-    const/4 v1, 0x4
+    move v1, v7
 
     :goto_3
     invoke-virtual {v6, v1}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -301,20 +301,20 @@
 
     move v1, p1
 
-    move v3, v1
-
-    goto :goto_5
+    goto :goto_4
 
     :cond_6
     move v1, p1
 
-    goto :goto_4
+    move v3, v2
+
+    goto :goto_5
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_4
-    const/4 v3, 0x0
+    move v3, v1
 
     .line 1901
     :goto_5
@@ -377,13 +377,13 @@
     goto :goto_6
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_7
 
     :cond_a
     :goto_6
-    const/4 v1, 0x4
+    move v1, v7
 
     :goto_7
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -417,7 +417,7 @@
     if-nez v1, :cond_c
 
     :cond_b
-    const/4 v0, 0x4
+    move v0, v7
 
     :cond_c
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V

@@ -261,12 +261,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v4, 0x5
+    move v4, v9
 
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x3
+    move v4, v10
 
     :goto_4
     or-int/lit8 v4, v4, 0x30
@@ -275,19 +275,19 @@
 
     if-eqz v0, :cond_5
 
-    const/4 v6, 0x0
+    move v6, v1
 
     goto :goto_5
 
     :cond_5
-    const/16 v6, 0xf
+    move v6, v5
 
     :goto_5
     const/16 v7, 0xc
 
     if-eqz v0, :cond_6
 
-    const/16 v1, 0xf
+    move v1, v5
 
     :cond_6
     const/4 v8, 0x0
@@ -359,12 +359,12 @@
 
     if-eqz p3, :cond_9
 
-    const/4 p3, 0x5
+    move p3, v9
 
     goto :goto_8
 
     :cond_9
-    const/4 p3, 0x3
+    move p3, v10
 
     :goto_8
     invoke-virtual {p2, p3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -391,12 +391,12 @@
 
     if-eqz p3, :cond_a
 
-    const/4 v3, 0x5
+    move v3, v9
 
     goto :goto_9
 
     :cond_a
-    const/4 v3, 0x3
+    move v3, v10
 
     :goto_9
     or-int/lit8 v3, v3, 0x30
@@ -405,24 +405,24 @@
 
     if-eqz p3, :cond_b
 
-    const/16 v4, 0x10
+    move v4, v0
 
     goto :goto_a
 
     :cond_b
-    const/16 v4, 0x49
+    move v4, v8
 
     :goto_a
     const/16 v5, 0xc
 
     if-eqz p3, :cond_c
 
-    const/16 v6, 0x49
+    move v6, v8
 
     goto :goto_b
 
     :cond_c
-    const/16 v6, 0x10
+    move v6, v0
 
     :goto_b
     const/4 v7, 0x0
@@ -463,12 +463,12 @@
 
     if-eqz p2, :cond_d
 
-    const/4 p2, 0x5
+    move p2, v9
 
     goto :goto_c
 
     :cond_d
-    const/4 p2, 0x3
+    move p2, v10
 
     :goto_c
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
@@ -487,31 +487,31 @@
     goto :goto_d
 
     :cond_e
-    const/4 v9, 0x3
+    move v9, v10
 
     :goto_d
     or-int/lit8 v3, v9, 0x30
 
     if-eqz p2, :cond_f
 
-    const/16 v4, 0x10
+    move v4, v0
 
     goto :goto_e
 
     :cond_f
-    const/16 v4, 0x49
+    move v4, v8
 
     :goto_e
     const/16 v5, 0x25
 
     if-eqz p2, :cond_10
 
-    const/16 v6, 0x49
+    move v6, v8
 
     goto :goto_f
 
     :cond_10
-    const/16 v6, 0x10
+    move v6, v0
 
     :goto_f
     const/4 v7, 0x0
@@ -1010,12 +1010,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v2
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
@@ -1025,12 +1025,12 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v2
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
@@ -1043,7 +1043,7 @@
     goto :goto_2
 
     :cond_2
-    const/high16 v1, 0x3f000000    # 0.5f
+    move v1, v2
 
     :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V

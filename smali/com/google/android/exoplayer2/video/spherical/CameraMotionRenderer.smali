@@ -241,9 +241,9 @@
 
     add-long/2addr v0, p1
 
-    cmp-long v2, p3, v0
+    cmp-long p3, p3, v0
 
-    if-gez v2, :cond_4
+    if-gez p3, :cond_4
 
     .line 95
     iget-object p3, p0, Lcom/google/android/exoplayer2/video/spherical/CameraMotionRenderer;->buffer:Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;

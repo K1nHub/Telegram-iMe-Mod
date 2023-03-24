@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CancelMappingKt {
     public static final CryptoCancelMetadata mapToDomain(GetCancelTransactionDataResponse getCancelTransactionDataResponse) {
         Intrinsics.checkNotNullParameter(getCancelTransactionDataResponse, "<this>");
-        TransactionParams mapToDomain = CryptoWalletMappingKt.mapToDomain(getCancelTransactionDataResponse.getTransactionParams());
+        TransactionParams.Ether mapToDomain = CryptoWalletMappingKt.mapToDomain(getCancelTransactionDataResponse.getTransactionParams());
         TokenCode map = TokenCode.Companion.map(getCancelTransactionDataResponse.getFeeTokenCode());
         String value = getCancelTransactionDataResponse.getValue();
         if (value == null) {

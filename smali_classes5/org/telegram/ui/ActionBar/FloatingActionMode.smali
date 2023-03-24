@@ -717,13 +717,13 @@
 .end method
 
 .method public hide(J)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     .line 203
     invoke-static {}, Landroid/view/ViewConfiguration;->getDefaultActionModeHideDuration()J
@@ -747,9 +747,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gtz v2, :cond_1
+    if-gtz v0, :cond_1
 
     .line 208
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;

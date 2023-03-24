@@ -55,12 +55,12 @@
 
     if-lez p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 393
     :goto_0
@@ -80,12 +80,12 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_1
     if-eq p1, v2, :cond_5
@@ -105,7 +105,7 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v4
 
     .line 396
     :cond_2
@@ -124,12 +124,12 @@
 
     if-eqz p1, :cond_3
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v4
 
     goto :goto_2
 
     :cond_3
-    const v5, 0x3dcccccd    # 0.1f
+    move v5, v3
 
     .line 398
     :goto_2
@@ -142,7 +142,7 @@
     goto :goto_3
 
     :cond_4
-    const v4, 0x3dcccccd    # 0.1f
+    move v4, v3
 
     .line 399
     :goto_3

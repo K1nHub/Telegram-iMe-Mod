@@ -157,12 +157,12 @@
 
     if-eqz p2, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_2
     if-nez p1, :cond_3
@@ -180,12 +180,12 @@
 
     if-nez p1, :cond_3
 
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_3
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 76
     :goto_3
@@ -201,12 +201,12 @@
 
     if-eqz p3, :cond_4
 
-    const/4 p3, 0x1
+    move p3, v1
 
     goto :goto_4
 
     :cond_4
-    const/4 p3, 0x0
+    move p3, v0
 
     .line 77
     :goto_4
@@ -221,7 +221,7 @@
     goto :goto_5
 
     :cond_5
-    const/4 v1, 0x0
+    move v1, v0
 
     :cond_6
     :goto_5
@@ -354,7 +354,7 @@
 
     const/high16 v7, 0x422c0000    # 43.0f
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -438,7 +438,7 @@
 
     const/high16 v7, 0x41f80000    # 31.0f
 
-    mul-float v8, v8, v7
+    mul-float/2addr v8, v7
 
     float-to-int v7, v8
 
@@ -605,7 +605,7 @@
 
     :cond_4
     :goto_3
-    const/16 v13, 0xcc
+    move v13, v10
 
     :goto_4
     invoke-static {v13, v3, v4, v2}, Landroid/graphics/Color;->argb(IIII)I
@@ -736,7 +736,7 @@
 
     if-nez v5, :cond_7
 
-    const/16 v14, 0xcc
+    move v14, v10
 
     goto :goto_7
 
@@ -784,7 +784,7 @@
     goto :goto_9
 
     :cond_8
-    const/4 v7, 0x2
+    move v7, v11
 
     :goto_9
     if-ge v6, v7, :cond_f
@@ -794,7 +794,7 @@
 
     if-nez v6, :cond_9
 
-    const/16 v13, 0xcc
+    move v13, v10
 
     goto :goto_a
 
@@ -853,7 +853,7 @@
     goto :goto_b
 
     :cond_a
-    const/16 v13, 0x30
+    move v13, v14
 
     :goto_b
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -892,7 +892,7 @@
     goto :goto_c
 
     :cond_b
-    const/16 v9, 0xb
+    move v9, v15
 
     :goto_c
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -955,7 +955,7 @@
     goto :goto_d
 
     :cond_d
-    const/16 v13, 0x30
+    move v13, v14
 
     :goto_d
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -992,7 +992,7 @@
     goto :goto_e
 
     :cond_e
-    const/16 v9, 0xb
+    move v9, v15
 
     :goto_e
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

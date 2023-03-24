@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final getChainById(J)Lcom/smedialink/storage/domain/model/crypto/Chain;
-    .locals 5
+    .locals 4
 
     .line 38
     invoke-direct {p0}, Lcom/smedialink/storage/domain/model/crypto/Chain$Companion;->getSupportedChains()Ljava/util/List;
@@ -96,9 +96,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, p1
+    cmp-long v2, v2, p1
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     const/4 v2, 0x1
 

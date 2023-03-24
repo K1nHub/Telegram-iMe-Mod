@@ -1,6 +1,7 @@
 package com.smedialink.storage.domain.repository.wallet;
 
 import com.smedialink.storage.domain.model.Result;
+import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.smedialink.storage.domain.model.crypto.send.TransferArgs;
@@ -22,5 +23,5 @@ public interface WalletRepository {
 
     Observable<Result<List<Transaction>>> getWalletTransactionHistory(boolean z, String str, TokenCode tokenCode, int i, NetworkType networkType);
 
-    Observable<Result<Boolean>> sendTokens(TokenCode tokenCode, TransferArgs transferArgs);
+    Observable<Result<Boolean>> sendTokens(TokenCode tokenCode, TransferArgs transferArgs, BlockchainType blockchainType);
 }

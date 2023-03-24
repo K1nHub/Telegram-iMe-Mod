@@ -135,23 +135,23 @@
     .line 205
     iget-wide v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->avatarStartTime:J
 
-    const/4 v2, 0x4
+    const-wide/16 v2, -0x1
 
-    const/4 v3, 0x2
+    cmp-long v0, v0, v2
 
-    const/4 v4, 0x5
+    const/4 v1, 0x4
 
-    const/16 v5, 0xa
+    const/4 v2, 0x2
 
-    const/4 v6, 0x0
+    const/4 v3, 0x5
 
-    const/4 v7, 0x1
+    const/16 v4, 0xa
 
-    const-wide/16 v8, -0x1
+    const/4 v5, 0x0
 
-    cmp-long v10, v0, v8
+    const/4 v6, 0x1
 
-    if-nez v10, :cond_2
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
@@ -195,28 +195,28 @@
     goto :goto_1
 
     :cond_3
-    const/16 v0, 0xa
+    move v0, v4
 
     .line 211
     :goto_1
-    iget-object v1, p0, Lorg/telegram/messenger/VideoEditedInfo;->paintPath:Ljava/lang/String;
+    iget-object v7, p0, Lorg/telegram/messenger/VideoEditedInfo;->paintPath:Ljava/lang/String;
 
-    if-eqz v1, :cond_4
+    if-eqz v7, :cond_4
 
     .line 212
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual {v7}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v1
+    move-result-object v7
 
     .line 213
-    array-length v8, v1
+    array-length v8, v7
 
     add-int/2addr v0, v8
 
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    const/4 v7, 0x0
 
     .line 217
     :goto_2
@@ -225,7 +225,7 @@
     invoke-direct {v8, v0}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
     .line 218
-    invoke-virtual {v8, v4}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
+    invoke-virtual {v8, v3}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
     .line 219
     iget-wide v9, p0, Lorg/telegram/messenger/VideoEditedInfo;->avatarStartTime:J
@@ -243,7 +243,7 @@
     if-eqz v0, :cond_9
 
     .line 222
-    invoke-virtual {v8, v7}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 223
     iget-object v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
@@ -404,10 +404,10 @@
 
     invoke-virtual {v8, v0}, Lorg/telegram/tgnet/SerializedData;->writeFloat(F)V
 
-    const/4 v0, 0x0
+    move v0, v5
 
     :goto_4
-    if-ge v0, v2, :cond_a
+    if-ge v0, v1, :cond_a
 
     if-nez v0, :cond_6
 
@@ -421,7 +421,7 @@
     goto :goto_5
 
     :cond_6
-    if-ne v0, v7, :cond_7
+    if-ne v0, v6, :cond_7
 
     .line 254
     iget-object v9, p0, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
@@ -433,7 +433,7 @@
     goto :goto_5
 
     :cond_7
-    if-ne v0, v3, :cond_8
+    if-ne v0, v2, :cond_8
 
     .line 256
     iget-object v9, p0, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
@@ -484,22 +484,22 @@
 
     .line 267
     :cond_9
-    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v5}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     :cond_a
-    if-eqz v1, :cond_b
+    if-eqz v7, :cond_b
 
     .line 270
-    invoke-virtual {v8, v7}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 271
-    invoke-virtual {v8, v1}, Lorg/telegram/tgnet/SerializedData;->writeByteArray([B)V
+    invoke-virtual {v8, v7}, Lorg/telegram/tgnet/SerializedData;->writeByteArray([B)V
 
     goto :goto_6
 
     .line 273
     :cond_b
-    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v5}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 275
     :goto_6
@@ -514,7 +514,7 @@
     if-nez v0, :cond_d
 
     .line 276
-    invoke-virtual {v8, v7}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 277
     iget-object v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
@@ -532,15 +532,15 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    move v7, v5
 
     :goto_7
-    if-ge v1, v0, :cond_c
+    if-ge v7, v0, :cond_c
 
     .line 279
     iget-object v9, p0, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -548,7 +548,7 @@
 
     invoke-static {v9, v8}, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->access$000(Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;Lorg/telegram/tgnet/SerializedData;)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_7
 
@@ -562,7 +562,7 @@
 
     .line 283
     :cond_d
-    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v5}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 285
     :goto_8
@@ -571,7 +571,7 @@
     if-eqz v0, :cond_e
 
     .line 286
-    invoke-virtual {v8, v7}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 287
     iget-object v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->cropState:Lorg/telegram/messenger/MediaController$CropState;
@@ -647,7 +647,7 @@
 
     .line 298
     :cond_e
-    invoke-virtual {v8, v6}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
+    invoke-virtual {v8, v5}, Lorg/telegram/tgnet/SerializedData;->writeByte(I)V
 
     .line 300
     :goto_9
@@ -664,7 +664,7 @@
 
     .line 305
     :goto_a
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v7, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/16 v8, 0xc
 
@@ -676,101 +676,101 @@
 
     move-result-object v9
 
-    aput-object v9, v8, v6
+    aput-object v9, v8, v5
 
     iget-wide v9, p0, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v8, v7
+    aput-object v5, v8, v6
 
-    iget v6, p0, Lorg/telegram/messenger/VideoEditedInfo;->rotationValue:I
+    iget v5, p0, Lorg/telegram/messenger/VideoEditedInfo;->rotationValue:I
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v8, v3
+    aput-object v5, v8, v2
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    iget v6, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalWidth:I
+    iget v5, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalWidth:I
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v8, v3
+    aput-object v5, v8, v2
 
-    iget v3, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalHeight:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v8, v2
-
-    iget v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
+    iget v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalHeight:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    aput-object v2, v8, v4
+    aput-object v2, v8, v1
 
-    const/4 v2, 0x6
+    iget v1, p0, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
-    iget v3, p0, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v3
+    aput-object v1, v8, v3
 
-    aput-object v3, v8, v2
+    const/4 v1, 0x6
 
-    const/4 v2, 0x7
+    iget v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
 
-    iget v3, p0, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
+    aput-object v2, v8, v1
 
-    aput-object v3, v8, v2
+    const/4 v1, 0x7
 
-    const/16 v2, 0x8
+    iget v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
 
-    iget-wide v3, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v2
 
-    move-result-object v3
+    aput-object v2, v8, v1
 
-    aput-object v3, v8, v2
+    const/16 v1, 0x8
 
-    const/16 v2, 0x9
+    iget-wide v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
 
-    iget v3, p0, Lorg/telegram/messenger/VideoEditedInfo;->framerate:I
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
+    aput-object v2, v8, v1
 
-    aput-object v3, v8, v2
+    const/16 v1, 0x9
 
-    aput-object v0, v8, v5
+    iget v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->framerate:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v8, v1
+
+    aput-object v0, v8, v4
 
     const/16 v0, 0xb
 
-    iget-object v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalPath:Ljava/lang/String;
+    iget-object v1, p0, Lorg/telegram/messenger/VideoEditedInfo;->originalPath:Ljava/lang/String;
 
-    aput-object v2, v8, v0
+    aput-object v1, v8, v0
 
     const-string v0, "-1_%d_%d_%d_%d_%d_%d_%d_%d_%d_%d_-%s_%s"
 
-    invoke-static {v1, v0, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v7, v0, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -778,7 +778,7 @@
 .end method
 
 .method public needConvert()Z
-    .locals 5
+    .locals 4
 
     .line 435
     iget-object v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
@@ -805,23 +805,23 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v4, :cond_1
+    if-gtz v0, :cond_1
 
     iget-wide v0, p0, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     iget-wide v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
@@ -985,12 +985,12 @@
 
     if-ne v2, v9, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v5
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/messenger/VideoEditedInfo;->muted:Z
@@ -1247,7 +1247,7 @@
 
     iput v8, v6, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurAngle:F
 
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     if-ge v6, v7, :cond_7
@@ -1375,7 +1375,7 @@
 
     iput-object v8, p0, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
 
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_3
     if-ge v8, v6, :cond_9
@@ -1403,12 +1403,12 @@
 
     if-ne v6, v5, :cond_a
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_4
 
     :cond_a
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_4
     iput-boolean v6, p0, Lorg/telegram/messenger/VideoEditedInfo;->isPhoto:Z
@@ -1525,7 +1525,7 @@
     invoke-virtual {v9}, Lorg/telegram/tgnet/SerializedData;->cleanup()V
 
     :cond_d
-    const/16 v4, 0xc
+    move v4, v2
 
     .line 419
     :cond_e

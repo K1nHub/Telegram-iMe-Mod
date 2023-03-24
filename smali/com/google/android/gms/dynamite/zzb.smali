@@ -225,7 +225,7 @@
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_0
     if-ge v7, v4, :cond_2

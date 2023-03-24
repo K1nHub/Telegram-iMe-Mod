@@ -400,9 +400,9 @@
 
     move-result v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    not-int p1, p2
+    not-int p1, p1
 
     and-int/lit8 p1, p1, 0x3
 
@@ -624,9 +624,9 @@
 
     move-result v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    and-int/lit8 p1, p2, 0x3
+    and-int/lit8 p1, p1, 0x3
 
     shl-int/lit8 p1, p1, 0x3
 
@@ -1562,9 +1562,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     int-to-byte p0, p0
 
@@ -1590,9 +1590,9 @@
 
     shl-long/2addr p1, v0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    ushr-int/2addr p0, p2
+    ushr-int/2addr p0, p1
 
     int-to-byte p0, p0
 

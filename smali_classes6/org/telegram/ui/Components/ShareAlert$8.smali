@@ -81,7 +81,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_1
     add-int/2addr p1, v1
@@ -95,7 +95,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_2
     return v0

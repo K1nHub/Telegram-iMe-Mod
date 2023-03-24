@@ -111,7 +111,7 @@
 
     move-result-wide v5
 
-    mul-double v5, v5, v2
+    mul-double/2addr v5, v2
 
     double-to-float v5, v5
 
@@ -129,7 +129,7 @@
 
     move-result-wide v0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float v0, v0
 
@@ -231,7 +231,7 @@
 
     const/high16 v1, 0x40b00000    # 5.5f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v2, 0x40000000    # 2.0f
 
@@ -270,7 +270,7 @@
 
     neg-float p1, p1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     const/high16 p2, 0x42c80000    # 100.0f
 

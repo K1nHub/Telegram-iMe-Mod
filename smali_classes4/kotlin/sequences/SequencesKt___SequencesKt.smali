@@ -419,14 +419,9 @@
 
     const/4 p4, -0x1
 
-    const/4 v1, -0x1
-
-    goto :goto_2
-
     :cond_3
     move v1, p4
 
-    :goto_2
     and-int/lit8 p2, p7, 0x10
 
     if-eqz p2, :cond_4

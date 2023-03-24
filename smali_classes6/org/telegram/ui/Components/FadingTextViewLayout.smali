@@ -385,9 +385,9 @@
 
     const/4 v2, -0x1
 
-    const/4 v3, 0x0
+    move v3, p2
 
-    const/4 v4, -0x1
+    move v4, v2
 
     :goto_0
     if-ge v3, p3, :cond_3
@@ -413,7 +413,7 @@
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v4, -0x1
+    move v4, v2
 
     goto :goto_1
 
@@ -485,9 +485,9 @@
 
     move-result p1
 
-    const/4 v3, 0x0
+    move v3, p2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_3
     if-ge v3, p1, :cond_8

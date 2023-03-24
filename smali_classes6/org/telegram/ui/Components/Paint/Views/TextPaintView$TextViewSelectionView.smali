@@ -130,11 +130,11 @@
 
     invoke-virtual {v7}, Landroid/graphics/Path;->rewind()V
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     add-float v7, v1, v3
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     add-float v8, v1, v0
 

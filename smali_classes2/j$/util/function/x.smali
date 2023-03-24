@@ -143,13 +143,13 @@
 
     iget v0, p0, Lj$/util/function/x;->a:I
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     packed-switch v0, :pswitch_data_0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 1
     :pswitch_0
@@ -170,13 +170,16 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x1
+    goto :goto_0
 
     :cond_0
+    move v1, v2
+
+    :goto_0
     return v1
 
     .line 3
-    :goto_0
+    :goto_1
     iget-object v0, p0, Lj$/util/function/x;->b:Lj$/util/function/Predicate;
 
     iget-object v3, p0, Lj$/util/function/x;->c:Lj$/util/function/Predicate;
@@ -186,18 +189,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     invoke-interface {v3, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
+
+    goto :goto_2
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_2
+    :goto_2
     return v1
 
     :pswitch_data_0

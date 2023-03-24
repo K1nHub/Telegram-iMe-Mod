@@ -133,7 +133,7 @@
     throw v0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v0
 
     :cond_2
     :goto_0

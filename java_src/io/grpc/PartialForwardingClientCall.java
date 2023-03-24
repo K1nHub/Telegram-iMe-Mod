@@ -2,7 +2,7 @@ package io.grpc;
 
 import com.google.common.base.MoreObjects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class PartialForwardingClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract ClientCall<?, ?> delegate();

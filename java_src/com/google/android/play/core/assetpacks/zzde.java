@@ -98,6 +98,7 @@ public final class zzde {
         Map<Integer, zzdb> map = this.zzf;
         Integer valueOf = Integer.valueOf(i);
         boolean z = true;
+        boolean z2 = false;
         if (!map.containsKey(valueOf)) {
             String zzs = zzs(bundle);
             long j = bundle.getLong(com.google.android.play.core.assetpacks.model.zzb.zza("pack_version", zzs));
@@ -111,17 +112,20 @@ public final class zzde {
                 ArrayList arrayList2 = new ArrayList();
                 for (Intent intent : zzt(parcelableArrayList)) {
                     if (intent == null) {
-                        z = false;
+                        z = z2;
                     }
                     arrayList2.add(new zzcz(z));
                     z = true;
+                    z2 = false;
                 }
                 String string2 = bundle.getString(com.google.android.play.core.assetpacks.model.zzb.zzb("uncompressed_hash_sha256", zzs, str));
                 long j3 = bundle.getLong(com.google.android.play.core.assetpacks.model.zzb.zzb("uncompressed_size", zzs, str));
                 int i3 = bundle.getInt(com.google.android.play.core.assetpacks.model.zzb.zzb("patch_format", zzs, str), 0);
                 if (i3 != 0) {
                     zzdcVar = new zzdc(str, string2, j3, arrayList2, 0, i3);
+                    z2 = false;
                 } else {
+                    z2 = false;
                     zzdcVar = new zzdc(str, string2, j3, arrayList2, bundle.getInt(com.google.android.play.core.assetpacks.model.zzb.zzb("compression_format", zzs, str), 0), 0);
                 }
                 arrayList.add(zzdcVar);

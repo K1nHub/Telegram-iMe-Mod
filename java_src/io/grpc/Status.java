@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Status {
     static final Metadata.Key<Status> CODE_KEY;
     public static final Status DEADLINE_EXCEEDED;
@@ -29,11 +29,11 @@ public final class Status {
     private static final List<Status> STATUS_LIST = buildStatusList();
 
     /* renamed from: OK */
-    public static final Status f427OK = Code.OK.toStatus();
+    public static final Status f428OK = Code.OK.toStatus();
     public static final Status CANCELLED = Code.CANCELLED.toStatus();
     public static final Status UNKNOWN = Code.UNKNOWN.toStatus();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public enum Code {
         OK(0),
         CANCELLED(1),
@@ -90,10 +90,10 @@ public final class Status {
         INTERNAL = Code.INTERNAL.toStatus();
         UNAVAILABLE = Code.UNAVAILABLE.toStatus();
         Code.DATA_LOSS.toStatus();
-        CODE_KEY = Metadata.Key.m698of("grpc-status", false, (Metadata.TrustedAsciiMarshaller) new StatusCodeMarshaller());
+        CODE_KEY = Metadata.Key.m697of("grpc-status", false, (Metadata.TrustedAsciiMarshaller) new StatusCodeMarshaller());
         StatusMessageMarshaller statusMessageMarshaller = new StatusMessageMarshaller();
         STATUS_MESSAGE_MARSHALLER = statusMessageMarshaller;
-        MESSAGE_KEY = Metadata.Key.m698of("grpc-message", false, (Metadata.TrustedAsciiMarshaller) statusMessageMarshaller);
+        MESSAGE_KEY = Metadata.Key.m697of("grpc-message", false, (Metadata.TrustedAsciiMarshaller) statusMessageMarshaller);
     }
 
     private static List<Status> buildStatusList() {
@@ -122,7 +122,7 @@ public final class Status {
     /* JADX INFO: Access modifiers changed from: private */
     public static Status fromCodeValue(byte[] bArr) {
         if (bArr.length == 1 && bArr[0] == 48) {
-            return f427OK;
+            return f428OK;
         }
         return fromCodeValueSlow(bArr);
     }
@@ -133,8 +133,7 @@ public final class Status {
         char c = 1;
         if (length != 1) {
             i = (length == 2 && bArr[0] >= 48 && bArr[0] <= 57) ? 0 + ((bArr[0] - 48) * 10) : 0;
-            Status status = UNKNOWN;
-            return status.withDescription("Unknown code " + new String(bArr, Charsets.US_ASCII));
+            return UNKNOWN.withDescription("Unknown code " + new String(bArr, Charsets.US_ASCII));
         }
         c = 0;
         if (bArr[c] >= 48 && bArr[c] <= 57) {
@@ -144,8 +143,7 @@ public final class Status {
                 return list.get(i2);
             }
         }
-        Status status2 = UNKNOWN;
-        return status2.withDescription("Unknown code " + new String(bArr, Charsets.US_ASCII));
+        return UNKNOWN.withDescription("Unknown code " + new String(bArr, Charsets.US_ASCII));
     }
 
     public static Status fromThrowable(Throwable th) {
@@ -231,7 +229,7 @@ public final class Status {
         return add.add("cause", str).toString();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     private static final class StatusCodeMarshaller implements Metadata.TrustedAsciiMarshaller<Status> {
         private StatusCodeMarshaller() {
         }
@@ -248,7 +246,7 @@ public final class Status {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     private static final class StatusMessageMarshaller implements Metadata.TrustedAsciiMarshaller<String> {
         private static final byte[] HEX = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70};
 

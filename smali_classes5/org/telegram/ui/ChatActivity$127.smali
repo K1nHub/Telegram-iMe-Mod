@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 28117
+    .line 28143
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$127;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x1
 
-    .line 28119
+    .line 28145
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
 
     return-void
@@ -47,54 +47,54 @@
 
     const/4 p1, 0x0
 
+    cmpl-float p1, p2, p1
+
     const/4 v0, 0x0
 
-    cmpl-float v0, p2, v0
+    if-nez p1, :cond_0
 
-    if-nez v0, :cond_0
+    .line 28149
+    iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
 
-    .line 28123
-    iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
+    if-nez p1, :cond_0
 
-    if-nez v0, :cond_0
+    .line 28150
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$127;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 28124
-    iget-object p2, p0, Lorg/telegram/ui/ChatActivity$127;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->startEnterAnimation(Z)V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->startEnterAnimation(Z)V
 
     const/4 p1, 0x1
 
-    .line 28125
+    .line 28151
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
 
     goto :goto_0
 
     :cond_0
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/high16 p1, 0x3f800000    # 1.0f
 
-    cmpl-float p2, p2, v0
+    cmpl-float p2, p2, p1
 
     if-nez p2, :cond_1
 
-    .line 28126
+    .line 28152
     iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
 
     if-eqz p2, :cond_1
 
-    .line 28127
+    .line 28153
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$127;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    sub-float v1, v0, p3
+    sub-float v1, p1, p3
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setAlpha(F)V
 
-    cmpl-float p2, p3, v0
+    cmpl-float p1, p3, p1
 
-    if-nez p2, :cond_1
+    if-nez p1, :cond_1
 
-    .line 28129
-    iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
+    .line 28155
+    iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$127;->isEnter:Z
 
     :cond_1
     :goto_0

@@ -172,22 +172,22 @@
 .end method
 
 .method private static getMotionPhotoMetadata(Ljava/lang/String;J)Lcom/google/android/exoplayer2/metadata/mp4/MotionPhotoMetadata;
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const-wide/16 v0, -0x1
 
-    const-wide/16 v1, -0x1
+    cmp-long v0, p1, v0
 
-    cmp-long v3, p1, v1
+    const/4 v1, 0x0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    return-object v1
 
     .line 310
     :cond_0
@@ -197,7 +197,7 @@
 
     if-nez p0, :cond_1
 
-    return-object v0
+    return-object v1
 
     .line 314
     :cond_1
@@ -818,13 +818,13 @@
 .end method
 
 .method public seek(JJ)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 

@@ -469,7 +469,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     aput v0, p2, v2
@@ -514,7 +514,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 956
     :goto_1
@@ -642,7 +642,7 @@
 
     int-to-float v1, v1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
 
@@ -667,133 +667,103 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 14
+    .locals 16
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v7, p1
 
     .line 985
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 987
-    iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->activeFloat:Lorg/telegram/ui/Components/AnimatedFloat;
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->activeFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->active:Z
+    iget-boolean v2, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->active:Z
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v2, v4
 
     :goto_0
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
-
-    move-result v0
-
-    const/high16 v1, 0x437f0000    # 255.0f
-
-    const/16 v4, 0x10
-
-    const/16 v5, 0x1d
-
-    const/16 v6, 0x23
-
-    const/4 v7, 0x1
-
-    cmpg-float v8, v0, v2
-
-    if-gez v8, :cond_1
-
-    .line 989
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
     move-result v8
 
-    int-to-float v8, v8
+    cmpg-float v1, v8, v3
+
+    const/high16 v2, 0x437f0000    # 255.0f
+
+    const/16 v5, 0x10
+
+    const/16 v6, 0x1d
+
+    const/16 v9, 0x23
+
+    const/4 v10, 0x1
+
+    if-gez v1, :cond_1
+
+    .line 989
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    int-to-float v11, v11
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v12
 
-    int-to-float v9, v9
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    int-to-float v10, v10
+    int-to-float v12, v12
 
     invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$2000()Landroid/graphics/Paint;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-virtual {p1, v8, v9, v10, v11}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v1, v11, v12, v13}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 991
-    iget-object v8, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
 
-    aget-object v8, v8, v7
+    aget-object v1, v1, v10
 
-    sub-float v9, v2, v0
+    sub-float v11, v3, v8
 
-    mul-float v9, v9, v1
+    mul-float/2addr v11, v2
 
-    float-to-int v9, v9
+    float-to-int v11, v11
 
-    invoke-virtual {v8, v9}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    invoke-virtual {v1, v11}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     .line 992
-    iget-object v8, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
 
-    aget-object v8, v8, v7
+    aget-object v1, v1, v10
 
     .line 993
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    iget-object v10, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v10, v10, v7
-
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v10
-
-    div-int/lit8 v10, v10, 0x2
-
-    sub-int/2addr v9, v10
-
-    .line 994
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    iget-object v11, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v11, v11, v7
-
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
-    div-int/lit8 v11, v11, 0x2
+    iget-object v12, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
 
-    sub-int/2addr v10, v11
-
-    .line 995
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v11
-
-    iget-object v12, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v12, v12, v7
+    aget-object v12, v12, v10
 
     invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -801,16 +771,16 @@
 
     div-int/lit8 v12, v12, 0x2
 
-    add-int/2addr v11, v12
+    sub-int/2addr v11, v12
 
-    .line 996
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 994
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
-    iget-object v13, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v13, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
 
-    aget-object v13, v13, v7
+    aget-object v13, v13, v10
 
     invoke-virtual {v13}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -818,172 +788,206 @@
 
     div-int/lit8 v13, v13, 0x2
 
-    add-int/2addr v12, v13
+    sub-int/2addr v12, v13
+
+    .line 995
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    iget-object v14, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v14, v14, v10
+
+    invoke-virtual {v14}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v14
+
+    div-int/lit8 v14, v14, 0x2
+
+    add-int/2addr v13, v14
+
+    .line 996
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v14
+
+    iget-object v15, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v15, v15, v10
+
+    invoke-virtual {v15}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v15
+
+    div-int/lit8 v15, v15, 0x2
+
+    add-int/2addr v14, v15
 
     .line 992
-    invoke-virtual {v8, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v1, v11, v12, v13, v14}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 998
-    iget-object v8, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
 
-    aget-object v8, v8, v7
+    aget-object v1, v1, v10
 
-    invoke-virtual {v8, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_1
-    cmpl-float v8, v0, v3
+    cmpl-float v1, v8, v4
 
-    if-lez v8, :cond_2
+    if-lez v1, :cond_2
 
     .line 1001
     invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1900()Landroid/graphics/Paint;
 
-    move-result-object v8
+    move-result-object v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v2, v8
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
-    invoke-virtual {v8, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 1002
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v8
+    move-result v11
 
-    int-to-float v8, v8
+    int-to-float v11, v11
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    mul-float v4, v4, v0
-
-    invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1900()Landroid/graphics/Paint;
-
-    move-result-object v10
-
-    invoke-virtual {p1, v8, v9, v4, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    .line 1004
-    iget-object v4, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    const/4 v8, 0x0
-
-    aget-object v4, v4, v8
-
-    invoke-virtual {v4, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
-
-    .line 1005
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v1, v1, v8
-
-    .line 1006
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    iget-object v9, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v9, v9, v8
-
-    invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v9
-
-    div-int/lit8 v9, v9, 0x2
-
-    sub-int/2addr v4, v9
-
-    .line 1007
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    iget-object v10, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v10, v10, v8
-
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v10
-
-    div-int/lit8 v10, v10, 0x2
-
-    sub-int/2addr v9, v10
-
-    .line 1008
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    iget-object v10, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v10, v10, v8
-
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v10
-
-    div-int/lit8 v10, v10, 0x2
-
-    add-int/2addr v6, v10
-
-    .line 1009
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
-    iget-object v10, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+    int-to-float v5, v5
 
-    aget-object v10, v10, v8
+    mul-float/2addr v5, v8
 
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1900()Landroid/graphics/Paint;
 
-    move-result v10
+    move-result-object v12
 
-    div-int/lit8 v10, v10, 0x2
+    invoke-virtual {v7, v1, v11, v5, v12}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    add-int/2addr v5, v10
+    .line 1004
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    const/4 v5, 0x0
+
+    aget-object v1, v1, v5
+
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     .line 1005
-    invoke-virtual {v1, v4, v9, v6, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v1, v1, v5
+
+    .line 1006
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    iget-object v11, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v11, v11, v5
+
+    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v11
+
+    div-int/lit8 v11, v11, 0x2
+
+    sub-int/2addr v2, v11
+
+    .line 1007
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    iget-object v12, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v12, v12, v5
+
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v12
+
+    div-int/lit8 v12, v12, 0x2
+
+    sub-int/2addr v11, v12
+
+    .line 1008
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    iget-object v12, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v12, v12, v5
+
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v12
+
+    div-int/lit8 v12, v12, 0x2
+
+    add-int/2addr v9, v12
+
+    .line 1009
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    iget-object v12, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v12, v12, v5
+
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v12
+
+    div-int/lit8 v12, v12, 0x2
+
+    add-int/2addr v6, v12
+
+    .line 1005
+    invoke-virtual {v1, v2, v11, v9, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 1011
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->linkDrawables:[Landroid/graphics/drawable/Drawable;
 
-    aget-object v1, v1, v8
+    aget-object v1, v1, v5
 
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 1014
     :cond_2
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->useDividerAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
+    iget-object v1, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->useDividerAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    iget-boolean v4, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->useDivider:Z
+    iget-boolean v2, v0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->useDivider:Z
 
-    if-eqz v4, :cond_3
+    if-eqz v2, :cond_3
 
     goto :goto_1
 
     :cond_3
-    const/4 v2, 0x0
+    move v3, v4
 
     :goto_1
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
     move-result v1
 
-    cmpl-float v2, v1, v3
+    cmpl-float v2, v1, v4
 
     if-lez v2, :cond_4
 
@@ -992,18 +996,18 @@
 
     invoke-virtual {v2}, Landroid/graphics/Paint;->getAlpha()I
 
-    move-result v2
+    move-result v9
 
     .line 1017
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
-    int-to-float v4, v2
+    int-to-float v3, v9
 
-    mul-float v4, v4, v1
+    mul-float/2addr v3, v1
 
-    float-to-int v1, v4
+    float-to-int v1, v3
 
-    invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/16 v1, 0x46
 
@@ -1012,38 +1016,38 @@
 
     move-result v1
 
-    int-to-float v9, v1
+    int-to-float v2, v1
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v1, v7
-
-    int-to-float v10, v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v1
 
-    int-to-float v11, v1
+    sub-int/2addr v1, v10
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
+    int-to-float v3, v1
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
 
-    int-to-float v12, v1
+    int-to-float v4, v1
 
-    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
-    move-object v8, p1
+    move-result v1
 
-    invoke-virtual/range {v8 .. v13}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    int-to-float v5, v1
+
+    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v1, p1
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 1019
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v1, v9}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 1022
     :cond_4
@@ -1074,52 +1078,116 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v0
+    mul-float/2addr v2, v8
 
-    float-to-int v0, v2
+    float-to-int v2, v2
 
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 1024
-    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0x25
+    const/16 v3, 0x25
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v2, v4
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    const/16 v3, 0x19
+    const/16 v4, 0x19
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v5
+
+    const/16 v6, 0x15
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    sub-int/2addr v5, v8
+
+    int-to-float v5, v5
+
+    const/16 v8, 0x1b
+
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    invoke-virtual {v1, v2, v4, v5, v8}, Landroid/graphics/RectF;->set(FFFF)V
+
+    const v2, 0x3e99999a    # 0.3f
+
+    .line 1025
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$2200()Landroid/graphics/Paint;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v1, v4, v5, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 1027
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v4
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    int-to-float v3, v3
+    sub-int/2addr v4, v3
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
+    int-to-float v3, v4
+
+    const/16 v4, 0x1f
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    const/16 v5, 0x15
+    int-to-float v4, v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v5
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    sub-int/2addr v4, v6
+    sub-int/2addr v5, v6
 
-    int-to-float v4, v4
+    int-to-float v5, v5
 
-    const/16 v6, 0x1b
+    const/16 v6, 0x21
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1127,90 +1195,26 @@
 
     int-to-float v6, v6
 
-    invoke-virtual {v0, v1, v3, v4, v6}, Landroid/graphics/RectF;->set(FFFF)V
-
-    const v1, 0x3e99999a    # 0.3f
-
-    .line 1025
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$2200()Landroid/graphics/Paint;
-
-    move-result-object v6
-
-    invoke-virtual {p1, v0, v3, v4, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-
-    .line 1027
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
-
-    move-result v3
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    sub-int/2addr v3, v2
-
-    int-to-float v2, v3
-
-    const/16 v3, 0x1f
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
-
-    move-result v4
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    sub-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/16 v5, 0x21
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    invoke-virtual {v0, v2, v3, v4, v5}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v3, v4, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 1028
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
     invoke-static {}, Lorg/telegram/ui/ChangeUsernameActivity;->access$2200()Landroid/graphics/Paint;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v7, v1, v3, v2, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     return-void
 .end method
@@ -1396,7 +1400,7 @@
     if-eqz p1, :cond_7
 
     :cond_6
-    const/4 v0, 0x1
+    move v0, p2
 
     :cond_7
     invoke-direct {p0, v0, p3}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->animateValueTextColor(ZZ)V

@@ -65,18 +65,18 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     if-ge v3, v0, :cond_7
 
     const/4 v5, -0x1
 
-    const/4 v6, 0x0
+    move v6, v2
 
-    const/4 v7, 0x0
+    move v7, v6
 
     :goto_3
     const/4 v8, 0x5
@@ -116,9 +116,9 @@
     :cond_4
     const/4 v5, 0x1
 
-    move v5, v9
+    move v7, v5
 
-    const/4 v7, 0x1
+    move v5, v9
 
     :goto_5
     add-int/lit8 v6, v6, 0x1
@@ -163,9 +163,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     add-int/lit8 v5, p0, -0x1
@@ -175,7 +175,7 @@
     .line 55
     aget-object v5, v0, v3
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_1
     add-int/lit8 v7, v1, -0x1
@@ -244,14 +244,14 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v3, p0, :cond_5
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_1
     if-ge v5, v1, :cond_4
@@ -442,9 +442,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v4, v2, :cond_2
@@ -452,7 +452,7 @@
     .line 138
     aget-object v6, v0, v4
 
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_1
     if-ge v7, v1, :cond_1
@@ -486,7 +486,7 @@
 
     move-result p0
 
-    mul-int v0, v0, p0
+    mul-int/2addr v0, p0
 
     mul-int/lit8 v5, v5, 0x2
 
@@ -549,7 +549,7 @@
     goto :goto_0
 
     :pswitch_1
-    mul-int p2, p2, p1
+    mul-int/2addr p2, p1
 
     and-int/lit8 p0, p2, 0x1
 
@@ -564,7 +564,7 @@
     goto :goto_2
 
     :pswitch_2
-    mul-int p2, p2, p1
+    mul-int/2addr p2, p1
 
     and-int/lit8 p0, p2, 0x1
 

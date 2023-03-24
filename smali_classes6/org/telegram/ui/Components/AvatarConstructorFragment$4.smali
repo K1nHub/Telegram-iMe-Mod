@@ -162,7 +162,7 @@
 
     iget v6, v5, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     sub-float v6, v2, v6
 
@@ -192,7 +192,7 @@
 
     iget v8, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
-    mul-float v4, v4, v8
+    mul-float/2addr v4, v8
 
     add-float/2addr v7, v4
 
@@ -314,14 +314,14 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     const/high16 v3, 0x3f800000    # 1.0f
 
     sub-float v1, v3, v1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     cmpl-float v1, v0, v2
 
@@ -391,7 +391,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v8, v0
 
@@ -492,7 +492,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -534,7 +534,7 @@
 
     iget v1, v1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -619,12 +619,12 @@
 
     if-le v0, v1, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 188
     :goto_0
@@ -742,7 +742,7 @@
 
     const v1, 0x3ee66666    # 0.45f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -755,7 +755,7 @@
 
     const v6, 0x3f0ccccd    # 0.55f
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v1, v1
 
@@ -978,7 +978,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_3
     iput-boolean v2, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisible:Z
@@ -1352,12 +1352,12 @@
 
     if-lez v3, :cond_6
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_6
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     invoke-static {v0, v3, v2, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1300(Lorg/telegram/ui/Components/AvatarConstructorFragment;ZZZ)V
@@ -1389,7 +1389,7 @@
     goto :goto_2
 
     :cond_9
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_a
     :goto_2

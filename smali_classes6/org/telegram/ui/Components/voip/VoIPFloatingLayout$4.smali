@@ -135,7 +135,7 @@
 
     const v7, 0x3e6b851f    # 0.23f
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     sub-float/2addr v1, v3
 
@@ -164,7 +164,7 @@
 
     int-to-float v9, v9
 
-    mul-float v9, v9, v7
+    mul-float/2addr v9, v7
 
     sub-float/2addr v8, v9
 

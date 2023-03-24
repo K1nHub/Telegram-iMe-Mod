@@ -58,31 +58,31 @@
 
     const/4 v0, 0x0
 
-    .line 17
+    .line 18
     invoke-direct {p0, p1, p2, v0}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs;-><init>(DLkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 9
+    .line 10
     iput-wide p1, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->amount:D
 
-    .line 10
+    .line 11
     iput-object p3, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 11
+    .line 12
     iput-object p4, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->recipientAddress:Ljava/lang/String;
 
-    .line 12
+    .line 13
     iput-wide p5, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->chainId:J
 
-    .line 13
+    .line 14
     iput-object p7, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->nonce:Ljava/math/BigInteger;
 
-    .line 14
+    .line 15
     iput-object p8, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->gasPrice:Ljava/math/BigInteger;
 
-    .line 15
+    .line 16
     iput-object p9, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->gasLimit:Ljava/math/BigInteger;
 
-    .line 16
+    .line 17
     iput-object p10, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->contractAddress:Ljava/lang/String;
 
     return-void
@@ -123,7 +123,7 @@
 
     move-object/from16 v10, p9
 
-    .line 8
+    .line 9
     invoke-direct/range {v1 .. v11}, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;-><init>(DLcom/smedialink/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;)V
 
     return-void
@@ -502,7 +502,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 9
+    .line 10
     iget-wide v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->amount:D
 
     return-wide v0
@@ -511,7 +511,7 @@
 .method public final getChainId()J
     .locals 2
 
-    .line 12
+    .line 13
     iget-wide v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->chainId:J
 
     return-wide v0
@@ -520,7 +520,7 @@
 .method public final getContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->contractAddress:Ljava/lang/String;
 
     return-object v0
@@ -529,7 +529,7 @@
 .method public final getGasLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->gasLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -538,7 +538,7 @@
 .method public final getGasPrice()Ljava/math/BigInteger;
     .locals 1
 
-    .line 14
+    .line 15
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->gasPrice:Ljava/math/BigInteger;
 
     return-object v0
@@ -547,7 +547,7 @@
 .method public final getNonce()Ljava/math/BigInteger;
     .locals 1
 
-    .line 13
+    .line 14
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->nonce:Ljava/math/BigInteger;
 
     return-object v0
@@ -556,7 +556,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 11
+    .line 12
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->recipientAddress:Ljava/lang/String;
 
     return-object v0
@@ -565,7 +565,7 @@
 .method public final getWeiConvertUnit()Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/smedialink/storage/domain/model/crypto/send/TransferArgs$EVM;->weiConvertUnit:Lcom/smedialink/storage/domain/utils/crypto/Convert$Unit;
 
     return-object v0

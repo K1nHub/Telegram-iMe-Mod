@@ -186,14 +186,20 @@ public class ConstraintAnchor {
             case 3:
                 boolean z2 = type == Type.LEFT || type == Type.RIGHT;
                 if (constraintAnchor.getOwner() instanceof Guideline) {
-                    return (z2 || type == Type.CENTER_X) ? true : true;
+                    if (z2 || type == Type.CENTER_X) {
+                        z = true;
+                    }
+                    return z;
                 }
                 return z2;
             case 4:
             case 5:
                 boolean z3 = type == Type.TOP || type == Type.BOTTOM;
                 if (constraintAnchor.getOwner() instanceof Guideline) {
-                    return (z3 || type == Type.CENTER_Y) ? true : true;
+                    if (z3 || type == Type.CENTER_Y) {
+                        z = true;
+                    }
+                    return z;
                 }
                 return z3;
             case 6:

@@ -370,7 +370,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v6, v6, v2
+    mul-float/2addr v6, v2
 
     float-to-int v6, v6
 
@@ -440,9 +440,9 @@
 
     const-wide/16 v3, 0x78
 
-    cmp-long v8, v5, v3
+    cmp-long v5, v5, v3
 
-    if-lez v8, :cond_3
+    if-lez v5, :cond_3
 
     .line 137
     iput-wide v3, p0, Lorg/telegram/ui/Components/ShutterButton;->totalTime:J
@@ -476,11 +476,11 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iget v2, p0, Lorg/telegram/ui/Components/ShutterButton;->redProgress:F
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShutterButton;->redPaint:Landroid/graphics/Paint;
 
@@ -503,7 +503,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ShutterButton;->redPaint:Landroid/graphics/Paint;
 
@@ -668,7 +668,7 @@
 
     if-gtz v4, :cond_2
 
-    const/4 v0, 0x0
+    move v0, p1
 
     :cond_2
     cmpl-float v4, v1, p1
@@ -686,7 +686,7 @@
 
     if-gtz v4, :cond_3
 
-    const/4 v1, 0x0
+    move v1, p1
 
     .line 177
     :cond_3

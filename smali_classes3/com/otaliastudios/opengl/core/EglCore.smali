@@ -110,24 +110,24 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     and-int/2addr p2, v2
 
     if-eqz p2, :cond_1
 
-    const/4 p2, 0x1
+    move p2, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_1
     const/4 v3, 0x3
@@ -174,26 +174,21 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
-
-    :catch_0
-    nop
-
     .line 57
+    :catch_0
     :cond_3
-    :goto_2
     iget-object p2, p0, Lcom/otaliastudios/opengl/core/EglCore;->eglContext:Landroid/opengl/EGLContext;
 
     sget-object v5, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     if-ne p2, v5, :cond_4
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v0
 
-    :goto_3
+    :goto_2
     if-eqz v4, :cond_7
 
     .line 59
@@ -233,7 +228,7 @@
     .line 65
     iput-object p1, p0, Lcom/otaliastudios/opengl/core/EglCore;->eglContext:Landroid/opengl/EGLContext;
 
-    goto :goto_4
+    goto :goto_3
 
     .line 68
     :cond_6
@@ -246,7 +241,7 @@
     throw p1
 
     :cond_7
-    :goto_4
+    :goto_3
     return-void
 
     :cond_8

@@ -70,7 +70,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 1176
+    .line 1184
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -81,7 +81,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/ReactionsContainerLayout$1;)V
     .locals 0
 
-    .line 1176
+    .line 1184
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     return-void
@@ -90,7 +90,7 @@
 .method private synthetic lambda$onScrolled$0(Ljava/lang/Float;)V
     .locals 2
 
-    .line 1187
+    .line 1195
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroid/graphics/Paint;
@@ -109,13 +109,13 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1188
+    .line 1196
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -128,7 +128,7 @@
 
     const/4 v0, 0x0
 
-    .line 1189
+    .line 1197
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->leftAnimator:Landroid/animation/ValueAnimator;
 
     return-void
@@ -137,7 +137,7 @@
 .method private synthetic lambda$onScrolled$2(Ljava/lang/Float;)V
     .locals 2
 
-    .line 1199
+    .line 1207
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$1900(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroid/graphics/Paint;
@@ -156,13 +156,13 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-int p1, p1
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1200
+    .line 1208
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -175,7 +175,7 @@
 
     const/4 v0, 0x0
 
-    .line 1201
+    .line 1209
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->rightAnimator:Landroid/animation/ValueAnimator;
 
     return-void
@@ -184,7 +184,7 @@
 .method private static synthetic lambda$startAnimator$4(Landroidx/core/util/Consumer;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1209
+    .line 1217
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -222,7 +222,7 @@
 
     aput p2, v0, v1
 
-    .line 1208
+    .line 1216
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
@@ -235,7 +235,7 @@
 
     const/high16 p2, 0x43160000    # 150.0f
 
-    mul-float p1, p1, p2
+    mul-float/2addr p1, p2
 
     float-to-long p1, p1
 
@@ -243,21 +243,21 @@
 
     move-result-object p1
 
-    .line 1209
+    .line 1217
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p3}, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener$$ExternalSyntheticLambda0;-><init>(Landroidx/core/util/Consumer;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1210
+    .line 1218
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener$1;
 
     invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener$1;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;Ljava/lang/Runnable;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1216
+    .line 1224
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     return-object p1
@@ -268,7 +268,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 6
 
-    .line 1182
+    .line 1190
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$1600(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -285,14 +285,14 @@
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    move p1, p3
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, p2
 
-    .line 1183
+    .line 1191
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->leftVisible:Z
 
@@ -302,15 +302,15 @@
 
     if-eq p1, v0, :cond_3
 
-    .line 1184
+    .line 1192
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->leftAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 1185
+    .line 1193
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1186
+    .line 1194
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -320,12 +320,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v1
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_1
     new-instance v4, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener$$ExternalSyntheticLambda1;
@@ -342,10 +342,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->leftAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1191
+    .line 1199
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->leftVisible:Z
 
-    .line 1194
+    .line 1202
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -371,23 +371,23 @@
 
     if-eq p1, v0, :cond_4
 
-    const/4 p2, 0x1
+    move p2, p3
 
-    .line 1195
+    .line 1203
     :cond_4
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->rightVisible:Z
 
     if-eq p2, p1, :cond_7
 
-    .line 1196
+    .line 1204
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->rightAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_5
 
-    .line 1197
+    .line 1205
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1198
+    .line 1206
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -400,7 +400,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_2
     new-instance p3, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener$$ExternalSyntheticLambda2;
@@ -417,7 +417,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->rightAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1203
+    .line 1211
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;->rightVisible:Z
 
     :cond_7

@@ -84,24 +84,24 @@
 
     if-ne p2, p1, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v4
 
     :goto_0
     and-int/lit8 p2, v0, 0x1
 
     if-eqz p2, :cond_2
 
-    const/4 p2, 0x1
+    move p2, v2
 
     goto :goto_1
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_1
     and-int/2addr p1, p2
@@ -131,7 +131,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v4
 
     .line 340
     :goto_2
@@ -139,7 +139,7 @@
 
     :cond_5
     :pswitch_4
-    const/4 v2, 0x0
+    move v2, v4
 
     :cond_6
     :goto_3
@@ -183,12 +183,12 @@
 
     if-lez p0, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     add-int/lit8 v3, p0, -0x1
@@ -197,7 +197,7 @@
 
     if-nez p0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     and-int p0, v2, v0
@@ -365,7 +365,7 @@
 
     int-to-long p0, p1
 
-    mul-long v0, v0, p0
+    mul-long/2addr v0, p0
 
     .line 559
     invoke-static {v0, v1}, Lcom/google/common/primitives/Ints;->saturatedCast(J)I

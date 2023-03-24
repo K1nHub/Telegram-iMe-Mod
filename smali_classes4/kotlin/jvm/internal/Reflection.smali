@@ -37,15 +37,10 @@
 
     move-object v0, v1
 
-    goto :goto_0
-
     :catch_0
-    nop
-
-    :goto_0
     if-eqz v0, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 34
     :cond_0
@@ -53,7 +48,7 @@
 
     invoke-direct {v0}, Lkotlin/jvm/internal/ReflectionFactory;-><init>()V
 
-    :goto_1
+    :goto_0
     sput-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
 
     const/4 v0, 0x0

@@ -24,7 +24,7 @@ public class BarChartView extends BaseChartView<ChartData, BarViewData> {
         this.useAlphaSignature = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0091  */
     @Override // org.telegram.p048ui.Charts.BaseChartView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -32,7 +32,7 @@ public class BarChartView extends BaseChartView<ChartData, BarViewData> {
     */
     protected void drawChart(android.graphics.Canvas r24) {
         /*
-            Method dump skipped, instructions count: 442
+            Method dump skipped, instructions count: 434
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Charts.BarChartView.drawChart(android.graphics.Canvas):void");
@@ -54,7 +54,7 @@ public class BarChartView extends BaseChartView<ChartData, BarViewData> {
                     int length = fArr.length;
                     float f = 1.0f;
                     float f2 = fArr.length < 2 ? 1.0f : fArr[1] * this.pickerWidth;
-                    int[] iArr = barViewData.line.f1673y;
+                    int[] iArr = barViewData.line.f1674y;
                     float f3 = barViewData.alpha;
                     int i4 = 0;
                     int i5 = 0;

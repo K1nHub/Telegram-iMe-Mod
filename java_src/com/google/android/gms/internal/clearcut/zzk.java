@@ -93,10 +93,10 @@ public final class zzk {
                 i5 = i10;
                 i6 = i9;
                 j6 = rotateRight2;
-                j5 = rotateRight3;
                 zzb12 = rotateRight4;
                 i = 37;
                 c = 0;
+                j5 = rotateRight3;
             }
         }
     }

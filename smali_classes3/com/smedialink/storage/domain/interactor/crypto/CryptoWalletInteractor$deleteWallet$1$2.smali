@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;Z)Lio/reactivex/Observable;
+    value = Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;ZZ)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -32,14 +32,18 @@
 
 
 # instance fields
+.field final synthetic $blockchainType:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
 .field final synthetic this$0:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
 
 # direct methods
-.method constructor <init>(Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;)V
+.method constructor <init>(Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
     .locals 0
 
     iput-object p1, p0, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$2;->this$0:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
+
+    iput-object p2, p0, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$2;->$blockchainType:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     const/4 p1, 0x1
 
@@ -69,14 +73,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 91
+    .line 102
     iget-object p1, p0, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$2;->this$0:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     invoke-static {p1}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->access$getCryptoWalletRepository$p(Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lcom/smedialink/storage/domain/repository/crypto/CryptoWalletRepository;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lcom/smedialink/storage/domain/repository/crypto/CryptoWalletRepository;->clearTokensData()Lio/reactivex/Observable;
+    iget-object v0, p0, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$2;->$blockchainType:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+
+    invoke-interface {p1, v0}, Lcom/smedialink/storage/domain/repository/crypto/CryptoWalletRepository;->clearTokensData(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -86,7 +92,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 91
+    .line 102
     check-cast p1, Lkotlin/Unit;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$1$2;->invoke(Lkotlin/Unit;)Lio/reactivex/ObservableSource;

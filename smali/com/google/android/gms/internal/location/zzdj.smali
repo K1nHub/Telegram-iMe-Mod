@@ -134,7 +134,7 @@
     :cond_1
     const-wide p0, 0x7fffffffffffffffL
 
-    const/4 v4, 0x1
+    move v4, v3
 
     :cond_2
     :goto_0
@@ -218,9 +218,9 @@
     rem-long/2addr p0, v2
 
     :cond_7
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-lez v2, :cond_8
+    if-lez v0, :cond_8
 
     .line 8
     invoke-virtual {p2, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;

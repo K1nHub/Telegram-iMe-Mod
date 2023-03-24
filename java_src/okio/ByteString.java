@@ -271,8 +271,18 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         return hashCode;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0030 A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x002e, code lost:
+        if (r0 < r1) goto L12;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0033, code lost:
+        return 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:18:?, code lost:
+        return -1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0028, code lost:
+        if (r7 < r8) goto L12;
+     */
     @Override // java.lang.Comparable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -287,7 +297,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             int r1 = r10.size()
             int r2 = java.lang.Math.min(r0, r1)
             r3 = 0
-            r4 = 0
+            r4 = r3
         L13:
             r5 = -1
             r6 = 1
@@ -308,10 +318,10 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         L2e:
             if (r0 >= r1) goto L32
         L30:
-            r3 = -1
+            r3 = r5
             goto L33
         L32:
-            r3 = 1
+            r3 = r6
         L33:
             return r3
         */

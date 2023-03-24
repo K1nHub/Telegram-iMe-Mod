@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity;)V
     .locals 0
 
-    .line 919
+    .line 931
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onItemClick$0(Landroid/content/DialogInterface;I)V
     .locals 4
 
-    .line 947
+    .line 959
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
@@ -62,7 +62,7 @@
 
     move-result p1
 
-    .line 950
+    .line 962
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     const/16 v0, 0x11
@@ -75,12 +75,12 @@
 
     if-eqz p2, :cond_1
 
-    const/4 p1, 0x1
+    move p1, v1
 
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 954
+    .line 966
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$1800(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ThemeActivity$ListAdapter;
@@ -99,7 +99,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 955
+    .line 967
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$1800(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ThemeActivity$ListAdapter;
@@ -118,7 +118,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 957
+    .line 969
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
@@ -130,17 +130,17 @@
 
     const-string p1, "Blue"
 
-    .line 958
+    .line 970
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p1
 
-    .line 959
+    .line 971
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p2
 
-    .line 960
+    .line 972
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccentsMap:Landroid/util/SparseArray;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->DEFALT_THEME_ACCENT_ID:I
@@ -153,28 +153,28 @@
 
     if-eqz v0, :cond_3
 
-    .line 962
+    .line 974
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
     invoke-direct {v2}, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;-><init>()V
 
     const-string v3, "d"
 
-    .line 963
+    .line 975
     iput-object v3, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->slug:Ljava/lang/String;
 
     const-string v3, "Blue_99_wp.jpg"
 
-    .line 964
+    .line 976
     iput-object v3, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
 
-    .line 965
+    .line 977
     iput-object v3, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->originalFileName:Ljava/lang/String;
 
-    .line 966
+    .line 978
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->overrideWallpaper:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
-    .line 967
+    .line 979
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setOverrideWallpaper(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;)V
 
     :cond_3
@@ -182,15 +182,15 @@
 
     if-eq p1, p2, :cond_4
 
-    .line 970
+    .line 982
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->DEFALT_THEME_ACCENT_ID:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setCurrentAccentId(I)V
 
-    .line 971
+    .line 983
     invoke-static {p1, v1, v0, v1, v0}, Lorg/telegram/ui/ActionBar/Theme;->saveThemeAccents(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;ZZZZ)V
 
-    .line 972
+    .line 984
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ThemeActivity;->access$2000(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
@@ -199,7 +199,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->selectTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
-    .line 973
+    .line 985
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$2000(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
@@ -210,7 +210,7 @@
 
     goto :goto_1
 
-    .line 974
+    .line 986
     :cond_4
     iget p1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->currentAccentId:I
 
@@ -218,7 +218,7 @@
 
     if-eq p1, v2, :cond_6
 
-    .line 975
+    .line 987
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -229,7 +229,7 @@
 
     invoke-virtual {p1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 976
+    .line 988
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -250,7 +250,7 @@
 
     if-ne p2, v1, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_5
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -277,7 +277,7 @@
 
     invoke-virtual {p1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 977
+    .line 989
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$1800(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ThemeActivity$ListAdapter;
@@ -294,7 +294,7 @@
 
     goto :goto_1
 
-    .line 979
+    .line 991
     :cond_6
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->reloadWallpaper()V
 
@@ -312,7 +312,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 923
+    .line 935
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -324,7 +324,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 925
+    .line 937
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$1300(Lorg/telegram/ui/ThemeActivity;)V
@@ -338,22 +338,22 @@
 
     if-ne p1, v3, :cond_3
 
-    .line 927
+    .line 939
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p1
 
-    .line 928
+    .line 940
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object p1
 
-    .line 929
+    .line 941
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     if-nez v0, :cond_2
 
-    .line 930
+    .line 942
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -364,7 +364,7 @@
 
     invoke-virtual {v0, v4, p1}, Lorg/telegram/messenger/MessagesController;->saveThemeToServer(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
 
-    .line 931
+    .line 943
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -383,7 +383,7 @@
 
     goto/16 :goto_2
 
-    .line 933
+    .line 945
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -417,7 +417,7 @@
 
     move-result-object v6
 
-    .line 934
+    .line 946
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert;
@@ -449,7 +449,7 @@
 
     if-ne p1, v4, :cond_4
 
-    .line 937
+    .line 949
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$1400(Lorg/telegram/ui/ThemeActivity;)V
@@ -461,7 +461,7 @@
 
     if-ne p1, v5, :cond_6
 
-    .line 939
+    .line 951
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -472,7 +472,7 @@
 
     return-void
 
-    .line 942
+    .line 954
     :cond_5
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -484,7 +484,7 @@
 
     invoke-direct {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 943
+    .line 955
     sget v1, Lorg/telegram/messenger/R$string;->ThemeResetToDefaultsTitle:I
 
     const-string v2, "ThemeResetToDefaultsTitle"
@@ -495,7 +495,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 944
+    .line 956
     sget v1, Lorg/telegram/messenger/R$string;->ThemeResetToDefaultsText:I
 
     const-string v2, "ThemeResetToDefaultsText"
@@ -506,7 +506,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 945
+    .line 957
     sget v1, Lorg/telegram/messenger/R$string;->Reset:I
 
     const-string v2, "Reset"
@@ -521,7 +521,7 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 983
+    .line 995
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -534,17 +534,17 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 984
+    .line 996
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 985
+    .line 997
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 986
+    .line 998
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -555,7 +555,7 @@
 
     const-string v0, "dialogTextRed"
 
-    .line 988
+    .line 1000
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -569,7 +569,7 @@
 
     if-ne p1, v6, :cond_f
 
-    .line 991
+    .line 1003
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v7, "themeconfig"
@@ -582,12 +582,12 @@
 
     const-string v8, "Blue"
 
-    .line 992
+    .line 1004
     invoke-interface {p1, v7, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 993
+    .line 1005
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v9
@@ -612,12 +612,12 @@
 
     const-string v10, "Dark Blue"
 
-    .line 996
+    .line 1008
     invoke-interface {p1, v9, v10}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 997
+    .line 1009
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v9
@@ -637,20 +637,20 @@
     :cond_9
     move-object p1, v10
 
-    .line 1000
+    .line 1012
     :cond_a
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v9
 
-    .line 1001
+    .line 1013
     invoke-virtual {v7, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v11
 
     if-eqz v11, :cond_c
 
-    .line 1002
+    .line 1014
     invoke-virtual {v9}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isDark()Z
 
     move-result v11
@@ -682,7 +682,7 @@
     :cond_d
     move-object v8, v7
 
-    .line 1010
+    .line 1022
     :goto_0
     invoke-virtual {v9}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
@@ -694,14 +694,14 @@
 
     if-eqz p1, :cond_e
 
-    .line 1011
+    .line 1023
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v7
 
     goto :goto_1
 
-    .line 1013
+    .line 1025
     :cond_e
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -710,7 +710,7 @@
     :goto_1
     new-array v8, v3, [I
 
-    .line 1017
+    .line 1029
     iget-object v9, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {v9}, Lorg/telegram/ui/ThemeActivity;->access$1500(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -723,7 +723,7 @@
 
     invoke-virtual {v9, v8}, Landroid/widget/ImageView;->getLocationInWindow([I)V
 
-    .line 1018
+    .line 1030
     aget v9, v8, v2
 
     iget-object v10, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
@@ -746,7 +746,7 @@
 
     aput v9, v8, v2
 
-    .line 1019
+    .line 1031
     aget v9, v8, v1
 
     iget-object v10, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
@@ -769,7 +769,7 @@
 
     aput v9, v8, v1
 
-    .line 1020
+    .line 1032
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v9
@@ -814,12 +814,12 @@
 
     invoke-virtual {v9, v10, v11}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1021
+    .line 1033
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ThemeActivity;->access$1600(Lorg/telegram/ui/ThemeActivity;Z)V
 
-    .line 1024
+    .line 1036
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$1;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->turnOffAutoNight(Lorg/telegram/ui/ActionBar/BaseFragment;)V

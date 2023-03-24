@@ -228,9 +228,9 @@
 
     const-wide/16 v3, -0x1
 
-    cmp-long v5, v0, v3
+    cmp-long v0, v0, v3
 
-    if-nez v5, :cond_3
+    if-nez v0, :cond_3
 
     .line 178
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader$UnseekableOggSeeker;
@@ -258,12 +258,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v10, 0x1
+    move v10, v2
 
     goto :goto_0
 
     :cond_4
-    const/4 v10, 0x0
+    move v10, v11
 
     .line 182
     :goto_0
@@ -309,7 +309,7 @@
 .end method
 
 .method private readPayload(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/extractor/PositionHolder;)I
-    .locals 16
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -327,31 +327,31 @@
 
     move-result-wide v2
 
-    const/4 v4, 0x1
+    const-wide/16 v4, 0x0
 
-    const-wide/16 v5, 0x0
+    cmp-long v6, v2, v4
 
-    cmp-long v7, v2, v5
+    const/4 v7, 0x1
 
-    if-ltz v7, :cond_0
+    if-ltz v6, :cond_0
 
-    move-object/from16 v7, p2
+    move-object/from16 v6, p2
 
     .line 202
-    iput-wide v2, v7, Lcom/google/android/exoplayer2/extractor/PositionHolder;->position:J
+    iput-wide v2, v6, Lcom/google/android/exoplayer2/extractor/PositionHolder;->position:J
 
-    return v4
+    return v7
 
     :cond_0
-    const-wide/16 v7, -0x1
+    const-wide/16 v8, -0x1
 
-    cmp-long v9, v2, v7
+    cmp-long v6, v2, v8
 
-    if-gez v9, :cond_1
+    if-gez v6, :cond_1
 
-    const-wide/16 v9, 0x2
+    const-wide/16 v10, 0x2
 
-    add-long/2addr v2, v9
+    add-long/2addr v2, v10
 
     neg-long v2, v2
 
@@ -383,15 +383,15 @@
     invoke-interface {v3, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->seekMap(Lcom/google/android/exoplayer2/extractor/SeekMap;)V
 
     .line 211
-    iput-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->seekMapSet:Z
+    iput-boolean v7, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->seekMapSet:Z
 
     .line 214
     :cond_2
     iget-wide v2, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->lengthOfReadPacket:J
 
-    cmp-long v4, v2, v5
+    cmp-long v2, v2, v4
 
-    if-gtz v4, :cond_4
+    if-gtz v2, :cond_4
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->oggPacket:Lcom/google/android/exoplayer2/extractor/ogg/OggPacket;
 
@@ -416,7 +416,7 @@
     .line 215
     :cond_4
     :goto_0
-    iput-wide v5, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->lengthOfReadPacket:J
+    iput-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->lengthOfReadPacket:J
 
     .line 216
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->oggPacket:Lcom/google/android/exoplayer2/extractor/ogg/OggPacket;
@@ -430,25 +430,25 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v5
+    cmp-long v4, v2, v4
 
     if-ltz v4, :cond_5
 
     .line 218
     iget-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->currentGranule:J
 
-    add-long v9, v4, v2
+    add-long v6, v4, v2
 
-    iget-wide v11, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->targetGranule:J
+    iget-wide v10, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->targetGranule:J
 
-    cmp-long v6, v9, v11
+    cmp-long v6, v6, v10
 
     if-ltz v6, :cond_5
 
     .line 220
     invoke-virtual {v0, v4, v5}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->convertGranuleToTime(J)J
 
-    move-result-wide v10
+    move-result-wide v11
 
     .line 221
     iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
@@ -460,22 +460,22 @@
     invoke-interface {v4, v1, v5}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     .line 222
-    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    const/4 v12, 0x1
+    const/4 v13, 0x1
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
-    move-result v13
-
-    const/4 v14, 0x0
+    move-result v14
 
     const/4 v15, 0x0
 
-    invoke-interface/range {v9 .. v15}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
+    const/16 v16, 0x0
+
+    invoke-interface/range {v10 .. v16}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
     .line 223
-    iput-wide v7, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->targetGranule:J
+    iput-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->targetGranule:J
 
     .line 225
     :cond_5
@@ -497,7 +497,7 @@
 
     const-wide/32 v0, 0xf4240
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 240
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->sampleRate:I
@@ -517,7 +517,7 @@
 
     int-to-long v0, v0
 
-    mul-long v0, v0, p1
+    mul-long/2addr v0, p1
 
     const-wide/32 p1, 0xf4240
 
@@ -683,7 +683,7 @@
 .end method
 
 .method final seek(JJ)V
-    .locals 3
+    .locals 2
 
     .line 97
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->oggPacket:Lcom/google/android/exoplayer2/extractor/ogg/OggPacket;
@@ -692,9 +692,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long p1, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_0
 
     .line 99
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->seekMapSet:Z

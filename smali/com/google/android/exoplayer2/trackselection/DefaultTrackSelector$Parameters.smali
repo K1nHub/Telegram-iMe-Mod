@@ -618,7 +618,7 @@
     return v2
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-ge v1, v0, :cond_2
@@ -682,7 +682,7 @@
     return v2
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     if-ge v1, v0, :cond_3
@@ -1208,7 +1208,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -1311,91 +1311,91 @@
 
     add-int/2addr v0, v1
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1842
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->exceedVideoConstraintsIfNecessary:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1843
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedMimeTypeAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1844
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowVideoNonSeamlessAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1845
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedDecoderSupportAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1847
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->exceedAudioConstraintsIfNecessary:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1848
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedMimeTypeAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1849
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedSampleRateAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1850
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedChannelCountAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1851
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedDecoderSupportAdaptiveness:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1852
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->constrainAudioChannelCountToDeviceCapabilities:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1854
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->exceedRendererCapabilitiesIfNecessary:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1855
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->tunnelingEnabled:Z
 
     add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 1856
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$Parameters;->allowMultipleAdaptiveSelections:Z

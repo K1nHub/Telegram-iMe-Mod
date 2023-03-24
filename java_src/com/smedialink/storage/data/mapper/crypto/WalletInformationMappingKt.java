@@ -13,18 +13,18 @@ public final class WalletInformationMappingKt {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(cryptoWalletInfoResponse, "<this>");
         String myEtherWalletAddress = cryptoWalletInfoResponse.getMyEtherWalletAddress();
-        if (myEtherWalletAddress == null) {
-            myEtherWalletAddress = "";
-        }
+        String str = myEtherWalletAddress == null ? "" : myEtherWalletAddress;
         String tonWalletAddress = cryptoWalletInfoResponse.getTonWalletAddress();
-        String str = tonWalletAddress != null ? tonWalletAddress : "";
+        String str2 = tonWalletAddress == null ? "" : tonWalletAddress;
+        String tronWalletAddress = cryptoWalletInfoResponse.getTronWalletAddress();
+        String str3 = tronWalletAddress == null ? "" : tronWalletAddress;
         boolean isEtherWalletAddressOpened = cryptoWalletInfoResponse.isEtherWalletAddressOpened();
         List<String> usersWithAccessToEtherWalletAddress = cryptoWalletInfoResponse.getUsersWithAccessToEtherWalletAddress();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(usersWithAccessToEtherWalletAddress, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (String str2 : usersWithAccessToEtherWalletAddress) {
-            arrayList.add(Long.valueOf(Long.parseLong(str2)));
+        for (String str4 : usersWithAccessToEtherWalletAddress) {
+            arrayList.add(Long.valueOf(Long.parseLong(str4)));
         }
-        return new CryptoWalletInfo(myEtherWalletAddress, str, isEtherWalletAddressOpened, arrayList);
+        return new CryptoWalletInfo(str, str2, str3, isEtherWalletAddressOpened, arrayList);
     }
 }

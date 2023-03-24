@@ -416,7 +416,7 @@
 
     const/16 v0, 0x10
 
-    const/16 v1, 0x10
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x3f
@@ -484,9 +484,9 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    move v10, v9
 
-    const/4 v11, 0x0
+    move v11, v10
 
     :goto_1
     const/16 v12, 0x8
@@ -854,7 +854,7 @@
 
     iput v9, p0, Lorg/bouncycastle/crypto/digests/SHA224Digest;->xOff:I
 
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_2
     if-ge v1, v0, :cond_2
@@ -889,9 +889,9 @@
 
     ushr-long v2, p1, v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aput v3, v0, v1
+    aput v2, v0, v1
 
     const/16 v1, 0xf
 
@@ -899,9 +899,9 @@
 
     and-long/2addr p1, v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    aput p2, v0, v1
+    aput p1, v0, v1
 
     return-void
 .end method
@@ -1002,7 +1002,7 @@
 
     iput v0, p0, Lorg/bouncycastle/crypto/digests/SHA224Digest;->xOff:I
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     iget-object v2, p0, Lorg/bouncycastle/crypto/digests/SHA224Digest;->X:[I

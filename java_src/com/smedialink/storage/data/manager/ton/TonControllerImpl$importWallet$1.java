@@ -39,7 +39,7 @@ final class TonControllerImpl$importWallet$1 extends Lambda implements Function1
         }
         sendRequest = this.this$0.sendRequest(new TonApi.DeleteAllKeys());
         schedulersProvider = this.this$0.schedulersProvider;
-        Observable subscribeOn = sendRequest.subscribeOn(schedulersProvider.mo708io());
+        Observable subscribeOn = sendRequest.subscribeOn(schedulersProvider.mo707io());
         final TonControllerImpl tonControllerImpl = this.this$0;
         final List<String> list = this.$words;
         final String str = this.$guid;
@@ -63,7 +63,7 @@ final class TonControllerImpl$importWallet$1 extends Lambda implements Function1
         Intrinsics.checkNotNullParameter(it, "it");
         sendRequest = this$0.sendRequest(new TonApi.ImportKey(new byte[0], new byte[0], new TonApi.ExportedKey((String[]) words.toArray(new String[0]))));
         schedulersProvider = this$0.schedulersProvider;
-        return sendRequest.subscribeOn(schedulersProvider.mo708io()).flatMap(new Function() { // from class: com.smedialink.storage.data.manager.ton.TonControllerImpl$importWallet$1$$ExternalSyntheticLambda0
+        return sendRequest.subscribeOn(schedulersProvider.mo707io()).flatMap(new Function() { // from class: com.smedialink.storage.data.manager.ton.TonControllerImpl$importWallet$1$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 ObservableSource invoke$lambda$1$lambda$0;
@@ -85,7 +85,7 @@ final class TonControllerImpl$importWallet$1 extends Lambda implements Function1
         if (keyResult instanceof TonApi.Key) {
             processInputKey = this$0.processInputKey((TonApi.Key) keyResult, guid, new byte[0], words);
             schedulersProvider = this$0.schedulersProvider;
-            return processInputKey.subscribeOn(schedulersProvider.mo708io());
+            return processInputKey.subscribeOn(schedulersProvider.mo707io());
         }
         tonApiErrorResult = this$0.getTonApiErrorResult(keyResult);
         Observable just = Observable.just(tonApiErrorResult);

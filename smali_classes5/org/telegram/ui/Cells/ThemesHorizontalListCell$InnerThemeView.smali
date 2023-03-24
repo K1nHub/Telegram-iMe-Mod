@@ -691,9 +691,9 @@
 
     const-wide v3, 0x3feeb851e0000000L    # 0.9599999785423279
 
-    cmpl-double v7, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-ltz v7, :cond_6
+    if-ltz v0, :cond_6
 
     .line 403
     iput-boolean v6, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->hasWhiteBackground:Z
@@ -1633,7 +1633,7 @@
 
     if-eqz v4, :cond_c
 
-    const/4 v4, 0x2
+    move v4, v14
 
     goto :goto_6
 
@@ -2008,12 +2008,12 @@
 
     if-ne v3, v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_1
     invoke-virtual {v2, v0, v4}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V
@@ -2119,7 +2119,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
     const/16 v4, 0xb
@@ -2199,7 +2199,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_2
     sub-int/2addr v5, v9
@@ -2288,7 +2288,7 @@
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :cond_5
     :goto_3
@@ -2434,9 +2434,9 @@
 
     move-result v10
 
-    const/high16 v12, 0x40000000    # 2.0f
-
     cmpl-float v10, v3, v10
+
+    const/high16 v12, 0x40000000    # 2.0f
 
     if-lez v10, :cond_7
 
@@ -3001,7 +3001,7 @@
 
     const/high16 v4, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -3096,7 +3096,7 @@
 
     iget v5, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->placeholderAlpha:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v4, v5
 
@@ -3283,7 +3283,7 @@
 
     if-eqz p1, :cond_0
 
-    const/16 p1, 0x16
+    move p1, p2
 
     goto :goto_0
 
@@ -3592,12 +3592,12 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, p3
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, p2
 
     :goto_1
     if-eqz v0, :cond_2
@@ -3807,9 +3807,9 @@
     goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     .line 496
     :goto_1
@@ -3952,7 +3952,7 @@
 
     if-ne v3, v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 

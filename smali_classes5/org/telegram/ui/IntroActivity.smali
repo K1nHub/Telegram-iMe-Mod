@@ -792,7 +792,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_1
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
@@ -1363,7 +1363,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_0
     invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
@@ -1392,7 +1392,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_1
     invoke-virtual {v7, v9, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
@@ -1847,7 +1847,7 @@
 .end method
 
 .method public isLightStatusBar()Z
-    .locals 6
+    .locals 5
 
     const-string v0, "windowBackgroundWhite"
 
@@ -1867,9 +1867,9 @@
 
     const-wide v3, 0x3fe6666660000000L    # 0.699999988079071
 
-    cmpl-double v5, v0, v3
+    cmpl-double v0, v0, v3
 
-    if-lez v5, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 

@@ -11,8 +11,8 @@ public final class zay implements Parcelable.Creator {
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         int i = 0;
-        Scope[] scopeArr = null;
         int i2 = 0;
+        Scope[] scopeArr = null;
         int i3 = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
@@ -20,9 +20,9 @@ public final class zay implements Parcelable.Creator {
             if (fieldId == 1) {
                 i = SafeParcelReader.readInt(parcel, readHeader);
             } else if (fieldId == 2) {
-                i2 = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 3) {
                 i3 = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 3) {
+                i2 = SafeParcelReader.readInt(parcel, readHeader);
             } else if (fieldId == 4) {
                 scopeArr = (Scope[]) SafeParcelReader.createTypedArray(parcel, readHeader, Scope.CREATOR);
             } else {
@@ -30,7 +30,7 @@ public final class zay implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zax(i, i2, i3, scopeArr);
+        return new zax(i, i3, i2, scopeArr);
     }
 
     @Override // android.os.Parcelable.Creator

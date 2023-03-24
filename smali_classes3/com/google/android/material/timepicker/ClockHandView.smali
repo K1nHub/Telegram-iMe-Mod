@@ -233,7 +233,7 @@
 
     double-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v2, v8
 
@@ -252,7 +252,7 @@
 
     double-to-float v4, v4
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     add-float/2addr v3, v9
 
@@ -297,7 +297,7 @@
 
     float-to-double v6, v6
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     double-to-int v4, v4
 
@@ -305,7 +305,7 @@
 
     int-to-float v5, v1
 
-    mul-double v6, v6, v2
+    mul-double/2addr v6, v2
 
     double-to-int v1, v6
 
@@ -423,28 +423,28 @@
 
     if-lez v1, :cond_1
 
-    const/high16 v1, 0x43b40000    # 360.0f
+    cmpl-float v1, v0, v2
 
-    cmpl-float v3, v0, v2
+    const/high16 v3, 0x43b40000    # 360.0f
 
-    if-lez v3, :cond_0
+    if-lez v1, :cond_0
 
-    cmpg-float v3, p1, v2
+    cmpg-float v1, p1, v2
 
-    if-gez v3, :cond_0
+    if-gez v1, :cond_0
 
-    add-float/2addr p1, v1
+    add-float/2addr p1, v3
 
     :cond_0
-    cmpg-float v3, v0, v2
+    cmpg-float v1, v0, v2
 
-    if-gez v3, :cond_1
+    if-gez v1, :cond_1
 
-    cmpl-float v2, p1, v2
+    cmpl-float v1, p1, v2
 
-    if-lez v2, :cond_1
+    if-lez v1, :cond_1
 
-    add-float/2addr v0, v1
+    add-float/2addr v0, v3
 
     .line 176
     :cond_1
@@ -478,20 +478,20 @@
 
     int-to-float p1, p1
 
+    cmpl-float p2, p2, p1
+
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    cmpl-float p2, p2, p1
-
     if-eqz p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_0
     if-eqz p4, :cond_1
@@ -519,7 +519,7 @@
 
     if-eqz p2, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_4
     invoke-virtual {p0, p1, v0}, Lcom/google/android/material/timepicker/ClockHandView;->setHandRotation(FZ)V
@@ -579,7 +579,7 @@
 
     double-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -598,7 +598,7 @@
 
     double-to-float v3, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v0, v2
 
@@ -755,14 +755,13 @@
 
     if-eq v0, v2, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    :goto_0
-    const/4 v5, 0x0
+    move v5, v4
 
-    goto :goto_3
+    goto :goto_2
 
     .line 293
     :cond_0
@@ -779,9 +778,9 @@
 
     float-to-int v3, v3
 
-    mul-int v2, v2, v2
+    mul-int/2addr v2, v2
 
-    mul-int v3, v3, v3
+    mul-int/2addr v3, v3
 
     add-int/2addr v2, v3
 
@@ -790,14 +789,14 @@
 
     if-le v2, v3, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v8
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
-    :goto_1
+    :goto_0
     iput-boolean v2, p0, Lcom/google/android/material/timepicker/ClockHandView;->isInTapRegion:Z
 
     .line 299
@@ -805,17 +804,19 @@
 
     if-ne v0, v8, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v8
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
-    :goto_2
+    :goto_1
+    move v5, v1
+
     move v4, v2
 
-    goto :goto_0
+    goto :goto_2
 
     .line 284
     :cond_3
@@ -830,14 +831,14 @@
     .line 288
     iput-boolean v1, p0, Lcom/google/android/material/timepicker/ClockHandView;->changedDuringTouch:Z
 
-    const/4 v0, 0x0
+    move v0, v1
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x1
+    move v5, v8
 
     .line 309
-    :goto_3
+    :goto_2
     iget-boolean v9, p0, Lcom/google/android/material/timepicker/ClockHandView;->changedDuringTouch:Z
 
     move-object v1, p0

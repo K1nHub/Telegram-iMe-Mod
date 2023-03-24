@@ -39,10 +39,10 @@ final class CryptoLocalWalletRepositoryImpl$unlockAllWallets$2 extends Lambda im
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList, 10);
         ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
         for (Result.Success success : arrayList) {
-            Wallet wallet = (Wallet) success.getData();
+            Wallet wallet2 = (Wallet) success.getData();
             cryptoAccessManager = cryptoLocalWalletRepositoryImpl.cryptoAccessManager;
-            cryptoAccessManager.setWallet(wallet, str);
-            arrayList2.add(wallet);
+            cryptoAccessManager.setWallet(wallet2, str);
+            arrayList2.add(wallet2);
         }
         return Result.Companion.success(arrayList2);
     }

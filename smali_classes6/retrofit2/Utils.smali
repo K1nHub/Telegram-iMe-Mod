@@ -257,7 +257,7 @@
     goto :goto_0
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -350,7 +350,7 @@
     goto :goto_1
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     return v0
@@ -404,7 +404,7 @@
     goto :goto_2
 
     :cond_c
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_2
     return v0
@@ -887,7 +887,7 @@
 
     array-length v0, p0
 
-    const/4 v3, 0x0
+    move v3, v1
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -1046,7 +1046,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1
@@ -1337,12 +1337,12 @@
 
     if-eq v3, v0, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_3
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 231
     :goto_3
@@ -1379,7 +1379,7 @@
 
     check-cast v4, [Ljava/lang/reflect/Type;
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 239
     :cond_7

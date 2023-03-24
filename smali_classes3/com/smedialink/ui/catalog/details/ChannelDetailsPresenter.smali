@@ -490,12 +490,12 @@
 
     if-lez v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_0
     if-eqz v4, :cond_1

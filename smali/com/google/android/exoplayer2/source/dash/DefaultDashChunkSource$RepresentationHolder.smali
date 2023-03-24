@@ -68,7 +68,7 @@
 
 # virtual methods
 .method copyWithNewRepresentation(JLcom/google/android/exoplayer2/source/dash/manifest/Representation;)Lcom/google/android/exoplayer2/source/dash/DefaultDashChunkSource$RepresentationHolder;
-    .locals 22
+    .locals 21
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/source/BehindLiveWindowException;
@@ -220,13 +220,13 @@
     .line 871
     iget-wide v6, v0, Lcom/google/android/exoplayer2/source/dash/DefaultDashChunkSource$RepresentationHolder;->segmentNumShift:J
 
-    cmp-long v21, v15, v8
+    cmp-long v15, v15, v8
 
-    if-nez v21, :cond_3
+    if-nez v15, :cond_3
 
-    const-wide/16 v15, 0x1
+    const-wide/16 v16, 0x1
 
-    add-long/2addr v4, v15
+    add-long v4, v4, v16
 
     :goto_0
     sub-long/2addr v4, v13
@@ -239,7 +239,7 @@
     goto :goto_2
 
     :cond_3
-    if-ltz v21, :cond_5
+    if-ltz v15, :cond_5
 
     cmp-long v4, v8, v11
 
@@ -527,9 +527,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, p1, p3
+    cmp-long p1, p1, p3
 
-    if-gtz v0, :cond_1
+    if-gtz p1, :cond_1
 
     goto :goto_0
 

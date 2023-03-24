@@ -231,12 +231,12 @@
     if-ne p1, v0, :cond_2
 
     :cond_1
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v3
 
     :goto_0
     if-eqz p1, :cond_4
@@ -607,7 +607,7 @@
 
     if-ge p1, v0, :cond_12
 
-    const/16 v1, 0x78
+    move v1, v8
 
     goto :goto_3
 
@@ -616,9 +616,9 @@
 
     if-ge p1, v0, :cond_13
 
-    const/16 v1, 0xf0
+    move v1, v7
 
-    const/16 v3, 0x78
+    move v3, v8
 
     goto :goto_3
 
@@ -627,9 +627,9 @@
 
     if-ge p1, v0, :cond_14
 
-    const/16 v1, 0x1a4
+    move v1, v5
 
-    const/16 v3, 0xf0
+    move v3, v7
 
     goto :goto_3
 
@@ -638,16 +638,16 @@
 
     if-ne p1, v0, :cond_15
 
-    const/16 v3, 0x1a4
+    move v3, v5
 
     goto :goto_3
 
     :cond_15
     const/16 p1, 0x2d0
 
-    const/16 v1, 0x2d0
+    move v3, v1
 
-    const/16 v3, 0x21c
+    move v1, p1
 
     .line 4307
     :goto_3
@@ -911,7 +911,7 @@
 
     if-eqz v0, :cond_1a
 
-    const/4 v2, 0x7
+    move v2, v5
 
     :cond_1a
     invoke-static {p1, v2, v4}, Lorg/telegram/ui/GroupCallActivity;->access$15200(Lorg/telegram/ui/GroupCallActivity;IZ)V

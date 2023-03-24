@@ -277,8 +277,6 @@
     throw v1
 
     :catch_1
-    nop
-
     :goto_3
     if-eqz v0, :cond_3
 

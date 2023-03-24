@@ -768,7 +768,7 @@
     return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 1969
     :goto_0
@@ -913,7 +913,7 @@
 
     new-array v0, v2, [Z
 
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 1873
     :goto_0

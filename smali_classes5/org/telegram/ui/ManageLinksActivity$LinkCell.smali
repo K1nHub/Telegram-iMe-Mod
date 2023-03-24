@@ -371,52 +371,52 @@
 
     if-ne p1, v1, :cond_2
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    const/high16 p1, 0x3f000000    # 0.5f
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    cmpl-float v1, p2, p1
 
-    cmpl-float v3, p2, v1
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    if-lez v3, :cond_1
+    if-lez v1, :cond_1
 
-    sub-float/2addr p2, v1
+    sub-float/2addr p2, p1
 
-    div-float/2addr p2, v1
+    div-float/2addr p2, p1
 
-    const-string v0, "chat_attachLocationBackground"
+    const-string p1, "chat_attachLocationBackground"
 
     .line 2894
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v0
+    move-result p1
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    sub-float/2addr p1, p2
+    sub-float/2addr v3, p2
 
-    invoke-static {v0, v1, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {p1, v0, v3}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
 
     return p1
 
     :cond_1
-    div-float/2addr p2, v1
+    div-float/2addr p2, p1
 
     .line 2897
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
-    sub-float/2addr p1, p2
+    sub-float/2addr v3, p2
 
-    invoke-static {v1, v0, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {p1, v0, v3}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
 
@@ -885,7 +885,7 @@
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_0
-    const/4 v2, 0x1
+    move v2, v4
 
     goto/16 :goto_1
 
@@ -1030,7 +1030,7 @@
     goto/16 :goto_0
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v3
 
     .line 2700
     :goto_1
@@ -1172,9 +1172,9 @@
     goto :goto_0
 
     :cond_2
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v2, v5
 
-    const/4 v2, 0x0
+    move v1, v6
 
     const/4 v3, 0x0
 
@@ -1195,7 +1195,7 @@
 
     const-wide/16 v13, 0x3e8
 
-    mul-long v11, v11, v13
+    mul-long/2addr v11, v13
 
     add-long/2addr v1, v11
 
@@ -1206,7 +1206,7 @@
 
     int-to-long v3, v12
 
-    mul-long v3, v3, v13
+    mul-long/2addr v3, v13
 
     .line 2795
     iget v12, v11, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->start_date:I
@@ -1218,7 +1218,7 @@
     :cond_4
     int-to-long v11, v12
 
-    mul-long v11, v11, v13
+    mul-long/2addr v11, v13
 
     sub-long/2addr v1, v11
 
@@ -1235,7 +1235,7 @@
     goto :goto_1
 
     :cond_5
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v6
 
     .line 2800
     :goto_1
@@ -1259,7 +1259,7 @@
     goto :goto_2
 
     :cond_6
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v6
 
     .line 2803
     :goto_2
@@ -1290,7 +1290,7 @@
     goto :goto_5
 
     :cond_7
-    const/4 v3, 0x1
+    move v3, v10
 
     goto :goto_5
 
@@ -1309,9 +1309,9 @@
     const/4 v3, 0x3
 
     :goto_4
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v2, v5
 
-    const/4 v2, 0x0
+    move v1, v6
 
     .line 2815
     :goto_5
@@ -1524,9 +1524,9 @@
     .line 2853
     iget v1, v0, Lorg/telegram/ui/ManageLinksActivity$LinkCell;->animateToStateProgress:F
 
-    const/high16 v2, 0x43b40000    # 360.0f
-
     cmpl-float v1, v1, v6
+
+    const/high16 v2, 0x43b40000    # 360.0f
 
     if-eqz v1, :cond_13
 
@@ -1569,7 +1569,7 @@
 
     const v1, 0x3e99999a    # 0.3f
 
-    mul-float v1, v1, v12
+    mul-float/2addr v1, v12
 
     float-to-double v5, v1
 
@@ -2356,7 +2356,7 @@
 
     const-wide/16 v6, 0x3e8
 
-    mul-long v4, v4, v6
+    mul-long/2addr v4, v6
 
     add-long/2addr v2, v4
 
@@ -2365,7 +2365,7 @@
 
     int-to-long p1, p1
 
-    mul-long p1, p1, v6
+    mul-long/2addr p1, v6
 
     sub-long/2addr p1, v2
 
@@ -2387,13 +2387,13 @@
     .line 2989
     div-long/2addr p1, v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    new-array p1, v0, [Ljava/lang/Object;
+    new-array p2, v0, [Ljava/lang/Object;
 
     const-string v0, "DaysLeft"
 
-    invoke-static {v0, p2, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2409,60 +2409,42 @@
 
     rem-long v4, p1, v2
 
-    long-to-int v5, v4
+    long-to-int v4, v4
 
     .line 2992
     div-long/2addr p1, v2
 
-    rem-long v6, p1, v2
+    rem-long v5, p1, v2
 
-    long-to-int v4, v6
+    long-to-int v5, v5
 
     .line 2993
     div-long/2addr p1, v2
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
     .line 2994
-    sget-object p1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    sget-object p2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     const/4 v2, 0x1
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p2
+    move-result-object p1
 
-    aput-object p2, v3, v0
+    aput-object p1, v3, v0
 
-    const-string p2, "%02d"
+    const-string p1, "%02d"
 
-    invoke-static {p1, p2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p1, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-virtual {v1, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v1, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    move-result-object p2
-
-    new-array v3, v2, [Ljava/lang/Object;
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v3, v0
-
-    const-string v4, ":%02d"
-
-    invoke-static {p1, v4, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p2, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object p2
+    move-result-object p1
 
     new-array v3, v2, [Ljava/lang/Object;
 
@@ -2472,11 +2454,29 @@
 
     aput-object v5, v3, v0
 
-    invoke-static {p1, v4, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v5, ":%02d"
+
+    invoke-static {p2, v5, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    new-array v3, v2, [Ljava/lang/Object;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v0
+
+    invoke-static {p2, v5, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 2995
     iput-boolean v2, p0, Lorg/telegram/ui/ManageLinksActivity$LinkCell;->timerRunning:Z

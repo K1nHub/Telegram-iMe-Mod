@@ -58,7 +58,7 @@
 
     div-int/2addr v2, v3
 
-    mul-int v0, v0, v2
+    mul-int/2addr v0, v2
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
@@ -66,9 +66,9 @@
 
     move v2, p2
 
-    const/4 v4, 0x0
+    move v4, v0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_1
     if-lez v2, :cond_d
@@ -171,7 +171,7 @@
 
     if-lez v7, :cond_6
 
-    const/4 v8, 0x0
+    move v8, v0
 
     :goto_4
     if-ge v8, v7, :cond_6
@@ -197,7 +197,7 @@
     :cond_7
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_5
     if-ge v6, v4, :cond_a
@@ -220,7 +220,7 @@
     if-le v7, v8, :cond_9
 
     :cond_8
-    const/16 v7, 0x2e
+    move v7, v9
 
     .line 10
     :cond_9
@@ -241,7 +241,7 @@
     .line 11
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    move v4, v0
 
     :cond_c
     add-int/lit8 p1, p1, 0x1

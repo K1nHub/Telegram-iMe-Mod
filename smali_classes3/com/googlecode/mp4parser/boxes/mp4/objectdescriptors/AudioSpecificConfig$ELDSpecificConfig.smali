@@ -96,7 +96,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 p2, 0x0
+    move p2, v1
 
     :goto_1
     const/16 v2, 0xff
@@ -136,7 +136,7 @@
 
     packed-switch p1, :pswitch_data_0
 
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_0
 

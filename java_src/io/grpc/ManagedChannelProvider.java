@@ -4,7 +4,7 @@ import io.grpc.ServiceProviders;
 import io.grpc.okhttp.OkHttpChannelProvider;
 import java.util.ArrayList;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ManagedChannelProvider {
     static final Iterable<Class<?>> HARDCODED_CLASSES;
     private static final ManagedChannelProvider provider;
@@ -40,14 +40,14 @@ public abstract class ManagedChannelProvider {
         throw new ProviderNotFoundException("No functional channel service provider found. Try adding a dependency on the grpc-okhttp, grpc-netty, or grpc-netty-shaded artifact");
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class ProviderNotFoundException extends RuntimeException {
         public ProviderNotFoundException(String str) {
             super(str);
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     private static final class HardcodedClasses implements Iterable<Class<?>> {
         private HardcodedClasses() {
         }

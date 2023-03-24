@@ -73,12 +73,12 @@
 
     if-eqz v7, :cond_0
 
-    const/4 v7, 0x3
+    move v7, v8
 
     goto :goto_0
 
     :cond_0
-    const/4 v7, 0x5
+    move v7, v9
 
     :goto_0
     or-int/lit8 v7, v7, 0x30
@@ -94,12 +94,12 @@
 
     if-eqz v7, :cond_1
 
-    const/4 v7, 0x3
+    move v7, v8
 
     goto :goto_1
 
     :cond_1
-    const/4 v7, 0x5
+    move v7, v9
 
     :goto_1
     or-int/lit8 v12, v7, 0x30
@@ -199,12 +199,12 @@
 
     if-eqz v7, :cond_2
 
-    const/4 v7, 0x3
+    move v7, v8
 
     goto :goto_2
 
     :cond_2
-    const/4 v7, 0x5
+    move v7, v9
 
     :goto_2
     or-int/lit8 v7, v7, 0x30
@@ -220,12 +220,12 @@
 
     if-eqz v7, :cond_3
 
-    const/4 v7, 0x3
+    move v7, v8
 
     goto :goto_3
 
     :cond_3
-    const/4 v7, 0x5
+    move v7, v9
 
     :goto_3
     or-int/lit8 v13, v7, 0x30
@@ -406,12 +406,12 @@
 
     if-eqz v13, :cond_4
 
-    const/4 v13, 0x3
+    move v13, v8
 
     goto :goto_4
 
     :cond_4
-    const/4 v13, 0x5
+    move v13, v9
 
     :goto_4
     or-int/lit8 v13, v13, 0x30
@@ -427,12 +427,12 @@
 
     if-eqz v13, :cond_5
 
-    const/4 v13, 0x3
+    move v13, v8
 
     goto :goto_5
 
     :cond_5
-    const/4 v13, 0x5
+    move v13, v9
 
     :goto_5
     or-int/lit8 v19, v13, 0x30
@@ -526,12 +526,12 @@
 
     if-eqz v13, :cond_6
 
-    const/4 v13, 0x3
+    move v13, v8
 
     goto :goto_6
 
     :cond_6
-    const/4 v13, 0x5
+    move v13, v9
 
     :goto_6
     or-int/lit8 v13, v13, 0x30
@@ -547,12 +547,12 @@
 
     if-eqz v13, :cond_7
 
-    const/4 v13, 0x3
+    move v13, v8
 
     goto :goto_7
 
     :cond_7
-    const/4 v13, 0x5
+    move v13, v9
 
     :goto_7
     or-int/lit8 v19, v13, 0x30
@@ -723,12 +723,12 @@
 
     if-eqz v4, :cond_8
 
-    const/4 v4, 0x3
+    move v4, v8
 
     goto :goto_8
 
     :cond_8
-    const/4 v4, 0x5
+    move v4, v9
 
     :goto_8
     or-int/lit8 v4, v4, 0x30
@@ -747,7 +747,7 @@
     goto :goto_9
 
     :cond_9
-    const/4 v8, 0x5
+    move v8, v9
 
     :goto_9
     or-int/lit8 v13, v8, 0x30

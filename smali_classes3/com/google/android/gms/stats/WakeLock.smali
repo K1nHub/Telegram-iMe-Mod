@@ -598,7 +598,7 @@
 
     invoke-interface {v1, v6, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    move v2, v12
 
     goto :goto_0
 
@@ -684,9 +684,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-lez v2, :cond_6
+    if-lez v0, :cond_6
 
     .line 73
     sget-object v0, Lcom/google/android/gms/stats/WakeLock;->zzn:Ljava/util/concurrent/ScheduledExecutorService;
@@ -796,7 +796,7 @@
     if-nez v1, :cond_1
 
     :goto_0
-    const/4 v1, 0x0
+    move v1, v11
 
     goto :goto_1
 
@@ -815,7 +815,7 @@
 
     invoke-interface {v1, v6}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_1
 

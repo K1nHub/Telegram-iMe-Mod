@@ -144,7 +144,7 @@
 
     :cond_2
     :goto_1
-    const/4 v11, 0x1
+    move v11, v7
 
     :goto_2
     if-eqz v8, :cond_3

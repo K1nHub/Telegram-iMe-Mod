@@ -24,21 +24,25 @@ final class Sniffer {
 
     private static boolean sniffInternal(ExtractorInput extractorInput, boolean z, boolean z2) throws IOException {
         boolean z3;
+        boolean z4;
+        boolean z5;
+        boolean z6;
+        boolean z7;
         long length = extractorInput.getLength();
-        long j = 4096;
-        long j2 = -1;
+        long j = -1;
         int i = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
+        long j2 = 4096;
         if (i != 0 && length <= 4096) {
-            j = length;
+            j2 = length;
         }
-        int i2 = (int) j;
+        int i2 = (int) j2;
         ParsableByteArray parsableByteArray = new ParsableByteArray(64);
-        boolean z4 = false;
+        boolean z8 = false;
         int i3 = 0;
-        boolean z5 = false;
+        boolean z9 = false;
         while (i3 < i2) {
             parsableByteArray.reset(8);
-            if (!extractorInput.peekFully(parsableByteArray.getData(), z4 ? 1 : 0, 8, true)) {
+            if (!extractorInput.peekFully(parsableByteArray.getData(), z8 ? 1 : 0, 8, true)) {
                 break;
             }
             long readUnsignedInt = parsableByteArray.readUnsignedInt();
@@ -51,7 +55,7 @@ final class Sniffer {
             } else {
                 if (readUnsignedInt == 0) {
                     long length2 = extractorInput.getLength();
-                    if (length2 != j2) {
+                    if (length2 != j) {
                         readUnsignedInt = (length2 - extractorInput.getPeekPosition()) + 8;
                     }
                 }
@@ -59,7 +63,7 @@ final class Sniffer {
             }
             long j3 = i4;
             if (readUnsignedInt < j3) {
-                return z4;
+                return z8;
             }
             i3 += i4;
             if (readInt == 1836019574) {
@@ -67,50 +71,63 @@ final class Sniffer {
                 if (i != 0 && i2 > length) {
                     i2 = (int) length;
                 }
-                j2 = -1;
             } else if (readInt == 1836019558 || readInt == 1836475768) {
-                z3 = true;
+                z3 = z8 ? 1 : 0;
+                z4 = true;
+                z5 = true;
                 break;
             } else {
                 long j4 = length;
                 if ((i3 + readUnsignedInt) - j3 >= i2) {
+                    z3 = false;
+                    z4 = true;
                     break;
                 }
                 int i5 = (int) (readUnsignedInt - j3);
                 i3 += i5;
-                if (readInt == 1718909296) {
-                    if (i5 < 8) {
-                        return false;
+                if (readInt != 1718909296) {
+                    z6 = false;
+                    z9 = z9;
+                    if (i5 != 0) {
+                        extractorInput.advancePeekPosition(i5);
+                        z9 = z9;
                     }
+                } else if (i5 < 8) {
+                    return false;
+                } else {
                     parsableByteArray.reset(i5);
                     extractorInput.peekFully(parsableByteArray.getData(), 0, i5);
                     int i6 = i5 / 4;
                     int i7 = 0;
                     while (true) {
                         if (i7 >= i6) {
+                            z7 = z9;
                             break;
                         }
                         if (i7 == 1) {
                             parsableByteArray.skipBytes(4);
                         } else if (isCompatibleBrand(parsableByteArray.readInt(), z2)) {
-                            z5 = true;
+                            z7 = true;
                             break;
                         }
                         i7++;
                     }
-                    if (!z5) {
+                    if (!z7) {
                         return false;
                     }
-                } else if (i5 != 0) {
-                    extractorInput.advancePeekPosition(i5);
+                    z6 = false;
+                    z9 = z7;
                 }
+                z8 = z6;
                 length = j4;
-                j2 = -1;
-                z4 = false;
             }
+            j = -1;
+            z9 = z9;
         }
-        z3 = false;
-        return z5 && z == z3;
+        z3 = z8 ? 1 : 0;
+        z4 = true;
+        z5 = z3;
+        return (z9 && z == z5) ? z4 : z3;
     }
 
     private static boolean isCompatibleBrand(int i, boolean z) {

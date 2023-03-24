@@ -161,9 +161,9 @@
 
     move-result-wide p3
 
-    cmp-long p5, p3, p1
+    cmp-long p1, p3, p1
 
-    if-nez p5, :cond_0
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1529,13 +1529,13 @@
     goto :goto_4
 
     :cond_4
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_5
 
     :cond_5
     :goto_4
-    const/4 v4, 0x1
+    move v4, v2
 
     :goto_5
     if-eqz v4, :cond_3
@@ -1669,16 +1669,16 @@
 .end method
 
 .method protected onFirstViewAttach()V
-    .locals 5
+    .locals 4
 
     .line 236
     iget-wide v0, p0, Lcom/smedialink/ui/profile/ProfilePresenter;->userId:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 237
     invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->isWalletAuthorized()Z
@@ -1906,16 +1906,16 @@
 .end method
 
 .method public final prepareTwitterAuthFlow()V
-    .locals 5
+    .locals 4
 
     .line 146
     iget-wide v0, p0, Lcom/smedialink/ui/profile/ProfilePresenter;->userId:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 147
     invoke-virtual {p0}, Lcom/smedialink/ui/profile/ProfilePresenter;->startTwitterAuthFlow()V

@@ -434,12 +434,12 @@
 
     if-lez v5, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v11
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v14
 
     .line 435
     :goto_0
@@ -457,9 +457,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v4, v1, v5
+    cmp-long v1, v1, v5
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_2
 
     if-nez v3, :cond_1
 
@@ -536,9 +536,9 @@
     .line 443
     iget-wide v2, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
-    cmp-long v4, v2, v11
+    cmp-long v2, v2, v11
 
-    if-eqz v4, :cond_4
+    if-eqz v2, :cond_4
 
     aget v2, v10, v14
 
@@ -615,9 +615,9 @@
     .line 452
     iget-wide v2, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
-    cmp-long v4, v2, v11
+    cmp-long v2, v2, v11
 
-    if-eqz v4, :cond_8
+    if-eqz v2, :cond_8
 
     aget v2, v10, v14
 
@@ -1246,7 +1246,7 @@
 .end method
 
 .method private chekDestroyDecoder()V
-    .locals 5
+    .locals 4
 
     .line 206
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->loadFrameRunnable:Ljava/lang/Runnable;
@@ -1261,9 +1261,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->generatingCache:Z
 
@@ -1361,7 +1361,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 957
     :goto_0
@@ -1568,9 +1568,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
     .line 712
     iget v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->invalidateAfter:I
@@ -1843,7 +1843,7 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_0
     return v1
@@ -1863,7 +1863,7 @@
     if-nez v0, :cond_3
 
     :cond_2
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_3
     return v1
@@ -1944,7 +1944,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 293
     :goto_0
@@ -2041,23 +2041,23 @@
 .end method
 
 .method public drawFrame(Landroid/graphics/Canvas;I)V
-    .locals 5
+    .locals 4
 
     .line 1103
     iget-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p2, :cond_1
@@ -2214,9 +2214,9 @@
     :cond_0
     const-wide/16 v2, 0x0
 
-    cmp-long v4, p3, v2
+    cmp-long v2, p3, v2
 
-    if-nez v4, :cond_1
+    if-nez v2, :cond_1
 
     .line 793
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -2431,7 +2431,7 @@
     goto :goto_5
 
     :cond_b
-    const/4 v2, 0x0
+    move v2, v6
 
     .line 831
     :goto_5
@@ -2599,7 +2599,7 @@
     iput-boolean v2, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->invalidatePath:Z
 
     :cond_13
-    const/4 v6, 0x0
+    move v6, v2
 
     .line 862
     :goto_7
@@ -2877,23 +2877,23 @@
 .end method
 
 .method public getCurrentProgressMs()I
-    .locals 5
+    .locals 4
 
     .line 696
     iget-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->pendingSeekToUI:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v4, :cond_0
+    if-ltz v0, :cond_0
 
     .line 697
     iget-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->pendingSeekToUI:J
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    return v1
+    return v0
 
     .line 699
     :cond_0
@@ -3256,7 +3256,7 @@
     .line 748
     iget v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->scaleFactor:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -3321,7 +3321,7 @@
     .line 759
     iget v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->scaleFactor:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -3459,9 +3459,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
@@ -3520,57 +3520,57 @@
     .line 1056
     iget-wide v6, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheGenerateTimestamp:J
 
-    const/4 v1, 0x3
+    cmp-long v1, v6, v2
 
-    cmp-long v8, v6, v2
+    const/4 v2, 0x3
 
-    if-eqz v8, :cond_3
+    if-eqz v1, :cond_3
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->metaData:[I
+    iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->metaData:[I
 
-    aget v3, v2, v1
+    aget v3, v1, v2
 
     if-eqz v3, :cond_2
 
-    aget v2, v2, v1
+    aget v1, v1, v2
 
-    int-to-long v2, v2
+    int-to-long v8, v1
 
-    cmp-long v8, v6, v2
+    cmp-long v1, v6, v8
 
-    if-lez v8, :cond_3
+    if-lez v1, :cond_3
 
     :cond_2
     return v5
 
     .line 1059
     :cond_3
-    iget v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->lastMetadata:I
+    iget v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->lastMetadata:I
 
     iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->metaData:[I
 
-    aget v6, v3, v1
+    aget v6, v3, v2
 
-    if-ne v2, v6, :cond_4
+    if-ne v1, v6, :cond_4
 
     .line 1060
-    iget v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->tryCount:I
+    iget v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->tryCount:I
 
-    add-int/2addr v2, v4
+    add-int/2addr v1, v4
 
-    iput v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->tryCount:I
+    iput v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->tryCount:I
 
     const/4 v6, 0x5
 
-    if-le v2, v6, :cond_4
+    if-le v1, v6, :cond_4
 
     return v5
 
     .line 1065
     :cond_4
-    aget v2, v3, v1
+    aget v1, v3, v2
 
-    iput v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->lastMetadata:I
+    iput v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->lastMetadata:I
 
     .line 1066
     invoke-virtual {p1, v5}, Landroid/graphics/Bitmap;->eraseColor(I)V
@@ -3583,15 +3583,15 @@
 
     int-to-float p1, p1
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->generatingCacheBitmap:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->generatingCacheBitmap:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v2
+    move-result v1
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    div-float/2addr p1, v2
+    div-float/2addr p1, v1
 
     .line 1069
     invoke-virtual {v0, p1, p1}, Landroid/graphics/Canvas;->scale(FF)V
@@ -3599,11 +3599,11 @@
     .line 1070
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->generatingCacheBitmap:Landroid/graphics/Bitmap;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, p1, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v0, p1, v3, v3, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 1071
     invoke-virtual {v0}, Landroid/graphics/Canvas;->restore()V
@@ -3611,7 +3611,7 @@
     .line 1072
     iget-object p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->metaData:[I
 
-    aget p1, p1, v1
+    aget p1, p1, v2
 
     int-to-long v0, p1
 
@@ -3628,9 +3628,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 1007
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->backgroundBitmap:Landroid/graphics/Bitmap;
@@ -3654,7 +3654,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->scaleFactor:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -3664,7 +3664,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -3748,7 +3748,7 @@
 
     const/high16 v1, 0x447a0000    # 1000.0f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-long v0, v0
 
@@ -3883,12 +3883,12 @@
 
     if-eqz v1, :cond_0
 
-    const/16 v16, 0x1
+    move/from16 v16, v2
 
     goto :goto_0
 
     :cond_0
-    const/16 v16, 0x0
+    move/from16 v16, v3
 
     :goto_0
     const/16 v17, 0x0
@@ -3931,12 +3931,12 @@
 
     if-eqz v11, :cond_2
 
-    const/16 v31, 0x1
+    move/from16 v31, v2
 
     goto :goto_1
 
     :cond_2
-    const/16 v31, 0x0
+    move/from16 v31, v3
 
     :goto_1
     const/16 v32, 0x0
@@ -4169,16 +4169,16 @@
 .end method
 
 .method public releaseForGenerateCache()V
-    .locals 5
+    .locals 4
 
     .line 1041
     iget-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheGenerateNativePtr:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 1042
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->destroyDecoder(J)V
@@ -4258,7 +4258,7 @@
 .end method
 
 .method public resetStream(Z)V
-    .locals 5
+    .locals 4
 
     .line 642
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->stream:Lorg/telegram/messenger/AnimatedFileDrawableStream;
@@ -4276,9 +4276,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     if-eqz p1, :cond_1
 
@@ -4312,7 +4312,7 @@
 .end method
 
 .method public seekTo(JZZ)V
-    .locals 4
+    .locals 3
 
     .line 576
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->sync:Ljava/lang/Object;
@@ -4331,9 +4331,9 @@
 
     const-wide/16 v1, 0x0
 
-    cmp-long v3, p1, v1
+    cmp-long p1, p1, v1
 
-    if-eqz v3, :cond_0
+    if-eqz p1, :cond_0
 
     .line 580
     iget-wide p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
@@ -4360,7 +4360,7 @@
 
     if-eqz p3, :cond_1
 
-    const/4 p1, 0x0
+    move p1, p2
 
     goto :goto_0
 
@@ -4629,9 +4629,9 @@
 
     int-to-long p3, p3
 
-    cmp-long v0, p3, p1
+    cmp-long p3, p3, p1
 
-    if-gez v0, :cond_0
+    if-gez p3, :cond_0
 
     const/4 p3, 0x1
 
@@ -4765,75 +4765,65 @@
 
     if-nez p3, :cond_3
 
-    .line 1137
+    .line 1136
     :cond_1
-    iget-object p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingBitmap:Landroid/graphics/Bitmap;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->backgroundBitmap:Landroid/graphics/Bitmap;
-
-    .line 1139
     iget-object p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmap:Landroid/graphics/Bitmap;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingBitmap:Landroid/graphics/Bitmap;
 
-    .line 1140
+    .line 1137
     iget p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmapTime:I
 
     iput p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingBitmapTime:I
 
-    const/4 p3, 0x0
+    move p3, v1
 
-    .line 1141
+    .line 1138
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->backgroundShader:[Landroid/graphics/BitmapShader;
 
-    array-length v3, v2
+    array-length v2, v2
 
-    if-ge p3, v3, :cond_2
+    if-ge p3, v2, :cond_2
 
-    .line 1143
-    iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingShader:[Landroid/graphics/BitmapShader;
+    .line 1139
+    iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingShader:[Landroid/graphics/BitmapShader;
+
+    iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingShader:[Landroid/graphics/BitmapShader;
 
     aget-object v4, v3, p3
 
     aput-object v4, v2, p3
 
-    .line 1145
-    iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingShader:[Landroid/graphics/BitmapShader;
-
-    aget-object v4, v2, p3
-
-    aput-object v4, v3, p3
-
-    .line 1146
-    aput-object v0, v2, p3
+    .line 1140
+    aput-object v0, v3, p3
 
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_0
 
-    .line 1148
+    .line 1142
     :cond_2
     iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmap:Landroid/graphics/Bitmap;
 
-    .line 1149
+    .line 1143
     iput v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmapTime:I
 
-    .line 1151
+    .line 1145
     iput-wide p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->lastFrameTime:J
 
-    .line 1152
+    .line 1146
     invoke-direct {p0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->scheduleNextGetFrame()V
 
     goto :goto_2
 
-    .line 1154
+    .line 1148
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->invalidateInternal()V
 
     goto :goto_2
 
-    .line 1156
+    .line 1150
     :cond_4
     iget-boolean p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->isRunning:Z
 
@@ -4863,22 +4853,22 @@
 
     if-eqz p3, :cond_6
 
-    .line 1158
+    .line 1152
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingBitmap:Landroid/graphics/Bitmap;
 
     iput-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->backgroundBitmap:Landroid/graphics/Bitmap;
 
-    .line 1160
+    .line 1154
     iput-object p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingBitmap:Landroid/graphics/Bitmap;
 
-    .line 1161
+    .line 1155
     iget p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmapTime:I
 
     iput p3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingBitmapTime:I
 
-    const/4 p3, 0x0
+    move p3, v1
 
-    .line 1162
+    .line 1156
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->backgroundShader:[Landroid/graphics/BitmapShader;
 
@@ -4886,38 +4876,38 @@
 
     if-ge p3, v3, :cond_5
 
-    .line 1164
+    .line 1158
     iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->renderingShader:[Landroid/graphics/BitmapShader;
 
     aget-object v4, v3, p3
 
     aput-object v4, v2, p3
 
-    .line 1166
+    .line 1160
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingShader:[Landroid/graphics/BitmapShader;
 
     aget-object v4, v2, p3
 
     aput-object v4, v3, p3
 
-    .line 1167
+    .line 1161
     aput-object v0, v2, p3
 
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_1
 
-    .line 1169
+    .line 1163
     :cond_5
     iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmap:Landroid/graphics/Bitmap;
 
-    .line 1170
+    .line 1164
     iput v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nextRenderingBitmapTime:I
 
-    .line 1171
+    .line 1165
     iput-wide p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->lastFrameTime:J
 
-    .line 1172
+    .line 1166
     invoke-direct {p0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->scheduleNextGetFrame()V
 
     :cond_6

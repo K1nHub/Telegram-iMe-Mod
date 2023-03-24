@@ -958,12 +958,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x2
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_0
     iput v0, p0, Lorg/webrtc/voiceengine/WebRtcAudioManager;->outputChannels:I
@@ -978,7 +978,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_1
     iput v1, p0, Lorg/webrtc/voiceengine/WebRtcAudioManager;->inputChannels:I

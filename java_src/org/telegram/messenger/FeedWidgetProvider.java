@@ -5,7 +5,6 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.widget.RemoteViews;
 import org.telegram.p048ui.LaunchActivity;
@@ -29,9 +28,7 @@ public class FeedWidgetProvider extends AppWidgetProvider {
     public void onDeleted(Context context, int[] iArr) {
         super.onDeleted(context, iArr);
         for (int i = 0; i < iArr.length; i++) {
-            SharedPreferences.Editor edit = context.getSharedPreferences("shortcut_widget", 0).edit();
-            SharedPreferences.Editor remove = edit.remove("account" + iArr[i]);
-            remove.remove("dialogId" + iArr[i]).commit();
+            context.getSharedPreferences("shortcut_widget", 0).edit().remove("account" + iArr[i]).remove("dialogId" + iArr[i]).commit();
         }
     }
 
@@ -39,10 +36,10 @@ public class FeedWidgetProvider extends AppWidgetProvider {
         Intent intent = new Intent(context, FeedWidgetService.class);
         intent.putExtra("appWidgetId", i);
         intent.setData(Uri.parse(intent.toUri(1)));
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), C3286R.layout.feed_widget_layout);
-        int i2 = C3286R.C3289id.list_view;
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), C3301R.layout.feed_widget_layout);
+        int i2 = C3301R.C3304id.list_view;
         remoteViews.setRemoteAdapter(i2, intent);
-        remoteViews.setEmptyView(i2, C3286R.C3289id.empty_view);
+        remoteViews.setEmptyView(i2, C3301R.C3304id.empty_view);
         Intent intent2 = new Intent(ApplicationLoader.applicationContext, LaunchActivity.class);
         intent2.setAction("com.tmessages.openchat" + Math.random() + Integer.MAX_VALUE);
         intent2.addFlags(ConnectionsManager.FileTypeFile);

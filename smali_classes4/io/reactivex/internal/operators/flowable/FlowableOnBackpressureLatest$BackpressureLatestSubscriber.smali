@@ -212,7 +212,7 @@
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    move v4, v3
 
     :cond_1
     const-wide/16 v5, 0x0
@@ -225,30 +225,30 @@
 
     move-result-wide v9
 
-    const/4 v11, 0x0
+    cmp-long v9, v7, v9
 
-    cmp-long v12, v7, v9
+    const/4 v10, 0x0
 
-    if-eqz v12, :cond_5
+    if-eqz v9, :cond_5
 
     .line 117
     iget-boolean v9, p0, Lio/reactivex/internal/operators/flowable/FlowableOnBackpressureLatest$BackpressureLatestSubscriber;->done:Z
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     .line 118
-    invoke-virtual {v2, v10}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v11}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v11
 
-    if-nez v10, :cond_2
+    if-nez v11, :cond_2
 
-    const/4 v12, 0x1
+    move v12, v3
 
     goto :goto_1
 
     :cond_2
-    const/4 v12, 0x0
+    move v12, v10
 
     .line 121
     :goto_1
@@ -267,7 +267,7 @@
 
     .line 129
     :cond_4
-    invoke-interface {v0, v10}, Lorg/reactivestreams/Subscriber;->onNext(Ljava/lang/Object;)V
+    invoke-interface {v0, v11}, Lorg/reactivestreams/Subscriber;->onNext(Ljava/lang/Object;)V
 
     const-wide/16 v9, 0x1
 
@@ -280,24 +280,24 @@
     :goto_2
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
-    move-result-wide v9
+    move-result-wide v11
 
-    cmp-long v12, v7, v9
+    cmp-long v9, v7, v11
 
-    if-nez v12, :cond_7
+    if-nez v9, :cond_7
 
     iget-boolean v9, p0, Lio/reactivex/internal/operators/flowable/FlowableOnBackpressureLatest$BackpressureLatestSubscriber;->done:Z
 
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v11
 
-    if-nez v10, :cond_6
+    if-nez v11, :cond_6
 
-    const/4 v11, 0x1
+    move v10, v3
 
     :cond_6
-    invoke-virtual {p0, v9, v11, v0, v2}, Lio/reactivex/internal/operators/flowable/FlowableOnBackpressureLatest$BackpressureLatestSubscriber;->checkTerminated(ZZLorg/reactivestreams/Subscriber;Ljava/util/concurrent/atomic/AtomicReference;)Z
+    invoke-virtual {p0, v9, v10, v0, v2}, Lio/reactivex/internal/operators/flowable/FlowableOnBackpressureLatest$BackpressureLatestSubscriber;->checkTerminated(ZZLorg/reactivestreams/Subscriber;Ljava/util/concurrent/atomic/AtomicReference;)Z
 
     move-result v9
 
@@ -306,9 +306,9 @@
     return-void
 
     :cond_7
-    cmp-long v9, v7, v5
+    cmp-long v5, v7, v5
 
-    if-eqz v9, :cond_8
+    if-eqz v5, :cond_8
 
     .line 139
     invoke-static {v1, v7, v8}, Lio/reactivex/internal/util/BackpressureHelper;->produced(Ljava/util/concurrent/atomic/AtomicLong;J)J

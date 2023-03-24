@@ -209,7 +209,7 @@
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    const/4 v0, 0x0
+    move v0, v3
 
     .line 14351
     :goto_0
@@ -624,7 +624,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_0
     int-to-float v0, v0
@@ -677,7 +677,7 @@
 
     move-result v4
 
-    mul-int/lit8 v4, v4, 0x2
+    mul-int/2addr v4, v10
 
     int-to-float v4, v4
 
@@ -744,7 +744,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v0, v3
 
@@ -787,7 +787,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v0, v3
 
@@ -845,7 +845,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_1
     add-int/2addr v2, v3
@@ -883,7 +883,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_2
     add-int/2addr v0, v3
@@ -896,7 +896,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v0, v3
 
@@ -921,7 +921,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     sub-float/2addr v0, v3
 
@@ -981,7 +981,7 @@
 
     if-eqz v4, :cond_5
 
-    const/4 v1, 0x0
+    move v1, v9
 
     :cond_5
     new-array v4, v10, [I
@@ -1019,7 +1019,7 @@
 
     :cond_7
     :goto_4
-    const/4 v14, 0x0
+    move v14, v9
 
     :goto_5
     sub-int/2addr v11, v14
@@ -1048,7 +1048,7 @@
 
     if-gez v7, :cond_8
 
-    const/4 v7, 0x0
+    move v7, v9
 
     :cond_8
     int-to-float v11, v15
@@ -1093,7 +1093,7 @@
 
     :cond_a
     :goto_6
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_7
     sub-int/2addr v4, v10
@@ -1114,7 +1114,7 @@
 
     if-gez v4, :cond_b
 
-    const/4 v4, 0x0
+    move v4, v9
 
     .line 14293
     :cond_b
@@ -1230,7 +1230,7 @@
 
     iget v11, v11, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v11, v11, v1
+    mul-float/2addr v11, v1
 
     const/4 v13, 0x4
 
@@ -1251,7 +1251,7 @@
 
     iget v11, v11, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v7, v7, v11
+    mul-float/2addr v7, v11
 
     const/4 v11, 0x5
 
@@ -1272,7 +1272,7 @@
 
     iget v10, v10, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     const/4 v10, 0x6
 
@@ -1289,7 +1289,7 @@
 
     move-result-object v4
 
-    const/4 v7, 0x0
+    move v7, v9
 
     :goto_8
     const/4 v14, 0x0
@@ -1336,7 +1336,7 @@
 
     iget v7, v7, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v3, v3, v7
+    mul-float/2addr v3, v7
 
     const/16 v7, 0xb
 
@@ -1355,7 +1355,7 @@
 
     iget v4, v4, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     const/16 v4, 0xc
 
@@ -1514,7 +1514,7 @@
 
     aput v14, v0, v4
 
-    const/4 v0, 0x0
+    move v0, v9
 
     .line 14324
     :goto_9
@@ -1634,19 +1634,19 @@
 
     if-le v3, v8, :cond_11
 
-    const/4 v3, 0x1
+    move v3, v8
 
     goto :goto_b
 
     :cond_11
-    const/4 v3, 0x0
+    move v3, v9
 
     :goto_b
     add-int/2addr v12, v3
 
     invoke-direct {v2, v12}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v3, 0x0
+    move v3, v9
 
     .line 14381
     :goto_c
@@ -1918,7 +1918,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/PhotoViewer$BackgroundDrawable;->setAlpha(I)V
 
-    const/4 v0, 0x0
+    move v0, v9
 
     .line 14429
     :goto_e

@@ -16,9 +16,9 @@ public final class zzm implements Parcelable.Creator<LandmarkParcel> {
     public final /* synthetic */ LandmarkParcel createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         float f = BitmapDescriptorFactory.HUE_RED;
-        float f2 = BitmapDescriptorFactory.HUE_RED;
         int i = 0;
         int i2 = 0;
+        float f2 = 0.0f;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);

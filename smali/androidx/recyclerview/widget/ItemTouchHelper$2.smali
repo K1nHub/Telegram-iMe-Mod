@@ -240,7 +240,7 @@
     goto :goto_2
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     return v0
@@ -371,7 +371,7 @@
 
     if-nez p1, :cond_5
 
-    const/4 v4, 0x1
+    move v4, v5
 
     .line 411
     :cond_5

@@ -183,8 +183,8 @@ class SampleDataQueue {
     }
 
     private static AllocationNode readEncryptionData(AllocationNode allocationNode, DecoderInputBuffer decoderInputBuffer, SampleQueue.SampleExtrasHolder sampleExtrasHolder, ParsableByteArray parsableByteArray) {
-        int i;
         long j = sampleExtrasHolder.offset;
+        int i = 1;
         parsableByteArray.reset(1);
         AllocationNode readData = readData(allocationNode, j, parsableByteArray.getData(), 1);
         long j2 = j + 1;
@@ -205,39 +205,38 @@ class SampleDataQueue {
             readData2 = readData(readData2, j3, parsableByteArray.getData(), 2);
             j3 += 2;
             i = parsableByteArray.readUnsignedShort();
-        } else {
-            i = 1;
         }
+        int i3 = i;
         int[] iArr = cryptoInfo.numBytesOfClearData;
-        if (iArr == null || iArr.length < i) {
-            iArr = new int[i];
+        if (iArr == null || iArr.length < i3) {
+            iArr = new int[i3];
         }
         int[] iArr2 = iArr;
         int[] iArr3 = cryptoInfo.numBytesOfEncryptedData;
-        if (iArr3 == null || iArr3.length < i) {
-            iArr3 = new int[i];
+        if (iArr3 == null || iArr3.length < i3) {
+            iArr3 = new int[i3];
         }
         int[] iArr4 = iArr3;
         if (z) {
-            int i3 = i * 6;
-            parsableByteArray.reset(i3);
-            readData2 = readData(readData2, j3, parsableByteArray.getData(), i3);
-            j3 += i3;
+            int i4 = i3 * 6;
+            parsableByteArray.reset(i4);
+            readData2 = readData(readData2, j3, parsableByteArray.getData(), i4);
+            j3 += i4;
             parsableByteArray.setPosition(0);
-            for (int i4 = 0; i4 < i; i4++) {
-                iArr2[i4] = parsableByteArray.readUnsignedShort();
-                iArr4[i4] = parsableByteArray.readUnsignedIntToInt();
+            for (int i5 = 0; i5 < i3; i5++) {
+                iArr2[i5] = parsableByteArray.readUnsignedShort();
+                iArr4[i5] = parsableByteArray.readUnsignedIntToInt();
             }
         } else {
             iArr2[0] = 0;
             iArr4[0] = sampleExtrasHolder.size - ((int) (j3 - sampleExtrasHolder.offset));
         }
         TrackOutput.CryptoData cryptoData = (TrackOutput.CryptoData) Util.castNonNull(sampleExtrasHolder.cryptoData);
-        cryptoInfo.set(i, iArr2, iArr4, cryptoData.encryptionKey, cryptoInfo.f107iv, cryptoData.cryptoMode, cryptoData.encryptedBlocks, cryptoData.clearBlocks);
+        cryptoInfo.set(i3, iArr2, iArr4, cryptoData.encryptionKey, cryptoInfo.f107iv, cryptoData.cryptoMode, cryptoData.encryptedBlocks, cryptoData.clearBlocks);
         long j4 = sampleExtrasHolder.offset;
-        int i5 = (int) (j3 - j4);
-        sampleExtrasHolder.offset = j4 + i5;
-        sampleExtrasHolder.size -= i5;
+        int i6 = (int) (j3 - j4);
+        sampleExtrasHolder.offset = j4 + i6;
+        sampleExtrasHolder.size -= i6;
         return readData2;
     }
 

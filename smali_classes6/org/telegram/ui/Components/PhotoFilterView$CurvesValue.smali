@@ -219,14 +219,14 @@
 
     invoke-virtual {v13, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v14, 0x1
+    move v14, v6
 
     :goto_0
     if-ge v14, v8, :cond_3
 
     add-int/lit8 v15, v14, -0x1
 
-    mul-int/lit8 v15, v15, 0x2
+    mul-int/2addr v15, v5
 
     .line 182
     aget v16, v1, v15
@@ -260,7 +260,7 @@
 
     add-int/lit8 v14, v14, 0x2
 
-    mul-int/lit8 v14, v14, 0x2
+    mul-int/2addr v14, v5
 
     .line 188
     aget v22, v1, v14
@@ -270,7 +270,7 @@
     .line 189
     aget v14, v1, v14
 
-    const/4 v3, 0x1
+    move v3, v6
 
     :goto_1
     if-ge v3, v11, :cond_2
@@ -539,7 +539,7 @@
 .end method
 
 .method public isDefault()Z
-    .locals 5
+    .locals 4
 
     .line 229
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->blacksLevel:F
@@ -556,9 +556,9 @@
 
     const-wide v2, 0x3ee4f8b588e368f1L    # 1.0E-5
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->shadowsLevel:F
 
@@ -572,9 +572,9 @@
 
     float-to-double v0, v0
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->midtonesLevel:F
 
@@ -588,9 +588,9 @@
 
     float-to-double v0, v0
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->highlightsLevel:F
 
@@ -604,9 +604,9 @@
 
     float-to-double v0, v0
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesValue;->whitesLevel:F
 
@@ -620,9 +620,9 @@
 
     float-to-double v0, v0
 
-    cmpg-double v4, v0, v2
+    cmpg-double v0, v0, v2
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 

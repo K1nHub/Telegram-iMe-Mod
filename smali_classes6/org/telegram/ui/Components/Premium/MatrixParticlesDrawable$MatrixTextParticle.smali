@@ -57,11 +57,11 @@
 
     const-wide/16 v4, 0x96
 
-    const/high16 v6, 0x437f0000    # 255.0f
+    cmp-long v2, v2, v4
 
-    cmp-long v7, v2, v4
+    const/high16 v3, 0x437f0000    # 255.0f
 
-    if-gez v7, :cond_0
+    if-gez v2, :cond_0
 
     sub-long/2addr v0, p4
 
@@ -87,37 +87,37 @@
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->paint:Landroid/graphics/Paint;
 
-    sub-float v3, v1, v0
+    sub-float v6, v1, v0
 
-    mul-float v3, v3, p6
+    mul-float/2addr v6, p6
 
-    mul-float v3, v3, v6
+    mul-float/2addr v6, v3
 
-    float-to-int v3, v3
+    float-to-int v6, v6
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 146
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$MatrixTextParticle;->this$0:Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;
 
-    iget-object v3, v2, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->bitmaps:[Landroid/graphics/Bitmap;
+    iget-object v6, v2, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->bitmaps:[Landroid/graphics/Bitmap;
 
     iget v7, p0, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$MatrixTextParticle;->index:I
 
-    aget-object v3, v3, v7
+    aget-object v6, v6, v7
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v3, p2, p3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v6, p2, p3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 147
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable$MatrixTextParticle;->this$0:Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->paint:Landroid/graphics/Paint;
 
-    mul-float p6, p6, v0
+    mul-float/2addr p6, v0
 
-    mul-float p6, p6, v6
+    mul-float/2addr p6, v3
 
     float-to-int p6, p6
 
@@ -198,7 +198,7 @@
 
     iget-object p4, p4, Lorg/telegram/ui/Components/Premium/MatrixParticlesDrawable;->paint:Landroid/graphics/Paint;
 
-    mul-float p6, p6, v6
+    mul-float/2addr p6, v3
 
     float-to-int p5, p6
 

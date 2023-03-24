@@ -82,7 +82,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 78
     :goto_0
@@ -112,9 +112,9 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v1
 
-    const/4 v2, 0x0
+    move v2, p1
 
     :goto_1
     if-ge p1, p3, :cond_3
@@ -152,9 +152,9 @@
 
     iput-object p1, p0, Landroidx/palette/graphics/ColorCutQuantizer;->mColors:[I
 
-    const/4 v3, 0x0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     if-ge v3, p3, :cond_5
@@ -614,7 +614,7 @@
     .line 445
     array-length v0, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_1

@@ -52,20 +52,22 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
             return;
         }
         int spanCount = getSpanCount();
+        boolean z = true;
         int itemCount = adapter.getItemCount() - 1;
         GridLayoutManager.SpanSizeLookup spanSizeLookup = getSpanSizeLookup();
+        boolean z2 = true;
         int i = 0;
-        boolean z = true;
         int i2 = 0;
-        for (int i3 = 0; i3 < itemCount; i3++) {
-            int spanSize = spanSizeLookup.getSpanSize(i3);
-            i += spanSize;
-            if (spanSize == spanCount || i > spanCount) {
-                i = spanSize;
-                z = true;
+        int i3 = 0;
+        while (i < itemCount) {
+            int spanSize = spanSizeLookup.getSpanSize(i);
+            i2 += spanSize;
+            if (spanSize == spanCount || i2 > spanCount) {
+                z2 = z;
+                i2 = spanSize;
             }
-            if (z) {
-                int itemViewType = adapter.getItemViewType(i3);
+            if (z2) {
+                int itemViewType = adapter.getItemViewType(i);
                 RecyclerView.ViewHolder viewHolder = this.heights.get(itemViewType, null);
                 if (viewHolder == null) {
                     viewHolder = adapter.createViewHolder(this.listView, itemViewType);
@@ -75,18 +77,20 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
                     }
                 }
                 if (this.bind) {
-                    adapter.onBindViewHolder(viewHolder, i3);
+                    adapter.onBindViewHolder(viewHolder, i);
                 }
                 RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) viewHolder.itemView.getLayoutParams();
                 viewHolder.itemView.measure(RecyclerView.LayoutManager.getChildMeasureSpec(this.listWidth, getWidthMode(), getPaddingLeft() + getPaddingRight() + ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin + ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams).width, canScrollHorizontally()), RecyclerView.LayoutManager.getChildMeasureSpec(this.listHeight, getHeightMode(), getPaddingTop() + getPaddingBottom() + ((ViewGroup.MarginLayoutParams) layoutParams).topMargin + ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin, ((ViewGroup.MarginLayoutParams) layoutParams).height, canScrollVertically()));
-                i2 += viewHolder.itemView.getMeasuredHeight();
-                if (i2 >= (this.listHeight - this.additionalHeight) - this.listView.getPaddingBottom()) {
+                i3 += viewHolder.itemView.getMeasuredHeight();
+                if (i3 >= (this.listHeight - this.additionalHeight) - this.listView.getPaddingBottom()) {
                     break;
                 }
-                z = false;
+                z2 = false;
             }
+            i++;
+            z = true;
         }
-        this.lastItemHeight = Math.max(0, ((this.listHeight - i2) - this.additionalHeight) - this.listView.getPaddingBottom());
+        this.lastItemHeight = Math.max(0, ((this.listHeight - i3) - this.additionalHeight) - this.listView.getPaddingBottom());
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager

@@ -176,6 +176,15 @@
     throw p2
 .end method
 
+.method public static emptyList()Lcom/google/protobuf/LongArrayList;
+    .locals 1
+
+    .line 54
+    sget-object v0, Lcom/google/protobuf/LongArrayList;->EMPTY_LIST:Lcom/google/protobuf/LongArrayList;
+
+    return-object v0
+.end method
+
 .method private ensureIndexInRange(I)V
     .locals 1
 
@@ -500,7 +509,7 @@
     :cond_2
     iget-object p1, p1, Lcom/google/protobuf/LongArrayList;->array:[J
 
-    const/4 v1, 0x0
+    move v1, v3
 
     .line 105
     :goto_0

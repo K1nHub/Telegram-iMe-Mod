@@ -7,7 +7,7 @@ import com.smedialink.services.receivers.BaseStopServiceReceiver;
 import com.smedialink.storage.data.utils.extentions.DateExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationsController;
 /* compiled from: ServiceNotificationsUtils.kt */
@@ -27,9 +27,9 @@ public final class ServiceNotificationsUtils {
         builder.setWhen(DateExtKt.now());
         builder.setSmallIcon(i);
         builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-        builder.setContentTitle(LocaleController.getString("AppName", C3286R.string.AppName));
+        builder.setContentTitle(LocaleController.getString("AppName", C3301R.string.AppName));
         builder.setProgress(0, 0, true);
-        builder.addAction(0, LocaleController.getString("Cancel", C3286R.string.Cancel), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, intent, 167772160));
+        builder.addAction(0, LocaleController.getString("Cancel", C3301R.string.Cancel), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, intent, 167772160));
         return builder;
     }
 }

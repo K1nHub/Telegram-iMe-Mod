@@ -186,7 +186,7 @@
 
     invoke-direct {v1, v3}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>([Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
 
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_0
     if-ge v3, v0, :cond_2
@@ -207,7 +207,7 @@
     :cond_0
     iget-object v4, v4, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Lcom/google/android/exoplayer2/Format;
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 389
     :goto_1

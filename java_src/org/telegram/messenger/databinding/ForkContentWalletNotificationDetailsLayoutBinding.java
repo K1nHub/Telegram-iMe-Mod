@@ -10,7 +10,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.smedialink.p031ui.custom.DividerView;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 /* loaded from: classes4.dex */
 public final class ForkContentWalletNotificationDetailsLayoutBinding implements ViewBinding {
     public final LinearLayout linearRoot;
@@ -39,7 +39,7 @@ public final class ForkContentWalletNotificationDetailsLayoutBinding implements 
     }
 
     public static ForkContentWalletNotificationDetailsLayoutBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3286R.layout.fork_content_wallet_notification_details_layout, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3301R.layout.fork_content_wallet_notification_details_layout, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -47,26 +47,26 @@ public final class ForkContentWalletNotificationDetailsLayoutBinding implements 
     }
 
     public static ForkContentWalletNotificationDetailsLayoutBinding bind(View view) {
-        int i = C3286R.C3289id.constraint_bottom_action;
+        int i = C3301R.C3304id.constraint_bottom_action;
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
         if (constraintLayout != null) {
             LinearLayout linearLayout = (LinearLayout) view;
-            i = C3286R.C3289id.nested_scroll_view;
+            i = C3301R.C3304id.nested_scroll_view;
             NestedScrollView nestedScrollView = (NestedScrollView) ViewBindings.findChildViewById(view, i);
             if (nestedScrollView != null) {
-                i = C3286R.C3289id.text_action_cancel;
+                i = C3301R.C3304id.text_action_cancel;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3286R.C3289id.text_category;
+                    i = C3301R.C3304id.text_category;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
-                        i = C3286R.C3289id.text_date;
+                        i = C3301R.C3304id.text_date;
                         AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView3 != null) {
-                            i = C3286R.C3289id.text_message;
+                            i = C3301R.C3304id.text_message;
                             AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView4 != null) {
-                                i = C3286R.C3289id.view_divider;
+                                i = C3301R.C3304id.view_divider;
                                 DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                                 if (dividerView != null) {
                                     return new ForkContentWalletNotificationDetailsLayoutBinding(linearLayout, constraintLayout, linearLayout, nestedScrollView, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, dividerView);

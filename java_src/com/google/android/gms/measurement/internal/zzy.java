@@ -41,13 +41,13 @@ public final class zzy extends zzx {
         boolean zzg = this.zzh.zzg();
         boolean zzh = this.zzh.zzh();
         boolean zzi = this.zzh.zzi();
-        boolean z2 = zzg || zzh || zzi;
+        Object[] objArr = (zzg || zzh || zzi) ? 1 : null;
         Boolean bool = null;
         bool = null;
         bool = null;
         bool = null;
         bool = null;
-        if (!z || z2) {
+        if (!z || objArr != null) {
             com.google.android.gms.internal.measurement.zzel zzb = this.zzh.zzb();
             boolean zzg2 = zzb.zzg();
             if (zzghVar.zzr()) {
@@ -86,7 +86,7 @@ public final class zzy extends zzx {
                 if (!z || this.zzh.zzg()) {
                     this.zze = bool;
                 }
-                if (bool.booleanValue() && z2 && zzghVar.zzs()) {
+                if (bool.booleanValue() && objArr != null && zzghVar.zzs()) {
                     long zzc = zzghVar.zzc();
                     if (l != null) {
                         zzc = l.longValue();

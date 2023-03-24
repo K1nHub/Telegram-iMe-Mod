@@ -378,7 +378,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
@@ -407,7 +407,7 @@
     .line 12
     array-length v4, p2
 
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_1
     if-ge v5, v4, :cond_3
@@ -434,12 +434,12 @@
 
     :cond_2
     :goto_2
-    const/4 v4, 0x1
+    move v4, v2
 
     goto :goto_3
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_3
     if-nez v4, :cond_5
@@ -537,7 +537,7 @@
 .end method
 
 .method public static zzc([B)Ljava/lang/String;
-    .locals 7
+    .locals 6
 
     if-eqz p0, :cond_5
 
@@ -567,9 +567,9 @@
 
     const-wide/32 v4, 0x7fffffff
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-gtz v6, :cond_4
+    if-gtz v4, :cond_4
 
     .line 85
     array-length v1, p0
@@ -615,7 +615,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 p0, 0x0
+    move p0, v3
 
     .line 95
     :goto_0
@@ -916,7 +916,7 @@
     return-void
 
     :cond_6
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_1
     if-ge v2, p3, :cond_9

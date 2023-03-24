@@ -148,12 +148,12 @@
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-ne p1, v0, :cond_1
@@ -244,19 +244,19 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v4, 0x0
+    move v4, v0
 
     goto :goto_1
 
     :cond_6
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v3
 
     :goto_1
     aput v4, p2, v2
 
     if-eqz p1, :cond_7
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v3
 
     :cond_7
     aput v0, p2, v1
@@ -369,7 +369,7 @@
 
     sub-float/2addr v1, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     iput v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsEnterOffset:F
 

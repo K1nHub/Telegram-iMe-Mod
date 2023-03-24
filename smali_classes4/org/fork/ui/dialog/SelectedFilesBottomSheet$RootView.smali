@@ -146,7 +146,7 @@
 
     const/4 v6, 0x2
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     .line 343
     iget-object v3, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet$RootView;->this$0:Lorg/fork/ui/dialog/SelectedFilesBottomSheet;
@@ -184,7 +184,7 @@
 
     add-int/2addr v2, v3
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v6
 
     int-to-float v3, v3
 
@@ -204,7 +204,7 @@
     goto :goto_0
 
     :cond_0
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v3, v5
 
     .line 349
     :goto_0
@@ -218,7 +218,7 @@
 
     sget v8, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    if-ge v7, v8, :cond_2
+    if-ge v7, v8, :cond_1
 
     sub-int v7, v8, v1
 
@@ -238,10 +238,14 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v3, 0x3f800000    # 1.0f
+    move v7, v4
+
+    goto :goto_1
 
     :cond_2
-    const/4 v7, 0x0
+    move v7, v4
+
+    move v3, v5
 
     .line 354
     :goto_1
@@ -354,7 +358,7 @@
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -362,7 +366,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
@@ -465,7 +469,7 @@
 
     const v3, 0x3f4ccccd    # 0.8f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v2, v2
 
@@ -475,7 +479,7 @@
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -485,7 +489,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     float-to-int v0, v0
 
@@ -685,7 +689,7 @@
 
     move-result v3
 
-    mul-int v0, v0, v3
+    mul-int/2addr v0, v3
 
     const/16 v3, 0x6e
 
@@ -717,13 +721,13 @@
 
     const v6, 0x404ccccd    # 3.2f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     cmpg-float v0, v0, v5
 
     if-gez v0, :cond_0
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_0
 
@@ -788,7 +792,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 313
     :goto_1

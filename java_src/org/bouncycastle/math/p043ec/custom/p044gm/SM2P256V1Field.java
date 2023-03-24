@@ -8,17 +8,17 @@ import org.bouncycastle.math.raw.Nat256;
 public class SM2P256V1Field {
 
     /* renamed from: P */
-    static final int[] f1320P = {-1, -1, 0, -1, -1, -1, -1, -2};
+    static final int[] f1321P = {-1, -1, 0, -1, -1, -1, -1, -2};
     static final int[] PExt = {1, 0, -2, 1, 1, -2, 0, 2, -2, -3, 3, -2, -1, -1, 0, -2};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat256.add(iArr, iArr2, iArr3) != 0 || ((iArr3[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr3, f1320P))) {
+        if (Nat256.add(iArr, iArr2, iArr3) != 0 || ((iArr3[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr3, f1321P))) {
             addPInvTo(iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(8, iArr, iArr2) != 0 || ((iArr2[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr2, f1320P))) {
+        if (Nat.inc(8, iArr, iArr2) != 0 || ((iArr2[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr2, f1321P))) {
             addPInvTo(iArr2);
         }
     }
@@ -52,7 +52,7 @@ public class SM2P256V1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat256.fromBigInteger(bigInteger);
         if ((fromBigInteger[7] >>> 1) >= Integer.MAX_VALUE) {
-            int[] iArr = f1320P;
+            int[] iArr = f1321P;
             if (Nat256.gte(fromBigInteger, iArr)) {
                 Nat256.subFrom(iArr, fromBigInteger);
             }
@@ -76,7 +76,7 @@ public class SM2P256V1Field {
         if (Nat256.isZero(iArr)) {
             Nat256.zero(iArr2);
         } else {
-            Nat256.sub(f1320P, iArr, iArr2);
+            Nat256.sub(f1321P, iArr, iArr2);
         }
     }
 
@@ -145,7 +145,7 @@ public class SM2P256V1Field {
         } else {
             j = 0;
         }
-        if (j != 0 || ((iArr[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr, f1320P))) {
+        if (j != 0 || ((iArr[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr, f1321P))) {
             addPInvTo(iArr);
         }
     }
@@ -202,7 +202,7 @@ public class SM2P256V1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(8, iArr, 0, iArr2) != 0 || ((iArr2[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr2, f1320P))) {
+        if (Nat.shiftUpBit(8, iArr, 0, iArr2) != 0 || ((iArr2[7] >>> 1) >= Integer.MAX_VALUE && Nat256.gte(iArr2, f1321P))) {
             addPInvTo(iArr2);
         }
     }

@@ -44,12 +44,12 @@
 
     if-ge v0, v3, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     sput-boolean v3, Lcom/bumptech/glide/load/resource/bitmap/HardwareConfigState;->BLOCK_HARDWARE_BITMAPS_WHEN_GL_CONTEXT_MIGHT_NOT_BE_INITIALIZED:Z
@@ -61,7 +61,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 32
     :goto_1
@@ -244,7 +244,7 @@
 .end method
 
 .method private declared-synchronized isFdSizeBelowHardwareLimit()Z
-    .locals 8
+    .locals 7
 
     monitor-enter p0
 
@@ -285,14 +285,14 @@
 
     int-to-long v5, v2
 
-    cmp-long v7, v5, v3
+    cmp-long v5, v5, v3
 
-    if-gez v7, :cond_0
+    if-gez v5, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 304
     :goto_0

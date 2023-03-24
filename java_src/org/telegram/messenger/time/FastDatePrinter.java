@@ -70,36 +70,37 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v16, types: [org.telegram.messenger.time.FastDatePrinter$TimeZoneNumberRule] */
     /* JADX WARN: Type inference failed for: r11v17, types: [org.telegram.messenger.time.FastDatePrinter$TimeZoneNumberRule] */
-    /* JADX WARN: Type inference failed for: r9v10 */
-    /* JADX WARN: Type inference failed for: r9v14, types: [org.telegram.messenger.time.FastDatePrinter$StringLiteral] */
-    /* JADX WARN: Type inference failed for: r9v15, types: [org.telegram.messenger.time.FastDatePrinter$CharacterLiteral] */
-    /* JADX WARN: Type inference failed for: r9v19, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
-    /* JADX WARN: Type inference failed for: r9v21, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v22, types: [org.telegram.messenger.time.FastDatePrinter$TwelveHourField] */
-    /* JADX WARN: Type inference failed for: r9v23, types: [org.telegram.messenger.time.FastDatePrinter$TwentyFourHourField] */
-    /* JADX WARN: Type inference failed for: r9v25, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v13, types: [org.telegram.messenger.time.FastDatePrinter$StringLiteral] */
+    /* JADX WARN: Type inference failed for: r9v14, types: [org.telegram.messenger.time.FastDatePrinter$CharacterLiteral] */
+    /* JADX WARN: Type inference failed for: r9v18, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v20, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v21, types: [org.telegram.messenger.time.FastDatePrinter$TwelveHourField] */
+    /* JADX WARN: Type inference failed for: r9v22, types: [org.telegram.messenger.time.FastDatePrinter$TwentyFourHourField] */
+    /* JADX WARN: Type inference failed for: r9v24, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v26, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
     /* JADX WARN: Type inference failed for: r9v27, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v28, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v30, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v31, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
-    /* JADX WARN: Type inference failed for: r9v33, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v34, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
-    /* JADX WARN: Type inference failed for: r9v36, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v38, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
-    /* JADX WARN: Type inference failed for: r9v39, types: [org.telegram.messenger.time.FastDatePrinter$UnpaddedMonthField] */
-    /* JADX WARN: Type inference failed for: r9v40, types: [org.telegram.messenger.time.FastDatePrinter$TwoDigitMonthField] */
-    /* JADX WARN: Type inference failed for: r9v41, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v28 */
+    /* JADX WARN: Type inference failed for: r9v31, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v32, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v34, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v35, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v37, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v39, types: [org.telegram.messenger.time.FastDatePrinter$NumberRule] */
+    /* JADX WARN: Type inference failed for: r9v40, types: [org.telegram.messenger.time.FastDatePrinter$UnpaddedMonthField] */
+    /* JADX WARN: Type inference failed for: r9v41, types: [org.telegram.messenger.time.FastDatePrinter$TwoDigitMonthField] */
     /* JADX WARN: Type inference failed for: r9v42, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
-    /* JADX WARN: Type inference failed for: r9v43, types: [org.telegram.messenger.time.FastDatePrinter$UnpaddedMonthField] */
-    /* JADX WARN: Type inference failed for: r9v44, types: [org.telegram.messenger.time.FastDatePrinter$TwoDigitMonthField] */
-    /* JADX WARN: Type inference failed for: r9v45, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v43, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v44, types: [org.telegram.messenger.time.FastDatePrinter$UnpaddedMonthField] */
+    /* JADX WARN: Type inference failed for: r9v45, types: [org.telegram.messenger.time.FastDatePrinter$TwoDigitMonthField] */
     /* JADX WARN: Type inference failed for: r9v46, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
+    /* JADX WARN: Type inference failed for: r9v47, types: [org.telegram.messenger.time.FastDatePrinter$TextField] */
     /* JADX WARN: Type inference failed for: r9v8, types: [org.telegram.messenger.time.FastDatePrinter$TimeZoneNameRule] */
     /* JADX WARN: Type inference failed for: r9v9, types: [org.telegram.messenger.time.FastDatePrinter$TimeZoneNameRule] */
     protected List<Rule> parsePattern() {
+        int i;
         NumberRule selectNumberRule;
         TwoDigitYearField twoDigitYearField;
-        ?? timeZoneNameRule;
+        ?? stringLiteral;
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(this.mLocale);
         ArrayList arrayList = new ArrayList();
         String[] eras = dateFormatSymbols.getEras();
@@ -110,146 +111,179 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         String[] amPmStrings = dateFormatSymbols.getAmPmStrings();
         int length = this.mPattern.length();
         int[] iArr = new int[1];
-        int i = 0;
         int i2 = 0;
-        while (i2 < length) {
-            iArr[i] = i2;
+        int i3 = 0;
+        while (i3 < length) {
+            iArr[i2] = i3;
             String parseToken = parseToken(this.mPattern, iArr);
-            int i3 = iArr[i];
+            int i4 = iArr[i2];
             int length2 = parseToken.length();
             if (length2 == 0) {
                 return arrayList;
             }
-            char charAt = parseToken.charAt(i);
-            if (charAt != 'y') {
-                if (charAt != 'z') {
-                    switch (charAt) {
-                        case '\'':
-                            String substring = parseToken.substring(1);
-                            if (substring.length() == 1) {
-                                timeZoneNameRule = new CharacterLiteral(substring.charAt(0));
-                                break;
-                            } else {
-                                timeZoneNameRule = new StringLiteral(substring);
-                                break;
-                            }
-                        case 'S':
-                            selectNumberRule = selectNumberRule(14, length2);
-                            break;
-                        case 'W':
-                            selectNumberRule = selectNumberRule(4, length2);
-                            break;
-                        case 'Z':
-                            if (length2 == 1) {
-                                selectNumberRule = TimeZoneNumberRule.INSTANCE_NO_COLON;
-                                break;
-                            } else {
-                                selectNumberRule = TimeZoneNumberRule.INSTANCE_COLON;
-                                break;
-                            }
-                        case 'a':
-                            timeZoneNameRule = new TextField(9, amPmStrings);
-                            break;
-                        case 'd':
-                            timeZoneNameRule = selectNumberRule(5, length2);
-                            break;
-                        case 'h':
-                            timeZoneNameRule = new TwelveHourField(selectNumberRule(10, length2));
-                            break;
-                        case 'k':
-                            timeZoneNameRule = new TwentyFourHourField(selectNumberRule(11, length2));
-                            break;
-                        case 'm':
-                            timeZoneNameRule = selectNumberRule(12, length2);
-                            break;
-                        case 's':
-                            timeZoneNameRule = selectNumberRule(13, length2);
-                            break;
-                        case 'w':
-                            timeZoneNameRule = selectNumberRule(3, length2);
-                            break;
-                        default:
-                            switch (charAt) {
-                                case 'D':
-                                    timeZoneNameRule = selectNumberRule(6, length2);
-                                    break;
-                                case 'E':
-                                    timeZoneNameRule = new TextField(7, length2 < 4 ? shortWeekdays : weekdays);
-                                    break;
-                                case 'F':
-                                    timeZoneNameRule = selectNumberRule(8, length2);
-                                    break;
-                                case 'G':
-                                    timeZoneNameRule = new TextField(0, eras);
-                                    break;
-                                case 'H':
-                                    timeZoneNameRule = selectNumberRule(11, length2);
-                                    break;
-                                default:
-                                    switch (charAt) {
-                                        case 'K':
-                                            timeZoneNameRule = selectNumberRule(10, length2);
-                                            break;
-                                        case 'L':
-                                            if (length2 < 4) {
-                                                if (length2 != 3) {
-                                                    if (length2 == 2) {
-                                                        timeZoneNameRule = TwoDigitMonthField.INSTANCE;
-                                                        break;
-                                                    } else {
-                                                        timeZoneNameRule = UnpaddedMonthField.INSTANCE;
-                                                        break;
-                                                    }
-                                                } else {
-                                                    timeZoneNameRule = new TextField(2, shortMonths);
-                                                    break;
-                                                }
-                                            } else {
-                                                timeZoneNameRule = new TextField(2, months);
-                                                break;
-                                            }
-                                        case 'M':
-                                            if (length2 < 4) {
-                                                if (length2 != 3) {
-                                                    if (length2 == 2) {
-                                                        timeZoneNameRule = TwoDigitMonthField.INSTANCE;
-                                                        break;
-                                                    } else {
-                                                        timeZoneNameRule = UnpaddedMonthField.INSTANCE;
-                                                        break;
-                                                    }
-                                                } else {
-                                                    timeZoneNameRule = new TextField(2, shortMonths);
-                                                    break;
-                                                }
-                                            } else {
-                                                timeZoneNameRule = new TextField(2, months);
-                                                break;
-                                            }
-                                        default:
-                                            throw new IllegalArgumentException("Illegal pattern component: " + parseToken);
-                                    }
-                            }
-                    }
-                } else if (length2 >= 4) {
-                    timeZoneNameRule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 1);
-                } else {
-                    twoDigitYearField = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 0);
+            char charAt = parseToken.charAt(i2);
+            if (charAt == 'y') {
+                i = 0;
+                if (length2 == 2) {
+                    twoDigitYearField = TwoDigitYearField.INSTANCE;
                     selectNumberRule = twoDigitYearField;
+                } else {
+                    if (length2 < 4) {
+                        length2 = 4;
+                    }
+                    selectNumberRule = selectNumberRule(1, length2);
                 }
-                selectNumberRule = timeZoneNameRule;
-            } else if (length2 == 2) {
-                twoDigitYearField = TwoDigitYearField.INSTANCE;
-                selectNumberRule = twoDigitYearField;
+            } else if (charAt != 'z') {
+                switch (charAt) {
+                    case '\'':
+                        String substring = parseToken.substring(1);
+                        if (substring.length() == 1) {
+                            stringLiteral = new CharacterLiteral(substring.charAt(0));
+                        } else {
+                            stringLiteral = new StringLiteral(substring);
+                        }
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 'S':
+                        selectNumberRule = selectNumberRule(14, length2);
+                        i = 0;
+                        break;
+                    case 'W':
+                        selectNumberRule = selectNumberRule(4, length2);
+                        i = 0;
+                        break;
+                    case 'Z':
+                        if (length2 == 1) {
+                            selectNumberRule = TimeZoneNumberRule.INSTANCE_NO_COLON;
+                        } else {
+                            selectNumberRule = TimeZoneNumberRule.INSTANCE_COLON;
+                        }
+                        i = 0;
+                        break;
+                    case 'a':
+                        stringLiteral = new TextField(9, amPmStrings);
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 'd':
+                        stringLiteral = selectNumberRule(5, length2);
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 'h':
+                        stringLiteral = new TwelveHourField(selectNumberRule(10, length2));
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 'k':
+                        stringLiteral = new TwentyFourHourField(selectNumberRule(11, length2));
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 'm':
+                        stringLiteral = selectNumberRule(12, length2);
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 's':
+                        stringLiteral = selectNumberRule(13, length2);
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    case 'w':
+                        stringLiteral = selectNumberRule(3, length2);
+                        selectNumberRule = stringLiteral;
+                        i = 0;
+                        break;
+                    default:
+                        switch (charAt) {
+                            case 'D':
+                                stringLiteral = selectNumberRule(6, length2);
+                                selectNumberRule = stringLiteral;
+                                i = 0;
+                                break;
+                            case 'E':
+                                stringLiteral = new TextField(7, length2 < 4 ? shortWeekdays : weekdays);
+                                selectNumberRule = stringLiteral;
+                                i = 0;
+                                break;
+                            case 'F':
+                                stringLiteral = selectNumberRule(8, length2);
+                                selectNumberRule = stringLiteral;
+                                i = 0;
+                                break;
+                            case 'G':
+                                i = 0;
+                                twoDigitYearField = new TextField(0, eras);
+                                break;
+                            case 'H':
+                                stringLiteral = selectNumberRule(11, length2);
+                                selectNumberRule = stringLiteral;
+                                i = 0;
+                                break;
+                            default:
+                                switch (charAt) {
+                                    case 'K':
+                                        stringLiteral = selectNumberRule(10, length2);
+                                        break;
+                                    case 'L':
+                                        if (length2 < 4) {
+                                            if (length2 != 3) {
+                                                if (length2 == 2) {
+                                                    stringLiteral = TwoDigitMonthField.INSTANCE;
+                                                    break;
+                                                } else {
+                                                    stringLiteral = UnpaddedMonthField.INSTANCE;
+                                                    break;
+                                                }
+                                            } else {
+                                                stringLiteral = new TextField(2, shortMonths);
+                                                break;
+                                            }
+                                        } else {
+                                            stringLiteral = new TextField(2, months);
+                                            break;
+                                        }
+                                    case 'M':
+                                        if (length2 < 4) {
+                                            if (length2 != 3) {
+                                                if (length2 == 2) {
+                                                    stringLiteral = TwoDigitMonthField.INSTANCE;
+                                                    break;
+                                                } else {
+                                                    stringLiteral = UnpaddedMonthField.INSTANCE;
+                                                    break;
+                                                }
+                                            } else {
+                                                stringLiteral = new TextField(2, shortMonths);
+                                                break;
+                                            }
+                                        } else {
+                                            stringLiteral = new TextField(2, months);
+                                            break;
+                                        }
+                                    default:
+                                        throw new IllegalArgumentException("Illegal pattern component: " + parseToken);
+                                }
+                                selectNumberRule = stringLiteral;
+                                i = 0;
+                                break;
+                        }
+                        selectNumberRule = twoDigitYearField;
+                        break;
+                }
+            } else if (length2 >= 4) {
+                selectNumberRule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 1);
+                i = 0;
             } else {
-                if (length2 < 4) {
-                    length2 = 4;
-                }
-                selectNumberRule = selectNumberRule(1, length2);
+                i = 0;
+                twoDigitYearField = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 0);
+                selectNumberRule = twoDigitYearField;
             }
             arrayList.add(selectNumberRule);
-            i2 = i3 + 1;
-            i = 0;
+            i3 = i4 + 1;
+            i2 = i;
         }
         return arrayList;
     }

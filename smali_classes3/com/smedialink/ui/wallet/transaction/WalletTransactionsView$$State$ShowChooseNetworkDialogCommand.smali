@@ -68,20 +68,20 @@
         }
     .end annotation
 
-    .line 449
+    .line 480
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showChooseNetworkDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 451
+    .line 482
     iput-object p2, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChooseNetworkDialogCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    .line 452
+    .line 483
     iput-object p3, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChooseNetworkDialogCommand;->availableNetworks:Ljava/util/List;
 
-    .line 453
+    .line 484
     iput-object p4, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChooseNetworkDialogCommand;->action:Lkotlin/jvm/functions/Function1;
 
     return-void
@@ -92,7 +92,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 3
 
-    .line 458
+    .line 489
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChooseNetworkDialogCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChooseNetworkDialogCommand;->availableNetworks:Ljava/util/List;
@@ -107,7 +107,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 440
+    .line 471
     check-cast p1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$ShowChooseNetworkDialogCommand;->apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V

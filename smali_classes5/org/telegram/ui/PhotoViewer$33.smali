@@ -206,7 +206,7 @@
 
     if-eq v1, v3, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v2
 
     goto :goto_0
 
@@ -663,7 +663,7 @@
 
     const v4, 0x3f147ae1    # 0.58f
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -770,7 +770,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_0
     add-int/2addr v0, v1

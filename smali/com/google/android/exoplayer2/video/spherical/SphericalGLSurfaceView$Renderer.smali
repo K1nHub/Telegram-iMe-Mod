@@ -154,7 +154,7 @@
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     double-to-float p1, v0
 

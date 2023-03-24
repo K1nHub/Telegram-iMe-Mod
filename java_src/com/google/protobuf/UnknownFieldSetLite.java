@@ -228,4 +228,66 @@ public final class UnknownFieldSetLite {
             this.objects = Arrays.copyOf(this.objects, i2);
         }
     }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean mergeFieldFrom(int i, CodedInputStream codedInputStream) throws IOException {
+        checkMutable();
+        int tagFieldNumber = WireFormat.getTagFieldNumber(i);
+        int tagWireType = WireFormat.getTagWireType(i);
+        if (tagWireType == 0) {
+            storeField(i, Long.valueOf(codedInputStream.readInt64()));
+            return true;
+        } else if (tagWireType == 1) {
+            storeField(i, Long.valueOf(codedInputStream.readFixed64()));
+            return true;
+        } else if (tagWireType == 2) {
+            storeField(i, codedInputStream.readBytes());
+            return true;
+        } else if (tagWireType == 3) {
+            UnknownFieldSetLite unknownFieldSetLite = new UnknownFieldSetLite();
+            unknownFieldSetLite.mergeFrom(codedInputStream);
+            codedInputStream.checkLastTagWas(WireFormat.makeTag(tagFieldNumber, 4));
+            storeField(i, unknownFieldSetLite);
+            return true;
+        } else if (tagWireType != 4) {
+            if (tagWireType == 5) {
+                storeField(i, Integer.valueOf(codedInputStream.readFixed32()));
+                return true;
+            }
+            throw InvalidProtocolBufferException.invalidWireType();
+        } else {
+            return false;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public UnknownFieldSetLite mergeVarintField(int i, int i2) {
+        checkMutable();
+        if (i == 0) {
+            throw new IllegalArgumentException("Zero is not a valid field number.");
+        }
+        storeField(WireFormat.makeTag(i, 0), Long.valueOf(i2));
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public UnknownFieldSetLite mergeLengthDelimitedField(int i, ByteString byteString) {
+        checkMutable();
+        if (i == 0) {
+            throw new IllegalArgumentException("Zero is not a valid field number.");
+        }
+        storeField(WireFormat.makeTag(i, 2), byteString);
+        return this;
+    }
+
+    private UnknownFieldSetLite mergeFrom(CodedInputStream codedInputStream) throws IOException {
+        int readTag;
+        do {
+            readTag = codedInputStream.readTag();
+            if (readTag == 0) {
+                break;
+            }
+        } while (mergeFieldFrom(readTag, codedInputStream));
+        return this;
+    }
 }

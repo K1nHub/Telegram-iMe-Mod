@@ -10,11 +10,13 @@ import kotlin.jvm.internal.Lambda;
 /* compiled from: ObservableExt.kt */
 /* loaded from: classes3.dex */
 public final class CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1 extends Lambda implements Function1<Result<? extends Boolean>, Unit> {
+    final /* synthetic */ boolean $shouldSendRxEvent$inlined;
     final /* synthetic */ CryptoWalletInteractor this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1(CryptoWalletInteractor cryptoWalletInteractor) {
+    public CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1(boolean z, CryptoWalletInteractor cryptoWalletInteractor) {
         super(1);
+        this.$shouldSendRxEvent$inlined = z;
         this.this$0 = cryptoWalletInteractor;
     }
 
@@ -28,7 +30,7 @@ public final class CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$
     public final void invoke2(Result<? extends Boolean> result) {
         RxEventBus rxEventBus;
         CryptoAccessManager cryptoAccessManager;
-        if (result instanceof Result.Success) {
+        if ((result instanceof Result.Success) && this.$shouldSendRxEvent$inlined) {
             rxEventBus = this.this$0.rxEventBus;
             cryptoAccessManager = this.this$0.cryptoAccessManager;
             rxEventBus.publish(new DomainRxEvents.SuccessResetWallet(!cryptoAccessManager.isAnyWalletCreated()));

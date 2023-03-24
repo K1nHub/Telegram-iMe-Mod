@@ -56,7 +56,7 @@
 .end method
 
 .method private static binarySearch([IIIJ)I
-    .locals 6
+    .locals 5
 
     add-int/2addr p2, p1
 
@@ -81,9 +81,9 @@
 
     int-to-long v3, v3
 
-    cmp-long v5, v3, p3
+    cmp-long v3, v3, p3
 
-    if-gez v5, :cond_0
+    if-gez v3, :cond_0
 
     move p1, v2
 
@@ -107,9 +107,9 @@
 
     int-to-long p0, p0
 
-    cmp-long p2, p0, p3
+    cmp-long p0, p0, p3
 
-    if-nez p2, :cond_3
+    if-nez p0, :cond_3
 
     return v1
 

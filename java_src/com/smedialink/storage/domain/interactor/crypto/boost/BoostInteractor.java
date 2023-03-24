@@ -23,7 +23,7 @@ public final class BoostInteractor {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
         Observable<R> flatMap = this.boostRepository.getCryptoBoostMetadata(txHash).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new BoostInteractor$boostEthTransaction$$inlined$flatMapSuccess$1(this, txHash)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo708io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo707io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "boostRepository\n        …artWith(Result.loading())");
         return startWith;
     }

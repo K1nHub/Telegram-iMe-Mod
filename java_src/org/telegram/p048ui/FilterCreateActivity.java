@@ -41,7 +41,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.fork.utils.Callbacks$Callback2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
@@ -54,7 +54,7 @@ import org.telegram.p048ui.ActionBar.ActionBarMenu;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -199,9 +199,9 @@ public class FilterCreateActivity extends JavaMvpFragment {
             FilterActivityType filterActivityType = filterCreateActivity.type;
             FilterActivityType filterActivityType2 = FilterActivityType.TOPIC;
             if (filterActivityType == filterActivityType2) {
-                this.imageView.setAnimation(C3286R.C3291raw.fork_topic_new, 125, 125);
+                this.imageView.setAnimation(C3301R.C3306raw.fork_topic_new, 125, 125);
             } else {
-                this.imageView.setAnimation(C3286R.C3291raw.filter_new, 100, 100);
+                this.imageView.setAnimation(C3301R.C3306raw.filter_new, 100, 100);
             }
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.imageView.playAnimation();
@@ -280,14 +280,14 @@ public class FilterCreateActivity extends JavaMvpFragment {
         if (dialogFilter == null) {
             MessagesController.DialogFilter dialogFilter3 = new MessagesController.DialogFilter();
             this.filter = dialogFilter3;
-            dialogFilter3.f1439id = 2;
-            while (getMessagesController().dialogFiltersById.get(this.filter.f1439id) != null) {
-                this.filter.f1439id++;
+            dialogFilter3.f1440id = 2;
+            while (getMessagesController().dialogFiltersById.get(this.filter.f1440id) != null) {
+                this.filter.f1440id++;
             }
             this.filter.name = "";
             this.creatingNew = true;
         }
-        this.newFilterSettings = getFiltersController().getSettings(this.filter.f1439id).getCopy();
+        this.newFilterSettings = getFiltersController().getSettings(this.filter.f1440id).getCopy();
         MessagesController.DialogFilter dialogFilter4 = this.filter;
         this.newFilterName = dialogFilter4.name;
         this.newFilterFlags = dialogFilter4.flags;
@@ -471,14 +471,14 @@ public class FilterCreateActivity extends JavaMvpFragment {
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment, org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
         super.createView(context);
-        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         ActionBarMenu createMenu = this.actionBar.createMenu();
         if (this.creatingNew) {
             if (this.type == FilterActivityType.TOPIC) {
-                this.actionBar.setTitle(LocaleController.getInternalString(C3286R.string.topic_new));
+                this.actionBar.setTitle(LocaleController.getInternalString(C3301R.string.topic_new));
             } else {
-                this.actionBar.setTitle(LocaleController.getString("FilterNew", C3286R.string.FilterNew));
+                this.actionBar.setTitle(LocaleController.getString("FilterNew", C3301R.string.FilterNew));
             }
         } else {
             TextPaint textPaint = new TextPaint(1);
@@ -493,8 +493,8 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 this.actionBar.setTitle(Emoji.replaceEmoji(this.filter.name, textPaint.getFontMetricsInt(), AndroidUtilities.m50dp(20), false));
             }
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.FilterCreateActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.FilterCreateActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (FilterCreateActivity.this.checkDiscard()) {
@@ -505,7 +505,7 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 }
             }
         });
-        this.doneItem = createMenu.addItem(1, LocaleController.getString("Save", C3286R.string.Save).toUpperCase());
+        this.doneItem = createMenu.addItem(1, LocaleController.getString("Save", C3301R.string.Save).toUpperCase());
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         FrameLayout frameLayout2 = frameLayout;
@@ -589,14 +589,14 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 presentFragment(usersSelectActivity);
             } else if (i == this.removeRow) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setTitle(LocaleController.getString("FilterDelete", C3286R.string.FilterDelete));
-                builder.setMessage(LocaleController.getString("FilterDeleteAlert", C3286R.string.FilterDeleteAlert));
+                builder.setTitle(LocaleController.getString("FilterDelete", C3301R.string.FilterDelete));
+                builder.setMessage(LocaleController.getString("FilterDeleteAlert", C3301R.string.FilterDeleteAlert));
                 if (this.type == FilterActivityType.TOPIC) {
-                    builder.setTitle(LocaleController.getInternalString(C3286R.string.topics_remove));
-                    builder.setMessage(LocaleController.getInternalString(C3286R.string.topics_remove_alert));
+                    builder.setTitle(LocaleController.getInternalString(C3301R.string.topics_remove));
+                    builder.setMessage(LocaleController.getInternalString(C3301R.string.topics_remove_alert));
                 }
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
-                builder.setPositiveButton(LocaleController.getString("Delete", C3286R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda2
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
+                builder.setPositiveButton(LocaleController.getString("Delete", C3301R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i3) {
                         FilterCreateActivity.this.lambda$createView$5(dialogInterface, i3);
@@ -675,7 +675,7 @@ public class FilterCreateActivity extends JavaMvpFragment {
             alertDialog.show();
         }
         TLRPC$TL_messages_updateDialogFilter tLRPC$TL_messages_updateDialogFilter = new TLRPC$TL_messages_updateDialogFilter();
-        tLRPC$TL_messages_updateDialogFilter.f1610id = this.filter.f1439id;
+        tLRPC$TL_messages_updateDialogFilter.f1611id = this.filter.f1440id;
         getConnectionsManager().sendRequest(tLRPC$TL_messages_updateDialogFilter, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda11
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -742,10 +742,10 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 String str = "";
                 if ((i3 & i2) == i2) {
                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ & i) != 0) {
-                        string = LocaleController.getString("FilterNameUnread", C3286R.string.FilterNameUnread);
+                        string = LocaleController.getString("FilterNameUnread", C3301R.string.FilterNameUnread);
                     } else {
                         if ((i & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) != 0) {
-                            string = LocaleController.getString("FilterNameNonMuted", C3286R.string.FilterNameNonMuted);
+                            string = LocaleController.getString("FilterNameNonMuted", C3301R.string.FilterNameNonMuted);
                         }
                         string = "";
                     }
@@ -753,34 +753,34 @@ public class FilterCreateActivity extends JavaMvpFragment {
                     int i4 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
                     if ((i3 & i4) != 0) {
                         if (((~i4) & i3) == 0) {
-                            string = LocaleController.getString("FilterContacts", C3286R.string.FilterContacts);
+                            string = LocaleController.getString("FilterContacts", C3301R.string.FilterContacts);
                         }
                         string = "";
                     } else {
                         int i5 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
                         if ((i3 & i5) != 0) {
                             if (((~i5) & i3) == 0) {
-                                string = LocaleController.getString("FilterNonContacts", C3286R.string.FilterNonContacts);
+                                string = LocaleController.getString("FilterNonContacts", C3301R.string.FilterNonContacts);
                             }
                             string = "";
                         } else {
                             int i6 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
                             if ((i3 & i6) != 0) {
                                 if (((~i6) & i3) == 0) {
-                                    string = LocaleController.getString("FilterGroups", C3286R.string.FilterGroups);
+                                    string = LocaleController.getString("FilterGroups", C3301R.string.FilterGroups);
                                 }
                                 string = "";
                             } else {
                                 int i7 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
                                 if ((i3 & i7) != 0) {
                                     if (((~i7) & i3) == 0) {
-                                        string = LocaleController.getString("FilterBots", C3286R.string.FilterBots);
+                                        string = LocaleController.getString("FilterBots", C3301R.string.FilterBots);
                                     }
                                     string = "";
                                 } else {
                                     int i8 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
                                     if ((i3 & i8) != 0 && ((~i8) & i3) == 0) {
-                                        string = LocaleController.getString("FilterChannels", C3286R.string.FilterChannels);
+                                        string = LocaleController.getString("FilterChannels", C3301R.string.FilterChannels);
                                     }
                                     string = "";
                                 }
@@ -805,33 +805,33 @@ public class FilterCreateActivity extends JavaMvpFragment {
         if (this.doneItem.getAlpha() == 1.0f) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
             if (this.creatingNew) {
-                builder.setTitle(LocaleController.getString("FilterDiscardNewTitle", C3286R.string.FilterDiscardNewTitle));
-                builder.setMessage(LocaleController.getString("FilterDiscardNewAlert", C3286R.string.FilterDiscardNewAlert));
+                builder.setTitle(LocaleController.getString("FilterDiscardNewTitle", C3301R.string.FilterDiscardNewTitle));
+                builder.setMessage(LocaleController.getString("FilterDiscardNewAlert", C3301R.string.FilterDiscardNewAlert));
                 if (this.type == FilterActivityType.TOPIC) {
-                    builder.setTitle(LocaleController.getInternalString(C3286R.string.topic_create_discard_title));
-                    builder.setMessage(LocaleController.getInternalString(C3286R.string.topic_create_discard_message));
+                    builder.setTitle(LocaleController.getInternalString(C3301R.string.topic_create_discard_title));
+                    builder.setMessage(LocaleController.getInternalString(C3301R.string.topic_create_discard_message));
                 }
-                builder.setPositiveButton(LocaleController.getString("FilterDiscardNewSave", C3286R.string.FilterDiscardNewSave), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda1
+                builder.setPositiveButton(LocaleController.getString("FilterDiscardNewSave", C3301R.string.FilterDiscardNewSave), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         FilterCreateActivity.this.lambda$checkDiscard$8(dialogInterface, i);
                     }
                 });
             } else {
-                builder.setTitle(LocaleController.getString("FilterDiscardTitle", C3286R.string.FilterDiscardTitle));
+                builder.setTitle(LocaleController.getString("FilterDiscardTitle", C3301R.string.FilterDiscardTitle));
                 if (this.type == FilterActivityType.TOPIC) {
-                    builder.setMessage(LocaleController.getInternalString(C3286R.string.topic_edit_discard_message));
+                    builder.setMessage(LocaleController.getInternalString(C3301R.string.topic_edit_discard_message));
                 } else {
-                    builder.setMessage(LocaleController.getString("FilterDiscardAlert", C3286R.string.FilterDiscardAlert));
+                    builder.setMessage(LocaleController.getString("FilterDiscardAlert", C3301R.string.FilterDiscardAlert));
                 }
-                builder.setPositiveButton(LocaleController.getString("ApplyTheme", C3286R.string.ApplyTheme), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda3
+                builder.setPositiveButton(LocaleController.getString("ApplyTheme", C3301R.string.ApplyTheme), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda3
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         FilterCreateActivity.this.lambda$checkDiscard$9(dialogInterface, i);
                     }
                 });
             }
-            builder.setNegativeButton(LocaleController.getString("PassportDiscard", C3286R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda0
+            builder.setNegativeButton(LocaleController.getString("PassportDiscard", C3301R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     FilterCreateActivity.this.lambda$checkDiscard$10(dialogInterface, i);
@@ -861,30 +861,30 @@ public class FilterCreateActivity extends JavaMvpFragment {
     private void showRemoveAlert(final int i, CharSequence charSequence, Object obj, final boolean z) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         if (z) {
-            builder.setTitle(LocaleController.getString("FilterRemoveInclusionTitle", C3286R.string.FilterRemoveInclusionTitle));
+            builder.setTitle(LocaleController.getString("FilterRemoveInclusionTitle", C3301R.string.FilterRemoveInclusionTitle));
             if (obj instanceof String) {
-                builder.setMessage(LocaleController.formatString("FilterRemoveInclusionText", C3286R.string.FilterRemoveInclusionText, charSequence));
+                builder.setMessage(LocaleController.formatString("FilterRemoveInclusionText", C3301R.string.FilterRemoveInclusionText, charSequence));
             } else if (obj instanceof TLRPC$User) {
-                builder.setMessage(LocaleController.formatString("FilterRemoveInclusionUserText", C3286R.string.FilterRemoveInclusionUserText, charSequence));
+                builder.setMessage(LocaleController.formatString("FilterRemoveInclusionUserText", C3301R.string.FilterRemoveInclusionUserText, charSequence));
             } else {
-                builder.setMessage(LocaleController.formatString("FilterRemoveInclusionChatText", C3286R.string.FilterRemoveInclusionChatText, charSequence));
+                builder.setMessage(LocaleController.formatString("FilterRemoveInclusionChatText", C3301R.string.FilterRemoveInclusionChatText, charSequence));
             }
         } else {
-            builder.setTitle(LocaleController.getString("FilterRemoveExclusionTitle", C3286R.string.FilterRemoveExclusionTitle));
+            builder.setTitle(LocaleController.getString("FilterRemoveExclusionTitle", C3301R.string.FilterRemoveExclusionTitle));
             if (obj instanceof String) {
-                builder.setMessage(LocaleController.formatString("FilterRemoveExclusionText", C3286R.string.FilterRemoveExclusionText, charSequence));
+                builder.setMessage(LocaleController.formatString("FilterRemoveExclusionText", C3301R.string.FilterRemoveExclusionText, charSequence));
             } else if (obj instanceof TLRPC$User) {
-                builder.setMessage(LocaleController.formatString("FilterRemoveExclusionUserText", C3286R.string.FilterRemoveExclusionUserText, charSequence));
+                builder.setMessage(LocaleController.formatString("FilterRemoveExclusionUserText", C3301R.string.FilterRemoveExclusionUserText, charSequence));
             } else {
-                builder.setMessage(LocaleController.formatString("FilterRemoveExclusionChatText", C3286R.string.FilterRemoveExclusionChatText, charSequence));
+                builder.setMessage(LocaleController.formatString("FilterRemoveExclusionChatText", C3301R.string.FilterRemoveExclusionChatText, charSequence));
             }
         }
         if (this.type == FilterActivityType.TOPIC) {
-            builder.setTitle(LocaleController.getInternalString(C3286R.string.topic_remove_chat_title));
-            builder.setMessage(LocaleController.formatStringInternal(C3286R.string.topic_remove_chat_message, charSequence));
+            builder.setTitle(LocaleController.getInternalString(C3301R.string.topic_remove_chat_title));
+            builder.setMessage(LocaleController.formatStringInternal(C3301R.string.topic_remove_chat_message, charSequence));
         }
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
-        builder.setPositiveButton(LocaleController.getString("StickersRemove", C3286R.string.StickersRemove), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda4
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3301R.string.Cancel), null);
+        builder.setPositiveButton(LocaleController.getString("StickersRemove", C3301R.string.StickersRemove), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 FilterCreateActivity.this.lambda$showRemoveAlert$11(i, z, dialogInterface, i2);
@@ -997,6 +997,7 @@ public class FilterCreateActivity extends JavaMvpFragment {
             return;
         }
         int i2 = 3;
+        int i3 = 0;
         if (z5) {
             alertDialog = new AlertDialog(baseFragment.getParentActivity(), 3);
             alertDialog.setCanCancel(false);
@@ -1005,8 +1006,8 @@ public class FilterCreateActivity extends JavaMvpFragment {
             alertDialog = null;
         }
         TLRPC$TL_messages_updateDialogFilter tLRPC$TL_messages_updateDialogFilter = new TLRPC$TL_messages_updateDialogFilter();
-        tLRPC$TL_messages_updateDialogFilter.f1610id = dialogFilter.f1439id;
-        int i3 = 1;
+        tLRPC$TL_messages_updateDialogFilter.f1611id = dialogFilter.f1440id;
+        int i4 = 1;
         tLRPC$TL_messages_updateDialogFilter.flags |= 1;
         TLRPC$TL_dialogFilter tLRPC$TL_dialogFilter = new TLRPC$TL_dialogFilter();
         tLRPC$TL_messages_updateDialogFilter.filter = tLRPC$TL_dialogFilter;
@@ -1018,14 +1019,14 @@ public class FilterCreateActivity extends JavaMvpFragment {
         tLRPC$TL_dialogFilter.exclude_muted = (i & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) != 0;
         tLRPC$TL_dialogFilter.exclude_read = (i & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) != 0;
         tLRPC$TL_dialogFilter.exclude_archived = (i & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED) != 0;
-        tLRPC$TL_dialogFilter.f1506id = dialogFilter.f1439id;
+        tLRPC$TL_dialogFilter.f1507id = dialogFilter.f1440id;
         tLRPC$TL_dialogFilter.title = str;
         MessagesController messagesController = baseFragment.getMessagesController();
         ArrayList<Long> arrayList5 = new ArrayList<>();
         if (longSparseIntArray.size() != 0) {
             int size = longSparseIntArray.size();
-            for (int i4 = 0; i4 < size; i4++) {
-                long keyAt = longSparseIntArray.keyAt(i4);
+            for (int i5 = 0; i5 < size; i5++) {
+                long keyAt = longSparseIntArray.keyAt(i5);
                 if (!DialogObject.isEncryptedDialog(keyAt)) {
                     arrayList5.add(Long.valueOf(keyAt));
                 }
@@ -1039,12 +1040,12 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 }
             });
         }
-        int i5 = 0;
-        while (i5 < i2) {
-            if (i5 == 0) {
+        int i6 = 0;
+        while (i6 < i2) {
+            if (i6 == 0) {
                 arrayList3 = tLRPC$TL_messages_updateDialogFilter.filter.include_peers;
                 arrayList4 = arrayList;
-            } else if (i5 == i3) {
+            } else if (i6 == i4) {
                 arrayList3 = tLRPC$TL_messages_updateDialogFilter.filter.exclude_peers;
                 arrayList4 = arrayList2;
             } else {
@@ -1052,9 +1053,9 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 arrayList4 = arrayList5;
             }
             int size2 = arrayList4.size();
-            for (int i6 = 0; i6 < size2; i6++) {
-                long longValue = arrayList4.get(i6).longValue();
-                if ((i5 != 0 || longSparseIntArray.indexOfKey(longValue) < 0) && !DialogObject.isEncryptedDialog(longValue)) {
+            for (int i7 = i3; i7 < size2; i7++) {
+                long longValue = arrayList4.get(i7).longValue();
+                if ((i6 != 0 || longSparseIntArray.indexOfKey(longValue) < 0) && !DialogObject.isEncryptedDialog(longValue)) {
                     if (longValue > 0) {
                         TLRPC$User user = messagesController.getUser(Long.valueOf(longValue));
                         if (user != null) {
@@ -1081,9 +1082,10 @@ public class FilterCreateActivity extends JavaMvpFragment {
                     }
                 }
             }
-            i5++;
+            i6++;
             i2 = 3;
-            i3 = 1;
+            i3 = 0;
+            i4 = 1;
         }
         final AlertDialog alertDialog2 = alertDialog;
         baseFragment.getConnectionsManager().sendRequest(tLRPC$TL_messages_updateDialogFilter, new RequestDelegate() { // from class: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda12
@@ -1163,7 +1165,7 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 return true;
             }
         } else if (filterActivityType == FilterActivityType.FILTER) {
-            FilterSettingsModel copy = getFiltersController().getSettings(this.filter.f1439id).getCopy();
+            FilterSettingsModel copy = getFiltersController().getSettings(this.filter.f1440id).getCopy();
             if (copy.getIcon() != this.newFilterSettings.getIcon()) {
                 return true;
             }
@@ -1204,12 +1206,12 @@ public class FilterCreateActivity extends JavaMvpFragment {
         }
         this.doneItem.setEnabled(z3);
         if (z) {
-            this.doneItem.animate().alpha(z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED).scaleX(z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED).scaleY(z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED).setDuration(180L).start();
+            this.doneItem.animate().alpha(z3 ? 1.0f : 0.0f).scaleX(z3 ? 1.0f : 0.0f).scaleY(z3 ? 1.0f : 0.0f).setDuration(180L).start();
             return;
         }
-        this.doneItem.setAlpha(z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-        this.doneItem.setScaleX(z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED);
-        this.doneItem.setScaleY(z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED);
+        this.doneItem.setAlpha(z3 ? 1.0f : 0.0f);
+        this.doneItem.setScaleX(z3 ? 1.0f : 0.0f);
+        this.doneItem.setScaleY(z3 ? 1.0f : 0.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1351,9 +1353,9 @@ public class FilterCreateActivity extends JavaMvpFragment {
                 FilterCreateActivity.this.setTextLeft(viewHolder.itemView);
                 PollEditTextCell pollEditTextCell = FilterCreateActivity.this.pollEditTextCellWrapper.getPollEditTextCell();
                 pollEditTextCell.setTag(1);
-                pollEditTextCell.setTextAndHint(FilterCreateActivity.this.newFilterName != null ? FilterCreateActivity.this.newFilterName : "", LocaleController.getString("FilterNameHint", C3286R.string.FilterNameHint), false);
+                pollEditTextCell.setTextAndHint(FilterCreateActivity.this.newFilterName != null ? FilterCreateActivity.this.newFilterName : "", LocaleController.getString("FilterNameHint", C3301R.string.FilterNameHint), false);
                 if (FilterCreateActivity.this.type == FilterActivityType.TOPIC) {
-                    pollEditTextCell.setHint(LocaleController.getInternalString(C3286R.string.topic_name_hint));
+                    pollEditTextCell.setHint(LocaleController.getInternalString(C3301R.string.topic_name_hint));
                 }
                 pollEditTextCell.setTag(null);
             }

@@ -102,7 +102,7 @@
 .end method
 
 .method public static eq64([J[J)Z
-    .locals 6
+    .locals 5
 
     const/16 v0, 0x8
 
@@ -113,9 +113,9 @@
 
     aget-wide v3, p1, v0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 p0, 0x0
 
@@ -192,7 +192,7 @@
 .end method
 
 .method public static isOne64([J)Z
-    .locals 8
+    .locals 7
 
     const/4 v0, 0x0
 
@@ -200,16 +200,16 @@
 
     const-wide/16 v3, 0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_0
+    if-eqz v1, :cond_0
 
     return v0
 
     :cond_0
     const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :goto_0
     const/16 v3, 0x9
@@ -220,9 +220,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_1
+    if-eqz v3, :cond_1
 
     return v0
 
@@ -236,11 +236,11 @@
 .end method
 
 .method public static isZero64([J)Z
-    .locals 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/16 v2, 0x9
@@ -251,9 +251,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v2, :cond_0
 
     return v0
 
@@ -269,7 +269,7 @@
 .end method
 
 .method public static toBigInteger64([J)Ljava/math/BigInteger;
-    .locals 7
+    .locals 6
 
     const/16 v0, 0x48
 
@@ -286,9 +286,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     rsub-int/lit8 v4, v1, 0x8
 

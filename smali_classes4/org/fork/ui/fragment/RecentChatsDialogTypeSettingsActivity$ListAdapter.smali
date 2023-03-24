@@ -268,7 +268,7 @@
     if-ne p1, v0, :cond_0
 
     :goto_0
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_1
 
@@ -284,7 +284,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     if-eqz v0, :cond_2
@@ -304,7 +304,7 @@
     if-ne p1, v0, :cond_3
 
     :goto_2
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_3
 
@@ -320,7 +320,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_3
     if-eqz v0, :cond_5
@@ -340,7 +340,7 @@
     if-ne p1, v0, :cond_6
 
     :goto_4
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_5
 
@@ -464,12 +464,12 @@
 
     if-ne v0, p2, :cond_0
 
-    const/4 v10, 0x1
+    move v10, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 v10, 0x0
+    move v10, v3
 
     .line 259
     :goto_0
@@ -633,12 +633,12 @@
 
     if-lez p2, :cond_3
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_1
 
     :cond_3
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_1
     invoke-virtual {p1, v2, v7, v0, v4}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V
@@ -710,12 +710,12 @@
 
     if-lez p2, :cond_5
 
-    const/4 v7, 0x1
+    move v7, v4
 
     goto :goto_2
 
     :cond_5
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_2
     invoke-virtual {p1, v2, v7, v0, v4}, Lorg/telegram/ui/Cells/TextCheckCell2;->setTextAndCheck(Ljava/lang/String;ZZZ)V

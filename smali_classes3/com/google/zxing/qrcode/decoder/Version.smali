@@ -123,7 +123,7 @@
     .line 59
     array-length v0, p3
 
-    const/4 v1, 0x0
+    move v1, p1
 
     :goto_0
     if-ge p1, v0, :cond_0
@@ -141,7 +141,7 @@
 
     add-int/2addr v2, p2
 
-    mul-int v3, v3, v2
+    mul-int/2addr v3, v2
 
     add-int/2addr v1, v3
 
@@ -5242,9 +5242,9 @@
 
     const v1, 0x7fffffff
 
-    const/4 v1, 0x0
+    move v2, v1
 
-    const v2, 0x7fffffff
+    move v1, v0
 
     .line 113
     :goto_0
@@ -5415,7 +5415,7 @@
 
     array-length v4, v4
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_0
     if-ge v5, v4, :cond_4
@@ -5427,7 +5427,7 @@
 
     add-int/lit8 v6, v6, -0x2
 
-    const/4 v7, 0x0
+    move v7, v2
 
     :goto_1
     if-ge v7, v4, :cond_3

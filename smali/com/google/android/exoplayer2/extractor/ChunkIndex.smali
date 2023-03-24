@@ -121,9 +121,9 @@
     .line 86
     iget-wide v2, v1, Lcom/google/android/exoplayer2/extractor/SeekPoint;->timeUs:J
 
-    cmp-long v4, v2, p1
+    cmp-long p1, v2, p1
 
-    if-gez v4, :cond_1
+    if-gez p1, :cond_1
 
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->length:I
 

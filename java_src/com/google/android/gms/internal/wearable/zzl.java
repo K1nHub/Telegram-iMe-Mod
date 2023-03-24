@@ -125,9 +125,7 @@ public final class zzl {
                             zzh.zze(zzc);
                             i++;
                         } else {
-                            String valueOf = String.valueOf(obj2.getClass());
-                            String valueOf2 = String.valueOf(obj3.getClass());
-                            throw new IllegalArgumentException("ArrayList elements must all be of the sameclass, but this one contains a " + valueOf + " and a " + valueOf2);
+                            throw new IllegalArgumentException("ArrayList elements must all be of the sameclass, but this one contains a " + String.valueOf(obj2.getClass()) + " and a " + String.valueOf(obj3.getClass()));
                         }
                     } else {
                         throw new IllegalArgumentException("The only ArrayList element types supported by DataBundleUtil are String, Integer, Bundle, and null, but this ArrayList contains a ".concat(String.valueOf(obj3.getClass())));
@@ -206,13 +204,10 @@ public final class zzl {
                     if (zzvVar2.zzf() == 9 || zzvVar2.zzf() == 2 || zzvVar2.zzf() == 6) {
                         i2 = zzvVar2.zzf();
                     } else if (zzvVar2.zzf() != 14) {
-                        String num = Integer.toString(zzvVar2.zzf());
-                        throw new IllegalArgumentException("Unexpected TypedValue type: " + num + " for key " + str);
+                        throw new IllegalArgumentException("Unexpected TypedValue type: " + Integer.toString(zzvVar2.zzf()) + " for key " + str);
                     }
                 } else if (zzvVar2.zzf() != i2) {
-                    String num2 = Integer.toString(i2);
-                    String num3 = Integer.toString(zzvVar2.zzf());
-                    throw new IllegalArgumentException("The ArrayList elements should all be the same type, but ArrayList with key " + str + " contains items of type " + num2 + " and " + num3);
+                    throw new IllegalArgumentException("The ArrayList elements should all be the same type, but ArrayList with key " + str + " contains items of type " + Integer.toString(i2) + " and " + Integer.toString(zzvVar2.zzf()));
                 }
             }
             ArrayList<Integer> arrayList = new ArrayList<>(zzb.zzc());

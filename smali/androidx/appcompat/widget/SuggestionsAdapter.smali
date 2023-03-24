@@ -765,10 +765,8 @@
 
     return-object v0
 
-    :catch_1
-    nop
-
     .line 527
+    :catch_1
     invoke-direct {p0, p1}, Landroidx/appcompat/widget/SuggestionsAdapter;->checkIconCache(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -1032,7 +1030,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 279
     :goto_0

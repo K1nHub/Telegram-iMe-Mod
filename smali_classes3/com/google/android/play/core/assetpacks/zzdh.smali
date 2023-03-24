@@ -923,7 +923,7 @@
     .line 50
     invoke-virtual {v0, v8, v9}, Lcom/google/android/play/core/internal/zzag;->zzb(Ljava/lang/String;[Ljava/lang/Object;)I
 
-    const/4 v0, 0x0
+    move v0, v6
 
     :goto_a
     const/4 v8, -0x1

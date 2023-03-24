@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State;Lcom/smedialink/model/wallet/transaction/StakingOperationItem;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
-    .line 278
+    .line 309
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openStakingOperationDetails"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 280
+    .line 311
     iput-object p2, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->item:Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
 
-    .line 281
+    .line 312
     iput-object p3, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 2
 
-    .line 286
+    .line 317
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->item:Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 272
+    .line 303
     check-cast p1, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->apply(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsView;)V

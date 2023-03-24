@@ -150,8 +150,8 @@ final class MaskUtil {
                     if (i3 >= 5) {
                         i += (i3 - 5) + 3;
                     }
-                    b = b2;
                     i3 = 1;
+                    b = b2;
                 }
             }
             if (i3 >= 5) {

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPreferencesMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n+ 4 Koin.kt\norg/koin/core/Koin\n+ 5 SharedPrefferencesExt.kt\ncom/smedialink/storage/data/utils/extentions/SharedPrefferencesExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n41#2,6:109\n47#2:116\n131#3:115\n103#4:117\n14#5,4:118\n766#6:122\n857#6,2:123\n1855#6:125\n1855#6,2:127\n1856#6:129\n1#7:126\n*S KotlinDebug\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n*L\n39#1:109,6\n39#1:116\n39#1:115\n39#1:117\n40#1:118,4\n77#1:122\n77#1:123,2\n78#1:125\n84#1:127,2\n78#1:129\n*E\n"
+    value = "SMAP\nPreferencesMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n+ 4 Koin.kt\norg/koin/core/Koin\n+ 5 SharedPrefferencesExt.kt\ncom/smedialink/storage/data/utils/extentions/SharedPrefferencesExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,109:1\n41#2,6:110\n47#2:117\n131#3:116\n103#4:118\n14#5,4:119\n766#6:123\n857#6,2:124\n1855#6:126\n1855#6,2:128\n1856#6:130\n1#7:127\n*S KotlinDebug\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n*L\n39#1:110,6\n39#1:117\n39#1:116\n39#1:118\n40#1:119,4\n78#1:123\n78#1:124,2\n79#1:126\n85#1:128,2\n79#1:130\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 77
+    .line 78
     sget-object v0, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->getAvailableNetworks()Ljava/util/List;
@@ -85,7 +85,7 @@
 
     check-cast v3, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    .line 77
+    .line 78
     invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v3
@@ -135,12 +135,12 @@
 
     check-cast v0, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    .line 79
+    .line 80
     invoke-interface {p1, v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getTokensSettings(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
 
     move-result-object v1
 
-    .line 81
+    .line 82
     sget-object v2, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->Companion:Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata$Companion;
 
     invoke-virtual {v2, v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata$Companion;->getDefaultTokensSettings(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
@@ -153,7 +153,7 @@
 
     if-nez v2, :cond_2
 
-    .line 82
+    .line 83
     new-instance v2, Lkotlin/jvm/internal/Ref$IntRef;
 
     invoke-direct {v2}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
@@ -246,7 +246,7 @@
 
     check-cast v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    .line 85
+    .line 86
     sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v5, v0}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->getTokensByNetwork(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)Ljava/util/List;
@@ -259,31 +259,31 @@
 
     if-eqz v5, :cond_5
 
-    .line 88
+    .line 89
     invoke-virtual {v1}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
     move-result-object v5
 
-    .line 89
+    .line 90
     new-instance v6, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 90
+    .line 91
     invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 91
+    .line 92
     iget v7, v2, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     const/4 v8, 0x1
 
-    .line 89
+    .line 90
     invoke-direct {v6, v4, v7, v8}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;-><init>(Ljava/lang/String;IZ)V
 
-    .line 88
+    .line 89
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 95
+    .line 96
     iget v4, v2, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     add-int/2addr v4, v8
@@ -292,13 +292,13 @@
 
     goto :goto_3
 
-    .line 99
+    .line 100
     :cond_6
     invoke-interface {p1, v1, v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->saveTokensSettings(Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     goto/16 :goto_1
 
-    .line 82
+    .line 83
     :cond_7
     new-instance p1, Ljava/util/NoSuchElementException;
 
@@ -405,11 +405,11 @@
     add-int/2addr v2, v3
 
     :goto_1
-    const/16 v4, 0x9
+    const/16 v4, 0xa
 
     if-ge v2, v4, :cond_1
 
-    const/16 v5, 0xa
+    const/16 v5, 0x9
 
     const/16 v6, 0x8
 
@@ -431,8 +431,22 @@
 
     goto/16 :goto_2
 
-    .line 69
+    .line 70
     :pswitch_0
+    sget-object v4, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
+
+    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+
+    invoke-static {v5}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-direct {v4, v1, v1, v5}, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->addSupportForNewTokens(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/util/List;)V
+
+    goto/16 :goto_2
+
+    .line 69
+    :pswitch_1
     sget-object v4, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     new-array v5, v13, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -454,7 +468,7 @@
     goto/16 :goto_2
 
     .line 68
-    :pswitch_1
+    :pswitch_2
     sget-object v4, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->FTM:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -468,7 +482,7 @@
     goto/16 :goto_2
 
     .line 60
-    :pswitch_2
+    :pswitch_3
     invoke-interface {v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getOldWalletPublicAddress()Ljava/lang/String;
 
     move-result-object v4
@@ -534,13 +548,13 @@
     goto/16 :goto_2
 
     .line 58
-    :pswitch_3
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->resetTokensSettings()V
+    :pswitch_4
+    invoke-interface {v1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->resetAllTokensSettings()V
 
     goto/16 :goto_2
 
     .line 57
-    :pswitch_4
+    :pswitch_5
     sget-object v4, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     new-array v5, v13, [Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -562,7 +576,7 @@
     goto/16 :goto_2
 
     .line 49
-    :pswitch_5
+    :pswitch_6
     sget-object v15, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     const/16 v12, 0x15
@@ -610,12 +624,12 @@
 
     sget-object v6, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->SHR:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v6, v12, v4
+    aput-object v6, v12, v5
 
     .line 53
-    sget-object v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->BOSON:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->BOSON:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v4, v12, v5
+    aput-object v5, v12, v4
 
     sget-object v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->KONO:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
@@ -689,7 +703,7 @@
     goto :goto_2
 
     .line 45
-    :pswitch_6
+    :pswitch_7
     sget-object v12, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     const/16 v15, 0xb
@@ -736,11 +750,11 @@
 
     sget-object v6, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->FRM:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v6, v15, v4
+    aput-object v6, v15, v5
 
-    sget-object v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->DOP:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->DOP:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v4, v15, v5
+    aput-object v5, v15, v4
 
     .line 45
     invoke-static {v15}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
@@ -752,7 +766,7 @@
     goto :goto_2
 
     .line 44
-    :pswitch_7
+    :pswitch_8
     sget-object v4, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->UFI:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
@@ -763,7 +777,7 @@
 
     invoke-direct {v4, v1, v1, v5}, Lcom/smedialink/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->addSupportForNewTokens(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/storage/BasePreferenceHelper;Ljava/util/List;)V
 
-    .line 71
+    .line 72
     :goto_2
     invoke-interface {v1, v2}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->setPrefsVersion(I)V
 
@@ -779,10 +793,9 @@
 
     return-void
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_8
         :pswitch_7
         :pswitch_6
         :pswitch_5

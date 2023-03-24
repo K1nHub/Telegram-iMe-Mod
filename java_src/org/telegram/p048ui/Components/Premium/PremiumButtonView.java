@@ -182,13 +182,13 @@ public class PremiumButtonView extends FrameLayout {
             this.overlayAnimator.cancel();
         }
         if (!z) {
-            this.overlayProgress = this.showOverlay ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            this.overlayProgress = this.showOverlay ? 1.0f : 0.0f;
             updateOverlayProgress();
             return;
         }
         float[] fArr = new float[2];
         fArr[0] = this.overlayProgress;
-        fArr[1] = this.showOverlay ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        fArr[1] = this.showOverlay ? 1.0f : 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
         this.overlayAnimator = ofFloat;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.1

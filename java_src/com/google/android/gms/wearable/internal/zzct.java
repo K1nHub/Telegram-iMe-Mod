@@ -83,15 +83,14 @@ public final class zzct implements DataApi {
     public final PendingResult<Status> addListener(GoogleApiClient googleApiClient, DataApi.DataListener dataListener, Uri uri, int i) {
         boolean z;
         Asserts.checkNotNull(uri, "uri must not be null");
-        if (i != 0) {
-            if (i != 1) {
-                z = false;
-                Preconditions.checkArgument(z, "invalid filter type");
-                return zzc.zza(googleApiClient, new zzco(new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.DATA_CHANGED", uri, i)}), dataListener);
-            }
+        if (i == 0) {
+            z = true;
+        } else if (i == 1) {
             i = 1;
+            z = true;
+        } else {
+            z = false;
         }
-        z = true;
         Preconditions.checkArgument(z, "invalid filter type");
         return zzc.zza(googleApiClient, new zzco(new IntentFilter[]{zzhl.zzb("com.google.android.gms.wearable.DATA_CHANGED", uri, i)}), dataListener);
     }

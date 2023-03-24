@@ -50,7 +50,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v1, :cond_6
@@ -101,7 +101,7 @@
 
     :cond_4
     :goto_2
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_3
     if-eqz v5, :cond_5
@@ -144,7 +144,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, v2, :cond_4
@@ -175,7 +175,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_1
     if-eqz v6, :cond_3

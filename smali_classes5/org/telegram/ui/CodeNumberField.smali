@@ -715,12 +715,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
-
     :catch_0
-    nop
-
-    :goto_1
     if-lez v2, :cond_2
 
     const/4 v2, 0x1
@@ -742,7 +737,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/CodeNumberField;->animateSpring(Landroidx/dynamicanimation/animation/SpringAnimation;F)V
 
@@ -757,7 +752,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/CodeNumberField;->animateSpring(Landroidx/dynamicanimation/animation/SpringAnimation;F)V
 
@@ -781,11 +776,11 @@
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
+    const/4 v0, 0x0
+
+    cmpl-float p1, p1, v0
+
     const/high16 v0, 0x3f800000    # 1.0f
-
-    const/4 v2, 0x0
-
-    cmpl-float p1, p1, v2
 
     if-eqz p1, :cond_0
 
@@ -1025,7 +1020,7 @@
 
     if-nez v0, :cond_3
 
-    goto :goto_3
+    goto :goto_2
 
     .line 253
     :cond_3
@@ -1089,12 +1084,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
-
     :catch_0
-    nop
-
-    :goto_2
     if-lez v0, :cond_9
 
     .line 268
@@ -1104,10 +1094,10 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
-    :goto_3
+    :goto_2
     return v2
 
     .line 299
@@ -1116,7 +1106,7 @@
 
     .line 301
     :cond_9
-    :goto_4
+    :goto_3
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
     .line 302

@@ -112,7 +112,7 @@
 
     const/high16 p1, 0x41000000    # 8.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 254
     iput v0, p0, Lme/grantland/widget/AutofitHelper;->mMinTextSize:F
@@ -501,7 +501,7 @@
     :cond_0
     const/4 v15, 0x0
 
-    const/4 v0, 0x1
+    move v0, v14
 
     :goto_0
     if-le v0, v10, :cond_2

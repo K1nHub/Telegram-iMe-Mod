@@ -288,7 +288,7 @@
 
     if-ge p1, v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 157
     :cond_0
@@ -320,7 +320,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     const/4 v2, 0x3
@@ -671,7 +671,7 @@
 
     int-to-float v5, v5
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
@@ -1114,7 +1114,7 @@
 
     const/high16 v9, 0x43b40000    # 360.0f
 
-    mul-float v6, v6, v9
+    mul-float/2addr v6, v9
 
     add-float/2addr v7, v6
 
@@ -1127,7 +1127,7 @@
 
     div-float v10, v5, v10
 
-    mul-float v10, v10, v9
+    mul-float/2addr v10, v9
 
     add-float/2addr v6, v10
 
@@ -1140,7 +1140,7 @@
 
     div-float/2addr v5, v10
 
-    mul-float v5, v5, v9
+    mul-float/2addr v5, v9
 
     add-float/2addr v6, v5
 
@@ -1210,7 +1210,7 @@
     .line 346
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount3:I
 
-    const/4 v5, 0x0
+    move v5, v8
 
     .line 347
     :goto_0
@@ -1338,9 +1338,9 @@
     .line 367
     iget-wide v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->lifeTime:J
 
-    cmp-long v9, v3, v6
+    cmp-long v6, v3, v6
 
-    if-lez v9, :cond_3
+    if-lez v6, :cond_3
 
     .line 368
     invoke-virtual {v5, v3, v4}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->genPosition(J)V

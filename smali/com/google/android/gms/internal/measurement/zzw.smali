@@ -131,10 +131,8 @@
 
     goto :goto_1
 
-    :catch_0
-    nop
-
     .line 10
+    :catch_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     .line 8

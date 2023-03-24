@@ -560,7 +560,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x001e, code lost:
-        if (r0 != 3) goto L16;
+        if (r0 != 3) goto L17;
      */
     @Override // android.widget.TextView, android.view.View
     /*
@@ -594,10 +594,10 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             boolean r0 = r5.closeIconPressed
             if (r0 == 0) goto L34
             r5.performCloseIconClick()
-            r0 = 1
+            r0 = r3
             goto L35
         L34:
-            r0 = 0
+            r0 = r2
         L35:
             r5.setCloseIconPressed(r2)
             goto L41
@@ -605,16 +605,16 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             if (r1 == 0) goto L40
             r5.setCloseIconPressed(r3)
         L3e:
-            r0 = 1
+            r0 = r3
             goto L41
         L40:
-            r0 = 0
+            r0 = r2
         L41:
             if (r0 != 0) goto L49
             boolean r6 = super.onTouchEvent(r6)
             if (r6 == 0) goto L4a
         L49:
-            r2 = 1
+            r2 = r3
         L4a:
             return r2
         */
@@ -708,7 +708,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     private int[] createCloseIconDrawableState() {
         ?? isEnabled = isEnabled();
         int i = isEnabled;

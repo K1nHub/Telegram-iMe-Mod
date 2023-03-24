@@ -111,7 +111,7 @@
 .end method
 
 .method private readAESExtraDataRecord(Ljava/util/ArrayList;)Lnet/lingala/zip4j/model/AESExtraDataRecord;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lnet/lingala/zip4j/exception/ZipException;
@@ -127,7 +127,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 1050
     :goto_0
@@ -156,9 +156,9 @@
 
     const-wide/32 v6, 0x9901
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_3
+    if-nez v4, :cond_3
 
     .line 1058
     invoke-virtual {v3}, Lnet/lingala/zip4j/model/ExtraDataRecord;->getData()[B
@@ -560,9 +560,9 @@
 
     const-wide/16 v3, -0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     .line 668
     invoke-virtual {v0}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUnCompressedSize()J
@@ -577,9 +577,9 @@
 
     move-result-wide v1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_2
+    if-eqz v1, :cond_2
 
     .line 671
     invoke-virtual {v0}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getCompressedSize()J
@@ -594,9 +594,9 @@
 
     move-result-wide v1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_3
+    if-eqz v1, :cond_3
 
     .line 674
     invoke-virtual {v0}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getOffsetLocalHeader()J
@@ -705,9 +705,9 @@
 
     const-wide/16 v3, -0x1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_1
+    if-eqz v1, :cond_1
 
     .line 705
     invoke-virtual {v0}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUnCompressedSize()J
@@ -722,9 +722,9 @@
 
     move-result-wide v1
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-eqz v5, :cond_2
+    if-eqz v1, :cond_2
 
     .line 708
     invoke-virtual {v0}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getCompressedSize()J
@@ -853,7 +853,7 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    move v10, v9
 
     :goto_0
     if-ge v10, v5, :cond_c
@@ -877,11 +877,11 @@
 
     const-wide/32 v15, 0x2014b50    # 1.6619997E-316
 
-    const/4 v7, 0x1
+    cmp-long v13, v13, v15
 
-    cmp-long v17, v13, v15
+    const/4 v14, 0x1
 
-    if-nez v17, :cond_b
+    if-nez v13, :cond_b
 
     .line 226
     invoke-virtual {v11, v12}, Lnet/lingala/zip4j/model/FileHeader;->setSignature(I)V
@@ -924,12 +924,12 @@
 
     if-eqz v12, :cond_1
 
-    const/4 v12, 0x1
+    move v12, v14
 
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x0
+    move v12, v9
 
     :goto_1
     invoke-virtual {v11, v12}, Lnet/lingala/zip4j/model/FileHeader;->setFileNameUTF8Encoded(Z)V
@@ -942,7 +942,7 @@
     if-eqz v13, :cond_2
 
     .line 242
-    invoke-virtual {v11, v7}, Lnet/lingala/zip4j/model/FileHeader;->setEncrypted(Z)V
+    invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setEncrypted(Z)V
 
     .line 244
     :cond_2
@@ -956,14 +956,14 @@
 
     shr-int/lit8 v12, v12, 0x3
 
-    if-ne v12, v7, :cond_3
+    if-ne v12, v14, :cond_3
 
-    const/4 v12, 0x1
+    move v12, v14
 
     goto :goto_2
 
     :cond_3
-    const/4 v12, 0x0
+    move v12, v9
 
     .line 247
     :goto_2
@@ -1087,70 +1087,70 @@
     move-result v13
 
     .line 285
-    new-instance v14, Ljava/lang/String;
+    new-instance v15, Ljava/lang/String;
 
-    invoke-direct {v14, v8}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v15, v8}, Ljava/lang/String;-><init>([B)V
 
-    invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setFileComment(Ljava/lang/String;)V
+    invoke-virtual {v11, v15}, Lnet/lingala/zip4j/model/FileHeader;->setFileComment(Ljava/lang/String;)V
 
     .line 288
-    iget-object v14, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
+    iget-object v15, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
 
-    invoke-direct {v1, v14, v8}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
+    invoke-direct {v1, v15, v8}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
 
     .line 289
     invoke-static {v8, v9}, Lnet/lingala/zip4j/util/Raw;->readShortLittleEndian([BI)I
 
-    move-result v14
+    move-result v15
 
-    invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setDiskNumberStart(I)V
+    invoke-virtual {v11, v15}, Lnet/lingala/zip4j/model/FileHeader;->setDiskNumberStart(I)V
 
     .line 292
-    iget-object v14, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
+    iget-object v15, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
 
-    invoke-direct {v1, v14, v8}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
+    invoke-direct {v1, v15, v8}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
 
     .line 293
     invoke-virtual {v8}, [B->clone()Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v15
 
-    check-cast v14, [B
+    check-cast v15, [B
 
-    invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setInternalFileAttr([B)V
+    invoke-virtual {v11, v15}, Lnet/lingala/zip4j/model/FileHeader;->setInternalFileAttr([B)V
 
     .line 296
-    iget-object v14, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
+    iget-object v15, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
 
-    invoke-direct {v1, v14, v6}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
+    invoke-direct {v1, v15, v6}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
 
     .line 297
     invoke-virtual {v6}, [B->clone()Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v15
 
-    check-cast v14, [B
+    check-cast v15, [B
 
-    invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setExternalFileAttr([B)V
+    invoke-virtual {v11, v15}, Lnet/lingala/zip4j/model/FileHeader;->setExternalFileAttr([B)V
 
     .line 300
-    iget-object v14, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
+    iget-object v15, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
 
-    invoke-direct {v1, v14, v6}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
+    invoke-direct {v1, v15, v6}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
 
     .line 303
     invoke-direct {v1, v6}, Lnet/lingala/zip4j/core/HeaderReader;->getLongByteFromIntByte([B)[B
 
-    move-result-object v14
+    move-result-object v15
 
     .line 304
-    invoke-static {v14, v9}, Lnet/lingala/zip4j/util/Raw;->readLongLittleEndian([BI)J
+    invoke-static {v15, v9}, Lnet/lingala/zip4j/util/Raw;->readLongLittleEndian([BI)J
 
-    move-result-wide v14
+    move-result-wide v15
 
     const-wide v17, 0xffffffffL
 
-    and-long v14, v14, v17
+    and-long v14, v15, v17
 
     invoke-virtual {v11, v14, v15}, Lnet/lingala/zip4j/model/FileHeader;->setOffsetLocalHeader(J)V
 
@@ -1247,21 +1247,14 @@
 
     move-result v12
 
-    const/4 v15, 0x2
-
-    add-int/2addr v12, v15
+    add-int/2addr v12, v7
 
     invoke-virtual {v14, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v14
 
-    goto :goto_4
-
-    :cond_5
-    const/4 v15, 0x2
-
     .line 330
-    :goto_4
+    :cond_5
     invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setFileName(Ljava/lang/String;)V
 
     const-string v12, "/"
@@ -1281,14 +1274,19 @@
 
     if-eqz v12, :cond_6
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_6
-    const/4 v7, 0x0
+    move v14, v9
+
+    goto :goto_5
 
     :cond_7
+    :goto_4
+    const/4 v14, 0x1
+
     :goto_5
-    invoke-virtual {v11, v7}, Lnet/lingala/zip4j/model/FileHeader;->setDirectory(Z)V
+    invoke-virtual {v11, v14}, Lnet/lingala/zip4j/model/FileHeader;->setDirectory(Z)V
 
     goto :goto_6
 
@@ -1303,12 +1301,10 @@
     throw v0
 
     :cond_9
-    const/4 v15, 0x2
-
-    const/4 v7, 0x0
+    const/4 v12, 0x0
 
     .line 334
-    invoke-virtual {v11, v7}, Lnet/lingala/zip4j/model/FileHeader;->setFileName(Ljava/lang/String;)V
+    invoke-virtual {v11, v12}, Lnet/lingala/zip4j/model/FileHeader;->setFileName(Ljava/lang/String;)V
 
     .line 338
     :goto_6
@@ -1323,27 +1319,25 @@
     if-lez v13, :cond_a
 
     .line 364
-    new-array v7, v13, [B
+    new-array v12, v13, [B
 
     .line 365
-    iget-object v12, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
+    iget-object v13, v1, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
 
-    invoke-direct {v1, v12, v7}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
+    invoke-direct {v1, v13, v12}, Lnet/lingala/zip4j/core/HeaderReader;->readIntoBuff(Ljava/io/RandomAccessFile;[B)[B
 
     .line 366
-    new-instance v12, Ljava/lang/String;
+    new-instance v13, Ljava/lang/String;
 
-    invoke-direct {v12, v7}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v13, v12}, Ljava/lang/String;-><init>([B)V
 
-    invoke-virtual {v11, v12}, Lnet/lingala/zip4j/model/FileHeader;->setFileComment(Ljava/lang/String;)V
+    invoke-virtual {v11, v13}, Lnet/lingala/zip4j/model/FileHeader;->setFileComment(Ljava/lang/String;)V
 
     .line 369
     :cond_a
     invoke-virtual {v4, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v10, v10, 0x1
-
-    const/4 v7, 0x2
 
     goto/16 :goto_0
 
@@ -1359,7 +1353,9 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/2addr v10, v7
+    const/4 v3, 0x1
+
+    add-int/2addr v10, v3
 
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1398,9 +1394,9 @@
 
     const-wide/32 v6, 0x5054b50
 
-    cmp-long v10, v4, v6
+    cmp-long v4, v4, v6
 
-    if-eqz v10, :cond_d
+    if-eqz v4, :cond_d
 
     return-object v3
 
@@ -1510,7 +1506,7 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v5
 
     .line 117
     :goto_0
@@ -1784,7 +1780,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     if-ge v4, p1, :cond_3
@@ -1928,7 +1924,7 @@
 .end method
 
 .method private readZip64EndCentralDirLocator()Lnet/lingala/zip4j/model/Zip64EndCentralDirLocator;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lnet/lingala/zip4j/exception/ZipException;
@@ -1973,9 +1969,9 @@
 
     const-wide/32 v6, 0x7064b50
 
-    cmp-long v8, v4, v6
+    cmp-long v6, v4, v6
 
-    if-nez v8, :cond_0
+    if-nez v6, :cond_0
 
     .line 525
     iget-object v6, p0, Lnet/lingala/zip4j/core/HeaderReader;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
@@ -2061,7 +2057,7 @@
 .end method
 
 .method private readZip64EndCentralDirRec()Lnet/lingala/zip4j/model/Zip64EndCentralDirRecord;
-    .locals 12
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lnet/lingala/zip4j/exception/ZipException;
@@ -2134,9 +2130,9 @@
 
     const-wide/32 v9, 0x6064b50
 
-    cmp-long v11, v7, v9
+    cmp-long v9, v7, v9
 
-    if-nez v11, :cond_1
+    if-nez v9, :cond_1
 
     .line 584
     invoke-virtual {v0, v7, v8}, Lnet/lingala/zip4j/model/Zip64EndCentralDirRecord;->setSignature(J)V
@@ -2327,7 +2323,7 @@
 .end method
 
 .method private readZip64ExtendedInfo(Ljava/util/ArrayList;JJJI)Lnet/lingala/zip4j/model/Zip64ExtendedInfo;
-    .locals 16
+    .locals 15
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lnet/lingala/zip4j/exception/ZipException;
@@ -2336,7 +2332,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 729
     :goto_0
@@ -2367,9 +2363,9 @@
 
     const-wide/16 v6, 0x1
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_6
+    if-nez v4, :cond_6
 
     .line 737
     new-instance v1, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;
@@ -2403,11 +2399,11 @@
 
     and-long v10, p2, v8
 
-    const/4 v12, 0x1
+    cmp-long v10, v10, v8
 
-    cmp-long v13, v10, v8
+    const/4 v11, 0x1
 
-    if-nez v13, :cond_2
+    if-nez v10, :cond_2
 
     .line 749
     invoke-virtual {v3}, Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData()I
@@ -2422,28 +2418,28 @@
     .line 751
     invoke-static {v5, v0}, Lnet/lingala/zip4j/util/Raw;->readLongLittleEndian([BI)J
 
-    move-result-wide v10
+    move-result-wide v12
 
     .line 752
-    invoke-virtual {v1, v10, v11}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setUnCompressedSize(J)V
+    invoke-virtual {v1, v12, v13}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setUnCompressedSize(J)V
 
-    const/16 v10, 0x8
+    move v10, v4
 
-    const/4 v11, 0x1
+    move v12, v11
 
     goto :goto_1
 
     :cond_2
-    const/4 v10, 0x0
+    move v10, v0
 
-    const/4 v11, 0x0
+    move v12, v10
 
     :goto_1
     and-long v13, p4, v8
 
-    cmp-long v15, v13, v8
+    cmp-long v13, v13, v8
 
-    if-nez v15, :cond_3
+    if-nez v13, :cond_3
 
     .line 757
     invoke-virtual {v3}, Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData()I
@@ -2458,21 +2454,21 @@
     .line 759
     invoke-static {v5, v0}, Lnet/lingala/zip4j/util/Raw;->readLongLittleEndian([BI)J
 
-    move-result-wide v13
+    move-result-wide v12
 
     .line 760
-    invoke-virtual {v1, v13, v14}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setCompressedSize(J)V
+    invoke-virtual {v1, v12, v13}, Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setCompressedSize(J)V
 
     add-int/lit8 v10, v10, 0x8
 
-    const/4 v11, 0x1
+    move v12, v11
 
     :cond_3
     and-long v13, p6, v8
 
-    cmp-long v15, v13, v8
+    cmp-long v8, v13, v8
 
-    if-nez v15, :cond_4
+    if-nez v8, :cond_4
 
     .line 765
     invoke-virtual {v3}, Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData()I
@@ -2494,7 +2490,7 @@
 
     add-int/lit8 v10, v10, 0x8
 
-    const/4 v11, 0x1
+    move v12, v11
 
     :cond_4
     const v4, 0xffff
@@ -2524,10 +2520,10 @@
     goto :goto_2
 
     :cond_5
-    move v12, v11
+    move v11, v12
 
     :goto_2
-    if-eqz v12, :cond_7
+    if-eqz v11, :cond_7
 
     return-object v1
 
@@ -2589,9 +2585,9 @@
 
     const-wide/32 v6, 0x6054b50
 
-    cmp-long v3, v1, v6
+    cmp-long v1, v1, v6
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     .line 814
     iget-object v0, p0, Lnet/lingala/zip4j/core/HeaderReader;->zip4jRaf:Ljava/io/RandomAccessFile;
@@ -2749,7 +2745,7 @@
 .end method
 
 .method public readLocalFileHeader(Lnet/lingala/zip4j/model/FileHeader;)Lnet/lingala/zip4j/model/LocalFileHeader;
-    .locals 19
+    .locals 18
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lnet/lingala/zip4j/exception/ZipException;
@@ -2842,9 +2838,9 @@
 
     const-wide/32 v16, 0x4034b50
 
-    cmp-long v18, v14, v16
+    cmp-long v14, v14, v16
 
-    if-nez v18, :cond_e
+    if-nez v14, :cond_e
 
     .line 860
     invoke-virtual {v5, v13}, Lnet/lingala/zip4j/model/LocalFileHeader;->setSignature(I)V
@@ -2877,12 +2873,12 @@
 
     if-eqz v13, :cond_1
 
-    const/4 v13, 0x1
+    move v13, v14
 
     goto :goto_0
 
     :cond_1
-    const/4 v13, 0x0
+    move v13, v12
 
     :goto_0
     invoke-virtual {v5, v13}, Lnet/lingala/zip4j/model/LocalFileHeader;->setFileNameUTF8Encoded(Z)V
@@ -2924,12 +2920,12 @@
 
     if-ne v6, v7, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v14
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    move v6, v12
 
     :goto_1
     invoke-virtual {v5, v6}, Lnet/lingala/zip4j/model/LocalFileHeader;->setDataDescriptorExists(Z)V

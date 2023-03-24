@@ -33,7 +33,7 @@ public final class QRCodeWriter {
         return encode(str, i, i2, map, bitmap, 1.0f, -1, -16777216);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x02dc  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0054  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -41,7 +41,7 @@ public final class QRCodeWriter {
     */
     public android.graphics.Bitmap encode(java.lang.String r28, int r29, int r30, java.util.Map<com.google.zxing.EncodeHintType, ?> r31, android.graphics.Bitmap r32, float r33, int r34, int r35) throws com.google.zxing.WriterException {
         /*
-            Method dump skipped, instructions count: 773
+            Method dump skipped, instructions count: 777
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.zxing.qrcode.QRCodeWriter.encode(java.lang.String, int, int, java.util.Map, android.graphics.Bitmap, float, int, int):android.graphics.Bitmap");

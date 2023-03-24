@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static final isDayAgo(J)Z
-    .locals 3
+    .locals 2
 
     .line 7
     invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/DateExtKt;->now()J
@@ -16,9 +16,9 @@
 
     const-wide/32 p0, 0x5265c00
 
-    cmp-long v2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-lez v2, :cond_0
+    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -45,11 +45,11 @@
 
     const-wide/32 v2, 0x5265c00
 
-    mul-long p0, p0, v2
+    mul-long/2addr p0, v2
 
-    cmp-long p2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-lez p2, :cond_0
+    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -76,11 +76,11 @@
 
     const-wide/32 v2, 0xea60
 
-    mul-long p0, p0, v2
+    mul-long/2addr p0, v2
 
-    cmp-long p2, v0, p0
+    cmp-long p0, v0, p0
 
-    if-lez p2, :cond_0
+    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 

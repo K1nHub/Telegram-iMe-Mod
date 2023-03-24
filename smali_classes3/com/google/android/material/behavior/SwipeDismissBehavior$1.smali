@@ -44,27 +44,27 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpl-float v1, p2, v0
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    cmpl-float v3, p2, v0
+    const/4 v3, 0x1
 
-    if-eqz v3, :cond_7
+    if-eqz v1, :cond_7
 
     .line 295
     invoke-static {p1}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
     move-result p1
 
-    if-ne p1, v2, :cond_0
+    if-ne p1, v3, :cond_0
 
-    const/4 p1, 0x1
+    move p1, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 297
     :goto_0
@@ -76,7 +76,7 @@
 
     if-ne v4, v5, :cond_1
 
-    return v2
+    return v3
 
     :cond_1
     if-nez v4, :cond_4
@@ -90,20 +90,20 @@
     goto :goto_1
 
     :cond_2
-    if-lez v3, :cond_3
+    if-lez v1, :cond_3
 
     :goto_1
-    const/4 v1, 0x1
+    move v2, v3
 
     :cond_3
-    return v1
+    return v2
 
     :cond_4
-    if-ne v4, v2, :cond_6
+    if-ne v4, v3, :cond_6
 
     if-eqz p1, :cond_5
 
-    if-lez v3, :cond_6
+    if-lez v1, :cond_6
 
     goto :goto_2
 
@@ -113,10 +113,10 @@
     if-gez p1, :cond_6
 
     :goto_2
-    const/4 v1, 0x1
+    move v2, v3
 
     :cond_6
-    return v1
+    return v2
 
     .line 310
     :cond_7
@@ -139,7 +139,7 @@
 
     iget v0, v0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->dragDismissThreshold:F
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
@@ -152,10 +152,10 @@
 
     if-lt p2, p1, :cond_8
 
-    const/4 v1, 0x1
+    move v2, v3
 
     :cond_8
-    return v1
+    return v2
 .end method
 
 
@@ -172,7 +172,7 @@
 
     if-ne p3, v0, :cond_0
 
-    const/4 p3, 0x1
+    move p3, v0
 
     goto :goto_0
 
@@ -362,7 +362,7 @@
 
     iget p5, p5, Lcom/google/android/material/behavior/SwipeDismissBehavior;->alphaStartSwipeDistance:F
 
-    mul-float p4, p4, p5
+    mul-float/2addr p4, p5
 
     add-float/2addr p3, p4
 
@@ -382,32 +382,32 @@
 
     iget v0, v0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->alphaEndSwipeDistance:F
 
-    mul-float p5, p5, v0
+    mul-float/2addr p5, v0
 
     add-float/2addr p4, p5
 
     int-to-float p2, p2
 
-    const/high16 p5, 0x3f800000    # 1.0f
+    cmpg-float p5, p2, p3
 
-    cmpg-float v0, p2, p3
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    if-gtz v0, :cond_0
+    if-gtz p5, :cond_0
 
     .line 367
-    invoke-virtual {p1, p5}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    cmpl-float p5, p2, p4
 
-    cmpl-float v1, p2, p4
+    const/4 v1, 0x0
 
-    if-ltz v1, :cond_1
+    if-ltz p5, :cond_1
 
     .line 369
-    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 
@@ -417,10 +417,10 @@
 
     move-result p2
 
-    sub-float p2, p5, p2
+    sub-float p2, v0, p2
 
     .line 373
-    invoke-static {v0, p2, p5}, Lcom/google/android/material/behavior/SwipeDismissBehavior;->clamp(FFF)F
+    invoke-static {v1, p2, v0}, Lcom/google/android/material/behavior/SwipeDismissBehavior;->clamp(FFF)F
 
     move-result p2
 

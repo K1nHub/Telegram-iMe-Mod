@@ -238,12 +238,12 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 584
     :goto_0
@@ -295,7 +295,7 @@
     if-eqz v0, :cond_7
 
     :cond_6
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_7
     return v1
@@ -353,7 +353,7 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    move v0, v8
 
     goto :goto_1
 
@@ -368,7 +368,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v8
 
     .line 629
     :goto_2
@@ -523,7 +523,7 @@
 
     const v3, 0x3e6147ae    # 0.22f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 

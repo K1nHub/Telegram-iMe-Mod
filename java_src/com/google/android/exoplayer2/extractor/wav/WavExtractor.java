@@ -308,9 +308,9 @@ public final class WavExtractor implements Extractor {
             this.trackOutput.format(this.format);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x0048  */
-        /* JADX WARN: Removed duplicated region for block: B:7:0x0021  */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x0036 -> B:4:0x001c). Please submit an issue!!! */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x0047  */
+        /* JADX WARN: Removed duplicated region for block: B:7:0x0020  */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x0035 -> B:4:0x001b). Please submit an issue!!! */
         @Override // com.google.android.exoplayer2.extractor.wav.WavExtractor.OutputWriter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -328,40 +328,40 @@ public final class WavExtractor implements Extractor {
                 com.google.android.exoplayer2.extractor.wav.WavFormat r1 = r6.wavFormat
                 int r1 = r1.blockSize
                 int r0 = r0 * r1
-                r1 = 1
-                r2 = 0
-                int r4 = (r8 > r2 ? 1 : (r8 == r2 ? 0 : -1))
-                if (r4 != 0) goto L1e
-            L1c:
+                r1 = 0
+                int r1 = (r8 > r1 ? 1 : (r8 == r1 ? 0 : -1))
                 r2 = 1
-                goto L1f
+                if (r1 != 0) goto L1d
+            L1b:
+                r1 = r2
+                goto L1e
+            L1d:
+                r1 = 0
             L1e:
-                r2 = 0
-            L1f:
-                if (r2 != 0) goto L3f
+                if (r1 != 0) goto L3e
                 int r3 = r6.pendingInputBytes
-                if (r3 >= r0) goto L3f
+                if (r3 >= r0) goto L3e
                 int r3 = r0 - r3
                 long r3 = (long) r3
                 long r3 = java.lang.Math.min(r3, r8)
-                int r4 = (int) r3
-                byte[] r3 = r6.inputData
+                int r3 = (int) r3
+                byte[] r4 = r6.inputData
                 int r5 = r6.pendingInputBytes
-                int r3 = r7.read(r3, r5, r4)
+                int r3 = r7.read(r4, r5, r3)
                 r4 = -1
-                if (r3 != r4) goto L39
-                goto L1c
-            L39:
+                if (r3 != r4) goto L38
+                goto L1b
+            L38:
                 int r4 = r6.pendingInputBytes
                 int r4 = r4 + r3
                 r6.pendingInputBytes = r4
-                goto L1f
-            L3f:
+                goto L1e
+            L3e:
                 int r7 = r6.pendingInputBytes
                 com.google.android.exoplayer2.extractor.wav.WavFormat r8 = r6.wavFormat
                 int r8 = r8.blockSize
                 int r7 = r7 / r8
-                if (r7 <= 0) goto L77
+                if (r7 <= 0) goto L75
                 byte[] r8 = r6.inputData
                 com.google.android.exoplayer2.util.ParsableByteArray r9 = r6.decodedData
                 r6.decode(r8, r7, r9)
@@ -381,16 +381,16 @@ public final class WavExtractor implements Extractor {
                 r6.pendingOutputBytes = r8
                 int r7 = r6.numOutputBytesToFrames(r8)
                 int r8 = r6.targetSampleSizeFrames
-                if (r7 < r8) goto L77
+                if (r7 < r8) goto L75
                 r6.writeSampleMetadata(r8)
-            L77:
-                if (r2 == 0) goto L84
+            L75:
+                if (r1 == 0) goto L82
                 int r7 = r6.pendingOutputBytes
                 int r7 = r6.numOutputBytesToFrames(r7)
-                if (r7 <= 0) goto L84
+                if (r7 <= 0) goto L82
                 r6.writeSampleMetadata(r7)
-            L84:
-                return r2
+            L82:
+                return r1
             */
             throw new UnsupportedOperationException("Method not decompiled: com.google.android.exoplayer2.extractor.wav.WavExtractor.ImaAdPcmOutputWriter.sampleData(com.google.android.exoplayer2.extractor.ExtractorInput, long):boolean");
         }

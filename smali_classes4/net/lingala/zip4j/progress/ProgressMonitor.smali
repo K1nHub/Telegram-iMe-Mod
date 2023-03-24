@@ -142,7 +142,7 @@
 .end method
 
 .method public updateWorkCompleted(J)V
-    .locals 5
+    .locals 4
 
     .line 82
     iget-wide v0, p0, Lnet/lingala/zip4j/progress/ProgressMonitor;->workCompleted:J
@@ -156,13 +156,13 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, p1, v2
+    cmp-long v2, p1, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     const-wide/16 v2, 0x64
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     .line 85
     div-long/2addr v0, p1
@@ -179,6 +179,7 @@
     iput p2, p0, Lnet/lingala/zip4j/progress/ProgressMonitor;->percentDone:I
 
     .line 90
+    :catch_0
     :cond_0
     :goto_0
     iget-boolean p1, p0, Lnet/lingala/zip4j/progress/ProgressMonitor;->pause:Z
@@ -192,11 +193,6 @@
     invoke-static {p1, p2}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    nop
 
     goto :goto_0
 

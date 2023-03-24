@@ -26,7 +26,7 @@
 
     const-wide v0, 0x3fef8a6c50c753f8L    # 0.985647352
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     const-wide v0, 0x408997e631f8a090L    # 818.9874
 
@@ -50,7 +50,7 @@
 
     const-wide v0, 0x404ca5dc1a63c1f8L    # 57.29577951308232
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     return-wide p0
 .end method
@@ -65,7 +65,7 @@
 
     const-wide p2, 0x404ca5dc1a63c1f8L    # 57.29577951308232
 
-    mul-double p0, p0, p2
+    mul-double/2addr p0, p2
 
     return-wide p0
 .end method
@@ -140,7 +140,7 @@
 
     const-wide/high16 v2, 0x404e000000000000L    # 60.0
 
-    mul-double p2, p2, v2
+    mul-double/2addr p2, v2
 
     double-to-int p2, p2
 
@@ -149,7 +149,7 @@
     .line 140
     aget-wide v4, v10, v11
 
-    mul-double v4, v4, v2
+    mul-double/2addr v4, v2
 
     double-to-int p3, v4
 
@@ -198,7 +198,7 @@
 
     const-wide v0, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 41
     invoke-static {p0, p1}, Ljava/lang/Math;->cos(D)D
@@ -215,7 +215,7 @@
 
     const-wide/16 v2, 0x16f
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     add-int/lit8 v2, p1, 0x9
 
@@ -256,7 +256,7 @@
 
     const-wide v0, 0x3f66c16c16c16c17L    # 0.002777777777777778
 
-    mul-double v0, v0, p0
+    mul-double/2addr v0, p0
 
     const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
@@ -269,7 +269,7 @@
 
     const-wide v2, 0x4076800000000000L    # 360.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     sub-double/2addr p0, v0
 
@@ -281,7 +281,7 @@
 
     const-wide v0, 0x3f66c16c16c16c17L    # 0.002777777777777778
 
-    mul-double v0, v0, p0
+    mul-double/2addr v0, p0
 
     .line 25
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
@@ -290,7 +290,7 @@
 
     const-wide v2, 0x4076800000000000L    # 360.0
 
-    mul-double v0, v0, v2
+    mul-double/2addr v0, v2
 
     sub-double/2addr p0, v0
 
@@ -302,7 +302,7 @@
 
     const-wide v0, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 37
     invoke-static {p0, p1}, Ljava/lang/Math;->sin(D)D
@@ -436,7 +436,7 @@
 
     move-result-wide v15
 
-    mul-double v13, v13, v15
+    mul-double/2addr v13, v15
 
     sub-double/2addr v11, v13
 
@@ -450,15 +450,15 @@
 
     move-result-wide v1
 
-    mul-double v13, v13, v1
+    mul-double/2addr v13, v1
 
     div-double/2addr v11, v13
 
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
-    cmpl-double v3, v11, v1
+    cmpl-double v1, v11, v1
 
-    if-ltz v3, :cond_1
+    if-ltz v1, :cond_1
 
     const/4 v1, -0x1
 
@@ -469,11 +469,11 @@
     :cond_1
     const-wide/high16 v1, -0x4010000000000000L    # -1.0
 
-    cmpg-double v3, v11, v1
+    cmpg-double v1, v11, v1
 
-    if-gtz v3, :cond_2
+    if-gtz v1, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v0
 
     goto :goto_1
 
@@ -485,7 +485,7 @@
 
     div-double v9, v1, v7
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_1
     sub-double v2, v5, v9
@@ -522,7 +522,7 @@
 
     move-result-wide v4
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     .line 84
     aget-wide v4, p4, v1
@@ -533,11 +533,11 @@
 
     move-result-wide v6
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     const-wide v6, 0x3e97e92ff8cedadaL    # 3.563E-7
 
-    mul-double p0, p0, v6
+    mul-double/2addr p0, v6
 
     const-wide v6, 0x40377075f6fd21ffL    # 23.4393
 
@@ -548,14 +548,14 @@
 
     move-result-wide p0
 
-    mul-double p0, p0, v4
+    mul-double/2addr p0, v4
 
     .line 90
     invoke-static {v6, v7}, Lorg/telegram/messenger/time/SunDate;->sind(D)D
 
     move-result-wide v6
 
-    mul-double v4, v4, v6
+    mul-double/2addr v4, v6
 
     .line 92
     invoke-static {p0, p1, v2, v3}, Lorg/telegram/messenger/time/SunDate;->atan2d(DD)D
@@ -564,9 +564,9 @@
 
     aput-wide v6, p2, v1
 
-    mul-double v2, v2, v2
+    mul-double/2addr v2, v2
 
-    mul-double p0, p0, p0
+    mul-double/2addr p0, p0
 
     add-double/2addr v2, p0
 
@@ -589,7 +589,7 @@
 
     const-wide v0, 0x3fef8a098da5f901L    # 0.9856002585
 
-    mul-double v0, v0, p0
+    mul-double/2addr v0, p0
 
     const-wide v2, 0x407640c083126e98L    # 356.047
 
@@ -602,7 +602,7 @@
 
     const-wide v2, 0x3f08b0c856bdc946L    # 4.70935E-5
 
-    mul-double v2, v2, p0
+    mul-double/2addr v2, p0
 
     const-wide v4, 0x4071af0be0ded289L    # 282.9404
 
@@ -610,7 +610,7 @@
 
     const-wide v4, 0x3e13c626caf35bd9L    # 1.151E-9
 
-    mul-double p0, p0, v4
+    mul-double/2addr p0, v4
 
     const-wide v4, 0x3f911c2a02320968L    # 0.016709
 
@@ -618,26 +618,26 @@
 
     const-wide p0, 0x404ca5dc1a63c1f8L    # 57.29577951308232
 
-    mul-double p0, p0, v4
+    mul-double/2addr p0, v4
 
     .line 63
     invoke-static {v0, v1}, Lorg/telegram/messenger/time/SunDate;->sind(D)D
 
     move-result-wide v6
 
-    mul-double p0, p0, v6
+    mul-double/2addr p0, v6
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/time/SunDate;->cosd(D)D
 
     move-result-wide v6
 
-    mul-double v6, v6, v4
+    mul-double/2addr v6, v4
 
     const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
 
     add-double/2addr v6, v8
 
-    mul-double p0, p0, v6
+    mul-double/2addr p0, v6
 
     add-double/2addr p0, v0
 
@@ -648,7 +648,7 @@
 
     sub-double/2addr v0, v4
 
-    mul-double v4, v4, v4
+    mul-double/2addr v4, v4
 
     sub-double/2addr v8, v4
 
@@ -661,7 +661,7 @@
 
     move-result-wide p0
 
-    mul-double v4, v4, p0
+    mul-double/2addr v4, p0
 
     mul-double p0, v0, v0
 
@@ -693,9 +693,9 @@
 
     const-wide v0, 0x4076800000000000L    # 360.0
 
-    cmpl-double p3, p0, v0
+    cmpl-double p0, p0, v0
 
-    if-ltz p3, :cond_0
+    if-ltz p0, :cond_0
 
     .line 71
     aget-wide p0, p2, v6
@@ -713,7 +713,7 @@
 
     const-wide v0, 0x3f91df46a2529d39L    # 0.017453292519943295
 
-    mul-double p0, p0, v0
+    mul-double/2addr p0, v0
 
     .line 45
     invoke-static {p0, p1}, Ljava/lang/Math;->tan(D)D

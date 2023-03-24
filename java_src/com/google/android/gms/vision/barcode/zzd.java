@@ -15,7 +15,6 @@ public final class zzd implements Parcelable.Creator<Barcode.CalendarDateTime> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ Barcode.CalendarDateTime createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        String str = null;
         int i = 0;
         int i2 = 0;
         int i3 = 0;
@@ -23,6 +22,7 @@ public final class zzd implements Parcelable.Creator<Barcode.CalendarDateTime> {
         int i5 = 0;
         int i6 = 0;
         boolean z = false;
+        String str = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

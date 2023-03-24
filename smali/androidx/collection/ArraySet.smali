@@ -666,7 +666,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     goto :goto_0
 
@@ -719,7 +719,7 @@
     :cond_2
     if-lt v3, v5, :cond_3
 
-    const/16 v5, 0x8
+    move v5, v6
 
     .line 378
     :cond_3
@@ -1030,7 +1030,7 @@
     return v2
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 569
     :goto_0
@@ -1080,7 +1080,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v2, v1, :cond_0
@@ -1420,7 +1420,7 @@
     .line 752
     invoke-virtual {p0, v0}, Landroidx/collection/ArraySet;->removeAt(I)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_0
     add-int/lit8 v0, v0, -0x1

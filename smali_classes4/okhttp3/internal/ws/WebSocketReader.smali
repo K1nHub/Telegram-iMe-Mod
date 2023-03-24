@@ -408,12 +408,12 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v1, v4
 
     .line 125
     :goto_0
@@ -423,12 +423,12 @@
 
     if-eqz v6, :cond_1
 
-    const/4 v6, 0x1
+    move v6, v5
 
     goto :goto_1
 
     :cond_1
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 126
     :goto_1
@@ -456,12 +456,12 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v5
 
     goto :goto_3
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_3
     const-string v6, "Unexpected rsv1 flag"
@@ -492,7 +492,7 @@
 
     if-eqz v0, :cond_7
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_4
 
@@ -504,7 +504,7 @@
     throw v0
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 136
     :goto_4
@@ -515,12 +515,12 @@
 
     if-eqz v0, :cond_9
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_6
 
     :cond_9
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_6
     if-nez v0, :cond_15
@@ -529,12 +529,12 @@
 
     if-eqz v0, :cond_a
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_7
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v4
 
     :goto_7
     if-nez v0, :cond_14
@@ -554,7 +554,7 @@
 
     if-eqz v1, :cond_b
 
-    const/4 v4, 0x1
+    move v4, v5
 
     .line 157
     :cond_b
@@ -621,9 +621,9 @@
     :cond_e
     int-to-long v0, v1
 
-    cmp-long v5, v2, v0
+    cmp-long v0, v2, v0
 
-    if-nez v5, :cond_10
+    if-nez v0, :cond_10
 
     .line 171
     iget-object v0, p0, Lokhttp3/internal/ws/WebSocketReader;->source:Lokio/BufferedSource;
@@ -636,9 +636,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v0, v2
 
-    if-ltz v5, :cond_f
+    if-ltz v0, :cond_f
 
     goto :goto_9
 
@@ -687,9 +687,9 @@
 
     const-wide/16 v2, 0x7d
 
-    cmp-long v5, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v5, :cond_11
+    if-gtz v0, :cond_11
 
     goto :goto_a
 
@@ -785,9 +785,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v2, :cond_0
 
     .line 274
     iget-object v2, p0, Lokhttp3/internal/ws/WebSocketReader;->source:Lokio/BufferedSource;

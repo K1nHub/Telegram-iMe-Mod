@@ -128,7 +128,7 @@
 
     iget v5, p0, Lorg/telegram/ui/GroupCallActivity$SmallRecordCallDrawable;->alpha:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v4, v5
 

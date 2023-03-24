@@ -644,17 +644,15 @@
 
     neg-int v0, v3
 
-    move v11, v0
-
     goto :goto_1
 
     :cond_2
     const/4 v0, 0x0
 
-    const/4 v11, 0x0
+    :goto_1
+    move v11, v0
 
     .line 159
-    :goto_1
     iget-wide v12, p0, Lcom/google/android/exoplayer2/extractor/ts/H264Reader;->pesTimeUs:J
 
     move-object v7, p0
@@ -728,13 +726,13 @@
 .end method
 
 .method public packetStarted(JI)V
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 115
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H264Reader;->pesTimeUs:J

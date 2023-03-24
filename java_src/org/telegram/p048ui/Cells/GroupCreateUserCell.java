@@ -217,7 +217,7 @@ public class GroupCreateUserCell extends FrameLayout {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00da, code lost:
         if (r14.equals("archived") == false) goto L15;
      */
     /*

@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/VideoEditedInfo;Ljava/io/File;Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
     .locals 0
 
-    .line 5106
+    .line 5105
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$14;->this$0:Lorg/telegram/messenger/MediaController;
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
@@ -46,7 +46,7 @@
 
     const-wide/16 p1, 0x0
 
-    .line 5108
+    .line 5107
     iput-wide p1, p0, Lorg/telegram/messenger/MediaController$14;->lastAvailableSize:J
 
     return-void
@@ -57,7 +57,7 @@
 .method public checkConversionCanceled()Z
     .locals 1
 
-    .line 5112
+    .line 5111
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
@@ -68,7 +68,7 @@
 .method public didWriteData(JF)V
     .locals 10
 
-    .line 5117
+    .line 5116
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
@@ -80,11 +80,11 @@
     :cond_0
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_1
+    if-gez v0, :cond_1
 
-    .line 5121
+    .line 5120
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$14;->val$cacheFile:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->length()J
@@ -94,7 +94,7 @@
     :cond_1
     move-wide v6, p1
 
-    .line 5124
+    .line 5123
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean p1, p1, Lorg/telegram/messenger/VideoEditedInfo;->needUpdateProgress:Z
@@ -103,17 +103,17 @@
 
     iget-wide p1, p0, Lorg/telegram/messenger/MediaController$14;->lastAvailableSize:J
 
-    cmp-long v0, p1, v6
+    cmp-long p1, p1, v6
 
-    if-nez v0, :cond_2
+    if-nez p1, :cond_2
 
     return-void
 
-    .line 5128
+    .line 5127
     :cond_2
     iput-wide v6, p0, Lorg/telegram/messenger/MediaController$14;->lastAvailableSize:J
 
-    .line 5129
+    .line 5128
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$14;->this$0:Lorg/telegram/messenger/MediaController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$14;->val$convertMessage:Lorg/telegram/messenger/MediaController$VideoConvertMessage;

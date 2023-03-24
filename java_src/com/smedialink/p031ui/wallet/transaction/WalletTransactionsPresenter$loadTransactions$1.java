@@ -13,15 +13,17 @@ import kotlin.jvm.internal.Lambda;
 /* renamed from: com.smedialink.ui.wallet.transaction.WalletTransactionsPresenter$loadTransactions$1 */
 /* loaded from: classes3.dex */
 public final class WalletTransactionsPresenter$loadTransactions$1 extends Lambda implements Function1<List<? extends Transaction>, Unit> {
+    final /* synthetic */ boolean $forceUpdate;
     final /* synthetic */ boolean $isLoadMore;
     final /* synthetic */ WalletTransactionsPresenter this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public WalletTransactionsPresenter$loadTransactions$1(WalletTransactionsPresenter walletTransactionsPresenter, boolean z) {
+    public WalletTransactionsPresenter$loadTransactions$1(WalletTransactionsPresenter walletTransactionsPresenter, boolean z, boolean z2) {
         super(1);
         this.this$0 = walletTransactionsPresenter;
         this.$isLoadMore = z;
+        this.$forceUpdate = z2;
     }
 
     @Override // kotlin.jvm.functions.Function1
@@ -40,6 +42,9 @@ public final class WalletTransactionsPresenter$loadTransactions$1 extends Lambda
             mapTransactionsToGroups = this.this$0.mapTransactionsToGroups(filterTransactionsByTypeIfNeeded);
             if (this.$isLoadMore) {
                 ((WalletTransactionsView) this.this$0.getViewState()).onLoadMoreItems(mapTransactionsToGroups);
+                return;
+            } else if (this.$forceUpdate) {
+                ((WalletTransactionsView) this.this$0.getViewState()).renderInitialItems(mapTransactionsToGroups);
                 return;
             } else {
                 ((WalletTransactionsView) this.this$0.getViewState()).renderItems(mapTransactionsToGroups);

@@ -109,7 +109,7 @@
 
     move-result v1
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     .line 6137
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -800,7 +800,7 @@
 
     int-to-double v4, v1
 
-    mul-double v2, v2, v4
+    mul-double/2addr v2, v4
 
     double-to-int v2, v2
 
@@ -819,7 +819,7 @@
 
     int-to-float p1, v2
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     int-to-float p1, v1
 
@@ -834,7 +834,7 @@
 
     move-result v2
 
-    mul-int p1, p1, v2
+    mul-int/2addr p1, v2
 
     aput p1, p3, v0
 
@@ -964,7 +964,7 @@
     .line 6126
     div-int/2addr v5, v0
 
-    mul-int v5, v5, v4
+    mul-int/2addr v5, v4
 
     int-to-float v0, v5
 
@@ -974,7 +974,7 @@
 
     int-to-float v2, v4
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     sub-float/2addr v1, p1
 
@@ -1011,7 +1011,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 10
+    .locals 9
 
     .line 6011
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
@@ -1110,12 +1110,12 @@
 
     if-ne v0, v2, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v4
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 6022
     :goto_1
@@ -1144,16 +1144,16 @@
 
     move-result-wide v7
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_2
+    if-nez v5, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v1
 
     goto :goto_2
 
     :cond_2
-    const/4 v5, 0x1
+    move v5, v4
 
     :goto_2
     aget-object v2, v2, v5
@@ -1168,7 +1168,7 @@
 
     if-ltz v2, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :cond_3
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setChecked(ZZ)V
@@ -1336,9 +1336,9 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 6089
     :goto_0

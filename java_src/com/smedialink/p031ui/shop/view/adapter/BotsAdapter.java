@@ -20,7 +20,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import me.grantland.widget.AutofitTextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkShopItemListBinding;
@@ -126,31 +126,31 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
             case 1:
                 AutofitTextView shopButton = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton, "shopButton");
-                TextViewExtKt.setTextColor(shopButton, C3286R.C3287color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton, C3301R.C3302color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
                 break;
             case 2:
                 AutofitTextView shopButton2 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton2, "shopButton");
-                TextViewExtKt.setTextColor(shopButton2, C3286R.C3287color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton2, C3301R.C3302color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
                 break;
             case 3:
                 AutofitTextView shopButton3 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton3, "shopButton");
-                TextViewExtKt.setTextColor(shopButton3, C3286R.C3287color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton3, C3301R.C3302color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
                 break;
             case 4:
                 AutofitTextView shopButton4 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton4, "shopButton");
-                TextViewExtKt.setTextColor(shopButton4, C3286R.C3287color.colorShopButtonTextDisable);
+                TextViewExtKt.setTextColor(shopButton4, C3301R.C3302color.colorShopButtonTextDisable);
                 gradientDrawable.setColor(0);
                 break;
             case 5:
                 AutofitTextView shopButton5 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton5, "shopButton");
-                int i2 = C3286R.C3287color.colorShopButtonTextDisable;
+                int i2 = C3301R.C3302color.colorShopButtonTextDisable;
                 TextViewExtKt.setTextColor(shopButton5, i2);
                 gradientDrawable.setColor(0);
                 gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), ContextCompat.getColor(binding.shopButton.getContext(), i2));
@@ -165,7 +165,7 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
         AutofitTextView autofitTextView = binding.shopButton;
         switch (iArr[shopItem.getStatus().ordinal()]) {
             case 1:
-                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_download);
+                internalString = LocaleController.getInternalString(C3301R.string.neurobots_store_bot_action_download);
                 break;
             case 2:
                 internalString = shopItem.getPrice();
@@ -175,16 +175,16 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
                 }
                 break;
             case 3:
-                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_update);
+                internalString = LocaleController.getInternalString(C3301R.string.neurobots_store_bot_action_update);
                 break;
             case 4:
-                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_status_downloading);
+                internalString = LocaleController.getInternalString(C3301R.string.neurobots_store_bot_status_downloading);
                 break;
             case 5:
-                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_disable);
+                internalString = LocaleController.getInternalString(C3301R.string.neurobots_store_bot_action_disable);
                 break;
             case 6:
-                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_enable);
+                internalString = LocaleController.getInternalString(C3301R.string.neurobots_store_bot_action_enable);
                 break;
             default:
                 throw new NoWhenBranchMatchedException();

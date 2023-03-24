@@ -104,7 +104,7 @@
 
     if-ge v0, p2, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v1
 
     :cond_1
     if-eqz v2, :cond_0

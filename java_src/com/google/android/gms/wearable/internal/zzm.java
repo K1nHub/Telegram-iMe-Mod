@@ -9,6 +9,11 @@ public final class zzm implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        byte b = 0;
+        byte b2 = 0;
+        byte b3 = 0;
+        byte b4 = 0;
         String str = null;
         String str2 = null;
         String str3 = null;
@@ -16,11 +21,6 @@ public final class zzm implements Parcelable.Creator {
         String str5 = null;
         String str6 = null;
         String str7 = null;
-        int i = 0;
-        byte b = 0;
-        byte b2 = 0;
-        byte b3 = 0;
-        byte b4 = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             switch (SafeParcelReader.getFieldId(readHeader)) {

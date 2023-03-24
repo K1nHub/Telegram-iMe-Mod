@@ -1631,7 +1631,7 @@
 
     if-eq p1, v3, :cond_4
 
-    const/4 p1, 0x0
+    move p1, v5
 
     goto :goto_3
 
@@ -1669,7 +1669,7 @@
 
     move-result p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     goto :goto_2
 
@@ -1732,7 +1732,7 @@
 
     int-to-float p1, p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     add-float/2addr p1, v4
 
@@ -2047,7 +2047,7 @@
     .line 190
     iget v2, v0, Landroidx/constraintlayout/core/widgets/analyzer/DependencyNode;->value:I
 
-    const/high16 v3, 0x3f000000    # 0.5f
+    move v3, v4
 
     :cond_f
     sub-int/2addr v2, v1
@@ -2068,7 +2068,7 @@
 
     int-to-float v1, v2
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     add-float/2addr v0, v1
 

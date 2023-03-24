@@ -128,6 +128,8 @@
 
 .field private nightTypeInfoRow:I
 
+.field private pauseOnMediaRow:I
+
 .field private pauseOnRecordRow:I
 
 .field private preferedHeaderRow:I
@@ -136,9 +138,9 @@
 
 .field private previousUpdatedType:I
 
-.field private raiseToSpeakRow:I
+.field private raiseToListenRow:I
 
-.field private raiseToSwitchSpeakerRow:I
+.field private raiseToSpeakRow:I
 
 .field private rowCount:I
 
@@ -336,14 +338,14 @@
     .line 427
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
-    .line 135
+    .line 133
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity;->darkThemes:Ljava/util/ArrayList;
 
-    .line 136
+    .line 134
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -380,7 +382,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/ThemeActivity;)V
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->stopLocationUpdate()V
 
     return-void
@@ -389,7 +391,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/ThemeActivity;IZ)Z
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ThemeActivity;->setBubbleRadius(IZ)Z
 
     move-result p0
@@ -397,19 +399,19 @@
     return p0
 .end method
 
-.method static synthetic access$10200(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+.method static synthetic access$10000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->appIconSelectorRow:I
 
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$10300(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -418,7 +420,16 @@
 .method static synthetic access$10400(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 112
+    .line 111
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
+
+    return-object p0
+.end method
+
+.method static synthetic access$10500(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    .locals 0
+
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -427,7 +438,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/ThemeActivity;)V
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->createNewTheme()V
 
     return-void
@@ -436,7 +447,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/ThemeActivity;)V
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->editTheme()V
 
     return-void
@@ -445,7 +456,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     return-object p0
@@ -454,7 +465,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/ThemeActivity;Z)V
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0, p1}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
 
     return-void
@@ -463,7 +474,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->textSizeRow:I
 
     return p0
@@ -472,7 +483,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ThemeActivity$ListAdapter;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     return-object p0
@@ -481,7 +492,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusRow:I
 
     return p0
@@ -490,7 +501,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/ThemeActivity;Landroid/location/Location;Z)V
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ThemeActivity;->updateSunTime(Landroid/location/Location;Z)V
 
     return-void
@@ -499,7 +510,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
 
     return-object p0
@@ -508,7 +519,7 @@
 .method static synthetic access$2002(Lorg/telegram/ui/ThemeActivity;Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
     .locals 0
 
-    .line 112
+    .line 111
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
 
     return-object p1
@@ -517,7 +528,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
     return p0
@@ -526,7 +537,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
 
     return p0
@@ -535,7 +546,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
     return p0
@@ -544,26 +555,26 @@
 .method static synthetic access$2500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
-
-    return p0
-.end method
-
-.method static synthetic access$2600(Lorg/telegram/ui/ThemeActivity;)I
-    .locals 0
-
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessInfoRow:I
 
     return p0
 .end method
 
-.method static synthetic access$2700(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+.method static synthetic access$2600(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$2700(Lorg/telegram/ui/ThemeActivity;)Ljava/util/ArrayList;
+    .locals 0
+
+    .line 111
+    iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
 
     return-object p0
 .end method
@@ -571,44 +582,44 @@
 .method static synthetic access$2800(Lorg/telegram/ui/ThemeActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 112
-    iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
-
-    return-object p0
-.end method
-
-.method static synthetic access$2900(Lorg/telegram/ui/ThemeActivity;)Ljava/util/ArrayList;
-    .locals 0
-
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity;->darkThemes:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$3100(Lorg/telegram/ui/ThemeActivity;)I
+.method static synthetic access$3000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return p0
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+.method static synthetic access$3100(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
 .end method
 
+.method static synthetic access$3200(Lorg/telegram/ui/ThemeActivity;)I
+    .locals 0
+
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+
+    return p0
+.end method
+
 .method static synthetic access$3300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
 
     return p0
 .end method
@@ -616,8 +627,8 @@
 .method static synthetic access$3400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
 
     return p0
 .end method
@@ -625,8 +636,8 @@
 .method static synthetic access$3500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
 
     return p0
 .end method
@@ -634,8 +645,8 @@
 .method static synthetic access$3600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
 
     return p0
 .end method
@@ -643,8 +654,8 @@
 .method static synthetic access$3700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->contactsSortRow:I
 
     return p0
 .end method
@@ -652,8 +663,8 @@
 .method static synthetic access$3800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->contactsSortRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->contactsReimportRow:I
 
     return p0
 .end method
@@ -661,79 +672,70 @@
 .method static synthetic access$3900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->contactsReimportRow:I
-
-    return p0
-.end method
-
-.method static synthetic access$4000(Lorg/telegram/ui/ThemeActivity;)I
-    .locals 0
-
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
 
     return p0
 .end method
 
-.method static synthetic access$4100(Lorg/telegram/ui/ThemeActivity;)Z
+.method static synthetic access$4000(Lorg/telegram/ui/ThemeActivity;)Z
     .locals 0
 
-    .line 112
+    .line 111
     iget-boolean p0, p0, Lorg/telegram/ui/ThemeActivity;->updateDistance:Z
 
     return p0
 .end method
 
-.method static synthetic access$4102(Lorg/telegram/ui/ThemeActivity;Z)Z
+.method static synthetic access$4002(Lorg/telegram/ui/ThemeActivity;Z)Z
     .locals 0
 
-    .line 112
+    .line 111
     iput-boolean p1, p0, Lorg/telegram/ui/ThemeActivity;->updateDistance:Z
 
     return p1
 .end method
 
-.method static synthetic access$4200(Lorg/telegram/ui/ThemeActivity;)I
+.method static synthetic access$4100(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
 
     return p0
 .end method
 
-.method static synthetic access$4300(Lorg/telegram/ui/ThemeActivity;)Z
+.method static synthetic access$4200(Lorg/telegram/ui/ThemeActivity;)Z
     .locals 0
 
-    .line 112
+    .line 111
     iget-boolean p0, p0, Lorg/telegram/ui/ThemeActivity;->updateRecordViaSco:Z
 
     return p0
 .end method
 
-.method static synthetic access$4302(Lorg/telegram/ui/ThemeActivity;Z)Z
+.method static synthetic access$4202(Lorg/telegram/ui/ThemeActivity;Z)Z
     .locals 0
 
-    .line 112
+    .line 111
     iput-boolean p1, p0, Lorg/telegram/ui/ThemeActivity;->updateRecordViaSco:Z
 
     return p1
 .end method
 
-.method static synthetic access$4400(Lorg/telegram/ui/ThemeActivity;)I
+.method static synthetic access$4300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationInfoRow:I
 
     return p0
 .end method
 
-.method static synthetic access$4500(Lorg/telegram/ui/ThemeActivity;)Ljava/lang/String;
+.method static synthetic access$4400(Lorg/telegram/ui/ThemeActivity;)Ljava/lang/String;
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->getLocationSunString()Ljava/lang/String;
 
     move-result-object p0
@@ -741,11 +743,20 @@
     return-object p0
 .end method
 
+.method static synthetic access$4500(Lorg/telegram/ui/ThemeActivity;)I
+    .locals 0
+
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureInfoRow:I
+
+    return p0
+.end method
+
 .method static synthetic access$4600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->stickersInfoRow:I
 
     return p0
 .end method
@@ -753,8 +764,8 @@
 .method static synthetic access$4700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->stickersInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->liteModeInfoRow:I
 
     return p0
 .end method
@@ -762,8 +773,8 @@
 .method static synthetic access$4800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->liteModeInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
 
     return p0
 .end method
@@ -771,8 +782,8 @@
 .method static synthetic access$4900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
 
     return p0
 .end method
@@ -780,7 +791,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/ThemeActivity;I)Z
     .locals 0
 
-    .line 112
+    .line 111
     invoke-direct {p0, p1}, Lorg/telegram/ui/ThemeActivity;->setFontSize(I)Z
 
     move-result p0
@@ -791,8 +802,8 @@
 .method static synthetic access$5000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->lastShadowRow:I
 
     return p0
 .end method
@@ -800,8 +811,8 @@
 .method static synthetic access$5100(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->lastShadowRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->saveToGallerySectionRow:I
 
     return p0
 .end method
@@ -809,8 +820,8 @@
 .method static synthetic access$5200(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->saveToGallerySectionRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->settings2Row:I
 
     return p0
 .end method
@@ -818,8 +829,8 @@
 .method static synthetic access$5300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->settings2Row:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
 
     return p0
 .end method
@@ -827,8 +838,8 @@
 .method static synthetic access$5400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
 
     return p0
 .end method
@@ -836,8 +847,8 @@
 .method static synthetic access$5500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
 
     return p0
 .end method
@@ -845,8 +856,8 @@
 .method static synthetic access$5600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
 
     return p0
 .end method
@@ -854,8 +865,8 @@
 .method static synthetic access$5700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleHeaderRow:I
 
     return p0
 .end method
@@ -863,8 +874,8 @@
 .method static synthetic access$5800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->automaticHeaderRow:I
 
     return p0
 .end method
@@ -872,8 +883,8 @@
 .method static synthetic access$5900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->automaticHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->preferedHeaderRow:I
 
     return p0
 .end method
@@ -881,8 +892,8 @@
 .method static synthetic access$6000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->preferedHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->settingsRow:I
 
     return p0
 .end method
@@ -890,8 +901,8 @@
 .method static synthetic access$6100(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->settingsRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
 
     return p0
 .end method
@@ -899,8 +910,8 @@
 .method static synthetic access$6200(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->textSizeHeaderRow:I
 
     return p0
 .end method
@@ -908,8 +919,8 @@
 .method static synthetic access$6300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->textSizeHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatListHeaderRow:I
 
     return p0
 .end method
@@ -917,8 +928,8 @@
 .method static synthetic access$6400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatListHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusHeaderRow:I
 
     return p0
 .end method
@@ -926,8 +937,8 @@
 .method static synthetic access$6500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureHeaderRow:I
 
     return p0
 .end method
@@ -935,8 +946,8 @@
 .method static synthetic access$6600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->selectThemeHeaderRow:I
 
     return p0
 .end method
@@ -944,8 +955,8 @@
 .method static synthetic access$6700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->selectThemeHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->appIconHeaderRow:I
 
     return p0
 .end method
@@ -953,8 +964,8 @@
 .method static synthetic access$6800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->appIconHeaderRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
 
     return p0
 .end method
@@ -962,8 +973,8 @@
 .method static synthetic access$6900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->audioPauseMusicOnRecordRow:I
 
     return p0
 .end method
@@ -971,7 +982,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -980,8 +991,8 @@
 .method static synthetic access$7000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSwitchSpeakerRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
 
     return p0
 .end method
@@ -989,8 +1000,8 @@
 .method static synthetic access$7100(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->audioPauseMusicOnRecordRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
 
     return p0
 .end method
@@ -998,8 +1009,8 @@
 .method static synthetic access$7200(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->enableAnimationsRow:I
 
     return p0
 .end method
@@ -1007,8 +1018,8 @@
 .method static synthetic access$7300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
 
     return p0
 .end method
@@ -1016,8 +1027,8 @@
 .method static synthetic access$7400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->enableAnimationsRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
 
     return p0
 .end method
@@ -1025,8 +1036,8 @@
 .method static synthetic access$7500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->raiseToListenRow:I
 
     return p0
 .end method
@@ -1034,7 +1045,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
+    .line 111
     iget p0, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
 
     return p0
@@ -1043,8 +1054,8 @@
 .method static synthetic access$7700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnMediaRow:I
 
     return p0
 .end method
@@ -1052,8 +1063,8 @@
 .method static synthetic access$7800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
 
     return p0
 .end method
@@ -1061,17 +1072,17 @@
 .method static synthetic access$7900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatBlurRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
 
     return p0
 .end method
 
-.method static synthetic access$8100(Lorg/telegram/ui/ThemeActivity;)I
+.method static synthetic access$8000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatBlurRow:I
 
     return p0
 .end method
@@ -1079,8 +1090,8 @@
 .method static synthetic access$8200(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
 
     return p0
 .end method
@@ -1088,8 +1099,8 @@
 .method static synthetic access$8300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
 
     return p0
 .end method
@@ -1097,8 +1108,8 @@
 .method static synthetic access$8400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
 
     return p0
 .end method
@@ -1106,8 +1117,8 @@
 .method static synthetic access$8500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
 
     return p0
 .end method
@@ -1115,8 +1126,8 @@
 .method static synthetic access$8600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption1Row:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
 
     return p0
 .end method
@@ -1124,8 +1135,8 @@
 .method static synthetic access$8700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromToInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption1Row:I
 
     return p0
 .end method
@@ -1133,8 +1144,8 @@
 .method static synthetic access$8800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->newThemeInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromToInfoRow:I
 
     return p0
 .end method
@@ -1142,8 +1153,8 @@
 .method static synthetic access$8900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->newThemeInfoRow:I
 
     return p0
 .end method
@@ -1151,8 +1162,8 @@
 .method static synthetic access$9000(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
 
     return p0
 .end method
@@ -1160,8 +1171,8 @@
 .method static synthetic access$9100(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->appIconShadowRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
 
     return p0
 .end method
@@ -1169,8 +1180,8 @@
 .method static synthetic access$9200(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->appIconShadowRow:I
 
     return p0
 .end method
@@ -1178,8 +1189,8 @@
 .method static synthetic access$9300(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatListRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessRow:I
 
     return p0
 .end method
@@ -1187,8 +1198,8 @@
 .method static synthetic access$9400(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->chatListRow:I
 
     return p0
 .end method
@@ -1196,8 +1207,8 @@
 .method static synthetic access$9500(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
 
     return p0
 .end method
@@ -1205,8 +1216,8 @@
 .method static synthetic access$9600(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themePreviewRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureRow:I
 
     return p0
 .end method
@@ -1214,8 +1225,8 @@
 .method static synthetic access$9700(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themePreviewRow:I
 
     return p0
 .end method
@@ -1223,8 +1234,8 @@
 .method static synthetic access$9800(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption2Row:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
 
     return p0
 .end method
@@ -1232,8 +1243,8 @@
 .method static synthetic access$9900(Lorg/telegram/ui/ThemeActivity;)I
     .locals 0
 
-    .line 112
-    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->appIconSelectorRow:I
+    .line 111
+    iget p0, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption2Row:I
 
     return p0
 .end method
@@ -1241,7 +1252,7 @@
 .method private createNewTheme()V
     .locals 3
 
-    .line 1345
+    .line 1376
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1250,7 +1261,7 @@
 
     return-void
 
-    .line 1348
+    .line 1379
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1260,7 +1271,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1349
+    .line 1380
     sget v1, Lorg/telegram/messenger/R$string;->NewTheme:I
 
     const-string v2, "NewTheme"
@@ -1271,7 +1282,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1350
+    .line 1381
     sget v1, Lorg/telegram/messenger/R$string;->CreateNewThemeAlert:I
 
     const-string v2, "CreateNewThemeAlert"
@@ -1282,7 +1293,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1351
+    .line 1382
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -1295,7 +1306,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1352
+    .line 1383
     sget v1, Lorg/telegram/messenger/R$string;->CreateTheme:I
 
     const-string v2, "CreateTheme"
@@ -1310,7 +1321,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1353
+    .line 1384
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -1323,19 +1334,19 @@
 .method private editTheme()V
     .locals 7
 
-    .line 1339
+    .line 1370
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v1
 
     const/4 v0, 0x0
 
-    .line 1340
+    .line 1371
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v2
 
-    .line 1341
+    .line 1372
     new-instance v6, Lorg/telegram/ui/ThemePreviewActivity;
 
     iget v2, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
@@ -1346,24 +1357,24 @@
 
     if-lt v2, v4, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v0
 
     :goto_0
     iget v2, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
     if-ne v2, v3, :cond_1
 
-    const/4 v5, 0x1
+    move v5, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x0
+    move v5, v0
 
     :goto_1
     const/4 v2, 0x0
@@ -1382,7 +1393,7 @@
 .method private getLocationSunString()Ljava/lang/String;
     .locals 8
 
-    .line 1522
+    .line 1553
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->autoNightSunriseTime:I
 
     div-int/lit8 v1, v0, 0x3c
@@ -1395,7 +1406,7 @@
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    .line 1524
+    .line 1555
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1418,7 +1429,7 @@
 
     move-result-object v3
 
-    .line 1525
+    .line 1556
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->autoNightSunsetTime:I
 
     div-int/lit8 v6, v5, 0x3c
@@ -1429,7 +1440,7 @@
 
     new-array v7, v2, [Ljava/lang/Object;
 
-    .line 1527
+    .line 1558
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -1446,7 +1457,7 @@
 
     move-result-object v0
 
-    .line 1528
+    .line 1559
     sget v5, Lorg/telegram/messenger/R$string;->AutoNightUpdateLocationInfo:I
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -1471,7 +1482,7 @@
 
     const/4 p2, 0x0
 
-    .line 1352
+    .line 1383
     invoke-static {p0, p1, p2, p2}, Lorg/telegram/ui/Components/AlertsCreator;->createThemeCreateDialog(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
 
     return-void
@@ -1480,14 +1491,14 @@
 .method private static synthetic lambda$createView$2(Lorg/telegram/ui/Cells/TextCheckCell;)V
     .locals 1
 
-    .line 1049
+    .line 1061
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isVibrationEnabled:Z
 
     xor-int/lit8 v0, v0, 0x1
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setVibrationEnabled(Z)V
 
-    .line 1050
+    .line 1062
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result v0
@@ -1502,15 +1513,15 @@
 .method private synthetic lambda$createView$3(ILjava/util/concurrent/atomic/AtomicReference;Landroid/view/View;)V
     .locals 1
 
-    .line 1121
+    .line 1144
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setDistanceSystemType(I)V
 
     const/4 p1, 0x1
 
-    .line 1122
+    .line 1145
     iput-boolean p1, p0, Lorg/telegram/ui/ThemeActivity;->updateDistance:Z
 
-    .line 1123
+    .line 1146
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget p3, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
@@ -1521,14 +1532,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1125
+    .line 1148
     iget-object p3, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
 
     invoke-virtual {p3, p1, v0}, Lorg/telegram/ui/ThemeActivity$ListAdapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
-    .line 1127
+    .line 1150
     :cond_0
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
@@ -1546,18 +1557,18 @@
 
     const/4 p2, 0x0
 
-    .line 1154
+    .line 1177
     sput-boolean p2, Lorg/telegram/messenger/SharedConfig;->recordViaSco:Z
 
-    .line 1155
+    .line 1178
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
     const/4 p2, 0x1
 
-    .line 1156
+    .line 1179
     iput-boolean p2, p0, Lorg/telegram/ui/ThemeActivity;->updateRecordViaSco:Z
 
-    .line 1157
+    .line 1180
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -1566,7 +1577,7 @@
 
     invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1159
+    .line 1182
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget p2, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
@@ -1577,7 +1588,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1161
+    .line 1184
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
@@ -1593,16 +1604,16 @@
 
     const/4 p2, 0x1
 
-    .line 1172
+    .line 1195
     sput-boolean p2, Lorg/telegram/messenger/SharedConfig;->recordViaSco:Z
 
-    .line 1173
+    .line 1196
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 1174
+    .line 1197
     iput-boolean p2, p0, Lorg/telegram/ui/ThemeActivity;->updateRecordViaSco:Z
 
-    .line 1175
+    .line 1198
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -1611,7 +1622,7 @@
 
     invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1177
+    .line 1200
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget p2, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
@@ -1622,7 +1633,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1179
+    .line 1202
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
@@ -1636,30 +1647,30 @@
 .method private synthetic lambda$createView$6(ILandroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1213
+    .line 1236
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p2
 
-    .line 1214
+    .line 1237
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
     const-string v0, "sortContactsBy"
 
-    .line 1215
+    .line 1238
     invoke-interface {p2, v0, p3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 1216
+    .line 1239
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1217
+    .line 1240
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     if-eqz p2, :cond_0
 
-    .line 1218
+    .line 1241
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     :cond_0
@@ -1673,7 +1684,7 @@
 
     add-int/2addr p3, p5
 
-    .line 1313
+    .line 1336
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
 
     const/4 v1, 0x0
@@ -1686,10 +1697,10 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1314
+    .line 1337
     sput p3, Lorg/telegram/ui/ActionBar/Theme;->autoNightDayStartTime:I
 
-    .line 1315
+    .line 1338
     sget p1, Lorg/telegram/messenger/R$string;->AutoNightFrom:I
 
     const-string p3, "AutoNightFrom"
@@ -1720,11 +1731,11 @@
 
     goto :goto_0
 
-    .line 1317
+    .line 1340
     :cond_0
     sput p3, Lorg/telegram/ui/ActionBar/Theme;->autoNightDayEndTime:I
 
-    .line 1318
+    .line 1341
     sget p1, Lorg/telegram/messenger/R$string;->AutoNightTo:I
 
     const-string p3, "AutoNightTo"
@@ -1768,69 +1779,65 @@
 
     move/from16 v3, p3
 
-    .line 1043
+    .line 1055
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
 
     const/4 v5, 0x1
 
-    if-eq v3, v4, :cond_30
-
-    iget v4, v0, Lorg/telegram/ui/ThemeActivity;->raiseToSwitchSpeakerRow:I
-
-    if-eq v3, v4, :cond_30
+    if-eq v3, v4, :cond_34
 
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
 
-    if-eq v3, v4, :cond_30
+    if-eq v3, v4, :cond_34
 
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->audioPauseMusicOnRecordRow:I
 
     if-ne v3, v4, :cond_0
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
-    .line 1061
+    .line 1070
     :cond_0
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->enableAnimationsRow:I
 
     if-ne v3, v4, :cond_1
 
-    .line 1062
+    .line 1071
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
     const-string v3, "view_animations"
 
-    .line 1063
+    .line 1072
     invoke-interface {v1, v3, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v4
 
-    .line 1064
+    .line 1073
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     xor-int/lit8 v6, v4, 0x1
 
-    .line 1065
+    .line 1074
     invoke-interface {v1, v3, v6}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     xor-int/lit8 v3, v4, 0x1
 
-    .line 1066
+    .line 1075
     invoke-static {v3}, Lorg/telegram/messenger/SharedConfig;->setAnimationsEnabled(Z)V
 
-    .line 1067
+    .line 1076
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1068
+    .line 1077
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1069
+    .line 1078
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -1839,9 +1846,9 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1071
+    .line 1080
     :cond_1
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
 
@@ -1849,52 +1856,52 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1072
+    .line 1081
     new-instance v1, Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-direct {v1, v6}, Lorg/telegram/ui/WallpapersListActivity;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1073
+    .line 1082
     :cond_2
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
 
     if-ne v3, v4, :cond_3
 
-    .line 1074
+    .line 1083
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
     const-string v3, "send_by_enter"
 
-    .line 1075
+    .line 1084
     invoke-interface {v1, v3, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v4
 
-    .line 1076
+    .line 1085
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     xor-int/lit8 v6, v4, 0x1
 
-    .line 1077
+    .line 1086
     invoke-interface {v1, v3, v6}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 1078
+    .line 1087
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1079
+    .line 1088
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1080
+    .line 1089
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -1903,31 +1910,23 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1082
+    .line 1091
     :cond_3
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
 
-    if-ne v3, v4, :cond_5
+    if-ne v3, v4, :cond_4
 
-    .line 1084
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->isRaiseToSwitchSpeakerEnabled:Z
+    .line 1092
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toggleRaiseToSpeak()V
 
-    if-nez v1, :cond_4
-
-    return-void
-
-    .line 1088
-    :cond_4
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toogleRaiseToSpeak()V
-
-    .line 1089
+    .line 1093
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1090
+    .line 1094
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -1936,23 +1935,108 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1092
+    .line 1096
+    :cond_4
+    iget v4, v0, Lorg/telegram/ui/ThemeActivity;->raiseToListenRow:I
+
+    if-ne v3, v4, :cond_8
+
+    .line 1097
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toggleRaiseToListen()V
+
+    .line 1098
+    instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    if-eqz v1, :cond_5
+
+    .line 1099
+    move-object v1, v2
+
+    check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->raiseToListen:Z
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
+
+    .line 1101
     :cond_5
-    iget v4, v0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
+    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->raiseToListen:Z
+
+    if-nez v1, :cond_7
+
+    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
+
+    const/4 v2, -0x1
+
+    if-eq v1, v2, :cond_7
+
+    move v1, v6
+
+    .line 1102
+    :goto_0
+    iget-object v2, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_7
+
+    .line 1103
+    iget-object v2, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v2
+
+    .line 1104
+    instance-of v3, v2, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    if-eqz v3, :cond_6
+
+    iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {v3, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
+
+    move-result v3
+
+    iget v4, v0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
 
     if-ne v3, v4, :cond_6
 
-    .line 1093
+    .line 1105
+    check-cast v2, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    invoke-virtual {v2, v6}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
+
+    :cond_6
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 1109
+    :cond_7
+    invoke-direct {v0, v6}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
+
+    goto/16 :goto_9
+
+    .line 1110
+    :cond_8
+    iget v4, v0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
+
+    if-ne v3, v4, :cond_9
+
+    .line 1111
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->togglePauseMusicOnRecord()V
 
-    .line 1094
+    .line 1112
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1095
+    .line 1113
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -1961,10 +2045,35 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1097
-    :cond_6
+    .line 1115
+    :cond_9
+    iget v4, v0, Lorg/telegram/ui/ThemeActivity;->pauseOnMediaRow:I
+
+    if-ne v3, v4, :cond_a
+
+    .line 1116
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->togglePauseMusicOnMedia()V
+
+    .line 1117
+    instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    if-eqz v1, :cond_37
+
+    .line 1118
+    move-object v1, v2
+
+    check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->pauseMusicOnMedia:Z
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
+
+    goto/16 :goto_9
+
+    .line 1120
+    :cond_a
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
 
     const-string v7, "listSelectorSDK21"
@@ -1983,39 +2092,39 @@
 
     const/4 v14, 0x2
 
-    if-ne v3, v4, :cond_a
+    if-ne v3, v4, :cond_e
 
-    .line 1098
+    .line 1121
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_b
 
     return-void
 
-    .line 1101
-    :cond_7
+    .line 1124
+    :cond_b
     new-instance v2, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 1103
+    .line 1126
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1104
+    .line 1127
     invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     new-array v1, v11, [Ljava/lang/CharSequence;
 
-    .line 1106
+    .line 1129
     sget v4, Lorg/telegram/messenger/R$string;->DistanceUnitsAutomatic:I
 
     const-string v15, "DistanceUnitsAutomatic"
 
-    .line 1107
+    .line 1130
     invoke-static {v15, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2026,7 +2135,7 @@
 
     const-string v15, "DistanceUnitsKilometers"
 
-    .line 1108
+    .line 1131
     invoke-static {v15, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2037,19 +2146,19 @@
 
     const-string v15, "DistanceUnitsMiles"
 
-    .line 1109
+    .line 1132
     invoke-static {v15, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
     aput-object v4, v1, v14
 
-    const/4 v4, 0x0
+    move v4, v6
 
-    :goto_0
-    if-ge v4, v11, :cond_9
+    :goto_1
+    if-ge v4, v11, :cond_d
 
-    .line 1114
+    .line 1137
     new-instance v15, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2058,7 +2167,7 @@
 
     invoke-direct {v15, v11}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 1115
+    .line 1138
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -2069,7 +2178,7 @@
 
     invoke-virtual {v15, v11, v6, v5, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1116
+    .line 1139
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
@@ -2080,24 +2189,24 @@
 
     invoke-virtual {v15, v5, v11}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 1117
+    .line 1140
     aget-object v5, v1, v4
 
     sget v11, Lorg/telegram/messenger/SharedConfig;->distanceSystemType:I
 
-    if-ne v4, v11, :cond_8
+    if-ne v4, v11, :cond_c
 
     const/4 v11, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_8
-    const/4 v11, 0x0
+    :cond_c
+    move v11, v6
 
-    :goto_1
+    :goto_2
     invoke-virtual {v15, v5, v11}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 1118
+    .line 1141
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v5
@@ -2108,10 +2217,10 @@
 
     invoke-virtual {v15, v5}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1119
+    .line 1142
     invoke-virtual {v3, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1120
+    .line 1143
     new-instance v5, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda5;
 
     invoke-direct {v5, v0, v4, v2}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/ThemeActivity;ILjava/util/concurrent/atomic/AtomicReference;)V
@@ -2124,10 +2233,10 @@
 
     const/4 v11, 0x3
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 1131
-    :cond_9
+    .line 1154
+    :cond_d
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2140,7 +2249,7 @@
 
     const-string v5, "DistanceUnitsTitle"
 
-    .line 1132
+    .line 1155
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2149,14 +2258,14 @@
 
     move-result-object v1
 
-    .line 1133
+    .line 1156
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v1
 
     sget v3, Lorg/telegram/messenger/R$string;->Cancel:I
 
-    .line 1134
+    .line 1157
     invoke-static {v8, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -2165,51 +2274,51 @@
 
     move-result-object v1
 
-    .line 1135
+    .line 1158
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 1136
+    .line 1159
     invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 1137
+    .line 1160
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1138
-    :cond_a
+    .line 1161
+    :cond_e
     iget v4, v0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
 
-    if-ne v3, v4, :cond_c
+    if-ne v3, v4, :cond_10
 
-    .line 1139
+    .line 1162
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_f
 
     return-void
 
-    .line 1142
-    :cond_b
+    .line 1165
+    :cond_f
     new-instance v2, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 1144
+    .line 1167
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 1145
+    .line 1168
     invoke-virtual {v3, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1147
+    .line 1170
     new-instance v1, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2218,7 +2327,7 @@
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 1148
+    .line 1171
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -2229,7 +2338,7 @@
 
     invoke-virtual {v1, v4, v6, v5, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1149
+    .line 1172
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2240,7 +2349,7 @@
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 1150
+    .line 1173
     sget v4, Lorg/telegram/messenger/R$string;->MicrophoneForVoiceMessagesBuiltIn:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -2255,7 +2364,7 @@
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 1151
+    .line 1174
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2266,17 +2375,17 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1152
+    .line 1175
     invoke-virtual {v3, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1153
+    .line 1176
     new-instance v4, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda7;
 
     invoke-direct {v4, v0, v2}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ThemeActivity;Ljava/util/concurrent/atomic/AtomicReference;)V
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1165
+    .line 1188
     new-instance v1, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2285,7 +2394,7 @@
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 1166
+    .line 1189
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -2296,7 +2405,7 @@
 
     invoke-virtual {v1, v4, v6, v5, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1167
+    .line 1190
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2307,7 +2416,7 @@
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 1168
+    .line 1191
     sget v4, Lorg/telegram/messenger/R$string;->MicrophoneForVoiceMessagesScoIfConnected:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -2324,7 +2433,7 @@
 
     invoke-virtual {v1, v4, v5, v6}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndText2AndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 1169
+    .line 1192
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v4
@@ -2335,17 +2444,17 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1170
+    .line 1193
     invoke-virtual {v3, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1171
+    .line 1194
     new-instance v4, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda6;
 
     invoke-direct {v4, v0, v2}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ThemeActivity;Ljava/util/concurrent/atomic/AtomicReference;)V
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1183
+    .line 1206
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2356,7 +2465,7 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->MicrophoneForVoiceMessages:I
 
-    .line 1184
+    .line 1207
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -2365,14 +2474,14 @@
 
     move-result-object v1
 
-    .line 1185
+    .line 1208
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v1
 
     sget v3, Lorg/telegram/messenger/R$string;->Cancel:I
 
-    .line 1186
+    .line 1209
     invoke-static {v8, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -2381,34 +2490,34 @@
 
     move-result-object v1
 
-    .line 1187
+    .line 1210
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 1188
+    .line 1211
     invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 1189
+    .line 1212
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1190
-    :cond_c
+    .line 1213
+    :cond_10
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
 
-    if-ne v3, v1, :cond_d
+    if-ne v3, v1, :cond_11
 
-    .line 1191
+    .line 1214
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toggleCustomTabs()V
 
-    .line 1192
+    .line 1215
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1193
+    .line 1216
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -2417,23 +2526,23 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1195
-    :cond_d
+    .line 1218
+    :cond_11
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
 
-    if-ne v3, v1, :cond_e
+    if-ne v3, v1, :cond_12
 
-    .line 1196
+    .line 1219
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toggleDirectShare()V
 
-    .line 1197
+    .line 1220
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1198
+    .line 1221
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -2442,33 +2551,33 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1200
-    :cond_e
+    .line 1223
+    :cond_12
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->contactsReimportRow:I
 
-    if-ne v3, v1, :cond_f
+    if-ne v3, v1, :cond_13
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1202
-    :cond_f
+    .line 1225
+    :cond_13
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->contactsSortRow:I
 
-    if-ne v3, v1, :cond_11
+    if-ne v3, v1, :cond_15
 
-    .line 1203
+    .line 1226
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_14
 
     return-void
 
-    .line 1206
-    :cond_10
+    .line 1229
+    :cond_14
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2477,7 +2586,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1207
+    .line 1230
     sget v2, Lorg/telegram/messenger/R$string;->SortBy:I
 
     const-string v4, "SortBy"
@@ -2492,12 +2601,12 @@
 
     new-array v2, v2, [Ljava/lang/CharSequence;
 
-    .line 1208
+    .line 1231
     sget v4, Lorg/telegram/messenger/R$string;->Default:I
 
     const-string v5, "Default"
 
-    .line 1209
+    .line 1232
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2508,7 +2617,7 @@
 
     const-string v5, "SortFirstName"
 
-    .line 1210
+    .line 1233
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2521,7 +2630,7 @@
 
     const-string v5, "SortLastName"
 
-    .line 1211
+    .line 1234
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -2532,10 +2641,10 @@
 
     invoke-direct {v4, v0, v3}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ThemeActivity;I)V
 
-    .line 1208
+    .line 1231
     invoke-virtual {v1, v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1221
+    .line 1244
     sget v2, Lorg/telegram/messenger/R$string;->Cancel:I
 
     invoke-static {v8, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -2544,30 +2653,30 @@
 
     invoke-virtual {v1, v2, v13}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1222
+    .line 1245
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1223
-    :cond_11
+    .line 1246
+    :cond_15
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->chatBlurRow:I
 
-    if-ne v3, v1, :cond_12
+    if-ne v3, v1, :cond_16
 
-    .line 1224
+    .line 1247
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toggleChatBlur()V
 
-    .line 1225
+    .line 1248
     instance-of v1, v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
-    .line 1226
+    .line 1249
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -2578,20 +2687,20 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1228
-    :cond_12
+    .line 1251
+    :cond_16
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
 
-    if-ne v3, v1, :cond_1c
+    if-ne v3, v1, :cond_20
 
-    .line 1229
+    .line 1252
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v3, 0x4c
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_17
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2601,12 +2710,12 @@
 
     cmpg-float v1, p4, v1
 
-    if-lez v1, :cond_14
+    if-lez v1, :cond_18
 
-    :cond_13
+    :cond_17
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1f
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2622,63 +2731,63 @@
 
     cmpl-float v1, p4, v1
 
-    if-ltz v1, :cond_1b
+    if-ltz v1, :cond_1f
 
-    .line 1230
-    :cond_14
+    .line 1253
+    :cond_18
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    .line 1231
+    .line 1254
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_19
 
-    .line 1232
+    .line 1255
     sput v14, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     const/4 v2, 0x1
 
-    .line 1233
+    .line 1256
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_15
+    :cond_19
     const/4 v2, 0x1
 
-    .line 1235
+    .line 1258
     sput v6, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    .line 1236
+    .line 1259
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setChecked(Z)V
 
-    .line 1238
-    :goto_2
+    .line 1261
+    :goto_3
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->saveAutoNightThemeConfig()V
 
-    .line 1239
+    .line 1262
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions(Z)V
 
-    .line 1240
+    .line 1263
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_1a
 
     const/4 v6, 0x1
 
-    :cond_16
-    if-eqz v6, :cond_17
+    :cond_1a
+    if-eqz v6, :cond_1b
 
-    .line 1241
+    .line 1264
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentNightThemeName()Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_17
+    :cond_1b
     sget v2, Lorg/telegram/messenger/R$string;->AutoNightThemeOff:I
 
     const-string v3, "AutoNightThemeOff"
@@ -2687,17 +2796,17 @@
 
     move-result-object v2
 
-    :goto_3
-    if-eqz v6, :cond_1a
+    :goto_4
+    if-eqz v6, :cond_1e
 
-    .line 1244
+    .line 1267
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_18
+    if-ne v3, v4, :cond_1c
 
-    .line 1245
+    .line 1268
     sget v3, Lorg/telegram/messenger/R$string;->AutoNightScheduled:I
 
     const-string v4, "AutoNightScheduled"
@@ -2706,14 +2815,14 @@
 
     move-result-object v3
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_18
+    :cond_1c
     const/4 v4, 0x3
 
-    if-ne v3, v4, :cond_19
+    if-ne v3, v4, :cond_1d
 
-    .line 1247
+    .line 1270
     sget v3, Lorg/telegram/messenger/R$string;->AutoNightSystemDefault:I
 
     const-string v4, "AutoNightSystemDefault"
@@ -2722,10 +2831,10 @@
 
     move-result-object v3
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 1249
-    :cond_19
+    .line 1272
+    :cond_1d
     sget v3, Lorg/telegram/messenger/R$string;->AutoNightAdaptive:I
 
     const-string v4, "AutoNightAdaptive"
@@ -2734,8 +2843,8 @@
 
     move-result-object v3
 
-    .line 1251
-    :goto_4
+    .line 1274
+    :goto_5
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2752,8 +2861,8 @@
 
     move-result-object v2
 
-    .line 1253
-    :cond_1a
+    .line 1276
+    :cond_1e
     sget v3, Lorg/telegram/messenger/R$string;->AutoNightTheme:I
 
     const-string v4, "AutoNightTheme"
@@ -2766,277 +2875,277 @@
 
     invoke-virtual {v1, v3, v2, v6, v4}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/CharSequence;ZZ)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    :cond_1b
+    :cond_1f
     const/4 v4, 0x1
 
-    .line 1255
+    .line 1278
     new-instance v1, Lorg/telegram/ui/ThemeActivity;
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/ThemeActivity;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    :cond_1c
+    :cond_20
     const/4 v4, 0x1
 
-    .line 1257
+    .line 1280
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
 
-    if-ne v3, v1, :cond_1e
-
-    .line 1258
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
-
-    if-nez v1, :cond_1d
-
-    return-void
-
-    .line 1261
-    :cond_1d
-    sput v6, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
-
-    .line 1262
-    invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
-
-    .line 1263
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
-
-    goto/16 :goto_8
-
-    .line 1264
-    :cond_1e
-    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
-
-    if-ne v3, v1, :cond_21
-
-    .line 1265
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
-
-    if-ne v1, v4, :cond_1f
-
-    return-void
-
-    .line 1268
-    :cond_1f
-    sput v4, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
-
-    .line 1269
-    sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
-
-    if-eqz v1, :cond_20
-
-    .line 1270
-    invoke-direct {v0, v13, v4}, Lorg/telegram/ui/ThemeActivity;->updateSunTime(Landroid/location/Location;Z)V
-
-    .line 1272
-    :cond_20
-    invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
-
-    .line 1273
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
-
-    goto/16 :goto_8
-
-    .line 1274
-    :cond_21
-    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
-
-    if-ne v3, v1, :cond_23
-
-    .line 1275
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
-
-    if-ne v1, v14, :cond_22
-
-    return-void
-
-    .line 1278
-    :cond_22
-    sput v14, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
-
-    .line 1279
-    invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
-
-    .line 1280
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
-
-    goto/16 :goto_8
+    if-ne v3, v1, :cond_22
 
     .line 1281
-    :cond_23
-    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    if-nez v1, :cond_21
+
+    return-void
+
+    .line 1284
+    :cond_21
+    sput v6, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    .line 1285
+    invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
+
+    .line 1286
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
+
+    goto/16 :goto_9
+
+    .line 1287
+    :cond_22
+    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
 
     if-ne v3, v1, :cond_25
 
-    .line 1282
+    .line 1288
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    if-ne v1, v4, :cond_23
+
+    return-void
+
+    .line 1291
+    :cond_23
+    sput v4, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    .line 1292
+    sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
+
+    if-eqz v1, :cond_24
+
+    .line 1293
+    invoke-direct {v0, v13, v4}, Lorg/telegram/ui/ThemeActivity;->updateSunTime(Landroid/location/Location;Z)V
+
+    .line 1295
+    :cond_24
+    invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
+
+    .line 1296
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
+
+    goto/16 :goto_9
+
+    .line 1297
+    :cond_25
+    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
+
+    if-ne v3, v1, :cond_27
+
+    .line 1298
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    if-ne v1, v14, :cond_26
+
+    return-void
+
+    .line 1301
+    :cond_26
+    sput v14, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    .line 1302
+    invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
+
+    .line 1303
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
+
+    goto/16 :goto_9
+
+    .line 1304
+    :cond_27
+    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
+
+    if-ne v3, v1, :cond_29
+
+    .line 1305
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_24
+    if-ne v1, v2, :cond_28
 
     return-void
 
-    .line 1285
-    :cond_24
+    .line 1308
+    :cond_28
     sput v2, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    .line 1286
+    .line 1309
     invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
 
-    .line 1287
+    .line 1310
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1288
-    :cond_25
+    .line 1311
+    :cond_29
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
 
-    if-ne v3, v1, :cond_27
+    if-ne v3, v1, :cond_2b
 
-    .line 1289
+    .line 1312
     sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
     xor-int/2addr v1, v4
 
     sput-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    .line 1290
+    .line 1313
     check-cast v2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1291
+    .line 1314
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    .line 1292
+    .line 1315
     invoke-direct {v0, v4}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
 
-    .line 1293
+    .line 1316
     sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2a
 
-    .line 1294
+    .line 1317
     invoke-direct {v0, v13, v4}, Lorg/telegram/ui/ThemeActivity;->updateSunTime(Landroid/location/Location;Z)V
 
-    .line 1296
-    :cond_26
+    .line 1319
+    :cond_2a
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1297
-    :cond_27
+    .line 1320
+    :cond_2b
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
 
-    if-eq v3, v1, :cond_2d
+    if-eq v3, v1, :cond_31
 
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
 
-    if-ne v3, v1, :cond_28
+    if-ne v3, v1, :cond_2c
 
-    goto :goto_5
+    goto :goto_6
 
-    .line 1322
-    :cond_28
+    .line 1345
+    :cond_2c
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
 
-    if-ne v3, v1, :cond_29
+    if-ne v3, v1, :cond_2d
 
     const/4 v1, 0x1
 
-    .line 1323
+    .line 1346
     invoke-direct {v0, v13, v1}, Lorg/telegram/ui/ThemeActivity;->updateSunTime(Landroid/location/Location;Z)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1324
-    :cond_29
+    .line 1347
+    :cond_2d
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
 
-    if-ne v3, v1, :cond_2a
+    if-ne v3, v1, :cond_2e
 
-    .line 1325
+    .line 1348
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ThemeActivity;->createNewTheme()V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1326
-    :cond_2a
+    .line 1349
+    :cond_2e
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
 
-    if-ne v3, v1, :cond_2b
+    if-ne v3, v1, :cond_2f
 
-    .line 1327
+    .line 1350
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ThemeActivity;->editTheme()V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1328
-    :cond_2b
+    .line 1351
+    :cond_2f
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
 
-    if-ne v3, v1, :cond_2c
+    if-ne v3, v1, :cond_30
 
-    .line 1329
+    .line 1352
     new-instance v1, Lorg/telegram/ui/StickersActivity;
 
     invoke-direct {v1, v6, v13}, Lorg/telegram/ui/StickersActivity;-><init>(ILjava/util/ArrayList;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .line 1330
-    :cond_2c
+    .line 1353
+    :cond_30
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
 
-    if-ne v3, v1, :cond_34
+    if-ne v3, v1, :cond_37
 
-    .line 1331
+    .line 1354
     new-instance v1, Lorg/telegram/ui/LiteModeSettingsActivity;
 
     invoke-direct {v1}, Lorg/telegram/ui/LiteModeSettingsActivity;-><init>()V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    goto/16 :goto_8
+    goto :goto_9
 
-    .line 1298
-    :cond_2d
-    :goto_5
+    .line 1321
+    :cond_31
+    :goto_6
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_32
 
     return-void
 
-    .line 1303
-    :cond_2e
+    .line 1326
+    :cond_32
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
 
-    if-ne v3, v1, :cond_2f
+    if-ne v3, v1, :cond_33
 
-    .line 1304
+    .line 1327
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightDayStartTime:I
 
     div-int/lit8 v4, v1, 0x3c
 
-    goto :goto_6
+    goto :goto_7
 
-    .line 1307
-    :cond_2f
+    .line 1330
+    :cond_33
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightDayEndTime:I
 
     div-int/lit8 v4, v1, 0x3c
 
-    :goto_6
+    :goto_7
     mul-int/lit8 v5, v4, 0x3c
 
     sub-int/2addr v1, v5
@@ -3045,12 +3154,12 @@
 
     move v8, v4
 
-    .line 1310
+    .line 1333
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    .line 1311
+    .line 1334
     new-instance v2, Landroid/app/TimePickerDialog;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3067,19 +3176,19 @@
 
     invoke-direct/range {v5 .. v10}, Landroid/app/TimePickerDialog;-><init>(Landroid/content/Context;Landroid/app/TimePickerDialog$OnTimeSetListener;IIZ)V
 
-    .line 1321
+    .line 1344
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 1044
-    :cond_30
-    :goto_7
+    .line 1056
+    :cond_34
+    :goto_8
     move-object v1, v2
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1045
+    .line 1057
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result v2
@@ -3090,67 +3199,45 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
 
-    .line 1046
+    .line 1058
     iget v2, v0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
 
-    if-ne v3, v2, :cond_31
+    if-ne v3, v2, :cond_35
 
-    .line 1047
+    .line 1059
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isVibrationEnabled:Z
 
     xor-int/2addr v2, v4
 
     invoke-static {v2}, Lorg/telegram/messenger/SharedConfig;->setVibrationEnabled(Z)V
 
-    .line 1048
+    .line 1060
     new-instance v2, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda11;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Cells/TextCheckCell;)V
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/AlertsCreator;->showRestartDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/fork/utils/Callbacks$Callback;)V
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 1052
-    :cond_31
-    iget v1, v0, Lorg/telegram/ui/ThemeActivity;->raiseToSwitchSpeakerRow:I
-
-    if-ne v3, v1, :cond_32
-
-    .line 1053
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->isRaiseToSwitchSpeakerEnabled:Z
-
-    xor-int/2addr v1, v4
-
-    invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->setRaiseToSwitchSpeakerEnabled(Z)V
-
-    .line 1054
-    iget-object v1, v0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    iget v2, v0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
-
-    invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
-
-    goto :goto_8
-
-    .line 1055
-    :cond_32
+    .line 1064
+    :cond_35
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->audioPauseMusicOnRecordRow:I
 
-    if-ne v3, v1, :cond_33
+    if-ne v3, v1, :cond_36
 
-    .line 1056
+    .line 1065
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->togglePauseMusicOnRecord()V
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 1057
-    :cond_33
+    .line 1066
+    :cond_36
     iget v1, v0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
 
-    if-ne v3, v1, :cond_34
+    if-ne v3, v1, :cond_37
 
-    .line 1058
+    .line 1067
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->isFilesSendingPreviewAndCaptionEnabled:Z
 
     const/4 v2, 0x1
@@ -3159,8 +3246,8 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->setFilesSendingPreviewAndCaptionEnabled(Z)V
 
-    :cond_34
-    :goto_8
+    :cond_37
+    :goto_9
     return-void
 .end method
 
@@ -3169,13 +3256,13 @@
 
     const/4 p1, 0x0
 
-    .line 872
+    .line 884
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingProgressDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 873
+    .line 885
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 874
+    .line 886
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingAccent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     return-void
@@ -3186,9 +3273,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    .line 2588
+    .line 2615
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -3198,19 +3285,19 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2589
+    .line 2616
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2590
+    .line 2617
     instance-of v3, v2, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     if-eqz v3, :cond_0
 
-    .line 2591
+    .line 2618
     check-cast v2, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -3225,9 +3312,9 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
-    .line 2594
+    .line 2621
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -3237,19 +3324,19 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2595
+    .line 2622
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2596
+    .line 2623
     instance-of v3, v2, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     if-eqz v3, :cond_2
 
-    .line 2597
+    .line 2624
     check-cast v2, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -3264,9 +3351,9 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v0
 
-    .line 2600
+    .line 2627
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -3276,19 +3363,19 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 2601
+    .line 2628
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2602
+    .line 2629
     instance-of v3, v2, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     if-eqz v3, :cond_4
 
-    .line 2603
+    .line 2630
     check-cast v2, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -3302,7 +3389,7 @@
 
     goto :goto_2
 
-    .line 2606
+    .line 2633
     :cond_5
     :goto_3
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3313,19 +3400,19 @@
 
     if-ge v0, v1, :cond_7
 
-    .line 2607
+    .line 2634
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2608
+    .line 2635
     instance-of v2, v1, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     if-eqz v2, :cond_6
 
-    .line 2609
+    .line 2636
     check-cast v1, Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -3346,7 +3433,7 @@
 .method private static synthetic lambda$updateRows$0(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)I
     .locals 0
 
-    .line 587
+    .line 590
     iget p0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->sortIndex:I
 
     iget p1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->sortIndex:I
@@ -3361,7 +3448,7 @@
 .method private synthetic lambda$updateSunTime$10(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1416
+    .line 1447
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -3370,7 +3457,7 @@
 
     return-void
 
-    .line 1420
+    .line 1451
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3394,7 +3481,7 @@
 .method private synthetic lambda$updateSunTime$11(Ljava/lang/String;)V
     .locals 4
 
-    .line 1474
+    .line 1505
     sput-object p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightCityName:Ljava/lang/String;
 
     const/4 v0, 0x0
@@ -3405,7 +3492,7 @@
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    .line 1476
+    .line 1507
     sget-wide v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLatitude:D
 
     invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
@@ -3432,16 +3519,16 @@
 
     sput-object p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightCityName:Ljava/lang/String;
 
-    .line 1478
+    .line 1509
     :cond_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->saveAutoNightThemeConfig()V
 
-    .line 1479
+    .line 1510
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_1
 
-    .line 1480
+    .line 1511
     iget v1, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -3452,14 +3539,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 1481
+    .line 1512
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v1, p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     if-eqz v1, :cond_1
 
-    .line 1482
+    .line 1513
     check-cast p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     sget v1, Lorg/telegram/messenger/R$string;->AutoNightUpdateLocation:I
@@ -3483,7 +3570,7 @@
 
     const/4 v0, 0x0
 
-    .line 1462
+    .line 1493
     :try_start_0
     new-instance v1, Landroid/location/Geocoder;
 
@@ -3495,7 +3582,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/location/Geocoder;-><init>(Landroid/content/Context;Ljava/util/Locale;)V
 
-    .line 1463
+    .line 1494
     sget-wide v2, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLatitude:D
 
     sget-wide v4, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLongitude:D
@@ -3506,7 +3593,7 @@
 
     move-result-object v1
 
-    .line 1464
+    .line 1495
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -3515,7 +3602,7 @@
 
     const/4 v2, 0x0
 
-    .line 1465
+    .line 1496
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -3528,7 +3615,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1473
+    .line 1504
     :catch_0
     :cond_0
     new-instance v1, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda9;
@@ -3794,7 +3881,7 @@
 .method private startLocationUpdate()V
     .locals 7
 
-    .line 1497
+    .line 1528
     iget-boolean v0, p0, Lorg/telegram/ui/ThemeActivity;->updatingLocation:Z
 
     if-eqz v0, :cond_0
@@ -3804,10 +3891,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1500
+    .line 1531
     iput-boolean v0, p0, Lorg/telegram/ui/ThemeActivity;->updatingLocation:Z
 
-    .line 1501
+    .line 1532
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "location"
@@ -3825,7 +3912,7 @@
 
     const/4 v5, 0x0
 
-    .line 1503
+    .line 1534
     iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->gpsLocationListener:Lorg/telegram/ui/ThemeActivity$GpsLocationListener;
 
     move-object v1, v0
@@ -3839,7 +3926,7 @@
     :catch_0
     move-exception v1
 
-    .line 1505
+    .line 1536
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -3850,7 +3937,7 @@
 
     const/4 v5, 0x0
 
-    .line 1508
+    .line 1539
     iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->networkLocationListener:Lorg/telegram/ui/ThemeActivity$GpsLocationListener;
 
     move-object v1, v0
@@ -3864,7 +3951,7 @@
     :catch_1
     move-exception v0
 
-    .line 1510
+    .line 1541
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -3876,10 +3963,10 @@
 
     const/4 v0, 0x0
 
-    .line 1515
+    .line 1546
     iput-boolean v0, p0, Lorg/telegram/ui/ThemeActivity;->updatingLocation:Z
 
-    .line 1516
+    .line 1547
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "location"
@@ -3890,12 +3977,12 @@
 
     check-cast v0, Landroid/location/LocationManager;
 
-    .line 1517
+    .line 1548
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->gpsLocationListener:Lorg/telegram/ui/ThemeActivity$GpsLocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 1518
+    .line 1549
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->networkLocationListener:Lorg/telegram/ui/ThemeActivity$GpsLocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
@@ -3906,14 +3993,14 @@
 .method private updateMenuItem()V
     .locals 5
 
-    .line 1373
+    .line 1404
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1376
+    .line 1407
     :cond_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -3921,12 +4008,12 @@
 
     const/4 v1, 0x0
 
-    .line 1377
+    .line 1408
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v1
 
-    .line 1378
+    .line 1409
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccents:Ljava/util/ArrayList;
 
     const/4 v2, 0x3
@@ -3949,30 +4036,30 @@
 
     if-lt v0, v4, :cond_1
 
-    .line 1379
+    .line 1410
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    .line 1380
+    .line 1411
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
     goto :goto_0
 
-    .line 1382
+    .line 1413
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    .line 1383
+    .line 1414
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    .line 1385
+    .line 1416
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
@@ -3987,13 +4074,13 @@
     :cond_2
     const/16 v0, 0x10
 
-    .line 1386
+    .line 1417
     :goto_1
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v2
 
-    .line 1387
+    .line 1418
     sget v3, Lorg/telegram/messenger/SharedConfig;->fontSize:I
 
     const/4 v4, 0x4
@@ -4034,7 +4121,7 @@
 
     goto :goto_2
 
-    .line 1390
+    .line 1421
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -4042,7 +4129,7 @@
 
     goto :goto_3
 
-    .line 1388
+    .line 1419
     :cond_4
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -4054,7 +4141,7 @@
 .end method
 
 .method private updateRows(Z)V
-    .locals 11
+    .locals 12
 
     .line 497
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
@@ -4065,970 +4152,992 @@
     .line 500
     iget v2, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
 
-    const/4 v3, 0x0
+    .line 501
+    iget v3, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
 
-    .line 502
-    iput v3, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    const/4 v4, -0x1
+    const/4 v4, 0x0
 
     .line 503
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->audioPauseMusicOnRecordRow:I
+    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
-
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSwitchSpeakerRow:I
-
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
+    const/4 v5, -0x1
 
     .line 504
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->contactsReimportRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->audioPauseMusicOnRecordRow:I
+
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
+
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
 
     .line 505
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->contactsSortRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->contactsReimportRow:I
 
     .line 506
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->contactsSortRow:I
 
     .line 507
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
 
     .line 508
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
 
     .line 509
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationInfoRow:I
 
     .line 510
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
 
     .line 511
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
 
     .line 512
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
 
     .line 513
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
 
     .line 514
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
 
     .line 515
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleHeaderRow:I
 
     .line 516
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->newThemeInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
 
     .line 517
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->newThemeInfoRow:I
 
     .line 518
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
 
     .line 519
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromToInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
 
     .line 520
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromToInfoRow:I
 
     .line 521
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
 
     .line 522
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
 
     .line 523
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
 
     .line 524
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->preferedHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
 
     .line 525
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->automaticHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->preferedHeaderRow:I
 
     .line 526
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->automaticHeaderRow:I
 
     .line 527
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessRow:I
 
     .line 528
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->textSizeHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessInfoRow:I
 
     .line 529
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->textSizeHeaderRow:I
 
     .line 530
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
 
     .line 531
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusHeaderRow:I
 
     .line 532
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusRow:I
 
     .line 533
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->chatListHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
 
     .line 534
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->chatListRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatListHeaderRow:I
 
     .line 535
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatListRow:I
 
     .line 536
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->chatBlurRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
 
     .line 537
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatBlurRow:I
 
     .line 538
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
 
     .line 539
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->stickersInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnMediaRow:I
 
     .line 540
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
 
     .line 541
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->liteModeInfoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->stickersInfoRow:I
+
+    .line 542
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
 
     .line 543
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->textSizeRow:I
-
-    .line 544
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->liteModeInfoRow:I
 
     .line 545
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->settingsRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->textSizeRow:I
 
     .line 546
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
 
     .line 547
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->settingsRow:I
 
     .line 548
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->enableAnimationsRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
 
     .line 549
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
 
     .line 550
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->enableAnimationsRow:I
 
     .line 551
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption1Row:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
 
     .line 552
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption2Row:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->raiseToListenRow:I
 
     .line 553
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->saveToGallerySectionRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
 
     .line 554
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption1Row:I
 
     .line 555
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->saveToGalleryOption2Row:I
 
     .line 556
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->settings2Row:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->saveToGallerySectionRow:I
+
+    .line 557
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
 
     .line 558
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
 
     .line 559
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->settings2Row:I
 
-    .line 560
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureInfoRow:I
+    .line 561
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureHeaderRow:I
 
     .line 562
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->selectThemeHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureRow:I
 
     .line 563
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->themePreviewRow:I
-
-    .line 564
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureInfoRow:I
 
     .line 565
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->selectThemeHeaderRow:I
+
+    .line 566
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themePreviewRow:I
 
     .line 567
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->appIconHeaderRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
 
     .line 568
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->appIconSelectorRow:I
-
-    .line 569
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->appIconShadowRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
 
     .line 570
-    iput v4, p0, Lorg/telegram/ui/ThemeActivity;->lastShadowRow:I
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->appIconHeaderRow:I
+
+    .line 571
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->appIconSelectorRow:I
 
     .line 572
-    iget-object v5, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->appIconShadowRow:I
 
     .line 573
-    iget-object v5, p0, Lorg/telegram/ui/ThemeActivity;->darkThemes:Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
-
-    .line 574
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->themes:Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v5
-
-    const/4 v6, 0x0
-
-    :goto_0
-    const/4 v7, 0x3
-
-    if-ge v6, v5, :cond_3
+    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->lastShadowRow:I
 
     .line 575
-    sget-object v8, Lorg/telegram/ui/ActionBar/Theme;->themes:Ljava/util/ArrayList;
+    iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
 
-    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
     .line 576
-    iget v9, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
+    iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->darkThemes:Ljava/util/ArrayList;
 
-    if-eqz v9, :cond_0
-
-    if-eq v9, v7, :cond_0
+    invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
     .line 577
-    invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isLight()Z
+    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->themes:Ljava/util/ArrayList;
 
-    move-result v7
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    if-nez v7, :cond_2
+    move-result v6
 
-    iget-object v7, v8, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
+    move v7, v4
 
-    if-eqz v7, :cond_0
+    :goto_0
+    const/4 v8, 0x3
 
-    iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$TL_theme;->document:Lorg/telegram/tgnet/TLRPC$Document;
+    if-ge v7, v6, :cond_3
 
-    if-nez v7, :cond_0
+    .line 578
+    sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->themes:Ljava/util/ArrayList;
 
-    goto :goto_1
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    .line 581
-    :cond_0
-    iget-object v7, v8, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
+    move-result-object v9
 
-    if-eqz v7, :cond_1
+    check-cast v9, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 582
-    iget-object v7, p0, Lorg/telegram/ui/ThemeActivity;->darkThemes:Ljava/util/ArrayList;
+    .line 579
+    iget v10, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-eqz v10, :cond_0
+
+    if-eq v10, v8, :cond_0
+
+    .line 580
+    invoke-virtual {v9}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isLight()Z
+
+    move-result v8
+
+    if-nez v8, :cond_2
+
+    iget-object v8, v9, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
+
+    if-eqz v8, :cond_0
+
+    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$TL_theme;->document:Lorg/telegram/tgnet/TLRPC$Document;
+
+    if-nez v8, :cond_0
 
     goto :goto_1
 
     .line 584
-    :cond_1
-    iget-object v7, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
+    :cond_0
+    iget-object v8, v9, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
 
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-eqz v8, :cond_1
+
+    .line 585
+    iget-object v8, p0, Lorg/telegram/ui/ThemeActivity;->darkThemes:Ljava/util/ArrayList;
+
+    invoke-virtual {v8, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    .line 587
+    :cond_1
+    iget-object v8, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
+
+    invoke-virtual {v8, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
     :goto_1
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 587
-    :cond_3
-    iget-object v5, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
-
-    sget-object v6, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;->INSTANCE:Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;
-
-    invoke-static {v5, v6}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    .line 589
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
-
-    const/4 v6, 0x2
-
-    const/4 v8, 0x1
-
-    if-ne v5, v7, :cond_7
-
     .line 590
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    :cond_3
+    iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->defaultThemes:Ljava/util/ArrayList;
 
-    add-int/lit8 v9, v5, 0x1
+    sget-object v7, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;->INSTANCE:Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda10;
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->selectThemeHeaderRow:I
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 591
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
-
-    add-int/lit8 v9, v5, 0x1
+    invoke-static {v6, v7}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 592
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
+    const/4 v7, 0x2
 
-    add-int/lit8 v5, v9, 0x1
+    const/4 v9, 0x1
+
+    if-ne v6, v8, :cond_7
+
+    .line 593
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->selectThemeHeaderRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 594
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->themePreviewRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 595
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
 
-    add-int/lit8 v5, v9, 0x1
-
-    .line 596
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
+    add-int/lit8 v6, v10, 0x1
 
     .line 597
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    move-result-object v5
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->themePreviewRow:I
 
-    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->hasAccentColors()Z
-
-    move-result v5
-
-    iput-boolean v5, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
+    add-int/lit8 v10, v6, 0x1
 
     .line 598
-    iget-object v9, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-eqz v9, :cond_4
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 599
-    invoke-virtual {v9, v5}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->setDrawDivider(Z)V
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    .line 601
-    :cond_4
-    iget-boolean v5, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
 
-    if-eqz v5, :cond_5
-
-    .line 602
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
-
-    .line 604
-    :cond_5
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
-
-    .line 606
+    .line 600
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    move-result-object v5
+    move-result-object v6
+
+    invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->hasAccentColors()Z
+
+    move-result v6
+
+    iput-boolean v6, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
+
+    .line 601
+    iget-object v10, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
+
+    if-eqz v10, :cond_4
+
+    .line 602
+    invoke-virtual {v10, v6}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->setDrawDivider(Z)V
+
+    .line 604
+    :cond_4
+    iget-boolean v6, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
+
+    if-eqz v6, :cond_5
+
+    .line 605
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
 
     .line 607
-    invoke-virtual {v5, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    :cond_5
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    move-result-object v9
+    add-int/lit8 v10, v6, 0x1
 
-    .line 608
-    iget-object v5, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccents:Ljava/util/ArrayList;
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-eqz v5, :cond_6
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v5
-
-    if-nez v5, :cond_6
-
-    if-eqz v9, :cond_6
-
-    iget v5, v9, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
-
-    const/16 v9, 0x64
-
-    if-lt v5, v9, :cond_6
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
 
     .line 609
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    add-int/lit8 v9, v5, 0x1
+    move-result-object v6
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    .line 610
+    invoke-virtual {v6, v4}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
+    move-result-object v10
 
     .line 611
-    :cond_6
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iget-object v6, v6, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccents:Ljava/util/ArrayList;
 
-    add-int/lit8 v9, v5, 0x1
+    if-eqz v6, :cond_6
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
+    move-result v6
 
-    add-int/lit8 v5, v9, 0x1
+    if-nez v6, :cond_6
+
+    if-eqz v10, :cond_6
+
+    iget v6, v10, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
+
+    const/16 v10, 0x64
+
+    if-lt v6, v10, :cond_6
 
     .line 612
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->lastShadowRow:I
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
+
+    .line 614
+    :cond_6
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->createNewThemeRow:I
+
+    add-int/lit8 v6, v10, 0x1
+
+    .line 615
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->lastShadowRow:I
 
     goto/16 :goto_3
 
     :cond_7
-    if-nez v5, :cond_8
-
-    .line 614
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->textSizeHeaderRow:I
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 615
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->textSizeRow:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    .line 616
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
-
-    add-int/lit8 v5, v9, 0x1
+    if-nez v6, :cond_9
 
     .line 617
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->newThemeInfoRow:I
+    add-int/lit8 v10, v6, 0x1
 
-    add-int/lit8 v9, v5, 0x1
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->textSizeHeaderRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 618
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->textSizeRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v10, v6, 0x1
+
+    .line 619
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->backgroundRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 620
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->newThemeInfoRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 621
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->themeHeaderRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 623
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusHeaderRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 624
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
-    .line 625
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    .line 626
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusHeaderRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 627
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatListHeaderRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 628
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->chatListRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->bubbleRadiusInfoRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
-    .line 629
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    .line 630
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->chatListHeaderRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 631
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->appIconHeaderRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->chatListRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 632
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->appIconSelectorRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->chatListInfoRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
-    .line 633
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    .line 634
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->appIconShadowRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->appIconHeaderRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 635
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureHeaderRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->appIconSelectorRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 636
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->appIconShadowRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
-    .line 637
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    .line 638
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureHeaderRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 639
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 640
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->liteModeInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->swipeGestureInfoRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 642
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->liteModeRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 643
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->stickersInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->liteModeInfoRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 645
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->settingsRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->stickersRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 646
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->stickersInfoRow:I
 
-    add-int/lit8 v5, v9, 0x1
-
-    .line 647
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
-
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 648
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->settingsRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v10, v6, 0x1
+
+    .line 649
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->nightThemeRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 650
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->customTabsRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 651
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->directShareRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
+
+    .line 653
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->filesSendingPreviewAndCaptionRow:I
+
+    add-int/lit8 v10, v6, 0x1
 
     .line 654
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSwitchSpeakerRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->vibrationRow:I
 
-    add-int/lit8 v9, v5, 0x1
-
-    .line 655
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 656
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
-
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 657
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
-
-    add-int/lit8 v5, v9, 0x1
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->raiseToListenRow:I
 
     .line 658
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    sget-boolean v10, Lorg/telegram/messenger/SharedConfig;->raiseToListen:Z
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
+    if-eqz v10, :cond_8
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
+
+    .line 659
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
+
+    .line 661
+    :cond_8
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->sendByEnterRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 662
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnMediaRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 663
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->settings2Row:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->pauseOnRecordRow:I
+
+    add-int/lit8 v6, v10, 0x1
+
+    .line 664
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->bluetoothScoRow:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    .line 668
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->distanceRow:I
+
+    add-int/lit8 v6, v10, 0x1
+
+    .line 669
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->settings2Row:I
 
     goto/16 :goto_3
 
-    .line 665
-    :cond_8
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 666
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    .line 667
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
-
-    .line 668
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v10, 0x1d
-
-    if-lt v5, v10, :cond_9
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 669
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
-
     .line 671
     :cond_9
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->nightDisabledRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 672
-    sget v5, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-ne v5, v8, :cond_b
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->nightScheduledRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 673
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->scheduleHeaderRow:I
-
-    add-int/lit8 v9, v5, 0x1
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->nightAutomaticRow:I
 
     .line 674
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
+    const/16 v11, 0x1d
+
+    if-lt v6, v11, :cond_a
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 675
-    sget-boolean v5, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-eqz v5, :cond_a
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 676
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
-
-    add-int/lit8 v9, v5, 0x1
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->nightSystemDefaultRow:I
 
     .line 677
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationInfoRow:I
-
-    goto :goto_2
-
     :cond_a
-    add-int/lit8 v5, v9, 0x1
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
+
+    .line 678
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    if-ne v6, v9, :cond_c
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 679
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->scheduleHeaderRow:I
 
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 680
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
-
-    add-int/lit8 v5, v9, 0x1
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationRow:I
 
     .line 681
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    sget-boolean v6, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromToInfoRow:I
+    if-eqz v6, :cond_b
+
+    add-int/lit8 v6, v10, 0x1
+
+    .line 682
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->scheduleUpdateLocationRow:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    .line 683
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationInfoRow:I
 
     goto :goto_2
 
     :cond_b
-    if-ne v5, v6, :cond_c
-
-    add-int/lit8 v5, v9, 0x1
-
-    .line 684
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->automaticHeaderRow:I
-
-    add-int/lit8 v9, v5, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 685
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromRow:I
 
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v10, v6, 0x1
 
     .line 686
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessInfoRow:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->scheduleToRow:I
 
-    .line 688
+    add-int/lit8 v6, v10, 0x1
+
+    .line 687
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->scheduleFromToInfoRow:I
+
+    goto :goto_2
+
     :cond_c
-    :goto_2
-    sget v5, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+    if-ne v6, v7, :cond_d
 
-    if-eqz v5, :cond_f
-
-    .line 689
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    add-int/lit8 v9, v5, 0x1
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->preferedHeaderRow:I
-
-    add-int/lit8 v5, v9, 0x1
+    add-int/lit8 v6, v10, 0x1
 
     .line 690
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->automaticHeaderRow:I
+
+    add-int/lit8 v10, v6, 0x1
 
     .line 691
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentNightTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    move-result-object v5
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessRow:I
 
-    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->hasAccentColors()Z
-
-    move-result v5
-
-    iput-boolean v5, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
+    add-int/lit8 v6, v10, 0x1
 
     .line 692
-    iget-object v9, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-eqz v9, :cond_d
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->automaticBrightnessInfoRow:I
 
-    .line 693
-    invoke-virtual {v9, v5}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->setDrawDivider(Z)V
+    .line 694
+    :cond_d
+    :goto_2
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    if-eqz v6, :cond_10
 
     .line 695
-    :cond_d
-    iget-boolean v5, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-eqz v5, :cond_e
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->preferedHeaderRow:I
+
+    add-int/lit8 v6, v10, 0x1
 
     .line 696
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    add-int/lit8 v9, v5, 0x1
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow:I
 
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    .line 697
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentNightTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
+    move-result-object v6
+
+    invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->hasAccentColors()Z
+
+    move-result v6
+
+    iput-boolean v6, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
 
     .line 698
+    iget-object v10, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
+
+    if-eqz v10, :cond_e
+
+    .line 699
+    invoke-virtual {v10, v6}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->setDrawDivider(Z)V
+
+    .line 701
     :cond_e
-    iget v5, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+    iget-boolean v6, p0, Lorg/telegram/ui/ThemeActivity;->hasThemeAccents:Z
 
-    add-int/lit8 v9, v5, 0x1
-
-    iput v9, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    iput v5, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
+    if-eqz v6, :cond_f
 
     .line 702
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    add-int/lit8 v10, v6, 0x1
+
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
+
+    .line 704
     :cond_f
-    :goto_3
-    iget-object v5, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
+    iget v6, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    if-eqz v5, :cond_10
+    add-int/lit8 v10, v6, 0x1
 
-    .line 703
-    iget-object v9, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    iput v10, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    invoke-virtual {v9}, Landroid/view/ViewGroup;->getWidth()I
+    iput v6, p0, Lorg/telegram/ui/ThemeActivity;->themeInfoRow:I
 
-    move-result v9
-
-    invoke-virtual {v5, v9}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->notifyDataSetChanged(I)V
-
-    .line 706
+    .line 708
     :cond_10
-    iget-object v5, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+    :goto_3
+    iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->themesHorizontalListCell:Lorg/telegram/ui/Cells/ThemesHorizontalListCell;
 
-    if-eqz v5, :cond_2d
+    if-eqz v6, :cond_11
 
-    .line 707
-    iget v9, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
+    .line 709
+    iget-object v10, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    if-ne v9, v8, :cond_26
+    invoke-virtual {v10}, Landroid/view/ViewGroup;->getWidth()I
 
-    iget v9, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
+    move-result v10
 
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+    invoke-virtual {v6, v10}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->notifyDataSetChanged(I)V
 
-    if-eq v9, v10, :cond_26
+    .line 712
+    :cond_11
+    iget-object v6, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
-    if-ne v9, v4, :cond_11
+    if-eqz v6, :cond_30
+
+    .line 713
+    iget v10, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
+
+    if-ne v10, v9, :cond_27
+
+    iget v10, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
+
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+
+    if-eq v10, v11, :cond_27
+
+    if-ne v10, v5, :cond_12
 
     goto/16 :goto_c
 
-    .line 729
-    :cond_11
+    .line 741
+    :cond_12
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->nightTypeInfoRow:I
 
-    add-int/2addr p1, v8
+    add-int/2addr p1, v9
 
-    if-eq v9, v10, :cond_23
+    if-eq v10, v11, :cond_24
 
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_4
     const/4 v2, 0x4
 
-    if-ge v1, v2, :cond_15
+    if-ge v1, v2, :cond_16
 
-    .line 732
+    .line 744
     iget-object v2, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -5037,185 +5146,131 @@
 
     check-cast v2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
-    .line 733
+    .line 745
     iget-object v2, v2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    instance-of v4, v2, Lorg/telegram/ui/Cells/ThemeTypeCell;
+    instance-of v3, v2, Lorg/telegram/ui/Cells/ThemeTypeCell;
 
-    if-nez v4, :cond_12
+    if-nez v3, :cond_13
 
     goto :goto_6
 
-    .line 736
-    :cond_12
+    .line 748
+    :cond_13
     check-cast v2, Lorg/telegram/ui/Cells/ThemeTypeCell;
 
-    sget v4, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    if-ne v1, v4, :cond_13
+    if-ne v1, v3, :cond_14
 
-    const/4 v4, 0x1
+    move v3, v9
 
     goto :goto_5
 
-    :cond_13
-    const/4 v4, 0x0
+    :cond_14
+    move v3, v4
 
     :goto_5
-    invoke-virtual {v2, v4}, Lorg/telegram/ui/Cells/ThemeTypeCell;->setTypeChecked(Z)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/ThemeTypeCell;->setTypeChecked(Z)V
 
-    :cond_14
+    :cond_15
     :goto_6
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 739
-    :cond_15
+    .line 751
+    :cond_16
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_17
 
-    .line 740
+    .line 752
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     sub-int/2addr v0, p1
 
     invoke-virtual {v1, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    goto/16 :goto_f
-
-    :cond_16
-    const/4 v0, 0x5
-
-    if-ne v1, v8, :cond_1b
-
-    .line 742
-    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
-
-    if-nez v1, :cond_17
-
-    .line 743
-    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    sub-int/2addr v1, p1
-
-    invoke-virtual {v0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
-
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_17
-    if-ne v1, v6, :cond_19
+    const/4 v0, 0x5
 
-    .line 745
-    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    invoke-virtual {v1, p1, v7}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
-
-    .line 746
-    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
-
-    if-eqz v3, :cond_18
-
-    goto :goto_7
-
-    :cond_18
-    const/4 v2, 0x5
-
-    :goto_7
-    invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
-
-    goto/16 :goto_f
-
-    :cond_19
-    if-ne v1, v7, :cond_2d
-
-    .line 748
-    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
-
-    if-eqz v3, :cond_1a
-
-    goto :goto_8
-
-    :cond_1a
-    const/4 v2, 0x5
-
-    :goto_8
-    invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
-
-    goto/16 :goto_f
-
-    :cond_1b
-    if-ne v1, v6, :cond_1f
-
-    .line 751
-    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
-
-    if-nez v1, :cond_1c
-
-    .line 752
-    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
-
-    sub-int/2addr v1, p1
-
-    invoke-virtual {v0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
-
-    goto/16 :goto_f
-
-    :cond_1c
-    if-ne v1, v8, :cond_1e
+    if-ne v1, v9, :cond_1c
 
     .line 754
-    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
 
-    sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
-
-    if-eqz v3, :cond_1d
-
-    goto :goto_9
-
-    :cond_1d
-    const/4 v2, 0x5
-
-    :goto_9
-    invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
+    if-nez v1, :cond_18
 
     .line 755
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
-    invoke-virtual {v0, p1, v7}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
 
-    goto/16 :goto_f
+    sub-int/2addr v1, p1
 
-    :cond_1e
-    if-ne v1, v7, :cond_2d
+    invoke-virtual {v0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto/16 :goto_10
+
+    :cond_18
+    if-ne v1, v7, :cond_1a
 
     .line 757
-    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
-    invoke-virtual {v0, p1, v7}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+    invoke-virtual {v1, p1, v8}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    goto/16 :goto_f
+    .line 758
+    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
-    :cond_1f
-    if-ne v1, v7, :cond_2d
+    sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
+
+    if-eqz v3, :cond_19
+
+    goto :goto_7
+
+    :cond_19
+    move v2, v0
+
+    :goto_7
+    invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto/16 :goto_10
+
+    :cond_1a
+    if-ne v1, v8, :cond_30
 
     .line 760
+    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
+
+    if-eqz v3, :cond_1b
+
+    goto :goto_8
+
+    :cond_1b
+    move v2, v0
+
+    :goto_8
+    invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto/16 :goto_10
+
+    :cond_1c
+    if-ne v1, v7, :cond_20
+
+    .line 763
     iget v1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1d
 
-    .line 761
+    .line 764
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget v1, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
@@ -5224,180 +5279,263 @@
 
     invoke-virtual {v0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    :cond_20
-    if-ne v1, v6, :cond_21
+    :cond_1d
+    if-ne v1, v9, :cond_1f
 
-    .line 763
-    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
-
-    invoke-virtual {v0, p1, v7}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
-
-    goto/16 :goto_f
-
-    :cond_21
-    if-ne v1, v8, :cond_2d
-
-    .line 765
+    .line 766
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_1e
+
+    goto :goto_9
+
+    :cond_1e
+    move v2, v0
+
+    :goto_9
+    invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
+
+    .line 767
+    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    invoke-virtual {v0, p1, v8}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto/16 :goto_10
+
+    :cond_1f
+    if-ne v1, v8, :cond_30
+
+    .line 769
+    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    invoke-virtual {v0, p1, v8}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto/16 :goto_10
+
+    :cond_20
+    if-ne v1, v8, :cond_30
+
+    .line 772
+    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
+
+    if-nez v1, :cond_21
+
+    .line 773
+    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    iget v1, p0, Lorg/telegram/ui/ThemeActivity;->rowCount:I
+
+    sub-int/2addr v1, p1
+
+    invoke-virtual {v0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto/16 :goto_10
+
+    :cond_21
+    if-ne v1, v7, :cond_22
+
+    .line 775
+    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    invoke-virtual {v0, p1, v8}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
+
+    goto/16 :goto_10
+
+    :cond_22
+    if-ne v1, v9, :cond_30
+
+    .line 777
+    iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    sget-boolean v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
+
+    if-eqz v3, :cond_23
 
     goto :goto_a
 
-    :cond_22
-    const/4 v2, 0x5
+    :cond_23
+    move v2, v0
 
     :goto_a
     invoke-virtual {v1, p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    goto :goto_f
+    goto/16 :goto_10
 
-    .line 769
-    :cond_23
+    .line 781
+    :cond_24
     iget-boolean v0, p0, Lorg/telegram/ui/ThemeActivity;->previousByLocation:Z
 
     sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_30
 
-    add-int/2addr p1, v6
+    add-int/2addr p1, v7
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_25
 
-    const/4 v0, 0x3
+    move v0, v8
 
     goto :goto_b
 
-    :cond_24
-    const/4 v0, 0x2
+    :cond_25
+    move v0, v7
 
-    .line 770
+    .line 782
     :goto_b
-    invoke-virtual {v5, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
+    invoke-virtual {v6, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 771
+    .line 783
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_26
 
-    const/4 v7, 0x2
+    move v8, v7
 
-    :cond_25
-    invoke-virtual {v0, p1, v7}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+    :cond_26
+    invoke-virtual {v0, p1, v8}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
+
+    goto :goto_10
+
+    :cond_27
+    :goto_c
+    if-nez p1, :cond_2f
+
+    .line 714
+    iget p1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
+
+    if-ne p1, v5, :cond_28
 
     goto :goto_f
 
-    :cond_26
-    :goto_c
-    if-nez p1, :cond_2c
+    :cond_28
+    if-ne v1, v5, :cond_29
 
-    .line 708
-    iget p1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
-
-    if-ne p1, v4, :cond_27
-
-    goto :goto_e
-
-    :cond_27
-    if-ne v1, v4, :cond_28
-
-    .line 711
+    .line 717
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
 
-    if-eq p1, v4, :cond_28
+    if-eq p1, v5, :cond_29
 
-    .line 712
-    invoke-virtual {v5, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemInserted(I)V
+    .line 718
+    invoke-virtual {v6, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemInserted(I)V
 
     goto :goto_d
 
-    :cond_28
-    if-eq v1, v4, :cond_29
+    :cond_29
+    if-eq v1, v5, :cond_2a
 
-    .line 713
+    .line 719
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
 
-    if-ne p1, v4, :cond_29
+    if-ne p1, v5, :cond_2a
 
-    .line 714
-    invoke-virtual {v5, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
+    .line 720
+    invoke-virtual {v6, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
-    if-eq v2, v4, :cond_2a
+    if-eq v2, v5, :cond_2b
 
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_d
 
-    .line 718
-    :cond_29
+    .line 724
+    :cond_2a
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->themeAccentListRow:I
 
-    if-eq p1, v4, :cond_2a
+    if-eq p1, v5, :cond_2b
 
-    .line 719
-    invoke-virtual {v5, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
+    .line 725
+    invoke-virtual {v6, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    :cond_2a
+    :cond_2b
     :goto_d
-    if-ne v2, v4, :cond_2b
+    if-ne v2, v5, :cond_2c
 
-    .line 722
+    .line 728
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
 
-    if-eq p1, v4, :cond_2b
+    if-eq p1, v5, :cond_2c
 
-    .line 723
+    .line 729
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemInserted(I)V
 
-    goto :goto_f
+    goto :goto_e
 
-    :cond_2b
-    if-eq v2, v4, :cond_2d
+    :cond_2c
+    if-eq v2, v5, :cond_2d
 
-    .line 724
+    .line 730
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->editThemeRow:I
 
-    if-ne p1, v4, :cond_2d
+    if-ne p1, v5, :cond_2d
 
-    .line 725
+    .line 731
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
 
-    goto :goto_f
-
-    .line 709
-    :cond_2c
-    :goto_e
-    invoke-virtual {v5}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
-
-    .line 776
     :cond_2d
+    :goto_e
+    if-ne v3, v5, :cond_2e
+
+    .line 734
+    iget p1, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
+
+    if-eq p1, v5, :cond_2e
+
+    .line 735
+    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemInserted(I)V
+
+    goto :goto_10
+
+    :cond_2e
+    if-eq v3, v5, :cond_30
+
+    .line 736
+    iget p1, p0, Lorg/telegram/ui/ThemeActivity;->raiseToSpeakRow:I
+
+    if-ne p1, v5, :cond_30
+
+    .line 737
+    iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
+
+    invoke-virtual {p1, v3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRemoved(I)V
+
+    goto :goto_10
+
+    .line 715
+    :cond_2f
     :goto_f
+    invoke-virtual {v6}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
+
+    .line 788
+    :cond_30
+    :goto_10
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
-    if-ne p1, v8, :cond_2e
+    if-ne p1, v9, :cond_31
 
-    .line 777
+    .line 789
     sget-boolean p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/ThemeActivity;->previousByLocation:Z
 
-    .line 778
+    .line 790
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     iput p1, p0, Lorg/telegram/ui/ThemeActivity;->previousUpdatedType:I
 
-    .line 780
-    :cond_2e
+    .line 792
+    :cond_31
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->updateMenuItem()V
 
     return-void
@@ -5406,7 +5544,7 @@
 .method private updateSunTime(Landroid/location/Location;Z)V
     .locals 8
 
-    .line 1395
+    .line 1426
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "location"
@@ -5417,14 +5555,14 @@
 
     check-cast v0, Landroid/location/LocationManager;
 
-    .line 1396
+    .line 1427
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x17
 
     if-lt v2, v3, :cond_0
 
-    .line 1397
+    .line 1428
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -5433,7 +5571,7 @@
 
     const-string v3, "android.permission.ACCESS_COARSE_LOCATION"
 
-    .line 1399
+    .line 1430
     invoke-virtual {v2, v3}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v4
@@ -5442,7 +5580,7 @@
 
     const-string p1, "android.permission.ACCESS_FINE_LOCATION"
 
-    .line 1400
+    .line 1431
     filled-new-array {v3, p1}, [Ljava/lang/String;
 
     move-result-object p1
@@ -5453,7 +5591,7 @@
 
     return-void
 
-    .line 1405
+    .line 1436
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -5467,7 +5605,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1406
+    .line 1437
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -5486,7 +5624,7 @@
 
     return-void
 
-    .line 1410
+    .line 1441
     :cond_1
     :try_start_0
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -5497,14 +5635,14 @@
 
     check-cast v1, Landroid/location/LocationManager;
 
-    .line 1411
+    .line 1442
     invoke-virtual {v1, v5}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 1412
+    .line 1443
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -5513,7 +5651,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1413
+    .line 1444
     sget v2, Lorg/telegram/messenger/R$raw;->permission_request_location:I
 
     const/16 v6, 0x48
@@ -5528,7 +5666,7 @@
 
     const-string v2, "GpsDisabledAlertText"
 
-    .line 1414
+    .line 1445
     sget v6, Lorg/telegram/messenger/R$string;->GpsDisabledAlertText:I
 
     invoke-static {v2, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -5539,7 +5677,7 @@
 
     const-string v2, "ConnectingToProxyEnable"
 
-    .line 1415
+    .line 1446
     sget v6, Lorg/telegram/messenger/R$string;->ConnectingToProxyEnable:I
 
     invoke-static {v2, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -5554,7 +5692,7 @@
 
     const-string v2, "Cancel"
 
-    .line 1425
+    .line 1456
     sget v6, Lorg/telegram/messenger/R$string;->Cancel:I
 
     invoke-static {v2, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -5563,7 +5701,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1426
+    .line 1457
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
@@ -5577,10 +5715,10 @@
     :catch_0
     move-exception v1
 
-    .line 1430
+    .line 1461
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1434
+    .line 1465
     :cond_2
     :try_start_1
     invoke-virtual {v0, v5}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
@@ -5591,7 +5729,7 @@
 
     const-string v1, "network"
 
-    .line 1436
+    .line 1467
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
     move-result-object p1
@@ -5601,7 +5739,7 @@
 
     const-string v1, "passive"
 
-    .line 1439
+    .line 1470
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
     move-result-object p1
@@ -5613,7 +5751,7 @@
     :catch_1
     move-exception v0
 
-    .line 1442
+    .line 1473
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
@@ -5622,7 +5760,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 1445
+    .line 1476
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->startLocationUpdate()V
 
@@ -5630,7 +5768,7 @@
 
     return-void
 
-    .line 1450
+    .line 1481
     :cond_6
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
@@ -5638,14 +5776,14 @@
 
     sput-wide v0, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLatitude:D
 
-    .line 1451
+    .line 1482
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide p1
 
     sput-wide p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLongitude:D
 
-    .line 1452
+    .line 1483
     sget-wide p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLatitude:D
 
     sget-wide v0, Lorg/telegram/ui/ActionBar/Theme;->autoNightLocationLongitude:D
@@ -5654,27 +5792,27 @@
 
     move-result-object p1
 
-    .line 1453
+    .line 1484
     aget p2, p1, v4
 
     sput p2, Lorg/telegram/ui/ActionBar/Theme;->autoNightSunriseTime:I
 
     const/4 p2, 0x1
 
-    .line 1454
+    .line 1485
     aget p1, p1, p2
 
     sput p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightSunsetTime:I
 
-    .line 1455
+    .line 1486
     sput-object v3, Lorg/telegram/ui/ActionBar/Theme;->autoNightCityName:Ljava/lang/String;
 
-    .line 1456
+    .line 1487
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object p1
 
-    .line 1457
+    .line 1488
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -5683,14 +5821,14 @@
 
     const/4 v0, 0x5
 
-    .line 1458
+    .line 1489
     invoke-virtual {p1, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result p1
 
     sput p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightLastSunCheckDay:I
 
-    .line 1459
+    .line 1490
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda8;
@@ -5699,7 +5837,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1487
+    .line 1518
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->scheduleLocationInfoRow:I
@@ -5712,14 +5850,14 @@
 
     if-eqz p1, :cond_7
 
-    .line 1488
+    .line 1519
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     if-eqz v0, :cond_7
 
-    .line 1489
+    .line 1520
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->getLocationSunString()Ljava/lang/String;
@@ -5728,7 +5866,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1491
+    .line 1522
     :cond_7
     sget-boolean p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightScheduleByLocation:Z
 
@@ -5738,7 +5876,7 @@
 
     if-ne p1, p2, :cond_8
 
-    .line 1492
+    .line 1523
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
 
     :cond_8
@@ -5750,7 +5888,7 @@
 .method public checkCurrentDayNight()V
     .locals 3
 
-    .line 2620
+    .line 2647
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
     const/4 v1, 0x3
@@ -5759,7 +5897,7 @@
 
     return-void
 
-    .line 2623
+    .line 2650
     :cond_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDay()Z
 
@@ -5767,17 +5905,17 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 2624
+    .line 2651
     iget-boolean v1, p0, Lorg/telegram/ui/ThemeActivity;->lastIsDarkTheme:Z
 
     const/4 v2, 0x0
 
     if-eq v1, v0, :cond_2
 
-    .line 2625
+    .line 2652
     iput-boolean v0, p0, Lorg/telegram/ui/ThemeActivity;->lastIsDarkTheme:Z
 
-    .line 2626
+    .line 2653
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->sunDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v0, :cond_1
@@ -5791,12 +5929,12 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 2627
+    .line 2654
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getIconView()Lorg/telegram/ui/Components/RLottieImageView;
@@ -5805,13 +5943,13 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 2629
+    .line 2656
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
 
     if-ltz v0, :cond_4
 
-    .line 2630
+    .line 2657
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -5821,7 +5959,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 2631
+    .line 2658
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -5832,7 +5970,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2632
+    .line 2659
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -5841,7 +5979,7 @@
 
     check-cast v0, Lorg/telegram/ui/DefaultThemesPreviewCell;
 
-    .line 2633
+    .line 2660
     invoke-virtual {v0}, Lorg/telegram/ui/DefaultThemesPreviewCell;->updateDayNightMode()V
 
     :cond_3
@@ -5856,7 +5994,7 @@
 .method public createView(Landroid/content/Context;)Landroid/view/View;
     .locals 11
 
-    .line 888
+    .line 900
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDay()Z
 
     move-result v0
@@ -5867,33 +6005,33 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/ThemeActivity;->lastIsDarkTheme:Z
 
-    .line 890
+    .line 902
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 891
+    .line 903
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 892
+    .line 904
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 893
+    .line 905
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 895
+    .line 907
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
@@ -5901,7 +6039,7 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 896
+    .line 908
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/messenger/R$string;->BrowseThemes:I
@@ -5914,14 +6052,14 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 897
+    .line 909
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
 
-    .line 898
+    .line 910
     new-instance v10, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v4, Lorg/telegram/messenger/R$raw;->sun:I
@@ -5960,12 +6098,12 @@
 
     iput-object v10, p0, Lorg/telegram/ui/ThemeActivity;->sunDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 899
+    .line 911
     iget-boolean v3, p0, Lorg/telegram/ui/ThemeActivity;->lastIsDarkTheme:Z
 
     if-eqz v3, :cond_1
 
-    .line 900
+    .line 912
     invoke-virtual {v10}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result v3
@@ -5976,11 +6114,11 @@
 
     goto :goto_0
 
-    .line 902
+    .line 914
     :cond_1
     invoke-virtual {v10, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 904
+    .line 916
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/ThemeActivity;->sunDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -5988,7 +6126,7 @@
 
     const/4 v3, 0x5
 
-    .line 905
+    .line 917
     iget-object v4, p0, Lorg/telegram/ui/ThemeActivity;->sunDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(ILandroid/graphics/drawable/Drawable;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -6002,7 +6140,7 @@
     :cond_2
     if-nez v0, :cond_3
 
-    .line 907
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v4, Lorg/telegram/messenger/R$string;->ChatSettings:I
@@ -6015,14 +6153,14 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 908
+    .line 920
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
 
-    .line 909
+    .line 921
     sget v4, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
 
     invoke-virtual {v0, v2, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(II)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -6031,7 +6169,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 910
+    .line 922
     sget v4, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
     const-string v5, "AccDescrMoreOptions"
@@ -6042,7 +6180,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 911
+    .line 923
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 v4, 0x2
@@ -6059,7 +6197,7 @@
 
     invoke-virtual {v0, v4, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 912
+    .line 924
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_edit:I
@@ -6074,7 +6212,7 @@
 
     invoke-virtual {v0, v3, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 913
+    .line 925
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_palette:I
@@ -6089,7 +6227,7 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 914
+    .line 926
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 v3, 0x4
@@ -6108,7 +6246,7 @@
 
     goto :goto_1
 
-    .line 916
+    .line 928
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -6122,7 +6260,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 919
+    .line 931
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -6132,57 +6270,57 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 1029
+    .line 1041
     new-instance v0, Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ThemeActivity$ListAdapter;-><init>(Lorg/telegram/ui/ThemeActivity;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
-    .line 1031
+    .line 1043
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const-string v3, "windowBackgroundGray"
 
-    .line 1032
+    .line 1044
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1033
+    .line 1045
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 1035
+    .line 1047
     new-instance v3, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v3, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 1036
+    .line 1048
     new-instance v4, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {v4, p1, v1, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     invoke-virtual {v3, v4}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1037
+    .line 1049
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1038
+    .line 1050
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v3, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 1039
+    .line 1051
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
@@ -6193,18 +6331,18 @@
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 1040
+    .line 1052
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    invoke-static {v2, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v3, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1041
+    .line 1053
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda13;
@@ -6213,7 +6351,39 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;)V
 
-    .line 1335
+    .line 1357
+    iget p1, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
+
+    if-nez p1, :cond_4
+
+    .line 1358
+    new-instance p1, Landroidx/recyclerview/widget/DefaultItemAnimator;
+
+    invoke-direct {p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
+
+    const-wide/16 v0, 0x15e
+
+    .line 1359
+    invoke-virtual {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setDurations(J)V
+
+    .line 1360
+    sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 1361
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
+
+    .line 1362
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/SimpleItemAnimator;->setSupportsChangeAnimations(Z)V
+
+    .line 1363
+    iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
+
+    .line 1366
+    :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
@@ -6222,7 +6392,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 7
 
-    .line 824
+    .line 836
     sget p2, Lorg/telegram/messenger/NotificationCenter;->themeChanged:I
 
     const/4 v0, 0x0
@@ -6231,14 +6401,14 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 825
+    .line 837
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 828
+    .line 840
     :cond_0
     sget p1, Lorg/telegram/messenger/R$string;->AutoNightModeOff:I
 
@@ -6250,21 +6420,21 @@
 
     invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
-    .line 829
+    .line 841
     sput v0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    .line 830
+    .line 842
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->saveAutoNightThemeConfig()V
 
-    .line 831
+    .line 843
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->cancelAutoNightThemeCallbacks()V
 
-    .line 832
+    .line 844
     invoke-direct {p0, v1}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
 
     goto/16 :goto_3
 
-    .line 834
+    .line 846
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->locationPermissionGranted:I
 
@@ -6272,12 +6442,12 @@
 
     const/4 p1, 0x0
 
-    .line 835
+    .line 847
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/ThemeActivity;->updateSunTime(Landroid/location/Location;Z)V
 
     goto/16 :goto_3
 
-    .line 836
+    .line 848
     :cond_2
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didSetNewWallpapper:I
 
@@ -6289,13 +6459,13 @@
 
     goto/16 :goto_2
 
-    .line 841
+    .line 853
     :cond_3
     sget p2, Lorg/telegram/messenger/NotificationCenter;->themeAccentListUpdated:I
 
     if-ne p1, p2, :cond_4
 
-    .line 842
+    .line 854
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     if-eqz p1, :cond_f
@@ -6306,7 +6476,7 @@
 
     if-eq p2, p3, :cond_f
 
-    .line 843
+    .line 855
     new-instance p3, Ljava/lang/Object;
 
     invoke-direct {p3}, Ljava/lang/Object;-><init>()V
@@ -6315,34 +6485,34 @@
 
     goto/16 :goto_3
 
-    .line 845
+    .line 857
     :cond_4
     sget p2, Lorg/telegram/messenger/NotificationCenter;->themeListUpdated:I
 
     if-ne p1, p2, :cond_5
 
-    .line 846
+    .line 858
     invoke-direct {p0, v1}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
 
     goto/16 :goto_3
 
-    .line 847
+    .line 859
     :cond_5
     sget p2, Lorg/telegram/messenger/NotificationCenter;->themeUploadedToServer:I
 
     if-ne p1, p2, :cond_7
 
-    .line 848
+    .line 860
     aget-object p1, p3, v0
 
     check-cast p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 849
+    .line 861
     aget-object p2, p3, v1
 
     check-cast p2, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    .line 850
+    .line 862
     iget-object p3, p0, Lorg/telegram/ui/ThemeActivity;->sharingTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     if-ne p1, p3, :cond_f
@@ -6351,7 +6521,7 @@
 
     if-ne p2, p3, :cond_f
 
-    .line 851
+    .line 863
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -6390,7 +6560,7 @@
 
     move-result-object v5
 
-    .line 852
+    .line 864
     new-instance p1, Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -6411,33 +6581,33 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 853
+    .line 865
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingProgressDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     if-eqz p1, :cond_f
 
-    .line 854
+    .line 866
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     goto/16 :goto_3
 
-    .line 857
+    .line 869
     :cond_7
     sget p2, Lorg/telegram/messenger/NotificationCenter;->themeUploadError:I
 
     if-ne p1, p2, :cond_8
 
-    .line 858
+    .line 870
     aget-object p1, p3, v0
 
     check-cast p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 859
+    .line 871
     aget-object p2, p3, v1
 
     check-cast p2, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    .line 860
+    .line 872
     iget-object p3, p0, Lorg/telegram/ui/ThemeActivity;->sharingTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     if-ne p1, p3, :cond_f
@@ -6450,18 +6620,18 @@
 
     if-nez p1, :cond_f
 
-    .line 861
+    .line 873
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     goto :goto_3
 
-    .line 863
+    .line 875
     :cond_8
     sget p2, Lorg/telegram/messenger/NotificationCenter;->needShareTheme:I
 
     if-ne p1, p2, :cond_b
 
-    .line 864
+    .line 876
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -6474,7 +6644,7 @@
 
     goto :goto_1
 
-    .line 867
+    .line 879
     :cond_9
     aget-object p1, p3, v0
 
@@ -6482,14 +6652,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 868
+    .line 880
     aget-object p1, p3, v1
 
     check-cast p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingAccent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    .line 869
+    .line 881
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -6502,10 +6672,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingProgressDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 870
+    .line 882
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 871
+    .line 883
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->sharingProgressDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     new-instance p2, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda4;
@@ -6520,49 +6690,49 @@
     :goto_1
     return-void
 
-    .line 876
+    .line 888
     :cond_b
     sget p2, Lorg/telegram/messenger/NotificationCenter;->needSetDayNightTheme:I
 
     if-ne p1, p2, :cond_c
 
-    .line 877
+    .line 889
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->updateMenuItem()V
 
-    .line 878
+    .line 890
     invoke-virtual {p0}, Lorg/telegram/ui/ThemeActivity;->checkCurrentDayNight()V
 
     goto :goto_3
 
-    .line 879
+    .line 891
     :cond_c
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiPreviewThemesChanged:I
 
     if-ne p1, p2, :cond_f
 
-    .line 880
+    .line 892
     iget p1, p0, Lorg/telegram/ui/ThemeActivity;->themeListRow2:I
 
     if-ltz p1, :cond_f
 
-    .line 881
+    .line 893
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     goto :goto_3
 
-    .line 837
+    .line 849
     :cond_d
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_e
 
-    .line 838
+    .line 850
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
-    .line 840
+    .line 852
     :cond_e
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->updateMenuItem()V
 
@@ -6584,12 +6754,12 @@
 
     move-object/from16 v0, p0
 
-    .line 2496
+    .line 2523
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2498
+    .line 2525
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6704,7 +6874,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2499
+    .line 2526
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -6727,7 +6897,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2501
+    .line 2528
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6744,7 +6914,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2502
+    .line 2529
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6759,7 +6929,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2503
+    .line 2530
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6774,7 +6944,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2504
+    .line 2531
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6789,7 +6959,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2505
+    .line 2532
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6804,7 +6974,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2506
+    .line 2533
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6819,7 +6989,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2507
+    .line 2534
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6834,7 +7004,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2508
+    .line 2535
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6853,7 +7023,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2510
+    .line 2537
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6868,7 +7038,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2512
+    .line 2539
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6893,7 +7063,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2514
+    .line 2541
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6924,7 +7094,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2516
+    .line 2543
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6949,7 +7119,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2517
+    .line 2544
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -6982,7 +7152,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2519
+    .line 2546
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7011,7 +7181,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2520
+    .line 2547
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7044,7 +7214,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2522
+    .line 2549
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7069,7 +7239,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2524
+    .line 2551
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7096,7 +7266,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2525
+    .line 2552
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7123,7 +7293,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2527
+    .line 2554
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7150,7 +7320,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2528
+    .line 2555
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7177,7 +7347,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2529
+    .line 2556
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7204,7 +7374,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2531
+    .line 2558
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7233,7 +7403,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2532
+    .line 2559
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7264,7 +7434,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2533
+    .line 2560
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7293,7 +7463,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2534
+    .line 2561
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7322,7 +7492,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2536
+    .line 2563
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7347,7 +7517,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2537
+    .line 2564
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7378,7 +7548,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2539
+    .line 2566
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7407,7 +7577,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2540
+    .line 2567
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7434,7 +7604,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2542
+    .line 2569
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7461,7 +7631,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2543
+    .line 2570
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7488,7 +7658,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2545
+    .line 2572
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7513,7 +7683,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2546
+    .line 2573
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7542,7 +7712,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2548
+    .line 2575
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7569,7 +7739,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2549
+    .line 2576
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7600,7 +7770,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2550
+    .line 2577
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7625,7 +7795,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2551
+    .line 2578
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7652,7 +7822,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2552
+    .line 2579
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7687,7 +7857,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2553
+    .line 2580
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7726,7 +7896,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2554
+    .line 2581
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7753,7 +7923,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2555
+    .line 2582
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7782,7 +7952,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2556
+    .line 2583
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7815,7 +7985,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2557
+    .line 2584
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7850,7 +8020,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2558
+    .line 2585
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7883,7 +8053,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2559
+    .line 2586
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7918,7 +8088,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2560
+    .line 2587
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7951,7 +8121,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2561
+    .line 2588
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7986,7 +8156,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2562
+    .line 2589
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8019,7 +8189,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2563
+    .line 2590
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8044,7 +8214,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2564
+    .line 2591
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8067,7 +8237,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2565
+    .line 2592
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8098,7 +8268,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2566
+    .line 2593
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8127,7 +8297,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2567
+    .line 2594
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8162,7 +8332,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2568
+    .line 2595
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8195,7 +8365,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2569
+    .line 2596
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8230,7 +8400,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2570
+    .line 2597
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8257,7 +8427,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2571
+    .line 2598
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8286,7 +8456,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2572
+    .line 2599
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8307,7 +8477,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2573
+    .line 2600
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8330,7 +8500,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2574
+    .line 2601
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8351,7 +8521,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2575
+    .line 2602
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8374,7 +8544,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2576
+    .line 2603
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8395,7 +8565,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2577
+    .line 2604
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8418,7 +8588,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2578
+    .line 2605
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8439,7 +8609,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2579
+    .line 2606
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8462,7 +8632,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2580
+    .line 2607
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8483,7 +8653,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2581
+    .line 2608
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8506,7 +8676,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2583
+    .line 2610
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8527,7 +8697,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2584
+    .line 2611
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8550,7 +8720,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2585
+    .line 2612
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8571,7 +8741,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2586
+    .line 2613
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ThemeActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -8594,7 +8764,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2587
+    .line 2614
     new-instance v2, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda12;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/ThemeActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/ThemeActivity;)V
@@ -8621,7 +8791,7 @@
 .method public onFragmentCreate()Z
     .locals 2
 
-    .line 785
+    .line 797
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8630,7 +8800,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 786
+    .line 798
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8639,7 +8809,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 787
+    .line 799
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8648,7 +8818,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 788
+    .line 800
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8657,7 +8827,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 789
+    .line 801
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8666,7 +8836,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 790
+    .line 802
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8675,7 +8845,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 791
+    .line 803
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8684,7 +8854,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 792
+    .line 804
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8693,7 +8863,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 793
+    .line 805
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8702,7 +8872,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 794
+    .line 806
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8711,7 +8881,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 795
+    .line 807
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8720,22 +8890,22 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 796
+    .line 808
     iget v0, p0, Lorg/telegram/ui/ThemeActivity;->currentType:I
 
     if-nez v0, :cond_0
 
-    .line 797
+    .line 809
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->loadRemoteThemes(IZ)V
 
-    .line 798
+    .line 810
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->checkCurrentRemoteTheme(Z)V
 
-    .line 800
+    .line 812
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
@@ -8747,10 +8917,10 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 805
+    .line 817
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
-    .line 806
+    .line 818
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8759,10 +8929,10 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 807
+    .line 819
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity;->stopLocationUpdate()V
 
-    .line 808
+    .line 820
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8771,7 +8941,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 809
+    .line 821
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8780,7 +8950,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 810
+    .line 822
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8789,7 +8959,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 811
+    .line 823
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8798,7 +8968,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 812
+    .line 824
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8807,7 +8977,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 813
+    .line 825
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8816,7 +8986,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 814
+    .line 826
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8825,7 +8995,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 815
+    .line 827
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8834,7 +9004,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 816
+    .line 828
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8843,7 +9013,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 817
+    .line 829
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -8852,7 +9022,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 818
+    .line 830
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->saveAutoNightThemeConfig()V
 
     return-void
@@ -8861,17 +9031,17 @@
 .method public onResume()V
     .locals 1
 
-    .line 1358
+    .line 1389
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 1359
+    .line 1390
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity;->listAdapter:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 1360
+    .line 1391
     invoke-direct {p0, v0}, Lorg/telegram/ui/ThemeActivity;->updateRows(Z)V
 
     :cond_0
@@ -8883,7 +9053,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1367
+    .line 1398
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -8892,7 +9062,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 1368
+    .line 1399
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1

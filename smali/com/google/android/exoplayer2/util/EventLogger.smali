@@ -664,13 +664,13 @@
 .end method
 
 .method private static getTimeString(J)Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     const-string p0, "?"
 
@@ -1912,7 +1912,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v2, 0x0
+    move v2, p2
 
     :goto_0
     const/4 v3, 0x3
@@ -2097,7 +2097,7 @@
 
     const/4 p2, 0x0
 
-    const/4 v0, 0x0
+    move v0, p2
 
     .line 265
     :goto_0
@@ -2123,7 +2123,7 @@
     .line 267
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/util/EventLogger;->logd(Ljava/lang/String;)V
 
-    const/4 v4, 0x0
+    move v4, p2
 
     .line 268
     :goto_1
@@ -2205,9 +2205,9 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, p2
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_2
     if-nez v0, :cond_4
@@ -2226,7 +2226,7 @@
 
     check-cast v4, Lcom/google/android/exoplayer2/Tracks$Group;
 
-    const/4 v5, 0x0
+    move v5, p2
 
     :goto_3
     if-nez v0, :cond_3

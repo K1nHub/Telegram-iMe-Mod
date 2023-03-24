@@ -114,17 +114,17 @@
 .end method
 
 .method public n(J)V
-    .locals 3
+    .locals 2
 
     const-wide/32 v0, 0x7ffffff7
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
-    long-to-int p2, p1
+    long-to-int p1, p1
 
-    new-array p1, p2, [D
+    new-array p1, p1, [D
 
     iput-object p1, p0, Lj$/util/stream/O3;->c:[D
 

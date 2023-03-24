@@ -527,7 +527,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v9, 0x0
+    move v9, v0
 
     :goto_0
     if-ge v9, v8, :cond_3
@@ -749,7 +749,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v9, 0x0
+    move v9, v3
 
     :goto_1
     if-ge v9, v0, :cond_7
@@ -802,7 +802,7 @@
     return-object v2
 
     :cond_6
-    const/4 v3, 0x1
+    move v3, v1
 
     :goto_2
     add-int/lit8 v9, v9, 0x1

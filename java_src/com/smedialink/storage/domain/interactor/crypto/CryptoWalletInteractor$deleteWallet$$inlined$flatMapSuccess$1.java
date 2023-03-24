@@ -5,7 +5,6 @@ import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.BlockchainType;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.util.concurrent.Callable;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -37,7 +36,7 @@ public final class CryptoWalletInteractor$deleteWallet$$inlined$flatMapSuccess$1
         }
         final CryptoWalletInteractor cryptoWalletInteractor = this.this$0;
         final BlockchainType blockchainType = this.$blockchainType$inlined;
-        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$1$1
+        Observable flatMap = Observable.fromCallable(new Callable() { // from class: com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$1$1
             @Override // java.util.concurrent.Callable
             public /* bridge */ /* synthetic */ Object call() {
                 call();
@@ -50,23 +49,8 @@ public final class CryptoWalletInteractor$deleteWallet$$inlined$flatMapSuccess$1
                 cryptoAccessManager = CryptoWalletInteractor.this.cryptoAccessManager;
                 cryptoAccessManager.deleteWallet(blockchainType);
             }
-        });
-        final CryptoWalletInteractor$deleteWallet$1$2 cryptoWalletInteractor$deleteWallet$1$2 = new CryptoWalletInteractor$deleteWallet$1$2(this.this$0);
-        Observable flatMap = fromCallable.flatMap(new Function(cryptoWalletInteractor$deleteWallet$1$2) { // from class: com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor$sam$io_reactivex_functions_Function$0
-            private final /* synthetic */ Function1 function;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                Intrinsics.checkNotNullParameter(cryptoWalletInteractor$deleteWallet$1$2, "function");
-                this.function = cryptoWalletInteractor$deleteWallet$1$2;
-            }
-
-            @Override // io.reactivex.functions.Function
-            public final /* synthetic */ Object apply(Object obj) {
-                return this.function.invoke(obj);
-            }
-        });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "fun deleteWallet(blockch…ulersProvider.io())\n    }");
+        }).flatMap(new CryptoWalletInteractor$sam$io_reactivex_functions_Function$0(new CryptoWalletInteractor$deleteWallet$1$2(this.this$0, this.$blockchainType$inlined)));
+        Intrinsics.checkNotNullExpressionValue(flatMap, "fun deleteWallet(\n      …ulersProvider.io())\n    }");
         return flatMap;
     }
 }

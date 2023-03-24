@@ -41,7 +41,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 191
     :goto_0
@@ -120,7 +120,7 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 206
     :goto_0
@@ -188,51 +188,51 @@
 .method private static durationIsValid(JI)Z
     .locals 6
 
-    const/4 v0, 0x0
+    const-wide v0, -0x4979cb9e00L
 
-    const-wide v1, -0x4979cb9e00L
+    cmp-long v0, p0, v0
 
-    cmp-long v3, p0, v1
+    const/4 v1, 0x0
 
-    if-ltz v3, :cond_4
+    if-ltz v0, :cond_4
 
-    const-wide v1, 0x4979cb9e00L
+    const-wide v2, 0x4979cb9e00L
 
-    cmp-long v3, p0, v1
+    cmp-long v0, p0, v2
 
-    if-lez v3, :cond_0
+    if-lez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    int-to-long v1, p2
+    int-to-long v2, p2
 
-    const-wide/32 v3, -0x3b9ac9ff
+    const-wide/32 v4, -0x3b9ac9ff
 
-    cmp-long v5, v1, v3
+    cmp-long v0, v2, v4
 
-    if-ltz v5, :cond_4
+    if-ltz v0, :cond_4
 
     .line 320
-    sget-wide v3, Lio/grpc/internal/JsonUtil;->NANOS_PER_SECOND:J
+    sget-wide v4, Lio/grpc/internal/JsonUtil;->NANOS_PER_SECOND:J
 
-    cmp-long v5, v1, v3
+    cmp-long v0, v2, v4
 
-    if-ltz v5, :cond_1
+    if-ltz v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v3, p0, v1
+    cmp-long p0, p0, v2
 
-    if-ltz v3, :cond_2
+    if-ltz p0, :cond_2
 
     if-gez p2, :cond_3
 
     :cond_2
-    if-gtz v3, :cond_4
+    if-gtz p0, :cond_4
 
     if-lez p2, :cond_3
 
@@ -245,7 +245,7 @@
 
     :cond_4
     :goto_0
-    return v0
+    return v1
 .end method
 
 .method public static getBoolean(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -542,7 +542,7 @@
 .end method
 
 .method public static getNumberAsInteger(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/Integer;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -579,9 +579,9 @@
 
     move-result-wide v2
 
-    cmpl-double v4, v0, v2
+    cmpl-double v0, v0, v2
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     .line 129
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -813,7 +813,7 @@
 .end method
 
 .method private static normalizedDuration(JI)J
-    .locals 8
+    .locals 9
 
     int-to-long v0, p2
 
@@ -822,9 +822,9 @@
 
     neg-long v4, v2
 
-    cmp-long v6, v0, v4
+    cmp-long v4, v0, v4
 
-    if-lez v6, :cond_0
+    if-lez v4, :cond_0
 
     cmp-long v4, v0, v2
 
@@ -844,38 +844,38 @@
     long-to-int p2, v0
 
     :cond_1
-    const-wide/16 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v4, 0x0
+    cmp-long v4, p0, v0
 
-    cmp-long v6, p0, v4
+    const-wide/16 v5, 0x1
 
-    if-lez v6, :cond_2
+    if-lez v4, :cond_2
 
     if-gez p2, :cond_2
 
-    int-to-long v6, p2
+    int-to-long v7, p2
 
-    add-long/2addr v6, v2
+    add-long/2addr v7, v2
 
-    long-to-int p2, v6
+    long-to-int p2, v7
 
-    sub-long/2addr p0, v0
+    sub-long/2addr p0, v5
 
     :cond_2
-    cmp-long v6, p0, v4
+    cmp-long v0, p0, v0
 
-    if-gez v6, :cond_3
+    if-gez v0, :cond_3
 
     if-lez p2, :cond_3
 
-    int-to-long v4, p2
+    int-to-long v0, p2
 
-    sub-long/2addr v4, v2
+    sub-long/2addr v0, v2
 
-    long-to-int p2, v4
+    long-to-int p2, v0
 
-    add-long/2addr p0, v0
+    add-long/2addr p0, v5
 
     .line 295
     :cond_3
@@ -938,7 +938,7 @@
 .end method
 
 .method private static parseDuration(Ljava/lang/String;)J
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/text/ParseException;
@@ -986,12 +986,12 @@
 
     move-result-object p0
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 236
     :goto_0
@@ -1046,7 +1046,7 @@
 
     if-eqz v6, :cond_2
 
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_2
 
@@ -1058,9 +1058,9 @@
     :goto_2
     const-wide/16 v6, 0x0
 
-    cmp-long v8, v3, v6
+    cmp-long v6, v3, v6
 
-    if-ltz v8, :cond_4
+    if-ltz v6, :cond_4
 
     if-eqz v0, :cond_3
 
@@ -1140,9 +1140,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/16 v3, 0x9
@@ -1207,43 +1207,43 @@
 .end method
 
 .method private static saturatedAdd(JJ)J
-    .locals 7
+    .locals 5
 
     add-long v0, p0, p2
 
     xor-long/2addr p2, p0
 
-    const/4 v2, 0x1
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    cmp-long p2, p2, v2
 
-    const-wide/16 v4, 0x0
+    const/4 p3, 0x1
 
-    cmp-long v6, p2, v4
+    const/4 v4, 0x0
 
-    if-gez v6, :cond_0
+    if-gez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, p3
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v4
 
     :goto_0
     xor-long/2addr p0, v0
 
-    cmp-long p3, p0, v4
+    cmp-long p0, p0, v2
 
-    if-ltz p3, :cond_1
+    if-ltz p0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    move p3, v4
 
     :goto_1
-    or-int p0, p2, v2
+    or-int p0, p2, p3
 
     if-eqz p0, :cond_2
 

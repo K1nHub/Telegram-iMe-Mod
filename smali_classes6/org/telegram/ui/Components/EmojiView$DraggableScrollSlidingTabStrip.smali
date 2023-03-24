@@ -876,7 +876,7 @@
     if-eqz p1, :cond_16
 
     :cond_15
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_16
     return v1

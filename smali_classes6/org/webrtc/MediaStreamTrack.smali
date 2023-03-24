@@ -24,16 +24,16 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .locals 3
+    .locals 2
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     .line 79
     iput-wide p1, p0, Lorg/webrtc/MediaStreamTrack;->nativeTrack:J
@@ -52,16 +52,16 @@
 .end method
 
 .method private checkMediaStreamTrackExists()V
-    .locals 5
+    .locals 4
 
     .line 119
     iget-wide v0, p0, Lorg/webrtc/MediaStreamTrack;->nativeTrack:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
@@ -77,28 +77,28 @@
 .end method
 
 .method static createMediaStreamTrack(J)Lorg/webrtc/MediaStreamTrack;
-    .locals 4
+    .locals 3
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    cmp-long v0, p0, v0
 
-    cmp-long v3, p0, v1
+    const/4 v1, 0x0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v0
+    return-object v1
 
     .line 63
     :cond_0
     invoke-static {p0, p1}, Lorg/webrtc/MediaStreamTrack;->nativeGetKind(J)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v2, "audio"
 
     .line 64
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -115,19 +115,21 @@
     const-string v2, "video"
 
     .line 66
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     .line 67
     new-instance v0, Lorg/webrtc/VideoTrack;
 
     invoke-direct {v0, p0, p1}, Lorg/webrtc/VideoTrack;-><init>(J)V
 
-    :cond_2
     return-object v0
+
+    :cond_2
+    return-object v1
 .end method
 
 .method private static native nativeGetEnabled(J)Z

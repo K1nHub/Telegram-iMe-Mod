@@ -231,19 +231,19 @@
 .end method
 
 .method public static final isWalletAuthBot(J)Z
-    .locals 3
+    .locals 2
 
     const-wide/32 v0, 0x3b591fa2
 
-    cmp-long v2, p0, v0
+    cmp-long v0, p0, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     const-wide/32 v0, 0x40254d83
 
-    cmp-long v2, p0, v0
+    cmp-long p0, p0, v0
 
-    if-nez v2, :cond_0
+    if-nez p0, :cond_0
 
     goto :goto_0
 

@@ -6,12 +6,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class GetCancelTransactionDataResponse {
     private final String feeTokenCode;
-    private final TransactionParamsResponse transactionParams;
+    private final TransactionParamsResponse.EVM transactionParams;
     private final String value;
 
-    public static /* synthetic */ GetCancelTransactionDataResponse copy$default(GetCancelTransactionDataResponse getCancelTransactionDataResponse, TransactionParamsResponse transactionParamsResponse, String str, String str2, int i, Object obj) {
+    public static /* synthetic */ GetCancelTransactionDataResponse copy$default(GetCancelTransactionDataResponse getCancelTransactionDataResponse, TransactionParamsResponse.EVM evm, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            transactionParamsResponse = getCancelTransactionDataResponse.transactionParams;
+            evm = getCancelTransactionDataResponse.transactionParams;
         }
         if ((i & 2) != 0) {
             str = getCancelTransactionDataResponse.feeTokenCode;
@@ -19,10 +19,10 @@ public final class GetCancelTransactionDataResponse {
         if ((i & 4) != 0) {
             str2 = getCancelTransactionDataResponse.value;
         }
-        return getCancelTransactionDataResponse.copy(transactionParamsResponse, str, str2);
+        return getCancelTransactionDataResponse.copy(evm, str, str2);
     }
 
-    public final TransactionParamsResponse component1() {
+    public final TransactionParamsResponse.EVM component1() {
         return this.transactionParams;
     }
 
@@ -34,7 +34,7 @@ public final class GetCancelTransactionDataResponse {
         return this.value;
     }
 
-    public final GetCancelTransactionDataResponse copy(TransactionParamsResponse transactionParams, String feeTokenCode, String value) {
+    public final GetCancelTransactionDataResponse copy(TransactionParamsResponse.EVM transactionParams, String feeTokenCode, String value) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -60,7 +60,7 @@ public final class GetCancelTransactionDataResponse {
         return "GetCancelTransactionDataResponse(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", value=" + this.value + ')';
     }
 
-    public GetCancelTransactionDataResponse(TransactionParamsResponse transactionParams, String feeTokenCode, String value) {
+    public GetCancelTransactionDataResponse(TransactionParamsResponse.EVM transactionParams, String feeTokenCode, String value) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -69,7 +69,7 @@ public final class GetCancelTransactionDataResponse {
         this.value = value;
     }
 
-    public final TransactionParamsResponse getTransactionParams() {
+    public final TransactionParamsResponse.EVM getTransactionParams() {
         return this.transactionParams;
     }
 

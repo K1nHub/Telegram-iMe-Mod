@@ -47,14 +47,14 @@ public class FragmentContextViewWavesDrawable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00cd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void draw(float r21, float r22, float r23, float r24, android.graphics.Canvas r25, org.telegram.p048ui.Components.FragmentContextView r26, float r27) {
         /*
-            Method dump skipped, instructions count: 611
+            Method dump skipped, instructions count: 605
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.FragmentContextViewWavesDrawable.draw(float, float, float, float, android.graphics.Canvas, org.telegram.ui.Components.FragmentContextView, float):void");

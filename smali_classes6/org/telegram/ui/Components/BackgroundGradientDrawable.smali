@@ -659,7 +659,7 @@
 
     if-le p4, v0, :cond_4
 
-    const/4 p4, 0x0
+    move p4, v1
 
     .line 269
     :goto_1
@@ -680,7 +680,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-nez v0, :cond_5
@@ -886,7 +886,7 @@
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v7, 0x0
+    move v7, v1
 
     .line 241
     :goto_0
@@ -1128,7 +1128,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, p3
+    mul-float/2addr v2, p3
 
     float-to-int v2, v2
 
@@ -1139,7 +1139,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, p3
+    mul-float/2addr v3, p3
 
     float-to-int p3, v3
 
@@ -1152,7 +1152,7 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_0
     if-ge v5, v3, :cond_3
@@ -1387,7 +1387,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 217
     :goto_0

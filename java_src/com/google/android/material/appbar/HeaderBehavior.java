@@ -111,10 +111,10 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
         L13:
             int r12 = r14.getActionIndex()
             if (r12 != 0) goto L1b
-            r12 = 1
+            r12 = r2
             goto L1c
         L1b:
-            r12 = 0
+            r12 = r3
         L1c:
             int r13 = r14.getPointerId(r12)
             r11.activePointerId = r13
@@ -142,7 +142,7 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
             r6 = r13
             r4.scroll(r5, r6, r7, r8, r9)
         L4c:
-            r12 = 0
+            r12 = r3
             goto L81
         L4e:
             android.view.VelocityTracker r0 = r11.velocityTracker
@@ -161,10 +161,10 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
             r6 = r12
             r7 = r13
             r5.fling(r6, r7, r8, r9, r10)
-            r12 = 1
+            r12 = r2
             goto L73
         L72:
-            r12 = 0
+            r12 = r3
         L73:
             r11.isBeingDragged = r3
             r11.activePointerId = r1
@@ -183,7 +183,7 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
             if (r12 == 0) goto L8f
             goto L90
         L8f:
-            r2 = 0
+            r2 = r3
         L90:
             return r2
         */

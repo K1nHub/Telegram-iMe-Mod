@@ -97,11 +97,11 @@
 
     const v0, -0x800001
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    cmpl-float v1, p0, v0
 
-    cmpl-float v2, p0, v0
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
     if-nez p1, :cond_1
 
@@ -111,22 +111,22 @@
 
     if-ltz v3, :cond_0
 
-    cmpl-float v3, p0, v1
+    cmpl-float v3, p0, v2
 
     if-lez v3, :cond_1
 
     :cond_0
-    return v1
+    return v2
 
     :cond_1
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
     return p0
 
     :cond_2
     if-nez p1, :cond_3
 
-    return v1
+    return v2
 
     :cond_3
     return v0
@@ -229,20 +229,20 @@
     :cond_1
     const/high16 p0, 0x3f000000    # 0.5f
 
-    const/high16 v1, 0x40000000    # 2.0f
-
     cmpg-float p0, p1, p0
+
+    const/high16 v1, 0x40000000    # 2.0f
 
     if-gtz p0, :cond_2
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     return p1
 
     :cond_2
     sub-float/2addr v0, p1
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     return v0
 

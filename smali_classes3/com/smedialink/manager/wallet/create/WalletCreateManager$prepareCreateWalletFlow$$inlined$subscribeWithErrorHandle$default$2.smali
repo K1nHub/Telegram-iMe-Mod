@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/manager/wallet/create/WalletCreateManager;->prepareCreateWalletFlow(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    value = Lcom/smedialink/manager/wallet/create/WalletCreateManager;->prepareCreateWalletFlow(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType$Initial;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

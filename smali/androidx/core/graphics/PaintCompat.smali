@@ -123,7 +123,7 @@
 
     const/high16 v8, 0x40000000    # 2.0f
 
-    mul-float v5, v5, v8
+    mul-float/2addr v5, v8
 
     cmpl-float v5, v6, v5
 
@@ -132,7 +132,7 @@
     return v2
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_0
     if-ge v5, v0, :cond_4

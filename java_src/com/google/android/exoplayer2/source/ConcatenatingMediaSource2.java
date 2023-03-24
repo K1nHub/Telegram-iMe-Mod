@@ -222,12 +222,12 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         ImmutableList.Builder builder3 = ImmutableList.builder();
         ImmutableList.Builder builder4 = ImmutableList.builder();
         boolean z = true;
-        int i2 = 0;
         boolean z2 = true;
+        boolean z3 = true;
+        int i2 = 0;
         Object obj = null;
         int i3 = 0;
         long j = 0;
-        boolean z3 = true;
         boolean z4 = false;
         long j2 = 0;
         long j3 = 0;

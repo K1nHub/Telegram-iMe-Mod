@@ -299,12 +299,12 @@
 
     if-eqz v3, :cond_4
 
-    const/16 v3, 0x50
+    move v3, p2
 
     goto :goto_0
 
     :cond_4
-    const/16 v3, 0x30
+    move v3, p3
 
     :goto_0
     invoke-static {p4, p4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -378,7 +378,7 @@
     goto :goto_2
 
     :cond_7
-    const/16 p2, 0x30
+    move p2, p3
 
     :goto_2
     invoke-static {p4, p4, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -753,7 +753,7 @@
 
     sub-float v2, v10, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
@@ -773,7 +773,7 @@
 
     sub-float v3, v10, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationX(F)V
 
@@ -810,7 +810,7 @@
 
     iget v2, v2, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     .line 443
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->topView:Landroid/view/View;
@@ -850,7 +850,7 @@
 
     const/4 v13, 0x0
 
-    const/4 v1, 0x0
+    move v1, v13
 
     .line 451
     :goto_0
@@ -887,7 +887,7 @@
 
     if-nez v2, :cond_1
 
-    const/4 v15, 0x1
+    move v15, v14
 
     goto :goto_1
 
@@ -897,10 +897,10 @@
     goto :goto_0
 
     :cond_2
-    const/4 v15, 0x0
+    move v15, v13
 
     :goto_1
-    const/4 v7, 0x0
+    move v7, v13
 
     :goto_2
     const/4 v1, 0x2
@@ -961,7 +961,7 @@
 
     move-object/from16 v1, p1
 
-    const v14, -0xf4240
+    move v14, v5
 
     move/from16 v5, v18
 
@@ -973,16 +973,16 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    const/4 v1, 0x0
+    move v1, v13
 
     goto :goto_3
 
     :cond_4
+    move v14, v5
+
+    move/from16 v16, v6
+
     move/from16 v18, v7
-
-    const v14, -0xf4240
-
-    const/16 v16, 0xff
 
     .line 467
     iget v1, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->gapStartY:I
@@ -1015,9 +1015,9 @@
     goto :goto_4
 
     :cond_5
-    const/4 v1, 0x1
+    move v2, v13
 
-    const/4 v2, 0x0
+    const/4 v1, 0x1
 
     .line 472
     :goto_4
@@ -1030,7 +1030,7 @@
     goto :goto_5
 
     :cond_6
-    const/16 v6, 0xff
+    move/from16 v6, v16
 
     :goto_5
     invoke-virtual {v3, v6}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
@@ -1054,7 +1054,7 @@
 
     sub-float v5, v10, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -1066,7 +1066,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleX:F
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     float-to-int v5, v5
 
@@ -1095,7 +1095,7 @@
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleY:F
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     float-to-int v1, v1
 
@@ -1127,7 +1127,7 @@
     :cond_8
     const/4 v5, 0x1
 
-    const/4 v6, 0x0
+    move v6, v13
 
     :goto_6
     add-int/2addr v4, v6
@@ -1140,7 +1140,7 @@
 
     iget v7, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleX:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -1194,7 +1194,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleX:F
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
@@ -1216,7 +1216,7 @@
 
     if-gez v3, :cond_d
 
-    const/4 v3, 0x0
+    move v3, v13
 
     goto :goto_7
 
@@ -1236,7 +1236,7 @@
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleX:F
 
-    mul-float v4, v4, v6
+    mul-float/2addr v4, v6
 
     float-to-int v4, v4
 
@@ -1248,7 +1248,7 @@
 
     iget v7, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleY:F
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     float-to-int v6, v6
 
@@ -1340,7 +1340,7 @@
     .line 507
     invoke-virtual {v8, v3}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    const/4 v1, 0x0
+    move v1, v13
 
     .line 508
     :goto_9
@@ -1391,7 +1391,7 @@
 
     move-object v7, v3
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :cond_10
     if-eq v7, v0, :cond_11
@@ -1427,7 +1427,7 @@
 
     move-result v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     invoke-virtual {v8, v4, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -1456,7 +1456,7 @@
     :goto_a
     add-int/lit8 v7, v18, 0x1
 
-    const/4 v14, 0x1
+    move v14, v5
 
     goto/16 :goto_2
 
@@ -1490,7 +1490,7 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, v6
+    mul-float/2addr v1, v6
 
     float-to-int v6, v1
 
@@ -1505,7 +1505,7 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v1, v2
 
@@ -1672,7 +1672,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->backScaleY:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -1870,7 +1870,7 @@
 
     move-result v4
 
-    mul-int v3, v3, v4
+    mul-int/2addr v3, v4
 
     const/16 v4, 0x20
 
@@ -1886,7 +1886,7 @@
 
     int-to-float v4, v0
 
-    mul-float v4, v4, p1
+    mul-float/2addr v4, p1
 
     cmpl-float v3, v3, v4
 
@@ -1917,7 +1917,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_2
     if-ge v2, v1, :cond_7
@@ -1976,7 +1976,7 @@
 
     int-to-float v6, v0
 
-    mul-float v6, v6, p1
+    mul-float/2addr v6, p1
 
     cmpl-float v5, v5, v6
 
@@ -2155,7 +2155,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v2, v0, :cond_2
@@ -2171,12 +2171,12 @@
 
     if-nez v2, :cond_0
 
-    const/4 v5, 0x6
+    move v5, v4
 
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x0
+    move v5, v1
 
     :goto_1
     add-int/lit8 v6, v0, -0x1
@@ -2186,7 +2186,7 @@
     goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v1
 
     .line 567
     :goto_2
@@ -2220,7 +2220,7 @@
 
     move-object v3, v1
 
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     if-ge v4, v0, :cond_2
@@ -2255,9 +2255,9 @@
     goto :goto_0
 
     :cond_2
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_2
     if-ge v4, v0, :cond_9
@@ -2305,23 +2305,23 @@
     goto :goto_3
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_4
 
     :cond_5
     :goto_3
-    const/4 v5, 0x1
+    move v5, v8
 
     :goto_4
     if-ne v6, v3, :cond_6
 
-    const/4 v6, 0x1
+    move v6, v8
 
     goto :goto_5
 
     :cond_6
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_5
     invoke-virtual {v9, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->updateSelectorBackground(ZZ)V
@@ -2329,12 +2329,12 @@
     :cond_7
     if-eqz v7, :cond_8
 
-    const/4 v5, 0x1
+    move v5, v8
 
     goto :goto_6
 
     :cond_8
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_6
     add-int/lit8 v4, v4, 0x1

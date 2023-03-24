@@ -180,11 +180,11 @@
 
     add-int/2addr v6, v3
 
+    move v7, v2
+
+    move v9, v7
+
     move v8, v5
-
-    const/4 v7, 0x0
-
-    const/4 v9, 0x0
 
     :goto_1
     const/4 v10, 0x1
@@ -223,9 +223,9 @@
 
     iput v8, v0, Lorg/telegram/ui/Components/ExtendedGridLayoutManager;->rowsCount:I
 
-    move v8, v5
+    move v9, v2
 
-    const/4 v9, 0x0
+    move v8, v5
 
     goto/16 :goto_a
 
@@ -247,12 +247,12 @@
 
     if-eqz v9, :cond_4
 
-    const/4 v11, 0x1
+    move v11, v10
 
     goto :goto_3
 
     :cond_4
-    const/4 v11, 0x0
+    move v11, v2
 
     :goto_3
     move v12, v5
@@ -271,11 +271,11 @@
 
     int-to-float v11, v4
 
-    mul-float v13, v13, v11
+    mul-float/2addr v13, v11
 
     div-float/2addr v13, v1
 
-    mul-float v12, v12, v13
+    mul-float/2addr v12, v13
 
     float-to-double v11, v12
 
@@ -302,13 +302,13 @@
     goto :goto_4
 
     :cond_6
-    const/4 v12, 0x0
+    move v12, v2
 
     goto :goto_5
 
     :cond_7
     :goto_4
-    const/4 v12, 0x1
+    move v12, v10
 
     :goto_5
     move/from16 v17, v12
@@ -498,27 +498,27 @@
     :cond_0
     iget v0, p1, Lorg/telegram/ui/Components/Size;->width:F
 
-    const/high16 v1, 0x42c80000    # 100.0f
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    cmpl-float v0, v0, v1
 
-    cmpl-float v0, v0, v2
+    const/high16 v2, 0x42c80000    # 100.0f
 
     if-nez v0, :cond_1
 
     .line 138
-    iput v1, p1, Lorg/telegram/ui/Components/Size;->width:F
+    iput v2, p1, Lorg/telegram/ui/Components/Size;->width:F
 
     .line 140
     :cond_1
     iget v0, p1, Lorg/telegram/ui/Components/Size;->height:F
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v1
 
     if-nez v0, :cond_2
 
     .line 141
-    iput v1, p1, Lorg/telegram/ui/Components/Size;->height:F
+    iput v2, p1, Lorg/telegram/ui/Components/Size;->height:F
 
     .line 143
     :cond_2

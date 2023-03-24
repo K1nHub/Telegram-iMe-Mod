@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;F)V
-    .locals 5
+    .locals 4
     .param p1    # Ljava/lang/String;
         .annotation build Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable$Param;
             id = 0x2
@@ -76,20 +76,20 @@
 
     float-to-double v0, p2
 
-    const/high16 p1, 0x43b40000    # 360.0f
-
     const-wide/16 v2, 0x0
 
-    cmpg-double v4, v0, v2
+    cmpg-double p1, v0, v2
 
-    if-gtz v4, :cond_0
+    const/high16 v0, 0x43b40000    # 360.0f
 
-    rem-float/2addr p2, p1
+    if-gtz p1, :cond_0
 
-    add-float/2addr p2, p1
+    rem-float/2addr p2, v0
+
+    add-float/2addr p2, v0
 
     :cond_0
-    rem-float/2addr p2, p1
+    rem-float/2addr p2, v0
 
     iput p2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaLink;->bearing:F
 

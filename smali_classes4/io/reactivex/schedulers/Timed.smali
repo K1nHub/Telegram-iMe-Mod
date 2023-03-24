@@ -133,7 +133,7 @@
     :goto_0
     const/16 v1, 0x1f
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 93
     iget-wide v2, p0, Lio/reactivex/schedulers/Timed;->time:J
@@ -142,11 +142,11 @@
 
     xor-long/2addr v2, v4
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    mul-int/2addr v0, v1
 
     .line 94
     iget-object v1, p0, Lio/reactivex/schedulers/Timed;->unit:Ljava/util/concurrent/TimeUnit;

@@ -1614,7 +1614,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x2
+    move v2, v4
 
     goto :goto_1
 
@@ -3819,7 +3819,7 @@
     goto :goto_1
 
     :cond_8
-    const/4 v2, 0x2
+    move v2, v4
 
     goto :goto_1
 

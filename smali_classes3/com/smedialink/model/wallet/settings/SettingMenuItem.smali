@@ -16,7 +16,7 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
-.field public static final enum ETH_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
+.field public static final enum CRYPTO_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
 .field public static final enum HELP:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
@@ -39,7 +39,7 @@
 
     new-array v0, v0, [Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
-    sget-object v1, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->ETH_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
+    sget-object v1, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->CRYPTO_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
     const/4 v2, 0x0
 
@@ -70,7 +70,7 @@
 
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
 
-    const-string v1, "ETH_ACCOUNT"
+    const-string v1, "CRYPTO_ACCOUNT"
 
     const/4 v2, 0x0
 
@@ -80,7 +80,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/smedialink/model/wallet/settings/SettingMenuItem;-><init>(Ljava/lang/String;IILjava/lang/Integer;I)V
 
-    sput-object v6, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->ETH_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
+    sput-object v6, Lcom/smedialink/model/wallet/settings/SettingMenuItem;->CRYPTO_ACCOUNT:Lcom/smedialink/model/wallet/settings/SettingMenuItem;
 
     .line 14
     new-instance v0, Lcom/smedialink/model/wallet/settings/SettingMenuItem;

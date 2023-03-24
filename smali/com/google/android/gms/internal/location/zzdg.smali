@@ -41,7 +41,7 @@
 
     move-object v10, v9
 
-    const/4 v4, 0x1
+    move v4, v2
 
     .line 2
     :goto_0

@@ -231,7 +231,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v9, -0x1
+    move v9, v10
 
     .line 173
     :goto_0
@@ -318,12 +318,12 @@
 
     if-eqz v14, :cond_5
 
-    const/4 v14, 0x1
+    move v14, v7
 
     goto :goto_4
 
     :cond_5
-    const/4 v14, 0x0
+    move v14, v8
 
     :goto_4
     iget v15, v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Format;->italicIndex:I
@@ -343,12 +343,12 @@
 
     if-eqz v15, :cond_6
 
-    const/4 v15, 0x1
+    move v15, v7
 
     goto :goto_5
 
     :cond_6
-    const/4 v15, 0x0
+    move v15, v8
 
     :goto_5
     iget v7, v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Format;->underlineIndex:I
@@ -373,7 +373,7 @@
     goto :goto_6
 
     :cond_7
-    const/16 v17, 0x0
+    move/from16 v17, v8
 
     :goto_6
     iget v7, v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Format;->strikeoutIndex:I
@@ -398,7 +398,7 @@
     goto :goto_7
 
     :cond_8
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
     .line 190
     :goto_7
@@ -420,7 +420,7 @@
     goto :goto_8
 
     :cond_9
-    const/4 v0, -0x1
+    move v0, v10
 
     :goto_8
     move-object v7, v3
@@ -596,7 +596,7 @@
     if-ne p0, v2, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     return v0

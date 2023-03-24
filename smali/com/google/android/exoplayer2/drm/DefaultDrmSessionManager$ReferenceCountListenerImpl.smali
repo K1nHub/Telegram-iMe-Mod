@@ -87,9 +87,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v2, v0
+    cmp-long v2, v2, v0
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     .line 941
     iget-object p2, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;

@@ -217,12 +217,12 @@
 
     if-eqz v0, :cond_2
 
-    const/16 v0, 0x36
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     add-int/lit8 v0, v0, 0x20
@@ -271,7 +271,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v1
 
     .line 7059
     :goto_2
@@ -290,7 +290,7 @@
     goto :goto_3
 
     :cond_5
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_3
     add-int/lit8 v2, v2, 0x20
@@ -648,12 +648,12 @@
 
     if-eqz v0, :cond_4
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_4
-    const/4 v0, 0x0
+    move v0, v13
 
     :goto_1
     iput-boolean v0, v10, Lorg/telegram/ui/ArticleViewer$BlockEmbedPostCell;->avatarVisible:Z
@@ -743,12 +743,12 @@
 
     if-eqz v1, :cond_6
 
-    const/16 v1, 0x36
+    move/from16 v1, v16
 
     goto :goto_2
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v13
 
     :goto_2
     add-int/2addr v1, v12
@@ -786,12 +786,12 @@
 
     if-eqz v1, :cond_7
 
-    const/16 v1, 0x36
+    move/from16 v1, v16
 
     goto :goto_3
 
     :cond_7
-    const/4 v1, 0x0
+    move v1, v13
 
     :goto_3
     add-int/2addr v1, v9
@@ -850,7 +850,7 @@
 
     const-wide/16 v4, 0x3e8
 
-    mul-long v2, v2, v4
+    mul-long/2addr v2, v4
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(J)Ljava/lang/String;
 
@@ -862,12 +862,12 @@
 
     if-eqz v1, :cond_a
 
-    const/16 v1, 0x36
+    move/from16 v1, v16
 
     goto :goto_5
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v13
 
     :goto_5
     add-int/2addr v1, v12
@@ -1083,7 +1083,7 @@
 
     if-eqz v1, :cond_10
 
-    const/16 v13, 0x36
+    move/from16 v13, v16
 
     :cond_10
     add-int/2addr v13, v9

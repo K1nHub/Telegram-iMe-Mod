@@ -233,7 +233,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     .line 76
     :goto_0
@@ -261,13 +261,12 @@
     .line 87
     invoke-interface {p1, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
+    move v1, v2
+
     move v4, v3
 
-    :goto_1
-    const/4 v1, 0x0
-
     .line 92
-    :goto_2
+    :goto_1
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
     move-result-object v5
@@ -309,6 +308,8 @@
     :cond_0
     invoke-interface {p1, v4}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
+    move v1, v2
+
     goto :goto_1
 
     :cond_1
@@ -344,7 +345,7 @@
     .line 110
     invoke-interface {p1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_4
     const/4 v4, 0x3

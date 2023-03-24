@@ -1360,9 +1360,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x2
@@ -1557,7 +1557,7 @@
 
     :cond_9
     :goto_3
-    const/4 v2, 0x1
+    move v2, v4
 
     :cond_a
     :goto_4
@@ -1591,18 +1591,18 @@
     goto :goto_5
 
     :cond_c
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_6
 
     :cond_d
     :goto_5
-    const/4 v1, 0x2
+    move v1, v3
 
     :goto_6
     sub-int/2addr p1, v1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_7
     if-ge v1, p1, :cond_e
@@ -3448,7 +3448,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
@@ -3584,14 +3584,44 @@
 
     move-result v0
 
+    if-nez v0, :cond_c
+
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout;->fragmentsStack:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout;->fragmentsStack:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    if-ne v0, p1, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout;->fragmentsStack:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iget-object v0, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+
     if-eqz v0, :cond_0
 
-    return-void
+    goto/16 :goto_2
 
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-ge v1, p1, :cond_4
@@ -3862,6 +3892,7 @@
     invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
     :cond_c
+    :goto_2
     return-void
 .end method
 
@@ -3986,9 +4017,9 @@
 
     sub-long/2addr v2, v4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -4124,12 +4155,12 @@
     if-eqz p1, :cond_5
 
     :cond_4
-    const/4 p1, 0x1
+    move p1, v1
 
     goto :goto_0
 
     :cond_5
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 1818
     :goto_0
@@ -4221,13 +4252,13 @@
     goto :goto_2
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v0
 
     goto :goto_3
 
     :cond_8
     :goto_2
-    const/4 v5, 0x1
+    move v5, v1
 
     :goto_3
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->hasForceLightStatusBar()Z
@@ -4594,13 +4625,13 @@
     goto :goto_5
 
     :cond_16
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_6
 
     :cond_17
     :goto_5
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_6
     invoke-direct {p0, v0, v1, p1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->startLayoutAnimation(ZZZ)V
@@ -5105,7 +5136,7 @@
 
     const/high16 v0, 0x437f0000    # 255.0f
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
     float-to-int p4, p4
 
@@ -5142,7 +5173,7 @@
 
     const/high16 v2, 0x43190000    # 153.0f
 
-    mul-float p2, p2, v2
+    mul-float/2addr p2, v2
 
     float-to-int p2, p2
 
@@ -5208,7 +5239,7 @@
 .end method
 
 .method public drawCurrentPreviewFragment(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;)V
-    .locals 11
+    .locals 10
 
     .line 732
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout;->inPreviewMode:Z
@@ -5251,42 +5282,42 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x437f0000    # 255.0f
-
     cmpg-float v1, v1, v2
+
+    const/high16 v2, 0x437f0000    # 255.0f
 
     if-gez v1, :cond_2
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     .line 736
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
 
-    int-to-float v7, v1
+    int-to-float v6, v1
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v1
 
-    int-to-float v8, v1
+    int-to-float v7, v1
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getAlpha()F
 
     move-result v1
 
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v2
 
-    float-to-int v9, v1
+    float-to-int v8, v1
 
-    const/16 v10, 0x1f
+    const/16 v9, 0x1f
 
-    move-object v4, p1
+    move-object v3, p1
 
-    invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+    invoke-virtual/range {v3 .. v9}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
     goto :goto_1
 
@@ -5312,12 +5343,12 @@
     .line 743
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v3
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
     .line 745
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
@@ -5329,17 +5360,17 @@
     invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
     .line 747
-    invoke-virtual {v2, v5}, Landroid/view/View;->getLocalVisibleRect(Landroid/graphics/Rect;)Z
+    invoke-virtual {v3, v5}, Landroid/view/View;->getLocalVisibleRect(Landroid/graphics/Rect;)Z
 
     .line 748
-    iget v2, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v3, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     iget v4, v4, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    invoke-virtual {v5, v2, v4}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {v5, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
     .line 749
-    iget v2, v5, Landroid/graphics/Rect;->top:I
+    iget v3, v5, Landroid/graphics/Rect;->top:I
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -5352,16 +5383,16 @@
     add-int/lit8 v1, v1, -0x1
 
     :cond_3
-    add-int/2addr v2, v1
+    add-int/2addr v3, v1
 
-    iput v2, v5, Landroid/graphics/Rect;->top:I
+    iput v3, v5, Landroid/graphics/Rect;->top:I
 
     .line 750
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getAlpha()F
 
     move-result v0
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v2
 
     float-to-int v0, v0
 
@@ -6156,7 +6187,7 @@
     if-lez v2, :cond_1
 
     :goto_0
-    const/4 p1, 0x0
+    move p1, v1
 
     goto :goto_1
 
@@ -7249,12 +7280,12 @@
     if-gez v6, :cond_d
 
     :cond_c
-    const/4 v6, 0x1
+    move v6, v2
 
     goto :goto_0
 
     :cond_d
-    const/4 v6, 0x0
+    move v6, v1
 
     .line 977
     :goto_0
@@ -7292,7 +7323,7 @@
 
     div-float/2addr v10, v11
 
-    mul-float v10, v10, p1
+    mul-float/2addr v10, p1
 
     float-to-int v10, v10
 
@@ -7372,7 +7403,7 @@
 
     div-float/2addr v10, v11
 
-    mul-float v10, v10, p1
+    mul-float/2addr v10, p1
 
     float-to-int v10, v10
 
@@ -7741,12 +7772,12 @@
 
     if-eqz v3, :cond_6
 
-    const/4 v0, 0x1
+    move v0, v12
 
     goto :goto_0
 
     :cond_6
-    const/4 v0, 0x0
+    move v0, v10
 
     .line 1322
     :goto_0
@@ -7799,13 +7830,13 @@
     goto :goto_1
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v10
 
     goto :goto_2
 
     :cond_9
     :goto_1
-    const/4 v0, 0x1
+    move v0, v12
 
     .line 1328
     :goto_2
@@ -7958,7 +7989,7 @@
     goto :goto_5
 
     :cond_d
-    const/4 v5, 0x0
+    move v5, v10
 
     .line 1355
     :goto_5
@@ -7997,7 +8028,7 @@
     goto :goto_6
 
     :cond_e
-    const/4 v12, 0x0
+    move v12, v10
 
     :goto_6
     if-lez v11, :cond_f
@@ -8034,7 +8065,7 @@
     :cond_f
     if-eqz v3, :cond_10
 
-    const/4 v11, 0x0
+    move v11, v10
 
     goto :goto_7
 
@@ -9503,7 +9534,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    mul-float p1, p1, v2
+    mul-float/2addr p1, v2
 
     const/4 v2, 0x0
 
@@ -9729,7 +9760,7 @@
 
     int-to-float v2, v13
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     add-float/2addr v6, v2
 
@@ -9748,7 +9779,7 @@
 
     int-to-float v10, v10
 
-    mul-float v10, v10, v1
+    mul-float/2addr v10, v1
 
     add-float/2addr v13, v10
 
@@ -9765,7 +9796,7 @@
 
     int-to-float v11, v11
 
-    mul-float v11, v11, v1
+    mul-float/2addr v11, v1
 
     add-float/2addr v13, v11
 
@@ -9782,7 +9813,7 @@
 
     int-to-float v3, v12
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     add-float/2addr v13, v3
 

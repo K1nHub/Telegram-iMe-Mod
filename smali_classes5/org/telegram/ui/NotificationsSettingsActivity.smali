@@ -2117,7 +2117,7 @@
     .line 389
     iget-object p4, p0, Lorg/telegram/ui/NotificationsSettingsActivity;->exceptionUsers:Ljava/util/ArrayList;
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_6
 
@@ -2130,7 +2130,7 @@
     .line 392
     iget-object p4, p0, Lorg/telegram/ui/NotificationsSettingsActivity;->exceptionChats:Ljava/util/ArrayList;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     goto :goto_6
 
@@ -2204,7 +2204,7 @@
 
     if-nez v4, :cond_22
 
-    const/4 p4, 0x0
+    move p4, v1
 
     goto :goto_7
 
@@ -2994,7 +2994,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_d
     if-ge v2, v0, :cond_16
@@ -3074,7 +3074,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_f
     if-ge v2, v0, :cond_18
@@ -3110,7 +3110,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v12
 
     :goto_11
     if-ge v2, v0, :cond_19

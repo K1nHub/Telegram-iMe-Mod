@@ -177,7 +177,7 @@
 .end method
 
 .method public final enter()V
-    .locals 7
+    .locals 6
 
     .line 49
     iget-boolean v0, p0, Lokio/AsyncTimeout;->inQueue:Z
@@ -200,9 +200,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v4
 
-    if-nez v6, :cond_0
+    if-nez v4, :cond_0
 
     if-nez v0, :cond_0
 

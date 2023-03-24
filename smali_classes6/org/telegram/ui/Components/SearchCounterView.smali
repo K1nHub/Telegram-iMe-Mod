@@ -444,13 +444,13 @@
     .line 232
     iget v5, p0, Lorg/telegram/ui/Components/SearchCounterView;->countChangeProgress:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     int-to-float v4, v4
 
     sub-float v5, v1, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
@@ -531,7 +531,7 @@
 
     sub-float v9, v1, v9
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v7, v8
 
@@ -542,7 +542,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/SearchCounterView;->countChangeProgress:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     float-to-int v7, v7
 
@@ -596,7 +596,7 @@
 
     sub-float v9, v1, v9
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v7, v8
 
@@ -607,7 +607,7 @@
 
     iget v7, p0, Lorg/telegram/ui/Components/SearchCounterView;->countChangeProgress:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     float-to-int v7, v7
 
@@ -662,7 +662,7 @@
 
     iget v6, p0, Lorg/telegram/ui/Components/SearchCounterView;->countChangeProgress:F
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     add-float/2addr v7, v2
 
@@ -675,7 +675,7 @@
 
     sub-float v3, v1, v3
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -709,7 +709,7 @@
 
     sub-float/2addr v1, v6
 
-    mul-float v4, v4, v1
+    mul-float/2addr v4, v1
 
     add-float/2addr v2, v4
 
@@ -891,7 +891,7 @@
 
     :cond_3
     :goto_0
-    const/4 v3, 0x0
+    move v3, v4
 
     :goto_1
     const-string v5, "**"
@@ -907,7 +907,7 @@
 
     if-nez v6, :cond_4
 
-    const/4 v3, 0x0
+    move v3, v4
 
     :cond_4
     const/4 v6, 0x0
@@ -1088,7 +1088,7 @@
     goto :goto_3
 
     :cond_9
-    const/4 v5, 0x0
+    move v5, v4
 
     .line 146
     :goto_3
@@ -1132,7 +1132,7 @@
     goto :goto_4
 
     :cond_a
-    const/4 v10, 0x0
+    move v10, v4
 
     .line 153
     :goto_4
@@ -1174,15 +1174,15 @@
     invoke-virtual {v8, v14, v4, v5, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     :cond_b
+    move v6, v4
+
+    move v15, v6
+
+    move/from16 v16, v15
+
+    move/from16 v20, v16
+
     move v14, v5
-
-    const/4 v6, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v20, 0x0
 
     :goto_5
     if-ge v14, v12, :cond_11
@@ -1309,7 +1309,7 @@
     goto :goto_5
 
     :cond_11
-    const/16 v4, 0xc
+    move v4, v9
 
     .line 185
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1490,7 +1490,7 @@
     goto :goto_8
 
     :cond_13
-    const/4 v8, 0x0
+    move v8, v4
 
     .line 201
     :goto_8
@@ -1508,7 +1508,7 @@
     goto :goto_9
 
     :cond_14
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_9
     iput-boolean v4, v0, Lorg/telegram/ui/Components/SearchCounterView;->countAnimationIncrement:Z
@@ -1582,8 +1582,6 @@
     iput-object v1, v0, Lorg/telegram/ui/Components/SearchCounterView;->currentString:Ljava/lang/String;
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4

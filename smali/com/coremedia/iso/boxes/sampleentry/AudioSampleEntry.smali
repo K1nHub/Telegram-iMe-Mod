@@ -78,12 +78,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/16 v4, 0x10
+    move v4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     add-int/lit8 v4, v4, 0x1c
@@ -282,12 +282,12 @@
 
     if-ne v0, v3, :cond_0
 
-    const/16 v3, 0x10
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     add-int/lit8 v3, v3, 0x1c

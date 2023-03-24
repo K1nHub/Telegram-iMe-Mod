@@ -30,12 +30,12 @@
 
     if-lt v0, v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     new-array v5, v3, [Ljava/lang/Object;
@@ -62,12 +62,12 @@
 
     if-ne v0, v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_1
     new-array v1, v3, [Ljava/lang/Object;
@@ -104,7 +104,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_2
     if-ge v6, v0, :cond_8
@@ -415,12 +415,12 @@
 
     if-ne v2, v1, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     new-array v3, v3, [Ljava/lang/Object;

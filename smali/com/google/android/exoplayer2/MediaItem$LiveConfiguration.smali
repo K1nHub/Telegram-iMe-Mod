@@ -360,7 +360,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     return v0
@@ -378,9 +378,9 @@
 
     xor-long/2addr v0, v3
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 1263
     iget-wide v3, p0, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->minOffsetMs:J
@@ -389,69 +389,69 @@
 
     xor-long/2addr v3, v5
 
-    long-to-int v0, v3
+    long-to-int v1, v3
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 1264
     iget-wide v3, p0, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->maxOffsetMs:J
 
-    ushr-long v5, v3, v2
+    ushr-long v1, v3, v2
 
-    xor-long v2, v3, v5
+    xor-long/2addr v1, v3
 
-    long-to-int v0, v2
+    long-to-int v1, v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 1265
-    iget v0, p0, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
+    iget v1, p0, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    cmpl-float v3, v1, v2
 
-    cmpl-float v4, v0, v3
+    const/4 v4, 0x0
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v0
+    move-result v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v1, v4
 
     :goto_0
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    mul-int/lit8 v1, v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 1266
-    iget v0, p0, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
+    iget v1, p0, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
-    cmpl-float v3, v0, v3
+    cmpl-float v2, v1, v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v2
+    move-result v4
 
     :cond_1
-    add-int/2addr v1, v2
+    add-int/2addr v0, v4
 
-    return v1
+    return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .locals 7
+    .locals 6
 
     .line 1280
     new-instance v0, Landroid/os/Bundle;
@@ -465,9 +465,9 @@
 
     iget-wide v4, v3, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->targetOffsetMs:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     .line 1282
     sget-object v4, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->FIELD_TARGET_OFFSET_MS:Ljava/lang/String;
@@ -480,9 +480,9 @@
 
     iget-wide v4, v3, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->minOffsetMs:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-eqz v6, :cond_1
+    if-eqz v4, :cond_1
 
     .line 1285
     sget-object v4, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->FIELD_MIN_OFFSET_MS:Ljava/lang/String;
@@ -495,9 +495,9 @@
 
     iget-wide v4, v3, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->maxOffsetMs:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     .line 1288
     sget-object v4, Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;->FIELD_MAX_OFFSET_MS:Ljava/lang/String;

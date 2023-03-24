@@ -246,7 +246,7 @@
 
     if-ne v2, v3, :cond_2
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_2
     const/4 v3, 0x5
@@ -274,7 +274,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     return v0
@@ -353,7 +353,7 @@
     goto :goto_1
 
     :cond_8
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     return v0
@@ -373,7 +373,7 @@
     goto :goto_2
 
     :cond_a
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     return v0

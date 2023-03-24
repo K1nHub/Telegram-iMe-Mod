@@ -439,7 +439,7 @@
 
     if-nez v8, :cond_4
 
-    const/4 v8, 0x0
+    move v8, v13
 
     .line 296
     :goto_0
@@ -460,12 +460,12 @@
 
     if-nez v8, :cond_2
 
-    const/4 v5, 0x1
+    move v5, v11
 
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    move v5, v13
 
     :goto_1
     move-object v0, v10
@@ -706,7 +706,7 @@
 .end method
 
 .method private getThumbDocument(Lorg/telegram/tgnet/TLRPC$StickerSet;Ljava/util/ArrayList;)Lorg/telegram/tgnet/TLRPC$Document;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -729,7 +729,7 @@
 
     if-eqz p2, :cond_2
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 361
     :goto_0
@@ -751,9 +751,9 @@
 
     iget-wide v6, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->thumb_document_id:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_1
+    if-nez v4, :cond_1
 
     return-object v3
 
@@ -808,7 +808,7 @@
     goto :goto_1
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 348
     :goto_0
@@ -1053,12 +1053,12 @@
 
     if-nez p2, :cond_0
 
-    const/4 p2, 0x1
+    move p2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 784
     :goto_0
@@ -1086,9 +1086,9 @@
     :cond_3
     iget v2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip;->selected:I
 
-    const/4 v3, 0x0
+    move v3, v0
 
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 792
     :goto_1
@@ -1115,9 +1115,9 @@
     .line 796
     check-cast v5, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;
 
-    move v7, v4
+    move v6, v0
 
-    const/4 v6, 0x0
+    move v7, v4
 
     .line 797
     :goto_2
@@ -1146,12 +1146,12 @@
 
     if-ne p1, v7, :cond_4
 
-    const/4 v9, 0x1
+    move v9, v1
 
     goto :goto_3
 
     :cond_4
-    const/4 v9, 0x0
+    move v9, v0
 
     :goto_3
     invoke-virtual {v8, v9, p2}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->updateSelect(ZZ)V
@@ -1179,12 +1179,12 @@
 
     if-ne p1, v4, :cond_8
 
-    const/4 v6, 0x1
+    move v6, v1
 
     goto :goto_4
 
     :cond_8
-    const/4 v6, 0x0
+    move v6, v0
 
     :goto_4
     invoke-virtual {v5, v6, p2}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->updateSelect(ZZ)V
@@ -1308,13 +1308,13 @@
     goto :goto_7
 
     :cond_e
-    const/4 v3, 0x0
+    move v3, v0
 
     goto :goto_8
 
     :cond_f
     :goto_7
-    const/4 v3, 0x1
+    move v3, v1
 
     :goto_8
     invoke-virtual {v2, v3, p2}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;->show(ZZ)V
@@ -1465,7 +1465,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
@@ -1485,7 +1485,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -1564,9 +1564,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     .line 722
     :goto_0
@@ -1593,7 +1593,7 @@
     .line 725
     check-cast v3, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;
 
-    const/4 v4, 0x0
+    move v4, v0
 
     .line 726
     :goto_1
@@ -1769,12 +1769,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v9
 
     :goto_0
     sub-int v10, v0, v1
@@ -1855,13 +1855,13 @@
     goto :goto_1
 
     :cond_6
-    const/4 v12, 0x0
+    move v12, v9
 
     goto :goto_2
 
     :cond_7
     :goto_1
-    const/4 v12, 0x1
+    move v12, v2
 
     .line 528
     :goto_2
@@ -1869,7 +1869,7 @@
 
     invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v14, 0x0
+    move v14, v9
 
     .line 530
     :goto_3

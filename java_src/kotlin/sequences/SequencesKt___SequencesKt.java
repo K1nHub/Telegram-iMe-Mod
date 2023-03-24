@@ -114,7 +114,10 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
         }
         String str = (i2 & 2) != 0 ? "" : charSequence2;
         String str2 = (i2 & 4) == 0 ? charSequence3 : "";
-        int i3 = (i2 & 8) != 0 ? -1 : i;
+        if ((i2 & 8) != 0) {
+            i = -1;
+        }
+        int i3 = i;
         if ((i2 & 16) != 0) {
             charSequence4 = "...";
         }

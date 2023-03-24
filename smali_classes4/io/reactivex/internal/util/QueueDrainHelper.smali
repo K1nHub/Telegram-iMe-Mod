@@ -167,7 +167,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 133
     :cond_0
@@ -211,14 +211,14 @@
 
     if-nez v2, :cond_2
 
-    const/4 v10, 0x1
+    move v10, v0
 
     goto :goto_1
 
     :cond_2
     const/4 v4, 0x0
 
-    const/4 v10, 0x0
+    move v10, v4
 
     :goto_1
     move v4, v10

@@ -196,72 +196,72 @@
     iput-boolean v3, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->startedInner:Z
 
     :cond_0
-    const v0, 0x3f8ccccd    # 1.1f
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    cmpg-float v1, p1, v0
 
-    cmpg-float v2, p1, v1
+    const v2, 0x3f8ccccd    # 1.1f
 
-    if-gtz v2, :cond_1
+    if-gtz v1, :cond_1
 
     .line 375
-    sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    div-float/2addr p1, v1
+    div-float/2addr p1, v0
 
-    invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v2
 
     goto :goto_0
 
     :cond_1
-    const/high16 v2, 0x3e800000    # 0.25f
+    const/high16 v1, 0x3f400000    # 0.75f
 
-    const/high16 v3, 0x3f400000    # 0.75f
+    cmpg-float v3, p1, v1
 
-    cmpg-float v4, p1, v3
+    const/high16 v4, 0x3e800000    # 0.25f
 
-    if-gtz v4, :cond_2
+    if-gtz v3, :cond_2
 
-    sub-float/2addr p1, v1
+    sub-float/2addr p1, v0
 
-    const v1, 0x3e4ccccd    # 0.2f
+    const v0, 0x3e4ccccd    # 0.2f
 
     .line 378
-    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    div-float/2addr p1, v2
+    div-float/2addr p1, v4
 
-    invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result p1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v0
 
-    sub-float p1, v0, p1
+    sub-float p1, v2, p1
 
     goto :goto_0
 
     :cond_2
-    sub-float/2addr p1, v3
+    sub-float/2addr p1, v1
 
     const v0, 0x3f666666    # 0.9f
 
     const v1, 0x3dcccccd    # 0.1f
 
     .line 381
-    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    div-float/2addr p1, v2
+    div-float/2addr p1, v4
 
-    invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
+    invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result p1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     add-float/2addr p1, v0
 
@@ -277,6 +277,8 @@
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4

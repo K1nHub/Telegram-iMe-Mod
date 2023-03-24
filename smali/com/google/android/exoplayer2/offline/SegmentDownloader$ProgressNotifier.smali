@@ -60,32 +60,32 @@
     .line 525
     iget-wide v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->contentLength:J
 
-    const/high16 v2, 0x42c80000    # 100.0f
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    cmp-long v2, v0, v2
 
-    cmp-long v5, v0, v3
+    const/high16 v3, 0x42c80000    # 100.0f
 
-    if-eqz v5, :cond_0
+    if-eqz v2, :cond_0
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v5, v0, v3
+    cmp-long v2, v0, v4
 
-    if-eqz v5, :cond_0
+    if-eqz v2, :cond_0
 
     .line 526
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
 
-    long-to-float v3, v3
+    long-to-float v2, v4
 
-    mul-float v3, v3, v2
+    mul-float/2addr v2, v3
 
     long-to-float v0, v0
 
-    div-float/2addr v3, v0
+    div-float/2addr v2, v0
 
-    return v3
+    return v2
 
     .line 527
     :cond_0
@@ -98,7 +98,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v3
 
     int-to-float v0, v0
 

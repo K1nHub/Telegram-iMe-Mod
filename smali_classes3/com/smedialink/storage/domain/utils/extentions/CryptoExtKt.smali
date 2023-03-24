@@ -7,7 +7,7 @@
 .method public static final generateUuid()Ljava/lang/String;
     .locals 2
 
-    .line 11
+    .line 12
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
@@ -30,7 +30,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 16
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/Wallet$TON;->getInputKey()Ldrinkless/org/ton/TonApi$InputKeyRegular;
 
     move-result-object p0
@@ -39,29 +39,25 @@
 
     iget-object p0, p0, Ldrinkless/org/ton/TonApi$Key;->publicKey:Ljava/lang/String;
 
-    .line 16
-    invoke-static {}, Ljava/util/Base64;->getUrlDecoder()Ljava/util/Base64$Decoder;
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/util/Base64$Decoder;->decode(Ljava/lang/String;)[B
+    .line 17
+    invoke-static {p0, v0}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
     move-result-object p0
 
-    const/4 v0, 0x2
+    const/4 v1, 0x2
 
-    const/16 v1, 0x20
+    const/16 v2, 0x20
 
-    const/4 v2, 0x0
-
-    .line 17
-    invoke-static {p0, v0, v1, v2}, Lorg/web3j/utils/Numeric;->toHexString([BIIZ)Ljava/lang/String;
+    .line 18
+    invoke-static {p0, v1, v2, v0}, Lorg/web3j/utils/Numeric;->toHexString([BIIZ)Ljava/lang/String;
 
     move-result-object p0
 
     const-string v0, "getUnarmoredPublicKey"
 
-    .line 15
+    .line 16
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
@@ -84,7 +80,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 13
+    .line 14
     invoke-virtual {p0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getMnemonic()Ljava/lang/String;
 
     move-result-object p0

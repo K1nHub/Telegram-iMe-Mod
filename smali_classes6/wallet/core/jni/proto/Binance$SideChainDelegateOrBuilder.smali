@@ -1,0 +1,43 @@
+.class public interface abstract Lwallet/core/jni/proto/Binance$SideChainDelegateOrBuilder;
+.super Ljava/lang/Object;
+.source "Binance.java"
+
+# interfaces
+.implements Lcom/google/protobuf/MessageLiteOrBuilder;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lwallet/core/jni/proto/Binance;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "SideChainDelegateOrBuilder"
+.end annotation
+
+
+# virtual methods
+.method public abstract getChainId()Ljava/lang/String;
+.end method
+
+.method public abstract getChainIdBytes()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract synthetic getDefaultInstanceForType()Lcom/google/protobuf/MessageLite;
+.end method
+
+.method public abstract getDelegation()Lwallet/core/jni/proto/Binance$SendOrder$Token;
+.end method
+
+.method public abstract getDelegatorAddr()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract getValidatorAddr()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract hasDelegation()Z
+.end method
+
+.method public abstract synthetic isInitialized()Z
+.end method

@@ -183,7 +183,7 @@ public final class Http2Reader implements Closeable {
 
     private final void readPriority(Handler handler, int i) throws IOException {
         int readInt = this.source.readInt();
-        handler.priority(i, readInt & Integer.MAX_VALUE, Util.and(this.source.readByte(), 255) + 1, (readInt & ((int) 2147483648L)) != 0);
+        handler.priority(i, readInt & Integer.MAX_VALUE, Util.and(this.source.readByte(), 255) + 1, (((int) 2147483648L) & readInt) != 0);
     }
 
     private final void readRstStream(Handler handler, int i, int i2, int i3) throws IOException {
@@ -282,7 +282,7 @@ public final class Http2Reader implements Closeable {
             r8.<init>(r9)
             throw r8
         L87:
-            r3 = 4
+            r3 = r6
             goto L96
         L89:
             if (r4 == 0) goto L96

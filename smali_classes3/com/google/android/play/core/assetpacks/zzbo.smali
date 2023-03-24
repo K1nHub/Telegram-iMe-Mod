@@ -104,19 +104,19 @@
 
     xor-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
-    const v0, 0xf4243
+    const v1, 0xf4243
 
-    xor-int/2addr v1, v0
+    xor-int/2addr v0, v1
 
-    mul-int v1, v1, v0
+    mul-int/2addr v0, v1
 
-    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzbo;->zzb:Ljava/util/Map;
+    iget-object v1, p0, Lcom/google/android/play/core/assetpacks/zzbo;->zzb:Ljava/util/Map;
 
-    invoke-interface {v0}, Ljava/util/Map;->hashCode()I
+    invoke-interface {v1}, Ljava/util/Map;->hashCode()I
 
-    move-result v0
+    move-result v1
 
     xor-int/2addr v0, v1
 

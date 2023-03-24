@@ -23,10 +23,10 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
-import org.telegram.PhoneFormat.C3204PhoneFormat;
+import org.telegram.PhoneFormat.C3218PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3286R;
+import org.telegram.messenger.C3301R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -42,7 +42,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3351ActionBar;
+import org.telegram.p048ui.ActionBar.C3366ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.AvatarDrawable;
 import org.telegram.p048ui.Components.BackupImageView;
@@ -68,7 +68,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.PopupNotificationActivity */
 /* loaded from: classes5.dex */
 public class PopupNotificationActivity extends Activity implements NotificationCenter.NotificationCenterDelegate {
-    private C3351ActionBar actionBar;
+    private C3366ActionBar actionBar;
     private FrameLayout avatarContainer;
     private BackupImageView avatarImageView;
     private ViewGroup centerButtonsView;
@@ -199,7 +199,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     Method dump skipped, instructions count: 231
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.PopupNotificationActivity.C62381.onLayout(boolean, int, int, int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.PopupNotificationActivity.C62641.onLayout(boolean, int, int, int, int):void");
             }
         };
         setContentView(sizeNotifierFrameLayout);
@@ -447,10 +447,10 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         FrameLayoutTouch frameLayoutTouch = new FrameLayoutTouch(this);
         this.messageContainer = frameLayoutTouch;
         this.popupContainer.addView(frameLayoutTouch, 0);
-        C3351ActionBar c3351ActionBar = new C3351ActionBar(this);
-        this.actionBar = c3351ActionBar;
-        c3351ActionBar.setOccupyStatusBar(false);
-        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_close_white);
+        C3366ActionBar c3366ActionBar = new C3366ActionBar(this);
+        this.actionBar = c3366ActionBar;
+        c3366ActionBar.setOccupyStatusBar(false);
+        this.actionBar.setBackButtonImage(C3301R.C3303drawable.ic_close_white);
         this.actionBar.setBackgroundColor(Theme.getColor("actionBarDefault"));
         this.actionBar.setItemsBackgroundColor(Theme.getColor("actionBarDefaultSelector"), false);
         this.popupContainer.addView(this.actionBar);
@@ -519,8 +519,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         layoutParams5.bottomMargin = AndroidUtilities.m50dp(4);
         layoutParams5.gravity = 80;
         this.onlineTextView.setLayoutParams(layoutParams5);
-        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PopupNotificationActivity.4
-            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3366ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PopupNotificationActivity.4
+            @Override // org.telegram.p048ui.ActionBar.C3366ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     PopupNotificationActivity.this.onFinish();
@@ -558,15 +558,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(LocaleController.getString("AppName", C3286R.string.AppName));
-        builder.setMessage(LocaleController.getString("PermissionNoAudioWithHint", C3286R.string.PermissionNoAudioWithHint));
-        builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3286R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("AppName", C3301R.string.AppName));
+        builder.setMessage(LocaleController.getString("PermissionNoAudioWithHint", C3301R.string.PermissionNoAudioWithHint));
+        builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3301R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 PopupNotificationActivity.this.lambda$onRequestPermissionsResult$0(dialogInterface, i2);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3301R.string.OK), null);
         builder.show();
     }
 
@@ -628,7 +628,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
     */
     public boolean onTouchEventMy(android.view.MotionEvent r14) {
         /*
-            Method dump skipped, instructions count: 455
+            Method dump skipped, instructions count: 454
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.PopupNotificationActivity.onTouchEventMy(android.view.MotionEvent):boolean");
@@ -737,7 +737,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 while (i8 < size3) {
                     TLRPC$TL_keyboardButtonRow tLRPC$TL_keyboardButtonRow2 = arrayList2.get(i8);
                     int size4 = tLRPC$TL_keyboardButtonRow2.buttons.size();
-                    int i9 = 0;
+                    int i9 = i4;
                     while (i9 < size4) {
                         TLRPC$KeyboardButton tLRPC$KeyboardButton = tLRPC$TL_keyboardButtonRow2.buttons.get(i9);
                         if (tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonCallback) {
@@ -801,15 +801,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0180  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private android.view.ViewGroup getViewForMessage(int r28, boolean r29) {
         /*
-            Method dump skipped, instructions count: 887
+            Method dump skipped, instructions count: 884
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.PopupNotificationActivity.getViewForMessage(int, boolean):android.view.ViewGroup");
@@ -974,7 +974,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                     if (PopupNotificationActivity.this.avatarContainer != null) {
                         PopupNotificationActivity.this.avatarContainer.getViewTreeObserver().removeOnPreDrawListener(this);
                     }
-                    int currentActionBarHeight = (C3351ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m50dp(48)) / 2;
+                    int currentActionBarHeight = (C3366ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m50dp(48)) / 2;
                     PopupNotificationActivity.this.avatarContainer.setPadding(PopupNotificationActivity.this.avatarContainer.getPaddingLeft(), currentActionBarHeight, PopupNotificationActivity.this.avatarContainer.getPaddingRight(), currentActionBarHeight);
                     return true;
                 }
@@ -990,7 +990,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                         return true;
                     }
                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) PopupNotificationActivity.this.messageContainer.getLayoutParams();
-                    marginLayoutParams.topMargin = C3351ActionBar.getCurrentActionBarHeight();
+                    marginLayoutParams.topMargin = C3366ActionBar.getCurrentActionBarHeight();
                     marginLayoutParams.bottomMargin = AndroidUtilities.m50dp(48);
                     marginLayoutParams.width = -1;
                     marginLayoutParams.height = -1;
@@ -1129,7 +1129,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (tLRPC$User2 != null) {
                 this.nameTextView.setText(UserObject.getUserName(tLRPC$User2));
                 if (DialogObject.isEncryptedDialog(dialogId)) {
-                    this.nameTextView.setCompoundDrawablesWithIntrinsicBounds(C3286R.C3288drawable.ic_lock_white, 0, 0, 0);
+                    this.nameTextView.setCompoundDrawablesWithIntrinsicBounds(C3301R.C3303drawable.ic_lock_white, 0, 0, 0);
                     this.nameTextView.setCompoundDrawablePadding(AndroidUtilities.m50dp(4));
                 } else {
                     this.nameTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
@@ -1149,13 +1149,13 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         if (this.actionBar == null || (messageObject = this.currentMessageObject) == null || this.currentChat != null || (tLRPC$User = this.currentUser) == null) {
             return;
         }
-        long j = tLRPC$User.f1639id;
-        if (j / 1000 != 777 && j / 1000 != 333 && ContactsController.getInstance(messageObject.currentAccount).contactsDict.get(Long.valueOf(this.currentUser.f1639id)) == null && (ContactsController.getInstance(this.currentMessageObject.currentAccount).contactsDict.size() != 0 || !ContactsController.getInstance(this.currentMessageObject.currentAccount).isLoadingContacts())) {
+        long j = tLRPC$User.f1640id;
+        if (j / 1000 != 777 && j / 1000 != 333 && ContactsController.getInstance(messageObject.currentAccount).contactsDict.get(Long.valueOf(this.currentUser.f1640id)) == null && (ContactsController.getInstance(this.currentMessageObject.currentAccount).contactsDict.size() != 0 || !ContactsController.getInstance(this.currentMessageObject.currentAccount).isLoadingContacts())) {
             String str = this.currentUser.phone;
             if (str != null && str.length() != 0) {
                 TextView textView = this.nameTextView;
-                C3204PhoneFormat c3204PhoneFormat = C3204PhoneFormat.getInstance();
-                textView.setText(c3204PhoneFormat.format("+" + this.currentUser.phone));
+                C3218PhoneFormat c3218PhoneFormat = C3218PhoneFormat.getInstance();
+                textView.setText(c3218PhoneFormat.format("+" + this.currentUser.phone));
             } else {
                 this.nameTextView.setText(UserObject.getUserName(this.currentUser));
             }
@@ -1163,15 +1163,15 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             this.nameTextView.setText(UserObject.getUserName(this.currentUser));
         }
         TLRPC$User tLRPC$User2 = this.currentUser;
-        if (tLRPC$User2 != null && tLRPC$User2.f1639id == 777000) {
-            this.onlineTextView.setText(LocaleController.getString("ServiceNotifications", C3286R.string.ServiceNotifications));
+        if (tLRPC$User2 != null && tLRPC$User2.f1640id == 777000) {
+            this.onlineTextView.setText(LocaleController.getString("ServiceNotifications", C3301R.string.ServiceNotifications));
             return;
         }
         CharSequence printingString = MessagesController.getInstance(this.currentMessageObject.currentAccount).getPrintingString(this.currentMessageObject.getDialogId(), 0, false);
         if (printingString == null || printingString.length() == 0) {
             this.lastPrintString = null;
             setTypingAnimation(false);
-            TLRPC$User user = MessagesController.getInstance(this.currentMessageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1639id));
+            TLRPC$User user = MessagesController.getInstance(this.currentMessageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1640id));
             if (user != null) {
                 this.currentUser = user;
             }
@@ -1190,7 +1190,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             return;
         }
         if (this.currentChat != null) {
-            TLRPC$Chat chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(this.currentChat.f1499id));
+            TLRPC$Chat chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(this.currentChat.f1500id));
             if (chat == null) {
                 return;
             }
@@ -1198,7 +1198,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (this.avatarImageView != null) {
                 this.avatarImageView.setForUserOrChat(chat, new AvatarDrawable(this.currentChat));
             }
-        } else if (this.currentUser == null || (user = MessagesController.getInstance(messageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1639id))) == null) {
+        } else if (this.currentUser == null || (user = MessagesController.getInstance(messageObject.currentAccount).getUser(Long.valueOf(this.currentUser.f1640id))) == null) {
         } else {
             this.currentUser = user;
             if (this.avatarImageView != null) {

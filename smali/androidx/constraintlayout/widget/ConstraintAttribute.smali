@@ -362,9 +362,9 @@
 
     move-object v4, v3
 
-    const/4 v5, 0x0
+    move v5, v2
 
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     if-ge v5, v0, :cond_c
@@ -433,7 +433,7 @@
 
     move-result-object v1
 
-    const/4 v6, 0x1
+    move v6, v9
 
     goto/16 :goto_2
 
@@ -1323,7 +1323,7 @@
 
     double-to-float v7, v14
 
-    mul-float v7, v7, v12
+    mul-float/2addr v7, v12
 
     float-to-int v7, v7
 
@@ -1342,7 +1342,7 @@
 
     double-to-float v14, v14
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     float-to-int v14, v14
 
@@ -1363,7 +1363,7 @@
 
     double-to-float v9, v9
 
-    mul-float v9, v9, v12
+    mul-float/2addr v9, v12
 
     float-to-int v9, v9
 
@@ -1374,7 +1374,7 @@
     .line 443
     aget v8, p2, v8
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
     float-to-int v8, v8
 
@@ -1416,7 +1416,7 @@
     goto/16 :goto_1
 
     :pswitch_4
-    const/4 v7, 0x1
+    move v7, v13
 
     new-array v13, v7, [Ljava/lang/Class;
 
@@ -1442,7 +1442,7 @@
 
     double-to-float v7, v13
 
-    mul-float v7, v7, v12
+    mul-float/2addr v7, v12
 
     float-to-int v7, v7
 
@@ -1463,7 +1463,7 @@
 
     double-to-float v13, v13
 
-    mul-float v13, v13, v12
+    mul-float/2addr v13, v12
 
     float-to-int v13, v13
 
@@ -1482,7 +1482,7 @@
 
     double-to-float v8, v8
 
-    mul-float v8, v8, v12
+    mul-float/2addr v8, v12
 
     float-to-int v8, v8
 
@@ -1495,7 +1495,7 @@
     .line 455
     aget v9, p2, v9
 
-    mul-float v9, v9, v12
+    mul-float/2addr v9, v12
 
     float-to-int v9, v9
 
@@ -1557,7 +1557,7 @@
     throw v0
 
     :pswitch_6
-    const/4 v7, 0x1
+    move v7, v13
 
     new-array v8, v7, [Ljava/lang/Class;
 
@@ -1583,12 +1583,12 @@
 
     if-lez v9, :cond_0
 
-    const/4 v13, 0x1
+    move v13, v7
 
     goto :goto_0
 
     :cond_0
-    const/4 v13, 0x0
+    move v13, v10
 
     :goto_0
     invoke-static {v13}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

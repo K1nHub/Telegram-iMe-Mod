@@ -5731,7 +5731,7 @@
 .end method
 
 .method private animateNavBarColorTo(IZ)V
-    .locals 7
+    .locals 6
 
     .line 6963
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->navBarAnimator:Landroid/animation/ValueAnimator;
@@ -5760,9 +5760,9 @@
 
     const-wide v4, 0x3fe7126e978d4fdfL    # 0.721
 
-    cmpl-double v6, v2, v4
+    cmpl-double v2, v2, v4
 
-    if-ltz v6, :cond_1
+    if-ltz v2, :cond_1
 
     const/4 v2, 0x1
 
@@ -6067,7 +6067,7 @@
 
     :cond_2
     :goto_1
-    const/high16 v13, 0x3f800000    # 1.0f
+    move/from16 v13, v16
 
     goto :goto_2
 
@@ -6157,7 +6157,7 @@
 
     add-float v14, v14, v17
 
-    mul-float v14, v14, v8
+    mul-float/2addr v14, v8
 
     float-to-int v14, v14
 
@@ -6169,7 +6169,7 @@
 
     add-float v15, v15, v17
 
-    mul-float v15, v15, v4
+    mul-float/2addr v15, v4
 
     float-to-int v15, v15
 
@@ -6227,11 +6227,11 @@
     move/from16 v6, p3
 
     :cond_b
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     div-float v5, v5, p6
 
-    mul-float v9, v9, v6
+    mul-float/2addr v9, v6
 
     div-float v9, v9, p6
 
@@ -6299,7 +6299,7 @@
     goto :goto_3
 
     :cond_f
-    const/high16 v2, 0x3f800000    # 1.0f
+    move/from16 v2, v16
 
     :goto_3
     sub-float v3, v2, v16
@@ -6349,7 +6349,7 @@
     :cond_11
     div-float/2addr v2, v11
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
     .line 16670
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->sendPhotoType:I
@@ -6406,13 +6406,13 @@
 
     move-result v3
 
-    mul-float v3, v3, v13
+    mul-float/2addr v3, v13
 
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/ui/Components/Crop/CropTransform;->getCropAreaY()F
 
     move-result v5
 
-    mul-float v5, v5, v13
+    mul-float/2addr v5, v13
 
     invoke-virtual {v1, v3, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -6424,21 +6424,21 @@
 
     move-result v2
 
-    mul-float v2, v2, v8
+    mul-float/2addr v2, v8
 
-    mul-float v2, v2, v11
+    mul-float/2addr v2, v11
 
-    mul-float v2, v2, v13
+    mul-float/2addr v2, v13
 
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/ui/Components/Crop/CropTransform;->getCropPy()F
 
     move-result v3
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
-    mul-float v3, v3, v11
+    mul-float/2addr v3, v11
 
-    mul-float v3, v3, v13
+    mul-float/2addr v3, v13
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -6488,7 +6488,7 @@
     goto :goto_8
 
     :cond_17
-    mul-float v2, v2, v13
+    mul-float/2addr v2, v13
 
     .line 16693
     invoke-virtual {v1, v2}, Landroid/graphics/Canvas;->rotate(F)V
@@ -6798,9 +6798,9 @@
 
     long-to-float v5, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
-    mul-float v4, v4, v2
+    mul-float/2addr v4, v2
 
     float-to-long v4, v4
 
@@ -6842,7 +6842,7 @@
     move-object v15, v5
 
     :goto_5
-    const/16 v22, 0x0
+    move/from16 v22, v13
 
     :goto_6
     if-nez v6, :cond_c
@@ -7157,14 +7157,14 @@
     :goto_9
     move-object/from16 v24, v0
 
-    const/16 v25, 0x1
+    move/from16 v25, v8
 
     goto :goto_a
 
     :cond_16
     move-object/from16 v24, v0
 
-    const/16 v25, 0x0
+    move/from16 v25, v13
 
     .line 9658
     :goto_a
@@ -7686,7 +7686,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v13
 
     :goto_10
     if-ge v3, v2, :cond_22
@@ -7890,13 +7890,13 @@
     :cond_26
     move-object v8, v0
 
-    const/4 v10, 0x0
+    move v10, v13
 
     .line 9740
     :goto_13
     iget-boolean v0, v7, Lorg/telegram/ui/PhotoViewer;->isCurrentVideo:Z
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2a
 
     .line 9742
     iget-object v0, v9, Lorg/telegram/messenger/MediaController$MediaEditState;->filterPath:Ljava/lang/String;
@@ -7922,11 +7922,11 @@
 
     long-to-float v2, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/high16 v2, 0x447a0000    # 1000.0f
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-long v1, v1
 
@@ -7971,16 +7971,21 @@
     :goto_15
     iget-object v3, v9, Lorg/telegram/messenger/MediaController$MediaEditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_29
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_29
 
     .line 9749
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    goto :goto_16
-
     :cond_29
+    move v14, v1
+
+    move-object v12, v2
+
+    goto :goto_17
+
+    :cond_2a
     const/4 v1, 0x1
 
     new-array v0, v1, [I
@@ -8012,7 +8017,6 @@
 
     move-result-object v2
 
-    :cond_2a
     :goto_16
     move-object v12, v2
 
@@ -8069,9 +8073,9 @@
     goto :goto_16
 
     :cond_2c
-    move-object/from16 v12, v27
+    move v14, v13
 
-    const/4 v14, 0x0
+    move-object/from16 v12, v27
 
     .line 9769
     :goto_17
@@ -8983,7 +8987,7 @@
     goto :goto_23
 
     :cond_42
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 9836
     :goto_23
@@ -9015,7 +9019,7 @@
     goto :goto_24
 
     :cond_43
-    const/4 v1, 0x0
+    move v1, v13
 
     goto :goto_25
 
@@ -9072,7 +9076,7 @@
 .end method
 
 .method private canDoubleTapSeekVideo(Landroid/view/MotionEvent;)Z
-    .locals 9
+    .locals 8
 
     .line 17036
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -9112,54 +9116,54 @@
 
     int-to-float v0, v0
 
-    const/4 v2, 0x1
-
     cmpl-float p1, p1, v0
+
+    const/4 v0, 0x1
 
     if-ltz p1, :cond_2
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 17042
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer;->getCurrentVideoPosition()J
 
-    move-result-wide v3
+    move-result-wide v2
 
     .line 17043
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer;->getVideoDuration()J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v0, v3, v7
+    cmp-long v6, v2, v6
 
-    if-eqz v0, :cond_4
+    if-eqz v6, :cond_4
 
-    const-wide/16 v7, 0x3a98
+    const-wide/16 v6, 0x3a98
 
-    cmp-long v0, v5, v7
+    cmp-long v6, v4, v6
 
-    if-lez v0, :cond_4
+    if-lez v6, :cond_4
 
     if-eqz p1, :cond_3
 
-    sub-long/2addr v5, v3
+    sub-long/2addr v4, v2
 
-    const-wide/16 v3, 0x2710
+    const-wide/16 v2, 0x2710
 
-    cmp-long p1, v5, v3
+    cmp-long p1, v4, v2
 
     if-lez p1, :cond_4
 
     :cond_3
-    const/4 v1, 0x1
+    move v1, v0
 
     :cond_4
     return v1
@@ -9292,7 +9296,7 @@
 
     iget v3, p0, Lorg/telegram/ui/PhotoViewer;->animationValue:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v1, v2
 
@@ -9303,7 +9307,7 @@
 
     sub-float/2addr v4, v2
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v2, v4
 
@@ -9314,7 +9318,7 @@
 
     sub-float/2addr v5, v4
 
-    mul-float v5, v5, v3
+    mul-float/2addr v5, v3
 
     add-float/2addr v4, v5
 
@@ -9325,7 +9329,7 @@
 
     sub-float/2addr v6, v5
 
-    mul-float v6, v6, v3
+    mul-float/2addr v6, v3
 
     add-float/2addr v5, v6
 
@@ -9386,16 +9390,16 @@
 .end method
 
 .method private captureCurrentFrame()V
-    .locals 5
+    .locals 4
 
     .line 7239
     iget-wide v0, p0, Lorg/telegram/ui/PhotoViewer;->captureFrameAtTime:J
 
     const-wide/16 v2, -0x1
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->videoTextureView:Landroid/view/TextureView;
 
@@ -9567,41 +9571,41 @@
 
     const-wide v3, 0x80000000L
 
-    const/4 v5, 0x0
+    cmp-long v1, v1, v3
 
-    const/4 v6, 0x1
+    const/4 v2, 0x0
 
-    cmp-long v7, v1, v3
+    const/4 v3, 0x1
 
-    if-ltz v7, :cond_3
+    if-ltz v1, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 8360
     :goto_0
-    iget v2, p0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
+    iget v4, p0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
 
-    invoke-static {v2}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
+    invoke-static {v4}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/DownloadController;->getAutodownloadMask()I
+    invoke-virtual {v4}, Lorg/telegram/messenger/DownloadController;->getAutodownloadMask()I
 
-    move-result v2
+    move-result v4
 
-    and-int/lit8 v2, v2, 0x4
+    and-int/lit8 v4, v4, 0x4
 
-    if-eqz v2, :cond_4
+    if-eqz v4, :cond_4
 
-    const/4 v5, 0x1
+    move v2, v3
 
     :cond_4
-    if-eqz v5, :cond_8
+    if-eqz v2, :cond_8
 
     const v2, 0x3f666666    # 0.9f
 
@@ -9610,15 +9614,15 @@
     if-gez v2, :cond_8
 
     .line 8361
-    iget-wide v2, v0, Lorg/telegram/tgnet/TLRPC$Document;->size:J
+    iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    long-to-float v0, v2
+    long-to-float v0, v4
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    const/high16 v4, 0x4aa00000    # 5242880.0f
+    const/high16 v2, 0x4aa00000    # 5242880.0f
 
-    cmpl-float v0, v0, v4
+    cmpl-float v0, v0, v2
 
     if-gez v0, :cond_5
 
@@ -9628,24 +9632,24 @@
 
     if-ltz p1, :cond_8
 
-    const-wide/32 v4, 0x200000
+    const-wide/32 v6, 0x200000
 
-    cmp-long p1, v2, v4
+    cmp-long p1, v4, v6
 
     if-ltz p1, :cond_8
 
     :cond_5
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    iget-wide v4, p0, Lorg/telegram/ui/PhotoViewer;->startedPlayTime:J
+    iget-wide v6, p0, Lorg/telegram/ui/PhotoViewer;->startedPlayTime:J
 
-    sub-long/2addr v2, v4
+    sub-long/2addr v4, v6
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v4, v5}, Ljava/lang/Math;->abs(J)J
 
-    move-result-wide v2
+    move-result-wide v4
 
     if-eqz v1, :cond_6
 
@@ -9659,7 +9663,7 @@
     :goto_1
     int-to-long v0, p1
 
-    cmp-long p1, v2, v0
+    cmp-long p1, v4, v0
 
     if-ltz p1, :cond_8
 
@@ -9670,9 +9674,9 @@
 
     move-result-wide v0
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long p1, v0, v2
+    cmp-long p1, v0, v4
 
     if-nez p1, :cond_7
 
@@ -9687,7 +9691,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p1, v0, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object p1
 
@@ -9696,7 +9700,7 @@
 
     .line 8367
     :cond_7
-    iput-boolean v6, p0, Lorg/telegram/ui/PhotoViewer;->streamingAlertShown:Z
+    iput-boolean v3, p0, Lorg/telegram/ui/PhotoViewer;->streamingAlertShown:Z
 
     :cond_8
     :goto_2
@@ -9891,7 +9895,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
+    move v3, v7
 
     .line 13152
     :goto_1
@@ -10059,41 +10063,37 @@
 
     if-nez v2, :cond_7
 
-    const/4 v2, 0x1
+    move v2, v1
 
     goto :goto_4
 
     :cond_7
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_4
+    move v13, v1
+
     move v10, v2
 
     move v2, v4
-
-    move-object v4, v8
-
-    move-object v8, v9
-
-    const/4 v13, 0x1
 
     goto :goto_5
 
     :cond_8
     move v2, v4
 
+    move v10, v7
+
+    move v13, v10
+
+    :goto_5
     move-object v4, v8
 
     move-object v8, v9
 
-    const/4 v10, 0x0
-
-    const/4 v13, 0x0
-
-    :goto_5
     move-object v9, v0
 
-    goto/16 :goto_12
+    goto/16 :goto_11
 
     .line 13154
     :cond_9
@@ -10177,7 +10177,10 @@
 
     invoke-direct {v0, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    goto :goto_7
+    :goto_7
+    move v2, v7
+
+    goto :goto_a
 
     .line 13192
     :cond_d
@@ -10201,10 +10204,9 @@
     goto :goto_7
 
     :cond_e
-    move-object v0, v8
+    move v2, v7
 
-    :goto_7
-    const/4 v2, 0x0
+    move-object v0, v8
 
     goto :goto_a
 
@@ -10289,7 +10291,7 @@
     move-object v0, v8
 
     :goto_9
-    const/4 v2, 0x1
+    move v2, v1
 
     .line 13195
     :goto_a
@@ -10309,9 +10311,9 @@
 
     move v13, v2
 
-    move-object v9, v8
+    move v2, v7
 
-    const/4 v2, 0x0
+    move v10, v2
 
     goto/16 :goto_10
 
@@ -10508,6 +10510,13 @@
     move-object v4, v2
 
     :goto_f
+    move v2, v7
+
+    move v10, v2
+
+    move v13, v10
+
+    :goto_10
     move-object v9, v8
 
     goto :goto_11
@@ -10539,16 +10548,21 @@
 
     move v13, v4
 
+    move v10, v7
+
     move-object v4, v8
 
     move-object v9, v4
 
-    :goto_10
-    const/4 v10, 0x0
-
-    goto :goto_12
+    goto :goto_11
 
     :cond_1b
+    move v2, v7
+
+    move v10, v2
+
+    move v13, v10
+
     move-object v4, v8
 
     move-object v5, v4
@@ -10556,13 +10570,6 @@
     move-object v9, v5
 
     :goto_11
-    const/4 v2, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v13, 0x0
-
-    :goto_12
     if-nez v6, :cond_1c
 
     .line 13225
@@ -10573,15 +10580,15 @@
     :cond_1c
     if-eqz v2, :cond_1d
 
-    const/4 v14, 0x1
+    move v14, v1
 
-    goto :goto_13
+    goto :goto_12
 
     :cond_1d
-    const/4 v14, 0x0
+    move v14, v7
 
     .line 13229
-    :goto_13
+    :goto_12
     sget-object v15, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v7, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda80;
@@ -10620,7 +10627,7 @@
 
     invoke-virtual {v15, v13}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    goto :goto_14
+    goto :goto_13
 
     .line 13310
     :cond_1e
@@ -10670,7 +10677,7 @@
 
     invoke-virtual {v0, v4, v11, v1}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setBackgroundState(IZZ)V
 
-    goto :goto_14
+    goto :goto_13
 
     .line 13320
     :cond_20
@@ -10680,7 +10687,7 @@
 
     invoke-virtual {v0, v5, v11, v1}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setBackgroundState(IZZ)V
 
-    :goto_14
+    :goto_13
     return-void
 .end method
 
@@ -11187,7 +11194,7 @@
     .line 9498
     iget v6, p2, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     float-to-int v6, v6
 
@@ -11196,7 +11203,7 @@
     .line 9499
     iget v7, p2, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     float-to-int v7, v7
 
@@ -11271,11 +11278,11 @@
     .line 9511
     iget p3, p2, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
 
-    mul-float p3, p3, v4
+    mul-float/2addr p3, v4
 
     iget p4, p2, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
-    mul-float p4, p4, v5
+    mul-float/2addr p4, v5
 
     invoke-virtual {v9, p3, p4}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
@@ -11388,10 +11395,6 @@
     move-result-object v2
 
     if-nez v2, :cond_3
-
-    if-lez v1, :cond_3
-
-    if-lez v0, :cond_3
 
     .line 10650
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -12317,7 +12320,7 @@
     .line 7673
     iget v6, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float p2, p2, v6
+    mul-float/2addr p2, v6
 
     float-to-int p2, p2
 
@@ -12326,7 +12329,7 @@
     .line 7674
     iget v5, v5, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     float-to-int v4, v4
 
@@ -12504,7 +12507,7 @@
 
     if-lez p1, :cond_8
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :cond_8
     return v1
@@ -12822,13 +12825,13 @@
     goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
     :goto_0
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 16572
     :goto_1
@@ -12847,7 +12850,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_5
     :goto_2
@@ -12873,7 +12876,7 @@
     goto :goto_3
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_3
     const/high16 v0, 0x3f800000    # 1.0f
@@ -12896,7 +12899,7 @@
 
     sub-float v5, v0, v5
 
-    mul-float v5, v5, p5
+    mul-float/2addr v5, p5
 
     goto :goto_4
 
@@ -12916,7 +12919,7 @@
 
     move-result v6
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     goto :goto_5
 
@@ -12949,7 +12952,7 @@
 
     sub-float v7, v0, v7
 
-    mul-float v6, v6, v7
+    mul-float/2addr v6, v7
 
     add-float/2addr v3, v6
 
@@ -13465,7 +13468,7 @@
 
     move-result v0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-ge v1, v0, :cond_3
@@ -13545,12 +13548,12 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
     add-int/lit8 v3, v0, 0x1
@@ -13923,7 +13926,7 @@
 .end method
 
 .method private getCurrentVideoEditedInfo()Lorg/telegram/messenger/VideoEditedInfo;
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -14010,13 +14013,13 @@
 
     const-wide/16 v14, 0x3e8
 
-    cmp-long v16, v12, v14
+    cmp-long v14, v12, v14
 
-    if-gez v16, :cond_1
+    if-gez v14, :cond_1
 
     const-wide/16 v14, 0x2
 
-    mul-long v12, v12, v14
+    mul-long/2addr v12, v14
 
     .line 8098
     iput-wide v12, v11, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
@@ -14048,7 +14051,7 @@
 
     const/high16 v4, 0x47e10000    # 115200.0f
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     float-to-int v4, v6
 
@@ -14147,11 +14150,11 @@
     if-ne v12, v2, :cond_5
 
     :cond_4
-    move/from16 v17, v6
+    move/from16 v16, v6
 
     move v6, v4
 
-    move/from16 v4, v17
+    move/from16 v4, v16
 
     :cond_5
     int-to-float v2, v4
@@ -14159,7 +14162,7 @@
     .line 8125
     iget v3, v9, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v4, v2
 
@@ -14168,7 +14171,7 @@
     .line 8126
     iget v3, v9, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-int v6, v2
 
@@ -14200,7 +14203,7 @@
 
     if-gez v6, :cond_8
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v3
 
     :cond_8
     div-float/2addr v2, v1
@@ -14351,9 +14354,9 @@
     .line 8164
     iget-wide v11, v0, Lorg/telegram/ui/PhotoViewer;->estimatedSize:J
 
-    cmp-long v13, v11, v7
+    cmp-long v7, v11, v7
 
-    if-eqz v13, :cond_d
+    if-eqz v7, :cond_d
 
     goto :goto_3
 
@@ -14376,7 +14379,7 @@
     .line 8167
     iget v7, v0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     float-to-long v7, v7
 
@@ -14594,7 +14597,7 @@
 
     iget v4, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -14607,7 +14610,7 @@
 
     iget v4, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -14626,7 +14629,7 @@
 
     iget v4, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -14639,7 +14642,7 @@
 
     iget v4, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -14814,7 +14817,7 @@
     if-ne v2, v10, :cond_22
 
     :cond_21
-    const/4 v6, 0x1
+    move v6, v10
 
     :cond_22
     iput-boolean v6, v1, Lorg/telegram/messenger/VideoEditedInfo;->muted:Z
@@ -15067,9 +15070,9 @@
     .line 11329
     aget-wide v0, p2, v2
 
-    cmp-long v3, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v3, :cond_9
+    if-nez v0, :cond_9
 
     .line 11330
     aput-wide v6, p2, v2
@@ -15154,9 +15157,9 @@
     .line 11344
     aget-wide v0, p2, v2
 
-    cmp-long v3, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v3, :cond_e
+    if-nez v0, :cond_e
 
     .line 11345
     aput-wide v6, p2, v2
@@ -15240,9 +15243,9 @@
     .line 11358
     aget-wide v0, p2, v2
 
-    cmp-long v3, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v3, :cond_12
+    if-nez v0, :cond_12
 
     .line 11359
     aput-wide v6, p2, v2
@@ -16369,7 +16372,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     goto :goto_0
 
@@ -16451,7 +16454,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     goto :goto_0
 
@@ -16797,7 +16800,7 @@
 .end method
 
 .method private isCurrentAvatarSet()Z
-    .locals 10
+    .locals 9
 
     .line 11380
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->currentAvatarLocation:Lorg/telegram/messenger/ImageLocation;
@@ -16862,7 +16865,7 @@
 
     move-result v2
 
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_0
     if-ge v4, v2, :cond_4
@@ -16895,9 +16898,9 @@
 
     iget-wide v7, v7, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_2
+    if-nez v5, :cond_2
 
     return v3
 
@@ -17098,7 +17101,7 @@
 
     const/4 p0, 0x1
 
-    const/4 v1, 0x1
+    move v1, p0
 
     :cond_0
     return v1
@@ -17186,12 +17189,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     :goto_0
     if-nez v0, :cond_3
@@ -17255,7 +17258,7 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :goto_1
     move v0, v1
@@ -17307,7 +17310,7 @@
 
     const/4 p0, 0x1
 
-    const/4 v1, 0x1
+    move v1, p0
 
     :cond_0
     return v1
@@ -17426,7 +17429,7 @@
     :cond_1
     const/4 p0, 0x1
 
-    const/4 v1, 0x1
+    move v1, p0
 
     :cond_2
     return v1
@@ -17777,12 +17780,12 @@
 
     if-eqz p5, :cond_b
 
-    const/4 p5, 0x1
+    move p5, v0
 
     goto :goto_3
 
     :cond_b
-    const/4 p5, 0x0
+    move p5, v2
 
     :goto_3
     invoke-virtual {p2, p3, p5}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubItemVisible(IZ)V
@@ -17863,7 +17866,7 @@
     if-eqz p1, :cond_10
 
     :cond_f
-    const/4 v2, 0x1
+    move v2, v0
 
     :cond_10
     iput-boolean v2, p0, Lorg/telegram/ui/PhotoViewer;->canZoom:Z
@@ -18333,7 +18336,7 @@
 
     move-result v1
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     iget p1, p0, Lorg/telegram/ui/PhotoViewer;->scale:F
 
@@ -18343,7 +18346,7 @@
 
     iget v3, p0, Lorg/telegram/ui/PhotoViewer;->animationValue:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr p1, v2
 
@@ -18744,7 +18747,7 @@
 
     :cond_1
     :goto_0
-    const/4 p2, 0x0
+    move p2, p5
 
     goto/16 :goto_3
 
@@ -18813,7 +18816,7 @@
     goto :goto_1
 
     :cond_4
-    const/4 p2, 0x0
+    move p2, p5
 
     :cond_5
     :goto_1
@@ -19212,7 +19215,7 @@
 
     if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v8
 
     goto :goto_0
 
@@ -19240,7 +19243,7 @@
     .line 13906
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    const/16 v18, 0x0
+    move/from16 v18, v8
 
     .line 13908
     :goto_1
@@ -19409,12 +19412,12 @@
 
     if-eqz v1, :cond_5
 
-    const/16 v1, 0x9a
+    move v1, v2
 
     goto :goto_3
 
     :cond_5
-    const/16 v1, 0x60
+    move v1, v3
 
     :goto_3
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -19432,12 +19435,12 @@
 
     if-eqz v1, :cond_6
 
-    const/16 v1, 0x9a
+    move v1, v2
 
     goto :goto_4
 
     :cond_6
-    const/16 v1, 0x60
+    move v1, v3
 
     :goto_4
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -19471,7 +19474,7 @@
     goto :goto_5
 
     :cond_7
-    const/16 v2, 0x60
+    move v2, v3
 
     :goto_5
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -19665,13 +19668,8 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    :catch_0
-    nop
-
     .line 5855
-    :goto_0
+    :catch_0
     iget p1, p0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -19751,7 +19749,7 @@
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer;->showScheduleDatePickerDialog()V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
     const/4 p1, 0x0
@@ -19759,7 +19757,7 @@
     .line 5863
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/PhotoViewer;->sendPressed(ZI)V
 
-    :goto_1
+    :goto_0
     return-void
 .end method
 
@@ -20192,12 +20190,12 @@
 
     if-eqz v5, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v4
 
     goto :goto_0
 
     :cond_3
-    const/4 v5, 0x0
+    move v5, v3
 
     :goto_0
     const/4 v6, 0x7
@@ -20252,7 +20250,7 @@
 
     move-result-object v11
 
-    const/4 v12, 0x0
+    move v12, v3
 
     :goto_1
     if-ge v12, v6, :cond_1d
@@ -20394,7 +20392,7 @@
     if-eqz v6, :cond_a
 
     :goto_4
-    const/4 v6, 0x1
+    move v6, v4
 
     goto :goto_5
 
@@ -20420,7 +20418,7 @@
     goto :goto_3
 
     :cond_b
-    const/4 v6, 0x0
+    move v6, v3
 
     :goto_5
     if-eqz v6, :cond_10
@@ -20475,24 +20473,26 @@
 
     if-nez v13, :cond_11
 
-    const/4 v15, 0x1
+    move v15, v4
 
     goto :goto_6
 
     :cond_11
-    const/4 v15, 0x0
+    move v15, v3
 
     :goto_6
-    move-object/from16 v3, p1
-
     if-ne v13, v10, :cond_12
 
-    const/4 v9, 0x1
+    move-object/from16 v3, p1
+
+    move v9, v4
 
     goto :goto_7
 
     :cond_12
-    const/4 v9, 0x0
+    move v9, v3
+
+    move-object/from16 v3, p1
 
     :goto_7
     invoke-direct {v6, v14, v15, v9, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -20920,7 +20920,7 @@
 
     :cond_1f
     :goto_b
-    const/4 v1, 0x0
+    move v1, v3
 
     return v1
 .end method
@@ -21800,7 +21800,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x0
+    move v1, v4
 
     :goto_1
     if-nez v1, :cond_4
@@ -22207,9 +22207,9 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x43b40000    # 360.0f
-
     cmpg-float v1, v0, v1
+
+    const/high16 v2, 0x43b40000    # 360.0f
 
     if-gez v1, :cond_1
 
@@ -22317,9 +22317,9 @@
 
     const/4 v0, 0x0
 
-    const/high16 v1, 0x43b40000    # 360.0f
-
     cmpg-float v0, p1, v0
+
+    const/high16 v1, 0x43b40000    # 360.0f
 
     if-gez v0, :cond_0
 
@@ -22402,14 +22402,14 @@
 
     if-eq p3, v0, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v0
 
     goto :goto_0
 
     :cond_1
     const/4 p3, 0x0
 
-    const/4 v4, 0x0
+    move v4, p3
 
     :goto_0
     const/4 v5, 0x1
@@ -23774,9 +23774,9 @@
 
     sub-float v2, v1, p9
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
-    mul-float p3, p3, p9
+    mul-float/2addr p3, p9
 
     add-float/2addr v2, p3
 
@@ -23788,9 +23788,9 @@
 
     sub-float v0, v1, p1
 
-    mul-float p4, p4, v0
+    mul-float/2addr p4, v0
 
-    mul-float p5, p5, p1
+    mul-float/2addr p5, p1
 
     add-float/2addr p4, p5
 
@@ -23809,9 +23809,9 @@
 
     sub-float p4, v1, p9
 
-    mul-float p2, p2, p4
+    mul-float/2addr p2, p4
 
-    mul-float p6, p6, p9
+    mul-float/2addr p6, p9
 
     add-float/2addr p2, p6
 
@@ -23823,9 +23823,9 @@
 
     sub-float/2addr v1, p1
 
-    mul-float p7, p7, v1
+    mul-float/2addr p7, v1
 
-    mul-float p8, p8, p1
+    mul-float/2addr p8, p1
 
     add-float/2addr p7, p8
 
@@ -24160,7 +24160,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x0
+    move p2, v0
 
     .line 9397
     :goto_0
@@ -25352,7 +25352,7 @@
 
     sub-float v3, v8, v0
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     add-float/2addr v0, v3
 
@@ -25366,7 +25366,7 @@
 
     const v2, 0x3dcccccd    # 0.1f
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     add-float/2addr v0, v8
 
@@ -25379,7 +25379,7 @@
 
     if-nez v2, :cond_4
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v8
 
     .line 15881
     :cond_4
@@ -25634,7 +25634,7 @@
     goto :goto_1
 
     :cond_d
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v8
 
     :goto_1
     const/4 v3, 0x0
@@ -25768,7 +25768,7 @@
 
     iget v12, v10, Lorg/telegram/ui/PhotoViewer;->animationValue:F
 
-    mul-float v3, v3, v12
+    mul-float/2addr v3, v12
 
     add-float/2addr v3, v0
 
@@ -25779,7 +25779,7 @@
 
     sub-float/2addr v5, v13
 
-    mul-float v5, v5, v12
+    mul-float/2addr v5, v12
 
     add-float/2addr v13, v5
 
@@ -25790,7 +25790,7 @@
 
     sub-float/2addr v15, v5
 
-    mul-float v15, v15, v12
+    mul-float/2addr v15, v12
 
     add-float/2addr v15, v5
 
@@ -25801,7 +25801,7 @@
 
     sub-float/2addr v4, v9
 
-    mul-float v4, v4, v12
+    mul-float/2addr v4, v12
 
     add-float/2addr v9, v4
 
@@ -25812,7 +25812,7 @@
 
     sub-float/2addr v14, v4
 
-    mul-float v14, v14, v12
+    mul-float/2addr v14, v12
 
     add-float/2addr v4, v14
 
@@ -26148,9 +26148,9 @@
 
     const v2, 0x3f800347    # 1.0001f
 
-    const-wide/16 v3, 0x78
-
     cmpg-float v2, v12, v2
+
+    const-wide/16 v3, 0x78
 
     if-gtz v2, :cond_21
 
@@ -26490,15 +26490,15 @@
     goto :goto_a
 
     :cond_2b
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_a
     iput-boolean v2, v10, Lorg/telegram/ui/PhotoViewer;->changingPage:Z
 
     :cond_2c
-    const/4 v0, 0x3
+    move v2, v5
 
-    const/4 v2, 0x0
+    const/4 v0, 0x3
 
     :goto_b
     if-ge v2, v0, :cond_30
@@ -26784,7 +26784,7 @@
 
     move/from16 v17, v13
 
-    const/4 v13, 0x1
+    move/from16 v13, v19
 
     move-object/from16 v9, v24
 
@@ -26837,11 +26837,11 @@
 
     move-result v1
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     float-to-int v3, v3
 
-    mul-float v6, v6, v1
+    mul-float/2addr v6, v1
 
     float-to-int v4, v6
 
@@ -26875,7 +26875,7 @@
 
     if-eqz v6, :cond_35
 
-    const/4 v6, 0x1
+    move v6, v13
 
     goto :goto_10
 
@@ -27087,9 +27087,9 @@
 
     const/high16 v12, 0x40000000    # 2.0f
 
-    const/4 v15, 0x0
-
     move v13, v2
+
+    move v15, v5
 
     .line 16142
     :goto_15
@@ -27120,7 +27120,7 @@
 
     add-float/2addr v2, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -27202,7 +27202,7 @@
 
     const/high16 v12, 0x40000000    # 2.0f
 
-    const/4 v15, 0x0
+    move v15, v5
 
     .line 16157
     iget-boolean v1, v10, Lorg/telegram/ui/PhotoViewer;->isActionBarVisible:Z
@@ -27300,7 +27300,7 @@
     goto :goto_18
 
     :cond_40
-    const/16 v32, 0x0
+    move/from16 v32, v15
 
     .line 16172
     :goto_18
@@ -27438,7 +27438,7 @@
     goto :goto_1b
 
     :cond_44
-    const/4 v3, 0x0
+    move v3, v15
 
     :goto_1b
     invoke-interface {v1, v3}, Lorg/telegram/ui/Components/IPhotoPaintView;->getEmojiPadding(Z)I
@@ -27471,7 +27471,7 @@
 
     sub-float v2, v3, v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     const/4 v2, 0x0
 
@@ -27581,7 +27581,7 @@
 
     move/from16 v40, v13
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move/from16 v13, v20
 
     move v8, v6
 
@@ -27605,7 +27605,7 @@
 
     move/from16 v40, v13
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move/from16 v13, v20
 
     move v8, v6
 
@@ -27708,13 +27708,13 @@
     :goto_1d
     int-to-float v1, v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -28103,7 +28103,7 @@
 
     add-float v1, v1, v21
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
     float-to-int v1, v1
 
@@ -28115,7 +28115,7 @@
 
     add-float v3, v3, v21
 
-    mul-float v3, v3, v13
+    mul-float/2addr v3, v13
 
     float-to-int v3, v3
 
@@ -28177,11 +28177,11 @@
     move/from16 v6, v22
 
     :cond_62
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     div-float/2addr v5, v12
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     div-float/2addr v15, v12
 
@@ -28349,7 +28349,7 @@
 
     div-float/2addr v1, v3
 
-    mul-float v8, v8, v1
+    mul-float/2addr v8, v1
 
     goto :goto_30
 
@@ -28431,7 +28431,7 @@
     :cond_6d
     div-float/2addr v4, v2
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     .line 16310
     iget v1, v10, Lorg/telegram/ui/PhotoViewer;->sendPhotoType:I
@@ -28496,7 +28496,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget-object v3, v10, Lorg/telegram/ui/PhotoViewer;->cropTransform:Lorg/telegram/ui/Components/Crop/CropTransform;
 
@@ -28504,7 +28504,7 @@
 
     move-result v3
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-virtual {v11, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -28518,11 +28518,11 @@
 
     move-result v1
 
-    mul-float v1, v1, v9
+    mul-float/2addr v1, v9
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     iget-object v3, v10, Lorg/telegram/ui/PhotoViewer;->cropTransform:Lorg/telegram/ui/Components/Crop/CropTransform;
 
@@ -28530,11 +28530,11 @@
 
     move-result v3
 
-    mul-float v3, v3, v13
+    mul-float/2addr v3, v13
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
-    mul-float v3, v3, v0
+    mul-float/2addr v3, v0
 
     invoke-virtual {v11, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -28586,7 +28586,7 @@
     goto :goto_31
 
     :cond_73
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     .line 16339
     invoke-virtual {v11, v1}, Landroid/graphics/Canvas;->rotate(F)V
@@ -28653,7 +28653,7 @@
 
     move-result v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     add-float v24, v44, v4
 
@@ -28797,9 +28797,9 @@
 
     sub-float v8, v1, v17
 
-    mul-float v13, v13, v8
+    mul-float/2addr v13, v8
 
-    mul-float v13, v13, v0
+    mul-float/2addr v13, v0
 
     const/4 v1, 0x0
 
@@ -28861,9 +28861,9 @@
 
     sub-float v8, v3, v17
 
-    mul-float v13, v13, v8
+    mul-float/2addr v13, v8
 
-    mul-float v13, v13, v0
+    mul-float/2addr v13, v0
 
     .line 16390
     invoke-virtual {v11, v1, v13}, Landroid/graphics/Canvas;->skew(FF)V
@@ -29442,7 +29442,7 @@
 
     add-float/2addr v1, v2
 
-    mul-float v1, v1, v14
+    mul-float/2addr v1, v14
 
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -29551,11 +29551,11 @@
 
     move-result v2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
-    mul-float v3, v3, v2
+    mul-float/2addr v3, v2
 
     float-to-int v3, v3
 
@@ -29800,7 +29800,7 @@
 
     add-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -30047,7 +30047,7 @@
 
     sub-float/2addr v1, v2
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -30260,7 +30260,7 @@
 
     const-wide/16 v3, 0x3e8
 
-    mul-long v0, v0, v3
+    mul-long/2addr v0, v3
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
@@ -30434,7 +30434,7 @@
 
     :catchall_0
     :cond_0
-    const/4 v1, -0x1
+    move v1, v2
 
     :goto_0
     if-ltz v1, :cond_1
@@ -30678,7 +30678,7 @@
     iput-object v2, p0, Lorg/telegram/ui/PhotoViewer;->currentAnimation:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     :cond_5
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_0
     const/4 v4, 0x3
@@ -30840,7 +30840,7 @@
 .end method
 
 .method private onPhotoShow(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;Lorg/telegram/messenger/ImageLocation;Lorg/telegram/messenger/ImageLocation;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/List;ILorg/telegram/ui/PhotoViewer$PlaceProviderObject;)V
-    .locals 20
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30981,11 +30981,11 @@
     .line 11458
     iget-wide v7, v0, Lorg/telegram/ui/PhotoViewer;->mergeDialogId:J
 
-    cmp-long v16, v7, v10
+    cmp-long v7, v7, v10
 
-    if-nez v16, :cond_0
+    if-nez v7, :cond_0
 
-    const/4 v7, 0x1
+    move v7, v14
 
     goto :goto_0
 
@@ -31165,7 +31165,7 @@
 
     if-eqz v7, :cond_7
 
-    const/4 v7, 0x1
+    move v7, v14
 
     goto :goto_4
 
@@ -31790,7 +31790,7 @@
     if-eqz v7, :cond_14
 
     :cond_13
-    const/4 v7, 0x1
+    move v7, v14
 
     goto :goto_8
 
@@ -32093,9 +32093,9 @@
 
     const-wide/16 v11, 0x0
 
-    cmp-long v4, v2, v11
+    cmp-long v2, v2, v11
 
-    if-eqz v4, :cond_20
+    if-eqz v2, :cond_20
 
     const/4 v2, 0x0
 
@@ -32104,7 +32104,7 @@
 
     :cond_1f
     :goto_c
-    const/4 v4, 0x0
+    move v4, v2
 
     goto/16 :goto_d
 
@@ -32236,9 +32236,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v9, v2, v6
+    cmp-long v2, v2, v6
 
-    if-nez v9, :cond_26
+    if-nez v2, :cond_26
 
     .line 11673
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->sendItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -32288,7 +32288,7 @@
 
     if-eqz v4, :cond_2a
 
-    const/4 v4, 0x1
+    move v4, v14
 
     goto :goto_f
 
@@ -32306,9 +32306,9 @@
 
     if-eqz v4, :cond_2c
 
-    cmp-long v4, v2, v9
+    cmp-long v2, v2, v9
 
-    if-lez v4, :cond_2b
+    if-lez v2, :cond_2b
 
     .line 11685
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
@@ -32444,7 +32444,7 @@
     goto :goto_13
 
     :cond_30
-    const/16 v3, 0x8
+    move v3, v8
 
     :goto_13
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -32596,22 +32596,22 @@
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
-    move-result-wide v17
+    move-result-wide v16
 
-    move-object/from16 v19, v9
+    move-object/from16 v18, v9
 
     iget-wide v8, v0, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
-    cmp-long v13, v17, v8
+    cmp-long v8, v16, v8
 
-    if-nez v13, :cond_35
+    if-nez v8, :cond_35
 
     const/4 v8, 0x0
 
     goto :goto_17
 
     :cond_35
-    const/4 v8, 0x1
+    move v8, v14
 
     :goto_17
     aget-object v4, v4, v8
@@ -32624,14 +32624,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    move-object/from16 v9, v19
+    move-object/from16 v9, v18
 
     const/16 v8, 0x8
 
     goto :goto_16
 
     :cond_36
-    move-object/from16 v19, v9
+    move-object/from16 v18, v9
 
     .line 11733
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->imagesArr:Ljava/util/ArrayList;
@@ -32730,7 +32730,7 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->ShowAllGIFs:I
 
-    move-object/from16 v4, v19
+    move-object/from16 v4, v18
 
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -33130,7 +33130,7 @@
 
     if-nez v2, :cond_4a
 
-    const/4 v2, 0x1
+    move v2, v14
 
     .line 11804
     :goto_1e
@@ -33154,7 +33154,7 @@
 
     if-eqz v4, :cond_4d
 
-    const/4 v4, 0x1
+    move v4, v14
 
     goto :goto_1f
 
@@ -33185,7 +33185,7 @@
     if-eqz v2, :cond_4f
 
     :cond_4e
-    const/4 v2, 0x1
+    move v2, v14
 
     goto :goto_20
 
@@ -33408,9 +33408,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v4, v2, v6
+    cmp-long v2, v2, v6
 
-    if-eqz v4, :cond_5b
+    if-eqz v2, :cond_5b
 
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->totalImagesCount:I
 
@@ -33459,9 +33459,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v4, v2, v6
+    cmp-long v2, v2, v6
 
-    if-eqz v4, :cond_5c
+    if-eqz v2, :cond_5c
 
     .line 11853
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
@@ -33490,9 +33490,9 @@
 
     const-wide/16 v6, 0x0
 
-    cmp-long v4, v2, v6
+    cmp-long v2, v2, v6
 
-    if-eqz v4, :cond_5c
+    if-eqz v2, :cond_5c
 
     .line 11857
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
@@ -33567,7 +33567,7 @@
 
     const/4 v3, -0x1
 
-    if-ne v2, v3, :cond_62
+    if-ne v2, v3, :cond_61
 
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrLocals:Ljava/util/ArrayList;
 
@@ -33579,7 +33579,7 @@
 
     iget-boolean v2, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_61
 
     .line 11861
     :cond_60
@@ -33590,20 +33590,19 @@
     .line 11862
     invoke-direct {v0, v2}, Lorg/telegram/ui/PhotoViewer;->onActionClick(Z)V
 
-    :cond_61
-    const/4 v3, 0x0
+    move v3, v2
 
     goto/16 :goto_2c
 
     .line 11863
-    :cond_62
+    :cond_61
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrLocals:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_61
+    if-nez v2, :cond_69
 
     .line 11864
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrLocals:Ljava/util/ArrayList;
@@ -33615,7 +33614,7 @@
     .line 11866
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->parentChatActivity:Lorg/telegram/ui/ChatActivity;
 
-    if-eqz v3, :cond_63
+    if-eqz v3, :cond_62
 
     invoke-virtual {v3}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
@@ -33623,24 +33622,24 @@
 
     goto :goto_28
 
-    :cond_63
+    :cond_62
     const/4 v7, 0x0
 
     .line 11867
     :goto_28
     iget-boolean v3, v0, Lorg/telegram/ui/PhotoViewer;->isDocumentsPicker:Z
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_63
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->parentChatActivity:Lorg/telegram/ui/ChatActivity;
 
-    if-eqz v3, :cond_64
+    if-eqz v3, :cond_63
 
     invoke-virtual {v3}, Lorg/telegram/ui/ChatActivity;->isSecretChat()Z
 
     move-result v3
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_63
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->parentChatActivity:Lorg/telegram/ui/ChatActivity;
 
@@ -33648,19 +33647,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_63
 
-    if-eqz v7, :cond_64
+    if-eqz v7, :cond_63
 
     iget-boolean v3, v7, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_63
 
     invoke-static {v7}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v3
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_63
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->parentChatActivity:Lorg/telegram/ui/ChatActivity;
 
@@ -33668,73 +33667,73 @@
 
     move-result v3
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_63
 
-    const/4 v7, 0x1
+    move v7, v14
 
     goto :goto_29
 
-    :cond_64
+    :cond_63
     const/4 v7, 0x0
 
     .line 11868
     :goto_29
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->placeProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_64
 
     invoke-interface {v3}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;->getEditingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v3
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_64
 
     const/4 v7, 0x0
 
     .line 11871
-    :cond_65
+    :cond_64
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    if-eqz v3, :cond_66
+    if-eqz v3, :cond_65
 
     const/4 v7, 0x0
 
     goto :goto_2b
 
     .line 11873
-    :cond_66
+    :cond_65
     instance-of v3, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_66
 
     goto :goto_2b
 
-    :cond_67
-    if-eqz v7, :cond_69
+    :cond_66
+    if-eqz v7, :cond_68
 
     .line 11875
     instance-of v3, v2, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    if-eqz v3, :cond_69
+    if-eqz v3, :cond_68
 
     .line 11876
     check-cast v2, Lorg/telegram/messenger/MediaController$SearchImage;
 
     iget v2, v2, Lorg/telegram/messenger/MediaController$SearchImage;->type:I
 
-    if-nez v2, :cond_68
+    if-nez v2, :cond_67
 
     goto :goto_2a
 
-    :cond_68
+    :cond_67
     const/4 v14, 0x0
 
     :goto_2a
     move v7, v14
 
-    :cond_69
+    :cond_68
     :goto_2b
-    if-eqz v7, :cond_61
+    if-eqz v7, :cond_69
 
     .line 11879
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->timeItem:Landroid/widget/ImageView;
@@ -33742,6 +33741,11 @@
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto :goto_2c
+
+    :cond_69
+    const/4 v3, 0x0
 
     .line 11882
     :goto_2c
@@ -33777,7 +33781,7 @@
     goto :goto_2d
 
     :cond_6a
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_2d
     invoke-virtual {v2, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -33819,7 +33823,7 @@
 .end method
 
 .method private onSharePressed(Ljava/lang/String;)V
-    .locals 10
+    .locals 9
 
     .line 3948
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->parentActivity:Landroid/app/Activity;
@@ -33936,9 +33940,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v9, v5, v7
+    cmp-long v5, v5, v7
 
-    if-nez v9, :cond_5
+    if-nez v5, :cond_5
 
     iget-boolean v5, p0, Lorg/telegram/ui/PhotoViewer;->isEvent:Z
 
@@ -33947,13 +33951,13 @@
     goto :goto_1
 
     :cond_4
-    const/4 v5, 0x0
+    move v5, v2
 
     goto :goto_2
 
     :cond_5
     :goto_1
-    const/4 v5, 0x1
+    move v5, v1
 
     :goto_2
     invoke-virtual {v0, v3, v4, v5}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Z)Ljava/io/File;
@@ -34685,7 +34689,7 @@
 
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->pinchStartScale:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     iput v1, v0, Lorg/telegram/ui/PhotoViewer;->scale:F
 
@@ -34724,7 +34728,7 @@
 
     div-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -34765,7 +34769,7 @@
 
     div-float v4, v3, v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float/2addr v1, v2
 
@@ -35129,9 +35133,9 @@
     .line 15554
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PhotoViewer;->hidePressedDrawables()V
 
-    const/4 v2, 0x0
+    move v2, v12
 
-    const/4 v4, 0x0
+    move v4, v2
 
     .line 15557
     :cond_1f
@@ -35471,7 +35475,7 @@
 
     div-float v4, v3, v4
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     sub-float/2addr v1, v2
 
@@ -35508,7 +35512,7 @@
 
     div-float v5, v3, v5
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sub-float/2addr v2, v4
 
@@ -35815,13 +35819,13 @@
 
     sub-float/2addr v4, v5
 
-    const/16 v5, 0x28a
-
     cmpg-float v3, v3, v4
+
+    const/16 v4, 0x28a
 
     if-ltz v3, :cond_3f
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -35851,7 +35855,7 @@
     :cond_40
     iget v3, v0, Lorg/telegram/ui/PhotoViewer;->translationX:F
 
-    iget v4, v0, Lorg/telegram/ui/PhotoViewer;->maxX:F
+    iget v5, v0, Lorg/telegram/ui/PhotoViewer;->maxX:F
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PhotoViewer;->getContainerViewWidth()I
 
@@ -35861,13 +35865,13 @@
 
     int-to-float v6, v7
 
-    add-float/2addr v4, v6
+    add-float/2addr v5, v6
 
-    cmpl-float v3, v3, v4
+    cmpl-float v3, v3, v5
 
     if-gtz v3, :cond_41
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -36627,12 +36631,12 @@
 
     if-nez v4, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x0
+    move v4, v3
 
     .line 13867
     :goto_0
@@ -36713,9 +36717,9 @@
 
     move-object v10, v8
 
-    const/4 v9, 0x0
+    move v9, v3
 
-    const/4 v11, 0x0
+    move v11, v9
 
     :goto_2
     if-eqz v8, :cond_6
@@ -37153,7 +37157,7 @@
 
     invoke-direct {v0, v7, v9}, Lorg/telegram/ui/PhotoViewer;->updatePlayerState(ZI)V
 
-    const/4 v7, 0x0
+    move v7, v3
 
     goto :goto_1
 
@@ -37165,7 +37169,7 @@
 
     iput-object v7, v0, Lorg/telegram/ui/PhotoViewer;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    const/4 v7, 0x1
+    move v7, v6
 
     .line 8781
     :goto_1
@@ -37200,7 +37204,7 @@
     goto :goto_2
 
     :cond_9
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 8978
     :goto_2
@@ -37383,9 +37387,9 @@
 
     sub-long v14, v14, v16
 
-    cmp-long v16, v12, v14
+    cmp-long v12, v12, v14
 
-    if-gez v16, :cond_e
+    if-gez v12, :cond_e
 
     .line 9014
     iget-object v9, v0, Lorg/telegram/ui/PhotoViewer;->savedVideoPositions:Landroidx/collection/ArrayMap;
@@ -37487,12 +37491,12 @@
 
     if-gt v1, v5, :cond_14
 
-    const/4 v1, 0x1
+    move v1, v6
 
     goto :goto_6
 
     :cond_14
-    const/4 v1, 0x0
+    move v1, v3
 
     :goto_6
     iput-boolean v1, v0, Lorg/telegram/ui/PhotoViewer;->playerLooping:Z
@@ -37686,7 +37690,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p4, 0x0
+    move p4, p3
 
     :cond_2
     :goto_0
@@ -38343,12 +38347,12 @@
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 17412
     :goto_0
@@ -38412,13 +38416,13 @@
     goto :goto_1
 
     :cond_2
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_2
 
     :cond_3
     :goto_1
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_2
     invoke-virtual {v4, v6, p1}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setProgress(FZ)V
@@ -38452,7 +38456,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-long v0, v0
 
@@ -38601,27 +38605,27 @@
     const-wide/16 v3, 0x0
 
     :cond_7
-    const/high16 v0, 0x447a0000    # 1000.0f
+    cmp-long v0, v7, v9
 
-    cmp-long v5, v7, v9
+    const/high16 v5, 0x447a0000    # 1000.0f
 
-    if-nez v5, :cond_8
+    if-nez v0, :cond_8
 
     .line 17450
-    iget v5, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
+    iget v0, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v5, v5, v0
+    mul-float/2addr v0, v5
 
-    float-to-long v7, v5
+    float-to-long v7, v0
 
     :cond_8
     sub-long/2addr v7, v3
 
     const-wide/32 v9, 0x4c4b40
 
-    cmp-long v5, v7, v9
+    cmp-long v0, v7, v9
 
-    if-lez v5, :cond_9
+    if-lez v0, :cond_9
 
     add-long/2addr v3, v9
 
@@ -38630,29 +38634,29 @@
 
     .line 17455
     :cond_9
-    iget v3, p0, Lorg/telegram/ui/PhotoViewer;->bitrate:I
+    iget v0, p0, Lorg/telegram/ui/PhotoViewer;->bitrate:I
 
-    iput v3, p1, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
+    iput v0, p1, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
     .line 17456
-    iget v3, p0, Lorg/telegram/ui/PhotoViewer;->resultWidth:I
+    iget v0, p0, Lorg/telegram/ui/PhotoViewer;->resultWidth:I
 
-    iput v3, p1, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
+    iput v0, p1, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
 
     .line 17457
-    iget v3, p0, Lorg/telegram/ui/PhotoViewer;->resultHeight:I
+    iget v0, p0, Lorg/telegram/ui/PhotoViewer;->resultHeight:I
 
-    iput v3, p1, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
+    iput v0, p1, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
 
     .line 17458
     iput-boolean v1, p1, Lorg/telegram/messenger/VideoEditedInfo;->needUpdateProgress:Z
 
     .line 17459
-    iget v3, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
+    iget v0, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v3, v3, v0
+    mul-float/2addr v0, v5
 
-    float-to-long v3, v3
+    float-to-long v3, v0
 
     iput-wide v3, p1, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
 
@@ -38702,13 +38706,13 @@
     goto :goto_3
 
     :cond_b
-    const/4 p1, 0x0
+    move p1, v2
 
     goto :goto_4
 
     :cond_c
     :goto_3
-    const/4 p1, 0x1
+    move p1, v1
 
     :goto_4
     invoke-virtual {v0, v6, p1}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setProgress(FZ)V
@@ -38757,7 +38761,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-long v0, v0
 
@@ -38956,7 +38960,7 @@
 
     long-to-float v1, v1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-long v1, p1
 
@@ -38977,7 +38981,7 @@
 
     int-to-float v1, v1
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     float-to-long v1, p1
 
@@ -38994,18 +38998,18 @@
     .line 17724
     iget-wide v0, p0, Lorg/telegram/ui/PhotoViewer;->originalSize:J
 
-    const/4 v2, 0x1
+    const-wide/32 v2, 0x3e800000
 
-    const-wide/32 v3, 0x3e800000
+    cmp-long v0, v0, v2
 
-    cmp-long v5, v0, v3
+    const/4 v1, 0x1
 
-    if-lez v5, :cond_0
+    if-lez v0, :cond_0
 
     .line 17725
     iget v0, p0, Lorg/telegram/ui/PhotoViewer;->compressionsCount:I
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v0, v1
 
     return v0
 
@@ -39016,23 +39020,23 @@
     move-result-object v0
 
     .line 17728
-    iget v1, p0, Lorg/telegram/ui/PhotoViewer;->compressionsCount:I
+    iget v2, p0, Lorg/telegram/ui/PhotoViewer;->compressionsCount:I
 
     const/4 v3, 0x2
 
     :goto_0
     const/4 v4, 0x5
 
-    if-ge v1, v4, :cond_2
+    if-ge v2, v4, :cond_2
 
     .line 17731
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    new-array v5, v2, [Ljava/lang/Object;
+    new-array v5, v1, [Ljava/lang/Object;
 
     const/4 v6, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
@@ -39060,7 +39064,7 @@
     return v0
 
     :cond_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
@@ -39080,9 +39084,9 @@
 
     const/high16 v4, 0x42c80000    # 100.0f
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    div-float/2addr v4, v1
+    div-float/2addr v4, v2
 
     div-float/2addr v0, v4
 
@@ -39090,7 +39094,7 @@
 
     move-result v0
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v0, v1
 
     invoke-static {v3, v0}, Ljava/lang/Math;->min(II)I
 
@@ -39294,9 +39298,9 @@
 
     iget-wide v3, v3, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    cmp-long v5, v3, v1
+    cmp-long v1, v3, v1
 
-    if-nez v5, :cond_2
+    if-nez v1, :cond_2
 
     .line 7033
     sget v0, Lorg/telegram/messenger/R$string;->SetUserPhotoSelfAlertMessage:I
@@ -39743,13 +39747,13 @@
     goto :goto_5
 
     :cond_f
-    const/4 v0, 0x0
+    move v0, v8
 
     goto :goto_6
 
     :cond_10
     :goto_5
-    const/4 v0, 0x1
+    move v0, v9
 
     :goto_6
     if-eqz v0, :cond_11
@@ -39842,15 +39846,15 @@
 
     const v1, 0x3f666666    # 0.9f
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-long v0, v0
 
     const-wide/32 v2, 0x7d000000
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_13
+    if-lez v2, :cond_13
 
     .line 7133
     iget v2, v7, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
@@ -39868,9 +39872,9 @@
     :cond_13
     const-wide v2, 0xfa000000L
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_16
+    if-lez v0, :cond_16
 
     .line 7134
     :cond_14
@@ -40083,12 +40087,12 @@
 
     if-eqz p1, :cond_6
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v0
 
     goto :goto_1
 
     :cond_6
-    const/high16 p1, 0x3f000000    # 0.5f
+    move p1, v1
 
     :goto_1
     const/4 v7, 0x0
@@ -40113,12 +40117,12 @@
 
     if-eqz v6, :cond_7
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v0
 
     goto :goto_2
 
     :cond_7
-    const/high16 v6, 0x3f000000    # 0.5f
+    move v6, v1
 
     :goto_2
     aput v6, v5, v7
@@ -40142,12 +40146,12 @@
 
     if-eqz v8, :cond_8
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v0
 
     goto :goto_3
 
     :cond_8
-    const/high16 v8, 0x3f000000    # 0.5f
+    move v8, v1
 
     :goto_3
     aput v8, v6, v7
@@ -40174,7 +40178,7 @@
     goto :goto_4
 
     :cond_9
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_4
     aput v0, v2, v7
@@ -40218,7 +40222,7 @@
     goto :goto_5
 
     :cond_b
-    const/high16 v0, 0x3f000000    # 0.5f
+    move v0, v1
 
     :goto_5
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -40760,12 +40764,12 @@
 
     if-eqz v4, :cond_b
 
-    const/4 v12, 0x1
+    move v12, v6
 
     goto :goto_4
 
     :cond_b
-    const/4 v12, 0x0
+    move v12, v7
 
     :goto_4
     iput-boolean v12, v1, Lorg/telegram/ui/PhotoViewer;->dontChangeCaptionPosition:Z
@@ -40915,7 +40919,7 @@
     invoke-static {v12, v10}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
     :goto_6
-    const/4 v10, 0x1
+    move v10, v6
 
     goto :goto_7
 
@@ -40938,7 +40942,7 @@
     invoke-virtual {v10, v7, v7}, Landroidx/core/widget/NestedScrollView;->scrollTo(II)V
 
     :cond_13
-    const/4 v10, 0x0
+    move v10, v7
 
     :goto_7
     const/4 v12, 0x4
@@ -41105,7 +41109,7 @@
     goto :goto_a
 
     :cond_17
-    const/4 v6, 0x0
+    move v6, v7
 
     .line 13108
     :cond_18
@@ -41117,7 +41121,7 @@
     goto :goto_b
 
     :cond_19
-    const/4 v7, 0x4
+    move v7, v12
 
     :goto_b
     invoke-virtual {v0, v7}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setVisibility(I)V
@@ -41193,7 +41197,7 @@
     goto :goto_c
 
     :cond_1c
-    const/4 v6, 0x0
+    move v6, v7
 
     :cond_1d
     :goto_c
@@ -41261,7 +41265,7 @@
 
     if-nez v2, :cond_0
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     :cond_0
     const/4 v2, 0x0
@@ -41408,7 +41412,7 @@
 
     if-lt v1, v10, :cond_4
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 12585
     :cond_4
@@ -41439,12 +41443,12 @@
 
     if-ne v10, v13, :cond_5
 
-    const/4 v10, 0x1
+    move v10, v6
 
     goto :goto_2
 
     :cond_5
-    const/4 v10, 0x0
+    move v10, v5
 
     :goto_2
     if-eqz v10, :cond_6
@@ -41573,7 +41577,7 @@
 
     if-le v15, v6, :cond_c
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :cond_c
     invoke-virtual {v14, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -41581,14 +41585,15 @@
     :goto_6
     move/from16 v16, v3
 
-    :goto_7
-    const/4 v1, 0x0
+    move v1, v5
 
-    goto/16 :goto_15
+    move v3, v6
+
+    goto/16 :goto_18
 
     .line 12582
     :cond_d
-    :goto_8
+    :goto_7
     invoke-virtual {v0, v5, v5}, Lorg/telegram/ui/PhotoViewer;->closePhoto(ZZ)V
 
     return-void
@@ -41614,7 +41619,7 @@
 
     if-lt v1, v10, :cond_f
 
-    goto :goto_9
+    goto :goto_8
 
     .line 12620
     :cond_f
@@ -41630,11 +41635,13 @@
 
     move/from16 v16, v3
 
-    goto/16 :goto_17
+    move v1, v5
+
+    goto/16 :goto_15
 
     .line 12617
     :cond_10
-    :goto_9
+    :goto_8
     invoke-virtual {v0, v5, v5}, Lorg/telegram/ui/PhotoViewer;->closePhoto(ZZ)V
 
     return-void
@@ -41660,7 +41667,7 @@
 
     if-lt v1, v10, :cond_12
 
-    goto :goto_b
+    goto :goto_a
 
     .line 12626
     :cond_12
@@ -41698,22 +41705,22 @@
 
     iget-wide v2, v13, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v13, v14, v2
+    cmp-long v2, v14, v2
 
-    if-nez v13, :cond_14
+    if-nez v2, :cond_14
 
-    const/4 v2, 0x1
+    move v2, v6
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_13
     move/from16 v16, v3
 
     :cond_14
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 12631
-    :goto_a
+    :goto_9
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrLocations:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -41737,17 +41744,19 @@
 
     move v10, v2
 
-    const/4 v1, 0x0
+    move v1, v5
+
+    move v13, v1
+
+    move v3, v6
 
     const/4 v2, 0x0
-
-    const/4 v3, 0x1
 
     goto/16 :goto_18
 
     .line 12623
     :cond_15
-    :goto_b
+    :goto_a
     invoke-virtual {v0, v5, v5}, Lorg/telegram/ui/PhotoViewer;->closePhoto(ZZ)V
 
     return-void
@@ -41775,7 +41784,7 @@
 
     if-lt v1, v2, :cond_17
 
-    goto/16 :goto_13
+    goto/16 :goto_12
 
     .line 12638
     :cond_17
@@ -41826,7 +41835,7 @@
 
     move-result v1
 
-    goto :goto_d
+    goto :goto_c
 
     .line 12644
     :cond_18
@@ -41863,7 +41872,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/PhotoViewer;->currentPathObject:Ljava/lang/String;
 
-    goto :goto_c
+    goto :goto_b
 
     .line 12646
     :cond_19
@@ -41887,20 +41896,20 @@
 
     move-result v1
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_1a
-    :goto_c
-    const/4 v1, 0x0
+    :goto_b
+    move v1, v5
 
-    :goto_d
+    :goto_c
     move v13, v1
 
+    move v10, v5
+
     const/4 v1, 0x0
 
-    const/4 v10, 0x0
-
-    goto/16 :goto_11
+    goto/16 :goto_10
 
     .line 12652
     :cond_1b
@@ -42071,9 +42080,9 @@
 
     const-wide/16 v17, 0x0
 
-    cmp-long v10, v6, v17
+    cmp-long v6, v6, v17
 
-    if-eqz v10, :cond_22
+    if-eqz v6, :cond_22
 
     .line 12684
     invoke-virtual {v15}, Ljava/lang/StringBuilder;->length()I
@@ -42118,15 +42127,15 @@
 
     const/4 v2, 0x1
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_24
-    const/4 v2, 0x0
+    move v2, v5
 
-    :goto_e
+    :goto_d
     move-object v10, v14
 
-    goto :goto_f
+    goto :goto_e
 
     .line 12694
     :cond_25
@@ -42184,14 +42193,14 @@
     iput-object v2, v3, Lorg/telegram/ui/PhotoViewer$EditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     :cond_26
-    const/4 v2, 0x0
+    move v2, v5
 
-    const/4 v3, 0x0
+    move v3, v2
 
     const/4 v10, 0x0
 
     .line 12705
-    :goto_f
+    :goto_e
     instance-of v6, v1, Lorg/telegram/messenger/MediaController$MediaEditState;
 
     if-eqz v6, :cond_29
@@ -42211,7 +42220,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/PhotoViewer;->currentImagePath:Ljava/lang/String;
 
-    goto :goto_10
+    goto :goto_f
 
     .line 12709
     :cond_27
@@ -42222,7 +42231,7 @@
     .line 12710
     iput-object v1, v0, Lorg/telegram/ui/PhotoViewer;->currentImagePath:Ljava/lang/String;
 
-    goto :goto_10
+    goto :goto_f
 
     .line 12712
     :cond_28
@@ -42231,7 +42240,7 @@
     iput-object v1, v0, Lorg/telegram/ui/PhotoViewer;->currentImagePath:Ljava/lang/String;
 
     :cond_29
-    :goto_10
+    :goto_f
     move v13, v3
 
     move-object v1, v10
@@ -42239,7 +42248,7 @@
     move v10, v2
 
     .line 12716
-    :goto_11
+    :goto_10
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->editState:Lorg/telegram/ui/PhotoViewer$EditState;
 
     iget-object v2, v2, Lorg/telegram/ui/PhotoViewer$EditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
@@ -42326,10 +42335,10 @@
 
     invoke-virtual/range {v19 .. v32}, Lorg/telegram/ui/Components/Crop/CropTransform;->setViewTransform(ZFFFIFFFFFFFZ)V
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_2a
-    const/4 v2, 0x0
+    move v2, v5
 
     .line 12728
     iput-boolean v2, v0, Lorg/telegram/ui/PhotoViewer;->previousHasTransform:Z
@@ -42383,14 +42392,16 @@
 
     invoke-virtual/range {v19 .. v32}, Lorg/telegram/ui/Components/Crop/CropTransform;->setViewTransform(ZFFFIFFFFFFFZ)V
 
-    :goto_12
+    :goto_11
     move-object v2, v1
 
-    goto/16 :goto_7
+    const/4 v1, 0x0
+
+    goto :goto_17
 
     :cond_2b
-    :goto_13
-    const/4 v1, 0x0
+    :goto_12
+    move v1, v5
 
     .line 12635
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/PhotoViewer;->closePhoto(ZZ)V
@@ -42414,7 +42425,7 @@
 
     if-lt v2, v1, :cond_2d
 
-    goto :goto_16
+    goto :goto_14
 
     .line 12736
     :cond_2d
@@ -42435,13 +42446,13 @@
 
     const/4 v10, 0x1
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_2e
     const/4 v10, 0x0
 
     .line 12738
-    :goto_14
+    :goto_13
     iput-object v1, v0, Lorg/telegram/ui/PhotoViewer;->currentPageBlock:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     .line 12739
@@ -42455,15 +42466,10 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    :goto_15
-    const/4 v3, 0x1
-
-    goto :goto_19
+    goto :goto_16
 
     :cond_2f
-    :goto_16
+    :goto_14
     const/4 v1, 0x0
 
     .line 12733
@@ -42472,20 +42478,21 @@
     return-void
 
     :cond_30
-    :goto_17
     const/4 v1, 0x0
 
+    :goto_15
+    move v10, v1
+
+    move v13, v10
+
+    :goto_16
     const/4 v2, 0x0
 
+    :goto_17
     const/4 v3, 0x1
 
-    const/4 v10, 0x0
-
-    :goto_18
-    const/4 v13, 0x0
-
     .line 12741
-    :goto_19
+    :goto_18
     invoke-direct {v0, v1, v3}, Lorg/telegram/ui/PhotoViewer;->setMenuItemIcon(ZZ)V
 
     .line 12743
@@ -42503,7 +42510,7 @@
 
     invoke-virtual {v1, v3, v3}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 12747
     :cond_31
@@ -42511,7 +42518,7 @@
 
     .line 12750
     :cond_32
-    :goto_1a
+    :goto_19
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->placeProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -42546,14 +42553,14 @@
 
     invoke-virtual {v1, v7, v3}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 12755
     :cond_33
     iput-object v1, v0, Lorg/telegram/ui/PhotoViewer;->hideAfterAnimation:Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     :cond_34
-    :goto_1b
+    :goto_1a
     if-nez v10, :cond_39
 
     .line 12760
@@ -42700,12 +42707,12 @@
     :cond_36
     const/4 v1, 0x1
 
-    goto :goto_1c
+    goto :goto_1b
 
     :cond_37
     const/4 v1, 0x0
 
-    :goto_1c
+    :goto_1b
     iput-boolean v1, v0, Lorg/telegram/ui/PhotoViewer;->canZoom:Z
 
     .line 12795
@@ -42719,12 +42726,12 @@
     .line 12796
     invoke-direct {v0, v1}, Lorg/telegram/ui/PhotoViewer;->releasePlayer(Z)V
 
-    goto :goto_1d
+    goto :goto_1c
 
     :cond_39
-    const/4 v1, 0x0
+    move v1, v7
 
-    :goto_1d
+    :goto_1c
     if-eqz v13, :cond_3b
 
     if-eqz v2, :cond_3b
@@ -42741,12 +42748,12 @@
 
     const/4 v3, 0x1
 
-    goto :goto_1e
+    goto :goto_1d
 
     :cond_3a
-    const/4 v3, 0x0
+    move v3, v1
 
-    :goto_1e
+    :goto_1d
     iget-object v5, v0, Lorg/telegram/ui/PhotoViewer;->editState:Lorg/telegram/ui/PhotoViewer$EditState;
 
     iget-object v5, v5, Lorg/telegram/ui/PhotoViewer$EditState;->savedFilterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
@@ -42763,7 +42770,7 @@
 
     if-nez v1, :cond_3c
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 12809
     :cond_3c
@@ -42772,7 +42779,7 @@
     invoke-virtual {v1}, Lorg/telegram/ui/PhotoViewer$EditState;->reset()V
 
     .line 12812
-    :goto_1f
+    :goto_1e
     iput-boolean v13, v0, Lorg/telegram/ui/PhotoViewer;->centerImageIsVideo:Z
 
     const/4 v1, -0x1
@@ -42786,7 +42793,7 @@
 
     const/4 v1, 0x0
 
-    :goto_20
+    :goto_1f
     const/4 v2, 0x3
 
     if-ge v1, v2, :cond_40
@@ -42798,7 +42805,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_20
+    goto :goto_1f
 
     :cond_3d
     const/4 v1, 0x1
@@ -42933,7 +42940,7 @@
     .line 12848
     invoke-direct {v0, v3, v2, v1}, Lorg/telegram/ui/PhotoViewer;->checkProgress(IZZ)V
 
-    goto :goto_21
+    goto :goto_20
 
     :cond_3e
     if-ge v2, v1, :cond_3f
@@ -43058,7 +43065,7 @@
 
     .line 12878
     :cond_3f
-    :goto_21
+    :goto_20
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->videoFrameBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_40
@@ -43076,7 +43083,7 @@
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PhotoViewer;->detectFaces()V
 
     :cond_41
-    :goto_22
+    :goto_21
     return-void
 .end method
 
@@ -43493,7 +43500,7 @@
 
     move-object/from16 v30, v10
 
-    const/16 v16, 0x0
+    move/from16 v16, v13
 
     const-wide/16 v20, 0x0
 
@@ -43822,8 +43829,6 @@
 
     move-wide/from16 v20, v16
 
-    const/16 v16, 0x1
-
     const/16 v17, 0x0
 
     const/16 v30, 0x0
@@ -43832,7 +43837,11 @@
 
     move-object v1, v4
 
+    move/from16 v16, v12
+
     move-object v4, v3
+
+    move-object v3, v10
 
     goto :goto_f
 
@@ -43941,18 +43950,22 @@
 
     const/4 v7, 0x0
 
-    const/16 v16, 0x1
-
     move-object v6, v3
 
-    :goto_f
     move-object v3, v10
 
-    const/4 v10, 0x0
+    move/from16 v16, v12
+
+    :goto_f
+    move v10, v13
 
     goto :goto_10
 
     :cond_19
+    move v10, v13
+
+    move/from16 v16, v10
+
     const/4 v1, 0x0
 
     const/4 v3, 0x0
@@ -43962,10 +43975,6 @@
     const/4 v6, 0x0
 
     const/4 v7, 0x0
-
-    const/4 v10, 0x0
-
-    const/16 v16, 0x0
 
     const/16 v17, 0x0
 
@@ -44070,7 +44079,7 @@
 
     move-object/from16 v12, v18
 
-    const/4 v14, 0x0
+    move v14, v13
 
     move/from16 v13, v16
 
@@ -44083,7 +44092,7 @@
 
     move-object/from16 v18, v11
 
-    const/4 v14, 0x0
+    move v14, v13
 
     .line 13480
     invoke-static {v6}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -44165,7 +44174,7 @@
 
     move-object/from16 v18, v11
 
-    const/4 v14, 0x0
+    move v14, v13
 
     if-eqz v1, :cond_21
 
@@ -44880,7 +44889,7 @@
     goto :goto_23
 
     :cond_3c
-    const/4 v12, 0x0
+    move v12, v13
 
     :goto_23
     invoke-virtual {v14, v12}, Lorg/telegram/messenger/ImageReceiver;->setNeedsQualityThumb(Z)V
@@ -45179,9 +45188,9 @@
 
     const-wide/16 v15, 0x0
 
-    cmp-long v9, v7, v15
+    cmp-long v7, v7, v15
 
-    if-nez v9, :cond_49
+    if-nez v7, :cond_49
 
     const-wide/16 v7, -0x1
 
@@ -45226,7 +45235,7 @@
 
     if-eqz v1, :cond_4d
 
-    const/4 v1, 0x0
+    move v1, v13
 
     .line 13627
     :goto_2d
@@ -45303,13 +45312,13 @@
     goto :goto_2f
 
     :cond_4f
-    const/4 v15, 0x0
+    move v15, v13
 
     goto :goto_30
 
     :cond_50
     :goto_2f
-    const/4 v15, 0x1
+    move v15, v12
 
     :goto_30
     const/4 v1, 0x5
@@ -45371,9 +45380,9 @@
 
     if-eqz v16, :cond_57
 
-    cmp-long v18, v8, v10
+    cmp-long v8, v8, v10
 
-    if-lez v18, :cond_54
+    if-lez v8, :cond_54
 
     .line 13649
     iget v8, v0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
@@ -45529,11 +45538,11 @@
 
     move-object v11, v13
 
-    const/4 v13, 0x1
+    move v13, v12
 
     move-object/from16 v12, v18
 
-    const/4 v0, 0x1
+    move v0, v13
 
     move v13, v15
 
@@ -45752,7 +45761,7 @@
     move-object p1, v1
 
     :goto_0
-    const/4 v0, 0x0
+    move v0, v2
 
     .line 13350
     :goto_1
@@ -45877,7 +45886,7 @@
 
     if-lt v0, v2, :cond_2
 
-    goto/16 :goto_21
+    goto/16 :goto_23
 
     .line 11943
     :cond_2
@@ -45939,13 +45948,13 @@
     goto :goto_0
 
     :cond_4
-    const/4 v3, 0x0
+    move v3, v8
 
     goto :goto_1
 
     :cond_5
     :goto_0
-    const/4 v3, 0x1
+    move v3, v13
 
     :goto_1
     if-eqz v17, :cond_6
@@ -46061,12 +46070,12 @@
 
     if-eqz v4, :cond_8
 
-    const/4 v4, 0x1
+    move v4, v13
 
     goto :goto_2
 
     :cond_8
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_2
     const/4 v5, 0x0
@@ -46218,12 +46227,12 @@
 
     if-nez v4, :cond_e
 
-    const/4 v4, 0x1
+    move v4, v13
 
     goto :goto_6
 
     :cond_e
-    const/4 v4, 0x0
+    move v4, v8
 
     :goto_6
     if-eqz v4, :cond_f
@@ -46338,12 +46347,12 @@
 
     if-nez v4, :cond_13
 
-    const/4 v4, 0x1
+    move v4, v13
 
     goto :goto_9
 
     :cond_13
-    const/4 v4, 0x0
+    move v4, v8
 
     .line 12001
     :goto_9
@@ -46363,12 +46372,12 @@
 
     if-nez v5, :cond_14
 
-    const/4 v5, 0x1
+    move v5, v13
 
     goto :goto_a
 
     :cond_14
-    const/4 v5, 0x0
+    move v5, v8
 
     :goto_a
     if-eqz v4, :cond_15
@@ -46603,7 +46612,7 @@
 
     const-wide/16 v13, 0x3e8
 
-    mul-long v11, v11, v13
+    mul-long/2addr v11, v13
 
     .line 12040
     sget v5, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
@@ -46783,7 +46792,7 @@
     goto :goto_11
 
     :cond_21
-    const/4 v2, 0x0
+    move v2, v8
 
     :goto_11
     const/4 v5, 0x0
@@ -46828,7 +46837,7 @@
 
     if-eqz v3, :cond_23
 
-    const/4 v3, 0x0
+    move v3, v8
 
     goto :goto_12
 
@@ -46874,7 +46883,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_20
+    goto/16 :goto_22
 
     .line 12071
     :cond_25
@@ -46941,7 +46950,7 @@
 
     if-eqz v2, :cond_26
 
-    const/4 v2, 0x0
+    move v2, v8
 
     goto :goto_14
 
@@ -46978,9 +46987,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v11, v4, v9
+    cmp-long v4, v4, v9
 
-    if-eqz v11, :cond_28
+    if-eqz v4, :cond_28
 
     .line 12078
     iget-object v4, v6, Lorg/telegram/ui/PhotoViewer;->imagesArr:Ljava/util/ArrayList;
@@ -47013,30 +47022,29 @@
 
     iget-wide v9, v6, Lorg/telegram/ui/PhotoViewer;->mergeDialogId:J
 
-    cmp-long v11, v4, v9
+    cmp-long v4, v4, v9
 
-    if-eqz v11, :cond_27
+    if-eqz v4, :cond_27
 
-    const/4 v2, 0x1
-
-    const/16 v25, 0x0
+    move/from16 v25, v8
 
     goto :goto_15
 
     :cond_27
     move/from16 v25, v2
 
+    :goto_15
     const/4 v2, 0x1
 
-    goto :goto_15
+    goto :goto_16
 
     :cond_28
     move/from16 v25, v2
 
-    const/4 v2, 0x0
+    move v2, v8
 
     .line 12083
-    :goto_15
+    :goto_16
     iget-object v4, v6, Lorg/telegram/ui/PhotoViewer;->placeProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     invoke-interface {v4}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;->loadMore()Z
@@ -47056,12 +47064,12 @@
 
     iget-wide v4, v6, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
-    goto :goto_16
+    goto :goto_17
 
     :cond_29
     iget-wide v4, v6, Lorg/telegram/ui/PhotoViewer;->mergeDialogId:J
 
-    :goto_16
+    :goto_17
     move-wide/from16 v22, v4
 
     const/16 v24, 0x28
@@ -47209,7 +47217,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleScrollNonFitText(Z)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_1c
 
     :cond_2c
     const/4 v4, 0x1
@@ -47257,7 +47265,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_1c
 
     :cond_2d
     move-object/from16 v12, v20
@@ -47296,9 +47304,9 @@
 
     if-eqz v2, :cond_2e
 
-    const/4 v2, 0x0
+    move v2, v8
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_2e
     iget-object v2, v6, Lorg/telegram/ui/PhotoViewer;->imagesArr:Ljava/util/ArrayList;
@@ -47314,7 +47322,7 @@
     move-result v2
 
     .line 12110
-    :goto_17
+    :goto_18
     iget-object v4, v6, Lorg/telegram/ui/PhotoViewer;->endReached:[Z
 
     aget-boolean v4, v4, v8
@@ -47325,9 +47333,9 @@
 
     const-wide/16 v9, 0x0
 
-    cmp-long v11, v4, v9
+    cmp-long v4, v4, v9
 
-    if-eqz v11, :cond_30
+    if-eqz v4, :cond_30
 
     .line 12112
     iget-object v4, v6, Lorg/telegram/ui/PhotoViewer;->imagesArr:Ljava/util/ArrayList;
@@ -47352,30 +47360,29 @@
 
     iget-wide v9, v6, Lorg/telegram/ui/PhotoViewer;->mergeDialogId:J
 
-    cmp-long v11, v4, v9
+    cmp-long v4, v4, v9
 
-    if-eqz v11, :cond_2f
+    if-eqz v4, :cond_2f
 
-    const/4 v2, 0x1
+    move/from16 v25, v8
 
-    const/16 v25, 0x0
-
-    goto :goto_18
+    goto :goto_19
 
     :cond_2f
     move/from16 v25, v2
 
+    :goto_19
     const/4 v2, 0x1
 
-    goto :goto_18
+    goto :goto_1a
 
     :cond_30
     move/from16 v25, v2
 
-    const/4 v2, 0x0
+    move v2, v8
 
     .line 12117
-    :goto_18
+    :goto_1a
     iget v4, v6, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -47386,12 +47393,12 @@
 
     iget-wide v4, v6, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
-    goto :goto_19
+    goto :goto_1b
 
     :cond_31
     iget-wide v4, v6, Lorg/telegram/ui/PhotoViewer;->mergeDialogId:J
 
-    :goto_19
+    :goto_1b
     move-wide/from16 v22, v4
 
     const/16 v24, 0x50
@@ -47477,7 +47484,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_1a
+    goto/16 :goto_1c
 
     .line 12122
     :cond_33
@@ -47509,7 +47516,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_1a
+    goto :goto_1c
 
     .line 12125
     :cond_34
@@ -47530,7 +47537,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_1a
+    goto :goto_1c
 
     .line 12127
     :cond_35
@@ -47551,7 +47558,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_1a
+    goto :goto_1c
 
     .line 12130
     :cond_36
@@ -47565,7 +47572,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_1a
+    goto :goto_1c
 
     :cond_37
     if-eqz v17, :cond_38
@@ -47583,7 +47590,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_1a
+    goto :goto_1c
 
     .line 12134
     :cond_38
@@ -47604,7 +47611,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_1a
+    goto :goto_1c
 
     .line 12136
     :cond_39
@@ -47627,7 +47634,7 @@
 
     .line 12139
     :cond_3a
-    :goto_1a
+    :goto_1c
     iget-wide v4, v6, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
     invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
@@ -47668,7 +47675,7 @@
     :cond_3e
     if-eqz v3, :cond_3f
 
-    goto :goto_1f
+    goto :goto_21
 
     :cond_3f
     const/4 v2, 0x1
@@ -47706,19 +47713,19 @@
 
     if-eqz v2, :cond_40
 
-    goto :goto_1b
+    goto :goto_1d
 
     :cond_40
-    const/4 v13, 0x0
+    move v13, v8
 
-    goto :goto_1c
+    goto :goto_1e
 
     :cond_41
-    :goto_1b
+    :goto_1d
     const/4 v13, 0x1
 
     .line 12151
-    :goto_1c
+    :goto_1e
     iget-object v2, v6, Lorg/telegram/ui/PhotoViewer;->paintButton:Landroid/widget/ImageView;
 
     if-eqz v13, :cond_42
@@ -47729,14 +47736,14 @@
 
     if-eqz v3, :cond_42
 
-    const/4 v3, 0x0
+    move v3, v8
 
-    goto :goto_1d
+    goto :goto_1f
 
     :cond_42
     const/16 v3, 0x8
 
-    :goto_1d
+    :goto_1f
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 12152
@@ -47746,14 +47753,14 @@
 
     if-nez v3, :cond_43
 
-    const/4 v13, 0x0
+    move v13, v8
 
-    goto :goto_1e
+    goto :goto_20
 
     :cond_43
     const/16 v13, 0x8
 
-    :goto_1e
+    :goto_20
     invoke-virtual {v2, v13}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 12153
@@ -47780,7 +47787,7 @@
     .line 12156
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    goto :goto_20
+    goto :goto_22
 
     :cond_44
     const/16 v3, 0xa
@@ -47790,10 +47797,10 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    goto :goto_20
+    goto :goto_22
 
     :cond_45
-    :goto_1f
+    :goto_21
     const/16 v3, 0xa
 
     .line 12143
@@ -47820,7 +47827,7 @@
 
     .line 12163
     :cond_46
-    :goto_20
+    :goto_22
     iget-object v2, v6, Lorg/telegram/ui/PhotoViewer;->groupedPhotosListView:Lorg/telegram/ui/Components/GroupedPhotosListView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/GroupedPhotosListView;->fillList()V
@@ -47829,10 +47836,10 @@
 
     move-object v15, v1
 
-    goto/16 :goto_57
+    goto/16 :goto_59
 
     :cond_47
-    :goto_21
+    :goto_23
     return-void
 
     :cond_48
@@ -47913,10 +47920,10 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    :goto_22
+    :goto_24
     move-object v15, v5
 
-    goto/16 :goto_56
+    goto/16 :goto_58
 
     .line 12171
     :cond_49
@@ -47939,7 +47946,7 @@
 
     if-lt v0, v1, :cond_4a
 
-    goto/16 :goto_2d
+    goto/16 :goto_2f
 
     .line 12175
     :cond_4a
@@ -47986,7 +47993,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    goto :goto_23
+    goto :goto_25
 
     .line 12183
     :cond_4b
@@ -47995,20 +48002,20 @@
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
     .line 12186
-    :goto_23
+    :goto_25
     iget-wide v1, v6, Lorg/telegram/ui/PhotoViewer;->avatarsDialogId:J
 
     const-wide/16 v3, 0x0
 
-    cmp-long v9, v1, v3
+    cmp-long v1, v1, v3
 
-    if-lez v9, :cond_4d
+    if-lez v1, :cond_4d
 
     :cond_4c
-    :goto_24
+    :goto_26
     const/4 v0, 0x1
 
-    goto :goto_25
+    goto :goto_27
 
     .line 12189
     :cond_4d
@@ -48053,12 +48060,12 @@
 
     if-eqz v0, :cond_4e
 
-    goto :goto_24
+    goto :goto_26
 
     :cond_4e
-    const/4 v0, 0x0
+    move v0, v8
 
-    :goto_25
+    :goto_27
     if-eqz v0, :cond_4f
 
     .line 12193
@@ -48068,7 +48075,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    goto :goto_26
+    goto :goto_28
 
     :cond_4f
     const/4 v1, 0x6
@@ -48078,7 +48085,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    goto :goto_26
+    goto :goto_28
 
     :cond_50
     const/4 v1, 0x6
@@ -48099,7 +48106,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
     .line 12202
-    :goto_26
+    :goto_28
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->customTitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_51
@@ -48109,7 +48116,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_27
+    goto :goto_29
 
     .line 12204
     :cond_51
@@ -48128,7 +48135,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_27
+    goto :goto_29
 
     .line 12207
     :cond_52
@@ -48171,14 +48178,14 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 12209
-    :goto_27
+    :goto_29
     iget-wide v0, v6, Lorg/telegram/ui/PhotoViewer;->avatarsDialogId:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_53
+    if-eqz v0, :cond_53
 
     iget v0, v6, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
 
@@ -48198,12 +48205,12 @@
 
     const/4 v0, 0x1
 
-    goto :goto_28
+    goto :goto_2a
 
     :cond_53
-    const/4 v0, 0x0
+    move v0, v8
 
-    :goto_28
+    :goto_2a
     if-eqz v0, :cond_54
 
     .line 12211
@@ -48213,7 +48220,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    goto :goto_29
+    goto :goto_2b
 
     :cond_54
     const/4 v2, 0x1
@@ -48223,7 +48230,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    :goto_29
+    :goto_2b
     xor-int/2addr v0, v2
 
     .line 12215
@@ -48242,14 +48249,14 @@
 
     if-eqz v0, :cond_55
 
-    const/4 v0, 0x0
+    move v0, v8
 
-    goto :goto_2a
+    goto :goto_2c
 
     :cond_55
     const/16 v0, 0x8
 
-    :goto_2a
+    :goto_2c
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 12218
@@ -48259,12 +48266,12 @@
 
     if-nez v1, :cond_56
 
-    goto :goto_2b
+    goto :goto_2d
 
     :cond_56
     const/16 v8, 0x8
 
-    :goto_2b
+    :goto_2d
     invoke-virtual {v0, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 12219
@@ -48283,7 +48290,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    goto :goto_2c
+    goto :goto_2e
 
     :cond_57
     const/16 v1, 0xa
@@ -48294,7 +48301,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
     .line 12224
-    :goto_2c
+    :goto_2e
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->checkHideMenuItem()V
@@ -48304,10 +48311,10 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/GroupedPhotosListView;->fillList()V
 
-    goto/16 :goto_22
+    goto/16 :goto_24
 
     :cond_58
-    :goto_2d
+    :goto_2f
     return-void
 
     .line 12226
@@ -48331,7 +48338,7 @@
 
     if-lt v0, v1, :cond_5a
 
-    goto/16 :goto_4c
+    goto/16 :goto_4e
 
     .line 12230
     :cond_5a
@@ -48363,7 +48370,7 @@
 
     move-result v0
 
-    goto :goto_2e
+    goto :goto_30
 
     .line 12240
     :cond_5b
@@ -48382,27 +48389,28 @@
 
     move-result v0
 
-    goto :goto_2e
+    goto :goto_30
 
     :cond_5c
-    const/4 v0, 0x0
+    move v0, v8
 
-    :goto_2e
+    :goto_30
     move-object v15, v5
 
     move/from16 v16, v7
 
-    const/4 v1, 0x0
+    move v1, v8
 
-    const/4 v2, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v3, v2
 
-    const/4 v4, 0x0
+    move v4, v3
 
+    :goto_31
     move-object v7, v15
 
-    goto/16 :goto_41
+    goto/16 :goto_43
 
     .line 12245
     :cond_5d
@@ -48430,9 +48438,9 @@
 
     move v14, v1
 
-    const/4 v0, 0x0
+    move v0, v8
 
-    goto :goto_30
+    goto :goto_32
 
     .line 12250
     :cond_5e
@@ -48464,20 +48472,21 @@
 
     if-ne v0, v2, :cond_60
 
+    move v14, v8
+
     const/4 v0, 0x1
 
-    goto :goto_2f
+    goto :goto_32
 
     :cond_5f
     move-object v15, v5
 
     :cond_60
-    const/4 v0, 0x0
+    move v0, v8
 
-    :goto_2f
-    const/4 v14, 0x0
+    move v14, v0
 
-    :goto_30
+    :goto_32
     if-eqz v14, :cond_68
 
     .line 12259
@@ -48485,15 +48494,15 @@
 
     if-nez v0, :cond_61
 
-    const/16 v16, 0x0
+    move/from16 v16, v8
 
-    goto :goto_31
+    goto :goto_33
 
     :cond_61
     move/from16 v16, v7
 
     .line 12262
-    :goto_31
+    :goto_33
     iget v0, v6, Lorg/telegram/ui/PhotoViewer;->sendPhotoType:I
 
     const/4 v1, -0x1
@@ -48540,18 +48549,18 @@
 
     move/from16 v4, v32
 
-    goto :goto_32
+    goto :goto_34
 
     :cond_63
-    const/4 v2, 0x0
+    move v5, v1
 
-    const/4 v3, 0x0
+    move v3, v2
+
+    move v2, v8
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    const/4 v5, -0x1
-
-    :goto_32
+    :goto_34
     if-eq v0, v1, :cond_67
 
     .line 12279
@@ -48576,7 +48585,7 @@
 
     if-ge v0, v1, :cond_64
 
-    goto/16 :goto_34
+    goto/16 :goto_36
 
     :cond_64
     const/4 v0, 0x1
@@ -48644,7 +48653,7 @@
 
     const/4 v1, 0x1
 
-    goto :goto_33
+    goto :goto_35
 
     :cond_65
     const/16 v2, 0x8
@@ -48709,7 +48718,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 12318
-    :goto_33
+    :goto_35
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->tuneItem:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -48739,10 +48748,10 @@
 
     const/16 v1, 0x8
 
-    goto/16 :goto_3d
+    goto/16 :goto_3f
 
     :cond_66
-    :goto_34
+    :goto_36
     const/high16 v3, 0x3f800000    # 1.0f
 
     .line 12281
@@ -48815,7 +48824,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_3d
+    goto/16 :goto_3f
 
     :cond_67
     move-object/from16 p1, v15
@@ -48824,7 +48833,7 @@
 
     const/4 v15, 0x0
 
-    goto/16 :goto_3d
+    goto/16 :goto_3f
 
     :cond_68
     move-object/from16 p1, v15
@@ -48853,15 +48862,15 @@
 
     if-eqz v2, :cond_69
 
-    const/4 v2, 0x0
+    move v2, v8
 
-    goto :goto_35
+    goto :goto_37
 
     :cond_69
     move v2, v7
 
     .line 12331
-    :goto_35
+    :goto_37
     iput-boolean v8, v6, Lorg/telegram/ui/PhotoViewer;->isCurrentVideo:Z
 
     .line 12332
@@ -48882,7 +48891,7 @@
 
     if-eqz v1, :cond_6a
 
-    goto :goto_3b
+    goto :goto_3d
 
     :cond_6a
     const/4 v1, 0x4
@@ -48893,7 +48902,7 @@
 
     if-ne v0, v1, :cond_6b
 
-    goto :goto_36
+    goto :goto_38
 
     .line 12348
     :cond_6b
@@ -48926,11 +48935,11 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    goto :goto_37
+    goto :goto_39
 
     .line 12343
     :cond_6c
-    :goto_36
+    :goto_38
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->paintItem:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
@@ -48953,7 +48962,7 @@
     invoke-virtual {v0, v15}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
     .line 12353
-    :goto_37
+    :goto_39
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->cropItem:Landroid/widget/ImageView;
 
     iget v1, v6, Lorg/telegram/ui/PhotoViewer;->sendPhotoType:I
@@ -48962,14 +48971,14 @@
 
     if-eq v1, v3, :cond_6d
 
-    const/4 v1, 0x0
+    move v1, v8
 
-    goto :goto_38
+    goto :goto_3a
 
     :cond_6d
     const/16 v1, 0x8
 
-    :goto_38
+    :goto_3a
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 12354
@@ -48981,12 +48990,12 @@
 
     const/16 v1, 0x8
 
-    goto :goto_39
+    goto :goto_3b
 
     :cond_6e
-    const/4 v1, 0x0
+    move v1, v8
 
-    :goto_39
+    :goto_3b
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 12355
@@ -48998,19 +49007,19 @@
 
     const/16 v1, 0x8
 
-    goto :goto_3a
+    goto :goto_3c
 
     :cond_6f
-    const/4 v1, 0x0
+    move v1, v8
 
-    :goto_3a
+    :goto_3c
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_3c
+    goto :goto_3e
 
     .line 12334
     :cond_70
-    :goto_3b
+    :goto_3d
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->paintItem:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
@@ -49047,7 +49056,7 @@
 
     invoke-virtual {v0, v15}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    :goto_3c
+    :goto_3e
     if-eqz v7, :cond_71
 
     .line 12358
@@ -49063,7 +49072,7 @@
 
     move/from16 v16, v2
 
-    :goto_3d
+    :goto_3f
     if-eqz v13, :cond_74
 
     .line 12363
@@ -49080,9 +49089,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-nez v5, :cond_72
+    if-nez v1, :cond_72
 
     iget-object v1, v6, Lorg/telegram/ui/PhotoViewer;->imagesArrLocals:Ljava/util/ArrayList;
 
@@ -49096,12 +49105,12 @@
 
     const/4 v1, 0x1
 
-    goto :goto_3e
+    goto :goto_40
 
     :cond_72
-    const/4 v1, 0x0
+    move v1, v8
 
-    :goto_3e
+    :goto_40
     iput-boolean v1, v6, Lorg/telegram/ui/PhotoViewer;->fromCamera:Z
 
     .line 12365
@@ -49112,14 +49121,14 @@
     .line 12366
     iget-object v1, v6, Lorg/telegram/ui/PhotoViewer;->captionForAllMedia:Ljava/lang/CharSequence;
 
-    goto :goto_3f
+    goto :goto_41
 
     .line 12368
     :cond_73
     iget-object v1, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     .line 12370
-    :goto_3f
+    :goto_41
     iget v2, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     .line 12371
@@ -49131,7 +49140,7 @@
     .line 12373
     iget-boolean v0, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->isCropped:Z
 
-    goto :goto_40
+    goto :goto_42
 
     .line 12374
     :cond_74
@@ -49159,7 +49168,7 @@
     .line 12380
     iget-boolean v0, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->isCropped:Z
 
-    :goto_40
+    :goto_42
     move-object/from16 v5, p1
 
     move-object v7, v1
@@ -49168,25 +49177,25 @@
 
     move v0, v14
 
-    goto :goto_41
+    goto :goto_43
 
     :cond_75
     move-object/from16 v5, p1
 
+    move v1, v8
+
+    move v2, v1
+
+    move v3, v2
+
+    move v4, v3
+
     move v0, v14
 
-    move-object v7, v15
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
+    goto/16 :goto_31
 
     .line 12383
-    :goto_41
+    :goto_43
     iget-object v13, v6, Lorg/telegram/ui/PhotoViewer;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v13}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -49226,7 +49235,7 @@
 
     invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_42
+    goto :goto_44
 
     .line 12391
     :cond_77
@@ -49240,7 +49249,7 @@
 
     invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_42
+    goto :goto_44
 
     .line 12394
     :cond_78
@@ -49283,7 +49292,7 @@
     invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 12396
-    :goto_42
+    :goto_44
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->parentChatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_7b
@@ -49302,7 +49311,7 @@
 
     invoke-virtual {v9, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_43
+    goto :goto_45
 
     .line 12401
     :cond_79
@@ -49332,7 +49341,7 @@
 
     invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_43
+    goto :goto_45
 
     .line 12406
     :cond_7a
@@ -49350,7 +49359,7 @@
 
     .line 12411
     :cond_7b
-    :goto_43
+    :goto_45
     iget v0, v6, Lorg/telegram/ui/PhotoViewer;->sendPhotoType:I
 
     if-eqz v0, :cond_7d
@@ -49416,12 +49425,12 @@
 
     move-object v2, v0
 
-    goto :goto_44
+    goto :goto_46
 
     :cond_7f
     move-object v2, v15
 
-    :goto_44
+    :goto_46
     invoke-virtual {v8, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 12418
@@ -49431,12 +49440,12 @@
 
     move-object v4, v0
 
-    goto :goto_45
+    goto :goto_47
 
     :cond_80
     move-object v4, v15
 
-    :goto_45
+    :goto_47
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 12419
@@ -49446,12 +49455,12 @@
 
     move-object v1, v0
 
-    goto :goto_46
+    goto :goto_48
 
     :cond_81
     move-object v1, v15
 
-    :goto_46
+    :goto_48
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 12420
@@ -49461,12 +49470,12 @@
 
     move-object v2, v0
 
-    goto :goto_47
+    goto :goto_49
 
     :cond_82
     move-object v2, v15
 
-    :goto_47
+    :goto_49
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 12421
@@ -49497,15 +49506,15 @@
     :cond_84
     move-object v2, v0
 
-    goto :goto_48
+    goto :goto_4a
 
     :cond_85
     move-object v2, v15
 
-    :goto_48
+    :goto_4a
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    goto :goto_4a
+    goto :goto_4c
 
     .line 12424
     :cond_86
@@ -49519,16 +49528,16 @@
 
     move-object v2, v0
 
-    goto :goto_49
+    goto :goto_4b
 
     :cond_87
     move-object v2, v15
 
-    :goto_49
+    :goto_4b
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 12426
-    :goto_4a
+    :goto_4c
     iget-object v1, v6, Lorg/telegram/ui/PhotoViewer;->rotateItem:Landroid/widget/ImageView;
 
     if-eqz v5, :cond_88
@@ -49539,12 +49548,12 @@
 
     move-object v5, v0
 
-    goto :goto_4b
+    goto :goto_4d
 
     :cond_88
     move-object v5, v15
 
-    :goto_4b
+    :goto_4d
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     move-object v5, v15
@@ -49553,16 +49562,16 @@
 
     move/from16 v7, v16
 
-    goto/16 :goto_57
+    goto/16 :goto_59
 
     :cond_89
-    :goto_4c
+    :goto_4e
     return-void
 
     :cond_8a
-    move-object v15, v5
+    move v0, v15
 
-    const/16 v0, 0xb
+    move-object v15, v5
 
     .line 12427
     iget-object v1, v6, Lorg/telegram/ui/PhotoViewer;->pageBlocksAdapter:Lorg/telegram/ui/PhotoViewer$PageBlocksAdapter;
@@ -49581,7 +49590,7 @@
 
     if-lt v2, v1, :cond_8b
 
-    goto/16 :goto_55
+    goto/16 :goto_57
 
     .line 12432
     :cond_8b
@@ -49614,12 +49623,12 @@
     :cond_8c
     const/4 v2, 0x1
 
-    goto :goto_4d
+    goto :goto_4f
 
     :cond_8d
-    const/4 v2, 0x0
+    move v2, v8
 
-    :goto_4d
+    :goto_4f
     iput-boolean v2, v6, Lorg/telegram/ui/PhotoViewer;->allowShare:Z
 
     .line 12433
@@ -49661,7 +49670,7 @@
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    goto :goto_4e
+    goto :goto_50
 
     .line 12440
     :cond_8e
@@ -49670,7 +49679,7 @@
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
     .line 12442
-    :goto_4e
+    :goto_50
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->checkHideMenuItem()V
@@ -49694,7 +49703,7 @@
 
     invoke-direct {v6, v0, v11, v11, v4}, Lorg/telegram/ui/PhotoViewer;->setItemVisible(Landroid/view/View;ZZF)V
 
-    goto :goto_4f
+    goto :goto_51
 
     :cond_8f
     const/4 v11, 0x1
@@ -49704,7 +49713,7 @@
 
     invoke-direct {v6, v0, v11, v11}, Lorg/telegram/ui/PhotoViewer;->setItemVisible(Landroid/view/View;ZZ)V
 
-    goto :goto_4f
+    goto :goto_51
 
     :cond_90
     const/4 v11, 0x1
@@ -49720,7 +49729,7 @@
     invoke-direct {v6, v0, v8, v11}, Lorg/telegram/ui/PhotoViewer;->setItemVisible(Landroid/view/View;ZZ)V
 
     .line 12454
-    :goto_4f
+    :goto_51
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -49749,14 +49758,14 @@
 
     if-eqz v11, :cond_92
 
-    const/4 v13, 0x0
+    move v13, v8
 
-    goto :goto_50
+    goto :goto_52
 
     :cond_92
-    const/16 v13, 0x8
+    move v13, v4
 
-    :goto_50
+    :goto_52
     invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 12461
@@ -49783,7 +49792,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    goto :goto_51
+    goto :goto_53
 
     :cond_93
     const/16 v1, 0xe
@@ -49794,7 +49803,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
     .line 12468
-    :goto_51
+    :goto_53
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->checkHideMenuItem()V
@@ -49812,7 +49821,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_54
+    goto :goto_56
 
     :cond_94
     const/4 v0, 0x1
@@ -49832,7 +49841,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    goto :goto_52
+    goto :goto_54
 
     .line 12475
     :cond_95
@@ -49846,10 +49855,10 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    :goto_52
+    :goto_54
     const/4 v10, 0x1
 
-    goto :goto_53
+    goto :goto_55
 
     .line 12478
     :cond_96
@@ -49886,7 +49895,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 12480
-    :goto_53
+    :goto_55
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->menuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
@@ -49904,7 +49913,7 @@
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->checkHideMenuItem()V
 
     .line 12484
-    :goto_54
+    :goto_56
     iget-object v0, v6, Lorg/telegram/ui/PhotoViewer;->groupedPhotosListView:Lorg/telegram/ui/Components/GroupedPhotosListView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/GroupedPhotosListView;->fillList()V
@@ -49920,18 +49929,18 @@
 
     move-object/from16 v5, v32
 
-    goto :goto_57
+    goto :goto_59
 
     :cond_97
-    :goto_55
+    :goto_57
     return-void
 
     :cond_98
-    :goto_56
+    :goto_58
     move-object v5, v15
 
     .line 12487
-    :goto_57
+    :goto_59
     invoke-direct {v6, v5, v15, v7}, Lorg/telegram/ui/PhotoViewer;->setCurrentCaption(Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Z)V
 
     .line 12489
@@ -50013,7 +50022,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    mul-float v1, v1, p4
+    mul-float/2addr v1, p4
 
     const/4 p4, 0x0
 
@@ -50571,13 +50580,13 @@
 
     move-result v4
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-int v0, v0
 
     int-to-float v0, v0
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     float-to-int v1, v1
 
@@ -50685,7 +50694,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     aput v0, v3, v2
@@ -50719,7 +50728,7 @@
     .line 9321
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    goto :goto_8
+    goto/16 :goto_8
 
     .line 9323
     :cond_4
@@ -50729,12 +50738,12 @@
 
     if-eqz p1, :cond_5
 
-    const/4 v4, 0x0
+    move v4, v2
 
     goto :goto_2
 
     :cond_5
-    const/16 v4, 0x8
+    move v4, v3
 
     :goto_2
     invoke-virtual {p2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -50744,12 +50753,12 @@
 
     if-eqz p1, :cond_6
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v0
 
     goto :goto_3
 
     :cond_6
-    const/4 v4, 0x0
+    move v4, v1
 
     :goto_3
     invoke-virtual {p2, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -50759,12 +50768,12 @@
 
     if-eqz p1, :cond_7
 
-    const/16 v4, 0x8
+    move v4, v3
 
     goto :goto_4
 
     :cond_7
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_4
     invoke-virtual {p2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -50774,12 +50783,12 @@
 
     if-eqz p1, :cond_8
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_5
 
     :cond_8
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v0
 
     :goto_5
     invoke-virtual {p2, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -50789,12 +50798,12 @@
 
     if-eqz p1, :cond_9
 
-    const/16 v4, 0x8
+    move v4, v3
 
     goto :goto_6
 
     :cond_9
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_6
     invoke-virtual {p2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -50804,12 +50813,12 @@
 
     if-eqz p1, :cond_a
 
-    const/4 v4, 0x0
+    move v4, v1
 
     goto :goto_7
 
     :cond_a
-    const/high16 v4, 0x3f800000    # 1.0f
+    move v4, v0
 
     :goto_7
     invoke-virtual {p2, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -50824,7 +50833,7 @@
 
     if-eqz p1, :cond_b
 
-    const/16 v2, 0x8
+    move v2, v3
 
     :cond_b
     invoke-virtual {p2, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -50834,7 +50843,7 @@
 
     if-eqz p1, :cond_c
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :cond_c
     invoke-virtual {p2, v0}, Landroid/widget/LinearLayout;->setAlpha(F)V
@@ -51387,12 +51396,12 @@
 
     if-eqz p1, :cond_4
 
-    const/high16 v6, 0x3e800000    # 0.25f
+    move v6, v1
 
     goto :goto_1
 
     :cond_4
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     :goto_1
     invoke-virtual {v0, v6}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
@@ -51401,12 +51410,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v6, 0x3e800000    # 0.25f
+    move v6, v1
 
     goto :goto_2
 
     :cond_5
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     .line 17606
     :goto_2
@@ -51416,12 +51425,12 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v6, 0x0
+    move v6, v2
 
     goto :goto_3
 
     :cond_6
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     .line 17607
     :goto_3
@@ -51451,12 +51460,12 @@
 
     if-eqz p1, :cond_8
 
-    const/high16 v6, 0x3e800000    # 0.25f
+    move v6, v1
 
     goto :goto_4
 
     :cond_8
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v5
 
     :goto_4
     invoke-virtual {v0, v6}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
@@ -51468,7 +51477,7 @@
     goto :goto_5
 
     :cond_9
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, v5
 
     .line 17612
     :goto_5
@@ -51481,7 +51490,7 @@
     goto :goto_6
 
     :cond_a
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v5
 
     .line 17613
     :goto_6
@@ -51638,7 +51647,7 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v14
 
     .line 7160
     :goto_0
@@ -51666,7 +51675,7 @@
     goto :goto_1
 
     :cond_1
-    const/16 v16, 0x0
+    move/from16 v16, v14
 
     .line 7164
     :goto_1
@@ -51702,7 +51711,7 @@
 
     move-object/from16 v12, v17
 
-    const/4 v15, 0x0
+    move v15, v14
 
     move/from16 v14, v16
 
@@ -52309,7 +52318,7 @@
 
     if-eqz v2, :cond_1
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     .line 10040
     :cond_1
@@ -52321,12 +52330,12 @@
 
     if-ne v1, v7, :cond_2
 
-    const/4 v8, 0x1
+    move v8, v6
 
     goto :goto_0
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_0
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
@@ -52360,7 +52369,7 @@
     goto :goto_1
 
     :cond_3
-    const/high16 v2, 0x7f000000
+    move v2, v8
 
     :goto_1
     if-ne v1, v6, :cond_4
@@ -52381,7 +52390,7 @@
 
     if-eq v1, v7, :cond_6
 
-    const/4 v11, 0x0
+    move v11, v5
 
     goto :goto_3
 
@@ -52489,7 +52498,7 @@
     .line 10077
     iget v9, v11, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v3, v3, v9
+    mul-float/2addr v3, v9
 
     float-to-int v3, v3
 
@@ -52498,7 +52507,7 @@
     .line 10078
     iget v10, v11, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     float-to-int v9, v9
 
@@ -52734,7 +52743,7 @@
 
     div-float/2addr v7, v13
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     div-float/2addr v7, v5
 
@@ -52780,7 +52789,7 @@
     .line 10107
     iget v5, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v3, v3, v5
+    mul-float/2addr v3, v5
 
     float-to-int v3, v3
 
@@ -52789,7 +52798,7 @@
     .line 10108
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v5, v5, v4
+    mul-float/2addr v5, v4
 
     float-to-int v4, v5
 
@@ -52884,7 +52893,7 @@
 
     :cond_19
     :goto_7
-    const/4 v3, 0x1
+    move v3, v6
 
     :goto_8
     invoke-direct {v0, v3}, Lorg/telegram/ui/PhotoViewer;->getCropFillScale(Z)F
@@ -53137,10 +53146,15 @@
     .line 10150
     iput-boolean v6, v0, Lorg/telegram/ui/PhotoViewer;->zoomAnimation:Z
 
-    :cond_21
     const/4 v3, 0x0
 
+    goto :goto_d
+
+    :cond_21
+    move v3, v5
+
     .line 10152
+    :goto_d
     iput-boolean v3, v0, Lorg/telegram/ui/PhotoViewer;->padImageForHorizontalInsets:Z
 
     .line 10154
@@ -53238,7 +53252,7 @@
     .line 10169
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_d
+    goto/16 :goto_e
 
     :cond_22
     const/4 v5, 0x2
@@ -53334,7 +53348,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_23
     const/4 v7, 0x3
@@ -53410,7 +53424,7 @@
 
     .line 10185
     :cond_24
-    :goto_d
+    :goto_e
     iget-object v4, v0, Lorg/telegram/ui/PhotoViewer;->navigationBar:Landroid/view/View;
 
     new-instance v7, Landroid/animation/ArgbEvaluator;
@@ -53465,7 +53479,7 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     :cond_25
     const/16 v4, 0x9a
@@ -53625,14 +53639,14 @@
 
     if-eqz v10, :cond_26
 
-    const/16 v10, 0x9a
+    move v10, v4
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_26
-    const/16 v10, 0x60
+    move v10, v5
 
-    :goto_e
+    :goto_f
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -53666,14 +53680,14 @@
 
     if-eqz v10, :cond_27
 
-    const/16 v10, 0x9a
+    move v10, v4
 
-    goto :goto_f
+    goto :goto_10
 
     :cond_27
-    const/16 v10, 0x60
+    move v10, v5
 
-    :goto_f
+    :goto_10
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -53768,12 +53782,12 @@
 
     if-eqz v9, :cond_28
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_28
-    const/16 v4, 0x60
+    move v4, v5
 
-    :goto_10
+    :goto_11
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -53798,16 +53812,16 @@
 
     if-ne v2, v4, :cond_2a
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_2a
     const/4 v5, 0x2
 
-    goto :goto_12
+    goto :goto_13
 
     .line 10315
     :cond_2b
-    :goto_11
+    :goto_12
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->checkImageView:Lorg/telegram/ui/Components/CheckBox;
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -53840,7 +53854,7 @@
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 10318
-    :goto_12
+    :goto_13
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->selectedPhotosListView:Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getVisibility()I
@@ -53962,7 +53976,7 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     :cond_30
     const/4 v7, 0x2
@@ -54010,13 +54024,13 @@
     .line 10437
     iget v10, v10, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    goto :goto_13
+    goto :goto_14
 
     :cond_31
     const/4 v10, 0x0
 
     .line 10439
-    :goto_13
+    :goto_14
     check-cast v7, Lorg/telegram/messenger/MediaController$MediaEditState;
 
     .line 10440
@@ -54029,7 +54043,7 @@
 
     move-object/from16 v22, v11
 
-    goto :goto_14
+    goto :goto_15
 
     :cond_32
     move-object v7, v9
@@ -54039,17 +54053,17 @@
     const/4 v10, 0x0
 
     .line 10443
-    :goto_14
+    :goto_15
     iget-object v11, v0, Lorg/telegram/ui/PhotoViewer;->videoTextureView:Landroid/view/TextureView;
 
     if-eqz v11, :cond_33
 
     move-object/from16 v20, v9
 
-    :goto_15
+    :goto_16
     move/from16 v21, v10
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_33
     if-nez v22, :cond_34
@@ -54068,7 +54082,7 @@
 
     move-result v10
 
-    goto :goto_16
+    goto :goto_17
 
     .line 10450
     :cond_34
@@ -54076,20 +54090,20 @@
 
     move-result-object v7
 
-    :goto_16
+    :goto_17
     move-object/from16 v20, v7
 
-    goto :goto_15
+    goto :goto_16
 
     .line 10455
-    :goto_17
+    :goto_18
     iget v7, v0, Lorg/telegram/ui/PhotoViewer;->sendPhotoType:I
 
     if-ne v7, v6, :cond_35
 
-    const/16 v24, 0x1
+    move/from16 v24, v6
 
-    goto :goto_1a
+    goto :goto_1b
 
     .line 10457
     :cond_35
@@ -54103,29 +54117,29 @@
 
     if-ne v7, v10, :cond_36
 
-    goto :goto_19
+    goto :goto_1a
 
     :cond_36
     if-ne v7, v6, :cond_37
 
-    const/4 v7, 0x1
+    move v7, v6
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_37
     const/4 v7, 0x0
 
-    :goto_18
+    :goto_19
     move/from16 v24, v7
 
-    goto :goto_1a
+    goto :goto_1b
 
     :cond_38
-    :goto_19
+    :goto_1a
     const/16 v24, 0x2
 
     .line 10462
-    :goto_1a
+    :goto_1b
     new-instance v7, Lorg/telegram/ui/Components/PhotoFilterView;
 
     iget-object v10, v0, Lorg/telegram/ui/PhotoViewer;->parentActivity:Landroid/app/Activity;
@@ -54140,22 +54154,22 @@
 
     move-object/from16 v19, v12
 
-    goto :goto_1b
+    goto :goto_1c
 
     :cond_39
     move-object/from16 v19, v9
 
-    :goto_1b
+    :goto_1c
     iget-boolean v12, v0, Lorg/telegram/ui/PhotoViewer;->isCurrentVideo:Z
 
     if-eqz v12, :cond_3a
 
-    goto :goto_1c
+    goto :goto_1d
 
     :cond_3a
     iget-object v9, v0, Lorg/telegram/ui/PhotoViewer;->paintingOverlay:Lorg/telegram/ui/Components/PaintingOverlay;
 
-    :goto_1c
+    :goto_1d
     move-object/from16 v23, v9
 
     if-nez v11, :cond_3d
@@ -54180,14 +54194,14 @@
     if-eqz v9, :cond_3d
 
     :cond_3c
-    const/16 v25, 0x1
+    move/from16 v25, v6
 
-    goto :goto_1d
+    goto :goto_1e
 
     :cond_3d
     const/16 v25, 0x0
 
-    :goto_1d
+    :goto_1e
     iget-object v9, v0, Lorg/telegram/ui/PhotoViewer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-object/from16 v17, v7
@@ -54284,14 +54298,14 @@
 
     if-eqz v10, :cond_3f
 
-    const/16 v10, 0x9a
+    move v10, v4
 
-    goto :goto_1e
+    goto :goto_1f
 
     :cond_3f
-    const/16 v10, 0x60
+    move v10, v5
 
-    :goto_1e
+    :goto_1f
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -54325,12 +54339,12 @@
 
     if-eqz v10, :cond_40
 
-    goto :goto_1f
+    goto :goto_20
 
     :cond_40
-    const/16 v4, 0x60
+    move v4, v5
 
-    :goto_1f
+    :goto_20
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -54385,7 +54399,7 @@
 
     if-ne v4, v5, :cond_41
 
-    goto :goto_20
+    goto :goto_21
 
     :cond_41
     if-ne v4, v6, :cond_42
@@ -54407,15 +54421,15 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_21
+    goto :goto_22
 
     :cond_42
     const/4 v7, 0x2
 
-    goto :goto_21
+    goto :goto_22
 
     :cond_43
-    :goto_20
+    :goto_21
     const/4 v7, 0x2
 
     .line 10492
@@ -54449,7 +54463,7 @@
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 10497
-    :goto_21
+    :goto_22
     iget-object v4, v0, Lorg/telegram/ui/PhotoViewer;->selectedPhotosListView:Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getVisibility()I
@@ -54579,7 +54593,7 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto/16 :goto_27
+    goto/16 :goto_28
 
     :cond_47
     const/4 v3, 0x3
@@ -54615,14 +54629,14 @@
 
     if-eqz v10, :cond_48
 
-    const/16 v10, 0x9a
+    move v10, v4
 
-    goto :goto_22
+    goto :goto_23
 
     :cond_48
-    const/16 v10, 0x60
+    move v10, v5
 
-    :goto_22
+    :goto_23
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -54650,14 +54664,14 @@
 
     if-eqz v10, :cond_49
 
-    const/16 v10, 0x9a
+    move v10, v4
 
-    goto :goto_23
+    goto :goto_24
 
     :cond_49
-    const/16 v10, 0x60
+    move v10, v5
 
-    :goto_23
+    :goto_24
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -54742,12 +54756,12 @@
 
     if-eqz v8, :cond_4a
 
-    goto :goto_24
+    goto :goto_25
 
     :cond_4a
-    const/16 v4, 0x60
+    move v4, v5
 
-    :goto_24
+    :goto_25
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -54774,7 +54788,7 @@
 
     if-ne v2, v3, :cond_4c
 
-    goto :goto_25
+    goto :goto_26
 
     :cond_4c
     if-ne v2, v6, :cond_4d
@@ -54796,15 +54810,15 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_26
+    goto :goto_27
 
     :cond_4d
     const/4 v4, 0x2
 
-    goto :goto_26
+    goto :goto_27
 
     :cond_4e
-    :goto_25
+    :goto_26
     const/4 v4, 0x2
 
     .line 10606
@@ -54838,7 +54852,7 @@
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 10611
-    :goto_26
+    :goto_27
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer;->selectedPhotosListView:Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getVisibility()I
@@ -54940,8 +54954,10 @@
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     :cond_52
-    :goto_27
+    :goto_28
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -55444,7 +55460,7 @@
     goto :goto_0
 
     :cond_8
-    const/4 v11, 0x0
+    move v11, v4
 
     :goto_0
     add-int/2addr v7, v11
@@ -55514,7 +55530,7 @@
     .line 10759
     iget v8, v7, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v0, v0, v8
+    mul-float/2addr v0, v8
 
     float-to-int v0, v0
 
@@ -55523,7 +55539,7 @@
     .line 10760
     iget v7, v7, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v1, v1, v7
+    mul-float/2addr v1, v7
 
     float-to-int v1, v1
 
@@ -56172,7 +56188,7 @@
 
     move v9, v15
 
-    const/4 v15, 0x2
+    move v15, v10
 
     move/from16 v10, v18
 
@@ -56581,12 +56597,12 @@
 
     if-eqz v3, :cond_8
 
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_1
 
     :cond_8
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     invoke-virtual {v2, v3}, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;->setSeekBarTransitionEnabled(Z)V
@@ -56620,12 +56636,12 @@
 
     if-eqz p1, :cond_9
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v3
 
     goto :goto_2
 
     :cond_9
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_2
     aput v9, v8, v0
@@ -56650,7 +56666,7 @@
 
     if-eqz p1, :cond_a
 
-    const/4 v9, 0x0
+    move v9, v5
 
     goto :goto_3
 
@@ -56691,12 +56707,12 @@
 
     if-eqz p1, :cond_c
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v3
 
     goto :goto_5
 
     :cond_c
-    const/4 v9, 0x0
+    move v9, v5
 
     :goto_5
     aput v9, v8, v0
@@ -56708,7 +56724,7 @@
     invoke-virtual {p2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_d
-    const/4 v6, 0x1
+    move v6, v4
 
     :goto_6
     if-ge v6, v2, :cond_f
@@ -56720,7 +56736,7 @@
 
     if-eqz p1, :cond_e
 
-    const/4 v8, 0x0
+    move v8, v5
 
     goto :goto_7
 
@@ -56751,7 +56767,7 @@
 
     if-eqz p1, :cond_10
 
-    const/4 v8, 0x0
+    move v8, v5
 
     goto :goto_8
 
@@ -56790,12 +56806,12 @@
 
     if-eqz p1, :cond_12
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v3
 
     goto :goto_a
 
     :cond_12
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_a
     aput v8, v7, v0
@@ -56820,7 +56836,7 @@
 
     if-eqz p1, :cond_13
 
-    const/4 v8, 0x0
+    move v8, v5
 
     goto :goto_b
 
@@ -56858,12 +56874,12 @@
 
     if-eqz p1, :cond_16
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v3
 
     goto :goto_d
 
     :cond_16
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_d
     aput v8, v7, v0
@@ -56889,12 +56905,12 @@
 
     if-eqz p1, :cond_18
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v3
 
     goto :goto_e
 
     :cond_18
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_e
     aput v8, v7, v0
@@ -56913,12 +56929,12 @@
 
     if-eqz p1, :cond_1a
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    move v6, v3
 
     goto :goto_f
 
     :cond_1a
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_f
     invoke-virtual {v2, v6}, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;->setProgress(F)V
@@ -56933,12 +56949,12 @@
 
     if-eqz p1, :cond_1b
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v3
 
     goto :goto_11
 
     :cond_1b
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_11
     aput v8, v7, v0
@@ -56963,7 +56979,7 @@
 
     if-eqz p1, :cond_1c
 
-    const/4 v8, 0x0
+    move v8, v5
 
     goto :goto_12
 
@@ -57004,12 +57020,12 @@
 
     if-eqz p1, :cond_1e
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v3
 
     goto :goto_14
 
     :cond_1e
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_14
     aput v8, v7, v0
@@ -57034,7 +57050,7 @@
 
     if-eqz p1, :cond_1f
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :cond_1f
     aput v1, v7, v0
@@ -57083,12 +57099,12 @@
 
     if-eqz p1, :cond_22
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move v2, v3
 
     goto :goto_16
 
     :cond_22
-    const/4 v2, 0x0
+    move v2, v5
 
     :goto_16
     aput v2, v1, v4
@@ -57129,7 +57145,7 @@
     goto :goto_17
 
     :cond_24
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_17
     aput v3, v4, v0
@@ -57189,12 +57205,12 @@
 
     if-eqz p1, :cond_27
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_18
 
     :cond_27
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_18
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -57224,18 +57240,18 @@
 
     if-eqz p1, :cond_28
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_19
 
     :cond_28
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_19
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setAlpha(F)V
 
     :cond_29
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_1a
     if-ge p2, v2, :cond_2b
@@ -57247,7 +57263,7 @@
 
     if-eqz p1, :cond_2a
 
-    const/4 v6, 0x0
+    move v6, v5
 
     goto :goto_1b
 
@@ -57267,7 +57283,7 @@
 
     if-eqz p1, :cond_2c
 
-    const/4 p3, 0x0
+    move p3, v5
 
     goto :goto_1c
 
@@ -57282,12 +57298,12 @@
 
     if-eqz p1, :cond_2d
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_1d
 
     :cond_2d
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_1d
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -57297,7 +57313,7 @@
 
     if-eqz p1, :cond_2e
 
-    const/4 p3, 0x0
+    move p3, v5
 
     goto :goto_1e
 
@@ -57312,12 +57328,12 @@
 
     if-eqz p1, :cond_2f
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_1f
 
     :cond_2f
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_1f
     invoke-virtual {p2, p3}, Landroid/view/View;->setAlpha(F)V
@@ -57327,12 +57343,12 @@
 
     if-eqz p1, :cond_30
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_20
 
     :cond_30
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_20
     invoke-virtual {p2, p3}, Landroid/view/View;->setAlpha(F)V
@@ -57342,7 +57358,7 @@
 
     if-eqz p1, :cond_31
 
-    const/4 p3, 0x0
+    move p3, v5
 
     goto :goto_21
 
@@ -57363,12 +57379,12 @@
 
     if-eqz p1, :cond_32
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_22
 
     :cond_32
-    const/4 p3, 0x0
+    move p3, v5
 
     .line 11081
     :goto_22
@@ -57379,7 +57395,7 @@
 
     if-eqz p1, :cond_33
 
-    const/4 v1, 0x0
+    move v1, v5
 
     :cond_33
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
@@ -57390,12 +57406,12 @@
 
     if-eqz p1, :cond_35
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_23
 
     :cond_35
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_23
     invoke-virtual {p2, p3}, Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;->setProgress(F)V
@@ -57414,12 +57430,12 @@
 
     if-eqz p1, :cond_36
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    move p3, v3
 
     goto :goto_24
 
     :cond_36
-    const/4 p3, 0x0
+    move p3, v5
 
     :goto_24
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -57444,7 +57460,7 @@
     goto :goto_25
 
     :cond_38
-    const/4 v3, 0x0
+    move v3, v5
 
     :goto_25
     invoke-virtual {p2, v4, v3, v0}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setIndexedAlpha(IFZ)V
@@ -57489,12 +57505,12 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v7
 
     goto :goto_0
 
     :cond_0
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_0
     const/4 v10, 0x0
@@ -57516,7 +57532,7 @@
 
     if-eqz p1, :cond_1
 
-    const/4 v9, 0x0
+    move v9, v8
 
     goto :goto_1
 
@@ -57541,12 +57557,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v7
 
     goto :goto_2
 
     :cond_2
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_2
     aput v9, v6, v10
@@ -57566,7 +57582,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v9, 0x0
+    move v9, v8
 
     goto :goto_3
 
@@ -57601,12 +57617,12 @@
 
     if-eqz p1, :cond_5
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    move v9, v7
 
     goto :goto_4
 
     :cond_5
-    const/4 v9, 0x0
+    move v9, v8
 
     :goto_4
     aput v9, v6, v10
@@ -57626,7 +57642,7 @@
 
     if-eqz p1, :cond_6
 
-    const/4 v9, 0x0
+    move v9, v8
 
     goto :goto_5
 
@@ -57654,7 +57670,7 @@
     goto :goto_6
 
     :cond_7
-    const/4 v7, 0x0
+    move v7, v8
 
     :goto_6
     aput v7, v6, v10
@@ -57947,12 +57963,12 @@
 
     if-eqz p1, :cond_2
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v2
 
     goto :goto_0
 
     :cond_2
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_0
     aput v8, v7, v0
@@ -57972,7 +57988,7 @@
 
     if-eqz p1, :cond_3
 
-    const/4 v1, 0x0
+    move v1, v3
 
     goto :goto_1
 
@@ -58006,7 +58022,7 @@
     goto :goto_2
 
     :cond_4
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_2
     aput v2, v5, v0
@@ -58059,12 +58075,12 @@
 
     if-eqz p1, :cond_7
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v2
 
     goto :goto_3
 
     :cond_7
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_3
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->setAlpha(F)V
@@ -58074,7 +58090,7 @@
 
     if-eqz p1, :cond_8
 
-    const/4 v0, 0x0
+    move v0, v3
 
     goto :goto_4
 
@@ -58098,7 +58114,7 @@
     goto :goto_5
 
     :cond_9
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_5
     invoke-virtual {p2, v2}, Lorg/telegram/ui/PhotoViewer$CounterView;->setRotationX(F)V
@@ -58118,7 +58134,7 @@
 .end method
 
 .method private toggleVideoPlayer()V
-    .locals 5
+    .locals 4
 
     .line 11135
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -58214,9 +58230,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_8
+    if-nez v0, :cond_8
 
     .line 11146
     :cond_4
@@ -58266,9 +58282,9 @@
 
     move-result-wide v2
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v4, :cond_7
+    if-nez v0, :cond_7
 
     :cond_6
     const/4 v0, 0x0
@@ -58843,7 +58859,7 @@
 
     move-result v0
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     .line 15276
     :cond_0
@@ -58870,15 +58886,15 @@
     .line 15279
     iget v3, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    mul-float v0, v0, v3
+    mul-float/2addr v0, v3
 
     .line 15280
     iget v2, v2, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     :cond_1
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 15282
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer;->getContainerViewWidth()I
@@ -58893,7 +58909,7 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    mul-float v1, v1, p1
+    mul-float/2addr v1, p1
 
     .line 15283
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer;->getContainerViewHeight()I
@@ -59288,11 +59304,11 @@
 
     const-wide/16 v13, 0x258
 
-    const v15, 0x3f7fbe77    # 0.999f
+    cmp-long v13, v11, v13
 
-    cmp-long v16, v11, v13
+    const v14, 0x3f7fbe77    # 0.999f
 
-    if-ltz v16, :cond_5
+    if-ltz v13, :cond_5
 
     .line 8483
     iget-object v11, v1, Lorg/telegram/ui/PhotoViewer;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -59321,7 +59337,7 @@
 
     if-lez v12, :cond_4
 
-    cmpg-float v12, v11, v15
+    cmpg-float v12, v11, v14
 
     if-gez v12, :cond_4
 
@@ -59342,11 +59358,11 @@
     goto :goto_3
 
     :cond_5
-    const-wide/16 v13, 0xa
+    const-wide/16 v15, 0xa
 
-    cmp-long v16, v11, v13
+    cmp-long v11, v11, v15
 
-    if-ltz v16, :cond_a
+    if-ltz v11, :cond_a
 
     .line 8494
     iget-object v11, v1, Lorg/telegram/ui/PhotoViewer;->savedVideoPositions:Landroidx/collection/ArrayMap;
@@ -59382,9 +59398,9 @@
 
     sub-long v17, v17, v19
 
-    cmp-long v14, v4, v17
+    cmp-long v4, v4, v17
 
-    if-gez v14, :cond_6
+    if-gez v4, :cond_6
 
     .line 8497
     iget-object v4, v1, Lorg/telegram/ui/PhotoViewer;->savedVideoPositions:Landroidx/collection/ArrayMap;
@@ -59440,7 +59456,7 @@
 
     if-lez v11, :cond_9
 
-    cmpg-float v11, v5, v15
+    cmpg-float v11, v5, v14
 
     if-gez v11, :cond_9
 
@@ -59512,13 +59528,13 @@
     goto :goto_4
 
     :cond_d
-    const/4 v0, 0x0
+    move v0, v9
 
     goto :goto_5
 
     :cond_e
     :goto_4
-    const/4 v0, 0x1
+    move v0, v3
 
     :goto_5
     if-eqz v0, :cond_f
@@ -59553,12 +59569,12 @@
 
     if-eq v2, v3, :cond_11
 
-    const/4 v10, 0x1
+    move v10, v3
 
     goto :goto_8
 
     :cond_11
-    const/4 v10, 0x0
+    move v10, v9
 
     .line 8535
     :goto_8
@@ -59916,7 +59932,7 @@
     goto :goto_c
 
     :cond_20
-    const/high16 v8, 0x3f800000    # 1.0f
+    move v8, v0
 
     :cond_21
     :goto_c
@@ -59953,12 +59969,12 @@
 
     if-ne v2, v5, :cond_24
 
-    const/4 v6, 0x1
+    move v6, v3
 
     goto :goto_d
 
     :cond_24
-    const/4 v6, 0x0
+    move v6, v9
 
     :goto_d
     invoke-virtual {v4, v3, v0, v6}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setIndexedAlpha(IFZ)V
@@ -59980,12 +59996,12 @@
 
     if-lez v0, :cond_25
 
-    const/4 v0, 0x1
+    move v0, v3
 
     goto :goto_e
 
     :cond_25
-    const/4 v0, 0x0
+    move v0, v9
 
     :goto_e
     invoke-virtual {v4, v7, v9, v0}, Lorg/telegram/ui/PhotoViewer$PhotoProgressView;->setBackgroundState(IZZ)V
@@ -60286,7 +60302,7 @@
 .end method
 
 .method private updateVideoInfo()V
-    .locals 13
+    .locals 12
 
     .line 17333
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -60373,7 +60389,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-double v2, v0
 
@@ -60443,9 +60459,9 @@
 
     const-wide/16 v9, 0x7d0
 
-    cmp-long v12, v2, v9
+    cmp-long v9, v2, v9
 
-    if-gtz v12, :cond_9
+    if-gtz v9, :cond_9
 
     const v9, 0x27ac40
 
@@ -60454,9 +60470,9 @@
     :cond_9
     const-wide/16 v9, 0x1388
 
-    cmp-long v12, v2, v9
+    cmp-long v9, v2, v9
 
-    if-gtz v12, :cond_a
+    if-gtz v9, :cond_a
 
     const v9, 0x2191c0
 
@@ -60482,7 +60498,7 @@
 
     div-float/2addr v2, v3
 
-    mul-float v9, v9, v2
+    mul-float/2addr v9, v2
 
     float-to-long v2, v9
 
@@ -60491,7 +60507,7 @@
     .line 17372
     div-long v6, v2, v6
 
-    mul-long v6, v6, v4
+    mul-long/2addr v6, v4
 
     add-long/2addr v2, v6
 
@@ -60560,7 +60576,7 @@
 
     div-float/2addr v3, v4
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-long v2, v2
 
@@ -60634,7 +60650,7 @@
 
     div-float/2addr v3, v9
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-long v2, v2
 
@@ -60643,7 +60659,7 @@
     .line 17382
     div-long v6, v2, v6
 
-    mul-long v6, v6, v4
+    mul-long/2addr v6, v4
 
     add-long/2addr v2, v6
 
@@ -60673,11 +60689,11 @@
 
     const/4 v4, 0x0
 
+    cmpl-float v4, v3, v4
+
     const-wide/16 v5, -0x1
 
     const-wide/16 v9, 0x3e8
-
-    cmpl-float v4, v3, v4
 
     if-nez v4, :cond_17
 
@@ -60690,11 +60706,11 @@
     :cond_17
     iget v4, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-long v3, v3
 
-    mul-long v3, v3, v9
+    mul-long/2addr v3, v9
 
     iput-wide v3, p0, Lorg/telegram/ui/PhotoViewer;->startTime:J
 
@@ -60714,11 +60730,11 @@
     :cond_18
     iget v3, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     float-to-long v2, v2
 
-    mul-long v2, v2, v9
+    mul-long/2addr v2, v9
 
     iput-wide v2, p0, Lorg/telegram/ui/PhotoViewer;->endTime:J
 
@@ -60971,7 +60987,7 @@
 
     sub-float/2addr v4, v5
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     float-to-long v4, v0
 
@@ -60986,7 +61002,7 @@
 
     long-to-float v10, v4
 
-    mul-float v9, v9, v10
+    mul-float/2addr v9, v10
 
     sub-float/2addr v0, v9
 
@@ -61010,9 +61026,9 @@
 
     div-long v2, v9, v6
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aput v3, v0, v1
+    aput v2, v0, v1
 
     .line 8305
     rem-long/2addr v9, v6
@@ -61026,9 +61042,9 @@
 
     div-long v2, v4, v6
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aput v3, v0, v1
+    aput v2, v0, v1
 
     .line 8307
     rem-long/2addr v4, v6
@@ -61037,7 +61053,7 @@
 
     aput v2, v0, v8
 
-    goto/16 :goto_1
+    goto :goto_1
 
     .line 8308
     :cond_2
@@ -61122,7 +61138,7 @@
 
     sub-float/2addr v9, v10
 
-    mul-float v0, v0, v9
+    mul-float/2addr v0, v9
 
     float-to-long v9, v0
 
@@ -61137,7 +61153,7 @@
 
     long-to-float v5, v9
 
-    mul-float v4, v4, v5
+    mul-float/2addr v4, v5
 
     sub-float/2addr v0, v4
 
@@ -61161,9 +61177,9 @@
 
     div-long v2, v4, v6
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aput v3, v0, v1
+    aput v2, v0, v1
 
     .line 8324
     rem-long/2addr v4, v6
@@ -61177,9 +61193,9 @@
 
     div-long v2, v9, v6
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    aput v3, v0, v1
+    aput v2, v0, v1
 
     .line 8326
     rem-long/2addr v9, v6
@@ -61536,7 +61552,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     div-float/2addr v1, v2
 
@@ -61544,7 +61560,7 @@
 
     move-result v1
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/2addr v1, v3
 
     iput v1, p0, Lorg/telegram/ui/PhotoViewer;->resultWidth:I
 
@@ -61553,7 +61569,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     div-float/2addr v1, v2
 
@@ -61561,7 +61577,7 @@
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/PhotoViewer;->resultHeight:I
 
@@ -61633,7 +61649,7 @@
     :cond_7
     int-to-float v0, v6
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     div-float/2addr v0, v2
 
@@ -61642,7 +61658,7 @@
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/PhotoViewer;->resultWidth:I
 
@@ -61651,7 +61667,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v5
+    mul-float/2addr v0, v5
 
     div-float/2addr v0, v2
 
@@ -61659,7 +61675,7 @@
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/2addr v0, v3
 
     iput v0, p0, Lorg/telegram/ui/PhotoViewer;->resultHeight:I
 
@@ -61726,7 +61742,7 @@
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer;->videoDuration:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     const/high16 v1, 0x447a0000    # 1000.0f
 
@@ -61846,7 +61862,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p2, 0x0
+    move p2, v0
 
     :goto_1
     aput-boolean p2, p1, v0
@@ -61970,7 +61986,7 @@
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    move v1, v2
 
     :cond_3
     :goto_0
@@ -62069,7 +62085,7 @@
     return-void
 
     :cond_1
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_1
     if-ge v0, v1, :cond_16
@@ -62161,12 +62177,12 @@
 
     if-ne v7, v8, :cond_6
 
-    const/4 v7, 0x1
+    move v7, v6
 
     goto :goto_3
 
     :cond_6
-    const/4 v7, 0x0
+    move v7, v3
 
     :goto_3
     if-eqz v7, :cond_7
@@ -62196,7 +62212,7 @@
     goto :goto_4
 
     :cond_8
-    const/4 v8, 0x0
+    move v8, v3
 
     :goto_4
     if-eqz v7, :cond_9
@@ -62226,7 +62242,7 @@
     goto :goto_5
 
     :cond_a
-    const/4 v7, 0x0
+    move v7, v3
 
     .line 9093
     :goto_5
@@ -62243,7 +62259,7 @@
 
     move-result v9
 
-    const/4 v10, 0x0
+    move v10, v3
 
     :goto_6
     if-ge v10, v9, :cond_c
@@ -62410,7 +62426,7 @@
 
     iget v8, p0, Lorg/telegram/ui/PhotoViewer;->animationValue:F
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     add-float/2addr v4, v7
 
@@ -62771,7 +62787,7 @@
 
     if-nez v0, :cond_d
 
-    goto/16 :goto_1f
+    goto/16 :goto_20
 
     .line 14725
     :cond_d
@@ -62863,13 +62879,13 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     .line 14741
     iget-object v0, v1, Lorg/telegram/ui/PhotoViewer;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -62897,7 +62913,7 @@
     .line 14747
     iget-object v0, v1, Lorg/telegram/ui/PhotoViewer;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
     .line 14748
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -62920,20 +62936,25 @@
     .line 14752
     invoke-virtual {v0, v9}, Landroid/view/View;->setScaleY(F)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_11
-    const/high16 v10, 0x3f800000    # 1.0f
+    move v12, v9
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    goto :goto_2
 
     :cond_12
-    const/high16 v12, 0x3f800000    # 1.0f
+    move v10, v9
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    move v11, v10
+
+    move v12, v11
+
+    :goto_2
+    move v13, v12
 
     .line 14755
-    :goto_2
+    :goto_3
     iget-object v0, v1, Lorg/telegram/ui/PhotoViewer;->placeProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     iget-object v14, v1, Lorg/telegram/ui/PhotoViewer;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -63009,7 +63030,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_3
+    goto :goto_4
 
     :catchall_0
     move-exception v0
@@ -63019,7 +63040,7 @@
 
     .line 14772
     :cond_13
-    :goto_3
+    :goto_4
     iget-object v0, v1, Lorg/telegram/ui/PhotoViewer;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_15
@@ -63044,12 +63065,12 @@
 
     if-lez v0, :cond_14
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_14
     move-wide/from16 v20, v24
 
-    :goto_4
+    :goto_5
     add-long v9, v22, v20
 
     .line 14775
@@ -63075,13 +63096,13 @@
 
     invoke-virtual {v15, v9, v10, v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->seekTo(JZ)V
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_15
     move v2, v10
 
     .line 14777
-    :goto_5
+    :goto_6
     iget-object v0, v7, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v3}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
@@ -63091,13 +63112,13 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_16
     move v2, v10
 
     .line 14781
-    :goto_6
+    :goto_7
     iget-boolean v0, v1, Lorg/telegram/ui/PhotoViewer;->doneButtonPressed:Z
 
     if-nez v0, :cond_17
@@ -63202,7 +63223,7 @@
 
     move/from16 p2, v13
 
-    goto/16 :goto_1e
+    goto/16 :goto_1f
 
     :cond_1b
     const/high16 v6, 0x3f800000    # 1.0f
@@ -63214,10 +63235,10 @@
 
     move-result-object v5
 
-    const/4 v0, 0x0
+    move v0, v4
 
     .line 14813
-    :goto_7
+    :goto_8
     array-length v8, v5
 
     if-ge v0, v8, :cond_1c
@@ -63236,7 +63257,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
     :cond_1c
     const/4 v8, 0x3
@@ -63307,10 +63328,10 @@
     move v15, v10
 
     :cond_1d
-    const/4 v10, 0x0
+    move v10, v4
 
     .line 14834
-    :goto_8
+    :goto_9
     array-length v6, v5
 
     if-ge v10, v6, :cond_20
@@ -63331,7 +63352,7 @@
 
     const/4 v14, 0x0
 
-    goto :goto_8
+    goto :goto_9
 
     .line 14839
     :cond_1e
@@ -63356,10 +63377,10 @@
 
     iput v6, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    const/4 v6, 0x0
+    move v6, v4
 
     .line 14841
-    :goto_9
+    :goto_a
     array-length v9, v5
 
     if-ge v6, v9, :cond_1f
@@ -63388,7 +63409,7 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_1f
     const/4 v9, 0x0
@@ -63428,12 +63449,12 @@
 
     sget v6, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_23
-    const/4 v6, 0x0
+    move v6, v4
 
-    :goto_a
+    :goto_b
     int-to-float v6, v6
 
     .line 14858
@@ -63478,7 +63499,7 @@
 
     const/4 v14, 0x2
 
-    mul-int/lit8 v10, v10, 0x2
+    mul-int/2addr v10, v14
 
     int-to-float v10, v10
 
@@ -63503,7 +63524,7 @@
 
     move-result v6
 
-    goto :goto_c
+    goto :goto_d
 
     .line 14864
     :cond_24
@@ -63534,12 +63555,12 @@
 
     sget v14, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    goto :goto_b
+    goto :goto_c
 
     :cond_25
-    const/4 v14, 0x0
+    move v14, v4
 
-    :goto_b
+    :goto_c
     add-int/2addr v10, v14
 
     int-to-float v10, v10
@@ -63556,25 +63577,25 @@
     move-result v6
 
     .line 14868
-    :goto_c
+    :goto_d
     iget v10, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     int-to-float v10, v10
 
     iget v14, v1, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v10, v10, v14
+    mul-float/2addr v10, v14
 
-    mul-float v10, v10, v6
+    mul-float/2addr v10, v6
 
     .line 14869
     iget v15, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     int-to-float v15, v15
 
-    mul-float v15, v15, v14
+    mul-float/2addr v15, v14
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     .line 14870
     iget-object v14, v1, Lorg/telegram/ui/PhotoViewer;->windowView:Landroid/widget/FrameLayout;
@@ -63605,12 +63626,12 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    goto :goto_d
+    goto :goto_e
 
     :cond_26
     const/4 v4, 0x0
 
-    :goto_d
+    :goto_e
     int-to-float v4, v4
 
     .line 14874
@@ -63624,7 +63645,7 @@
 
     sub-float/2addr v3, v4
 
-    goto :goto_f
+    goto :goto_10
 
     .line 14877
     :cond_27
@@ -63640,17 +63661,17 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_28
     const/4 v4, 0x0
 
-    :goto_e
+    :goto_f
     add-int/2addr v3, v4
 
     int-to-float v3, v3
 
-    :goto_f
+    :goto_10
     sub-float/2addr v3, v15
 
     div-float/2addr v3, v10
@@ -63658,7 +63679,7 @@
     const/4 v4, 0x0
 
     .line 14879
-    :goto_10
+    :goto_11
     array-length v10, v5
 
     if-ge v4, v10, :cond_2b
@@ -63691,7 +63712,7 @@
 
     iget v15, v1, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     invoke-static {v15}, Ljava/lang/Float;->isNaN(F)Z
 
@@ -63701,14 +63722,14 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_11
+    goto :goto_12
 
     :cond_29
     iget v15, v1, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
-    :goto_11
+    :goto_12
     invoke-virtual {v10, v15}, Landroid/view/View;->setScaleX(F)V
 
     .line 14884
@@ -63716,7 +63737,7 @@
 
     iget v15, v1, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
     invoke-static {v15}, Ljava/lang/Float;->isNaN(F)Z
 
@@ -63726,19 +63747,19 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_12
+    goto :goto_13
 
     :cond_2a
     iget v15, v1, Lorg/telegram/ui/PhotoViewer;->scale:F
 
-    mul-float v15, v15, v6
+    mul-float/2addr v15, v6
 
-    :goto_12
+    :goto_13
     invoke-virtual {v10, v15}, Landroid/view/View;->setScaleY(F)V
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10
+    goto :goto_11
 
     :cond_2b
     if-eqz v7, :cond_39
@@ -63824,12 +63845,12 @@
 
     const/4 v14, 0x0
 
-    goto :goto_13
+    goto :goto_14
 
     :cond_2d
     sget v14, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    :goto_13
+    :goto_14
     sub-int/2addr v10, v14
 
     int-to-float v10, v10
@@ -63888,12 +63909,12 @@
 
     const/4 v6, 0x0
 
-    goto :goto_14
+    goto :goto_15
 
     :cond_2f
     sget v6, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    :goto_14
+    :goto_15
     sub-int/2addr v8, v6
 
     int-to-float v6, v8
@@ -64075,7 +64096,7 @@
 
     iget v12, v9, Landroid/graphics/RectF;->left:F
 
-    mul-float v12, v12, v15
+    mul-float/2addr v12, v15
 
     add-float/2addr v14, v12
 
@@ -64094,7 +64115,7 @@
 
     iget v9, v9, Landroid/graphics/RectF;->top:F
 
-    mul-float v9, v9, v15
+    mul-float/2addr v9, v15
 
     add-float/2addr v14, v9
 
@@ -64118,7 +64139,7 @@
 
     int-to-float v8, v8
 
-    mul-float v8, v8, v15
+    mul-float/2addr v8, v15
 
     const/4 v13, 0x5
 
@@ -64129,7 +64150,7 @@
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v15
+    mul-float/2addr v6, v15
 
     const/4 v9, 0x6
 
@@ -64137,7 +64158,7 @@
 
     const/4 v6, 0x0
 
-    :goto_15
+    :goto_16
     if-ge v6, v14, :cond_32
 
     .line 14932
@@ -64155,12 +64176,12 @@
 
     int-to-float v10, v10
 
-    goto :goto_16
+    goto :goto_17
 
     :cond_31
     const/4 v10, 0x0
 
-    :goto_16
+    :goto_17
     aput v10, v8, v9
 
     add-int/lit8 v6, v6, 0x1
@@ -64169,7 +64190,7 @@
 
     const/4 v14, 0x4
 
-    goto :goto_15
+    goto :goto_16
 
     .line 14934
     :cond_32
@@ -64183,7 +64204,7 @@
 
     iget v10, v7, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v4, v4, v10
+    mul-float/2addr v4, v10
 
     const/16 v12, 0xb
 
@@ -64192,7 +64213,7 @@
     .line 14935
     aget-object v4, v6, v8
 
-    mul-float v3, v3, v10
+    mul-float/2addr v3, v10
 
     aput v3, v4, v16
 
@@ -64205,12 +64226,12 @@
 
     const/16 v19, 0x3
 
-    goto :goto_17
+    goto :goto_18
 
     :cond_33
     const/16 v19, 0x2
 
-    :goto_17
+    :goto_18
     array-length v4, v5
 
     add-int v19, v19, v4
@@ -64221,12 +64242,12 @@
 
     const/4 v4, 0x1
 
-    goto :goto_18
+    goto :goto_19
 
     :cond_34
     const/4 v4, 0x0
 
-    :goto_18
+    :goto_19
     add-int v4, v19, v4
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
@@ -64234,7 +64255,7 @@
     const/4 v4, 0x0
 
     .line 14938
-    :goto_19
+    :goto_1a
     array-length v6, v5
 
     if-ge v4, v6, :cond_36
@@ -64269,7 +64290,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_19
+    goto :goto_1a
 
     .line 14945
     :cond_36
@@ -64385,7 +64406,7 @@
     :cond_38
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    goto/16 :goto_1c
+    goto/16 :goto_1d
 
     :cond_39
     move/from16 v17, v12
@@ -64405,12 +64426,12 @@
 
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    goto :goto_1a
+    goto :goto_1b
 
     :cond_3a
     const/4 v4, 0x0
 
-    :goto_1a
+    :goto_1b
     add-int/2addr v3, v4
 
     const/4 v4, 0x2
@@ -64489,12 +64510,12 @@
 
     if-ltz v9, :cond_3b
 
-    goto :goto_1b
+    goto :goto_1c
 
     :cond_3b
     neg-int v3, v3
 
-    :goto_1b
+    :goto_1c
     int-to-float v3, v3
 
     const/4 v9, 0x0
@@ -64551,7 +64572,7 @@
     invoke-virtual {v0, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 14970
-    :goto_1c
+    :goto_1d
     iget-object v3, v1, Lorg/telegram/ui/PhotoViewer;->placeProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     if-eqz v3, :cond_3c
@@ -64606,7 +64627,7 @@
     :cond_3d
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    goto/16 :goto_1d
+    goto/16 :goto_1e
 
     :cond_3e
     move/from16 v17, v12
@@ -64808,7 +64829,7 @@
 
     .line 15059
     :cond_41
-    :goto_1d
+    :goto_1e
     iget-object v0, v1, Lorg/telegram/ui/PhotoViewer;->currentAnimation:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     if-eqz v0, :cond_42
@@ -64847,7 +64868,7 @@
 
     .line 15068
     :cond_43
-    :goto_1e
+    :goto_1f
     iget-object v0, v1, Lorg/telegram/ui/PhotoViewer;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_44
@@ -64892,10 +64913,8 @@
     invoke-virtual {v0, v9}, Landroid/view/View;->setScaleY(F)V
 
     :cond_44
-    :goto_1f
+    :goto_20
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -65046,7 +65065,7 @@
 .end method
 
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 31
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -65072,7 +65091,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_0
     if-ge v2, v4, :cond_67
@@ -65115,13 +65134,13 @@
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v7
 
     goto :goto_2
 
     :cond_2
     :goto_1
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 3522
     :goto_2
@@ -65152,7 +65171,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_3
     if-ge v2, v4, :cond_67
@@ -65195,13 +65214,13 @@
     goto :goto_4
 
     :cond_6
-    const/4 v1, 0x0
+    move v1, v7
 
     goto :goto_5
 
     :cond_7
     :goto_4
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 3532
     :goto_5
@@ -65304,7 +65323,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move v2, v7
 
     :goto_6
     if-ge v2, v4, :cond_67
@@ -65376,13 +65395,13 @@
     goto :goto_7
 
     :cond_f
-    const/4 v11, 0x0
+    move v11, v7
 
     goto :goto_8
 
     :cond_10
     :goto_7
-    const/4 v11, 0x1
+    move v11, v6
 
     .line 3551
     :goto_8
@@ -65430,9 +65449,9 @@
 
     const-wide/16 v15, 0x1f4
 
-    cmp-long v17, v5, v15
+    cmp-long v5, v5, v15
 
-    if-ltz v17, :cond_15
+    if-ltz v5, :cond_15
 
     .line 3560
     iget v5, v0, Lorg/telegram/ui/PhotoViewer;->seekToProgressPending:F
@@ -65461,9 +65480,9 @@
 
     if-ltz v5, :cond_12
 
-    const-wide v18, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v5, v3, v18
+    cmp-long v5, v3, v17
 
     if-eqz v5, :cond_12
 
@@ -65480,7 +65499,7 @@
     goto :goto_a
 
     :cond_12
-    const/4 v5, 0x0
+    move v5, v6
 
     .line 3571
     :cond_13
@@ -65653,9 +65672,9 @@
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    const/4 v5, 0x0
+    move v10, v6
 
-    const/4 v10, -0x1
+    move v5, v7
 
     .line 3604
     :goto_d
@@ -65725,7 +65744,7 @@
 
     if-eqz v15, :cond_1e
 
-    const/4 v15, 0x0
+    move v15, v7
 
     .line 3613
     :goto_f
@@ -65843,9 +65862,9 @@
 
     iget-wide v12, v9, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    cmp-long v9, v7, v12
+    cmp-long v7, v7, v12
 
-    if-nez v9, :cond_1f
+    if-nez v7, :cond_1f
 
     .line 3625
     iget-object v4, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrLocations:Ljava/util/ArrayList;
@@ -66012,9 +66031,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v6, v2, v4
+    cmp-long v2, v2, v4
 
-    if-lez v6, :cond_28
+    if-lez v2, :cond_28
 
     .line 3662
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
@@ -66110,9 +66129,9 @@
 
     iget-wide v6, v2, Lorg/telegram/messenger/ImageLocation;->photoId:J
 
-    cmp-long v8, v4, v6
+    cmp-long v4, v4, v6
 
-    if-nez v8, :cond_2b
+    if-nez v4, :cond_2b
 
     .line 3675
     iget-object v4, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrLocations:Ljava/util/ArrayList;
@@ -66244,15 +66263,15 @@
 
     iget-wide v4, v0, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-eqz v6, :cond_2e
+    if-eqz v4, :cond_2e
 
     iget-wide v4, v0, Lorg/telegram/ui/PhotoViewer;->mergeDialogId:J
 
-    cmp-long v6, v1, v4
+    cmp-long v4, v1, v4
 
-    if-nez v6, :cond_67
+    if-nez v4, :cond_67
 
     .line 3698
     :cond_2e
@@ -66274,9 +66293,9 @@
     :cond_2f
     iget-wide v4, v0, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
-    cmp-long v6, v1, v4
+    cmp-long v1, v1, v4
 
-    if-nez v6, :cond_30
+    if-nez v1, :cond_30
 
     const/4 v1, 0x2
 
@@ -66332,33 +66351,33 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object v20
+    move-result-object v19
 
     iget-wide v1, v0, Lorg/telegram/ui/PhotoViewer;->currentDialogId:J
 
-    const/16 v23, 0x14
+    const/16 v22, 0x14
+
+    const/16 v23, 0x0
 
     const/16 v24, 0x0
 
-    const/16 v25, 0x0
-
     iget v4, v0, Lorg/telegram/ui/PhotoViewer;->sharedMediaType:I
 
-    const/16 v28, 0x1
+    const/16 v27, 0x1
 
     iget v5, v0, Lorg/telegram/ui/PhotoViewer;->classGuid:I
 
-    const/16 v30, 0x0
+    const/16 v29, 0x0
 
-    move-wide/from16 v21, v1
+    move-wide/from16 v20, v1
 
-    move/from16 v26, v4
+    move/from16 v25, v4
 
-    move/from16 v27, v3
+    move/from16 v26, v3
 
-    move/from16 v29, v5
+    move/from16 v28, v5
 
-    invoke-virtual/range {v20 .. v30}, Lorg/telegram/messenger/MediaDataController;->loadMedia(JIIIIIIII)V
+    invoke-virtual/range {v19 .. v29}, Lorg/telegram/messenger/MediaDataController;->loadMedia(JIIIIIIII)V
 
     goto/16 :goto_2e
 
@@ -66593,9 +66612,9 @@
     .line 3727
     iput-boolean v4, v0, Lorg/telegram/ui/PhotoViewer;->loadingMoreImages:Z
 
-    cmp-long v4, v1, v7
+    cmp-long v1, v1, v7
 
-    if-nez v4, :cond_37
+    if-nez v1, :cond_37
 
     const/4 v1, 0x0
 
@@ -66654,9 +66673,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v5, v2, v7
+    cmp-long v2, v2, v7
 
-    if-eqz v5, :cond_49
+    if-eqz v2, :cond_49
 
     :cond_38
     iget v2, v0, Lorg/telegram/ui/PhotoViewer;->currentIndex:I
@@ -66685,11 +66704,11 @@
 
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
+    move v7, v6
+
     const/4 v3, 0x0
 
     const/4 v5, 0x0
-
-    const/4 v7, -0x1
 
     .line 3742
     :goto_1c
@@ -66804,9 +66823,9 @@
 
     const-wide/16 v4, 0x0
 
-    cmp-long v8, v2, v4
+    cmp-long v2, v2, v4
 
-    if-nez v8, :cond_3f
+    if-nez v2, :cond_3f
 
     .line 3762
     :cond_3e
@@ -66963,9 +66982,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_47
+    if-eqz v3, :cond_47
 
     .line 3786
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrTemp:Ljava/util/ArrayList;
@@ -67047,9 +67066,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v7, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v7, :cond_47
+    if-eqz v3, :cond_47
 
     .line 3794
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer;->imagesArrTemp:Ljava/util/ArrayList;
@@ -67498,9 +67517,9 @@
 
     const-wide/16 v5, 0x0
 
-    cmp-long v8, v3, v5
+    cmp-long v3, v3, v5
 
-    if-eqz v8, :cond_67
+    if-eqz v3, :cond_67
 
     .line 3870
     iput-boolean v7, v0, Lorg/telegram/ui/PhotoViewer;->requestingPreview:Z
@@ -67656,9 +67675,9 @@
 
     iget-wide v12, v12, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    cmp-long v14, v12, v2
+    cmp-long v12, v12, v2
 
-    if-nez v14, :cond_60
+    if-nez v12, :cond_60
 
     .line 3893
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -68571,13 +68590,15 @@
     move-wide v14, v6
 
     :goto_0
-    cmp-long v11, v6, v14
+    cmp-long v6, v6, v14
 
-    if-eqz v11, :cond_8
+    if-eqz v6, :cond_8
 
     cmp-long v6, v14, v8
 
     if-lez v6, :cond_3
+
+    move v6, v5
 
     move-wide v2, v8
 
@@ -68586,26 +68607,29 @@
     :cond_3
     cmp-long v6, v14, v2
 
-    if-gez v6, :cond_4
+    if-gez v6, :cond_5
 
     const-wide/16 v6, -0x2328
 
-    cmp-long v11, v14, v6
+    cmp-long v6, v14, v6
 
-    if-gez v11, :cond_5
+    if-gez v6, :cond_4
 
-    const/4 v6, 0x0
+    move v6, v4
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_4
-    move-wide v2, v14
+    move v6, v5
+
+    goto :goto_1
 
     :cond_5
-    :goto_1
-    const/4 v6, 0x1
+    move v6, v5
 
-    :goto_2
+    move-wide v2, v14
+
+    :goto_1
     if-eqz v6, :cond_7
 
     .line 17075
@@ -68622,7 +68646,7 @@
 
     if-gez v1, :cond_6
 
-    const/4 v4, 0x1
+    move v4, v5
 
     :cond_6
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/VideoForwardDrawable;->setLeftSide(Z)V
@@ -68669,9 +68693,9 @@
 
     const/high16 v6, 0x3f800000    # 1.0f
 
-    const/4 v7, 0x0
-
     cmpl-float v1, v1, v6
+
+    const/4 v7, 0x0
 
     if-nez v1, :cond_9
 
@@ -68687,7 +68711,7 @@
 
     if-eqz v1, :cond_9
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 17090
     :cond_9
@@ -68701,7 +68725,7 @@
 
     if-eqz v1, :cond_a
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     .line 17093
     :cond_a
@@ -68793,9 +68817,9 @@
 
     int-to-double v8, v3
 
-    cmpg-double v3, v1, v8
+    cmpg-double v1, v1, v8
 
-    if-gez v3, :cond_b
+    if-gez v1, :cond_b
 
     return v4
 
@@ -68846,7 +68870,7 @@
 
     div-float v3, v4, v3
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -68887,7 +68911,7 @@
 
     div-float v6, v4, v6
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     sub-float/2addr v2, v3
 
@@ -68901,10 +68925,10 @@
 
     if-gez v6, :cond_c
 
-    :goto_3
+    :goto_2
     move v1, v3
 
-    goto :goto_4
+    goto :goto_3
 
     .line 17102
     :cond_c
@@ -68914,21 +68938,21 @@
 
     if-lez v6, :cond_d
 
-    goto :goto_3
+    goto :goto_2
 
     .line 17105
     :cond_d
-    :goto_4
+    :goto_3
     iget v3, v0, Lorg/telegram/ui/PhotoViewer;->minY:F
 
     cmpg-float v6, v2, v3
 
     if-gez v6, :cond_e
 
-    :goto_5
+    :goto_4
     move v2, v3
 
-    goto :goto_6
+    goto :goto_5
 
     .line 17107
     :cond_e
@@ -68938,21 +68962,21 @@
 
     if-lez v6, :cond_f
 
-    goto :goto_5
+    goto :goto_4
 
     .line 17110
     :cond_f
-    :goto_6
+    :goto_5
     invoke-direct {v0, v4, v1, v2, v5}, Lorg/telegram/ui/PhotoViewer;->animateTo(FFFZ)V
 
-    goto :goto_7
+    goto :goto_6
 
     .line 17112
     :cond_10
     invoke-direct {v0, v6, v7, v7, v5}, Lorg/telegram/ui/PhotoViewer;->animateTo(FFFZ)V
 
     .line 17114
-    :goto_7
+    :goto_6
     iput-boolean v5, v0, Lorg/telegram/ui/PhotoViewer;->doubleTap:Z
 
     .line 17115
@@ -68961,7 +68985,7 @@
     return v5
 
     :cond_11
-    :goto_8
+    :goto_7
     return v4
 .end method
 
@@ -69160,7 +69184,7 @@
 .end method
 
 .method public onLongPress()V
-    .locals 7
+    .locals 6
 
     .line 16896
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -69193,15 +69217,15 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v6, v0, v4
+    cmp-long v0, v0, v4
 
-    if-eqz v6, :cond_2
+    if-eqz v0, :cond_2
 
     const-wide/16 v0, 0x3a98
 
-    cmp-long v4, v2, v0
+    cmp-long v0, v2, v0
 
-    if-gez v4, :cond_0
+    if-gez v0, :cond_0
 
     goto :goto_1
 
@@ -69649,12 +69673,12 @@
     if-eqz p1, :cond_6
 
     :cond_5
-    const/4 p1, 0x1
+    move p1, v4
 
     goto :goto_0
 
     :cond_6
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 16972
     :goto_0
@@ -70209,7 +70233,7 @@
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v1
 
     :goto_0
     if-eqz p1, :cond_2
@@ -70649,9 +70673,9 @@
 
     const-wide/16 v16, 0x0
 
-    cmp-long v7, v5, v16
+    cmp-long v5, v5, v16
 
-    if-eqz v7, :cond_5
+    if-eqz v5, :cond_5
 
     iget v5, v12, Lorg/telegram/ui/PhotoViewer;->currentAccount:I
 
@@ -70789,12 +70813,12 @@
 
     if-eqz v14, :cond_a
 
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_3
 
     :cond_a
-    const/4 v1, 0x0
+    move v1, v15
 
     .line 14110
     :goto_3
@@ -71155,12 +71179,12 @@
     if-nez v1, :cond_11
 
     :cond_10
-    const/4 v1, 0x1
+    move v1, v10
 
     goto :goto_6
 
     :cond_11
-    const/4 v1, 0x0
+    move v1, v15
 
     :goto_6
     iput-boolean v1, v12, Lorg/telegram/ui/PhotoViewer;->skipFirstBufferingProgress:Z
@@ -71211,11 +71235,11 @@
 
     move-object/from16 v5, p4
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    move v0, v6
 
     move-object/from16 v6, p5
 
-    const/4 v0, 0x0
+    move v0, v7
 
     move-object/from16 v7, p6
 
@@ -71225,7 +71249,7 @@
 
     move/from16 v9, p8
 
-    const/4 v0, 0x1
+    move v0, v10
 
     move-object/from16 v10, p10
 
@@ -71299,7 +71323,7 @@
     .line 14198
     iput v4, v12, Lorg/telegram/ui/PhotoViewer;->clippingImageProgress:F
 
-    const/4 v4, 0x0
+    move v4, v15
 
     .line 14200
     :goto_8
@@ -71469,7 +71493,7 @@
 
     iget v8, v10, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v6, v6, v8
+    mul-float/2addr v6, v8
 
     add-float/2addr v9, v6
 
@@ -71486,7 +71510,7 @@
 
     iget v9, v10, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    mul-float v8, v8, v9
+    mul-float/2addr v8, v9
 
     add-float/2addr v6, v8
 
@@ -71534,11 +71558,11 @@
     goto :goto_b
 
     :cond_1d
+    move v1, v6
+
+    move v0, v10
+
     move-object v10, v8
-
-    const/4 v0, 0x1
-
-    const/high16 v1, 0x3f800000    # 1.0f
 
     if-eqz p7, :cond_1f
 
@@ -73867,7 +73891,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/GroupedPhotosListView;->setDelegate(Lorg/telegram/ui/Components/GroupedPhotosListView$GroupedPhotosListViewDelegate;)V
 
-    const/4 v1, 0x0
+    move v1, v14
 
     :goto_2
     const/4 v2, 0x3
@@ -74008,7 +74032,7 @@
     .line 5368
     invoke-direct {v7, v13}, Lorg/telegram/ui/PhotoViewer;->setCaptionHwLayerEnabled(Z)V
 
-    const/4 v1, 0x0
+    move v1, v14
 
     :goto_3
     const/4 v2, 0x3
@@ -76211,17 +76235,15 @@
     :cond_c
     const/16 v3, 0x47
 
-    const/16 v21, 0x47
-
     goto :goto_7
 
     :cond_d
     :goto_6
     const/16 v3, 0x3d
 
-    const/16 v21, 0x3d
-
     :goto_7
+    move/from16 v21, v3
+
     const/16 v22, 0xb
 
     const/16 v23, 0x0
@@ -76297,17 +76319,15 @@
     :cond_f
     const/16 v0, 0x44
 
-    const/16 v21, 0x44
-
     goto :goto_9
 
     :cond_10
     :goto_8
     const/16 v0, 0x3a
 
-    const/16 v21, 0x3a
-
     :goto_9
+    move/from16 v21, v0
+
     const/16 v22, 0x40
 
     const/16 v23, 0x0
@@ -76579,17 +76599,17 @@
 
     move-object v8, v1
 
-    const/16 v6, 0x11
+    move v6, v10
 
     move v10, v2
 
     const/16 v2, 0x40
 
-    const/4 v2, 0x1
+    move v2, v13
 
     move v13, v3
 
-    const/4 v3, 0x0
+    move v3, v14
 
     move-object v14, v5
 
@@ -76761,6 +76781,8 @@
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/PhotoViewer;->updateColors()V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4

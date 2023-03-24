@@ -140,7 +140,7 @@
 
     int-to-float v6, v6
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sub-float/2addr v6, v2
 
@@ -169,16 +169,16 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v5
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_0
     const/16 v7, 0x8
 
     if-ge v3, v7, :cond_4
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_1
     if-ge v8, v7, :cond_1
@@ -208,13 +208,13 @@
 
     int-to-float v9, v8
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     add-float v11, v6, v9
 
     int-to-float v9, v3
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     add-float v12, v9, v2
 
@@ -287,7 +287,7 @@
 
     int-to-float v6, v6
 
-    mul-float v2, v2, v1
+    mul-float/2addr v2, v1
 
     sub-float/2addr v6, v2
 
@@ -316,16 +316,16 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    move v3, v5
 
-    const/4 v4, 0x0
+    move v4, v3
 
     :goto_2
     const/16 v7, 0xc
 
     if-ge v3, v7, :cond_4
 
-    const/4 v8, 0x0
+    move v8, v5
 
     :goto_3
     if-ge v8, v7, :cond_3
@@ -353,13 +353,13 @@
 
     int-to-float v9, v8
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     add-float v11, v6, v9
 
     int-to-float v9, v3
 
-    mul-float v9, v9, v1
+    mul-float/2addr v9, v1
 
     add-float v12, v9, v2
 

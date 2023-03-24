@@ -552,7 +552,7 @@
 .end method
 
 .method private synthetic lambda$new$2()V
-    .locals 6
+    .locals 5
 
     .line 88
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->destroyed:Z
@@ -625,9 +625,9 @@
 
     const-wide/16 v3, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v1, v1, v3
 
-    if-gez v5, :cond_1
+    if-gez v1, :cond_1
 
     .line 100
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->currentAccount:I
@@ -1108,9 +1108,9 @@
     .line 625
     iget-wide v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->queryId:J
 
-    cmp-long p3, v0, p1
+    cmp-long p1, v0, p1
 
-    if-nez p3, :cond_1
+    if-nez p1, :cond_1
 
     .line 626
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->webViewContainer:Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -1744,9 +1744,9 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
     cmpl-float v1, v1, p1
+
+    const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
@@ -1755,12 +1755,12 @@
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->stickTo(F)V
 
-    const/4 p1, 0x1
+    move p1, v0
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move p1, v2
 
     .line 311
     :goto_0
@@ -1928,7 +1928,7 @@
 
     if-gez p1, :cond_1
 
-    const/4 p1, 0x0
+    move p1, p2
 
     .line 561
     :cond_1
@@ -2205,9 +2205,9 @@
 
     const-wide/16 p4, 0x0
 
-    cmp-long p6, p2, p4
+    cmp-long p4, p2, p4
 
-    if-gez p6, :cond_0
+    if-gez p4, :cond_0
 
     .line 444
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;

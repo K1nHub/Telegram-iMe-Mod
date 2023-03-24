@@ -30,11 +30,9 @@ public class zzeb extends zzea {
                 if (zzj == 0 || zzj2 == 0 || zzj == zzj2) {
                     int zzd = zzd();
                     if (zzd > zzebVar.zzd()) {
-                        int zzd2 = zzd();
-                        throw new IllegalArgumentException("Length too large: " + zzd + zzd2);
+                        throw new IllegalArgumentException("Length too large: " + zzd + zzd());
                     } else if (zzd > zzebVar.zzd()) {
-                        int zzd3 = zzebVar.zzd();
-                        throw new IllegalArgumentException("Ran off end of other: 0, " + zzd + ", " + zzd3);
+                        throw new IllegalArgumentException("Ran off end of other: 0, " + zzd + ", " + zzebVar.zzd());
                     } else {
                         byte[] bArr = this.zza;
                         byte[] bArr2 = zzebVar.zza;

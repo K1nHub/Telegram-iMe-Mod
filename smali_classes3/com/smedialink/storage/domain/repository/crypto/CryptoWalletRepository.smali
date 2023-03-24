@@ -4,10 +4,12 @@
 
 
 # virtual methods
-.method public abstract clearTokensData()Lio/reactivex/Observable;
+.method public abstract clearTokensData(Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "(",
+            "Lcom/smedialink/storage/domain/model/crypto/BlockchainType;",
+            ")",
             "Lio/reactivex/Observable<",
             "Lcom/smedialink/storage/domain/model/Result<",
             "Ljava/lang/Boolean;",
@@ -44,12 +46,11 @@
     .end annotation
 .end method
 
-.method public abstract unlinkWallet(Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+.method public abstract unlinkWallet(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/smedialink/storage/domain/model/crypto/NetworkType;",
-            "Lcom/smedialink/storage/domain/model/crypto/BlockchainType;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/smedialink/storage/domain/model/Result<",

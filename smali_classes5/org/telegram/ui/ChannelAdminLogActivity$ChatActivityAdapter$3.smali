@@ -665,13 +665,13 @@
 .end method
 
 .method public needOpenUserProfile(J)V
-    .locals 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     .line 2700
     new-instance v0, Landroid/os/Bundle;
@@ -741,9 +741,9 @@
 
     move-result-wide v0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 2706
     new-instance v0, Landroid/os/Bundle;

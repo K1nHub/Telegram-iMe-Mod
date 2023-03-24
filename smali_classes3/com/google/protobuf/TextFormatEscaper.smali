@@ -15,7 +15,7 @@
 .method static escapeBytes(Lcom/google/protobuf/ByteString;)Ljava/lang/String;
     .locals 1
 
-    .line 109
+    .line 119
     new-instance v0, Lcom/google/protobuf/TextFormatEscaper$1;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/TextFormatEscaper$1;-><init>(Lcom/google/protobuf/ByteString;)V
@@ -30,7 +30,7 @@
 .method static escapeBytes(Lcom/google/protobuf/TextFormatEscaper$ByteSequence;)Ljava/lang/String;
     .locals 5
 
-    .line 50
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-interface {p0}, Lcom/google/protobuf/TextFormatEscaper$ByteSequence;->size()I
@@ -41,7 +41,7 @@
 
     const/4 v1, 0x0
 
-    .line 51
+    .line 65
     :goto_0
     invoke-interface {p0}, Lcom/google/protobuf/TextFormatEscaper$ByteSequence;->size()I
 
@@ -49,7 +49,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 52
+    .line 66
     invoke-interface {p0, v1}, Lcom/google/protobuf/TextFormatEscaper$ByteSequence;->byteAt(I)B
 
     move-result v2
@@ -78,12 +78,12 @@
 
     int-to-char v2, v2
 
-    .line 89
+    .line 102
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 91
+    .line 104
     :cond_0
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -95,7 +95,7 @@
 
     int-to-char v3, v3
 
-    .line 92
+    .line 105
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     ushr-int/lit8 v3, v2, 0x3
@@ -106,7 +106,7 @@
 
     int-to-char v3, v3
 
-    .line 93
+    .line 106
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     and-int/lit8 v2, v2, 0x7
@@ -115,7 +115,7 @@
 
     int-to-char v2, v2
 
-    .line 94
+    .line 107
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -123,7 +123,7 @@
     :pswitch_0
     const-string v2, "\\r"
 
-    .line 68
+    .line 81
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -131,7 +131,7 @@
     :pswitch_1
     const-string v2, "\\f"
 
-    .line 62
+    .line 75
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -139,7 +139,7 @@
     :pswitch_2
     const-string v2, "\\v"
 
-    .line 74
+    .line 87
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -147,7 +147,7 @@
     :pswitch_3
     const-string v2, "\\n"
 
-    .line 65
+    .line 78
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -155,7 +155,7 @@
     :pswitch_4
     const-string v2, "\\t"
 
-    .line 71
+    .line 84
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -163,7 +163,7 @@
     :pswitch_5
     const-string v2, "\\b"
 
-    .line 59
+    .line 72
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -171,7 +171,7 @@
     :pswitch_6
     const-string v2, "\\a"
 
-    .line 56
+    .line 69
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -179,7 +179,7 @@
     :cond_1
     const-string v2, "\\\\"
 
-    .line 77
+    .line 90
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -187,7 +187,7 @@
     :cond_2
     const-string v2, "\\\'"
 
-    .line 80
+    .line 93
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
@@ -195,7 +195,7 @@
     :cond_3
     const-string v2, "\\\""
 
-    .line 83
+    .line 96
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_1
@@ -203,7 +203,7 @@
 
     goto/16 :goto_0
 
-    .line 99
+    .line 112
     :cond_4
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -226,7 +226,7 @@
 .method static escapeText(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 145
+    .line 153
     invoke-static {p0}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
 
     move-result-object p0

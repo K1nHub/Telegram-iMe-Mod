@@ -146,7 +146,7 @@
     const/high16 v3, -0x40800000    # -1.0f
 
     :goto_0
-    mul-float v1, v1, v3
+    mul-float/2addr v1, v3
 
     const v3, 0x3f28f5c3    # 0.66f
 
@@ -157,7 +157,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     invoke-virtual {v7, v3, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
@@ -432,9 +432,9 @@
     :cond_7
     const/4 v5, 0x0
 
-    const/4 v13, 0x0
+    move v13, v12
 
-    const/4 v15, 0x0
+    move v15, v13
 
     .line 1021
     :goto_5
@@ -482,7 +482,7 @@
 
     move-result v2
 
-    mul-float v15, v15, v2
+    mul-float/2addr v15, v2
 
     add-float/2addr v14, v15
 
@@ -512,7 +512,7 @@
     move-result v3
 
     :goto_6
-    mul-float v3, v3, v14
+    mul-float/2addr v3, v14
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
@@ -523,7 +523,7 @@
     goto :goto_7
 
     :cond_b
-    const/4 v3, 0x0
+    move v3, v12
 
     :goto_7
     add-int/2addr v2, v3
@@ -1063,7 +1063,7 @@
 
     move-result v6
 
-    mul-float v6, v6, v4
+    mul-float/2addr v6, v4
 
     float-to-int v6, v6
 
@@ -1114,7 +1114,7 @@
 
     mul-float v8, v3, v6
 
-    mul-float v3, v3, v6
+    mul-float/2addr v3, v6
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
@@ -1152,7 +1152,7 @@
 
     sub-float v3, v6, v3
 
-    mul-float v3, v3, v4
+    mul-float/2addr v3, v4
 
     float-to-int v3, v3
 
@@ -1259,7 +1259,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 

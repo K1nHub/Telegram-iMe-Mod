@@ -215,7 +215,7 @@
 
     sub-float/2addr v1, v3
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     add-float/2addr v1, v0
 

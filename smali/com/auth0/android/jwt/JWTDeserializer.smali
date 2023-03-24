@@ -53,7 +53,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     .line 68
     new-instance v0, Ljava/util/Date;

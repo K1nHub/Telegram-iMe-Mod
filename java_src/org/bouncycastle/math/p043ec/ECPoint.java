@@ -14,13 +14,13 @@ public abstract class ECPoint {
     protected boolean withCompression;
 
     /* renamed from: x */
-    protected ECFieldElement f1310x;
+    protected ECFieldElement f1311x;
 
     /* renamed from: y */
-    protected ECFieldElement f1311y;
+    protected ECFieldElement f1312y;
 
     /* renamed from: zs */
-    protected ECFieldElement[] f1312zs;
+    protected ECFieldElement[] f1313zs;
 
     /* renamed from: org.bouncycastle.math.ec.ECPoint$AbstractF2m */
     /* loaded from: classes4.dex */
@@ -40,18 +40,18 @@ public abstract class ECPoint {
             ECFieldElement multiplyPlusProduct;
             ECFieldElement squarePlusProduct;
             ECCurve curve = getCurve();
-            ECFieldElement eCFieldElement = this.f1310x;
+            ECFieldElement eCFieldElement = this.f1311x;
             ECFieldElement a = curve.getA();
             ECFieldElement b = curve.getB();
             int coordinateSystem = curve.getCoordinateSystem();
             if (coordinateSystem != 6) {
-                ECFieldElement eCFieldElement2 = this.f1311y;
+                ECFieldElement eCFieldElement2 = this.f1312y;
                 ECFieldElement multiply = eCFieldElement2.add(eCFieldElement).multiply(eCFieldElement2);
                 if (coordinateSystem != 0) {
                     if (coordinateSystem != 1) {
                         throw new IllegalStateException("unsupported coordinate system");
                     }
-                    ECFieldElement eCFieldElement3 = this.f1312zs[0];
+                    ECFieldElement eCFieldElement3 = this.f1313zs[0];
                     if (!eCFieldElement3.isOne()) {
                         ECFieldElement multiply2 = eCFieldElement3.multiply(eCFieldElement3.square());
                         multiply = multiply.multiply(eCFieldElement3);
@@ -61,16 +61,16 @@ public abstract class ECPoint {
                 }
                 return multiply.equals(eCFieldElement.add(a).multiply(eCFieldElement.square()).add(b));
             }
-            ECFieldElement eCFieldElement4 = this.f1312zs[0];
+            ECFieldElement eCFieldElement4 = this.f1313zs[0];
             boolean isOne = eCFieldElement4.isOne();
             if (eCFieldElement.isZero()) {
-                ECFieldElement square = this.f1311y.square();
+                ECFieldElement square = this.f1312y.square();
                 if (!isOne) {
                     b = b.multiply(eCFieldElement4.square());
                 }
                 return square.equals(b);
             }
-            ECFieldElement eCFieldElement5 = this.f1311y;
+            ECFieldElement eCFieldElement5 = this.f1312y;
             ECFieldElement square2 = eCFieldElement.square();
             if (isOne) {
                 multiplyPlusProduct = eCFieldElement5.square().add(eCFieldElement5).add(a);
@@ -149,7 +149,7 @@ public abstract class ECPoint {
             }
             ECCurve curve = getCurve();
             int coordinateSystem = curve.getCoordinateSystem();
-            ECFieldElement eCFieldElement = this.f1310x;
+            ECFieldElement eCFieldElement = this.f1311x;
             if (coordinateSystem != 0) {
                 if (coordinateSystem != 1) {
                     if (coordinateSystem != 5) {
@@ -158,10 +158,10 @@ public abstract class ECPoint {
                         }
                     }
                 }
-                createRawPoint = curve.createRawPoint(eCFieldElement.squarePow(i), this.f1311y.squarePow(i), new ECFieldElement[]{this.f1312zs[0].squarePow(i)}, this.withCompression);
+                createRawPoint = curve.createRawPoint(eCFieldElement.squarePow(i), this.f1312y.squarePow(i), new ECFieldElement[]{this.f1313zs[0].squarePow(i)}, this.withCompression);
                 return (AbstractF2m) createRawPoint;
             }
-            createRawPoint = curve.createRawPoint(eCFieldElement.squarePow(i), this.f1311y.squarePow(i), this.withCompression);
+            createRawPoint = curve.createRawPoint(eCFieldElement.squarePow(i), this.f1312y.squarePow(i), this.withCompression);
             return (AbstractF2m) createRawPoint;
         }
     }
@@ -186,15 +186,15 @@ public abstract class ECPoint {
 
         @Override // org.bouncycastle.math.p043ec.ECPoint
         protected boolean satisfiesCurveEquation() {
-            ECFieldElement eCFieldElement = this.f1310x;
-            ECFieldElement eCFieldElement2 = this.f1311y;
+            ECFieldElement eCFieldElement = this.f1311x;
+            ECFieldElement eCFieldElement2 = this.f1312y;
             ECFieldElement a = this.curve.getA();
             ECFieldElement b = this.curve.getB();
             ECFieldElement square = eCFieldElement2.square();
             int curveCoordinateSystem = getCurveCoordinateSystem();
             if (curveCoordinateSystem != 0) {
                 if (curveCoordinateSystem == 1) {
-                    ECFieldElement eCFieldElement3 = this.f1312zs[0];
+                    ECFieldElement eCFieldElement3 = this.f1313zs[0];
                     if (!eCFieldElement3.isOne()) {
                         ECFieldElement square2 = eCFieldElement3.square();
                         ECFieldElement multiply = eCFieldElement3.multiply(square2);
@@ -205,7 +205,7 @@ public abstract class ECPoint {
                 } else if (curveCoordinateSystem != 2 && curveCoordinateSystem != 3 && curveCoordinateSystem != 4) {
                     throw new IllegalStateException("unsupported coordinate system");
                 } else {
-                    ECFieldElement eCFieldElement4 = this.f1312zs[0];
+                    ECFieldElement eCFieldElement4 = this.f1313zs[0];
                     if (!eCFieldElement4.isOne()) {
                         ECFieldElement square3 = eCFieldElement4.square();
                         ECFieldElement square4 = square3.square();
@@ -231,9 +231,9 @@ public abstract class ECPoint {
     protected ECPoint(ECCurve eCCurve, ECFieldElement eCFieldElement, ECFieldElement eCFieldElement2, ECFieldElement[] eCFieldElementArr) {
         this.preCompTable = null;
         this.curve = eCCurve;
-        this.f1310x = eCFieldElement;
-        this.f1311y = eCFieldElement2;
-        this.f1312zs = eCFieldElementArr;
+        this.f1311x = eCFieldElement;
+        this.f1312y = eCFieldElement2;
+        this.f1313zs = eCFieldElementArr;
     }
 
     protected static ECFieldElement[] getInitialZCoords(ECCurve eCCurve) {
@@ -362,28 +362,28 @@ public abstract class ECPoint {
     }
 
     public final ECFieldElement getRawXCoord() {
-        return this.f1310x;
+        return this.f1311x;
     }
 
     public final ECFieldElement getRawYCoord() {
-        return this.f1311y;
+        return this.f1312y;
     }
 
     protected final ECFieldElement[] getRawZCoords() {
-        return this.f1312zs;
+        return this.f1313zs;
     }
 
     public ECFieldElement getXCoord() {
-        return this.f1310x;
+        return this.f1311x;
     }
 
     public ECFieldElement getYCoord() {
-        return this.f1311y;
+        return this.f1312y;
     }
 
     public ECFieldElement getZCoord(int i) {
         if (i >= 0) {
-            ECFieldElement[] eCFieldElementArr = this.f1312zs;
+            ECFieldElement[] eCFieldElementArr = this.f1313zs;
             if (i < eCFieldElementArr.length) {
                 return eCFieldElementArr[i];
             }
@@ -435,8 +435,8 @@ public abstract class ECPoint {
     }
 
     public boolean isInfinity() {
-        if (this.f1310x != null && this.f1311y != null) {
-            ECFieldElement[] eCFieldElementArr = this.f1312zs;
+        if (this.f1311x != null && this.f1312y != null) {
+            ECFieldElement[] eCFieldElementArr = this.f1313zs;
             if (eCFieldElementArr.length <= 0 || !eCFieldElementArr[0].isZero()) {
                 return false;
             }
@@ -446,7 +446,7 @@ public abstract class ECPoint {
 
     public boolean isNormalized() {
         int curveCoordinateSystem = getCurveCoordinateSystem();
-        return curveCoordinateSystem == 0 || curveCoordinateSystem == 5 || isInfinity() || this.f1312zs[0].isOne();
+        return curveCoordinateSystem == 0 || curveCoordinateSystem == 5 || isInfinity() || this.f1313zs[0].isOne();
     }
 
     public boolean isValid() {
@@ -531,9 +531,9 @@ public abstract class ECPoint {
         stringBuffer.append(getRawXCoord());
         stringBuffer.append(',');
         stringBuffer.append(getRawYCoord());
-        for (int i = 0; i < this.f1312zs.length; i++) {
+        for (int i = 0; i < this.f1313zs.length; i++) {
             stringBuffer.append(',');
-            stringBuffer.append(this.f1312zs[i]);
+            stringBuffer.append(this.f1313zs[i]);
         }
         stringBuffer.append(')');
         return stringBuffer.toString();

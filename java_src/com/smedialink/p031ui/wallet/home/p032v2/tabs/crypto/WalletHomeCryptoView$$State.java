@@ -188,6 +188,19 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
     }
 
     @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
+    public void showActivationConfirmationDialog(DialogModel dialogModel, Callbacks$Callback callbacks$Callback) {
+        ShowActivationConfirmationDialogCommand showActivationConfirmationDialogCommand = new ShowActivationConfirmationDialogCommand(this, dialogModel, callbacks$Callback);
+        this.viewCommands.beforeApply(showActivationConfirmationDialogCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showActivationConfirmationDialog(dialogModel, callbacks$Callback);
+        }
+        this.viewCommands.afterApply(showActivationConfirmationDialogCommand);
+    }
+
+    @Override // com.smedialink.manager.wallet.create.WalletCreateManagerView
     public void openImportWalletScreen(String str, String str2) {
         OpenImportWalletScreenCommand openImportWalletScreenCommand = new OpenImportWalletScreenCommand(this, str, str2);
         this.viewCommands.beforeApply(openImportWalletScreenCommand);
@@ -459,6 +472,25 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletHomeCryptoView walletHomeCryptoView) {
             walletHomeCryptoView.showAlreadyCreatedWalletWarningDialog(this.dialogModel, this.walletAddress, this.action);
+        }
+    }
+
+    /* compiled from: WalletHomeCryptoView$$State.java */
+    /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.crypto.WalletHomeCryptoView$$State$ShowActivationConfirmationDialogCommand */
+    /* loaded from: classes3.dex */
+    public class ShowActivationConfirmationDialogCommand extends ViewCommand<WalletHomeCryptoView> {
+        public final Callbacks$Callback action;
+        public final DialogModel dialogModel;
+
+        ShowActivationConfirmationDialogCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State, DialogModel dialogModel, Callbacks$Callback callbacks$Callback) {
+            super("showActivationConfirmationDialog", OneExecutionStateStrategy.class);
+            this.dialogModel = dialogModel;
+            this.action = callbacks$Callback;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletHomeCryptoView walletHomeCryptoView) {
+            walletHomeCryptoView.showActivationConfirmationDialog(this.dialogModel, this.action);
         }
     }
 

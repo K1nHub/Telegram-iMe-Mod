@@ -445,14 +445,14 @@
 
     const v4, 0x3ca3d70a    # 0.02f
 
-    const-string v5, "chat_inReactionButtonText"
-
     cmpg-float p1, p1, v4
+
+    const-string v4, "chat_inReactionButtonText"
 
     if-gtz p1, :cond_3
 
     .line 315
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedColor(Ljava/lang/String;)I
 
     move-result p1
 
@@ -475,13 +475,13 @@
 
     .line 318
     :cond_3
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedColor(Ljava/lang/String;)I
 
     move-result p1
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicHSV:[F
+    iget-object v5, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicHSV:[F
 
-    invoke-static {p1, v4}, Landroid/graphics/Color;->colorToHSV(I[F)V
+    invoke-static {p1, v5}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
     .line 319
     iget-object p1, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicHSV:[F
@@ -521,19 +521,19 @@
     :goto_1
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_6
+    if-eqz v5, :cond_6
 
-    sget-object v4, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->darkValValues:[F
+    sget-object v5, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->darkValValues:[F
 
     goto :goto_2
 
     :cond_6
-    sget-object v4, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->lightValValues:[F
+    sget-object v5, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->lightValValues:[F
 
     :goto_2
-    const/4 v6, 0x1
+    move v6, v3
 
     .line 323
     :goto_3
@@ -581,11 +581,11 @@
 
     const/4 v0, 0x2
 
-    aget v3, v4, v7
+    aget v3, v5, v7
 
-    aget v4, v4, v6
+    aget v5, v5, v6
 
-    invoke-static {v3, v4, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    invoke-static {v3, v5, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v2
 
@@ -601,7 +601,7 @@
     .line 331
     :cond_8
     :goto_4
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedColor(Ljava/lang/String;)I
 
     move-result p1
 
@@ -873,16 +873,16 @@
 
     invoke-virtual {v0, p2, p3}, Landroid/graphics/Path;->offset(FF)V
 
-    const/4 v0, -0x1
+    cmpg-float v0, p4, v2
 
-    const-string v3, "paintChatActionBackground"
+    const/4 v3, -0x1
 
-    cmpg-float v4, p4, v2
+    const-string v4, "paintChatActionBackground"
 
-    if-gez v4, :cond_1
+    if-gez v0, :cond_1
 
     .line 401
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v5
 
@@ -891,13 +891,13 @@
     move-result v5
 
     .line 402
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v6
 
     int-to-float v7, v5
 
-    mul-float v7, v7, p4
+    mul-float/2addr v7, p4
 
     float-to-int v7, v7
 
@@ -906,13 +906,13 @@
     goto :goto_0
 
     :cond_1
-    const/4 v5, -0x1
+    move v5, v3
 
     .line 404
     :goto_0
     iget-object v6, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicPath:Landroid/graphics/Path;
 
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object v7
 
@@ -925,7 +925,7 @@
 
     if-eqz v6, :cond_3
 
-    if-gez v4, :cond_2
+    if-gez v0, :cond_2
 
     .line 407
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
@@ -935,41 +935,43 @@
     move-result v0
 
     .line 408
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
     int-to-float v6, v0
 
-    mul-float v6, v6, p4
+    mul-float/2addr v6, p4
 
     float-to-int v6, v6
 
-    invoke-virtual {v4, v6}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    move v3, v0
 
     .line 410
     :cond_2
-    iget-object v4, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicPath:Landroid/graphics/Path;
+    iget-object v0, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicPath:Landroid/graphics/Path;
 
     sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v4, v6}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v6}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     :cond_3
     if-ltz v5, :cond_4
 
     .line 413
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v0, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_4
-    if-ltz v0, :cond_5
+    if-ltz v3, :cond_5
 
     .line 416
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_actionBackgroundGradientDarkenPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
     .line 418
     :cond_5
@@ -1034,7 +1036,7 @@
 
     int-to-float v4, v0
 
-    mul-float v4, v4, p4
+    mul-float/2addr v4, p4
 
     float-to-int v4, v4
 
@@ -1210,7 +1212,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, p4
+    mul-float/2addr v0, p4
 
     iget-boolean p4, p0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicClosed:Z
 
@@ -1219,7 +1221,7 @@
     const v2, 0x3f333333    # 0.7f
 
     :cond_d
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     float-to-int p4, v0
 
@@ -1345,7 +1347,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     float-to-int p2, p2
 
@@ -1477,12 +1479,12 @@
 
     if-ne v4, v5, :cond_0
 
-    const/4 v4, 0x1
+    move v4, v5
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    move v4, v6
 
     :goto_0
     iput-boolean v4, v0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->isGeneralTopic:Z
@@ -1491,7 +1493,7 @@
 
     if-nez v2, :cond_1
 
-    goto/16 :goto_16
+    goto/16 :goto_15
 
     :cond_1
     const/4 v4, 0x7
@@ -1653,7 +1655,7 @@
 
     if-nez v8, :cond_5
 
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_2
 
@@ -1676,7 +1678,7 @@
 
     if-nez v8, :cond_6
 
-    const/4 v8, 0x0
+    move v8, v6
 
     goto :goto_3
 
@@ -1767,9 +1769,9 @@
 
     const-wide/16 v19, 0x0
 
-    cmp-long v21, v10, v19
+    cmp-long v19, v10, v19
 
-    if-eqz v21, :cond_10
+    if-eqz v19, :cond_10
 
     .line 114
     iget-object v14, v0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicIconDrawable:Landroid/graphics/drawable/Drawable;
@@ -1784,9 +1786,9 @@
 
     move-result-wide v19
 
-    cmp-long v12, v10, v19
+    cmp-long v10, v10, v19
 
-    if-eqz v12, :cond_d
+    if-eqz v10, :cond_d
 
     .line 115
     :cond_b
@@ -1851,7 +1853,7 @@
     goto :goto_6
 
     :cond_e
-    const/4 v3, 0x0
+    move v3, v6
 
     :goto_6
     if-nez v3, :cond_11
@@ -2095,7 +2097,7 @@
 
     float-to-int v3, v3
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/2addr v3, v15
 
     add-int v3, v20, v3
 
@@ -2183,7 +2185,7 @@
 
     if-eqz v14, :cond_17
 
-    const/4 v14, 0x1
+    move v14, v5
 
     goto :goto_9
 
@@ -2704,12 +2706,12 @@
 
     move/from16 v3, v23
 
-    goto/16 :goto_d
+    goto/16 :goto_e
 
     :cond_1c
     move/from16 v24, v4
 
-    const/4 v1, 0x1
+    move v1, v5
 
     if-ne v8, v1, :cond_1e
 
@@ -2944,10 +2946,7 @@
 
     move v3, v1
 
-    :goto_d
-    const/4 v1, 0x1
-
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :cond_1e
     if-nez v8, :cond_20
@@ -2991,15 +2990,15 @@
 
     move/from16 v15, v22
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_1f
     const/4 v2, 0x0
 
-    const/4 v15, 0x0
+    move v15, v2
 
     .line 236
-    :goto_e
+    :goto_d
     iput v2, v0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicNameLeft:F
 
     const/4 v1, 0x1
@@ -3163,17 +3162,17 @@
 
     move v3, v15
 
-    goto/16 :goto_d
+    goto :goto_e
 
     :cond_20
     const/4 v4, 0x0
 
+    move v3, v4
+
+    :goto_e
     const/4 v1, 0x1
 
-    const/4 v3, 0x0
-
     .line 253
-    :goto_f
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -3205,12 +3204,12 @@
 
     if-ne v3, v4, :cond_22
 
-    goto :goto_10
+    goto :goto_f
 
     :cond_21
     move-object/from16 v1, p2
 
-    :goto_10
+    :goto_f
     iget v3, v1, Lorg/telegram/messenger/MessageObject;->type:I
 
     if-ne v3, v2, :cond_24
@@ -3243,10 +3242,10 @@
 
     move-result v1
 
-    :goto_11
+    :goto_10
     add-int/2addr v15, v1
 
-    goto :goto_12
+    goto :goto_11
 
     :cond_23
     if-eqz v1, :cond_25
@@ -3258,14 +3257,14 @@
 
     move-result v1
 
-    goto :goto_11
+    goto :goto_10
 
     :cond_24
     const/4 v15, 0x0
 
     .line 264
     :cond_25
-    :goto_12
+    :goto_11
     iget-object v1, v0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicSelectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_26
@@ -3286,7 +3285,7 @@
     .line 266
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    goto :goto_13
+    goto :goto_12
 
     .line 268
     :cond_26
@@ -3297,7 +3296,7 @@
     invoke-static {v1, v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 271
-    :goto_13
+    :goto_12
     iget-object v1, v0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicPaint:Landroid/graphics/Paint;
 
     iget v2, v0, Lorg/telegram/ui/Components/Forum/MessageTopicButton;->topicBackgroundColor:I
@@ -3338,14 +3337,14 @@
 
     if-ne v8, v4, :cond_28
 
-    const/4 v5, 0x3
+    move v5, v3
 
-    goto :goto_14
+    goto :goto_13
 
     :cond_28
     const/4 v5, 0x0
 
-    :goto_14
+    :goto_13
     add-int/2addr v5, v4
 
     .line 279
@@ -3364,12 +3363,12 @@
 
     if-ne v8, v4, :cond_29
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_29
     const/4 v3, 0x0
 
-    :goto_15
+    :goto_14
     add-int/2addr v3, v4
 
     .line 281
@@ -3393,8 +3392,8 @@
     return v15
 
     :cond_2b
-    :goto_16
-    const/4 v1, 0x0
+    :goto_15
+    move v1, v6
 
     return v1
 .end method

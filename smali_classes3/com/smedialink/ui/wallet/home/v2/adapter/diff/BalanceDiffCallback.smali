@@ -296,7 +296,7 @@
     if-ne p1, p2, :cond_c
 
     :goto_0
-    const/4 v1, 0x1
+    move v1, v2
 
     goto/16 :goto_1
 
@@ -460,9 +460,9 @@
 
     iget-wide p1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    cmp-long v0, v3, p1
+    cmp-long p1, v3, p1
 
-    if-nez v0, :cond_c
+    if-nez p1, :cond_c
 
     goto/16 :goto_0
 
@@ -568,9 +568,9 @@
 
     move-result-wide p1
 
-    cmp-long v0, v3, p1
+    cmp-long p1, v3, p1
 
-    if-nez v0, :cond_c
+    if-nez p1, :cond_c
 
     goto/16 :goto_0
 

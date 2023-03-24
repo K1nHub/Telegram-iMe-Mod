@@ -301,22 +301,22 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 p1, 0x0
+    cmp-long p1, v2, v4
 
-    cmp-long v6, v2, v4
+    const/4 v4, 0x0
 
-    if-eqz v6, :cond_3
+    if-eqz p1, :cond_3
 
     sub-long v2, v0, v2
 
-    const-wide/16 v4, 0xa
+    const-wide/16 v5, 0xa
 
-    cmp-long v6, v2, v4
+    cmp-long p1, v2, v5
 
-    if-lez v6, :cond_4
+    if-lez p1, :cond_4
 
     .line 109
-    iget v4, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+    iget p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
     long-to-float v2, v2
 
@@ -326,29 +326,29 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->animationSpeedScale:F
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
-    add-float/2addr v4, v2
+    add-float/2addr p1, v2
 
-    iput v4, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+    iput p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
     .line 110
     iget v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->repeatProgress:F
 
-    cmpl-float v2, v4, v2
+    cmpl-float p1, p1, v2
 
-    if-lez v2, :cond_2
+    if-lez p1, :cond_2
 
     .line 111
-    iput p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+    iput v4, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
     .line 112
-    iget-object v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->onRestartCallback:Ljava/lang/Runnable;
+    iget-object p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->onRestartCallback:Ljava/lang/Runnable;
 
-    if-eqz v2, :cond_2
+    if-eqz p1, :cond_2
 
     .line 113
-    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     .line 116
     :cond_2
@@ -363,33 +363,33 @@
     .line 126
     :cond_4
     :goto_0
-    iget v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->parentWidth:I
+    iget p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->parentWidth:I
 
-    iget v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->size:I
+    iget v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->size:I
 
-    mul-int/lit8 v2, v1, 0x2
+    mul-int/lit8 v1, v0, 0x2
 
-    add-int/2addr v0, v2
+    add-int/2addr p1, v1
+
+    int-to-float p1, p1
+
+    iget v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+
+    mul-float/2addr p1, v1
 
     int-to-float v0, v0
 
-    iget v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
-
-    mul-float v0, v0, v2
-
-    int-to-float v1, v1
-
-    sub-float/2addr v0, v1
+    sub-float/2addr p1, v0
 
     .line 127
-    iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
     .line 128
-    iget-object v1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1, v0, p1}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v0, p1, v4}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 129
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->gradientShader:Landroid/graphics/Shader;
@@ -498,24 +498,24 @@
     .line 135
     iget-wide v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->lastUpdateTime:J
 
-    const/4 v4, 0x0
+    const-wide/16 v4, 0x0
 
-    const-wide/16 v5, 0x0
+    cmp-long v4, v2, v4
 
-    cmp-long v7, v2, v5
+    const/4 v5, 0x0
 
-    if-eqz v7, :cond_1
+    if-eqz v4, :cond_1
 
     sub-long v2, v0, v2
 
-    const-wide/16 v5, 0xa
+    const-wide/16 v6, 0xa
 
-    cmp-long v7, v2, v5
+    cmp-long v4, v2, v6
 
-    if-lez v7, :cond_2
+    if-lez v4, :cond_2
 
     .line 138
-    iget v5, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+    iget v4, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
     long-to-float v2, v2
 
@@ -523,18 +523,18 @@
 
     div-float/2addr v2, v3
 
-    add-float/2addr v5, v2
+    add-float/2addr v4, v2
 
-    iput v5, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+    iput v4, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
     const/high16 v2, 0x40800000    # 4.0f
 
-    cmpl-float v2, v5, v2
+    cmpl-float v2, v4, v2
 
     if-lez v2, :cond_0
 
     .line 140
-    iput v4, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
+    iput v5, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
     .line 141
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->onRestartCallback:Ljava/lang/Runnable;
@@ -579,7 +579,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     int-to-float v0, v2
 
@@ -594,7 +594,7 @@
     .line 156
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->matrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v0, v1, v4}, Landroid/graphics/Matrix;->setTranslate(FF)V
+    invoke-virtual {v0, v1, v5}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
     .line 157
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->gradientShader:Landroid/graphics/Shader;

@@ -162,15 +162,15 @@ public class GestureDetector2 {
         this.mIsLongpressEnabled = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:159:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x02da  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x02be  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x02d4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public boolean onTouchEvent(android.view.MotionEvent r20) {
         /*
-            Method dump skipped, instructions count: 774
+            Method dump skipped, instructions count: 768
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.GestureDetector2.onTouchEvent(android.view.MotionEvent):boolean");

@@ -147,12 +147,12 @@
 
     if-eqz v1, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v3
 
     goto :goto_0
 
     :cond_3
-    const/4 v4, 0x0
+    move v4, v2
 
     :goto_0
     add-int/2addr v4, v3
@@ -174,7 +174,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v2
 
     .line 2317
     :goto_1
@@ -191,7 +191,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    const/4 v6, 0x0
+    move v6, v2
 
     :goto_2
     if-ge v6, v4, :cond_d
@@ -259,7 +259,7 @@
     iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     :goto_3
-    const/4 v9, 0x0
+    move v9, v2
 
     .line 2337
     :goto_4
@@ -302,7 +302,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 v8, 0x0
+    move v8, v2
 
     :goto_5
     if-nez v8, :cond_b
@@ -329,7 +329,7 @@
     goto :goto_4
 
     :cond_a
-    const/4 v8, 0x0
+    move v8, v2
 
     :cond_b
     :goto_6

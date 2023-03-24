@@ -26,6 +26,6 @@ final class WalletPrivacySettingPresenter$loadPrivacySettings$1 extends Lambda i
     public final Pair<Result<CryptoWalletInfo>, Result<Boolean>> invoke2(Result<CryptoWalletInfo> walletAddressResult, Result<Boolean> accountRankResult) {
         Intrinsics.checkNotNullParameter(walletAddressResult, "walletAddressResult");
         Intrinsics.checkNotNullParameter(accountRankResult, "accountRankResult");
-        return TuplesKt.m100to(walletAddressResult, accountRankResult);
+        return TuplesKt.m99to(walletAddressResult, accountRankResult);
     }
 }

@@ -72,44 +72,44 @@
 .end method
 
 .method private getValueAt(J)F
-    .locals 9
+    .locals 8
 
     .line 800
     iget-wide v0, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStartTime:J
 
-    const/4 v2, 0x0
+    cmp-long v2, p1, v0
 
-    cmp-long v3, p1, v0
+    const/4 v3, 0x0
 
-    if-gez v3, :cond_0
+    if-gez v2, :cond_0
 
-    return v2
+    return v3
 
     .line 802
     :cond_0
-    iget-wide v3, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
+    iget-wide v4, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    cmp-long v2, v4, v6
 
-    cmp-long v8, v3, v5
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    if-ltz v8, :cond_2
+    if-ltz v2, :cond_2
 
-    cmp-long v5, p1, v3
+    cmp-long v2, p1, v4
 
-    if-gez v5, :cond_1
+    if-gez v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    sub-long/2addr p1, v3
+    sub-long/2addr p1, v4
 
     .line 807
     iget v0, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopValue:F
 
-    sub-float v1, v7, v0
+    sub-float v1, v6, v0
 
     long-to-float p1, p1
 
@@ -120,11 +120,11 @@
     div-float/2addr p1, p2
 
     .line 808
-    invoke-static {p1, v2, v7}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
+    invoke-static {p1, v3, v6}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
 
     move-result p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     add-float/2addr v1, v0
 
@@ -145,11 +145,11 @@
 
     div-float/2addr p1, p2
 
-    invoke-static {p1, v2, v7}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
+    invoke-static {p1, v3, v6}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
 
     move-result p1
 
-    mul-float p1, p1, v0
+    mul-float/2addr p1, v0
 
     return p1
 .end method
@@ -159,13 +159,13 @@
 
     const/high16 v0, -0x3f800000    # -4.0f
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     const/high16 v1, 0x40800000    # 4.0f
 
-    mul-float p1, p1, v1
+    mul-float/2addr p1, v1
 
     add-float/2addr v0, p1
 
@@ -182,9 +182,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
     .line 835
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
@@ -211,12 +211,12 @@
 
     long-to-float v0, v3
 
-    mul-float v0, v0, v2
+    mul-float/2addr v0, v2
 
     .line 841
     iget v1, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mTargetVelocityX:F
 
-    mul-float v1, v1, v0
+    mul-float/2addr v1, v0
 
     float-to-int v1, v1
 
@@ -225,7 +225,7 @@
     .line 842
     iget v1, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mTargetVelocityY:F
 
-    mul-float v0, v0, v1
+    mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
@@ -304,9 +304,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     .line 796
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
@@ -321,9 +321,9 @@
 
     add-long/2addr v2, v4
 
-    cmp-long v4, v0, v2
+    cmp-long v0, v0, v2
 
-    if-lez v4, :cond_0
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -349,13 +349,13 @@
 
     sub-long v2, v0, v2
 
-    long-to-int v3, v2
+    long-to-int v2, v2
 
-    iget v2, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mRampDownDuration:I
+    iget v3, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mRampDownDuration:I
 
     const/4 v4, 0x0
 
-    invoke-static {v3, v4, v2}, Landroidx/core/widget/AutoScrollHelper;->constrain(III)I
+    invoke-static {v2, v4, v3}, Landroidx/core/widget/AutoScrollHelper;->constrain(III)I
 
     move-result v2
 

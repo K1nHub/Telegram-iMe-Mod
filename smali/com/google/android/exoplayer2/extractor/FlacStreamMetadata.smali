@@ -620,13 +620,13 @@
 
     int-to-long v2, v2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->bitsPerSample:I
 
     int-to-long v2, v2
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     const-wide/16 v2, 0x8
 
@@ -648,26 +648,26 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->sampleRate:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->channels:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public getDurationUs()J
-    .locals 5
+    .locals 4
 
     .line 193
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->totalSamples:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -676,7 +676,7 @@
     :cond_0
     const-wide/32 v2, 0xf4240
 
-    mul-long v0, v0, v2
+    mul-long/2addr v0, v2
 
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->sampleRate:I
 
@@ -775,13 +775,13 @@
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->channels:I
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->bitsPerSample:I
 
     div-int/lit8 v1, v1, 0x8
 
-    mul-int v0, v0, v1
+    mul-int/2addr v0, v1
 
     return v0
 .end method
@@ -813,7 +813,7 @@
 
     int-to-long v0, v0
 
-    mul-long p1, p1, v0
+    mul-long/2addr p1, v0
 
     const-wide/32 v0, 0xf4240
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$59;Landroid/content/Context;ILorg/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 8922
+    .line 8933
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;
 
     iput-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->val$reasonCallback:Lorg/fork/utils/Callbacks$Callback1;
@@ -39,10 +39,10 @@
 .method public dismissInternal()V
     .locals 1
 
-    .line 8926
+    .line 8937
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 8927
+    .line 8938
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$59;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8928
+    .line 8939
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$59;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -71,12 +71,12 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 3
 
-    .line 8934
+    .line 8945
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->val$reasonCallback:Lorg/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, p2}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
-    .line 8935
+    .line 8946
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$59$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$59;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$59;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;

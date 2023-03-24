@@ -285,7 +285,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
     }
 
     private void startStream(OkHttpClientStream okHttpClientStream) {
-        Preconditions.checkState(okHttpClientStream.m697id() == -1, "StreamId already assigned");
+        Preconditions.checkState(okHttpClientStream.m696id() == -1, "StreamId already assigned");
         this.streams.put(Integer.valueOf(this.nextStreamId), okHttpClientStream);
         setInUse(okHttpClientStream);
         okHttpClientStream.transportState().start(this.nextStreamId);
@@ -896,9 +896,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
                 z3 = false;
             }
             if (z3) {
-                OkHttpClientTransport okHttpClientTransport = OkHttpClientTransport.this;
-                ErrorCode errorCode = ErrorCode.PROTOCOL_ERROR;
-                okHttpClientTransport.onError(errorCode, "Received header for unknown stream: " + i);
+                OkHttpClientTransport.this.onError(ErrorCode.PROTOCOL_ERROR, "Received header for unknown stream: " + i);
             }
         }
 

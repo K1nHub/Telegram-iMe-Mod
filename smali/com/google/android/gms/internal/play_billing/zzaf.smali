@@ -131,7 +131,7 @@
 
     const-wide v11, 0x3fe6666666666666L    # 0.7
 
-    mul-double v9, v9, v11
+    mul-double/2addr v9, v11
 
     int-to-double v11, v6
 
@@ -163,7 +163,7 @@
     .line 7
     invoke-static {v6, v7}, Lcom/google/android/gms/internal/play_billing/zzp;->zza(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_4
     add-int/lit8 v6, v8, -0x1
@@ -182,9 +182,9 @@
     .line 11
     invoke-static {v7, v10}, Ljava/util/Arrays;->fill([BB)V
 
-    const/4 v8, 0x0
+    move v8, v3
 
-    const/4 v10, 0x0
+    move v10, v8
 
     :goto_1
     if-ge v8, v0, :cond_8
@@ -295,7 +295,10 @@
 
     move-object v2, v7
 
-    goto :goto_5
+    :goto_4
+    const/4 v5, 0x2
+
+    goto/16 :goto_d
 
     :cond_9
     new-array v5, v9, [Ljava/lang/Object;
@@ -313,13 +316,11 @@
 
     aput-object v2, v5, v6
 
-    :goto_4
     move-object v2, v5
 
-    :goto_5
-    const/4 v5, 0x2
+    move v5, v6
 
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_a
     const v5, 0x8000
@@ -331,11 +332,11 @@
     .line 25
     invoke-static {v5, v10}, Ljava/util/Arrays;->fill([SS)V
 
-    const/4 v7, 0x0
+    move v7, v3
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    :goto_6
+    :goto_5
     if-ge v7, v0, :cond_e
 
     add-int v10, v8, v8
@@ -366,7 +367,7 @@
 
     move-result v13
 
-    :goto_7
+    :goto_6
     and-int/2addr v13, v6
 
     .line 30
@@ -396,7 +397,7 @@
     :cond_b
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_8
+    goto :goto_7
 
     .line 31
     :cond_c
@@ -425,20 +426,20 @@
 
     move-object v2, v10
 
-    :goto_8
+    :goto_7
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_d
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_e
     if-ne v8, v0, :cond_f
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_f
     new-array v6, v9, [Ljava/lang/Object;
@@ -456,7 +457,7 @@
 
     aput-object v2, v6, v5
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_10
     new-array v5, v8, [I
@@ -464,11 +465,11 @@
     .line 39
     invoke-static {v5, v10}, Ljava/util/Arrays;->fill([II)V
 
-    const/4 v7, 0x0
+    move v7, v3
 
-    const/4 v8, 0x0
+    move v8, v7
 
-    :goto_9
+    :goto_8
     if-ge v7, v0, :cond_14
 
     add-int v11, v8, v8
@@ -499,7 +500,7 @@
 
     move-result v14
 
-    :goto_a
+    :goto_9
     and-int/2addr v14, v6
 
     .line 44
@@ -523,7 +524,7 @@
     :cond_11
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_b
+    goto :goto_a
 
     .line 45
     :cond_12
@@ -552,24 +553,26 @@
 
     move-object v2, v10
 
-    :goto_b
+    :goto_a
     add-int/lit8 v7, v7, 0x1
 
     const/4 v10, -0x1
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_13
     add-int/lit8 v14, v14, 0x1
 
     const/4 v10, -0x1
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_14
     if-ne v8, v0, :cond_15
 
-    :goto_c
+    :goto_b
+    move-object v2, v5
+
     goto/16 :goto_4
 
     :cond_15
@@ -588,11 +591,11 @@
 
     aput-object v2, v6, v5
 
-    :goto_d
+    :goto_c
     move-object v2, v6
 
     .line 53
-    :goto_e
+    :goto_d
     nop
 
     instance-of v6, v2, [Ljava/lang/Object;

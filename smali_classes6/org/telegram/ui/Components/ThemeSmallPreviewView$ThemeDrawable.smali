@@ -181,9 +181,9 @@
 
     move-result v1
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
-    mul-float v1, v1, v2
+    mul-float/2addr v1, v2
 
     float-to-int v1, v1
 
@@ -196,7 +196,7 @@
 
     move-result v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -214,7 +214,7 @@
 
     sub-float/2addr v5, v6
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     add-float/2addr v0, v1
 
@@ -274,7 +274,7 @@
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->outBubblePaintSecond:Landroid/graphics/Paint;
 
-    mul-float p2, p2, v2
+    mul-float/2addr p2, v2
 
     float-to-int p2, p2
 
@@ -391,7 +391,7 @@
 
     int-to-float p2, p2
 
-    mul-float p2, p2, v4
+    mul-float/2addr p2, v4
 
     .line 604
     iget-object v0, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -501,7 +501,7 @@
 
     const v1, 0x3df5c28f    # 0.12f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     .line 613
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -520,7 +520,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     sub-float/2addr v1, v2
 
@@ -541,7 +541,7 @@
 
     int-to-float v7, v7
 
-    mul-float v7, v7, v5
+    mul-float/2addr v7, v5
 
     sub-float/2addr v2, v7
 
@@ -556,7 +556,7 @@
 
     const v8, 0x3ea3d70a    # 0.32f
 
-    mul-float v7, v7, v8
+    mul-float/2addr v7, v8
 
     .line 616
     iget-object v8, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -597,7 +597,7 @@
 
     move-result v7
 
-    mul-float v7, v7, v4
+    mul-float/2addr v7, v4
 
     iget-object v8, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
 
@@ -609,7 +609,7 @@
 
     move-result v8
 
-    mul-float v8, v8, v4
+    mul-float/2addr v8, v4
 
     invoke-virtual {p1, v2, v7, v8, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
@@ -692,7 +692,7 @@
 
     move-result v2
 
-    mul-float v2, v2, v4
+    mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
@@ -788,7 +788,7 @@
 
     const v1, 0x3eb33333    # 0.35f
 
-    mul-float p2, p2, v1
+    mul-float/2addr p2, v1
 
     .line 634
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -799,7 +799,7 @@
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v5
+    mul-float/2addr v1, v5
 
     .line 635
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -810,7 +810,7 @@
 
     int-to-float v2, v2
 
-    mul-float v2, v2, v6
+    mul-float/2addr v2, v6
 
     .line 636
     iget-object v5, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -823,7 +823,7 @@
 
     const v6, 0x3f0ccccd    # 0.55f
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     .line 637
     iget-object v6, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -861,7 +861,7 @@
 
     move-result v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->this$0:Lorg/telegram/ui/Components/ThemeSmallPreviewView;
 
@@ -873,7 +873,7 @@
 
     move-result v1
 
-    mul-float v1, v1, v4
+    mul-float/2addr v1, v4
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeSmallPreviewView$ThemeDrawable;->inBubblePaint:Landroid/graphics/Paint;
 
@@ -958,7 +958,7 @@
 
     move-result p2
 
-    mul-float p2, p2, v4
+    mul-float/2addr p2, v4
 
     float-to-int p2, p2
 
@@ -1027,7 +1027,7 @@
 
     int-to-float v0, v0
 
-    mul-float v0, v0, v4
+    mul-float/2addr v0, v4
 
     const/16 v1, 0x12
 
@@ -1129,7 +1129,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     div-float/2addr v3, v0
 
@@ -1171,7 +1171,7 @@
 
     int-to-float v3, v3
 
-    mul-float v3, v3, v1
+    mul-float/2addr v3, v1
 
     div-float/2addr v3, v0
 
@@ -1225,7 +1225,7 @@
 
     const/high16 v1, 0x437f0000    # 255.0f
 
-    mul-float v1, v1, p2
+    mul-float/2addr v1, p2
 
     float-to-int v1, v1
 
@@ -1272,7 +1272,7 @@
 
     int-to-float v2, v0
 
-    mul-float v2, v2, p2
+    mul-float/2addr v2, p2
 
     float-to-int p2, v2
 

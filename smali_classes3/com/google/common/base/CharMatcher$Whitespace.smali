@@ -61,7 +61,7 @@
 
     const v0, 0x6449bf0a
 
-    mul-int v0, v0, p1
+    mul-int/2addr v0, p1
 
     .line 1232
     sget v1, Lcom/google/common/base/CharMatcher$Whitespace;->SHIFT:I

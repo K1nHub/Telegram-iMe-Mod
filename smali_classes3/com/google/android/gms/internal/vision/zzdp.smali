@@ -679,7 +679,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 228
     :goto_0
@@ -903,7 +903,7 @@
 
     int-to-double v10, v7
 
-    mul-double v10, v10, v8
+    mul-double/2addr v10, v8
 
     double-to-int v8, v10
 

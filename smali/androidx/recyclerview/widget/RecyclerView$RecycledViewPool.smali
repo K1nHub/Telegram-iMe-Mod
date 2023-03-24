@@ -336,9 +336,9 @@
 
     const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v0
+    cmp-long v0, p1, v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     return-wide p3
 
@@ -350,7 +350,7 @@
 
     const-wide/16 v2, 0x3
 
-    mul-long p1, p1, v2
+    mul-long/2addr p1, v2
 
     div-long/2addr p3, v0
 

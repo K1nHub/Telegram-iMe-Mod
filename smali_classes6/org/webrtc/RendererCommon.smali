@@ -65,7 +65,7 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v1, v2
 
@@ -86,7 +86,7 @@
 
     add-float/2addr v4, v5
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     sub-float/2addr v2, v4
 
@@ -358,7 +358,7 @@
 
     div-float/2addr v0, p0
 
-    mul-float v0, v0, p1
+    mul-float/2addr v0, p1
 
     .line 256
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -421,42 +421,42 @@
 .method public static getLayoutMatrix(ZFF)[F
     .locals 2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    cmpl-float v0, p2, p1
 
-    cmpl-float v1, p2, p1
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
     div-float/2addr p1, p2
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    move p2, v1
 
     goto :goto_0
 
     :cond_0
     div-float/2addr p2, p1
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move p1, v1
 
     :goto_0
     if-eqz p0, :cond_1
 
     const/high16 p0, -0x40800000    # -1.0f
 
-    mul-float p2, p2, p0
+    mul-float/2addr p2, p0
 
     :cond_1
     const/16 p0, 0x10
 
     new-array p0, p0, [F
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 153
-    invoke-static {p0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    invoke-static {p0, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     .line 154
-    invoke-static {p0, v1, p2, p1, v0}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
+    invoke-static {p0, v0, p2, p1, v1}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
     .line 155
     invoke-static {p0}, Lorg/webrtc/RendererCommon;->adjustOrigin([F)V

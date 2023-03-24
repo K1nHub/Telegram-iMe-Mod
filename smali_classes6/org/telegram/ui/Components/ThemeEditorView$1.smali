@@ -547,7 +547,7 @@
 
     div-float/2addr v2, p1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     add-float/2addr v6, v2
 
@@ -610,7 +610,7 @@
 
     div-float/2addr v2, p1
 
-    mul-float v2, v2, v3
+    mul-float/2addr v2, v3
 
     sub-float/2addr v6, v2
 

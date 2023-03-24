@@ -447,7 +447,7 @@
     goto :goto_1
 
     :cond_1
-    const/4 v2, -0x1
+    move v2, v4
 
     :goto_2
     if-eq v2, v4, :cond_2
@@ -613,7 +613,7 @@
 
     const/16 v5, 0xa
 
-    mul-int/lit8 v4, v4, 0xa
+    mul-int/2addr v4, v5
 
     add-int/2addr v2, v4
 
@@ -786,9 +786,9 @@
     :cond_0
     const/4 p1, 0x0
 
-    const/4 v0, 0x0
+    move v0, p1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 231
     :goto_0
@@ -813,7 +813,7 @@
 
     if-gt v2, v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_1
 
@@ -827,7 +827,7 @@
 
     if-eq v0, v2, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v4
 
     :goto_1
     add-int/lit8 p1, p1, 0x1
@@ -943,12 +943,12 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     if-eqz v2, :cond_1
@@ -1012,7 +1012,7 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_2
     if-eqz v0, :cond_4
@@ -1234,7 +1234,7 @@
     goto :goto_5
 
     :cond_8
-    const/4 p2, -0x1
+    move p2, v2
 
     :goto_5
     if-ne p2, v2, :cond_9
@@ -1270,7 +1270,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     if-ge v3, v0, :cond_0
@@ -1377,11 +1377,11 @@
 
     add-int p2, p1, v2
 
-    mul-int p2, p2, v1
+    mul-int/2addr p2, v1
 
     add-int v5, v4, v3
 
-    mul-int v5, v5, v0
+    mul-int/2addr v5, v0
 
     add-int/2addr p2, v5
 
@@ -1478,13 +1478,13 @@
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    move v11, v10
 
-    const/4 v12, 0x0
+    move v12, v11
 
-    const/4 v13, 0x0
+    move v13, v12
 
-    const/4 v14, 0x0
+    move v14, v13
 
     :goto_0
     if-ge v11, v8, :cond_0
@@ -1566,7 +1566,7 @@
 
     invoke-direct {v0}, Lcom/google/zxing/common/BitArray;-><init>()V
 
-    const/4 v1, 0x0
+    move v1, v10
 
     :goto_1
     const/16 v2, 0x8
@@ -1753,7 +1753,7 @@
     return v0
 
     :cond_0
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, v1, :cond_4
@@ -1856,7 +1856,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v2, v1
 
     :goto_0
     const/4 v3, 0x4

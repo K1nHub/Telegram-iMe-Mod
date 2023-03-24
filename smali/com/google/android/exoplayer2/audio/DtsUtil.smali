@@ -245,7 +245,7 @@
 
     add-int/2addr p0, v5
 
-    const/4 v0, 0x1
+    move v0, v5
 
     goto :goto_2
 
@@ -322,7 +322,7 @@
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x0
+    move v1, v0
 
     .line 209
     :goto_0

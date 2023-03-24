@@ -1201,12 +1201,12 @@
 
     const-string v0, "\u274c"
 
-    const/4 v2, 0x1
+    move v2, v6
 
     goto :goto_3
 
     :cond_3
-    const/4 v2, 0x0
+    move v2, v4
 
     :goto_3
     if-eqz v0, :cond_4
@@ -1951,7 +1951,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v4, 0x1
+    move v4, v0
 
     .line 513
     :goto_0
@@ -2035,7 +2035,7 @@
 
     if-eqz v3, :cond_5
 
-    const/4 p1, 0x0
+    move p1, v1
 
     .line 535
     :goto_1
@@ -2087,7 +2087,7 @@
     goto :goto_1
 
     :cond_3
-    const/4 p1, -0x1
+    move p1, v6
 
     :goto_2
     if-eq p1, v6, :cond_6
@@ -2147,7 +2147,7 @@
 
     invoke-virtual {p1, v1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 557
     :cond_6
@@ -2181,12 +2181,12 @@
 
     if-eqz v1, :cond_7
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    move v5, v0
 
     goto :goto_4
 
     :cond_7
-    const/4 v5, 0x0
+    move v5, v4
 
     :goto_4
     invoke-virtual {p1, v5}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -2208,7 +2208,7 @@
 
     if-eqz v1, :cond_8
 
-    const/4 v0, 0x0
+    move v0, v4
 
     :cond_8
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
@@ -2310,7 +2310,7 @@
     goto :goto_0
 
     :cond_3
-    const/4 p1, 0x0
+    move p1, v0
 
     .line 597
     :goto_0
@@ -2770,12 +2770,12 @@
 
     if-gt v1, v2, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-eqz v1, :cond_2
@@ -3241,11 +3241,11 @@
 
     move/from16 v7, v17
 
-    const/4 v14, 0x2
+    move v14, v11
 
     move/from16 v11, v16
 
-    const/4 v14, 0x0
+    move v14, v12
 
     move/from16 v12, v19
 

@@ -172,12 +172,12 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     if-ge v2, p1, :cond_3
 
-    const/4 v3, 0x0
+    move v3, v0
 
     :goto_1
     const/16 v4, 0xa
@@ -243,7 +243,7 @@
 
     div-float/2addr v7, v8
 
-    mul-float v7, v7, v6
+    mul-float/2addr v7, v6
 
     invoke-static {v5, v4, v7}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
@@ -267,7 +267,7 @@
 
     div-float/2addr v5, v7
 
-    mul-float v5, v5, v6
+    mul-float/2addr v5, v6
 
     sub-float/2addr v6, v5
 
@@ -646,7 +646,7 @@
 
     int-to-float v10, v6
 
-    mul-float v10, v10, v2
+    mul-float/2addr v10, v2
 
     add-float/2addr v9, v10
 
@@ -658,7 +658,7 @@
 
     int-to-float v11, v7
 
-    mul-float v11, v11, v3
+    mul-float/2addr v11, v3
 
     add-float/2addr v10, v11
 
@@ -672,7 +672,7 @@
 
     int-to-float v12, v12
 
-    mul-float v12, v12, v2
+    mul-float/2addr v12, v2
 
     add-float/2addr v11, v12
 
@@ -686,7 +686,7 @@
 
     int-to-float v13, v13
 
-    mul-float v13, v13, v3
+    mul-float/2addr v13, v3
 
     add-float/2addr v12, v13
 
@@ -746,20 +746,20 @@
     .line 447
     iget-wide v10, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selected:J
 
-    const/high16 v12, 0x3f800000    # 1.0f
+    cmp-long v10, v10, v7
 
-    const/4 v13, 0x0
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    cmp-long v14, v10, v7
+    const/4 v12, 0x0
 
-    if-nez v14, :cond_3
+    if-nez v10, :cond_3
 
     const v10, 0x3d3b3ee7
 
     add-float/2addr v9, v10
 
     .line 448
-    invoke-static {v12, v9}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v11, v9}, Ljava/lang/Math;->min(FF)F
 
     move-result v9
 
@@ -771,24 +771,24 @@
     sub-float/2addr v9, v10
 
     .line 450
-    invoke-static {v13, v9}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v12, v9}, Ljava/lang/Math;->max(FF)F
 
     move-result v9
 
     :goto_4
     const/16 v10, 0x10
 
-    shr-long v10, v7, v10
+    shr-long v13, v7, v10
 
-    long-to-int v11, v10
+    long-to-int v10, v13
 
-    shl-int/lit8 v10, v11, 0x10
+    shl-int/lit8 v13, v10, 0x10
 
-    int-to-long v14, v10
+    int-to-long v13, v13
 
-    sub-long v14, v7, v14
+    sub-long v13, v7, v13
 
-    long-to-int v10, v14
+    long-to-int v13, v13
 
     .line 456
     iget-object v14, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->colorMap:Ljava/util/Map;
@@ -846,21 +846,21 @@
 
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v11
 
-    int-to-float v12, v12
+    int-to-float v11, v11
 
-    mul-float v15, v15, v12
+    mul-float/2addr v15, v11
 
     invoke-virtual {v14, v15}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     .line 462
-    iget-object v12, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selectorPath:Landroid/graphics/Path;
+    iget-object v11, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selectorPath:Landroid/graphics/Path;
 
-    invoke-virtual {v12}, Landroid/graphics/Path;->rewind()V
+    invoke-virtual {v11}, Landroid/graphics/Path;->rewind()V
 
     .line 463
-    sget-object v12, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+    sget-object v11, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
@@ -868,9 +868,9 @@
 
     int-to-float v14, v14
 
-    int-to-float v15, v11
+    int-to-float v15, v10
 
-    mul-float v15, v15, v2
+    mul-float/2addr v15, v2
 
     add-float/2addr v14, v15
 
@@ -880,25 +880,25 @@
 
     int-to-float v15, v15
 
-    int-to-float v13, v10
+    int-to-float v12, v13
 
-    mul-float v13, v13, v3
+    mul-float/2addr v12, v3
 
-    add-float/2addr v15, v13
+    add-float/2addr v15, v12
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
-    move-result v13
+    move-result v12
 
-    int-to-float v13, v13
+    int-to-float v12, v12
 
-    add-int/lit8 v5, v11, 0x1
+    add-int/lit8 v5, v10, 0x1
 
     int-to-float v5, v5
 
-    mul-float v5, v5, v2
+    mul-float/2addr v5, v2
 
-    add-float/2addr v13, v5
+    add-float/2addr v12, v5
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -906,30 +906,30 @@
 
     int-to-float v5, v5
 
-    add-int/lit8 v4, v10, 0x1
+    add-int/lit8 v4, v13, 0x1
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v3
+    mul-float/2addr v4, v3
 
     add-float/2addr v5, v4
 
-    invoke-virtual {v12, v14, v15, v13, v5}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v11, v14, v15, v12, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 464
     iget-object v4, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->radii:[F
 
-    if-nez v11, :cond_6
-
     if-nez v10, :cond_6
+
+    if-nez v13, :cond_6
 
     const/16 v5, 0xa
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v12
 
-    int-to-float v5, v13
+    int-to-float v5, v12
 
     goto :goto_6
 
@@ -937,9 +937,9 @@
     const/4 v5, 0x0
 
     :goto_6
-    const/4 v13, 0x1
+    const/4 v12, 0x1
 
-    aput v5, v4, v13
+    aput v5, v4, v12
 
     const/4 v14, 0x0
 
@@ -952,9 +952,9 @@
 
     const/16 v15, 0xb
 
-    if-ne v11, v15, :cond_7
+    if-ne v10, v15, :cond_7
 
-    if-nez v10, :cond_7
+    if-nez v13, :cond_7
 
     const/16 v17, 0xa
 
@@ -981,71 +981,71 @@
 
     const/4 v14, 0x5
 
-    const/16 v13, 0x9
+    const/16 v12, 0x9
 
-    if-ne v11, v15, :cond_8
+    if-ne v10, v15, :cond_8
 
-    if-ne v10, v13, :cond_8
+    if-ne v13, v12, :cond_8
 
     const/16 v15, 0xa
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v12
 
-    int-to-float v13, v13
+    int-to-float v12, v12
 
     goto :goto_8
 
     :cond_8
-    const/4 v13, 0x0
+    const/4 v12, 0x0
 
     :goto_8
-    aput v13, v4, v14
+    aput v12, v4, v14
 
-    aput v13, v4, v5
+    aput v12, v4, v5
 
     .line 467
     iget-object v4, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->radii:[F
 
     const/4 v5, 0x6
 
-    const/4 v13, 0x7
+    const/4 v12, 0x7
 
-    if-nez v11, :cond_9
+    if-nez v10, :cond_9
 
-    const/16 v11, 0x9
+    const/16 v10, 0x9
 
-    if-ne v10, v11, :cond_9
+    if-ne v13, v10, :cond_9
 
     const/16 v10, 0xa
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v13
 
-    int-to-float v11, v11
+    int-to-float v13, v13
 
     goto :goto_9
 
     :cond_9
     const/16 v10, 0xa
 
-    const/4 v11, 0x0
+    const/4 v13, 0x0
 
     :goto_9
-    aput v11, v4, v13
+    aput v13, v4, v12
 
-    aput v11, v4, v5
+    aput v13, v4, v5
 
     .line 468
     iget-object v4, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selectorPath:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->radii:[F
 
-    sget-object v11, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+    sget-object v12, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    invoke-virtual {v4, v12, v5, v11}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
+    invoke-virtual {v4, v11, v5, v12}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
     .line 469
     iget-object v4, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selectorPath:Landroid/graphics/Path;
@@ -1063,9 +1063,9 @@
     .line 471
     iget-wide v4, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selected:J
 
-    cmp-long v11, v4, v7
+    cmp-long v4, v4, v7
 
-    if-eqz v11, :cond_a
+    if-eqz v4, :cond_a
 
     .line 472
     iget-object v4, v0, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->selectors:Landroid/util/LongSparseArray;
@@ -1104,7 +1104,7 @@
 
     add-int/2addr v6, v4
 
-    const/16 v4, 0xa
+    move v4, v10
 
     goto/16 :goto_3
 
@@ -1236,10 +1236,10 @@
 
     sub-long/2addr v0, v2
 
-    long-to-int v1, v0
+    long-to-int v0, v0
 
     .line 387
-    invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->setCurrentColor(II)V
+    invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/Paint/ColorPickerBottomSheet$GridPickerView;->setCurrentColor(II)V
 
     return-void
 

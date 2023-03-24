@@ -40,47 +40,47 @@
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 689
+    .line 683
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 690
+    .line 684
     iput-object p1, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->address:Ljava/lang/String;
 
-    .line 691
+    .line 685
     iput p2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->port:I
 
-    .line 692
+    .line 686
     iput-object p3, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
 
-    .line 693
+    .line 687
     iput-object p4, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
 
-    .line 694
+    .line 688
     iput-object p5, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
 
     const-string p2, ""
 
     if-nez p1, :cond_0
 
-    .line 696
+    .line 690
     iput-object p2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->address:Ljava/lang/String;
 
     :cond_0
     if-nez p4, :cond_1
 
-    .line 699
+    .line 693
     iput-object p2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
 
     :cond_1
     if-nez p3, :cond_2
 
-    .line 702
+    .line 696
     iput-object p2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
 
     :cond_2
     if-nez p5, :cond_3
 
-    .line 705
+    .line 699
     iput-object p2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
 
     :cond_3
@@ -94,7 +94,7 @@
 
     const-string v0, "UTF-8"
 
-    .line 710
+    .line 704
     new-instance v1, Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
@@ -118,7 +118,7 @@
     :try_start_0
     const-string v2, "server="
 
-    .line 712
+    .line 706
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->address:Ljava/lang/String;
@@ -141,7 +141,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 713
+    .line 707
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -152,7 +152,7 @@
 
     const-string v2, "&user="
 
-    .line 714
+    .line 708
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->username:Ljava/lang/String;
@@ -163,7 +163,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 716
+    .line 710
     :cond_1
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
 
@@ -175,7 +175,7 @@
 
     const-string v2, "&pass="
 
-    .line 717
+    .line 711
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->password:Ljava/lang/String;
@@ -186,7 +186,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 719
+    .line 713
     :cond_2
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
 
@@ -198,7 +198,7 @@
 
     const-string v2, "&secret="
 
-    .line 720
+    .line 714
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lorg/telegram/messenger/SharedConfig$ProxyInfo;->secret:Ljava/lang/String;
@@ -211,7 +211,7 @@
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 723
+    .line 717
     :catch_0
     :cond_3
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

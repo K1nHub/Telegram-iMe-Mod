@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.LinearLayout;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 /* renamed from: org.telegram.ui.Components.BlurredLinearLayout */
@@ -36,7 +35,7 @@ public class BlurredLinearLayout extends LinearLayout {
             }
             this.backgroundPaint.setColor(this.backgroundColor);
             AndroidUtilities.rectTmp2.set(0, this.backgroundPaddingTop, getMeasuredWidth(), getMeasuredHeight() - this.backgroundPaddingBottom);
-            float f = BitmapDescriptorFactory.HUE_RED;
+            float f = 0.0f;
             View view = this;
             while (true) {
                 sizeNotifierFrameLayout = this.sizeNotifierFrameLayout;

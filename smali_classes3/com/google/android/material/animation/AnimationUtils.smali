@@ -62,7 +62,7 @@
 
     sub-float/2addr p1, p0
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     add-float/2addr p0, p2
 
@@ -107,7 +107,7 @@
 
     int-to-float p1, p1
 
-    mul-float p2, p2, p1
+    mul-float/2addr p2, p1
 
     .line 53
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
